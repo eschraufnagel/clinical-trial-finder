@@ -257,3 +257,4 @@ Written as the work goes: the snapshot's real numbers, the gate answers, convent
   - A biomarker-specific NSCLC exclusion (HER2-mutant NSCLC excluded, HER2-overexpressed not). Labelled relevant.
   - Not unclear, but worth knowing: rollover studies for people already on a drug are not relevant (they don't enroll by cancer type). Lung carcinoid and large-cell neuroendocrine tumors are not NSCLC.
 - **Step 7, a finding about the snapshot.** The registry's own `cancer` search returns some trials that aren't about cancer: spinal cord injury, insomnia, common warts, myasthenia gravis, heavy drinking. Six turned up in the held-out sample, labelled not relevant. `docs/search.md` will say so.
+- **Step 8.** The 20 labels for Gate 2 are in `work/0001-trial-snapshot/gate-2-labels.md`: 15 held-out and 5 dev, 7 relevant and 13 not, one marked unclear. **Stopped for Gate 2.**
