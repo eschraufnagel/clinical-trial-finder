@@ -245,3 +245,15 @@ Written as the work goes: the snapshot's real numbers, the gate answers, convent
   - `loadSnapshot` on the full snapshot: 0.33 s, faster than the spec's estimate of about a second.
   - **The files are not committed. Stopped for Gate 1.**
 - **Gate 1, answered (owner, 2026-10): commit the snapshot.** The owner looked at a readable preview first (what takes the space: eligibility text 53%, US sites 29%; three trials as stored; 25 at random), then agreed with the recommendation.
+- **Step 6.** The labelling tools as planned, and one test the plan didn't list, `tests/scripts/search-sample.test.ts`, for the draw's two rules.
+- **Step 7, the draw.** 4,241 treatment trials; held-out 300. The dev rule matched 128 trials, so the cap applied: 80 by `sha256("dev:" + nctId)`.
+- **Step 7, a change to the labelling tool.** After 15 labels read in full (about 3,000 tokens a trial), `search:show` gained `--brief`. It prints the header and only the eligibility lines containing a fixed list of disease words (cancer, carcinoma, tumor, malignancy, neoplasm, sarcoma, lymphoma, leukemia, myeloma, melanoma, glioma, blastoma, metastasis, cohort, histology, cytology, solid, lung, NSCLC, thoracic), plus an `Ages` line. The list is the same for every trial, and nothing in it comes from the search. Full text was read whenever the brief view left the disease scope unclear: eight trials, each noted "full text read" in its reason.
+- **Step 7, the labels.** Held-out: 82 of 300 relevant (27%), 16 marked unclear. Dev: 57 of 80 relevant, 2 unclear. Commits: 98, then 99–198, then 199–300, then the dev pool, close to the plan's three hundreds.
+- **Step 7, convention questions that came up**, each decided by `ANNOTATION.md` as written and marked "unclear:":
+  - Trials that treat a complication rather than the cancer, but take any cancer: malignant pleural effusion, thrombosis prevention, taste changes, virtual reality for symptoms, navigation. Labelled relevant, under the "symptom being treated" rule.
+  - Pediatric-framed trials with an upper age of 30 that take any solid tumor. Labelled relevant, because age isn't part of the label.
+  - Small cell lung cancer transformed from EGFR-mutant NSCLC, which requires an NSCLC history. Labelled relevant.
+  - "Selected solid tumors" with the selection not in the record. Labelled relevant.
+  - A biomarker-specific NSCLC exclusion (HER2-mutant NSCLC excluded, HER2-overexpressed not). Labelled relevant.
+  - Not unclear, but worth knowing: rollover studies for people already on a drug are not relevant (they don't enroll by cancer type). Lung carcinoid and large-cell neuroendocrine tumors are not NSCLC.
+- **Step 7, a finding about the snapshot.** The registry's own `cancer` search returns some trials that aren't about cancer: spinal cord injury, insomnia, common warts, myasthenia gravis, heavy drinking. Six turned up in the held-out sample, labelled not relevant. `docs/search.md` will say so.
