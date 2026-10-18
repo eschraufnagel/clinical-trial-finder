@@ -8,4 +8,11 @@
  */
 export { CORPUS, CORPUS_IDS, type CorpusEntry } from "./corpus.js";
 export { getTrial, loadTrials } from "./load.js";
+export { DEFAULT_SNAPSHOT_DIR, loadSnapshot, type Snapshot } from "./snapshot-load.js";
+export type {
+  Intervention,
+  Site,
+  SnapshotManifest,
+  SnapshotTrial,
+} from "./snapshot-types.js";
 export { type Trial, type TrialEligibility, TrialFixtureError } from "./types.js";

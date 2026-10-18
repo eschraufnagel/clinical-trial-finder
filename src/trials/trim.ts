@@ -1,3 +1,4 @@
+import { asRecord, optional, optionalBoolean, required, stringArray } from "./read.js";
 import { type Trial, type TrialEligibility, TrialFixtureError } from "./types.js";
 
 /**
@@ -59,7 +60,8 @@ export function trimStudy(raw: unknown, source = "study"): Trial {
   return trial;
 }
 
-function trimEligibility(
+/** Exported for `snapshot-trim.ts`, which reads the same module the same way. */
+export function trimEligibility(
   module: Record<string, unknown> | undefined,
   problems: string[],
 ): TrialEligibility {
@@ -106,41 +108,4 @@ export function serializeTrial(trial: Trial): string {
   };
 
   return `${JSON.stringify(ordered, null, 2)}\n`;
-}
-
-function asRecord(value: unknown): Record<string, unknown> | undefined {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) {
-    return undefined;
-  }
-  return value as Record<string, unknown>;
-}
-
-/**
- * A field the project cannot work without. Records a problem and returns a
- * placeholder so that a single pass collects every fault rather than stopping at
- * the first; `trimStudy` throws before any placeholder can escape.
- */
-function required(value: unknown, path: string, problems: string[]): string {
-  if (typeof value !== "string" || value.length === 0) {
-    problems.push(`${path} is missing or not a non-empty string`);
-    return "";
-  }
-  return value;
-}
-
-/** Absent optional scalars become null, and are still written to the fixture. */
-function optional(value: unknown): string | null {
-  return typeof value === "string" && value.length > 0 ? value : null;
-}
-
-function optionalBoolean(value: unknown): boolean | null {
-  return typeof value === "boolean" ? value : null;
-}
-
-/** Absent optional arrays become empty arrays, and are still written. */
-function stringArray(value: unknown): string[] {
-  if (!Array.isArray(value)) {
-    return [];
-  }
-  return value.filter((item): item is string => typeof item === "string");
 }
