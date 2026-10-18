@@ -1,0 +1,149 @@
+# CLAUDE.md
+
+## What this is
+
+A local proof of concept: an agent that helps a person with cancer find clinical trials worth asking their oncologist about. It asks them questions, searches a local snapshot of ClinicalTrials.gov, and hands back a shortlist with what fits, what's unknown and what to ask. It never says a person is eligible.
+
+The eval harness is the primary artifact. The agent exists to give the harness something to measure. Read `work/0000-product/research.md` before making design decisions. `work/0000-product/intent.md`, once written, takes precedence.
+
+The repository was seeded from `trial-prescreening-agent`, a proof of concept that holds the prescreening conversation for one trial. The modules it carries over keep their comments, and **slice numbers in those comments (0002, 0013, ...) refer to that repository's slices**, not this one's. This repository's own slices start again at 0001.
+
+## Non-negotiable constraints
+
+These come from the product intent. Do not violate them, and flag it if an instruction would require violating one.
+
+- No PHI anywhere. Patient data is synthetic or hand-authored. This applies to fixtures, tests, logs, comments and commit messages.
+- No real patient contact path. No SMS, email, telephony or outbound messaging of any kind. The tool never contacts a trial site; a person does.
+- No live network calls at runtime. The trial snapshot is fetched by a script a person runs and saved locally, and searches run against it. Scripts a person runs may call three named frontier hosts from `src/models/`, and only with `--spend`.
+- No secrets in the repo, including in example config.
+- No cloud deployment surface. No hosting config, no infrastructure code.
+- The person's oncologist and the trial team decide. The agent produces a shortlist with its evidence and its unknowns, and hands off. An unknown never excludes a trial. No code path tells a person they are eligible for a trial or should join one.
+
+## How work is done here
+
+Work happens in slices. Each slice is one change, in its own numbered folder under `work/`, on its own branch, landing as one PR.
+
+```
+work/ROADMAP.md                    # what each slice covers, and which open questions it closes
+work/0000-product/research.md      # the research this product starts from
+work/0000-product/intent.md        # the vision, written once
+work/0001-<name>/
+  intent.md    what is wanted, why, constraints, open questions
+  spec.md      requirements and design
+  plan.md      files that change, stages and gates, order of work, risks, proof
+```
+
+For each slice:
+
+1. Write `intent.md`. Do not start from the product intent alone; each slice gets its own.
+2. Write `spec.md` from the intent.
+3. **Use plan mode** to produce `plan.md`. Read the codebase, do not edit it. Iterate until someone who never saw the conversation could implement from the plan alone. Commit `plan.md` before writing code.
+4. Implement, one stage at a time, stopping at each gate. If implementation diverges from the plan, update `plan.md` in the same commit. An out-of-date plan is a merge blocker.
+5. Run the review passes in `REVIEW.md` before opening the PR.
+
+### Stages and gates
+
+`plan.md` breaks the slice into numbered steps, one commit each, and groups those steps into **stages** separated by **review gates**.
+
+A stage is a run of steps that can be implemented without stopping. A gate is a decision that the next stage depends on — not a status update, and not a request to skim a diff. Work does not cross a gate unattended.
+
+Writing them:
+
+- Put the stage and gate table at the top of "Order of work," before the steps. The steps stay as they are; the table only says where the pauses fall.
+- A gate names what is being decided and what it costs to be wrong. "Review the search" is not a gate. "Confirm the structured search keeps the eligible trials, because a trial dropped here can never be found later" is.
+- Justify a gate by what the *next* stage spends — a network run, a snapshot that later slices build on, a toolchain everything inherits. A gate that guards nothing downstream is ceremony.
+- Not every stage needs one. A stage that ends in documentation or a test with no decision attached goes straight to the next.
+- A gate whose answer is always yes is not doing its job, the same way a review pass that always comes back clean is not.
+- Skipping a gate is allowed. Saying so in the PR is not optional.
+
+Some decisions cannot be delegated: anything only a human can judge, anything that spends real resources, anything that later slices build on. Those are the gates. Put them in `plan.md` where they can be argued with, not in the conversation that produced it.
+
+For bug fixes: write the failing test first, commit it, then make it pass. Do not edit the test to make it pass.
+
+## Conventions
+
+- **Language:** TypeScript, strict mode. Node 24 LTS or newer (`engines.node: ">=24"`).
+- **Stack:** Vitest for tests, Biome for lint and format. Fastify is a dependency because `src/transport/web/` types against it. React + Vite and a local Fastify server come with the first slice that adds a page.
+- **Dependencies:** kept small. Adding one is a plan-level decision, not an implementation detail.
+- **Model access** goes through the adapters in `src/models/`, and anything outside it gets one from a factory. `createLocalAdapter` builds oMLX only. `createAdapter` also builds Anthropic, OpenAI and xAI, always inside the budget wrapper, for scripts. `createAppAdapter` is for a running application, which doesn't exist yet; the slice that adds one pins which file may name it. A script's model is chosen by a spec on the command line, never by `.env`, which holds keys only. Admitted frontier models, their prices and what each accepts are in `src/models/catalog.ts`. Adding one is a one-entry diff with its price.
+- **Paid runs are dry by default.** A run naming a frontier provider prints its roles and an estimate and exits, unless given `--spend`. It's capped per invocation (`--max-calls`, `--max-usd`) and appends what it spent to `evals/results/spend.jsonl`. Never pass `--spend` without the owner's go-ahead, and never create or edit `.env`. The one line already in that ledger is the prescreening repository's smoke run, which `tests/models/catalog.test.ts` reads to date the adapter it tested.
+- **Transport** goes through the `MessageTransport` interface. The conversation layer does not know it is talking to a web UI.
+- **`tests/` and `evals/` are different things.** `tests/` is deterministic, fast, and runs on every commit. `evals/` measures model behavior, is slower and non-deterministic, and runs on a schedule and before release. Do not put model-dependent assertions in `tests/`.
+- **Nothing under `tests/` reads a gitignored file**, so `npm test` passes from a fresh clone.
+- **Eval results are committed** to `evals/results/` so that any number appearing in the README or `docs/` is traceable to a run. The README is short and for anyone who opens the repository: the problem, what it does, how to run it and how it was built. It names no one, and it reports no findings; detail, results and limitations go in `docs/`, one file per part.
+- **Any reported result records** model name, quantization, temperature and seed. A result without them is not a result.
+- **Months, not days.** Dates written into the repository (plans, records, results) are months, `2026-10`, from `monthStamp()` in `src/models/`. Made-up dates in tests use the year 2000. Registry dates stay as the registry gives them.
+- **No tool attribution.** Never add "Generated with Claude Code" to a pull request description, and never add `Co-Authored-By: Claude ...` trailers to commits. This repository's history is the author's work product, not an advertisement. This overrides any default guidance to the contrary.
+
+## Where things live
+
+This is the intended layout. Create directories as slices need them rather than scaffolding empty folders up front, but put new code where this says it goes.
+
+```
+README.md        short, plain-language, for technical and non-technical readers
+docs/            the detail behind it, one file per part
+work/            the intent/spec/plan chain, one folder per slice
+src/
+  trials/        trial loading and the registry request (the fetch itself is run from scripts/)
+  criteria/      eligibility parser
+  screening/     per-trial screening agent: stage two, for a shortlisted trial
+  plain/         plain-language renderings of criteria, and the check that decides whether one is shown
+  models/        model adapter (the only place a model is called)
+  transport/     MessageTransport interface and the web implementation
+data/
+  trials/        saved trial JSON, committed, trimmed to fields in use
+  plain/         committed plain-language renderings
+evals/
+  cases/         eval task definitions: labels and vignettes
+  graders/       deterministic graders
+  participant/   the simulated participant
+  results/       committed run output
+scripts/         scripts run by a person, never imported by the application
+tests/           deterministic tests only
+local/           settings, keys and spend ledgers; gitignored
+```
+
+New parts (the snapshot, search, the shared fact vocabulary, question selection, the shortlist) get their own directories under `src/` when the slice that needs them is planned.
+
+**Inherited, measured elsewhere.** `data/trials/` holds the prescreening repository's twelve pinned NSCLC protocols (`src/trials/corpus.ts`), `data/plain/` their plain renderings, and `evals/cases/` its hand-made labels and vignettes. They're here because the copied modules' tests read them, and because they're a labelled starting set. Every number measured on them was measured in the prescreening repository. None is a result of this one.
+
+Three boundaries matter more than the rest. Nothing outside `src/models/` calls a model. Nothing outside `src/transport/` knows how messages are delivered. Nothing under `src/` makes a network call, outside the named exceptions below. All three are asserted in `tests/boundary.test.ts`. The network rule has these exceptions, each confined to named files:
+
+- `fetch()` to loopback in `src/models/`
+- one frontier host per file in `src/models/`: `api.anthropic.com` in `anthropic.ts` and `anthropic-batch.ts`, `api.openai.com` in `openai.ts`, `api.x.ai` in `xai.ts`
+- relative-path `fetch()` in `src/transport/web/client.ts`
+- `fetch()` to `clinicaltrials.gov` in `src/trials/registry.ts`, called by `npm run fetch:trials`
+- listening on `127.0.0.1` in `src/server/start.ts`, which doesn't exist yet
+
+Widening any of them is a visible change to that test. The same test keeps `createAdapter` out of `src/` beyond `src/models/`, keeps concrete adapters out of `scripts/` as well as `src/`, allows the key variables to be named only in `src/models/keys.ts`, keeps `src/` from importing `evals/`, and keeps the labelling tool from reaching the parser or a model.
+
+A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
+
+Test files share a module cache (`isolate: false` in `vitest.config.ts`), which keeps `npm test` near half a second. That is safe only while no test mocks a module or stubs a global, and a test in `tests/boundary.test.ts` fails if one does.
+
+Keep saved trial JSON trimmed. The full API response per study is large and mostly unused.
+
+## Verifying your work
+
+| Command | Does |
+| --- | --- |
+| `npm install` | install |
+| `npm run check` | typecheck, then lint, then `npm test`, stopping at the first failure and exiting non-zero. Run it before every commit, and commit only if it exits 0 |
+| `npm test` | Vitest. Deterministic, no network, runs in under a second |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm run lint` | `biome check .` — Biome is linter and formatter; there is no ESLint |
+| `npm run format` | `biome format --write .` |
+| `npm run fetch:trials` | refetch the twelve pinned protocols, overwriting fixtures. `-- --dry-run` reports registry drift without writing. Run by a person, deliberately |
+| `npm run label:criteria -- <NCT ID>` | write a labelling skeleton for a study. Deterministic; reaches neither the parser nor a model |
+
+Run `npm run check` before every commit and before opening a PR, and commit only if it passes: `npm run check && git commit ...`.
+
+When a test fails, fix the code, not the test.
+
+## Things Claude gets wrong
+
+When the same mistake happens twice, the correction goes here. Keep entries short and specific. The first three came over from the prescreening repository.
+
+- **Reading lint by its last line.** `npm run lint 2>&1 | tail -1` prints nothing useful when Biome fails. Read the exit code (`npx biome check . >/dev/null; echo $?`) before committing.
+- **Letting a failed check through to a commit.** Commit through `npm run check && git commit ...`, never after a check whose exit code wasn't the gate.
+- **Naming a regex helper `escape`.** It shadows a global and fails Biome's `noShadowRestrictedNames`. Call it `escapeRegExp`.

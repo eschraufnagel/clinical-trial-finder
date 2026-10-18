@@ -1,0 +1,35 @@
+{
+  "name": "trial-finder-agent",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local proof of concept: an agent that helps a person with cancer find clinical trials worth asking their oncologist about, by asking them questions.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "check": "npm run typecheck && npm run lint && npm test",
+    "fetch:trials": "tsx scripts/fetch-trials.ts",
+    "label:criteria": "node --import tsx scripts/label-criteria.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.11",
+    "@types/node": "24.10.1",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.1"
+  },
+  "dependencies": {
+    "fastify": "5.12.5"
+  },
+  "allowScripts": {
+    "esbuild": false,
+    "fsevents": false
+  }
+}
