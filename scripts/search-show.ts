@@ -5,6 +5,7 @@
  *
  *   npm run search:show -- NCT07148128
  *   npm run search:show -- --next [N]     the next N unlabelled trials in the label file (default 1)
+ *   add --brief to print only the eligibility lines about disease scope
  *
  * Like `search:sample`, it can't see the search: it prints the registry's
  * words and nothing derived from them, so a label is written before its
@@ -14,8 +15,27 @@ import { NSCLC_LABELS, readSearchLabels } from "../evals/search/labels.js";
 import { loadSnapshot } from "../src/trials/snapshot-load.js";
 import type { SnapshotTrial } from "../src/trials/snapshot-types.js";
 
-export function describeForLabelling(trial: SnapshotTrial, set?: string): string {
+/**
+ * Words that say which cancers a line is about. `--brief` prints only the
+ * eligibility lines that contain one, so a labeller reads the disease scope
+ * without the lab values and contraception rules around it. A fixed list,
+ * the same for every trial, and nothing derived from the search.
+ */
+const SCOPE_WORDS =
+  /cancer|carcinoma|tumou?r|malignan|neoplas|sarcoma|lymphoma|leuka?emia|myeloma|melanoma|glioma|blastoma|metasta|cohort|histolog|cytolog|solid|lung|nsclc|thoracic/i;
+
+/** The eligibility lines a labeller needs for disease scope, each cut to 400 characters. */
+export function scopeLines(criteriaText: string): string[] {
+  return criteriaText
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => SCOPE_WORDS.test(line))
+    .map((line) => (line.length > 400 ? `${line.slice(0, 400)} …` : line));
+}
+
+export function describeForLabelling(trial: SnapshotTrial, set?: string, brief = false): string {
   const list = (items: readonly string[]) => (items.length === 0 ? "—" : items.join("; "));
+  const text = trial.eligibility.criteriaText;
   return [
     `=== ${trial.nctId}${set === undefined ? "" : `  (${set})`}`,
     `Title:          ${trial.briefTitle}`,
@@ -25,14 +45,18 @@ export function describeForLabelling(trial: SnapshotTrial, set?: string): string
     `Keywords:       ${list(trial.keywords)}`,
     `MeSH:           ${list(trial.conditionMesh)}`,
     `Interventions:  ${list(trial.interventions.map((i) => i.name))}`,
-    "Eligibility:",
-    trial.eligibility.criteriaText,
+    `Ages:           ${trial.eligibility.minimumAge ?? "no minimum"} to ${trial.eligibility.maximumAge ?? "no maximum"}`,
+    brief
+      ? `Eligibility, lines about disease scope only (${text.length} characters in all):`
+      : "Eligibility:",
+    ...(brief ? scopeLines(text).map((line) => `  | ${line}`) : [text]),
     "",
   ].join("\n");
 }
 
 function main(): void {
   const args = process.argv.slice(2);
+  const brief = args.includes("--brief");
   const { trials } = loadSnapshot();
   const byId = new Map(trials.map((t) => [t.nctId, t]));
 
@@ -48,7 +72,7 @@ function main(): void {
   } else {
     wanted = args.filter((a) => /^NCT\d{8}$/i.test(a)).map((a) => ({ nctId: a.toUpperCase() }));
     if (wanted.length === 0) {
-      console.error("Usage: npm run search:show -- <NCT ID>... | --next [N]");
+      console.error("Usage: npm run search:show -- <NCT ID>... | --next [N] [--brief]");
       process.exitCode = 1;
       return;
     }
@@ -61,7 +85,7 @@ function main(): void {
       process.exitCode = 1;
       continue;
     }
-    console.log(describeForLabelling(trial, set));
+    console.log(describeForLabelling(trial, set, brief));
   }
 }
 
