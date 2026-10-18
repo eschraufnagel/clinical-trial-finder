@@ -1,4 +1,4 @@
-# intent: trial-finder-agent
+# intent: clinical-trial-finder
 
 **Author:** the repository owner
 **Status:** Draft

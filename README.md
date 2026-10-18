@@ -1,4 +1,4 @@
-# Trial Finder Agent
+# Clinical Trial Finder
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Node 24 or newer](https://img.shields.io/badge/node-%E2%89%A524-339933.svg)](https://nodejs.org/)
 
@@ -28,4 +28,4 @@ npm run check
 
 ## How it's being built
 
-It's built by one developer working with Claude, in small changes. Each change is written up as an intent, a spec and a plan before any code, then checked automatically and landed as one reviewed change. The record is in [`work/`](work/), starting with the [research](work/0000-product/research.md). The model adapters, the eligibility parser and the per-trial screening agent come from an earlier proof of concept, [Trial Prescreening Agent](https://github.com/eschraufnagel/trial-prescreening-agent).
+It's built by one developer working with Claude, in small changes. Each change is written up as an intent, a spec and a plan before any code, then checked automatically and landed as one reviewed change. The record is in [`work/`](work/), starting with the [research](work/0000-product/research.md). The model adapters, the eligibility parser and the per-trial screening agent come from an earlier proof of concept, [Clinical Trial Prescreening Agent](https://github.com/eschraufnagel/trial-prescreening-agent).
