@@ -94,7 +94,7 @@ data/snapshot/2026-10/
 ```ts
 interface SnapshotManifest {
   version: 1;
-  month: string;                 // "2026-10", from monthStamp()
+  month: string;                 // "2026-10": dataTimestamp.slice(0, 7), not the clock (amended in plan)
   dataTimestamp: string;         // the registry's /version, as given
   query: string;                 // the exact query string requested
   count: number;
@@ -198,7 +198,9 @@ interface Candidate {
 ### 6.2 Which trials are labelled
 
 - **Held-out sample:** 300 of the snapshot's treatment trials, chosen by ordering every treatment trial by `sha256("0001:" + nctId)` and taking the first 300. It's reproducible, and independent of the search and its vocabulary. `npm run search:sample` writes the skeleton.
-- **Dev pool:** trials outside the held-out sample that the *first* vocabulary drops, and whose title or eligibility text contains `non small cell`, `nsclc`, `lung cancer`, `lung carcinoma`, `lung adenocarcinoma` or `thoracic` (normalized). Frozen once written, so later vocabulary changes can't reshape it. About 25 at the intent's measurement, plus any trial a first look at the dropped trials suggests.
+- **Dev pool:** trials outside the held-out sample that the *first* vocabulary drops, and whose title or eligibility text contains `non small cell`, `nsclc`, `lung cancer`, `lung carcinoma`, `lung adenocarcinoma` or `thoracic` (normalized). Frozen once written, so later vocabulary changes can't reshape it.
+
+  *Amended in plan:* the dev pool is drawn by a fixed text rule, not by the first vocabulary, so it can be drawn before any search code exists. It's the treatment trials outside the held-out sample whose normalized title or eligibility text contains one of the phrases above, and whose conditions, keywords and MeSH terms contain none of `lung`, `nsclc` or `thoracic`. That's the "mentions it but doesn't name it" pool. If it exceeds 80, the first 80 by `sha256("dev:" + nctId)` are used.
 - Labels live in `evals/cases/search/nsclc.json`:
 
 ```ts
@@ -214,7 +216,7 @@ interface SearchLabels {
 
 ### 6.3 Running it
 
-`npm run search:eval` loads the snapshot, vocabulary and labels, runs the cancer-type stage on every labelled trial, and writes `evals/results/search/NN-nsclc.json` (numbered by `evals/run-file.ts`):
+`npm run search:eval` loads the snapshot, vocabulary and labels, runs the cancer-type stage on every labelled trial, and writes `evals/results/search/NN-<first 12 hex of vocabularySha256>.json`, numbered by `nextRunFile` in `evals/run-file.ts`, which accepts only a hex suffix (amended in plan):
 
 ```ts
 interface SearchEvalResult {
