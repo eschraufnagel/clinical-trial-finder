@@ -244,3 +244,4 @@ Written as the work goes: the snapshot's real numbers, the gate answers, convent
   - `--dry-run` straight after: 0 added, 0 removed, 0 changed.
   - `loadSnapshot` on the full snapshot: 0.33 s, faster than the spec's estimate of about a second.
   - **The files are not committed. Stopped for Gate 1.**
+- **Gate 1, answered (owner, 2026-10): commit the snapshot.** The owner looked at a readable preview first (what takes the space: eligibility text 53%, US sites 29%; three trials as stored; 25 at random), then agreed with the recommendation.
