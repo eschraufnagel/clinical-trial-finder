@@ -230,3 +230,17 @@ Each step is one commit, made through `npm run check && git commit`. No test moc
 ## Records
 
 Written as the work goes: the snapshot's real numbers, the gate answers, convention questions from labelling, vocabulary changes with reasons, and the measured result.
+
+- **Step 2.** The fixture is NCT07148128: a basket trial with two US and two non-US sites, central and site contacts, keywords and MeSH terms. Its contacts and the responsible party were replaced before it was written. `npm test`: 677 passed, 0.58 s.
+- **Step 3.** Two choices the plan didn't spell out:
+  - The script writes to `data/snapshot/<month>/`, the month taken from the registry, and refuses a month that already has a manifest unless given `--force`. A same-month refetch would otherwise overwrite the snapshot that labels are pinned to.
+  - The three requests share one `API` base constant, so `registry.ts` still names its host exactly once, which the boundary test's `findHosts` check expects.
+- **Step 4.** `data/geo/zcta-2025.csv`: 33,791 ZIPs, 0.91 MB. The gazetteer is pipe-separated with a single deflated entry and no data descriptor. The test fixture's five rows are copied from the committed table.
+- **Step 5, the snapshot.** `npm run snapshot:fetch`: six pages, 21 s.
+  - Registry data of 2026-10-16T09:00:05; month 2026-10.
+  - 5,740 trials. `trials.jsonl.gz` is 11.3 MB (43.2 MB uncompressed), `manifest.json` 0.7 KB, sha256 `76099a0e…f1cf6a3d`.
+  - 80,137 US sites, 167 without coordinates.
+  - Purposes: treatment 4,241; supportive care 527; diagnostic 296; prevention 189; health services research 147; screening 131; other 125; basic science 57; device feasibility 27; none missing.
+  - `--dry-run` straight after: 0 added, 0 removed, 0 changed.
+  - `loadSnapshot` on the full snapshot: 0.33 s, faster than the spec's estimate of about a second.
+  - **The files are not committed. Stopped for Gate 1.**
