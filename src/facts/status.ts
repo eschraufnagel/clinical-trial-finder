@@ -5,9 +5,12 @@ import type { FactMapping, FactVocabulary, TrialFacts } from "./types.js";
  * 0002 §4). Pure: no model, no file, no clock.
  *
  * **An unanswered fact is unknown, and an unknown never rules a trial out.**
- * Only a whole-trial mapping whose `rulesOut` holds the person's own answer
- * does. A mapping scoped to part of a trial (`appliesTo`) never rules out the
- * whole trial; it's reported as ruling out part of it.
+ * Only a whole-trial mapping on a trusted fact whose `rulesOut` holds the
+ * person's own answer does. A mapping on an untrusted fact (0002 Gate 2) that
+ * would rule the person out is reported as "may not fit", and its fact counts
+ * as unknown: an uncertain mapping never excludes either. A mapping scoped
+ * to part of a trial (`appliesTo`) never rules out the whole trial; it's
+ * reported as ruling out part of it.
  */
 
 /** A person's answers: fact id to answer id. A missing fact is unknown. */
@@ -20,9 +23,11 @@ export interface TrialStatus {
   ruledOutBy: FactMapping[];
   /** The same, for mappings scoped to part of the trial. Never makes the trial ruled out. */
   partlyRuledOutBy: FactMapping[];
+  /** Mappings on untrusted facts that would rule the person out. Shown, never acted on. */
+  mayNotFitBy: FactMapping[];
   /** Facts the trial maps that the profile answers, and that none of its mappings rule out. */
   fits: string[];
-  /** Facts the trial maps that the profile doesn't answer. */
+  /** Facts the trial maps that the profile doesn't answer, or that only an untrusted mapping rules out. */
   unknown: string[];
 }
 
@@ -50,18 +55,24 @@ export function statusFor(
   trial: TrialFacts,
   profile: Profile,
   vocabulary: FactVocabulary,
+  trusted: ReadonlySet<string>,
 ): TrialStatus {
   validateProfile(profile, vocabulary);
   const ruledOutBy: FactMapping[] = [];
   const partlyRuledOutBy: FactMapping[] = [];
+  const mayNotFitBy: FactMapping[] = [];
   const mapped = new Set<string>();
   const failed = new Set<string>();
+  const uncertain = new Set<string>();
 
   for (const mapping of trial.mappings) {
     mapped.add(mapping.factId);
     const answer = profile[mapping.factId];
     if (answer === undefined || !mapping.rulesOut.includes(answer)) continue;
-    if (mapping.appliesTo === undefined) {
+    if (!trusted.has(mapping.factId)) {
+      mayNotFitBy.push(mapping);
+      uncertain.add(mapping.factId);
+    } else if (mapping.appliesTo === undefined) {
       ruledOutBy.push(mapping);
       failed.add(mapping.factId);
     } else {
@@ -75,8 +86,9 @@ export function statusFor(
     status: ruledOutBy.length > 0 ? "ruled-out" : "open",
     ruledOutBy,
     partlyRuledOutBy,
-    fits: facts.filter((f) => profile[f] !== undefined && !failed.has(f)),
-    unknown: facts.filter((f) => profile[f] === undefined),
+    mayNotFitBy,
+    fits: facts.filter((f) => profile[f] !== undefined && !failed.has(f) && !uncertain.has(f)),
+    unknown: facts.filter((f) => profile[f] === undefined || uncertain.has(f)),
   };
 }
 

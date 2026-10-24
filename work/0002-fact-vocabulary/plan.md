@@ -373,3 +373,4 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - fix that list before held-out, then score held-out once on Haiku.
 
   **Stopped for Gate 2.**
+- **Gate 2, answered (owner, 2026-10): take the recommendation.** The nine trusted facts are in `data/facts/trusted.json`, a list of per-fact flags. It sits beside `vocabulary.json`, so labels and runs keep naming the same vocabulary checksum. `statusFor` takes the trusted set: a mapping on an untrusted fact goes to `mayNotFitBy`, and its fact counts as unknown. Tests check every untrusted fact. Then held-out is scored once on Haiku.

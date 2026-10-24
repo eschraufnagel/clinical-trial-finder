@@ -119,3 +119,38 @@ function answerProblems(name: string, answers: unknown): string[] {
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
+
+export const DEFAULT_TRUSTED_FACTS = fileURLToPath(
+  new URL("../../data/facts/trusted.json", import.meta.url),
+);
+
+/**
+ * The facts whose mappings may rule a trial out (0002 Gate 2). A mapping on
+ * any other fact is shown, but counts as unknown: the dev runs found the
+ * model reliable on these facts only. Kept beside the vocabulary rather than
+ * in it, so labels and runs keep naming the vocabulary they used.
+ */
+export function loadTrustedFacts(
+  vocabulary: FactVocabulary,
+  path: string = DEFAULT_TRUSTED_FACTS,
+): ReadonlySet<string> {
+  let value: unknown;
+  try {
+    value = JSON.parse(readFileSync(path, "utf8"));
+  } catch {
+    throw new FactVocabularyError(path, ["the file can't be read as JSON"]);
+  }
+  const facts = isRecord(value) ? value["facts"] : undefined;
+  if (!Array.isArray(facts) || !facts.every((f) => typeof f === "string")) {
+    throw new FactVocabularyError(path, ["facts is not a list of fact ids"]);
+  }
+  const known = new Set(vocabulary.facts.map((f) => f.id));
+  const unknown = facts.filter((f) => !known.has(f));
+  if (unknown.length > 0) {
+    throw new FactVocabularyError(
+      path,
+      unknown.map((f) => `${f} isn't a fact`),
+    );
+  }
+  return new Set(facts);
+}
