@@ -180,13 +180,13 @@ Each step is one commit, made through `npm run check && git commit`. No test moc
 - `src/trials/read.ts`, `snapshot-types.ts`, `snapshot-trim.ts`, `snapshot-validate.ts`, `snapshot-write.ts`, `snapshot-load.ts`
 - `src/search/index.ts`, `normalize.ts`, `geo.ts`, `vocabulary.ts`, `search.ts`, `types.ts`
 - `scripts/fetch-snapshot.ts`, `fetch-zips.ts`, `search.ts`, `search-sample.ts`, `search-show.ts`, `search-eval.ts`
-- `evals/search/labels.ts`, `metrics.ts`
+- `evals/search/labels.ts`, `metrics.ts`, `result.ts`
 - `evals/cases/search/ANNOTATION.md`, `nsclc.json`
 - `evals/results/search/` (`dev/` too)
 - `data/snapshot/2026-10/` (if Gate 1 says commit), `data/geo/zcta-2025.csv`, `data/cancer-types/nsclc.json`, `generic.json`
 - `tests/trials/snapshot-trim.test.ts`, `snapshot-load.test.ts`, `fixtures/snapshot-study.json`, `fixtures/README.md`
-- `tests/search/geo.test.ts`, `normalize.test.ts`, `vocabulary.test.ts`, `search.test.ts`
-- `tests/scripts/fetch-snapshot.test.ts`, `fetch-zips.test.ts`, `search-cli.test.ts`
+- `tests/search/geo.test.ts`, `normalize.test.ts`, `vocabulary.test.ts`, `search.test.ts`, `trial-fixture.ts`, `fixtures/zips.csv`
+- `tests/scripts/fetch-snapshot.test.ts`, `fetch-zips.test.ts`, `search-cli.test.ts`, `search-sample.test.ts`
 - `tests/evals/search-labels.test.ts`, `search-metrics.test.ts`, `search-result.test.ts`
 - `docs/search.md`, `work/0001-trial-snapshot/plan.md`
 
@@ -288,3 +288,10 @@ Written as the work goes: the snapshot's real numbers, the gate answers, convent
 - **Gate 3, answered (owner, 2026-10): accept 92.7% as the finding.** No second round. Every held-out miss was a trial about a site, a procedure or a side effect that takes any cancer, and every relevant trial not marked unclear was kept. 0002 builds on the search as it is, and `docs/search.md` reports the gap with the misses.
 - **After Gate 3, a change the plan didn't foresee.** `measured` sits inside the vocabulary file, so setting it would have changed the vocabulary's checksum and left the committed result naming a vocabulary that no longer exists. The checksum now reads `measured` as false, tested in `tests/search/vocabulary.test.ts`. `nsclc.json` has `measured: true`, its checksum is still `a3e87584fb11…`, and `search:eval -- --check` still passes.
 - **Step 14.** `docs/search.md`, `CLAUDE.md` (layout, commands, the network exception and the boundary sentence), `README.md` (the search command, no numbers) and `work/ROADMAP.md` (0001 done; its measurement corrected, TREC moved to 0006).
+- **Step 15, review passes** against `git diff main` (62 files).
+  - **Plan compliance.** Four files were missing from "Files that change": `evals/search/result.ts`, `tests/search/trial-fixture.ts`, `tests/search/fixtures/zips.csv` and `tests/scripts/search-sample.test.ts` (Nit, added). The `measured` checksum change after Gate 3 wasn't planned; it's recorded above (Nit). The "not touched" paths have no diff.
+  - **Correctness.** One stale comment: `Vocabulary.sha256` didn't say `measured` is read as false (Nit, fixed). Nothing else found.
+  - **Scope and data.** `fetch(` under `src/` appears only in the allowed files. The fixture's contacts are the invented values. No key, no trailer, no name in the diff.
+  - **Eval integrity.** No label changed after step 7, and the vocabulary's matching terms haven't changed since step 9. The bar wasn't lowered: the result is below it, and the gate's answer says so. There's no model, so no model, quantization, temperature or seed; the result names its snapshot, labels and vocabulary instead, and `docs/search.md` says why.
+  - **Documentation.** `docs/search.md`'s numbers match the committed result. The README has no numbers. One claim in the step 13 records about the misses' conditions was wrong when first written and was corrected from the trials' text before the docs commit.
+  - `npm run check` passes; `search:eval -- --check` matches a rerun.

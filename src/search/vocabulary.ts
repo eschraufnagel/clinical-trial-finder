@@ -47,7 +47,10 @@ export interface GenericTerms {
 export interface Vocabulary {
   type: CancerType;
   generic: GenericTerms;
-  /** Of the type's file and the generic file, in that order, so a result names its vocabulary. */
+  /**
+   * Of the type's file (with `measured` read as false) and the generic file,
+   * in that order, so a result names its vocabulary.
+   */
   sha256: string;
 }
 
