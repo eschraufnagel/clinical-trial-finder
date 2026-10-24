@@ -10,3 +10,13 @@ export {
   pointForZip,
   UnknownZipError,
 } from "./geo.js";
+export {
+  type CancerType,
+  DEFAULT_VOCABULARY_DIR,
+  type GenericTerms,
+  loadVocabulary,
+  type Reason,
+  reasonsFor,
+  type Vocabulary,
+  VocabularyError,
+} from "./vocabulary.js";
