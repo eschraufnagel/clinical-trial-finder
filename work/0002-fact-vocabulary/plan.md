@@ -241,7 +241,7 @@ Each step is one commit, through `npm run check && git commit`. No test mocks a 
 - `tests/facts/vocabulary.test.ts`, `map.test.ts`, `status.test.ts`
 - `tests/evals/facts-labels.test.ts`, `facts-coverage.test.ts`, `facts-grade.test.ts`, `facts-result.test.ts`
 - `tests/scripts/facts-candidates.test.ts`, `facts-map.test.ts`, `facts-cli.test.ts`, `model-flags.test.ts`
-- `docs/facts.md`, `work/0002-fact-vocabulary/plan.md`, `gate-1-labels.md`, `gate-1-relabel.txt`
+- `docs/facts.md`, `work/0002-fact-vocabulary/plan.md`, `gate-1-labels.md`, `gate-1-relabel.txt`, `gate-2-finding.md`
 
 **Modified:**
 - `tests/boundary.test.ts`, `package.json`
@@ -367,3 +367,9 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - 9 of 10 trials graded. NCT05215353 failed: Haiku wrapped `{"mappings": []}` in prose, and it wasn't paid for again.
   - Wrong rule-outs 19 of 79 (24.1%), 17 whole-trial, across the 9 graded trials. Recall 55.6%. 10 mappings were rejected because their quotes weren't in the text.
   - 1.0 s per 1,000 characters.
+- **Step 11, brought forward: Gate 2 before held-out.** All four dev runs missed the bar by eight times or more, so held-out's one look wasn't spent on a prompt that couldn't pass. `gate-2-finding.md` has the four runs, the errors by fact and by kind, the costs, and Claude's recommendation:
+  - rule out only on nine facts that had no wrong rule-out on Haiku's dev run;
+  - count mappings on every other fact as unknown, shown with their quotes;
+  - fix that list before held-out, then score held-out once on Haiku.
+
+  **Stopped for Gate 2.**
