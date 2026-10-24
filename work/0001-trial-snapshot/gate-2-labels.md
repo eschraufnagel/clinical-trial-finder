@@ -31,4 +31,9 @@ Each NCT ID links to the trial on ClinicalTrials.gov, for anyone who wants to ch
 
 ## Answer
 
-_To be filled in at the gate: for each row, whether the reason follows the convention, and any change made._
+**Delegated by the owner (2026-10), and checked by a blind relabel.** A separate agent, given `ANNOTATION.md` and the 20 NCT IDs, but not this file or the label file, read each trial's full eligibility text and labelled it.
+
+- **Agreement: 20 of 20,** including row 1, which it also marked unclear for the same reason. (Its summary line said 8 relevant; its own 20 answers count 7, matching these.)
+- **It raised four places where the convention was silent:** an unnamed list of cancer types (row 1), an LCNEC cohort inside a basket trial (row 18), a MeSH heading the record doesn't support (row 5), and "preferred" tumor lists (rows 16 and 17). None changes a label here. All 380 labels were checked for the same cases, and each had been decided the same way: unnamed lists relevant and unclear (3 trials); neuroendocrine lung tumors not relevant (5); preferred lists not limiting (4). The four rulings are now written into `ANNOTATION.md` under "Edge cases settled at Gate 2".
+- **No label changed.**
+- **Its limits:** the second labeller is another instance of the same model, given the same written convention. It checks that the convention is applied consistently and can be followed from the text alone. It doesn't check the convention against a clinician's judgment, and `docs/search.md` will say so.

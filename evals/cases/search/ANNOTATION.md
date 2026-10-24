@@ -32,6 +32,15 @@ Stage, biomarkers, prior treatment, brain metastases, performance status and lab
 
 The trial's purpose doesn't affect it either: the sample is drawn from treatment trials already.
 
+## Edge cases settled at Gate 2
+
+An independent labeller relabelled 20 trials blind and raised these. Each was already decided this way in the labels, and is written down here so it's applied the same way next time.
+
+- **A list the record doesn't give** ("the top cancer types", "selected solid tumors" with the selection unnamed): relevant, marked unclear, unless the record excludes lung cancer. NSCLC is the most common form of lung cancer, so an unnamed list of common or selected cancers can't be assumed to leave it out.
+- **Neuroendocrine lung tumors** (large-cell neuroendocrine carcinoma, carcinoid, other lung NETs) don't make a trial relevant, even as a cohort inside a basket trial. This follows the rule that "large-cell neuroendocrine carcinoma only" isn't NSCLC. Older classifications grouped LCNEC with NSCLC; this convention doesn't.
+- **A "preferred" or "of primary interest" list doesn't limit enrollment.** A trial open to any solid tumor stays relevant whatever its preferred list says. Only a required list that leaves NSCLC out makes it not relevant.
+- **MeSH terms can be wrong.** Decide from the title, conditions and rules. A MeSH heading that nothing else in the record supports doesn't change a label.
+
 ## How a label is written
 
 - From `npm run search:show` output only: the registry's title, conditions, keywords, MeSH terms, interventions and eligibility text. Never from search output.
