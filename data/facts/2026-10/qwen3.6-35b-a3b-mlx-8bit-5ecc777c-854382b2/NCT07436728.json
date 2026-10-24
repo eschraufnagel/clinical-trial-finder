@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT07436728",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 711,
+        "end": 779,
+        "text": "Non-small cell lung cancer (NSCLC) (both squamous and non-squamous)."
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 416,
+        "end": 459,
+        "text": "locally advanced or metastatic solid tumors"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4082,
+        "end": 4153,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4157,
+        "end": 4316,
+        "text": "Participants must have at least 1 lesion that meets the definition of measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 criteria"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5744,
+        "end": 5848,
+        "text": "Symptomatic central nervous system (CNS) metastases must have been treated, be asymptomatic for ≥14 days"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6051,
+        "end": 6108,
+        "text": "No concurrent leptomeningeal disease or cord compression."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10334,
+        "end": 10416,
+        "text": "Diagnosed with a second primary invasive malignancy not in remission for ≥3 years."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9972,
+        "end": 10121,
+        "text": "History of a bone marrow transplantation within the past 5 years or solid organ transplantation (as a recipient) and use of immunosuppressive agents."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13097,
+        "end": 13249,
+        "text": "Has a positive serum pregnancy test during the screening period or a positive urine pregnancy test on Day 1 before the first dose of trial intervention."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3286,
+        "end": 3420,
+        "text": "Confirmed PD-L1 positive by an FDA approved, Conformité Européene (CE)-marked, or other health-authority equivalent test in local lab."
+      },
+      "appliesTo": "dose expansion"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active diagnosis of a lung condition including: ... b) Interstitial lung disease",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active diagnosis of a lung condition including: ... b) Interstitial lung disease",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5ecc777c8cf0",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "nctId": "NCT07705334",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 88,
+        "end": 116,
+        "text": "ECOG performance status 0-1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 353,
+        "end": 379,
+        "text": "NSCLC (adeno and squamous)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 158,
+        "end": 193,
+        "text": "advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 493,
+        "end": 582,
+        "text": "Stable CNS metastases ≥4 weeks post-radiotherapy and off steroids ≥14 days are permitted."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 585,
+        "end": 621,
+        "text": "≥1 measurable lesion per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 204,
+        "end": 270,
+        "text": "progressed on or are intolerant/unsuitable for standard therapies."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 204,
+        "end": 270,
+        "text": "progressed on or are intolerant/unsuitable for standard therapies."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 204,
+        "end": 270,
+        "text": "progressed on or are intolerant/unsuitable for standard therapies."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 204,
+        "end": 270,
+        "text": "progressed on or are intolerant/unsuitable for standard therapies."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 204,
+        "end": 270,
+        "text": "progressed on or are intolerant/unsuitable for standard therapies."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1879,
+        "end": 1976,
+        "text": "Any medical or psychiatric disorders affecting compliance and/or interpretation of study results."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1435,
+        "end": 1515,
+        "text": "well-controlled HIV with CD4 ≥350 cells/µL and undetectable viral load permitted"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1378,
+        "end": 1425,
+        "text": "Active HBV (HBV-DNA \\>ULN), HCV (HCV-RNA \\>ULN)"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1102,
+        "end": 1135,
+        "text": "High-risk cardiovascular disease."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1636,
+        "end": 1663,
+        "text": "Pregnancy or breastfeeding."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1666,
+        "end": 1774,
+        "text": "Recent radiotherapy, systemic anti-tumor therapy, other investigational therapy without appropriate washout."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1247,
+        "end": 1375,
+        "text": "History of another malignancy (with standard exceptions for in situ disease, non-melanoma skin cancers, and remission ≥2 years)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1576,
+        "end": 1633,
+        "text": "Compromised pulmonary function within 6 months pre-dose ."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5ecc777c8cf0",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

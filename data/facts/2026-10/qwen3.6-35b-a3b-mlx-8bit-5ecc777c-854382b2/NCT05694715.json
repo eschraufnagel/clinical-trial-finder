@@ -1,0 +1,81 @@
+{
+  "nctId": "NCT05694715",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 947,
+        "end": 1003,
+        "text": "Advanced solid tumor malignancy without curative options"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 830,
+        "end": 943,
+        "text": "Presence of at least one lesion with measurable disease as defined by RECIST 1.1 criteria for response assessment"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1308,
+        "end": 1408,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of \\<=1 (Karnofsky \\> 60%; Appendix 1)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6080,
+        "end": 6137,
+        "text": "Participants with unstable brain metastases are excluded."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7045,
+        "end": 7228,
+        "text": "Individuals who are pregnant and/or breast feeding, or expecting to conceive children while receiving study treatment and/or for up to 180 days after the last dose of study treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5ecc777c8cf0",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

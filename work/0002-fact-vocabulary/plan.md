@@ -354,3 +354,8 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
     - "symptomatic" brain metastases ruling out `not_stable_no_symptoms` too (3);
     - permission sentences read as exclusions (5), including "active brain metastases are eligible if…";
     - misreadings (7), e.g. "active uncontrolled HIV" ruling out `controlled`.
+- **Step 10, revision 1** (prompt `5ecc777c8cf0`; `evals/results/facts/02-5ecc777c8cf0.json`). Concrete rules were added: permissions rule nothing out, qualifiers limit the answers, conditions no answer states, "advanced" means `early_resectable` only, and other cancers' cohorts are skipped. **Worse:** wrong rule-outs 40 of 108 (37.0%), 28 whole-trial, in 8 trials; recall 57.8%.
+  - The new failure: vague lines ("progressed on or unsuitable for standard therapies") became `never` on five prior-therapy facts at once.
+  - Scopes written in parentheses ("(Phase 2)") were still missed.
+  - Rules with conditions no answer states were still mapped.
+  - The model doesn't apply rules stated in prose to each answer.

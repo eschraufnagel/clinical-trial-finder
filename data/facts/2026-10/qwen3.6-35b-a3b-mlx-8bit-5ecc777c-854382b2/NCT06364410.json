@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT06364410",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 94,
+        "end": 151,
+        "text": "locally advanced, unresectable, or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1595,
+        "end": 1681,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 1 (Karnofsky ≥ 70%)."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 569,
+        "end": 599,
+        "text": "T-DXd (DS-8201a)-naive disease"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13358,
+        "end": 13443,
+        "text": "Patients with prior treatment with T-DXd (DS-8201a) or other topoisomerase inhibitors"
+      },
+      "appliesTo": "dose escalation and dose expansion"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13267,
+        "end": 13318,
+        "text": "Patients with prior treatment with a WEE1 inhibitor"
+      },
+      "appliesTo": "dose escalation and dose expansion"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11474,
+        "end": 11638,
+        "text": "Patients with history of non-infectious pneumonitis/interstitial lung disease (ILD), current ILD, or where suspected ILD cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11048,
+        "end": 11091,
+        "text": "Pregnant women are excluded from this study"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13533,
+        "end": 13632,
+        "text": "Patients with prior allogeneic organ transplantation including allogeneic stem cell transplantation"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5ecc777c8cf0",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}
