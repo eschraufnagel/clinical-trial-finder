@@ -37,7 +37,7 @@ export function searchTrials(
 
   const candidates: Candidate[] = [];
   for (const { trial, reasons, age } of byPerson) {
-    const place = placeFor(trial.sites, origin, request.radiusMiles);
+    const place = placeFor(trial.sites, origin, request.radiusMiles, zipPoints);
     if (place === undefined) continue;
     const flags: Flag[] = [...recordFlags(trial, manifest.dataTimestamp)];
     if (age === "unread") flags.push("age-limit-unread");
@@ -119,16 +119,14 @@ function placeFor(
   sites: readonly Site[],
   origin: Point,
   radius: number | null,
+  zipPoints: ReadonlyMap<string, Point>,
 ): { nearest: NearestSite; distanceUnknown: boolean } | undefined {
-  const counted = sites.filter(counts);
+  const counted = sites.map((site) => ({ site, point: pointFor(site, zipPoints) }));
   const known = counted
-    .filter((s) => s.lat !== null && s.lon !== null)
-    .map((s) => ({
-      site: s,
-      miles: Math.round(milesBetween(origin, { lat: s.lat as number, lon: s.lon as number })),
-    }))
+    .filter((c) => c.point !== undefined && counts(c.site))
+    .map((c) => ({ site: c.site, miles: Math.round(milesBetween(origin, c.point as Point)) }))
     .sort((a, b) => a.miles - b.miles);
-  const unknown = counted.filter((s) => s.lat === null || s.lon === null);
+  const unknown = counted.filter((c) => c.point === undefined && counts(c.site)).map((c) => c.site);
   const closest = known[0];
 
   if (closest !== undefined && (radius === null || closest.miles <= radius)) {
@@ -139,6 +137,16 @@ function placeFor(
     return { nearest: describe(first, null), distanceUnknown: true };
   }
   return undefined;
+}
+
+/**
+ * Where a site is: the registry's coordinates, or else its ZIP's point. The
+ * registry gives no coordinates when it can't place a city, often because
+ * the city is misspelled, but the ZIP is usually still right.
+ */
+function pointFor(site: Site, zipPoints: ReadonlyMap<string, Point>): Point | undefined {
+  if (site.lat !== null && site.lon !== null) return { lat: site.lat, lon: site.lon };
+  return site.zip === null ? undefined : zipPoints.get(site.zip.slice(0, 5));
 }
 
 function describe(site: Site, miles: number | null): NearestSite {

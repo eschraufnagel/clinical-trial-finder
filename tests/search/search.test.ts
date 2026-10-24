@@ -132,7 +132,7 @@ describe("searchTrials", () => {
     expect(result.candidates[1]?.nearestSite?.miles).toBeNull();
   });
 
-  it.fails("places a site with no coordinates by its ZIP", () => {
+  it("places a site with no coordinates by its ZIP", () => {
     const unlocated = (zip: string) =>
       trial("NCT00000001", { ...lung, sites: [site({ lat: null, lon: null, zip })] });
     expect(ids(search([unlocated("99501")]))).toEqual([]);
