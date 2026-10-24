@@ -5,59 +5,93 @@
   "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
   "passages": [
     {
-      "quote": "Age ≥ 18 years, at the time of signing the informed consent.",
+      "quote": "Age \u2265 18 years, at the time of signing the informed consent.",
       "start": 24,
       "end": 84,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Histologically confirmed metastatic Stage IV non-squamous NSCLC.",
       "start": 88,
       "end": 152,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable", "locally_advanced"],
+          "appliesTo": null
+        },
+        {
+          "factId": "histology",
+          "rulesOut": ["squamous", "mixed_small_cell"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Measurable disease per RECIST v1.1 with at least 1 thoracic lesion amenable to intratumoral injection (e.g., pathological lymph node or lung lesion).",
       "start": 156,
       "end": 305,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "thoracic lesion for injection not mapped"
     },
     {
       "quote": "Note: Able to be reached by bronchoscopy (including robotic bronchoscopy or flexible bronchoscopy with or without endobronchial ultrasound), or by percutaneous injection.",
       "start": 310,
       "end": 480,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Documented radiographic progression observed in at least 3 consecutive scans or according to RECIST v1.1 criteria after a minimum of 12 weeks on continued pembrolizumab, determined by central review.",
       "start": 484,
       "end": 683,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "prior_pd1",
+          "rulesOut": ["never", "stopped_other"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "minimum time and response on pembrolizumab not mapped"
     },
     {
       "quote": "Note: Participants on a pembrolizumab-based regimen should have achieved a best overall response (BOR) of at least SD (e.g., participants with a BOR of PD while on pembrolizumab are not eligible).",
       "start": 688,
       "end": 884,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 5"
     },
     {
       "quote": "Prior treatment requirements:",
       "start": 888,
       "end": 917,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Must have received platinum-based chemotherapy in any line of therapy.",
       "start": 925,
       "end": 995,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "prior_platinum",
+          "rulesOut": ["never"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -65,20 +99,28 @@
       "start": 1002,
       "end": 1091,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "Note: The participant must be currently progressing on pembrolizumab or a pembrolizumab-based regimen.",
       "start": 1092,
       "end": 1194,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "part of 5"
     },
     {
       "quote": "ECOG performance status of 0 or 1 at screening.",
       "start": 1198,
       "end": 1245,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -86,167 +128,212 @@
       "start": 1249,
       "end": 1295,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Platelet count ≥ 75,000/mm3.",
+      "quote": "Platelet count \u2265 75,000/mm3.",
       "start": 1303,
       "end": 1331,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Hemoglobin ≥ 9.0 g/dL (",
+      "quote": "Hemoglobin \u2265 9.0 g/dL (",
       "start": 1338,
       "end": 1361,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Absolute neutrophil count (ANC) ≥ 1500/mm3",
+      "quote": "Absolute neutrophil count (ANC) \u2265 1500/mm3",
       "start": 1368,
       "end": 1410,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Has adequate organ function, defined as: a) Aspartate aminotransferase (AST) and alanine aminotransferase (ALT) ≤ 2.5 ×upper limit of normal (ULN); (≤ 5.0 × ULN if transferase elevation is due to liver metastases) AND b) Total bilirubin ≤ 1.5 × ULN (\\< 3.0 × ULN in the presence of documented Gilbert's syndrome \\[unconjugated hyperbilirubinemia\\] or liver metastases at baseline). c) Creatinine clearance ≥ 30 mL/min as calculated using the Cockcroft-Gault equation). d) International normalized ratio (INR) \\< 1.5 without anticoagulants, INR \\< 3 if on prophylactic anticoagulation therapy.",
+      "quote": "Has adequate organ function, defined as: a) Aspartate aminotransferase (AST) and alanine aminotransferase (ALT) \u2264 2.5 \u00d7upper limit of normal (ULN); (\u2264 5.0 \u00d7 ULN if transferase elevation is due to liver metastases) AND b) Total bilirubin \u2264 1.5 \u00d7 ULN (\\< 3.0 \u00d7 ULN in the presence of documented Gilbert's syndrome \\[unconjugated hyperbilirubinemia\\] or liver metastases at baseline). c) Creatinine clearance \u2265 30 mL/min as calculated using the Cockcroft-Gault equation). d) International normalized ratio (INR) \\< 1.5 without anticoagulants, INR \\< 3 if on prophylactic anticoagulation therapy.",
       "start": 1414,
       "end": 2006,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "e) Prothrombin time (PT) and either partial thromboplastin (PTT) or activated partial thromboplastin time (aPTT) ≤ 1.5 × ULN.",
+      "quote": "e) Prothrombin time (PT) and either partial thromboplastin (PTT) or activated partial thromboplastin time (aPTT) \u2264 1.5 \u00d7 ULN.",
       "start": 2011,
       "end": 2136,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Completion of prior therapy with required washout and recovery:",
       "start": 2140,
       "end": 2203,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Cytotoxic chemotherapy: \\> 14 days from the last dose.",
       "start": 2210,
       "end": 2264,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Monoclonal antibodies (e.g., bevacizumab, ramucirumab): ≥ 5 half-lives or ≥ 42 days, whichever is longer.",
+      "quote": "Monoclonal antibodies (e.g., bevacizumab, ramucirumab): \u2265 5 half-lives or \u2265 42 days, whichever is longer.",
       "start": 2270,
       "end": 2375,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Recovered to ≤ Grade 1 from prior therapy-related clinical toxicities (except alopecia and stable endocrine replacement).",
+      "quote": "Recovered to \u2264 Grade 1 from prior therapy-related clinical toxicities (except alopecia and stable endocrine replacement).",
       "start": 2381,
       "end": 2502,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
-      "quote": "Projected life expectancy ≥ 12 weeks (or 3 months) in the opinion of the Investigator.",
+      "quote": "Projected life expectancy \u2265 12 weeks (or 3 months) in the opinion of the Investigator.",
       "start": 2507,
       "end": 2593,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
     },
     {
       "quote": "Pregnancy test (for females of childbearing potential) negative at screening.",
       "start": 2598,
       "end": 2675,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Male and female individuals of childbearing potential who engage in heterosexual intercourse must agree to use protocol-specified method(s) of contraception.",
       "start": 2680,
       "end": 2837,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Participants meeting any exclusion criteria for this trial will be disqualified from entering the study.",
       "start": 2860,
       "end": 2964,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Has a known actionable genomic alteration, including EGFR, ALK, or ROS1 rearrangements, for which approved targeted therapy exists.",
       "start": 2969,
       "end": 3100,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "egfr",
+          "rulesOut": ["common_sensitizing", "exon20_insertion"],
+          "appliesTo": null
+        },
+        {
+          "factId": "alk",
+          "rulesOut": ["found"],
+          "appliesTo": null
+        },
+        {
+          "factId": "ros1",
+          "rulesOut": ["found"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "other actionable alterations not mapped"
     },
     {
       "quote": "Participants who are receiving or have previously received tyrosine kinase inhibitor (TKI) therapy targeting EGFR, ALK, or ROS1 are excluded.",
       "start": 3101,
       "end": 3242,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior targeted therapy: by target (EGFR, ALK or ROS1)"
     },
     {
       "quote": "Prior therapy with docetaxel either as monotherapy or in combination with other agents.",
       "start": 3246,
       "end": 3333,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior docetaxel"
     },
     {
       "quote": "Prior treatment with CTLA-4 inhibitor (e.g., ipilimumab).",
       "start": 3337,
       "end": 3394,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior CTLA-4 inhibitor"
     },
     {
       "quote": "History of severe irAEs related to ICI.",
       "start": 3398,
       "end": 3437,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior PD-1: stopped for a severe immune side effect"
     },
     {
       "quote": "Has a known history of active autoimmune disease requiring systemic immunosuppressive therapy within the past 2 years is excluded.",
       "start": 3441,
       "end": 3571,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "autoimmune_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Note: Participants receiving physiologic corticosteroid replacement (e.g., ≤ 10 mg/day prednisone equivalent) are eligible.",
+      "quote": "Note: Participants receiving physiologic corticosteroid replacement (e.g., \u2264 10 mg/day prednisone equivalent) are eligible.",
       "start": 3572,
       "end": 3695,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 31"
     },
     {
       "quote": "History of hypersensitivity or allergic reactions to valacyclovir.",
       "start": 3699,
       "end": 3765,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to valacyclovir"
     },
     {
       "quote": "Active, uncontrolled, clinically significant bacterial, fungal, or viral infection, or any ongoing infection requiring systemic therapy.",
       "start": 3769,
       "end": 3905,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     },
     {
       "quote": "Clinically active central nervous system (CNS) metastases or leptomeningeal disease.",
       "start": 3909,
       "end": 3993,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        },
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -254,83 +341,114 @@
       "start": 3994,
       "end": 4080,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "part of 35"
     },
     {
       "quote": "Persistently symptomatic bone metastases.",
       "start": 4084,
       "end": 4125,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "symptomatic bone metastases"
     },
     {
       "quote": "Has liver metastases involving more than half of the liver.",
       "start": 4130,
       "end": 4189,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "extent of liver metastases"
     },
     {
       "quote": "Prior radiotherapy within 2 weeks of the start of the study drug.",
       "start": 4194,
       "end": 4259,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Has a known history of active interstitial lung diseases (ILD) (≥ grade 2) or noninfectious pneumonitis requiring active therapy, or for whom suspected ILD/pneumonitis cannot be ruled out by imaging at screening, or clinically severe pulmonary compromise due to intercurrent pulmonary illness and/or pulmonary disorder (e.g., severe chronic obstructive pulmonary disease, restrictive lung disease, etc.) requiring supplemental oxygen (\\>2L/min at rest) or any autoimmune, connective tissue or inflammatory disorders with active pulmonary involvement (i.e., rheumatoid arthritis, Sjogren's syndrome, sarcoidosis, etc.), or any prior pneumonectomy.",
+      "quote": "Has a known history of active interstitial lung diseases (ILD) (\u2265 grade 2) or noninfectious pneumonitis requiring active therapy, or for whom suspected ILD/pneumonitis cannot be ruled out by imaging at screening, or clinically severe pulmonary compromise due to intercurrent pulmonary illness and/or pulmonary disorder (e.g., severe chronic obstructive pulmonary disease, restrictive lung disease, etc.) requiring supplemental oxygen (\\>2L/min at rest) or any autoimmune, connective tissue or inflammatory disorders with active pulmonary involvement (i.e., rheumatoid arthritis, Sjogren's syndrome, sarcoidosis, etc.), or any prior pneumonectomy.",
       "start": 4264,
       "end": 4910,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "other lung conditions not mapped"
     },
     {
       "quote": "Receiving or anticipated to receive investigational agents or has used an investigational device within 4 weeks prior to the first dose of study drug.",
       "start": 4915,
       "end": 5065,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Ongoing clinically significant toxicity (\\> Grade 2 except alopecia), associated with prior treatment including systemic therapy, radiotherapy, or surgery.",
       "start": 5070,
       "end": 5225,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
       "quote": "Has a known history of Human Immunodeficiency Virus (HIV) infection and/or acquired immunodeficiency syndrome (AIDS)-related illness.",
       "start": 5230,
       "end": 5363,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["controlled", "uncontrolled"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Has a known active or known prior history of Hepatitis B (HBV) infection (e.g., hepatitis B virus surface antigen \\[HBsAg\\] reactive or detectable quantitative levels of HBV DNA) or known active Hepatitis C (HCV) (e.g., hepatitis C virus RNA \\[quantitative\\] is detected).",
       "start": 5368,
       "end": 5640,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "past hepatitis B not mapped"
     },
     {
       "quote": "Has an uncontrolled or significant heart disease, defined as:",
       "start": 5645,
       "end": 5706,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Mean QT interval corrected for heart rate using Fridericia's formula (QTcF) prolongation \\> 470 msec (based on the average of Screening triplicate 12-lead electrocardiogram \\[ECG\\] determinations).",
       "start": 5715,
       "end": 5912,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Myocardial infarction or uncontrolled/unstable angina within 6 months before randomization.",
       "start": 5920,
       "end": 6011,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -338,76 +456,90 @@
       "start": 6019,
       "end": 6136,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "heart failure class"
     },
     {
       "quote": "Uncontrolled or significant cardiac arrhythmia (i.e., ventricular tachycardia or ventricular fibrillation), high-grade atrioventricular block, or other cardiac arrhythmias requiring anti-arrhythmic medications (except for atrial fibrillation that is well controlled with antiarrhythmic medication).",
       "start": 6144,
       "end": 6442,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "arrhythmia"
     },
     {
       "quote": "NYHA Class III or IV Functional Classification.",
       "start": 6450,
       "end": 6497,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "heart failure class"
     },
     {
       "quote": "LVEF \\< 40% by ECHO or MUGA scan within 28 days before randomization.",
       "start": 6505,
       "end": 6574,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Uncontrolled hypertension (resting systolic blood pressure \\> 180 mmHg or diastolic blood pressure \\> 110 mmHg) within 28 days before randomization.",
       "start": 6582,
       "end": 6730,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Has a concurrent malignancy requiring active systemic or local anti-cancer treatment except for the following:",
       "start": 6735,
       "end": 6845,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "other cancer: active and needing treatment only"
     },
     {
       "quote": "Adequately treated non-melanoma skin cancer (squamous or basal cell cancers).",
       "start": 6853,
       "end": 6930,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 53"
     },
     {
       "quote": "In situ cervical cancer that has been adequately treated.",
       "start": 6937,
       "end": 6994,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 53"
     },
     {
       "quote": "Early-stage malignancies under active surveillance or observation only, including but not limited to:",
       "start": 7001,
       "end": 7102,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 53"
     },
     {
       "quote": "Low-risk prostate cancer managed with active surveillance- Ductal carcinoma in situ of the breast managed with observation",
       "start": 7112,
       "end": 7234,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 53"
     },
     {
       "quote": "Participants of childbearing potential, who are pregnant, lactating, or intend to become pregnant or father children during the study.",
       "start": 7239,
       "end": 7373,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -415,7 +547,8 @@
       "start": 7378,
       "end": 7566,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     }
   ]
 }

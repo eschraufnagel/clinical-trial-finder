@@ -8,21 +8,45 @@
       "quote": "Pathologically confirmed diagnosis of metastatic Kirsten rat sarcoma viral oncogene homolog (KRAS)-mutant pancreatic ductal adenocarcinoma (PDAC), non-small cell lung cancer (NSCLC), or colorectal cancer (CRC) with evidence of a single KRAS G12C, G12D, G12V, G12A, G12S, or G13D mutation in tumor tissue or circulating tumor deoxyribonucleic acid (ctDNA).",
       "start": 24,
       "end": 379,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable", "locally_advanced"],
+          "appliesTo": null
+        },
+        {
+          "factId": "kras",
+          "rulesOut": ["none_found"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "only some KRAS variants qualify"
     },
     {
       "quote": "Measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1.",
       "start": 383,
       "end": 464,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0-1.",
       "start": 468,
       "end": 538,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -30,42 +54,64 @@
       "start": 542,
       "end": 776,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "standard therapies received, or unable to receive them"
     },
     {
       "quote": "History of additional malignancy within the last 2 years, with some exceptions as specified in the protocol.",
       "start": 802,
       "end": 910,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "protocol exceptions not mapped"
     },
     {
       "quote": "Active brain metastases (participants with asymptomatic brain metastases may be eligible).",
       "start": 914,
       "end": 1004,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "brain metastases: symptomatic only"
     },
     {
       "quote": "Have received prior targeted treatment(s) against KRAS, including pan-KRAS inhibitors, multi-RAS inhibitors, mutant-selective KRAS inhibitors, and RAS or KRAS degraders.",
       "start": 1008,
       "end": 1177,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior targeted therapy: by target (KRAS)"
     },
     {
       "quote": "Active or uncontrolled systemic infection, such as tuberculosis, Hepatitis B virus (HBV), Hepatitis C virus (HCV), or Human immunodeficiency virus (HIV).",
       "start": 1181,
       "end": 1334,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["uncontrolled"],
+          "appliesTo": null
+        },
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "tuberculosis not mapped"
     },
     {
       "quote": "The above information is not intended to contain all considerations relevant to a patient's potential participation in a clinical trial.",
       "start": 1336,
       "end": 1472,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     }
   ]
 }

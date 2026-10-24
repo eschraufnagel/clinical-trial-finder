@@ -325,3 +325,9 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - **HER2 "expression" (IHC 1+ to 3+, HER2-low)** can't be ruled out from `her2: none_found`: someone with no HER2 mutation or amplification may still be IHC 1+. Recorded as a gap.
   - **Prior ADC rules name a payload or a drug** (T-DXd, topoisomerase inhibitors). `prior_adc: received` would over-exclude, so these are gaps.
   - **Rules conditional on another fact** ("if you have a driver mutation, you must have had its targeted therapy") can't be expressed by one mapping. They're `trial-specific`, note "conditional".
+- **Step 4, the held-out labels.** 30 trials, in two commits as planned.
+  - **Consistency fix.** While labelling the second half, a pattern turned out to have been labelled two ways: "pneumonitis that required steroids, or current pneumonitis". Two labels in the first commit (NCT06865339 and NCT07432295) treated it as a gap only. All three now map the current part to `ild: current`, with the steroid history as a note. No prompt existed yet, so this is a label fix, not tuning.
+  - **More of the same window and threshold gaps** as in dev, plus three new kinds:
+    - prior targeted therapy named by its target (KRAS, RAS, HER2, or EGFR/ALK/ROS1);
+    - "able to stop steroids", as distinct from taking them;
+    - transplant limited to allogeneic, bone marrow only, or on immunosuppressants.

@@ -170,9 +170,15 @@
       "quote": "Active pneumonitis or history requiring steroids/immunosuppressive therapy within 3 years.",
       "start": 1325,
       "end": 1415,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "pneumonitis: steroid-requiring"
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "history of steroid-requiring pneumonitis within 3 years not mapped"
     },
     {
       "quote": "Participation in another therapeutic clinical trial.",

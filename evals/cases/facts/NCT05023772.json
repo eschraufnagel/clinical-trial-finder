@@ -9,55 +9,67 @@
       "start": 23,
       "end": 129,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Histologic diagnosis of solid malignant tumor (not one of the more radiosensitive histologic subtypes, see Exclusion Criteria), including but not limited to non-small cell lung cancer, breast, prostate, renal cell, melanoma, gastrointestinal, sarcoma, thyroid, head and neck primary, and unknown primary tumors.",
       "start": 132,
       "end": 443,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Quantification of the degree of epidural spinal cord compression as grade 1C, 2, or 3 by MRI, with and without contrast sequences.",
       "start": 446,
       "end": 576,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "spinal cord compression grade"
     },
     {
       "quote": "Axial T2 sequence is encouraged but not required.",
       "start": 577,
       "end": 626,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "The vertebral body site to be treated must be located from T2 to L1",
       "start": 629,
       "end": 696,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "spine metastasis details"
     },
     {
       "quote": "No more than 3 contiguous or dis-contiguous vertebral levels involved with metastasis in the spine to be irradiated in a single session or 3 sessions.",
       "start": 699,
       "end": 849,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "spine metastasis details"
     },
     {
-      "quote": "Motor strength ≥4 out of 5 in extremity or extremities affected by the level of the spinal cord compression (see section 4 for grading method).",
+      "quote": "Motor strength \u22654 out of 5 in extremity or extremities affected by the level of the spinal cord compression (see section 4 for grading method).",
       "start": 852,
       "end": 995,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "spine metastasis details"
     },
     {
       "quote": "ECOG performance status \\<2 or Karnofsky performance status (KPS) \\>50",
       "start": 998,
       "end": 1068,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -65,98 +77,114 @@
       "start": 1071,
       "end": 1098,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
     },
     {
       "quote": "Inoperable disease because of patient refusal, neurosurgical evaluation, or any other medical reasons.",
       "start": 1101,
       "end": 1203,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "inoperable"
     },
     {
       "quote": "Women of child-bearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control; abstinence) before study entry and for the duration of study participation.",
       "start": 1206,
       "end": 1409,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Should a woman become pregnant or suspect she is pregnant while she or her partner is participating in this study, she should inform her treating physician immediately.",
       "start": 1410,
       "end": 1578,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Prior conventional radiation to the same site is allowed as long as there is a greater than 3 months interval.",
       "start": 1581,
       "end": 1691,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "Signed informed consent.",
       "start": 1694,
       "end": 1718,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Requires open spinal procedure or a percutaneous procedure without the use of image guidance.",
       "start": 1743,
       "end": 1836,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "procedure needed"
     },
     {
       "quote": "Primary tumors of radiosensitive histology (lymphoma, multiple myeloma, small cell carcinoma, germ cell tumors), as conventional radiation is likely to be effective in such cases.",
       "start": 1839,
       "end": 2018,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "lymphoma, myeloma and germ cell tumors are the search's"
     },
     {
       "quote": "Unable to tolerate general anesthesia and prone position.",
       "start": 2021,
       "end": 2078,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "able to have the procedure"
     },
     {
       "quote": "Unable to undergo MRI scan of the spine.",
       "start": 2081,
       "end": 2121,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "able to have the procedure"
     },
     {
       "quote": "Inability to lie flat on a treatment table for \\>60 minutes.",
       "start": 2124,
       "end": 2184,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "able to have the procedure"
     },
     {
       "quote": "Pregnant. (Urine testing must be done no more than 10 days prior to surgery.)",
       "start": 2187,
       "end": 2264,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "pregnancy only; fact combines it with breastfeeding"
     },
     {
       "quote": "Prior conventional irradiation of the spine site and level to be treated with an interval shorter than 3 months.",
       "start": 2267,
       "end": 2379,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Frank cord compression or cord compression from bone components or configuration and acute neurological deficits (defined as motor strength \\<4/5 in extremity or extremities affected by the level of the spinal cord compression)",
       "start": 2382,
       "end": 2609,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "spinal cord compression"
     }
   ]
 }

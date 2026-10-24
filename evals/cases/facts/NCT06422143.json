@@ -8,28 +8,52 @@
       "quote": "Histologically or cytologically confirmed diagnosis of squamous non-small cell lung cancer (NSCLC) \\[Stage IV: M1a, M1b, M1c, American Joint Committee on Cancer Staging Manual, version 8\\]",
       "start": 23,
       "end": 211,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["adenocarcinoma", "other_nsclc", "mixed_small_cell"],
+          "appliesTo": null
+        },
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable", "locally_advanced"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Measurable disease per Response Evaluation Criteria in Solid Tumours (RECIST) 1.1 as assessed by the local site investigator/radiology",
       "start": 214,
       "end": 348,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Has life expectancy ≥3 months",
+      "quote": "Has life expectancy \u22653 months",
       "start": 351,
       "end": 380,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
     },
     {
       "quote": "Has Eastern Cooperative Oncology Group Performance Status (ECOG PS) score of 0 or 1 assessed within 7 days prior to allocation",
       "start": 383,
       "end": 509,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -37,76 +61,110 @@
       "start": 512,
       "end": 659,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Human immunodeficiency virus (HIV)-infected participants must have well controlled HIV on antiretroviral therapy (ART)",
       "start": 662,
       "end": 780,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["uncontrolled"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Participants who are hepatitis B surface antigen (HBsAg)-positive are eligible if they have received hepatitis B virus (HBV) antiviral therapy for at least 4 weeks and have undetectable HBV viral load before allocation",
       "start": 783,
       "end": 1001,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Participants with history of hepatitis C virus (HCV) infection are eligible if HCV viral load is undetectable at screening",
       "start": 1004,
       "end": 1126,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Participants who have adverse events (AEs) due to previous anticancer therapies must have recovered to Grade ≤1 or baseline (participants with endocrine-related AEs who are adequately treated with hormone replacement are eligible)",
+      "quote": "Participants who have adverse events (AEs) due to previous anticancer therapies must have recovered to Grade \u22641 or baseline (participants with endocrine-related AEs who are adequately treated with hormone replacement are eligible)",
       "start": 1129,
       "end": 1359,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
       "quote": "Has adequate organ function",
       "start": 1362,
       "end": 1389,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "For Maintenance only (prior to randomization): is without disease progression of their NSCLC, as determined by BICR using RECIST 1.1 after completion of study-specified Induction with an evaluable scan at Week 12 or most recent scan before randomization",
       "start": 1392,
       "end": 1645,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "no progression during induction"
     },
     {
       "quote": "For Maintenance only (prior to randomization): has ECOG PS of 0 or 1 as assessed at the Prerandomization Visit",
       "start": 1648,
       "end": 1758,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": "For Maintenance only (prior to randomization)"
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "For Maintenance only (prior to randomization): all AEs (with the exception of alopecia, Grade ≤2 fatigue, Grade ≤2 peripheral neuropathy, and Grade ≤2 endocrine-related AEs requiring treatment or hormone replacement) have recovered",
+      "quote": "For Maintenance only (prior to randomization): all AEs (with the exception of alopecia, Grade \u22642 fatigue, Grade \u22642 peripheral neuropathy, and Grade \u22642 endocrine-related AEs requiring treatment or hormone replacement) have recovered",
       "start": 1761,
       "end": 1992,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
       "quote": "For Maintenance only (prior to randomization): has not experienced a pneumonitis/interstitial lung disease (ILD) event during the study-specified induction",
       "start": 1995,
       "end": 2150,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "pneumonitis during induction"
     },
     {
       "quote": "Diagnosis of small cell lung cancer or, for mixed tumors, presence of small cell elements",
       "start": 2175,
       "end": 2264,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -114,34 +172,50 @@
       "start": 2267,
       "end": 2427,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "eye disease"
     },
     {
       "quote": "Active inflammatory bowel disease requiring immunosuppressive medication or previous history of inflammatory bowel disease (eg, Crohn's disease, ulcerative colitis, or chronic diarrhea)",
       "start": 2430,
       "end": 2615,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "inflammatory bowel disease"
     },
     {
       "quote": "Has uncontrolled, significant cardiovascular disease or cerebrovascular disease including New York Heart Association Class III or IV congestive heart failure, unstable angina, myocardial infarction, uncontrolled symptomatic arrhythmia, prolongation of QTcF interval to \\>480 ms, and other serious cardiovascular and cerebrovascular diseases within 6 months before study intervention",
       "start": 2618,
       "end": 3000,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "arrhythmia, QT and other conditions not mapped"
     },
     {
       "quote": "HIV-infected participants who have been newly diagnosed or with a history of Kaposi's sarcoma and/or Multicentric Castleman's Disease",
       "start": 3003,
       "end": 3136,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "HIV complications"
     },
     {
       "quote": "Received prior systemic chemotherapy or other targeted or biological antineoplastic therapy for their metastatic NSCLC.",
       "start": 3139,
       "end": 3258,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "lines_advanced",
+          "rulesOut": ["one", "two", "three_plus"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -149,118 +223,164 @@
       "start": 3259,
       "end": 3510,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 20"
     },
     {
       "quote": "Received prior therapy with an anti-programmed cell death 1 protein (PD-1), anti-programmed cell death ligand 1 (PD-L1), or anti programmed cell death ligand 2 (PD-L2) agent, or with an agent directed to another stimulatory or coinhibitory T-cell receptor (eg, cytotoxic T lymphocyte-associated protein 4, OX-40, CD137).",
       "start": 3513,
       "end": 3833,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior PD-1: allowed for early-stage disease finished 12 months before"
     },
     {
       "quote": "Note: Prior treatment with an anti-PD-1 or anti-PD-L1 agent for nonmetastatic NSCLC is allowed as long as therapy was completed at least 12 months before diagnosis of metastatic NSCLC",
       "start": 3834,
       "end": 4017,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 22"
     },
     {
       "quote": "Received prior treatment with a trophoblast cell-surface antigen 2 (TROP2)-targeted antidrug conjugate (ADC)",
       "start": 4020,
       "end": 4128,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior ADC: TROP2-targeted"
     },
     {
       "quote": "Received radiation therapy to the lung that is \\>30 Gray within 6 months of start of study intervention",
       "start": 4131,
       "end": 4234,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "chest radiation: over 30 Gy within 6 months"
     },
     {
       "quote": "Received prior radiotherapy within 2 weeks of start of study intervention, or radiation-related toxicities, requiring corticosteroids",
       "start": 4237,
       "end": 4370,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Received a live or live-attenuated vaccine within 30 days before the first dose of study intervention",
       "start": 4373,
       "end": 4474,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Participants who have not adequately recovered from major surgery or have ongoing surgical complications",
       "start": 4477,
       "end": 4581,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from surgery"
     },
     {
       "quote": "Received prior treatment with a topoisomerase I inhibitor-containing ADC",
       "start": 4584,
       "end": 4656,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior ADC: topoisomerase payload"
     },
     {
       "quote": "Is currently receiving a strong inducer/inhibitor of CYP3A4 that cannot be discontinued for the duration of the study (the required washout period before starting sac-TMT is 2 weeks)",
       "start": 4659,
       "end": 4841,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Has a known additional malignancy that is progressing or has required active treatment within the past 3 years.",
       "start": 4844,
       "end": 4955,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "3-year window"
     },
     {
       "quote": "Has known central nervous system (CNS) metastases/carcinomatous meningitis",
       "start": 4958,
       "end": 5032,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["treated_stable", "active"],
+          "appliesTo": null
+        },
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Severe hypersensitivity (≥Grade 3) to study intervention and/or any of its excipients or to another biologic therapy",
+      "quote": "Severe hypersensitivity (\u2265Grade 3) to study intervention and/or any of its excipients or to another biologic therapy",
       "start": 5035,
       "end": 5151,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
     },
     {
       "quote": "Active autoimmune disease that has required systemic treatment in the past 2 years (replacement therapy \\[eg, thyroxine, insulin, or physiologic corticosteroid\\] is allowed)",
       "start": 5154,
       "end": 5327,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "autoimmune_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Has a history of (noninfectious)pneumonitis/ILD that required steroids, has current pneumonitis/ILD, or has suspected ILD or pneumonitis that cannot be ruled out by standard diagnostic assessments at Screening",
       "start": 5330,
       "end": 5539,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "history of steroid-requiring pneumonitis not mapped"
     },
     {
       "quote": "Active infection requiring systemic therapy",
       "start": 5542,
       "end": 5585,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     },
     {
       "quote": "History of allogeneic tissue/solid organ transplant",
       "start": 5588,
       "end": 5639,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "transplant",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     }
   ]

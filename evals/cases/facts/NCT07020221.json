@@ -5,38 +5,62 @@
   "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
   "passages": [
     {
-      "quote": "Individuals ≥18 years of age.",
+      "quote": "Individuals \u226518 years of age.",
       "start": 27,
       "end": 56,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Agreement to sign and date an informed consent form (ICF) approved by the Institutional Review Board (IRB)/Independent Ethics Committee (IEC).",
       "start": 59,
       "end": 201,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Histologic or cytologic evidence of locally advanced unresectable or metastatic solid tumor harboring a KRAS G12D mutation.",
       "start": 204,
       "end": 327,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        },
+        {
+          "factId": "kras",
+          "rulesOut": ["g12c", "none_found"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST) v1.1.",
       "start": 330,
       "end": 421,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1",
       "start": 424,
       "end": 491,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -44,62 +68,70 @@
       "start": 494,
       "end": 517,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Adequate cardiac function",
       "start": 520,
       "end": 545,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Recovered from all AEs due to previous therapies to Grade ≤1 or baseline",
+      "quote": "Recovered from all AEs due to previous therapies to Grade \u22641 or baseline",
       "start": 548,
       "end": 620,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
       "quote": "Agreement to use highly effective contraception",
       "start": 623,
       "end": 670,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Underwent major surgical procedure as defined by the Investigator, other than for diagnosis, within 4 weeks prior to Cycle 1 Day 1",
       "start": 699,
       "end": 829,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Receipt of chemotherapy, targeted therapy, or radiotherapy (excluding palliative radiation) within 4 weeks or 5 half-lives, whichever is shorter, or immunotherapy within 4 weeks prior to Cycle 1 Day 1.",
       "start": 832,
       "end": 1033,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Treatment with any investigational drug at least 4 weeks or 5 half-lives, whichever is shorter, prior to Cycle 1 Day 1.",
       "start": 1036,
       "end": 1155,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "History of treatment with direct RAS inhibitors.",
       "start": 1158,
       "end": 1206,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior targeted therapy: by target (KRAS)"
     },
     {
       "quote": "Symptomatic, untreated, or actively progressing known central nervous system (CNS) metastases.",
       "start": 1209,
       "end": 1303,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -107,20 +139,28 @@
       "start": 1306,
       "end": 1344,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "able to take pills"
     },
     {
       "quote": "Evidence or history of uncontrolled, clinically significant hematological, renal, hepatic, endocrine, pulmonary, gastrointestinal, cardiovascular, psychiatric, coagulation, neurologic, dermatologic, autoimmune, or allergic disease.",
       "start": 1347,
       "end": 1578,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     },
     {
       "quote": "Individuals who are pregnant or breastfeeding.",
       "start": 1581,
       "end": 1627,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     }
   ]
