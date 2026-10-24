@@ -1,0 +1,229 @@
+## NCT07436728
+1 x search
+2 x heading
+3 extent:early_resectable @Tumor histologies during dose escalation # standard-therapy-exhausted condition not mapped
+4 x fragment
+5-6 x search
+7 histology:mixed_small_cell @Tumor histologies during dose escalation
+8 extent:early_resectable @Tumor histologies during dose expansion # HNSCC part is search; heading b) split into this passage
+9 histology:mixed_small_cell @Tumor histologies during dose expansion; extent:early_resectable @Tumor histologies during dose expansion
+10 t prior platinum and anti-PD-1/PD-L1 required only for those with no known activating mutation; conditional on mutation status (dose expansion NSCLC)
+11 t targeted therapy plus platinum required for those with an actionable mutation; conditional (dose expansion NSCLC)
+12 g lines_advanced: max 3 lines falls inside three_plus (dose expansion NSCLC)
+13 x search
+14 t CRC cohort prior therapy (TAS-102, regorafenib, fruquintinib)
+15 x permits
+16 t CRC cohort prior standard therapy
+17 g lines_advanced: max 4 lines falls inside three_plus (CRC cohort)
+18 x search
+19 prior_platinum:never @Gastric adenocarcinoma
+20 t gastric cohort: prior anti-HER2/anti-PD-1 conditional on biomarker
+21 g lines_advanced: max 3 lines falls inside three_plus (gastric cohort)
+22 pdl1:negative
+23 x exception to 22: pre-screening when PD-L1 status unavailable
+24-25 p
+26 x note
+27 p
+28 ecog:ps2,ps3_4
+29 measurable_disease:no
+30 x definition of target lesions
+31-35 o
+36 x fragment
+37-39 o
+40 t recovery from earlier side effects
+41 p venous access
+42 g brain_mets: symptomatic vs asymptomatic untreated (only symptomatic must be treated)
+43 x exception to 42: no concurrent CNS treatment; steroid condition not mapped
+44 leptomeningeal:yes # cord compression not mapped
+45 x heading
+46 autoimmune_active:yes # any history, broader than fact window; exceptions (vitiligo, thyroid, type 1 diabetes, psoriasis) not mapped
+47-48 x exception to 46
+49 brain_mets:active; leptomeningeal:yes # off-steroids and neurologic conditions not mapped
+50 x exception to 49
+51 x heading for 52-55
+52 cardiac_recent:yes # hypertension and arrhythmia parts not mapped
+53 x permits
+54 cardiac_recent:yes # PE and cerebrovascular events not in fact
+55 o
+56 t hepatic encephalopathy
+57 x heading for 58
+58 ild:current # COPD, pleural effusion, PE not mapped
+59 t infection
+60 o
+61 t unresolved inflammatory process
+62 t chronic inflammatory process incl. radiation pneumonitis
+63 x heading
+64-71 t gastrointestinal history
+72 t inflammatory bowel disease history
+73 p
+74 x permits
+75 g transplant: 5-year window for bone marrow; immunosuppression condition
+76 t allergy to study drug
+77 other_cancer:within_2_years # 3-year remission window; two_to_5_years straddles; exceptions not mapped
+78-83 x exception to 77
+84 hiv:controlled,uncontrolled; hepatitis_active:yes # HBsAg / HCV antibody broader than active
+85 hiv:controlled,uncontrolled
+86-87 hepatitis_active:yes # serology broader than active infection
+88 x heading
+89-90 p
+91 t anti-PD-L1 within 120 days: time window not in vocabulary
+92 t recovery from earlier side effects
+93 g steroids_daily: dose threshold and exceptions (replacement, stable dose for brain mets)
+94-96 x exception to 93
+97 p surgery washout
+98 t unhealed wounds
+99 t investigator judgment
+100-101 pregnant_or_breastfeeding:yes
+102 p
+103 x definition
+104-105 p
+106 t site employee
+107 t vulnerable person
+108 x definition
+109-110 p
+111 o # congenital long QT history included
+112 x permits
+113 p
+
+## NCT05696782
+1 extent:metastatic_or_recurrent; histology:mixed_small_cell
+2 x definition
+3 t unresectable or medically inoperable; early_resectable not clearly excluded
+4 t definitive radiation planned, ongoing or recent
+5 t platinum chemotherapy planned, ongoing or recent
+6 t chemotherapy cycles and timing
+7 t consolidation durvalumab planned
+8 x search
+9 ecog:ps3_4
+10 t life expectancy
+11-12 p
+13 x heading
+14 t uncontrolled respiratory symptoms
+15 egfr:common_sensitizing
+16 p EGFR testing must have been attempted
+17 x exception to 15
+18 prior_pd1:progressed,stopped_other # CTLA-4 not mapped
+19 g autoimmune_active: currently requiring systemic immunosuppression; fact window 2 years
+20 g ild: steroid condition (autoimmune pneumonitis requiring high-dose steroids)
+21 t uncontrolled intercurrent illness
+22 pregnant_or_breastfeeding:yes
+
+## NCT07432295
+1 x search
+2 lines_advanced:one,two,three_plus # adjuvant 6-month condition not mapped
+3 t CLDN18.2 biomarker
+4 g pdl1: CPS scoring rather than TPS
+5 measurable_disease:no
+6 ecog:ps2,ps3_4
+7-10 o
+11 t life expectancy
+12-13 p
+14 her2:overexpression
+15 other_cancer:within_2_years # 3-year window; two_to_5_years straddles; skin/cervical exception not mapped
+16 t gastrointestinal ulcer or bleeding
+17 autoimmune_active:yes
+18 ild:current # history requiring steroids within 3 years not mapped
+19 p
+20 p surgery washout
+21 p
+22 brain_mets:active; leptomeningeal:yes
+23 cardiac_recent:yes
+24 hiv:uncontrolled; hepatitis_active:yes # immunodeficiency not mapped
+25 p
+26 t infection
+27 t allergy to study drug
+28 t investigator judgment
+
+## NCT05694715
+1 x search
+2 p
+3 x search
+4 t BRCA1/BRCA2/ATM/PALB2 biomarker
+5 p
+6 measurable_disease:no
+7 extent:early_resectable
+8 p
+9 p # toxicity recovery part not mapped
+10 ecog:ps2,ps3_4
+11-17 o
+18 t recovery from earlier side effects
+19 t able to take oral medication
+20-22 x explanation
+23 p
+24-28 x definition
+29-31 p
+32-38 x definition
+39 x permits
+40 hepatitis_active:yes
+41 hepatitis_active:yes
+42 x exception to 41
+43 t investigator judgment
+44 t allergy to study drug
+45 x permits
+46 t prior irinotecan toxicity
+47 t UGT1A1 polymorphism
+48 p
+49 brain_mets:active # small asymptomatic (<1 cm) exception not mapped
+50 x exception to 49
+51 x exception to 49: steroid condition not mapped
+52 x permits
+53 other_cancer:within_2_years # no window given; only the most recent answer ruled out
+54 t PRES history
+55 o
+56 t malabsorption
+57 t MDS/AML
+58 t Gilbert's
+59 pregnant_or_breastfeeding:yes # conception part is procedure
+60 p
+
+## NCT07602855
+1 x search
+2 extent:early_resectable
+3 x search # SCLC cohort
+4 x search # ES-SCLC cohort; dropped heading for NSCLC cohort
+5 histology:mixed_small_cell @Squamous NSCLC or non-squamous NSCLC
+6 extent:early_resectable,locally_advanced @Squamous NSCLC or non-squamous NSCLC
+7 measurable_disease:no
+8 x permits
+9 ecog:ps2,ps3_4
+10 t life expectancy
+11 o
+12 p
+13 p @For dose expansion only
+14 x preference
+15 p @For dose expansion only
+16 x exception to 13
+17 x explanation
+18 t recovery from earlier side effects
+19 p surgery washout
+20 leptomeningeal:yes # brain_mets not mapped: symptomatic/size/hemorrhagic criteria
+21 x condition on 20: steroid condition not mapped
+22 x heading
+23-24 o
+25 t QT risk factors
+26 o
+27 t uncontrolled cardiovascular disorders
+28 o
+29-30 t bleeding
+31 x permits
+32 t bleeding
+33 p
+34-35 t gastrointestinal / thromboembolic history
+36 t infection
+37 x permits
+38 ild:current # past requiring high-dose steroids not mapped
+39 x definition
+40 t pulmonary disease, investigator judgment
+41 x examples for 40
+42 o
+43 x permits
+44-45 t allergy to study drug
+46-49 p
+50 x permits
+51 g steroids_daily: dose threshold (≤10 mg/day allowed)
+52 x exception to 51
+53 x permits
+54 o
+55 t fistula / perforation history
+56 o
+57 x permits

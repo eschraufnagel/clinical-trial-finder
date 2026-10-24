@@ -61,17 +61,28 @@
       "quote": "Non-small cell lung cancer (NSCLC) (both squamous and non-squamous).",
       "start": 711,
       "end": 779,
-      "mappings": [],
-      "unmapped": "not-a-rule",
-      "note": "search"
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": "Tumor histologies during dose escalation"
+        }
+      ],
+      "unmapped": null
     },
     {
       "quote": "Head and neck squamous cell carcinoma (HNSCC). b) Tumor histologies during dose expansion: Participants will be eligible if they have histologically or pathologically confirmed, locally advanced or metastatic solid tumors, as follows:",
       "start": 783,
       "end": 1017,
-      "mappings": [],
-      "unmapped": "not-a-rule",
-      "note": "search"
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": "Tumor histologies during dose expansion"
+        }
+      ],
+      "unmapped": null,
+      "note": "head and neck cohort is the search's"
     },
     {
       "quote": "Metastatic or advanced squamous or non-squamous NSCLC:",
@@ -81,7 +92,7 @@
         {
           "factId": "extent",
           "rulesOut": ["early_resectable"],
-          "appliesTo": null
+          "appliesTo": "Tumor histologies during dose expansion"
         },
         {
           "factId": "histology",
@@ -730,9 +741,19 @@
       "quote": "Known to be Human Immunodeficiency Virus (HIV) positive or hepatitis B or C positive as defined below:",
       "start": 10722,
       "end": 10824,
-      "mappings": [],
-      "unmapped": "not-a-rule",
-      "note": "heading"
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["controlled", "uncontrolled"],
+          "appliesTo": null
+        },
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
     },
     {
       "quote": "Positive serology for HIV.",

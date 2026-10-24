@@ -241,7 +241,7 @@ Each step is one commit, through `npm run check && git commit`. No test mocks a 
 - `tests/facts/vocabulary.test.ts`, `map.test.ts`, `status.test.ts`
 - `tests/evals/facts-labels.test.ts`, `facts-coverage.test.ts`, `facts-grade.test.ts`, `facts-result.test.ts`
 - `tests/scripts/facts-candidates.test.ts`, `facts-map.test.ts`, `facts-cli.test.ts`, `model-flags.test.ts`
-- `docs/facts.md`, `work/0002-fact-vocabulary/plan.md`, `gate-1-labels.md`
+- `docs/facts.md`, `work/0002-fact-vocabulary/plan.md`, `gate-1-labels.md`, `gate-1-relabel.txt`
 
 **Modified:**
 - `tests/boundary.test.ts`, `package.json`
@@ -331,3 +331,8 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
     - prior targeted therapy named by its target (KRAS, RAS, HER2, or EGFR/ALK/ROS1);
     - "able to stop steroids", as distinct from taking them;
     - transplant limited to allogeneic, bone marrow only, or on immunosuppressants.
+- **Step 5.** `facts:eval -- --coverage` as planned. The blind relabel and its comparison are in `gate-1-labels.md`, with the relabel's own answers in `gate-1-relabel.txt` (a file the plan didn't list).
+  - 88.2% of passages agreed before fixes, 90.0% after. Of passages both labellers mapped, 49 of 49 now match.
+  - It caught a notation error in these labels: in four passages a cohort scope had attached to only the last of two mappings. Those are fixed, along with seven passages that missed worked cases 6 and 8, three of them found by searching all 40 trials for the same miss. Two convention points were added to `ANNOTATION.md`.
+  - Coverage after the fixes: rules about the person mapped 40.7% (all 40 trials) and 41.3% (held-out).
+  - **Stopped for Gate 1.**

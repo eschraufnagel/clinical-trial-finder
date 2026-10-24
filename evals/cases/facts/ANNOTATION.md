@@ -82,6 +82,8 @@ Settled after reading the first dev trials, before any label was written:
 
   These make the cost of a coarse vocabulary visible at Gate 1.
 - **Pregnancy and breastfeeding** are one fact. A trial that excludes pregnancy and requires breastfeeding to stop excludes both, so each of its passages maps to `pregnant_or_breastfeeding` ruling out `yes`. A trial that excludes only one of them is a `vocabulary-gap`.
+- **Rules inside a cohort for another cancer type** ("CRC cohort: no more than 4 prior lines") can't apply to a person with NSCLC. They are `not-a-rule`, note "search", like the cohort's own definition. *Added at Gate 1.*
+- **A heading that states the rule itself** ("Known HIV, hepatitis B or C, as defined below:") gets the rule's mappings, as its items do. A heading that only introduces a list ("Prior therapies:") stays `not-a-rule`. *Added at Gate 1.*
 - **A sentence that only permits** ("Subjects may have received prior anti-PD-1 therapy") or only explains is `not-a-rule`, note "permits".
 - **An exception sentence that refines a rule mapped in an earlier passage** is `not-a-rule`, note "exception to n". The mapped passage already reflects it. If the exception adds a condition the vocabulary can't express, the note says so.
 
