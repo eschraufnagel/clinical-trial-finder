@@ -9,20 +9,34 @@
       "start": 23,
       "end": 112,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Locally advanced or metastatic solid malignancy with a TP53 Y220C mutation",
       "start": 115,
       "end": 189,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "TP53 Y220C requirement not mapped"
     },
     {
       "quote": "Eastern Cooperative Oncology Group (ECOG) status of 0 or 1",
       "start": 192,
       "end": 250,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -30,20 +44,27 @@
       "start": 253,
       "end": 340,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior therapy not clearly for advanced disease"
     },
     {
       "quote": "Adequate organ function",
       "start": 343,
       "end": 366,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Measurable disease per RECIST v1.1 (Phase 2)",
       "start": 369,
       "end": 413,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": "Phase 2"
+        }
+      ],
       "unmapped": null
     },
     {
@@ -51,20 +72,33 @@
       "start": 415,
       "end": 502,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Anti-PD-1/PD-L1 naive or must have progressed on treatment",
       "start": 506,
       "end": 564,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "prior_pd1",
+          "rulesOut": ["stopped_other"],
+          "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Measurable disease",
       "start": 567,
       "end": 585,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+        }
+      ],
       "unmapped": null
     },
     {
@@ -72,69 +106,103 @@
       "start": 610,
       "end": 690,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Radiotherapy within 14 days of receiving the study drug",
       "start": 693,
       "end": 748,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Primary CNS tumor",
       "start": 751,
       "end": 768,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "History of leptomeningeal disease or spinal cord compression",
       "start": 771,
       "end": 831,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "spinal cord compression not mapped"
     },
     {
       "quote": "Brain metastases, unless neurologically stable and do not require steroids to treat associated neurological symptoms",
       "start": 834,
       "end": 950,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Stroke or transient ischemic attack within 6 months prior to screening",
       "start": 953,
       "end": 1023,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Heart conditions such as unstable angina within 6 months prior to screening, uncontrolled hypertension, a heart attack within 6 months prior to screening, congestive heart failure, prolongation of QT interval, or other rhythm abnormalities",
       "start": 1026,
       "end": 1265,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "heart failure without a window, hypertension and QT not mapped"
     },
     {
       "quote": "Strong CYP3A4 inducers and strong CYP2C9 inhibitors/inducers within 14 days of first dose of rezatapopt",
       "start": 1268,
       "end": 1371,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "History of gastrointestinal (GI) disease that may interfere with absorption of study drug or patients unable to take oral medication",
       "start": 1374,
       "end": 1506,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "absorption"
     },
     {
       "quote": "History of prior organ transplant",
       "start": 1509,
       "end": 1542,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "transplant",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -142,13 +210,25 @@
       "start": 1545,
       "end": 1653,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "other cancer: active only, not the 2-year window"
     },
     {
       "quote": "Known, active uncontrolled Hepatitis B, Hepatitis C, or human immunodeficiency virus infection",
       "start": 1656,
       "end": 1750,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        },
+        {
+          "factId": "hiv",
+          "rulesOut": ["uncontrolled"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -156,13 +236,20 @@
       "start": 1752,
       "end": 1823,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Known KRAS mutation, defined as a single nucleotide variant (SNV) (Phase 2).",
       "start": 1827,
       "end": 1903,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "kras",
+          "rulesOut": ["g12c", "other_mutation"],
+          "appliesTo": "Phase 2"
+        }
+      ],
       "unmapped": null
     },
     {
@@ -170,48 +257,65 @@
       "start": 1904,
       "end": 1975,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 23"
     },
     {
       "quote": "Additional Criteria for Exclusion from Phase 1b (rezatapopt) + pembrolizumab combination)",
       "start": 1977,
       "end": 2066,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Received prior therapy with an anti-PD-1, anti-PD-L1, or anti-PD-L2 agent or with an agent directed to another stimulatory or co-inhibitory T-cell receptor and discontinued from that treatment due to a Grade 3 or higher immune-related AE (irAE)",
       "start": 2070,
       "end": 2314,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior PD-1: stopped for a severe immune side effect"
     },
     {
       "quote": "Received a live or live-attenuated vaccine within 30 days prior to the first dose of study intervention",
       "start": 2317,
       "end": 2420,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Diagnosis of immunodeficiency or receiving chronic systemic steroid therapy within 7 days prior to the first dose of study drug",
       "start": 2423,
       "end": 2550,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "steroids_daily",
+          "rulesOut": ["yes"],
+          "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+        }
+      ],
+      "unmapped": null,
+      "note": "immunodeficiency not mapped"
     },
     {
-      "quote": "Hypersensitivity (≥ Grade 3) to pembrolizumab and/or any of its excipients",
+      "quote": "Hypersensitivity (\u2265 Grade 3) to pembrolizumab and/or any of its excipients",
       "start": 2553,
       "end": 2627,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
     },
     {
       "quote": "Active autoimmune disease that has required systemic treatment in past 2 years",
       "start": 2630,
       "end": 2708,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "autoimmune_active",
+          "rulesOut": ["yes"],
+          "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+        }
+      ],
       "unmapped": null
     },
     {
@@ -219,27 +323,36 @@
       "start": 2711,
       "end": 2743,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "pneumonitis: radiation pneumonitis specifically"
     },
     {
       "quote": "History of (non-infectious) or active pneumonitis / interstitial lung disease that required steroids",
       "start": 2746,
       "end": 2846,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "pneumonitis: steroid-requiring"
     },
     {
       "quote": "Active infection requiring systemic therapy",
       "start": 2849,
       "end": 2892,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     },
     {
       "quote": "Known history of HIV infection",
       "start": 2895,
       "end": 2925,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["controlled", "uncontrolled"],
+          "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+        }
+      ],
       "unmapped": null
     },
     {
@@ -247,7 +360,8 @@
       "start": 2928,
       "end": 2962,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior study drug"
     }
   ]
 }

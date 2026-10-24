@@ -61,6 +61,30 @@ When a rule is scoped to an arm, cohort, part or phase, `appliesTo` holds the sc
 
 `vocabulary-gap` versus `trial-specific`: the test is whether a question about it would be worth asking across many trials. Prior EGFR TKI generation would be; prior anti-TIGIT antibody wouldn't.
 
+### Defaults for rules that recur
+
+Settled after reading the first dev trials, before any label was written:
+
+- **Age, sex and cancer type** are the search's job (0001). A passage that only states them is `not-a-rule`, note "search". This includes a cohort for another cancer type ("Cohort B2: cutaneous squamous cell carcinoma"). If such a passage also says something about extent or histology for a type that includes NSCLC, map that part.
+- **Washouts, vaccines, concurrent medicines and drug interactions** are `procedure`.
+- **ECG, QTc and blood pressure readings** are `organ-function`, like labs.
+- **These are `trial-specific`, with a short note:**
+  - life expectancy;
+  - the investigator's judgment;
+  - recovery from earlier side effects;
+  - allergy to the study drug;
+  - infections other than HIV and hepatitis;
+  - a prior drug or biomarker the vocabulary doesn't name and few trials ask about.
+- **The same fact with a different window or threshold** is a `vocabulary-gap`, with the note naming the fact and the difference. Examples:
+  - "autoimmune disease currently requiring systemic treatment": the fact's window is 2 years;
+  - "systemic steroids, except up to 10 mg/day prednisone": the fact has no dose;
+  - "pneumonitis that required steroids": the fact has no steroid condition.
+
+  These make the cost of a coarse vocabulary visible at Gate 1.
+- **Pregnancy and breastfeeding** are one fact. A trial that excludes pregnancy and requires breastfeeding to stop excludes both, so each of its passages maps to `pregnant_or_breastfeeding` ruling out `yes`. A trial that excludes only one of them is a `vocabulary-gap`.
+- **A sentence that only permits** ("Subjects may have received prior anti-PD-1 therapy") or only explains is `not-a-rule`, note "permits".
+- **An exception sentence that refines a rule mapped in an earlier passage** is `not-a-rule`, note "exception to n". The mapped passage already reflects it. If the exception adds a condition the vocabulary can't express, the note says so.
+
 ## Worked cases
 
 1. **"Patients with brain metastases are eligible if treated and clinically stable, off steroids for ≥ 14 days."** → `brain_mets` ruling out `active`. The steroid part sits inside the exception, so the note records "steroid condition not mapped". `steroids_daily` isn't mapped from this sentence: it governs only people with brain metastases.

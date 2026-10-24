@@ -9,237 +9,275 @@
       "start": 133,
       "end": 224,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Either sex",
       "start": 228,
       "end": 238,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
-      "quote": "Age: ≥18 years",
+      "quote": "Age: \u226518 years",
       "start": 242,
       "end": 256,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
-      "quote": "Life expectancy of ≥3 months",
+      "quote": "Life expectancy of \u22653 months",
       "start": 260,
       "end": 288,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
     },
     {
       "quote": "For Dose Escalation and Dose Finding: Documented locally advanced or metastatic HER2-expressing (IHC 1+ to 3+ and/or HER2 gene amplification or activating mutation \\[see Table 17-5\\] in tumor specimen by ISH or NGS) solid tumor(s) not amenable to curative surgery or radiation and has received at least 2 lines of standard therapy, including adjuvant/neoadjuvant treatment, or whose cancer is considered refractory to the standard of care or for which no standard treatment is available, including:",
       "start": 292,
       "end": 790,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": "For Dose Escalation and Dose Finding"
+        }
+      ],
+      "unmapped": null,
+      "note": "HER2 expression (HER2-low) and prior-lines rule not mapped"
     },
     {
       "quote": "Cohort 1: Participants with HER2 expression in endometrial cancers",
       "start": 798,
       "end": 864,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Cohort 2: Participants with HER2 expression in cervical cancers",
       "start": 871,
       "end": 934,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Cohort 3: Participants with HER2 expression in ovarian cancers, including fallopian tube cancer and primary peritoneal cancer",
       "start": 941,
       "end": 1066,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Cohort 4: Participants with HER2 expression in urothelial cancers",
       "start": 1073,
       "end": 1138,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Cohort 5: Participants with HER2 expression in biliary tract cancers",
       "start": 1145,
       "end": 1213,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Cohort 6: Participants with HER2 expression in breast cancer",
       "start": 1220,
       "end": 1280,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Cohort 7: Participants with HER2 expression in lung cancer",
       "start": 1287,
       "end": 1345,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "HER2 by IHC level (HER2-low)"
     },
     {
       "quote": "Cohort 8: Participants with HER2 expression in gastric, esophageal, or gastroesophageal junction (GEJ) cancers",
       "start": 1352,
       "end": 1462,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Cohort 9: Participants with HER2 expression in other solid tumors as approved by the medical monitor Note: For indications in which a HER2-directed therapy is approved, the approved treatment is recommended although not mandated, at the discretion of the investigator.",
       "start": 1469,
       "end": 1737,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Agree to provide most recent existing tumor samples (formalin-fixed paraffin-embedded \\[FFPE\\] tissue block or slides) from primary or metastatic sites for tissue-based IHC staining to centrally determine HER2 expression (see details in Section 7.1.1).",
       "start": 1741,
       "end": 1993,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "In dose escalation and dose finding: archival tissue or fresh biopsy.",
       "start": 2001,
       "end": 2070,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "If no archival tissue is available or it is not possible to obtain a fresh tissue biopsy, medical monitor approval is required to screen participant;",
       "start": 2071,
       "end": 2220,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "In dose expansion: an FFPE block or slides from fresh biopsy or the most recent archival tissue is required.",
       "start": 2227,
       "end": 2335,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "At least one measurable lesion based on RECIST (Response Evaluation Criteria in Solid Tumors) V1.1",
       "start": 2339,
       "end": 2437,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Eastern Cooperative Oncology Group performance status (ECOG PS) of 0 to 1",
       "start": 2441,
       "end": 2514,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Toxicity of previous antitumor therapy has returned to Grade ≤1 as defined by the National Cancer Institute (NCI) CTCAE V5.0, except for alopecia and endocrinopathies controlled by replacement therapy that must be Grade ≤2",
+      "quote": "Toxicity of previous antitumor therapy has returned to Grade \u22641 as defined by the National Cancer Institute (NCI) CTCAE V5.0, except for alopecia and endocrinopathies controlled by replacement therapy that must be Grade \u22642",
       "start": 2518,
       "end": 2740,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
-      "quote": "No serious cardiac dysfunction, left ventricular ejection fraction ≥50%",
+      "quote": "No serious cardiac dysfunction, left ventricular ejection fraction \u226550%",
       "start": 2745,
       "end": 2816,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Adequate organ function before enrollment, defined as:",
       "start": 2821,
       "end": 2875,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Marrow function: Absolute neutrophil count (ANC) ≥1.5×10\\^9/L, platelet (PLT) count ≥100×10\\^9",
+      "quote": "Marrow function: Absolute neutrophil count (ANC) \u22651.5\u00d710\\^9/L, platelet (PLT) count \u2265100\u00d710\\^9",
       "start": 2884,
       "end": 2978,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "/L, hemoglobin (Hb) ≥9.0 g/dL \\[blood transfusion, PLT transfusion, erythropoietin, hematopoiesis agents, and granulocyte colony-stimulating factor (G-CSF) use are not allowed 1 week prior to screening\\]",
+      "quote": "/L, hemoglobin (Hb) \u22659.0 g/dL \\[blood transfusion, PLT transfusion, erythropoietin, hematopoiesis agents, and granulocyte colony-stimulating factor (G-CSF) use are not allowed 1 week prior to screening\\]",
       "start": 2987,
       "end": 3190,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Hepatic function: Total bilirubin (TBIL) ≤1.5×upper limit of normal (ULN) (≤3×ULN for participants with Gilbert's syndrome or liver metastasis at baseline), aspartate aminotransferase (AST) and alanine aminotransferase (ALT) without liver metastasis ≤3.0×ULN, AST and ALT with liver metastasis ≤5.0×ULN",
+      "quote": "Hepatic function: Total bilirubin (TBIL) \u22641.5\u00d7upper limit of normal (ULN) (\u22643\u00d7ULN for participants with Gilbert's syndrome or liver metastasis at baseline), aspartate aminotransferase (AST) and alanine aminotransferase (ALT) without liver metastasis \u22643.0\u00d7ULN, AST and ALT with liver metastasis \u22645.0\u00d7ULN",
       "start": 3198,
       "end": 3500,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Renal function:",
       "start": 3508,
       "end": 3523,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "In dose escalation and dose finding: Creatinine (Cr) clearance ≥50 mL/minute (Cockcroft-Gault equation) or estimated glomerular filtration rate (eGFR) ≥50 mL/min/1.73 m\\^2 (Chronic Kidney Disease Epidemiology Collaboration \\[CKD-EPI\\] equation)",
+      "quote": "In dose escalation and dose finding: Creatinine (Cr) clearance \u226550 mL/minute (Cockcroft-Gault equation) or estimated glomerular filtration rate (eGFR) \u226550 mL/min/1.73 m\\^2 (Chronic Kidney Disease Epidemiology Collaboration \\[CKD-EPI\\] equation)",
       "start": 3535,
       "end": 3779,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "In dose expansion: Cr clearance ≥40 mL/minute (Cockcroft-Gault equation) or eGFR ≥40 mL/min/1.73 m\\^2 (CKD-EPI equation)",
+      "quote": "In dose expansion: Cr clearance \u226540 mL/minute (Cockcroft-Gault equation) or eGFR \u226540 mL/min/1.73 m\\^2 (CKD-EPI equation)",
       "start": 3790,
       "end": 3910,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Coagulation parameters: International Normalized Ratio (INR) ≤1.5×ULN, and activated partial thromboplastin time (aPTT) ≤1.5×ULN, unless receiving anticoagulation therapy with prothrombin time and aPTT levels within the intended therapeutic range",
+      "quote": "Coagulation parameters: International Normalized Ratio (INR) \u22641.5\u00d7ULN, and activated partial thromboplastin time (aPTT) \u22641.5\u00d7ULN, unless receiving anticoagulation therapy with prothrombin time and aPTT levels within the intended therapeutic range",
       "start": 3915,
       "end": 4161,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Urine protein ≤2+ or ≤1000 mg/24 hours (in dose escalation and dose finding only)",
+      "quote": "Urine protein \u22642+ or \u22641000 mg/24 hours (in dose escalation and dose finding only)",
       "start": 4166,
       "end": 4247,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Sexually active fertile participants and their partners must agree to use highly effective methods of contraception (defined in Appendix D) during the course of the study and for a washout period after the last dose of study treatment (7 months for women of childbearing potential and 4 months for men).",
       "start": 4252,
       "end": 4555,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "An additional contraceptive method, such as a barrier method (eg, condom), is recommended.",
       "start": 4556,
       "end": 4646,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Women of childbearing potential (WOCBP) must have a negative serum pregnancy test at screening and must be nonlactating.",
       "start": 4651,
       "end": 4771,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -247,83 +285,96 @@
       "start": 4772,
       "end": 5119,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "In addition, females \\<55 years old must have a serum follicle stimulating hormone (FSH) level \\>40 mIU/mL to confirm menopause.",
       "start": 5120,
       "end": 5248,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "NOTE: Documentation may include review of medical records, medical examination, or medical history interview by study site staff.",
       "start": 5249,
       "end": 5378,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Additional Inclusion Criteria for Dose Expansion",
       "start": 5379,
       "end": 5427,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "For participants with urothelial carcinoma (Part A: Randomized Doses):",
       "start": 5432,
       "end": 5502,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Histologically confirmed advanced or unresectable HER2-expressing (as defined in Inclusion Criterion #5) urothelial carcinoma of the upper or lower urinary tract, not amenable to curative surgery or radiation.",
       "start": 5511,
       "end": 5720,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Mixed histological types are allowed if urothelial is the primary histology; however, small cell histology is excluded.",
       "start": 5721,
       "end": 5840,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants with progression or recurrence following receipt of an ADC (eg, enfortumab vedotin or disitamab vedotin) and anti-PD1/PD-L1 therapy (either as a combination regimen or as separate lines of therapy) in the advanced or metastatic setting.",
       "start": 5848,
       "end": 6097,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Patients treated with enfortumab/pembrolizumab in the localized muscle invasive setting will be eligible.",
       "start": 6098,
       "end": 6203,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Prior platinum therapy is allowed but not required.",
       "start": 6204,
       "end": 6255,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants should have no more than 3 prior lines of systemic cytotoxic therapy (eg, ADC, chemotherapy) in the advanced or metastatic setting.",
       "start": 6261,
       "end": 6405,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Multiple Indications (Part B: Basket Dosing):",
       "start": 6410,
       "end": 6455,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": "Multiple Indications (Part B: Basket Dosing)"
+        }
+      ],
       "unmapped": null
     },
     {
@@ -331,139 +382,184 @@
       "start": 6852,
       "end": 6907,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants with HER2 expression in cervical cancer",
       "start": 6915,
       "end": 6967,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants with HER2 expression in ovarian cancer, including fallopian tube cancer and primary peritoneal cancer",
       "start": 6975,
       "end": 7089,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants with HER2 expression in breast cancer, status post-trastuzumab deruxtecan",
       "start": 7097,
       "end": 7183,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
-      "quote": "Participants with HER2 expression in breast cancer, trastuzumab deruxtecan-naïve",
+      "quote": "Participants with HER2 expression in breast cancer, trastuzumab deruxtecan-na\u00efve",
       "start": 7191,
       "end": 7271,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants with HER2 expression in gastric, esophageal, or GEJ cancers",
       "start": 7279,
       "end": 7351,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants deemed at high-risk for infection, including those with an indwelling catheter or ostomy, must be willing to receive prophylactic G-CSF during their time on study (see Section 6.3.3.5).",
       "start": 7356,
       "end": 7554,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Exclusion Criteria",
       "start": 7556,
       "end": 7574,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Chemotherapy, biological therapy, immunotherapy, radical radiotherapy, targeted therapy (including small molecule inhibitor of tyrosine kinase), and other antitumor therapy within 4 weeks or 5 half-lives (whichever is shorter) prior to the first administration; major surgery within 4 weeks prior to the first administration; mitomycin and nitrosoureas treatment within 6 weeks prior to the first administration",
       "start": 7686,
       "end": 8097,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Participants with history of severe heart disease, such as symptomatic congestive heart failure (CHF) ≥ Grade 2 (CTCAE 5.0), New York Heart Association (NYHA)",
+      "quote": "Participants with history of severe heart disease, such as symptomatic congestive heart failure (CHF) \u2265 Grade 2 (CTCAE 5.0), New York Heart Association (NYHA)",
       "start": 8101,
       "end": 8259,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "heart failure at any time not mapped"
     },
     {
-      "quote": "≥ Grade 2 heart failure at any time, or history of myocardial infarction or unstable angina pectoris within 6 months before enrollment.",
+      "quote": "\u2265 Grade 2 heart failure at any time, or history of myocardial infarction or unstable angina pectoris within 6 months before enrollment.",
       "start": 8264,
       "end": 8399,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "heart failure at any time not mapped"
     },
     {
       "quote": "Participants with prolonged QT interval corrected Fridericia formula (\\[QTcF\\]\\>470 msec), complete left bundle branch block, Grade 3 atrioventricular block",
       "start": 8403,
       "end": 8559,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Active autoimmune diseases and inflammatory diseases, such as systemic lupus erythematosus, psoriasis requiring systemic treatment, rheumatoid arthritis, inflammatory bowel disease, and Hashimoto's thyroiditis, etc.",
       "start": 8563,
       "end": 8778,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "autoimmune: active, not the 2-year window"
     },
     {
       "quote": "Participants with skin diseases that do not require systemic treatment (such as vitiligo, psoriasis), well-controlled type 1 diabetes, or hypothyroidism are permitted.",
       "start": 8779,
       "end": 8946,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 59"
     },
     {
       "quote": "For autoimmune conditions that are active but stable and low grade on systemic therapy, discussion with the medical monitor is required prior to screening",
       "start": 8947,
       "end": 9101,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 59"
     },
     {
       "quote": "Participants with other prior malignancies except for: basal cell carcinoma of the skin, squamous cell carcinoma of the skin and/or carcinoma in situ after adequate resection, or other malignancy treated with curative intent with a disease-free interval of at least 3 years prior to screening",
       "start": 9105,
       "end": 9397,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "3-year window; skin and in situ exceptions not mapped"
     },
     {
       "quote": "Participants with poorly controlled hypertension by 2 types of antihypertensive drugs (systolic blood pressure \\>150 mmHg or diastolic blood pressure \\>100 mmHg)",
       "start": 9401,
       "end": 9562,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Participants with advanced or clinically significant lung diseases, such as poorly controlled chronic obstructive pulmonary disease and asthma, restrictive lung disease, pulmonary hypertension, etc.",
       "start": 9566,
       "end": 9764,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "other lung diseases"
     },
     {
       "quote": "Participants who have a history of noninfectious interstitial lung disease (ILD)/ pneumonitis that required treatment with steroids, have current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening",
       "start": 9768,
       "end": 10009,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "history of steroid-requiring pneumonitis not mapped"
     },
     {
       "quote": "Participants with stroke or transient ischemic attack (TIA) within 6 months before enrollment",
       "start": 10013,
       "end": 10106,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -471,13 +567,25 @@
       "start": 10111,
       "end": 10376,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "blood clots"
     },
     {
       "quote": "Participants with primary tumors in the central nervous system (CNS) and active or untreated CNS metastases and/or carcinomatous meningitis should be excluded.",
       "start": 10381,
       "end": 10540,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        },
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -485,55 +593,68 @@
       "start": 10541,
       "end": 10824,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 68; steroid condition not mapped"
     },
     {
       "quote": "Patients on low dose corticosteroids (\\<10 mg prednisone or equivalent/day) may participate",
       "start": 10825,
       "end": 10916,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
-      "quote": "Participants with pre-existing Grade ≥2 peripheral neuropathy",
+      "quote": "Participants with pre-existing Grade \u22652 peripheral neuropathy",
       "start": 10921,
       "end": 10982,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "neuropathy"
     },
     {
       "quote": "Participants who have a history of anaphylaxis or severe hypersensitivity to recombinant humanized antibodies or human-mouse chimeric antibodies or any of the components of BL-M07D1",
       "start": 10987,
       "end": 11168,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
     },
     {
-      "quote": "Participants who are receiving treatment with systemic glucocorticoids \\>10 mg/day equivalent of prednisone, except for the treatment of chronic obstructive pulmonary disease, antiemetic, infusion reactions; however, treatment with low dose glucocorticoids (≤10 mg/day equivalent of prednisone) is permitted.",
+      "quote": "Participants who are receiving treatment with systemic glucocorticoids \\>10 mg/day equivalent of prednisone, except for the treatment of chronic obstructive pulmonary disease, antiemetic, infusion reactions; however, treatment with low dose glucocorticoids (\u226410 mg/day equivalent of prednisone) is permitted.",
       "start": 11173,
       "end": 11481,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "steroids: dose threshold"
     },
     {
       "quote": "The chronic use of topical, inhaled, and locally injected steroids is permitted",
       "start": 11482,
       "end": 11561,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "Participants who have received treatment with anthracyclines with a cumulative dose exceeding 360 mg/m\\^2",
       "start": 11566,
       "end": 11671,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "anthracycline dose"
     },
     {
       "quote": "Participants with known human immunodeficiency virus (HIV) infection (HIV antibody positive).",
       "start": 11676,
       "end": 11769,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["uncontrolled"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -541,34 +662,44 @@
       "start": 11770,
       "end": 11869,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 76"
     },
     {
-      "quote": "Undetectable HIV RNA and CD4 count ≥ 350 cells/μL at screening;",
+      "quote": "Undetectable HIV RNA and CD4 count \u2265 350 cells/\u03bcL at screening;",
       "start": 11878,
       "end": 11941,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 76"
     },
     {
       "quote": "No AIDS-defining opportunistic infection within 12 months prior to screening;",
       "start": 11949,
       "end": 12026,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 76"
     },
     {
       "quote": "On stable antiretroviral therapy (ART) for at least 4 weeks prior to enrollment with projected continuation of ART as clinically indicated while on the study.",
       "start": 12034,
       "end": 12192,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 76"
     },
     {
       "quote": "Participants with active hepatitis B virus (HBV) infection (positive HBsAg test).",
       "start": 12197,
       "end": 12278,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -576,27 +707,36 @@
       "start": 12394,
       "end": 12434,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 81"
     },
     {
-      "quote": "Have normal AST and ALT, OR if liver metastasis is present, have AST and ALT \\<3×ULN which are not attributed to HBV infection;",
+      "quote": "Have normal AST and ALT, OR if liver metastasis is present, have AST and ALT \\<3\u00d7ULN which are not attributed to HBV infection;",
       "start": 12442,
       "end": 12569,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 81"
     },
     {
       "quote": "Are on antiviral treatment, as clinically indicated.",
       "start": 12577,
       "end": 12629,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 81"
     },
     {
       "quote": "Participants with active hepatitis C virus (HCV) infection (HCV antibody positive and HCV RNA \\> the lower limit of detection).",
       "start": 12634,
       "end": 12761,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -604,34 +744,44 @@
       "start": 12762,
       "end": 12879,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 85"
     },
     {
       "quote": "Participants with known active tuberculosis",
       "start": 12884,
       "end": 12927,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     },
     {
       "quote": "Participants with active infections requiring IV antibiotic, antiviral, or antifungal treatment, such as severe pneumonia, bacteremia, sepsis, etc., within 1 week prior to first dose of study treatment.",
       "start": 12932,
       "end": 13134,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     },
     {
       "quote": "Participants on stable oral antimicrobials with no clinical or laboratory evidence of active infection are eligible",
       "start": 13135,
       "end": 13250,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 88"
     },
     {
       "quote": "Participants who are pregnant, breastfeeding, or planning to become pregnant during the study",
       "start": 13255,
       "end": 13348,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -639,21 +789,24 @@
       "start": 13353,
       "end": 13470,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     },
     {
       "quote": "For Dose Expansion Only: Prior treatment with any topoisomerase inhibitor ADC.",
       "start": 13475,
       "end": 13553,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior ADC: topoisomerase payload"
     },
     {
       "quote": "If the topoisomerase I ADC is sacituzumab govitecan, prior discussion with the medical monitor is required for potential inclusion",
       "start": 13554,
       "end": 13684,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 92"
     }
   ]
 }

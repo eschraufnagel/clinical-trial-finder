@@ -8,84 +8,106 @@
       "quote": "In the dose escalation, patients must have a histologically documented locally advanced, unresectable, or metastatic solid tumor that has progressed following at least one prior line of treatment in the metastatic setting or has no satisfactory alternative treatment option and all of the following:",
       "start": 23,
       "end": 322,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": "In the dose escalation"
+        }
+      ],
+      "unmapped": null,
+      "note": "progressed after a metastatic line, or no alternative, not mapped"
     },
     {
       "quote": "HER2 expression by immunohistochemistry (IHC) (1+, 2+, or 3+) or HER2 amplification by in situ hybridization (ISH) or next generation sequencing (NGS) (on any Clinical Laboratory Improvements Amendments \\[CLIA\\] platform on tissue), AND",
       "start": 328,
       "end": 564,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "HER2 by IHC level (HER2-low)"
     },
     {
       "quote": "T-DXd (DS-8201a)-naive disease",
       "start": 569,
       "end": 599,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior ADC: a specific drug (T-DXd)"
     },
     {
       "quote": "In the dose expansion, patients must have histologically documented locally advanced, unresectable or metastatic gastric or gastroesophageal junction (GEJ) cancer that has progressed following at least one prior line of treatment in the metastatic setting and have all of the following:",
       "start": 602,
       "end": 888,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "HER2 expression by IHC (1+, 2+, or 3+) or HER2 amplification by ISH or NGS (on any CLIA platform on tissue), AND",
       "start": 894,
       "end": 1006,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "T-DXd (DS-8201a)-naive disease",
       "start": 1011,
       "end": 1041,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Received prior trastuzumab-based treatment, if eligible for such treatment",
       "start": 1046,
       "end": 1120,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "For the dose escalation and dose expansion, patients can have evaluable or measurable disease",
       "start": 1123,
       "end": 1216,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "Potential trial participants should have recovered from clinically significant adverse events (AEs) of their most recent therapy/intervention prior to enrollment",
       "start": 1219,
       "end": 1380,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
-      "quote": "Age ≥ 18 years.",
+      "quote": "Age \u2265 18 years.",
       "start": 1383,
       "end": 1398,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Because no dosing or AE data are currently available on the use of T-DXd (DS-8201a) in combination with azenosertib (ZN-c3) in patients \\< 18 years of age, children are excluded from this study",
       "start": 1399,
       "end": 1592,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
-      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 1 (Karnofsky ≥ 70%).",
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of \u2264 1 (Karnofsky \u2265 70%).",
       "start": 1595,
       "end": 1681,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -93,202 +115,217 @@
       "start": 1682,
       "end": 1762,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Due to the overlapping adverse effect, the performance status cannot be less restrictive",
       "start": 1763,
       "end": 1851,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
-      "quote": "Absolute neutrophil count ≥ 1.5 × 10\\^9/L (within 7 days of study treatment initiation)",
+      "quote": "Absolute neutrophil count \u2265 1.5 \u00d7 10\\^9/L (within 7 days of study treatment initiation)",
       "start": 1854,
       "end": 1941,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "No transfusions with red blood cells or platelets are allowed within 1 week prior to screening assessment",
       "start": 1947,
       "end": 2052,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "No administration of granulocyte colony-stimulating factor is allowed within 1 week prior to screening assessment",
       "start": 2057,
       "end": 2170,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Hemoglobin \\> 9.0 g/dL (within 7 days of study treatment initiation)",
       "start": 2173,
       "end": 2241,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "No transfusions with red blood cells or platelets are allowed within 1 week prior to screening assessment",
       "start": 2247,
       "end": 2352,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "No administration of granulocyte colony-stimulating factor is allowed within 1 week prior to screening assessment",
       "start": 2357,
       "end": 2470,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Platelets ≥ 100 × 10\\^9/L (within 7 days of study treatment initiation)",
+      "quote": "Platelets \u2265 100 \u00d7 10\\^9/L (within 7 days of study treatment initiation)",
       "start": 2473,
       "end": 2544,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "No transfusions with red blood cells or platelets are allowed within 1 week prior to screening assessment",
       "start": 2550,
       "end": 2655,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "No administration of granulocyte colony-stimulating factor is allowed within 1 week prior to screening assessment",
       "start": 2660,
       "end": 2773,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Total bilirubin ≤ 1.5 institutional upper limit of normal (ULN).",
+      "quote": "Total bilirubin \u2264 1.5 institutional upper limit of normal (ULN).",
       "start": 2776,
       "end": 2840,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Documented Gilbert syndrome is allowed if total bilirubin is ≤ 3 × institutional ULN (within 7 days of study treatment initiation)",
+      "quote": "Documented Gilbert syndrome is allowed if total bilirubin is \u2264 3 \u00d7 institutional ULN (within 7 days of study treatment initiation)",
       "start": 2841,
       "end": 2971,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 24"
     },
     {
       "quote": "No transfusions with red blood cells or platelets are allowed within 1 week prior to screening assessment",
       "start": 2977,
       "end": 3082,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "No administration of granulocyte colony-stimulating factor is allowed within 1 week prior to screening assessment",
       "start": 3087,
       "end": 3200,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Aspartate aminotransferase (AST \\[serum glutamic-oxaloacetic transaminase (SGOT)\\])/alanine aminotransferase (ALT \\[serum glutamate pyruvate transaminase (SGPT)\\]) ≤ 3 × institutional ULN.",
+      "quote": "Aspartate aminotransferase (AST \\[serum glutamic-oxaloacetic transaminase (SGOT)\\])/alanine aminotransferase (ALT \\[serum glutamate pyruvate transaminase (SGPT)\\]) \u2264 3 \u00d7 institutional ULN.",
       "start": 3203,
       "end": 3391,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "In the presence of liver metastases, AST or ALT up to 5 × institutional ULN is permitted (within 7 days of study treatment initiation)",
+      "quote": "In the presence of liver metastases, AST or ALT up to 5 \u00d7 institutional ULN is permitted (within 7 days of study treatment initiation)",
       "start": 3392,
       "end": 3526,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 28"
     },
     {
       "quote": "No transfusions with red blood cells or platelets are allowed within 1 week prior to screening assessment",
       "start": 3532,
       "end": 3637,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "No administration of granulocyte colony-stimulating factor is allowed within 1 week prior to screening assessment",
       "start": 3642,
       "end": 3755,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Measured of calculated creatinine clearance (CrCl) ≥ 60 mL/min (CrCl should be calculated per institutional standard; glomerular filtration rate can also be used in place of CrCl) ≥ 60 mL/min for patients with creatinine levels \\> 1.5 x institutional ULN (within 7 days of study treatment initiation)",
+      "quote": "Measured of calculated creatinine clearance (CrCl) \u2265 60 mL/min (CrCl should be calculated per institutional standard; glomerular filtration rate can also be used in place of CrCl) \u2265 60 mL/min for patients with creatinine levels \\> 1.5 x institutional ULN (within 7 days of study treatment initiation)",
       "start": 3758,
       "end": 4058,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "No transfusions with red blood cells or platelets are allowed within 1 week prior to screening assessment",
       "start": 4064,
       "end": 4169,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "No administration of granulocyte colony-stimulating factor is allowed within 1 week prior to screening assessment",
       "start": 4174,
       "end": 4287,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "International normalized ratio/prothrombin time and activated partial thromboplastin time ≤ 1.5 × institutional ULN (within 7 days of study treatment initiation)",
+      "quote": "International normalized ratio/prothrombin time and activated partial thromboplastin time \u2264 1.5 \u00d7 institutional ULN (within 7 days of study treatment initiation)",
       "start": 4290,
       "end": 4451,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "No transfusions with red blood cells or platelets are allowed within 1 week prior to screening assessment",
       "start": 4457,
       "end": 4562,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "No administration of granulocyte colony-stimulating factor is allowed within 1 week prior to screening assessment",
       "start": 4567,
       "end": 4680,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Patients must have left ventricular ejection fraction (LVEF) ≥ 50% by either an echocardiogram (ECHO) or multigated acquisition (MUGA) scan within 28 days before enrollment",
+      "quote": "Patients must have left ventricular ejection fraction (LVEF) \u2265 50% by either an echocardiogram (ECHO) or multigated acquisition (MUGA) scan within 28 days before enrollment",
       "start": 4683,
       "end": 4855,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Human immunodeficiency virus-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial",
       "start": 4858,
       "end": 5014,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "For patients with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated",
       "start": 5017,
       "end": 5166,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured.",
       "start": 5169,
       "end": 5263,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -296,223 +333,238 @@
       "start": 5264,
       "end": 5389,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 41"
     },
     {
       "quote": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression",
       "start": 5392,
       "end": 5555,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS-specific treatment is not required and is unlikely to be required during the first cycle of study treatment",
       "start": 5558,
       "end": 5836,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "Patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial",
       "start": 5839,
       "end": 6059,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
-      "quote": "Life expectancy ≥ 3 months",
+      "quote": "Life expectancy \u2265 3 months",
       "start": 6062,
       "end": 6088,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
     },
     {
       "quote": "Women of childbearing potential (WOCBP) must have a negative serum pregnancy test result within 3 days of study treatment initiation",
       "start": 6091,
       "end": 6223,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Agents composed of HER2 antibody conjugated to a topoisomerase 1 inhibitor and azenosertib (ZN-c3) are known to be teratogenic; thus, WOCBP must agree to use highly effective contraception from time of screening and throughout the study treatment period and for at least 7 months after final study treatment administration.",
       "start": 6226,
       "end": 6549,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Should a woman become pregnant or suspect she is pregnant while she or her partner is participating in this study, she should inform her treating physician immediately.",
       "start": 6550,
       "end": 6718,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Female patients must not donate, or retrieve for their own use, ova from the time of screening and throughout the study treatment period and for at least 7 months after the final study treatment administration",
       "start": 6719,
       "end": 6928,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Women of non-childbearing potential defined as premenopausal females with documented tubal ligation or hysterectomy; or postmenopausal defined as 12 months of spontaneous amenorrhea (in questionable cases, a blood sample with simultaneous follicle-stimulating hormone \\> 40 mIU/mL and estradiol \\< 40 pg/mL \\[\\< 147 pmol/L\\] is confirmatory) are eligible.",
       "start": 6931,
       "end": 7286,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Females on hormone replacement therapy (HRT) and whose menopausal status is in doubt will be required to use one of the contraception methods outlined for WOCBP if they wish to continue their HRT during the study.",
       "start": 7287,
       "end": 7500,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Otherwise, they must discontinue HRT to allow confirmation of postmenopausal status prior to study enrollment.",
       "start": 7501,
       "end": 7611,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "For most forms of HRT, at least 2-4 weeks will elapse between the cessation of therapy and the blood draw; this interval depends on the type and dosage of HRT.",
       "start": 7612,
       "end": 7771,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Following confirmation of their postmenopausal status, they can resume use of HRT during the study without use of a contraception method",
       "start": 7772,
       "end": 7908,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Male patients involved with WOCBP must agree to use a highly effective form of contraception or avoid intercourse from time of screening and throughout the study treatment period and for at least 4 months after the last dose of study treatment.",
       "start": 7911,
       "end": 8155,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Male patients must not freeze or donate sperm starting at screening and throughout the study period and at least 4 months after the final study treatment administration.",
       "start": 8156,
       "end": 8325,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Preservation of sperm should be considered prior to enrollment in this study",
       "start": 8326,
       "end": 8402,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Ability to understand and the willingness to sign a written informed consent document.",
       "start": 8405,
       "end": 8491,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Legally authorized representatives may sign and give informed consent on behalf of study participants",
       "start": 8492,
       "end": 8593,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Willing to undergo biopsy as required by the study (dose expansion only)",
       "start": 8596,
       "end": 8668,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Note: Patients in the dose escalation who have insufficient/inadequate archival tissue may have optional pre-treatment biopsy",
       "start": 8674,
       "end": 8799,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Patients must have adequate washout from prior therapy at the time of study treatment initiation: 4 weeks from major surgery (any surgical incision should be fully healed prior to study drug administration); 4 weeks from antibody-based therapy; 2 weeks or or 5 half-lives (whichever is shorter) from any targeted therapy or small molecule therapy; 3 weeks or 5 half-lives (whichever is shorter) from chemotherapy or 6 weeks in the case of certain therapies (e.g., extensive radiotherapy, mitomycin C, and nitrosoureas); and 4 weeks from radiation therapy.",
       "start": 8802,
       "end": 9357,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "These washout periods are included to ensure patients have maximal bone marrow recovery and as this is a multicenter trial, to ensure uniformity in interpretation of recovery",
       "start": 9358,
       "end": 9532,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "As azenosertib (ZN-c3) is a substrate of CYP3A4, use of prescription or non-prescription drugs known to be moderate or strong inhibitors or inducers of CYP3A4 are prohibited with the exception of moderate or strong inhibitors or inducers of CYP3A4 that are part of the prophylactic antiemetic regimen.",
       "start": 9557,
       "end": 9858,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Chloroquine/hydroxychloroquine are metabolized by CYP3A4 and therefore, should be prohibited.",
       "start": 9859,
       "end": 9952,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "For patients who have received prior moderate or strong inhibitors or inducers of CYP3A4, the required washout period is approximately 5 half-lives prior to study treatment initiation",
       "start": 9953,
       "end": 10136,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Patients who are receiving any other investigational agents",
       "start": 10139,
       "end": 10198,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Patients who have a history of allergic reactions attributed to compounds of similar chemical or biologic composition to the study drugs",
       "start": 10201,
       "end": 10337,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug class"
     },
     {
       "quote": "Patients who have a history of severe hypersensitivity reactions to other monoclonal antibodies (mAbs)",
       "start": 10340,
       "end": 10442,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug class"
     },
     {
       "quote": "Patients with clinically severe pulmonary compromise resulting from intercurrent pulmonary illnesses including, but not limited to, any underlying pulmonary disorder (i.e., pulmonary emboli within 3 months of the study enrollment, severe asthma, severe chronic obstructive pulmonary disease, restrictive lung disease, pleural effusion, etc.), and any autoimmune, connective tissue or inflammatory disorders with potential pulmonary involvement (i.e., rheumatoid arthritis, Sjogren's, sarcoidosis, etc.), or prior pneumonectomy",
       "start": 10445,
       "end": 10971,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "lung function and other lung diseases"
     },
     {
       "quote": "Patients who require supplemental oxygen for activities of daily living",
       "start": 10974,
       "end": 11045,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "needs oxygen"
     },
     {
       "quote": "Pregnant women are excluded from this study because T-DXd (DS-8201a) and azenosertib (ZN-c3) have the potential risk for teratogenic or abortifacient effects.",
       "start": 11048,
       "end": 11206,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -520,13 +572,20 @@
       "start": 11207,
       "end": 11471,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 73"
     },
     {
       "quote": "Patients with history of non-infectious pneumonitis/interstitial lung disease (ILD), current ILD, or where suspected ILD cannot be ruled out by imaging at screening",
       "start": 11474,
       "end": 11638,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["past", "current"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -534,112 +593,137 @@
       "start": 11641,
       "end": 11791,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     },
     {
       "quote": "Patients who have completed such treatment and whose infection is controlled/resolved (and afebrile) for at least 7 days before cycle 1 day 1 are eligible",
       "start": 11792,
       "end": 11946,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 76"
     },
     {
       "quote": "Patients with history of malabsorption syndrome or other condition that would interfere with enteral absorption or results in the inability or unwillingness to swallow pills",
       "start": 11949,
       "end": 12122,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "absorption"
     },
     {
       "quote": "Patients with current signs or symptoms of bowel obstruction including sub-occlusive disease related to underlying disease",
       "start": 12125,
       "end": 12247,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "bowel obstruction"
     },
     {
       "quote": "Patients with a medical history of myocardial infarction within 6 months before enrollment, symptomatic congestive heart failure (New York Heart Association class IIb to IV), and/or troponin levels consistent with myocardial infarction as defined according to the manufacturer 28 days prior to enrollment",
       "start": 12250,
       "end": 12554,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "symptomatic heart failure without a window not mapped"
     },
     {
       "quote": "Patients with clinically significant corneal disease",
       "start": 12557,
       "end": 12609,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "corneal disease"
     },
     {
       "quote": "Patients with a pleural effusion, ascites, or pericardial effusion that requires drainage, peritoneal shunt, or cell-free and concentrated ascites reinfusion therapy (CART). (Drainage and CART are not allowed within 2 weeks prior to screening assessment)",
       "start": 12612,
       "end": 12866,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "symptomatic pleural effusion or ascites"
     },
     {
       "quote": "Patients with history of Torsades de Pointes unless all risk factors that contributed to Torsades de Pointes have been corrected",
       "start": 12869,
       "end": 12997,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "heart rhythm"
     },
     {
       "quote": "Based on an average of triplicate 12-lead electrocardiogram (ECG), patients with a mean resting corrected QT (QTc) interval using Fridericia formula of \\> 470 msec for both males and females at screening or a history of congenital long QT syndrome will be excluded",
       "start": 13000,
       "end": 13264,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Patients with prior treatment with a WEE1 inhibitor (dose escalation and dose expansion)",
       "start": 13267,
       "end": 13355,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior WEE1 inhibitor"
     },
     {
       "quote": "Patients with prior treatment with T-DXd (DS-8201a) or other topoisomerase inhibitors (dose escalation and dose expansion)",
       "start": 13358,
       "end": 13480,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior ADC: topoisomerase payload or T-DXd specifically"
     },
     {
       "quote": "Patients with uncontrolled intercurrent illness",
       "start": 13483,
       "end": 13530,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     },
     {
       "quote": "Patients with prior allogeneic organ transplantation including allogeneic stem cell transplantation",
       "start": 13533,
       "end": 13632,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "transplant",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Patients with clinically significant chronic gastrointestinal disorder with diarrhea as a major symptom; ≥ grade 2 diarrhea at baseline.",
+      "quote": "Patients with clinically significant chronic gastrointestinal disorder with diarrhea as a major symptom; \u2265 grade 2 diarrhea at baseline.",
       "start": 13635,
       "end": 13771,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "diarrhea"
     },
     {
       "quote": "Please contact the protocol principal investigator (PI) for any patient with more than two episodes of diarrhea per day averaged over at least a 7-day period at time of screening to determine whether the diarrhea would be considered clinically significant",
       "start": 13772,
       "end": 14027,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Patients with spinal cord compression",
       "start": 14030,
       "end": 14067,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "spinal cord compression"
     }
   ]
 }

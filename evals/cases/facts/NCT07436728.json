@@ -5,612 +5,772 @@
   "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
   "passages": [
     {
-      "quote": "Aged greater than or equal to (≥) 18 years or ≥ the local legal age of majority, as applicable, at the time of signing the main informed consent form (ICF).",
+      "quote": "Aged greater than or equal to (\u2265) 18 years or \u2265 the local legal age of majority, as applicable, at the time of signing the main informed consent form (ICF).",
       "start": 24,
       "end": 180,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Criteria for disease state in dose escalation and cohort-expansion:",
       "start": 184,
       "end": 251,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Tumor histologies during dose escalation (including potential participants in backfill cohort): Participants with histologically or pathologically confirmed locally advanced or metastatic solid tumors, who are either ineligible for or intolerant of standard therapies, have no approved therapy with demonstrated benefit available, or have exhausted all available standard therapies:",
       "start": 259,
       "end": 641,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": "Tumor histologies during dose escalation"
+        }
+      ],
+      "unmapped": null,
+      "note": "ineligible for, intolerant of or exhausted standard therapies not mapped"
     },
     {
       "quote": "<!-- -->",
       "start": 643,
       "end": 651,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Gastric adenocarcinoma.",
       "start": 656,
       "end": 679,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Colorectal cancer (CRC).",
       "start": 683,
       "end": 707,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Non-small cell lung cancer (NSCLC) (both squamous and non-squamous).",
       "start": 711,
       "end": 779,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Head and neck squamous cell carcinoma (HNSCC). b) Tumor histologies during dose expansion: Participants will be eligible if they have histologically or pathologically confirmed, locally advanced or metastatic solid tumors, as follows:",
       "start": 783,
       "end": 1017,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Metastatic or advanced squamous or non-squamous NSCLC:",
       "start": 1023,
       "end": 1077,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        },
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": "Tumor histologies during dose expansion"
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Participants with no known activating mutations: have received platinum-based chemotherapy and anti-programmed death protein 1 (PD-1)/programmed death ligand 1 (PD-L1) for locally advanced or metastatic disease (chemotherapy and anti-PD-1/PD-L1 treatment can be received in combination or in sequence).",
       "start": 1081,
       "end": 1383,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "prior_platinum",
+          "rulesOut": ["never"],
+          "appliesTo": "Tumor histologies during dose expansion"
+        }
+      ],
+      "unmapped": null,
+      "note": "anti-PD-1 requirement depends on mutation status, not mapped"
     },
     {
       "quote": "Participants with a known activating mutation with an approved and accessible target therapy (including but not limited to epidermal growth factor receptor \\[EGFR\\], anaplastic lymphoma kinase, ROS proto-oncogene 1, receptor tyrosine kinase, v-raf murine sarcoma viral oncogene homolog B1V600, rearranged during transfection, mesenchymal epithelial transition \\[MET\\] exon 14 skipping mutation, neurotrophic tyrosine receptor kinase, and kirsten rat sarcoma G12C) should have received the respective targeted therapy and 1 line of platinum-based chemotherapy and anti-PD-1/PD-L1 (if appropriate).",
       "start": 1386,
       "end": 1982,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "requirement conditional on mutation status"
     },
     {
       "quote": "Participants should have received no more than 3 prior lines of therapies for locally advanced or metastatic cancer.",
       "start": 1985,
       "end": 2101,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "lines: no more than 3 (4 or more)"
     },
     {
       "quote": "CRC: adenocarcinoma",
       "start": 2109,
       "end": 2128,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants who have received or been intolerant to treatment with either trifluridine/tipiracil (TAS-102), regorafenib or fruquintinib.",
       "start": 2131,
       "end": 2268,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants who have been treated with all are permitted.",
       "start": 2269,
       "end": 2327,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants must also have been previously treated with standard approved therapies, such as: fluoropyrimidine-, oxaliplatin-, or irinotecan-based chemotherapy, an anti-vascular endothelial growth factor (VEGF) biological therapy, and, if rat sarcoma (RAS) wild-type, an anti-EGFR therapy or checkpoint inhibitors, as clinically appropriate.",
       "start": 2328,
       "end": 2670,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants should have received no more than 4 prior lines of therapies for locally advanced or metastatic cancer.",
       "start": 2673,
       "end": 2789,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Gastric adenocarcinoma",
       "start": 2797,
       "end": 2819,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants who have received or been intolerant to platinum/fluoropyrimidine doublet with or without anthracycline.",
       "start": 2822,
       "end": 2939,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants who are human epidermal growth factor receptor 2 (HER2) positive, PD-L1 positive or having microsatellite instability-high (MSI-H) should have received anti-HER2 and anti-PD-1/PD-L1 treatment, respectively.",
       "start": 2940,
       "end": 3159,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants should have received no more than 3 prior lines of therapies for locally advanced or metastatic cancer.",
       "start": 3162,
       "end": 3278,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
-      "quote": "Confirmed PD-L1 positive by an FDA approved, Conformité Européene (CE)-marked, or other health-authority equivalent test in local lab.",
+      "quote": "Confirmed PD-L1 positive by an FDA approved, Conformit\u00e9 Europ\u00e9ene (CE)-marked, or other health-authority equivalent test in local lab.",
       "start": 3286,
       "end": 3420,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "pdl1",
+          "rulesOut": ["negative"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "threshold for \"positive\" not stated"
     },
     {
       "quote": "If historical PD-L1 status is not available, participants are eligible for pre-screening.",
       "start": 3421,
       "end": 3510,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Tumor tissue: All participants must provide an existing formalin-fixed paraffin-embedded (FFPE) archival tumor sample taken within 24 months of the date of the main ICF.",
       "start": 3518,
       "end": 3687,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "If the acquisition of FFPE blocks is not feasible, freshly cut slides from the eligible FFPE sample should be provided, and the slides need to have been cut within 3 months before the expected (Cycle 1 Day 1) C1D1.",
       "start": 3688,
       "end": 3902,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "See the lab manual, which is provided separately, for further details.",
       "start": 3903,
       "end": 3973,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "If an FFPE archival tumor sample is not available, tumor biopsy will be required before trial entry.",
       "start": 3974,
       "end": 4074,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1. 6.",
       "start": 4082,
       "end": 4156,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Participants must have at least 1 lesion that meets the definition of measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 criteria (radiologically measured by the investigator).",
       "start": 4157,
       "end": 4363,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Lesions in previously irradiated areas (or other local therapy) should not be selected as measurable/target lesions, unless treatment was ≥12 months prior to start of treatment and/or there has been demonstrated progression in that particular lesion.",
+      "quote": "Lesions in previously irradiated areas (or other local therapy) should not be selected as measurable/target lesions, unless treatment was \u226512 months prior to start of treatment and/or there has been demonstrated progression in that particular lesion.",
       "start": 4364,
       "end": 4614,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Adequate bone marrow function as defined below:",
       "start": 4622,
       "end": 4669,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Absolute neutrophil count (ANC) ≥1,000/ microliters(μL),",
+      "quote": "Absolute neutrophil count (ANC) \u22651,000/ microliters(\u03bcL),",
       "start": 4675,
       "end": 4731,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Platelet count ≥75,000/μL",
+      "quote": "Platelet count \u226575,000/\u03bcL",
       "start": 4737,
       "end": 4762,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Hemoglobin ≥9.0 grams per deciliter (g/dL). 8.",
+      "quote": "Hemoglobin \u22659.0 grams per deciliter (g/dL). 8.",
       "start": 4768,
       "end": 4814,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Adequate renal and liver function as defined below:",
       "start": 4815,
       "end": 4866,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "<!-- -->",
       "start": 4870,
       "end": 4878,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
-      "quote": "Alanine aminotransferase (ALT)/ Aspartate aminotransferase (AST) less than equal to (≤) 3.0 × the upper limit of the normal range (ULN); for participants with hepatic metastases, ALT and AST)≤5 × ULN.",
+      "quote": "Alanine aminotransferase (ALT)/ Aspartate aminotransferase (AST) less than equal to (\u2264) 3.0 \u00d7 the upper limit of the normal range (ULN); for participants with hepatic metastases, ALT and AST)\u22645 \u00d7 ULN.",
       "start": 4885,
       "end": 5085,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Total bilirubin ≤1.5 × ULN, except for participants with Gilbert's syndrome, who may be enrolled if the conjugated bilirubin is within normal limits.",
+      "quote": "Total bilirubin \u22641.5 \u00d7 ULN, except for participants with Gilbert's syndrome, who may be enrolled if the conjugated bilirubin is within normal limits.",
       "start": 5091,
       "end": 5240,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Creatinine clearance ≥45 mL/minute (calculated by Cockcroft-Gault formula). 9.",
+      "quote": "Creatinine clearance \u226545 mL/minute (calculated by Cockcroft-Gault formula). 9.",
       "start": 5246,
       "end": 5324,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Clinically significant toxic effects of previous therapy have recovered to Grade 1 (per National Cancer Institute \\[NCI\\] Common Terminology Criteria for Adverse Events \\[CTCAE\\] v5.0) or baseline, except for alopecia, Grade 2 peripheral neuropathy, and/or autoimmune endocrinopathies with stable endocrine replacement therapy.",
       "start": 5325,
       "end": 5652,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
       "quote": "Suitable venous access for the collection of trial-required blood sampling. 11.",
       "start": 5664,
       "end": 5743,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Symptomatic central nervous system (CNS) metastases must have been treated, be asymptomatic for ≥14 days, and meet the following criteria at the time of enrollment:",
+      "quote": "Symptomatic central nervous system (CNS) metastases must have been treated, be asymptomatic for \u226514 days, and meet the following criteria at the time of enrollment:",
       "start": 5744,
       "end": 5908,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "brain metastases: symptomatic only"
     },
     {
-      "quote": "a) No concurrent treatment for CNS disease (for example, surgery, radiation, and corticosteroids ≥10 mg/d prednisone or equivalent).",
+      "quote": "a) No concurrent treatment for CNS disease (for example, surgery, radiation, and corticosteroids \u226510 mg/d prednisone or equivalent).",
       "start": 5912,
       "end": 6044,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 42"
     },
     {
       "quote": "b) No concurrent leptomeningeal disease or cord compression.",
       "start": 6048,
       "end": 6108,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "cord compression not mapped"
     },
     {
       "quote": "Exclusion Criteria",
       "start": 6109,
       "end": 6127,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "History of known autoimmune disease, except for:",
       "start": 6133,
       "end": 6181,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "autoimmune: any history, with exceptions"
     },
     {
       "quote": "a) Vitiligo. b) Psoriasis not requiring systemic treatment for \\>1 year before receipt of TAK-505.",
       "start": 6188,
       "end": 6286,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 46"
     },
     {
       "quote": "c) History of Graves' disease in participants now euthyroid for \\>4 weeks. d) Hypothyroidism managed by thyroid hormone replacement. e) Alopecia. f) Well-controlled diabetes type 1.",
       "start": 6293,
       "end": 6474,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 46"
     },
     {
       "quote": "History of brain metastasis or leptomeningeal disease unless:",
       "start": 6480,
       "end": 6541,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        },
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "a) Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR b) Received stereotactic radiosurgery and is off corticosteroids for brain metastases AND c) Is without neurologic dysfunction that would confound the evaluation of neurologic and other adverse events (AEs).",
+      "quote": "a) Brain metastases are stable on cranial imaging (that is, \u22654 weeks) following prior surgery, whole-brain radiation OR b) Received stereotactic radiosurgery and is off corticosteroids for brain metastases AND c) Is without neurologic dysfunction that would confound the evaluation of neurologic and other adverse events (AEs).",
       "start": 6548,
       "end": 6875,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 49"
     },
     {
-      "quote": "History of any of the following ≤6 months before the first dose of trial intervention:",
+      "quote": "History of any of the following \u22646 months before the first dose of trial intervention:",
       "start": 6881,
       "end": 6967,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "a) Congestive heart failure New York Heart Association (NYHA) Grade III or IV. b) Unstable angina. c) Myocardial infarction. d) Unstable symptomatic ischemic heart disease. e) Uncontrolled hypertension despite appropriate medical therapy. f) Any ongoing symptomatic cardiac arrhythmias of Grade greater than (\\>) 2 (including acute atrial flutter/fibrillation, ventricular fibrillation, or ventricular tachycardia).",
       "start": 6974,
       "end": 7389,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "arrhythmia, hypertension and other conditions not mapped"
     },
     {
       "quote": "Chronic, stable atrial fibrillation on stable anticoagulant therapy, including lowmolecular-weight heparin, is allowed.",
       "start": 7390,
       "end": 7509,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 52"
     },
     {
       "quote": "g) Acute symptomatic pulmonary embolism, or symptomatic cerebrovascular events, or any other serious cardiac condition (for example, pericardial effusion or restrictive cardiomyopathy).",
       "start": 7516,
       "end": 7701,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "pulmonary embolism not mapped"
     },
     {
       "quote": "h) Left ventricular ejection fraction (LVEF) less than (\\<) 50%, as measured by echocardiogram or multigated acquisition scan (MUGA) within 4 weeks before receiving the first dose of trial intervention.",
       "start": 7708,
       "end": 7910,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "History of hepatic encephalopathy.",
       "start": 7916,
       "end": 7950,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "hepatic encephalopathy"
     },
     {
       "quote": "Active diagnosis of a lung condition including:",
       "start": 7956,
       "end": 8003,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
-      "quote": "a) Pneumonitis b) Interstitial lung disease c) Severe chronic obstructive pulmonary disease d) Idiopathic pulmonary fibrosis e) Other restrictive lung diseases f) Acute symptomatic pulmonary embolism g) Grade ≥2 pleural effusion not controlled by tap or requiring indwelling catheters.",
+      "quote": "a) Pneumonitis b) Interstitial lung disease c) Severe chronic obstructive pulmonary disease d) Idiopathic pulmonary fibrosis e) Other restrictive lung diseases f) Acute symptomatic pulmonary embolism g) Grade \u22652 pleural effusion not controlled by tap or requiring indwelling catheters.",
       "start": 8010,
       "end": 8295,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "COPD, pulmonary embolism and effusion not mapped"
     },
     {
-      "quote": "Ongoing or active infection of Grade ≥2",
+      "quote": "Ongoing or active infection of Grade \u22652",
       "start": 8301,
       "end": 8340,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     },
     {
       "quote": "Oxygen saturation \\<90% on room air at screening or during the C1D1 predose assessment.",
       "start": 8346,
       "end": 8433,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "oxygen saturation"
     },
     {
-      "quote": "Inflammatory process that has not resolved for ≥4 weeks before the first dose of trial intervention.",
+      "quote": "Inflammatory process that has not resolved for \u22654 weeks before the first dose of trial intervention.",
       "start": 8439,
       "end": 8539,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "inflammation"
     },
     {
       "quote": "Participants with chronic low-grade inflammatory processes such as radiation induced pneumonitis are excluded regardless of duration.",
       "start": 8540,
       "end": 8673,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "pneumonitis: radiation pneumonitis specifically"
     },
     {
       "quote": "Clinically significant gastrointestinal disorders including the following:",
       "start": 8679,
       "end": 8753,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Gastrointestinal perforation or unhealed ulcerations \\<6 months before trial intervention administration.",
       "start": 8763,
       "end": 8868,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "gastrointestinal conditions"
     },
     {
       "quote": "Participants must have documented evidence (for example, upper endoscopy or colonoscopy) of a completely healed area of prior perforation.",
       "start": 8869,
       "end": 9007,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "gastrointestinal conditions"
     },
     {
       "quote": "Gastrointestinal bleeding \\<2 months before trial intervention administration.",
       "start": 9016,
       "end": 9094,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "gastrointestinal conditions"
     },
     {
       "quote": "Participants must have documented evidence (for example, from upper endoscopy or colonoscopy) of a completely healed area of prior bleeding.",
       "start": 9095,
       "end": 9235,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "gastrointestinal conditions"
     },
     {
       "quote": "Pancreatitis \\<6 months before the initiation of trial intervention.",
       "start": 9244,
       "end": 9312,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "gastrointestinal conditions"
     },
     {
       "quote": "Participants must have a computed tomography (CT) scan that is negative for evidence of remaining disease or normal pancreatic enzyme levels \\>4 weeks before the initiation of trial intervention.",
       "start": 9313,
       "end": 9508,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "gastrointestinal conditions"
     },
     {
       "quote": "Diverticulitis flare \\<2 months before trial intervention administration.",
       "start": 9517,
       "end": 9590,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "gastrointestinal conditions"
     },
     {
       "quote": "Participants must have a CT scan demonstrating no evidence of remaining disease before the initiation of trial intervention.",
       "start": 9591,
       "end": 9715,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "gastrointestinal conditions"
     },
     {
       "quote": "History of Crohn's disease or ulcerative colitis.",
       "start": 9724,
       "end": 9773,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "inflammatory bowel disease"
     },
     {
       "quote": "Vaccination with any live virus vaccine within 4 weeks or other vaccines within 2 weeks before the initiation of trial intervention.",
       "start": 9780,
       "end": 9912,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Inactivated annual influenza vaccination is allowed.",
       "start": 9913,
       "end": 9965,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "History of a bone marrow transplantation within the past 5 years or solid organ transplantation (as a recipient) and use of immunosuppressive agents.",
       "start": 9972,
       "end": 10121,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "transplant: within 5 years or on immunosuppression"
     },
     {
       "quote": "Known hypersensitivity to TAK-505 or any excipient (acetate, arginine, histidine, methionine or polysorbate 80) contained in the drug or diluent formulation, or known hypersensitivity to tocilizumab.",
       "start": 10128,
       "end": 10327,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
     },
     {
-      "quote": "Diagnosed with a second primary invasive malignancy not in remission for ≥3 years.",
+      "quote": "Diagnosed with a second primary invasive malignancy not in remission for \u22653 years.",
       "start": 10334,
       "end": 10416,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "3-year window; exceptions not mapped"
     },
     {
       "quote": "Nonmelanoma skin cancer",
       "start": 10453,
       "end": 10476,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 77"
     },
     {
       "quote": "Cervical carcinoma in situ",
       "start": 10486,
       "end": 10512,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 77"
     },
     {
       "quote": "Resected melanoma in situ",
       "start": 10522,
       "end": 10547,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 77"
     },
     {
       "quote": "Malignancies considered indolent and never required therapy.",
       "start": 10557,
       "end": 10617,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 77"
     },
     {
       "quote": "This does not include lymphomas.",
       "start": 10618,
       "end": 10650,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 77"
     },
     {
       "quote": "Others upon consultation and approval from the sponsor.",
       "start": 10660,
       "end": 10715,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 77"
     },
     {
       "quote": "Known to be Human Immunodeficiency Virus (HIV) positive or hepatitis B or C positive as defined below:",
       "start": 10722,
       "end": 10824,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Positive serology for HIV.",
       "start": 10835,
       "end": 10861,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["controlled", "uncontrolled"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Positive hepatitis B surface antigen (HBsAg) test.",
       "start": 10871,
       "end": 10921,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Positive hepatitis C virus (HCV) antibody test.",
       "start": 10931,
       "end": 10978,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -618,97 +778,117 @@
       "start": 10985,
       "end": 11060,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
-      "quote": "Cytotoxic chemotherapy, small-molecule inhibitors, cell therapy, radiation, interventional radiology procedure, or similar investigational therapies within ≤2 weeks or 5 half-lives, whichever is shorter.",
+      "quote": "Cytotoxic chemotherapy, small-molecule inhibitors, cell therapy, radiation, interventional radiology procedure, or similar investigational therapies within \u22642 weeks or 5 half-lives, whichever is shorter.",
       "start": 11071,
       "end": 11274,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Monoclonal antibodies including PD-1 checkpoint inhibitors (for example, pembrolizumab and nivolumab), antibody (Ab)-drug conjugates, radioimmunoconjugates, or similar therapies within ≤4 weeks.",
+      "quote": "Monoclonal antibodies including PD-1 checkpoint inhibitors (for example, pembrolizumab and nivolumab), antibody (Ab)-drug conjugates, radioimmunoconjugates, or similar therapies within \u22644 weeks.",
       "start": 11284,
       "end": 11478,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Any anti-PD-L1 treatment, including PD-L1 checkpoint inhibitors (for example, atezolizumab and durvalumab) and antibody-drug conjugates, within 120 days.",
       "start": 11488,
       "end": 11641,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Not recovered to Grade 1 or baseline or established as sequelae from all toxic effects of previous therapy (except alopecia, neuropathy, or autoimmune endocrinopathies with stable endocrine replacement therapy, or bone marrow parameters \\[any of Grade 1/2 permitted if directly related to bone marrow involvement\\]).",
       "start": 11651,
       "end": 11967,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
       "quote": "Used corticosteroids or other immunosuppressive medication, concurrently or within 14 days of administration of TAK-505, except for:",
       "start": 11974,
       "end": 12106,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "steroids: dose threshold"
     },
     {
       "quote": "a) Topical, intranasal, inhaled, ocular, or intra-articular corticosteroids. b) Physiologic doses of replacement steroid (for example, for adrenal insufficiency).",
       "start": 12114,
       "end": 12276,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 93"
     },
     {
-      "quote": "c) Steroid premedication for hypersensitivity reactions and antiemetic use. d) Stable steroid dose (established for ≥28 days before the first dose of TAK-505) for previously treated brain metastasis.",
+      "quote": "c) Steroid premedication for hypersensitivity reactions and antiemetic use. d) Stable steroid dose (established for \u226528 days before the first dose of TAK-505) for previously treated brain metastasis.",
       "start": 12284,
       "end": 12483,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 93"
     },
     {
-      "quote": "Corticosteroid dose on C1D1 should be ≤15 mg/d of prednisone or equivalent.",
+      "quote": "Corticosteroid dose on C1D1 should be \u226415 mg/d of prednisone or equivalent.",
       "start": 12484,
       "end": 12559,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 93"
     },
     {
       "quote": "Major surgery or traumatic injury within 8 weeks before the first dose of trial intervention.",
       "start": 12566,
       "end": 12659,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Unhealed wounds from surgery or injury.",
       "start": 12666,
       "end": 12705,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "unhealed wounds"
     },
     {
       "quote": "Any pre-existing medical or psychiatric condition or illness, metabolic dysfunction, physical examination finding, or clinical laboratory finding that gives reasonable suspicion of a disease or condition that would contraindicate the use of an investigational drug or that would limit compliance with trial requirements or compromise ability to provide written informed consent.",
       "start": 12712,
       "end": 13090,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     },
     {
       "quote": "Has a positive serum pregnancy test during the screening period or a positive urine pregnancy test on Day 1 before the first dose of trial intervention.",
       "start": 13097,
       "end": 13249,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Is capable of breastfeeding but does not agree to forego breastfeeding from the first dose of trial intervention through 180 days after the last dose of trial intervention.",
       "start": 13256,
       "end": 13428,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -716,84 +896,85 @@
       "start": 13435,
       "end": 13678,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Contraception methods may be considered highly effective if they can achieve a failure rate of \\<1% per year when used consistently and correctly.",
       "start": 13679,
       "end": 13825,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Is of male birth and fertile, and has partners of childbearing potential, but does not agree to use effective barrier contraception, that is, a condom, combined with at least 1 other form of acceptable contraception from signing of the main ICF until at least 180 days after the last dose of trial intervention.",
       "start": 13832,
       "end": 14143,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Does not agree to refrain from donating gametes from signing of the main ICF until 180 days after the last dose of trial intervention.",
       "start": 14150,
       "end": 14284,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Is a trial site employee, a site employee's immediate family member (for example, spouse, parent, child, and sibling), or is in a dependent relationship with a trial site employee who is involved in the conduct of this trial or may consent under duress.",
       "start": 14291,
       "end": 14544,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "site employee"
     },
     {
       "quote": "Is considered to be vulnerable, as defined per local regulations and if exclusion is required by local regulations.",
       "start": 14551,
       "end": 14666,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Examples are persons under safeguard of justice, persons deprived of liberty by judicial or administrative decision, persons receiving psychiatric care without their consent, persons admitted to a health or social establishment for purposes other than research, persons of full age who are subject to a legal protection measure (guardianship or curatorship), and persons unable to express their consent.",
       "start": 14667,
       "end": 15070,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Is unable or unwilling to comply with clinic visits and procedures outlined in the trial protocol.",
       "start": 15077,
       "end": 15175,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Is unwilling to provide informed consent/age-appropriate assent.",
       "start": 15182,
       "end": 15246,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Baseline prolongation of the QT interval with Fridericia correction method (QTcF) (for example, repeated demonstration of corrected QT interval \\[QTc\\] ≥480 ms, history of congenital long QT syndrome, or torsades de pointes).",
+      "quote": "Baseline prolongation of the QT interval with Fridericia correction method (QTcF) (for example, repeated demonstration of corrected QT interval \\[QTc\\] \u2265480 ms, history of congenital long QT syndrome, or torsades de pointes).",
       "start": 15253,
       "end": 15478,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "If patients are taking medications known to prolong the QTc at screening, patients may continue to take these medications as long as their baseline QTcF is \\<480 ms that are receiving such medications.",
       "start": 15479,
       "end": 15680,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Participants may not start using such medications on C1D1.",
       "start": 15681,
       "end": 15739,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     }
   ]
 }

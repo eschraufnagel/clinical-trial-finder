@@ -9,20 +9,28 @@
       "start": 0,
       "end": 18,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Histologically confirmed diagnosis of a solid tumor malignancy with homozygous deletion of the MTAP gene detected in tumor tissue.",
       "start": 22,
       "end": 152,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "MTAP deletion"
     },
     {
       "quote": "Unresectable or metastatic disease.",
       "start": 155,
       "end": 190,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -30,20 +38,27 @@
       "start": 193,
       "end": 364,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Age ≥ 18 years.",
+      "quote": "Age \u2265 18 years.",
       "start": 367,
       "end": 382,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1.",
       "start": 385,
       "end": 456,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -51,27 +66,40 @@
       "start": 459,
       "end": 483,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Exclusion Criteria",
       "start": 485,
       "end": 503,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Prior treatment with a PRMT5 or MAT2A inhibitor therapy.",
       "start": 507,
       "end": 563,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior PRMT5 or MAT2A inhibitor"
     },
     {
       "quote": "Active brain metastases or carcinomatous meningitis.",
       "start": 566,
       "end": 618,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        },
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -79,35 +107,38 @@
       "start": 621,
       "end": 721,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "bleeding"
     },
     {
       "quote": "Major surgery within 4 weeks of first dose of study treatment.",
       "start": 724,
       "end": 786,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "History of intestinal disease, inflammatory bowel disease, major gastric surgery, or other gastrointestinal conditions (eg, uncontrolled nausea, vomiting, malabsorption syndrome) likely to alter absorption of study treatment or result in inability to swallow oral medications.",
       "start": 789,
       "end": 1065,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "absorption"
     },
     {
       "quote": "Cardiac abnormalities.",
       "start": 1068,
       "end": 1090,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment: cardiac abnormalities"
     },
     {
       "quote": "Other protocol-defined Inclusion/Exclusion criteria apply.",
       "start": 1093,
       "end": 1151,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     }
   ]
 }
