@@ -10,6 +10,15 @@ export {
   pointForZip,
   UnknownZipError,
 } from "./geo.js";
+export { parseAgeLimit, recordFlags, searchTrials } from "./search.js";
+export type {
+  Candidate,
+  Flag,
+  FunnelStage,
+  NearestSite,
+  SearchRequest,
+  SearchResult,
+} from "./types.js";
 export {
   type CancerType,
   DEFAULT_VOCABULARY_DIR,

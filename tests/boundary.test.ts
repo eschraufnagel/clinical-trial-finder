@@ -545,6 +545,36 @@ describe("the search labelling tools cannot see the search", () => {
 });
 
 /**
+ * This repository's slice 0001: the search is arithmetic over registry data.
+ * It reaches no model, no parser and no screening agent, so its results
+ * don't depend on a model and its recall is measured on the search alone.
+ */
+describe("the search reaches no model, parser or screening agent", () => {
+  const ENTRY = fileURLToPath(new URL("../src/search/index.ts", import.meta.url));
+  const modules = reachableModules(ENTRY);
+  const forbidden = (file: string): boolean =>
+    [`${sep}models${sep}`, `${sep}criteria${sep}`, `${sep}screening${sep}`].some((dir) =>
+      file.includes(dir),
+    );
+
+  it("walks a real graph", () => {
+    expect(modules.some((m) => m.endsWith(`search${sep}search.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`search${sep}vocabulary.ts`))).toBe(true);
+  });
+
+  it("reaches none of them", () => {
+    expect(modules.filter(forbidden)).toEqual([]);
+  });
+
+  it("would catch one", () => {
+    expect(forbidden(`${sep}src${sep}models${sep}omlx.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}criteria${sep}parse.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}screening${sep}session.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}trials${sep}snapshot-types.ts`)).toBe(false);
+  });
+});
+
+/**
  * Slice 0004's two boundaries: the application cannot see the measurement, and
  * nothing outside `src/models/` chooses which model to call.
  *
