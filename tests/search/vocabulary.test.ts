@@ -61,6 +61,13 @@ describe("loadVocabulary", () => {
     ).sha256;
     expect(new Set([a, b, c]).size).toBe(3);
   });
+
+  it("keeps its checksum when only measured changes", () => {
+    const before = loadVocabulary("test", vocabularyDir(TYPE)).sha256;
+    const after = loadVocabulary("test", vocabularyDir({ ...TYPE, measured: true }));
+    expect(after.type.measured).toBe(true);
+    expect(after.sha256).toBe(before);
+  });
 });
 
 describe("reasonsFor", () => {

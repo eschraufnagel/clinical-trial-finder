@@ -23,7 +23,11 @@ export const DEFAULT_VOCABULARY_DIR = fileURLToPath(
 export interface CancerType {
   id: string;
   label: string;
-  /** True only once a committed held-out result covers this type. */
+  /**
+   * True only once a committed held-out result covers this type. Read as
+   * false for the checksum, so setting it doesn't rename the vocabulary the
+   * result measured.
+   */
   measured: boolean;
   /** Terms that name it, matched in conditions, keywords, titles and, for `rules`, eligibility text. */
   names: string[];
@@ -67,7 +71,7 @@ export function loadVocabulary(id: string, dir: string = DEFAULT_VOCABULARY_DIR)
   const type = validateType(parse(typeBytes, typePath), typePath, id);
   const generic = validateGeneric(parse(genericBytes, genericPath), genericPath);
   const sha256 = createHash("sha256")
-    .update(typeBytes)
+    .update(typeBytes.toString("utf8").replace(/("measured"\s*:\s*)true/, "$1false"))
     .update("\n")
     .update(genericBytes)
     .digest("hex");

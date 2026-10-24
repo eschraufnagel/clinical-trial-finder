@@ -285,3 +285,5 @@ Written as the work goes: the snapshot's real numbers, the gate answers, convent
 
   "Anywhere" drops 26: trials whose US sites aren't recruiting.
 - **Held-out recall is below the 0.95 bar. Stopped for Gate 3.** The plan's one more round is dev-only, and the dev pool has no misses to tune on. `measured` stays `false` until the gate is answered.
+- **Gate 3, answered (owner, 2026-10): accept 92.7% as the finding.** No second round. Every held-out miss was a trial about a site, a procedure or a side effect that takes any cancer, and every relevant trial not marked unclear was kept. 0002 builds on the search as it is, and `docs/search.md` reports the gap with the misses.
+- **After Gate 3, a change the plan didn't foresee.** `measured` sits inside the vocabulary file, so setting it would have changed the vocabulary's checksum and left the committed result naming a vocabulary that no longer exists. The checksum now reads `measured` as false, tested in `tests/search/vocabulary.test.ts`. `nsclc.json` has `measured: true`, its checksum is still `a3e87584fb11…`, and `search:eval -- --check` still passes.
