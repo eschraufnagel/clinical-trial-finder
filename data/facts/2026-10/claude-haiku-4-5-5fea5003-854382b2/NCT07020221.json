@@ -1,0 +1,97 @@
+{
+  "nctId": "NCT07020221",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 240,
+        "end": 295,
+        "text": "locally advanced unresectable or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 330,
+        "end": 420,
+        "text": "Measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST) v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 424,
+        "end": 491,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1209,
+        "end": 1302,
+        "text": "Symptomatic, untreated, or actively progressing known central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1581,
+        "end": 1626,
+        "text": "Individuals who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1347,
+        "end": 1577,
+        "text": "Evidence or history of uncontrolled, clinically significant hematological, renal, hepatic, endocrine, pulmonary, gastrointestinal, cardiovascular, psychiatric, coagulation, neurologic, dermatologic, autoimmune, or allergic disease"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

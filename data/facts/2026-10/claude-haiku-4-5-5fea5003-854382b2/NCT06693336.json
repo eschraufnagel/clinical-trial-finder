@@ -1,0 +1,110 @@
+{
+  "nctId": "NCT06693336",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2279,
+        "end": 2353,
+        "text": "Evidence of locally advanced T3 or T4 NSCLC or distant metastatic disease."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 61,
+        "end": 96,
+        "text": "Stage Ia, Ib, IIa, IIb or IIIa (N2)"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 259,
+        "end": 314,
+        "text": "No prior chemotherapy and/or thoracic radiation therapy"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 259,
+        "end": 314,
+        "text": "No prior chemotherapy and/or thoracic radiation therapy"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2473,
+        "end": 2565,
+        "text": "Patients with a previous malignancy within the last 5 years except non-melanoma skin cancer."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2994,
+        "end": 3030,
+        "text": "Pregnant or nursing female subjects."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histopathological confirmed NSCLC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Histopathological confirmed NSCLC",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -374,3 +374,8 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
 
   **Stopped for Gate 2.**
 - **Gate 2, answered (owner, 2026-10): take the recommendation.** The nine trusted facts are in `data/facts/trusted.json`, a list of per-fact flags. It sits beside `vocabulary.json`, so labels and runs keep naming the same vocabulary checksum. `statusFor` takes the trusted set: a mapping on an untrusted fact goes to `mayNotFitBy`, and its fact counts as unknown. Tests check every untrusted fact. Then held-out is scored once on Haiku.
+- **Step 11, held-out, scored once** (owner's go-ahead; Haiku 4.5, original prompt `5fea50034aea`; `evals/results/facts/05-5fea50034aea.json`). $0.20 spent, logged. 30 trials in 168 s.
+  - **All facts:** wrong rule-outs 60 of 230 (26.1%, 95% interval 20.8% to 32.1%); 59 whole-trial, in 21 of 30 trials. Recall 72.7% (170 of 234). Exact share of matched 90.7%.
+  - **The 9 trusted facts:** wrong rule-outs 19 of 95 (20.0%, 13.2% to 29.1%); 18 whole-trial, in 13 trials. Recall 67.3% (76 of 113). **The trust list didn't hold up:** 0 of 34 on dev, where it was chosen, and 19 of 95 on held-out.
+  - About 5 of the 19 are arguable grading artefacts: extent rules in trials for other cancers, which the labels call the search's, and two staging readings. The rest are real: steroid thresholds and "unable to stop", "heart attack within 1 year", a pregnancy-only rule, and missed scopes ("0-1 in 1a", KRAS in dose escalation).
+  - Both bars are missed for all facts and for the trusted facts. **Stopped to report.**

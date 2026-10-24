@@ -1,0 +1,98 @@
+{
+  "nctId": "NCT05038150",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1992,
+        "end": 2063,
+        "text": "At least 1 measurable lesion according to RECIST 1.1 (for solid tumors)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5442,
+        "end": 5530,
+        "text": "Present with symptomatic central nervous system metastasis or brain abscess at screening"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6875,
+        "end": 6984,
+        "text": "Positive for the presence of human immunodeficiency virus-1 (HIV-1) or human immunodeficiency virus-2 (HIV-2)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5004,
+        "end": 5139,
+        "text": "Received systemic or absorbable dosage of steroid hormone (prednisone or equivalent) of \\> 10 mg/day in the 14 days prior to enrollment"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5852,
+        "end": 5896,
+        "text": "Myocardial infarction occurred within 1 year"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Eastern Co-Operative Oncology Group (ECOG) performance status 0 ~ 1",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eastern Co-Operative Oncology Group (ECOG) performance status 0 ~ 1",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

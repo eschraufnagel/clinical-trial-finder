@@ -1,0 +1,269 @@
+{
+  "nctId": "NCT05570825",
+  "mappings": [
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 58,
+        "end": 164,
+        "text": "Pathologically or cytologically confirmed non-small cell lung cancer with no known oncogenic EGFR mutation"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 224,
+        "text": "no known oncogenic EGFR mutation, ALK rearrangement, ROS1 rearrangement or RET rearrangement"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 224,
+        "text": "no known oncogenic EGFR mutation, ALK rearrangement, ROS1 rearrangement or RET rearrangement"
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 224,
+        "text": "no known oncogenic EGFR mutation, ALK rearrangement, ROS1 rearrangement or RET rearrangement"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 227,
+        "end": 323,
+        "text": "Tumoral PD-L1 expression \\>=1% by any Clinical Laboratory Improvement Act (CLIA)-certified assay"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 326,
+        "end": 523,
+        "text": "Metastatic or recurrent non-small cell lung cancer (NSCLC). Stage IIIC per 8th edition TNM stage classification is allowed if not amenable to curative surgery or radiation per investigator judgment"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 526,
+        "end": 673,
+        "text": "At least one site of measurable disease as determined by the Investigator, using Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 676,
+        "end": 748,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1879,
+        "end": 2106,
+        "text": "Participants must not have received prior chemotherapy or immune checkpoint inhibitor or immune-modulatory therapy (e.g. anti-PD\\[L\\]1, anti-CTLA4, anti-TIM3, anti-GITR, anti-TIGIT, anti-LAG3), for metastatic or recurrent NSCLC"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1879,
+        "end": 2106,
+        "text": "Participants must not have received prior chemotherapy or immune checkpoint inhibitor or immune-modulatory therapy (e.g. anti-PD\\[L\\]1, anti-CTLA4, anti-TIM3, anti-GITR, anti-TIGIT, anti-LAG3), for metastatic or recurrent NSCLC"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2639,
+        "end": 2695,
+        "text": "Presence of other active cancers within the last 2 years"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2981,
+        "end": 3198,
+        "text": "Symptomatic central nervous system (CNS) metastases; participants with known brain metastasis must be asymptomatic with no steroids or escalating doses of antiepileptics within 7 days prior to start of study treatment"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3420,
+        "end": 3616,
+        "text": "Participants with spinal cord compression must have received local treatment and must have been symptomatically stable with no use of steroids for at least 7 days prior to start of study treatment"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3619,
+        "end": 3761,
+        "text": "Participants must not have an active autoimmune disease that has required immune modulating treatment within (\\<) 365 days prior to consenting"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4212,
+        "end": 4355,
+        "text": "Current symptomatic pneumonitis and any past history of immune checkpoint inhibitor related pneumonitis regardless of steroid treatment history"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5990,
+        "end": 6053,
+        "text": "Known uncontrolled HIV (human immunodeficiency virus) infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5372,
+        "end": 5453,
+        "text": "Known active chronic infections: Active hepatitis B, hepatitis C and tuberculosis"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4142,
+        "end": 4209,
+        "text": "History of organ transplant that requires use of immunosuppressives"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1652,
+        "end": 1701,
+        "text": "Pregnant or breast feeding women are not eligible"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Serious cerebrovascular and cardiac disease defined as: Active unstable angina pectoris, Congestive heart failure NYHA (New York Heart Association) > grade 3, Acute myocardial infarction within 3 months of consenting, Stroke or transient ischemic attack within 3 months of consenting",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Serious cerebrovascular and cardiac disease defined as: Active unstable angina pectoris, Congestive heart failure NYHA (New York Heart Association) > grade 3, Acute myocardial infarction within 3 months of consenting, Stroke or transient ischemic attack within 3 months of consenting",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

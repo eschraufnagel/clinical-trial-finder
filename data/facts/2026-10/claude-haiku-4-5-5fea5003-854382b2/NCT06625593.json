@@ -1,0 +1,110 @@
+{
+  "nctId": "NCT06625593",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 876,
+        "end": 914,
+        "text": "≥ 1 measurable lesion per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 918,
+        "end": 989,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1070,
+        "end": 1201,
+        "text": "Prior exposure to topoisomerase I inhibitor (TOP1i)-based antibody-drug conjugate (ADC) therapies or FGFR2b-targeted ADC therapies."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1549,
+        "end": 1623,
+        "text": "active leptomeningeal disease or uncontrolled, untreated brain metastasis."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1582,
+        "end": 1623,
+        "text": "uncontrolled, untreated brain metastasis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1957,
+        "end": 2148,
+        "text": "Any malignancy ≤ 2 years before first dose of study drug(s) except for the specific cancer under investigation in this study and any locally recurring cancer that has been treated curatively."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2152,
+        "end": 2308,
+        "text": "History of interstitial lung disease (ILD), noninfectious pneumonitis, oxygen saturation at rest \\< 92%, or requirement for supplemental oxygen at baseline."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "nctId": "NCT05661461",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 269,
+        "end": 337,
+        "text": "Histologically confirmed locally advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 381,
+        "end": 461,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0, 1, or 2"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2727,
+        "end": 2893,
+        "text": "Patients with meningeal carcinomatosis, leptomeningeal carcinomatosis, spinal cord compression, untreated brain metastases or symptomatic or unstable brain metastases"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2727,
+        "end": 2893,
+        "text": "Patients with meningeal carcinomatosis, leptomeningeal carcinomatosis, spinal cord compression, untreated brain metastases or symptomatic or unstable brain metastases"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4772,
+        "end": 4868,
+        "text": "Individuals with known human immunodeficiency virus (HIV) infection are excluded from this study"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5115,
+        "end": 5176,
+        "text": "Active Hepatitis B or Hepatitis C, with detectable viral load"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4668,
+        "end": 4764,
+        "text": "Patients with history of interstitial lung disease and/or pneumonitis, or pulmonary hypertension"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3615,
+        "end": 3677,
+        "text": "myocardial infarction ≤6 months prior to first study treatment"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5430,
+        "end": 5553,
+        "text": "High-dose systemic corticosteroids (\\>10 mg of prednisone or its equivalent) are not permitted within 2 weeks of first dose"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "nctId": "NCT07629960",
+  "mappings": [
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 239,
+        "end": 378,
+        "text": "evidence of a single KRAS G12C, G12D, G12V, G12A, G12S, or G13D mutation in tumor tissue or circulating tumor deoxyribonucleic acid (ctDNA)"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 383,
+        "end": 463,
+        "text": "Measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 468,
+        "end": 537,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0-1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 802,
+        "end": 909,
+        "text": "History of additional malignancy within the last 2 years, with some exceptions as specified in the protocol"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 914,
+        "end": 1003,
+        "text": "Active brain metastases (participants with asymptomatic brain metastases may be eligible)"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1008,
+        "end": 1176,
+        "text": "Have received prior targeted treatment(s) against KRAS, including pan-KRAS inhibitors, multi-RAS inhibitors, mutant-selective KRAS inhibitors, and RAS or KRAS degraders"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1181,
+        "end": 1333,
+        "text": "Active or uncontrolled systemic infection, such as tuberculosis, Hepatitis B virus (HBV), Hepatitis C virus (HCV), or Human immunodeficiency virus (HIV)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1181,
+        "end": 1333,
+        "text": "Active or uncontrolled systemic infection, such as tuberculosis, Hepatitis B virus (HBV), Hepatitis C virus (HCV), or Human immunodeficiency virus (HIV)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

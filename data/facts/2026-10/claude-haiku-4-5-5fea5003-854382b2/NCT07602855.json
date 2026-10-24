@@ -1,0 +1,184 @@
+{
+  "nctId": "NCT07602855",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 450,
+        "end": 580,
+        "text": "prior pathological diagnosis of complex SCLC \\[such as mixed SCLC and NSCLC\\] or transformed SCLC \\[NSCLC to SCLC\\] is not allowed"
+      },
+      "appliesTo": "ES-SCLC cohort"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 787,
+        "end": 882,
+        "text": "Metastatic NSCLC (Stage IV), according to American Joint Committee on Cancer (AJCC) 8th edition"
+      },
+      "appliesTo": "Squamous NSCLC or non-squamous NSCLC cohorts"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3013,
+        "end": 3268,
+        "text": "Has symptomatic Central Nervous System (CNS) metastases, CNS metastases with hemorrhagic features, CNS metastasis ≥ 1.5 cm, CNS radiation within 7 days prior to first dose, potential need for CNS radiation within the first cycle, or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3013,
+        "end": 3268,
+        "text": "Has symptomatic Central Nervous System (CNS) metastases, CNS metastases with hemorrhagic features, CNS metastasis ≥ 1.5 cm, CNS radiation within 7 days prior to first dose, potential need for CNS radiation within the first cycle, or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 886,
+        "end": 964,
+        "text": "Has at least 1 target lesion per RECIST 1.1, as determined by the investigator"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1110,
+        "end": 1206,
+        "text": "Has an ECOG performance status of 0 or 1, with no deterioration in the 2 weeks before first dose"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6032,
+        "end": 6283,
+        "text": "Any evidence of current Interstitial Lung Disease (ILD)/non-infectious pneumonitis OR a prior history of ILD/non-infectious pneumonitis requiring high-dose glucocorticoids OR suspected ILD/non-infectious pneumonitis that cannot be ruled out by imaging"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8850,
+        "end": 9008,
+        "text": "Has received immunosuppressive agents within 30 days prior to first dose of study treatment (or requires long-term (30 days or longer) glucocorticoid therapy)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8850,
+        "end": 9008,
+        "text": "Has received immunosuppressive agents within 30 days prior to first dose of study treatment (or requires long-term (30 days or longer) glucocorticoid therapy)"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5261,
+        "end": 5559,
+        "text": "History of any grade arterial thromboembolic event, Grade 3 and above venous thromboembolic event, as specified in National Cancer Institute-Common Terminology Criteria for Adverse Events (NCI-CTCAE) 6.0, hypertensive crisis, or hypertensive encephalopathy, within 12 months prior to the first dose"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8850,
+        "end": 9008,
+        "text": "Has received immunosuppressive agents within 30 days prior to first dose of study treatment (or requires long-term (30 days or longer) glucocorticoid therapy)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1344,
+        "end": 1563,
+        "text": "Is willing to use adequate contraception (contraceptive use by male and female participants should be consistent with local regulations regarding the methods of contraception for those participating in clinical studies)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8850,
+        "end": 9092,
+        "text": "Has received immunosuppressive agents within 30 days prior to first dose of study treatment (or requires long-term (30 days or longer) glucocorticoid therapy). Low-dose corticosteroids (prednisone ≤10 mg/day or equivalent) may be administered"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

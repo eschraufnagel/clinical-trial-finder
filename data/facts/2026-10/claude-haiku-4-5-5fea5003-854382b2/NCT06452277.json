@@ -1,0 +1,111 @@
+{
+  "nctId": "NCT06452277",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 242,
+        "end": 407,
+        "text": "locally advanced non-squamous NSCLC, not suitable for definitive therapy or metastatic non-squamous NSCLC at screening (small cell or mixed histologies are excluded)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 242,
+        "end": 347,
+        "text": "locally advanced non-squamous NSCLC, not suitable for definitive therapy or metastatic non-squamous NSCLC"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found",
+        "overexpression"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 432,
+        "end": 503,
+        "text": "Documented activating HER2 mutation in the tyrosine kinase domain (TKD)"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 824,
+        "end": 892,
+        "text": "No prior systemic therapy for locally advanced or metastatic disease"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 894,
+        "end": 991,
+        "text": "No prior treatment with a HER2 ex20ins-targeted therapy (e.g. poziotinib, trastuzumab deruxtecan)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1397,
+        "end": 1591,
+        "text": "Known history of prior malignancy except if the participant has undergone potentially curative therapy with no evidence of that disease recurrence for five years since initiation of that therapy"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2017,
+        "end": 2089,
+        "text": "Inability to discontinue treatment with chronic systemic corticosteroids"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}
