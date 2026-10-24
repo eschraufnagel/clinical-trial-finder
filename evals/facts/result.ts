@@ -23,7 +23,10 @@ export interface FactsEvalResult {
   labelRows: LabelRow[];
   rejected: { nctId: string; reason: string }[];
   metrics: FactMetrics;
-  /** Added at Gate 2: the facts that may rule out, and the same numbers on their rows alone. */
+  /**
+   * Result 05 only: the trust list tried at Gate 2 and its numbers on those facts'
+   * rows. The list was dropped when held-out found it no safer (`gate-2-finding.md`).
+   */
   trustedFacts?: string[];
   trustedMetrics?: FactMetrics;
 }

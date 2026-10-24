@@ -20,9 +20,7 @@ export type {
 export { FactMappingError } from "./types.js";
 export {
   DEFAULT_FACT_VOCABULARY,
-  DEFAULT_TRUSTED_FACTS,
   FactVocabularyError,
   factsFor,
   loadFactVocabulary,
-  loadTrustedFacts,
 } from "./vocabulary.js";

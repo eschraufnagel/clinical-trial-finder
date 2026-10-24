@@ -1,11 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { dependsOn, ProfileError, statusFor } from "../../src/facts/status.js";
 import type { FactMapping, TrialFacts } from "../../src/facts/types.js";
-import { loadFactVocabulary, loadTrustedFacts } from "../../src/facts/vocabulary.js";
+import { loadFactVocabulary } from "../../src/facts/vocabulary.js";
 
 const vocabulary = loadFactVocabulary();
-/** Every fact trusted, so these tests check the rules apart from the trust list. */
-const ALL = new Set(vocabulary.facts.map((f) => f.id));
 
 const mapping = (factId: string, rulesOut: string[], appliesTo?: string): FactMapping => ({
   factId,
@@ -35,104 +33,73 @@ const trial = (nctId: string, mappings: FactMapping[]): TrialFacts => ({
 });
 
 describe("statusFor", () => {
-  it("never rules a trial out on an unknown, for any fact in the vocabulary", () => {
+  it("never removes a trial: every answer of every fact, ruled out by a mapping, is only a hint", () => {
     for (const fact of vocabulary.facts) {
-      const allButOne = fact.answers.slice(1).map((a) => a.id);
-      const t = trial("NCT00000001", [mapping(fact.id, allButOne)]);
-      const s = statusFor(t, {}, vocabulary, ALL);
-      expect(s.status, fact.id).toBe("open");
-      expect(s.unknown).toEqual([fact.id]);
+      for (const answer of fact.answers) {
+        const t = trial("NCT00000001", [mapping(fact.id, [answer.id])]);
+        const s = statusFor(t, { [fact.id]: answer.id }, vocabulary);
+        expect(Object.keys(s).sort(), `${fact.id}=${answer.id}`).toEqual([
+          "fits",
+          "hints",
+          "nctId",
+          "partHints",
+          "unknown",
+        ]);
+        expect(s.hints.map((m) => m.factId)).toEqual([fact.id]);
+        expect(s.fits).toEqual([]);
+        expect(s.unknown).toEqual([fact.id]);
+      }
     }
   });
 
-  it("rules a trial out only on an answer a whole-trial mapping rules out", () => {
+  it("calls an unanswered fact unknown, and an answer no mapping hints against a fit", () => {
     const t = trial("NCT00000001", [
       mapping("ecog", ["ps2", "ps3_4"]),
       mapping("hiv", ["uncontrolled"]),
     ]);
-    const out = statusFor(t, { ecog: "ps2", hiv: "no" }, vocabulary, ALL);
-    expect(out.status).toBe("ruled-out");
-    expect(out.ruledOutBy.map((m) => m.factId)).toEqual(["ecog"]);
-    expect(out.fits).toEqual(["hiv"]);
-    const open = statusFor(t, { ecog: "ps1" }, vocabulary, ALL);
-    expect(open).toMatchObject({ status: "open", fits: ["ecog"], unknown: ["hiv"] });
+    expect(statusFor(t, { ecog: "ps1" }, vocabulary)).toMatchObject({
+      hints: [],
+      fits: ["ecog"],
+      unknown: ["hiv"],
+    });
   });
 
-  it("only partly rules out a trial on a mapping scoped to part of it", () => {
+  it("puts a mapping scoped to part of the trial in partHints", () => {
     const t = trial("NCT00000001", [mapping("kras", ["none_found"], "Cohort B")]);
-    const s = statusFor(t, { kras: "none_found" }, vocabulary, ALL);
-    expect(s.status).toBe("open");
-    expect(s.partlyRuledOutBy).toHaveLength(1);
-    expect(s.fits).toEqual(["kras"]);
+    const s = statusFor(t, { kras: "none_found" }, vocabulary);
+    expect(s.hints).toEqual([]);
+    expect(s.partHints).toHaveLength(1);
   });
 
-  it("checks every mapping of a fact, and doesn't call a fact that ruled out a fit", () => {
+  it("gives one hint per mapping that names the answer", () => {
     const t = trial("NCT00000001", [
       mapping("other_cancer", ["within_2_years"]),
       mapping("other_cancer", ["within_2_years", "two_to_5_years"]),
     ]);
-    const s = statusFor(t, { other_cancer: "two_to_5_years" }, vocabulary, ALL);
-    expect(s.status).toBe("ruled-out");
-    expect(s.ruledOutBy).toHaveLength(1);
-    expect(s.fits).toEqual([]);
-  });
-
-  it("leaves a trial with no mappings open, with nothing fitting or unknown", () => {
-    expect(statusFor(trial("NCT00000001", []), { ecog: "ps0" }, vocabulary, ALL)).toMatchObject({
-      status: "open",
-      fits: [],
-      unknown: [],
-    });
+    expect(statusFor(t, { other_cancer: "two_to_5_years" }, vocabulary).hints).toHaveLength(1);
+    expect(statusFor(t, { other_cancer: "within_2_years" }, vocabulary).hints).toHaveLength(2);
   });
 
   it("refuses a profile naming a fact or answer the vocabulary lacks", () => {
     const t = trial("NCT00000001", []);
-    expect(() => statusFor(t, { mood: "good", ecog: "ps9" }, vocabulary, ALL)).toThrow(
-      ProfileError,
-    );
-    expect(() => statusFor(t, { mood: "good", ecog: "ps9" }, vocabulary, ALL)).toThrow(
+    expect(() => statusFor(t, { mood: "good", ecog: "ps9" }, vocabulary)).toThrow(ProfileError);
+    expect(() => statusFor(t, { mood: "good", ecog: "ps9" }, vocabulary)).toThrow(
       /mood isn't a fact[\s\S]*ecog has no answer ps9/,
     );
   });
 });
 
 describe("dependsOn", () => {
-  it("counts open trials per unknown fact, most first", () => {
+  it("counts every trial per unanswered fact, and not facts the person answered", () => {
     const profile = { ecog: "ps3_4" };
     const statuses = [
       trial("NCT00000001", [mapping("egfr", ["none_found"]), mapping("brain_mets", ["symptoms"])]),
       trial("NCT00000002", [mapping("egfr", ["none_found"])]),
       trial("NCT00000003", [mapping("egfr", ["none_found"]), mapping("ecog", ["ps3_4"])]),
-    ].map((t) => statusFor(t, profile, vocabulary, ALL));
+    ].map((t) => statusFor(t, profile, vocabulary));
     expect(dependsOn(statuses)).toEqual([
-      { factId: "egfr", trials: 2 },
+      { factId: "egfr", trials: 3 },
       { factId: "brain_mets", trials: 1 },
     ]);
-  });
-});
-
-describe("the trust list", () => {
-  const trusted = loadTrustedFacts(vocabulary);
-
-  it("names nine facts, all in the vocabulary", () => {
-    expect(trusted.size).toBe(9);
-    expect([...trusted].every((f) => ALL.has(f))).toBe(true);
-  });
-
-  it("never rules a trial out on an untrusted fact, for every untrusted fact", () => {
-    for (const fact of vocabulary.facts.filter((f) => !trusted.has(f.id))) {
-      const answer = fact.answers[0]?.id ?? "";
-      const t = trial("NCT00000001", [mapping(fact.id, [answer])]);
-      const s = statusFor(t, { [fact.id]: answer }, vocabulary, trusted);
-      expect(s.status, fact.id).toBe("open");
-      expect(s.mayNotFitBy.map((m) => m.factId)).toEqual([fact.id]);
-      expect(s.unknown).toEqual([fact.id]);
-      expect(s.fits).toEqual([]);
-    }
-  });
-
-  it("still rules a trial out on a trusted fact", () => {
-    const t = trial("NCT00000001", [mapping("ecog", ["ps3_4"])]);
-    expect(statusFor(t, { ecog: "ps3_4" }, vocabulary, trusted).status).toBe("ruled-out");
   });
 });

@@ -1,16 +1,15 @@
 import type { FactMapping, FactVocabulary, TrialFacts } from "./types.js";
 
 /**
- * Where a person stands with each trial, given what they've answered (spec
- * 0002 §4). Pure: no model, no file, no clock.
+ * What a person's answers say about a trial (spec 0002 §4, amended after
+ * Gate 2). Pure: no model, no file, no clock.
  *
- * **An unanswered fact is unknown, and an unknown never rules a trial out.**
- * Only a whole-trial mapping on a trusted fact whose `rulesOut` holds the
- * person's own answer does. A mapping on an untrusted fact (0002 Gate 2) that
- * would rule the person out is reported as "may not fit", and its fact counts
- * as unknown: an uncertain mapping never excludes either. A mapping scoped
- * to part of a trial (`appliesTo`) never rules out the whole trial; it's
- * reported as ruling out part of it.
+ * **No mapping rules a trial out.** On held-out, a quarter of the model's
+ * mappings ruled out an answer the trial accepts (`gate-2-finding.md`). So a
+ * mapping whose `rulesOut` holds the person's answer is a hint, "may not
+ * fit", shown with the trial's own words for the person and their oncologist.
+ * Nothing here removes a trial. An unanswered fact is unknown, and a fact
+ * with a hint counts as unknown too: the mapping is not trusted to settle it.
  */
 
 /** A person's answers: fact id to answer id. A missing fact is unknown. */
@@ -18,16 +17,13 @@ export type Profile = Readonly<Record<string, string>>;
 
 export interface TrialStatus {
   nctId: string;
-  status: "ruled-out" | "open";
-  /** Whole-trial mappings whose `rulesOut` holds the profile's answer. */
-  ruledOutBy: FactMapping[];
-  /** The same, for mappings scoped to part of the trial. Never makes the trial ruled out. */
-  partlyRuledOutBy: FactMapping[];
-  /** Mappings on untrusted facts that would rule the person out. Shown, never acted on. */
-  mayNotFitBy: FactMapping[];
-  /** Facts the trial maps that the profile answers, and that none of its mappings rule out. */
+  /** Whole-trial mappings whose `rulesOut` holds the profile's answer: "may not fit". */
+  hints: FactMapping[];
+  /** The same, for mappings scoped to part of the trial. */
+  partHints: FactMapping[];
+  /** Facts the trial maps that the profile answers, and that no mapping hints against. */
   fits: string[];
-  /** Facts the trial maps that the profile doesn't answer, or that only an untrusted mapping rules out. */
+  /** Facts the trial maps that the profile doesn't answer, or that a hint covers. */
   unknown: string[];
 }
 
@@ -55,52 +51,43 @@ export function statusFor(
   trial: TrialFacts,
   profile: Profile,
   vocabulary: FactVocabulary,
-  trusted: ReadonlySet<string>,
 ): TrialStatus {
   validateProfile(profile, vocabulary);
-  const ruledOutBy: FactMapping[] = [];
-  const partlyRuledOutBy: FactMapping[] = [];
-  const mayNotFitBy: FactMapping[] = [];
+  const hints: FactMapping[] = [];
+  const partHints: FactMapping[] = [];
   const mapped = new Set<string>();
-  const failed = new Set<string>();
-  const uncertain = new Set<string>();
+  const hinted = new Set<string>();
 
   for (const mapping of trial.mappings) {
     mapped.add(mapping.factId);
     const answer = profile[mapping.factId];
     if (answer === undefined || !mapping.rulesOut.includes(answer)) continue;
-    if (!trusted.has(mapping.factId)) {
-      mayNotFitBy.push(mapping);
-      uncertain.add(mapping.factId);
-    } else if (mapping.appliesTo === undefined) {
-      ruledOutBy.push(mapping);
-      failed.add(mapping.factId);
-    } else {
-      partlyRuledOutBy.push(mapping);
-    }
+    hinted.add(mapping.factId);
+    (mapping.appliesTo === undefined ? hints : partHints).push(mapping);
   }
 
   const facts = [...mapped].sort();
   return {
     nctId: trial.nctId,
-    status: ruledOutBy.length > 0 ? "ruled-out" : "open",
-    ruledOutBy,
-    partlyRuledOutBy,
-    mayNotFitBy,
-    fits: facts.filter((f) => profile[f] !== undefined && !failed.has(f) && !uncertain.has(f)),
-    unknown: facts.filter((f) => profile[f] === undefined || uncertain.has(f)),
+    hints,
+    partHints,
+    fits: facts.filter((f) => profile[f] !== undefined && !hinted.has(f)),
+    unknown: facts.filter((f) => profile[f] === undefined || hinted.has(f)),
   };
 }
 
 /**
- * For each fact, how many open trials list it as unknown: how many trials an
- * answer to it could settle. Most first, then by fact id.
+ * For each fact the person hasn't answered, how many trials map it: how many
+ * trials an answer could flag. Every trial counts, since none is dropped.
+ * Most first, then by fact id.
  */
 export function dependsOn(statuses: readonly TrialStatus[]): { factId: string; trials: number }[] {
   const counts = new Map<string, number>();
   for (const s of statuses) {
-    if (s.status !== "open") continue;
-    for (const f of s.unknown) counts.set(f, (counts.get(f) ?? 0) + 1);
+    const answered = new Set([...s.hints, ...s.partHints].map((m) => m.factId));
+    for (const f of s.unknown) {
+      if (!answered.has(f)) counts.set(f, (counts.get(f) ?? 0) + 1);
+    }
   }
   return [...counts]
     .map(([factId, trials]) => ({ factId, trials }))
