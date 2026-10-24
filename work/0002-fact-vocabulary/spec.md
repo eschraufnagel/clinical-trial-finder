@@ -232,7 +232,7 @@ function statusFor(trial: TrialFacts, profile: Profile, vocabulary: FactVocabula
 }
 ```
 
-- **Passages come from the inherited skeleton splitter** in `scripts/label-criteria.ts`, factored out so both tools use it.
+- **Passages come from the inherited skeleton splitter**, `splitPassages` in `scripts/label-criteria.ts`. *Amended in plan: it's imported, not factored out. It's already exported, and that file runs only under `import.meta.main`.*
 - **Each passage gets either mappings or an `unmapped` category:**
   - `organ-function`: labs and organ thresholds;
   - `procedure`: consent, contraception, compliance, washouts;
@@ -286,6 +286,7 @@ Reported per set, each with a Wilson 95% interval where it's a proportion:
 - **Mapping recall:** at least 0.6.
 - **Coverage:** reported, with no bar. If labelled coverage of patient-level rules is low, that is the finding that matters for open question 1, and the vocabulary gaps say what to add.
 - **Tuning:** the prompt is tuned on the dev set only. The held-out set is scored once, or twice if the first misses a bar after one more dev round, as in 0001.
+- *Amended in plan:* the held-out set is scored before the candidates run (§3.4), and Gate 2 decides that run from the held-out result. The candidates are always mapped with a prompt whose held-out result is known.
 
 ---
 
