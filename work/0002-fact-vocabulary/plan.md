@@ -318,3 +318,4 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - **daily steroids added** (`steroids_daily`): 527 trials (47%) mention corticosteroids, mostly "requiring systemic steroids" exclusions, which a person can answer.
   - **prior antibody-drug conjugate added** (`prior_adc`): 111 trials (10%), mostly excluding people who've had one with the same payload.
   - RET (13) and MET (37) stay. Few trials mention them, but for those trials they decide the cohort.
+- **Step 3.** The labelling tools as planned. `skeleton` and `drawSample` are tested in `tests/evals/facts-labels.test.ts` beside the loader, which the plan didn't list. `ANNOTATION.md` has eight worked cases, three more than planned: histology from "confirmed NSCLC", extent from "stage IV or recurrent", and "squamous or non-squamous".

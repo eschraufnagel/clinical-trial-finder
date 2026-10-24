@@ -545,6 +545,50 @@ describe("the search labelling tools cannot see the search", () => {
 });
 
 /**
+ * This repository's slice 0002: the fact labelling tools can't see the
+ * mapper. Labels written knowing what the mapper produced would agree with it
+ * by construction. They may read the vocabulary and its types, nothing else
+ * under `src/facts/`, and no model.
+ */
+describe("the facts labelling tools cannot see the mapper", () => {
+  const TOOLS = ["facts-sample.ts", "facts-label-show.ts"].map((name) =>
+    fileURLToPath(new URL(`../scripts/${name}`, import.meta.url)),
+  );
+  const modules = [...new Set(TOOLS.flatMap(reachableModules))];
+
+  const forbidden = (file: string): boolean =>
+    file.includes(`${sep}models${sep}`) ||
+    (file.includes(`${sep}src${sep}facts${sep}`) &&
+      !file.endsWith(`facts${sep}vocabulary.ts`) &&
+      !file.endsWith(`facts${sep}types.ts`));
+
+  it("walks a real graph", () => {
+    expect(modules.some((m) => m.endsWith(`src${sep}facts${sep}vocabulary.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`evals${sep}facts${sep}labels.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`scripts${sep}label-criteria.ts`))).toBe(true);
+  });
+
+  it("reaches neither the mapper nor a model", () => {
+    expect(modules.filter(forbidden)).toEqual([]);
+  });
+
+  it("reaches nothing that touches the network", () => {
+    const offenders = modules
+      .map((file) => ({ file, usage: findNetworkUsage(file) }))
+      .filter(({ usage }) => usage.length > 0);
+    expect(offenders).toEqual([]);
+  });
+
+  it("would catch an import of the mapper or a model", () => {
+    expect(forbidden(`${sep}src${sep}facts${sep}map.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}facts${sep}index.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}models${sep}omlx.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}facts${sep}vocabulary.ts`)).toBe(false);
+    expect(forbidden(`${sep}src${sep}facts${sep}types.ts`)).toBe(false);
+  });
+});
+
+/**
  * This repository's slice 0001: the search is arithmetic over registry data.
  * It reaches no model, no parser and no screening agent, so its results
  * don't depend on a model and its recall is measured on the search alone.
