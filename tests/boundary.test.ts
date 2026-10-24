@@ -593,13 +593,17 @@ describe("the facts labelling tools cannot see the mapper", () => {
  * It reaches no model, no parser and no screening agent, so its results
  * don't depend on a model and its recall is measured on the search alone.
  */
-describe("the search reaches no model, parser or screening agent", () => {
+describe("the search reaches no model, parser, screening agent or fact mapping", () => {
   const ENTRY = fileURLToPath(new URL("../src/search/index.ts", import.meta.url));
   const modules = reachableModules(ENTRY);
+  // Slice 0002 added `facts`: the search stays independent of the mapping.
   const forbidden = (file: string): boolean =>
-    [`${sep}models${sep}`, `${sep}criteria${sep}`, `${sep}screening${sep}`].some((dir) =>
-      file.includes(dir),
-    );
+    [
+      `${sep}models${sep}`,
+      `${sep}criteria${sep}`,
+      `${sep}screening${sep}`,
+      `${sep}facts${sep}`,
+    ].some((dir) => file.includes(dir));
 
   it("walks a real graph", () => {
     expect(modules.some((m) => m.endsWith(`search${sep}search.ts`))).toBe(true);
@@ -614,7 +618,54 @@ describe("the search reaches no model, parser or screening agent", () => {
     expect(forbidden(`${sep}src${sep}models${sep}omlx.ts`)).toBe(true);
     expect(forbidden(`${sep}src${sep}criteria${sep}parse.ts`)).toBe(true);
     expect(forbidden(`${sep}src${sep}screening${sep}session.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}facts${sep}status.ts`)).toBe(true);
     expect(forbidden(`${sep}src${sep}trials${sep}snapshot-types.ts`)).toBe(false);
+  });
+});
+
+/**
+ * This repository's slice 0002: what a person's answers do to a trial is
+ * arithmetic over committed mappings. The status function and the vocabulary
+ * reach no model. The mapper takes its adapter as an argument, so no file
+ * under `src/facts/` reaches the factory that builds one.
+ */
+describe("the fact status reaches no model, and src/facts/ builds none", () => {
+  const facts = (name: string) => fileURLToPath(new URL(`../src/facts/${name}`, import.meta.url));
+  const statusModules = [
+    ...new Set(["status.ts", "vocabulary.ts"].map(facts).flatMap(reachableModules)),
+  ];
+  const allModules = [
+    ...new Set(
+      readdirSync(fileURLToPath(new URL("../src/facts/", import.meta.url)))
+        .filter((n) => n.endsWith(".ts"))
+        .map(facts)
+        .flatMap(reachableModules),
+    ),
+  ];
+  const isModel = (file: string): boolean => file.includes(`${sep}models${sep}`);
+  const isFactory = (file: string): boolean =>
+    file.endsWith(`models${sep}factory.ts`) || file.endsWith(`models${sep}index.ts`);
+
+  it("walks a real graph", () => {
+    expect(statusModules.some((m) => m.endsWith(`facts${sep}status.ts`))).toBe(true);
+    expect(allModules.some((m) => m.endsWith(`facts${sep}types.ts`))).toBe(true);
+    expect(allModules.some((m) => m.endsWith(`criteria${sep}locate.ts`))).toBe(true);
+    expect(allModules.some((m) => m.endsWith(`models${sep}types.ts`))).toBe(true);
+  });
+
+  it("keeps the status function and vocabulary away from every model module", () => {
+    expect(statusModules.filter(isModel)).toEqual([]);
+  });
+
+  it("keeps all of src/facts/ away from the factory", () => {
+    expect(allModules.filter(isFactory)).toEqual([]);
+  });
+
+  it("would catch either", () => {
+    expect(isModel(`${sep}src${sep}models${sep}types.ts`)).toBe(true);
+    expect(isFactory(`${sep}src${sep}models${sep}factory.ts`)).toBe(true);
+    expect(isFactory(`${sep}src${sep}models${sep}index.ts`)).toBe(true);
+    expect(isFactory(`${sep}src${sep}models${sep}types.ts`)).toBe(false);
   });
 });
 
