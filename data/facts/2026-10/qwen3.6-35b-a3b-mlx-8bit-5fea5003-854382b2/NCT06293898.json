@@ -1,0 +1,364 @@
+{
+  "nctId": "NCT06293898",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 330,
+        "end": 568,
+        "text": "Documented locally advanced or metastatic HER2-expressing (IHC 1+ to 3+ and/or HER2 gene amplification or activating mutation \\[see Table 17-5\\] in tumor specimen by ISH or NGS) solid tumor(s) not amenable to curative surgery or radiation"
+      },
+      "appliesTo": "Dose Escalation and Dose Finding"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6461,
+        "end": 6622,
+        "text": "Has documented locally advanced or metastatic HER2-expressing (as defined in Inclusion Criterion #5) solid tumor(s) not amenable to curative surgery or radiation"
+      },
+      "appliesTo": "Part B: Basket Dosing"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5511,
+        "end": 5720,
+        "text": "Histologically confirmed advanced or unresectable HER2-expressing (as defined in Inclusion Criterion #5) urothelial carcinoma of the upper or lower urinary tract, not amenable to curative surgery or radiation."
+      },
+      "appliesTo": "Part A: Randomized Doses"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2339,
+        "end": 2437,
+        "text": "At least one measurable lesion based on RECIST (Response Evaluation Criteria in Solid Tumors) V1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2441,
+        "end": 2514,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG PS) of 0 to 1"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 330,
+        "end": 522,
+        "text": "Documented locally advanced or metastatic HER2-expressing (IHC 1+ to 3+ and/or HER2 gene amplification or activating mutation \\[see Table 17-5\\] in tumor specimen by ISH or NGS) solid tumor(s)"
+      },
+      "appliesTo": "Dose Escalation and Dose Finding"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6461,
+        "end": 6576,
+        "text": "Has documented locally advanced or metastatic HER2-expressing (as defined in Inclusion Criterion #5) solid tumor(s)"
+      },
+      "appliesTo": "Part B: Basket Dosing"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5511,
+        "end": 5636,
+        "text": "Histologically confirmed advanced or unresectable HER2-expressing (as defined in Inclusion Criterion #5) urothelial carcinoma"
+      },
+      "appliesTo": "Part A: Randomized Doses"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5721,
+        "end": 5840,
+        "text": "Mixed histological types are allowed if urothelial is the primary histology; however, small cell histology is excluded."
+      },
+      "appliesTo": "Part A: Randomized Doses"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 573,
+        "end": 778,
+        "text": "has received at least 2 lines of standard therapy, including adjuvant/neoadjuvant treatment, or whose cancer is considered refractory to the standard of care or for which no standard treatment is available"
+      },
+      "appliesTo": "Dose Escalation and Dose Finding"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6261,
+        "end": 6405,
+        "text": "Participants should have no more than 3 prior lines of systemic cytotoxic therapy (eg, ADC, chemotherapy) in the advanced or metastatic setting."
+      },
+      "appliesTo": "Part A: Randomized Doses"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5848,
+        "end": 5992,
+        "text": "Participants with progression or recurrence following receipt of an ADC (eg, enfortumab vedotin or disitamab vedotin) and anti-PD1/PD-L1 therapy"
+      },
+      "appliesTo": "Part A: Randomized Doses"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 7097,
+        "end": 7183,
+        "text": "Participants with HER2 expression in breast cancer, status post-trastuzumab deruxtecan"
+      },
+      "appliesTo": "Part B: Basket Dosing"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13500,
+        "end": 13553,
+        "text": "Prior treatment with any topoisomerase inhibitor ADC."
+      },
+      "appliesTo": "Dose Expansion Only"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5848,
+        "end": 5992,
+        "text": "Participants with progression or recurrence following receipt of an ADC (eg, enfortumab vedotin or disitamab vedotin) and anti-PD1/PD-L1 therapy"
+      },
+      "appliesTo": "Part A: Randomized Doses"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8563,
+        "end": 8778,
+        "text": "Active autoimmune diseases and inflammatory diseases, such as systemic lupus erythematosus, psoriasis requiring systemic treatment, rheumatoid arthritis, inflammatory bowel disease, and Hashimoto's thyroiditis, etc."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9284,
+        "end": 9397,
+        "text": "other malignancy treated with curative intent with a disease-free interval of at least 3 years prior to screening"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10454,
+        "end": 10721,
+        "text": "active or untreated CNS metastases and/or carcinomatous meningitis should be excluded. Patients with previously treated brain metastases may participate provided they are clinically stable for at least 4 weeks and have no evidence of new or enlarging brain metastases"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11878,
+        "end": 11940,
+        "text": "Undetectable HIV RNA and CD4 count ≥ 350 cells/μL at screening"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12197,
+        "end": 12278,
+        "text": "Participants with active hepatitis B virus (HBV) infection (positive HBsAg test)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12634,
+        "end": 12761,
+        "text": "Participants with active hepatitis C virus (HCV) infection (HCV antibody positive and HCV RNA \\> the lower limit of detection)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13255,
+        "end": 13348,
+        "text": "Participants who are pregnant, breastfeeding, or planning to become pregnant during the study"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11173,
+        "end": 11280,
+        "text": "Participants who are receiving treatment with systemic glucocorticoids \\>10 mg/day equivalent of prednisone"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Prior platinum therapy is allowed but not required.",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Prior platinum therapy is allowed but not required.",
+        "appliesTo": "Part A: Randomized Doses"
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Prior platinum therapy is allowed but not required.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Prior platinum therapy is allowed but not required.",
+        "appliesTo": "Part A: Randomized Doses"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "has received at least 2 lines of standard therapy, including adjuvant/neoadjuvant treatment, or whose cancer is considered refractory to the standard of care or for which no standard treatment is available",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero",
+          "one"
+        ],
+        "polarity": "inclusion",
+        "quote": "has received at least 2 lines of standard therapy, including adjuvant/neoadjuvant treatment, or whose cancer is considered refractory to the standard of care or for which no standard treatment is available",
+        "appliesTo": "Part B: Basket Dosing"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with a history of noninfectious interstitial lung disease (ILD)/ pneumonitis that required treatment with steroids, have current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "past",
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with a history of noninfectious interstitial lung disease (ILD)/ pneumonitis that required treatment with steroids, have current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

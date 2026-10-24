@@ -344,3 +344,13 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - **Result file names** are `NN-<prompt version>.json`, which is what `nextRunFile` accepts. The run name, which carries the model, is recorded inside.
   - `biome.jsonc` ignores `evals/results/facts` and `data/facts/2026-10`, as planned.
 - **Step 9.** `scripts/lib/model-flags.ts` and its test are copied from the prescreening repository. The test drops its block on that repository's two eval scripts, which aren't here, and `tests/scripts/facts-map.test.ts` tests this script's dry plan instead. `facts:map` gained `--limit N`, for timing a few trials. `--batch` changes only the estimate: a batch run, if Gate 2 chooses one, needs `createAdapter`'s batch ledger wired in first.
+- **Step 10, the local model.** `facts:map` loads `.env` with `node --env-file-if-exists=.env`, as the prescreening repository's model scripts did. The plan didn't say how the key reaches the script. The owner put it in `.env`; Claude didn't edit that file.
+- **Step 10, dev run 1** (prompt `5fea50034aea`; `evals/results/facts/01-5fea50034aea.json`). Qwen3.6-35B-A3B-MLX-8bit, 8-bit, temperature 0, seed 20260921. 10 trials, 107 mappings, 109 labelled.
+  - Wrong rule-outs 32 (29.9%): 20 whole-trial, in 8 of 10 trials. Mapping recall 62.4%. Exact share of matched mappings 87.8%.
+  - Timing: 3.4 s per 1,000 characters after the first trial (36 s for a 3,000-character trial while the model loaded).
+  - What the wrong mappings are:
+    - rules inside another cancer type's cohort, mapped with a scope (10);
+    - the same fact with a different window or condition (7), e.g. a 3-year other-cancer window ruling out `two_to_5_years`, or "pneumonitis that required steroids";
+    - "symptomatic" brain metastases ruling out `not_stable_no_symptoms` too (3);
+    - permission sentences read as exclusions (5), including "active brain metastases are eligible if…";
+    - misreadings (7), e.g. "active uncontrolled HIV" ruling out `controlled`.

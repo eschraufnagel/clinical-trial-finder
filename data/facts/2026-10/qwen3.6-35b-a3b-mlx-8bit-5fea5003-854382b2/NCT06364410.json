@@ -1,0 +1,208 @@
+{
+  "nctId": "NCT06364410",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 151,
+        "text": "In the dose escalation, patients must have a histologically documented locally advanced, unresectable, or metastatic solid tumor"
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 602,
+        "end": 764,
+        "text": "In the dose expansion, patients must have histologically documented locally advanced, unresectable or metastatic gastric or gastroesophageal junction (GEJ) cancer"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 151,
+        "text": "In the dose escalation, patients must have a histologically documented locally advanced, unresectable, or metastatic solid tumor"
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 602,
+        "end": 764,
+        "text": "In the dose expansion, patients must have histologically documented locally advanced, unresectable or metastatic gastric or gastroesophageal junction (GEJ) cancer"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 328,
+        "end": 564,
+        "text": "HER2 expression by immunohistochemistry (IHC) (1+, 2+, or 3+) or HER2 amplification by in situ hybridization (ISH) or next generation sequencing (NGS) (on any Clinical Laboratory Improvements Amendments \\[CLIA\\] platform on tissue), AND"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 569,
+        "end": 599,
+        "text": "T-DXd (DS-8201a)-naive disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1595,
+        "end": 1681,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 1 (Karnofsky ≥ 70%)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4858,
+        "end": 5014,
+        "text": "Human immunodeficiency virus-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5264,
+        "end": 5389,
+        "text": "For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5558,
+        "end": 5836,
+        "text": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS-specific treatment is not required and is unlikely to be required during the first cycle of study treatment"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5558,
+        "end": 5836,
+        "text": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS-specific treatment is not required and is unlikely to be required during the first cycle of study treatment"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11048,
+        "end": 11206,
+        "text": "Pregnant women are excluded from this study because T-DXd (DS-8201a) and azenosertib (ZN-c3) have the potential risk for teratogenic or abortifacient effects."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11474,
+        "end": 11638,
+        "text": "Patients with history of non-infectious pneumonitis/interstitial lung disease (ILD), current ILD, or where suspected ILD cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12250,
+        "end": 12554,
+        "text": "Patients with a medical history of myocardial infarction within 6 months before enrollment, symptomatic congestive heart failure (New York Heart Association class IIb to IV), and/or troponin levels consistent with myocardial infarction as defined according to the manufacturer 28 days prior to enrollment"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13533,
+        "end": 13632,
+        "text": "Patients with prior allogeneic organ transplantation including allogeneic stem cell transplantation"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}
