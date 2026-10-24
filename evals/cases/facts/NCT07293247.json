@@ -8,35 +8,70 @@
       "quote": "Histopathologic diagnosis of NSCLC, may have mixed or multiple histologies but no small cell component",
       "start": 2,
       "end": 104,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "No known EGFR mutation or ALK rearrangement",
       "start": 107,
       "end": 150,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "egfr",
+          "rulesOut": ["common_sensitizing", "exon20_insertion", "other_mutation"],
+          "appliesTo": null
+        },
+        {
+          "factId": "alk",
+          "rulesOut": ["found"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "No metastatic disease (M0) per most recent PET/CT and head CT/MRI imaging",
       "start": 153,
       "end": 226,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["metastatic_or_recurrent"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "No disease progression per CT chest (including upper abdomen as per standard practice) with intravenous (IV) contrast (unless IV contrast is contraindicated) or FDG-PET performed post-neoadjuvant therapy ≤ 90 days prior to registration, either before or after surgery",
+      "quote": "No disease progression per CT chest (including upper abdomen as per standard practice) with intravenous (IV) contrast (unless IV contrast is contraindicated) or FDG-PET performed post-neoadjuvant therapy \u2264 90 days prior to registration, either before or after surgery",
       "start": 229,
       "end": 496,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "no progression after neoadjuvant therapy"
     },
     {
       "quote": "No metastatic disease (M0) per head CT/MRI imaging",
       "start": 499,
       "end": 549,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["metastatic_or_recurrent"],
+          "appliesTo": null
+        },
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["treated_stable", "active"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -44,133 +79,156 @@
       "start": 552,
       "end": 702,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "neoadjuvant therapy given"
     },
     {
       "quote": "Lobectomy or greater oncologic surgical resection within 8 weeks prior to registration",
       "start": 705,
       "end": 791,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "surgery done"
     },
     {
       "quote": "Complete (R0) resection showing ypN2 disease",
       "start": 794,
       "end": 838,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "pathology after surgery"
     },
     {
       "quote": "No prior radiotherapy to the lungs or mediastinum",
       "start": 841,
       "end": 890,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "chest_radiation_6m",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "any prior chest radiation, not only 6 months"
     },
     {
-      "quote": "No treatment with a VEGF inhibitor ≤ 90 days prior to registration or plan to treat with adjuvant systemic therapy including a VEGF inhibitor",
+      "quote": "No treatment with a VEGF inhibitor \u2264 90 days prior to registration or plan to treat with adjuvant systemic therapy including a VEGF inhibitor",
       "start": 893,
       "end": 1034,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Age ≥ 18 years",
+      "quote": "Age \u2265 18 years",
       "start": 1037,
       "end": 1051,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
-      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2",
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status \u2264 2",
       "start": 1054,
       "end": 1118,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Absolute neutrophil count (ANC) ≥ 1,000/mm\\^3",
+      "quote": "Absolute neutrophil count (ANC) \u2265 1,000/mm\\^3",
       "start": 1121,
       "end": 1166,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Platelet count ≥ 50,000/mm\\^3",
+      "quote": "Platelet count \u2265 50,000/mm\\^3",
       "start": 1169,
       "end": 1198,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Calculated (Calc.) creatinine clearance ≥ 30 mL/min",
+      "quote": "Calculated (Calc.) creatinine clearance \u2265 30 mL/min",
       "start": 1201,
       "end": 1252,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Total bilirubin ≤ 3 x upper limit of normal (ULN)",
+      "quote": "Total bilirubin \u2264 3 x upper limit of normal (ULN)",
       "start": 1255,
       "end": 1304,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Aspartate aminotransferase (AST) (serum glutamic-oxaloacetic transaminase \\[SGOT\\])/alanine aminotransferase (ALT) (serum glutamic pyruvic transaminase \\[SGPT\\]) ≤ 5 x upper limit of normal (ULN)",
+      "quote": "Aspartate aminotransferase (AST) (serum glutamic-oxaloacetic transaminase \\[SGOT\\])/alanine aminotransferase (ALT) (serum glutamic pyruvic transaminase \\[SGPT\\]) \u2264 5 x upper limit of normal (ULN)",
       "start": 1307,
       "end": 1502,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Not pregnant, because this study involves radiation therapy, which has known genotoxic, mutagenic and teratogenic effects.",
       "start": 1505,
       "end": 1627,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "pregnancy only; fact combines it with breastfeeding"
     },
     {
-      "quote": "Therefore, for women of childbearing potential only, a negative urine or serum pregnancy test done ≤ 7 days prior to registration is required",
+      "quote": "Therefore, for women of childbearing potential only, a negative urine or serum pregnancy test done \u2264 7 days prior to registration is required",
       "start": 1628,
       "end": 1769,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial",
       "start": 1772,
       "end": 1992,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "Cardiac function: Patients with known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, should have a clinical risk assessment of cardiac function using the New York Heart Association Functional Classification.",
       "start": 1995,
       "end": 2252,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "heart function class"
     },
     {
       "quote": "To be eligible for this trial, patients should be class 2B or better",
       "start": 2253,
       "end": 2321,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 21"
     },
     {
       "quote": "No idiopathic pulmonary fibrosis requiring anti-fibrotic medication: Patients with idiopathic pulmonary fibrosis or inflammatory/interstitial lung disease compromising pulmonary function or requiring ongoing treatment with nintedanib, pirfenidone, or other anti-fibrotic drug are excluded",
       "start": 2324,
       "end": 2612,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "ILD: limiting lung function or on anti-fibrotic drugs"
     },
     {
       "quote": "HIV-infected patients on effective anti-retroviral therapy with an undetectable viral load within 6 months are eligible for this trial",
       "start": 2615,
       "end": 2749,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     }
   ]
 }

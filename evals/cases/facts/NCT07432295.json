@@ -9,41 +9,63 @@
       "start": 23,
       "end": 171,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
-      "quote": "Treatment-naïve for advanced/metastatic disease (prior adjuvant/neoadjuvant therapy allowed if ≥6 months since last dose).",
+      "quote": "Treatment-na\u00efve for advanced/metastatic disease (prior adjuvant/neoadjuvant therapy allowed if \u22656 months since last dose).",
       "start": 174,
       "end": 296,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "lines_advanced",
+          "rulesOut": ["one", "two", "three_plus"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "adjuvant therapy allowed"
     },
     {
-      "quote": "CLDN18.2 positive (membrane intensity score ≥1+ on ≥1% of tumor cells).",
+      "quote": "CLDN18.2 positive (membrane intensity score \u22651+ on \u22651% of tumor cells).",
       "start": 299,
       "end": 370,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "CLDN18.2"
     },
     {
-      "quote": "PD-L1 positive (CPS ≥1).",
+      "quote": "PD-L1 positive (CPS \u22651).",
       "start": 373,
       "end": 397,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "PD-L1 by combined positive score"
     },
     {
       "quote": "At least 1 measurable lesion per RECIST v1.1.",
       "start": 400,
       "end": 445,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "ECOG performance status 0 or 1.",
       "start": 448,
       "end": 479,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -51,76 +73,97 @@
       "start": 482,
       "end": 517,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Hematologic: WBC ≥2,000/μL; ANC ≥1,500/μL; platelets ≥100,000/μL; hemoglobin ≥9 g/dL",
+      "quote": "Hematologic: WBC \u22652,000/\u03bcL; ANC \u22651,500/\u03bcL; platelets \u2265100,000/\u03bcL; hemoglobin \u22659 g/dL",
       "start": 523,
       "end": 607,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Hepatic: AST/ALT ≤3×ULN (≤5×ULN if liver metastases); bilirubin ≤1.5×ULN (≤3×ULN if Gilbert's)",
+      "quote": "Hepatic: AST/ALT \u22643\u00d7ULN (\u22645\u00d7ULN if liver metastases); bilirubin \u22641.5\u00d7ULN (\u22643\u00d7ULN if Gilbert's)",
       "start": 612,
       "end": 706,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Renal: Creatinine ≤1.5×ULN or eGFR ≥50 mL/min/1.73 m²",
+      "quote": "Renal: Creatinine \u22641.5\u00d7ULN or eGFR \u226550 mL/min/1.73 m\u00b2",
       "start": 711,
       "end": 764,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Life expectancy ≥90 days.",
+      "quote": "Life expectancy \u226590 days.",
       "start": 767,
       "end": 792,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
     },
     {
       "quote": "Women of childbearing potential (WOCBP) and men must use effective contraception during the study and for a defined period after treatment.",
       "start": 795,
       "end": 934,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Willing and able to provide informed consent and comply with study procedures",
       "start": 937,
       "end": 1014,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "HER2-positive tumors.",
       "start": 1039,
       "end": 1060,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "her2",
+          "rulesOut": ["overexpression"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Second malignancy within 3 years, except certain skin or cervical cancers.",
       "start": 1063,
       "end": 1137,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "3-year window; skin and cervical exceptions not mapped"
     },
     {
       "quote": "Active or unstable gastrointestinal ulcer or bleeding within 6 weeks.",
       "start": 1140,
       "end": 1209,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "stomach ulcer or bleeding"
     },
     {
       "quote": "Active autoimmune disease requiring systemic therapy within past 2 years or ongoing immunosuppressive therapy.",
       "start": 1212,
       "end": 1322,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "autoimmune_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -128,48 +171,77 @@
       "start": 1325,
       "end": 1415,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "pneumonitis: steroid-requiring"
     },
     {
       "quote": "Participation in another therapeutic clinical trial.",
       "start": 1418,
       "end": 1470,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Major surgery or significant injury within 4 weeks prior to first dose, or planned major surgery within 6 months.",
       "start": 1473,
       "end": 1586,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Radiotherapy within protocol-specified timeframes without adequate recovery.",
       "start": 1589,
       "end": 1665,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Active CNS metastases or carcinomatous meningitis (previously treated brain metastases allowed if stable).",
       "start": 1668,
       "end": 1774,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        },
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Significant cardiovascular disease (NYHA Class 3-4 CHF, recent MI, unstable angina, TIA/stroke, or major cardiac procedures within 6 months).",
       "start": 1777,
       "end": 1918,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "cardiac_recent",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Active or uncontrolled HIV, hepatitis B, or hepatitis C infection, or immunodeficiency (controlled infection allowed).",
       "start": 1921,
       "end": 2039,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["uncontrolled"],
+          "appliesTo": null
+        },
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -177,28 +249,31 @@
       "start": 2042,
       "end": 2127,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Active infection requiring parenteral therapy.",
       "start": 2130,
       "end": 2176,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     },
     {
       "quote": "Known hypersensitivity to study drug components (e.g., DPD deficiency).",
       "start": 2179,
       "end": 2250,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
     },
     {
       "quote": "Any other condition or laboratory abnormality that, in the investigator's judgment, increases risk or interferes with study participation.",
       "start": 2253,
       "end": 2391,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     }
   ]
 }

@@ -8,28 +8,53 @@
       "quote": "Phase 1a Dose Escalation: Subjects with histologically confirmed select advanced solid tumors, including metastatic castration resistant prostate cancer (mCRPC), gastric cancer (GC), and non-small cell lung cancer (NSCLC).",
       "start": 23,
       "end": 245,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": "Phase 1a Dose Escalation"
+        }
+      ],
+      "unmapped": null,
+      "note": "tumor types are the search's"
     },
     {
       "quote": "Phase 1b Dose Expansion: Subjects with histologically confirmed prostate adenocarcinoma that is confirmed to be castration resistant (i.e., serum testosterone \\< 50 ng/dL \\[\\< 2.0 nM\\]) and that is intolerant/resistant to standard of care (SOC) therapies.",
       "start": 248,
       "end": 503,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Measurable disease according to RECIST version 1.1 or evaluable disease per PCWG3 for subjects with prostate cancer",
       "start": 506,
       "end": 621,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1 in 1a; 0-2 in 1b",
       "start": 624,
       "end": 708,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps3_4"],
+          "appliesTo": null
+        },
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2"],
+          "appliesTo": "in 1a"
+        }
+      ],
       "unmapped": null
     },
     {
@@ -37,13 +62,19 @@
       "start": 711,
       "end": 758,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Active and uncontrolled central nervous system metastases",
       "start": 783,
       "end": 840,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -51,35 +82,51 @@
       "start": 843,
       "end": 877,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment: cardiovascular disease"
     },
     {
       "quote": "History of another malignancy other than the one for which the subject is being treated on this study within 3 years",
       "start": 880,
       "end": 996,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "3-year window"
     },
     {
       "quote": "Receipt of any anticancer or investigational therapy within: 5 elimination half-lives or 14 days (whichever is less); 4 weeks for any therapeutic radiopharmaceutical for prostate cancer",
       "start": 999,
       "end": 1184,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "History of (non-infectious) ILD/pneumonitis that required steroids within 2 years of study enrollment, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening.",
       "start": 1187,
       "end": 1398,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "history of steroid-requiring pneumonitis within 2 years not mapped"
     },
     {
       "quote": "Receiving systemic antimicrobial treatment for active infection; routine antimicrobial prophylaxis is permitted",
       "start": 1401,
       "end": 1512,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     }
   ]
 }

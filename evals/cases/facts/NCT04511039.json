@@ -9,34 +9,49 @@
       "start": 23,
       "end": 279,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Patients with adenocarcinoma histology only are allowed to participate.",
       "start": 280,
       "end": 351,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Has received at least one prior line of therapy with progression or intolerance",
       "start": 354,
       "end": 433,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior therapy not clearly for advanced disease"
     },
     {
       "quote": "Have measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 criteria present",
       "start": 436,
       "end": 538,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of 0-1",
       "start": 541,
       "end": 616,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -44,139 +59,157 @@
       "start": 619,
       "end": 674,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
     },
     {
       "quote": "Hemoglobin \\>= 9 g/dL",
       "start": 677,
       "end": 698,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Absolute neutrophil count \\>= 1500/mm\\^3",
       "start": 701,
       "end": 741,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Platelet count \\>= 100,000/mm\\^3 without transfusion or growth factor support",
       "start": 744,
       "end": 821,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Creatinine \\< 1.5 upper limit of normal (ULN) or creatinine clearance \\> 60 mL/min",
       "start": 824,
       "end": 906,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Total bilirubin \\< 1.5 x ULN",
       "start": 909,
       "end": 937,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Aspartate aminotransferase (AST)/alanine aminotransferase (ALT) =\\< 2.5 x ULN or \\< x 5 ULN in the presence of liver metastasis",
       "start": 940,
       "end": 1067,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Albumin \\> 3 g/dL",
       "start": 1070,
       "end": 1087,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Ability to swallow oral medications",
       "start": 1090,
       "end": 1125,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "able to take pills"
     },
     {
       "quote": "Participants of child-bearing potential must agree to use adequate contraceptive methods (e.g., hormonal or barrier method of birth control; abstinence) prior to study entry.",
       "start": 1128,
       "end": 1302,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Should a woman become pregnant or suspect she is pregnant while she or her partner is participating in this study, she should inform her treating physician immediately",
       "start": 1303,
       "end": 1470,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Participant must understand the investigational nature of this study and sign an Independent Ethics Committee/Institutional Review Board approved written informed consent form prior to receiving any study related procedure",
       "start": 1473,
       "end": 1695,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Systemic antineoplastic therapy within 2 weeks prior to day -14 (Dose Escalation, Cohort A) or Cycle 1 day 1 (Dose Expansion, Cohorts B1 and B2) or within the past 6 weeks if this treatment is mitomycin C or nitrosourea",
       "start": 1720,
       "end": 1939,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Radiotherapy within the past 2 weeks excluding palliative radiotherapy to painful bone lesions",
       "start": 1942,
       "end": 2036,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Prior treatment with PARP inhibitor, FUDR or FTD/TPI",
       "start": 2039,
       "end": 2091,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior PARP inhibitor or trifluridine"
     },
     {
       "quote": "Any condition that in the investigator's opinion can limit absorption of FTD/TPI or talazoparib from the gastrointestinal (GI) tract",
       "start": 2094,
       "end": 2226,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "absorption"
     },
     {
       "quote": "Gastrointestinal obstruction (without diversion) or perforation within 4 weeks from initiation of day -14 (Dose Escalation, Cohort A) or Cycle 1 Day 1 (Dose Expansion, Cohorts B1 and B2.",
       "start": 2229,
       "end": 2415,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "bowel obstruction"
     },
     {
       "quote": "Refractory ascites (requiring weekly or more frequent paracentesis or permanent indwelling peritoneal catheter)",
       "start": 2418,
       "end": 2529,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "ascites"
     },
     {
       "quote": "Untreated central nervous system (CNS) disease.",
       "start": 2532,
       "end": 2579,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Patients with leptomeningeal disease are ineligible but patients with treated, stable CNS metastasis for at least 4 weeks are allowed to participate",
       "start": 2580,
       "end": 2728,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -184,34 +217,49 @@
       "start": 2731,
       "end": 3070,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "cardiac: 3-month window, and blood clots"
     },
     {
       "quote": "Other malignancy requiring active therapy",
       "start": 3073,
       "end": 3114,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "other cancer: active and needing treatment only"
     },
     {
       "quote": "Presence of toxicities from prior therapy of grade 2 or higher",
       "start": 3117,
       "end": 3179,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
     },
     {
       "quote": "Active infection requiring antibiotic therapy",
       "start": 3182,
       "end": 3227,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "infection"
     },
     {
       "quote": "Known human immunodeficiency virus (HIV) or hepatitis B infection or untreated hepatitis C infection.",
       "start": 3230,
       "end": 3331,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["controlled", "uncontrolled"],
+          "appliesTo": null
+        },
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -219,20 +267,28 @@
       "start": 3332,
       "end": 3430,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 30"
     },
     {
       "quote": "Any history of myelodysplastic syndrome, acute leukemia, or bone marrow transplant",
       "start": 3433,
       "end": 3515,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "transplant: bone marrow only"
     },
     {
       "quote": "Pregnant or nursing female participants",
       "start": 3518,
       "end": 3557,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -240,14 +296,15 @@
       "start": 3560,
       "end": 3611,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Any condition which in the investigator's opinion deems the participant an unsuitable candidate to receive study drug",
       "start": 3614,
       "end": 3731,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     }
   ]
 }

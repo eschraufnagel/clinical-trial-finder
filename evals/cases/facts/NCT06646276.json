@@ -9,56 +9,69 @@
       "start": 0,
       "end": 18,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Participants must have diagnosis of Extensive-Stage Small Cell Lung Cancer (ES-SCLC).",
       "start": 22,
       "end": 107,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Participants must be Healthy enough to do their normal activities with little or no help based on the ECOG performance scale.",
       "start": 110,
       "end": 235,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "performance status in plain words"
     },
     {
       "quote": "Participants must have at least one tumor that can be measured using special imaging techniques like a CT scan or MRI at a site other than the brain and nervous system",
       "start": 238,
       "end": 405,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "outside the brain"
     },
     {
       "quote": "Exclusion Criteria",
       "start": 407,
       "end": 425,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Participants have already received certain types of treatment for extensive stage small cell lung cancer",
       "start": 429,
       "end": 533,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior treatment, unspecified"
     },
     {
       "quote": "Participants have certain health conditions, like spread of small cell lung cancer to the brain that are causing symptoms, certain lung diseases, heart diseases, infections, autoimmune diseases, other cancers, or a type of nerve damage called peripheral sensory neuropathy",
       "start": 536,
       "end": 808,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "unspecified health conditions"
     },
     {
       "quote": "Other protocol-defined Inclusion/Exclusion criteria apply.",
       "start": 811,
       "end": 869,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     }
   ]
 }

@@ -9,20 +9,38 @@
       "start": 0,
       "end": 18,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Participants must have a histologically confirmed diagnosis of a locally advanced and unresectable or metastatic solid tumor malignancy with a known Kirsten rat sarcoma viral oncogene homolog (KRAS) alteration (mutation or amplification).",
       "start": 22,
       "end": 260,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        },
+        {
+          "factId": "kras",
+          "rulesOut": ["none_found"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Participants must, for Arm D, have a PD-L1 expression (≥50%).",
+      "quote": "Participants must, for Arm D, have a PD-L1 expression (\u226550%).",
       "start": 263,
       "end": 324,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pdl1",
+          "rulesOut": ["low", "negative"],
+          "appliesTo": "for Arm D"
+        }
+      ],
       "unmapped": null
     },
     {
@@ -30,56 +48,79 @@
       "start": 327,
       "end": 535,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "Exclusion Criteria",
       "start": 537,
       "end": 555,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Participants must not have untreated central nervous system (CNS) metastases.",
       "start": 559,
       "end": 636,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["active"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Participants must not have concurrent malignancy (present during screening) requiring treatment or history of prior malignancy active within 2 years prior to treatment.",
       "start": 639,
       "end": 807,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Participants must not have a history of, or any evidence of, interstitial lung disease or active, non-infectious pneumonitis.",
       "start": 810,
       "end": 935,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "history of ILD, as distinct from pneumonitis, not mapped"
     },
     {
       "quote": "A history of radiation pneumonitis in the radiation field is permitted.",
       "start": 936,
       "end": 1007,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 8"
     },
     {
       "quote": "Participants must not have a history of prior severe cutaneous adverse reactions (SCARs), including Stevens-Johnson Syndrome (SJS) and toxic epidermal necrolysis (TEN).",
       "start": 1010,
       "end": 1178,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "severe skin reactions"
     },
     {
       "quote": "Other protocol-defined Inclusion/Exclusion criteria apply.",
       "start": 1181,
       "end": 1239,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     }
   ]
 }

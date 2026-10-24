@@ -8,224 +8,275 @@
       "quote": "Histopathological confirmed NSCLC",
       "start": 24,
       "end": 57,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Stage Ia, Ib, IIa, IIb or IIIa (N2) for both dose escalation and dose confirmation (NOTE: Staging will be according to the AJCC 8th edition)",
       "start": 61,
       "end": 201,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["locally_advanced", "metastatic_or_recurrent"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Age ≥18 years and suitable for lung cancer surgery",
+      "quote": "Age \u226518 years and suitable for lung cancer surgery",
       "start": 205,
       "end": 255,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search; suitable for surgery"
     },
     {
       "quote": "No prior chemotherapy and/or thoracic radiation therapy",
       "start": 259,
       "end": 314,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "prior_platinum",
+          "rulesOut": ["received"],
+          "appliesTo": null
+        },
+        {
+          "factId": "chest_radiation_6m",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "any prior chemotherapy or chest radiation, not only platinum or 6 months"
     },
     {
       "quote": "Normal liver, and renal function at study entry",
       "start": 318,
       "end": 365,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Laboratory requirements:",
       "start": 369,
       "end": 393,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "WBC \\> 2500/mm3",
       "start": 401,
       "end": 416,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Neutrophil \\>1500/mm3",
       "start": 423,
       "end": 444,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Hemoglobin \\>10 g/dL",
       "start": 451,
       "end": 471,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Platelet \\>100,000/ mm3",
       "start": 478,
       "end": 501,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "AST and ALT \\< 2.5 x ULN",
       "start": 508,
       "end": 532,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Total bilirubin \\< 1.5 x ULN",
       "start": 539,
       "end": 567,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Creatinine \\< 2 mg/dL (equivalent to 176.8 μmol/L)",
+      "quote": "Creatinine \\< 2 mg/dL (equivalent to 176.8 \u03bcmol/L)",
       "start": 574,
       "end": 624,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Normal PT/INR and PTT",
       "start": 631,
       "end": 652,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "eGFR \\>60mL/min/1.73m²",
+      "quote": "eGFR \\>60mL/min/1.73m\u00b2",
       "start": 659,
       "end": 681,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "QT interval corrected for heart rate using Frederica's formula (QTcF): males \\< 450msec and females \\< 470msec",
       "start": 685,
       "end": 795,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Operating surgeon deems patient is candidate for complete surgical resection of lung cancer and lymphadenectomy or lymph node sampling (Wedge resection, segmentectomy or lobectomy are acceptable)",
       "start": 799,
       "end": 994,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "surgical candidate"
     },
     {
       "quote": "Stated willingness to comply with all study procedures and availability for the duration of the study",
       "start": 998,
       "end": 1099,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Ability to understand and sign informed consent",
       "start": 1104,
       "end": 1151,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Women of childbearing potential (WOCBP) must use highly effective methods of contraception for at least 6 months after wafer insertion.",
       "start": 1156,
       "end": 1291,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Otherwise, women must be postmenopausal (at least 1 y absence of vaginal bleeding or spotting and confirmed by follicle stimulating hormone \\[FSH\\] ≥40 mIU/mL \\[or ≥ 40 IU/L\\] if less than 2 y postmenopausal) or be surgically sterile.",
+      "quote": "Otherwise, women must be postmenopausal (at least 1 y absence of vaginal bleeding or spotting and confirmed by follicle stimulating hormone \\[FSH\\] \u226540 mIU/mL \\[or \u2265 40 IU/L\\] if less than 2 y postmenopausal) or be surgically sterile.",
       "start": 1292,
       "end": 1526,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Men must use highly effective methods of contraception for at least 3 months after wafer insertion.",
       "start": 1527,
       "end": 1626,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Examples of highly effective contraception include: parenteral contraceptives, oral contraceptives, patch contraceptives, implantable hormonal contraceptives, intrauterine device or system, surgical sterilization (hysterectomy, bilateral oophorectomy, and/or bilateral salpingectomy), tubal ligation/occlusion, vasectomized partner, or sexual abstinence, if this is the subject's current practice.",
       "start": 1627,
       "end": 2024,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Periodic abstinence, i.e., calendar, symptothermal, or post-ovulation methods are not an acceptable form of contraception for this study.",
       "start": 2025,
       "end": 2162,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "If a subject meets any of the following criteria, he/she must be excluded from the study.",
       "start": 2185,
       "end": 2274,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "heading"
     },
     {
       "quote": "Evidence of locally advanced T3 or T4 NSCLC or distant metastatic disease.",
       "start": 2279,
       "end": 2353,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["locally_advanced", "metastatic_or_recurrent"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "T3 and T4 not mapped"
     },
     {
       "quote": "Patients requiring pneumonectomy or sleeve resection.",
       "start": 2357,
       "end": 2410,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "type of surgery"
     },
     {
       "quote": "Known sensitivity to any of the study agent components.",
       "start": 2414,
       "end": 2469,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
     },
     {
       "quote": "Patients with a previous malignancy within the last 5 years except non-melanoma skin cancer.",
       "start": 2473,
       "end": 2565,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years", "two_to_5_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "skin cancer exception not mapped"
     },
     {
       "quote": "Patients receiving induction (neo-adjuvant) chemotherapy and/or radiation prior to surgery.",
       "start": 2569,
       "end": 2660,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "no neoadjuvant therapy"
     },
     {
       "quote": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection. dysfunction of major organ (e.g., liver, kidney etc.), symptomatic congestive heart failure. unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements.",
       "start": 2664,
       "end": 2990,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     },
     {
       "quote": "Pregnant or nursing female subjects.",
       "start": 2994,
       "end": 3030,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -233,14 +284,15 @@
       "start": 3034,
       "end": 3086,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Any other condition (e.g., psychiatric disorder) that, in the opinion of the Investigator, may interfere with the patient's ability to comply with the study requirements or visit schedule.",
       "start": 3090,
       "end": 3278,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     }
   ]
 }

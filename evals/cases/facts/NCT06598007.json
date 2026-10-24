@@ -9,48 +9,70 @@
       "start": 23,
       "end": 151,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Aged ≥ 18 years (or adult age as per local regulations).",
+      "quote": "Aged \u2265 18 years (or adult age as per local regulations).",
       "start": 154,
       "end": 210,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Histologically/cytologically confirmed, locally advanced unresectable or metastatic solid tumors that are refractory to standard therapy, or for whom no standard therapy exists.",
       "start": 213,
       "end": 390,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "refractory to, or no, standard therapy not mapped"
     },
     {
       "quote": "Note: In Phase 2b, only participants with advanced CRC who are eligible for re-engaging FOLFOX will be enrolled.",
       "start": 391,
       "end": 503,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Has measurable disease per RECIST Version 1.1. that was not in a prior radiation or other locally treated area unless imaging-based progression has been clearly documented following radiation or other local therapy.",
       "start": 506,
       "end": 721,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
-      "quote": "Life expectancy ≥ 3 months, in the opinion of the PI or designee.",
+      "quote": "Life expectancy \u2265 3 months, in the opinion of the PI or designee.",
       "start": 724,
       "end": 789,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
     },
     {
       "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1.",
       "start": 792,
       "end": 863,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -58,118 +80,125 @@
       "start": 866,
       "end": 926,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Absolute neutrophil count ≥ 1.5 × 10\\^9/L without growth factor support in the 2 weeks prior to study entry.",
+      "quote": "Absolute neutrophil count \u2265 1.5 \u00d7 10\\^9/L without growth factor support in the 2 weeks prior to study entry.",
       "start": 953,
       "end": 1061,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Hemoglobin ≥9.0 g/dL without transfusion, growth factor support, or other supportive medication in the 2 weeks prior to study entry.",
+      "quote": "Hemoglobin \u22659.0 g/dL without transfusion, growth factor support, or other supportive medication in the 2 weeks prior to study entry.",
       "start": 1065,
       "end": 1197,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Platelet count ≥ 75 × 10\\^9/L without transfusion in 2 weeks prior to study entry.",
+      "quote": "Platelet count \u2265 75 \u00d7 10\\^9/L without transfusion in 2 weeks prior to study entry.",
       "start": 1201,
       "end": 1283,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Serum TBIL \\< 1.5 × ULN.",
+      "quote": "Serum TBIL \\< 1.5 \u00d7 ULN.",
       "start": 1307,
       "end": 1331,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "AST and ALT \\< 3 × ULN.",
+      "quote": "AST and ALT \\< 3 \u00d7 ULN.",
       "start": 1335,
       "end": 1358,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "CGGFR = \\[(140 - age in years) × weight in kg\\] / (7.2 × serum creatinine in mg/dL) (× 0.85 for females) (for urine protein \\< 2+; if urine protein \\> 2+, 24-hour urinary protein quantity should be measured and must be \\< 1.0 g).",
+      "quote": "CGGFR = \\[(140 - age in years) \u00d7 weight in kg\\] / (7.2 \u00d7 serum creatinine in mg/dL) (\u00d7 0.85 for females) (for urine protein \\< 2+; if urine protein \\> 2+, 24-hour urinary protein quantity should be measured and must be \\< 1.0 g).",
       "start": 1463,
       "end": 1692,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
-      "quote": "Coagulation tests: international normalized ratio (INR) \\< 1.5, activated partial thromboplastin time (aPTT) ≤ 1.5 × ULN (Note: for those on oral anticoagulants, an INR in the range of 2 to 3 is acceptable).",
+      "quote": "Coagulation tests: international normalized ratio (INR) \\< 1.5, activated partial thromboplastin time (aPTT) \u2264 1.5 \u00d7 ULN (Note: for those on oral anticoagulants, an INR in the range of 2 to 3 is acceptable).",
       "start": 1696,
       "end": 1903,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Participants (both males and females) of childbearing potential should be willing to use a viable contraception method that is deemed effective by the PI or designee from Screening, during the study, and for at least 3 months following the last dose of IP.",
       "start": 1906,
       "end": 2162,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Postmenopausal women must have been amenorrheal for at least 12 months to be considered of non-childbearing potential; postmenopausal status, if not known, is to be confirmed through testing of follicle-stimulating hormone (FSH) levels of ≥ 40 IU/L.",
+      "quote": "Postmenopausal women must have been amenorrheal for at least 12 months to be considered of non-childbearing potential; postmenopausal status, if not known, is to be confirmed through testing of follicle-stimulating hormone (FSH) levels of \u2265 40 IU/L.",
       "start": 2163,
       "end": 2412,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Male participants must be willing not to donate sperm until 3 months following the last IP administration.",
       "start": 2413,
       "end": 2519,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "During Phase 1 Dose Escalation, receiving concurrent anticancer treatment (including chemotherapy, targeted drugs, radiotherapy \\[excluding the following small-area radiotherapy for bone metastasis\\], endocrine therapy, antitumor traditional Chinese Medicine), except during Phase 2b, Standard Care Chemotherapy (FOLFOX-based regimen) for advanced CRC patients is allowed.",
       "start": 2544,
       "end": 2916,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Use of other IP within 5 half-lives of the product (if the IP is a small molecule) or anti-cancer investigational medical device within two weeks prior to the first administration of CT3001.",
       "start": 2919,
       "end": 3109,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Prior use of investigational monoclonal antibody IP can be permitted upon obtaining an approval from the Sponsor.",
       "start": 3110,
       "end": 3223,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Use of these investigational IP or devices are not permitted for the duration of treatment with CT3001.",
       "start": 3224,
       "end": 3327,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Evidence of severe or uncontrolled systemic diseases, infection, or laboratory finding that in the view of the PI or designee makes it undesirable for the patient to participate in the trial.",
       "start": 3330,
       "end": 3521,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     },
     {
       "quote": "Females who are pregnant or nursing, or any participant who is planning to become pregnant (self or partner) at any time during the study, including the Follow-up Period.",
       "start": 3524,
       "end": 3694,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -177,69 +206,83 @@
       "start": 3697,
       "end": 3977,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Has a prolonged QT interval corrected by Fredericia's formula (QTcF interval) of \\> 470 ms (determined by average of 3 readings on triplicate 12-lead ECG) or has a history of additional risk factors for Torsade de Pointes (e.g., heart failure, hypokalemia, family history of long-QT syndrome) or current use of medications that prolong the QTcF interval.",
       "start": 3980,
       "end": 4334,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "organ-function"
     },
     {
       "quote": "Any psychiatric, psychological, familial or geographical condition that, in the judgment of the PI or designee, may interfere with the treatment and follow-up, affect compliance or place the participant at high risk of treatment-related complications will be excluded.",
       "start": 4337,
       "end": 4605,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     },
     {
       "quote": "Blood donation or significant blood loss within 60 days prior to the first administration of CT3001.",
       "start": 4608,
       "end": 4708,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "blood donation"
     },
     {
       "quote": "History of severe allergic or anaphylactic reactions, or sensitivity to the CT3001 or its constituents.",
       "start": 4711,
       "end": 4814,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
     },
     {
       "quote": "Vaccination with a live vaccine within 4 weeks prior to the first administration of CT3001.",
       "start": 4817,
       "end": 4908,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Exposure to any significantly immune suppressing drug (including experimental therapies as part of a clinical study) within 5 half-lives of the product prior to the first administration of CT3001; these medications will not be permitted for the duration of treatment with CT3001.",
       "start": 4911,
       "end": 5190,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Use of any medications with a narrow therapeutics index that are sensitive substrates of and metabolized mainly through CYP2C8 within 5-half-lives of the products prior to the first administration of CT3001; these medications will not be permitted for the duration of treatment with CT3001.",
       "start": 5193,
       "end": 5483,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Use of any gastric acid reducing agents during the time period between 6 hours prior to and 2 hours after the administration of CT3001.",
       "start": 5486,
       "end": 5621,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Positive test for hepatitis C antibody (HCV), hepatitis B surface antigen (HBsAg), or human immunodeficiency virus (HIV) antibodies (HIV-1/-2) at Screening, unless the participant meets 1 of the following criteria:",
       "start": 5624,
       "end": 5838,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["controlled", "uncontrolled"],
+          "appliesTo": null
+        },
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -247,28 +290,32 @@
       "start": 5845,
       "end": 6061,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 34"
     },
     {
       "quote": "Has chronic HCV infection but has completed curative antiviral treatment (note: patients may be HCV antibody positive but must be HCV RNA negative to be eligible).",
       "start": 6067,
       "end": 6230,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 34"
     },
     {
       "quote": "Please note: the eligibility of patients with HBV or HCV infection should be considered on a case-by-case basis by the PI in consultation with the independent Medical Monitor.",
       "start": 6232,
       "end": 6407,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 34"
     },
     {
       "quote": "Anything that the PI considers would jeopardize the safety of the participant, prevent complete participation in the study, or compromise interpretation of study data.",
       "start": 6411,
       "end": 6578,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     }
   ]
 }

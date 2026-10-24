@@ -5,73 +5,89 @@
   "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
   "passages": [
     {
-      "quote": "Age ≥ 18 years.",
+      "quote": "Age \u2265 18 years.",
       "start": 24,
       "end": 39,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "search"
     },
     {
       "quote": "Evaluation by a brain metastasis multidisciplinary team (BM-MDT) consisting of a medical oncologist (can be the patient's primary medical oncologist), a radiation oncologist who regularly performs SRS, and a neurosurgeon.",
       "start": 43,
       "end": 264,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "This evaluation can take place in clinic or during a multidisciplinary conference.",
       "start": 265,
       "end": 347,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "Life expectancy \\> 6 months as estimated by BM-MDT.",
       "start": 351,
       "end": 402,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
     },
     {
       "quote": "BM-MDT agreement that the planned systemic therapy regimen may provide intracranial benefit (SD, PR, or CR in the CNS).",
       "start": 406,
       "end": 525,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "care team's judgment about the brain metastases"
     },
     {
       "quote": "BM-MDT agreement that the patient's BM does not require immediate local therapy (surgery and/or radiation therapy); i.e. it is judged to be safe to omit local therapy as initial BM management.",
       "start": 529,
       "end": 721,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "care team's judgment about the brain metastases"
     },
     {
       "quote": "The patient's BM are amenable to SRS as initial local therapy as determined by BM-MDT.",
       "start": 725,
       "end": 811,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "care team's judgment about the brain metastases"
     },
     {
       "quote": "Subjects must have signed and dated an IRB/IEC approved written informed consent form in accordance with regulatory and institutional guidelines.",
       "start": 815,
       "end": 960,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
       "quote": "This must be obtained before the performance of any protocol-related procedures that are not part of normal subject care.",
       "start": 961,
       "end": 1082,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "procedure"
     },
     {
-      "quote": "Histologically confirmed metastatic cancer with at least one measurable metastasis in the brain (≥ 5 mm).",
+      "quote": "Histologically confirmed metastatic cancer with at least one measurable metastasis in the brain (\u2265 5 mm).",
       "start": 1086,
       "end": 1191,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["none"],
+          "appliesTo": null
+        },
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable", "locally_advanced"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -79,48 +95,58 @@
       "start": 1195,
       "end": 1288,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "brain lesion not treated with radiosurgery"
     },
     {
       "quote": "Regrowth in a cavity of previously excised lesion will not qualify as a measurable lesion.",
       "start": 1289,
       "end": 1379,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Growth or change in a lesion previously irradiated will not qualify as a measurable lesion.",
       "start": 1380,
       "end": 1471,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Prior SRS and prior excision of BM is permitted if other measurable non irradiated lesions as described in #9 remain.",
       "start": 1476,
       "end": 1593,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "permits"
     },
     {
       "quote": "The resection cavity of excised BM must have received appropriate radiation therapy (pre or post operative SRS, brachytherapy) or have been observed for \\>6 months after resection without evidence of local cavity recurrence.",
       "start": 1598,
       "end": 1822,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "treated cavity"
     },
     {
-      "quote": "Subjects must be free of neurologic signs and symptoms related to metastatic brain lesions either without systemic corticosteroids or requiring ≤ 2 mg dexamethasone daily for symptom resolution.",
+      "quote": "Subjects must be free of neurologic signs and symptoms related to metastatic brain lesions either without systemic corticosteroids or requiring \u2264 2 mg dexamethasone daily for symptom resolution.",
       "start": 1827,
       "end": 2021,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "brain metastases: symptoms or steroid dose"
     },
     {
-      "quote": "ECOG performance status ≤ 1.",
+      "quote": "ECOG performance status \u2264 1.",
       "start": 2026,
       "end": 2054,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -128,111 +154,139 @@
       "start": 2059,
       "end": 2172,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "oncologist agreement"
     },
     {
       "quote": "This study will allow non-English speaking subjects to be enrolled.",
       "start": 2177,
       "end": 2244,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "Verbal Translation Preparative Sheet (VTPS) will be used if a translated consent form is not available in the subject's language.",
       "start": 2245,
       "end": 2374,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "The consent form will be translated into the language of the subject after 2 or more occurrences.",
       "start": 2375,
       "end": 2472,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "This will apply to any MD Anderson patient.",
       "start": 2473,
       "end": 2516,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule"
     },
     {
       "quote": "History of known leptomeningeal involvement (radiographic or cytological).",
       "start": 2542,
       "end": 2616,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
       "quote": "Small cell lung cancer, lymphoma, or leukemia histology.",
       "start": 2620,
       "end": 2676,
-      "mappings": [],
-      "unmapped": null
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "lymphoma and leukemia are the search's"
     },
     {
       "quote": "Non-small cell lung cancer histology with targetable oncogenic driver mutation with planned initiation of highly CNS active targeted therapy (eg osimertinib, brigatinib, alectinib, or lorlatinib).",
       "start": 2680,
       "end": 2876,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "conditional on driver mutation and planned therapy"
     },
     {
       "quote": "Subjects previously treated with WBRT.",
       "start": 2880,
       "end": 2918,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "vocabulary-gap",
+      "note": "prior whole-brain radiation"
     },
     {
       "quote": "Any intact BM size \\> 3 cm.",
       "start": 2922,
       "end": 2949,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "brain metastasis size"
     },
     {
       "quote": "After surgical excision and appropriate radiation therapy to the cavity, patients may enroll if additional eligible lesions are present.",
       "start": 2950,
       "end": 3086,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 27"
     },
     {
       "quote": "Prior disease progression on one or more of the agents comprising SST.",
       "start": 3090,
       "end": 3160,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior study drugs"
     },
     {
       "quote": "Exposure to one or more agents comprising SST within the last 30 days.",
       "start": 3164,
       "end": 3234,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior study drugs"
     },
     {
       "quote": "Prior unacceptable toxicity during treatment with one or more agents comprising SST.",
       "start": 3238,
       "end": 3322,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior study drugs"
     },
     {
       "quote": "Subjects with a major medical, neurologic or psychiatric condition who are judged as unable to fully comply with study therapy or assessments should not be enrolled.",
       "start": 3326,
       "end": 3491,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "judgment"
     },
     {
       "quote": "History of a second malignancy, unless potentially curative treatment has been completed with no evidence of malignancy for 2 years.",
       "start": 3496,
       "end": 3628,
-      "mappings": [],
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
       "unmapped": null
     },
     {
@@ -240,63 +294,72 @@
       "start": 3629,
       "end": 3829,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 33"
     },
     {
-      "quote": "Subjects with a completely treated prior malignancy and no evidence of disease for ≥ 2 years are eligible.",
+      "quote": "Subjects with a completely treated prior malignancy and no evidence of disease for \u2265 2 years are eligible.",
       "start": 3830,
       "end": 3936,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 33"
     },
     {
       "quote": "Skin Cancer Exclusion: Please note that localized cutaneous basal cell carcinoma and squamous cell carcinoma is not an exclusion criterion regardless of treatment status.",
       "start": 3941,
       "end": 4111,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 33"
     },
     {
       "quote": "Biopsy proven metastatic disease from these histologies is an exclusion criterion if this constitutes a second cancer.",
       "start": 4112,
       "end": 4230,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "not-a-rule",
+      "note": "exception to 33"
     },
     {
       "quote": "Patient weight \\>450 pounds.",
       "start": 4235,
       "end": 4263,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "weight"
     },
     {
       "quote": "Patient had prior SRS to any intracranial lesion \\<15mm from a metastasis on the screening MRI.",
       "start": 4268,
       "end": 4363,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior radiosurgery nearby"
     },
     {
       "quote": "Prior MRIs and DICOMs will be used to make this determination.",
       "start": 4364,
       "end": 4426,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "prior radiosurgery nearby"
     },
     {
       "quote": "Patient unable to receive a brain MRI (implanted metal devices or foreign bodies) or MRI contrast.",
       "start": 4431,
       "end": 4529,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "able to have MRI"
     },
     {
-      "quote": "Any BM with a significant hemorrhagic component (defined as MRI T1 intrinsic hyperintensity comprising ≥ 25% of maximal lesion diameter).",
+      "quote": "Any BM with a significant hemorrhagic component (defined as MRI T1 intrinsic hyperintensity comprising \u2265 25% of maximal lesion diameter).",
       "start": 4534,
       "end": 4671,
       "mappings": [],
-      "unmapped": null
+      "unmapped": "trial-specific",
+      "note": "bleeding in brain metastasis"
     }
   ]
 }
