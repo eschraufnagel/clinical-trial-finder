@@ -67,7 +67,7 @@ The four changes, as made:
 3. **`brain_mets`:** none / treated and stable / untreated or growing, no symptoms / causing symptoms. The old `active` answer split into the two unstable answers. Rules about "active", "untreated" or "unstable" brain metastases rule out both. "Symptomatic" rules rule out `symptoms` only.
 4. **`autoimmune_active`** now means immune-suppressing treatment in the last 2 years, with thyroid hormone, insulin and skin creams named as not counting. NCT07436728 #46 now maps, as the relabel had it.
 
-`ANNOTATION.md` gained a section on the four facts. 37 passages were relabelled in one commit, and every label file now names the new vocabulary's checksum.
+`ANNOTATION.md` gained a section on the four facts. 41 passages were relabelled in one commit, and every label file now names the new vocabulary's checksum.
 
 | | Before | After |
 | --- | ---: | ---: |
