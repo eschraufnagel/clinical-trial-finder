@@ -336,3 +336,4 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - It caught a notation error in these labels: in four passages a cohort scope had attached to only the last of two mappings. Those are fixed, along with seven passages that missed worked cases 6 and 8, three of them found by searching all 40 trials for the same miss. Two convention points were added to `ANNOTATION.md`.
   - Coverage after the fixes: rules about the person mapped 40.7% (all 40 trials) and 41.3% (held-out).
   - **Stopped for Gate 1.**
+- **Gate 1, answered (owner, 2026-10): make the four vocabulary changes, then go on to stage B.** The changes are steroids by dose, prior ADC by payload, brain metastases with symptoms split out, and autoimmune reworded. Details and before-and-after coverage are in `gate-1-labels.md`. Rules about the person mapped: 43.3% overall, 43.8% held-out.

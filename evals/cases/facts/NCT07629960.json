@@ -2,7 +2,7 @@
   "nctId": "NCT07629960",
   "set": "heldout",
   "criteriaTextSha": "9fcba994cedd4b4aa20016aac3044ffdde6562039ff25c356bac61d6de67e3d9",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "Pathologically confirmed diagnosis of metastatic Kirsten rat sarcoma viral oncogene homolog (KRAS)-mutant pancreatic ductal adenocarcinoma (PDAC), non-small cell lung cancer (NSCLC), or colorectal cancer (CRC) with evidence of a single KRAS G12C, G12D, G12V, G12A, G12S, or G13D mutation in tumor tissue or circulating tumor deoxyribonucleic acid (ctDNA).",
@@ -75,9 +75,14 @@
       "quote": "Active brain metastases (participants with asymptomatic brain metastases may be eligible).",
       "start": 914,
       "end": 1004,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "brain metastases: symptomatic only"
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["symptoms"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
     },
     {
       "quote": "Have received prior targeted treatment(s) against KRAS, including pan-KRAS inhibitors, multi-RAS inhibitors, mutant-selective KRAS inhibitors, and RAS or KRAS degraders.",

@@ -2,7 +2,7 @@
   "nctId": "NCT06792552",
   "set": "heldout",
   "criteriaTextSha": "4d55a7a97017428cbb98eb1e27cdf41dfb82a548d934a0314dd5100bb7b8d108",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "Written informed consent is obtained prior to any procedures that are not considered standard of care.",
@@ -343,7 +343,7 @@
       "mappings": [
         {
           "factId": "brain_mets",
-          "rulesOut": ["active"],
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
           "appliesTo": null
         },
         {
@@ -436,9 +436,15 @@
       "quote": "Prior exposure to an ADC with a topoisomerase I inhibitor payload (e.g., raludotatug deruxtecan/DS-6000) for all cohorts except for the topoisomerase inhibitor payload ADC-pretreated participants in PROC cohort.",
       "start": 7932,
       "end": 8143,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "prior ADC: topoisomerase payload"
+      "mappings": [
+        {
+          "factId": "prior_adc",
+          "rulesOut": ["topo_payload"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "the exception is for an ovarian cohort"
     },
     {
       "quote": "Has not recovered (i.e., to CTCAE version 5.0 Grade 1 or to baseline) from previous anticancer therapy-induced AEs.",

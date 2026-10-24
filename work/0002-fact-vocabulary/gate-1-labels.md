@@ -57,3 +57,23 @@ Gate 1 decides whether to change the vocabulary before any model maps anything. 
 4. **`autoimmune_active` reworded** to "needed medicine that calms the immune system, such as steroids or immunosuppressants, in the last 2 years". That excludes thyroid replacement and skin-only treatment, matching the trials' standard exceptions. It settles the #46 disagreement.
 
 Leaving them is also a defensible answer. The finding would then be that 31 facts express about 40% of rules about the person, and that the gaps, not the fact count, are what's missing.
+
+## Answer (owner, 2026-10): make all four changes
+
+The four changes, as made:
+
+1. **`steroids_daily` became `steroids`:** none / 10 mg prednisone a day or less / more than that. "More than 10 mg" and "except up to 10 mg" rules rule out `high_dose`. Steroids with no dose allowed rule out both doses. The gate proposal folded "unable to stop" into the fact, but those rules don't say anything about dose, so they stay gaps, as do other thresholds (2 mg dexamethasone, 15 mg prednisone).
+2. **`prior_adc`:** never / topoisomerase I payload / another kind. A single named drug (T-DXd only) or a target (TROP2) stays a gap.
+3. **`brain_mets`:** none / treated and stable / untreated or growing, no symptoms / causing symptoms. The old `active` answer split into the two unstable answers. Rules about "active", "untreated" or "unstable" brain metastases rule out both. "Symptomatic" rules rule out `symptoms` only.
+4. **`autoimmune_active`** now means immune-suppressing treatment in the last 2 years, with thyroid hormone, insulin and skin creams named as not counting. NCT07436728 #46 now maps, as the relabel had it.
+
+`ANNOTATION.md` gained a section on the four facts. 37 passages were relabelled in one commit, and every label file now names the new vocabulary's checksum.
+
+| | Before | After |
+| --- | ---: | ---: |
+| Mapped share of rules about the person, all 40 | 40.7% | **43.3%** (298 of 688) |
+| The same, held-out 30 | 41.3% | **43.8%** (197 of 450) |
+| Vocabulary gaps | 70 | 52 |
+| Trials using `brain_mets`, `steroids`, `autoimmune_active` and `prior_adc` | 20, 2, 6, 0 | 24, 8, 7, 5 |
+
+The largest gaps left are other-cancer windows (6 trials), pneumonitis that needed steroids (5), prior targeted therapy by target (5), and autoimmune, prior PD-1, steroid and transplant variants (4 each).

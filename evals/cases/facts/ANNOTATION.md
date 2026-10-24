@@ -38,7 +38,7 @@ List every answer the rule clearly makes ineligible, and no answer whose fit is 
   - "No other malignancy within 3 years" rules out `within_2_years`. `two_to_5_years` straddles the threshold, so it isn't ruled out, and the note says so.
   - "No other malignancy within 5 years" rules out `within_2_years` and `two_to_5_years`.
   - "At least one but no more than two prior lines" rules out `zero` and `three_plus`, if the lines are for advanced disease.
-- **Exceptions that the answers can express are honoured.** "No brain metastases unless treated and stable for at least 4 weeks" rules out `active` only. `treated_stable` fits.
+- **Exceptions that the answers can express are honoured.** "No brain metastases unless treated and stable for at least 4 weeks" rules out `not_stable_no_symptoms` and `symptoms`. `treated_stable` fits.
 - **Exceptions the answers can't express leave the rule's core.** "No prior immunotherapy within 6 months": no answer says when. The rule doesn't clearly exclude any answer of `prior_pd1`, so it's `trial-specific` with a note.
 
 ## Rule 3: rules for part of a trial carry `appliesTo`
@@ -77,7 +77,7 @@ Settled after reading the first dev trials, before any label was written:
   - a prior drug or biomarker the vocabulary doesn't name and few trials ask about.
 - **The same fact with a different window or threshold** is a `vocabulary-gap`, with the note naming the fact and the difference. Examples:
   - "autoimmune disease currently requiring systemic treatment": the fact's window is 2 years;
-  - "systemic steroids, except up to 10 mg/day prednisone": the fact has no dose;
+  - "systemic steroids, except up to 2 mg/day dexamethasone": the fact's threshold is 10 mg prednisone;
   - "pneumonitis that required steroids": the fact has no steroid condition.
 
   These make the cost of a coarse vocabulary visible at Gate 1.
@@ -87,9 +87,24 @@ Settled after reading the first dev trials, before any label was written:
 - **A sentence that only permits** ("Subjects may have received prior anti-PD-1 therapy") or only explains is `not-a-rule`, note "permits".
 - **An exception sentence that refines a rule mapped in an earlier passage** is `not-a-rule`, note "exception to n". The mapped passage already reflects it. If the exception adds a condition the vocabulary can't express, the note says so.
 
+### After Gate 1: brain metastases, steroids and antibody-drug conjugates
+
+The vocabulary changed at Gate 1 (`work/0002-fact-vocabulary/gate-1-labels.md`):
+
+- **`brain_mets`**:
+  - "Active", "unstable", "uncontrolled", "untreated" or "progressing" brain metastases rule out `not_stable_no_symptoms` and `symptoms`. "Untreated" is read as trials use it, meaning not yet controlled.
+  - "Symptomatic" brain metastases alone rule out `symptoms` only.
+  - Any known brain metastases rule out every answer but `none`.
+- **`steroids`**:
+  - "More than 10 mg prednisone a day", or "except replacement or low doses up to 10 mg", rules out `high_dose`.
+  - Systemic steroids with no dose allowed rule out `low_dose` and `high_dose`.
+  - A different threshold, or "able to stop", stays a gap.
+- **`prior_adc`**: a topoisomerase I payload ADC (T-DXd, Dato-DXd, sacituzumab, "TOP1i ADC") rules out `topo_payload`. A single named drug or a target (TROP2) stays a gap.
+- **`autoimmune_active`** means immune-suppressing treatment in the last 2 years. The usual exceptions (thyroid hormone, insulin, vitiligo, skin-only psoriasis) are inside the meaning, so a rule listing them maps.
+
 ## Worked cases
 
-1. **"Patients with brain metastases are eligible if treated and clinically stable, off steroids for ≥ 14 days."** → `brain_mets` ruling out `active`. The steroid part sits inside the exception, so the note records "steroid condition not mapped". `steroids_daily` isn't mapped from this sentence: it governs only people with brain metastases.
+1. **"Patients with brain metastases are eligible if treated and clinically stable, off steroids for ≥ 14 days."** → `brain_mets` ruling out `not_stable_no_symptoms` and `symptoms`. The steroid part sits inside the exception, so the note records "steroid condition not mapped". `steroids` isn't mapped from this sentence: it governs only people with brain metastases.
 2. **"Prior immunotherapy is allowed if the last dose was more than 6 months before enrollment."** → `trial-specific`, note "time window not in vocabulary". No answer of `prior_pd1` is clearly excluded.
 3. **Biomarker cohort:** "Cohort 2: NSCLC with MET exon 14 skipping" → `met` ruling out `amplification` and `none_found`, `appliesTo` "Cohort 2".
 4. **"No history of another malignancy within 3 years, except adequately treated basal cell carcinoma."** → `other_cancer` ruling out `within_2_years`, note "3-year window; skin cancer exception not mapped". The exception would only move a person out of `within_2_years`, and someone in that group whose other cancer was a basal cell carcinoma is wrongly ruled out. Recorded as a known cost in the note.

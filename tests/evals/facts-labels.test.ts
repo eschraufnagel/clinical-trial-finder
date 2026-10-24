@@ -71,7 +71,7 @@ describe("loadFactLabels", () => {
       ...base,
       passages: [
         { ...ecog, mappings: [{ factId: "ecog", rulesOut: ["ps2", "ps3_4"], appliesTo: null }] },
-        { ...brain, mappings: [{ factId: "brain_mets", rulesOut: ["active"], appliesTo: null }] },
+        { ...brain, mappings: [{ factId: "brain_mets", rulesOut: ["symptoms"], appliesTo: null }] },
         { ...anc, unmapped: "organ-function" },
       ],
     };

@@ -2,7 +2,7 @@
   "nctId": "NCT05661461",
   "set": "heldout",
   "criteriaTextSha": "d29e50a50df7f14477310afb5e5edfd29e1f51bf7fdcab6222dff5f68ea31865",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "For All Patients",
@@ -209,7 +209,7 @@
       "mappings": [
         {
           "factId": "brain_mets",
-          "rulesOut": ["active"],
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
           "appliesTo": null
         },
         {
@@ -362,9 +362,14 @@
       "quote": "High-dose systemic corticosteroids (\\>10 mg of prednisone or its equivalent) are not permitted within 2 weeks of first dose.",
       "start": 5430,
       "end": 5554,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "steroids: dose threshold"
+      "mappings": [
+        {
+          "factId": "steroids",
+          "rulesOut": ["high_dose"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
     },
     {
       "quote": "However, inhaled, intranasal, intra articular, and topical steroids are allowed.",

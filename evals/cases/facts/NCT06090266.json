@@ -2,7 +2,7 @@
   "nctId": "NCT06090266",
   "set": "dev",
   "criteriaTextSha": "c01abc70d9c7c01bfe88d4b5e39e49c481c725002883dd91588e661184696bc2",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "Informed consent signed by the subject prior to conducting study-specific procedures.",
@@ -392,7 +392,7 @@
       "mappings": [
         {
           "factId": "brain_mets",
-          "rulesOut": ["active"],
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
           "appliesTo": null
         },
         {
@@ -586,9 +586,15 @@
       "quote": "Use of systemic corticosteroids within 15 days or other immunosuppressive drugs within 30 days prior to start of the study, with the exception of corticosteroids as replacement therapy up to an equivalent of prednisone 10 mg/day, which are allowed.",
       "start": 8335,
       "end": 8583,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "steroids: dose threshold (replacement up to 10 mg allowed)"
+      "mappings": [
+        {
+          "factId": "steroids",
+          "rulesOut": ["high_dose"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "other immunosuppressive drugs not mapped"
     },
     {
       "quote": "QTc interval \u2265 470 msec by electrocardiogram (ECG).",

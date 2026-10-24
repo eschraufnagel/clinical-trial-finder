@@ -2,7 +2,7 @@
   "nctId": "NCT07436728",
   "set": "dev",
   "criteriaTextSha": "a5cb5d4eb78cfcd997eee2a4f3a6e1070beaaf4a56ded600ee05f632732a24a3",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "Aged greater than or equal to (\u2265) 18 years or \u2265 the local legal age of majority, as applicable, at the time of signing the main informed consent form (ICF).",
@@ -368,9 +368,14 @@
       "quote": "Symptomatic central nervous system (CNS) metastases must have been treated, be asymptomatic for \u226514 days, and meet the following criteria at the time of enrollment:",
       "start": 5744,
       "end": 5908,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "brain metastases: symptomatic only"
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["symptoms"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
     },
     {
       "quote": "a) No concurrent treatment for CNS disease (for example, surgery, radiation, and corticosteroids \u226510 mg/d prednisone or equivalent).",
@@ -406,9 +411,15 @@
       "quote": "History of known autoimmune disease, except for:",
       "start": 6133,
       "end": 6181,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "autoimmune: any history, with exceptions"
+      "mappings": [
+        {
+          "factId": "autoimmune_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "any history; the listed exceptions are inside the fact's meaning"
     },
     {
       "quote": "a) Vitiligo. b) Psoriasis not requiring systemic treatment for \\>1 year before receipt of TAK-505.",
@@ -433,7 +444,7 @@
       "mappings": [
         {
           "factId": "brain_mets",
-          "rulesOut": ["active"],
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
           "appliesTo": null
         },
         {
@@ -837,7 +848,7 @@
       "end": 12106,
       "mappings": [],
       "unmapped": "vocabulary-gap",
-      "note": "steroids: dose threshold"
+      "note": "steroids: other threshold (15 mg prednisone) and replacement exceptions"
     },
     {
       "quote": "a) Topical, intranasal, inhaled, ocular, or intra-articular corticosteroids. b) Physiologic doses of replacement steroid (for example, for adrenal insufficiency).",

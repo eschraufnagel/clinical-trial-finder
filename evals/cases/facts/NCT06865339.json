@@ -2,7 +2,7 @@
   "nctId": "NCT06865339",
   "set": "heldout",
   "criteriaTextSha": "a77d4a2f3a718008f6e3ac6023c5b73420487f453dc6f88e5cc448297521a5ce",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "Previously untreated and biopsy-proven NSCLC, with measurable disease (at least 1 unidimensional, radiographically measurable lesion based on RECIST v1.1) and one of the following stages: (prior resection or stereotactic radiotherapy for early-stage disease is allowed)",
@@ -459,9 +459,15 @@
       "quote": "Diagnosis of immunodeficiency or ongoing chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent) or any other form of immunosuppressive therapy within 7 days prior to the first dose of study drug",
       "start": 6903,
       "end": 7134,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "steroids: dose threshold"
+      "mappings": [
+        {
+          "factId": "steroids",
+          "rulesOut": ["high_dose"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "immunodeficiency and other immunosuppressants not mapped"
     },
     {
       "quote": "Known hypersensitivity to the active substances or to any of the excipients",

@@ -2,7 +2,7 @@
   "nctId": "NCT06293898",
   "set": "dev",
   "criteriaTextSha": "15d171389cfe09f3cd12f1b69c35ea8e4f1119459fb77597ea2ace68d9b3337c",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "Signed the informed consent form voluntarily and agreed to follow the program requirements.",
@@ -577,7 +577,7 @@
       "mappings": [
         {
           "factId": "brain_mets",
-          "rulesOut": ["active"],
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
           "appliesTo": null
         },
         {
@@ -624,9 +624,14 @@
       "quote": "Participants who are receiving treatment with systemic glucocorticoids \\>10 mg/day equivalent of prednisone, except for the treatment of chronic obstructive pulmonary disease, antiemetic, infusion reactions; however, treatment with low dose glucocorticoids (\u226410 mg/day equivalent of prednisone) is permitted.",
       "start": 11173,
       "end": 11481,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "steroids: dose threshold"
+      "mappings": [
+        {
+          "factId": "steroids",
+          "rulesOut": ["high_dose"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
     },
     {
       "quote": "The chronic use of topical, inhaled, and locally injected steroids is permitted",
@@ -796,9 +801,14 @@
       "quote": "For Dose Expansion Only: Prior treatment with any topoisomerase inhibitor ADC.",
       "start": 13475,
       "end": 13553,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "prior ADC: topoisomerase payload"
+      "mappings": [
+        {
+          "factId": "prior_adc",
+          "rulesOut": ["topo_payload"],
+          "appliesTo": "For Dose Expansion Only"
+        }
+      ],
+      "unmapped": null
     },
     {
       "quote": "If the topoisomerase I ADC is sacituzumab govitecan, prior discussion with the medical monitor is required for potential inclusion",

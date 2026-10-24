@@ -2,7 +2,7 @@
   "nctId": "NCT05570825",
   "set": "heldout",
   "criteriaTextSha": "e48fa6713c84fa580a7546500c5f0a4e0393ef2c9b703231732a021dc016c2cb",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "Subjects aged 18 years and older",
@@ -268,9 +268,15 @@
       "quote": "Symptomatic central nervous system (CNS) metastases; participants with known brain metastasis must be asymptomatic with no steroids or escalating doses of antiepileptics within 7 days prior to start of study treatment",
       "start": 2981,
       "end": 3198,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "brain metastases: symptomatic only"
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["symptoms"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "no steroids for them not mapped"
     },
     {
       "quote": "Patients with untreated CNS metastases may be enrolled as long as they meet the above criteria.",

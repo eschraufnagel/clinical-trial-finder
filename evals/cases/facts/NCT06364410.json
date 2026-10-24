@@ -2,7 +2,7 @@
   "nctId": "NCT06364410",
   "set": "dev",
   "criteriaTextSha": "e84759935c1185995273470e462824bbbcb6b639efba53b03c8f5fd87d94621b",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "In the dose escalation, patients must have a histologically documented locally advanced, unresectable, or metastatic solid tumor that has progressed following at least one prior line of treatment in the metastatic setting or has no satisfactory alternative treatment option and all of the following:",
@@ -677,9 +677,15 @@
       "quote": "Patients with prior treatment with T-DXd (DS-8201a) or other topoisomerase inhibitors (dose escalation and dose expansion)",
       "start": 13358,
       "end": 13480,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "prior ADC: topoisomerase payload or T-DXd specifically"
+      "mappings": [
+        {
+          "factId": "prior_adc",
+          "rulesOut": ["topo_payload"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "non-ADC topoisomerase inhibitors not mapped"
     },
     {
       "quote": "Patients with uncontrolled intercurrent illness",

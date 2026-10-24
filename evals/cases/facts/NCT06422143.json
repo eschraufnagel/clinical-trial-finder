@@ -2,7 +2,7 @@
   "nctId": "NCT06422143",
   "set": "heldout",
   "criteriaTextSha": "26da0663093ccb26ed0e97e62c696bd1d5e79e42f16687251e9f2b6073b86ccc",
-  "vocabularySha256": "fa74937c6d4d3f59e4f91dfb5aba7d94e6f8fd098b5cf26d85b3286d5dbc1f5f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
   "passages": [
     {
       "quote": "Histologically or cytologically confirmed diagnosis of squamous non-small cell lung cancer (NSCLC) \\[Stage IV: M1a, M1b, M1c, American Joint Committee on Cancer Staging Manual, version 8\\]",
@@ -284,9 +284,14 @@
       "quote": "Received prior treatment with a topoisomerase I inhibitor-containing ADC",
       "start": 4584,
       "end": 4656,
-      "mappings": [],
-      "unmapped": "vocabulary-gap",
-      "note": "prior ADC: topoisomerase payload"
+      "mappings": [
+        {
+          "factId": "prior_adc",
+          "rulesOut": ["topo_payload"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
     },
     {
       "quote": "Is currently receiving a strong inducer/inhibitor of CYP3A4 that cannot be discontinued for the duration of the study (the required washout period before starting sac-TMT is 2 weeks)",
@@ -316,7 +321,7 @@
       "mappings": [
         {
           "factId": "brain_mets",
-          "rulesOut": ["treated_stable", "active"],
+          "rulesOut": ["treated_stable", "not_stable_no_symptoms", "symptoms"],
           "appliesTo": null
         },
         {
