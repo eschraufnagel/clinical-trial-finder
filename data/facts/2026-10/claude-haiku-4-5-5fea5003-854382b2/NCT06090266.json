@@ -1,0 +1,182 @@
+{
+  "nctId": "NCT06090266",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 241,
+        "end": 459,
+        "text": "subjects must have a histological diagnosis of any type of carcinoma, sarcoma, or melanoma with progressive metastatic disease, or progressive locally advanced disease not amenable to local therapy with curative intent"
+      },
+      "appliesTo": "Parts A and B (Cohorts A1, A2, and B1)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2135,
+        "end": 2188,
+        "text": "Subjects must have measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4874,
+        "end": 4959,
+        "text": "Subject has an Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) \\> 2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5222,
+        "end": 5337,
+        "text": "Subject has a known active central nervous system (CNS) primary tumor or metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5222,
+        "end": 5337,
+        "text": "Subject has a known active central nervous system (CNS) primary tumor or metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4964,
+        "end": 4999,
+        "text": "Prior organ or stem cell transplant"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5848,
+        "end": 6158,
+        "text": "Subject has a known history of a hematologic malignancy, malignant primary brain tumor, or another malignant primary solid tumor (other than that under study), unless the subject has undergone potentially curative therapy with no evidence of recurrent disease for at least 3 years before the start of treatment"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7028,
+        "end": 7090,
+        "text": "Uncontrolled infection with human immunodeficiency virus (HIV)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7686,
+        "end": 7794,
+        "text": "Known active hepatitis C as determined by positive serology and confirmed by polymerase chain reaction (PCR)"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8095,
+        "end": 8184,
+        "text": "Autoimmune disease or inflammatory condition requiring systemic anti-inflammatory therapy"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9091,
+        "end": 9116,
+        "text": "Interstitial lung disease"
+      },
+      "appliesTo": "Cohorts A2, B1, B2, and B3 only"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10324,
+        "end": 10447,
+        "text": "Subject is pregnant or breastfeeding or expecting to conceive or father children within the projected duration of the study"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8335,
+        "end": 8582,
+        "text": "Use of systemic corticosteroids within 15 days or other immunosuppressive drugs within 30 days prior to start of the study, with the exception of corticosteroids as replacement therapy up to an equivalent of prednisone 10 mg/day, which are allowed"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

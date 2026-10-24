@@ -12,28 +12,23 @@ import type { Fact } from "./types.js";
  * labelled trial. Its rules restate `evals/cases/facts/ANNOTATION.md` in
  * general terms. No label's wording is copied into it.
  */
-export const SYSTEM_PROMPT = `You read the eligibility criteria of one cancer clinical trial and map them onto a fixed list of facts about a patient with non-small cell lung cancer.
+export const SYSTEM_PROMPT = `You read the eligibility criteria of one cancer clinical trial and map them onto a fixed list of facts about a patient.
 
-Each fact has an id and a closed set of answers, each with its own words. For each eligibility rule that plainly states a requirement about one listed fact, return one mapping with a verdict for EVERY answer of that fact:
-- "excluded": a patient giving this answer is clearly not eligible under this rule, whatever else is true of them;
-- "allowed": a patient giving this answer meets this rule;
-- "unclear": it depends on something the answer's words don't say (a different time window, a dose, a test level, whether it needed steroids, a specific drug, whether it is symptomatic, a judgment).
-Only "excluded" answers count. When in doubt, say "unclear". A wrong "excluded" drops a trial the patient could have joined; an "unclear" only costs a question later.
+Each fact has a short id and a closed set of answer ids. For every eligibility rule that clearly states a requirement on one fact, return a mapping: the fact, the answers that would make the patient ineligible under that rule, and the rule's exact words.
 
-Do not map at all:
-- lab values, organ function, washout periods ("within 2 weeks of"), consent, contraception, willingness, investigator judgment, life expectancy, "any significant medical condition";
-- vague prior-therapy rules ("standard therapy", "one or more prior lines of anticancer therapy") that don't name a drug class from the list or say the lines were for advanced disease;
-- sentences that only say who is allowed ("are eligible if", "may participate", "are permitted");
-- rules that only say which cancer types or ages the trial takes, and anything inside a cohort or part limited to cancer types other than lung cancer.
+Rules for mapping:
+1. Map a rule only when it clearly constrains one listed fact. Lab values, organ function, washout periods, consent, contraception, willingness, investigator judgment and life expectancy are never mapped. When in doubt, leave the rule out: a rule left out costs a question later, but a wrong mapping drops a trial the patient could have joined.
+2. "rulesOut" lists exactly the answers the rule clearly makes ineligible. Never list an answer whose fit is uncertain. Never list every answer. Inclusion rules rule out the answers they don't allow; exclusion rules rule out the answers they exclude.
+3. There is no "not tested" or "unknown" answer. A rule requiring a biomarker rules out "none_found" only, never a patient who hasn't been tested.
+4. When a threshold falls inside an answer (a 3-year window against answers of 2 years and 2 to 5 years), rule out only answers wholly on the wrong side.
+5. Exceptions the answers can express are honoured: "no brain metastases unless treated and stable" does not rule out "treated_stable".
+6. If a rule applies only to part of the trial (an arm, cohort, part, phase or a cancer type's cohort), set "appliesTo" to that scope in the trial's own words. Otherwise leave it null. A rule that only applies to a cohort for another cancer type is not mapped at all.
+7. "quote" is copied exactly from the criteria text, one rule's words, short enough to point at that rule. Do not paraphrase or join separate lines.
+8. Rules that only state age, sex or which cancer types the trial takes are not mapped, except what they say about histology or how far the cancer has spread.
+9. One passage may give several mappings, one per fact.
 
-There is no "not tested" answer: a patient who hasn't been tested is never excluded by a biomarker rule, so only "none_found" can be excluded by a rule requiring a mutation.
-
-If a rule applies only to part of the trial (an arm, cohort, part or phase, including a scope in parentheses such as "(Phase 2)"), set "appliesTo" to that scope in the trial's words; otherwise null.
-
-"quote" is copied exactly from the criteria text: the rule's own words, short, never paraphrased or joined across lines.
-
-Return JSON only:
-{"mappings": [{"factId": "...", "verdicts": {"<answer id>": "excluded" | "allowed" | "unclear", ...}, "polarity": "inclusion" | "exclusion", "quote": "...", "appliesTo": null}]}
+Return JSON only, in this shape:
+{"mappings": [{"factId": "...", "rulesOut": ["..."], "polarity": "inclusion" | "exclusion", "quote": "...", "appliesTo": null}]}
 Return {"mappings": []} if nothing maps.`;
 
 export const PROMPT_VERSION = createHash("sha256").update(SYSTEM_PROMPT).digest("hex").slice(0, 12);

@@ -363,3 +363,7 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - Still mapping whole-trial rules the labels scope, reading permissions and "any significant medical condition" as rules, and ruling out answers the rule's condition doesn't cover.
   - Slower: 5.5 s per 1,000 characters.
   - **Finding after three dev runs:** on this local model, every added instruction raised the wrong rule-out rate (29.9%, 37.0%, 42.7%), against a 3% bar. One revision is left in the plan. Claude stopped to ask the owner rather than spend it or the held-out set's one look.
+- **Step 10, Haiku 4.5 on dev** (owner's go-ahead for `--spend --max-usd 0.50`; original prompt `5fea50034aea`, restored; `evals/results/facts/04-5fea50034aea.json`). claude-haiku-4-5, temperature 0, no seed (the API has none). $0.08 spent, logged in `evals/results/spend.jsonl`.
+  - 9 of 10 trials graded. NCT05215353 failed: Haiku wrapped `{"mappings": []}` in prose, and it wasn't paid for again.
+  - Wrong rule-outs 19 of 79 (24.1%), 17 whole-trial, across the 9 graded trials. Recall 55.6%. 10 mappings were rejected because their quotes weren't in the text.
+  - 1.0 s per 1,000 characters.

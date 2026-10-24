@@ -1,0 +1,127 @@
+{
+  "nctId": "NCT05694715",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 947,
+        "end": 1003,
+        "text": "Advanced solid tumor malignancy without curative options"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 830,
+        "end": 943,
+        "text": "Presence of at least one lesion with measurable disease as defined by RECIST 1.1 criteria for response assessment"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1308,
+        "end": 1376,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of \\<=1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6446,
+        "end": 6490,
+        "text": "Individuals with a second primary malignancy"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7045,
+        "end": 7228,
+        "text": "Individuals who are pregnant and/or breast feeding, or expecting to conceive children while receiving study treatment and/or for up to 180 days after the last dose of study treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with unstable brain metastases are excluded. Patients with a history of brain metastases (>1cm) are permitted to enroll if they have been treated and have been stable for a minimum of one month on imaging. Patients with small, asymptomatic brain metastases (<1cm) may enroll.",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with unstable brain metastases are excluded. Patients with a history of brain metastases (>1cm) are permitted to enroll if they have been treated and have been stable for a minimum of one month on imaging. Patients with small, asymptomatic brain metastases (<1cm) may enroll.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "HIV-infected individuals on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "HIV-infected individuals on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For participants with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated. Individuals with a history of hepatitis C virus (HCV) infection must have been treated and cured.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "For participants with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated. Individuals with a history of hepatitis C virus (HCV) infection must have been treated and cured.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}
