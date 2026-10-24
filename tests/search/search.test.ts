@@ -120,13 +120,26 @@ describe("searchTrials", () => {
     const result = search([
       trial("NCT00000001", {
         ...lung,
-        sites: [site({ lat: null, lon: null }), site({ lat: 61.219998, lon: -149.85784 })],
+        sites: [
+          site({ lat: null, lon: null, zip: null }),
+          site({ lat: 61.219998, lon: -149.85784 }),
+        ],
       }),
       trial("NCT00000002", lung),
     ]);
     expect(ids(result)).toEqual(["NCT00000002", "NCT00000001"]);
     expect(result.candidates[1]?.flags).toEqual(["site-distance-unknown"]);
     expect(result.candidates[1]?.nearestSite?.miles).toBeNull();
+  });
+
+  it.fails("places a site with no coordinates by its ZIP", () => {
+    const unlocated = (zip: string) =>
+      trial("NCT00000001", { ...lung, sites: [site({ lat: null, lon: null, zip })] });
+    expect(ids(search([unlocated("99501")]))).toEqual([]);
+    const near = search([unlocated("62701")]);
+    expect(ids(near)).toEqual(["NCT00000001"]);
+    expect(near.candidates[0]?.nearestSite?.miles).toBe(0);
+    expect(near.candidates[0]?.flags).toEqual([]);
   });
 
   it("counts every stage of the funnel, ending at the candidates", () => {

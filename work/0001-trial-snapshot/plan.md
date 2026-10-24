@@ -174,6 +174,12 @@ Each step is one commit, made through `npm run check && git commit`. No test moc
     - "Files that change" checked against `git diff --stat main`.
     - Then stop. The PR is opened on the owner's word, saying which gates were held and how each was answered.
 
+16. **A site with no coordinates is placed by its ZIP.** Added after step 15, from the owner's first look at the command's output.
+    - Four trials in a 50-mile Chicago search had their only US sites in other states, with misspelled cities ("Colombus", "Nasville"), so the registry gave no coordinates and the search kept them as "distance unknown". 165 of the snapshot's 167 sites without coordinates have a ZIP that's in the gazetteer.
+    - `placeFor` in `src/search/search.ts` locates such a site at its ZIP's point. Only a site with neither coordinates nor a known ZIP stays unknown, flagged and kept.
+    - Bug-fix order: the failing test in `tests/search/search.test.ts` is committed first, then the fix. The existing "no coordinates" test gets `zip: null` in that same first commit, so it still tests a site that can't be placed.
+    - The cancer-type measurement doesn't change: it doesn't reach the distance stage. The example funnels and `docs/search.md` are updated.
+
 ## Files that change
 
 **New:**
