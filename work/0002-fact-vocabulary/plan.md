@@ -38,8 +38,11 @@ It then measures two things against hand labels written first:
 | --- | --- | --- | --- |
 | **A. Vocabulary and labels** | 1–5 | **Gate 1** | `data/facts/vocabulary.json`; 40 trials labelled. Coverage and vocabulary gaps are computed from the labels alone, with no model |
 | **B. The mapper, tuned and scored** | 6–11 | **Gate 2** | Fake-adapter tests; a dev run tuned on the local model; the held-out set scored once; timing and a hosted dry-run estimate for all 1,129 |
-| **C. The long run** | 12–13 | — | All 1,129 candidates mapped, with a manifest; `facts:show` and `facts:try` working |
-| **D. Written up** | 14–15 | PR | docs, CLAUDE.md, README, roadmap, review passes |
+| ~~C. The long run~~ | ~~12–13~~ | | *Replaced after Gate 2: see below.* |
+| ~~D. Written up~~ | ~~14–15~~ | | |
+| **C′. Hints, not rule-outs** (re-planned after Gate 2) | 12–13 | **Gate 3** | No mapping rules a trial out; the local model scored on held-out with the frozen prompt, beside Haiku |
+| **D′. The long run** | 14–15 | — | All 1,129 candidates mapped, with a manifest; `facts:show` and `facts:try` print hints and question counts |
+| **E′. Written up** | 16–17 | PR | docs, CLAUDE.md, README, roadmap, review passes |
 
 **Gate 1: is the vocabulary worth spending model time on?** (intent, open question 1; spec §2.2, §5)
 - **What's decided:** whether the 31 facts and the labels hold up before any model maps anything.
@@ -70,7 +73,17 @@ It then measures two things against hand labels written first:
   - A prompt with wrong rule-outs, run over 1,129 trials, silently drops trials for every later profile.
 - **Also decided here:** whether the run's files are committed. Committing makes every 0003 result checkable from a fresh clone, at roughly 1,129 small files. The size is reported from the dev run.
 
-Stage C needs no gate of its own; it carries out Gate 2's answer. Stage D is documentation and the review passes.
+**Gate 2, as answered** (owner, 2026-10; `gate-2-finding.md`): **no model mapping rules a trial out.** A mapping is a "may not fit" hint, shown with the trial's words when the person's answer is among those it rules out, and a reason to ask a question when the person hasn't answered. The person's answers flag; the oncologist decides. The trust list tried first didn't hold up on held-out.
+
+**Gate 3: map all 1,129 on which model, and commit the files?** (re-planned after Gate 2)
+- **What the owner sees:** both models on the same 30 held-out trials with the frozen prompt `5fea50034aea`: recall, which is now the number that matters most because a missed rule is a missing hint or question, and the wrong-hint rate. Also the dry-run cost, and the size of a run directory.
+- **The choices:**
+  - the local model, about 5 hours, free;
+  - Haiku 4.5, about $7.84, which needs `--spend`;
+  - and, separately, whether the 1,129 files are committed.
+- **What it costs to be wrong:** 0003 chooses questions from these mappings. Missed rules mean questions never asked, and a rerun on the other model costs hours or dollars.
+
+Stages D′ and E′ need no gate of their own.
 
 ### Steps
 
@@ -191,43 +204,49 @@ Each step is one commit, through `npm run check && git commit`. No test mocks a 
     - Record the dev and held-out local timings and the projection for 1,129, plus the size of a run directory.
     - **Stop for Gate 2.**
 
-**Stage C: the long run**
+**Stage C: the long run** — *replaced after Gate 2. Steps 12–15 as first planned weren't done; steps 12–17 below replace them.*
 
-12. **Map the candidates, as Gate 2 decided.**
-    - The run goes in the background with progress in its log. It resumes if stopped.
-    - When the manifest is written: record counts, failures and time, and commit the run directory, or don't, as decided.
-    - `facts:eval -- --check` still passes.
-    - A test samples 20 committed mapping files, chosen by hash, and checks each quote against the snapshot text at its span and the run metadata against the manifest.
+**Stage C′: hints, not rule-outs** (re-planned after Gate 2)
 
-13. **Show and try (spec §1).**
-    - `scripts/facts-show.ts` (`facts:show`); `--run` defaults to the run named in `data/facts/2026-10/latest`, written at step 12.
-    - `scripts/facts-try.ts` (`facts:try`): `parseArgs` from `scripts/search.ts` for the search flags, plus `--profile`. It prints the 0001 funnel, then ruled out, open and fitting, then `dependsOn` for the top facts.
-    - `evals/cases/facts/profiles/example.json`: a made-up profile (stage IV adenocarcinoma, no brain metastases, ECOG 1, progressed on a PD-1 inhibitor and platinum, EGFR and ALK unknown).
-    - Formatting functions are exported and tested in `tests/scripts/facts-cli.test.ts`.
-    - Claude runs `facts:try` with the 0001 Chicago and Pierre searches and records the output.
+12. **No mapping rules a trial out (spec §4, amended).**
+    - `src/facts/status.ts`: `statusFor(trial, profile, vocabulary)` returns `hints` (whole-trial mappings whose `rulesOut` holds the person's answer, each with its quote), `partHints` (the same for scoped mappings), `fits` and `unknown`. There is no `status` field and no "ruled-out" state. A fact with a hint counts as unknown, not as a fit. `dependsOn` counts, for each unanswered fact, the trials that map it. Every trial still counts, because none is ever dropped.
+    - Remove `data/facts/trusted.json`, `loadTrustedFacts` and the trusted-set argument. Result 05 keeps the nine facts it names, and the grader's `trustedMetrics` stays readable for it.
+    - **Tests:** `tests/facts/status.test.ts` checks every fact and every answer of the committed vocabulary: a mapping ruling out that answer, given that answer, yields a hint and never anything that removes the trial. Scoped mappings give `partHints`. Profile validation and `dependsOn` stay.
+    - The grader's words change in its printed output, from "wrong rule-outs" to "wrong hints"; its numbers and field names stay, so committed results 01–05 still verify.
 
-**Stage D: written up**
+13. **The local model on held-out, with the frozen prompt.**
+    - `facts:map -- --set heldout` on the local model with prompt `5fea50034aea` (restored at step 10), then `facts:eval -- --set heldout`. It's free and takes about 20 minutes.
+    - This isn't tuning. The prompt is the one Haiku was scored with, and the comparison is between models for Gate 3.
+    - Record both models' held-out recall and wrong-hint rate side by side, plus the run directory's size.
+    - **Stop for Gate 3.**
 
-14. **Docs.**
-    - `docs/facts.md`:
-      - what the vocabulary is and why these facts;
+**Stage D′: the long run**
+
+14. **Map the candidates, as Gate 3 decided.** As step 12 was first planned: in the background, resumable, with a manifest. Then record counts, failures and time, and commit the run directory, or don't, as decided. `facts:eval -- --check` still passes. If committed, a test samples 20 mapping files by hash and checks quotes and run metadata against the manifest.
+
+15. **Show and try (spec §1).**
+    - `facts:show` as first planned.
+    - `facts:try` prints the 0001 funnel, then, for the profile:
+      - how many trials have hints and how many have none, and the five with the most hints, each hint with its quote;
+      - `dependsOn` for the top facts: "an answer to this would flag N trials".
+    - The profile in `evals/cases/facts/profiles/example.json` is as first planned.
+    - Formatting is tested in `tests/scripts/facts-cli.test.ts`. Claude runs `facts:try` on the Chicago and Pierre searches and records the output.
+
+**Stage E′: written up**
+
+16. **Docs.**
+    - `docs/facts.md` covers:
+      - the vocabulary and why these facts;
       - coverage and its gaps;
-      - the held-out result with every wrong rule-out;
-      - the model, quantization, temperature and seed;
-      - that the labels and vocabulary have one author;
-      - what the dev numbers are worth.
-    - `CLAUDE.md`:
-      - "Where things live": `src/facts/`, `data/facts/`, `evals/cases/facts/`, `evals/facts/`;
-      - the commands;
-      - the boundary sentences.
+      - every dev and held-out run, with model, quantization, temperature and seed;
+      - the Gate 2 finding and decision, in plain words;
+      - the trust list that didn't hold up;
+      - that the labels, vocabulary and prompt have one author.
+    - `CLAUDE.md`: layout, commands and boundary sentences, as first planned. One sentence under "Non-negotiable constraints" says that no model mapping rules a trial out.
     - `README.md`: `facts:try` in "Run it", with no numbers.
-    - `work/ROADMAP.md`: 0002 marked done.
+    - `work/ROADMAP.md`: 0002 done. 0003 is to choose questions by how many trials an answer would flag.
 
-15. **Review passes (`REVIEW.md`)**, recorded here.
-    - All five against `git diff main`.
-    - `npm run check`, `facts:eval -- --check` and `search:eval -- --check`.
-    - "Files that change" against `git diff --stat main`.
-    - Then stop. The PR is opened on the owner's word, saying how each gate was answered.
+17. **Review passes (`REVIEW.md`)**, as step 15 was first planned. The PR says how each gate was answered, including that held-out missed both bars and what was decided.
 
 ## Files that change
 
@@ -242,6 +261,7 @@ Each step is one commit, through `npm run check && git commit`. No test mocks a 
 - `tests/evals/facts-labels.test.ts`, `facts-coverage.test.ts`, `facts-grade.test.ts`, `facts-result.test.ts`
 - `tests/scripts/facts-candidates.test.ts`, `facts-map.test.ts`, `facts-cli.test.ts`, `model-flags.test.ts`
 - `docs/facts.md`, `work/0002-fact-vocabulary/plan.md`, `gate-1-labels.md`, `gate-1-relabel.txt`, `gate-2-finding.md`
+- `data/facts/trusted.json` (added at Gate 2, removed at step 12), `scripts/lib/model-flags.ts`
 
 **Modified:**
 - `tests/boundary.test.ts`, `package.json`
@@ -379,3 +399,4 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - **The 9 trusted facts:** wrong rule-outs 19 of 95 (20.0%, 13.2% to 29.1%); 18 whole-trial, in 13 trials. Recall 67.3% (76 of 113). **The trust list didn't hold up:** 0 of 34 on dev, where it was chosen, and 19 of 95 on held-out.
   - About 5 of the 19 are arguable grading artefacts: extent rules in trials for other cancers, which the labels call the search's, and two staging readings. The rest are real: steroid thresholds and "unable to stop", "heart attack within 1 year", a pregnancy-only rule, and missed scopes ("0-1 in 1a", KRAS in dose escalation).
   - Both bars are missed for all facts and for the trusted facts. **Stopped to report.**
+- **Gate 2, after held-out (owner, 2026-10): no model mapping rules a trial out.** Mappings become "may not fit" hints with quotes, and drive which questions to ask; the person's answers flag and the oncologist decides. The finding is in `gate-2-finding.md`. Steps 12–15 as first planned are replaced by steps 12–17 above, with Gate 3 deciding the long run's model.

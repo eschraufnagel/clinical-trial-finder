@@ -201,6 +201,22 @@ function statusFor(trial: TrialFacts, profile: Profile, vocabulary: FactVocabula
 - **A profile is validated against the vocabulary first.** An unknown fact or answer is an error, never silently ignored.
 - `dependsOn(statuses)` counts, for each fact, the open trials that list it as unknown. `facts:try` prints this.
 
+*Amended after Gate 2 (`gate-2-finding.md`): **no mapping rules a trial out.** On held-out, 26% of Haiku 4.5's mappings ruled out an answer the trial accepts, and 20% on the nine facts that had looked safe on dev. So `statusFor` has no `status` and no "ruled-out" state:*
+
+```ts
+interface TrialStatus {
+  nctId: string;
+  hints: FactMapping[];      // whole-trial mappings whose rulesOut holds the profile's answer: "may not fit", shown with the quote
+  partHints: FactMapping[];  // the same, for mappings with appliesTo
+  fits: string[];            // facts with an answer, mapped, and hinted by none of the trial's mappings
+  unknown: string[];         // facts the trial maps that the profile doesn't answer, or that a hint covers
+}
+
+function statusFor(trial: TrialFacts, profile: Profile, vocabulary: FactVocabulary): TrialStatus;
+```
+
+*Tests assert, for every fact and every answer, that a profile never removes a trial. `dependsOn` counts every trial, since none is dropped. In §6 the wrong rule-out rate is read as a hint-quality number, with the field names unchanged. Recall becomes the number that matters most: a rule the mapper misses is a hint never shown and a question never asked.*
+
 ---
 
 ## 5. Labels (OQ 4, OQ 5)

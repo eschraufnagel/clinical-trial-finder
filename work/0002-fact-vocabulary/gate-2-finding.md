@@ -74,3 +74,34 @@ These errors aren't noise around a working mapper. They are the rules whose mean
 **Why not a bigger model first:** Sonnet 5 would cost about twice Haiku's price, around $15 for the long run, and is untested here. The trusted-facts change makes the mapper safe on whatever model runs it, because untrusted facts can no longer drop a trial. A bigger model would mainly raise recall, which is cheaper to try in 0003 than to bet on now.
 
 **What this means for the product:** with the trusted facts, the conversation can rule trials out on activity level, extent, leptomeningeal disease, hepatitis, pregnancy, recent heart events, prior ADC, KRAS and steroids. Brain metastases, pneumonitis, autoimmune disease, HER2, histology, other cancers and prior therapy become questions to take to the oncologist, with the trial's own words, rather than reasons to drop a trial. For a patient-facing tool that never wants to drop a trial wrongly, that's arguably the right line regardless.
+
+## Answer (owner, 2026-10), after held-out
+
+The owner took the recommendation: rule out only on the nine trusted facts, then score held-out once on Haiku. Held-out ([05](../../evals/results/facts/05-5fea50034aea.json); claude-haiku-4-5, temperature 0, no seed, prompt `5fea50034aea`, $0.20):
+
+| | Mappings | Wrong rule-outs | Whole-trial wrong, in trials | Recall |
+| --- | ---: | ---: | --- | ---: |
+| All facts | 230 | 60 (26.1%; 95% interval 20.8%–32.1%) | 59, in 21 of 30 | 72.7% (170 of 234) |
+| The 9 trusted facts | 95 | 19 (20.0%; 13.2%–29.1%) | 18, in 13 of 30 | 67.3% (76 of 113) |
+
+**The trust list didn't hold up.** Its dev score of 0 of 34 was chosen, not measured, and held-out found 19 of 95 wrong.
+- About five of the 19 are arguable grading artefacts: extent rules in trials for other cancers, which the labels leave to the search, and two staging readings.
+- The rest are the same kinds as on dev, now on facts that looked safe: a steroid threshold given as 2 mg dexamethasone, "unable to stop steroids", "heart attack within 1 year", a pregnancy-only rule, and missed scopes ("ECOG 0-1 in 1a", KRAS in dose escalation).
+
+What the mapper does well is find the rules: 73% of the labelled mappings, and 91% of its matched mappings exact.
+
+### The decision
+
+**No model mapping rules a trial out.** That holds on any fact, any model, and any profile. A mapping becomes:
+
+- **a "may not fit" hint,** shown with the trial's own words, when the person's answer is among the answers it rules out. The person and their oncologist read it; nothing is dropped.
+- **a reason to ask a question:** a fact the person hasn't answered, which many open trials depend on, is worth asking about.
+
+The person's answers flag; the oncologist decides. This is "an unknown never excludes" taken one step further: the mapping itself counts as uncertain.
+
+**What it means for the product:**
+- The shortlist can't be narrowed by facts the model read. It is narrowed by the search (cancer type, age, sex, distance) and ordered with hints. A trial with several "may not fit" hints, each quoted, is still on the list.
+- The intent's question, whether one answer can settle many trials, gets a qualified answer. One answer can **flag** many trials at once, and 0003 can choose questions by how many trials an answer would flag. It can't **settle** them.
+- The wrong rule-out rate stops being a safety number. It becomes a hint-quality number: a wrong hint costs the person a question to their oncologist, not a trial.
+
+The trust list (`data/facts/trusted.json`) and the code that reads it are removed in the next step. This record and result 05, which names the nine facts, stay.
