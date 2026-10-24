@@ -111,3 +111,33 @@ describe("mapTrialFacts", () => {
     expect(request?.user).toMatch(/Cohort B: KRAS G12C mutation/);
   });
 });
+
+describe("per-answer verdicts", () => {
+  it("rules out only the answers marked excluded", async () => {
+    const { result } = await run([
+      {
+        factId: "brain_mets",
+        verdicts: {
+          none: "allowed",
+          treated_stable: "allowed",
+          not_stable_no_symptoms: "unclear",
+          symptoms: "excluded",
+        },
+        polarity: "exclusion",
+        quote: "Active brain metastases",
+        appliesTo: null,
+      },
+      {
+        factId: "ecog",
+        verdicts: { ps0: "allowed", ps1: "allowed", ps2: "unclear", ps3_4: "unclear" },
+        polarity: "inclusion",
+        quote: "ECOG performance status 0 or 1",
+        appliesTo: null,
+      },
+    ]);
+    expect(result.mappings.map((m) => [m.factId, m.rulesOut])).toEqual([
+      ["brain_mets", ["symptoms"]],
+    ]);
+    expect(result.rejected.map((r) => r.reason)).toEqual(["rulesOut is empty"]);
+  });
+});

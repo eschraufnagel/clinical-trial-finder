@@ -1,0 +1,309 @@
+{
+  "nctId": "NCT05694715",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 947,
+        "end": 1003,
+        "text": "Advanced solid tumor malignancy without curative options"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6080,
+        "end": 6442,
+        "text": "Participants with unstable brain metastases are excluded. Patients with a history of brain metastases (\\>1cm) are permitted to enroll if they have been treated and have been stable for a minimum of one month on imaging. Patients may not currently receive steroids for their brain metastases. Patients with small, asymptomatic brain metastases (\\<1cm) may enroll."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6080,
+        "end": 6442,
+        "text": "Participants with unstable brain metastases are excluded. Patients with a history of brain metastases (\\>1cm) are permitted to enroll if they have been treated and have been stable for a minimum of one month on imaging. Patients may not currently receive steroids for their brain metastases. Patients with small, asymptomatic brain metastases (\\<1cm) may enroll."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 830,
+        "end": 943,
+        "text": "Presence of at least one lesion with measurable disease as defined by RECIST 1.1 criteria for response assessment"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1308,
+        "end": 1408,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of \\<=1 (Karnofsky \\> 60%; Appendix 1)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6446,
+        "end": 6490,
+        "text": "Individuals with a second primary malignancy"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5194,
+        "end": 5401,
+        "text": "Any significant medical condition, laboratory abnormalities, which places the subject at unacceptable risk if he/she were to participate in the study at clinician's discretion and not otherwise stated below."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5194,
+        "end": 5401,
+        "text": "Any significant medical condition, laboratory abnormalities, which places the subject at unacceptable risk if he/she were to participate in the study at clinician's discretion and not otherwise stated below."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4611,
+        "end": 4777,
+        "text": "Human immunodeficiency virus (HIV)-infected individuals on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5194,
+        "end": 5401,
+        "text": "Any significant medical condition, laboratory abnormalities, which places the subject at unacceptable risk if he/she were to participate in the study at clinician's discretion and not otherwise stated below."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5194,
+        "end": 5401,
+        "text": "Any significant medical condition, laboratory abnormalities, which places the subject at unacceptable risk if he/she were to participate in the study at clinician's discretion and not otherwise stated below."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7045,
+        "end": 7228,
+        "text": "Individuals who are pregnant and/or breast feeding, or expecting to conceive children while receiving study treatment and/or for up to 180 days after the last dose of study treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Solid tumors where topoisomerase I inhibitors have shown efficacy, including gastrointestinal tumors (e.g., colon, pancreatic, gastric cancer and cholangiocarcinoma), breast cancer, and ovarian cancer (prostate cancer is excluded), with one or more of the following DNA repair defects: a. BRCA1, BRCA2, ATM, and/or PALB2",
+      "raw": {
+        "factId": "histology",
+        "verdicts": {
+          "adenocarcinoma": "allowed",
+          "squamous": "allowed",
+          "other_nsclc": "allowed",
+          "mixed_small_cell": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Solid tumors where topoisomerase I inhibitors have shown efficacy, including gastrointestinal tumors (e.g., colon, pancreatic, gastric cancer and cholangiocarcinoma), breast cancer, and ovarian cancer (prostate cancer is excluded), with one or more of the following DNA repair defects: a. BRCA1, BRCA2, ATM, and/or PALB2",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+      "raw": {
+        "factId": "prior_pd1",
+        "verdicts": {
+          "never": "allowed",
+          "progressed": "allowed",
+          "stopped_other": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+      "raw": {
+        "factId": "prior_platinum",
+        "verdicts": {
+          "never": "allowed",
+          "received": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+      "raw": {
+        "factId": "prior_targeted",
+        "verdicts": {
+          "never": "allowed",
+          "received": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+      "raw": {
+        "factId": "prior_adc",
+        "verdicts": {
+          "never": "allowed",
+          "topo_payload": "allowed",
+          "other": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+      "raw": {
+        "factId": "lines_advanced",
+        "verdicts": {
+          "zero": "allowed",
+          "one": "allowed",
+          "two": "allowed",
+          "three_plus": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+      "raw": {
+        "factId": "chest_radiation_6m",
+        "verdicts": {
+          "no": "allowed",
+          "yes": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Prior PARP inhibitor or irinotecan (or topoisomerase 1 inhibitors) use is allowed.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients may not currently receive steroids for their brain metastases.",
+      "raw": {
+        "factId": "steroids",
+        "verdicts": {
+          "none": "allowed",
+          "low_dose": "unclear",
+          "high_dose": "unclear"
+        },
+        "polarity": "exclusion",
+        "quote": "Patients may not currently receive steroids for their brain metastases.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For participants with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated. Individuals with a history of hepatitis C virus (HCV) infection must have been treated and cured. For individuals with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "For participants with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated. Individuals with a history of hepatitis C virus (HCV) infection must have been treated and cured. For individuals with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

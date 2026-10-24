@@ -34,14 +34,37 @@ export function readMappingEnvelope(
   const byId = new Map(facts.map((f) => [f.id, f]));
   const valid: RawMapping[] = [];
   const rejected: RejectedMapping[] = [];
-  for (const raw of mappings) {
+  for (const given of mappings) {
+    const raw = withRulesOut(given);
     const problem = mappingProblem(raw, byId);
+    const shaped = raw as { quote?: unknown } | null;
     const quote =
-      typeof raw === "object" && raw !== null && typeof raw.quote === "string" ? raw.quote : null;
+      typeof raw === "object" && shaped !== null && typeof shaped.quote === "string"
+        ? shaped.quote
+        : null;
     if (problem === undefined) valid.push(normalizeMapping(raw as RawMapping));
     else rejected.push({ reason: problem, quote, raw });
   }
   return { valid, rejected };
+}
+
+/**
+ * Amended in plan (step 10, revision 2): the model may give a verdict per
+ * answer, "excluded", "allowed" or "unclear", instead of a `rulesOut` list.
+ * Only "excluded" answers are ruled out. Asking for every answer makes the
+ * model weigh each answer's words, which a bare list let it skip.
+ */
+function withRulesOut(raw: unknown): unknown {
+  if (typeof raw !== "object" || raw === null || Array.isArray(raw)) return raw;
+  const m = raw as Record<string, unknown>;
+  const verdicts = m["verdicts"];
+  if (m["rulesOut"] !== undefined || typeof verdicts !== "object" || verdicts === null) return raw;
+  return {
+    ...m,
+    rulesOut: Object.entries(verdicts as Record<string, unknown>)
+      .filter(([, v]) => v === "excluded")
+      .map(([answer]) => answer),
+  };
 }
 
 function mappingProblem(raw: unknown, facts: ReadonlyMap<string, Fact>): string | undefined {

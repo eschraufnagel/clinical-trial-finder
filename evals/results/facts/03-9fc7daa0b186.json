@@ -1,0 +1,3494 @@
+{
+  "version": 1,
+  "set": "dev",
+  "runDir": "data/facts/2026-10/qwen3.6-35b-a3b-mlx-8bit-9fc7daa0-854382b2",
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  },
+  "labelsSha256": "14f3f4c5e53a16f9d80b8abf4f445576ec45bfa9270a4e57f31c46d28717a0a0",
+  "trials": [
+    "NCT04585750",
+    "NCT05215353",
+    "NCT05245500",
+    "NCT05694715",
+    "NCT05985655",
+    "NCT06090266",
+    "NCT06293898",
+    "NCT06364410",
+    "NCT07436728",
+    "NCT07705334"
+  ],
+  "missing": [],
+  "mappingRows": [
+    {
+      "nctId": "NCT04585750",
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "scoped": false,
+      "start": 115,
+      "end": 189,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": false,
+      "start": 115,
+      "end": 189,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 2,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "start": 192,
+      "end": 250,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 3,
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": true,
+      "start": 369,
+      "end": 413,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 6,
+        "rulesOut": [
+          "no"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": true,
+      "start": 369,
+      "end": 387,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 6,
+        "rulesOut": [
+          "no"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "start": 834,
+      "end": 950,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 14,
+        "rulesOut": [
+          "symptoms"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 771,
+      "end": 831,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 13,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "scoped": true,
+      "start": 506,
+      "end": 564,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 8,
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "scoped": true,
+      "start": 2070,
+      "end": 2314,
+      "grade": "exact",
+      "displaced": true,
+      "label": {
+        "passage": 8,
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose",
+        "low_dose"
+      ],
+      "scoped": true,
+      "start": 2423,
+      "end": 2550,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 28,
+        "rulesOut": [
+          "low_dose",
+          "high_dose"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": true,
+      "start": 2630,
+      "end": 2708,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 30,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "scoped": true,
+      "start": 2746,
+      "end": 2846,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "start": 2895,
+      "end": 2925,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 34,
+        "rulesOut": [
+          "controlled",
+          "uncontrolled"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 1656,
+      "end": 1750,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 21,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 1509,
+      "end": 1542,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 19,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "scoped": false,
+      "start": 253,
+      "end": 340,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT04585750",
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "scoped": true,
+      "start": 1827,
+      "end": 1975,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 23,
+        "rulesOut": [
+          "g12c",
+          "other_mutation"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT05245500",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": false,
+      "start": 155,
+      "end": 189,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 3,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05245500",
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "start": 566,
+      "end": 589,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 10,
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05245500",
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 593,
+      "end": 617,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 10,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05245500",
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "start": 193,
+      "end": 248,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05245500",
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "start": 385,
+      "end": 455,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 6,
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "scoped": false,
+      "start": 947,
+      "end": 1003,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 7,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "start": 6080,
+      "end": 6442,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 49,
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 6080,
+      "end": 6442,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "start": 830,
+      "end": 943,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 6,
+        "rulesOut": [
+          "no"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "start": 1308,
+      "end": 1408,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 10,
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "other_cancer",
+      "rulesOut": [
+        "over_5_years",
+        "two_to_5_years",
+        "within_2_years"
+      ],
+      "scoped": false,
+      "start": 6446,
+      "end": 6490,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 53,
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 5194,
+      "end": 5401,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "scoped": false,
+      "start": 5194,
+      "end": 5401,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "start": 4611,
+      "end": 4777,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 5194,
+      "end": 5401,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 5194,
+      "end": 5401,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05694715",
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 7045,
+      "end": 7228,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 59,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "start": 27,
+      "end": 92,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 1,
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "scoped": false,
+      "start": 126,
+      "end": 706,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "scoped": false,
+      "start": 709,
+      "end": 871,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 4,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "scoped": false,
+      "start": 1277,
+      "end": 1343,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 9,
+        "rulesOut": [
+          "symptoms"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "scoped": false,
+      "start": 709,
+      "end": 871,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "scoped": true,
+      "start": 322,
+      "end": 556,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "scoped": false,
+      "start": 709,
+      "end": 871,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 2271,
+      "end": 2370,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "other_cancer",
+      "rulesOut": [
+        "over_5_years",
+        "two_to_5_years",
+        "within_2_years"
+      ],
+      "scoped": false,
+      "start": 1346,
+      "end": 1387,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 10,
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years",
+          "over_5_years"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 1390,
+      "end": 1442,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 11,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT05985655",
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 1445,
+      "end": 1487,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "scoped": false,
+      "start": 159,
+      "end": 671,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": false,
+      "start": 241,
+      "end": 460,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 4,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "start": 5222,
+      "end": 5844,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 46,
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 5222,
+      "end": 5338,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 46,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "start": 2135,
+      "end": 2189,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 20,
+        "rulesOut": [
+          "no"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "scoped": false,
+      "start": 4874,
+      "end": 4960,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 42,
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "scoped": true,
+      "start": 765,
+      "end": 1150,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 2985,
+      "end": 3201,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "other_cancer",
+      "rulesOut": [
+        "two_to_5_years",
+        "within_2_years"
+      ],
+      "scoped": false,
+      "start": 5848,
+      "end": 6159,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 49,
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 8095,
+      "end": 8236,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "scoped": true,
+      "start": 9091,
+      "end": 9117,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 73,
+        "rulesOut": [
+          "current"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "start": 7028,
+      "end": 7263,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 55,
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 7686,
+      "end": 7795,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 61,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 9699,
+      "end": 10188,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 4964,
+      "end": 5000,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 43,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 10324,
+      "end": 10448,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 80,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06090266",
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "scoped": false,
+      "start": 8335,
+      "end": 8583,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 67,
+        "rulesOut": [
+          "high_dose"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "scoped": true,
+      "start": 5807,
+      "end": 5839,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "start": 330,
+      "end": 568,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 5,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "start": 10381,
+      "end": 10916,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 68,
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 10381,
+      "end": 10540,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 68,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "start": 2339,
+      "end": 2437,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 19,
+        "rulesOut": [
+          "no"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "start": 2441,
+      "end": 2514,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 20,
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "scoped": true,
+      "start": 330,
+      "end": 522,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "scoped": true,
+      "start": 13500,
+      "end": 13684,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 92,
+        "rulesOut": [
+          "topo_payload"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "zero"
+      ],
+      "scoped": true,
+      "start": 573,
+      "end": 778,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "other_cancer",
+      "rulesOut": [
+        "two_to_5_years",
+        "within_2_years"
+      ],
+      "scoped": false,
+      "start": 9105,
+      "end": 9397,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 62,
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 8563,
+      "end": 8778,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "scoped": false,
+      "start": 9768,
+      "end": 10009,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 65,
+        "rulesOut": [
+          "current"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "start": 11676,
+      "end": 12192,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 76,
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 8101,
+      "end": 8399,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 56,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 13255,
+      "end": 13348,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 90,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06293898",
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "scoped": false,
+      "start": 11173,
+      "end": 11481,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 73,
+        "rulesOut": [
+          "high_dose"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "start": 23,
+      "end": 151,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 1,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "start": 602,
+      "end": 764,
+      "grade": "exact",
+      "displaced": true,
+      "label": {
+        "passage": 1,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "start": 1595,
+      "end": 1681,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 12,
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "scoped": true,
+      "start": 328,
+      "end": 478,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "scoped": true,
+      "start": 894,
+      "end": 968,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "scoped": true,
+      "start": 569,
+      "end": 599,
+      "grade": "safe",
+      "displaced": true,
+      "label": {
+        "passage": 86,
+        "rulesOut": [
+          "topo_payload"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "scoped": true,
+      "start": 13358,
+      "end": 13443,
+      "grade": "safe",
+      "displaced": false,
+      "label": {
+        "passage": 86,
+        "rulesOut": [
+          "topo_payload"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "start": 4858,
+      "end": 5014,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 5169,
+      "end": 5389,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 41,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 11048,
+      "end": 11206,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 73,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 11207,
+      "end": 11471,
+      "grade": "exact",
+      "displaced": true,
+      "label": {
+        "passage": 73,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "scoped": false,
+      "start": 11474,
+      "end": 11638,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 75,
+        "rulesOut": [
+          "past",
+          "current"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 12250,
+      "end": 12554,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 80,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT06364410",
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 13533,
+      "end": 13632,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 88,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "scoped": true,
+      "start": 711,
+      "end": 779,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 7,
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "start": 416,
+      "end": 459,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 3,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "start": 6480,
+      "end": 6875,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 49,
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 6480,
+      "end": 6875,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 49,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "start": 4157,
+      "end": 4363,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 29,
+        "rulesOut": [
+          "no"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "start": 4082,
+      "end": 4153,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 28,
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "scoped": false,
+      "start": 3286,
+      "end": 3420,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 22,
+        "rulesOut": [
+          "negative"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "scoped": true,
+      "start": 1081,
+      "end": 1291,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "scoped": true,
+      "start": 1081,
+      "end": 1291,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 10,
+        "rulesOut": [
+          "never"
+        ],
+        "scoped": true
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus",
+        "zero"
+      ],
+      "scoped": true,
+      "start": 1985,
+      "end": 2101,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "other_cancer",
+      "rulesOut": [
+        "two_to_5_years",
+        "within_2_years"
+      ],
+      "scoped": false,
+      "start": 10334,
+      "end": 10416,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 77,
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 6133,
+      "end": 6474,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 46,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "scoped": false,
+      "start": 7956,
+      "end": 8295,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 58,
+        "rulesOut": [
+          "current"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "start": 10722,
+      "end": 10861,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 84,
+        "rulesOut": [
+          "controlled",
+          "uncontrolled"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 10868,
+      "end": 10978,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 86,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 6881,
+      "end": 7910,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 52,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 9972,
+      "end": 10121,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07436728",
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "scoped": false,
+      "start": 11974,
+      "end": 12559,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "start": 88,
+      "end": 116,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 3,
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "scoped": false,
+      "start": 119,
+      "end": 492,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "scoped": false,
+      "start": 119,
+      "end": 270,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 4,
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "start": 585,
+      "end": 698,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 7,
+        "rulesOut": [
+          "no"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "start": 493,
+      "end": 582,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 1666,
+      "end": 1774,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "other_cancer",
+      "rulesOut": [
+        "two_to_5_years",
+        "within_2_years"
+      ],
+      "scoped": false,
+      "start": 1247,
+      "end": 1375,
+      "grade": "wrong",
+      "displaced": false,
+      "label": {
+        "passage": 16,
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 1879,
+      "end": 1976,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "scoped": false,
+      "start": 1576,
+      "end": 1633,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "start": 1378,
+      "end": 1573,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 17,
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 1378,
+      "end": 1573,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 17,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 1102,
+      "end": 1135,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "start": 1636,
+      "end": 1663,
+      "grade": "exact",
+      "displaced": false,
+      "label": {
+        "passage": 19,
+        "rulesOut": [
+          "yes"
+        ],
+        "scoped": false
+      }
+    },
+    {
+      "nctId": "NCT07705334",
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "scoped": false,
+      "start": 493,
+      "end": 582,
+      "grade": "wrong",
+      "displaced": false,
+      "label": null
+    }
+  ],
+  "labelRows": [
+    {
+      "nctId": "NCT04585750",
+      "passage": 2,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 3,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 6,
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 8,
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 9,
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 13,
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 14,
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 15,
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 16,
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 19,
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 21,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 21,
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 23,
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 28,
+      "factId": "steroids",
+      "rulesOut": [
+        "low_dose",
+        "high_dose"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 30,
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT04585750",
+      "passage": 34,
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT05215353",
+      "passage": 14,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT05245500",
+      "passage": 3,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05245500",
+      "passage": 6,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05245500",
+      "passage": 10,
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05245500",
+      "passage": 10,
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05694715",
+      "passage": 6,
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05694715",
+      "passage": 7,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT05694715",
+      "passage": 10,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05694715",
+      "passage": 40,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT05694715",
+      "passage": 41,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT05694715",
+      "passage": 49,
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05694715",
+      "passage": 53,
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT05694715",
+      "passage": 59,
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05985655",
+      "passage": 1,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05985655",
+      "passage": 4,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT05985655",
+      "passage": 9,
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05985655",
+      "passage": 10,
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT05985655",
+      "passage": 11,
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 4,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 11,
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 15,
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 17,
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 20,
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 42,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 43,
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 46,
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 46,
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 49,
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 55,
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 58,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 61,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 67,
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 73,
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT06090266",
+      "passage": 80,
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 5,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 19,
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 20,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 34,
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 46,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 56,
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 57,
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 62,
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 65,
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 66,
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 68,
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 68,
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 73,
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 76,
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 81,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 85,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 90,
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06293898",
+      "passage": 92,
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT06364410",
+      "passage": 1,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT06364410",
+      "passage": 12,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06364410",
+      "passage": 40,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT06364410",
+      "passage": 41,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06364410",
+      "passage": 73,
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06364410",
+      "passage": 75,
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06364410",
+      "passage": 80,
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06364410",
+      "passage": 86,
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT06364410",
+      "passage": 88,
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 3,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 7,
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 8,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 9,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 9,
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "scoped": true,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 10,
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "scoped": true,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 22,
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 28,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 29,
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 42,
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 44,
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 46,
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 49,
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 49,
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 52,
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 54,
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 58,
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 77,
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 84,
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 84,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 85,
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 86,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 87,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 100,
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07436728",
+      "passage": 101,
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07705334",
+      "passage": 3,
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07705334",
+      "passage": 4,
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07705334",
+      "passage": 7,
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07705334",
+      "passage": 16,
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "scoped": false,
+      "found": false
+    },
+    {
+      "nctId": "NCT07705334",
+      "passage": 17,
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07705334",
+      "passage": 17,
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "scoped": false,
+      "found": true
+    },
+    {
+      "nctId": "NCT07705334",
+      "passage": 19,
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "scoped": false,
+      "found": true
+    }
+  ],
+  "rejected": [
+    {
+      "nctId": "NCT05245500",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05694715",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05694715",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05694715",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05694715",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05694715",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05694715",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05694715",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05694715",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05694715",
+      "reason": "quote does not appear in the criteria text"
+    },
+    {
+      "nctId": "NCT05985655",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT05985655",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06090266",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06090266",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06090266",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06090266",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06293898",
+      "reason": "quote does not appear in the criteria text"
+    },
+    {
+      "nctId": "NCT06293898",
+      "reason": "quote does not appear in the criteria text"
+    },
+    {
+      "nctId": "NCT06364410",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06364410",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06364410",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06364410",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06364410",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06364410",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT06364410",
+      "reason": "repeats a mapping already made"
+    },
+    {
+      "nctId": "NCT07436728",
+      "reason": "quote does not appear in the criteria text"
+    },
+    {
+      "nctId": "NCT07705334",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT07705334",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT07705334",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT07705334",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT07705334",
+      "reason": "rulesOut is empty"
+    },
+    {
+      "nctId": "NCT07705334",
+      "reason": "rulesOut is empty"
+    }
+  ],
+  "metrics": {
+    "trials": 10,
+    "modelMappings": 124,
+    "exact": 69,
+    "safe": 2,
+    "wrong": 53,
+    "unplaced": 0,
+    "wrongShare": 0.4274,
+    "wrongInterval": [
+      0.3438,
+      0.5154
+    ],
+    "wrongWholeTrial": 42,
+    "trialsWithWrongWholeTrial": 9,
+    "labelled": 109,
+    "found": 66,
+    "recall": 0.6055,
+    "recallInterval": [
+      0.5117,
+      0.6922
+    ],
+    "exactShare": 0.8118,
+    "rejected": 32,
+    "rejectedByReason": [
+      {
+        "reason": "rulesOut is empty",
+        "count": 27
+      },
+      {
+        "reason": "quote does not appear in the criteria text",
+        "count": 4
+      },
+      {
+        "reason": "repeats a mapping already made",
+        "count": 1
+      }
+    ]
+  }
+}

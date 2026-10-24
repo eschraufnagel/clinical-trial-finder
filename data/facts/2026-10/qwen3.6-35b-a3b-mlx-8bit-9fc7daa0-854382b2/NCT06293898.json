@@ -1,0 +1,250 @@
+{
+  "nctId": "NCT06293898",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5807,
+        "end": 5839,
+        "text": "small cell histology is excluded"
+      },
+      "appliesTo": "Cohort 7"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 330,
+        "end": 568,
+        "text": "Documented locally advanced or metastatic HER2-expressing (IHC 1+ to 3+ and/or HER2 gene amplification or activating mutation \\[see Table 17-5\\] in tumor specimen by ISH or NGS) solid tumor(s) not amenable to curative surgery or radiation"
+      },
+      "appliesTo": "Cohort 7"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10381,
+        "end": 10916,
+        "text": "Participants with primary tumors in the central nervous system (CNS) and active or untreated CNS metastases and/or carcinomatous meningitis should be excluded. Patients with previously treated brain metastases may participate provided they are clinically stable for at least 4 weeks and have no evidence of new or enlarging brain metastases and no requirements for corticosteroids 14 days prior to dosing with the investigational product (IP). Patients on low dose corticosteroids (\\<10 mg prednisone or equivalent/day) may participate"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10381,
+        "end": 10540,
+        "text": "Participants with primary tumors in the central nervous system (CNS) and active or untreated CNS metastases and/or carcinomatous meningitis should be excluded."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2339,
+        "end": 2437,
+        "text": "At least one measurable lesion based on RECIST (Response Evaluation Criteria in Solid Tumors) V1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2441,
+        "end": 2514,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG PS) of 0 to 1"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 330,
+        "end": 522,
+        "text": "Documented locally advanced or metastatic HER2-expressing (IHC 1+ to 3+ and/or HER2 gene amplification or activating mutation \\[see Table 17-5\\] in tumor specimen by ISH or NGS) solid tumor(s)"
+      },
+      "appliesTo": "Cohort 7"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13500,
+        "end": 13684,
+        "text": "Prior treatment with any topoisomerase inhibitor ADC. If the topoisomerase I ADC is sacituzumab govitecan, prior discussion with the medical monitor is required for potential inclusion"
+      },
+      "appliesTo": "Dose Expansion Only"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 573,
+        "end": 778,
+        "text": "has received at least 2 lines of standard therapy, including adjuvant/neoadjuvant treatment, or whose cancer is considered refractory to the standard of care or for which no standard treatment is available"
+      },
+      "appliesTo": "Cohort 7"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9105,
+        "end": 9397,
+        "text": "Participants with other prior malignancies except for: basal cell carcinoma of the skin, squamous cell carcinoma of the skin and/or carcinoma in situ after adequate resection, or other malignancy treated with curative intent with a disease-free interval of at least 3 years prior to screening"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8563,
+        "end": 8778,
+        "text": "Active autoimmune diseases and inflammatory diseases, such as systemic lupus erythematosus, psoriasis requiring systemic treatment, rheumatoid arthritis, inflammatory bowel disease, and Hashimoto's thyroiditis, etc."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9768,
+        "end": 10009,
+        "text": "Participants who have a history of noninfectious interstitial lung disease (ILD)/ pneumonitis that required treatment with steroids, have current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11676,
+        "end": 12192,
+        "text": "Participants with known human immunodeficiency virus (HIV) infection (HIV antibody positive). Participants who are HIV positive are allowed to participate if all the following criteria are met:\n\n    1. Undetectable HIV RNA and CD4 count ≥ 350 cells/μL at screening;\n    2. No AIDS-defining opportunistic infection within 12 months prior to screening;\n    3. On stable antiretroviral therapy (ART) for at least 4 weeks prior to enrollment with projected continuation of ART as clinically indicated while on the study."
+      },
+      "loose": true
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8101,
+        "end": 8399,
+        "text": "Participants with history of severe heart disease, such as symptomatic congestive heart failure (CHF) ≥ Grade 2 (CTCAE 5.0), New York Heart Association (NYHA)\n\n   ≥ Grade 2 heart failure at any time, or history of myocardial infarction or unstable angina pectoris within 6 months before enrollment."
+      },
+      "loose": true
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13255,
+        "end": 13348,
+        "text": "Participants who are pregnant, breastfeeding, or planning to become pregnant during the study"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11173,
+        "end": 11481,
+        "text": "Participants who are receiving treatment with systemic glucocorticoids \\>10 mg/day equivalent of prednisone, except for the treatment of chronic obstructive pulmonary disease, antiemetic, infusion reactions; however, treatment with low dose glucocorticoids (≤10 mg/day equivalent of prednisone) is permitted."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "radical radiotherapy... within 4 weeks or 5 half-lives (whichever is shorter) prior to the first administration",
+      "raw": {
+        "factId": "chest_radiation_6m",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "radical radiotherapy... within 4 weeks or 5 half-lives (whichever is shorter) prior to the first administration",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with active hepatitis B virus (HBV) infection (positive HBsAg test). Participants with a chronic inactive HBV infection are eligible if all the following criteria are met: 1. Have an HBV DNA viral load < 500 IU/mL; 2. Have normal AST and ALT, OR if liver metastasis is present, have AST and ALT <3×ULN which are not attributed to HBV infection; 3. Are on antiviral treatment, as clinically indicated. Participants with active hepatitis C virus (HCV) infection (HCV antibody positive and HCV RNA > the lower limit of detection). Participants with a positive anti-HCV antibody are eligible only if polymerase chain reaction is negative for HCV RNA",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with active hepatitis B virus (HBV) infection (positive HBsAg test). Participants with a chronic inactive HBV infection are eligible if all the following criteria are met: 1. Have an HBV DNA viral load < 500 IU/mL; 2. Have normal AST and ALT, OR if liver metastasis is present, have AST and ALT <3×ULN which are not attributed to HBV infection; 3. Are on antiviral treatment, as clinically indicated. Participants with active hepatitis C virus (HCV) infection (HCV antibody positive and HCV RNA > the lower limit of detection). Participants with a positive anti-HCV antibody are eligible only if polymerase chain reaction is negative for HCV RNA",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

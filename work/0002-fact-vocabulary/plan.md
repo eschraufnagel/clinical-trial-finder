@@ -359,3 +359,7 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - Scopes written in parentheses ("(Phase 2)") were still missed.
   - Rules with conditions no answer states were still mapped.
   - The model doesn't apply rules stated in prose to each answer.
+- **Step 10, revision 2** (prompt `9fc7daa0b186`; `evals/results/facts/03-9fc7daa0b186.json`). The model gives a verdict on every answer (`excluded`, `allowed`, `unclear`), and only `excluded` answers are ruled out. Amended in plan: the validator accepts either form. **Worse again:** wrong rule-outs 53 of 124 (42.7%), 42 whole-trial, in 9 trials; recall 60.6%. 27 mappings had no `excluded` answer and were rejected.
+  - Still mapping whole-trial rules the labels scope, reading permissions and "any significant medical condition" as rules, and ruling out answers the rule's condition doesn't cover.
+  - Slower: 5.5 s per 1,000 characters.
+  - **Finding after three dev runs:** on this local model, every added instruction raised the wrong rule-out rate (29.9%, 37.0%, 42.7%), against a 3% bar. One revision is left in the plan. Claude stopped to ask the owner rather than spend it or the held-out set's one look.

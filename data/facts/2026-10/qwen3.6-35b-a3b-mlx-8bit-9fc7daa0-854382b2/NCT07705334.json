@@ -1,0 +1,287 @@
+{
+  "nctId": "NCT07705334",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 88,
+        "end": 116,
+        "text": "ECOG performance status 0-1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 119,
+        "end": 492,
+        "text": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies. Eligible tumor types: TNBC, HR+ breast cancer, colon cancer, gastric cancer, HCC, NSCLC (adeno and squamous), mesothelioma, pancreatic cancer, HRPC, soft tissue sarcoma; other tumor types after Medical Monitor discussion."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 119,
+        "end": 270,
+        "text": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 585,
+        "end": 698,
+        "text": "≥1 measurable lesion per RECIST v1.1 (prostate cancer with bone-only disease and elevated PSA assessed by PCWG3)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 493,
+        "end": 582,
+        "text": "Stable CNS metastases ≥4 weeks post-radiotherapy and off steroids ≥14 days are permitted."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1666,
+        "end": 1774,
+        "text": "Recent radiotherapy, systemic anti-tumor therapy, other investigational therapy without appropriate washout."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1247,
+        "end": 1375,
+        "text": "History of another malignancy (with standard exceptions for in situ disease, non-melanoma skin cancers, and remission ≥2 years)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1879,
+        "end": 1976,
+        "text": "Any medical or psychiatric disorders affecting compliance and/or interpretation of study results."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1576,
+        "end": 1633,
+        "text": "Compromised pulmonary function within 6 months pre-dose ."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1378,
+        "end": 1573,
+        "text": "Active HBV (HBV-DNA \\>ULN), HCV (HCV-RNA \\>ULN), or HIV (well-controlled HIV with CD4 ≥350 cells/µL and undetectable viral load permitted); AIDS-defining opportunistic infection within 12 months."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1378,
+        "end": 1573,
+        "text": "Active HBV (HBV-DNA \\>ULN), HCV (HCV-RNA \\>ULN), or HIV (well-controlled HIV with CD4 ≥350 cells/µL and undetectable viral load permitted); AIDS-defining opportunistic infection within 12 months."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1102,
+        "end": 1135,
+        "text": "High-risk cardiovascular disease."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1636,
+        "end": 1663,
+        "text": "Pregnancy or breastfeeding."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 493,
+        "end": 582,
+        "text": "Stable CNS metastases ≥4 weeks post-radiotherapy and off steroids ≥14 days are permitted."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+      "raw": {
+        "factId": "pdl1",
+        "verdicts": {
+          "high": "unclear",
+          "low": "unclear",
+          "negative": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+      "raw": {
+        "factId": "prior_pd1",
+        "verdicts": {
+          "never": "unclear",
+          "progressed": "unclear",
+          "stopped_other": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+      "raw": {
+        "factId": "prior_platinum",
+        "verdicts": {
+          "never": "unclear",
+          "received": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+      "raw": {
+        "factId": "prior_targeted",
+        "verdicts": {
+          "never": "unclear",
+          "received": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+      "raw": {
+        "factId": "prior_adc",
+        "verdicts": {
+          "never": "unclear",
+          "topo_payload": "unclear",
+          "other": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+      "raw": {
+        "factId": "lines_advanced",
+        "verdicts": {
+          "zero": "unclear",
+          "one": "unclear",
+          "two": "unclear",
+          "three_plus": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

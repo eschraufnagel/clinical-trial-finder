@@ -1,0 +1,189 @@
+{
+  "nctId": "NCT05985655",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 92,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 126,
+        "end": 706,
+        "text": "One of the following histologically or cytologically confirmed advanced solid tumors: head and neck squamous cell carcinoma (HNSCC), pancreatic adenocarcinoma, non-small cell lung cancer (NSCLC), breast carcinoma (hormone receptor-positive \\[HR+\\] and Human Epidermal Growth Receptor 2 negative \\[HER2-\\] that has progressed to a prior treatment with Cyclin-Dependent Kinase 4 (CDK4)/ Cyclin-Dependent Kinase 6 \\[CDK6\\] inhibitor), or platinum-resistant high-grade epithelial ovarian, primary peritoneal, or fallopian tube cancers (HGSOC), or triple negative breast cancer (TNBC)."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 709,
+        "end": 871,
+        "text": "Must have disease that is advanced (ie, surgery or radiotherapy are not considered to be potentially curative), recurrent, or metastatic following SoC treatments."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1277,
+        "end": 1343,
+        "text": "Symptomatic central nervous system (CNS) malignancy or metastases."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 709,
+        "end": 871,
+        "text": "Must have disease that is advanced (ie, surgery or radiotherapy are not considered to be potentially curative), recurrent, or metastatic following SoC treatments."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 322,
+        "end": 556,
+        "text": "breast carcinoma (hormone receptor-positive \\[HR+\\] and Human Epidermal Growth Receptor 2 negative \\[HER2-\\] that has progressed to a prior treatment with Cyclin-Dependent Kinase 4 (CDK4)/ Cyclin-Dependent Kinase 6 \\[CDK6\\] inhibitor)"
+      },
+      "appliesTo": "breast carcinoma (hormone receptor-positive [HR+] and Human Epidermal Growth Receptor 2 negative [HER2-] that has progressed to a prior treatment with Cyclin-Dependent Kinase 4 (CDK4)/ Cyclin-Dependent Kinase 6 [CDK6] inhibitor)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 709,
+        "end": 871,
+        "text": "Must have disease that is advanced (ie, surgery or radiotherapy are not considered to be potentially curative), recurrent, or metastatic following SoC treatments."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2271,
+        "end": 2370,
+        "text": "Has had or is scheduled to have major surgery \\<28 days prior to the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1346,
+        "end": 1387,
+        "text": "Concurrent active or previous malignancy."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1390,
+        "end": 1442,
+        "text": "Prior organ or allogeneic stem-cell transplantation."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1445,
+        "end": 1487,
+        "text": "Moderate or severe cardiovascular disease."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Must have disease that is advanced (ie, surgery or radiotherapy are not considered to be potentially curative), recurrent, or metastatic following SoC treatments.",
+      "raw": {
+        "factId": "prior_adc",
+        "verdicts": {
+          "never": "allowed",
+          "topo_payload": "allowed",
+          "other": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Must have disease that is advanced (ie, surgery or radiotherapy are not considered to be potentially curative), recurrent, or metastatic following SoC treatments.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Must have disease that is advanced (ie, surgery or radiotherapy are not considered to be potentially curative), recurrent, or metastatic following SoC treatments.",
+      "raw": {
+        "factId": "prior_pd1",
+        "verdicts": {
+          "never": "allowed",
+          "progressed": "allowed",
+          "stopped_other": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Must have disease that is advanced (ie, surgery or radiotherapy are not considered to be potentially curative), recurrent, or metastatic following SoC treatments.",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}
