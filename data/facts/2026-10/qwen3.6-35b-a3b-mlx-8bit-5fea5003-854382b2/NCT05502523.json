@@ -1,0 +1,82 @@
+{
+  "nctId": "NCT05502523",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 120,
+        "text": "Any patients 18 years of age or older with confirmed or suspected early-stage (stage I-III) NSCLC"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 284,
+        "end": 487,
+        "text": "Previous cancer diagnosis within 5 years (except ductal carcinoma in situ \\[DCIS\\] of the breast, superficial bladder cancer, non-melanoma skin primary, other malignancy that does not require treatment)."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 490,
+        "end": 552,
+        "text": "Preoperative chemotherapy, immunotherapy, or radiation therapy"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 490,
+        "end": 552,
+        "text": "Preoperative chemotherapy, immunotherapy, or radiation therapy"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 490,
+        "end": 552,
+        "text": "Preoperative chemotherapy, immunotherapy, or radiation therapy"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

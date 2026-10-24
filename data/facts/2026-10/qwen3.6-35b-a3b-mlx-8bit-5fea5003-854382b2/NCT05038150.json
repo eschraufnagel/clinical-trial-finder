@@ -1,0 +1,214 @@
+{
+  "nctId": "NCT05038150",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 146,
+        "end": 320,
+        "text": "Part 1: Patients with advanced stage (unresectable or metastatic) cancer including but not limited to small cell lung cancer, non-small cell lung cancer (adeno- and squamous)"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 146,
+        "end": 218,
+        "text": "Part 1: Patients with advanced stage (unresectable or metastatic) cancer"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1992,
+        "end": 2064,
+        "text": "At least 1 measurable lesion according to RECIST 1.1 (for solid tumors)."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 543,
+        "end": 693,
+        "text": "characterized by failure of standard treatment (disease progression or intolerance, such as chemotherapy, targeted therapy, and other immunotherapies)"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 543,
+        "end": 693,
+        "text": "characterized by failure of standard treatment (disease progression or intolerance, such as chemotherapy, targeted therapy, and other immunotherapies)"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 543,
+        "end": 693,
+        "text": "characterized by failure of standard treatment (disease progression or intolerance, such as chemotherapy, targeted therapy, and other immunotherapies)"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 543,
+        "end": 693,
+        "text": "characterized by failure of standard treatment (disease progression or intolerance, such as chemotherapy, targeted therapy, and other immunotherapies)"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 543,
+        "end": 693,
+        "text": "characterized by failure of standard treatment (disease progression or intolerance, such as chemotherapy, targeted therapy, and other immunotherapies)"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6303,
+        "end": 6479,
+        "text": "Those who had received radiotherapy, chemotherapy, hormone therapy, surgery or molecular targeted therapy that ended fewer than 4 weeks before the first dose of study treatment"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7123,
+        "end": 7358,
+        "text": "Patients participating in other clinical studies or participating in other clinical studies within 4 weeks (or 5 half-lives of other study drugs), whichever is longer, prior to enrollment and receiving experimental drug administration."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5210,
+        "end": 5339,
+        "text": "Allergic or intolerant to salmonella sensitive antibiotics, or combined with infectious diseases and currently using antibiotics."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6875,
+        "end": 7082,
+        "text": "Positive for the presence of human immunodeficiency virus-1 (HIV-1) or human immunodeficiency virus-2 (HIV-2) (positive antigen/antibody and nucleic acid tests); or follow standard of care for HIV diagnosis."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3555,
+        "end": 3845,
+        "text": "If female, be either postmenopausal for at least 1 year with documented follicle stimulating hormone (FSH) \\> 30 IU/L, or surgically sterile for at least 3 months, or if a woman of childbearing potential, must be non-pregnant confirmed by blood and urine pregnancy tests, and non-lactating."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5004,
+        "end": 5140,
+        "text": "Received systemic or absorbable dosage of steroid hormone (prednisone or equivalent) of \\> 10 mg/day in the 14 days prior to enrollment;"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Eastern Co-Operative Oncology Group (ECOG) performance status 0 ~ 1",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eastern Co-Operative Oncology Group (ECOG) performance status 0 ~ 1",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

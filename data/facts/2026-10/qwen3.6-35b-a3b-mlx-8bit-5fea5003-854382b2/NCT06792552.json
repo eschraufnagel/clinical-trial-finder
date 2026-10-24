@@ -1,0 +1,189 @@
+{
+  "nctId": "NCT06792552",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 965,
+        "end": 1063,
+        "text": "Participants must have a diagnosis of specific type of metastatic or locally advanced solid tumors"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6534,
+        "end": 6718,
+        "text": "Known untreated CNS metastases and/or leptomeningeal metastases. Participants are eligible if CNS metastases have been treated and participants have neurologically returned to baseline"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6534,
+        "end": 6598,
+        "text": "Known untreated CNS metastases and/or leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 397,
+        "end": 527,
+        "text": "presence of at least one evaluable lesion according to RECIST Version 1.1. Measurable lesions are required in the backfill period."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1191,
+        "end": 1266,
+        "text": "presence of at least one measurable lesion according to RECIST Version 1.1."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4648,
+        "end": 4725,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6306,
+        "end": 6530,
+        "text": "Any other malignancy within 2 years prior to the first dose of the study treatment except for localized cancers that are considered to have been cured and in the opinion of the Investigator present a low risk for recurrence."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7680,
+        "end": 7877,
+        "text": "History of non-infectious pneumonitis that has required a course of oral or intravenous steroids to assist with recovery, or interstitial lung disease (ILD) or severe obstructive pulmonary disease."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9488,
+        "end": 9590,
+        "text": "Known human immunodeficiency virus (HIV) infection or known acquired immunodeficiency syndrome (AIDS)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9595,
+        "end": 9639,
+        "text": "Active hepatitis B or hepatitis C infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9859,
+        "end": 9900,
+        "text": "Participant is pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5883,
+        "end": 6001,
+        "text": "mixed nonsmall cell and small cell carcinoma, or adenosquamous cell lung cancer with an adenocarcinoma component \\<50%"
+      },
+      "appliesTo": "Part 2"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with histologically or cytologically-confirmed adenocarcinoma of NSCLC without actionable mutation of epidermal growth factor receptor (EGFR).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histologically or cytologically-confirmed adenocarcinoma of NSCLC without actionable mutation of epidermal growth factor receptor (EGFR).",
+        "appliesTo": "Non-Small Cell Lung Cancer cohort"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

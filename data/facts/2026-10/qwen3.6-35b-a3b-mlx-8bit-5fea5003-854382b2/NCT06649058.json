@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT06649058",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2620,
+        "end": 2676,
+        "text": "Small cell lung cancer, lymphoma, or leukemia histology."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1086,
+        "end": 1191,
+        "text": "Histologically confirmed metastatic cancer with at least one measurable metastasis in the brain (≥ 5 mm)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1086,
+        "end": 1191,
+        "text": "Histologically confirmed metastatic cancer with at least one measurable metastasis in the brain (≥ 5 mm)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2542,
+        "end": 2616,
+        "text": "History of known leptomeningeal involvement (radiographic or cytological)."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1086,
+        "end": 1191,
+        "text": "Histologically confirmed metastatic cancer with at least one measurable metastasis in the brain (≥ 5 mm)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2026,
+        "end": 2054,
+        "text": "ECOG performance status ≤ 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3496,
+        "end": 3628,
+        "text": "History of a second malignancy, unless potentially curative treatment has been completed with no evidence of malignancy for 2 years."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2680,
+        "end": 2876,
+        "text": "Non-small cell lung cancer histology with targetable oncogenic driver mutation with planned initiation of highly CNS active targeted therapy (eg osimertinib, brigatinib, alectinib, or lorlatinib)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

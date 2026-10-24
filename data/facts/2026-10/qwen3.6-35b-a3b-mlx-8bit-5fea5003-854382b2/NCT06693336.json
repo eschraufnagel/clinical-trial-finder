@@ -1,0 +1,219 @@
+{
+  "nctId": "NCT06693336",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 57,
+        "text": "Histopathological confirmed NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 61,
+        "end": 143,
+        "text": "Stage Ia, Ib, IIa, IIb or IIIa (N2) for both dose escalation and dose confirmation"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2279,
+        "end": 2353,
+        "text": "Evidence of locally advanced T3 or T4 NSCLC or distant metastatic disease."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2473,
+        "end": 2565,
+        "text": "Patients with a previous malignancy within the last 5 years except non-melanoma skin cancer."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 259,
+        "end": 314,
+        "text": "No prior chemotherapy and/or thoracic radiation therapy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 259,
+        "end": 314,
+        "text": "No prior chemotherapy and/or thoracic radiation therapy"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2569,
+        "end": 2660,
+        "text": "Patients receiving induction (neo-adjuvant) chemotherapy and/or radiation prior to surgery."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2569,
+        "end": 2660,
+        "text": "Patients receiving induction (neo-adjuvant) chemotherapy and/or radiation prior to surgery."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2994,
+        "end": 3030,
+        "text": "Pregnant or nursing female subjects."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2664,
+        "end": 2990,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection. dysfunction of major organ (e.g., liver, kidney etc.), symptomatic congestive heart failure. unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2664,
+        "end": 2990,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection. dysfunction of major organ (e.g., liver, kidney etc.), symptomatic congestive heart failure. unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2664,
+        "end": 2990,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection. dysfunction of major organ (e.g., liver, kidney etc.), symptomatic congestive heart failure. unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "No prior chemotherapy and/or thoracic radiation therapy",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "No prior chemotherapy and/or thoracic radiation therapy",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "No prior chemotherapy and/or thoracic radiation therapy",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "No prior chemotherapy and/or thoracic radiation therapy",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Patients receiving induction (neo-adjuvant) chemotherapy and/or radiation prior to surgery.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients receiving induction (neo-adjuvant) chemotherapy and/or radiation prior to surgery.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Patients receiving induction (neo-adjuvant) chemotherapy and/or radiation prior to surgery.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients receiving induction (neo-adjuvant) chemotherapy and/or radiation prior to surgery.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

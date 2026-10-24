@@ -1,0 +1,132 @@
+{
+  "nctId": "NCT07276373",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 427,
+        "end": 497,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 382,
+        "end": 424,
+        "text": "Has evaluable disease based on RECIST v1.1"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 788,
+        "end": 1026,
+        "text": "Past or current immune-related adverse events (irAEs) due to anti-programmed cell death protein 1 ligand 1 (PD\\[L\\]1) therapy that meet any of the following criteria:\n\n  1. Grade ≥ 3\n  2. Resulted in discontinuation of anti-PD(L)1 therapy"
+      },
+      "loose": true
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1029,
+        "end": 1121,
+        "text": "Medical history of an autoimmune or inflammatory disease requiring immunosuppressive therapy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2289,
+        "end": 2385,
+        "text": "Has untreated parenchymal brain metastasis or has uncontrolled central nervous system metastases"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2388,
+        "end": 2477,
+        "text": "Has a history of another malignancy within 2 years prior to study treatment, unless cured"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2480,
+        "end": 2555,
+        "text": "Has received prior autologous or allogeneic organ or tissue transplantation"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2223,
+        "end": 2286,
+        "text": "Has infection with HIV, hepatitis C virus, or hepatitis B virus"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1833,
+        "end": 1956,
+        "text": "Pregnant or lactating patients or female patients expecting to conceive children within the projected duration of the trial"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

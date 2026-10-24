@@ -401,3 +401,9 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - Both bars are missed for all facts and for the trusted facts. **Stopped to report.**
 - **Gate 2, after held-out (owner, 2026-10): no model mapping rules a trial out.** Mappings become "may not fit" hints with quotes, and drive which questions to ask; the person's answers flag and the oncologist decides. The finding is in `gate-2-finding.md`. Steps 12–15 as first planned are replaced by steps 12–17 above, with Gate 3 deciding the long run's model.
 - **Step 12.** `statusFor` returns `hints`, `partHints`, `fits` and `unknown`, with no status. A test runs every answer of every fact and checks that each yields only a hint. `dependsOn` counts every trial for each fact the person hasn't answered. One change from the re-plan: `dependsOn` skips a fact the person answered even where a hint covers it, since a hinted fact is unknown only in the sense of unsettled, and the question has been asked. `data/facts/trusted.json` and its loader are removed. `evals/facts/result.ts` keeps reading result 05's record of the list. The grader prints "wrong hints".
+- **Step 13, the local model on held-out** (frozen prompt `5fea50034aea`; `evals/results/facts/06-5fea50034aea.json`). Qwen3.6-35B-A3B-MLX-8bit, 8-bit, temperature 0, seed 20260921. 29 of 30 graded. NCT06710379 timed out: one request was aborted after about 30 minutes, and the run went on.
+  - Wrong hints 89 of 254 (35.0%), in 26 of 29 trials. Recall 71.8% (163 of 227). Exact share of matched 80.2%.
+  - Time: 2,482 s in all. Of that, 716 s mapped 118,831 characters (6.0 s per 1,000), and about 1,770 s was the one timeout.
+  - Run directories are about 5.5 KB a trial, so about 6 MB for 1,129.
+  - Beside Haiku on the same prompt (result 05, all 30 trials): wrong hints 26.1%, recall 72.7%, 1.4 s per 1,000 characters, $0.20.
+  - **Stopped for Gate 3.**
