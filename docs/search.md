@@ -30,7 +30,7 @@ The snapshot is narrowed in four stages, and the command prints how many trials 
    - **mentions it in its rules:** its eligibility text names the cancer;
    - **open to many:** a condition is a generic term, such as "solid tumors", "brain metastases" or just "Cancer".
 3. **Age and sex.** Dropped only when a limit clearly excludes the person. An age limit that doesn't read keeps the trial, with a flag.
-4. **Distance.** The nearest recruiting US site within the radius, or anywhere with `--miles anywhere`. A trial with no recruiting site in range is still kept if one of its recruiting sites has no location, with a flag.
+4. **Distance.** The nearest recruiting US site within the radius, or anywhere with `--miles anywhere`. The registry places a site at its city's centre, so distances are good to a few miles. When it couldn't place a site, often because the city is misspelled, the site is placed by its ZIP code. A trial with no recruiting site in range is still kept if one of its sites can't be placed either way, with a flag.
 
 Each trial is listed with its reasons, its nearest site and any flags: record not updated in the year before the snapshot, completion date already past, age limit unreadable, nearest site with no location. Flags never drop a trial.
 
@@ -40,9 +40,11 @@ Three made-up searches (age 64, female, treatment trials, non-small cell lung ca
 
 | Search | For the cancer | Open to the person | Within the distance |
 | --- | --- | --- | --- |
-| Chicago 60611, 50 miles | 1,129 | 1,087 | 191 |
-| Pierre, South Dakota 57501, 100 miles | 1,129 | 1,087 | 19 |
+| Chicago 60611, 50 miles | 1,129 | 1,087 | 188 |
+| Pierre, South Dakota 57501, 100 miles | 1,129 | 1,087 | 2 |
 | 60611, anywhere in the US | 1,129 | 1,087 | 1,061 |
+
+Before sites without coordinates were placed by their ZIP, the Pierre search returned 19, and 17 of them were trials far away whose sites the registry couldn't place.
 
 ## How well it does
 
