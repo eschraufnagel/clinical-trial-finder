@@ -7,6 +7,7 @@ import { FACT_LABELS_DIR, factLabelsSha256 } from "../../evals/facts/labels.js";
 import {
   type FactsEvalResult,
   readFactsResult,
+  trustedMetricsOf,
   verifyFactsResult,
 } from "../../evals/facts/result.js";
 import { loadFactVocabulary } from "../../src/facts/vocabulary.js";
@@ -88,6 +89,21 @@ describe("verifyFactsResult", () => {
 
   it("passes an honest made-up result", () => {
     expect(verifyFactsResult(result, { ...context, fileName: "01-abcdef123456.json" })).toEqual([]);
+  });
+
+  it("checks the trusted facts' numbers when a result has them", () => {
+    const withTrusted = {
+      ...result,
+      trustedFacts: ["ecog"],
+      trustedMetrics: trustedMetricsOf(result, new Set(["ecog"])),
+    };
+    expect(verifyFactsResult(withTrusted, context)).toEqual([]);
+    expect(
+      verifyFactsResult(
+        { ...withTrusted, trustedMetrics: result.metrics, trustedFacts: ["hiv"] },
+        context,
+      ),
+    ).toContain("trusted metrics don't follow from the rows");
   });
 
   it("would fail a tampered one", () => {

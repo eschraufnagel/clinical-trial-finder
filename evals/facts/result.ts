@@ -23,6 +23,22 @@ export interface FactsEvalResult {
   labelRows: LabelRow[];
   rejected: { nctId: string; reason: string }[];
   metrics: FactMetrics;
+  /** Added at Gate 2: the facts that may rule out, and the same numbers on their rows alone. */
+  trustedFacts?: string[];
+  trustedMetrics?: FactMetrics;
+}
+
+/** The rows and metrics for the trusted facts only. Rejected mappings carry no fact, so none count. */
+export function trustedMetricsOf(
+  result: Pick<FactsEvalResult, "mappingRows" | "labelRows" | "trials">,
+  trusted: ReadonlySet<string>,
+): FactMetrics {
+  return metricsOf(
+    result.mappingRows.filter((r) => trusted.has(r.factId)),
+    result.labelRows.filter((r) => trusted.has(r.factId)),
+    [],
+    result.trials.length,
+  );
 }
 
 export function readFactsResult(path: string): FactsEvalResult {
@@ -42,6 +58,11 @@ export function verifyFactsResult(
   );
   if (JSON.stringify(metrics) !== JSON.stringify(result.metrics))
     problems.push("metrics don't follow from the rows");
+  if (result.trustedFacts !== undefined) {
+    const derived = trustedMetricsOf(result, new Set(result.trustedFacts));
+    if (JSON.stringify(derived) !== JSON.stringify(result.trustedMetrics))
+      problems.push("trusted metrics don't follow from the rows");
+  }
   if (result.labelsSha256 !== context.labelsSha256)
     problems.push("labelsSha256 isn't the committed labels'");
   if (result.run.vocabularySha256 !== context.vocabularySha256)

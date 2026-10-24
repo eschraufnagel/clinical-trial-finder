@@ -19,10 +19,10 @@ import {
   factLabelsSha256,
   loadFactLabels,
 } from "../evals/facts/labels.js";
-import { type FactsEvalResult, readFactsResult } from "../evals/facts/result.js";
+import { type FactsEvalResult, readFactsResult, trustedMetricsOf } from "../evals/facts/result.js";
 import { nextRunFile } from "../evals/run-file.js";
 import type { TrialFacts } from "../src/facts/types.js";
-import { loadFactVocabulary } from "../src/facts/vocabulary.js";
+import { loadFactVocabulary, loadTrustedFacts } from "../src/facts/vocabulary.js";
 import { loadSnapshot } from "../src/trials/snapshot-load.js";
 
 export function formatCoverage(c: Coverage, label: string): string {
@@ -177,7 +177,13 @@ function main(): void {
     process.exitCode = 1;
     return;
   }
-  const result = gradeRun(runDir, labels, set, labelsSha, vocabulary.sha256);
+  const graded = gradeRun(runDir, labels, set, labelsSha, vocabulary.sha256);
+  const trusted = loadTrustedFacts(vocabulary);
+  const result: FactsEvalResult = {
+    ...graded,
+    trustedFacts: [...trusted].sort(),
+    trustedMetrics: trustedMetricsOf(graded, trusted),
+  };
   mkdirSync(FACT_RESULTS_DIR, { recursive: true });
   const path = join(FACT_RESULTS_DIR, nextRunFile(FACT_RESULTS_DIR, result.run.promptVersion));
   writeFileSync(path, `${JSON.stringify(result, null, 2)}\n`, "utf8");
@@ -187,7 +193,9 @@ function main(): void {
   );
   if (result.missing.length > 0)
     console.log(`Not mapped, so not graded: ${result.missing.join(" ")}`);
-  console.log(formatMetrics(result.metrics, set));
+  console.log(formatMetrics(result.metrics, `${set}, all facts`));
+  if (result.trustedMetrics !== undefined)
+    console.log(formatMetrics(result.trustedMetrics, `${set}, the ${trusted.size} trusted facts`));
 }
 
 if (import.meta.main) {
