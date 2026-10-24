@@ -272,7 +272,7 @@ Written as the work goes: the snapshot's real numbers, the gate answers, convent
     - NCT06669416: chemotherapy taste changes in the top cancer types, of which lung is one.
     - NCT07410117: preventing cancer-associated clots in locally advanced or metastatic solid tumors.
     - NCT07817147: microwave ablation of a pancreas or liver tumor in advanced cancer; liver metastases count.
-  - All six are trials about a site, a procedure or a side effect that take any cancer, and none names lung cancer or a generic condition the vocabulary knows ("Thoracic Cancer", "Liver Metastases", "Malignant Solid Tumor" as written).
+  - All six are trials about a site, a procedure or a side effect that take any cancer, and none lists lung cancer or a generic condition. Their conditions name other sites ("Liver Cancer", "Thoracic Cancer", "Liver Malignant Tumors") or the side effect itself ("Taste, Altered", "Cancer-Associated Thrombosis (CAT)"), and their openness to lung cancer is only in the eligibility text or the description.
   - The 11 kept but not relevant: four small cell lung cancer trials (`names`, the cost step 9 predicted), and seven `generic` trials whose conditions say "cancer" or "solid tumor" while the eligibility text lists other cancers only.
   - `search:eval -- --check`: matches a rerun, row for row.
 - **Step 13, three made-up searches** (age 64, female, treatment trials):
@@ -287,3 +287,4 @@ Written as the work goes: the snapshot's real numbers, the gate answers, convent
 - **Held-out recall is below the 0.95 bar. Stopped for Gate 3.** The plan's one more round is dev-only, and the dev pool has no misses to tune on. `measured` stays `false` until the gate is answered.
 - **Gate 3, answered (owner, 2026-10): accept 92.7% as the finding.** No second round. Every held-out miss was a trial about a site, a procedure or a side effect that takes any cancer, and every relevant trial not marked unclear was kept. 0002 builds on the search as it is, and `docs/search.md` reports the gap with the misses.
 - **After Gate 3, a change the plan didn't foresee.** `measured` sits inside the vocabulary file, so setting it would have changed the vocabulary's checksum and left the committed result naming a vocabulary that no longer exists. The checksum now reads `measured` as false, tested in `tests/search/vocabulary.test.ts`. `nsclc.json` has `measured: true`, its checksum is still `a3e87584fb11…`, and `search:eval -- --check` still passes.
+- **Step 14.** `docs/search.md`, `CLAUDE.md` (layout, commands, the network exception and the boundary sentence), `README.md` (the search command, no numbers) and `work/ROADMAP.md` (0001 done; its measurement corrected, TREC moved to 0006).

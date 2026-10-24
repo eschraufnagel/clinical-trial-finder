@@ -4,7 +4,7 @@
 
 **An AI assistant that helps a person with cancer find clinical trials worth asking their oncologist about.** It asks what they know about their cancer and their treatment so far, searches a saved copy of ClinicalTrials.gov, and gives back a short list. For each trial it says why the trial may fit, what's still unknown and what to ask. It never says a person is eligible. Their oncologist and the trial team decide that.
 
-> **A proof of concept, not for real use, and not built yet.** This repository holds the research and the starting code. It will only ever be tried with made-up patients, and it will never contact anyone.
+> **A proof of concept, not for real use, and not finished.** So far it has the research and the search. It will only ever be tried with made-up patients, and it will never contact anyone.
 
 ## The problem
 
@@ -19,12 +19,20 @@ When standard treatment stops working, a trial may be the next option. ClinicalT
 
 ## Run it
 
-Needs Node 24 or newer. There's nothing to run yet beyond the tests:
+Needs Node 24 or newer.
 
 ```
 npm install
 npm run check
 ```
+
+The search works from the terminal, on a saved copy of the registry, with no network and no AI model. Non-small cell lung cancer is the only cancer type so far:
+
+```
+npm run search -- --cancer nsclc --zip 60611 --miles 50 --age 64 --sex female
+```
+
+How it works and how well it does: [docs/search.md](docs/search.md).
 
 ## How it's being built
 

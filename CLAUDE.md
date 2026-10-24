@@ -84,7 +84,8 @@ README.md        short, plain-language, for technical and non-technical readers
 docs/            the detail behind it, one file per part
 work/            the intent/spec/plan chain, one folder per slice
 src/
-  trials/        trial loading and the registry request (the fetch itself is run from scripts/)
+  trials/        trial loading, the snapshot, and the registry requests (the fetches are run from scripts/)
+  search/        the search: purpose, cancer type, age and sex, distance; no model
   criteria/      eligibility parser
   screening/     per-trial screening agent: stage two, for a shortlisted trial
   plain/         plain-language renderings of criteria, and the check that decides whether one is shown
@@ -93,8 +94,12 @@ src/
 data/
   trials/        saved trial JSON, committed, trimmed to fields in use
   plain/         committed plain-language renderings
+  snapshot/      the pinned registry snapshot, one folder per month, gzipped JSONL plus a manifest
+  geo/           ZIP code locations from the Census gazetteer
+  cancer-types/  the search vocabulary, one file per cancer type plus generic.json
 evals/
   cases/         eval task definitions: labels and vignettes
+  search/        the search measurement: labels loader, metrics, result checks
   graders/       deterministic graders
   participant/   the simulated participant
   results/       committed run output
@@ -103,7 +108,7 @@ tests/           deterministic tests only
 local/           settings, keys and spend ledgers; gitignored
 ```
 
-New parts (the snapshot, search, the shared fact vocabulary, question selection, the shortlist) get their own directories under `src/` when the slice that needs them is planned.
+New parts (the shared fact vocabulary, question selection, the shortlist) get their own directories under `src/` when the slice that needs them is planned.
 
 **Inherited, measured elsewhere.** `data/trials/` holds the prescreening repository's twelve pinned NSCLC protocols (`src/trials/corpus.ts`), `data/plain/` their plain renderings, and `evals/cases/` its hand-made labels and vignettes. They're here because the copied modules' tests read them, and because they're a labelled starting set. Every number measured on them was measured in the prescreening repository. None is a result of this one.
 
@@ -112,10 +117,10 @@ Three boundaries matter more than the rest. Nothing outside `src/models/` calls 
 - `fetch()` to loopback in `src/models/`
 - one frontier host per file in `src/models/`: `api.anthropic.com` in `anthropic.ts` and `anthropic-batch.ts`, `api.openai.com` in `openai.ts`, `api.x.ai` in `xai.ts`
 - relative-path `fetch()` in `src/transport/web/client.ts`
-- `fetch()` to `clinicaltrials.gov` in `src/trials/registry.ts`, called by `npm run fetch:trials`
+- `fetch()` to `clinicaltrials.gov` in `src/trials/registry.ts`, called by `npm run fetch:trials` and `npm run snapshot:fetch`
 - listening on `127.0.0.1` in `src/server/start.ts`, which doesn't exist yet
 
-Widening any of them is a visible change to that test. The same test keeps `createAdapter` out of `src/` beyond `src/models/`, keeps concrete adapters out of `scripts/` as well as `src/`, allows the key variables to be named only in `src/models/keys.ts`, keeps `src/` from importing `evals/`, and keeps the labelling tool from reaching the parser or a model.
+Widening any of them is a visible change to that test. The same test keeps `createAdapter` out of `src/` beyond `src/models/`, keeps concrete adapters out of `scripts/` as well as `src/`, allows the key variables to be named only in `src/models/keys.ts`, keeps `src/` from importing `evals/`, and keeps the labelling tool from reaching the parser or a model. It also keeps the search labelling tools (`search:sample`, `search:show`) from seeing the search beyond `normalize.ts`, and keeps `src/search/` from reaching a model, the parser or the screening agent.
 
 A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
 
@@ -135,6 +140,12 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run format` | `biome format --write .` |
 | `npm run fetch:trials` | refetch the twelve pinned protocols, overwriting fixtures. `-- --dry-run` reports registry drift without writing. Run by a person, deliberately |
 | `npm run label:criteria -- <NCT ID>` | write a labelling skeleton for a study. Deterministic; reaches neither the parser nor a model |
+| `npm run snapshot:fetch` | fetch a new registry snapshot into `data/snapshot/<month>/`; refuses an existing month without `--force`. `-- --dry-run` compares against the committed one. Run by a person, deliberately |
+| `npm run geo:fetch` | refetch the Census ZIP gazetteer into `data/geo/` |
+| `npm run search -- --cancer nsclc --zip 60611 --age 64 --sex female` | search the snapshot. `--miles N` or `anywhere` (default 100), `--purpose all`, `--json` |
+| `npm run search:sample` | draw the held-out and dev sets into a label skeleton; refuses to overwrite |
+| `npm run search:show -- <NCT ID>` | print a trial for labelling; `--brief`, `--next N` |
+| `npm run search:eval` | score the search against the labels and write a result; `-- --dev` dev only, `-- --check` rerun the latest result and fail on any difference |
 
 Run `npm run check` before every commit and before opening a PR, and commit only if it passes: `npm run check && git commit ...`.
 
