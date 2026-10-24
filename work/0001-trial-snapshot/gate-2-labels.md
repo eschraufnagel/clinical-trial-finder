@@ -1,0 +1,39 @@
+# Gate 2: do the labels follow their convention?
+
+Twenty labels chosen by `sha256("gate2:" + nctId)`: the first 15 of the held-out set and the first 5 of the dev set. Nothing else chose them.
+
+**The question for each row needs no clinical judgment:** does the reason apply [ANNOTATION.md](../../evals/cases/search/ANNOTATION.md) as written? In one line, a trial is *relevant* if it would consider an adult with non-small cell lung cancer, at some stage, for at least one arm or cohort. Stage, biomarkers and prior treatment don't count.
+
+Each NCT ID links to the trial on ClinicalTrials.gov, for anyone who wants to check a row against the full record.
+
+| # | Set | Trial | Title | Conditions (first four) | Label | Reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | heldout | [NCT06669416](https://clinicaltrials.gov/study/NCT06669416) | Taste Alterations Study | Chemotherapy Side Effects; Taste, Altered | **relevant** | unclear: chemotherapy taste changes in 'cancer with types limited to the top cancer types', of which lung cancer is one; doesn't treat the cancer itself. |
+| 2 | heldout | [NCT06792552](https://clinicaltrials.gov/study/NCT06792552) | A Phase I Study of SIM0505 in Participants With Advanced Solid Tumors | Advanced Solid Tumors; Platinum Resistant Ovarian Cancer; Fallopian Tube Cancer; Renal Cel | **relevant** | 'Non-Small Cell Lung Cancer cohort: ... adenocarcinoma of NSCLC without actionable mutation of EGFR'. |
+| 3 | heldout | [NCT05423210](https://clinicaltrials.gov/study/NCT05423210) | Atezolizumab and Pre-Surgical Brain Radiation Therapy for Glioblastoma Multiforme | Glioblastoma Multiforme | **not relevant** | Limited to newly diagnosed glioblastoma. |
+| 4 | heldout | [NCT05842044](https://clinicaltrials.gov/study/NCT05842044) | NSAID Use After Robotic Partial Nephrectomy | Kidney Cancer; Renal Cancer; Renal Neoplasm | **not relevant** | Pain control after partial nephrectomy for kidney tumors. |
+| 5 | heldout | [NCT07011966](https://clinicaltrials.gov/study/NCT07011966) | ASV Therapy for Insomnia | Insomnia; Insomnia (Moderate) | **not relevant** | Insomnia; not a cancer trial. |
+| 6 | heldout | [NCT04620187](https://clinicaltrials.gov/study/NCT04620187) | Post-op T-DM1 in HER-2+ Salivary Gland Carcinomas | Salivary Gland Cancer; HER2 Gene Mutation | **not relevant** | Limited to HER2-positive salivary gland carcinoma. |
+| 7 | heldout | [NCT06745882](https://clinicaltrials.gov/study/NCT06745882) | Prospective Trial Assessing Real World Outcomes Response to Pembro in Black Patients w/ NS… | Non-small Cell Lung Cancer | **relevant** | 'histologically or cytologically confirmed, advanced/metastatic NSCLC'. |
+| 8 | heldout | [NCT02781883](https://clinicaltrials.gov/study/NCT02781883) | Clinical Trial of BP1001 in Combination With With Venetoclax Plus Decitabine in AML | Acute Myeloid Leukemia (AML) | **not relevant** | Blood cancer only: acute myeloid leukemia. |
+| 9 | heldout | [NCT06630234](https://clinicaltrials.gov/study/NCT06630234) | A Master Protocol to Evaluate DCC-3009 in Gastrointestinal Stromal Tumor (GIST) | Gastrointestinal Stromal Tumor (GIST) | **not relevant** | Limited to gastrointestinal stromal tumor. |
+| 10 | heldout | [NCT05736419](https://clinicaltrials.gov/study/NCT05736419) | A Study of Immune Suppression Treatment for People With Sickle Cell Disease or β-Thalassem… | Sickle Cell Disease; Thalassemia, Beta; Thalassemia | **not relevant** | Sickle cell disease and thalassemia: not a cancer. |
+| 11 | heldout | [NCT06558214](https://clinicaltrials.gov/study/NCT06558214) | OPTIMUS PRIME: Safety and Feasibility of OPTune GIO® Integrated With MRI-gUided Laser Abla… | Recurrent Glioblastoma | **not relevant** | Limited to recurrent glioblastoma. |
+| 12 | heldout | [NCT06142396](https://clinicaltrials.gov/study/NCT06142396) | Pilot Study Dara-CyBorD in Newly Diagnosed Multiple Myeloma Patients With Renal Failure | Multiple Myeloma; Renal Failure | **not relevant** | Blood cancer only: multiple myeloma with renal failure. |
+| 13 | heldout | [NCT06271252](https://clinicaltrials.gov/study/NCT06271252) | A Study to Evaluate the Safety, PK/PD of (OriCAR-017) in Subjects With RR/MM - RIGEL Study | Neoplasms, Plasma Cell; Neoplasms by Histologic Type; Neoplasms; Hemostatic Disorders | **not relevant** | Blood cancer only: relapsed or refractory multiple myeloma. |
+| 14 | heldout | [NCT06590857](https://clinicaltrials.gov/study/NCT06590857) | Trial of 225Ac-DOTATATE (RYZ101) in Subjects With ER+, HER2-negative Unresectable or Metas… | Metastatic Breast Cancer; HER2-negative Breast Cancer; ER+ Breast Cancer; Advanced Breast  | **not relevant** | Limited to ER+, HER2-negative breast cancer. |
+| 15 | heldout | [NCT07450859](https://clinicaltrials.gov/study/NCT07450859) | A Study of Nuzefatide Pevedotin (BT5528) in Patients With Metastatic Pancreatic Ductal Ade… | Pancreatic Ductal Adenocarcinoma (PDAC) | **not relevant** | Limited to metastatic pancreatic ductal adenocarcinoma. |
+| 16 | dev | [NCT05725291](https://clinicaltrials.gov/study/NCT05725291) | AMT-116 in Patients With Advanced Solid Tumors | Advanced Solid Tumor | **relevant** | 'unresectable advanced solid tumor. Preferred tumor types include ... non-small cell lung'. |
+| 17 | dev | [NCT06277219](https://clinicaltrials.gov/study/NCT06277219) | A First-in-Human, Phase 1/2 Study of LAT010 in Patients With Advanced Solid Tumors (LIGHTS… | Advanced Solid Tumor | **relevant** | 'locally advanced or metastatic solid tumors'; tumor types of interest include 'non-small cell lung cancer'. |
+| 18 | dev | [NCT06330064](https://clinicaltrials.gov/study/NCT06330064) | A Study to Evaluate the Efficacy and Safety of Ifinatamab Deruxtecan (I-DXd) in Subjects W… | Recurrent or Metastatic Solid Tumors | **not relevant** | Lists endometrial, head and neck, pancreatic, colorectal, liver, gastroesophageal, urothelial, cervical, ovarian, biliary, breast, melanoma and NEC cohorts; NSCLC isn't among them. |
+| 19 | dev | [NCT07207707](https://clinicaltrials.gov/study/NCT07207707) | A Study to Investigate the Safety and Efficacy of KQB548 in Participants With Advanced Sol… | Solid Tumor Malignancies | **relevant** | 'locally advanced or metastatic PDAC, CRC, or NSCLC with a KRAS G12D mutation'. |
+| 20 | dev | [NCT06960395](https://clinicaltrials.gov/study/NCT06960395) | Safety and Preliminary Efficacy of VIR-5525 and VIR-5525 + Pembrolizumab in Participants W… | Solid Tumor Malignancies; EGFR Positive Solid Tumors; EGFR | **relevant** | Parts 1 and 3 take 'NSCLC (nonsquamous or squamous histology)'. |
+
+## Answer
+
+**Delegated by the owner (2026-10), and checked by a blind relabel.** A separate agent, given `ANNOTATION.md` and the 20 NCT IDs, but not this file or the label file, read each trial's full eligibility text and labelled it.
+
+- **Agreement: 20 of 20,** including row 1, which it also marked unclear for the same reason. (Its summary line said 8 relevant; its own 20 answers count 7, matching these.)
+- **It raised four places where the convention was silent:** an unnamed list of cancer types (row 1), an LCNEC cohort inside a basket trial (row 18), a MeSH heading the record doesn't support (row 5), and "preferred" tumor lists (rows 16 and 17). None changes a label here. All 380 labels were checked for the same cases, and each had been decided the same way: unnamed lists relevant and unclear (3 trials); neuroendocrine lung tumors not relevant (5); preferred lists not limiting (4). The four rulings are now written into `ANNOTATION.md` under "Edge cases settled at Gate 2".
+- **No label changed.**
+- **Its limits:** the second labeller is another instance of the same model, given the same written convention. It checks that the convention is applied consistently and can be followed from the text alone. It doesn't check the convention against a clinician's judgment, and `docs/search.md` will say so.

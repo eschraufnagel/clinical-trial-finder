@@ -499,6 +499,82 @@ describe("the labelling tool cannot see the parser", () => {
 });
 
 /**
+ * This repository's slice 0001: the search's labelling tools can't see the
+ * search. Labels written knowing what the search keeps would agree with it by
+ * construction, and the recall it reports would be circular. They may use the
+ * text normalizer, a leaf module, so the dev pool's rule and the search read
+ * text the same way. Nothing else under `src/search/`, and no model.
+ */
+describe("the search labelling tools cannot see the search", () => {
+  const TOOLS = ["search-sample.ts", "search-show.ts"].map((name) =>
+    fileURLToPath(new URL(`../scripts/${name}`, import.meta.url)),
+  );
+  const modules = [...new Set(TOOLS.flatMap(reachableModules))];
+
+  const forbidden = (file: string): boolean =>
+    file.includes(`${sep}models${sep}`) ||
+    (file.includes(`${sep}search${sep}`) &&
+      !file.endsWith(`search${sep}normalize.ts`) &&
+      !file.includes(`${sep}evals${sep}search${sep}`));
+
+  it("walks a real graph", () => {
+    expect(modules.some((m) => m.endsWith(`trials${sep}snapshot-load.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`search${sep}normalize.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`evals${sep}search${sep}labels.ts`))).toBe(true);
+  });
+
+  it("reaches neither the search nor a model", () => {
+    expect(modules.filter(forbidden)).toEqual([]);
+  });
+
+  it("reaches nothing that touches the network", () => {
+    const offenders = modules
+      .map((file) => ({ file, usage: findNetworkUsage(file) }))
+      .filter(({ usage }) => usage.length > 0);
+    expect(offenders).toEqual([]);
+  });
+
+  it("would catch an import of the search or a model", () => {
+    expect(forbidden(`${sep}src${sep}search${sep}search.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}search${sep}vocabulary.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}search${sep}index.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}models${sep}omlx.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}search${sep}normalize.ts`)).toBe(false);
+    expect(forbidden(`${sep}evals${sep}search${sep}labels.ts`)).toBe(false);
+  });
+});
+
+/**
+ * This repository's slice 0001: the search is arithmetic over registry data.
+ * It reaches no model, no parser and no screening agent, so its results
+ * don't depend on a model and its recall is measured on the search alone.
+ */
+describe("the search reaches no model, parser or screening agent", () => {
+  const ENTRY = fileURLToPath(new URL("../src/search/index.ts", import.meta.url));
+  const modules = reachableModules(ENTRY);
+  const forbidden = (file: string): boolean =>
+    [`${sep}models${sep}`, `${sep}criteria${sep}`, `${sep}screening${sep}`].some((dir) =>
+      file.includes(dir),
+    );
+
+  it("walks a real graph", () => {
+    expect(modules.some((m) => m.endsWith(`search${sep}search.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`search${sep}vocabulary.ts`))).toBe(true);
+  });
+
+  it("reaches none of them", () => {
+    expect(modules.filter(forbidden)).toEqual([]);
+  });
+
+  it("would catch one", () => {
+    expect(forbidden(`${sep}src${sep}models${sep}omlx.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}criteria${sep}parse.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}screening${sep}session.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}trials${sep}snapshot-types.ts`)).toBe(false);
+  });
+});
+
+/**
  * Slice 0004's two boundaries: the application cannot see the measurement, and
  * nothing outside `src/models/` chooses which model to call.
  *
