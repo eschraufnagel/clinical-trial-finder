@@ -260,3 +260,28 @@ Written as the work goes: the snapshot's real numbers, the gate answers, convent
 - **Step 8.** The 20 labels for Gate 2 are in `work/0001-trial-snapshot/gate-2-labels.md`: 15 held-out and 5 dev, 7 relevant and 13 not, one marked unclear. **Stopped for Gate 2.**
 - **Gate 2, answered (2026-10): delegated by the owner, and checked by a blind relabel.** A separate agent labelled the 20 from `ANNOTATION.md` and the trials' text, without seeing these labels: 20 of 20 agreed. Its four questions about where the convention was silent were checked across all 380 labels. Each had been decided one way throughout, so they're now written into `ANNOTATION.md`, and no label changed. Details in `gate-2-labels.md`. On to stage C.
 - **Step 9.** The vocabulary, written from the intent's examples, with the labels not opened. One change to spec §4: the generic list has two parts. `containedTerms` ("solid tumor", "brain metastases") match inside a condition. `wholeConditions` ("cancer", "neoplasms") match only a whole condition, because "cancer" inside "breast cancer" would make every trial generic. NSCLC's first version: names (non small cell lung, nsclc, lung cancer, lung carcinoma, lung adenocarcinoma, adenocarcinoma of the lung, lung neoplasm(s), lung non small cell), three MeSH headings, and biomarkers (EGFR, ALK, ROS1, KRAS G12C, MET exon 14). "lung cancer" also matches small cell lung cancer trials, a precision cost the measurement will show.
+- **Step 13, dev.** The first vocabulary kept all 57 relevant dev trials (recall 100%, precision 90.5%), so there was nothing to tune and the vocabulary was frozen as written. That number flatters it: the dev pool was drawn by trials whose title or eligibility text mentions lung cancer, which is close to what the `rules` reason matches, so the pool was always going to be easy for it.
+- **Step 13, held-out** (`evals/results/search/01-a3e87584fb11.json`, vocabulary `a3e87584fb11`). 300 labelled, 82 relevant, 87 kept.
+  - Recall **92.7%** (76 of 82; 95% interval 84.9% to 96.6%). Precision 87.4%.
+  - By reason, relevant kept of kept: names 39/43, rules 39/41, generic 54/61.
+  - Of the 66 relevant labels not marked unclear, all 66 were kept. All six misses are among the 16 marked unclear.
+  - The six misses, with their label reasons:
+    - NCT04545957: MR-guided radiation simulation for any confirmed malignancy needing radiation; conditions list other sites.
+    - NCT05053555: unresectable liver tumors, primary or secondary, so lung cancer spread to the liver counts.
+    - NCT05313191: proton re-irradiation of previously irradiated tumors; "Thoracic Cancer" among conditions, no tumor type required.
+    - NCT06669416: chemotherapy taste changes in the top cancer types, of which lung is one.
+    - NCT07410117: preventing cancer-associated clots in locally advanced or metastatic solid tumors.
+    - NCT07817147: microwave ablation of a pancreas or liver tumor in advanced cancer; liver metastases count.
+  - All six are trials about a site, a procedure or a side effect that take any cancer, and none names lung cancer or a generic condition the vocabulary knows ("Thoracic Cancer", "Liver Metastases", "Malignant Solid Tumor" as written).
+  - The 11 kept but not relevant: four small cell lung cancer trials (`names`, the cost step 9 predicted), and seven `generic` trials whose conditions say "cancer" or "solid tumor" while the eligibility text lists other cancers only.
+  - `search:eval -- --check`: matches a rerun, row for row.
+- **Step 13, three made-up searches** (age 64, female, treatment trials):
+
+  | Search | Cancer type | Age and sex | Distance | names · rules · generic |
+  | --- | --- | --- | --- | --- |
+  | Chicago 60611, 50 miles | 1,129 | 1,087 | 191 | 127 · 121 · 91 |
+  | Pierre, South Dakota 57501, 100 miles | 1,129 | 1,087 | 19 | 17 · 15 · 4 |
+  | 60611, anywhere | 1,129 | 1,087 | 1,061 | 579 · 539 · 627 |
+
+  "Anywhere" drops 26: trials whose US sites aren't recruiting.
+- **Held-out recall is below the 0.95 bar. Stopped for Gate 3.** The plan's one more round is dev-only, and the dev pool has no misses to tune on. `measured` stays `false` until the gate is answered.
