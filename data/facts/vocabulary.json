@@ -1,0 +1,298 @@
+{
+  "version": 1,
+  "facts": [
+    {
+      "id": "histology",
+      "question": "What type of lung cancer cell did the biopsy show?",
+      "answers": [
+        { "id": "adenocarcinoma", "words": "Adenocarcinoma" },
+        { "id": "squamous", "words": "Squamous cell" },
+        { "id": "other_nsclc", "words": "Another non-small cell type" },
+        { "id": "mixed_small_cell", "words": "Mixed with small cell" }
+      ],
+      "whoKnows": "oncologist",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "extent",
+      "question": "How far has the cancer spread?",
+      "answers": [
+        { "id": "early_resectable", "words": "Early, and it can be removed with surgery" },
+        { "id": "locally_advanced", "words": "In the chest only, but surgery can't remove it" },
+        { "id": "metastatic_or_recurrent", "words": "It has spread further, or come back" }
+      ],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "brain_mets",
+      "question": "Has the cancer spread to the brain?",
+      "answers": [
+        { "id": "none", "words": "No" },
+        { "id": "treated_stable", "words": "Yes, treated and stable" },
+        { "id": "active", "words": "Yes, untreated or growing" }
+      ],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "leptomeningeal",
+      "question": "Has the cancer spread to the lining of the brain or spinal cord?",
+      "answers": [{ "id": "no", "words": "No" }, { "id": "yes", "words": "Yes" }],
+      "whoKnows": "oncologist",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "measurable_disease",
+      "question": "Is there a tumor that scans can measure?",
+      "answers": [{ "id": "yes", "words": "Yes" }, { "id": "no", "words": "No" }],
+      "whoKnows": "oncologist",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "ecog",
+      "question": "Which is closest to how you are day to day?",
+      "answers": [
+        { "id": "ps0", "words": "Fully active, as before the illness" },
+        { "id": "ps1", "words": "Up and about, but can't do heavy work" },
+        { "id": "ps2", "words": "Up more than half the day, can't work" },
+        { "id": "ps3_4", "words": "In bed or a chair half the day or more" }
+      ],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "egfr",
+      "question": "Did testing find an EGFR mutation?",
+      "answers": [
+        { "id": "common_sensitizing", "words": "Yes, a common one (exon 19 deletion or L858R)" },
+        { "id": "exon20_insertion", "words": "Yes, an exon 20 insertion" },
+        { "id": "other_mutation", "words": "Yes, another EGFR mutation" },
+        { "id": "none_found", "words": "Tested, none found" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "alk",
+      "question": "Did testing find an ALK change?",
+      "answers": [
+        { "id": "found", "words": "Yes" },
+        { "id": "none_found", "words": "Tested, none found" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "ros1",
+      "question": "Did testing find a ROS1 change?",
+      "answers": [
+        { "id": "found", "words": "Yes" },
+        { "id": "none_found", "words": "Tested, none found" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "ret",
+      "question": "Did testing find a RET change?",
+      "answers": [
+        { "id": "found", "words": "Yes" },
+        { "id": "none_found", "words": "Tested, none found" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "ntrk",
+      "question": "Did testing find an NTRK change?",
+      "answers": [
+        { "id": "found", "words": "Yes" },
+        { "id": "none_found", "words": "Tested, none found" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "kras",
+      "question": "Did testing find a KRAS mutation?",
+      "answers": [
+        { "id": "g12c", "words": "Yes, G12C" },
+        { "id": "other_mutation", "words": "Yes, another KRAS mutation" },
+        { "id": "none_found", "words": "Tested, none found" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "her2",
+      "question": "Did testing find a HER2 change?",
+      "answers": [
+        { "id": "mutation", "words": "Yes, a HER2 mutation" },
+        { "id": "overexpression", "words": "Yes, too much HER2 protein or extra copies" },
+        { "id": "none_found", "words": "Tested, none found" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "met",
+      "question": "Did testing find a MET change?",
+      "answers": [
+        { "id": "exon14_skipping", "words": "Yes, exon 14 skipping" },
+        { "id": "amplification", "words": "Yes, extra copies (amplification)" },
+        { "id": "none_found", "words": "Tested, none found" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "braf_v600e",
+      "question": "Did testing find a BRAF V600E mutation?",
+      "answers": [
+        { "id": "found", "words": "Yes" },
+        { "id": "none_found", "words": "Tested, none found" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "pdl1",
+      "question": "What was the PD-L1 test result?",
+      "answers": [
+        { "id": "high", "words": "50% or more" },
+        { "id": "low", "words": "1% to 49%" },
+        { "id": "negative", "words": "Under 1%" }
+      ],
+      "whoKnows": "records",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "prior_pd1",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?",
+      "answers": [
+        { "id": "never", "words": "No" },
+        { "id": "progressed", "words": "Yes, and the cancer grew during or after it" },
+        { "id": "stopped_other", "words": "Yes, stopped for another reason" }
+      ],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "prior_platinum",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?",
+      "answers": [{ "id": "never", "words": "No" }, { "id": "received", "words": "Yes" }],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "prior_targeted",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?",
+      "answers": [{ "id": "never", "words": "No" }, { "id": "received", "words": "Yes" }],
+      "whoKnows": "patient",
+      "cancerTypes": ["nsclc"]
+    },
+    {
+      "id": "prior_adc",
+      "question": "Have you had an antibody-drug conjugate, such as trastuzumab deruxtecan or datopotamab deruxtecan?",
+      "answers": [{ "id": "never", "words": "No" }, { "id": "received", "words": "Yes" }],
+      "whoKnows": "oncologist",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "lines_advanced",
+      "question": "How many treatments have you had since the cancer became advanced?",
+      "answers": [
+        { "id": "zero", "words": "None yet" },
+        { "id": "one", "words": "One" },
+        { "id": "two", "words": "Two" },
+        { "id": "three_plus", "words": "Three or more" }
+      ],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "chest_radiation_6m",
+      "question": "Have you had radiation to the chest in the last 6 months?",
+      "answers": [{ "id": "no", "words": "No" }, { "id": "yes", "words": "Yes" }],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "other_cancer",
+      "question": "Have you had another kind of cancer?",
+      "answers": [
+        { "id": "none", "words": "No" },
+        { "id": "within_2_years", "words": "Yes, active or treated in the last 2 years" },
+        { "id": "two_to_5_years", "words": "Yes, treated 2 to 5 years ago" },
+        { "id": "over_5_years", "words": "Yes, more than 5 years ago" }
+      ],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "autoimmune_active",
+      "question": "Do you have an autoimmune disease that needed treatment in the last 2 years, such as lupus or Crohn's?",
+      "answers": [{ "id": "no", "words": "No" }, { "id": "yes", "words": "Yes" }],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "ild",
+      "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?",
+      "answers": [
+        { "id": "never", "words": "No" },
+        { "id": "past", "words": "Yes, in the past" },
+        { "id": "current", "words": "Yes, now" }
+      ],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "hiv",
+      "question": "Do you have HIV?",
+      "answers": [
+        { "id": "no", "words": "No" },
+        { "id": "controlled", "words": "Yes, controlled on treatment" },
+        { "id": "uncontrolled", "words": "Yes, not controlled" }
+      ],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "hepatitis_active",
+      "question": "Do you have active hepatitis B or C?",
+      "answers": [{ "id": "no", "words": "No" }, { "id": "yes", "words": "Yes" }],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "cardiac_recent",
+      "question": "In the last 6 months, have you had a heart attack, a stroke, or heart failure that needed hospital care?",
+      "answers": [{ "id": "no", "words": "No" }, { "id": "yes", "words": "Yes" }],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "transplant",
+      "question": "Have you had an organ or bone marrow transplant?",
+      "answers": [{ "id": "no", "words": "No" }, { "id": "yes", "words": "Yes" }],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "pregnant_or_breastfeeding",
+      "question": "Are you pregnant or breastfeeding?",
+      "answers": [{ "id": "no", "words": "No" }, { "id": "yes", "words": "Yes" }],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    },
+    {
+      "id": "steroids_daily",
+      "question": "Do you take steroid pills, such as prednisone or dexamethasone, every day?",
+      "answers": [{ "id": "no", "words": "No" }, { "id": "yes", "words": "Yes" }],
+      "whoKnows": "patient",
+      "cancerTypes": "all"
+    }
+  ]
+}

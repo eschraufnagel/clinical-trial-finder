@@ -288,3 +288,33 @@ Each step is one commit, through `npm run check && git commit`. No test mocks a 
 Written as the work goes: topic counts, vocabulary adjustments, convention questions, the gate answers, dev revisions, held-out numbers, timings and estimates, and the long run's counts.
 
 - **Step 1.** Plan committed, with the two spec amendments.
+- **Step 2, topic counts** (`npm run facts:topics`, 1,129 candidates; trials whose eligibility text mentions each topic):
+
+  | Topic | Trials | | Topic | Trials |
+  | --- | ---: | --- | --- | ---: |
+  | performance status | 948 (84%) | | EGFR | 274 (24%) |
+  | metastatic or recurrent | 825 (73%) | | resectable or early stage | 236 (21%) |
+  | measurable disease | 755 (67%) | | platinum chemotherapy | 213 (19%) |
+  | radiation | 697 (62%) | | lines of therapy | 188 (17%) |
+  | brain metastases | 675 (60%) | | organ transplant | 181 (16%) |
+  | pregnancy or breastfeeding | 633 (56%) | | ALK | 172 (15%) |
+  | corticosteroids | 527 (47%) | | HER2 | 149 (13%) |
+  | locally advanced, unresectable | 508 (45%) | | QTc | 135 (12%) |
+  | HIV | 507 (45%) | | KRAS | 114 (10%) |
+  | PD-1 or PD-L1 inhibitor | 503 (45%) | | antibody-drug conjugate | 111 (10%) |
+  | hepatitis B or C | 474 (42%) | | BRAF | 104 (9%) |
+  | heart attack, stroke, heart failure | 449 (40%) | | ROS1 | 95 (8%) |
+  | interstitial lung disease or pneumonitis | 421 (37%) | | EGFR TKI | 90 (8%) |
+  | labs: kidney and liver | 385 (34%) | | PD-L1 level | 66 (6%) |
+  | labs: blood counts | 380 (34%) | | NTRK | 48 (4%) |
+  | autoimmune disease | 367 (33%) | | MET | 37 (3%) |
+  | leptomeningeal disease | 331 (29%) | | docetaxel | 28 (2%) |
+  | squamous | 313 (28%) | | small cell component | 14 (1%) |
+  | another cancer | 297 (26%) | | RET | 13 (1%) |
+
+  Counts are floors: whole-word matches only, and a rule phrased differently is missed. The lab counts are low because most trials say "adequate organ function" and give the numbers in a table the words don't catch.
+- **Step 2, the vocabulary.** The spec's draft has 30 facts, not the 31 it says. Three changes from the counts give 31:
+  - **docetaxel dropped:** 28 trials (2%).
+  - **daily steroids added** (`steroids_daily`): 527 trials (47%) mention corticosteroids, mostly "requiring systemic steroids" exclusions, which a person can answer.
+  - **prior antibody-drug conjugate added** (`prior_adc`): 111 trials (10%), mostly excluding people who've had one with the same payload.
+  - RET (13) and MET (37) stay. Few trials mention them, but for those trials they decide the cohort.
