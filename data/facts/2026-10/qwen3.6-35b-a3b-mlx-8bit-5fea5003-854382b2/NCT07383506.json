@@ -1,0 +1,262 @@
+{
+  "nctId": "NCT07383506",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 128,
+        "text": "Histologically confirmed advanced solid tumor harboring oncogenic PIK3CA mutations in blood and/or tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 986,
+        "end": 1047,
+        "text": "Have at least one measurable lesion according to RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1051,
+        "end": 1118,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status 0 to 1"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2395,
+        "end": 2568,
+        "text": "Previous molecular testing (NGS or PCR) showed tumor with the following mutations: mutations/deletions in PTEN or activating mutations in AKT, HRAS/KRAS/NRAS, EGFR, and BRAF"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2395,
+        "end": 2568,
+        "text": "Previous molecular testing (NGS or PCR) showed tumor with the following mutations: mutations/deletions in PTEN or activating mutations in AKT, HRAS/KRAS/NRAS, EGFR, and BRAF"
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2395,
+        "end": 2568,
+        "text": "Previous molecular testing (NGS or PCR) showed tumor with the following mutations: mutations/deletions in PTEN or activating mutations in AKT, HRAS/KRAS/NRAS, EGFR, and BRAF"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1649,
+        "end": 1784,
+        "text": "Received small molecule chemotherapy or anticancer therapies or radiotherapy within certain timeframes before first dose of study drug."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1881,
+        "end": 1954,
+        "text": "Treatment with radiotherapy ≤2 weeks before the first dose of study drug."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2000,
+        "end": 2175,
+        "text": "Ongoing or planned long-term (≥4 consecutive weeks) treatment with glucocorticoid steroids at greater than physiologic dosing (defined as equivalent to \\>20 mg/day prednisone)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1788,
+        "end": 1877,
+        "text": "Major surgeries (eg, abdominal laparotomy) within 4 weeks of the first dose of study drug"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1958,
+        "end": 1996,
+        "text": "Clinically significant cardiac disease"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2179,
+        "end": 2391,
+        "text": "Diagnosis of diabetes mellitus type 1 or uncontrolled diabetes mellitus type 2 (defined as fasting glucose ≥140 mg/dL and HbA1c ≥7.0%; antihyperglycemic medical management permitted with the exception of insulin)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1958,
+        "end": 1996,
+        "text": "Clinically significant cardiac disease"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1958,
+        "end": 1996,
+        "text": "Clinically significant cardiac disease"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1958,
+        "end": 1996,
+        "text": "Clinically significant cardiac disease"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1958,
+        "end": 1996,
+        "text": "Clinically significant cardiac disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1958,
+        "end": 1996,
+        "text": "Clinically significant cardiac disease"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed advanced solid tumor harboring oncogenic PIK3CA mutations in blood and/or tumor",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed advanced solid tumor harboring oncogenic PIK3CA mutations in blood and/or tumor",
+        "appliesTo": "Phase 1b Cohort 3 will allow all solid tumors that do not meet criteria for Phase 1b Cohorts 1 or 2, including head and neck cancers, other gynecological cancers, colorectal cancers harboring PIK3CA mutations"
+      }
+    },
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Previous molecular testing (NGS or PCR) showed tumor with the following mutations: mutations/deletions in PTEN or activating mutations in AKT, HRAS/KRAS/NRAS, EGFR, and BRAF",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "exclusion",
+        "quote": "Previous molecular testing (NGS or PCR) showed tumor with the following mutations: mutations/deletions in PTEN or activating mutations in AKT, HRAS/KRAS/NRAS, EGFR, and BRAF",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

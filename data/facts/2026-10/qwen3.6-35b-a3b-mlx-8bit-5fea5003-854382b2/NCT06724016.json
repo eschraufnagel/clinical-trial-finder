@@ -1,0 +1,118 @@
+{
+  "nctId": "NCT06724016",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 114,
+        "text": "Have a histologically and/or cytologically confirmed advanced or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 194,
+        "end": 523,
+        "text": "Patients in the Dose-Escalation Part must have evaluable or measurable disease at baseline and the patients for Dose-Ranging and Dose-Expansion Part must have at least one measurable lesion at baseline by computed tomography (CT) or magnetic resonance imaging (MRI) per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      },
+      "appliesTo": "Dose-Escalation Part and Dose-Ranging and Dose-Expansion Part"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 526,
+        "end": 655,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 assessed within 7 days before allocation or randomization."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 992,
+        "end": 1052,
+        "text": "Known active CNS metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 992,
+        "end": 1052,
+        "text": "Known active CNS metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1417,
+        "end": 1461,
+        "text": "Has ongoing or suspected autoimmune disease."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1464,
+        "end": 1681,
+        "text": "Known active and clinically significant bacterial, fungal or viral infection including known human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome (AIDS)-related illness, immunocompromised patients."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1055,
+        "end": 1122,
+        "text": "History of severe toxicities associated with a prior immunotherapy."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

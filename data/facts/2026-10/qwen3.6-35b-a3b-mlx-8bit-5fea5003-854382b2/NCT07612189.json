@@ -1,0 +1,93 @@
+{
+  "nctId": "NCT07612189",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 157,
+        "text": "Participants must have locally advanced or metatstatic disease in a select tumor type, for which no standard therapy is available."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 160,
+        "end": 240,
+        "text": "Participants must have at least 1 measurable target lesion based on RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 243,
+        "end": 337,
+        "text": "Participants must have Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 654,
+        "end": 832,
+        "text": "Participant with known symptomatic central nervous system (CNS) metastases or any evidence of leptomeningeal disease or evidence of unstable CNS metastases, even if asymptomatic."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 654,
+        "end": 832,
+        "text": "Participant with known symptomatic central nervous system (CNS) metastases or any evidence of leptomeningeal disease or evidence of unstable CNS metastases, even if asymptomatic."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 835,
+        "end": 1003,
+        "text": "Participants with a known history of interstitial lung disease (ILD) requiring steroid treatment, or for whom suspected ILD cannot be ruled out by imaging at screening."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

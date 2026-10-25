@@ -1,0 +1,121 @@
+{
+  "nctId": "NCT06227377",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 50,
+        "end": 91,
+        "text": "locally advanced or metastatic malignancy"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 272,
+        "end": 332,
+        "text": "Advanced solid tumors with at least 1 prior systemic therapy"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 335,
+        "end": 382,
+        "text": "Evaluable or Measurable disease per RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 437,
+        "end": 508,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 599,
+        "end": 650,
+        "text": "Active brain metastases or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 599,
+        "end": 650,
+        "text": "Active brain metastases or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 653,
+        "end": 695,
+        "text": "History of other malignancy within 2 years"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of kras",
+      "quote": "KRAS G12D mutation identified through molecular testing",
+      "raw": {
+        "factId": "kras",
+        "rulesOut": [
+          "g12c",
+          "other_mutation",
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "KRAS G12D mutation identified through molecular testing",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

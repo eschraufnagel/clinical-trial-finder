@@ -1,0 +1,222 @@
+{
+  "nctId": "NCT05642572",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 253,
+        "text": "Patients must meet all SCREENING/PRE-SCREENING and SUB-STUDY REGISTRATION COMMON ELIGIBILITY CRITERIA as specified in S1400: Phase II/III Biomarker-Driven Master Protocol for Previously Treated Squamous Cell Lung Cancer (Lung-Map)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 256,
+        "end": 446,
+        "text": "Participants must have been assigned to S1900G by the Southwest Oncology Group (SWOG) Statistics and Data Management Center (SDMC). Assignment to S1900G is determined by the LUNGMAP protocol"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "exon20_insertion",
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 449,
+        "end": 718,
+        "text": "Participants must have documentation of NSCLC with a sensitizing EGFR mutation and have radiologically or clinically progressed (in the opinion of the treating physician) on osimertinib, alone or in combination with other agent(s), as their most recent line of therapy."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 769,
+        "end": 927,
+        "text": "Participants must have a MET amplification determined by tissue-based or blood-based (circulating tumor DNA \\[ctDNA\\]) next generation sequencing (NGS) assay."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1760,
+        "end": 1859,
+        "text": "Participants must have either measurable disease or non-measurable disease documented by CT or MRI."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2661,
+        "end": 2890,
+        "text": "Participants with symptomatic CNS metastasis (brain metastases or leptomeningeal disease) must be neurologically stable and have a stable or decreasing corticosteroid requirement for at least 5 days before sub-study randomization"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4046,
+        "end": 4175,
+        "text": "Participants' most recent Zubrod performance status must be 0-1 and be documented within 28 days prior to sub-study randomization"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5436,
+        "end": 5648,
+        "text": "Participants with known human immunodeficiency virus (HIV) infection must be on effective anti-retroviral therapy at randomization and have undetectable viral load within 6 months prior to sub-study randomization"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7562,
+        "end": 7646,
+        "text": "Participants must not have received an anti-VEGF or VEGFR inhibitor or MET inhibitor"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7649,
+        "end": 7816,
+        "text": "Participants must not have received any anti-cancer drug (investigational or standard of care drug, except osimertinib) within 21 days prior to sub-study randomization"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7649,
+        "end": 7816,
+        "text": "Participants must not have received any anti-cancer drug (investigational or standard of care drug, except osimertinib) within 21 days prior to sub-study randomization"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7649,
+        "end": 7816,
+        "text": "Participants must not have received any anti-cancer drug (investigational or standard of care drug, except osimertinib) within 21 days prior to sub-study randomization"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 449,
+        "end": 718,
+        "text": "Participants must have documentation of NSCLC with a sensitizing EGFR mutation and have radiologically or clinically progressed (in the opinion of the treating physician) on osimertinib, alone or in combination with other agent(s), as their most recent line of therapy."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7905,
+        "end": 8010,
+        "text": "Participants must not have received any radiation therapy within 14 days prior to sub-study randomization"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9177,
+        "end": 9415,
+        "text": "Participants must not have a prior or concurrent malignancy whose natural history or treatment (in the opinion of the treating physician) has the potential to interfere with the safety or efficacy assessment of the investigational regimen"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9418,
+        "end": 9592,
+        "text": "Participants must not be pregnant or breastfeeding (nursing includes breast milk fed to an infant by any means, including from the breast, milk expressed by hand, or pumped)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

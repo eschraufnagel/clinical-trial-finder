@@ -1,0 +1,93 @@
+{
+  "nctId": "NCT06804824",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 796,
+        "text": "For Part 1 Dose Escalation, the prospective participant must have histologically confirmed pancreatic ductal adenocarcinoma (PDAC), colorectal cancer (CRC), non-small cell lung cancer (NSCLC), or any solid tumor that harbors a rat sarcoma viral oncogene (RAS) alteration \\[Kirsten rat sarcoma viral oncogene homolog (KRAS), neuroblastoma RAS viral oncogene homolog (NRAS), Harvey rat sarcoma viral oncogene homolog (HRAS)\\] as per local /historical testing; any solid tumor that harbors an epidermal growth factor receptor (EGFR) alteration as per local/historical testing; or human epidermal growth factor receptor 2 (HER2) overexpression (immunohistochemistry \\[IHC\\] 3+ or IHC 2+/fluorescence in situ hybridization \\[FISH\\] positive) as per local/historical testing."
+      },
+      "appliesTo": "Part 1 Dose Escalation"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 799,
+        "end": 886,
+        "text": "Have histologically or cytologically confirmed metastatic or unresectable solid tumors."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 889,
+        "end": 962,
+        "text": "Measurable disease by RECIST version 1.1 as assessed by the investigator."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 965,
+        "end": 1029,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤1."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1577,
+        "end": 1701,
+        "text": "Active hepatitis B infection \\[positive for hepatitis B surface antigen and Hepatitis B virus deoxyribonucleic acid (DNA)\\]."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1704,
+        "end": 1892,
+        "text": "Active hepatitis C infection (positive anti-hepatitis C virus \\[HCV\\] antibody and quantitative HCV ribonucleic acid (RNA) results greater than the lower limits of detection of the assay)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

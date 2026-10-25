@@ -1,0 +1,146 @@
+{
+  "nctId": "NCT05559879",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 125,
+        "end": 190,
+        "text": "Received at least one prior chemotherapy regimen for their cancer"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 194,
+        "end": 253,
+        "text": "Must have measurable or evaluable lesion defined by iRECIST"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 433,
+        "end": 463,
+        "text": "ECOG Performance Status of 0-2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3343,
+        "end": 3684,
+        "text": "Known brain metastases or cranial epidural disease unless adequately treated with radiotherapy and/or surgery (including radiosurgery) and stable for at least 4 weeks before first dose of study treatment. Eligible patients must be neurologically asymptomatic and without corticosteroid treatment at the time of first dose of study treatment."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7692,
+        "end": 7896,
+        "text": "Diagnosis of another malignancy within 2 years before first dose of study treatment, except for superficial skin cancers, or localized, low-grade tumors deemed cured and not treated with systemic therapy."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8898,
+        "end": 9087,
+        "text": "Active, known, or suspected autoimmune disease (exceptions: type 1 diabetes mellitus, hypothyroidism, skin disorders, conditions not expected to recur in the absence of an external trigger)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8715,
+        "end": 8890,
+        "text": "History of idiopathic pulmonary fibrosis, organizing pneumonia, drug-induced pneumonitis, idiopathic pneumonitis, or evidence of active pneumonitis on screening chest CT scan."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8343,
+        "end": 8559,
+        "text": "Presence of a known active acute or chronic infection including: a urinary tract infection, HIV or viral hepatitis; however, it is acceptable to treat an acute infection and then re-screen or re-evaluate eligibility."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2031,
+        "end": 2107,
+        "text": "Female patients of childbearing potential must not be pregnant at screening."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed diagnosis of carcinosarcoma (independent of organ of gynecologic origin)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed diagnosis of carcinosarcoma (independent of organ of gynecologic origin)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

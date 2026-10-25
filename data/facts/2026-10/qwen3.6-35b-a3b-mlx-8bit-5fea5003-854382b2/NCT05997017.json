@@ -1,0 +1,161 @@
+{
+  "nctId": "NCT05997017",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 405,
+        "end": 549,
+        "text": "Patients must have EEC that is metastatic or locally advanced where surgical resection is not an option or likely to result in severe morbidity."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 199,
+        "end": 401,
+        "text": "All patients must have 1 or more measurable target lesion at baseline by computed tomography (CT; or magnetic resonance imaging \\[MRI\\] if CT scans are contraindicated) as defined by RECIST version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1549,
+        "end": 1638,
+        "text": "Patient must have Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4960,
+        "end": 4996,
+        "text": "Known or suspected brain metastases."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5003,
+        "end": 5293,
+        "text": "Severe heart disease defined as unstable angina pectoris, New York Heart Association (NYHA) Class III or IV congestive heart failure, myocardial infarction ≤6 months prior to first study treatment, serious uncontrolled cardiac arrhythmia or any other clinically significant cardiac disease."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5728,
+        "end": 5907,
+        "text": "A history of malignancies other than the one under treatment unless the patient is disease-free for more than 5 years from completion of therapy administered with curative intent."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6350,
+        "end": 6447,
+        "text": "Patients with history of interstitial lung disease and/or pneumonitis, or pulmonary hypertension."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6454,
+        "end": 6553,
+        "text": "Active hepatitis B and/or hepatitis C infection and detectable viral load despite antiviral therapy"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4069,
+        "end": 4208,
+        "text": "The patient has been receiving an antiretroviral therapy regimen for≥4 weeks and the HIV viral load is \\<400 copies/mL prior to enrollment."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2708,
+        "end": 2749,
+        "text": "Non-pregnant and non-breastfeeding female"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients must have clinically confirmed advanced or recurrent endometrioid endometrial carcinoma.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have clinically confirmed advanced or recurrent endometrioid endometrial carcinoma.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

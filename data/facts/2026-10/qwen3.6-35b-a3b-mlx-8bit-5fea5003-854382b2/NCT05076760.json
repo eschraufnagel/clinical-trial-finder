@@ -1,0 +1,326 @@
+{
+  "nctId": "NCT05076760",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 198,
+        "end": 232,
+        "text": "ECOG performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 257,
+        "end": 362,
+        "text": "Advanced/metastatic NSCLC, cSCC, Merkel cell, melanoma, TNBC, pancreatic cancer, or head and neck cancer."
+      },
+      "appliesTo": "Part 1A monotherapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 395,
+        "end": 519,
+        "text": "Advanced/metastatic NSCLC which has progressed following front-line anti-PD-1/PD-L1 with or without concurrent chemotherapy."
+      },
+      "appliesTo": "Parts 1B and 1C combination"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4522,
+        "end": 4917,
+        "text": "Prior history of brain metastases are eligible, provided:\n\n    1. Brain metastases have been treated\n    2. Asymptomatic from the brain metastases\n    3. Corticosteroids prescribed for the management of brain metastases have been discontinued at least 7 days before registration to study\n    4. Brain metastases are stable on pre-registration imaging\n    5. No evidence of leptomeningeal disease"
+      },
+      "loose": true
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4522,
+        "end": 4917,
+        "text": "Prior history of brain metastases are eligible, provided:\n\n    1. Brain metastases have been treated\n    2. Asymptomatic from the brain metastases\n    3. Corticosteroids prescribed for the management of brain metastases have been discontinued at least 7 days before registration to study\n    4. Brain metastases are stable on pre-registration imaging\n    5. No evidence of leptomeningeal disease"
+      },
+      "loose": true
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4463,
+        "end": 4517,
+        "text": "Measurable disease, as defined per RECIST version 1.1."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3217,
+        "end": 3383,
+        "text": "Progressed following therapy with at least one PD-1 or PD-L1 checkpoint inhibitor (regardless of PD-L1 expression status), except for patients with pancreatic cancer."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 890,
+        "end": 1028,
+        "text": "Must have progressed on standard therapy, including platinum-based chemotherapy and checkpoint inhibitor therapy (combined or sequential)."
+      },
+      "appliesTo": "Part 1A monotherapy"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1037,
+        "end": 1250,
+        "text": "Patients with tumors that have known actionable molecular alteration such in EGFR, ALK, ROS-1, BRAF, RET, MET, and KRAS must have progressed on standard directed molecular therapy, and platinum-based chemotherapy."
+      },
+      "appliesTo": "Part 1A monotherapy"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3646,
+        "end": 3868,
+        "text": "Patients with activating EGFR mutation or ALK rearrangement which is expected to be responsive to available tyrosine kinase inhibitor therapy, must have been previously treated with an applicable tyrosine kinase inhibitor."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2195,
+        "end": 2331,
+        "text": "Subjects must have received a BRAF inhibitor as monotherapy or in combination with other targeted agents for BRAF V600E mutant melanoma."
+      },
+      "appliesTo": "Melanoma"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2696,
+        "end": 2819,
+        "text": "Prior treatment (for advanced, metastatic or (neo)adjuvant) must have included a taxane and/or anthracycline-based therapy."
+      },
+      "appliesTo": "Triple negative breast cancer"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2960,
+        "end": 3105,
+        "text": "Subjects must have received a platinum containing chemotherapy regimen for treatment of primary tumor in locally advanced, or metastatic settings"
+      },
+      "appliesTo": "Head and Neck Cancer"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3114,
+        "end": 3213,
+        "text": "Subjects must have received an anti-PD-1/ PD-L1 as monotherapy or in combination with chemotherapy."
+      },
+      "appliesTo": "Head and Neck Cancer"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2340,
+        "end": 2473,
+        "text": "Subjects must have received an anti-PD-1/ PD-L1inhibitor as monotherapy or combination with anti-CTLA-4 inhibitor or other therapies."
+      },
+      "appliesTo": "Melanoma"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2108,
+        "end": 2170,
+        "text": "Must have progressed on standard checkpoint inhibitor therapy."
+      },
+      "appliesTo": "Merkel cell Carcinoma"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1954,
+        "end": 2070,
+        "text": "Must have progressed on standard therapy, including platinum-based chemotherapy and/or checkpoint inhibitor therapy."
+      },
+      "appliesTo": "Cutaneous squamous-cell carcinoma (cSCC)"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2507,
+        "end": 2643,
+        "text": "Progression after systemic chemotherapy which included either gemcitabine or Fluorouracil (5-FU)-based regimen (including capecitabine)."
+      },
+      "appliesTo": "Pancreatic cancer"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7938,
+        "end": 8074,
+        "text": "Active autoimmune disease requiring disease modifying therapy (except vitiligo, Grave's, or psoriasis not requiring systemic treatment)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7127,
+        "end": 7338,
+        "text": "History of clinically significant noninfectious interstitial pneumonitis (i.e., limiting activities of daily living or requiring therapeutic intervention), including clinically significant radiation pneumonitis."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7535,
+        "end": 7934,
+        "text": "Clinically significant, uncontrolled heart disease and/or recent cardiac event (within 6 months), such as:\n\n   1. unstable angina within 6 months prior to screening\n   2. myocardial infarction within 6 months prior to screening\n   3. history of documented congestive heart failure (New York Heart Association functional classification III-IV)\n   4. cardiac arrhythmias not controlled with medication"
+      },
+      "loose": true
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8140,
+        "end": 8190,
+        "text": "Receiving ≥10 mg daily prednisone (or equivalent)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8195,
+        "end": 8544,
+        "text": "Prior malignancy (except non-melanoma skin cancers, and the following in situ cancers: bladder, gastric, colon, cervical/dysplasia endometrial, melanoma, or breast) are excluded unless a complete remission was achieved at least 2 years prior to study entry AND no additional therapy is required or anticipated to be required during the study period."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6484,
+        "end": 6511,
+        "text": "Pregnant or breast feeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

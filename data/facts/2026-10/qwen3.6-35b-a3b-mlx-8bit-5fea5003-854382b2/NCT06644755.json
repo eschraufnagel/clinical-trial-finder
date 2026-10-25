@@ -1,0 +1,141 @@
+{
+  "nctId": "NCT06644755",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 338,
+        "end": 527,
+        "text": "Advanced (metastatic or unresectable) SS Advanced (metastatic or unresectable) MRCLS Metastatic or unresectable locally advanced NSCLC (Ad/Sq) Metastatic or unresectable locally advanced UC"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 423,
+        "end": 480,
+        "text": "Metastatic or unresectable locally advanced NSCLC (Ad/Sq)"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 985,
+        "end": 1088,
+        "text": "Has measurable disease based on RECIST v1.1 on computed tomography/magnetic resonance imaging (CT/MRI)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1182,
+        "end": 1279,
+        "text": "Has Eastern Cooperative Oncology Group Performance Status (ECOG PS) score of 0 or 1 at Screening."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5016,
+        "end": 5293,
+        "text": "Has known symptomatic central nervous system (CNS) metastases, leptomeningeal disease, or cord compression. Note: Asymptomatic or adequately treated CNS metastases are not exclusionary provided that, in the opinion of the investigator, the participant is neurologically stable."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5016,
+        "end": 5123,
+        "text": "Has known symptomatic central nervous system (CNS) metastases, leptomeningeal disease, or cord compression."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7305,
+        "end": 7351,
+        "text": "Has a history of or active autoimmune disease."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7619,
+        "end": 7668,
+        "text": "Has human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8594,
+        "end": 8688,
+        "text": "Has active or uncontrolled hepatitis B or C infection as defined per institutional guidelines."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6030,
+        "end": 6420,
+        "text": "Has active other primary malignancies. Note: Participants with the following can be enrolled: Adequately resected non-melanoma skin cancer, curatively treated in situ disease, superficial cancer in the gastrointestinal tract curatively resected by endoscopic surgery, or any other solid tumors curatively treated with no evidence of recurrent disease for ≥3 years and requires no treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

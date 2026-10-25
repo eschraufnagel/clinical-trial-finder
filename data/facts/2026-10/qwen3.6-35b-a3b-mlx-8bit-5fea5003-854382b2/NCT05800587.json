@@ -1,0 +1,129 @@
+{
+  "nctId": "NCT05800587",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 252,
+        "text": "Must have histologically or cytologically confirmed stage IV (AJCC version 8) lung cancer (small cell or non-small cell). Patients with stage III disease who are not felt to be candidates for definitive therapy are also eligible."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 563,
+        "end": 619,
+        "text": "Must have measurable disease as per RECIST criteria 1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 622,
+        "end": 694,
+        "text": "History of treated or untreated asymptomatic CNS metastases are eligible"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1235,
+        "end": 1265,
+        "text": "ECOG performance status of 0-3"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2179,
+        "end": 2290,
+        "text": "Patients receiving only a targeted agent (e.g. TKI, sotorasib etc.) or immunotherapy without a cytotoxic agent."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3673,
+        "end": 3695,
+        "text": "Leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4068,
+        "end": 4095,
+        "text": "Pregnant or breast feeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Must have histologically or cytologically confirmed stage IV (AJCC version 8) lung cancer (small cell or non-small cell).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Must have histologically or cytologically confirmed stage IV (AJCC version 8) lung cancer (small cell or non-small cell).",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Patients receiving only a targeted agent (e.g. TKI, sotorasib etc.) or immunotherapy without a cytotoxic agent.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients receiving only a targeted agent (e.g. TKI, sotorasib etc.) or immunotherapy without a cytotoxic agent.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

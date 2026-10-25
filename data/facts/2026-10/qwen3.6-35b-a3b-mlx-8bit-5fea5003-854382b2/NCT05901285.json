@@ -1,0 +1,167 @@
+{
+  "nctId": "NCT05901285",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 55,
+        "end": 155,
+        "text": "Histological or cytopathological confirmed diagnosis of a locally advanced or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1187,
+        "end": 1220,
+        "text": "Measurable disease by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1225,
+        "end": 1262,
+        "text": "ECOG Performance Status of 0, 1, or 2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2767,
+        "end": 2931,
+        "text": "Known CNS metastases or leptomeningeal carcinomatosis, unless adequately treated and clinically stable off steroids for ≥ 14 days from the first injection of VAX014"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2767,
+        "end": 2931,
+        "text": "Known CNS metastases or leptomeningeal carcinomatosis, unless adequately treated and clinically stable off steroids for ≥ 14 days from the first injection of VAX014"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3157,
+        "end": 3227,
+        "text": "Active autoimmune disease requiring systemic immunosuppressive therapy"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3335,
+        "end": 3403,
+        "text": "Any other malignancy likely to require treatment in the next 2 years"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3541,
+        "end": 3588,
+        "text": "Known active infection with tuberculosis or HIV"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3593,
+        "end": 3616,
+        "text": "Active Hepatitis B or C"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1069,
+        "end": 1182,
+        "text": "[Expansion\\] Progression following at least one prior regimen containing PD-1 directed immune checkpoint blockade"
+      },
+      "appliesTo": "Expansion"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 159,
+        "end": 256,
+        "text": "Progression following at least one prior standard treatment or intolerant of standard treatments."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Clinically significant cardiovascular abnormalities including: ... ≤ 12 months from prior MI ... ≤ 6 months from NYHA classification >=3 CHF",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Clinically significant cardiovascular abnormalities including: ... ≤ 12 months from prior MI ... ≤ 6 months from NYHA classification >=3 CHF",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

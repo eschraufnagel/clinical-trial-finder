@@ -1,0 +1,255 @@
+{
+  "nctId": "NCT05886920",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3492,
+        "end": 3609,
+        "text": "Part 2: subjects with mixed small-cell lung cancer, or large cell neuroendocrine histology, or sarcomatoid carcinoma."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 31,
+        "end": 174,
+        "text": "Subjects must have a histologically or cytologically confirmed metastatic or locally advanced solid tumor with evidence of progressive disease."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 185,
+        "end": 326,
+        "text": "Subjects must have a histologically or cytologically confirmed metastatic or locally advanced non-small cell lung cancer with evidence of PD."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3071,
+        "end": 3160,
+        "text": "Subject must have Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2659,
+        "end": 2721,
+        "text": "Part 2: Subjects must have measurable disease per RECIST v1.1."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4057,
+        "end": 4108,
+        "text": "Part 1: Uncontrolled or untreated brain metastasis."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4111,
+        "end": 4455,
+        "text": "Part 2: Asymptomatic and stable brain metastases subjects will be eligible for enrollment per the following criteria.\n\n  * Treated or untreated brain metastases\n  * Neurologically asymptomatic\n  * Stable and not requiring steroids more than 10 mg/day of prednisone or equivalent for at least 4 weeks prior to the first dose of study medication."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 332,
+        "end": 610,
+        "text": "Subjects with non-small cell lung cancer (NSCLC) should have no known epidermal growth factor receptor (EGFR) mutations, ALK/ROS1/RET rearrangements, NTRK1/2/3 gene fusions, v-Raf murine sarcoma viral oncogene homolog B (BRAF) V600E mutations, or MET exon 14 skipping mutations."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 332,
+        "end": 610,
+        "text": "Subjects with non-small cell lung cancer (NSCLC) should have no known epidermal growth factor receptor (EGFR) mutations, ALK/ROS1/RET rearrangements, NTRK1/2/3 gene fusions, v-Raf murine sarcoma viral oncogene homolog B (BRAF) V600E mutations, or MET exon 14 skipping mutations."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 332,
+        "end": 610,
+        "text": "Subjects with non-small cell lung cancer (NSCLC) should have no known epidermal growth factor receptor (EGFR) mutations, ALK/ROS1/RET rearrangements, NTRK1/2/3 gene fusions, v-Raf murine sarcoma viral oncogene homolog B (BRAF) V600E mutations, or MET exon 14 skipping mutations."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 332,
+        "end": 610,
+        "text": "Subjects with non-small cell lung cancer (NSCLC) should have no known epidermal growth factor receptor (EGFR) mutations, ALK/ROS1/RET rearrangements, NTRK1/2/3 gene fusions, v-Raf murine sarcoma viral oncogene homolog B (BRAF) V600E mutations, or MET exon 14 skipping mutations."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 332,
+        "end": 610,
+        "text": "Subjects with non-small cell lung cancer (NSCLC) should have no known epidermal growth factor receptor (EGFR) mutations, ALK/ROS1/RET rearrangements, NTRK1/2/3 gene fusions, v-Raf murine sarcoma viral oncogene homolog B (BRAF) V600E mutations, or MET exon 14 skipping mutations."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 332,
+        "end": 610,
+        "text": "Subjects with non-small cell lung cancer (NSCLC) should have no known epidermal growth factor receptor (EGFR) mutations, ALK/ROS1/RET rearrangements, NTRK1/2/3 gene fusions, v-Raf murine sarcoma viral oncogene homolog B (BRAF) V600E mutations, or MET exon 14 skipping mutations."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 332,
+        "end": 610,
+        "text": "Subjects with non-small cell lung cancer (NSCLC) should have no known epidermal growth factor receptor (EGFR) mutations, ALK/ROS1/RET rearrangements, NTRK1/2/3 gene fusions, v-Raf murine sarcoma viral oncogene homolog B (BRAF) V600E mutations, or MET exon 14 skipping mutations."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1796,
+        "end": 1983,
+        "text": "Part 2: Subject must have received at least 1 line of prior standard of care systemic therapy for locally advanced and unresectable or metastatic disease, including KRAS p.G12C inhibitor."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1796,
+        "end": 1983,
+        "text": "Part 2: Subject must have received at least 1 line of prior standard of care systemic therapy for locally advanced and unresectable or metastatic disease, including KRAS p.G12C inhibitor."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1994,
+        "end": 2181,
+        "text": "Subjects should only have received 1 type of prior KRAS p.G12Ci treatment (including all types of KRAS p.G12C inhibitor which are either under investigation or in market, except D3S-001)."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4111,
+        "end": 4455,
+        "text": "Part 2: Asymptomatic and stable brain metastases subjects will be eligible for enrollment per the following criteria.\n\n  * Treated or untreated brain metastases\n  * Neurologically asymptomatic\n  * Stable and not requiring steroids more than 10 mg/day of prednisone or equivalent for at least 4 weeks prior to the first dose of study medication."
+      },
+      "appliesTo": "Part 2"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

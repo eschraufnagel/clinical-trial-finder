@@ -1,0 +1,131 @@
+{
+  "nctId": "NCT06641908",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 97,
+        "end": 157,
+        "text": "locally advanced or metastatic STS with unresectable disease"
+      },
+      "appliesTo": "Escalation A"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 318,
+        "end": 367,
+        "text": "resectable locally advanced or metastatic disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 924,
+        "end": 1007,
+        "text": "Eastern Cooperative Oncology Group Performance Status (ECOG PS) below or equal to 1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1201,
+        "end": 1345,
+        "text": "history of malignancy other than STS or glioblastoma (depending on the escalation/expansion cohort) within 3 years before the date of enrollment"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1620,
+        "end": 1738,
+        "text": "Participants with history of brain metastasis, leptomeningeal metastasis, or participants with spinal cord compression"
+      },
+      "appliesTo": "STS only"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1620,
+        "end": 1738,
+        "text": "Participants with history of brain metastasis, leptomeningeal metastasis, or participants with spinal cord compression"
+      },
+      "appliesTo": "STS only"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "participants with documented histopathological diagnosis of locally advanced or metastatic STS",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "participants with documented histopathological diagnosis of locally advanced or metastatic STS",
+        "appliesTo": "Escalation A"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "participants with documented histopathological diagnosis of glioblastoma, IDH-wildtype",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "participants with documented histopathological diagnosis of glioblastoma, IDH-wildtype",
+        "appliesTo": "Escalation B"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

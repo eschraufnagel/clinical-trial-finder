@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT04977453",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 252,
+        "end": 280,
+        "text": "ECOG performance status 0-1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 664,
+        "end": 728,
+        "text": "Has known active CNS metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 664,
+        "end": 728,
+        "text": "Has known active CNS metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 211,
+        "end": 249,
+        "text": "Measurable disease as per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 500,
+        "end": 635,
+        "text": "HIV infected patients must be on anti-retroviral therapy (ART) and have a well-controlled HIV infection/disease as defined in protocol."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 761,
+        "end": 850,
+        "text": "Has active or a known history of Hepatitis B or known active Hepatitis C virus infection."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1144,
+        "end": 1230,
+        "text": "Has an active autoimmune disease that has required systemic treatment in past 2 years."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 731,
+        "end": 758,
+        "text": "An active second malignancy"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Squamous Cell Non Small Cell Lung Cancer",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Squamous Cell Non Small Cell Lung Cancer",
+        "appliesTo": "Squamous Cell Non Small Cell Lung Cancer"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Advanced Solid Tumor; Metastatic Solid Tumor",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "Advanced Solid Tumor; Metastatic Solid Tumor",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

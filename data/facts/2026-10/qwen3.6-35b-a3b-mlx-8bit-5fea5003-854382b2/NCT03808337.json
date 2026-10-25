@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT03808337",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 90,
+        "text": "Metastatic disease detected on imaging and histologically confirmed"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 552,
+        "end": 625,
+        "text": "Patients must have measurable disease at baseline (RECIST or PERCIST 2.0)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3082,
+        "end": 3181,
+        "text": "Patients with brain metastases are eligible if these lesions have been treated prior to enrollment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3184,
+        "end": 3214,
+        "text": "ECOG Performance status 0 - 2."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4024,
+        "end": 4106,
+        "text": "Other active malignancy within the last year, even if without evidence of disease."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3993,
+        "end": 4021,
+        "text": "Pregnant or lactating women."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 140,
+        "end": 243,
+        "text": "Non-small cell lung cancer (NSCLC) without known targetable molecular alterations in EGFR, ALK, or ROS1"
+      },
+      "appliesTo": "Non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 140,
+        "end": 243,
+        "text": "Non-small cell lung cancer (NSCLC) without known targetable molecular alterations in EGFR, ALK, or ROS1"
+      },
+      "appliesTo": "Non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 140,
+        "end": 243,
+        "text": "Non-small cell lung cancer (NSCLC) without known targetable molecular alterations in EGFR, ALK, or ROS1"
+      },
+      "appliesTo": "Non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 140,
+        "end": 243,
+        "text": "Non-small cell lung cancer (NSCLC) without known targetable molecular alterations in EGFR, ALK, or ROS1"
+      },
+      "appliesTo": "Non-small cell lung cancer (NSCLC)"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "nctId": "NCT07197827",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 41,
+        "end": 114,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG PS) of 0 or 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 311,
+        "end": 382,
+        "text": "Part 4: locally advanced or metastatic non-sq NSCLC without AGA and HCC"
+      },
+      "appliesTo": "Part 4"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 311,
+        "end": 382,
+        "text": "Part 4: locally advanced or metastatic non-sq NSCLC without AGA and HCC"
+      },
+      "appliesTo": "Part 4"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 311,
+        "end": 433,
+        "text": "Part 4: locally advanced or metastatic non-sq NSCLC without AGA and HCC; Have not received any systemic anti-tumor therapy"
+      },
+      "appliesTo": "Part 4"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 172,
+        "end": 309,
+        "text": "Part 1-3: Advanced/unresectable or metastatic solid malignant tumor; Have received at least one prior line of systemic anti-tumor therapy"
+      },
+      "appliesTo": "Part 1-3"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 172,
+        "end": 309,
+        "text": "Part 1-3: Advanced/unresectable or metastatic solid malignant tumor; Have received at least one prior line of systemic anti-tumor therapy"
+      },
+      "appliesTo": "Part 1-3"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 172,
+        "end": 309,
+        "text": "Part 1-3: Advanced/unresectable or metastatic solid malignant tumor; Have received at least one prior line of systemic anti-tumor therapy"
+      },
+      "appliesTo": "Part 1-3"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 172,
+        "end": 309,
+        "text": "Part 1-3: Advanced/unresectable or metastatic solid malignant tumor; Have received at least one prior line of systemic anti-tumor therapy"
+      },
+      "appliesTo": "Part 1-3"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 962,
+        "end": 1032,
+        "text": "A history of leptomeningeal carcinomatosis or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 172,
+        "end": 309,
+        "text": "Part 1-3: Advanced/unresectable or metastatic solid malignant tumor; Have received at least one prior line of systemic anti-tumor therapy"
+      },
+      "appliesTo": "Part 1-3"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 436,
+        "end": 535,
+        "text": "Part 5: mCRC, have received at least one (5a) or one (5b) prior line of systemic anti-tumor therapy"
+      },
+      "appliesTo": "Part 5"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 537,
+        "end": 674,
+        "text": "Part 6: advanced or metastatic HER2-negative G/GEJ; have received at least one (6a) or one (6b) prior line of systemic anti-tumor therapy"
+      },
+      "appliesTo": "Part 6"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

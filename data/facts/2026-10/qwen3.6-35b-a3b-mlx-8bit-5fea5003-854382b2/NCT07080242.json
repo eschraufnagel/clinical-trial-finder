@@ -1,0 +1,95 @@
+{
+  "nctId": "NCT07080242",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 572,
+        "text": "Documented locally advanced or metastatic SCLC, large cell neuroendocrine cancer of the lung (LCNEC), neuroendocrine prostate cancer (NEPC), poorly differentiated gastroenteropancreatic neuroendocrine carcinomas (GEP-NEC) or other extrapulmonary neuroendocrine carcinomas (EP-NECs), Merkel cell carcinoma (MCC), or other poorly differentiated and/or high-grade neuroendocrine neoplasms with evidence of DLL3 expression who have failed at least 1 line of standard therapy in the advanced/metastatic setting or are unable to receive standard treatment"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 916,
+        "end": 1014,
+        "text": "At least one measurable lesion based on RECIST (Response Evaluation Criteria in Solid Tumors) v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1017,
+        "end": 1090,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG PS) of 0 to 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2539,
+        "end": 3361,
+        "text": "Participants with primary neoplasms in the central nervous system (CNS), active or untreated CNS metastases, spinal cord compression, or carcinomatous meningitis should be excluded. Active brain metastases are defined as untreated symptomatic brain metastases or untreated brain metastases requiring systemic corticosteroids and/or anticonvulsants to control CNS-related symptoms. Patients with brain metastases are eligible if they meet any of the following criteria:\n\n  1. untreated, asymptomatic brain metastases\n  2. previously treated brain metastases may participate provided they are clinically stable with local therapy (eg, surgery or radiotherapy, currently asymptomatic, no longer requiring corticosteroid treatment, and recovered from all local therapy-related adverse events, as determined by the investigator"
+      },
+      "loose": true
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2045,
+        "end": 2331,
+        "text": "Participants with other prior or concurrent malignancies except for basal cell carcinoma of the skin, squamous cell carcinoma of the skin and/or carcinoma in situ after adequate resection, or other malignancy treated with curative intent with a disease-free interval of at least 3 years"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3459,
+        "end": 3554,
+        "text": "Participants who are pregnant or breastfeeding, or planning to become pregnant during the study"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

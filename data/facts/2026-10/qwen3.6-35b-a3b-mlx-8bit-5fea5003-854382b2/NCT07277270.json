@@ -1,0 +1,123 @@
+{
+  "nctId": "NCT07277270",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 120,
+        "text": "Has an ECOG performance status of 0 or 1, with no deterioration in the 2 weeks before first dose."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 154,
+        "end": 287,
+        "text": "Has histologically confirmed unresectable adenocarcinoma or unresectable metastatic adenocarcinoma of the colon or rectum. (Cohort A)"
+      },
+      "appliesTo": "Cohort A"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 290,
+        "end": 373,
+        "text": "Histologically or cytologically confirmed adenocarcinoma of the prostate (Cohort B)"
+      },
+      "appliesTo": "Cohort B"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 398,
+        "end": 689,
+        "text": "Has a malignancy (except disease under study) that has progressed or required active treatment within the past 24 months except for basal cell or squamous cell carcinomas of the skin or in-situ carcinomas \\[e.g., breast, cervix, bladder\\] that have been resected with no evidence of disease."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 940,
+        "end": 1047,
+        "text": "Has untreated brain or central nervous system (CNS) metastases or brain/CNS metastases that have progressed"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1050,
+        "end": 1249,
+        "text": "Any evidence of current interstitial lung disease (ILD) or pneumonitis OR a prior history of ILD requiring high-dose glucocorticoids or non-infectious pneumonitis requiring high-dose glucocorticoids."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1252,
+        "end": 1360,
+        "text": "Has a history of autoimmune disease that has required systemic treatments in the 2 years prior to screening."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1363,
+        "end": 1601,
+        "text": "Has received immunosuppressive agents within 30 days prior to first dose of study intervention (or requires long-term \\[30 days or longer\\]). Low-dose corticosteroids (prednisone ≤10 milligrams (mg)/day or equivalent) may be administered."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "nctId": "NCT05815173",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 300,
+        "end": 377,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 380,
+        "end": 450,
+        "text": "Histologically confirmed diagnosis of NSCLC (squamous or nonsquamous)."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 453,
+        "end": 570,
+        "text": "Patients with metastatic or locally advanced NSCLC who are not candidates for curative surgery or curative radiation."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 573,
+        "end": 825,
+        "text": "Do not have an epidermal growth factor receptor (EGFR) mutation, anaplastic lymphoma kinase (ALK) translocation, rearranged during transfection (RET), ROS1 or other actionable molecular alterations that can be treated with FDA approved targeted agents."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 573,
+        "end": 825,
+        "text": "Do not have an epidermal growth factor receptor (EGFR) mutation, anaplastic lymphoma kinase (ALK) translocation, rearranged during transfection (RET), ROS1 or other actionable molecular alterations that can be treated with FDA approved targeted agents."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 573,
+        "end": 825,
+        "text": "Do not have an epidermal growth factor receptor (EGFR) mutation, anaplastic lymphoma kinase (ALK) translocation, rearranged during transfection (RET), ROS1 or other actionable molecular alterations that can be treated with FDA approved targeted agents."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 573,
+        "end": 825,
+        "text": "Do not have an epidermal growth factor receptor (EGFR) mutation, anaplastic lymphoma kinase (ALK) translocation, rearranged during transfection (RET), ROS1 or other actionable molecular alterations that can be treated with FDA approved targeted agents."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 828,
+        "end": 910,
+        "text": "Patients must have documentation of presence of KRASG12C mutation in tumor tissue."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 913,
+        "end": 1051,
+        "text": "Patients must have demonstrated progression of disease following treatment with anti-PD (L)-1 with or without platinum-based chemotherapy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1054,
+        "end": 1179,
+        "text": "Participants must have at least 1 measurable lesion as defined by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3394,
+        "end": 3689,
+        "text": "History (≤1 years) of other cancer that is histologically distinct from the cancers under study, except for cervical carcinoma in situ, ductal carcinoma in situ, prostatic intraepithelial neoplasia, superficial non-invasive bladder tumors, or curatively treated stage I non-melanoma skin cancer."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3791,
+        "end": 4131,
+        "text": "History (≤6 months before the start of treatment with the study drugs) of severe autoimmune disease (including ≥ Grade 3 or recurrent Grade 2 immune-related AEs of prior immuno-oncology therapy) or autoimmune disorder that requires chronic systemic corticosteroid treatment at immunosuppressive doses (prednisone \\>10 mg/day or equivalent)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4134,
+        "end": 4475,
+        "text": "Brain or spinal metastases, except if treated by surgery or surgery plus radiotherapy or radiotherapy alone, with no clinical evidence of progression or hemorrhage for ≤7 days before the start of treatment with the study drugs, and has not received any systemic corticosteroids for ≥7 days before the start of treatment with the study drugs."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4615,
+        "end": 4814,
+        "text": "History of interstitial lung disease, radiation pneumonitis which required steroid treatment, idiopathic pulmonary fibrosis, drug-induced pneumonitis, idiopathic pneumonitis, or organizing pneumonia."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5015,
+        "end": 5192,
+        "text": "History of seropositive status for human immunodeficiency virus (HIV) at any time before the start of treatment as determined by presence of anti-HIV-1 or anti-HIV-2 antibodies."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5356,
+        "end": 5405,
+        "text": "Has active hepatitis B, or hepatitis C infection."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9916,
+        "end": 9979,
+        "text": "History of an allogeneic bone marrow or solid organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8998,
+        "end": 9041,
+        "text": "Persons who are pregnant or breast-feeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

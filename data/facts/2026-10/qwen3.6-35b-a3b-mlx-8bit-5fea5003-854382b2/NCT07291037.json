@@ -1,0 +1,241 @@
+{
+  "nctId": "NCT07291037",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2517,
+        "end": 2583,
+        "text": "Squamous, mixed NSCLC, or small cell lung cancer (SCLC) histology."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2586,
+        "end": 2652,
+        "text": "NSCLC disease that is eligible for definitive local therapy alone."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2871,
+        "end": 3056,
+        "text": "Spinal cord compression or brain metastases, unless asymptomatic, stable, and not requiring treatment with corticosteroids or anticonvulsants for at least 7 days prior to randomisation."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 239,
+        "end": 400,
+        "text": "Participants must have documented negative test results for EGFR (eg, exon 19 deletion or exon 21 L858R, exon 21 L861Q, exon 18 G719X, or exon 20 S768I mutation)"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 239,
+        "end": 436,
+        "text": "Participants must have documented negative test results for EGFR (eg, exon 19 deletion or exon 21 L858R, exon 21 L861Q, exon 18 G719X, or exon 20 S768I mutation), ALK, and ROS1 genomic alterations."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 239,
+        "end": 436,
+        "text": "Participants must have documented negative test results for EGFR (eg, exon 19 deletion or exon 21 L858R, exon 21 L861Q, exon 18 G719X, or exon 20 S768I mutation), ALK, and ROS1 genomic alterations."
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 657,
+        "end": 763,
+        "text": "Has no known tumour genomic alterations in NTRK, BRAF V600, RET, MET exon 14 skipping, KRAS G12C, or HER2."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 657,
+        "end": 763,
+        "text": "Has no known tumour genomic alterations in NTRK, BRAF V600, RET, MET exon 14 skipping, KRAS G12C, or HER2."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 657,
+        "end": 763,
+        "text": "Has no known tumour genomic alterations in NTRK, BRAF V600, RET, MET exon 14 skipping, KRAS G12C, or HER2."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 657,
+        "end": 763,
+        "text": "Has no known tumour genomic alterations in NTRK, BRAF V600, RET, MET exon 14 skipping, KRAS G12C, or HER2."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 657,
+        "end": 763,
+        "text": "Has no known tumour genomic alterations in NTRK, BRAF V600, RET, MET exon 14 skipping, KRAS G12C, or HER2."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 657,
+        "end": 763,
+        "text": "Has no known tumour genomic alterations in NTRK, BRAF V600, RET, MET exon 14 skipping, KRAS G12C, or HER2."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1902,
+        "end": 2323,
+        "text": "At least one lesion not previously irradiated that qualifies as a Response Evaluation Criteria in Solid Tumours, Version 1.1 (RECIST 1.1) target lesion (TL) at baseline and can be accurately measured at baseline as ≥ 10 mm in the longest diameter (except lymph nodes, which must have short axis ≥ 15 mm) with computed tomography (CT) or magnetic resonance imaging (MRI) and is suitable for accurate repeated measurements."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2328,
+        "end": 2404,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) of 0 or 1."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3101,
+        "end": 3161,
+        "text": "Has active or uncontrolled hepatitis B or C virus infection."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3164,
+        "end": 3243,
+        "text": "Known human immunodeficiency virus (HIV) infection that is not well controlled."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3339,
+        "end": 3580,
+        "text": "History of ILD/pneumonitis, including radiation pneumonitis (apart from radiation pneumonitis that did not require steroids), or drug-induced ILD/pneumonitis, or has suspected ILD/pneumonitis that cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2655,
+        "end": 2868,
+        "text": "History of another primary malignancy other than NSCLC, except for malignancy treated with curative intent with no known active disease within 3 years before randomisation and of low potential risk for recurrence."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

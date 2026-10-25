@@ -1,0 +1,128 @@
+{
+  "nctId": "NCT07404332",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 102,
+        "end": 276,
+        "text": "Histologically and radiologically confirmed locally advanced or metastatic unresectable solid tumor malignancy for which PD-1 or PD-L1 therapy is already approved by the FDA."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 102,
+        "end": 212,
+        "text": "Histologically and radiologically confirmed locally advanced or metastatic unresectable solid tumor malignancy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 435,
+        "end": 530,
+        "text": "At least one Response Evaluation Criteria in Solid Tumors (RECIST 1.1) - defined target lesion."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 533,
+        "end": 983,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 (fully active, able to carry on all pre-disease performance without restriction), 1 (restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, such as light housework or office work), or 2 (ambulatory and capable of self-care but unable to carry out any work activities, spending more than 50% of waking hours up and about)."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 986,
+        "end": 1036,
+        "text": "Documented progression on PD1 or PD-L1 inhibitors."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2686,
+        "end": 2759,
+        "text": "Patients with active, untreated metastases in the central nervous system."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2762,
+        "end": 2805,
+        "text": "Patients who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3089,
+        "end": 3194,
+        "text": "Patients who have a history of inflammatory bowel disease or a history of symptomatic autoimmune disease."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2930,
+        "end": 3086,
+        "text": "Patients who are being treated for any concurrent medical condition requiring the use of systemic steroids or history of long-term use of systemic steroids."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

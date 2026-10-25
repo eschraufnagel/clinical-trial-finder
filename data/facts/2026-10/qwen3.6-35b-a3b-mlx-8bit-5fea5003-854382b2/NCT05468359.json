@@ -1,0 +1,199 @@
+{
+  "nctId": "NCT05468359",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 893,
+        "end": 1012,
+        "text": "Patients must tumors that are unresectable and have either measurable or evaluable disease that is accessible by biopsy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 893,
+        "end": 1012,
+        "text": "Patients must tumors that are unresectable and have either measurable or evaluable disease that is accessible by biopsy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 196,
+        "end": 339,
+        "text": "Part 1: Patients with refractory or recurrent (relapsed) solid tumors accessible by biopsy for which there is no standard therapy are eligible."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 196,
+        "end": 339,
+        "text": "Part 1: Patients with refractory or recurrent (relapsed) solid tumors accessible by biopsy for which there is no standard therapy are eligible."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 196,
+        "end": 339,
+        "text": "Part 1: Patients with refractory or recurrent (relapsed) solid tumors accessible by biopsy for which there is no standard therapy are eligible."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 565,
+        "end": 680,
+        "text": "Performance level: Karnofsky \\> 50 for patients \\> 16 years of age and Lansky \\> 50 for patients \\< 16 years of age"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4163,
+        "end": 4322,
+        "text": "Cardiac disease or hypertension: Patients must not have a history of myocardial - infarction, severe or unstable angina, or severe peripheral vascular disease."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4571,
+        "end": 4597,
+        "text": "Pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4903,
+        "end": 5244,
+        "text": "Surgical procedures and serious or non-healing wounds: patients with a documented, chronic non-healing wound, ulcer, or bone fracture or history of a major surgical procedure or significant traumatic injury within 28 days prior to beginning therapy are excluded due to preclinical evidence supporting the potential for delayed wound healing."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Part 1: Patients with refractory or recurrent (relapsed) solid tumors accessible by biopsy for which there is no standard therapy are eligible.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 1: Patients with refractory or recurrent (relapsed) solid tumors accessible by biopsy for which there is no standard therapy are eligible.",
+        "appliesTo": "Part 1"
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Part 1: Patients with refractory or recurrent (relapsed) solid tumors accessible by biopsy for which there is no standard therapy are eligible.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 1: Patients with refractory or recurrent (relapsed) solid tumors accessible by biopsy for which there is no standard therapy are eligible.",
+        "appliesTo": "Part 1"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Part 2: Patients with one of the following diagnoses: Biopsy accessible refractory or recurrent (relapsed) hepatocellular carcinoma Biopsy accessible refractory or recurrent (relapsed)or FL-HCC, DSRCT or non-CNS MRT.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 2: Patients with one of the following diagnoses: Biopsy accessible refractory or recurrent (relapsed) hepatocellular carcinoma Biopsy accessible refractory or recurrent (relapsed)or FL-HCC, DSRCT or non-CNS MRT.",
+        "appliesTo": "Part 2"
+      }
+    },
+    {
+      "reason": "histology has no answer none_found",
+      "quote": "Part 2: Patients with one of the following diagnoses: Biopsy accessible refractory or recurrent (relapsed) hepatocellular carcinoma Biopsy accessible refractory or recurrent (relapsed)or FL-HCC, DSRCT or non-CNS MRT.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 2: Patients with one of the following diagnoses: Biopsy accessible refractory or recurrent (relapsed) hepatocellular carcinoma Biopsy accessible refractory or recurrent (relapsed)or FL-HCC, DSRCT or non-CNS MRT.",
+        "appliesTo": "Part 2"
+      }
+    },
+    {
+      "reason": "thrombosis isn't a fact for this trial's cancer type",
+      "quote": "Thrombosis: Patients must not have a deep venous or arterial thrombosis (including pulmonary embolism) within the last three months prior to study entry",
+      "raw": {
+        "factId": "thrombosis",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Thrombosis: Patients must not have a deep venous or arterial thrombosis (including pulmonary embolism) within the last three months prior to study entry",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

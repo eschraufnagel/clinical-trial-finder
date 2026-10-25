@@ -1,0 +1,133 @@
+{
+  "nctId": "NCT07472517",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 25,
+        "end": 112,
+        "text": "Patients with histologically confirmed Extensive-stage Small Cell Lung Cancer (ES-SCLC)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 731,
+        "end": 831,
+        "text": "Patients with asymptomatic brain metastasis are eligible if they meet one of the following criteria:"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1948,
+        "end": 2014,
+        "text": "Presence of leptomeningeal disease and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1365,
+        "end": 1422,
+        "text": "Eastern Cooperative Oncology Group (ECOG) score of 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1426,
+        "end": 1615,
+        "text": "Eligible for continuing carboplatin + etoposide + atezolizumab regimen as first-line Standard of care (SoC) treatment within 28 days after the start of the initial cycle of standard therapy"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1426,
+        "end": 1615,
+        "text": "Eligible for continuing carboplatin + etoposide + atezolizumab regimen as first-line Standard of care (SoC) treatment within 28 days after the start of the initial cycle of standard therapy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1619,
+        "end": 1887,
+        "text": "Eligible to receive treatment with full dose of atezolizumab, carboplatin, and etoposide as first-line SoC treatment, in accordance with the approved Summary of Product Characteristics if provided centrally or approved local product label if provided by the trial site"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2908,
+        "end": 3076,
+        "text": "Patient with active autoimmune disease or a documented history of autoimmune disease that requires systemic treatment (e.g. glucocorticoids or immunosuppressive drugs)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients with histologically confirmed Extensive-stage Small Cell Lung Cancer (ES-SCLC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with histologically confirmed Extensive-stage Small Cell Lung Cancer (ES-SCLC)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

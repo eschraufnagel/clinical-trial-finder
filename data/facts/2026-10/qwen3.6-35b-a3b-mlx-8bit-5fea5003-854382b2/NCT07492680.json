@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT07492680",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 200,
+        "text": "Participant must have histologically confirmed diagnosis of advanced and/or metastatic solid tumor malignancy with homozygous deletion of the MTAP gene detected in tumor tissue."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 200,
+        "text": "Participant must have histologically confirmed diagnosis of advanced and/or metastatic solid tumor malignancy with homozygous deletion of the MTAP gene detected in tumor tissue."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 617,
+        "end": 727,
+        "text": "Participant must have presence of at least one measurable tumor lesion per RECIST v1.1 or mRECIST at baseline."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 927,
+        "end": 1020,
+        "text": "Participant must have Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1160,
+        "end": 1511,
+        "text": "Participants must not have active brain metastases or carcinomatous meningitis. Participants are eligible if brain metastases are adequately treated, and participants are neurologically stable for at least 2 weeks prior to enrollment without the use of corticosteroids or are on a stable or decreasing dose of ≤ 10 mg daily prednisone (or equivalent)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1160,
+        "end": 1239,
+        "text": "Participants must not have active brain metastases or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2027,
+        "end": 2088,
+        "text": "Participants must not have active viral HBV or HCV hepatitis."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1240,
+        "end": 1511,
+        "text": "Participants are eligible if brain metastases are adequately treated, and participants are neurologically stable for at least 2 weeks prior to enrollment without the use of corticosteroids or are on a stable or decreasing dose of ≤ 10 mg daily prednisone (or equivalent)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

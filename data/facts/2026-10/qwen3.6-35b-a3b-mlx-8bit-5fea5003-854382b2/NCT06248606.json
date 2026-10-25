@@ -1,0 +1,118 @@
+{
+  "nctId": "NCT06248606",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 346,
+        "end": 496,
+        "text": "Confirmation of stage IV non-small cell lung cancer (NSCLC) per AJCC, 8th edition, or metastatic recurrence after treatment for earlier stage disease."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 500,
+        "end": 535,
+        "text": "Known to have a KRAS G12C mutation."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 620,
+        "end": 819,
+        "text": "Presence of brain metastases that meet the following criteria:\n\n   * Patients must have at least 1 untreated enhancing intracranial lesion, per local radiology interpretation, measuring at least 2mm."
+      },
+      "loose": true
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2476,
+        "end": 2565,
+        "text": "Patients may be treatment-naïve OR have received up to 2 prior lines of systemic therapy."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4701,
+        "end": 4758,
+        "text": "Prior treatment with KRAS G12C tyrosine kinase inhibitor."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3833,
+        "end": 3981,
+        "text": "HIV-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months of registration are eligible for this trial."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4056,
+        "end": 4297,
+        "text": "Patients with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated. Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5615,
+        "end": 5640,
+        "text": "Pregnant or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

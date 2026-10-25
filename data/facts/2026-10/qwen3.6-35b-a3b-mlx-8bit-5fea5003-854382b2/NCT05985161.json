@@ -1,0 +1,98 @@
+{
+  "nctId": "NCT05985161",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2437,
+        "end": 2537,
+        "text": "Patients with progressive, relapsed, unresectable or metastatic MPNST, are eligible for this cohort."
+      },
+      "appliesTo": "Cohort C"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4526,
+        "end": 4789,
+        "text": "Patients on the phase II portion of the study must have measurable disease whereas patients on the PK cohorts can have either evaluable or measurable disease as measured by the revised Response Evaluation Criteria in Solid Tumors (RECIST) guideline (Version 1.1)."
+      },
+      "appliesTo": "phase II portion"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7355,
+        "end": 7415,
+        "text": "Has received selinexor or another XPO1 inhibitor previously."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7752,
+        "end": 7827,
+        "text": "Patients who have had a prior solid organ transplantation are not eligible."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8134,
+        "end": 8295,
+        "text": "Pregnant or breast-feeding women will not be entered on this study because there is yet no available information regarding human fetal or teratogenic toxicities."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients must not qualify for Cohorts A, B, or C but have a solid tumor (no hematologic malignancies including lymphoma) for which there is specific evidence that this particular patient's tumor may benefit from selinexor.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients must not qualify for Cohorts A, B, or C but have a solid tumor (no hematologic malignancies including lymphoma) for which there is specific evidence that this particular patient's tumor may benefit from selinexor.",
+        "appliesTo": "Cohort D"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

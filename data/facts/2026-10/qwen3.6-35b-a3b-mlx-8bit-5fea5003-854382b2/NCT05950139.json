@@ -1,0 +1,104 @@
+{
+  "nctId": "NCT05950139",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 167,
+        "text": "Histologically or cytologically confirmed diagnosis of stage IV NSCLC (or recurrent NSCLC not a candidate for definitive multimodality therapy)"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 171,
+        "end": 381,
+        "text": "Documented ALK rearrangement as detected by: (1) fluorescence in situ hybridization (FISH), (2) immuno-histochemistry (IHC), (3) tissue next-generation sequencing (NGS), or (4) circulating tumor DNA (ctDNA) NGS"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 614,
+        "end": 684,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 752,
+        "end": 857,
+        "text": "Known additional malignancy that is progressing or has required active treatment within the past 3 years."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1274,
+        "end": 1373,
+        "text": "Use of chronic oral or systemic steroid medication (topical or inhalational steroids are permitted)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1437,
+        "end": 1489,
+        "text": "Symptomatic central nervous system (CNS) metastasis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1625,
+        "end": 1802,
+        "text": "Current spinal cord compression (symptomatic or asymptomatic and detected by radiographic imaging). Patients with leptomeningeal disease and without cord compression are allowed"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

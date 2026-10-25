@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT06563388",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 140,
+        "end": 249,
+        "text": "Histologically confirmed lung, prostate or colorectal malignancy with metastatic disease detected on imaging."
+      },
+      "appliesTo": "Trials 1-3"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 314,
+        "end": 345,
+        "text": "Any malignancy with metastasis."
+      },
+      "appliesTo": "Trial 4"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3195,
+        "end": 3452,
+        "text": "Participants with known brain metastases should be excluded from this clinical trial because of their poor prognosis and because they often develop progressive neurologic dysfunction that would confound the evaluation of neurologic and other adverse events."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1871,
+        "end": 2116,
+        "text": "Participants who have had chemotherapy or radiotherapy within 3 weeks (6 weeks for nitrosoureas or mitomycin C) prior to entering the study or those who have not recovered from adverse events due to agents administered more than 3 weeks earlier."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1871,
+        "end": 2116,
+        "text": "Participants who have had chemotherapy or radiotherapy within 3 weeks (6 weeks for nitrosoureas or mitomycin C) prior to entering the study or those who have not recovered from adverse events due to agents administered more than 3 weeks earlier."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1871,
+        "end": 2116,
+        "text": "Participants who have had chemotherapy or radiotherapy within 3 weeks (6 weeks for nitrosoureas or mitomycin C) prior to entering the study or those who have not recovered from adverse events due to agents administered more than 3 weeks earlier."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1779,
+        "end": 1868,
+        "text": "Participants who have no option for standard systemic therapy or refuse systemic therapy."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2119,
+        "end": 2451,
+        "text": "Serious medical comorbidities precluding radiotherapy. These include ILD in patients requiring thoracic radiation, Crohn's disease in patients where the gastrointestinal (GI tract will receive radiotherapy, or ulcerative colitis where the bowel will receive radiotherapy and connective tissue disorders such as lupus or scleroderma."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2119,
+        "end": 2451,
+        "text": "Serious medical comorbidities precluding radiotherapy. These include ILD in patients requiring thoracic radiation, Crohn's disease in patients where the gastrointestinal (GI tract will receive radiotherapy, or ulcerative colitis where the bowel will receive radiotherapy and connective tissue disorders such as lupus or scleroderma."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3733,
+        "end": 3773,
+        "text": "Pregnant or nursing female participants."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "nctId": "NCT05613413",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 434,
+        "end": 536,
+        "text": "Subjects with histologically or cytologically confirmed squamous non-small cell lung cancer (sqNSCLC)."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 540,
+        "end": 844,
+        "text": "Subjects with stage IV NSCLC as defined by American Joint Committee on Cancer (AJCC) 8th Edition who have not received prior therapy for stage IV NSCLC. Patients with locally advanced or recurrent disease who are candidates for first-line induction systemic therapies for stage IV NSCLC are also allowed."
+      },
+      "appliesTo": "maintenance cabozantinib plus pembrolizumab arm"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9126,
+        "end": 9476,
+        "text": "Known brain metastases or cranial epidural disease unless adequately treated with radiotherapy and/or surgery (including radiosurgery) and stable for at least 4 weeks prior to first dose of study treatment after radiotherapy or at least 4 weeks prior to first dose of study treatment after major surgery (e.g., removal or biopsy of brain metastasis)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11436,
+        "end": 11822,
+        "text": "Any other active malignancy at time of first dose of study treatment or diagnosis of another malignancy within 3 years prior to first dose of study treatment that requires active treatment, except for locally curable cancers that have been apparently cured, such as basal or squamous cell skin cancer, superficial bladder cancer, or carcinoma in situ of the prostate, cervix, or breast."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10607,
+        "end": 10775,
+        "text": "The subject has uncontrolled, significant intercurrent or recent illness, including, but not limited to, an active or history of autoimmune disease or immune deficiency"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10777,
+        "end": 10841,
+        "text": "idiopathic pulmonary fibrosis, organizing pneumonia, pneumonitis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10890,
+        "end": 10961,
+        "text": "infection with human immunodeficiency virus (HIV), AIDS-related illness"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10963,
+        "end": 11006,
+        "text": "acute or chronic hepatitis B or C infection"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6788,
+        "end": 7023,
+        "text": "Stroke (including transient ischemic attack \\[TIA\\]), myocardial infarction (MI), or other ischemic event, or thromboembolic event (e.g., deep venous thrombosis, pulmonary embolism) within 6 months before first dose of study treatment."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12570,
+        "end": 12661,
+        "text": "Previously received a solid organ transplant or allogeneic progenitor/stem cell transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4660,
+        "end": 4686,
+        "text": "Pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8392,
+        "end": 8602,
+        "text": "Any condition requiring systemic treatment with either steroid therapy (\\>10 mg daily prednisone equivalent) or any other form of immunosuppressive therapy within 2 weeks prior to first dose of study treatment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 274,
+        "end": 348,
+        "text": "ECOG Performance Status of 0, 1, or 2 within 28 days prior to registration"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 540,
+        "end": 692,
+        "text": "Subjects with stage IV NSCLC as defined by American Joint Committee on Cancer (AJCC) 8th Edition who have not received prior therapy for stage IV NSCLC."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 540,
+        "end": 692,
+        "text": "Subjects with stage IV NSCLC as defined by American Joint Committee on Cancer (AJCC) 8th Edition who have not received prior therapy for stage IV NSCLC."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 540,
+        "end": 692,
+        "text": "Subjects with stage IV NSCLC as defined by American Joint Committee on Cancer (AJCC) 8th Edition who have not received prior therapy for stage IV NSCLC."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 540,
+        "end": 692,
+        "text": "Subjects with stage IV NSCLC as defined by American Joint Committee on Cancer (AJCC) 8th Edition who have not received prior therapy for stage IV NSCLC."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 540,
+        "end": 692,
+        "text": "Subjects with stage IV NSCLC as defined by American Joint Committee on Cancer (AJCC) 8th Edition who have not received prior therapy for stage IV NSCLC."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5198,
+        "end": 5278,
+        "text": "any other radiation therapy within 4 weeks before first dose of study treatment."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6103,
+        "end": 6295,
+        "text": "Patients with targetable genomic aberrations for which FDA-approved targeted therapy is available (e.g. ROS1, MET exon 14 skipping mutations, BRAFV600E, ALK, EGFR, ALK, RET, and NTRK fusions)."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6103,
+        "end": 6295,
+        "text": "Patients with targetable genomic aberrations for which FDA-approved targeted therapy is available (e.g. ROS1, MET exon 14 skipping mutations, BRAFV600E, ALK, EGFR, ALK, RET, and NTRK fusions)."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6103,
+        "end": 6295,
+        "text": "Patients with targetable genomic aberrations for which FDA-approved targeted therapy is available (e.g. ROS1, MET exon 14 skipping mutations, BRAFV600E, ALK, EGFR, ALK, RET, and NTRK fusions)."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6103,
+        "end": 6295,
+        "text": "Patients with targetable genomic aberrations for which FDA-approved targeted therapy is available (e.g. ROS1, MET exon 14 skipping mutations, BRAFV600E, ALK, EGFR, ALK, RET, and NTRK fusions)."
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6103,
+        "end": 6295,
+        "text": "Patients with targetable genomic aberrations for which FDA-approved targeted therapy is available (e.g. ROS1, MET exon 14 skipping mutations, BRAFV600E, ALK, EGFR, ALK, RET, and NTRK fusions)."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6103,
+        "end": 6295,
+        "text": "Patients with targetable genomic aberrations for which FDA-approved targeted therapy is available (e.g. ROS1, MET exon 14 skipping mutations, BRAFV600E, ALK, EGFR, ALK, RET, and NTRK fusions)."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6103,
+        "end": 6295,
+        "text": "Patients with targetable genomic aberrations for which FDA-approved targeted therapy is available (e.g. ROS1, MET exon 14 skipping mutations, BRAFV600E, ALK, EGFR, ALK, RET, and NTRK fusions)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Subjects whose tumors have been tested for PD-L1 expression.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "Subjects whose tumors have been tested for PD-L1 expression.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

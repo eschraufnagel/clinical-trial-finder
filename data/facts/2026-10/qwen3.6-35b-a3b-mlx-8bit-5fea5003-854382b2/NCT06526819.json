@@ -1,0 +1,241 @@
+{
+  "nctId": "NCT06526819",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 115,
+        "text": "Histologically or cytologically-confirmed cancer that is advanced, recurrent, or metastatic"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1162,
+        "end": 1253,
+        "text": "Non-small cell lung cancer (NSCLC: adenocarcinoma, large cell, and squamous cell carcinoma)"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1003,
+        "end": 1038,
+        "text": "Squamous cell carcinoma of the anus"
+      },
+      "appliesTo": "Cohort C: SCCA"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1114,
+        "end": 1158,
+        "text": "Squamous cell carcinoma of the head and neck"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1257,
+        "end": 1304,
+        "text": "Uterine serous cancer (recurrent or persistent)"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 330,
+        "end": 363,
+        "text": "Platinum-resistant ovarian cancer"
+      },
+      "appliesTo": "Dose Escalation part"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 651,
+        "end": 721,
+        "text": "Triple negative breast cancer - ER- and PR-negative with HER2 negative"
+      },
+      "appliesTo": "Dose Escalation part"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1046,
+        "end": 1110,
+        "text": "Patient with locally advanced ineligible for surgery is allowed."
+      },
+      "appliesTo": "Squamous cell carcinoma of the anus"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3911,
+        "end": 3982,
+        "text": "Patient has central nervous system metastasis or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3911,
+        "end": 3982,
+        "text": "Patient has central nervous system metastasis or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3037,
+        "end": 3172,
+        "text": "Patient has received prior treatment at any time with a cell cycle checkpoint inhibitor (eg, CHK1 and/or CHK2, WEE1, or ATR inhibition)"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3287,
+        "end": 3437,
+        "text": "Patient has received treatment with systemic anticancer therapy, radiotherapy, or investigational therapy within 14 days prior to Study Cycle 1 Day 1."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3287,
+        "end": 3437,
+        "text": "Patient has received treatment with systemic anticancer therapy, radiotherapy, or investigational therapy within 14 days prior to Study Cycle 1 Day 1."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2363,
+        "end": 2615,
+        "text": "May be HIV positive if the following conditions are met:\n\n  1. CD4 + T-cell count \\>/= 350 cells/uL\n  2. HIV viral load \\< 400 copies/ml prior to enrollment\n  3. No history of acquired immunodefficiency syndrome (AIDS) defining opportunistic infections"
+      },
+      "loose": true
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2618,
+        "end": 2782,
+        "text": "Known hepatitis B infection mush have negative serum HbsAg. Patients with known hepatitis C virus infection must have a viral load below the limit of quantification"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4739,
+        "end": 4838,
+        "text": "Patient is pregnant (as evidenced by a positive serum or urine pregnancy test) or is breastfeeding."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 148,
+        "end": 282,
+        "text": "whose disease progressed on standard therapy and for whom there are no alternative therapies that may confer overall survival benefit."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

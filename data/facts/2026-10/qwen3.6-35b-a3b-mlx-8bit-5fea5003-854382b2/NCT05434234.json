@@ -1,0 +1,143 @@
+{
+  "nctId": "NCT05434234",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 146,
+        "end": 219,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG PS) of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 918,
+        "end": 1036,
+        "text": "Have at least 1 evaluable tumor lesion according to Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1518,
+        "end": 1712,
+        "text": "Prior systemic anticancer treatment including chemotherapy, molecular -targeted therapy, hormonal therapy, immunotherapy, or biological therapy within 3 weeks before the first dose of study drug"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1518,
+        "end": 1712,
+        "text": "Prior systemic anticancer treatment including chemotherapy, molecular -targeted therapy, hormonal therapy, immunotherapy, or biological therapy within 3 weeks before the first dose of study drug"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2505,
+        "end": 2680,
+        "text": "Undergone allogeneic hematopoietic stem cell transplantation (HSCT) before the first dose of study drug, or autologous HSCT within 3 months before the first dose of study drug"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2683,
+        "end": 2842,
+        "text": "Received systemic steroids (\\>10 mg/day of prednisone or its equivalent) or other immunosuppressive therapy within 2 weeks before the first dose of study drug."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2975,
+        "end": 3025,
+        "text": "Known human immunodeficiency virus (HIV) infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3028,
+        "end": 3096,
+        "text": "Active hepatitis B virus (HBV) or hepatitis C virus (HCV) infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3870,
+        "end": 3987,
+        "text": "Women who are breastfeeding or pregnant as confirmed by pregnancy tests performed within 7 days before the first dose"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior systemic anticancer treatment including chemotherapy, molecular -targeted therapy, hormonal therapy, immunotherapy, or biological therapy within 3 weeks before the first dose of study drug",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior systemic anticancer treatment including chemotherapy, molecular -targeted therapy, hormonal therapy, immunotherapy, or biological therapy within 3 weeks before the first dose of study drug",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

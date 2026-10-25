@@ -1,0 +1,120 @@
+{
+  "nctId": "NCT07124117",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 188,
+        "end": 323,
+        "text": "Histologically or cytologically confirmed participants with metastatic or advanced solid tumor that is not curable with local therapies"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 675,
+        "end": 747,
+        "text": "Measurable disease (i.e., at least one measurable lesion per RECIST 1.1)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 751,
+        "end": 821,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4361,
+        "end": 4734,
+        "text": "Participants with known untreated central nervous system (CNS) metastases. Participants with treated brain metastases are eligible if there is no evidence of progression for at least 4 weeks after CNS-directed treatment, as ascertained by clinical examination and brain imaging (magnetic resonance imaging \\[MRI\\] or computed tomography \\[CT\\]) during the screening period."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3797,
+        "end": 3917,
+        "text": "Participants with a history of solid organ transplants. Corneal transplant without immunosuppressive therapy is allowed."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5169,
+        "end": 5216,
+        "text": "Participants who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2311,
+        "end": 2640,
+        "text": "Participants with human immunodeficiency virus (HIV) infection or with documented history of HIV infection are eligible if CD4+ T-cell counts are ≥350 cells/μL and have an HIV viral load less than 200 copies/mL prior to enrollment. Participants on ART should be on an established dose for at least 4 weeks under stable condition."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with serological evidence of chronic HBV infection or with documented history of HBV infection are eligible if they have an HBV viral load below the limit of quantification with or without concurrent viral suppressive therapy. Participants with a history of HCV infection can be under curative antiviral treatment and have a viral load below the limit of quantification.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with serological evidence of chronic HBV infection or with documented history of HBV infection are eligible if they have an HBV viral load below the limit of quantification with or without concurrent viral suppressive therapy. Participants with a history of HCV infection can be under curative antiviral treatment and have a viral load below the limit of quantification.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

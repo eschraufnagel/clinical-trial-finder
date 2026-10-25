@@ -1,0 +1,200 @@
+{
+  "nctId": "NCT04198766",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1915,
+        "end": 2061,
+        "text": "All subjects with non-squamous NSCLC must have documentation of absence of tumor activating EGFR mutations and absence of ALK gene rearrangements."
+      },
+      "appliesTo": "Part 2 (single-agent expansion cohort)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 101,
+        "end": 173,
+        "text": "Subjects with locally advanced or metastatic non resectable solid tumors"
+      },
+      "appliesTo": "Parts 1 and 3 (escalation cohorts)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 350,
+        "end": 493,
+        "text": "Subjects with NSCLC, melanoma, HNSCC, G/GEA, RCC, or TCC, with histologically confirmed, locally advanced or metastatic, non-resectable disease"
+      },
+      "appliesTo": "Part 2 (single-agent expansion cohort)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 720,
+        "end": 917,
+        "text": "Subjects with melanoma (all types), HNSCC, G/GEA, RCC, TCC, NSCLC, or MSI-high, TMB-high, MMR-deficient tumors, with histologically confirmed, locally advanced or metastatic, non resectable disease"
+      },
+      "appliesTo": "Part 4 (expansion cohorts in combination with pembrolizumab, with or without chemotherapy)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1643,
+        "end": 1747,
+        "text": "subjects must have previously untreated, histologically confirmed Stage II, IIIA or IIIB (T3-4N2) NSCLC."
+      },
+      "appliesTo": "For Cohort F8"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1915,
+        "end": 2021,
+        "text": "All subjects with non-squamous NSCLC must have documentation of absence of tumor activating EGFR mutations"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1915,
+        "end": 2061,
+        "text": "All subjects with non-squamous NSCLC must have documentation of absence of tumor activating EGFR mutations and absence of ALK gene rearrangements."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2166,
+        "end": 2286,
+        "text": "Combined Positive Score (CPS) ≥ 1% (or Tumor Proportion Score ≥50% for NSCLC; for TMB-high tumors, any TPS% is allowed)."
+      },
+      "appliesTo": "Part 2 (single-agent expansion cohort)"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3419,
+        "end": 3560,
+        "text": "Active autoimmune disease or documented history of autoimmune disease that required systemic steroids or other immunosuppressive medications."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3803,
+        "end": 3888,
+        "text": "History of hepatitis B, hepatitis C, or human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3932,
+        "end": 4094,
+        "text": "Active interstitial lung disease (ILD) or pneumonitis or a history of ILD or pneumonitis requiring treatment with steroids or other immunosuppressive medications."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4097,
+        "end": 4325,
+        "text": "Clinically significant cardiac condition, including myocardial infarction, uncontrolled angina, viral myocarditis, cerebrovascular accident, or other acute uncontrolled heart disease \\< 3 months prior to enrollment on this trial"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4807,
+        "end": 4930,
+        "text": "Prior organ allograft transplantations or allogeneic peripheral blood stem cell (PBSC) or bone marrow (BM) transplantation."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Combined Positive Score (CPS) ≥ 1% (or Tumor Proportion Score ≥50% for NSCLC; for TMB-high tumors, any TPS% is allowed).",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "Combined Positive Score (CPS) ≥ 1% (or Tumor Proportion Score ≥50% for NSCLC; for TMB-high tumors, any TPS% is allowed).",
+        "appliesTo": "Part 4 (expansion cohorts in combination with pembrolizumab, with or without chemotherapy)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

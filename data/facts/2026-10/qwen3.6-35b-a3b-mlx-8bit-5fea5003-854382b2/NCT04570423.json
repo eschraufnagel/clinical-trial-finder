@@ -1,0 +1,107 @@
+{
+  "nctId": "NCT04570423",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 171,
+        "text": "Participant must have a pathologic/histologic confirmed newly diagnosed/relapsed/recurrent solid tumor or lymphoma without bone marrow involvement."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 171,
+        "text": "Participant must have a pathologic/histologic confirmed newly diagnosed/relapsed/recurrent solid tumor or lymphoma without bone marrow involvement."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2021,
+        "end": 2057,
+        "text": "Participant with active CNS disease."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2021,
+        "end": 2057,
+        "text": "Participant with active CNS disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 171,
+        "text": "Participant must have a pathologic/histologic confirmed newly diagnosed/relapsed/recurrent solid tumor or lymphoma without bone marrow involvement."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 794,
+        "end": 940,
+        "text": "Participant has a Karnofsky performance level ≥50% for patients ≥16 years of age or a Lansky performance level ≥50 for children \\<16 years of age."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1515,
+        "end": 1677,
+        "text": "Participant has had prior bone marrow or hematopoietic stem cell transplant and/or has concurrent bone marrow involvement in their malignancy, including leukemia."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

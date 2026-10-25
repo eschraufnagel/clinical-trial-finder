@@ -1,0 +1,171 @@
+{
+  "nctId": "NCT06780137",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 73,
+        "text": "Has histologically or cytologically confirmed SCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 82,
+        "end": 142,
+        "text": "extensive stage (defined as Stage IV (T any, N any, M1a/b/c)"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 143,
+        "end": 194,
+        "text": "following at least 1 prior line of systemic therapy"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 195,
+        "end": 236,
+        "text": "that included platinum-based chemotherapy"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 559,
+        "end": 721,
+        "text": "Any history of interstitial lung disease (ILD)/pneumonitis irrespective of steroid use except for a history of radiation pneumonitis that did not require steroids"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1677,
+        "end": 1710,
+        "text": "History of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1059,
+        "end": 1416,
+        "text": "History within 6 months before the first dose of study intervention of coronary/peripheral artery bypass graft and/or any coronary/peripheral angioplasty or clinically significant cardiovascular disease such as myocardial infarction, symptomatic congestive heart failure (CHF) (New York Heart Association \\> class II), and/or uncontrolled cardiac arrhythmia"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2072,
+        "end": 2176,
+        "text": "Known additional malignancy that is progressing or has required active treatment within the past 3 years"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2179,
+        "end": 2220,
+        "text": "Untreated or symptomatic brain metastases"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2223,
+        "end": 2608,
+        "text": "Active viral hepatitis, defined as hepatitis A (hepatitis A virus immunoglobulin M \\[IgM\\] positive in the setting of associated signs/symptoms), hepatitis B (hepatitis B virus surface antigen \\[HbsAg\\] positive and/or detectable hepatitis B virus \\[HBV\\] deoxyribonucleic acid \\[DNA\\]), or hepatitis C (hepatitis C virus \\[HCV\\] antibody positive and detectable HCV ribonucleic acid)."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1853,
+        "end": 1954,
+        "text": "Receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "HIV infected participants must have well controlled HIV on antiretroviral therapy (ART)",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "inclusion",
+        "quote": "HIV infected participants must have well controlled HIV on antiretroviral therapy (ART)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

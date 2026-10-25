@@ -1,0 +1,108 @@
+{
+  "nctId": "NCT06780098",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 205,
+        "text": "Histologically or cytologically confirmed diagnosis of Stage IV squamous non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 205,
+        "text": "Histologically or cytologically confirmed diagnosis of Stage IV squamous non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2068,
+        "end": 2159,
+        "text": "Has known untreated central nervous system (CNS) metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2162,
+        "end": 2200,
+        "text": "Evidence of any leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2203,
+        "end": 2500,
+        "text": "Has one or more of the following indicators of interstitial lung disease (ILD)/pneumonitis: any history of ILD/pneumonitis irrespective of steroid use (except for a history of radiation pneumonitis that did not require steroids), current diagnosis of ILD, clinical or radiographic suspicion of ILD"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2503,
+        "end": 2586,
+        "text": "Active autoimmune disease that has required systemic treatment in the past 2 years."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3085,
+        "end": 3136,
+        "text": "History of allogeneic tissue/solid organ transplant"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

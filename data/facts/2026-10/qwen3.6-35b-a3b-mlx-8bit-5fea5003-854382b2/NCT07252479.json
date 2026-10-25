@@ -1,0 +1,224 @@
+{
+  "nctId": "NCT07252479",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 198,
+        "end": 269,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 359,
+        "end": 528,
+        "text": "Have histological or cytological evidence of a diagnosis of cancer that is advanced and/or metastatic with progression after treatment with available standard therapies."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 532,
+        "end": 685,
+        "text": "Documentation of KRAS/NRAS/HRAS mutation determined by validated local testing of tumor tissue or circulating free DNA (cfDNA) in a certified laboratory."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1468,
+        "end": 1712,
+        "text": "Participants must not have tumors previously tested positive for targetable oncogenic driver mutations including Epidermal Growth Factor Receptor (EGFR), Anaplastic Lymphoma Kinase (ALK), B-Rapidly Accelerated Fibrosarcoma (BRAF), RET, and ROS1"
+      },
+      "appliesTo": "Part 3 Dose-Expansion: Cohort 3A: RAS-mutated solid tumors (2L/3L)"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1468,
+        "end": 1712,
+        "text": "Participants must not have tumors previously tested positive for targetable oncogenic driver mutations including Epidermal Growth Factor Receptor (EGFR), Anaplastic Lymphoma Kinase (ALK), B-Rapidly Accelerated Fibrosarcoma (BRAF), RET, and ROS1"
+      },
+      "appliesTo": "Part 3 Dose-Expansion: Cohort 3A: RAS-mutated solid tumors (2L/3L)"
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2224,
+        "end": 2323,
+        "text": "Participants must not have tumors previously tested positive for Class I BRAF mutations i.e. V600X."
+      },
+      "appliesTo": "Part 3 Dose-Expansion: Cohort 3A: RAS-mutated solid tumors (2L/3L)"
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1468,
+        "end": 1712,
+        "text": "Participants must not have tumors previously tested positive for targetable oncogenic driver mutations including Epidermal Growth Factor Receptor (EGFR), Anaplastic Lymphoma Kinase (ALK), B-Rapidly Accelerated Fibrosarcoma (BRAF), RET, and ROS1"
+      },
+      "appliesTo": "Part 3 Dose-Expansion: Cohort 3A: RAS-mutated solid tumors (2L/3L)"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1468,
+        "end": 1712,
+        "text": "Participants must not have tumors previously tested positive for targetable oncogenic driver mutations including Epidermal Growth Factor Receptor (EGFR), Anaplastic Lymphoma Kinase (ALK), B-Rapidly Accelerated Fibrosarcoma (BRAF), RET, and ROS1"
+      },
+      "appliesTo": "Part 3 Dose-Expansion: Cohort 3A: RAS-mutated solid tumors (2L/3L)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1719,
+        "end": 1956,
+        "text": "Participants must have received 1 or 2 prior lines of systemic therapy which include prior immune checkpoint inhibitor and platinum chemotherapy administered either concurrently or sequentially, and have not received docetaxel previously"
+      },
+      "appliesTo": "Part 3 Dose-Expansion: Cohort 3A: RAS-mutated solid tumors (2L/3L)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1719,
+        "end": 1956,
+        "text": "Participants must have received 1 or 2 prior lines of systemic therapy which include prior immune checkpoint inhibitor and platinum chemotherapy administered either concurrently or sequentially, and have not received docetaxel previously"
+      },
+      "appliesTo": "Part 3 Dose-Expansion: Cohort 3A: RAS-mutated solid tumors (2L/3L)"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1719,
+        "end": 1956,
+        "text": "Participants must have received 1 or 2 prior lines of systemic therapy which include prior immune checkpoint inhibitor and platinum chemotherapy administered either concurrently or sequentially, and have not received docetaxel previously"
+      },
+      "appliesTo": "Part 3 Dose-Expansion: Cohort 3A: RAS-mutated solid tumors (2L/3L)"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4970,
+        "end": 5051,
+        "text": "Known human immunodeficiency virus (HIV) infection per HIV 1 and/or 2 antibodies."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5058,
+        "end": 5207,
+        "text": "Participants with evidence of active Hepatitis B or Hepatitis C infections (positive for Hepatitis B surface antigen (HBsAg) or Hepatitis C antibody)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5466,
+        "end": 5712,
+        "text": "The participant has a serious pre-existing medical condition(s) that, in the judgment of the Investigator, would preclude participation in this study, including interstitial lung disease (ILD), severe dyspnea at rest, or requiring oxygen therapy."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6413,
+        "end": 6501,
+        "text": "myocardial infarction or cardiovascular event within the last 6 months before enrollment"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7018,
+        "end": 7252,
+        "text": "Are pregnant or planning to become pregnant during the study or within 6 months following the last dose of AN9025. Plan to be breastfeeding from the initial dose of study treatment or within 6 months following the last dose of AN9025."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

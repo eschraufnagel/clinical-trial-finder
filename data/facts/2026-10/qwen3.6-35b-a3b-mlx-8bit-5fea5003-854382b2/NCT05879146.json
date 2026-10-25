@@ -1,0 +1,183 @@
+{
+  "nctId": "NCT05879146",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 663,
+        "end": 839,
+        "text": "evidence of radiographic tumor progression (≥ 10% or absolute increase in dimensions of ≥ 10 mm in maximal diameter) in unidimensional measurement within the previous 18 months"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 841,
+        "end": 1034,
+        "text": "Patients must have measurable disease, defined as at least one lesion that can be accurately measured in at least one dimension as ≥10 mm (≥1 cm) with CT scan, MRI, or calipers by clinical exam"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1764,
+        "end": 1828,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1211,
+        "end": 1278,
+        "text": "Treatment naïve or progression on or after any prior therapy for DT"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1211,
+        "end": 1278,
+        "text": "Treatment naïve or progression on or after any prior therapy for DT"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1211,
+        "end": 1278,
+        "text": "Treatment naïve or progression on or after any prior therapy for DT"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1211,
+        "end": 1278,
+        "text": "Treatment naïve or progression on or after any prior therapy for DT"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1211,
+        "end": 1278,
+        "text": "Treatment naïve or progression on or after any prior therapy for DT"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4495,
+        "end": 4555,
+        "text": "Pregnant or breastfeeding women are excluded from this study"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5688,
+        "end": 5819,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with positive viral load will be excluded"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6160,
+        "end": 6219,
+        "text": "Patients with an additional malignancy and brain metastases"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6320,
+        "end": 6752,
+        "text": "Participant has experienced any of the following within 6 months of signing informed consent:\n\n15.1 clinically significant cardiac disease (New York Heart Association Class III or IV); 15.2 myocardial infarction; 15.3 severe/unstable angina; 15.4 coronary/peripheral artery bypass graft; 15.5 symptomatic congestive heart failure; 15.6 cerebrovascular accident; 15.7 transient ischemic attack; or 15.8 symptomatic pulmonary embolism"
+      },
+      "loose": true
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically documented DT",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically documented DT",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

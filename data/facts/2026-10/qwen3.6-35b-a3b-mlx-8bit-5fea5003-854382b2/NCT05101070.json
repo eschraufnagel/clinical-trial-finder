@@ -1,0 +1,307 @@
+{
+  "nctId": "NCT05101070",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 50,
+        "end": 349,
+        "text": "Participants with histologically or cytologically conﬁrmed advanced (locoregionally recurrent, not amenable to curative therapy) or metastatic solid tumors who have no standard therapies with a proven clinical beneﬁt, or who are intolerant to or unwilling to receive these therapies for any reasons."
+      },
+      "appliesTo": "Part A only"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1126,
+        "end": 1238,
+        "text": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum"
+      },
+      "appliesTo": "Part B CRC cohorts only"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 50,
+        "end": 205,
+        "text": "Participants with histologically or cytologically conﬁrmed advanced (locoregionally recurrent, not amenable to curative therapy) or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1126,
+        "end": 1238,
+        "text": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum"
+      },
+      "appliesTo": "Part B CRC cohorts only"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 353,
+        "end": 432,
+        "text": "Measurable disease by Response Evaluation Criteria in Solid Tumors version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4032,
+        "end": 4096,
+        "text": "Eastern Cooperative Oncology Group Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4376,
+        "end": 4607,
+        "text": "Presence or history of autoimmune diseases or immune-mediated diseases that require chronic use of systemic corticosteroids (\\> 10 milligrams of prednisone equivalent per day), immunosuppressive agents, or disease-modifying agents."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4611,
+        "end": 4723,
+        "text": "Presence or history of interstitial lung disease and (non-infectious) pneumonitis that required corticosteroids."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5087,
+        "end": 5276,
+        "text": "A positive test for hepatitis B surface antigen and/or hepatitis C virus (HCV) antibody (participants with positive HCV antibody are eligible if a conﬁrmatory HCV RNA test is undetectable)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5280,
+        "end": 5350,
+        "text": "A positive serological test for human immunodeﬁciency virus infection."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5433,
+        "end": 5501,
+        "text": "Known history of an allogeneic tissue and/or solid organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5710,
+        "end": 5816,
+        "text": "Women who are pregnant or breastfeeding (or have discontinued breastfeeding) or trying to become pregnant."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6872,
+        "end": 6923,
+        "text": "Clinical evidence of uncontrolled brain metastasis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7148,
+        "end": 7253,
+        "text": "Known additional malignancy that is progressing or has required active treatment within the past 3 years."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7416,
+        "end": 7791,
+        "text": "Has received prior therapy with an anti-programmed death 1, anti-programmed death ligand 1, or anti-programmed death ligand 2 agent or with an agent directed to another stimulatory or co-inhibitory T-cell receptor (for example, cytotoxic T-lymphocyte-associated protein 4, OX-40, CD137), and was discontinued from that treatment due to ≥ Grade 3 immune-related adverse event."
+      },
+      "appliesTo": "Parts A-2, C and E only"
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8079,
+        "end": 8265,
+        "text": "Prior extended ﬁeld radiotherapy within 28 days before the ﬁrst dose of study intervention (within 14 days for limited ﬁeld radiation for palliation) or history of radiation pneumonitis."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5943,
+        "end": 6307,
+        "text": "Presence or history of severe arterial thromboembolic events (for example, cerebral infarction, transient ischemic attacks, myocardial infarction, and angina) within 6 months prior to the ﬁrst dose of study intervention, and/or ≥ Grade 3 venous thromboembolic events (for example, deep vein thrombosis) within 3 months prior to the ﬁrst dose of study intervention."
+      },
+      "appliesTo": "Parts D and E only"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Colorectal cancer with mismatch repair deﬁcient/microsatellite instability-high status.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "exclusion",
+        "quote": "Colorectal cancer with mismatch repair deﬁcient/microsatellite instability-high status.",
+        "appliesTo": "Part B, C, D and E CRC cohorts only"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum",
+        "appliesTo": "Part C CRC cohorts only"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum",
+        "appliesTo": "Parts D and E"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum",
+        "appliesTo": "Part C CRC cohorts only"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have histologically or cytologically conﬁrmed metastatic adenocarcinoma of the colon or rectum",
+        "appliesTo": "Parts D and E"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

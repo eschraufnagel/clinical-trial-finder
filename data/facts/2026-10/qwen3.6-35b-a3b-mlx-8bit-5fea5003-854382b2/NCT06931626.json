@@ -1,0 +1,171 @@
+{
+  "nctId": "NCT06931626",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 94,
+        "text": "Histologically confirmed extensive-stage Small Cell Lung Cancer (SCLC)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 621,
+        "end": 686,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 689,
+        "end": 845,
+        "text": "Patient must have progressed radiographically on or after their most recent line of anticancer therapy and have measurable disease as defined by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 96,
+        "end": 274,
+        "text": "must have failed prior front-line platinum-based therapy including immune therapy with relapse within 6 months followed by failed tarlatamab therapy, if available and appropriate"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 280,
+        "end": 332,
+        "text": "no more than 3 total prior lines of systemic therapy"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3284,
+        "end": 3716,
+        "text": "Known active, life-threatening or clinically significant uncontrolled systemic infection (bacterial, fungal, viral including Human Immunodeficiency Virus \\[HIV\\] positivity or Hepatitis B Virus \\[HBV\\] or Hepatitis B Virus \\[HCV\\] infections) requiring systemic treatment; HIV or Acquired Immune Deficiency Syndrome (AIDS)-related illness are allowed as long as controlled more than 6 months to undetectable on anti-HIV medications."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4521,
+        "end": 4839,
+        "text": "Any of the following in the previous 6 months: myocardial infarction, unstable angina, coronary/peripheral artery bypass graft, symptomatic congestive heart failure, cerebrovascular accident or transient ischemic attack, pulmonary embolism, deep vein thrombosis, active bleeding disorder and interstitial lung disease."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5188,
+        "end": 5314,
+        "text": "Symptomatic, or untreated central nervous system (CNS) lesions except stable and well controlled with no neurological symptoms"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4964,
+        "end": 5185,
+        "text": "Currently active second malignancy, except for adequately treated basal or squamous cell skin cancer and/or cone biopsied or post curative intention in situ carcinoma of the cervix uteri and/or superficial bladder cancer."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2872,
+        "end": 2983,
+        "text": "Treatment with systemic immune modulators such as corticosteroids at prednisone equivalent dose of \\> 10 mg/day"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed extensive-stage Small Cell Lung Cancer (SCLC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed extensive-stage Small Cell Lung Cancer (SCLC)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "heart_failure isn't a fact for this trial's cancer type",
+      "quote": "Any of the following in the previous 6 months: myocardial infarction, unstable angina, coronary/peripheral artery bypass graft, symptomatic congestive heart failure, cerebrovascular accident or transient ischemic attack, pulmonary embolism, deep vein thrombosis, active bleeding disorder and interstitial lung disease.",
+      "raw": {
+        "factId": "heart_failure",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Any of the following in the previous 6 months: myocardial infarction, unstable angina, coronary/peripheral artery bypass graft, symptomatic congestive heart failure, cerebrovascular accident or transient ischemic attack, pulmonary embolism, deep vein thrombosis, active bleeding disorder and interstitial lung disease.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

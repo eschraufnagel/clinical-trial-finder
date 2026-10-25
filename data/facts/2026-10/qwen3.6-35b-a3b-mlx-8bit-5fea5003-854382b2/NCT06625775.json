@@ -1,0 +1,255 @@
+{
+  "nctId": "NCT06625775",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 70,
+        "text": "Locally advanced and unresectable or metastatic"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1971,
+        "end": 2029,
+        "text": "Patients with untreated and/or non-stable brain metastases"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 400,
+        "end": 469,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0-1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 274,
+        "end": 307,
+        "text": "Measurable disease by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 611,
+        "end": 677,
+        "text": "Must have had at least 2 prior lines of anti-HER2-directed therapy"
+      },
+      "appliesTo": "BBO-10203 + Trastuzumab cohorts"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 874,
+        "end": 962,
+        "text": "Must have progression on, or disease recurrence after at least one line of SOC treatment"
+      },
+      "appliesTo": "Monotherapy Cohort"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1376,
+        "end": 1430,
+        "text": "no prior systemic therapy in the aBC setting permitted"
+      },
+      "appliesTo": "BBO-10203 + Fulvestrant + ribociclib combination cohort"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1517,
+        "end": 1631,
+        "text": "One prior line of irinotecan-containing therapy for locally advanced or metastatic CRC is allowed but not required"
+      },
+      "appliesTo": "BBO-10203 + FOLFOX + Bevacizumab combination cohort"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1656,
+        "end": 1714,
+        "text": "Patients with KRAS mutant aCRC who have KRAS G12R mutation"
+      },
+      "appliesTo": "KRAS mutant aCRC"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1768,
+        "end": 1828,
+        "text": "Patients with KRAS mutant aNSCLC who have KRAS G12R mutation"
+      },
+      "appliesTo": "KRAS mutant aNSCLC"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with KRAS mutant aCRC who have ... HER2amp",
+      "raw": {
+        "factId": "her2",
+        "rulesOut": [
+          "overexpression"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with KRAS mutant aCRC who have ... HER2amp",
+        "appliesTo": "KRAS mutant aCRC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with KRAS mutant aNSCLC who have ... HER2",
+      "raw": {
+        "factId": "her2",
+        "rulesOut": [
+          "overexpression"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with KRAS mutant aNSCLC who have ... HER2",
+        "appliesTo": "KRAS mutant aNSCLC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with KRAS mutant aNSCLC who have ... EGFR",
+      "raw": {
+        "factId": "egfr",
+        "rulesOut": [
+          "common_sensitizing",
+          "exon20_insertion",
+          "other_mutation"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with KRAS mutant aNSCLC who have ... EGFR",
+        "appliesTo": "KRAS mutant aNSCLC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with KRAS mutant aNSCLC who have ... anaplastic lymphoma kinase",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with KRAS mutant aNSCLC who have ... anaplastic lymphoma kinase",
+        "appliesTo": "KRAS mutant aNSCLC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with KRAS mutant aNSCLC who have ... ROS1",
+      "raw": {
+        "factId": "ros1",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with KRAS mutant aNSCLC who have ... ROS1",
+        "appliesTo": "KRAS mutant aNSCLC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with KRAS mutant aNSCLC who have ... RET",
+      "raw": {
+        "factId": "ret",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with KRAS mutant aNSCLC who have ... RET",
+        "appliesTo": "KRAS mutant aNSCLC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with KRAS mutant aNSCLC who have ... MET",
+      "raw": {
+        "factId": "met",
+        "rulesOut": [
+          "exon14_skipping",
+          "amplification"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with KRAS mutant aNSCLC who have ... MET",
+        "appliesTo": "KRAS mutant aNSCLC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with KRAS mutant aNSCLC who have ... NTRK",
+      "raw": {
+        "factId": "ntrk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with KRAS mutant aNSCLC who have ... NTRK",
+        "appliesTo": "KRAS mutant aNSCLC"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

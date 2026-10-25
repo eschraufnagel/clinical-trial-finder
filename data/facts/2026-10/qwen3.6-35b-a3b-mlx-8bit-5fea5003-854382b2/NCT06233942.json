@@ -1,0 +1,109 @@
+{
+  "nctId": "NCT06233942",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 157,
+        "end": 222,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status ≤ 1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 534,
+        "end": 832,
+        "text": "Enrollment will be limited to participants with hormone receptor-positive/human epidermal growth factor receptor 2-negative (HR+/HER2-) breast cancer, cholangiocarcinoma (CCA), endometrial cancer, squamous non-small cell lung cancer (NSCLC), triple-negative breast cancer (TNBC), or ovarian cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 226,
+        "end": 533,
+        "text": "Participants with selected histologically or cytologically confirmed advanced, metastatic, and unresectable solid tumors who have previously received standard systemic therapy and whose cancer is not amenable to therapy with curative intent, and for whom further treatment is not available or not tolerated."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 974,
+        "end": 1071,
+        "text": "≥ 1 measurable lesion per Response Evaluation Criteria in Solid Tumors, version 1.1 (RECIST v1.1)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1720,
+        "end": 1793,
+        "text": "Active leptomeningeal disease or uncontrolled, untreated brain metastasis"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1797,
+        "end": 2006,
+        "text": "Any malignancy ≤ 2 years before the first dose of study treatment(s) except for the specific cancer under investigation in this study and any locally recurring cancer that has been treated with curative intent"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2135,
+        "end": 2324,
+        "text": "History of interstitial lung disease, ≥ Grade 2 noninfectious pneumonitis, oxygen saturation at rest \\< 92%, or requirement for supplemental oxygen (including intermittent use) at baseline."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

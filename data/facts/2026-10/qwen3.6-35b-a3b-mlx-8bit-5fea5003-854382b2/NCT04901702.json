@@ -1,0 +1,98 @@
+{
+  "nctId": "NCT04901702",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 114,
+        "end": 246,
+        "text": "Patients with refractory or recurrent non-central nervous system (CNS) solid tumors not amenable to curative treatment are eligible."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 716,
+        "end": 819,
+        "text": "Patients with refractory or recurrent Ewing sarcoma (during or after completion of first-line therapy)."
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1420,
+        "end": 1512,
+        "text": "Patients must have either measurable or evaluable disease (see Section 7.0 for definitions)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1800,
+        "end": 1918,
+        "text": "Performance level: Karnofsky \\> 50% for patients \\> 16 years of age and Lansky \\> 50% for patients \\< 16 years of age."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5984,
+        "end": 6051,
+        "text": "Pregnant or breast-feeding women will not be entered on this study."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients must have a histologic diagnosis of Ewing sarcoma with EWSR1- FLI1 translocation or other EWS rearrangement at the time of initial diagnosis.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have a histologic diagnosis of Ewing sarcoma with EWSR1- FLI1 translocation or other EWS rearrangement at the time of initial diagnosis.",
+        "appliesTo": "Phase II"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "nctId": "NCT06745882",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 200,
+        "end": 240,
+        "text": "Have an ECOG performance status of 0- 2."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 243,
+        "end": 317,
+        "text": "Have histologically or cytologically confirmed, advanced/metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 243,
+        "end": 317,
+        "text": "Have histologically or cytologically confirmed, advanced/metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 395,
+        "end": 434,
+        "text": "No known EGFR/ALK/ROS1 tumor mutations."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 395,
+        "end": 434,
+        "text": "No known EGFR/ALK/ROS1 tumor mutations."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 395,
+        "end": 434,
+        "text": "No known EGFR/ALK/ROS1 tumor mutations."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 320,
+        "end": 392,
+        "text": "Be treatment naïve in the advanced/metastatic/recurrent disease setting."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 320,
+        "end": 392,
+        "text": "Be treatment naïve in the advanced/metastatic/recurrent disease setting."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 320,
+        "end": 392,
+        "text": "Be treatment naïve in the advanced/metastatic/recurrent disease setting."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 320,
+        "end": 392,
+        "text": "Be treatment naïve in the advanced/metastatic/recurrent disease setting."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 320,
+        "end": 392,
+        "text": "Be treatment naïve in the advanced/metastatic/recurrent disease setting."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2390,
+        "end": 2441,
+        "text": "History of allogenic tissue/solid organ transplant."
+      },
+      "appliesTo": "Cohorts 1, 2a and b"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2488,
+        "end": 2620,
+        "text": "Received prior treatment chemotherapy and/or immune checkpoint inhibitor therapy in the advanced/metastatic setting for lung cancer."
+      },
+      "appliesTo": "Cohort 2a and b Only"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2488,
+        "end": 2620,
+        "text": "Received prior treatment chemotherapy and/or immune checkpoint inhibitor therapy in the advanced/metastatic setting for lung cancer."
+      },
+      "appliesTo": "Cohort 2a and b Only"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2488,
+        "end": 2620,
+        "text": "Received prior treatment chemotherapy and/or immune checkpoint inhibitor therapy in the advanced/metastatic setting for lung cancer."
+      },
+      "appliesTo": "Cohort 2a and b Only"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2488,
+        "end": 2620,
+        "text": "Received prior treatment chemotherapy and/or immune checkpoint inhibitor therapy in the advanced/metastatic setting for lung cancer."
+      },
+      "appliesTo": "Cohort 2a and b Only"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2488,
+        "end": 2620,
+        "text": "Received prior treatment chemotherapy and/or immune checkpoint inhibitor therapy in the advanced/metastatic setting for lung cancer."
+      },
+      "appliesTo": "Cohort 2a and b Only"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2623,
+        "end": 2795,
+        "text": "Has a diagnosis of immunodeficiency or is receiving systemic steroid therapy at doses\n\n  ≥ 10 mg prednisone or any other form of systemic immunosuppressive therapy at C1D1."
+      },
+      "appliesTo": "Cohort 2a and b Only",
+      "loose": true
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3283,
+        "end": 3376,
+        "text": "Has active autoimmune disease that has required active systemic treatment in the past 2 years"
+      },
+      "appliesTo": "Cohort 2a and b Only"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4767,
+        "end": 4908,
+        "text": "History of (noninfectious) pneumonitis/interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease."
+      },
+      "appliesTo": "Cohorts 1, 2a and b"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4911,
+        "end": 5003,
+        "text": "Has known untreated central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      },
+      "appliesTo": "Cohorts 1, 2a and b"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4911,
+        "end": 5003,
+        "text": "Has known untreated central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      },
+      "appliesTo": "Cohorts 1, 2a and b"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Have testing status for PDL1 tissue status.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Have testing status for PDL1 tissue status.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

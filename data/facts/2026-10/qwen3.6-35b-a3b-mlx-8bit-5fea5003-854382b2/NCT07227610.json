@@ -1,0 +1,56 @@
+{
+  "nctId": "NCT07227610",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 389,
+        "end": 481,
+        "text": "Radiographic confirmation of brain metastasis measuring ≥2 cm and ≤ 5 cm in maximum diameter"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1834,
+        "end": 1874,
+        "text": "Evidence of leptomeningeal disease (LMD)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 944,
+        "end": 1067,
+        "text": "Known active or history of invasive non-CNS primary cancer based on documented pathologic diagnosis within the past 3 years"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "nctId": "NCT04192344",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 602,
+        "end": 742,
+        "text": "where surgical resection would be associated with potentially worsening functional limitation or severe morbidity (locally advanced disease)"
+      },
+      "appliesTo": "For patients with tenosynovial giant cell tumor (TGCT)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 865,
+        "end": 983,
+        "text": "Measurable disease as defined by RECIST 1.1 (except that a minimal size of 2 cm is required), assessed from MRI scans;"
+      },
+      "appliesTo": "For patients with tenosynovial giant cell tumor (TGCT)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2395,
+        "end": 2441,
+        "text": "Active central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1231,
+        "end": 1359,
+        "text": "Known additional malignancy that is progressing or required active treatment within 3 years of the first dose of study treatment"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2688,
+        "end": 2777,
+        "text": "Known human immunodeficiency virus or active hepatitis B, or active hepatitis C infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2688,
+        "end": 2777,
+        "text": "Known human immunodeficiency virus or active hepatitis B, or active hepatitis C infection"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2834,
+        "end": 2853,
+        "text": "Pregnant or nursing"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "ECOG (electrocorticogram) performance status 0~1",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG (electrocorticogram) performance status 0~1",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "nctId": "NCT06440005",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1290,
+        "end": 1407,
+        "text": "non-small-cell lung cancer with predominant squamous histology (ie, squamous cell carcinoma of the lung) are excluded"
+      },
+      "appliesTo": "non-small-cell lung cancer"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 107,
+        "text": "Histologically confirmed unresectable, locally advanced, or metastatic solid tumors."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 936,
+        "end": 977,
+        "text": "Have an ECOG performance status of 0 to 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1461,
+        "end": 1588,
+        "text": "Clinically unstable central nervous system (CNS) tumors or brain metastasis (stable and/or asymptomatic CNS metastases allowed)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2500,
+        "end": 2541,
+        "text": "known symptomatic active hepatitis B or C"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3332,
+        "end": 3435,
+        "text": "Is breastfeeding or expecting to conceive or father children within the projected duration of the study"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

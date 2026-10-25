@@ -1,0 +1,166 @@
+{
+  "nctId": "NCT06999187",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 210,
+        "text": "Histologically confirmed epithelial cancer of the following tumor types: breast (TNBC, HR+/HER2-/+BC), NSCLC, cervical, CRPC, PDAC, HNSCC, endometrial, ovarian, gastric/GEJ, or urothelial"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 219,
+        "end": 263,
+        "text": "unresectable, locally advanced or metastatic"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 396,
+        "end": 431,
+        "text": "Radiographically measurable disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 434,
+        "end": 498,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-1"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 266,
+        "end": 327,
+        "text": "Relapsed or refractory with at least 2 prior lines of therapy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1713,
+        "end": 1848,
+        "text": "Brain metastases either untreated and symptomatic or requiring therapy with steroids or anticonvulsants to control associated symptoms."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2147,
+        "end": 2342,
+        "text": "Another malignancy (except for adequately resected non-melanoma skin cancer, curatively treated in situ disease, or other solid tumors curatively treated with no evidence of disease for ≥ 1 year)"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3107,
+        "end": 3141,
+        "text": "Prior solid organ transplantation."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3144,
+        "end": 3182,
+        "text": "Known infection with HIV, HBV, or HCV."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3144,
+        "end": 3182,
+        "text": "Known infection with HIV, HBV, or HCV."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3971,
+        "end": 4164,
+        "text": "Active clinical interstitial pneumonitis (e.g., shortness of breath, requirement of supplemental oxygen, dry cough) or as confirmed by means of diagnostic imaging within 6 months prior to C1D1."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2949,
+        "end": 3104,
+        "text": "History or presence of an abnormal ECG that is clinically significant in the Investigator's opinion or myocardial infarction within 6 months prior to C1D1."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

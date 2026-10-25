@@ -1,0 +1,109 @@
+{
+  "nctId": "NCT07387068",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 39,
+        "end": 97,
+        "text": "Must have histologically confirmed selected solid cancers."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 937,
+        "end": 1026,
+        "text": "Have histologically confirmed selected solid cancers that are metastatic or unresectable."
+      },
+      "appliesTo": "Parts 1 and 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1199,
+        "end": 1286,
+        "text": "Have histologically confirmed selected solid cancer that is metastatic or unresectable."
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 100,
+        "end": 196,
+        "text": "Have measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1581,
+        "end": 1896,
+        "text": "Autoimmune diseases, eg, systemic lupus erythematosus (SLE), rheumatoid arthritis (RA), neuromyelitis optica (NMO), myasthenia gravis (MG), cold agglutinin disease (CAD), atypical hemolytic uremic syndrome (aHUS), immunoglobulin A (IgA) nephropathy, inflammatory bowel disease (IBD; Crohn's and ulcerative colitis)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1971,
+        "end": 2317,
+        "text": "Known history of interstitial lung disease (ILD) Grade ≥3 or prior or ongoing noninfectious pneumonitis with evidence of progressive fibrotic changes on baseline imaging, unless clinically and radiologically stable for ≥6 months with preserved pulmonary function (eg, diffusing capacity of the lungs for carbon monoxide \\[DLCO\\] ≥ 50% predicted)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2692,
+        "end": 2853,
+        "text": "Any history of intracerebral arteriovenous malformation (shunts), cerebral aneurysm, spinal cord compression (from disease), carcinomatous meningitis, or stroke."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

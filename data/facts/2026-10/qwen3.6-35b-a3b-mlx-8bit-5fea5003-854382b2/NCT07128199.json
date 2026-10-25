@@ -1,0 +1,160 @@
+{
+  "nctId": "NCT07128199",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 116,
+        "text": "Histologically confirmed diagnosis of primary NSCLC on predominantly non-squamous histology."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1358,
+        "end": 1599,
+        "text": "Pathologic (post-operative) Stage IB, IIA, IIB, or IIIA according to the AJCC 9th tumor nodes metastasis (TNM) staging system for lung cancer. In addition, participants with stage IIIB are eligible when regional lymph node involvement is N2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 539,
+        "end": 709,
+        "text": "Baseline imaging assessment of the brain (MRI \\[preferred modality\\] or CT scan) performed within 8 weeks prior to randomization must show no evidence of brain metastasis"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1280,
+        "end": 1354,
+        "text": "Eastern cooperative oncology group performance status (ECOG PS) of 0 or 1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 120,
+        "end": 535,
+        "text": "Documented EGFRmt status as determined by local testing performed at a clinical laboratory improvement amendment (CLIA) certified (United States \\[US\\]) or accredited (outside of the US) local laboratory, defined as either one of the following EGFRmt:\n\n   1. exon20 insertion mutations (ex20ins) or\n   2. other uncommon, non-ex20ins EGFRmt (eg, G719X, L861Q, or S768I) exons 18-21 of the EGFR tyrosine kinase domain"
+      },
+      "loose": true
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1976,
+        "end": 2047,
+        "text": "Zipalertinib (TAS6417/CLN-081) or any other EGFR inhibitor at any time."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2150,
+        "end": 2416,
+        "text": "Any prior systemic anticancer therapy for NSCLC, including preoperative (neoadjuvant) chemotherapy, immunotherapy, or investigational therapy. (Exception: Participants who have received postoperative adjuvant platinum-based chemotherapy up to 4 cycles are permitted)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2786,
+        "end": 2937,
+        "text": "Past medical history of interstitial lung disease (ILD)/pneumonitis, drug-induced ILD/pneumonitis or any evidence of clinically active ILD/pneumonitis."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3728,
+        "end": 3859,
+        "text": "Known history of hepatitis B, hepatitis C, or human immunodeficiency virus (HIV) that is unstable or not controlled with treatment."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3728,
+        "end": 3859,
+        "text": "Known history of hepatitis B, hepatitis C, or human immunodeficiency virus (HIV) that is unstable or not controlled with treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Has a history of any other cancer except for any of the following: ... Other curatively treated cancer, with no evidence of disease for >3 years following the end of treatment and, in the opinion of the treating physician, has no substantial risk of recurrence.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Has a history of any other cancer except for any of the following: ... Other curatively treated cancer, with no evidence of disease for >3 years following the end of treatment and, in the opinion of the treating physician, has no substantial risk of recurrence.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

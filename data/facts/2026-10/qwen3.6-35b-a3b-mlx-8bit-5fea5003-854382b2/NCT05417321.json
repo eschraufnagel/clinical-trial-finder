@@ -1,0 +1,273 @@
+{
+  "nctId": "NCT05417321",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 153,
+        "end": 273,
+        "text": "Phase I: Patients with histologically or cytologically confirmed locally advanced, recurrent, or metastatic solid tumors"
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 668,
+        "end": 770,
+        "text": "Phase II: Histologically or cytologically documented locally advanced, recurrent or metastatic cancer."
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 859,
+        "end": 949,
+        "text": "Histologically or cytologically documented locally advanced, recurrent or metastatic NSCLC"
+      },
+      "appliesTo": "Advanced non-small cell lung cancer cohort"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1652,
+        "end": 1790,
+        "text": "Histologically or cytologically documented locally advanced, recurrent or metastatic cancer (esophageal squamous cell carcinoma, melanoma)"
+      },
+      "appliesTo": "Advanced other cancer cohort"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1934,
+        "end": 2054,
+        "text": "At least one measurable lesion( assessable lesion only accepted during accelerated titration stage) as per RECIST v. 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2546,
+        "end": 2618,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0-1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5020,
+        "end": 5267,
+        "text": "Have clinically active central nervous system (CNS) metastases and/or carcinomatous meningitis. Patients with previously-treated brain or meningeal metastases may participate and be eligible for treatment provided they are stable and asymptomatic."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5020,
+        "end": 5115,
+        "text": "Have clinically active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5435,
+        "end": 5534,
+        "text": "Have history of interstitial lung disease or non-infectious pneumonitis (except from radiotherapy);"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5538,
+        "end": 5744,
+        "text": "Active autoimmune disease or history of autoimmune disease requiring systemic therapy \\< 2 years prior to screening except hypothyroidism, vitiligo, Grave's disease, Hashimoto's disease, or Type I diabetes."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6070,
+        "end": 6214,
+        "text": "Use of systemic corticosteroids in a dose equivalent to \\>10 mg/day of prednisone or other immunosuppressive agent \\< 2 weeks prior to screening"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7526,
+        "end": 7616,
+        "text": "Patients who have previously received allogeneic stem cell or solid organ transplantation."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8206,
+        "end": 8236,
+        "text": "Positive results for HIV test."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8241,
+        "end": 8265,
+        "text": "Active hepatitis B or C."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7033,
+        "end": 7236,
+        "text": "Cerebrovascular accident (CVA), transient ischemic attack (TIA), myocardial infarction (MI), unstable angina, or New York Heart Association (NYHA) class III or IV heart failure \\< 6 months of study entry"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4316,
+        "end": 4585,
+        "text": "Concurrent malignancy \\< 5 years prior to entry other than adequately treated cervical carcinoma-in-situ, localized squamous cell cancer of the skin, basal cell carcinoma, localized prostate cancer, ductal carcinoma in situ of the breast, or \\< T1 urothelial carcinoma."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1551,
+        "end": 1618,
+        "text": "should have progressed at least one prior systemic therapy regimen."
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1241,
+        "end": 1278,
+        "text": "Tumor PD-L1 expression with a TPS≥1 %"
+      },
+      "appliesTo": "Advanced non-small cell lung cancer cohort"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1280,
+        "end": 1467,
+        "text": "Negative for actionable molecular markers \\[including but not limited to: epidermal growth factor receptor (EGFR) mutations, anaplastic lymphoma kinase (ALK) gene fusion mutation, etc.\\]；"
+      },
+      "appliesTo": "Advanced non-small cell lung cancer cohort"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1280,
+        "end": 1467,
+        "text": "Negative for actionable molecular markers \\[including but not limited to: epidermal growth factor receptor (EGFR) mutations, anaplastic lymphoma kinase (ALK) gene fusion mutation, etc.\\]；"
+      },
+      "appliesTo": "Advanced non-small cell lung cancer cohort"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

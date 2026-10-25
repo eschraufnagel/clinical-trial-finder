@@ -1,0 +1,215 @@
+{
+  "nctId": "NCT03740256",
+  "mappings": [
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 488,
+        "end": 709,
+        "text": "HER2 positivity is defined as ≥2+ staining by IHC with either the FDA-approved CB11 antibody (Leica) or anti HER2/neu (4B5) (VENTANA), which refers to greater than weak-to-moderate staining intensity in \\>10% tumor cells."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 713,
+        "end": 999,
+        "text": "The disease must be deemed unsuitable for curative treatments including surgery, radiotherapy, systemic therapy, including checkpoint inhibitors, or any combination of the above modalities by the referring oncology physician and confirmed by the senior oncologists leading the protocol."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1288,
+        "end": 1364,
+        "text": "The patient must have radiographically measurable disease as per RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4643,
+        "end": 4727,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 2 or less (Appendix I)."
+      },
+      "appliesTo": "Treatment Inclusion Criteria"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1566,
+        "end": 1801,
+        "text": "History or evidence of active autoimmune disease requiring continuous systemic corticosteroids (with more than 10mg/day prednisone or equivalent dose), immunosuppressants or other disease modifying agents (except palliative radiation)."
+      },
+      "appliesTo": "Procurement Exclusion Criteria"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1888,
+        "end": 1910,
+        "text": "Post organ transplant."
+      },
+      "appliesTo": "Procurement Exclusion Criteria"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1973,
+        "end": 2145,
+        "text": "Diagnosis of other malignancies within 5 years except for cutaneous basal cell or squamous cell carcinoma, well-differentiated thyroid cancer, or localized prostate cancer."
+      },
+      "appliesTo": "Procurement Exclusion Criteria"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2149,
+        "end": 2203,
+        "text": "Patients with known active hepatitis B or C infection."
+      },
+      "appliesTo": "Procurement Exclusion Criteria"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2207,
+        "end": 2300,
+        "text": "Patient has had acute myocardial infarction within 6 months prior to consent for procurement."
+      },
+      "appliesTo": "Procurement Exclusion Criteria"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6083,
+        "end": 6232,
+        "text": "History or evidence of active autoimmune disease requiring continuous systemic corticosteroids, immunosuppressants or other disease modifying agents."
+      },
+      "appliesTo": "Treatment Exclusion Criteria"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6404,
+        "end": 6588,
+        "text": "Diagnosis of other malignancies within 5 years except for cutaneous basal cell or squamous cell carcinoma, well-differentiated thyroid cancer, or localized prostate or cervical cancer."
+      },
+      "appliesTo": "Treatment Exclusion Criteria"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6592,
+        "end": 6674,
+        "text": "Patients with known active infectious disease, such as hepatitis B or C infection."
+      },
+      "appliesTo": "Treatment Exclusion Criteria"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6678,
+        "end": 6772,
+        "text": "Patient has had acute myocardial infarction within 6 months prior to enrollment for treatment."
+      },
+      "appliesTo": "Treatment Exclusion Criteria"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7038,
+        "end": 7072,
+        "text": "Pregnant or breastfeeding females."
+      },
+      "appliesTo": "Treatment Exclusion Criteria"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Post organ transplant.",
+      "raw": {
+        "factId": "transplant",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Post organ transplant.",
+        "appliesTo": "Treatment Exclusion Criteria"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

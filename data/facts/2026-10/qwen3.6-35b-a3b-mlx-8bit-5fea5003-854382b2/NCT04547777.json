@@ -1,0 +1,108 @@
+{
+  "nctId": "NCT04547777",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 62,
+        "end": 150,
+        "text": "Histopathologically confirmed recurrent supratentorial WHO grade 3 or 4 malignant glioma"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5613,
+        "end": 5902,
+        "text": "Patients with neoplastic lesions in the brainstem, cerebellum, or spinal cord; radiological evidence of active (growing) disease (active multifocal disease); extensive subependymal disease (tumor touching subependymal space is allowed); tumor crossing the midline or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3643,
+        "end": 3736,
+        "text": "Patients with known immunosuppressive disease or known human immunodeficiency virus infection"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6373,
+        "end": 6483,
+        "text": "Patients with active autoimmune disease requiring systemic immunomodulatory treatment within the past 3 months"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5907,
+        "end": 6010,
+        "text": "Patients on greater than 4 mg per day of dexamethasone within the 2 weeks prior to the D2C7-IT infusion"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with neoplastic lesions in the brainstem, cerebellum, or spinal cord; radiological evidence of active (growing) disease (active multifocal disease); extensive subependymal space (tumor touching subependymal space is allowed); tumor crossing the midline or leptomeningeal disease",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with neoplastic lesions in the brainstem, cerebellum, or spinal cord; radiological evidence of active (growing) disease (active multifocal disease); extensive subependymal space (tumor touching subependymal space is allowed); tumor crossing the midline or leptomeningeal disease",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "A recurrence of their supratentorial WHO grade IV4 malignant glioma based on imaging studies with measurable disease requiring therapy other than per protocol allowed reduced dose bevacizumab",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "A recurrence of their supratentorial WHO grade IV4 malignant glioma based on imaging studies with measurable disease requiring therapy other than per protocol allowed reduced dose bevacizumab",
+        "appliesTo": "Subject Eligibility Salvage Treatment"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

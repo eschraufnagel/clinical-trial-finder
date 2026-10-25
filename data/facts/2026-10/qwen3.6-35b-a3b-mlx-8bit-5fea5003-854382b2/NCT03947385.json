@@ -1,0 +1,133 @@
+{
+  "nctId": "NCT03947385",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 103,
+        "end": 218,
+        "text": "Diagnosis of the following:\n\n  o MUM: Uveal melanoma with histological or cytological confirmed metastatic disease."
+      },
+      "appliesTo": "MUM: Uveal melanoma with histological or cytological confirmed metastatic disease",
+      "loose": true
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 808,
+        "end": 842,
+        "text": "Measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 845,
+        "end": 882,
+        "text": "Eastern Cooperative Oncology Group ≤1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1714,
+        "end": 1748,
+        "text": "Known symptomatic brain metastases"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2099,
+        "end": 2140,
+        "text": "Females who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1822,
+        "end": 1926,
+        "text": "Known acquired immunodeficiency syndrome (AIDS)-related illness, hepatitis B virus, or hepatitis C virus"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2143,
+        "end": 2168,
+        "text": "Impaired cardiac function"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2525,
+        "end": 2576,
+        "text": "History of pneumonitis or interstitial lung disease"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2600,
+        "end": 2700,
+        "text": "History of thromboembolic or cerebrovascular events ≤12 weeks prior to first dose of study treatment"
+      },
+      "appliesTo": "Crizotinib Combination Additional Exclusion Criteria"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

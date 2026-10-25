@@ -1,0 +1,156 @@
+{
+  "nctId": "NCT06258304",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 71,
+        "end": 340,
+        "text": "Histologically or cytologically confirmed locally advanced or radiographically confirmed metastatic solid tumor malignancies ineligible for standard-of-care or refractory to or relapsing after at least one line of systemic therapy in the metastatic or advanced setting."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 71,
+        "end": 340,
+        "text": "Histologically or cytologically confirmed locally advanced or radiographically confirmed metastatic solid tumor malignancies ineligible for standard-of-care or refractory to or relapsing after at least one line of systemic therapy in the metastatic or advanced setting."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 343,
+        "end": 428,
+        "text": "Measurable disease on imaging as based on Response Evaluation Criteria in RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 431,
+        "end": 499,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 1."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3012,
+        "end": 3175,
+        "text": "Human immunodeficiency virus (HIV) infection unless participants are stable on anti-retroviral therapy (CD4 count ≥ 200/μL) and have a viral load \\< 400 copies/mL."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3490,
+        "end": 3743,
+        "text": "Active or history of autoimmune or primary immunodeficiency disease requiring systemic treatment within 2 years of commencing study (NOTE: participants with autoimmune conditions requiring hormone replacement therapy or topical treatments are eligible)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4638,
+        "end": 4915,
+        "text": "History of other active malignancy within 3 years of enrollment except for the following: adequately treated localized skin cancer, ductal carcinoma in situ, cervical carcinoma in situ, superficial bladder cancer or other localized malignancy which has been adequately treated."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4918,
+        "end": 5187,
+        "text": "Active or untreated brain metastases that are not stable. Stable is defined as 2 brain images that show no progression, obtained ≥ 4 weeks apart and any neurologic symptoms that developed either as a result of the brain metastases or their treatment must have resolved."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3841,
+        "end": 3967,
+        "text": "History of hematopoietic stem cell transplantation (HSCT) or solid organ transplant with the exception of corneal transplants."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3970,
+        "end": 3996,
+        "text": "Pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4086,
+        "end": 4429,
+        "text": "Concurrent use of systemic steroids (within 10 days of enrollment), except for physiologic doses of systemic steroid replacement or local (topical, nasal, or inhaled) steroid use. Limited doses of systemic steroids (e.g., in participants with exacerbations of reactive airway disease) must have completed therapy ≥ 10 days prior to enrollment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

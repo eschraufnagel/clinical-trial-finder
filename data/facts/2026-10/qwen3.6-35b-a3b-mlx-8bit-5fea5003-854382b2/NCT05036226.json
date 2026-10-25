@@ -1,0 +1,154 @@
+{
+  "nctId": "NCT05036226",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 131,
+        "text": "Patient must have advanced solid tumor cancer of any type (Phase I) or advanced prostate cancer (Phase II)."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 285,
+        "end": 378,
+        "text": "Measurable / evaluable tumor by RECIST, quantitative blood biomarker, or radionuclide imaging"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 812,
+        "end": 843,
+        "text": "ECOG performance status of 0-2."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2348,
+        "end": 2473,
+        "text": "Treatment with local or systemic radiation therapy, surgery, or investigational therapy within 28 days prior to registration."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2348,
+        "end": 2473,
+        "text": "Treatment with local or systemic radiation therapy, surgery, or investigational therapy within 28 days prior to registration."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2560,
+        "end": 2666,
+        "text": "Serious nonmalignant disease that could compromise protocol objectives in the opinion of the Investigator."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2560,
+        "end": 2666,
+        "text": "Serious nonmalignant disease that could compromise protocol objectives in the opinion of the Investigator."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2257,
+        "end": 2344,
+        "text": "Active, uncontrolled bacterial, viral, or fungal infection, requiring systemic therapy."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2257,
+        "end": 2344,
+        "text": "Active, uncontrolled bacterial, viral, or fungal infection, requiring systemic therapy."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1859,
+        "end": 2019,
+        "text": "New York Heart Association Class III or IV, cardiac disease, myocardial infarction within the past 6 months, unstable arrhythmia, or history of ischemia on ECG."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1443,
+        "end": 1567,
+        "text": "Subjects with the potential to produce children must agree to effective contraceptive method use during study participation."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "nctId": "NCT07843940",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 699,
+        "end": 792,
+        "text": "Histologically or cytologically confirmed Extensive Stage Small Cell Lung Carcinoma (ES-SCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 699,
+        "end": 792,
+        "text": "Histologically or cytologically confirmed Extensive Stage Small Cell Lung Carcinoma (ES-SCLC)"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1581,
+        "end": 1729,
+        "text": "At least one measurable lesion outside of the Central Nervous System (CNS) as defined per Response Evaluation Criteria In Solid Tumors (RECIST) 1.1."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2945,
+        "end": 3012,
+        "text": "Presence of leptomeningeal disease and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1043,
+        "end": 1127,
+        "text": "For Cohort 1 - must have received at least one line of platinum-containing treatment"
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1043,
+        "end": 1222,
+        "text": "For Cohort 1 - must have received at least one line of platinum-containing treatment but no more than 2 lines of treatment per local standard of care for the treatment of ES-SCLC."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1228,
+        "end": 1300,
+        "text": "For Cohort 2 - must have received no prior systemic therapy for ES-SCLC."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1228,
+        "end": 1300,
+        "text": "For Cohort 2 - must have received no prior systemic therapy for ES-SCLC."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1228,
+        "end": 1300,
+        "text": "For Cohort 2 - must have received no prior systemic therapy for ES-SCLC."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1228,
+        "end": 1300,
+        "text": "For Cohort 2 - must have received no prior systemic therapy for ES-SCLC."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4014,
+        "end": 4046,
+        "text": "Prior organ or tissue allograft."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4050,
+        "end": 4257,
+        "text": "History of or active interstitial lung disease, pulmonary fibrosis, organizing pneumonia or non-infectious pneumonitis (any grade) or any other condition resulting in significant impairment in lung function."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

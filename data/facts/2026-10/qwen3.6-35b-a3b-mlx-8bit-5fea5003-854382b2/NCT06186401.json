@@ -1,0 +1,266 @@
+{
+  "nctId": "NCT06186401",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1069,
+        "end": 1252,
+        "text": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, confirmed by a Clinical Laboratory Improvement Amendments (CLIA)-certified lab using a next-generation sequencing panel."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2698,
+        "end": 2828,
+        "text": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, as defined by an EGFRvIII H-score of ≥ 150 based on central review."
+      },
+      "appliesTo": "Study Enrollment for Cohort 2"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5447,
+        "end": 5494,
+        "text": "Participants with leptomeningeal dissemination."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5500,
+        "end": 5696,
+        "text": "Participants with a known disorder that affects their immune system, such as human immunodeficiency virus (HIV) or an autoimmune disorder requiring systemic cytotoxic or immunosuppressive therapy."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7726,
+        "end": 7891,
+        "text": "Participants with a known disorder that affects their immune system, such as HIV or an autoimmune disorder requiring systemic cytotoxic or immunosuppressive therapy."
+      },
+      "appliesTo": "Study Enrollment for Cohort 2"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5500,
+        "end": 5696,
+        "text": "Participants with a known disorder that affects their immune system, such as human immunodeficiency virus (HIV) or an autoimmune disorder requiring systemic cytotoxic or immunosuppressive therapy."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7726,
+        "end": 7891,
+        "text": "Participants with a known disorder that affects their immune system, such as HIV or an autoimmune disorder requiring systemic cytotoxic or immunosuppressive therapy."
+      },
+      "appliesTo": "Study Enrollment for Cohort 2"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5839,
+        "end": 6212,
+        "text": "Participants with serologic status reflecting active hepatitis B or C infection. Participants that are positive for hepatitis B surface antigen (HBsAg+) will be excluded. Participants that are positive for hepatitis B core antibody or hepatitis C antibody must have a negative polymerase chain reaction (PCR) prior to enrollment. PCR positive participants will be excluded."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6218,
+        "end": 6298,
+        "text": "Participants who have received prior solid organ or bone marrow transplantation."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8525,
+        "end": 8580,
+        "text": "Female participants who are pregnant or breast-feeding."
+      },
+      "appliesTo": "Study Enrollment for Cohort 2"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5094,
+        "end": 5170,
+        "text": "Female participants of reproductive potential who are pregnant or lactating."
+      },
+      "appliesTo": "Cohort 1"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, confirmed by a Clinical Laboratory Improvement Amendments (CLIA)-certified lab using a next-generation sequencing panel.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, confirmed by a Clinical Laboratory Improvement Amendments (CLIA)-certified lab using a next-generation sequencing panel.",
+        "appliesTo": "Cohort 1"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, confirmed by a Clinical Laboratory Improvement Amendments (CLIA)-certified lab using a next-generation sequencing panel.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, confirmed by a Clinical Laboratory Improvement Amendments (CLIA)-certified lab using a next-generation sequencing panel.",
+        "appliesTo": "Tissue Screening Cohort 2"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, as defined by an EGFRvIII H-score of ≥ 150 based on central review.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, as defined by an EGFRvIII H-score of ≥ 150 based on central review.",
+        "appliesTo": "Study Enrollment for Cohort 2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, confirmed by a Clinical Laboratory Improvement Amendments (CLIA)-certified lab using a next-generation sequencing panel.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathological criteria: EGFRvIII+ GBM from most recent surgery, confirmed by a Clinical Laboratory Improvement Amendments (CLIA)-certified lab using a next-generation sequencing panel.",
+        "appliesTo": "Tissue Screening Cohort 2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants with leptomeningeal dissemination.",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with leptomeningeal dissemination.",
+        "appliesTo": "Study Enrollment for Cohort 2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants with serologic status reflecting active hepatitis B or C infection. Participants that are positive for hepatitis B surface antigen (HBsAg+) will be excluded. Participants that are positive for hepatitis B core antibody or hepatitis C antibody must have a negative polymerase chain reaction (PCR) prior to enrollment. PCR positive participants will be excluded.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with serologic status reflecting active hepatitis B or C infection. Participants that are positive for hepatitis B surface antigen (HBsAg+) will be excluded. Participants that are positive for hepatitis B core antibody or hepatitis C antibody must have a negative polymerase chain reaction (PCR) prior to enrollment. PCR positive participants will be excluded.",
+        "appliesTo": "Study Enrollment for Cohort 2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants who have received prior solid organ or bone marrow transplantation.",
+      "raw": {
+        "factId": "transplant",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants who have received prior solid organ or bone marrow transplantation.",
+        "appliesTo": "Study Enrollment for Cohort 2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

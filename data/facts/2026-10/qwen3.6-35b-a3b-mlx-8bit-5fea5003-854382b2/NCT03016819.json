@@ -1,0 +1,161 @@
+{
+  "nctId": "NCT03016819",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6500,
+        "end": 6841,
+        "text": "Known active CNS metastases and/or carcinomatous meningitis. Patients with previously treated brain metastases may participate provided that they are stable with no evidence of progression by imaging, and all neurologic symptoms have returned to baseline, and should not be using corticosteroids for at least 7 days prior to study treatment."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6500,
+        "end": 6560,
+        "text": "Known active CNS metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2234,
+        "end": 2461,
+        "text": "Has measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1 confirmed by CT or MRI scan of the chest, abdomen and pelvis (and other areas of disease) within 28 days prior to enrollment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2159,
+        "end": 2230,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5809,
+        "end": 6064,
+        "text": "Previous or concurrent cancer that is distinct in primary site or histology from ASPS, LMS, or SS within 5 years before enrollment except for successfully treated in situ carcinoma, non-melanoma skin cancer and superficial bladder tumors (Ta, Tis and T1)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9401,
+        "end": 9544,
+        "text": "Clinical conditions affecting the intake and use of oral medications (e.g., inability to swallow, chronic diarrhea, and intestinal obstruction)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9348,
+        "end": 9366,
+        "text": "Known HIV-positive"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9371,
+        "end": 9396,
+        "text": "Had organ transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9549,
+        "end": 9596,
+        "text": "Females who are pregnant or are breast-feeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically proven, unresectable, locally advanced or metastatic alveolar soft part sarcoma. ... Histologically proven, unresectable, recurrent, locally advanced or metastatic leiomyosarcoma ... Histologically proven, unresectable, recurrent, locally advanced or metastatic synovial sarcoma.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically proven, unresectable, locally advanced or metastatic alveolar soft part sarcoma. ... Histologically proven, unresectable, recurrent, locally advanced or metastatic leiomyosarcoma ... Histologically proven, unresectable, recurrent, locally advanced or metastatic synovial sarcoma.",
+        "appliesTo": "Indication A - ASPS; Indication B - LMS; Indication C - SS; Indication D - LMS; Indication E: Any sarcomas or other solid tumors"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "unresectable, locally advanced or metastatic alveolar soft part sarcoma. ... unresectable, recurrent, locally advanced or metastatic leiomyosarcoma ... unresectable, recurrent, locally advanced or metastatic synovial sarcoma.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable, locally advanced or metastatic alveolar soft part sarcoma. ... unresectable, recurrent, locally advanced or metastatic leiomyosarcoma ... unresectable, recurrent, locally advanced or metastatic synovial sarcoma.",
+        "appliesTo": "Indication A - ASPS; Indication B - LMS; Indication C - SS; Indication D - LMS"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

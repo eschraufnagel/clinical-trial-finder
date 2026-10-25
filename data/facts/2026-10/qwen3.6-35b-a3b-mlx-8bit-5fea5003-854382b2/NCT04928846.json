@@ -1,0 +1,173 @@
+{
+  "nctId": "NCT04928846",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 759,
+        "end": 827,
+        "text": "A histologically or cytologically documented non-squamous cell NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 759,
+        "end": 867,
+        "text": "A histologically or cytologically documented non-squamous cell NSCLC that is locally advanced or metastatic."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1172,
+        "end": 1246,
+        "text": "An Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 to 1."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1249,
+        "end": 1370,
+        "text": "Have received no more than 1 line of prior systemic cytotoxic chemotherapy in the locally advanced or metastatic setting."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2549,
+        "end": 2763,
+        "text": "They are asymptomatic and off or on a stable or reducing dose of systemic steroids (on no more than 10 mg per day \\[QD\\] prednisone or equivalent) and/or anticonvulsants for at least 2 weeks prior to randomization."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2879,
+        "end": 2914,
+        "text": "Evidence of leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3070,
+        "end": 3260,
+        "text": "Participants who have received prior c-Met-targeted antibodies, prior telisotuzumab vedotin, or prior antibody-drug conjugates either targeting c-Met or consisting of monomethylauristatin E."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1468,
+        "end": 1691,
+        "text": "Participants WITHOUT an actionable gene alteration: must have progressed on (or be considered ineligible for) platinum-based chemotherapy and immune checkpoint inhibitor (as monotherapy or in combination with chemotherapy)."
+      },
+      "appliesTo": "Participants WITHOUT an actionable gene alteration"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1696,
+        "end": 2016,
+        "text": "Participants WITH an actionable gene alteration for which immune checkpoint inhibitor therapy is not standard of care (e.g., anaplastic lymphoma kinase \\[ALK\\] translocation): must have progressed on (or be considered ineligible for) anti-cancer therapy targeting driver gene alterations and platinum-based chemotherapy."
+      },
+      "appliesTo": "Participants WITH an actionable gene alteration for which immune checkpoint inhibitor therapy is not standard of care (e.g., anaplastic lymphoma kinase [ALK] translocation)"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3872,
+        "end": 4220,
+        "text": "A history of idiopathic pulmonary fibrosis, organizing pneumonia (e.g., bronchiolitis obliterans), drug-induced pneumonitis, or idiopathic pneumonitis, evidence of active pneumonitis on screening chest computed tomography (CT) scan or prior pneumonectomy. A history of prior radiation pneumonitis in the radiation field (fibrosis) is not permitted."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3367,
+        "end": 3557,
+        "text": "Malignancy treated with curative intent and with no known active disease present for \\>=2 years before the first dose of study drug and felt to be at low risk for recurrence by investigator."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants WITH an actionable gene alteration for which immune checkpoint inhibitor is standard of care must have also progressed on (or be considered ineligible for) immune checkpoint inhibitor (as monotherapy or in combination with chemotherapy).",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants WITH an actionable gene alteration for which immune checkpoint inhibitor is standard of care must have also progressed on (or be considered ineligible for) immune checkpoint inhibitor (as monotherapy or in combination with chemotherapy).",
+        "appliesTo": "Participants WITH an actionable gene alteration for which immune checkpoint inhibitor is standard of care"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

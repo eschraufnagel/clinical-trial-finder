@@ -1,0 +1,134 @@
+{
+  "nctId": "NCT07358260",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 398,
+        "end": 581,
+        "text": "Participants must have histologically confirmed diagnosis of a solid tumor that is relapsed or refractory for which standard curative measures do not exist or are no longer effective."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7969,
+        "end": 8413,
+        "text": "Participants with known current brain metastases or leptomeningeal disease. Prior CNS metastatic disease is allowable if prior resection and/or radiation occurred at least 8 weeks prior to enrollment, without any intervening CNS metastasis, progression or recurrence, and participants are clinically stable as evidenced by no requirements for corticosteroids, no evolving neurologic deficits, and no progression of residual brain abnormalities."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7969,
+        "end": 8413,
+        "text": "Participants with known current brain metastases or leptomeningeal disease. Prior CNS metastatic disease is allowable if prior resection and/or radiation occurred at least 8 weeks prior to enrollment, without any intervening CNS metastasis, progression or recurrence, and participants are clinically stable as evidenced by no requirements for corticosteroids, no evolving neurologic deficits, and no progression of residual brain abnormalities."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2094,
+        "end": 2377,
+        "text": "Participants must have measurable or evaluable disease for dose escalation. For expansion phase, participants with neuroblastoma must have measurable or evaluable disease by INRC. Participants with other solid tumors must have measurable disease by RECIST1.1 for the expansion phase."
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 907,
+        "end": 964,
+        "text": "Lansky/Karnofsky performance status ≥50% (see Appendix A)"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8416,
+        "end": 8601,
+        "text": "Participants with any prior immunodeficiency or history of autoimmune disease requiring systemic steroids/ immunosuppressive medication/ disease modifying agents within the last 2 years"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8604,
+        "end": 8726,
+        "text": "Prior solid organ transplant. Prior allogeneic or autologous stem cell transplant is permitted as outlined in Section 3.2."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10216,
+        "end": 10815,
+        "text": "Pregnant women are excluded from this study because the effects of B7-H3.CD28Z.CART cells on the developing fetus are unknown and because chemotherapeutic agents with the potential for teratogenic or abortifacient effects are used in this study. Because there is an unknown but potential risk for adverse events in nursing infants, secondary to treatment of the mother with B7-H3.CD28Z.CART cells and chemotherapy, breastfeeding should be discontinued if the mother is treated with T cells on this study (NOTE: breast milk cannot be stored for future use while the mother is being treated on study)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants must have histologically confirmed diagnosis of a solid tumor that is relapsed or refractory for which standard curative measures do not exist or are no longer effective.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have histologically confirmed diagnosis of a solid tumor that is relapsed or refractory for which standard curative measures do not exist or are no longer effective.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

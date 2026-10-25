@@ -1,0 +1,180 @@
+{
+  "nctId": "NCT07566052",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 144,
+        "text": "Participant has histologically confirmed locally advanced (unresectable) or metastatic non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7116,
+        "end": 7270,
+        "text": "Participant has a known actionable mutation for which an approved targeted therapy is locally available, including, but not limited to, KRAS G12C mutation"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5259,
+        "end": 5324,
+        "text": "Participant has mixed small-cell lung cancer and NSCLC histology."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4708,
+        "end": 4795,
+        "text": "Participant has known untreated or symptomatic central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5327,
+        "end": 5411,
+        "text": "Participant has leptomeningeal disease as a manifestation of the current malignancy."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5414,
+        "end": 5617,
+        "text": "Participant has another prior malignancy active (i.e., requiring treatment, including hormonal therapies, or intervention) within the previous 2 years different from the primary malignancy for this study"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5820,
+        "end": 6060,
+        "text": "Participant has known hepatitis B virus (HBV) infection (defined as hepatitis B surface antigen \\[HBsAg\\]-positive or anti HBV core antibody-positive) or known hepatitis C virus (HCV) (defined as HCV RNA \\[qualitative\\] detected) infection."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6063,
+        "end": 6404,
+        "text": "Participant with human immunodeficiency virus (HIV) infection may be eligible if the participant has not had an opportunistic infection within the past 12 months. Participant must be on established antiretroviral therapy for ≥ 4 weeks, have a CD4+ T cell ≥ 200 cells/µL and must have an HIV viral load \\< 400 copies/mL prior to randomization"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4593,
+        "end": 4683,
+        "text": "Participant has an ECOG performance status of 0 or 1 within 7 days prior to randomization."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 652,
+        "end": 758,
+        "text": "Participant must have progressed or experienced disease recurrence on or after platinum based chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 652,
+        "end": 1070,
+        "text": "Participant must have progressed or experienced disease recurrence on or after platinum based chemotherapy (which includes but is not limited to platinum combinations with pemetrexed, paclitaxel, etoposide or gemcitabine) in combination with anti-PD-1/PD-L1 antibody OR platinum-based chemotherapy and anti-PD-1/PD-L1 antibody (in either order) sequentially in the locally advanced (unresectable) or metastatic setting"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7517,
+        "end": 7694,
+        "text": "Participant has received prior treatment with either docetaxel or a KRAS-targeting agent (including KRAS directed inhibitors, degraders, siRNA, vaccines and cellular therapies)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Female participant is not pregnant and at least 1 of the following conditions apply: ... Must not be breastfeeding or lactating starting at screening and throughout the investigational period",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Female participant is not pregnant and at least 1 of the following conditions apply: ... Must not be breastfeeding or lactating starting at screening and throughout the investigational period",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

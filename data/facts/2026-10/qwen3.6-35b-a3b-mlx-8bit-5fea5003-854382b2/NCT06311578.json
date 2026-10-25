@@ -1,0 +1,94 @@
+{
+  "nctId": "NCT06311578",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 153,
+        "end": 256,
+        "text": "Part 2: Individuals with histologically or cytologically confirmed metastatic or locally advanced NSCLC"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 294,
+        "end": 370,
+        "text": "Eastern cooperative oncology group (ECOG) performance status of grade 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 651,
+        "end": 802,
+        "text": "Active disease involvement of the CNS (example, primary central nervous system tumors, metastases, leptomeningeal disease). Some exceptions are allowed"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 651,
+        "end": 802,
+        "text": "Active disease involvement of the CNS (example, primary central nervous system tumors, metastases, leptomeningeal disease). Some exceptions are allowed"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1233,
+        "end": 1296,
+        "text": "History of solid organ or hematologic stem cell transplantation"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1299,
+        "end": 1399,
+        "text": "Known positive test result for human immunodeficiency virus (HIV) or other immunodeficiency syndrome"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

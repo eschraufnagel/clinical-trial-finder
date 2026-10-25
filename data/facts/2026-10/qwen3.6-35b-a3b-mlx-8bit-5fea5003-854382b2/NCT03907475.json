@@ -1,0 +1,237 @@
+{
+  "nctId": "NCT03907475",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 289,
+        "text": "Patients with histologically documented metastatic or locally advanced (not amenable to surgery) solid tumors whose disease has progressed following at least one line of standard therapy and/or no standard of treatment exists that has been shown to prolong survival."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 289,
+        "text": "Patients with histologically documented metastatic or locally advanced (not amenable to surgery) solid tumors whose disease has progressed following at least one line of standard therapy and/or no standard of treatment exists that has been shown to prolong survival."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 943,
+        "end": 1205,
+        "text": "Patients must have measurable disease, defined as at least one lesion that can be accurately measured in at least one dimension (longest diameter to be recorded) as \\>= 20 mm with conventional techniques or as \\>= 10 mm with spiral computed tomography (CT) scan."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1607,
+        "end": 1674,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status =\\< 2."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6147,
+        "end": 6275,
+        "text": "Patients who received prior therapy with a checkpoint inhibitor and were taken off drug for serious adverse events are excluded."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6399,
+        "end": 6599,
+        "text": "Patients who had prior PD-L1/PD-1 inhibitor treatment and did not experience serious adverse events are excluded from the durvalumab monotherapy arm but are eligible for the chemotherapy combinations."
+      },
+      "appliesTo": "durvalumab monotherapy arm"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 289,
+        "text": "Patients with histologically documented metastatic or locally advanced (not amenable to surgery) solid tumors whose disease has progressed following at least one line of standard therapy and/or no standard of treatment exists that has been shown to prolong survival."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 289,
+        "text": "Patients with histologically documented metastatic or locally advanced (not amenable to surgery) solid tumors whose disease has progressed following at least one line of standard therapy and/or no standard of treatment exists that has been shown to prolong survival."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 289,
+        "text": "Patients with histologically documented metastatic or locally advanced (not amenable to surgery) solid tumors whose disease has progressed following at least one line of standard therapy and/or no standard of treatment exists that has been shown to prolong survival."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 289,
+        "text": "Patients with histologically documented metastatic or locally advanced (not amenable to surgery) solid tumors whose disease has progressed following at least one line of standard therapy and/or no standard of treatment exists that has been shown to prolong survival."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7138,
+        "end": 7513,
+        "text": "Active or prior documented autoimmune or inflammatory disorders (including inflammatory bowel disease \\[e.g., colitis or Crohn's disease\\], diverticulitis \\[with the exception of diverticulosis\\], systemic lupus erythematosus, sarcoidosis syndrome, or Wegener syndrome \\[granulomatosis with polyangiitis, Graves' disease, rheumatoid arthritis, hypophysitis, uveitis, etc.\\])."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7939,
+        "end": 8196,
+        "text": "History of idiopathic pulmonary fibrosis, pneumonitis (including drug induced), organizing pneumonia (e.g. bronchiolitis obliterans, cryptogenic organizing pneumonia, etc.), or evidence of active pneumonitis on screening chest computed tomography (CT) scan."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3988,
+        "end": 4206,
+        "text": "They must be on an anti-retroviral regimen with evidence of at least two undetectable viral loads within the past 6 months on this same regimen; the most recent undetectable viral load must be within the past 12 weeks."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9988,
+        "end": 10321,
+        "text": "uncontrolled severe infection, liver disease such as cirrhosis, decompensated liver disease, and active and chronic hepatitis (i.e., quantifiable hepatitis B virus \\[HBV\\]-deoxyribonucleic acid \\[DNA\\] and/or positive hepatitis B surface antigen \\[HbsAg\\], quantifiable HCV-ribonucleic acid \\[RNA\\]), are not eligible to participate."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9884,
+        "end": 9926,
+        "text": "myocardial infarction in the past 6 months"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11019,
+        "end": 11058,
+        "text": "History of allogeneic organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6933,
+        "end": 6973,
+        "text": "Women who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8502,
+        "end": 8638,
+        "text": "Systemic corticosteroids at physiologic doses not to exceed 10 mg/day of prednisone or glucocorticoid equivalent dose of another steroid"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

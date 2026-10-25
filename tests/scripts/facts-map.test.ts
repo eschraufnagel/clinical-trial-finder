@@ -59,19 +59,13 @@ describe("resuming and the manifest", () => {
     write("NCT00000001", 2);
     expect(remaining(TRIALS, dir).map((t) => t.nctId)).toEqual(["NCT00000002", "NCT00000003"]);
     write("NCT00000002", 0);
-    const manifest = buildManifest(
-      dir,
-      "fake-x-y",
-      ["NCT00000001", "NCT00000002", "NCT00000003"],
-      12.4,
-    );
+    const manifest = buildManifest(dir, "fake-x-y", ["NCT00000001", "NCT00000002", "NCT00000003"]);
     expect(manifest).toMatchObject({
       candidates: 3,
       mapped: 2,
       failed: 1,
       mappings: 2,
       rejectedMappings: 2,
-      seconds: 12,
       run: { model: "fake" },
     });
   });

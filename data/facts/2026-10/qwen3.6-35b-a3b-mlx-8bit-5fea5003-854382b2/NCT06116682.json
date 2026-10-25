@@ -1,0 +1,278 @@
+{
+  "nctId": "NCT06116682",
+  "mappings": [
+    {
+      "factId": "met",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 216,
+        "end": 354,
+        "text": "Participants must have documentation of NSCLC with MET amplification determined by FMI tissue-based next generation sequencing (NGS) assay"
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1742,
+        "end": 2079,
+        "text": "Participants must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, MET Exon-14 skipping mutant NSCLC, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 357,
+        "end": 423,
+        "text": "Participants must have measurable disease documented by CT or MRI."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1402,
+        "end": 1588,
+        "text": "Participants with asymptomatic CNS metastasis (brain metastases or leptomeningeal disease) must be clinically stable and asymptomatic for at least 14 days prior to sub-study registration"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1402,
+        "end": 1588,
+        "text": "Participants with asymptomatic CNS metastasis (brain metastases or leptomeningeal disease) must be clinically stable and asymptomatic for at least 14 days prior to sub-study registration"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1742,
+        "end": 2079,
+        "text": "Participants must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, MET Exon-14 skipping mutant NSCLC, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1742,
+        "end": 2079,
+        "text": "Participants must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, MET Exon-14 skipping mutant NSCLC, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1742,
+        "end": 2079,
+        "text": "Participants must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, MET Exon-14 skipping mutant NSCLC, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1742,
+        "end": 2079,
+        "text": "Participants must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, MET Exon-14 skipping mutant NSCLC, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1742,
+        "end": 2079,
+        "text": "Participants must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, MET Exon-14 skipping mutant NSCLC, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1742,
+        "end": 2079,
+        "text": "Participants must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, MET Exon-14 skipping mutant NSCLC, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1742,
+        "end": 2079,
+        "text": "Participants must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, MET Exon-14 skipping mutant NSCLC, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1742,
+        "end": 2079,
+        "text": "Participants must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, MET Exon-14 skipping mutant NSCLC, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2927,
+        "end": 3050,
+        "text": "Participants must not have a prior treatment with anti-PD-1 or anti-PD-L1 antibody within 6 weeks of sub-study registration"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2203,
+        "end": 2306,
+        "text": "Participants must have received at least one line of systemic treatment for Stage IV or recurrent NSCLC"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5093,
+        "end": 5221,
+        "text": "Participants' most recent Zubrod performance status must be 0-2 and be documented within 28 days prior to sub-study registration"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5657,
+        "end": 5897,
+        "text": "Participants with known human immunodeficiency virus (HIV)-infection must be on effective anti-retroviral therapy and have undetectable viral load test on the most recent test results obtained within 6 months prior to sub-study registration"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6713,
+        "end": 6788,
+        "text": "Participants must not have other clinically active infectious liver disease"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6946,
+        "end": 7146,
+        "text": "Participants must not have a history of pneumonitis that required drug therapy or an active symptomatic interstitial lung disease (ILD)/pneumonitis, including drug-induced or radiation ILD/pneumonitis"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7989,
+        "end": 8163,
+        "text": "Participants must not be pregnant or breastfeeding (nursing includes breast milk fed to an infant by any means, including from the breast, milk expressed by hand, or pumped)."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1594,
+        "end": 1739,
+        "text": "NOTE: Participants can be on a low-dose corticosteroid treatment (≤ 10 mg prednisone or equivalent) for at least 14 days prior to study treatment"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "nctId": "NCT07423585",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 378,
+        "end": 506,
+        "text": "Have a histologically or cytologically documented new diagnosis of the extensive-stage (i.e., metastatic and/or recurrent) SCLC."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3855,
+        "end": 3913,
+        "text": "Symptomatic brain metastases and/or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3855,
+        "end": 3913,
+        "text": "Symptomatic brain metastases and/or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 894,
+        "end": 938,
+        "text": "Measurable disease according to RECIST v 1.1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7459,
+        "end": 7700,
+        "text": "Subjects with known active autoimmune disease or immune deficiency that has required systemic treatment or steroids (except replacement therapy) within the past 2 years or any other diseases requiring immunosuppressive therapy while on study"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8121,
+        "end": 8295,
+        "text": "Subjects with evidence of interstitial lung disease or active, non-infectious pneumonitis, or evidence of active pneumonitis on screening chest computed tomography (CT) scan."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5577,
+        "end": 5645,
+        "text": "Subjects with active hepatitis or HIV infection, testing is required"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5577,
+        "end": 5645,
+        "text": "Subjects with active hepatitis or HIV infection, testing is required"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8058,
+        "end": 8118,
+        "text": "Subjects with a known history of solid organ transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9126,
+        "end": 9300,
+        "text": "Females who are pregnant or planning to become pregnant or breastfeeding or who plan to breastfeed while on study through 60 days after receiving the last dose of tarlatamab."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Have a histologically or cytologically documented new diagnosis of the extensive-stage (i.e., metastatic and/or recurrent) SCLC.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Have a histologically or cytologically documented new diagnosis of the extensive-stage (i.e., metastatic and/or recurrent) SCLC.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of ecog",
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 2",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps0",
+          "ps1",
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 2",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of prior_pd1",
+      "quote": "Prior treatment for SCLC. Subjects with limited-stage SCLC (LS-SCLC) who progressed after 6 months from completing chemotherapy and radiation may be considered for inclusion after discussion with the sponsor",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never",
+          "progressed",
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior treatment for SCLC. Subjects with limited-stage SCLC (LS-SCLC) who progressed after 6 months from completing chemotherapy and radiation may be considered for inclusion after discussion with the sponsor",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of prior_platinum",
+      "quote": "Prior treatment for SCLC. Subjects with limited-stage SCLC (LS-SCLC) who progressed after 6 months from completing chemotherapy and radiation may be considered for inclusion after discussion with the sponsor",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "never",
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior treatment for SCLC. Subjects with limited-stage SCLC (LS-SCLC) who progressed after 6 months from completing chemotherapy and radiation may be considered for inclusion after discussion with the sponsor",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

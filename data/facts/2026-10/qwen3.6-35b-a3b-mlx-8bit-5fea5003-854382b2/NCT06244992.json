@@ -1,0 +1,121 @@
+{
+  "nctId": "NCT06244992",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 214,
+        "end": 304,
+        "text": "Locally advanced unresectable or metastatic solid tumor confirmed by histology or cytology"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 419,
+        "end": 526,
+        "text": "For Part B: On tumor imaging, as assessed by RECIST v1.1 and iRECIST, with at least one measurable disease."
+      },
+      "appliesTo": "Part B"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 561,
+        "end": 654,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS): 0-1 for Part A and Part B."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2029,
+        "end": 2074,
+        "text": "Patients with leptomeningeal (LMD) metastases"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2458,
+        "end": 2586,
+        "text": "History of primary malignancy other than the diseases under study, not in remission greater than three (3) years prior to Day 1."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3310,
+        "end": 3397,
+        "text": "Active systemic autoimmune disease or a history of autoimmune disorder that may relapse"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4011,
+        "end": 4211,
+        "text": "History of myocardial infarction, unstable or severe angina, or arterial thrombotic event (such as cerebrovascular attack \\[CVA\\] or transient ischemic attack \\[TIA\\]) within 12 months prior to Day 1."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with new and/or progressive brain metastases at the time of study entry.",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with new and/or progressive brain metastases at the time of study entry.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

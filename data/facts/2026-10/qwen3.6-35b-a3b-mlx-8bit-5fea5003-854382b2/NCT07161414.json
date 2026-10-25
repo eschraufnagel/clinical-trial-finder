@@ -1,0 +1,166 @@
+{
+  "nctId": "NCT07161414",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 120,
+        "text": "Histologically or cytologically documented advanced (metastatic and/or unresectable) solid tumor."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 518,
+        "end": 625,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 at enrollment with no deterioration."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1217,
+        "end": 1283,
+        "text": "Unstable, symptomatic brain metastasis or spinal cord compression."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1286,
+        "end": 1327,
+        "text": "History of leptomeningeal carcinomatosis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1330,
+        "end": 1567,
+        "text": "Active primary immunodeficiency/active infectious disease including tuberculosis (TB), human immunodeficiency virus (HIV) infection or hepatitis B or C infection or any other active or uncontrolled infection requiring systemic treatment."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1330,
+        "end": 1567,
+        "text": "Active primary immunodeficiency/active infectious disease including tuberculosis (TB), human immunodeficiency virus (HIV) infection or hepatitis B or C infection or any other active or uncontrolled infection requiring systemic treatment."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1570,
+        "end": 1815,
+        "text": "Clinically significant or uncontrolled cardiovascular disease, including clinically significant arrhythmias, symptomatic heart failure, cardiomyopathy or myocarditis, recent myocardial infarction or unstable angina, or uncontrolled hypertension."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1818,
+        "end": 2038,
+        "text": "Active or ongoing interstitial lung disease (ILD)/ pneumonitis, serious chronic gastrointestinal conditions associated with diarrhea; primary immunodeficiency, or non-infectious skin disease requiring systemic treatment."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2041,
+        "end": 2228,
+        "text": "Active or prior documented autoimmune or inflammatory disorders requiring chronic systemic treatment with the use of disease-modifying agents, corticosteroids, or immunosuppressive drugs."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 944,
+        "end": 1007,
+        "text": "History of organ transplant or allogeneic stem cell transplant."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1010,
+        "end": 1084,
+        "text": "History of another primary malignancy that was active within past 2 years."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically or cytologically documented advanced (metastatic and/or unresectable) solid tumor.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically documented advanced (metastatic and/or unresectable) solid tumor.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "nctId": "NCT07783477",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 78,
+        "end": 556,
+        "text": "History of DLL3+ neuroendocrine tumors\n\n  * Includes patients with histologically confirmed SCLC, as well other advanced neuroendocrine tumors (NETs), including large cell neuroendocrine carcinomas (LCNECs), gastroenteropancreatic NETs (GEP-NETs), laryngeal NETs, genitourinary (GU) tract NETs, neuroendocrine prostate cancers (NEPCs), gynecological tract NETs, neuroblastomas, salivary NETs, skin NETs, NETs of unknown primary, or other tumor confirmed positive for DLL3 by IHC"
+      },
+      "loose": true
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1024,
+        "end": 1323,
+        "text": "Any participant with histologically confirmed SCLC or DLL3 positive tumor who has had one line of approved systemic therapy for limited or extensive stage disease and has progressed or is no longer deriving benefit or standard treatment is no longer tolerable or declines further standard treatment."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5886,
+        "end": 6312,
+        "text": "CNS metastatic disease that is symptomatic (including use of steroids within 7 days prior to the first dose of LDC) or new/enlarging is excluded. Patients with treated brain metastases are permitted if treatment was completed at least 4 weeks prior to the first dose of LDC and the disease has remained radiographically stable for at least 4 weeks prior to the first dose of LDC, with neurologic symptoms returned to baseline."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1620,
+        "end": 1726,
+        "text": "At least 1 measurable lesion as defined per modified RECIST 1.1 within 21 days prior to first dose of LDC."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1796,
+        "end": 1864,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1326,
+        "end": 1448,
+        "text": "Prior treatment should include an approved platinum-based regimen with/without ICI therapy if applicable to their disease."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3239,
+        "end": 3529,
+        "text": "Pregnant or lactating female participants; female participants of reproductive potential, unless they agree to use a highly effective method of contraception or abstain from heterosexual intercourse while receiving study treatment and for at least 12 months after all treatment is finished."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5008,
+        "end": 5075,
+        "text": "Any autoimmune disease requiring active systemic immunosuppression."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4843,
+        "end": 4930,
+        "text": "Unresolved pneumonitis of any grade or history of any grade ICI-mediated CNS toxicities"
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4403,
+        "end": 4443,
+        "text": "Positive serologic test results for HIV."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4446,
+        "end": 4708,
+        "text": "Patients with active hepatitis B infection (as manifested by either detectable hepatitis B virus DNA by PCR and/or positivity for hepatitis B surface antigen)\n* Patients with active hepatitis C infection (as manifested by detectable hepatitis C virus RNA by PCR)"
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)",
+      "loose": true
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4347,
+        "end": 4400,
+        "text": "Myocardial infarction ≤ 6 months prior to enrollment."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1024,
+        "end": 1323,
+        "text": "Any participant with histologically confirmed SCLC or DLL3 positive tumor who has had one line of approved systemic therapy for limited or extensive stage disease and has progressed or is no longer deriving benefit or standard treatment is no longer tolerable or declines further standard treatment."
+      },
+      "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Participants previously treated with DLL3-specific therapies (i.e. antibody-drug conjugates, T-cell engager molecules) are permitted.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Participants previously treated with DLL3-specific therapies (i.e. antibody-drug conjugates, T-cell engager molecules) are permitted.",
+        "appliesTo": "Treatment with DLL3-SAVVYZ-IL18 CAR T cells (Part B)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

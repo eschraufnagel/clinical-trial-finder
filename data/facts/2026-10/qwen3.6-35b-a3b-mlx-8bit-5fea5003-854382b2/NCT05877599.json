@@ -1,0 +1,180 @@
+{
+  "nctId": "NCT05877599",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 401,
+        "end": 514,
+        "text": "Subject has advanced solid cancer, defined as unresectable, advanced, and/or metastatic disease (Stage III or IV)"
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 666,
+        "end": 706,
+        "text": "Subject has at least 1 measurable lesion"
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 709,
+        "end": 779,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1"
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 892,
+        "end": 961,
+        "text": "Any another primary malignancy within the 3 years prior to enrollment"
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 964,
+        "end": 1025,
+        "text": "Known, active primary central nervous system (CNS) malignancy"
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1028,
+        "end": 1140,
+        "text": "History of prior adoptive cell and gene therapy, allogeneic stem cell transplant or solid organ transplantation."
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1143,
+        "end": 1282,
+        "text": "History of clinically significant cardiac disease within the 6 months prior to enrollment or heart failure at any time prior to enrollment."
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1817,
+        "end": 1850,
+        "text": "ECOG performance status of 0 to 1"
+      },
+      "appliesTo": "Hematological malignancies (AML/MDS)"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1983,
+        "end": 2042,
+        "text": "Another primary malignancy within 2 years (with exceptions)"
+      },
+      "appliesTo": "Hematological malignancies (AML/MDS)"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2045,
+        "end": 2110,
+        "text": "HSCT within 100 days or immunosuppression for GvHD within 4 weeks"
+      },
+      "appliesTo": "Hematological malignancies (AML/MDS)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2113,
+        "end": 2229,
+        "text": "History of CNS or other extramedullary leukaemic involvement unless a lumbar puncture is negative for leukemic cells"
+      },
+      "appliesTo": "Hematological malignancies (AML/MDS)"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Subject must be diagnosed with one of the histologies below: NSCLC, Colorectal adenocarcinoma, HNSCC, Pancreatic adenocarcinoma, Breast cancer, Ovarian cancer, Any other solid tumor",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Subject must be diagnosed with one of the histologies below: NSCLC, Colorectal adenocarcinoma, HNSCC, Pancreatic adenocarcinoma, Breast cancer, Ovarian cancer, Any other solid tumor",
+        "appliesTo": "Solid tumors"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "nctId": "NCT06912087",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 149,
+        "text": "Histologically or cytologically confirmed recurrent and/or metastatic squamous cell carcinoma of the head and neck (R/M HNSCC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 200,
+        "text": "Histologically or cytologically confirmed recurrent and/or metastatic squamous cell carcinoma of the head and neck (R/M HNSCC), which is considered incurable by local therapies."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 389,
+        "end": 426,
+        "text": "ECOG Performance Status: Must be 0-1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 429,
+        "end": 518,
+        "text": "Measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 criteria."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2165,
+        "end": 2261,
+        "text": "Brain metastases or cranial epidural disease unless stable after treatment for at least 4 weeks."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2772,
+        "end": 2882,
+        "text": "Other malignancies within the past 2 years (except for certain low-grade cancers like localized skin cancers)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2561,
+        "end": 2681,
+        "text": "Known or suspected autoimmune disease, except for specific conditions like type I diabetes or controlled skin disorders."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2684,
+        "end": 2769,
+        "text": "Pregnancy or breastfeeding: Women must not be pregnant or breastfeeding at screening."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

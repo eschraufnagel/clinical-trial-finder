@@ -1,0 +1,96 @@
+{
+  "nctId": "NCT05652686",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 187,
+        "end": 242,
+        "text": "NECs that have transformed from NSCLC are not eligible."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 311,
+        "end": 487,
+        "text": "unresectable advanced or metastatic small cell lung cancer (SCLC), large cell neuroendocrine carcinoma of the lung (LCNEC), or extrapulmonary neuroendocrine carcinoma (EP-NEC)."
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 112,
+        "end": 183,
+        "text": "Measurable disease as defined by RECIST v1.1 criteria for solid tumors."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3163,
+        "end": 3197,
+        "text": "ECOG performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3348,
+        "end": 3384,
+        "text": "Women who are pregnant or lactating."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3471,
+        "end": 3549,
+        "text": "Autoimmune disease requiring systemic treatment within the past twelve months."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

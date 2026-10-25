@@ -1,0 +1,136 @@
+{
+  "nctId": "NCT07222267",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 32,
+        "end": 149,
+        "text": "Participants with histologically or cytologically confirmed advanced, metastatic breast cancer and other solid tumors"
+      },
+      "appliesTo": "Part 1A"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 306,
+        "end": 417,
+        "text": "Participants with advanced breast cancer with 1 to 3 prior lines of systemic therapy in the metastatic setting."
+      },
+      "appliesTo": "Part 1B and Part 2A"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 587,
+        "end": 886,
+        "text": "Participants with advanced breast cancer enrolled in regions where cyclin-dependent kinase 4/6 (CDK4/6) inhibitors are not approved and/or not available as the first-line treatment and who are CDK4/6 inhibitor treatment naïve and did not receive any previous systemic treatment for advanced disease."
+      },
+      "appliesTo": "Parts 2B and 2C"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 889,
+        "end": 1030,
+        "text": "Participants with breast cancer must have histologically or cytologically confirmed advanced breast cancer at the time of most recent testing"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1267,
+        "end": 1361,
+        "text": "Measurable disease as assessed by Response Evaluation Criteria in Solid Tumors (RECIST) v 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1364,
+        "end": 1442,
+        "text": "Stable Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1552,
+        "end": 1640,
+        "text": "Patients with active leptomeningeal disease or uncontrolled, untreated brain metastasis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1552,
+        "end": 1640,
+        "text": "Patients with active leptomeningeal disease or uncontrolled, untreated brain metastasis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1643,
+        "end": 1942,
+        "text": "Participants with any malignancy ≤ 3 years before screening for the study except for the specific cancer under investigation in this study and any locally recurring cancer that has been treated curatively which in the opinion of the investigator is unlikely to require intervention during the study."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

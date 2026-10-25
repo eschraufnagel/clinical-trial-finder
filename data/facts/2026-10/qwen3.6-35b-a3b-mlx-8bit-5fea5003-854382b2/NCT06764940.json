@@ -1,0 +1,197 @@
+{
+  "nctId": "NCT06764940",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 93,
+        "text": "Have histologically confirmed HER2-negative metastatic breast cancer."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 237,
+        "end": 391,
+        "text": "Based on screening contrast-enhanced brain MRI, patients must have at least one measurable intracranial lesion according to RECIST 1.1 (≥1.0 cm in size) ."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 429,
+        "end": 444,
+        "text": "ECOG PS 0 or 1."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 591,
+        "end": 657,
+        "text": "≤ 3 prior lines of chemotherapy in advanced or metastatic setting."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2085,
+        "end": 2164,
+        "text": "Leptomeningeal metastasis confirmed by MRI and/or cerebrospinal fluid cytology."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2932,
+        "end": 3184,
+        "text": "Patients who have received anti-tumor therapies less than 2 weeks before the first dose of investigational product, including endocrine therapy, chemotherapy, radiotherapy, biotherapy, targeted therapy, immunotherapy or antibody-drug conjugate therapy."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2932,
+        "end": 3184,
+        "text": "Patients who have received anti-tumor therapies less than 2 weeks before the first dose of investigational product, including endocrine therapy, chemotherapy, radiotherapy, biotherapy, targeted therapy, immunotherapy or antibody-drug conjugate therapy."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3991,
+        "end": 4227,
+        "text": "Patients with other malignancies over the past 5 years, except for inactive tumors with good prognosis, including resected basal cell and squamous cell carcinoma of the skin, in-situ carcinoma of the cervix, or papillary thyroid cancer."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4473,
+        "end": 4745,
+        "text": "Known active or uncontrolled hepatitis B infection, active syphilis, or HIV infection that is not well controlled; or positive for hepatitis B virus based on the evaluation of results of tests for hepatitis B (HBsAg, anti-HBs, anti-HBc, or HBV DNA) infection at screening."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4805,
+        "end": 4875,
+        "text": "Autoimmune diseases requiring treatment with systemic glucocorticoids."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3921,
+        "end": 3986,
+        "text": "Patients who are pregnant (positive pregnancy test) or lactating."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Have histologically confirmed HER2-negative metastatic breast cancer.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Have histologically confirmed HER2-negative metastatic breast cancer.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Patients who have received anti-tumor therapies less than 2 weeks before the first dose of investigational product, including endocrine therapy, chemotherapy, radiotherapy, biotherapy, targeted therapy, immunotherapy or antibody-drug conjugate therapy.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who have received anti-tumor therapies less than 2 weeks before the first dose of investigational product, including endocrine therapy, chemotherapy, radiotherapy, biotherapy, targeted therapy, immunotherapy or antibody-drug conjugate therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Patients who have received anti-tumor therapies less than 2 weeks before the first dose of investigational product, including endocrine therapy, chemotherapy, radiotherapy, biotherapy, targeted therapy, immunotherapy or antibody-drug conjugate therapy.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who have received anti-tumor therapies less than 2 weeks before the first dose of investigational product, including endocrine therapy, chemotherapy, radiotherapy, biotherapy, targeted therapy, immunotherapy or antibody-drug conjugate therapy.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "nctId": "NCT07658196",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 398,
+        "end": 500,
+        "text": "Must have documented CRC or appendiceal adenocarcinoma peritoneal carcinomatosis or malignant ascites."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 398,
+        "end": 500,
+        "text": "Must have documented CRC or appendiceal adenocarcinoma peritoneal carcinomatosis or malignant ascites."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 585,
+        "end": 715,
+        "text": "Must have evaluable disease by physical examination, serum tumor markers, radiologic assessment, or laparoscopic visual assessment"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 801,
+        "end": 832,
+        "text": "Must have an ECOG status of ≤ 2"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2895,
+        "end": 3043,
+        "text": "Has known, clinically active Hepatitis B Virus (HBV), Hepatitis C Virus (HCV), or Human Immunodeficiency Virus (HIV) (Note: Testing is not required)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3048,
+        "end": 3144,
+        "text": "Receiving continuous systemic corticosteroid therapy (≥ 10 mg/day of prednisolone or equivalent)"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3257,
+        "end": 3378,
+        "text": "A history of newly diagnosed transmural myocardial infarction, cerebral infarction, or pulmonary embolism within 6 months"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3795,
+        "end": 3887,
+        "text": "Other active malignancy within 2 years excluding cutaneous squamous or basal cell carcinomas"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4170,
+        "end": 4225,
+        "text": "Pregnant, likely to become pregnant, or lactating women"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

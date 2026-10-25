@@ -1,0 +1,207 @@
+{
+  "nctId": "NCT06110572",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 121,
+        "end": 171,
+        "text": "diagnosis of extensive stage small-celllung cancer"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 500,
+        "end": 567,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1692,
+        "end": 1917,
+        "text": "Presence of brain metastases allowed (should undergo management with surgery and/or radiation therapy if symptomatic prior to TESSERACT radiation regimen; upfront cranial irradiation not mandatory on protocol if asymptomatic)"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7003,
+        "end": 7036,
+        "text": "History of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 172,
+        "end": 219,
+        "text": "with evaluable disease per RECIST v1.1 criteria"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2026,
+        "end": 2084,
+        "text": "Female patients must be non-pregnant and not breastfeeding"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7925,
+        "end": 7985,
+        "text": "Active or history of autoimmune disease or immune deficiency"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9198,
+        "end": 9408,
+        "text": "History of idiopathic pulmonary fibrosis, organizing pneumonia (e.g., bronchiolitis obliterans), drug-induced pneumonitis, or idiopathic pneumonitis, or evidence of active pneumonitis on screening chest CT scan"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1405,
+        "end": 1637,
+        "text": "Negative HIV test at screening, with the following exception: patients with positive HIV test at screening are eligible provided they are stable on anti-retroviral therapy, have a CD4 count ≥ 200, and have an undetectable viral load"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4429,
+        "end": 4673,
+        "text": "Known clinically significant (per study physician) acute or chronic infections including HIV (per inclusion criteria above), hepatitis B virus (HBV), hepatitis C virus (HCV) or active tuberculosis (testing not required for tuberculosis \\[TB\\])."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4820,
+        "end": 5075,
+        "text": "Significant cardiovascular disease (such as New York Heart Association Class II or greater cardiac disease, myocardial infarction, or cerebrovascular accident) within 3 months prior to initiation of study treatment, unstable arrhythmia, or unstable angina"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9874,
+        "end": 9931,
+        "text": "Prior allogeneic stem cell or solid organ transplantation"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5457,
+        "end": 5763,
+        "text": "History of prior malignancy within 3 years of enrollment, except for adequately treated basal or squamous cell carcinoma of the skin, adequately treated carcinoma in situ (e.g. cervix or non- invasive bladder cancer) or other malignancy with minimal risk of metastasis or death (survival \\> 90% at 5 years)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically documented or cytologically confirmed diagnosis of extensive stage small-celllung cancer",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically documented or cytologically confirmed diagnosis of extensive stage small-celllung cancer",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior treatment with CD137 agonists or immune checkpoint blockade therapies, including anti- CTLA-4, and anti-PD-L1 therapeutic antibodies",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior treatment with CD137 agonists or immune checkpoint blockade therapies, including anti- CTLA-4, and anti-PD-L1 therapeutic antibodies",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

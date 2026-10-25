@@ -1,0 +1,79 @@
+{
+  "nctId": "NCT07013565",
+  "mappings": [
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 92,
+        "end": 211,
+        "text": "Patients with relapsed or refractory histologically or cytologically proven ALK-positive anaplastic large cell lymphoma"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 818,
+        "end": 862,
+        "text": "ALK-NEGATIVE anaplastic large cell lymphoma."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 865,
+        "end": 933,
+        "text": "Patients with active leptomeningeal disease (lymphoma cells in CSF)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1284,
+        "end": 1383,
+        "text": "Any patient known to have primary or acquired immunodeficiency and/or prior solid organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1011,
+        "end": 1044,
+        "text": "Female patients who are pregnant."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

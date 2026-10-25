@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT07554339",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 282,
+        "text": "Has a histological or cytological diagnosis of locally advanced, unresected Stage II (node-positive) to III non-small cell lung cancer (NSCLC) with predominantly nonsquamous histology."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 282,
+        "text": "Has a histological or cytological diagnosis of locally advanced, unresected Stage II (node-positive) to III non-small cell lung cancer (NSCLC) with predominantly nonsquamous histology."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 600,
+        "end": 707,
+        "text": "Tumor tissue sample has a demonstrated presence of KRAS G12C mutation and an evaluable PD-L1 status result."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 710,
+        "end": 814,
+        "text": "If human immunodeficiency virus (HIV)-infected, has well-controlled HIV on antiretroviral therapy (ART)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 817,
+        "end": 957,
+        "text": "If hepatitis B surface antigen (HBsAg)-positive, has undetectable hepatitis B virus (HBV) viral load and has received HBV antiviral therapy."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1756,
+        "end": 1867,
+        "text": "Has a known additional malignancy that is progressing or has required active treatment within the past 3 years."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1870,
+        "end": 1960,
+        "text": "Has an active autoimmune disease that has required systemic treatment in the past 2 years."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1963,
+        "end": 2083,
+        "text": "Has a history of, or has current, (noninfectious) pneumonitis/interstitial lung disease that required/requires steroids."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2140,
+        "end": 2190,
+        "text": "Has a history of stem cell/solid organ transplant."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Tumor tissue sample has a demonstrated presence of KRAS G12C mutation and an evaluable PD-L1 status result.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Tumor tissue sample has a demonstrated presence of KRAS G12C mutation and an evaluable PD-L1 status result.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

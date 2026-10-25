@@ -1,0 +1,169 @@
+{
+  "nctId": "NCT07252739",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 226,
+        "text": "Has histologically or cytologically confirmed diagnosis of advanced or metastatic nonsquamous Non-Small Cell Lung Cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 229,
+        "end": 395,
+        "text": "Has tumor tissue or circulating tumor deoxyribonucleic acid (ctDNA) that demonstrates the presence of Kirsten rat sarcoma viral oncogene homolog (KRAS) G12C mutations"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1172,
+        "end": 1267,
+        "text": "Has a diagnosis of small cell lung cancer or, for mixed tumors, presence of small cell elements"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2147,
+        "end": 2226,
+        "text": "Has received prior systemic anticancer therapy for advanced or metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2229,
+        "end": 2543,
+        "text": "Has received any prior immunotherapy and was discontinued from that treatment due to a Grade 3 or higher immune-related adverse event (irAE) (except endocrine disorders that can be treated with replacement therapy) or was discontinued from that treatment due to Grade 2 myocarditis or recurrent Grade 2 pneumonitis"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2546,
+        "end": 2606,
+        "text": "Has received previous treatment with an agent targeting KRAS"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3310,
+        "end": 3400,
+        "text": "Has a known active central nervous system (CNS) metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3310,
+        "end": 3400,
+        "text": "Has a known active central nervous system (CNS) metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3403,
+        "end": 3493,
+        "text": "Has an active autoimmune disease that has required systemic treatment in the past 2 years."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3583,
+        "end": 3821,
+        "text": "Has a history of (noninfectious) pneumonitis/interstitial lung disease (ILD) that required steroids, has current pneumonitis/ILD, or has suspected ILD or pneumonitis that cannot be ruled out by standard diagnostic assessments at screening"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3824,
+        "end": 3873,
+        "text": "Has a history of stem cell/solid organ transplant"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2983,
+        "end": 3087,
+        "text": "is receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

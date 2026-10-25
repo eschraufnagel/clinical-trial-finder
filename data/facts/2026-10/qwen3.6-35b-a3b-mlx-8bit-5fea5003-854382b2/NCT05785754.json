@@ -1,0 +1,214 @@
+{
+  "nctId": "NCT05785754",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1063,
+        "end": 1212,
+        "text": "Non-squamous NSCLC for which prior standard first-line treatment containing an anti-PD-(1/L1) checkpoint inhibitor alone or in combination has failed"
+      },
+      "appliesTo": "Phase 1b Dose Optimization/Expansion"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 230,
+        "end": 283,
+        "text": "advanced (metastatic and/or unresectable) solid tumor"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10801,
+        "end": 10875,
+        "text": "Patients with known active CNS metastases and or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3761,
+        "end": 3832,
+        "text": "Patients must have at least 1 measurable lesion according to RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5040,
+        "end": 5108,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 to 2."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1848,
+        "end": 2129,
+        "text": "Patients with known driver mutations/genomic aberrations (i.e., EGFR, B-Raf proto-oncogene mutation V600E \\[BRAF V600E\\], and ROS proto-oncogene 1 \\[ROS1\\] sensitizing mutations, neurotrophic receptor tyrosine kinase \\[NRTK\\] gene fusions, and ALK rearrangements) are not eligible."
+      },
+      "appliesTo": "Phase 1b Dose Optimization/Expansion"
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1848,
+        "end": 2129,
+        "text": "Patients with known driver mutations/genomic aberrations (i.e., EGFR, B-Raf proto-oncogene mutation V600E \\[BRAF V600E\\], and ROS proto-oncogene 1 \\[ROS1\\] sensitizing mutations, neurotrophic receptor tyrosine kinase \\[NRTK\\] gene fusions, and ALK rearrangements) are not eligible."
+      },
+      "appliesTo": "Phase 1b Dose Optimization/Expansion"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1848,
+        "end": 2129,
+        "text": "Patients with known driver mutations/genomic aberrations (i.e., EGFR, B-Raf proto-oncogene mutation V600E \\[BRAF V600E\\], and ROS proto-oncogene 1 \\[ROS1\\] sensitizing mutations, neurotrophic receptor tyrosine kinase \\[NRTK\\] gene fusions, and ALK rearrangements) are not eligible."
+      },
+      "appliesTo": "Phase 1b Dose Optimization/Expansion"
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1848,
+        "end": 2129,
+        "text": "Patients with known driver mutations/genomic aberrations (i.e., EGFR, B-Raf proto-oncogene mutation V600E \\[BRAF V600E\\], and ROS proto-oncogene 1 \\[ROS1\\] sensitizing mutations, neurotrophic receptor tyrosine kinase \\[NRTK\\] gene fusions, and ALK rearrangements) are not eligible."
+      },
+      "appliesTo": "Phase 1b Dose Optimization/Expansion"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1848,
+        "end": 2129,
+        "text": "Patients with known driver mutations/genomic aberrations (i.e., EGFR, B-Raf proto-oncogene mutation V600E \\[BRAF V600E\\], and ROS proto-oncogene 1 \\[ROS1\\] sensitizing mutations, neurotrophic receptor tyrosine kinase \\[NRTK\\] gene fusions, and ALK rearrangements) are not eligible."
+      },
+      "appliesTo": "Phase 1b Dose Optimization/Expansion"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12498,
+        "end": 12586,
+        "text": "Autoimmune disease requiring systemic immunosuppressive therapy within the past 2 years."
+      },
+      "appliesTo": "For patients receiving a combination with pembrolizumab"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13177,
+        "end": 13318,
+        "text": "History of (noninfectious) pneumonitis/interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease."
+      },
+      "appliesTo": "For patients receiving a combination with pembrolizumab"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13326,
+        "end": 13381,
+        "text": "History of allogeneic tissue or solid organ transplant."
+      },
+      "appliesTo": "For patients receiving a combination with pembrolizumab"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15263,
+        "end": 15327,
+        "text": "Female patients who are pregnant or lactating and breastfeeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with previously treated CNS metastases may participate provided that: They are stable (i.e., without evidence of progression by magnetic resonance imaging [MRI]) for ≥ 4 weeks prior to the first dose of study drug), and All neurologic symptoms have returned to baseline",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with previously treated CNS metastases may participate provided that: They are stable (i.e., without evidence of progression by magnetic resonance imaging [MRI]) for ≥ 4 weeks prior to the first dose of study drug), and All neurologic symptoms have returned to baseline",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

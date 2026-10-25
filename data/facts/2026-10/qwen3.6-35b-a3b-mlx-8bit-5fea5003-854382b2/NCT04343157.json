@@ -1,0 +1,79 @@
+{
+  "nctId": "NCT04343157",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 54,
+        "end": 208,
+        "text": "Eligible for intracranial SRS: Limited brain metastases targets geometrically feasible for SRS (intact or resected tumor bed), meningioma, or cerebral AVM"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 212,
+        "end": 365,
+        "text": "Eastern cooperative Oncology Group (ECOG) performance status 0-2 (score of 0, no symptoms; 1, mild symptoms; 2, symptomatic, \\<50% in bed during the day)"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1199,
+        "end": 1245,
+        "text": "Leptomeningeal metastases (ineligible for SRS)"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1249,
+        "end": 1356,
+        "text": "Metastases from primary germ cell tumor, small cell carcinoma, or primary CNS lymphoma (ineligible for SRS)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 759,
+        "end": 784,
+        "text": "Pregnant or nursing women"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

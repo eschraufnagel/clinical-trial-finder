@@ -1,0 +1,93 @@
+{
+  "nctId": "NCT05892718",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 124,
+        "end": 431,
+        "text": "Histologically/cytologically confirmed, locally advanced solid tumor: subjects with histologically or cytologically confirmed advanced solid tumors refractory to standard therapy, or for which no standard treatment exists or non-Hodgkin lymphoma, relapsed or refractory to at least 2 prior lines of therapy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 435,
+        "end": 600,
+        "text": "For subjects with advanced solid tumor - must have at least 1 measurable lesion as defined by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 at baseline."
+      },
+      "appliesTo": "advanced solid tumor"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 775,
+        "end": 832,
+        "text": "Must have ECOG performance status of 0 to 2 at Screening."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2247,
+        "end": 2340,
+        "text": "Have other malignancies requiring treatment within 2 years prior to the first dose of HCB101."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2584,
+        "end": 2698,
+        "text": "Positive for hepatitis B, active hepatitis C infections, positive for HIV, or known active or latent tuberculosis."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2584,
+        "end": 2698,
+        "text": "Positive for hepatitis B, active hepatitis C infections, positive for HIV, or known active or latent tuberculosis."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

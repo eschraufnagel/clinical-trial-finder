@@ -1,0 +1,79 @@
+{
+  "nctId": "NCT06629584",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 631,
+        "end": 659,
+        "text": "ECOG performance status ≤ 2."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4539,
+        "end": 4636,
+        "text": "Patients with known active infection with human immunodeficiency virus (HIV) or Hepatitis B or C."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4539,
+        "end": 4636,
+        "text": "Patients with known active infection with human immunodeficiency virus (HIV) or Hepatitis B or C."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5163,
+        "end": 5342,
+        "text": "History of other active malignancy within 2 years prior to study entry except for previous or concomitant basal cell skin cancer and previous carcinoma in situ treated curatively."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4781,
+        "end": 4997,
+        "text": "Nursing women, women of childbearing potential (WOCBP) with positive blood or urine pregnancy test, or women of childbearing potential who are not willing to maintain adequate contraception (see inclusion criteria 8)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

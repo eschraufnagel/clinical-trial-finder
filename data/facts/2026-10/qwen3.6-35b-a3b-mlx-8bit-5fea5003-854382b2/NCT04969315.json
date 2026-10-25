@@ -1,0 +1,174 @@
+{
+  "nctId": "NCT04969315",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2071,
+        "end": 2148,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) score 0 - 2"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2310,
+        "end": 2456,
+        "text": "Have measurable disease per RECIST 1.1 (Eisenhauer et al 2009) except as specified below and as assessed by the local site investigator/radiology."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6960,
+        "end": 7016,
+        "text": "Human immunodeficiency virus (HIV)-infected participants"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7918,
+        "end": 8221,
+        "text": "Participants requiring immunosuppressive therapy: Participants who require systemic immunosuppressive therapy at Screening or within 14 days prior to first dose are excluded. Systemic immunosuppressive therapy includes, but is not limited to, chronic corticosteroids at \\>10 mg/day prednisone equivalent"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10493,
+        "end": 10546,
+        "text": "Female participants who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10551,
+        "end": 10686,
+        "text": "Concurrent active malignancy other than non-melanoma skin cancer, carcinoma in situ of the cervix or prostate intraepithelial neoplasia"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10691,
+        "end": 10900,
+        "text": "Past medical history of interstitial lung disease, drug-induced interstitial lung disease, radiation pneumonitis which required steroid treatment, or any evidence of clinically active interstitial lung disease"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11007,
+        "end": 11177,
+        "text": "History of stroke, unstable angina, myocardial infarction or ventricular arrhythmia requiring medication or mechanical control within the last 6 months prior to Screening"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Diagnosis of histologically or cytologically confirmed advanced selected solid tumors: ... RCC: Participants with locally advanced or metastatic RCC ... CRPC: Participants with metastatic CRPC ... Non-small cell lung cancer (NSCLC): Participants with metastatic NSCLC ... Cohort C Only d. PM: Participants with unresectable, metastatic PM",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "Diagnosis of histologically or cytologically confirmed advanced selected solid tumors: ... RCC: Participants with locally advanced or metastatic RCC ... CRPC: Participants with metastatic CRPC ... Non-small cell lung cancer (NSCLC): Participants with metastatic NSCLC ... Cohort C Only d. PM: Participants with unresectable, metastatic PM",
+        "appliesTo": "All Cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with active CNS metastases are excluded. ... Participants with treated CNS metastases are eligible provided all of the following are met: ... Neurologically stable ... No evidence of progression of CNS lesions on screening brain MRI",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with active CNS metastases are excluded. ... Participants with treated CNS metastases are eligible provided all of the following are met: ... Neurologically stable ... No evidence of progression of CNS lesions on screening brain MRI",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "No leptomeningeal metastases (LMD excluded). ... Leptomeningeal metastases are not eligible.",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "No leptomeningeal metastases (LMD excluded). ... Leptomeningeal metastases are not eligible.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants who are hepatitis B surface antigen positive are eligible if they have received hepatitis B virus (HBV) antiviral therapy for at least 4 weeks and have undetectable HBV viral load prior to enrollment ... Participants with a history of hepatitis C virus (HCV) infection are eligible if HCV viral load is undetectable at Screening.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants who are hepatitis B surface antigen positive are eligible if they have received hepatitis B virus (HBV) antiviral therapy for at least 4 weeks and have undetectable HBV viral load prior to enrollment ... Participants with a history of hepatitis C virus (HCV) infection are eligible if HCV viral load is undetectable at Screening.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

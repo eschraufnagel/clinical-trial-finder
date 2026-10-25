@@ -1,0 +1,150 @@
+{
+  "nctId": "NCT06618287",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 125,
+        "text": "Participants must have at least one measurable lesion per response evaluation criteria in solid tumors."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 128,
+        "end": 225,
+        "text": "Participants must have an Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1352,
+        "end": 1468,
+        "text": "Participants must not have any mixed Small Cell Lung Cancer (SCLC) and Non-Small Cell Lung Cancer (NSCLC) histology."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 332,
+        "end": 416,
+        "text": "Participants must have pathologically confirmed locally advanced or metastatic NSCLC"
+      },
+      "appliesTo": "Group A"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 835,
+        "end": 970,
+        "text": "Participants must have pathologically confirmed locally-advanced, recurrent inoperable, or metastatic TNBC or ER-low, HER2-negative BC."
+      },
+      "appliesTo": "Group C"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 982,
+        "end": 1110,
+        "text": "Participants must have pathologically confirmed locally-advanced, recurrent inoperable, or metastatic TNBC per ASCO/CAP criteria"
+      },
+      "appliesTo": "Group D"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1197,
+        "end": 1328,
+        "text": "Participants must have pathologically confirmed locally advanced or metastatic NSCLC, not amenable to treatment in curative intent."
+      },
+      "appliesTo": "Group E"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1471,
+        "end": 1548,
+        "text": "Participants with known mutations in EGFR will be excluded (Group A,B and E)."
+      },
+      "appliesTo": "Group A, B and E"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have pathologically confirmed locally advanced or metastatic NSCLC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have pathologically confirmed locally advanced or metastatic NSCLC",
+        "appliesTo": "Group B"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have pathologically confirmed locally advanced or metastatic NSCLC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have pathologically confirmed locally advanced or metastatic NSCLC",
+        "appliesTo": "Group E"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

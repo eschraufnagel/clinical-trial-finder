@@ -1,0 +1,155 @@
+{
+  "nctId": "NCT06741644",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 319,
+        "end": 353,
+        "text": "unresectable advanced solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 872,
+        "end": 941,
+        "text": "at least one measurable lesion as defined per RECIST v1.1 solid tumor"
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 945,
+        "end": 1015,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1457,
+        "end": 1589,
+        "text": "History of a second malignancy active within the previous 3 years except for locally curable cancers that have been apparently cured"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1593,
+        "end": 1730,
+        "text": "Known primary central nervous system (CNS) tumor or solid tumor CNS metastasis that is either symptomatic, untreated, or requires therapy"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2070,
+        "end": 2132,
+        "text": "Active or prior history of definite inflammatory bowel disease"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2136,
+        "end": 2282,
+        "text": "History of (non-infectious) interstitial lung disease (ILD)/pneumonitis that required steroids, or presence of active or suspected ILD/pneumonitis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2400,
+        "end": 2505,
+        "text": "Positive for human immunodeficiency virus (HIV) or presence of acquired immune deficiency syndrome (AIDS)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2509,
+        "end": 2542,
+        "text": "Active Hepatitis B or C infection"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3058,
+        "end": 3156,
+        "text": "History of allogeneic organ transplantation and allogeneic hematopoietic stem cell transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3673,
+        "end": 3726,
+        "text": "Female participants who are pregnant or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

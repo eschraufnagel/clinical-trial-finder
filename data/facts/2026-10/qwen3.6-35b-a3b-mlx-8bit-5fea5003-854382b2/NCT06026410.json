@@ -1,0 +1,159 @@
+{
+  "nctId": "NCT06026410",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 603,
+        "end": 637,
+        "text": "locally advanced or metastatic RCC"
+      },
+      "appliesTo": "Arm #2 (Combination)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 975,
+        "end": 1025,
+        "text": "locally advanced or metastatic NSCLC, CRC, or PDAC"
+      },
+      "appliesTo": "Arm #3 (Combination)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1169,
+        "end": 1205,
+        "text": "locally advanced or metastatic ccRCC"
+      },
+      "appliesTo": "Arm #4 (Combination)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 975,
+        "end": 1011,
+        "text": "locally advanced or metastatic NSCLC"
+      },
+      "appliesTo": "Arm #7 (Combination)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1964,
+        "end": 2045,
+        "text": "Measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2048,
+        "end": 2092,
+        "text": "Karnofsky Performance Status of 70 or higher"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2598,
+        "end": 2620,
+        "text": "leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3402,
+        "end": 3443,
+        "text": "Other invasive malignancy within 2 years."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "locally advanced or metastatic RCC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "locally advanced or metastatic RCC",
+        "appliesTo": "Arm #2 (Combination)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "locally advanced or metastatic ccRCC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "locally advanced or metastatic ccRCC",
+        "appliesTo": "Arm #5 (Cabozantinib monotherapy)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "locally advanced or metastatic ccRCC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "locally advanced or metastatic ccRCC",
+        "appliesTo": "Arm #6 (Cabozantinib rollover to combination)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "nctId": "NCT06795412",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 411,
+        "text": "Histologically or cytologically confirmed advanced solid tumors, including first-line (1L) head and neck squamous cell carcinoma (HNSCC), advanced or metastatic triple negative breast cancer (TNBC), hormone receptor positive (HR+) and human epidermal growth factor receptor 2 negative breast cancer (HER2- BC), gastric cancer (GC), cervical cancer, and second-line and higher (2L+) HNSCC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 411,
+        "text": "Histologically or cytologically confirmed advanced solid tumors, including first-line (1L) head and neck squamous cell carcinoma (HNSCC), advanced or metastatic triple negative breast cancer (TNBC), hormone receptor positive (HR+) and human epidermal growth factor receptor 2 negative breast cancer (HER2- BC), gastric cancer (GC), cervical cancer, and second-line and higher (2L+) HNSCC."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 489,
+        "end": 563,
+        "text": "Eastern Cooperative Oncology Group Performance Status (ECOG PS) of 0 to 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 567,
+        "end": 690,
+        "text": "Participant must have at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 criteria."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1016,
+        "end": 1121,
+        "text": "Known additional malignancy that is progressing or has required active treatment within the past 2 years."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1125,
+        "end": 1213,
+        "text": "Have any active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1125,
+        "end": 1213,
+        "text": "Have any active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1217,
+        "end": 1297,
+        "text": "Significant cardiovascular disease within 6 months prior to start of study drug."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1421,
+        "end": 1564,
+        "text": "Known active hepatitis B virus (HBV), hepatitis C virus (HCV), human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome (AIDS)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1421,
+        "end": 1564,
+        "text": "Known active hepatitis B virus (HBV), hepatitis C virus (HCV), human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome (AIDS)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1968,
+        "end": 2074,
+        "text": "Participants with immunodeficiency or active autoimmune disease that is contraindicated for pembrolizumab."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2079,
+        "end": 2224,
+        "text": "Participants with a history of (noninfectious) pneumonitis/interstitial lung disease (ILD) that required steroids or has current pneumonitis/ILD."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2229,
+        "end": 2294,
+        "text": "Prior solid organ or bone marrow progenitor cell transplantation."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2360,
+        "end": 2535,
+        "text": "Previously received treatment with a programmed death-1 (PD-1)/L1 inhibitor any prior treatment with an agent directed to another stimulatory or co inhibitory T-cell receptor."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

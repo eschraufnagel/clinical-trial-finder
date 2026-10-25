@@ -1,0 +1,193 @@
+{
+  "nctId": "NCT06225804",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 166,
+        "end": 304,
+        "text": "Patients with histologically or cytologically confirmed locally advanced (and not a candidate for definitive therapy) or metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 166,
+        "end": 304,
+        "text": "Patients with histologically or cytologically confirmed locally advanced (and not a candidate for definitive therapy) or metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 849,
+        "end": 930,
+        "text": "Patients must have at least one measurable target lesion according to RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 934,
+        "end": 964,
+        "text": "ECOG performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 351,
+        "end": 531,
+        "text": "For the escalation part (except for the RDE confirmation part), patients have progressed on, rejected, or are intolerant of standard therapy, or for whom no standard therapy exists"
+      },
+      "appliesTo": "escalation part"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 628,
+        "end": 845,
+        "text": "For the expansion part, patients have documented EGFR in-frame exon 20 insertion mutations confirmed by certificated local laboratories; and must also meet all criteria for the cohort in which their entry is proposed."
+      },
+      "appliesTo": "expansion part"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 538,
+        "end": 621,
+        "text": "For RDE confirmation in the escalation part: same as Cohort 1 in the expansion part"
+      },
+      "appliesTo": "RDE confirmation in the escalation part"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4024,
+        "end": 4184,
+        "text": "Have current spinal cord compression (symptomatic or asymptomatic and detected by radiographic imaging) or leptomeningeal disease (symptomatic or asymptomatic)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4262,
+        "end": 4365,
+        "text": "Known acquired immunodeficiency syndrome (AIDS)-related illness, or positive test for HIV 1/2 antibody."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4459,
+        "end": 4596,
+        "text": "Active hepatitis B infection: positive tests for hepatitis B surface antigen (HbsAg), or antibody to hepatitis B core antigen (anti-HBc)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4725,
+        "end": 4791,
+        "text": "Active hepatitis C infection: positive Hepatitis C virus antibody."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5380,
+        "end": 5650,
+        "text": "Pregnant or nursing (lactating) women, where pregnancy is defined as the state of a female after conception and until the termination of gestation, confirmed by a positive human chorionic gonadotropin (hCG) laboratory test within 7 days prior to the start of study drug."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2129,
+        "end": 2494,
+        "text": "Have been diagnosed with another primary malignancy other than NSCLC except for adequately treated non-melanoma skin cancer or cervical cancer in situ; definitively treated non-metastatic prostate cancer; or patients with another primary malignancy who are definitively relapse-free with at least 3 years elapsed since the diagnosis of the other primary malignancy."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Current evidence or previous history of interstitial lung disease (ILD).",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current",
+          "past"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current evidence or previous history of interstitial lung disease (ILD).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

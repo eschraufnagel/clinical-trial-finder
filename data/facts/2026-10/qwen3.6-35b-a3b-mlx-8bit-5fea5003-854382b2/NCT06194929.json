@@ -1,0 +1,196 @@
+{
+  "nctId": "NCT06194929",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 344,
+        "end": 457,
+        "text": "Histologically confirmed diagnosis of cutaneous melanoma with radiographically confirmed metastases to the brain."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 344,
+        "end": 457,
+        "text": "Histologically confirmed diagnosis of cutaneous melanoma with radiographically confirmed metastases to the brain."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4129,
+        "end": 4177,
+        "text": "History of or current leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 725,
+        "end": 977,
+        "text": "Must have at least 1 untreated (no prior resection or radiation of the target lesion) parenchymal brain metastasis with minimal dimensions of ≥ 0.5 cm diameter and maximal dimensions ≤ 4 cm diameter, measured from a gadolinium enhanced MRI T1 sequence."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1242,
+        "end": 1305,
+        "text": "An ECOG Performance Status of 0 or 1, or Karnofsky score \\>= 70"
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 460,
+        "end": 596,
+        "text": "Must have a tumor with a known RAS, BRAF, or NF1 mutation or triple wildtype status using validated testing methods prior to enrollment."
+      },
+      "appliesTo": "Cohort A: RAS, BRAF, NF1, or triple wildtype"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9248,
+        "end": 9636,
+        "text": "The diagnosis of another malignancy within ≤ 2 years before study enrollment, except for those considered to be adequately treated with no evidence of disease or symptoms and/or will not require therapy during the study duration (i.e., basal cell or squamous cell skin cancer, carcinoma in situ of the breast, bladder or of the cervix, or low-grade prostate cancer with Gleason Score ≤ 6)"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5303,
+        "end": 5550,
+        "text": "Active, known, or suspected uncontrolled autoimmune disease, which required therapy in the past 2 years, including but not limited to systemic lupus erythematosus, Hashimotos thyroiditis, scleroderma, polyarteritis nodosa, or autoimmune hepatitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5553,
+        "end": 5826,
+        "text": "Known HIV infection with a detectable viral load within 6 months of the anticipated start of treatment. Note: Participants on effective antiretroviral therapy with an undetectable viral load within 6 months of the anticipated start of treatment are eligible for this trial."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5829,
+        "end": 6101,
+        "text": "Systemic active infection including tuberculosis (clinical evaluation that includes clinical history, physical examination, radiographic findings, and TB testing in line with local practice), hepatitis B (known positive HBV surface antigen (HBsAg) result), or hepatitis C."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4480,
+        "end": 5070,
+        "text": "Uncontrolled or severe cardiac disease (eg, history of unstable angina, myocardial infarction, coronary stenting, or bypass surgery within the last 6 months prior to initiation of study treatment), symptomatic congestive heart failure, serious uncontrolled cardiac arrhythmia (including atrial flutter/fibrillation), requirement for inotropic support or use of devices for cardiac conditions (eg, pacemakers/defibrillators), or hypertension (patients with systolic blood pressure \\[BP\\] of \\> 160 mm Hg or diastolic BP of \\> 100 mm Hg despite optimal medical management are to be excluded)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5073,
+        "end": 5300,
+        "text": "History of interstitial lung disease, history of slowly progressive dyspnea and unproductive cough, sarcoidosis, silicosis, idiopathic pulmonary fibrosis, pulmonary hypersensitivity pneumonitis, or symptomatic pleural effusion."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Uveal or mucosal melanoma.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uveal or mucosal melanoma.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Must have a tumor with a known RAS, BRAF, or NF1 mutation or triple wildtype status using validated testing methods prior to enrollment.",
+      "raw": {
+        "factId": "braf_v600e",
+        "rulesOut": [
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "Must have a tumor with a known RAS, BRAF, or NF1 mutation or triple wildtype status using validated testing methods prior to enrollment.",
+        "appliesTo": "Cohort B: BRAF V600E or BRAF V600K"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

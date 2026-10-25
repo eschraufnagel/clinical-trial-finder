@@ -1,0 +1,81 @@
+{
+  "nctId": "NCT07158918",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 249,
+        "end": 368,
+        "text": "Subject must have a histologically or cytologically confirmed locally advanced unresectable, or metastatic solid tumor."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 249,
+        "end": 368,
+        "text": "Subject must have a histologically or cytologically confirmed locally advanced unresectable, or metastatic solid tumor."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 503,
+        "end": 655,
+        "text": "Subject must meet Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1 assessed 7 days before the first administration of the study drug."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2964,
+        "end": 3255,
+        "text": "Subject has received any prior immunotherapy and was discontinued from the treatment due to a Grade 3 or higher irAE (except endocrine disorders that can be treated with replacement therapy) or was discontinued from that treatment due to Grade 2 myocarditis or recurrent Grade 2 pneumonitis."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3258,
+        "end": 3378,
+        "text": "Subject has received radiation therapy to the lung that is \\>30 Gy within 6 months of the first dose of study treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT06414733",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 143,
+        "end": 237,
+        "text": "patients with histologically documented metastatic or unresectable breast or esophageal cancer"
+      },
+      "appliesTo": "extension and expansion cohorts"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 482,
+        "end": 559,
+        "text": "All patients enrolled to this cohort are required to have measurable disease."
+      },
+      "appliesTo": "expansion cohort"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1954,
+        "end": 2107,
+        "text": "Patients with prior history of treated brain metastases who are off steroids and have stable metastatic brain disease for at least 3 months are eligible."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2111,
+        "end": 2178,
+        "text": "Patients must be ambulatory with ECOG performance status 0, 1, or 2"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1222,
+        "end": 1346,
+        "text": "Patients are required to have HER-2 (IHC 1+, 2+ and 3+) or EGFR over-expression (FISH and IHC) to be enrolled on this study."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1222,
+        "end": 1346,
+        "text": "Patients are required to have HER-2 (IHC 1+, 2+ and 3+) or EGFR over-expression (FISH and IHC) to be enrolled on this study."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4980,
+        "end": 5063,
+        "text": "Patients with known active HIV, hepatitis A, hepatitis B, or hepatitis C infection."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5627,
+        "end": 5799,
+        "text": "Patients with active autoimmune diseases including rheumatoid arthritis, systemic lupus erythematosus, scleroderma, polymyositis dermato-myositis, or a vasculitic syndrome."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

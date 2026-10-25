@@ -1,0 +1,166 @@
+{
+  "nctId": "NCT06694480",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 166,
+        "end": 290,
+        "text": "Histologically- or cytologically confirmed malignant solid tumor that is metastatic, unresectable, progressive, or recurrent"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 490,
+        "end": 541,
+        "text": "Measurable disease according to RECIST version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 859,
+        "end": 877,
+        "text": "ECOG PS of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4244,
+        "end": 4507,
+        "text": "Patients with known symptomatic active brain metastases, gliomas, leptomeningeal carcinomatosis, or spinal cord compression or other primary brain tumors. Patients with adequately treated and asymptomatic brain metastases are eligible to participate in the study."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4244,
+        "end": 4398,
+        "text": "Patients with known symptomatic active brain metastases, gliomas, leptomeningeal carcinomatosis, or spinal cord compression or other primary brain tumors."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4958,
+        "end": 5109,
+        "text": "Received \\>3 prior lines of chemotherapy for recurrent or metastatic disease unless otherwise discussed with the sponsor's medical monitor or delegate."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5593,
+        "end": 5812,
+        "text": "Medical history of interstitial pulmonary disease, intestinal obstructions, intestinal inflammatory disease and gastrointestinal bleeding, especially those developed from prior irinotecan treatments may not be enrolled."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6033,
+        "end": 6109,
+        "text": "Known history of uncontrolled HIV infection defined as CD4+ cells \\<350/mm3."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6113,
+        "end": 6207,
+        "text": "Patients with a positive viral load assay at time of screening for hepatitis C or hepatitis B."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6307,
+        "end": 6444,
+        "text": "Requirement of systemic steroids at daily doses \\>10 mg prednisone equivalent systemic exposure daily, including for control of symptoms."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7128,
+        "end": 7250,
+        "text": "Pregnancy, breastfeeding, or plans to become pregnant during the study or within 24 weeks after the last FID-022 infusion."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of any secondary malignancy, with the exception of non-melanoma skin cancers and in situ cancers... or has undergone potentially curative therapy with no evidence of disease recurrence for at least 2 years before the first FID-022 infusion",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of any secondary malignancy, with the exception of non-melanoma skin cancers and in situ cancers... or has undergone potentially curative therapy with no evidence of disease recurrence for at least 2 years before the first FID-022 infusion",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

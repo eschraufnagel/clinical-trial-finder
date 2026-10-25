@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT05092373",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 103,
+        "text": "Participants must have pathologically confirmed advanced/metastatic solid cancer"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 374,
+        "end": 439,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1289,
+        "end": 1339,
+        "text": "Measurable disease by RECIST or evaluable disease."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2776,
+        "end": 3005,
+        "text": "Active brain metastasis or leptomeningeal disease. Patients with treated brain metastasis must have stable disease, evidenced by brain imaging for at least 4 weeks and the patient must have been off steroids for at least 2 weeks."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2776,
+        "end": 2826,
+        "text": "Active brain metastasis or leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3374,
+        "end": 3532,
+        "text": "unstable ischemic heart disease (myocardial infarction within 6 months prior to starting treatment or angina requiring use of nitrates more than once weekly)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4557,
+        "end": 4598,
+        "text": "The patient is pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3792,
+        "end": 3986,
+        "text": "Concurrent malignancies are permitted if (A) they were previously treated, and all treatment of that malignancy was completed at least 2 years before enrollment and no evidence of disease exists"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7904,
+        "end": 7948,
+        "text": "Human immunodeficiency virus (HIV) infection"
+      },
+      "appliesTo": "ATEZOLIZUMAB-CONTAINING COHORT"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7950,
+        "end": 7983,
+        "text": "active Hepatitis B or C infection"
+      },
+      "appliesTo": "ATEZOLIZUMAB-CONTAINING COHORT"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8446,
+        "end": 8782,
+        "text": "Patients with a history of active serious inflammatory bowel disease (including Crohn's disease and ulcerative colitis) and autoimmune disorders such as rheumatoid arthritis, systemic progressive sclerosis (scleroderma), systemic lupus erythematosus or autoimmune vasculitis (e.g. Wegener's Granulomatosis) are excluded from this study."
+      },
+      "appliesTo": "ATEZOLIZUMAB-CONTAINING COHORT"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

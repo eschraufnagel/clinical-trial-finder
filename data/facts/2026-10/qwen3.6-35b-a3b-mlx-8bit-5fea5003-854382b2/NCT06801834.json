@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT06801834",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 73,
+        "end": 150,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 153,
+        "end": 289,
+        "text": "Measurable disease by computed tomography (CT) or magnetic resonance imaging (MRI) as assessed by investigator per RECIST v1.1 criteria."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 292,
+        "end": 396,
+        "text": "Documentation of radiological disease progression after 1 prior line of platinum-containing chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 292,
+        "end": 396,
+        "text": "Documentation of radiological disease progression after 1 prior line of platinum-containing chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1767,
+        "end": 1984,
+        "text": "Received any prior treatment with irinotecan, topotecan, SG, SN-38, exatecan derivatives, and similar agents targeting topoisomerase I. Received lurbinectedin after progression on or after platinum-based chemotherapy."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1767,
+        "end": 1902,
+        "text": "Received any prior treatment with irinotecan, topotecan, SG, SN-38, exatecan derivatives, and similar agents targeting topoisomerase I."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1987,
+        "end": 2135,
+        "text": "Have carcinomatous meningitis and/or non-carcinomatous meningitis central nervous system (CNS) metastasis apart from the following noted exceptions."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1987,
+        "end": 2135,
+        "text": "Have carcinomatous meningitis and/or non-carcinomatous meningitis central nervous system (CNS) metastasis apart from the following noted exceptions."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2498,
+        "end": 2549,
+        "text": "taking ≤ 10 mg/day of prednisone or its equivalent."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed diagnosis of SCLC.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed diagnosis of SCLC.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

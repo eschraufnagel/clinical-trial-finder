@@ -1,0 +1,105 @@
+{
+  "nctId": "NCT06253871",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 371,
+        "end": 434,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance score 0-1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 298,
+        "end": 368,
+        "text": "Have radiographically measurable disease by RECIST v1.1 and/or RANO-BM"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 656,
+        "end": 829,
+        "text": "Infection with human immunodeficiency virus (HIV)-1 or HIV-2. Exception: Participants with well-controlled HIV (e.g., CD4 \\>350/mm3 and undetectable viral load) are eligible"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 832,
+        "end": 912,
+        "text": "Current active liver disease including hepatitis A, hepatitis B , or hepatitis C"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1089,
+        "end": 1127,
+        "text": "History of solid organ transplantation"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1217,
+        "end": 1373,
+        "text": "Prior history of non-infectious interstitial lung disease (ILD). (Exceptions: participants with prior grade 1 ILD that has completely resolved are eligible)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1376,
+        "end": 1443,
+        "text": "Participants requiring immediate local therapy for brain metastases"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

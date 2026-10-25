@@ -1,0 +1,189 @@
+{
+  "nctId": "NCT06384352",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 350,
+        "end": 960,
+        "text": "History of an advanced solid tumors (including locally advanced unresectable or metastatic NSCLC, metastatic colorectal carcinoma (mCRC), advanced gastric adenocarcinoma (GAC)/ gastroesophageal junction adenocarcinoma (GEJA), pancreatic ductal adenocarcinoma (PDAC), hepatocellular carcinoma (HCC), intrahepatic biliary tract cancer (ih-BTC), and head and neck squamous cell carcinoma (HNSCC) who failed currently available standard therapies and are not amenable to surgical resection, or for whom no available standard therapy or no other approved therapeutic options that have demonstrated clinical benefit."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1155,
+        "end": 1378,
+        "text": "History of histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic NSCLC and no more than 2 lines of prior cytotoxic systemic therapy in the locally advanced or metastatic setting."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1392,
+        "end": 1603,
+        "text": "History of histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic non-squamous (Part 3A) or squamous (Part 3B) NSCLC and no more than 2 lines of prior systemic therapy"
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1617,
+        "end": 1816,
+        "text": "History of histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic non-squamous NSCLC who have progressed on or after 1 or 2 prior lines of systemic therapy"
+      },
+      "appliesTo": "Part 4"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1840,
+        "end": 2101,
+        "text": "Histologically or cytologically documented locally advanced unresectable or metastatic non-squamous NSCLC that is not eligible for curative surgery and/or definitive chemoradiotherapy and no prior systemic treatment for advanced unresectable or metastatic NSCLC"
+      },
+      "appliesTo": "Part 5 and Part 6"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1392,
+        "end": 1603,
+        "text": "History of histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic non-squamous (Part 3A) or squamous (Part 3B) NSCLC and no more than 2 lines of prior systemic therapy"
+      },
+      "appliesTo": "Part 3A"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1392,
+        "end": 1603,
+        "text": "History of histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic non-squamous (Part 3A) or squamous (Part 3B) NSCLC and no more than 2 lines of prior systemic therapy"
+      },
+      "appliesTo": "Part 3B"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1617,
+        "end": 1816,
+        "text": "History of histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic non-squamous NSCLC who have progressed on or after 1 or 2 prior lines of systemic therapy"
+      },
+      "appliesTo": "Part 4"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1840,
+        "end": 2101,
+        "text": "Histologically or cytologically documented locally advanced unresectable or metastatic non-squamous NSCLC that is not eligible for curative surgery and/or definitive chemoradiotherapy and no prior systemic treatment for advanced unresectable or metastatic NSCLC"
+      },
+      "appliesTo": "Part 5 and Part 6"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2739,
+        "end": 2809,
+        "text": "A history of leptomeningeal carcinomatosis or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2813,
+        "end": 3455,
+        "text": "Brain metastasis, except for the following situations:\n\n   Participants with asymptomatic brain metastasis who do not require immediate local or systemic treatment (such as mannitol or steroids, surgery, or radiotherapy) are allowed to be enrolled If the participant's brain metastasis is treated and the condition of the metastasis is stable (brain imaging examination at least 2 weeks before the first administration shows that the lesion is stable, there is no evidence of new or original brain metastasis enlargement, there are no new neurological symptoms, and immediate local or systemic treatment is not required), admission is allowed"
+      },
+      "loose": true
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3459,
+        "end": 3783,
+        "text": "Clinically significant concomitant pulmonary disease, including but not limited to:\n\nA history of drug-induced pneumonitis A history of (non-infectious) interstitial lung disease (ILD)/pneumonitis that requires steroids, current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening"
+      },
+      "loose": true
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2395,
+        "end": 2641,
+        "text": "Received continuous systemic steroids therapy for more than 28 days or require long-term (≥ 28 days) use of systemic steroids therapy within 28 days before the first administration, or have other acquired or congenital immune deficiency diseases."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

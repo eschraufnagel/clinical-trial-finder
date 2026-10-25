@@ -1,0 +1,135 @@
+{
+  "nctId": "NCT07225036",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 42,
+        "end": 68,
+        "text": "ECOG performance status ≤2"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 664,
+        "end": 725,
+        "text": "Biopsy proven Non-Small Cell Lung Cancer (NSCLC) or Melanoma."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 729,
+        "end": 771,
+        "text": "Radiographic evidence of liver metastases."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1332,
+        "end": 1507,
+        "text": "Patients with prior immunotherapy use in the adjuvant setting for NSCLC or Melanoma are eligible unless the adjuvant immunotherapy was delivered within 6 months of enrollment."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1511,
+        "end": 1655,
+        "text": "Patients with NSCLC are ineligible for enrollment in cohort 1 if the presence of the following driver mutations are noted: EGFR, ALK, ROS1, RET."
+      },
+      "appliesTo": "cohort 1"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1511,
+        "end": 1655,
+        "text": "Patients with NSCLC are ineligible for enrollment in cohort 1 if the presence of the following driver mutations are noted: EGFR, ALK, ROS1, RET."
+      },
+      "appliesTo": "cohort 1"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1511,
+        "end": 1655,
+        "text": "Patients with NSCLC are ineligible for enrollment in cohort 1 if the presence of the following driver mutations are noted: EGFR, ALK, ROS1, RET."
+      },
+      "appliesTo": "cohort 1"
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1511,
+        "end": 1655,
+        "text": "Patients with NSCLC are ineligible for enrollment in cohort 1 if the presence of the following driver mutations are noted: EGFR, ALK, ROS1, RET."
+      },
+      "appliesTo": "cohort 1"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2077,
+        "end": 2163,
+        "text": "Pregnant women are excluded from this study considering the use of ionizing radiation."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

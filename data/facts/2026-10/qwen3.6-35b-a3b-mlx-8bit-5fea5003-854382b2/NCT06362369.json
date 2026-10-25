@@ -1,0 +1,229 @@
+{
+  "nctId": "NCT06362369",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 365,
+        "end": 466,
+        "text": "non-small cell lung cancer with no EGFR or anaplastic lymphoma kinase (ALK) genomic tumor aberrations"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 179,
+        "end": 222,
+        "text": "locally advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 865,
+        "end": 898,
+        "text": "ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2000,
+        "end": 2071,
+        "text": "All patients must have measurable disease by applicable RECIST criteria"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2508,
+        "end": 2675,
+        "text": "Active brain metastasis or leptomeningeal disease. Patients with treated brain metastasis must have stable disease, evidenced by MRI brain imaging for at least 4 weeks"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2508,
+        "end": 2557,
+        "text": "Active brain metastasis or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 365,
+        "end": 466,
+        "text": "non-small cell lung cancer with no EGFR or anaplastic lymphoma kinase (ALK) genomic tumor aberrations"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 365,
+        "end": 466,
+        "text": "non-small cell lung cancer with no EGFR or anaplastic lymphoma kinase (ALK) genomic tumor aberrations"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4992,
+        "end": 5182,
+        "text": "Concurrent malignancies are permitted if they were previously treated, and all treatment of that malignancy was completed at least 2 years before enrollment and no evidence of disease exists"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7212,
+        "end": 7640,
+        "text": "Serious autoimmune disease at the discretion of the treating Investigator: patients with a history of active serious inflammatory bowel disease (including Crohn's disease and ulcerative colitis) and autoimmune disorders such as rheumatoid arthritis, systemic progressive sclerosis (scleroderma), systemic lupus erythematosus or autoimmune vasculitis (e.g., Wegener's Granulomatosis) are excluded from participation in this study"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7645,
+        "end": 7823,
+        "text": "Active or history of pneumonitis (drug-induced), idiopathic pulmonary fibrosis, Interstitial Lung Disease (ILD), or lung disease that may interfere with assessment of pneumonitis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4867,
+        "end": 4907,
+        "text": "Known history of a positive test for HIV"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4912,
+        "end": 4987,
+        "text": "positive test for hepatitis B (positive for HBsAg) or hepatitis C (HCV RNA)"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9511,
+        "end": 9581,
+        "text": "Patients who have had allogeneic tissue or solid organ transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8359,
+        "end": 8394,
+        "text": "Women who are pregnant or lactating"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6730,
+        "end": 6870,
+        "text": "Physiological doses of replacement corticosteroids (e.g., for adrenal insufficiency) are not to exceed 10 mg/day of prednisone or equivalent"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients may have received treatment with anti PD-1/PD-L1",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Patients may have received treatment with anti PD-1/PD-L1",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

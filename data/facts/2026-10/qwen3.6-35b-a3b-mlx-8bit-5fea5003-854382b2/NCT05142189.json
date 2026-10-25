@@ -1,0 +1,255 @@
+{
+  "nctId": "NCT05142189",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 80,
+        "text": "Participants must have histologically confirmed NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 255,
+        "end": 337,
+        "text": "Participants must present with unresectable Stage III or metastatic Stage IV NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 441,
+        "end": 520,
+        "text": "Participants in Cohorts 5 and 11 must present with unresectable Stage III NSCLC"
+      },
+      "appliesTo": "Cohorts 5 and 11"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 618,
+        "end": 712,
+        "text": "Participants in Cohort 6 with the initial diagnosis of resectable Stage II and Stage III NSCLC"
+      },
+      "appliesTo": "Cohort 6"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 982,
+        "end": 1101,
+        "text": "Participants must have an Eastern Cooperative Oncology Group performance status (ECOG-PS) less than or equal to (\\<=) 1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps0",
+        "ps1"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1103,
+        "end": 1196,
+        "text": "except for participants in Cohorts 1, 4, 5, 10 and 11 who are eligible with an ECOG-PS of 0-2"
+      },
+      "appliesTo": "Cohorts 1, 4, 5, 10 and 11"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1761,
+        "end": 1928,
+        "text": "Participants who are to start cemiplimab at Cycle 3 must present with PD-L1 expression of tumor proportion score (TPS) greater than or equal to (\\>=) 1% in tumor cells"
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1968,
+        "end": 2045,
+        "text": "Participants must present with PD-L1 expression of TPS \\>= 50% in tumor cells"
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2895,
+        "end": 3098,
+        "text": "Participants who are not candidates for chemotherapy as first-line treatment for the advanced or metastasized stage of NSCLC may be enrolled if presenting with PD-L1 expression: TPS \\>= 1% in tumor cells"
+      },
+      "appliesTo": "Cohort 4"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "exon20_insertion",
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5113,
+        "end": 5191,
+        "text": "Participants' NSCLC must have classical EGFR mutations, i.e., ex19Del or L858R"
+      },
+      "appliesTo": "Cohort EGFR"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5321,
+        "end": 5389,
+        "text": "Participants' NSCLC must have ALK rearrangement or RET rearrangement"
+      },
+      "appliesTo": "Cohort ALK/RET"
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5321,
+        "end": 5389,
+        "text": "Participants' NSCLC must have ALK rearrangement or RET rearrangement"
+      },
+      "appliesTo": "Cohort ALK/RET"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5776,
+        "end": 5929,
+        "text": "Ongoing or recent evidence (within the last 5 years) of significant autoimmune disease that required treatment with systemic immunosuppressive treatments"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6198,
+        "end": 6276,
+        "text": "Current evidence of new or growing brain or spinal metastases during screening"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6333,
+        "end": 6447,
+        "text": "Participants with known brain or spinal metastases may be eligible for all Cohorts, except for Cohorts 5, 6 and 11"
+      },
+      "appliesTo": "Cohorts 5, 6 and 11"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6278,
+        "end": 6331,
+        "text": "Participants with leptomeningeal disease are excluded"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7172,
+        "end": 7272,
+        "text": "Current use of chronic systemic steroid medication (\\<= 5 mg/day prednisolone equivalent is allowed)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants must have ... measurable disease by RECIST v1.1",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have ... measurable disease by RECIST v1.1",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

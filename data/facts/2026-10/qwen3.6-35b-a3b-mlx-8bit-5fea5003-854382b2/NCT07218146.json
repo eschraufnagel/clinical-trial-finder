@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT07218146",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 138,
+        "end": 185,
+        "text": "Histologically or cytologically confirmed SCLC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 186,
+        "end": 356,
+        "text": "Received 1L platinum-based systemic therapy and had documented disease progression during or after the most recent systemic therapy. Or received 2L tarlatamab is allowed."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 359,
+        "end": 435,
+        "text": "Measurable disease according to RECIST v1.1 as assessed by the investigator."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 438,
+        "end": 564,
+        "text": "Participants with a history of treated and stable or untreated and asymptomatic CNS metastases based on criteria per protocol."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 604,
+        "end": 665,
+        "text": "Eastern Cooperative Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 933,
+        "end": 1006,
+        "text": "Received more than one line of systemic therapy for Extensive-Stage SCLC."
+      },
+      "appliesTo": "Extensive-Stage SCLC"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1009,
+        "end": 1070,
+        "text": "Received any prior ADC with topoisomerase 1 inhibitor payload"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1073,
+        "end": 1156,
+        "text": "Participants with another known malignancy with exceptions defined in the protocol."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1159,
+        "end": 1226,
+        "text": "History or suspected ILD/pneumonitis based on criteria per protocol"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1690,
+        "end": 1877,
+        "text": "Clinically significant active cardiovascular disease or history of arterial thromboembolic event within 6 months prior to the first dose of study treatment based on criteria per protocol."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "nctId": "NCT07339059",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 155,
+        "end": 374,
+        "text": "Participants must have a histologically or cytologically confirmed diagnosis of small cell lung cancer (SCLC) and extensive stage at diagnosis or locally advanced disease and unable to receive curative intent radiation."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 640,
+        "end": 670,
+        "text": "ECOG performance status of 0-2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 833,
+        "end": 888,
+        "text": "Patients with stable and asymptomatic brain metastasis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1075,
+        "end": 1116,
+        "text": "Participants with leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1119,
+        "end": 1216,
+        "text": "Participants with a recent diagnosis of heart failure and acute coronary disease within 3 months."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1404,
+        "end": 1545,
+        "text": "Active chronic inflammatory bowel disease (ulcerative colitis, Crohn's disease) or gastrointestinal perforation within 6 months of enrolment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants must have a histologically or cytologically confirmed diagnosis of small cell lung cancer (SCLC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have a histologically or cytologically confirmed diagnosis of small cell lung cancer (SCLC)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Patients with prior exposure to anti-PD-1, anti-PD-L1, or anti-PD-L2 agents or with an agent directed to another stimulatory or coinhibitory T-cell receptor (eg, CTLA-4) within 12 months of the study is not allowed.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with prior exposure to anti-PD-1, anti-PD-L1, or anti-PD-L2 agents or with an agent directed to another stimulatory or coinhibitory T-cell receptor (eg, CTLA-4) within 12 months of the study is not allowed.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

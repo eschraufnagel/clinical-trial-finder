@@ -1,0 +1,310 @@
+{
+  "nctId": "NCT03556228",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 285,
+        "end": 312,
+        "text": "Lung cancers (of any types)"
+      },
+      "appliesTo": "Phase 1 Dose Escalation only"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 875,
+        "end": 942,
+        "text": "TrkA-driven HNC, Esophageal, Lung, Mesothelioma, Pancreatic cancers"
+      },
+      "appliesTo": "Phase 2 Monotherapy and Combination with Pembrolizumab only"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1040,
+        "end": 1109,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status: 0 or 1."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4711,
+        "end": 4896,
+        "text": "Subjects who relapsed after prior treatment with PD-1(L1) inhibitors. Relapsed is defined as patients having best overall response of CR or PR after treatment with a PD-1(L1) inhibitor."
+      },
+      "appliesTo": "For combination therapy with Pembrolizumab only"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4258,
+        "end": 4434,
+        "text": "Serious adverse immune related adverse events (grade 3 or 4) with previous PD-1(L1) inhibitor therapy, that were symptomatic and required prolong immunosuppression (\\>6 weeks)."
+      },
+      "appliesTo": "For combination therapy with Pembrolizumab only"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4437,
+        "end": 4519,
+        "text": "Any grade Pneumonitis and Myocarditis related to prior PD-1(L1) inhibitor therapy."
+      },
+      "appliesTo": "For combination therapy with Pembrolizumab only"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4522,
+        "end": 4708,
+        "text": "For subjects that received PD-1(L1) inhibitors before, there should be a washout period of at least 21 days between the last day of PD-1(L1) inhibitor and first day of study medications."
+      },
+      "appliesTo": "For combination therapy with Pembrolizumab only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1668,
+        "end": 1787,
+        "text": "Received chemotherapy having delayed toxicity within the last 14 days (six weeks for prior nitrosourea or mitomycin C)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1790,
+        "end": 1923,
+        "text": "Received anticancer therapy with radiation, immunotherapy, and a biologic, surgery and/or tumor embolization within the past 2 weeks."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1926,
+        "end": 2087,
+        "text": "Received an investigational anticancer drug within 14 days or 5 half-lives of the investigational agent, whichever is longer, prior to the first dose of VMD-928."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3286,
+        "end": 3363,
+        "text": "Patient has had or is currently having other malignant tumors within 3 years."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3366,
+        "end": 3431,
+        "text": "Patients have multiple factors that affect their oral medication."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3434,
+        "end": 3487,
+        "text": "Patients have long-term unhealed wounds or fractures."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3490,
+        "end": 3605,
+        "text": "Patients have uncontrolled pleural effusion, pericardial effusion, or ascites that still require repeated drainage."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3917,
+        "end": 3976,
+        "text": "Epstein-Barr virus (EBV) negative nasopharyngeal carcinoma."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3999,
+        "end": 4056,
+        "text": "Negative result on TrkA immunohistochemistry (IHC) assay."
+      },
+      "appliesTo": "For Phase 2 only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4059,
+        "end": 4204,
+        "text": "Have visceral crisis, defined as severe organ dysfunction and rapid progression of the cancer. (It is not about presence of visceral metastasis.)"
+      },
+      "appliesTo": "For Phase 2 only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4258,
+        "end": 4434,
+        "text": "Serious adverse immune related adverse events (grade 3 or 4) with previous PD-1(L1) inhibitor therapy, that were symptomatic and required prolong immunosuppression (\\>6 weeks)."
+      },
+      "appliesTo": "For combination therapy with Pembrolizumab only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4437,
+        "end": 4519,
+        "text": "Any grade Pneumonitis and Myocarditis related to prior PD-1(L1) inhibitor therapy."
+      },
+      "appliesTo": "For combination therapy with Pembrolizumab only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4522,
+        "end": 4708,
+        "text": "For subjects that received PD-1(L1) inhibitors before, there should be a washout period of at least 21 days between the last day of PD-1(L1) inhibitor and first day of study medications."
+      },
+      "appliesTo": "For combination therapy with Pembrolizumab only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4711,
+        "end": 4896,
+        "text": "Subjects who relapsed after prior treatment with PD-1(L1) inhibitors. Relapsed is defined as patients having best overall response of CR or PR after treatment with a PD-1(L1) inhibitor."
+      },
+      "appliesTo": "For combination therapy with Pembrolizumab only"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Unresolved toxicity from previous anticancer therapy &gt; CTCAE Grade 1 (except alopecia or anemia) unless agreed to by both the Sponsor Medical Monitor and the Investigator.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Unresolved toxicity from previous anticancer therapy &gt; CTCAE Grade 1 (except alopecia or anemia) unless agreed to by both the Sponsor Medical Monitor and the Investigator.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients are taking the following drugs and can't stop them during the study: Tylenol or medicine containing acetaminophen (paracetamol). Antacids (e.g. TUMS, calcium carbonate, or magnesium hydroxide), proton pump inhibitors (e.g. omeprazole), H2 blockers (e.g. famotidine), or buffered vitamins.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients are taking the following drugs and can't stop them during the study: Tylenol or medicine containing acetaminophen (paracetamol). Antacids (e.g. TUMS, calcium carbonate, or magnesium hydroxide), proton pump inhibitors (e.g. omeprazole), H2 blockers (e.g. famotidine), or buffered vitamins.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

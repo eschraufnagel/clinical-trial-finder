@@ -1,0 +1,116 @@
+{
+  "nctId": "NCT07140016",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 261,
+        "text": "Participant has histologically or cytologically confirmed locally advanced or metastatic non-small cell lung cancer (NSCLC) with a documented anaplastic lymphoma kinase (ALK) rearrangement and is not amenable to curative intent treatment."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1329,
+        "end": 1443,
+        "text": "Participant has measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1575,
+        "end": 1662,
+        "text": "Participant has an Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 2."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3633,
+        "end": 3721,
+        "text": "Participant has a history of malignancy other than NSCLC within 2 years before screening"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4661,
+        "end": 4969,
+        "text": "Participant has a history of a cerebral vascular event (stroke or transient ischemic attack), unstable angina, myocardial infarction or cardiac symptoms (including congestive heart failure) consistent with New York Heart Association Class III-IV within 6 months prior to the first dose of study intervention."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4972,
+        "end": 5024,
+        "text": "Participant has a history of interstitial pneumonia."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5727,
+        "end": 5983,
+        "text": "Participant has known active hepatitis B virus (HBV) infection (defined as hepatitis B surface antigen (HBsAg)-positive and/or anti-HBV core antibody-positive) or known active hepatitis C virus (HCV) infection (defined as HCV RNA \\[qualitative\\] detected)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6353,
+        "end": 6502,
+        "text": "Participant has a known history of human immunodeficiency virus (HIV) infection with acquired immunodeficiency syndrome (AIDS)-related complications."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

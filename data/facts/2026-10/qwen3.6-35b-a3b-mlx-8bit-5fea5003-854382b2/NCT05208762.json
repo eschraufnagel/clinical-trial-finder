@@ -1,0 +1,134 @@
+{
+  "nctId": "NCT05208762",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1170,
+        "end": 1245,
+        "text": "Participants with a neuroendocrine component or histology are not eligible."
+      },
+      "appliesTo": "Part C: NSCLC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 43,
+        "end": 174,
+        "text": "Participants must have one of the following histologically- or cytologically-confirmed metastatic or unresectable solid tumor types"
+      },
+      "appliesTo": "Parts A and B"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2151,
+        "end": 2198,
+        "text": "Known active central nervous system metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2584,
+        "end": 2607,
+        "text": "Lepto-meningeal disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1845,
+        "end": 1921,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1924,
+        "end": 1970,
+        "text": "Measurable disease per RECIST v1.1 at baseline"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1995,
+        "end": 2148,
+        "text": "History of another malignancy within 3 years of first dose of study treatment or any evidence of residual disease from a previously diagnosed malignancy."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1732,
+        "end": 1785,
+        "text": "Participants with NSCLC; PD-L1 expression ≥ 1% by TPS"
+      },
+      "appliesTo": "Part D and Part E"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1790,
+        "end": 1842,
+        "text": "Participants with HNSCC; PD--L1 expression ≥1 by CPS"
+      },
+      "appliesTo": "Part D and Part E"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "nctId": "NCT06759649",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 135,
+        "text": "Participants with histologically/cytologically confirmed advanced recurrent or metastatic solid tumor malignancy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 644,
+        "end": 868,
+        "text": "Participants must have a solid tumor measurable by computed tomography (CT) or magnetic resonance imaging (MRI) as per Response Evaluation Criteria in Solid Tumors version 1.1 (RECIST 1.1) criteria by investigator assessment"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 893,
+        "end": 990,
+        "text": "History of another malignancy within 2 years prior to the first trial intervention administration"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1406,
+        "end": 1500,
+        "text": "Have known active central nervous system (CNS) metastases and/or leptomeningeal disease (LMD)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1406,
+        "end": 1500,
+        "text": "Have known active central nervous system (CNS) metastases and/or leptomeningeal disease (LMD)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1818,
+        "end": 1880,
+        "text": "Have active hepatitis B virus (HBV) or hepatitis C virus (HCV)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1882,
+        "end": 1938,
+        "text": "or participants with human immunodeficiency virus (HIV)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

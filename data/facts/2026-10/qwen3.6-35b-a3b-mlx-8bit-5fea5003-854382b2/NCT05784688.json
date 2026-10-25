@@ -1,0 +1,375 @@
+{
+  "nctId": "NCT05784688",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 232,
+        "end": 423,
+        "text": "histologically or cytologically documented advanced unresectable solid tumor for which no effective standard therapy exists, or that has progressed on or not tolerated prior standard therapy."
+      },
+      "appliesTo": "Phase 1b and 2a"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 936,
+        "end": 1049,
+        "text": "anti-PD-(L)1 agent-naïve metastatic or with unresectable, recurrent head and neck squamous cell carcinoma (HNSCC)"
+      },
+      "appliesTo": "HNSCC cohort in Phase 2a"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1373,
+        "end": 1451,
+        "text": "biliary tract cancer that has been locally advanced unresectable or metastatic"
+      },
+      "appliesTo": "BTC cohort in Phase 2a"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1589,
+        "end": 1712,
+        "text": "anti-PD-(L)1 agent-naïve colorectal adenocarcinoma of Proficient Mismatch Repair (pMMR)/Microsatellite Stable (MSS) subtype"
+      },
+      "appliesTo": "CRC cohort in Phase 2a"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5139,
+        "end": 5196,
+        "text": "Metastatic disease to the brain or central nervous system"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5139,
+        "end": 5196,
+        "text": "Metastatic disease to the brain or central nervous system"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5198,
+        "end": 5222,
+        "text": "carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 120,
+        "end": 164,
+        "text": "Measurable disease as defined by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 168,
+        "end": 179,
+        "text": "ECOG 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 424,
+        "end": 657,
+        "text": "If previously treated with an anti-PD-1/L1 mAb administered either as monotherapy, or in combination with other checkpoint inhibitors or other therapies, PD-1 treatment progression is defined by meeting all of the following criteria:"
+      },
+      "appliesTo": "Phase 1b and 2a"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 936,
+        "end": 1049,
+        "text": "anti-PD-(L)1 agent-naïve metastatic or with unresectable, recurrent head and neck squamous cell carcinoma (HNSCC)"
+      },
+      "appliesTo": "HNSCC cohort in Phase 2a"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1589,
+        "end": 1712,
+        "text": "anti-PD-(L)1 agent-naïve colorectal adenocarcinoma of Proficient Mismatch Repair (pMMR)/Microsatellite Stable (MSS) subtype"
+      },
+      "appliesTo": "CRC cohort in Phase 2a"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6643,
+        "end": 6889,
+        "text": "For Phase 1b and BTC cohort in Phase 2a: discontinued prior therapy with an anti-PD-1, anti-PD-L1, or anti PD-L2 agent or with an agent directed to another stimulatory or co inhibitory T-cell receptor (e.g., CTLA-4, OX-40, CD137), due to an irAE."
+      },
+      "appliesTo": "Phase 1b and BTC cohort in Phase 2a"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6894,
+        "end": 7113,
+        "text": "For CRC and HNSCC cohorts in Phase 2a: received prior therapy with an anti-PD-1, anti PD-L1, or anti PD-L2 agent or an agent directed to another stimulatory or co inhibitory T-cell receptor (e.g., CTLA-4, OX-40, CD137)."
+      },
+      "appliesTo": "CRC and HNSCC cohorts in Phase 2a"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1185,
+        "end": 1324,
+        "text": "recurrent or metastatic head and neck squamous cell carcinoma (HNSCC) with disease progression on or after platinum-containing chemotherapy"
+      },
+      "appliesTo": "HNSCC cohort in Phase 2a"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1762,
+        "end": 1880,
+        "text": "progressed on or not tolerated at least 2 lines of prior standard chemotherapy with biological agents where applicable"
+      },
+      "appliesTo": "CRC cohort in Phase 2a"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1762,
+        "end": 1880,
+        "text": "progressed on or not tolerated at least 2 lines of prior standard chemotherapy with biological agents where applicable"
+      },
+      "appliesTo": "CRC cohort in Phase 2a"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1056,
+        "end": 1143,
+        "text": "tumors express programmed death ligand 1 (PD - L1) \\[combined positive score (CPS) ≥1\\]"
+      },
+      "appliesTo": "HNSCC cohort in Phase 2a"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9807,
+        "end": 9994,
+        "text": "Has an active autoimmune disease or history of autoimmune disease, except vitiligo, hypothyroidism or resolved childhood asthma/atopy, that has required systemic treatment in past 2 years"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10288,
+        "end": 10435,
+        "text": "Has a history of (non-infectious) pneumonitis/interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10506,
+        "end": 10757,
+        "text": "Active and clinically significant bacterial, fungal, or viral infection, including known history of hepatitis B virus (HBV), known hepatitis C virus (HCV), known human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome-related illness."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10506,
+        "end": 10757,
+        "text": "Active and clinically significant bacterial, fungal, or viral infection, including known history of hepatitis B virus (HBV), known hepatitis C virus (HCV), known human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome-related illness."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4453,
+        "end": 4509,
+        "text": "Myocardial infarction within 6 months prior to screening"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9002,
+        "end": 9053,
+        "text": "Has had an allogeneic tissue/solid organ transplant"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3715,
+        "end": 3804,
+        "text": "A female participant is eligible to participate if she is not pregnant, not breastfeeding"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6055,
+        "end": 6145,
+        "text": "Female participants must not be pregnant or at risk of becoming pregnant during the study."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6597,
+        "end": 6638,
+        "text": "Female participants who are breastfeeding"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9173,
+        "end": 9274,
+        "text": "receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "nctId": "NCT07063745",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 114,
+        "text": "Participants must have Metastatic (Stage IV or recurrent) non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 594,
+        "end": 796,
+        "text": "Nonsquamous participants must not have documented targetable oncogenic mutation or actionable genetic alterations (AGAs) for which there is a standard of care (SoC) available as first-line (1L) therapy."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 402,
+        "end": 496,
+        "text": "Participants must have an Eastern Cooperative Oncology Group (ECOG) performance status of 0-1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 499,
+        "end": 570,
+        "text": "Participants must have at least 1 measurable lesion as per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 799,
+        "end": 882,
+        "text": "Participants must not have symptomatic brain metastases or spinal cord compression."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 885,
+        "end": 1061,
+        "text": "Participants must not have any prior systemic therapy (chemotherapy, immunotherapy, targeted therapy, or biological therapy) for metastatic non-small cell lung cancer (mNSCLC)."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 885,
+        "end": 1061,
+        "text": "Participants must not have any prior systemic therapy (chemotherapy, immunotherapy, targeted therapy, or biological therapy) for metastatic non-small cell lung cancer (mNSCLC)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 885,
+        "end": 1061,
+        "text": "Participants must not have any prior systemic therapy (chemotherapy, immunotherapy, targeted therapy, or biological therapy) for metastatic non-small cell lung cancer (mNSCLC)."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 251,
+        "text": "Participants must have Metastatic (Stage IV or recurrent) non-small cell lung cancer (NSCLC) (as defined by the American Joint Committee on Cancer, Ninth Edition) with no prior systemic anti-cancer therapy for metastatic disease."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

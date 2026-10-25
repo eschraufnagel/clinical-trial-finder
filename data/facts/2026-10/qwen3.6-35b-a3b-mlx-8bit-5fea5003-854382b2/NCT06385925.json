@@ -1,0 +1,95 @@
+{
+  "nctId": "NCT06385925",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 445,
+        "end": 543,
+        "text": "Subjects with histologically or cytologically confirmed locally advanced or metastatic solid tumor"
+      },
+      "appliesTo": "Phase 1 part (1a/1b) of Monotherapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 781,
+        "end": 886,
+        "text": "Subjects with histologically or cytologically confirmed locally advanced or metastatic PDAC、CRC and NSCLC"
+      },
+      "appliesTo": "Phase 2 part of TSN1611 Monotherapy"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 336,
+        "end": 404,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1192,
+        "end": 1265,
+        "text": "Leptomeningeal disease or Active central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1871,
+        "end": 2057,
+        "text": "History of interstitial lung disease (ILD), drug induced IDL, or current active pneumonitis, radiation pneumonitis requiring therapeutic intervention, or uncontrolled other lung disease."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2060,
+        "end": 2237,
+        "text": "Any of the following in the past 6 months: myocardial infarction, unstable angina, symptomatic congestive heart failure, stroke or transient ischemic attack, pulmonary embolism."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

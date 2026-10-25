@@ -1,0 +1,199 @@
+{
+  "nctId": "NCT04585958",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1200,
+        "end": 1300,
+        "text": "Patients must have histologically confirmed platinum resistant, high grade serous ovarian carcinoma."
+      },
+      "appliesTo": "DOSE EXPANSION PHASE"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 48,
+        "end": 137,
+        "text": "Patients must have histologically confirmed malignancy that is metastatic or unresectable"
+      },
+      "appliesTo": "DOSE ESCALATION PHASE"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 741,
+        "end": 808,
+        "text": "Patients with unknown or negative HER2 testing will not be eligible"
+      },
+      "appliesTo": "DOSE ESCALATION PHASE"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1553,
+        "end": 1670,
+        "text": "Patient disease must be evaluable or measurable by Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1."
+      },
+      "appliesTo": "DOSE EXPANSION PHASE"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1780,
+        "end": 1852,
+        "text": "Patients must have had at least one prior line of cytotoxic chemotherapy"
+      },
+      "appliesTo": "DOSE ESCALATION AND DOSE EXPANSION PHASES"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2331,
+        "end": 2417,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status =\\< 1 (Karnofsky \\>= 70%)"
+      },
+      "appliesTo": "DOSE ESCALATION AND DOSE EXPANSION PHASES"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11703,
+        "end": 12105,
+        "text": "Pregnant women are excluded from this study because DS-8201a is a HER2 antibody conjugated to a topoisomerase 1 inhibitor agent with the potential for teratogenic or abortifacient effects. Because there is an unknown but potential risk for adverse events in nursing infants secondary to treatment of the mother with DS-8201a, breastfeeding should be discontinued if the mother is treated with DS-8201a."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10811,
+        "end": 11001,
+        "text": "Patients with multiple primary malignancies within 3 years, except adequately resected non-melanoma skin cancer, curatively treated in-situ disease, and other solid tumors curatively treated"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9007,
+        "end": 9544,
+        "text": "Patients with clinically severe pulmonary compromise resulting from intercurrent pulmonary illnesses including, but not limited to, any underlying pulmonary disorder (i.e. pulmonary emboli within three months of the study enrollment, severe asthma, severe chronic obstructive pulmonary disease \\[COPD\\], restrictive lung disease, pleural effusion, etc.), and any autoimmune, connective tissue or inflammatory disorders with potential pulmonary involvement (i.e. rheumatoid arthritis, Sjogren's, sarcoidosis, etc.), or prior pneumonectomy"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8785,
+        "end": 9004,
+        "text": "Patients with a history of (non-infectious) interstitial lung disease (ILD)/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10308,
+        "end": 10628,
+        "text": "Patients with a medical history of myocardial infarction within 6 months before randomization/enrollment, symptomatic congestive heart failure (CHF) (New York Heart Association class IIb to IV), troponin levels consistent with myocardial infarction as defined according to the manufacturer 28 days prior to randomization"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12180,
+        "end": 12284,
+        "text": "Patients who have received a live, attenuated vaccine within 30 days prior to the first dose of DS-8201a"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients who are human immunodeficiency virus (HIV) positive may participate IF they meet the following eligibility requirements: They must be stable on their anti-retroviral regimen, and they must be healthy from an HIV perspective. They must have an undetectable viral load and a CD4 count >= 250 cells/uL within 7 days of enrollment",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients who are human immunodeficiency virus (HIV) positive may participate IF they meet the following eligibility requirements: They must be stable on their anti-retroviral regimen, and they must be healthy from an HIV perspective. They must have an undetectable viral load and a CD4 count >= 250 cells/uL within 7 days of enrollment",
+        "appliesTo": "DOSE ESCALATION AND DOSE EXPANSION PHASES"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "For patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load",
+        "appliesTo": "DOSE ESCALATION AND DOSE EXPANSION PHASES"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

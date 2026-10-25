@@ -1,0 +1,93 @@
+{
+  "nctId": "NCT07128303",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 293,
+        "text": "Participants diagnosed with histologically or cytologically confirmed solid tumor types who have progressed despite standard therapy, are intolerant to standard therapy, or are ineligible for standard therapy in the advanced setting (locally-advanced or metastatic)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 533,
+        "end": 610,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 to 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 832,
+        "end": 1090,
+        "text": "Active second malignancy. Participants with a history of malignancy who have been completely treated, with no evidence of active cancer for 3 years prior to enrollment, or participants with surgically cured tumors with low risk of recurrence may be enrolled."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1093,
+        "end": 1159,
+        "text": "Positive serum pregnancy test or participant who is breastfeeding."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1613,
+        "end": 1712,
+        "text": "Active human immunodeficiency virus (HIV)/hepatitis B virus (HBV)/hepatitis C virus (HCV) infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1613,
+        "end": 1712,
+        "text": "Active human immunodeficiency virus (HIV)/hepatitis B virus (HBV)/hepatitis C virus (HCV) infection"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

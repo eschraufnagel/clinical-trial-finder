@@ -1,0 +1,219 @@
+{
+  "nctId": "NCT04892953",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 195,
+        "end": 246,
+        "text": "Stage III NSCLC (AJCC 7th and 8th edition) patients"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 195,
+        "end": 246,
+        "text": "Stage III NSCLC (AJCC 7th and 8th edition) patients"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2010,
+        "end": 2077,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7358,
+        "end": 7448,
+        "text": "Brain metastases must be treated prior to enrolment and demonstrate radiographic stability"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7156,
+        "end": 7196,
+        "text": "History of leptomeningeal carcinomatosis"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1716,
+        "end": 1770,
+        "text": "Candidate for radiation therapy to at least one lesion"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 536,
+        "end": 625,
+        "text": "For lung adenocarcinoma patients, patients must not harbor any EGFR sensitizing mutations"
+      },
+      "appliesTo": "For lung adenocarcinoma patients"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3453,
+        "end": 3526,
+        "text": "Patients who were treated with anti-PD-(L)1 therapy other than durvalumab"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5431,
+        "end": 5494,
+        "text": "Active or prior documented autoimmune or inflammatory disorders"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5386,
+        "end": 5428,
+        "text": "History of allogenic organ transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9563,
+        "end": 9612,
+        "text": "Female patients who are pregnant or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For lung adenocarcinoma patients, patients must not harbor any ... ALK fusion",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "inclusion",
+        "quote": "For lung adenocarcinoma patients, patients must not harbor any ... ALK fusion",
+        "appliesTo": "For lung adenocarcinoma patients"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For lung adenocarcinoma patients, patients must not harbor any ... ROS1 rearrangements",
+      "raw": {
+        "factId": "ros1",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "inclusion",
+        "quote": "For lung adenocarcinoma patients, patients must not harbor any ... ROS1 rearrangements",
+        "appliesTo": "For lung adenocarcinoma patients"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For lung adenocarcinoma patients, patients must not harbor any ... MET exon 14 skipping mutations",
+      "raw": {
+        "factId": "met",
+        "rulesOut": [
+          "exon14_skipping"
+        ],
+        "polarity": "inclusion",
+        "quote": "For lung adenocarcinoma patients, patients must not harbor any ... MET exon 14 skipping mutations",
+        "appliesTo": "For lung adenocarcinoma patients"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Uncontrolled intercurrent illness, including ... interstitial lung disease",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled intercurrent illness, including ... interstitial lung disease",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active infection including ... hepatitis B (known positive hepatitis B virus [HBV] surface antigen (HBsAg) result)",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active infection including ... hepatitis B (known positive hepatitis B virus [HBV] surface antigen (HBsAg) result)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

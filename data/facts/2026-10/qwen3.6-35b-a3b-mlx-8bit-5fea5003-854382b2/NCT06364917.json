@@ -1,0 +1,194 @@
+{
+  "nctId": "NCT06364917",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 228,
+        "end": 337,
+        "text": "Participants must have histologically or cytologically confirmed non-small cell lung cancer which is stage IV"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 228,
+        "end": 337,
+        "text": "Participants must have histologically or cytologically confirmed non-small cell lung cancer which is stage IV"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "high",
+        "low"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1304,
+        "end": 1530,
+        "text": "Participants should have provided tumor tissue from locations not radiated prior to biopsy; fresh formalin fixed specimens or archival samples which have been determined as PD-L1 status \\<1% or negative prior to randomization."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1680,
+        "end": 2142,
+        "text": "Participants with CNS metastases are eligible if all metastases have been treated and have remained stable without growth for at least 2 weeks post-treatment, the participant's neurological status has returned to baseline or remained stable for at least 2 weeks, and any use of corticosteroids for CNS metastases is at a dose of ≤10 mg daily prednisone (or an equivalent dose of another corticosteroid) and has been stable for at least 2 weeks before enrollment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1173,
+        "end": 1299,
+        "text": "Participants should have a performance status of 0, 1 or 2 on the Eastern Cooperative Oncology Group (ECOG) Performance Status"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 835,
+        "end": 965,
+        "text": "Participants should have measurable disease based on RECIST 1.1 as determined by the local site investigator/radiology assessment."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3660,
+        "end": 3838,
+        "text": "Prior treatment or history of allergy/hypersensitivity with anti-PD-1, anti-PD-L1, anti-PD-L2, anti-CTLA-4, or other specific T-cell co-stimulation or checkpoint targeting drugs."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 552,
+        "end": 659,
+        "text": "Participants should not have received prior systemic anticancer therapy for advanced or metastatic disease."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 341,
+        "end": 548,
+        "text": "Participants should not have a known sensitizing mutation for which an FDA-approved.\n\n   targeted therapy for NSCLC exists in first line (e.g., EGFR, ALK, ROS1, BRAF, RET, NTRK, and MET sensitizing mutations"
+      },
+      "loose": true
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3984,
+        "end": 4348,
+        "text": "Participants with active or suspected autoimmune diseases are excluded, with the following exceptions allowed: vitiligo, well-controlled type I diabetes mellitus, residual hypothyroidism due to autoimmune condition requiring hormone replacement, psoriasis not requiring systemic treatment, or conditions not expected to recur in the absence of an external trigger."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4699,
+        "end": 4815,
+        "text": "Participants with a history of ILD, or those who are suspected of having symptomatic ILD, or those with pneumonitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4820,
+        "end": 5034,
+        "text": "Individuals with a positive test for HIV, Hep B or Hep C are excluded unless it is well-controlled with no increased risk of immunosuppression and with no potential drug interactions with current antiviral therapy."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4820,
+        "end": 5034,
+        "text": "Individuals with a positive test for HIV, Hep B or Hep C are excluded unless it is well-controlled with no increased risk of immunosuppression and with no potential drug interactions with current antiviral therapy."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5039,
+        "end": 5441,
+        "text": "Participants with a history of other malignancies are excluded, except for those with basal cell carcinoma of the skin, squamous cell carcinoma of the skin, carcinoma in situ of the cervix, carcinoma in situ of the breast, or any cancer in situ that has been treated curatively, and the participant has been in complete remission for more than two years with any cancer prior to the start of the study."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

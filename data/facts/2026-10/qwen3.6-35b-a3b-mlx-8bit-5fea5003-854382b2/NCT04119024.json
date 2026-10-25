@@ -1,0 +1,150 @@
+{
+  "nctId": "NCT04119024",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 302,
+        "end": 467,
+        "text": "Other metastatic, non-central nervous system (CNS) solid tumor relapsed or refractory after all standard-of-care systemic therapies for which the patient is eligible"
+      },
+      "appliesTo": "Lung Adenocarcinoma"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3324,
+        "end": 3670,
+        "text": "Clinically active brain metastases. Radiological documentation of absence of active brain metastases at screening is required for all patients. Prior evidence of brain metastasis successfully treated with surgery or radiation therapy will not be exclusion for participation as long as they are deemed under control at the time of study enrollment"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 739,
+        "end": 806,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2237,
+        "end": 2544,
+        "text": "Patients with melanoma must have progressed following \\>= 1 line of systemic therapy, including immune checkpoint inhibitor and a BRAF inhibitor in combination with MEK inhibitor for patients with BRAF V600-activating mutation and is not considered to have an alternate treatment option with curative intent"
+      },
+      "appliesTo": "Metastatic Melanoma; Pathologic Stage IIIC Cutaneous Melanoma AJCC v8; Pathologic Stage IV Cutaneous Melanoma AJCC v8"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2237,
+        "end": 2544,
+        "text": "Patients with melanoma must have progressed following \\>= 1 line of systemic therapy, including immune checkpoint inhibitor and a BRAF inhibitor in combination with MEK inhibitor for patients with BRAF V600-activating mutation and is not considered to have an alternate treatment option with curative intent"
+      },
+      "appliesTo": "Metastatic Melanoma; Pathologic Stage IIIC Cutaneous Melanoma AJCC v8; Pathologic Stage IV Cutaneous Melanoma AJCC v8"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4045,
+        "end": 4278,
+        "text": "Human immunodeficiency virus (HIV) seropositivity or other congenital or acquired immune deficiency state, which would increase the risk of opportunistic infections and other complications during chemotherapy-induced lymphodepletion."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4469,
+        "end": 4667,
+        "text": "Hepatitis B or C seropositivity with evidence of ongoing liver damage, which would increase the likelihood of hepatic toxicities from the chemotherapy conditioning regimen and supportive treatments."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6116,
+        "end": 6670,
+        "text": "Pregnancy or breast-feeding. Female patients must be surgically sterile or be postmenopausal for two years, or must agree to use effective contraception during the period of treatment and for 6 months afterwards. All female patients with reproductive potential must have a negative pregnancy test (serum/urine) at screening and again within 14 days from starting the conditioning chemotherapy. The definition of effective contraception will be based on the judgment of the study investigators. Patients who are breastfeeding are not allowed on this study"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Histologically confirmed malignancy that is considered surgically incurable with either: Stage IIIC melanoma including locally relapsed, satellite, in-transit lesions or bulky draining node metastasis; Stage IV melanoma including patients with known brain metastases; Other metastatic, non-central nervous system (CNS) solid tumor relapsed or refractory after all standard-of-care systemic therapies for which the patient is eligible",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed malignancy that is considered surgically incurable with either: Stage IIIC melanoma including locally relapsed, satellite, in-transit lesions or bulky draining node metastasis; Stage IV melanoma including patients with known brain metastases; Other metastatic, non-central nervous system (CNS) solid tumor relapsed or refractory after all standard-of-care systemic therapies for which the patient is eligible",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "A minimum of one measurable lesion defined as: Meeting the criteria for measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST), OR Skin lesion(s) selected as non-completely biopsied target lesion(s) that can be accurately measured and recorded by color photography with a ruler to document the size of the target lesion(s)",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "A minimum of one measurable lesion defined as: Meeting the criteria for measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST), OR Skin lesion(s) selected as non-completely biopsied target lesion(s) that can be accurately measured and recorded by color photography with a ruler to document the size of the target lesion(s)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

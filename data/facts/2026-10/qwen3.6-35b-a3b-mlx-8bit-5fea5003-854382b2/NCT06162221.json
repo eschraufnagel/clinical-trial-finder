@@ -1,0 +1,83 @@
+{
+  "nctId": "NCT06162221",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 225,
+        "end": 368,
+        "text": "Must have pathologically documented, locally advanced or metastatic KRAS G12C-mutated solid tumor malignancy (not amenable to curative surgery)"
+      },
+      "appliesTo": "Subprotocol A"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 387,
+        "end": 472,
+        "text": "Must have pathologically documented, locally advanced or metastatic RAS-mutated NSCLC"
+      },
+      "appliesTo": "Subprotocol B"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 491,
+        "end": 581,
+        "text": "Must have pathologically documented, locally advanced or metastatic RAS G12D-mutated NSCLC"
+      },
+      "appliesTo": "Subprotocol C and Subprotocol D"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 83,
+        "end": 100,
+        "text": "ECOG PS is 0 to 1"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 841,
+        "end": 927,
+        "text": "Active or history of interstitial lung disease (ILD) or pneumonitis requiring steroids"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

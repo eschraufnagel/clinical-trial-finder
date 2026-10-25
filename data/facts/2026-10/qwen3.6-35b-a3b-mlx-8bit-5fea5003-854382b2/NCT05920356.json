@@ -1,0 +1,148 @@
+{
+  "nctId": "NCT05920356",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 135,
+        "text": "Histologically or cytologically confirmed diagnosis of nonsquamous stage IV or advanced Stage IIIB or IIIC NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 135,
+        "text": "Histologically or cytologically confirmed diagnosis of nonsquamous stage IV or advanced Stage IIIB or IIIC NSCLC"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 136,
+        "end": 162,
+        "text": "with KRAS p. G12C mutation"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "high",
+        "low"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 163,
+        "end": 196,
+        "text": "and negative for PD-L1 expression"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 280,
+        "end": 356,
+        "text": "No history of systemic anticancer therapy in metastatic/non-curable settings"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 359,
+        "end": 404,
+        "text": "Eastern Cooperative Oncology Group (ECOG) ≤ 1"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell",
+        "squamous"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 429,
+        "end": 556,
+        "text": "Mixed histology NSCLC with either small-cell or large-cell neuroendocrine cell component or predominant squamous cell histology"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 695,
+        "end": 746,
+        "text": "Symptomatic (treated or untreated) brain metastases"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 833,
+        "end": 929,
+        "text": "Myocardial infarction within 6 months of randomization, unstable arrhythmias, or unstable angina"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 932,
+        "end": 972,
+        "text": "Prior therapy with a KRAS G12C inhibitor"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

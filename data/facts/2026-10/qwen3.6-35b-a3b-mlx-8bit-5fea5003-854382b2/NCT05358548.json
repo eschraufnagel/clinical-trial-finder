@@ -1,0 +1,493 @@
+{
+  "nctId": "NCT05358548",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 680,
+        "end": 773,
+        "text": "Patients with any evidence of Small Cell Carcinoma will be excluded from study participation."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 30,
+        "end": 357,
+        "text": "Patients must have histologically or cytologically confirmed stage IV NSCLC (includes M1a, M1b, and M1c stage disease, AJCC 8th edition). Patients with Stage IIIB and IIIC disease are eligible if they are not candidates for combined chemotherapy and radiation; such cases should be discussed in a multidisciplinary tumor board."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3155,
+        "end": 3467,
+        "text": "Patients with asymptomatic new (at screening) or progressive brain metastases (active brain metastases at screening) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS specific treatment is not required and is unlikely to be required during the first cycle of therapy."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3155,
+        "end": 3467,
+        "text": "Patients with asymptomatic new (at screening) or progressive brain metastases (active brain metastases at screening) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS specific treatment is not required and is unlikely to be required during the first cycle of therapy."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1470,
+        "end": 1525,
+        "text": "Patients must have an ECOG Performance Status of 0 to 2"
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1580,
+        "end": 1752,
+        "text": "Prior systemic chemotherapy or immunotherapy for advanced metastatic NSCLC. Patients treated with any prior checkpoint inhibitors for metastatic lung cancer are ineligible."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1580,
+        "end": 1655,
+        "text": "Prior systemic chemotherapy or immunotherapy for advanced metastatic NSCLC."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2781,
+        "end": 2987,
+        "text": "Patients with known EGFR mutations (except exon 20 insertion), BRAF mutations (V600), MET Exon14 skipping or ALK or ROS1 translocations that can be treated with oral tyrosine kinase inhibitors are excluded."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2781,
+        "end": 2987,
+        "text": "Patients with known EGFR mutations (except exon 20 insertion), BRAF mutations (V600), MET Exon14 skipping or ALK or ROS1 translocations that can be treated with oral tyrosine kinase inhibitors are excluded."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2781,
+        "end": 2987,
+        "text": "Patients with known EGFR mutations (except exon 20 insertion), BRAF mutations (V600), MET Exon14 skipping or ALK or ROS1 translocations that can be treated with oral tyrosine kinase inhibitors are excluded."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2781,
+        "end": 2987,
+        "text": "Patients with known EGFR mutations (except exon 20 insertion), BRAF mutations (V600), MET Exon14 skipping or ALK or ROS1 translocations that can be treated with oral tyrosine kinase inhibitors are excluded."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2781,
+        "end": 2987,
+        "text": "Patients with known EGFR mutations (except exon 20 insertion), BRAF mutations (V600), MET Exon14 skipping or ALK or ROS1 translocations that can be treated with oral tyrosine kinase inhibitors are excluded."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2781,
+        "end": 2987,
+        "text": "Patients with known EGFR mutations (except exon 20 insertion), BRAF mutations (V600), MET Exon14 skipping or ALK or ROS1 translocations that can be treated with oral tyrosine kinase inhibitors are excluded."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4085,
+        "end": 4274,
+        "text": "Patients must not have known pre-existing and clinically active interstitial lung disease, or a known history of (non-infectious) pneumonitis that required steroids, or current pneumonitis."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4418,
+        "end": 4635,
+        "text": "Patients must not have history of auto-immune condition requiring ongoing or intermittent systemic treatment in the past 2 years (i.e. with use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8192,
+        "end": 8355,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8358,
+        "end": 8733,
+        "text": "For patients with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable or on suppressive therapy, if indicated. Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4829,
+        "end": 5138,
+        "text": "Patients with known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, should have a clinical risk assessment of cardiac function using the New York Heart Association Functional Classification. To be eligible for this trial, patients should be class II or better."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12094,
+        "end": 12181,
+        "text": "Patient must not have a history of solid organ transplantation or stem-cell transplant."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5468,
+        "end": 5634,
+        "text": "Women must not be pregnant or breast-feeding due to potential harm to the fetus or infant from cytotoxic chemotherapy and the unknown risk of MK-3475 (pembrolizumab)."
+      },
+      "appliesTo": "Lung Cancer (Arms 1 and 2)"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8767,
+        "end": 8989,
+        "text": "Patient must have histologically confirmed recurrent/metastatic squamous cell carcinoma of the head and neck (HNSCC) (excluding SCC of salivary glands, nasopharynx and skin) that is considered incurable by local therapies."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8767,
+        "end": 8989,
+        "text": "Patient must have histologically confirmed recurrent/metastatic squamous cell carcinoma of the head and neck (HNSCC) (excluding SCC of salivary glands, nasopharynx and skin) that is considered incurable by local therapies."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 10629,
+        "end": 10678,
+        "text": "Patient must have an ECOG performance status 0-2."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 10112,
+        "end": 10169,
+        "text": "Patients must have measurable or non-measureable disease."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10733,
+        "end": 10957,
+        "text": "Prior systemic chemotherapy or immunotherapy for recurrent/metastatic head and neck squamous cell carcinoma. Patients treated with any prior checkpoint inhibitors for recurrent/metastatic head and neck cancer are ineligible."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10733,
+        "end": 10841,
+        "text": "Prior systemic chemotherapy or immunotherapy for recurrent/metastatic head and neck squamous cell carcinoma."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11902,
+        "end": 12091,
+        "text": "Patient must not have a history of non-infectious pneumonitis requiring steroids at doses greater than or equal to 10 mg per day of prednisone or the equivalent on first line immunotherapy."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12523,
+        "end": 12645,
+        "text": "Patient must not have an active autoimmune disease that requires systemic treatment within 2 years prior to randomization."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15785,
+        "end": 15965,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months of randomization are eligible for this trial."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16510,
+        "end": 16586,
+        "text": "Patients must not have untreated brain metastases or leptomeningeal disease."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16510,
+        "end": 16586,
+        "text": "Patients must not have untreated brain metastases or leptomeningeal disease."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16813,
+        "end": 17106,
+        "text": "Patient must not have significant cardiovascular disease (such as New York Heart Association Class II or greater cardiac disease, myocardial infarction, or cerebrovascular accident) within 3 months prior to randomization, or unstable arrhythmia or unstable angina at the time of randomization."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13632,
+        "end": 13819,
+        "text": "Patient must not be pregnant or breast-feeding due to the potential harm to an unborn fetus and possible risk for adverse events in nursing infants with the treatment regimens being used."
+      },
+      "appliesTo": "Head and Neck Cancer (Arm 3)"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients must have measurable or non-measurable disease.",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Patients must have measurable or non-measurable disease.",
+        "appliesTo": "Lung Cancer (Arms 1 and 2)"
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients may have ANY PD-L1 expression Tumor Proportion Score (TPS) status.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Patients may have ANY PD-L1 expression Tumor Proportion Score (TPS) status.",
+        "appliesTo": "Lung Cancer (Arms 1 and 2)"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For patients with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated. Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "For patients with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated. Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load.",
+        "appliesTo": "Head and Neck Cancer (Arm 3)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

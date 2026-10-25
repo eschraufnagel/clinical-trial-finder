@@ -1,0 +1,120 @@
+{
+  "nctId": "NCT05498428",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1654,
+        "end": 1711,
+        "text": "Cohort 2, 3, 3b, and 7 only: Squamous NSCLC are excluded."
+      },
+      "appliesTo": "Cohort 2, 3, 3b, and 7"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 243,
+        "text": "Participant must have histologically or cytologically confirmed, locally advanced or metastatic, non-small cell lung cancer (NSCLC) that is not amenable to curative therapy including surgical resection or chemoradiation."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2256,
+        "end": 2417,
+        "text": "All cohorts except Cohort 4: Participants must have at least 1 measurable lesion, according to Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1."
+      },
+      "appliesTo": "All cohorts except Cohort 4"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3068,
+        "end": 3148,
+        "text": "Participant must have eastern cooperative oncology group (ECOG) status of 0 or 1"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3760,
+        "end": 3881,
+        "text": "Participant has a medical history of interstitial lung disease (ILD), including drug induced ILD or radiation pneumonitis"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6446,
+        "end": 6604,
+        "text": "Participant has symptomatic brain metastases. A participant with asymptomatic or previously treated and stable brain metastases may participate in this study."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4566,
+        "end": 5040,
+        "text": "Participant has a history of clinically significant cardiovascular disease including, but not limited to: a) All cohorts: diagnosis of deep vein thrombosis or pulmonary embolism within 1 month prior to the first dose of study treatment(s), or any of the following within 6 months prior to the first dose of study treatment(s): myocardial infarction, unstable angina, stroke, transient ischemic attack, coronary/peripheral artery bypass graft, or any acute coronary syndrome."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 463,
+        "end": 702,
+        "text": "Cohorts 1,5,and6: Participant should not have received any prior systemic therapy for locally advanced or metastatic NSCLC. Cohort 2: Participant should not have received any prior systemic therapy for locally advanced or metastatic NSCLC."
+      },
+      "appliesTo": "Cohorts 1, 2, 5, and 6"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

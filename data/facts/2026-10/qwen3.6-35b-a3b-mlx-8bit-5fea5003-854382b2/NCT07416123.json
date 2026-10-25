@@ -1,0 +1,73 @@
+{
+  "nctId": "NCT07416123",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 434,
+        "end": 483,
+        "text": "Have measurable disease according to RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 486,
+        "end": 584,
+        "text": "Have Eastern Cooperative Oncology Group performance status (ECOG PS) score of 0 to 1 at screening."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 833,
+        "end": 924,
+        "text": "Prior treatment with topoisomerase 1 inhibitor-based antibody-drug conjugate (ADC) therapy."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Parts 2 and 3: Have histologically or cytologically confirmed diagnosis of metastatic urothelial carcinoma (mUC).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Parts 2 and 3: Have histologically or cytologically confirmed diagnosis of metastatic urothelial carcinoma (mUC).",
+        "appliesTo": "Parts 2 and 3"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "nctId": "NCT06303505",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 141,
+        "end": 191,
+        "text": "Disease not amenable to curative intent treatment."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 498,
+        "end": 616,
+        "text": "Radiologically measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 as assessed by the INV."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 620,
+        "end": 666,
+        "text": "Eastern Cooperative Oncology Group (ECOG) 0-1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2903,
+        "end": 3019,
+        "text": "Participants with spinal cord compression or active central nervous system disease, and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2903,
+        "end": 3019,
+        "text": "Participants with spinal cord compression or active central nervous system disease, and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3840,
+        "end": 4091,
+        "text": "History of another malignancy with ongoing treatment or not yet free from disease for 2 years, except for appropriately treated carcinoma in situ of the cervix, non-melanoma skin carcinoma, or other malignancy with a similar expected curative outcome."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4096,
+        "end": 4390,
+        "text": "Documented other concurrent non-malignant comorbidities such as unstable or uncontrolled pectoral angina, myocardial infarction during the last 6 months, valvular heart disease that requires treatment, acute myocarditis, or congestive heart failure (CHF) (New York Heart Association III or IV)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5099,
+        "end": 5214,
+        "text": "HIV infected participants must be on anti-retroviral therapy (ART) and have a well-controlled HIV infection/disease"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4800,
+        "end": 4978,
+        "text": "Participants who are HBsAg positive are eligible if they have received HBV anti-viral therapy for at least 4 weeks and have an undetectable HBV viral load prior to randomization."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with PROC or r/r Adenocarcinoma NSCLC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with PROC or r/r Adenocarcinoma NSCLC",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

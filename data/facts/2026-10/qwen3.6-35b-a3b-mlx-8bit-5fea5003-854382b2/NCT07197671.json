@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT07197671",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 152,
+        "end": 293,
+        "text": "Participants with histologically or cytologically confirmed squamous cell carcinoma thought to originate from the head and neck region (HNC)."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 297,
+        "end": 367,
+        "text": "Participants must have metastatic solid malignancy, non-hematological."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1762,
+        "end": 1863,
+        "text": "Participants must have at least one evaluable (measurable) tumor that is radiographically detectable."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1867,
+        "end": 1963,
+        "text": "Participants must have an Eastern Cooperative Oncology Group (ECOG) performance status of 0 - 2."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 371,
+        "end": 497,
+        "text": "Participants must be under treatment with one of the following FDA-approved standard-of-care anti-PD-1 or anti-PD-L1 therapies"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6561,
+        "end": 6675,
+        "text": "Patients with a history of or concurrent second primary malignancy within 2 years to study enrollment are excluded"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7113,
+        "end": 7309,
+        "text": "Any condition requiring the use of immunosuppression, excluding rheumatologic conditions or endocrine conditions treated with stable doses of corticosteroids (equivalent to prednisone 10 mg daily)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5658,
+        "end": 5891,
+        "text": "Any ongoing or active infection, including active tuberculosis, hepatitis B or C, or known infection with the human immunodeficiency virus (HIV) that is not well controlled (undetectable viral load by PCR) by anti-retroviral therapy."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5658,
+        "end": 5891,
+        "text": "Any ongoing or active infection, including active tuberculosis, hepatitis B or C, or known infection with the human immunodeficiency virus (HIV) that is not well controlled (undetectable viral load by PCR) by anti-retroviral therapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5423,
+        "end": 5654,
+        "text": "The participant is pregnant, breastfeeding, or expecting to conceive or could impregnate someone within the projected duration of the trial, starting with the screening visit through 6 months after the last dose of trial treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

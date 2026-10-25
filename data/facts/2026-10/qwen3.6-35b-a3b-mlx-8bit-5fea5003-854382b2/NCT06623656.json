@@ -1,0 +1,283 @@
+{
+  "nctId": "NCT06623656",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 126,
+        "text": "Patients with histologically or cytologically proven clinical stages IB (T2aN0), II, and III(N2) NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 210,
+        "text": "Patients with histologically or cytologically proven clinical stages IB (T2aN0), II, and III(N2) NSCLC (according to AJCC version 9) eligible for surgical resection with curative intent."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 261,
+        "end": 307,
+        "text": "Measurable disease, as defined by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 338,
+        "end": 377,
+        "text": "No known EGFR mutations or ALK fusions."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 338,
+        "end": 377,
+        "text": "No known EGFR mutations or ALK fusions."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 541,
+        "end": 612,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 616,
+        "end": 648,
+        "text": "No prior therapy for lung cancer"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 616,
+        "end": 648,
+        "text": "No prior therapy for lung cancer"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 616,
+        "end": 648,
+        "text": "No prior therapy for lung cancer"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 616,
+        "end": 648,
+        "text": "No prior therapy for lung cancer"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 616,
+        "end": 648,
+        "text": "No prior therapy for lung cancer"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4235,
+        "end": 4548,
+        "text": "Active or prior documented autoimmune or inflammatory disorders (including inflammatory bowel disease \\[e.g., colitis or Crohn's disease systemic lupus erythematosus, sarcoidosis syndrome, or Wegener syndrome \\[granulomatosis with polyangiitis, Graves' disease, rheumatoid arthritis, hypophysitis, uveitis, etc\\]."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5430,
+        "end": 5635,
+        "text": "Interstitial lung disease (eg, idiopathic pulmonary fibrosis, organizing pneumonia) or active, noninfectious pneumonitis that requires immune-suppressive doses of glucocorticoids to assist with management."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6434,
+        "end": 6550,
+        "text": "Uncontrolled HIV, active hepatitis B or C, or diagnosis of immunodeficiency, and/or tuberculosis (active or latent)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6434,
+        "end": 6550,
+        "text": "Uncontrolled HIV, active hepatitis B or C, or diagnosis of immunodeficiency, and/or tuberculosis (active or latent)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10163,
+        "end": 10405,
+        "text": "New York Heart Association heart failure classifications of Class II, III, or IV; or myocardial infarction, or acute coronary syndrome within 12 months of first dose of study medication; or b. Transient ischemic attack or stroke within 1 year"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6366,
+        "end": 6430,
+        "text": "Prior allogeneic stem cell transplant or solid organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7721,
+        "end": 7771,
+        "text": "Female patients who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3903,
+        "end": 4087,
+        "text": "Any condition that requires ongoing/continuous corticosteroid therapy (\\>10mg prednisone/day or anti-inflammatory equivalent) within 1 week prior to the first dose of study medication."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Known PD-L1 expression.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "Known PD-L1 expression.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of another primary malignancy except for: Malignancy treated with curative intent and with no known active disease ≥2 years before the first dose of the study drug and of low potential risk for recurrence.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of another primary malignancy except for: Malignancy treated with curative intent and with no known active disease ≥2 years before the first dose of the study drug and of low potential risk for recurrence.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

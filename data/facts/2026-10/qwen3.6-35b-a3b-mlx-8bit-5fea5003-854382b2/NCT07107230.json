@@ -1,0 +1,109 @@
+{
+  "nctId": "NCT07107230",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 238,
+        "text": "Participants must have been previously diagnosed with histologically confirmed unresectable, locally advanced, or metastatic non-small cell lung cancer, colorectal carcinoma, or head and neck squamous cell carcinoma"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 238,
+        "text": "Participants must have been previously diagnosed with histologically confirmed unresectable, locally advanced, or metastatic non-small cell lung cancer, colorectal carcinoma, or head and neck squamous cell carcinoma"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 786,
+        "end": 877,
+        "text": "Have an eastern cooperative oncology group (ECOG) performance status of 0 to 1 at screening"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1007,
+        "end": 1150,
+        "text": "Any prior medical history of ILD/pneumonitis, including pneumonitis from anti-PD-1/ PD-L1 antibody or radiation that required systemic steroids"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1411,
+        "end": 1517,
+        "text": "History of clinically significant cardiovascular disease within 6 months prior to signing informed consent"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1520,
+        "end": 1723,
+        "text": "Participants with prior or concurrent second malignancy cannot be enrolled if prior/concurrent malignancy's natural history of treatment is likely to interfere with any safety or efficacy study endpoints"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have measurable or evaluable disease: Part 1: Either measurable or evaluable disease; Part 2: At least 1 measurable lesion per response evaluation criteria in solid tumors (RECIST) version (v) 1.1",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "Have measurable or evaluable disease: Part 1: Either measurable or evaluable disease; Part 2: At least 1 measurable lesion per response evaluation criteria in solid tumors (RECIST) version (v) 1.1",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

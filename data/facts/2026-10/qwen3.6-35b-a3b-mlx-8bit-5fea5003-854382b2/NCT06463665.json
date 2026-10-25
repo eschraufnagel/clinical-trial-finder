@@ -1,0 +1,92 @@
+{
+  "nctId": "NCT06463665",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 59,
+        "end": 130,
+        "text": "ECOG (Eastern Cooperative Oncology Group) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 212,
+        "end": 335,
+        "text": "Histologically confirmed Stage III or IV squamous or nonsquamous \\[American Joint Committee on Cancer (AJCC) 8th edition\\]."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 133,
+        "end": 209,
+        "text": "Have histologically or cytologically confirmed advanced or metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 599,
+        "end": 753,
+        "text": "At least one measurable target tumor lesion anywhere except the brain per RECIST 1.1 by Computed Tomography (CT) or Magnetic Resonance Imaging (MRI) scan."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1265,
+        "end": 1325,
+        "text": "Current symptomatic central nervous system (CNS) metastasis."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1903,
+        "end": 1983,
+        "text": "currently require maintenance doses of \\>10 mg prednisone or equivalent per day."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

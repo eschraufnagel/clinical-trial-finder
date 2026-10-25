@@ -1,0 +1,123 @@
+{
+  "nctId": "NCT06657144",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 111,
+        "text": "At least 1 measurable lesion based on RECIST v1.1 as determined by the Investigator."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3401,
+        "end": 3540,
+        "text": "History of prior malignancy other than the cancer under study that is progressing or has required active treatment within the past 3 years."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3543,
+        "end": 3744,
+        "text": "Symptomatic or untreated central nervous system metastases, including leptomeningeal metastases, requiring concurrent treatment, including but not limited to surgery, radiation, and/or corticosteroids."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4142,
+        "end": 4362,
+        "text": "Active uncontrolled bacterial, fungal, or viral infection including hepatitis B virus (HBV), hepatitis C virus (HCV), known human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome (AIDS)-related illness."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4142,
+        "end": 4362,
+        "text": "Active uncontrolled bacterial, fungal, or viral infection including hepatitis B virus (HBV), hepatitis C virus (HCV), known human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome (AIDS)-related illness."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4616,
+        "end": 4700,
+        "text": "Received ≥ 2 prior systemic anticancer therapies for advanced or metastatic disease."
+      },
+      "appliesTo": "Cohort A (2L Gastric, Gastro-esophageal-junction [GEJ], Esophageal Adenocarcinoma [EAC]) Specific Inclusion Criteria"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5424,
+        "end": 5508,
+        "text": "Received ≥ 1 prior systemic anticancer therapies for advanced or metastatic disease."
+      },
+      "appliesTo": "Cohort C (1L Esophageal Squamous Cell Carcinoma [ESCC]) - Specific Inclusion Criteria"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Received ≥ 2 prior systemic anticancer therapies for advanced or metastatic disease.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Received ≥ 2 prior systemic anticancer therapies for advanced or metastatic disease.",
+        "appliesTo": "Cohort B (2L Esophageal Squamous Cell Carcinoma [ESCC]) - Specific Inclusion Criteria"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "nctId": "NCT05384626",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 174,
+        "end": 322,
+        "text": "Histologically or cytologically confirmed locally advanced or metastatic solid tumor with a documented ALK rearrangement or activating ALK mutation."
+      },
+      "appliesTo": "Phase 1"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 368,
+        "end": 482,
+        "text": "Histologically or cytologically confirmed locally advanced or metastatic NSCLC with a documented ALK rearrangement"
+      },
+      "appliesTo": "Phase 2 Cohorts except 2f"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 508,
+        "end": 684,
+        "text": "Histologically or cytologically confirmed locally advanced or metastatic solid tumor with a documented ALK rearrangement or activating ALK mutation detected by certified assay."
+      },
+      "appliesTo": "Phase 2 Cohort 2f"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 174,
+        "end": 322,
+        "text": "Histologically or cytologically confirmed locally advanced or metastatic solid tumor with a documented ALK rearrangement or activating ALK mutation."
+      },
+      "appliesTo": "Phase 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 368,
+        "end": 482,
+        "text": "Histologically or cytologically confirmed locally advanced or metastatic NSCLC with a documented ALK rearrangement"
+      },
+      "appliesTo": "Phase 2 Cohorts except 2f"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 508,
+        "end": 684,
+        "text": "Histologically or cytologically confirmed locally advanced or metastatic solid tumor with a documented ALK rearrangement or activating ALK mutation detected by certified assay."
+      },
+      "appliesTo": "Phase 2 Cohort 2f"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1007,
+        "end": 1142,
+        "text": "Must have evaluable disease (target or nontarget) according to RECIST 1.1 Phase 2: Must have measurable disease according to RECIST 1.1"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 259,
+        "end": 322,
+        "text": "with a documented ALK rearrangement or activating ALK mutation."
+      },
+      "appliesTo": "Phase 1"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 259,
+        "end": 294,
+        "text": "with a documented ALK rearrangement"
+      },
+      "appliesTo": "Phase 2 Cohorts except 2f"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 593,
+        "end": 684,
+        "text": "with a documented ALK rearrangement or activating ALK mutation detected by certified assay."
+      },
+      "appliesTo": "Phase 2 Cohort 2f"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1219,
+        "end": 1291,
+        "text": "Patient's cancer has a known oncogenic driver alteration other than ALK."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Histologically or cytologically confirmed locally advanced or metastatic NSCLC with a documented ALK rearrangement",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed locally advanced or metastatic NSCLC with a documented ALK rearrangement",
+        "appliesTo": "DDI sub-study cohorts"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Histologically or cytologically confirmed locally advanced or metastatic NSCLC with a documented ALK rearrangement",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed locally advanced or metastatic NSCLC with a documented ALK rearrangement",
+        "appliesTo": "DDI sub-study cohorts"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "with a documented ALK rearrangement",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "with a documented ALK rearrangement",
+        "appliesTo": "DDI sub-study cohorts"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

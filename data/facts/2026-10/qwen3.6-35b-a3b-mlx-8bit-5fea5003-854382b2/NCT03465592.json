@@ -1,0 +1,96 @@
+{
+  "nctId": "NCT03465592",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 111,
+        "end": 205,
+        "text": "Patients with histologically confirmed solid tumors with an estimated poor long term survival."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 209,
+        "end": 322,
+        "text": "Performance Level: Karnofsky ≥ 50% for patients \\> 16 years of age and Lansky ≥ 60 for patients ≤16 years of age."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 326,
+        "end": 371,
+        "text": "Patients must be post RIC haploidentical BMT."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4130,
+        "end": 4419,
+        "text": "Has active, known or suspected autoimmune disease. Subjects with vitiligo, type I diabetes mellitus, residual hypothyroidism due to autoimmune thyroiditis only requiring hormone replacement, or conditions not expected to recur in the absence of an external trigger are permitted to enroll."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4592,
+        "end": 5314,
+        "text": "Pregnancy or Breast Feeding: Women of childbearing potential (WOCBP) must agree to follow instructions for method(s) of contraception for the duration of study treatment with nivolumab and 5 months after the last dose of study treatment {i.e., 30 days (duration of ovulatory cycle) plus the time required for the investigational drug to undergo approximately five half-lives. Males who are sexually active with WOCBP must agree to follow instructions for method(s) of contraception for the duration of study treatment with nivolumab and 7 months after the last dose of study treatment {i.e., 90 days (duration of sperm turnover) plus the time required for the investigational drug to undergo approximately five half-lives."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients with histologically confirmed solid tumors with an estimated poor long term survival.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with histologically confirmed solid tumors with an estimated poor long term survival.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "nctId": "NCT05746325",
+  "mappings": [
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 93,
+        "end": 258,
+        "text": "Confirmed diagnosis of leptomeningeal metastases (LM) with positive cerebrospinal fluid (CSF) cytology for malignancy and meningeal enhancement (type 1A, 1B, and 1C)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 420,
+        "end": 497,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0, 1, 2, or 3"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2311,
+        "end": 2427,
+        "text": "Patients with uncontrolled or untreated infection including active hepatitis, and human immunodeficiency virus (HIV)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2311,
+        "end": 2427,
+        "text": "Patients with uncontrolled or untreated infection including active hepatitis, and human immunodeficiency virus (HIV)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2131,
+        "end": 2187,
+        "text": "Women of childbearing age who are pregnant or lactating."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "nctId": "NCT07452224",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 227,
+        "end": 261,
+        "text": "ECOG performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 295,
+        "end": 357,
+        "text": "At least one measurable lesion per iRECIST/RECIST 1.1 criteria"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 692,
+        "end": 860,
+        "text": "Participants must have locally advanced or metastatic NSCLC, confirmed by available pathology records or current biopsy, that is advanced (non-resectable), or recurrent"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5863,
+        "end": 5967,
+        "text": "Known or confirmed central nervous system (CNS) metastases or carcinomatous meningitis during screening."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5863,
+        "end": 5967,
+        "text": "Known or confirmed central nervous system (CNS) metastases or carcinomatous meningitis during screening."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6321,
+        "end": 6440,
+        "text": "History of any other malignant tumors within 5 years prior to the first dose, except for cured early-stage malignancies"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7951,
+        "end": 8012,
+        "text": "Myocardial infarction within 6 months prior to the first dose"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10344,
+        "end": 10436,
+        "text": "Known history of organ transplantation or allogeneic hematopoietic stem cell transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10477,
+        "end": 10509,
+        "text": "Pregnant or breastfeeding women."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 922,
+        "end": 1195,
+        "text": "For Cohort 1 and Cohort 2, pathologically or cytologically confirmed advanced malignant locally advanced or metastatic NSCLC participants who have failed standard PD-1/L1 inhibitor alone or in combination with standard chemotherapy treatment regardless of PD-L1 expression."
+      },
+      "appliesTo": "Cohort 1 and Cohort 2"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1196,
+        "end": 1467,
+        "text": "For Cohort 3 and Cohort 4, participants with pathologically or cytologically confirmed advanced, non-resectable locally advanced or metastatic NSCLC, who have previously untreated with any anticancer drugs expressing PD-L1 (TPS≥ 1%) as determined by an FDA-approved test."
+      },
+      "appliesTo": "Cohort 3 and Cohort 4"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active autoimmune diseases or inflammatory diseases ... or a history of such diseases within the past 2 years",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active autoimmune diseases or inflammatory diseases ... or a history of such diseases within the past 2 years",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active or uncontrolled HBV ... HCV ... or HIV positive.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active or uncontrolled HBV ... HCV ... or HIV positive.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

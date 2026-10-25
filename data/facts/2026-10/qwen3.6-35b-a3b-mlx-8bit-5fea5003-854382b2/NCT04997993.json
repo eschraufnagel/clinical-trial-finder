@@ -1,0 +1,143 @@
+{
+  "nctId": "NCT04997993",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 37,
+        "end": 71,
+        "text": "Advanced or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1770,
+        "end": 2039,
+        "text": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS directed therapy is not required and is unlikely to be required during the first cycle of therapy."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1770,
+        "end": 2039,
+        "text": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS directed therapy is not required and is unlikely to be required during the first cycle of therapy."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2268,
+        "end": 2296,
+        "text": "ECOG performance status 0-2."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2299,
+        "end": 2414,
+        "text": "Patients with HIV on effective anti-retroviral therapy with an undetectable viral load are eligible for this trial."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5389,
+        "end": 5538,
+        "text": "Patients must not be pregnant or nursing due to the potential for congenital abnormalities and the potential of this regimen to harm nursing infants."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4868,
+        "end": 4979,
+        "text": "A known history of acute or chronic Hepatitis B or C, due to the known potential hepatotoxicity of leflunomide."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5115,
+        "end": 5386,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 619,
+        "end": 704,
+        "text": "Patients must have received ≤ 3 prior cytotoxic chemotherapies for metastatic disease"
+      },
+      "appliesTo": "HER2 negative breast cancer"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 762,
+        "end": 860,
+        "text": "up to 2 prior antibody drug conjugate regimens (eg, sacituzumab govitecan, trastuzumab deruxtecan)"
+      },
+      "appliesTo": "HER2 negative breast cancer"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

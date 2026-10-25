@@ -1,0 +1,107 @@
+{
+  "nctId": "NCT05244239",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 111,
+        "end": 157,
+        "text": "Patients with pathologically confirmed ES-SCLC"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 625,
+        "end": 759,
+        "text": "Patients with treated brain metastases are eligible but must require \\< 10 mg of dexamethasone daily or its glucocorticoid equivalent."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 240,
+        "end": 349,
+        "text": "progression on first-line systemic therapy (either chemotherapy \\[platinum etoposide\\] or chemoimmunotherapy)"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 240,
+        "end": 349,
+        "text": "progression on first-line systemic therapy (either chemotherapy \\[platinum etoposide\\] or chemoimmunotherapy)"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 240,
+        "end": 282,
+        "text": "progression on first-line systemic therapy"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3299,
+        "end": 3340,
+        "text": "Pregnancy or breastfeeding within 2 weeks"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients who have received prior RT will be permitted to enroll. However, the metastases treated on this study must be > 2 cm from the following previously irradiated structures: ... Lungs previously irradiated with prior V20Gy > 35 percent",
+      "raw": {
+        "factId": "chest_radiation_6m",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who have received prior RT will be permitted to enroll. However, the metastases treated on this study must be > 2 cm from the following previously irradiated structures: ... Lungs previously irradiated with prior V20Gy > 35 percent",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

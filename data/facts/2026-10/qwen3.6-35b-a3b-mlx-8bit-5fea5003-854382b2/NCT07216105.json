@@ -1,0 +1,94 @@
+{
+  "nctId": "NCT07216105",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 41,
+        "end": 180,
+        "text": "disease that is not amenable to curative therapy and that has relapsed or progressed following at least one line of prior systemic therapy."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1069,
+        "end": 1137,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1140,
+        "end": 1254,
+        "text": "Presence of measurable disease by RECIST, v1.1 assessed within 28 days prior to start of first study intervention."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2135,
+        "end": 2464,
+        "text": "Participants with prior CNS involvement from their malignancy must have completed effective treatment of their CNS disease with no symptoms of disease in the absence of steroid treatment and at least stable findings on relevant CNS imaging and no evidence of leptomeningeal disease for at least 4 weeks prior to study enrollment."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2135,
+        "end": 2464,
+        "text": "Participants with prior CNS involvement from their malignancy must have completed effective treatment of their CNS disease with no symptoms of disease in the absence of steroid treatment and at least stable findings on relevant CNS imaging and no evidence of leptomeningeal disease for at least 4 weeks prior to study enrollment."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2656,
+        "end": 2980,
+        "text": "Currently receiving or likely to require systemic immunosuppressive therapy (e.g., prednisone ≥5 mg daily) for any reason from start of first study intervention to Day 29 with the exception of corticosteroids as a premedication for chemotherapy side effects per institutional standard of care or as mandated by the protocol."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

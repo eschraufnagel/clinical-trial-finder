@@ -1,0 +1,205 @@
+{
+  "nctId": "NCT06807632",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 249,
+        "end": 342,
+        "text": "Pathologically confirmed diagnosis of newly diagnosed extensive-stage small cell lung cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 249,
+        "end": 342,
+        "text": "Pathologically confirmed diagnosis of newly diagnosed extensive-stage small cell lung cancer."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 216,
+        "end": 246,
+        "text": "ECOG performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2197,
+        "end": 2477,
+        "text": "Patients with treated CNS metastases are allowed on the study if their clinical symptoms are adequately controlled and the daily dose of steroid use is equivalent to or less than 10 mg of prednisone. Patients with untreated asymptomatic CNS metastases off of steroids are allowed."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 543,
+        "end": 737,
+        "text": "Radiographically documented RECIST version 1.1 stable disease, partial or complete response after initial treatment with a platinum doublet regimen in combination with atezolizumab for 4 cycles."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 543,
+        "end": 737,
+        "text": "Radiographically documented RECIST version 1.1 stable disease, partial or complete response after initial treatment with a platinum doublet regimen in combination with atezolizumab for 4 cycles."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7246,
+        "end": 7539,
+        "text": "Prior malignancy, active within the previous 3 years, except for locally curable cancer that is currently considered as cured or successfully resected, such as basal or squamous cell carcinoma, superficial bladder cancer, gastric cancer or carcinoma in situ of the prostate, cervix, or breast."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7542,
+        "end": 7692,
+        "text": "Female patients who have a positive serum pregnancy test during screening or a positive urine pregnancy test on Day 1 before first dose of study drug."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7695,
+        "end": 7866,
+        "text": "Female patients who are lactating and/or plan to breastfeed during the study treatment or at any point leading up to and including 6 months after the last study drug dose."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6071,
+        "end": 6203,
+        "text": "Congenital or acquired immunodeficiency, including patients with known history or infection with human immunodeficiency virus (HIV)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6373,
+        "end": 6593,
+        "text": "Active hepatitis B virus (HBV) infection (chronic or acute), defined as having a positive hepatitis B surface antigen (HBsAg) test followed by a positive HBV RNA test within 28 days prior to the first dose of study drug."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6892,
+        "end": 7070,
+        "text": "Active hepatitis C virus (HCV) infection, defined as having a positive HCV antibody test followed by a positive HCV RNA test within 28 days prior to the first dose of study drug."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5266,
+        "end": 5322,
+        "text": "Myocardial infarction within 6 months prior to screening"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5325,
+        "end": 5388,
+        "text": "Uncontrolled angina pectoris within 6 months prior to screening"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "It is acceptable to have no measurable disease at the start of this study.",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "It is acceptable to have no measurable disease at the start of this study.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

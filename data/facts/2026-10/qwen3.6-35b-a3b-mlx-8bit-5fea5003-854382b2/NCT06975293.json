@@ -1,0 +1,110 @@
+{
+  "nctId": "NCT06975293",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 67,
+        "end": 98,
+        "text": "ECOG performance status 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 101,
+        "end": 198,
+        "text": "Measurable disease according to RECIST v1.1 as assessed by the local site investigator/radiology."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 774,
+        "end": 803,
+        "text": "Pregnant and lactating women."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1245,
+        "end": 1400,
+        "text": "History of (non-infectious) pneumonitis/interstitial lung disease that required steroids or the presence of ongoing pneumonitis/interstitial lung disease)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1465,
+        "end": 1523,
+        "text": "Known active CNS metastases and/or leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1465,
+        "end": 1523,
+        "text": "Known active CNS metastases and/or leptomeningeal disease."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_lines isn't a fact for this trial's cancer type",
+      "quote": "Participant must have received at least 2, but no more than 4 prior lines of systemic therapy.",
+      "raw": {
+        "factId": "prior_lines",
+        "rulesOut": [
+          "zero",
+          "one",
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant must have received at least 2, but no more than 4 prior lines of systemic therapy.",
+        "appliesTo": "Phase 2 Monotherapy Cohorts"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

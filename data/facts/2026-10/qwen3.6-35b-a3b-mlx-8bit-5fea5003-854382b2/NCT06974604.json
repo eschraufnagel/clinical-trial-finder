@@ -1,0 +1,234 @@
+{
+  "nctId": "NCT06974604",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 109,
+        "end": 175,
+        "text": "Pathologically documented unresectable advanced non-squamous NSCLC"
+      },
+      "appliesTo": "non-squamous NSCLC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 60,
+        "text": "Has advanced and/or metastatic cancer"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1123,
+        "end": 1218,
+        "text": "Measurable disease based on Response Evaluation Criteria in Solids Tumors (RECIST) version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 890,
+        "end": 955,
+        "text": "Has an Eastern Cooperative Oncology Group performance status 0-2."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5901,
+        "end": 5941,
+        "text": "Has ongoing radiation-related toxicities"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5402,
+        "end": 5614,
+        "text": "Has a history of non-infectious ILD/pneumonitis including radiation pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6044,
+        "end": 6127,
+        "text": "Has active human immunodeﬁciency virus (HIV) infection that is not well controlled."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6130,
+        "end": 6200,
+        "text": "Has an active or uncontrolled hepatitis B and/or hepatitis C infection"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6203,
+        "end": 6301,
+        "text": "Is lactating or pregnant as conﬁrmed by pregnancy tests performed within 7 days before enrollment."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6443,
+        "end": 6649,
+        "text": "Has uncontrolled or significant cardiac disease (including MI or unstable angina within the past 6 months, NYHA Class II-IV heart failure, uncontrolled hypertension, uncontrolled or significant arrhythmia)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Pathologically documented hormone receptor positive breast cancer ... which has progressed on hormonal based therapy including CDK4/6 inhibitor and 1 prior line of chemotherapy and/or antibody drug conjugate therapy.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically documented hormone receptor positive breast cancer ... which has progressed on hormonal based therapy including CDK4/6 inhibitor and 1 prior line of chemotherapy and/or antibody drug conjugate therapy.",
+        "appliesTo": "hormone receptor positive breast cancer"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Pathologically documented triple negative breast cancer ... who have progressed on at least 1 prior line of therapy",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically documented triple negative breast cancer ... who have progressed on at least 1 prior line of therapy",
+        "appliesTo": "triple negative breast cancer"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Pathologically documented triple negative breast cancer ... who have progressed on at least 1 prior line of therapy",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically documented triple negative breast cancer ... who have progressed on at least 1 prior line of therapy",
+        "appliesTo": "triple negative breast cancer"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Pathologically documented triple negative breast cancer ... who have progressed on at least 1 prior line of therapy",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically documented triple negative breast cancer ... who have progressed on at least 1 prior line of therapy",
+        "appliesTo": "triple negative breast cancer"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Pathologically documented unresectable advanced non-squamous NSCLC ... that has progressed on at least one prior therapy.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically documented unresectable advanced non-squamous NSCLC ... that has progressed on at least one prior therapy.",
+        "appliesTo": "non-squamous NSCLC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Pathologically documented triple negative breast cancer ... who have progressed on at least 1 prior line of therapy",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically documented triple negative breast cancer ... who have progressed on at least 1 prior line of therapy",
+        "appliesTo": "triple negative breast cancer"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Pathologically documented hormone receptor positive breast cancer ... which has progressed on hormonal based therapy including CDK4/6 inhibitor and 1 prior line of chemotherapy and/or antibody drug conjugate therapy.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically documented hormone receptor positive breast cancer ... which has progressed on hormonal based therapy including CDK4/6 inhibitor and 1 prior line of chemotherapy and/or antibody drug conjugate therapy.",
+        "appliesTo": "hormone receptor positive breast cancer"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "nctId": "NCT04693468",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1712,
+        "end": 1916,
+        "text": "Histological or cytological diagnosis of a solid tumor that is advanced/metastatic, intolerable to standard therapy, resistant to effective standard therapy, or for which no standard therapy is available."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2735,
+        "end": 2878,
+        "text": "Have measurable disease at study enrollment as defined by RECIST v1.1 with at least 1 measurable lesion that has not previously been irradiated"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3195,
+        "end": 3268,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0 to 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6649,
+        "end": 7029,
+        "text": "Known symptomatic brain metastases requiring steroids. Participants with previously diagnosed brain metastases are eligible if they have completed their treatment and have recovered from the acute effects of radiation therapy or surgery prior to study enrollment, have discontinued corticosteroid treatment for these metastases for at least 2 weeks, and are neurologically stable."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7615,
+        "end": 7700,
+        "text": "Participants with known uncontrolled HIV virus or Acquired immunodeficiency syndrome."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7800,
+        "end": 7905,
+        "text": "Participants with uncontrolled Hepatitis B virus (HBV) or hepatitis C virus (HCV) infection at screening."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8102,
+        "end": 8188,
+        "text": "Myocardial infarction or symptomatic cardiac ischemia within 6 months before screening"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11177,
+        "end": 11483,
+        "text": "Diagnosis of any other malignancy within 2 years prior to study enrollment, except for adequately treated basal cell or squamous cell skin cancer, or carcinoma in situ of the breast, bladder, or cervix, or low grade (Gleason ≤ 6) prostate cancer on surveillance without any plans for treatment intervention"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11569,
+        "end": 11632,
+        "text": "Pregnant female participants; breastfeeding female participants"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "nctId": "NCT07222566",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 64,
+        "end": 183,
+        "text": "Have pathologically confirmed locally advanced (Stage IIIB/IIIC) or metastatic (Stage IV)squamous or non-squamous NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 64,
+        "end": 238,
+        "text": "Have pathologically confirmed locally advanced (Stage IIIB/IIIC) or metastatic (Stage IV)squamous or non-squamous NSCLC and not be a candidate for complete surgical resection"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 640,
+        "end": 697,
+        "text": "Measurable disease based on RECIST v1.1 per investigator."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 700,
+        "end": 776,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG) score of 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1417,
+        "end": 1638,
+        "text": "Known active CNS lesions are excluded. Participants with definitively treated brain metastases (surgery and/or radiotherapy) may be eligible. Clinically inactive brain metastases of longest diameter \\< 1 cm are permitted."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1728,
+        "end": 1915,
+        "text": "Participants with any history of another malignancy within 3 years before the first dose of study intervention, or any evidence of residual disease from a previously diagnosed malignancy."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3137,
+        "end": 3296,
+        "text": "Participants with acute, chronic or symptomatic infections including participants positive for active HIV, hepatitis B virus (HBV), or Hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3137,
+        "end": 3296,
+        "text": "Participants with acute, chronic or symptomatic infections including participants positive for active HIV, hepatitis B virus (HBV), or Hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3614,
+        "end": 3823,
+        "text": "Previous systemic anti-tumor therapy including:\n\n  1. Prior systemic therapy, including anti-PD-(L)1 therapy, for locally advanced, unresectable, or metastatic NSCLC.\n  2. Previous treatment with immunotherapy"
+      },
+      "loose": true
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4082,
+        "end": 4123,
+        "text": "6. Prior systemic anti-angiogenic therapy"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3614,
+        "end": 3823,
+        "text": "Previous systemic anti-tumor therapy including:\n\n  1. Prior systemic therapy, including anti-PD-(L)1 therapy, for locally advanced, unresectable, or metastatic NSCLC.\n  2. Previous treatment with immunotherapy"
+      },
+      "loose": true
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3614,
+        "end": 3823,
+        "text": "Previous systemic anti-tumor therapy including:\n\n  1. Prior systemic therapy, including anti-PD-(L)1 therapy, for locally advanced, unresectable, or metastatic NSCLC.\n  2. Previous treatment with immunotherapy"
+      },
+      "loose": true
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3826,
+        "end": 3916,
+        "text": "3. Prior radiotherapy \\> 30 Gy to the lung \\< 6 months of first dose of study intervention"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2330,
+        "end": 2418,
+        "text": "Evidence of noninfectious or drug-induced interstitial lung disease (ILD) or pneumonitis"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2485,
+        "end": 2624,
+        "text": "History of uncontrolled comorbidities within 6 months prior to the first dose including uncontrolled cardiac and cerebrovascular conditions"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2192,
+        "end": 2262,
+        "text": "History of allogeneic organ / hematopoietic stem cell transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4736,
+        "end": 4877,
+        "text": "Breastfeeding participants, participants of childbearing potential, and male participants who are unwilling to follow contraceptive measures."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4615,
+        "end": 4661,
+        "text": "4. current high-dose systemic corticosteroids."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with known actionable genomic alteration (AGAs), including estimated glomerular filtration rate (EGFR)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+      "raw": {
+        "factId": "egfr",
+        "rulesOut": [
+          "common_sensitizing",
+          "exon20_insertion",
+          "other_mutation"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with known actionable genomic alteration (AGAs), including estimated glomerular filtration rate (EGFR)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with known actionable genomic alteration (AGAs), including... anaplastic lymphoma kinase (ALK)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with known actionable genomic alteration (AGAs), including... anaplastic lymphoma kinase (ALK)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with known actionable genomic alteration (AGAs), including... Repressor of Silencing 1 (ROS1)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+      "raw": {
+        "factId": "ros1",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with known actionable genomic alteration (AGAs), including... Repressor of Silencing 1 (ROS1)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with known actionable genomic alteration (AGAs), including... neurotrophic tyrosine receptor kinase (NTRK)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+      "raw": {
+        "factId": "ntrk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with known actionable genomic alteration (AGAs), including... neurotrophic tyrosine receptor kinase (NTRK)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with known actionable genomic alteration (AGAs), including... v-raf murine sarcoma viral oncogene homolog B1 (BRAF)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+      "raw": {
+        "factId": "braf_v600e",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with known actionable genomic alteration (AGAs), including... v-raf murine sarcoma viral oncogene homolog B1 (BRAF)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with known actionable genomic alteration (AGAs), including... rearranged during transfection (RET)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+      "raw": {
+        "factId": "ret",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with known actionable genomic alteration (AGAs), including... rearranged during transfection (RET)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with known actionable genomic alteration (AGAs), including... mesenchymal-epithelial transition (MET)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+      "raw": {
+        "factId": "met",
+        "rulesOut": [
+          "exon14_skipping",
+          "amplification"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with known actionable genomic alteration (AGAs), including... mesenchymal-epithelial transition (MET)... for which there are available first-line therapies per local standard-of-care (SOC) are ineligible.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

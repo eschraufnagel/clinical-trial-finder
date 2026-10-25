@@ -1,0 +1,83 @@
+{
+  "nctId": "NCT05281237",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 140,
+        "text": "Subject with Stage I - II primary lung cancer (Solitary nodules up to 3 cm) as defined by previous pathology or ROSE."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 140,
+        "text": "Subject with Stage I - II primary lung cancer (Solitary nodules up to 3 cm) as defined by previous pathology or ROSE."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1058,
+        "end": 1094,
+        "text": "Subject is pregnant or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_radiation isn't a fact for this trial's cancer type",
+      "quote": "Prior radiation or neo adjuvant chemotherapy of the target nodule/tumor",
+      "raw": {
+        "factId": "prior_radiation",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior radiation or neo adjuvant chemotherapy of the target nodule/tumor",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_chemotherapy isn't a fact for this trial's cancer type",
+      "quote": "Prior radiation or neo adjuvant chemotherapy of the target nodule/tumor",
+      "raw": {
+        "factId": "prior_chemotherapy",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior radiation or neo adjuvant chemotherapy of the target nodule/tumor",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

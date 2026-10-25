@@ -1,0 +1,146 @@
+{
+  "nctId": "NCT04923542",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 780,
+        "end": 945,
+        "text": "Measurable brain disease per RANO-BM criteria that can be measured in at least one dimension as ≥ 0.5 cm for both intact brain metastases and post-operative cavities"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2157,
+        "end": 2191,
+        "text": "Presence of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 780,
+        "end": 945,
+        "text": "Measurable brain disease per RANO-BM criteria that can be measured in at least one dimension as ≥ 0.5 cm for both intact brain metastases and post-operative cavities"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1110,
+        "end": 1170,
+        "text": "Eastern Cooperative Oncology Group performance status 0 to 2"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4089,
+        "end": 4389,
+        "text": "History of prior malignancy within 2 years prior to screening, with the exception of those with a negligible risk of metastasis or death (e.g., 5-year OS of \\>90%), such as but not limited to, non-melanoma skin carcinoma, or stage I endometriod uterine cancer, and others at the discretion of the PI."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3604,
+        "end": 3685,
+        "text": "detectable viral infection (such as known human immunodeficiency virus positivity"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3694,
+        "end": 3777,
+        "text": "known active hepatitis B or C \\[for example, hepatitis B surface antigen positive\\]"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2861,
+        "end": 2900,
+        "text": "Women who are pregnant or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "HR+ breast cancer to fulfill the requirement of HR+ disease, a breast cancer must express (≥ 1%), by immunohistochemistry (IHC), at least 1 of the hormone receptors (estrogen receptor [ER] or progesterone receptor [PR]) as defined in the American Society of Clinical Oncology (ASCO) / College of American Pathologists (CAP) Guidelines",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "HR+ breast cancer to fulfill the requirement of HR+ disease, a breast cancer must express (≥ 1%), by immunohistochemistry (IHC), at least 1 of the hormone receptors (estrogen receptor [ER] or progesterone receptor [PR]) as defined in the American Society of Clinical Oncology (ASCO) / College of American Pathologists (CAP) Guidelines",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "HR+ Metastatic Breast Cancer",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "HR+ Metastatic Breast Cancer",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

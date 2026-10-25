@@ -1,0 +1,95 @@
+{
+  "nctId": "NCT06413680",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 55,
+        "end": 159,
+        "text": "Histologically or cytologically confirmed diagnosis of solid malignancy (locally advanced or metastatic)"
+      },
+      "appliesTo": "Dose escalation cohorts"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 317,
+        "end": 399,
+        "text": "Histologically of cytologically confirmed diagnosis of one of the following tumors"
+      },
+      "appliesTo": "Dose expansion cohorts"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1209,
+        "end": 1377,
+        "text": "Has had prior anti-cancer immunotherapy within 4 weeks prior to study intervention, or discontinuation of prior anti-cancer immunotherapy due to grade 3 or 4 toxicities"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1561,
+        "end": 1744,
+        "text": "Has any condition requiring ongoing/continuous corticosteroid therapy (\\>10 mg prednisone/day or anti-inflammatory equivalent) within 1-2 weeks to the first dose of study intervention"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1748,
+        "end": 1919,
+        "text": "Has ongoing or recent (within 5 years) evidence of significant autoimmune disease or any other condition that required treatment with systemic immunosuppressive treatments"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior treatment with anti-PD1/PD-L1, or an approved systemic therapy or any previous systemic non-immunomodulatory biologic therapy within 4 weeks",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior treatment with anti-PD1/PD-L1, or an approved systemic therapy or any previous systemic non-immunomodulatory biologic therapy within 4 weeks",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

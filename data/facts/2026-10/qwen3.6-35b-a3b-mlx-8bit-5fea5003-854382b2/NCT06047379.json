@@ -1,0 +1,110 @@
+{
+  "nctId": "NCT06047379",
+  "mappings": [
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5669,
+        "end": 5710,
+        "text": "Patients with metastases to the meninges."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5838,
+        "end": 5895,
+        "text": "Patient with history of known leptomeningeal involvement."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5898,
+        "end": 6089,
+        "text": "Patient has prior history or new diagnosis of secondary cancer within five years prior to the date of informed consent, except for basal cell carcinoma or squamous cell carcinoma of the skin."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6685,
+        "end": 6849,
+        "text": "Patients in Phase 2b with Astrocytoma IDH-mutant, or Glioblastoma IDH-wildtype who have had more than one recurrence or progression of his/her primary CNS tumor(s)."
+      },
+      "appliesTo": "Phase 2b"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patient with select solid tumors must have uncontrolled metastases to the brain (confirmed by cranial CT or MRI) that is not controlled by surgery or radiation therapy and receiving one of the protocol approved SOC regimens.",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "none"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patient with select solid tumors must have uncontrolled metastases to the brain (confirmed by cranial CT or MRI) that is not controlled by surgery or radiation therapy and receiving one of the protocol approved SOC regimens.",
+        "appliesTo": "Phase 1"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patient with select solid tumors must have uncontrolled metastases to the brain (confirmed by cranial CT or MRI) that is not controlled by surgery or radiation therapy and receiving one of the protocol approved SOC regimens.",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "none"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patient with select solid tumors must have uncontrolled metastases to the brain (confirmed by cranial CT or MRI) that is not controlled by surgery or radiation therapy and receiving one of the protocol approved SOC regimens.",
+        "appliesTo": "Phase 2a"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patient with select solid tumors must have uncontrolled metastases to the brain (confirmed by cranial CT or MRI) that is not controlled by surgery or radiation therapy and receiving one of the protocol approved SOC regimens.",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "none"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patient with select solid tumors must have uncontrolled metastases to the brain (confirmed by cranial CT or MRI) that is not controlled by surgery or radiation therapy and receiving one of the protocol approved SOC regimens.",
+        "appliesTo": "Phase 2b"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

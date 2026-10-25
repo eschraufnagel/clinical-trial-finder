@@ -1,0 +1,96 @@
+{
+  "nctId": "NCT05269316",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 593,
+        "end": 686,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1 (Part 1) at screening."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3101,
+        "end": 3193,
+        "text": "Primary tumor in CNS, or active or untreated CNS metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5437,
+        "end": 5610,
+        "text": "Patients with CD4+ T-cell counts \\< 350 cells/μL are ineligible for enrolment as well as patients with unknown HIV infection status who are unwilling to undergo HIV testing."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5616,
+        "end": 5648,
+        "text": "A known active hepatitis B or C."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8331,
+        "end": 8616,
+        "text": "Patients who have other malignancies requiring treatment within 2 years prior to the first dose of study drug will be excluded, except for radically treated locally curable basal or squamous cell skin cancer and other malignancies that have been treated with no relapse within 2 years."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients who have received transplantation including patients with previous allogeneic bone marrow transplant.",
+      "raw": {
+        "factId": "transplant",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who have received transplantation including patients with previous allogeneic bone marrow transplant.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

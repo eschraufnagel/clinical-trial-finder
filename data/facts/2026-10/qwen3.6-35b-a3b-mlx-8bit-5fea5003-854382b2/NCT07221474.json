@@ -1,0 +1,221 @@
+{
+  "nctId": "NCT07221474",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 76,
+        "end": 180,
+        "text": "Has a histologically or cytologically confirmed diagnosis of squamous non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 76,
+        "end": 245,
+        "text": "Has a histologically or cytologically confirmed diagnosis of squamous non-small cell lung cancer (NSCLC) (Stage IV: M1a, M1b, M1c1, M1c2, AJCC Staging Manual, Version 9)"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 368,
+        "end": 506,
+        "text": "Has measurable disease per Response Criteria in Solid Tumors Version 1.1 (RECIST 1.1) as assessed by the local site investigator/radiology"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1472,
+        "end": 1593,
+        "text": "Has an Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1 assessed within 7 days before randomization"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 913,
+        "end": 1031,
+        "text": "Human immunodeficiency virus (HIV)-infected participants must have well controlled HIV on antiretroviral therapy (ART)"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2021,
+        "end": 2296,
+        "text": "Has received prior therapy with an anti-programmed cell death 1 protein (anti-PD-1), anti-programmed cell death ligand 1 (anti-PD-L1), or anti-programmed cell death ligand 2 (anti-PD-L2) agent, or with an agent directed to another stimulatory or coinhibitory T-cell receptor."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1839,
+        "end": 1942,
+        "text": "Has received prior treatment with a cancer vaccine, including another personalized cancer vaccine (PCV)"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1945,
+        "end": 2018,
+        "text": "Has received prior systemic anticancer therapy for their metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1945,
+        "end": 2018,
+        "text": "Has received prior systemic anticancer therapy for their metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3332,
+        "end": 3440,
+        "text": "Has known additional malignancy that is progressing or has required active treatment within the past 3 years"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3443,
+        "end": 3531,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3443,
+        "end": 3531,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3681,
+        "end": 3767,
+        "text": "Has active autoimmune disease that has required systemic treatment in the past 2 years"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3770,
+        "end": 3916,
+        "text": "Has a history of (noninfectious) pneumonitis/interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3969,
+        "end": 4018,
+        "text": "Has a history of stem cell/solid organ transplant"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3079,
+        "end": 3329,
+        "text": "Has a diagnosis of immunodeficiency or is receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent) or any other form of immunosuppressive therapy within 7 days prior to the first dose of study intervention"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

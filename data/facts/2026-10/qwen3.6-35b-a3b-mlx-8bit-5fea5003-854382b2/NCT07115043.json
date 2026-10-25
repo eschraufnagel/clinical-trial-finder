@@ -1,0 +1,132 @@
+{
+  "nctId": "NCT07115043",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 47,
+        "end": 64,
+        "text": "ECOG PS of 0 to 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 400,
+        "end": 468,
+        "text": "Participants with locally advanced or metastatic select solid tumors"
+      },
+      "appliesTo": "Module 1 specific inclusion criteria"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 108,
+        "end": 163,
+        "text": "At least one measurable lesion according to RECIST v1.1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1647,
+        "end": 1746,
+        "text": "Brain metastases unless treated, asymptomatic, stable, and not requiring continuous corticosteroids"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1818,
+        "end": 1860,
+        "text": "a history of leptomeningeal carcinomatosis"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1391,
+        "end": 1479,
+        "text": "Active or prior documented autoimmune or inflammatory disorders, within the past 3 years"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1992,
+        "end": 2105,
+        "text": "Participant requires chronic immunosuppressive therapy (including steroids \\> 10 mg prednisone/day or equivalent)"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1029,
+        "end": 1055,
+        "text": "have PD-L1 expression ≥ 1%"
+      },
+      "appliesTo": "Module 2 specific inclusion criteria"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2247,
+        "end": 2356,
+        "text": "1L NSCLC participants with genetic alteration such as EGFR that has a targeted therapy in 1L as per local SoC"
+      },
+      "appliesTo": "Module 2 specific exclusion criteria"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "nctId": "NCT07393555",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2197,
+        "end": 2335,
+        "text": "Participants must have progressed (in the opinion of the treating physician) during or following the most recent line of systemic therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1389,
+        "end": 2003,
+        "text": "Participants with spinal cord compression or brain metastases must not have residual neurological dysfunction, unless no further recovery is expected, and the participant has been stable on weaning doses of corticosteroids (≤ 10 mg daily prednisone or equivalent) prior to randomization. Participants with spinal cord compression or brain metastases that require local treatment must have received local treatment to these metastases and remained clinically controlled and asymptomatic for at least 7 days following stereotactic radiation and/or 14 days following whole brain radiation, and prior to randomization."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2006,
+        "end": 2194,
+        "text": "Participants must not have leptomeningeal disease that requires CNS-specific treatment prior to randomization and must not be planning to receive the CNS-specific treatment while on study."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 505,
+        "end": 571,
+        "text": "Participants must have measurable disease documented by CT or MRI."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3675,
+        "end": 3795,
+        "text": "Participants' most recent Zubrod performance status must be 0-1 and be documented within 28 days prior to randomization."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2895,
+        "end": 2978,
+        "text": "Participants must not have received prior anti-PD-1 or anti-PD-L1 antibody therapy."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2492,
+        "end": 2597,
+        "text": "Participants must have previously received platinum-based chemotherapy for stage IV or recurrent disease."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2600,
+        "end": 2747,
+        "text": "Participants must have received no more than (\\<=) 3 lines of prior cytotoxic therapy (including chemotherapy, antibody-drug conjugates) for NSCLC."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2750,
+        "end": 2892,
+        "text": "Participants must not have received prior TROP2-targeted antibody-drug conjugate or a systemic therapy containing sacituzumab govitecan/SN-38."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5364,
+        "end": 5603,
+        "text": "Participants must not have a prior or concurrent malignancy whose natural history or treatment (in the opinion of the treating physician) has the potential to interfere with the safety or efficacy assessment of the investigational regimen."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5606,
+        "end": 5774,
+        "text": "Participants must not be pregnant or nursing (nursing includes breast milk fed to an infant by any means, including from the breast, milk expressed by hand, or pumped)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6487,
+        "end": 6719,
+        "text": "Participants with known human immunodeficiency virus (HIV)-infection must be on effective anti-retroviral therapy and have undetectable viral load test on the most recent test results obtained within 6 months prior to randomization."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6944,
+        "end": 7221,
+        "text": "Participants with a history of hepatitis C virus (HCV) infection must have been treated and cured. Participants currently being treated for HCV infection must have undetectable HCV viral load test on the most recent test results obtained within 6 months prior to randomization."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "nctId": "NCT07145255",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2511,
+        "end": 2620,
+        "text": "i. Cohort B: Histologic or cytologic diagnosis of advanced metastatic NSCLC refractory to standard treatment."
+      },
+      "appliesTo": "Phase 1b Cohort B"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2134,
+        "end": 2265,
+        "text": "i. Cohort A: Histologic or cytologic diagnosis of mCRPC (with confirmed adenocarcinoma histology) refractory to standard treatment."
+      },
+      "appliesTo": "Phase 1b Cohort A"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2511,
+        "end": 2620,
+        "text": "i. Cohort B: Histologic or cytologic diagnosis of advanced metastatic NSCLC refractory to standard treatment."
+      },
+      "appliesTo": "Phase 1b Cohort B"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2627,
+        "end": 2793,
+        "text": "i. Cohort C: Histologic or cytologic diagnosis of advanced metastatic breast cancer (TNBC, HR+/HER2-negative or HER2-low, HR-/HER2+) refractory to standard treatment."
+      },
+      "appliesTo": "Phase 1b Cohort C"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2798,
+        "end": 2912,
+        "text": "iv. Cohort D: Histologic or cytologic diagnosis of advanced metastatic CRC, PDAC refractory to standard treatment."
+      },
+      "appliesTo": "Phase 1b Cohort D"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5118,
+        "end": 5390,
+        "text": "3. Active cerebral/meningeal disease related to the underlying malignancy. Patients with a history of cerebral/meningeal disease related to the underlying malignancy are allowed if prior central nervous system disease has been treated and the patient is clinically stable."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5118,
+        "end": 5390,
+        "text": "3. Active cerebral/meningeal disease related to the underlying malignancy. Patients with a history of cerebral/meningeal disease related to the underlying malignancy are allowed if prior central nervous system disease has been treated and the patient is clinically stable."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3455,
+        "end": 3565,
+        "text": "For both Dose Expansion (Phase 1b) and Phase 2, patients must have measurable disease according to RECIST v1.1"
+      },
+      "appliesTo": "Phase 1b and Phase 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3569,
+        "end": 3634,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4424,
+        "end": 4584,
+        "text": "1. History of another malignancy within 3 years before the first dose of study drug, or any evidence of residual disease from a previously diagnosed malignancy."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7458,
+        "end": 7505,
+        "text": "12. Uncontrolled autoimmune disease or syndrome"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7265,
+        "end": 7457,
+        "text": "11. A history of (non-infectious) ILD/pneumonitis requiring steroid therapy, or active ILD/pneumonitis, or clinically suspected ILD/pneumonitis that cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5829,
+        "end": 6029,
+        "text": "5. Active or symptomatic viral hepatitis, including patients with active hepatitis C infection (positive by polymerase chain reaction or on antiviral therapy for hepatitis C within the last 6 months)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6717,
+        "end": 7013,
+        "text": "8. Documented history of a cerebral vascular event (stroke or transient ischemic attack), unstable angina, myocardial infarction, or cardiac symptoms (including congestive heart failure) consistent with New York Heart Association Class III-IV within 6 months prior to the first dose of study drug"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8332,
+        "end": 8538,
+        "text": "16. For Phase 1b and Phase 2: prior treatment with an ADC with a camptothecin (CPT) payload, such as Enhertu (trastuzumab deruxtecan), Datroway (datopotamab deruxtecan), or Trodelvy (sacituzumab govitecan)."
+      },
+      "appliesTo": "Phase 1b and Phase 2"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "6. Patients with HIV infection with 1 or more of the following: ... Receiving antiretroviral therapy that may interfere with study drug ... CD4 count < 350 at screening",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "6. Patients with HIV infection with 1 or more of the following: ... Receiving antiretroviral therapy that may interfere with study drug ... CD4 count < 350 at screening",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

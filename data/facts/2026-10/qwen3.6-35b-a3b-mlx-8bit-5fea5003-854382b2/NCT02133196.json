@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT02133196",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 28,
+        "end": 315,
+        "text": "Measurable metastatic (stage IV) or unresectable non-small cell lung cancer (including but not limited to squamous cell carcinoma, adenosquamous carcinoma, or adenocarcinomas) with at least one lesion that is resectable for TIL generation. (Note: neuroendocrine tumors are not eligible.)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 28,
+        "end": 267,
+        "text": "Measurable metastatic (stage IV) or unresectable non-small cell lung cancer (including but not limited to squamous cell carcinoma, adenosquamous carcinoma, or adenocarcinomas) with at least one lesion that is resectable for TIL generation."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 321,
+        "end": 642,
+        "text": "Patients with 3 or fewer brain metastases that are less than 1 cm in diameter and asymptomatic are eligible. Lesions that have been treated with stereotactic radiosurgery must be clinically stable for 1 month after treatment for the patient to be eligible. Patients with surgically resected brain metastases are eligible."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 749,
+        "end": 792,
+        "text": "Clinical performance status of ECOG 0 or 1."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1508,
+        "end": 1809,
+        "text": "Seronegative for HIV antibody. (The experimental treatment being evaluated in this protocol depends on an intact immune system. Patients who are HIV seropositive can have decreased immune competence and thus may be less responsive to the experimental treatment and more susceptible to its toxicities.)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1812,
+        "end": 2024,
+        "text": "Seronegative for active hepatitis B, and seronegative for hepatitis C antibody. If hepatitis C antibody test is positive, then patient must be tested for the presence of antigen by RT-PCR and be HCV RNA negative."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3085,
+        "end": 3190,
+        "text": "Participants who are nursing because of the potentially dangerous effects of the treatment on the infant."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3194,
+        "end": 3264,
+        "text": "Ongoing need for pharmacological immunosuppression, including steroids"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

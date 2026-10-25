@@ -1,0 +1,172 @@
+{
+  "nctId": "NCT07116057",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 264,
+        "end": 401,
+        "text": "NSCLC Patients: i. Metastatic or recurrent lung adenocarcinoma with cytologically or pathologically confirmed malignant pleural effusion."
+      },
+      "appliesTo": "NSCLC Patients"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 264,
+        "end": 401,
+        "text": "NSCLC Patients: i. Metastatic or recurrent lung adenocarcinoma with cytologically or pathologically confirmed malignant pleural effusion."
+      },
+      "appliesTo": "NSCLC Patients"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 587,
+        "end": 720,
+        "text": "Patients with asymptomatic CNS metastases that have been treated (and are off steroids for the treatment of CNS disease) are allowed."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 875,
+        "end": 932,
+        "text": "No evidence of leptomeningeal disease or cord compression"
+      },
+      "appliesTo": "Patients with asymptomatic CNS metastases that have been treated"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1488,
+        "end": 1570,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status that is either 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 410,
+        "end": 500,
+        "text": "Failure of at least one prior line of standard of care therapy for advanced stage disease."
+      },
+      "appliesTo": "NSCLC Patients"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 504,
+        "end": 583,
+        "text": "Patients must have evidence of active disease as defined by RECIST 1.1 criteria"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3346,
+        "end": 3460,
+        "text": "Active autoimmune disease requiring systemic immunosuppressive treatment equivalent to ≥ 10mg of prednisone daily."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3211,
+        "end": 3252,
+        "text": "Pregnant or nursing (lactating) patients."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2672,
+        "end": 2715,
+        "text": "Active hepatitis B or hepatitis C infection"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2863,
+        "end": 3022,
+        "text": "Active invasive cancer, other than the proposed cancer included in this protocol, within 2 years prior to eligibility confirmation by a physician-investigator."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3142,
+        "end": 3207,
+        "text": "Dependence on systemic steroids or immunosuppressant medications."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

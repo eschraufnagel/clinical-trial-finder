@@ -1,0 +1,275 @@
+{
+  "nctId": "NCT07619339",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 43,
+        "end": 273,
+        "text": "Patients must have pathologically confirmed non-small cell lung cancer. This includes, but is not limited, to histologies such as adenocarcinoma, squamous cell carcinoma, sarcomatoid carcinoma, and poorly differentiated carcinoma."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 685,
+        "end": 757,
+        "text": "Patients must have measurable disease as defined by RECIST 1.1 criteria."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 278,
+        "end": 462,
+        "text": "Patients must have documentation of MET exon 14 skipping present in their cancer using an FDA-approved assay done within a laboratory with CLIA, ISO/IEC, CAP, or similar certification."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1057,
+        "end": 1509,
+        "text": "Must not have leptomeningeal disease or brain metastases unless: 1) metastases have been locally treated and have remained clinically controlled and asymptomatic for at least 3 days following the stereotactic radiation and/or 14 days following whole brain radiation, and prior to sub-study randomization, AND 2) participant has no residual neurological dysfunction and has been off corticosteroids for at least 24 hours prior to start of study therapy."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1057,
+        "end": 1509,
+        "text": "Must not have leptomeningeal disease or brain metastases unless: 1) metastases have been locally treated and have remained clinically controlled and asymptomatic for at least 3 days following the stereotactic radiation and/or 14 days following whole brain radiation, and prior to sub-study randomization, AND 2) participant has no residual neurological dysfunction and has been off corticosteroids for at least 24 hours prior to start of study therapy."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 762,
+        "end": 1052,
+        "text": "Must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 762,
+        "end": 1052,
+        "text": "Must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 762,
+        "end": 1052,
+        "text": "Must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 762,
+        "end": 1052,
+        "text": "Must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation."
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 762,
+        "end": 1052,
+        "text": "Must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 762,
+        "end": 1052,
+        "text": "Must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 762,
+        "end": 1052,
+        "text": "Must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 762,
+        "end": 1052,
+        "text": "Must not have other known actionable oncogenic alterations, such as (but not limited to) EGFR sensitizing mutations, EGFR T790M mutation, ALK gene fusion, ROS1 gene rearrangement, RET gene rearrangement, NTRK rearrangement, HER2 mutation, KRAS activating mutations, and BRAF V600E mutation."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2108,
+        "end": 2138,
+        "text": "ECOG Performance Status of ≤ 2"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2141,
+        "end": 2169,
+        "text": "Not Pregnant and Not Nursing"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3869,
+        "end": 3936,
+        "text": "No history of interstitial lung disease requiring steroid treatment"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4116,
+        "end": 4246,
+        "text": "Must not have active autoimmune or lung disease requiring systemic therapy (prednisone ≤ 10mg allowed) within 2 years of treatment"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4874,
+        "end": 4994,
+        "text": "Must not have a history of unstable angina, MI, CHF (NYHA grade ≥ 2) requiring hospitalization in the preceding 6 months"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6441,
+        "end": 6573,
+        "text": "HIV-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6822,
+        "end": 6973,
+        "text": "All patients with active hepatitis C (hepatitis C virus \\[HCV\\] antibody positive with HCV RNA levels above the lower limit of detection) are excluded."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients must have advanced or recurrent disease. Advanced disease is defined as stage IV disease or stage IIIB/C disease not amenable to local therapy such as radiation or surgery.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have advanced or recurrent disease. Advanced disease is defined as stage IV disease or stage IIIB/C disease not amenable to local therapy such as radiation or surgery.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

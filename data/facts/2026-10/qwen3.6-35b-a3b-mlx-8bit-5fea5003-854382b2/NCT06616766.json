@@ -1,0 +1,196 @@
+{
+  "nctId": "NCT06616766",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 53,
+        "text": "ECOG performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2070,
+        "end": 2126,
+        "text": "Patient with symptomatic or progressive brain metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2129,
+        "end": 2176,
+        "text": "Known or suspected leptomeningeal disease (LMD)"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2218,
+        "end": 2388,
+        "text": "History of acute coronary syndromes, including myocardial infarction, coronary artery bypass graft, unstable angina, coronary angioplasty or stenting within past 24 weeks"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2945,
+        "end": 3089,
+        "text": "History of (non-infectious) interstitial lung disease (ILD) or pneumonitis that required steroids, or any evidence of current ILD or pneumonitis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3384,
+        "end": 3497,
+        "text": "Infection with Human immunodeficiency virus (HIV) infection, or active chronic hepatitis B or chronic hepatitis C"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3384,
+        "end": 3497,
+        "text": "Infection with Human immunodeficiency virus (HIV) infection, or active chronic hepatitis B or chronic hepatitis C"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 229,
+        "end": 381,
+        "text": "Mandatory provision of archived or fresh tumor tissue in quantity sufficient to allow for retrospective confirmation of HER2 aberration or EGFR mutation"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 229,
+        "end": 381,
+        "text": "Mandatory provision of archived or fresh tumor tissue in quantity sufficient to allow for retrospective confirmation of HER2 aberration or EGFR mutation"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1870,
+        "end": 1916,
+        "text": "Patients who have at least 1 measurable lesion"
+      },
+      "appliesTo": "Dose Expansion part only"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1713,
+        "end": 1836,
+        "text": "Documented HER2 aberration or EGFR mutation (HER2 mutation or EGFR exon 20 insertion, HER2 amplification or overexpression)"
+      },
+      "appliesTo": "Dose Escalation part only"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1713,
+        "end": 1836,
+        "text": "Documented HER2 aberration or EGFR mutation (HER2 mutation or EGFR exon 20 insertion, HER2 amplification or overexpression)"
+      },
+      "appliesTo": "Dose Escalation part only"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1919,
+        "end": 2045,
+        "text": "Patients with histologically or cytologically confirmed locally advanced or metastatic NSCLC HER2 exon 20 insertion (Cohort 1)"
+      },
+      "appliesTo": "Dose Expansion part only"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of a second primary cancer with the exception of... other malignancy with no known active disease present and no treatment administered during the last 2 years",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of a second primary cancer with the exception of... other malignancy with no known active disease present and no treatment administered during the last 2 years",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

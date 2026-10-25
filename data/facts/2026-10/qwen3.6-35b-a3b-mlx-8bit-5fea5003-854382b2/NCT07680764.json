@@ -1,0 +1,105 @@
+{
+  "nctId": "NCT07680764",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 153,
+        "text": "Participants must have histologically confirmed diagnosis of stage IV non-small cell lung cancer (NSCLC) (squamous or non-squamous)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 187,
+        "text": "Participants must have histologically confirmed diagnosis of stage IV non-small cell lung cancer (NSCLC) (squamous or non-squamous) or recurrent unresectable disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 548,
+        "end": 638,
+        "text": "Participants must have an Eastern Cooperative Oncology Group Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 641,
+        "end": 746,
+        "text": "Participants must have measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 770,
+        "end": 913,
+        "text": "Participants must not have any documented actionable genomic alterations (AGAs) for which first line approved targeted therapies are indicated."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 916,
+        "end": 990,
+        "text": "Participants must not have prior treatment with immuno-oncology therapies."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 993,
+        "end": 1070,
+        "text": "Participants must not have untreated central nervous system (CNS) metastases."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "nctId": "NCT07705035",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 81,
+        "end": 194,
+        "text": "Has a histologically or cytologically confirmed unresectable recurrent locally advanced or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 197,
+        "end": 346,
+        "text": "Has measurable disease per RECIST v1.1 (or mRECIST 1.1 for patients with pleural mesothelioma), as assessed by the local site Investigator/radiology."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 410,
+        "end": 470,
+        "text": "Has had a prior stem cell, bone marrow, or organ transplant."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 473,
+        "end": 541,
+        "text": "Has a known history of human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 544,
+        "end": 628,
+        "text": "Has active or chronic hepatitis B virus (HBV), or hepatitis C virus (HCV) infection."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 631,
+        "end": 848,
+        "text": "Has an active autoimmune disease (non-immunotherapy induced conditions) that has required systemic treatment in the past 2 years (ie, with use of disease modifying agents, corticosteroids, or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 851,
+        "end": 975,
+        "text": "Has a history of (noninfectious) pneumonitis that required steroids or current active pneumonitis/interstitial lung disease."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1258,
+        "end": 1733,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis. Individuals with previously treated CNS metastases may participate provided they are radiologically stable (ie, without evidence of progression for at least 2 weeks by repeat imaging \\[note that the repeat imaging should be performed during study Screening\\]), clinically stable, and without requirement of steroid treatment for at least 14 days prior to first dose of study treatment."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1736,
+        "end": 2178,
+        "text": "Has a history of a previous secondary malignancy within 3 years of Screening (except basal cell or squamous cell carcinoma of the skin or carcinoma in situ treated with curative therapy or other localized, low-grade tumors deemed cured, or whose natural history does not have the potential to interfere with the safety or efficacy assessments of the current study and not treated with systemic anticancer therapy \\[except hormonal therapy\\])."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

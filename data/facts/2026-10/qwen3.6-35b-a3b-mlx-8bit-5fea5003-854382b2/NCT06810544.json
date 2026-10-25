@@ -1,0 +1,59 @@
+{
+  "nctId": "NCT06810544",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 513,
+        "end": 559,
+        "text": "Has an ECOG performance status score of 0 to 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 562,
+        "end": 733,
+        "text": "Has measurable disease based on RECIST v1.1 or a confirmed glioblastoma (IDH-wildtype) with radiographic evidence of disease progression or recurrence defined by RANO 2.0."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 736,
+        "end": 832,
+        "text": "Has an ECOG performance score of 0 to 1 or for GBM has a Karnofsky performance status score ≥70."
+      },
+      "appliesTo": "for GBM"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

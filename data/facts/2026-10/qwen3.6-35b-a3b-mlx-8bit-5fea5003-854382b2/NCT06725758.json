@@ -1,0 +1,143 @@
+{
+  "nctId": "NCT06725758",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 425,
+        "end": 462,
+        "text": "non-small cell lung carcinoma (NSCLC)"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 110,
+        "end": 257,
+        "text": "locally advanced (primary or recurrent) or metastatic solid tumour of the kind listed below that is not amenable for treatment with curative intent"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1589,
+        "end": 1738,
+        "text": "Subjects must have measurable disease by response evaluation criteria in solid tumours (response evaluation criteria in solid tumors - RECIST) v. 1.1"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2032,
+        "end": 2122,
+        "text": "Performance status 0-1 on the Eastern Cooperative Oncology Group (ECOG) Performance Scale."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2357,
+        "end": 2588,
+        "text": "Other malignancy active within the previous 2 years except for basal cell or squamous cell skin cancer, superficial bladder cancer, or carcinoma in situ of the cervix or breast, for which the subject has completed curative therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3604,
+        "end": 3784,
+        "text": "Subjects with brain or subdural metastases are not eligible, unless the metastases are asymptomatic and do not require treatment or have been adequately treated with local therapy."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3788,
+        "end": 3839,
+        "text": "Known human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3843,
+        "end": 3993,
+        "text": "Active infection requiring therapy, including known positive tests for Hepatitis B surface antigen and hepatitis C virus (HCV) Ribonucleic acid (RNA)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6405,
+        "end": 6480,
+        "text": "Female subjects who are breastfeeding or pregnant at screening or baseline."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4250,
+        "end": 4438,
+        "text": "Immunosuppressive doses of systemic medications, such as steroids or absorbed topical steroids (doses \\>10 mg/day prednisone or equivalent) within 2 weeks before study drug administration."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

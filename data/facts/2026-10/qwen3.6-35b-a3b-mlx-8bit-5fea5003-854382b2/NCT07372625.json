@@ -1,0 +1,143 @@
+{
+  "nctId": "NCT07372625",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 74,
+        "end": 118,
+        "text": "ECOG performance status (PS) score of 0 or 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 122,
+        "end": 179,
+        "text": "Confirmed locally advanced or metastatic solid malignancy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2469,
+        "end": 2892,
+        "text": "Previously untreated brain metastases, leptomeningeal metastases, or spinal cord compression due to disease. Patients who have received radiation or surgery for brain metastases are eligible if therapy was completed at least 4 weeks prior to starting study drugs, there is no evidence of central nervous system disease progression or mild neurologic symptoms, and there is no requirement for chronic corticosteroid therapy."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2469,
+        "end": 2892,
+        "text": "Previously untreated brain metastases, leptomeningeal metastases, or spinal cord compression due to disease. Patients who have received radiation or surgery for brain metastases are eligible if therapy was completed at least 4 weeks prior to starting study drugs, there is no evidence of central nervous system disease progression or mild neurologic symptoms, and there is no requirement for chronic corticosteroid therapy."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3518,
+        "end": 3551,
+        "text": "History of prior organ transplant"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3555,
+        "end": 3834,
+        "text": "Presence of other active invasive cancers other than the one treated in this study within 2 years prior to screening, except appropriately treated basal cell carcinoma of the skin, in situ carcinoma of the uterine cervix, or other local tumors considered cured by local treatment"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3839,
+        "end": 4270,
+        "text": "Known, active, uncontrolled hepatitis B virus infection (i.e., viral load above the limit of quantification), hepatitis C virus infection (i.e., viral load above the limit of quantification), or human immunodeficiency virus infection (viral load \\>400 copies/mL of blood). Patients whose viral load is controlled should be on established antiretroviral therapy for at least 4 weeks before receiving their first dose of study drugs."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3839,
+        "end": 4270,
+        "text": "Known, active, uncontrolled hepatitis B virus infection (i.e., viral load above the limit of quantification), hepatitis C virus infection (i.e., viral load above the limit of quantification), or human immunodeficiency virus infection (viral load \\>400 copies/mL of blood). Patients whose viral load is controlled should be on established antiretroviral therapy for at least 4 weeks before receiving their first dose of study drugs."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4275,
+        "end": 4344,
+        "text": "Patients with a known KRAS single-nucleotide variation (SNV) mutation"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2896,
+        "end": 2964,
+        "text": "Stroke or transient ischemic attack within 6 months before screening"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

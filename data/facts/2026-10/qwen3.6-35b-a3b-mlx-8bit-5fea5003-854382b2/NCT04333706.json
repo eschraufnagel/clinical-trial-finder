@@ -1,0 +1,222 @@
+{
+  "nctId": "NCT04333706",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 215,
+        "end": 405,
+        "text": "A clinical diagnosis of metastatic triple negative or hormone resistant, Her2/neu-negative breast cancer that has been confirmed histologically at one point during the course of the disease."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1140,
+        "end": 1400,
+        "text": "A pathologic confirmation of stage I, or II, or III breast cancer with less than a complete pCR, defined as the absence of residual invasive cancer in resected breast specimen and sampled lymph nodes with residual noninvasive cancer or in situ disease allowed."
+      },
+      "appliesTo": "Phase II and Parallel Baseline Arm only"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 215,
+        "end": 405,
+        "text": "A clinical diagnosis of metastatic triple negative or hormone resistant, Her2/neu-negative breast cancer that has been confirmed histologically at one point during the course of the disease."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 975,
+        "end": 1092,
+        "text": "A diagnosis of TNBC confirmed histologically and defined as ER/PR IHC positivity rate of \\<10% and Her2/neu-negative."
+      },
+      "appliesTo": "Phase II and Parallel Baseline Arm only"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 721,
+        "end": 830,
+        "text": "For ER/PR-positive tumors, endocrine therapy must have been included in at least one of those prior regimens."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 721,
+        "end": 830,
+        "text": "For ER/PR-positive tumors, endocrine therapy must have been included in at least one of those prior regimens."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 721,
+        "end": 830,
+        "text": "For ER/PR-positive tumors, endocrine therapy must have been included in at least one of those prior regimens."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1448,
+        "end": 1645,
+        "text": "Must not have received prior systemic treatment for breast cancer except for those included in the neoadjuvant regimen and the neoadjuvant regimen must not have included capecitabine nor sarilumab."
+      },
+      "appliesTo": "Phase II and Parallel Baseline Arm only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1448,
+        "end": 1645,
+        "text": "Must not have received prior systemic treatment for breast cancer except for those included in the neoadjuvant regimen and the neoadjuvant regimen must not have included capecitabine nor sarilumab."
+      },
+      "appliesTo": "Phase II and Parallel Baseline Arm only"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1448,
+        "end": 1645,
+        "text": "Must not have received prior systemic treatment for breast cancer except for those included in the neoadjuvant regimen and the neoadjuvant regimen must not have included capecitabine nor sarilumab."
+      },
+      "appliesTo": "Phase II and Parallel Baseline Arm only"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1693,
+        "end": 1723,
+        "text": "An ECOG Performance Status ≤2."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3396,
+        "end": 3447,
+        "text": "Hepatitis B infection except for prior vaccination."
+      },
+      "appliesTo": "Phase I and Phase II only"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2949,
+        "end": 2991,
+        "text": "Females who are pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "A clinical diagnosis of metastatic triple negative or hormone resistant, Her2/neu-negative breast cancer that has been confirmed histologically at one point during the course of the disease.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "A clinical diagnosis of metastatic triple negative or hormone resistant, Her2/neu-negative breast cancer that has been confirmed histologically at one point during the course of the disease.",
+        "appliesTo": "Phase I"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "A diagnosis of TNBC confirmed histologically and defined as ER/PR IHC positivity rate of <10% and Her2/neu-negative.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "A diagnosis of TNBC confirmed histologically and defined as ER/PR IHC positivity rate of <10% and Her2/neu-negative.",
+        "appliesTo": "Phase II and Parallel Baseline Arm only"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

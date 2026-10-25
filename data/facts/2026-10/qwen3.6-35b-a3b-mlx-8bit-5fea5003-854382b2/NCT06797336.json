@@ -1,0 +1,183 @@
+{
+  "nctId": "NCT06797336",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 105,
+        "text": "Histologically or cytologically confirmed advanced or metastatic solid malignancy"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 109,
+        "end": 371,
+        "text": "Participant has a pathologically documented, locally advanced or metastatic malignancy with KRAS p.G12D mutation identified through molecular testing using a Clinical Laboratory Improvement Amendments (CLIA) certified, validated institutional or commercial test."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 375,
+        "end": 416,
+        "text": "Measurable disease (RECIST 1.1 Criteria)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 420,
+        "end": 488,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 641,
+        "end": 1110,
+        "text": "Active brain metastasis or carcinomatous meningitis. If participants have had brain metastases resected or have received radiation therapy, they may be eligible if: (1) study treatment begins at least 4 weeks from the end of brain-specific therapy, (2) residual neurological symptoms Grade less than or equal to (\\<=) 2, (3) currently on stable doses of corticosteroids, and (4) pre-study brain magnetic resonance imaging (MRI) documents no new/worsening brain lesions."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 641,
+        "end": 1110,
+        "text": "Active brain metastasis or carcinomatous meningitis. If participants have had brain metastases resected or have received radiation therapy, they may be eligible if: (1) study treatment begins at least 4 weeks from the end of brain-specific therapy, (2) residual neurological symptoms Grade less than or equal to (\\<=) 2, (3) currently on stable doses of corticosteroids, and (4) pre-study brain magnetic resonance imaging (MRI) documents no new/worsening brain lesions."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1114,
+        "end": 1178,
+        "text": "History of any other malignancy within the past 2 years, except:"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2839,
+        "end": 2900,
+        "text": "Thoracic radiation within 4 months of starting study therapy."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2904,
+        "end": 2981,
+        "text": "Significant cardiovascular disease within 6 months of starting study therapy."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3060,
+        "end": 3133,
+        "text": "History of non-infectious interstitial lung disease (ILD) or pneumonitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3138,
+        "end": 3536,
+        "text": "Known HIV infection with a cluster of differentiation 4+ (CD4+) T-cell count less than (\\<) 200 cells per microliter \\[/mcL\\] and/or a detectable viral load per parameters of assay and/or on an anti-retroviral regimen containing a strong or moderate cytochrome (CY)P3A4/5 inhibitor or inducer and/or on a new anti-retroviral regimen for less than 28 days prior to the initiation of study treatment."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4814,
+        "end": 4980,
+        "text": "Female participants who are pregnant or lactating/breast feeding or who plan to breastfeed while on study through 28 days after receiving the last dose of study drug."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active hepatitis B virus (HBV) infection. Participants with resolved infection or who are on stable antiviral therapy are eligible.\nActive hepatitis C virus (HCV) infection. Participants who have completed definitive antiviral therapy with post treatment confirmation of eradication are eligible.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active hepatitis B virus (HBV) infection. Participants with resolved infection or who are on stable antiviral therapy are eligible.\nActive hepatitis C virus (HCV) infection. Participants who have completed definitive antiviral therapy with post treatment confirmation of eradication are eligible.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

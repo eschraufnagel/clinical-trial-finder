@@ -1,0 +1,203 @@
+{
+  "nctId": "NCT06669117",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 188,
+        "end": 280,
+        "text": "Part 2: histological confirmation of locally advanced or metastatic NSCLC Stage IIIB/C or IV"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 130,
+        "text": "Part 1: histological confirmation of relapsed and/or refractory locally advanced or metastatic solid tumor"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 188,
+        "end": 280,
+        "text": "Part 2: histological confirmation of locally advanced or metastatic NSCLC Stage IIIB/C or IV"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1590,
+        "end": 1661,
+        "text": "Part 2: at least one measurable target lesion according to RECIST v1.1."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1665,
+        "end": 1733,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2004,
+        "end": 2061,
+        "text": "Part 2: a maximum of 3 prior lines of systemic therapies."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3306,
+        "end": 3519,
+        "text": "Uncontrolled Central Nervous System (CNS) metastases or spinal cord compression that are associated with progressive neurological symptoms or require increasing doses of corticosteroids to control the CNS disease."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4316,
+        "end": 4487,
+        "text": "Past medical history of Interstitial Lung Disease (ILD), drug induced ILD, radiation pneumonitis that requires steroid treatment, or any evidence of clinically active ILD."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4492,
+        "end": 4532,
+        "text": "Women who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3996,
+        "end": 4152,
+        "text": "Impaired cardiovascular function or clinically significant cardiovascular disease (either active or within 6 months prior to signing main informed consent)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Part 2: Documented evidence by local testing of targetable oncogene driver mutations.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "exclusion",
+        "quote": "Part 2: Documented evidence by local testing of targetable oncogene driver mutations.",
+        "appliesTo": "Part 2"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Part 1: presence of at least one of the following MET alterations based on local documentation of blood or archived tissue results: METex14 mutation, MET kinase domain activating gene mutations, MET amplification",
+      "raw": {
+        "factId": "met",
+        "rulesOut": [
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 1: presence of at least one of the following MET alterations based on local documentation of blood or archived tissue results: METex14 mutation, MET kinase domain activating gene mutations, MET amplification",
+        "appliesTo": "Part 1"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Part 2-a: presence of METex14 mutation... and for Part 2-b presence of at least one of the following MET alterations: METex14 mutation... de novo MET amplification",
+      "raw": {
+        "factId": "met",
+        "rulesOut": [
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 2-a: presence of METex14 mutation... and for Part 2-b presence of at least one of the following MET alterations: METex14 mutation... de novo MET amplification",
+        "appliesTo": "Part 2"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of a primary malignancy other than the cancer under trial... with the exception of: Participants with a previous malignancy who completed their anticancer treatment at least 2 years before signing informed consent and with no evidence of residual disease from the prior malignancy at screening.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of a primary malignancy other than the cancer under trial... with the exception of: Participants with a previous malignancy who completed their anticancer treatment at least 2 years before signing informed consent and with no evidence of residual disease from the prior malignancy at screening.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

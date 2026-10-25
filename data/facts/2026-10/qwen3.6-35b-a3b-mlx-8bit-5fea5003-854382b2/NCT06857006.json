@@ -1,0 +1,57 @@
+{
+  "nctId": "NCT06857006",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 166,
+        "end": 236,
+        "text": "Brain metastases diagnosis not requiring retreatment to the same tumor"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1631,
+        "end": 1691,
+        "text": "Patients with diffuse leptomeningeal tumor are not eligible."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_srs isn't a fact for this trial's cancer type",
+      "quote": "Prior SBRT or SRS to a lesion planned for retreatment.",
+      "raw": {
+        "factId": "prior_srs",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior SBRT or SRS to a lesion planned for retreatment.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

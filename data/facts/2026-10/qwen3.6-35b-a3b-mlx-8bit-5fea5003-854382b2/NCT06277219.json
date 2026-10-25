@@ -1,0 +1,145 @@
+{
+  "nctId": "NCT06277219",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 400,
+        "end": 574,
+        "text": "Patients have histologically or cytologically documented diagnosis of locally advanced or metastatic solid tumors with evidence of progressive disease according to RECIST 1.1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1301,
+        "end": 1541,
+        "text": "Patients have at least one measurable tumor lesion, defined as a lesion with the longest measurable diameter of non-lymph node lesions by imaging (CT/MRI) of ≥10 mm or the short diameter of a single pathological lymph node lesion of ≥15 mm."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1609,
+        "end": 1726,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 for Phase 1. ECOG score of 0 to 2 for Phase 2."
+      },
+      "appliesTo": "Phase 1"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5761,
+        "end": 5982,
+        "text": "Patient has active central nervous system (CNS) metastases. However, definitely treated CNS metastases (such as surgery, radiotherapy) that are stable for at least 2 weeks prior to the first dose of LAT010 are acceptable."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5989,
+        "end": 6082,
+        "text": "Patient has another active primary malignancy that has not been treated with curative intent."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7502,
+        "end": 7576,
+        "text": "Patient is taking corticosteroids \\>10 mg/day of prednisone or equivalent."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7580,
+        "end": 7665,
+        "text": "Patient has had an organ transplantation or is on systemic immunosuppressive therapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8806,
+        "end": 8931,
+        "text": "Patient is breastfeeding or pregnant as confirmed by pregnancy tests performed within 7 days before the first dose of LAT010."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4650,
+        "end": 4788,
+        "text": "Must have received no more than 1 prior line of anti-angiogenic therapy, e.g., anti-vascular endothelial growth factor (anti-VEGF) therapy"
+      },
+      "appliesTo": "Phase 2 only"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 for Phase 1. ECOG score of 0 to 2 for Phase 2.",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 for Phase 1. ECOG score of 0 to 2 for Phase 2.",
+        "appliesTo": "Phase 2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

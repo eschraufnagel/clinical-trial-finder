@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT07578571",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 98,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0, 1, or 2"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 157,
+        "end": 213,
+        "text": "unresectable locally advanced or metastatic solid tumors"
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3003,
+        "end": 3071,
+        "text": "Participants must have measurable disease as defined per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3530,
+        "end": 3614,
+        "text": "Known active central nervous system (CNS) metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3530,
+        "end": 3614,
+        "text": "Known active central nervous system (CNS) metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3455,
+        "end": 3483,
+        "text": "Prior solid organ transplant"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3618,
+        "end": 3831,
+        "text": "Known history of another primary solid or hematologic malignancy (other than that under study), unless the participant has undergone potentially curative therapy with no evidence of recurrence for at least 2 years"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3097,
+        "end": 3202,
+        "text": "Previously treated with an antibody-drug conjugate (ADC) with a topoisomerase-1 (TOP1) inhibitor payload."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable locally advanced or metastatic solid tumors",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable locally advanced or metastatic solid tumors",
+        "appliesTo": "Part B Cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Non-squamous cell carcinoma subtypes, such as adenocarcinoma; Squamous cell carcinoma subtype",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Non-squamous cell carcinoma subtypes, such as adenocarcinoma; Squamous cell carcinoma subtype",
+        "appliesTo": "Part A: NSCLC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Non-squamous cell carcinoma subtypes, such as adenocarcinoma; Squamous cell carcinoma subtype",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Non-squamous cell carcinoma subtypes, such as adenocarcinoma; Squamous cell carcinoma subtype",
+        "appliesTo": "Part B Cohorts - NSCLC"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

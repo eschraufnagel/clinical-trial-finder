@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT05111561",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 192,
+        "text": "Patients must have histologically confirmed advanced/metastatic or unresectable solid tumor that is refractory to standard therapy or has relapsed after standard therapy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 919,
+        "end": 1034,
+        "text": "For Part 2, patients must have measurable disease by the Response Evaluation Criteria in Solid Tumors (RECIST) v1.1"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1631,
+        "end": 1717,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status =\\< 2 (Karnofsky \\>= 60%)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2420,
+        "end": 2582,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this study"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2737,
+        "end": 2957,
+        "text": "Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2960,
+        "end": 3533,
+        "text": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression by imaging for at least 4 weeks prior to the first dose of study treatment and any neurologic symptoms have returned to baseline, have no evidence of new or enlarging brain metastases, and are not using steroids for at least 7 days prior to the first dose of study treatment. This exception does not include carcinomatous meningitis and primary CNS cancers, which are excluded regardless of clinical stability"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7035,
+        "end": 7492,
+        "text": "Pregnant women are excluded from this study because ZEN003694 (ZEN-3694) and binimetinib are a BETi and MEK inhibitor agent, respectively, with the potential for teratogenic or abortifacient effects. Because there is an unknown but potential risk for AEs in nursing infants secondary to treatment of the mother with ZEN003694 (ZEN-3694) and binimetinib, breastfeeding should be discontinued if the mother is treated with ZEN003694 (ZEN-3694) and binimetinib"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7495,
+        "end": 7652,
+        "text": "Patient has a history of cerebrovascular accident, myocardial infarction, or unstable angina within the previous 6 months prior to study treatment initiation"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7903,
+        "end": 7968,
+        "text": "Patient has a history of pneumonitis or interstitial lung disease"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients must have histologically confirmed advanced/metastatic or unresectable solid tumor that is refractory to standard therapy or has relapsed after standard therapy",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have histologically confirmed advanced/metastatic or unresectable solid tumor that is refractory to standard therapy or has relapsed after standard therapy",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

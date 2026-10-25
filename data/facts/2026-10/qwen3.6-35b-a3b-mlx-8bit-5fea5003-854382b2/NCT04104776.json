@@ -1,0 +1,272 @@
+{
+  "nctId": "NCT04104776",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 97,
+        "end": 124,
+        "text": "ECOG performance status 0-1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 598,
+        "end": 653,
+        "text": "locally advanced or metastatic solid tumors or lymphoma"
+      },
+      "appliesTo": "Phase 1 (Dose Escalation)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 869,
+        "end": 943,
+        "text": "M1: ARID1A mutant urothelial carcinoma or other ARID1A mutant solid tumors"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1030,
+        "end": 1111,
+        "text": "M2: ARID1A mutant ovarian clear cell carcinoma after prior platinum-based therapy"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1155,
+        "end": 1268,
+        "text": "M3: ARID1A mutant recurrent/metastatic endometrial carcinoma after platinum therapy and appropriate immunotherapy"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1271,
+        "end": 1402,
+        "text": "M4: Relapsed/refractory peripheral T cell lymphoma or diffuse large B cell lymphoma, transplant-ineligible, with measurable disease"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1405,
+        "end": 1489,
+        "text": "M5: Relapsed/refractory pleural or peritoneal mesothelioma with documented BAP1 loss"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1492,
+        "end": 1629,
+        "text": "M6: Metastatic castration-resistant prostate cancer (mCRPC) with documented progression after AR targeted therapy and taxane chemotherapy"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1632,
+        "end": 1707,
+        "text": "M7: ARID1A wild type endometrial carcinoma (exploratory food-effect cohort)"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1710,
+        "end": 1879,
+        "text": "M8: mCRPC treated with DZR123 in combination with enzalutamide, with cohort specific requirements for prior androgen receptor pathway inhibitor and chemotherapy exposure"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1271,
+        "end": 1402,
+        "text": "M4: Relapsed/refractory peripheral T cell lymphoma or diffuse large B cell lymphoma, transplant-ineligible, with measurable disease"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 869,
+        "end": 1027,
+        "text": "M1: ARID1A mutant urothelial carcinoma or other ARID1A mutant solid tumors (with cohort specific prior therapy and RECIST 1.1 measurable disease requirements)"
+      },
+      "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1944,
+        "end": 2005,
+        "text": "Prior solid organ or allogeneic hematopoietic cell transplant"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2008,
+        "end": 2080,
+        "text": "Active or untreated symptomatic CNS metastases (with limited exceptions)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2184,
+        "end": 2231,
+        "text": "Active interstitial lung disease or pneumonitis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2323,
+        "end": 2360,
+        "text": "Active HIV or hepatitis B/C infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2323,
+        "end": 2360,
+        "text": "Active HIV or hepatitis B/C infection"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2449,
+        "end": 2524,
+        "text": "Pregnancy, breastfeeding, or inability to comply with protocol requirements"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "M6: Metastatic castration-resistant prostate cancer (mCRPC) with documented progression after AR targeted therapy and taxane chemotherapy",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "M6: Metastatic castration-resistant prostate cancer (mCRPC) with documented progression after AR targeted therapy and taxane chemotherapy",
+        "appliesTo": "Phase 2 (Disease-Specific Cohorts)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

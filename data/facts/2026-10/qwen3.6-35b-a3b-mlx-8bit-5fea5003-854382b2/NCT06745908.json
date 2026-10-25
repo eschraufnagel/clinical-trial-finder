@@ -1,0 +1,216 @@
+{
+  "nctId": "NCT06745908",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 325,
+        "end": 373,
+        "text": "Pathologically confirmed stage IV NSCLC disease."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5170,
+        "end": 5286,
+        "text": "Have known active central nervous system (CNS) metastases, carcinomatous meningitis, and/or spinal cord compression."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3911,
+        "end": 4084,
+        "text": "Systemic autoimmune disease currently requiring treatment (eg, lupus erythematosus, rheumatoid arthritis, Addison's disease, or autoimmune disease associated with lymphoma)."
+      },
+      "appliesTo": "Cohort A"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11787,
+        "end": 12053,
+        "text": "Autoimmune disease currently requiring systemic treatment (eg, lupus erythematosus, rheumatoid arthritis, Addison's disease, or autoimmune disease associated with lymphoma) except for autoimmune thyroiditis needing thyroid replacement and diabetes requiring insulin."
+      },
+      "appliesTo": "Cohort B"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4931,
+        "end": 5086,
+        "text": "History of known active hepatitis B or C infection to be assessed within 6 months prior to enrollment using locally accepted standard of care measurements."
+      },
+      "appliesTo": "Cohort A"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2465,
+        "end": 2499,
+        "text": "ECOG performance status of 0 to 2."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2503,
+        "end": 2553,
+        "text": "Measurable tumor lesions according to RECIST v1.1."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 828,
+        "end": 897,
+        "text": "Participants must have received platinum chemotherapy to be eligible."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 898,
+        "end": 1011,
+        "text": "Participants must have received anti-PD-1/anti-PD-L1 mAb in their immediate prior line of therapy to be eligible."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2116,
+        "end": 2387,
+        "text": "Participants who have been treated with a prior tyrosine kinase inhibitor (TKI) must receive additional approved targeted therapy, if locally available and clinically appropriate, for the applicable genomic alteration, or the participant will not be allowed in the study."
+      },
+      "appliesTo": "Cohort A"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 9331,
+        "end": 9471,
+        "text": "Participants MUST have received at least 1 targeted therapy or 2 or more if multiple lines of targeted therapies are approved in the region."
+      },
+      "appliesTo": "Cohort B"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Participants with AGA of ALK.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with AGA of ALK.",
+        "appliesTo": "Cohort A"
+      }
+    },
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Participants with AGA of ALK.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with AGA of ALK.",
+        "appliesTo": "Cohort B"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have an active or uncontrolled hepatitis B and/or hepatitis C infection and are positive for hepatitis B or C virus based on the evaluation of results of tests for hepatitis B... and/or hepatitis C infection... within 28 days of randomization.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Have an active or uncontrolled hepatitis B and/or hepatitis C infection and are positive for hepatitis B or C virus based on the evaluation of results of tests for hepatitis B... and/or hepatitis C infection... within 28 days of randomization.",
+        "appliesTo": "Cohort B"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have a history of malignancy other than NSCLC, except: ... Other curatively treated solid tumors, with no evidence of disease for ≥ 3 years;",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Have a history of malignancy other than NSCLC, except: ... Other curatively treated solid tumors, with no evidence of disease for ≥ 3 years;",
+        "appliesTo": "Cohort B"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

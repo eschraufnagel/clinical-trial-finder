@@ -1,0 +1,141 @@
+{
+  "nctId": "NCT06607939",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 350,
+        "end": 420,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3363,
+        "end": 3721,
+        "text": "The patient has a diagnosis of another malignancy within 2 years before the first dose of study treatment, except for superficial skin cancer, localized prostate cancer on active surveillance, or localized solid tumors deemed cured by surgery and not treated with systemic anticancer therapy and not expected to require anticancer therapy in the next 2 years"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3727,
+        "end": 3832,
+        "text": "Patients with primary malignant brain tumors, untreated and/or unresolved or symptomatic brain metastasis"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4008,
+        "end": 4138,
+        "text": "systemic corticosteroids at physiological doses, which are not to exceed 10 mg/day of prednisone, or an equivalent corticosteroid."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4145,
+        "end": 4257,
+        "text": "Active or prior documented autoimmune or inflammatory disorders requiring systemic immunosuppressive medications"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4857,
+        "end": 4895,
+        "text": "History of allogeneic organ transplant"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2800,
+        "end": 3035,
+        "text": "Pregnant women are excluded from this study because the effects of ORB-021 on a pregnant woman or fetus are unknown. Breastfeeding should be discontinued as the potential risk for AEs in nursing infants treated with ORB-021 is unknown."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5753,
+        "end": 5926,
+        "text": "Patients living with HIV infection are ineligible only if they have a CD4 count less than 350 cells/µL and a history of an AIDS-defining infection within the last 12 months."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5208,
+        "end": 5282,
+        "text": "Patients with active HBV infection or active HCV infection are ineligible."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6987,
+        "end": 7096,
+        "text": "Patients with prior grade 3 irAE or any irAE that resulted in discontinuation of PD-1 or PD-L1 ICI treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

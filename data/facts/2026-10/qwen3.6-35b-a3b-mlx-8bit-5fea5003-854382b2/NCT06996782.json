@@ -1,0 +1,194 @@
+{
+  "nctId": "NCT06996782",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 81,
+        "text": "Participants with confirmed squamous or non-squamous NSCLC"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1204,
+        "end": 1267,
+        "text": "Presence of small cell and neuroendocrine histology components."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 113,
+        "text": "Participants with confirmed squamous or non-squamous NSCLC with a current Stage IV mNSCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 294,
+        "end": 426,
+        "text": "Measurable disease as defined by at least one lesion that can be accurately measured at baseline as ≥ 10 mm at the longest diameter."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2347,
+        "end": 2403,
+        "text": "Spinal cord compression or symptomatic brain metastases."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1652,
+        "end": 1736,
+        "text": "Has had a prior stem cell, bone marrow, allogenic tissue, or solid organ transplant."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1739,
+        "end": 1829,
+        "text": "Has an active autoimmune disease that has required systemic treatment in the past 5 years."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1953,
+        "end": 2124,
+        "text": "History of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1418,
+        "end": 1470,
+        "text": "interstitial lung disease/pneumonitis (of any grade)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3102,
+        "end": 3181,
+        "text": "Known human immunodeficiency virus (HIV) infection that is not well controlled."
+      },
+      "appliesTo": "Exclusion Criteria for Sub Study 2"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 980,
+        "end": 1201,
+        "text": "Participants with epidermal growth factor receptor mutations, anaplastic lymphoma receptor fusions or any other known genomic alteration for which targeted therapy is approved in the first line per local standard of care."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4016,
+        "end": 4071,
+        "text": "Prior systemic therapy received for advanced or mNSCLC."
+      },
+      "appliesTo": "Exclusion Criteria for Sub Study 2"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4074,
+        "end": 4442,
+        "text": "Prior exposure to an anti-T-cell immunoreceptor with Ig and Immunoreceptor Tyrosine-based Inhibition Motif domains (TIGIT) therapy or immune-oncology agent such as anti-programmed cell death protein 1 (PD-1), anti-PD-L1, or anti-cytotoxic T-lymphocyte associated antigen 4 (CTLA-4), or any other anti-cancer therapy targeting immune-regulatory receptors or mechanisms."
+      },
+      "appliesTo": "Exclusion Criteria for Sub Study 2"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known active hepatitis A. Acute hepatitis B infection... Active hepatitis C infection...",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known active hepatitis A. Acute hepatitis B infection... Active hepatitis C infection...",
+        "appliesTo": "Exclusion Criteria for Sub Study 2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

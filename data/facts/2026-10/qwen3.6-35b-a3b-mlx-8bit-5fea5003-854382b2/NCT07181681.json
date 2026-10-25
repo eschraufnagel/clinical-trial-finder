@@ -1,0 +1,82 @@
+{
+  "nctId": "NCT07181681",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 235,
+        "text": "Participants with histologically or cytologically confirmed advanced, metastatic, or unresectable solid tumors not amenable to therapy with curative intent or for whom treatment is not available or not tolerated."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 486,
+        "end": 558,
+        "text": "Participants must have ≥ 1 measurable lesion as assessed by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 561,
+        "end": 685,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status ≤ 1, as assessed ≤ 14 days before the first dose of study drug."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1787,
+        "end": 2030,
+        "text": "Active leptomeningeal disease or uncontrolled, untreated brain metastasis. Participants with a history of treated and, at the time of screening, stable central nervous system (CNS) metastases are eligible, provided they meet all the following:"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2538,
+        "end": 2822,
+        "text": "History of interstitial lung disease (ILD), or ≥ Grade 2 noninfectious pneumonitis ≤ 2 years before the first dose of the study drug, or has current ILD/noninfectious pneumonitis, or where suspected active ILD/noninfectious pneumonitis cannot be ruled out by imaging during screening."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

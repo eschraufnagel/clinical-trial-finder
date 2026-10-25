@@ -1,0 +1,241 @@
+{
+  "nctId": "NCT05216432",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 66,
+        "text": "Patient has ECOG performance status of 0-1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 653,
+        "end": 686,
+        "text": "Evaluable disease per RECIST v1.1"
+      },
+      "appliesTo": "Part 1 [Escalation]"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 716,
+        "end": 750,
+        "text": "Measurable disease per RECIST v1.1"
+      },
+      "appliesTo": "Part 2 [Expansion]"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1782,
+        "end": 1811,
+        "text": "Evaluable disease per RECIST."
+      },
+      "appliesTo": "Triplet combination arms: [Part 1 and Part 2 Dose Expansion, Group 1]"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1850,
+        "end": 1880,
+        "text": "Measurable disease per RECIST."
+      },
+      "appliesTo": "Triplet combination arms: [Part 2 Dose Expansion, Group 2]"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 869,
+        "end": 970,
+        "text": "Part 1- histologically or cytologically confirmed diagnosis of unresectable or metastatic solid tumor"
+      },
+      "appliesTo": "Part 1 [Escalation]"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 973,
+        "end": 1044,
+        "text": "Part 2 - Unresectable or metastatic solid tumor with PIK3CA mutation(s)"
+      },
+      "appliesTo": "Part 2 [Expansion]"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2048,
+        "end": 2154,
+        "text": "histologically or cytologically confirmed diagnosis of HR+, HER2- unresectable or metastatic breast cancer"
+      },
+      "appliesTo": "Key Inclusion for Combination Arms"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6498,
+        "end": 6589,
+        "text": "CNS metastases or primary CNS tumor that is associated with progressive neurologic symptoms"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6070,
+        "end": 6148,
+        "text": "Past medical history of or ongoing ILD, or pneumonitis requiring intervention."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2841,
+        "end": 2890,
+        "text": "≤1 line of chemotherapy in the metastatic setting"
+      },
+      "appliesTo": "Key Inclusion for Combination Arms"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4889,
+        "end": 5070,
+        "text": "Prior treatment with:\n\n1. PI3Kα, AKT, or mTOR inhibitors (all arms except for doublet RLY-2608 + fulvestrant arm, Part 2, Group 2; and triplet combinations, Part 1 dose escalation)."
+      },
+      "loose": true
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5215,
+        "end": 5313,
+        "text": "Prior systemic chemotherapy or antibody drug conjugate for locally advanced or metastatic disease."
+      },
+      "appliesTo": "Triplet combinations RLY-2608 + CDK4 or CDK4/6 inhibitor + fulvestrant, Part 2 expansion, Group 2 only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5318,
+        "end": 5412,
+        "text": "Prior CDK2, CDK4, or CDK4/6 inhibitor as treatment for locally advanced or metastatic disease."
+      },
+      "appliesTo": "Triplet combinations RLY-2608 + CDK4 or CDK4/6 inhibitor + fulvestrant, Part 2 expansion, Group 2 only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5419,
+        "end": 5480,
+        "text": "Prior treatment with fulvestrant or any selective ER degrader"
+      },
+      "appliesTo": "Triplet combinations RLY-2608 + CDK4 or CDK4/6 inhibitor + fulvestrant, Part 2 expansion, Group 2 only"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Evaluable disease per RECIST v1.1",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "Evaluable disease per RECIST v1.1",
+        "appliesTo": "Doublet combination arms [Part 1 and Part 2]"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Prior treatment with: 2. Immune checkpoint inhibitors.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior treatment with: 2. Immune checkpoint inhibitors.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

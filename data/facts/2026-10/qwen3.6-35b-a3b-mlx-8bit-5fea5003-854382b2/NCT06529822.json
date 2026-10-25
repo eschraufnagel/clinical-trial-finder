@@ -1,0 +1,1077 @@
+{
+  "nctId": "NCT06529822",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 100,
+        "end": 228,
+        "text": "Histologically confirmed muscle-invasive bladder cancer (MIBC) or upper tract urothelial carcinoma (renal pelvis and/or ureter)."
+      },
+      "appliesTo": "Cohort #1"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5822,
+        "end": 5878,
+        "text": "Histologically confirmed gastroesophageal adenocarcinoma"
+      },
+      "appliesTo": "Cohort #2"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 15545,
+        "end": 15653,
+        "text": "Histological diagnosis of non-small cell lung carcinoma, stages II, IIIA or IIIB with complete R0 resection."
+      },
+      "appliesTo": "Cohort #4"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5881,
+        "end": 5935,
+        "text": "Stage II or III gastroesophageal adenocarcinoma (GEC)."
+      },
+      "appliesTo": "Cohort #2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 11675,
+        "end": 11720,
+        "text": "Stage IIB/C or IIIB-C (per AJCC 8th edition)."
+      },
+      "appliesTo": "Cohort #3"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 15545,
+        "end": 15653,
+        "text": "Histological diagnosis of non-small cell lung carcinoma, stages II, IIIA or IIIB with complete R0 resection."
+      },
+      "appliesTo": "Cohort #4"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15016,
+        "end": 15053,
+        "text": "Untreated or unstable CNS metastases."
+      },
+      "appliesTo": "Cohort #3"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 51,
+        "end": 96,
+        "text": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)"
+      },
+      "appliesTo": "Cohort #1"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 11579,
+        "end": 11607,
+        "text": "ECOG performance status ≤ 1."
+      },
+      "appliesTo": "Cohort #3"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5557,
+        "end": 5587,
+        "text": "Pregnant and/or breastfeeding."
+      },
+      "appliesTo": "Cohort #1"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2707,
+        "end": 2796,
+        "text": "Prior or currently active autoimmune disease requiring management with immunosuppression."
+      },
+      "appliesTo": "Cohort #1"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3939,
+        "end": 3965,
+        "text": "Known HIV-positive status."
+      },
+      "appliesTo": "Cohort #1"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3968,
+        "end": 4183,
+        "text": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection"
+      },
+      "appliesTo": "Cohort #1"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14782,
+        "end": 14851,
+        "text": "History of allogeneic stem cell transplant of solid organ transplant."
+      },
+      "appliesTo": "Cohort #3"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 18828,
+        "end": 18897,
+        "text": "History of allogeneic stem cell transplant or solid organ transplant."
+      },
+      "appliesTo": "Cohort #4"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5334,
+        "end": 5480,
+        "text": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease."
+      },
+      "appliesTo": "Cohort #1"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed diagnosis of Melanoma.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed diagnosis of Melanoma.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 1.",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 1.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current",
+          "past"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 1.",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 1.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 1.",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 1.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of allogeneic stem cell transplant of solid organ transplant.",
+      "raw": {
+        "factId": "transplant",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of allogeneic stem cell transplant of solid organ transplant.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of allogeneic stem cell transplant or solid organ transplant.",
+      "raw": {
+        "factId": "transplant",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of allogeneic stem cell transplant or solid organ transplant.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current",
+          "past"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current",
+          "past"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 2 (Karnofsky ≥ 60%)",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 1.",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 1.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "ECOG performance status ≤ 1.",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "ECOG performance status ≤ 1.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Pregnant and/or breastfeeding.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Pregnant and/or breastfeeding.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior or currently active autoimmune disease requiring management with immunosuppression.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Known HIV-positive status.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known HIV-positive status.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of positive test for Hepatitis B virus surface antigen (HBsAg) and/or positive Hepatitis C antibody result with detectable hepatitis C virus (HCV) ribonucleic acid (RNA) indicating acute or chronic infection",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of allogeneic stem cell transplant of solid organ transplant.",
+      "raw": {
+        "factId": "transplant",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of allogeneic stem cell transplant of solid organ transplant.",
+        "appliesTo": "Cohort #3"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "History of allogeneic stem cell transplant or solid organ transplant.",
+      "raw": {
+        "factId": "transplant",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of allogeneic stem cell transplant or solid organ transplant.",
+        "appliesTo": "Cohort #4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current",
+          "past"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+        "appliesTo": "Cohort #1"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current",
+          "past"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current pneumonitis, a history of (non-infectious) pneumonitis requiring steroids, or history of clinically significant interstitial lung disease.",
+        "appliesTo": "Cohort #2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

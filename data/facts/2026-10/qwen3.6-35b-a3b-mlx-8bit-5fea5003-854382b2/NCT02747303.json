@@ -1,0 +1,80 @@
+{
+  "nctId": "NCT02747303",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 836,
+        "end": 913,
+        "text": "Diagnosis of germ cell tumor, small cell carcinoma or hematologic malignancy."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 136,
+        "end": 276,
+        "text": "Histologically confirmed systemic malignancy with gadolinium contrast-enhanced MRI scan demonstrating 1-5 intraparenchymal brain metastases."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 136,
+        "end": 276,
+        "text": "Histologically confirmed systemic malignancy with gadolinium contrast-enhanced MRI scan demonstrating 1-5 intraparenchymal brain metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1052,
+        "end": 1088,
+        "text": "Diagnosis of leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 471,
+        "end": 603,
+        "text": "At least one lesion must be ≥1.0 cm in maximum diameter and ≥0.5 cm in a perpendicular diameter to be considered measurable disease."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

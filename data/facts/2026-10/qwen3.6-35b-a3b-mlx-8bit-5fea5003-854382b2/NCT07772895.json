@@ -1,0 +1,69 @@
+{
+  "nctId": "NCT07772895",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 134,
+        "end": 251,
+        "text": "Have a primary diagnosis, or a high clinical suspicion, for cancer in the lung based on CT, biopsy, or other imaging."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 254,
+        "end": 357,
+        "text": "Are scheduled to undergo surgical thoracoscopy or open surgery (thoracotomy) and resection of the lung."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2397,
+        "end": 2711,
+        "text": "The patient is pregnant, breast feeding, or plans to become pregnant within 6 months of the administration of Pemefolacianine for Injection or has a positive serum pregnancy test at Screening or a positive urine pregnancy test on the day of surgery or day of admission for female subjects of childbearing potential"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_radiation isn't a fact for this trial's cancer type",
+      "quote": "History of radiation therapy to the chest",
+      "raw": {
+        "factId": "prior_radiation",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of radiation therapy to the chest",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

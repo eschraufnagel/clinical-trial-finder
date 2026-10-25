@@ -1,0 +1,300 @@
+{
+  "nctId": "NCT04370587",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 263,
+        "end": 314,
+        "text": "locally recurrent or metastatic advanced malignancy"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 389,
+        "end": 486,
+        "text": "Participants must have received no more than 3 prior regimens for advanced or metastatic disease."
+      },
+      "appliesTo": "Phase 2a Part 1 i. Arm A - locally recurrent or metastatic melanoma"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 766,
+        "end": 854,
+        "text": "Participants must have received no more than three lines of prior anti-cancer therapies."
+      },
+      "appliesTo": "Phase 2a Part 1 iii. Arm C - Sarcoma"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1164,
+        "end": 1274,
+        "text": "Participants must have received at least one line but no more than three lines of prior anti-cancer therapies."
+      },
+      "appliesTo": "Phase 2a Part 2 i.v. Arm E - Histologically or pathologically confirmed NSCLC that is advanced or recurrent, without EGFR mutation or ALK rearrangement"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1278,
+        "end": 1320,
+        "text": "Measurable disease per RECIST version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1442,
+        "end": 1507,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1040,
+        "end": 1163,
+        "text": "Histologically or pathologically confirmed NSCLC that is advanced or recurrent, without EGFR mutation or ALK rearrangement."
+      },
+      "appliesTo": "Phase 2a Part 2 i.v. Arm E - Histologically or pathologically confirmed NSCLC that is advanced or recurrent, without EGFR mutation or ALK rearrangement"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1040,
+        "end": 1163,
+        "text": "Histologically or pathologically confirmed NSCLC that is advanced or recurrent, without EGFR mutation or ALK rearrangement."
+      },
+      "appliesTo": "Phase 2a Part 2 i.v. Arm E - Histologically or pathologically confirmed NSCLC that is advanced or recurrent, without EGFR mutation or ALK rearrangement"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2876,
+        "end": 2976,
+        "text": "Prior treatment with another OV (including T-VEC), tumor vaccines, cellular therapy or gene therapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3495,
+        "end": 3517,
+        "text": "Pregnant or lactating."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3522,
+        "end": 3550,
+        "text": "Prior organ transplantation."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3555,
+        "end": 3698,
+        "text": "Active hepatitis B virus, hepatitis C virus, and HIV infection or a positive serological test at Screening within 14 days of dosing with T3011."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3555,
+        "end": 3698,
+        "text": "Active hepatitis B virus, hepatitis C virus, and HIV infection or a positive serological test at Screening within 14 days of dosing with T3011."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3703,
+        "end": 3870,
+        "text": "Active autoimmune disease or medical conditions requiring chronic steroid or immunosuppressive therapy within 4 weeks prior to first administration of study treatment."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3875,
+        "end": 3931,
+        "text": "History of or current central nervous system metastases."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4051,
+        "end": 4177,
+        "text": "Active interstitial lung disease (ILD)/pneumonitis or a history of ILD/pneumonitis requiring treatment with systemic steroids."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4182,
+        "end": 4351,
+        "text": "Congestive heart failure, active coronary artery disease, unevaluated new onset angina within 3 months or unstable angina, or clinically significant cardiac arrhythmias."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior intolerance to anti-PD-(L)1 monoclonal antibody or history of immunotherapy related non-infectious pneumonitis/interstitial lung disease.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior intolerance to anti-PD-(L)1 monoclonal antibody or history of immunotherapy related non-infectious pneumonitis/interstitial lung disease.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior treatment with anti-PD-(L)1 monoclonal antibody in combination with IL-12.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior treatment with anti-PD-(L)1 monoclonal antibody in combination with IL-12.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "HNSCC only: ... Failure to anti-PD-1/PDL1 blockade after receiving at least 2 doses alone or in combination.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "HNSCC only: ... Failure to anti-PD-1/PDL1 blockade after receiving at least 2 doses alone or in combination.",
+        "appliesTo": "Phase 2a Part 1 ii. Arm B - locally recurrent or metastatic HNSCC"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have received no more than 3 prior regimens for advanced or metastatic disease.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have received no more than 3 prior regimens for advanced or metastatic disease.",
+        "appliesTo": "Phase 2a Part 1 iv. Arm D - locally recurrent or metastatic cSCC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "HNSCC only: ... Disease progression to platinum-containing chemotherapy",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "exclusion",
+        "quote": "HNSCC only: ... Disease progression to platinum-containing chemotherapy",
+        "appliesTo": "Phase 2a Part 1 ii. Arm B - locally recurrent or metastatic HNSCC"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "nctId": "NCT06326411",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 278,
+        "end": 383,
+        "text": "Subjects who have a histologically or cytologically documented metastatic or locally advanced solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1308,
+        "end": 1470,
+        "text": "Part B: measurable disease as defined by RECIST Version 1.1 or by other disease assessment tool standard for a given tumor type (if RECIST v. 1.1 is not standard)"
+      },
+      "appliesTo": "Part B"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1500,
+        "end": 1543,
+        "text": "Solid tumors other than glioma: ECOG 0 or 1"
+      },
+      "appliesTo": "Solid tumors other than glioma"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1550,
+        "end": 1588,
+        "text": "Glioma: Karnofsky ≥ 70 and ECOG 0 or 1"
+      },
+      "appliesTo": "Glioma"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2204,
+        "end": 2313,
+        "text": "Current or history within 6 months of planned Cycle 1 Day 1 of pneumonitis or interstitial lung disease (ILD)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2375,
+        "end": 2439,
+        "text": "Untreated or symptomatic central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2650,
+        "end": 2692,
+        "text": "Females who are pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

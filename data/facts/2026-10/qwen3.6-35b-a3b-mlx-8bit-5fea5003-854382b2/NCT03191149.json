@@ -1,0 +1,181 @@
+{
+  "nctId": "NCT03191149",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 120,
+        "text": "Participants must have a pathologically-confirmed diagnosis of non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 123,
+        "end": 328,
+        "text": "Participants must have advanced disease - either stage IV disease, stage IIIB disease not amenable to definitive multi-modality therapy, or recurrent disease after a prior diagnosis of stage I-III disease."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 488,
+        "end": 560,
+        "text": "An EGFR exon 20 insertion mutation must be detected in the tumor tissue."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 848,
+        "end": 981,
+        "text": "Patients must have measurable disease; baseline measurements and ALL sites of disease must be obtained within 4 weeks to registration"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 984,
+        "end": 1082,
+        "text": "Patients must have previously received at least one line of therapy for their advanced lung cancer"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1161,
+        "end": 1219,
+        "text": "Participants must not have previously received osimertinib"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1222,
+        "end": 1356,
+        "text": "Participants must have not previously received therapies targeting PDL1, PD1 or CTLA4 within 6 months (180 days) prior to registration"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1378,
+        "end": 1444,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status =\\< 1"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2387,
+        "end": 2499,
+        "text": "Participants may not have clinically active or symptomatic interstitial lung disease or interstitial pneumonitis"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4210,
+        "end": 4328,
+        "text": "Participants may not have clinically symptomatic brain metastases, leptomeningeal disease, or spinal cord compression."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4210,
+        "end": 4328,
+        "text": "Participants may not have clinically symptomatic brain metastases, leptomeningeal disease, or spinal cord compression."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6024,
+        "end": 6086,
+        "text": "Participants may not have a second, clinically active, cancer."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9150,
+        "end": 9277,
+        "text": "Women must not be pregnant or breast-feeding because osimertinib (AZD9291) has been shown to cause fetal harm in animal models."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "nctId": "NCT04900818",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 291,
+        "end": 405,
+        "text": "Subjects with treatment naïve locally advanced, unresectable or metastatic gastric, GEJ, esophageal adenocarcinoma"
+      },
+      "appliesTo": "Part 2 - Combination Therapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 436,
+        "end": 545,
+        "text": "Subjects with unresectable, locally advanced or metastatic histologically confirmed pancreatic adenocarcinoma"
+      },
+      "appliesTo": "Part 3: Combination Therapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 576,
+        "end": 680,
+        "text": "Subjects with unresectable, locally advanced or metastatic histologically confirmed biliary tract cancer"
+      },
+      "appliesTo": "Part 4: Combination Therapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 42,
+        "end": 90,
+        "text": "Subjects with advanced or metastatic solid tumor"
+      },
+      "appliesTo": "Part 1 - Monotherapy"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 685,
+        "end": 752,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 784,
+        "end": 900,
+        "text": "Have known PD-L1 status with prior testing by immunohistochemistry and a corresponding combined positive score (CPS)"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1426,
+        "end": 1504,
+        "text": "Active autoimmune disease requiring systemic treatment within the past 2 years"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1507,
+        "end": 1615,
+        "text": "Active interstitial lung disease (ILD) or pneumonitis or a history of ILD or pneumonitis requiring treatment"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1618,
+        "end": 1886,
+        "text": "Known active CNS metastases and/or carcinomatous meningitis. Subjects with previously treated brain metastases may participate provided they are clinically stable and without requirement of steroid treatment for at least 14 days prior to first dose of study treatment;"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1889,
+        "end": 2251,
+        "text": "New York Heart Association (NYHA) Class 3 or 4 congestive heart failure, severe/unstable angina, myocardial infarction (MI), symptomatic congestive heart failure, cerebrovascular accident, transient ischemic attack (TIA), arterial embolism, percutaneous transluminal coronary angioplasty (PTCA), or coronary artery bypass grafting (CABG) in the previous 6 months"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2254,
+        "end": 2308,
+        "text": "Diagnosis of immunodeficiency such as known active HIV"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1287,
+        "end": 1356,
+        "text": "Known active or chronic Hepatitis B or Hepatitis C, other hepatitides"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2406,
+        "end": 2451,
+        "text": "Prior treatment with anti-PD-1 or PD-L1 agent"
+      },
+      "appliesTo": "Part 2, 3, 4 Combination subjects"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1123,
+        "end": 1284,
+        "text": "Second malignancy within the last 3 years with the exception of cutaneous squamous cell carcinoma or cutaneous basal cell carcinoma or cervical carcinoma in situ"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

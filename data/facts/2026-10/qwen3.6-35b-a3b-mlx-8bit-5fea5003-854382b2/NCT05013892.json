@@ -1,0 +1,115 @@
+{
+  "nctId": "NCT05013892",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 63,
+        "text": "Any patient with a solid tumor diagnosis"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 178,
+        "text": "Any patient with a solid tumor diagnosis and any number of brain metastasis clinically indicated for cranial irradiation with whole brain radiation therapy"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1134,
+        "end": 1255,
+        "text": "Leptomeningeal disease (by any one or more of clinical assessment, radiographic assessment, or cerebrospinal fluid study)"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 948,
+        "end": 1059,
+        "text": "Any prior, concomitant, or post-radiotherapy systemic therapy is permitted at discretion of treating physicians"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 948,
+        "end": 1059,
+        "text": "Any prior, concomitant, or post-radiotherapy systemic therapy is permitted at discretion of treating physicians"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 948,
+        "end": 1059,
+        "text": "Any prior, concomitant, or post-radiotherapy systemic therapy is permitted at discretion of treating physicians"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 948,
+        "end": 1059,
+        "text": "Any prior, concomitant, or post-radiotherapy systemic therapy is permitted at discretion of treating physicians"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 948,
+        "end": 1059,
+        "text": "Any prior, concomitant, or post-radiotherapy systemic therapy is permitted at discretion of treating physicians"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

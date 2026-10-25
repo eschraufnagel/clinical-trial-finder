@@ -1,0 +1,156 @@
+{
+  "nctId": "NCT06096844",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 81,
+        "end": 175,
+        "text": "Patient must have histologically or cytologically confirmed non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 233,
+        "end": 333,
+        "text": "Patient must have Stage IIIB, IIIC or IV disease and not be candidates for combined chemo-radiation."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "high",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 181,
+        "end": 230,
+        "text": "PD-L1 Tumor Proportion Score (TPS) range of 1-49%"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 418,
+        "end": 613,
+        "text": "Patient must have a tumor that is negative for EGFR mutation/ALK translocations or other actionable first line mutations in which patients would receive first-line oral tyrosine kinase inhibitors"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 418,
+        "end": 613,
+        "text": "Patient must have a tumor that is negative for EGFR mutation/ALK translocations or other actionable first line mutations in which patients would receive first-line oral tyrosine kinase inhibitors"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 616,
+        "end": 704,
+        "text": "Patient must have an Eastern Cooperative Oncology Group (ECOG) Performance Status of 0-2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2869,
+        "end": 3278,
+        "text": "Patient must not have symptomatic central nervous system disease (CNS) metastases. Patients with a clinical history of CNS metastases or cord compression are eligible if they have been definitively treated and are clinically stable for at least 14 days prior to Step 1 registration and off all steroids for at least 24 hours prior to Step 1 registration. Patients with asymptomatic CNS metastases are eligible"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3281,
+        "end": 3597,
+        "text": "Patient must not have had any prior cytotoxic chemotherapy regimen for metastatic disease. Chemotherapy given in the setting of adjuvant therapy or locally advanced disease is allowed as long as treatment was completed, and they have fully recovered from treatment related adverse events prior to Step 1 registration"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3600,
+        "end": 3853,
+        "text": "Patient must not have had any prior immunotherapy for metastatic disease. Immunotherapy given in the setting of adjuvant therapy or locally advanced disease is allowed as long as treatment was completed greater than 6 months prior to Step 1 registration"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3856,
+        "end": 4107,
+        "text": "Patient must not have a history of uncontrolled autoimmune conditions with the following exceptions, which are allowed: alopecia, vitiligo, rheumatoid arthritis, psoriasis/psoriatic arthritis, Hashimoto's thyroiditis, lupus, inflammatory bowel disease"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4110,
+        "end": 4398,
+        "text": "Patient must not be on immunosuppressive medication, including steroids (if doses exceed the equivalent of prednisone 10 mg daily). Short courses of steroids which are discontinued prior to randomization are acceptable. Patients on inhaled, intranasal and/or topical steroids are eligible"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

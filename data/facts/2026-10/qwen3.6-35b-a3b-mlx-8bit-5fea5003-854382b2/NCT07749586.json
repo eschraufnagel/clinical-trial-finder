@@ -1,0 +1,127 @@
+{
+  "nctId": "NCT07749586",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 128,
+        "end": 222,
+        "text": "Have a histologic or cytologic diagnosis of unresectable or metastatic solid tumor malignancy."
+      },
+      "appliesTo": "Part A1 dose escalation and A2 dose optimization"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 128,
+        "end": 222,
+        "text": "Have a histologic or cytologic diagnosis of unresectable or metastatic solid tumor malignancy."
+      },
+      "appliesTo": "Part A1 dose escalation and A2 dose optimization"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 903,
+        "end": 1125,
+        "text": "Participants must have demonstrated radiographic progression and have at least 1 measurable lesion per RECIST v1.1 that has not been previously irradiated or has demonstrated progression of disease since radiation therapy."
+      },
+      "appliesTo": "Part A1 dose escalation and A2 dose optimization"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1128,
+        "end": 1253,
+        "text": "ECOG PS 0 or 1 or equivalent. Participants with ECOG PS 2 may be considered upon discussion with the Sponsor Medical Monitor."
+      },
+      "appliesTo": "Part A1 dose escalation and A2 dose optimization"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1352,
+        "end": 1634,
+        "text": "Active brain metastases (new lesions identified on imaging, existing lesions showing progression per Response Evaluation Criteria in Solid Tumors, version 1.1 (RECIST v1.1)/imaging characteristics or by clinical criteria, lesions requiring active interventions for symptom control)."
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1637,
+        "end": 1662,
+        "text": "Carcinomatous meningitis."
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1758,
+        "end": 1835,
+        "text": "Active autoimmune disease or history of autoimmune diseases that may relapse."
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 225,
+        "end": 571,
+        "text": "Have previously received at least one prior therapy targeting programmed cell death protein 1 (PD-1), programmed death-ligand 1 (PD-L1), cytotoxic T-lymphocyte antigen 4 (CTLA-4), lymphocyte-activation gene 3 (LAG-3), and/or another T-cell co-stimulatory or immune checkpoint pathway, in any treatment setting (including neoadjuvant or adjuvant)."
+      },
+      "appliesTo": "Part A1 dose escalation and A2 dose optimization"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

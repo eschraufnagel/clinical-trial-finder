@@ -1,0 +1,211 @@
+{
+  "nctId": "NCT07564401",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 53,
+        "text": "Phase I: Patients with ES-SCLC"
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 470,
+        "end": 501,
+        "text": "Phase II: Patients with ES-SCLC"
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 973,
+        "end": 1076,
+        "text": "At least one measurable lesion as defined by Response Evaluation Criteria in Solid Tumors (RECIST 1.1)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1079,
+        "end": 1150,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 209,
+        "text": "Phase I: Patients with ES-SCLC and disease progression after one or more chemotherapy regimens (that included a platinum-based doublet chemotherapy in combination with a PD-L1 inhibitor)"
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 470,
+        "end": 595,
+        "text": "Phase II: Patients with ES-SCLC who have received a platinum-based doublet chemotherapy in combination with a PD-L1 inhibitor"
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1847,
+        "end": 1961,
+        "text": "Prior administration of a genetically modified cellular product, including prior DLL3-targeted CAR-T cell therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1964,
+        "end": 2060,
+        "text": "Unstable or symptomatic central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1964,
+        "end": 2060,
+        "text": "Unstable or symptomatic central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2178,
+        "end": 2283,
+        "text": "Clinically significant active infections, including Hepatitis B/C and Human Immunodeficiency Virus (HIV)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2178,
+        "end": 2283,
+        "text": "Clinically significant active infections, including Hepatitis B/C and Human Immunodeficiency Virus (HIV)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2286,
+        "end": 2368,
+        "text": "Has a known additional malignancy that is progressing or requires active treatment"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2431,
+        "end": 2513,
+        "text": "History of prior solid organ transplant or allogenic hematopoietic cell transplant"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2650,
+        "end": 2676,
+        "text": "Pregnant or nursing women."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed small cell lung cancer (SCLC).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed small cell lung cancer (SCLC).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

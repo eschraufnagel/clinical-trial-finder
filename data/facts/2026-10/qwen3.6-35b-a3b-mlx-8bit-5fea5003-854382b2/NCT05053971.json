@@ -1,0 +1,250 @@
+{
+  "nctId": "NCT05053971",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 269,
+        "text": "For patients in Phase 2: Patients must have locally advanced, unresectable OR metastatic pancreatic cancer refractory to standard therapy"
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 272,
+        "end": 413,
+        "text": "For patients with solid tumors, they must have measurable disease based on Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 755,
+        "end": 841,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status =\\< 1 (Karnofsky \\>= 70%)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4312,
+        "end": 4646,
+        "text": "Patients with known untreated or symptomatic brain or leptomeningeal metastases are excluded. Patients with previously treated CNS metastasis may be included provided that they have stable CNS disease for at least 4 weeks (confirmed by imaging) without symptoms and are off corticosteroids (above physiologic dose) for that indication"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 416,
+        "end": 532,
+        "text": "For patients with solid tumors, they must have received at least one standard of care regimen for metastatic disease"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 416,
+        "end": 532,
+        "text": "For patients with solid tumors, they must have received at least one standard of care regimen for metastatic disease"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 416,
+        "end": 532,
+        "text": "For patients with solid tumors, they must have received at least one standard of care regimen for metastatic disease"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 416,
+        "end": 532,
+        "text": "For patients with solid tumors, they must have received at least one standard of care regimen for metastatic disease"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 416,
+        "end": 532,
+        "text": "For patients with solid tumors, they must have received at least one standard of care regimen for metastatic disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5840,
+        "end": 6342,
+        "text": "Pregnant women are excluded from this study because entinostat is an HDACi and ZEN003694 is a BETi with the potential for teratogenic or abortifacient effects. Because there is an unknown but potential risk for adverse events in nursing infants secondary to treatment of the mother with entinostat or ZEN003694, breastfeeding should be discontinued throughout the treatment period and for at least 28 days following the last dose of study treatment if the mother is treated with entinostat or ZEN003694"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6917,
+        "end": 7067,
+        "text": "History of acute coronary syndromes (including unstable angina and myocardial infarction), coronary angioplasty, or stenting within the past 6 months."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5790,
+        "end": 5837,
+        "text": "Patients with uncontrolled intercurrent illness"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4649,
+        "end": 4752,
+        "text": "Patients with significant malabsorption or nausea and vomiting that would interfere with oral therapies"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5790,
+        "end": 5837,
+        "text": "Patients with uncontrolled intercurrent illness"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3404,
+        "end": 3624,
+        "text": "Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7559,
+        "end": 7655,
+        "text": "Patients who have had a bone-targeted radionuclide within 6 weeks of the first dose of ZEN003694"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7559,
+        "end": 7655,
+        "text": "Patients who have had a bone-targeted radionuclide within 6 weeks of the first dose of ZEN003694"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7559,
+        "end": 7655,
+        "text": "Patients who have had a bone-targeted radionuclide within 6 weeks of the first dose of ZEN003694"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4406,
+        "end": 4646,
+        "text": "Patients with previously treated CNS metastasis may be included provided that they have stable CNS disease for at least 4 weeks (confirmed by imaging) without symptoms and are off corticosteroids (above physiologic dose) for that indication"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

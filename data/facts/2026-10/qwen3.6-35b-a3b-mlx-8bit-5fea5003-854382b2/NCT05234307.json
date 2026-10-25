@@ -1,0 +1,165 @@
+{
+  "nctId": "NCT05234307",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 42,
+        "end": 154,
+        "text": "Confirmed recurrent or metastatic non-small cell carcinoma of the lung of any histology without curative options"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 157,
+        "end": 195,
+        "text": "Measurable disease based on RECIST 1.1"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 312,
+        "end": 368,
+        "text": "Prior PD-1 and/or PD-L1 directed therapies are required."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 403,
+        "end": 524,
+        "text": "Patients may have received no more than 3 prior lines of therapy in the metastatic setting (excluding targeted therapies)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 758,
+        "end": 825,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3447,
+        "end": 3568,
+        "text": "Has active autoimmune disease, including myasthenic syndrome, which has required systemic treatment in the past 12 months"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4178,
+        "end": 4258,
+        "text": "receiving systemic steroid therapy (at a dose \\> 10 mg prednisone or equivalent)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4365,
+        "end": 4475,
+        "text": "Known active chronic infections - human immunodeficiency virus (HIV)/acquired immunodeficiency syndrome (AIDS)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4477,
+        "end": 4561,
+        "text": "known active (ie with detectable polymerase chain reaction \\[PCR\\]) Hepatitis B or C"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4814,
+        "end": 4866,
+        "text": "Symptomatic central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5431,
+        "end": 5457,
+        "text": "Pregnancy or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Confirmed recurrent or metastatic non-small cell carcinoma of the lung of any histology without curative options",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Confirmed recurrent or metastatic non-small cell carcinoma of the lung of any histology without curative options",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

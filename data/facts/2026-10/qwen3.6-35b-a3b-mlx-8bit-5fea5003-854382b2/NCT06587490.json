@@ -1,0 +1,114 @@
+{
+  "nctId": "NCT06587490",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 577,
+        "end": 644,
+        "text": "At least one metastatic lesion must be outside the brain parenchyma"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1961,
+        "end": 2014,
+        "text": "Leptomeningeal disease in the central nervous system."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 447,
+        "end": 709,
+        "text": "Newly diagnosed or progressive metastasis (at least 1 and no more than 10 discrete distant metastases visible on staging imaging. At least one metastatic lesion must be outside the brain parenchyma) for which a new line of systemic therapy is started or resumed."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1196,
+        "end": 1299,
+        "text": "Contraindications to radiotherapy, including interstitial lung disease if thoracic radiation is planned"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1374,
+        "end": 1450,
+        "text": "active connective tissue disorders such as scleroderma or uncontrolled lupus"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histopathologic confirmation of a solid malignancy.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Histopathologic confirmation of a solid malignancy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Newly diagnosed or progressive metastasis (at least 1 and no more than 10 discrete distant metastases visible on staging imaging. At least one metastatic lesion must be outside the brain parenchyma) for which a new line of systemic therapy is started or resumed.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Newly diagnosed or progressive metastasis (at least 1 and no more than 10 discrete distant metastases visible on staging imaging. At least one metastatic lesion must be outside the brain parenchyma) for which a new line of systemic therapy is started or resumed.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Prior radiation therapy to an area requiring treatment in the present study, if the composite dose would exceed normal tissue constraints specified by UC San Diego Radiotherapy Standards and Guidelines (published by the Department of Radiation Medicine and Applied Sciences), or by local institutional radiotherapy dose constraints for safety and efficacy.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [],
+        "polarity": "exclusion",
+        "quote": "Prior radiation therapy to an area requiring treatment in the present study, if the composite dose would exceed normal tissue constraints specified by UC San Diego Radiotherapy Standards and Guidelines (published by the Department of Radiation Medicine and Applied Sciences), or by local institutional radiotherapy dose constraints for safety and efficacy.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

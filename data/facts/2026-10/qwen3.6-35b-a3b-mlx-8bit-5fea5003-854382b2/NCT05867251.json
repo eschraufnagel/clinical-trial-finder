@@ -1,0 +1,144 @@
+{
+  "nctId": "NCT05867251",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 249,
+        "end": 279,
+        "text": "locally advanced or metastatic"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3551,
+        "end": 3626,
+        "text": "Active CNS metastases or confirmed leptomeningeal disease are not eligible."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3551,
+        "end": 3626,
+        "text": "Active CNS metastases or confirmed leptomeningeal disease are not eligible."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2780,
+        "end": 2835,
+        "text": "Measurable disease as determined by RECIST version 1.1."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3114,
+        "end": 3333,
+        "text": "Received any CDK2 inhibitor, protein kinase membrane associated tyrosine/threonine 1 (PKMYT1) inhibitor, or WEE1 inhibitor anticancer therapy. For cohort B5, prior therapy with topoisomerase inhibitors is not permitted."
+      },
+      "appliesTo": "Phase 1b Combination Dose Escalation"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3114,
+        "end": 3256,
+        "text": "Received any CDK2 inhibitor, protein kinase membrane associated tyrosine/threonine 1 (PKMYT1) inhibitor, or WEE1 inhibitor anticancer therapy."
+      },
+      "appliesTo": "Phase 1b Combination Dose Escalation"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1240,
+        "end": 1281,
+        "text": "platinum-refractory or platinum-resistant"
+      },
+      "appliesTo": "Phase 1b Combination Dose Escalation"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2370,
+        "end": 2462,
+        "text": "No more than 2 prior cytotoxic chemotherapy regimens for locally advanced/metastatic disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4049,
+        "end": 4125,
+        "text": "Active second malignancy unless in remission with life expectancy \\> 2 years"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4168,
+        "end": 4288,
+        "text": "Pregnancy, lactation, or plans to breastfeed during the study or within 6 months of the last dose of study intervention."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

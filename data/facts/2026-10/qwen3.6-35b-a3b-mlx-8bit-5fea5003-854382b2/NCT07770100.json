@@ -1,0 +1,211 @@
+{
+  "nctId": "NCT07770100",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 166,
+        "text": "Histologically proven advanced or stage IV head \\& neck, non-small cell lung cancer, cervical, esophageal, gastric, and gastroesophageal cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 166,
+        "text": "Histologically proven advanced or stage IV head \\& neck, non-small cell lung cancer, cervical, esophageal, gastric, and gastroesophageal cancer"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5204,
+        "end": 5575,
+        "text": "Major surgical procedure (including craniotomy and open brain biopsy) or significant traumatic injury (injury requiring immediate surgical intervention or involving loss of consciousness) within 14 days prior to registration or those patients who receive a nonCNS minor surgical procedures (e.g. core biopsy or fine needle aspiration) within 3 days prior to registration."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1481,
+        "end": 1599,
+        "text": "If non-small cell lung cancer patient with pembrolizumab, PD-L1 testing CPS score \\> or = to 50% will have to be shown"
+      },
+      "appliesTo": "non-small cell lung cancer patient with pembrolizumab"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1602,
+        "end": 1722,
+        "text": "If cervical cancer patient on secondary line therapy with pembrolizumab, CPS score of \\> or = to 1 will have to be done."
+      },
+      "appliesTo": "cervical cancer patient on secondary line therapy with pembrolizumab"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1863,
+        "end": 2076,
+        "text": "If non-small cell lung cancer on first line ipilimumab in combination with nivolumab, PD-L1 of 1% and negative epidermal growth factor receptor (EGFR) or anaplastic lymphoma kinase (ALK) genomic tumor aberrations."
+      },
+      "appliesTo": "non-small cell lung cancer on first line ipilimumab in combination with nivolumab"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2079,
+        "end": 2176,
+        "text": "If pembrolizumab is given for a gastric cancer, a PD-L1 expression (CPS =1) will need to be shown"
+      },
+      "appliesTo": "pembrolizumab is given for a gastric cancer"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2179,
+        "end": 2406,
+        "text": "If pembrolizumab is given as a single agent treatment after progression of one prior systemic therapy agent for esophageal or gastroesophageal squamous cell carcinoma histology, a PD-L1 (CPS=1) expression will have to be shown."
+      },
+      "appliesTo": "esophageal or gastroesophageal squamous cell carcinoma histology"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2409,
+        "end": 2456,
+        "text": "ECOG Performance Status 0 - 1 (see Appendix A)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3105,
+        "end": 3330,
+        "text": "No previous or concurrent malignancy is allowed except for adequately treated basal cell or squamous cell skin cancer, in situ cervical cancer, or other cancer for which the patient has been disease free for the past 3 years."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3333,
+        "end": 3367,
+        "text": "Non-pregnant and non-nursing women"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4823,
+        "end": 4844,
+        "text": "Auto-immune diagnosis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6451,
+        "end": 6501,
+        "text": "Known human immunodeficiency virus (HIV) infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6451,
+        "end": 6529,
+        "text": "Known human immunodeficiency virus (HIV) infection or chronic Hepatitis B or C"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Uncontrolled inter-current illness. This includes, but is not limited to: ongoing or active infection; symptomatic congestive heart failure (NYHA class III or IV); unstable angina pectorial or new onset angina that began within the last 3 months; cardiac ventricular arrhythmias requiring anti-arrhythmic therapy; thrombotic/ embolic events such as cerebrovascular accident, including transient ischemic attacks within the past 6 months;",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled inter-current illness. This includes, but is not limited to: ongoing or active infection; symptomatic congestive heart failure (NYHA class III or IV); unstable angina pectorial or new onset angina that began within the last 3 months; cardiac ventricular arrhythmias requiring anti-arrhythmic therapy; thrombotic/ embolic events such as cerebrovascular accident, including transient ischemic attacks within the past 6 months;",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

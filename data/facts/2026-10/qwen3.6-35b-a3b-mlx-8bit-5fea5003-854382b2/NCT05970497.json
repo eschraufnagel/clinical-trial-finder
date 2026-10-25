@@ -1,0 +1,180 @@
+{
+  "nctId": "NCT05970497",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 56,
+        "end": 89,
+        "text": "ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 92,
+        "end": 144,
+        "text": "Have measurable disease per RECIST v1.1 at Screening"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 623,
+        "end": 688,
+        "text": "Subject has previously failed one prior anti-PD-1/PD-L1 treatment"
+      },
+      "appliesTo": "Cohorts 5 and 6"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 801,
+        "end": 898,
+        "text": "If proto-oncogene B-Raf (BRAF) V600 mutation-positive, subject previously failed a BRAF inhibitor"
+      },
+      "appliesTo": "Cohorts 5 and 6"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1791,
+        "end": 1889,
+        "text": "Subject has received more than 2 lines of systemic therapy for unresectable or metastatic melanoma"
+      },
+      "appliesTo": "Cohorts 5 and 6"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1717,
+        "end": 1785,
+        "text": "The subject has active brain metastases or leptomeningeal metastases"
+      },
+      "appliesTo": "Cohorts 5 and 6"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1717,
+        "end": 1785,
+        "text": "The subject has active brain metastases or leptomeningeal metastases"
+      },
+      "appliesTo": "Cohorts 5 and 6"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1339,
+        "end": 1423,
+        "text": "The subject is pregnant, nursing, or plans to become pregnant during study treatment"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1480,
+        "end": 1549,
+        "text": "Have known history of positive human immunodeficiency virus (HIV 1/2)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1580,
+        "end": 1671,
+        "text": "Subject has a known additional malignancy that is progressing or requires active treatment."
+      },
+      "appliesTo": "Cohorts 5 and 6"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "low_dose",
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1287,
+        "end": 1336,
+        "text": "subject does not require systemic corticosteroids"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Cohorts 5 and 6 only: Histologically confirmed stage III (unresectable) or stage IV melanoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Cohorts 5 and 6 only: Histologically confirmed stage III (unresectable) or stage IV melanoma",
+        "appliesTo": "Cohorts 5 and 6"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

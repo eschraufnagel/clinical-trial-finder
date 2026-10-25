@@ -1,0 +1,135 @@
+{
+  "nctId": "NCT04890613",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5160,
+        "end": 5240,
+        "text": "For pancreatic cancer; non-adenocarcinoma histology is excluded from this study."
+      },
+      "appliesTo": "Main study cohort"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1148,
+        "end": 1297,
+        "text": "Histologically confirmed ovarian, fallopian tube or primary peritoneal cancer, with a high grade serous or high grade endometrioid histology subtype."
+      },
+      "appliesTo": "Exploratory cohort"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2050,
+        "end": 2162,
+        "text": "Radiographically documented disease progression within 28 days of registration and evaluable as per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2166,
+        "end": 2222,
+        "text": "Patient must have measurable disease as per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1950,
+        "end": 2046,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2 within 14 days of registration."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5290,
+        "end": 5655,
+        "text": "Untreated, unstable brain or meningeal metastases or tumor. Patients with radiological evidence of stable brain metastases are eligible provided that they are asymptomatic and either do not require corticosteroids or have been treated with corticosteroids, with clinical and radiological evidence of stabilization at least 10 days after discontinuation of steroids."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5290,
+        "end": 5349,
+        "text": "Untreated, unstable brain or meningeal metastases or tumor."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8626,
+        "end": 8670,
+        "text": "Female patients who are pregnant or nursing."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9541,
+        "end": 9760,
+        "text": "Other malignancies within 5 years except for noninvasive malignancies such as cervical carcinoma in situ, non-melanomatous carcinoma of the skin, or ductal carcinoma in situ of the breast that has been surgically cured."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

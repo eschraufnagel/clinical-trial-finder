@@ -1,0 +1,131 @@
+{
+  "nctId": "NCT06578624",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 78,
+        "end": 251,
+        "text": "Histologically and/or cytologically confirmed diagnosis of advanced or metastatic solid tumor and/or non-Hodgkin lymphoma excluding primary central nervous system malignancy"
+      },
+      "appliesTo": "Phase 1"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 535,
+        "end": 718,
+        "text": "Cohort A: Tumor p53 wild-type with histologically confirmed diagnosis of advanced or metastatic DD LPS (and MDM2 amplification); OR Cohort B: Tumor p53 wild-type in other solid tumor."
+      },
+      "appliesTo": "Phase 2a"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 724,
+        "end": 757,
+        "text": "Measurable disease by RECIST 1.1."
+      },
+      "appliesTo": "Phase 2a"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 924,
+        "end": 995,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2937,
+        "end": 2973,
+        "text": "Women who are pregnant or lactating."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1317,
+        "end": 1369,
+        "text": "Active, untreated central nervous system metastases."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1792,
+        "end": 1811,
+        "text": "Known HIV infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1815,
+        "end": 1849,
+        "text": "active hepatitis B or C infection."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1967,
+        "end": 2039,
+        "text": "Myocardial infarction within the last 6 months prior to study treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

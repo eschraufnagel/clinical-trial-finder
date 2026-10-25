@@ -1,0 +1,57 @@
+{
+  "nctId": "NCT06657222",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 521,
+        "end": 656,
+        "text": "For patients with known brain metastases, evidence of clinically stable disease post radiation therapy is required prior to enrollment."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1025,
+        "end": 1211,
+        "text": "Radiologically measurable disease by RECIST v1.1, 4 weeks before C1D1, that can include a lesion in an irradiated field that shows progression according to RECIST v1.1 after irradiation."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1215,
+        "end": 1261,
+        "text": "Eastern Cooperative Oncology Group (ECOG) 0-1."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

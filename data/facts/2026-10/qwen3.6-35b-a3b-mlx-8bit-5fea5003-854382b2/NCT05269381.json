@@ -1,0 +1,431 @@
+{
+  "nctId": "NCT05269381",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1813,
+        "end": 1888,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 790,
+        "end": 872,
+        "text": "Measurable disease as defined by RECIST (v 1.1) criteria or non-measurable disease"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5932,
+        "end": 5971,
+        "text": "Histological confirmation of lung NSCLC"
+      },
+      "appliesTo": "PHASE II PRE-SCREENING COHORT 4 ONLY"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6021,
+        "end": 6060,
+        "text": "Stage II or stage III based on AJCC 8th"
+      },
+      "appliesTo": "PHASE II PRE-SCREENING COHORT 4 ONLY"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 18197,
+        "end": 18241,
+        "text": "Evidence of metastatic disease or recurrence"
+      },
+      "appliesTo": "PHASE II REGISTRATION"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 968,
+        "end": 1183,
+        "text": "Patients with actionable genomic abnormality including, but not limited to EGFR, ALK, MET, ROS-1, RET, NTRK, KRAS or BRAF must have received and progressed on at least one line of prior FDA-approved targeted therapy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4082,
+        "end": 4302,
+        "text": "Patients with actionable genomic abnormality including, but not limited to EGFR, ALK, MET, ROS-1, RET, NTRK, KRAS or BRAF must have also received and progressed on at least one line of prior FDA-approved targeted therapy"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11606,
+        "end": 11665,
+        "text": "Other active malignancy ≤ 3 years prior to pre-registration"
+      },
+      "appliesTo": "ALL PHASES"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15408,
+        "end": 15464,
+        "text": "Other active malignancy ≤ 3 years prior to pre-screening"
+      },
+      "appliesTo": "PHASE II PRE-SCREENING"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11866,
+        "end": 12107,
+        "text": "History of active autoimmune disease (AD) that required systemic treatment in ≤ 30 days (i.e., use of disease modifying agents, corticosteroids \\> 10 mg daily prednisone equivalent, or other immunosuppressive drugs) prior to pre-registration"
+      },
+      "appliesTo": "PHASE I PRE-REGISTRATION"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15665,
+        "end": 15858,
+        "text": "Known history of active AD that has required systemic treatment in the ≤ 30 days (i.e., with use of disease modifying agents, corticosteroids, or immunosuppressive drugs) prior to pre-screening"
+      },
+      "appliesTo": "PHASE II PRE-SCREENING"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16890,
+        "end": 17129,
+        "text": "Known history of active AD that has required systemic treatment in the ≤ 30 days (i.e., with use of disease modifying agents, corticosteroids \\> 10 mg daily prednisone equivalent, or other immunosuppressive drugs) prior to pre-registration"
+      },
+      "appliesTo": "PHASE II PRE-REGISTRATION"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13585,
+        "end": 13701,
+        "text": "Active ADs that require chronic systemic steroids (\\> 10 mg daily prednisone equivalent) or immunosuppressive agents"
+      },
+      "appliesTo": "ALL PHASES"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10018,
+        "end": 10033,
+        "text": "Pregnant person"
+      },
+      "appliesTo": "ALL PHASES"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10038,
+        "end": 10085,
+        "text": "Nursing person unwilling to stop breast feeding"
+      },
+      "appliesTo": "ALL PHASES"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10486,
+        "end": 10675,
+        "text": "History of myocardial infarction ≤ 6 months prior to pre-registration, or congestive heart failure requiring use of ongoing maintenance therapy for life-threatening ventricular arrhythmias."
+      },
+      "appliesTo": "ALL PHASES"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11099,
+        "end": 11242,
+        "text": "Congestive heart failure with New York Heart Association (NYHA) class III or IV moderate to severe objective evidence of cardiovascular disease"
+      },
+      "appliesTo": "PHASE I PRE-REGISTRATION"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16342,
+        "end": 16457,
+        "text": "Congestive heart failure with NYHA class III or IV; moderate to severe objective evidence of cardiovascular disease"
+      },
+      "appliesTo": "PHASE II PRE-SCREENING"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10678,
+        "end": 10820,
+        "text": "Immunocompromised patients and patients known to be human immunodeficiency virus (HIV) positive and currently receiving antiretroviral therapy"
+      },
+      "appliesTo": "ALL PHASES"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14650,
+        "end": 14810,
+        "text": "Evidence of leptomeningeal disease or central nervous system metastases that are untreated, symptomatic, or require steroids \\>10 mg daily prednisone equivalent"
+      },
+      "appliesTo": "PHASE I PRE-REGISTRATION"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14650,
+        "end": 14810,
+        "text": "Evidence of leptomeningeal disease or central nervous system metastases that are untreated, symptomatic, or require steroids \\>10 mg daily prednisone equivalent"
+      },
+      "appliesTo": "PHASE I PRE-REGISTRATION"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13704,
+        "end": 13838,
+        "text": "Systemic corticosteroids (\\> 10 mg daily prednisone equivalent) or other immunosuppressive medications ≤ 14 days prior to registration"
+      },
+      "appliesTo": "PHASE I PRE-REGISTRATION"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13585,
+        "end": 13701,
+        "text": "Active ADs that require chronic systemic steroids (\\> 10 mg daily prednisone equivalent) or immunosuppressive agents"
+      },
+      "appliesTo": "PHASE I PRE-REGISTRATION"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8571,
+        "end": 8639,
+        "text": "Stage II-IV based on the 7th edition of TNM staging system from AJCC"
+      },
+      "appliesTo": "PHASE II PRE-REGISTRATION COHORT 5 (ILC) ONLY"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5276,
+        "end": 5377,
+        "text": "Stage I-III based on 7th edition of TNM staging system from American Joint Committee on Cancer (AJCC)"
+      },
+      "appliesTo": "PHASE II PRE-SCREENING COHORT 3 ONLY"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed invasive lobular carcinoma or other histology with lobular features",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed invasive lobular carcinoma or other histology with lobular features",
+        "appliesTo": "PHASE II PRE-REGISTRATION COHORT 5 (ILC) ONLY"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histological confirmation of adenocarcinoma of the breast with estrogen receptor (ER) < 10%, progesterone receptor (PR) < 10%, and HER2 negative based on current American Society of Clinical Oncology (ASCO)/College of American Pathologists (CAP) guideline",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histological confirmation of adenocarcinoma of the breast with estrogen receptor (ER) < 10%, progesterone receptor (PR) < 10%, and HER2 negative based on current American Society of Clinical Oncology (ASCO)/College of American Pathologists (CAP) guideline",
+        "appliesTo": "PHASE II PRE-SCREENING COHORT 3 ONLY"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Other active malignancy ≤ 3 years prior to pre-registration",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Other active malignancy ≤ 3 years prior to pre-registration",
+        "appliesTo": "PHASE II PRE-REGISTRATION"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Active ADs that require chronic systemic steroids (> 10 mg daily prednisone equivalent) or immunosuppressive agents",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active ADs that require chronic systemic steroids (> 10 mg daily prednisone equivalent) or immunosuppressive agents",
+        "appliesTo": "PHASE II REGISTRATION"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Congestive heart failure with NYHA class III or IV; moderate to severe objective evidence of cardiovascular disease",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Congestive heart failure with NYHA class III or IV; moderate to severe objective evidence of cardiovascular disease",
+        "appliesTo": "PHASE II PRE-REGISTRATION"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Active ADs that require chronic systemic steroids (> 10 mg daily prednisone equivalent) or immunosuppressive agents",
+      "raw": {
+        "factId": "steroids",
+        "rulesOut": [
+          "high_dose"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active ADs that require chronic systemic steroids (> 10 mg daily prednisone equivalent) or immunosuppressive agents",
+        "appliesTo": "PHASE II REGISTRATION"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

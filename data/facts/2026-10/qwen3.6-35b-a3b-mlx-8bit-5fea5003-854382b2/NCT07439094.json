@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT07439094",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 195,
+        "end": 285,
+        "text": "Part 2 : Histologically or cytologically documented c-Met overexpressing nonsquamous NSCLC"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 776,
+        "end": 846,
+        "text": "Documented progressive and measurable disease as defined by RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 849,
+        "end": 879,
+        "text": "ECOG Performance Status 0 or 1"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 904,
+        "end": 1004,
+        "text": "Subject has received radiation therapy to the lung \\< 6 months prior to the first dose of study drug"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1409,
+        "end": 1473,
+        "text": "Prior c-Met-targeted antibody therapy or any MMAE-containing ADC"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1802,
+        "end": 2002,
+        "text": "Evidence of pulmonary fibrosis on screening imaging assessment or any history of pneumonitis that required treatment with systemic steroids within 12 months of the planned first dose of the study drug"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2005,
+        "end": 2054,
+        "text": "History of drug induced interstitial lung disease"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Part 2 : ... having failed at least 1 line of SoC therapy",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 2 : ... having failed at least 1 line of SoC therapy",
+        "appliesTo": "Part 2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

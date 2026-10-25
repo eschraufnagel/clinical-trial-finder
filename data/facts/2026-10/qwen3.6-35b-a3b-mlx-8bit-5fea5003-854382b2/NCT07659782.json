@@ -1,0 +1,196 @@
+{
+  "nctId": "NCT07659782",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 97,
+        "text": "Histopathology confirmed unresectable locally advanced or metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 100,
+        "end": 133,
+        "text": "Measurable disease per RECIST 1.1"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 136,
+        "end": 178,
+        "text": "Local testing confirmed KRAS G12D mutation"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 232,
+        "end": 246,
+        "text": "ECOG PS=0 or 1"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 275,
+        "end": 342,
+        "text": "Received prior treatment with a platinum-based chemotherapy regimen"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 421,
+        "end": 517,
+        "text": "Have documented disease progression during or following their most recent prior line of therapy."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 275,
+        "end": 418,
+        "text": "Received prior treatment with a platinum-based chemotherapy regimen and an immune checkpoint inhibitor in the advanced, non-resectable setting."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 571,
+        "end": 722,
+        "text": "Received at least 1 and no more than 2 prior systemic lines of therapy for advanced (in the unresectable locally advanced or metastatic setting) NSCLC."
+      },
+      "appliesTo": "Patients with 2L/3L on stable or preferred dose"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 770,
+        "end": 921,
+        "text": "Received at least 1 and no more than 3 prior systemic lines of therapy for advanced (in the unresectable locally advanced or metastatic setting) NSCLC."
+      },
+      "appliesTo": "Patients with 2L-4L with brain metastases"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 924,
+        "end": 972,
+        "text": "Have asymptomatic and untreated brain metastases"
+      },
+      "appliesTo": "Patients with 2L-4L with brain metastases"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1483,
+        "end": 1522,
+        "text": "Untreated or symptomatic CNS metastasis"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1391,
+        "end": 1440,
+        "text": "History of drug-induced Interstitial Lung Disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1273,
+        "end": 1325,
+        "text": "Major surgery within 4 weeks of first treatment dose"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Received prior treatment with ... an immune checkpoint inhibitor",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Received prior treatment with ... an immune checkpoint inhibitor",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

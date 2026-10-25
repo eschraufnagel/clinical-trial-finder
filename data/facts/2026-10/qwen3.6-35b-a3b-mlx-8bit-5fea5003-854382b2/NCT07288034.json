@@ -1,0 +1,361 @@
+{
+  "nctId": "NCT07288034",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 802,
+        "end": 849,
+        "text": "Histologically confirmed stage IIIB or IV NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 802,
+        "end": 849,
+        "text": "Histologically confirmed stage IIIB or IV NSCLC"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 754,
+        "end": 799,
+        "text": "Eastern Cooperative Oncology Group (ECOG) ≤ 2"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3126,
+        "end": 3143,
+        "text": "PART II: ECOG ≤ 2"
+      },
+      "appliesTo": "PART II"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 852,
+        "end": 911,
+        "text": "Absence of sensitizing EGFR mutation or ALK/ROS1 alteration"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 852,
+        "end": 911,
+        "text": "Absence of sensitizing EGFR mutation or ALK/ROS1 alteration"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 852,
+        "end": 911,
+        "text": "Absence of sensitizing EGFR mutation or ALK/ROS1 alteration"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1199,
+        "end": 1365,
+        "text": "Patients who have received PD1/PDL1 antibody for early-stage NSCLC are allowed to enroll if they completed the therapy at least 6 months before starting trial therapy"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 914,
+        "end": 1198,
+        "text": "Scheduled to begin treatment with a Food and Drug Administration (FDA) approved PD1/PDL1 antibody with or without chemotherapy. Participants who have already started treatment with anti-PD1/PDL1 in this setting may enroll if they have only received up to 4 cycles of treatment so far."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4977,
+        "end": 5391,
+        "text": "Symptomatic central nervous system (CNS) metastases or leptomeningeal carcinomatosis, except for individuals who have 1) previously-treated CNS metastases, are asymptomatic, and have had no requirement for steroid medication for 1 week prior to the first dose of study drug and have completed radiation 2 weeks prior to the first dose of study drug OR 2) untreated brain metastases that are asymptomatic and stable"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7428,
+        "end": 7851,
+        "text": "Clinical evidence of central nervous system (CNS) metastases or leptomeningeal carcinomatosis, except for individuals who have 1) previously-treated CNS metastases, are asymptomatic, and have had no requirement for steroid medication for 1 week prior to the first dose of study drug and have completed radiation 2 weeks prior to the first dose of study drug OR 2) untreated brain metastases that are asymptomatic and stable"
+      },
+      "appliesTo": "PART II"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4977,
+        "end": 5391,
+        "text": "Symptomatic central nervous system (CNS) metastases or leptomeningeal carcinomatosis, except for individuals who have 1) previously-treated CNS metastases, are asymptomatic, and have had no requirement for steroid medication for 1 week prior to the first dose of study drug and have completed radiation 2 weeks prior to the first dose of study drug OR 2) untreated brain metastases that are asymptomatic and stable"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7428,
+        "end": 7851,
+        "text": "Clinical evidence of central nervous system (CNS) metastases or leptomeningeal carcinomatosis, except for individuals who have 1) previously-treated CNS metastases, are asymptomatic, and have had no requirement for steroid medication for 1 week prior to the first dose of study drug and have completed radiation 2 weeks prior to the first dose of study drug OR 2) untreated brain metastases that are asymptomatic and stable"
+      },
+      "appliesTo": "PART II"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1368,
+        "end": 1412,
+        "text": "Measurable disease by RECIST version (v) 1.1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4771,
+        "end": 4974,
+        "text": "Active autoimmune disease or history of autoimmune disease that required systemic treatment within 2 years before starting treatment, i.e., with use of disease-modifying agents or immunosuppressive drugs"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5394,
+        "end": 5508,
+        "text": "Prior history of interstitial lung disease (ILD) or non-infectious pneumonitis requiring high-dose glucocorticoids"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5552,
+        "end": 5730,
+        "text": "Other active malignancy. Patients with concurrent malignancy other than non-melanoma skin cancer are not eligible for this trial due to potential confounding of the ctDNA results"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5552,
+        "end": 5575,
+        "text": "Other active malignancy"
+      },
+      "appliesTo": "PART II"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5733,
+        "end": 5772,
+        "text": "Females only: Pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7994,
+        "end": 8041,
+        "text": "PART II FEMALES ONLY: Pregnant or breastfeeding"
+      },
+      "appliesTo": "PART II"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4005,
+        "end": 4388,
+        "text": "Patients with a condition requiring systemic treatment with corticosteroids (\\> 10 mg daily prednisone equivalent) within 7 days or another immunosuppressive medication within 30 days of the first dose of study treatment. Inhaled or topical steroids, and adrenal replacement steroid doses ≤ 10 mg daily prednisone equivalent, are permitted in the absence of active autoimmune disease"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4460,
+        "end": 4768,
+        "text": "Clinically significant (i.e., active) cardiovascular disease: cerebral vascular accident/stroke or myocardial infarction within 6 months of enrollment, unstable angina, congestive heart failure (New York Heart Association \\[NYHA class\\] ≥ III), or serious uncontrolled cardiac arrhythmia requiring medication"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6583,
+        "end": 6882,
+        "text": "Clinically significant (i.e., active) cardiovascular disease: cerebral vascular accident/stroke or myocardial infarction within 6 months of enrollment, unstable angina, congestive heart failure (New York Heart Association class ≥ III), or serious uncontrolled cardiac arrhythmia requiring medication"
+      },
+      "appliesTo": "PART II"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2065,
+        "end": 2219,
+        "text": "If seropositive for HIV, hepatitis C virus (HCV), or hepatitis B virus (HBV), nucleic acid quantitation must be performed. Viral load must be undetectable"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2065,
+        "end": 2219,
+        "text": "If seropositive for HIV, hepatitis C virus (HCV), or hepatitis B virus (HBV), nucleic acid quantitation must be performed. Viral load must be undetectable"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Active autoimmune disease or history of autoimmune disease that required systemic treatment within 2 years before starting treatment, i.e., with use of disease-modifying agents or immunosuppressive drugs",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active autoimmune disease or history of autoimmune disease that required systemic treatment within 2 years before starting treatment, i.e., with use of disease-modifying agents or immunosuppressive drugs",
+        "appliesTo": "PART II ARM A ONLY"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients with a condition requiring systemic treatment with corticosteroids (> 10 mg daily prednisone equivalent) within 7 days or another immunosuppressive medication within 30 days of the first dose of study treatment. Inhaled or topical steroids, and adrenal replacement steroid doses ≤ 10 mg daily prednisone equivalent, are permitted in the absence of active autoimmune disease",
+      "raw": {
+        "factId": "steroids",
+        "rulesOut": [
+          "high_dose"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with a condition requiring systemic treatment with corticosteroids (> 10 mg daily prednisone equivalent) within 7 days or another immunosuppressive medication within 30 days of the first dose of study treatment. Inhaled or topical steroids, and adrenal replacement steroid doses ≤ 10 mg daily prednisone equivalent, are permitted in the absence of active autoimmune disease",
+        "appliesTo": "PART II ARM A ONLY"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

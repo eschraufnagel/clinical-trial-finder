@@ -1,0 +1,121 @@
+{
+  "nctId": "NCT06953089",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 150,
+        "end": 247,
+        "text": "At least one measurable lesion as assessed by the Investigator according to RECIST v1.1 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 289,
+        "end": 368,
+        "text": "Has an Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0-1"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1494,
+        "end": 1755,
+        "text": "For NSCLC patients: Pathologically documented Stage IIIB or IIIC NSCLC not amenable for radical surgery or definitive chemoradiation or Stage IV NSQ NSCLC. Not harboring an EGFR-sensitizing mutation or ALK gene rearrangements or other onco-driver gene mutations"
+      },
+      "appliesTo": "NSCLC patients"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1494,
+        "end": 1649,
+        "text": "For NSCLC patients: Pathologically documented Stage IIIB or IIIC NSCLC not amenable for radical surgery or definitive chemoradiation or Stage IV NSQ NSCLC."
+      },
+      "appliesTo": "NSCLC patients"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3956,
+        "end": 4045,
+        "text": "Has spinal cord compression or clinically active central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3840,
+        "end": 3890,
+        "text": "Has a history of (non-infectious) ILD/pneumonitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3893,
+        "end": 3953,
+        "text": "Any autoimmune, connective tissue or inflammatory disorders."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3140,
+        "end": 3214,
+        "text": "Prior treatment with antibody-drug conjugate with topoisomerase inhibitor."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

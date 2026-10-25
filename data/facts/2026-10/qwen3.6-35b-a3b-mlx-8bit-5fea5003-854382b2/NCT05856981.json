@@ -1,0 +1,138 @@
+{
+  "nctId": "NCT05856981",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 311,
+        "end": 350,
+        "text": "metastatic or unresectable solid tumors"
+      },
+      "appliesTo": "Escalation Phase"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 161,
+        "end": 194,
+        "text": "ECOG Performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 96,
+        "end": 134,
+        "text": "Measurable disease according to RECIST"
+      },
+      "appliesTo": "Safety Expansion only"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 956,
+        "end": 994,
+        "text": "> 3 lines of prior systemic treatments"
+      },
+      "appliesTo": "Expansion Phase"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1798,
+        "end": 1831,
+        "text": "Active untreated brain metastases"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2205,
+        "end": 2238,
+        "text": "Diagnosis or positive test of HIV"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2240,
+        "end": 2264,
+        "text": "hepatitis B, hepatitis C"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2291,
+        "end": 2330,
+        "text": "Allogenic tissue/solid organ transplant"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients that suffer from melanoma, brain tumors, glioblastoma, sarcoma and pancreatic ductal adenocarcinoma (PDAC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients that suffer from melanoma, brain tumors, glioblastoma, sarcoma and pancreatic ductal adenocarcinoma (PDAC)",
+        "appliesTo": "Escalation Phase"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

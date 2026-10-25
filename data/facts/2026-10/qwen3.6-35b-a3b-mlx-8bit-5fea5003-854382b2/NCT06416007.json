@@ -1,0 +1,118 @@
+{
+  "nctId": "NCT06416007",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 89,
+        "end": 126,
+        "text": "Patients must have measurable disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 314,
+        "end": 340,
+        "text": "ECOG Performance status ≤2"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 769,
+        "end": 890,
+        "text": "Patients receiving cytotoxic chemotherapy or known radiosensitizing agents within 5 days before or after lattice therapy."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 769,
+        "end": 890,
+        "text": "Patients receiving cytotoxic chemotherapy or known radiosensitizing agents within 5 days before or after lattice therapy."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 769,
+        "end": 890,
+        "text": "Patients receiving cytotoxic chemotherapy or known radiosensitizing agents within 5 days before or after lattice therapy."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 893,
+        "end": 1039,
+        "text": "Patients with hematologic malignancies including lymphoma and leukemia as well as primary or metastatic central nervous system (CNS) malignancies."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 893,
+        "end": 1039,
+        "text": "Patients with hematologic malignancies including lymphoma and leukemia as well as primary or metastatic central nervous system (CNS) malignancies."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1247,
+        "end": 1261,
+        "text": "Pregnant women"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

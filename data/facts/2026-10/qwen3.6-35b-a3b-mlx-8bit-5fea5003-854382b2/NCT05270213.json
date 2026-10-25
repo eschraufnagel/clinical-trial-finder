@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT05270213",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 313,
+        "end": 396,
+        "text": "Male and female subjects with advanced unresectable, recurrent or metastatic tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 865,
+        "end": 909,
+        "text": "Have measurable disease based on RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 913,
+        "end": 1028,
+        "text": "Have a performance status of 0, 1 or 2 using the ECOG Performance Scale within 14 days of first dose of study drug."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4205,
+        "end": 4473,
+        "text": "Malignancies other than indications open for enrollment within 3 years prior to Day 1, with the exception of those with negligible risk of metastasis or death treated with expected curative outcome, undergoing active surveillance or treatment-naïve for indolent tumors"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4759,
+        "end": 4930,
+        "text": "Active autoimmune disease that has required systemic treatment in the past 2 years (i.e. with use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4935,
+        "end": 4987,
+        "text": "History or any evidence of interstitial lung disease"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5104,
+        "end": 5155,
+        "text": "Active HIV requiring therapy and Uncontrolled HIV\\*"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5233,
+        "end": 5363,
+        "text": "Active hepatitis B virus (HBV; hepatitis B surface antigen reactive) or active hepatitis C virus (HCV; qualitative RNA detected)\\*"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6717,
+        "end": 6770,
+        "text": "Prior allogeneic stem cell or solid organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7274,
+        "end": 7493,
+        "text": "Pregnant or lactating or intending to become pregnant or father children within the projected duration of the trial starting with the screening visit through 120 days after the last dose of pembrolizumab and/or RBS2418."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

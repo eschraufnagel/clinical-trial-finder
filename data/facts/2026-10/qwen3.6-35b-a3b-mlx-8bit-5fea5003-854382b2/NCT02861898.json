@@ -1,0 +1,162 @@
+{
+  "nctId": "NCT02861898",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 70,
+        "end": 166,
+        "text": "Patients with a documented histologic diagnosis of newly diagnosed glioblastoma multiforme (GBM)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2279,
+        "end": 2341,
+        "text": "Patients with radiological evidence of leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2279,
+        "end": 2341,
+        "text": "Patients with radiological evidence of leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 236,
+        "end": 303,
+        "text": "Patients must have at least one confirmed and evaluable tumor site."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 543,
+        "end": 635,
+        "text": "Patients must have a Karnofsky performance status ≥70% (or the equivalent ECOG level of 0-2)"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2396,
+        "end": 2440,
+        "text": "Patients who initiated or completed chemo/RT"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2396,
+        "end": 2440,
+        "text": "Patients who initiated or completed chemo/RT"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 70,
+        "end": 166,
+        "text": "Patients with a documented histologic diagnosis of newly diagnosed glioblastoma multiforme (GBM)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients with a documented histologic diagnosis of newly diagnosed glioblastoma multiforme (GBM)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with a documented histologic diagnosis of newly diagnosed glioblastoma multiforme (GBM)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Patients who initiated or completed chemo/RT",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who initiated or completed chemo/RT",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Patients who initiated or completed chemo/RT",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who initiated or completed chemo/RT",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

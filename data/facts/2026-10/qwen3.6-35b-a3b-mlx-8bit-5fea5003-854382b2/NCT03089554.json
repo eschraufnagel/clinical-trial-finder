@@ -1,0 +1,92 @@
+{
+  "nctId": "NCT03089554",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 188,
+        "end": 306,
+        "text": "Patients must have failed first-line therapy for their disease (refractory) or have no options for curative therapies."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 392,
+        "end": 449,
+        "text": "Eastern Cooperative Oncology Group performance status ≤3."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 452,
+        "end": 654,
+        "text": "Patients with brain metastasis must have had treatment of their brain metastasis completed at least 1 day prior to enrollment and be on stable dose of steroids or off steroids at the time of enrollment."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1326,
+        "end": 1370,
+        "text": "Pregnant women are excluded from this study."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1373,
+        "end": 1539,
+        "text": "HIV positive patients with CD4 counts below 500 OR who are not on a stable dose of antiretroviral therapy (for at least 1 month prior to registration) are ineligible."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients must have either measurable or non-measurable disease.",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Patients must have either measurable or non-measurable disease.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

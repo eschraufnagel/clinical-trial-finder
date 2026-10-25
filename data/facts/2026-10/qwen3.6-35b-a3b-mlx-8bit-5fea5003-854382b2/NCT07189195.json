@@ -1,0 +1,80 @@
+{
+  "nctId": "NCT07189195",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 64,
+        "end": 135,
+        "text": "Pathology or histology-confirmed metastatic or unresectable solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 734,
+        "end": 855,
+        "text": "Participants in dose expansion must have measurable disease per Response Evaluation Criteira in Solid Tumors (RECIST) 1.1"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1005,
+        "end": 1069,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2440,
+        "end": 2541,
+        "text": "Participant has a history of myocardial infarction or unstable angina within 6 months prior to day 1."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2651,
+        "end": 2769,
+        "text": "History of cerebrovascular accident (CVA) or transient ischemic attack (TIA) within 6 months prior to study treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

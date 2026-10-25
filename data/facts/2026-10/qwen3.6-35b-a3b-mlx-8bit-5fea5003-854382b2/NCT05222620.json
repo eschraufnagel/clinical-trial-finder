@@ -1,0 +1,68 @@
+{
+  "nctId": "NCT05222620",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 46,
+        "end": 153,
+        "text": "Presence of presumed brain metastases from an extra-cerebral tumor site (e.g. lung, breast, prostate, etc.)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 46,
+        "end": 153,
+        "text": "Presence of presumed brain metastases from an extra-cerebral tumor site (e.g. lung, breast, prostate, etc.)"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1518,
+        "end": 1589,
+        "text": "Any patient with definitive evidence of leptomeningeal metastasis (LMD)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1060,
+        "end": 1133,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance score of (PS) \\>= 2"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

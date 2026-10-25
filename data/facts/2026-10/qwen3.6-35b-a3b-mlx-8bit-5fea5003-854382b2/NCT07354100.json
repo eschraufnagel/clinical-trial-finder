@@ -1,0 +1,140 @@
+{
+  "nctId": "NCT07354100",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 52,
+        "end": 662,
+        "text": "Patients must have a histologically confirmed malignancy that is to receive exclusively ICIs (no chemotherapy or RT in combination) per standard of care during the time in which lactulose will be administered. This includes, but is not limited to, melanoma, cutaneous squamous cell carcinoma, non-small cell lung cancer, mesothelioma, head and neck squamous cell carcinoma, classical Hodgkin lymphoma, primary mediastinal large B-cell lymphoma, urothelial cancer, MSI/MMRd cancer, cancers with high tumor mutational burden (\\>=10 muts/mB), esophageal cancer, hepatocellular carcinoma, and renal cell carcinoma."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1213,
+        "end": 1249,
+        "text": "Measurable disease per RECIST 1.1.32"
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3722,
+        "end": 3934,
+        "text": "Symptomatic CNS metastases and/or leptomeningeal involvement. Patients with CNS metastases and/or leptomeningeal involvement may participate if they are clinically stable, as judged by the enrolling investigator."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3722,
+        "end": 3934,
+        "text": "Symptomatic CNS metastases and/or leptomeningeal involvement. Patients with CNS metastases and/or leptomeningeal involvement may participate if they are clinically stable, as judged by the enrolling investigator."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3937,
+        "end": 4193,
+        "text": "Has an active autoimmune disease or a documented history of autoimmune disease or syndrome that requires systemic steroids or immunosuppressive agents. Patients with vitiligo, type I diabetes, or resolved childhood asthma/atopy are exceptions to this rule."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4485,
+        "end": 4713,
+        "text": "Patients with a \"currently active\" second malignancy other than non-melanoma skin cancers. Patients are not considered to have a \"currently active\" malignancy if they have completed therapy and are free of disease for ≥ 2 years."
+      },
+      "appliesTo": "Phase II"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients must have a histologically confirmed cutaneous or mucosal melanoma. Uveal melanoma is excluded.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have a histologically confirmed cutaneous or mucosal melanoma. Uveal melanoma is excluded.",
+        "appliesTo": "Phase II"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Current serious concomitant illnesses include cardiovascular diseases (such as uncontrolled congestive heart failure, hypertension, cardiac ischemia, and severe cardiac arrhythmias), bleeding disorders, autoimmune diseases, severe obstructive or restrictive pulmonary diseases, active systemic infections, and inflammatory bowel disorders, including HIV or AIDS-related illnesses or active hepatitis B or C virus.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current serious concomitant illnesses include cardiovascular diseases (such as uncontrolled congestive heart failure, hypertension, cardiac ischemia, and severe cardiac arrhythmias), bleeding disorders, autoimmune diseases, severe obstructive or restrictive pulmonary diseases, active systemic infections, and inflammatory bowel disorders, including HIV or AIDS-related illnesses or active hepatitis B or C virus.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Current serious concomitant illnesses include cardiovascular diseases (such as uncontrolled congestive heart failure, hypertension, cardiac ischemia, and severe cardiac arrhythmias), bleeding disorders, autoimmune diseases, severe obstructive or restrictive pulmonary diseases, active systemic infections, and inflammatory bowel disorders, including HIV or AIDS-related illnesses or active hepatitis B or C virus.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current serious concomitant illnesses include cardiovascular diseases (such as uncontrolled congestive heart failure, hypertension, cardiac ischemia, and severe cardiac arrhythmias), bleeding disorders, autoimmune diseases, severe obstructive or restrictive pulmonary diseases, active systemic infections, and inflammatory bowel disorders, including HIV or AIDS-related illnesses or active hepatitis B or C virus.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

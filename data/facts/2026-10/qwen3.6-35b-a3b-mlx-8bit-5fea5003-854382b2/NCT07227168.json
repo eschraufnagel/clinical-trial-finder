@@ -1,0 +1,105 @@
+{
+  "nctId": "NCT07227168",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 329,
+        "text": "Histologically or cytologically documented metastatic or locally advanced solid tumors including: Head and Neck Squamous Cell Carcinoma, Non-small Cell Lung Cancer, Esophageal/Gastric Cancer, Colorectal Cancer, Pancreatic Ductal Adenocarcinoma, Cervical Cancer, Endometrial Cancer, and Urothelial Carcinoma"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 109,
+        "text": "Histologically or cytologically documented metastatic or locally advanced solid tumors"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 356,
+        "end": 423,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 to 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 780,
+        "end": 813,
+        "text": "Measurable disease per RECIST 1.1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 945,
+        "end": 971,
+        "text": "Untreated brain metastases"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1028,
+        "end": 1060,
+        "text": "active interstitial lung disease"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1187,
+        "end": 1238,
+        "text": "Previous solid organ or bone marrow transplantation"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "nctId": "NCT05039801",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 417,
+        "end": 480,
+        "text": "Histologically or cytologically confirmed advanced solid tumors"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8676,
+        "end": 9112,
+        "text": "Known primary central malignancy or symptomatic central nervous system metastasis(es).\n\n   Note: Patients with stable, previously treated brain metastases may participate if neurologic symptoms have resolved, patients have been off steroids (at least 7 days for Part A and Part B, and at least 4 weeks for Part C), and there is no evidence of disease progression by imaging for at least 2 weeks before the first dose of study treatment."
+      },
+      "loose": true
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2086,
+        "end": 2291,
+        "text": "Patients must have received at least one line of therapy for advanced stage disease and be refractory or ineligible to available existing therapy(ies) known to provide clinical benefit for their condition."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3697,
+        "end": 3850,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status ≤1 with no deterioration over the previous 2 weeks prior to baseline or day of first dosing."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_cancer isn't a fact for this trial's cancer type",
+      "quote": "Prior malignancy within the previous 2 years except for locally curable cancers that have been cured, such as basal or squamous cell skin cancer, or carcinoma in situ of the cervix, breast or bladder.",
+      "raw": {
+        "factId": "prior_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior malignancy within the previous 2 years except for locally curable cancers that have been cured, such as basal or squamous cell skin cancer, or carcinoma in situ of the cervix, breast or bladder.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_cancer isn't a fact for this trial's cancer type",
+      "quote": "History of another primary malignancy, except for a malignancy treated with curative intent, with no known active disease ≥5 years before the first dose of treatment, with low potential risk for recurrence. Exceptions include basal cell carcinoma of the skin and squamous cell carcinoma of the skin that has undergone potentially curative therapy.",
+      "raw": {
+        "factId": "prior_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of another primary malignancy, except for a malignancy treated with curative intent, with no known active disease ≥5 years before the first dose of treatment, with low potential risk for recurrence. Exceptions include basal cell carcinoma of the skin and squamous cell carcinoma of the skin that has undergone potentially curative therapy.",
+        "appliesTo": "Part C Specific Exclusion Criteria"
+      }
+    },
+    {
+      "reason": "prior_cancer isn't a fact for this trial's cancer type",
+      "quote": "Prior malignancy within the previous 2 years except for locally curable cancers that have been cured, such as basal or squamous cell skin cancer, or carcinoma in situ of the cervix, breast or bladder.",
+      "raw": {
+        "factId": "prior_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior malignancy within the previous 2 years except for locally curable cancers that have been cured, such as basal or squamous cell skin cancer, or carcinoma in situ of the cervix, breast or bladder.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_cancer isn't a fact for this trial's cancer type",
+      "quote": "History of another primary malignancy, except for a malignancy treated with curative intent, with no known active disease ≥5 years before the first dose of treatment, with low potential risk for recurrence. Exceptions include basal cell carcinoma of the skin and squamous cell carcinoma of the skin that has undergone potentially curative therapy.",
+      "raw": {
+        "factId": "prior_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of another primary malignancy, except for a malignancy treated with curative intent, with no known active disease ≥5 years before the first dose of treatment, with low potential risk for recurrence. Exceptions include basal cell carcinoma of the skin and squamous cell carcinoma of the skin that has undergone potentially curative therapy.",
+        "appliesTo": "Part C Specific Exclusion Criteria"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients must have received at least one line of therapy for advanced stage disease and be refractory or ineligible to available existing therapy(ies) known to provide clinical benefit for their condition.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have received at least one line of therapy for advanced stage disease and be refractory or ineligible to available existing therapy(ies) known to provide clinical benefit for their condition.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Eastern Cooperative Oncology Group (ECOG) Performance Status ≤1 with no deterioration over the previous 2 weeks prior to baseline or day of first dosing.",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eastern Cooperative Oncology Group (ECOG) Performance Status ≤1 with no deterioration over the previous 2 weeks prior to baseline or day of first dosing.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "nctId": "NCT06266299",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 124,
+        "end": 175,
+        "text": "Patients who have disease measurable by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 180,
+        "end": 214,
+        "text": "Patients with an ECOG PS of 0 or 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 628,
+        "end": 745,
+        "text": "Patients with histological or cytological evidence of at least one locally advanced or metastatic non-CNS solid tumor"
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 798,
+        "end": 1027,
+        "text": "Patients with histological or cytological evidence of any of the following disease: Gastric adenocarcinoma, GEJ adenocarcinoma, or esophageal adenocarcinoma, NSCLC (Only patients with NSCLC will be enrolled in the expansion part)"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1204,
+        "end": 1264,
+        "text": "Patients with known active central nervous system metastasis"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1349,
+        "end": 1394,
+        "text": "Patients with a history of autoimmune disease"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1399,
+        "end": 1455,
+        "text": "Patients with a history of HIV, HBV, or HCV at screening"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1570,
+        "end": 1621,
+        "text": "Patients with a history of treatment with docetaxel"
+      },
+      "appliesTo": "Part 2"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

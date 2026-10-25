@@ -1,0 +1,180 @@
+{
+  "nctId": "NCT05493566",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 183,
+        "text": "Patients must have Stage IV non-small cell lung cancer (NSCLC), based on the 8th edition of the American Joint Committee on Cancer (AJCC) NSCLC Staging System."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 184,
+        "end": 241,
+        "text": "This includes adenocarcinoma and squamous cell carcinoma."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 245,
+        "end": 365,
+        "text": "Patients must have measurable disease, as defined by Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 criteria."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 409,
+        "end": 500,
+        "text": "Patients with brain metastasis are eligible if they are asymptomatic or treated and stable."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 546,
+        "end": 611,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-2."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1184,
+        "end": 1388,
+        "text": "Patients must have tumor PD-L1 expression of ≥1% (by 22c3 PD-L1 companion testing); patients whose PD-L1 status could not be determined are also eligible. Patients with known PD-L1 of 0% will be excluded."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2873,
+        "end": 2956,
+        "text": "Prior treatment with anti-PD-1 or anti-PD-L1 therapies or pathway-targeting agents."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2961,
+        "end": 3026,
+        "text": "Any targetable driver mutation (e.g. ALK, EGFR exon 19 del, etc)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3031,
+        "end": 3127,
+        "text": "Patients with prior allogeneic bone marrow transplantation or prior solid organ transplantation."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4079,
+        "end": 4456,
+        "text": "History or risk of autoimmune disease, including but not limited to systemic lupus erythematosus, rheumatoid arthritis, inflammatory bowel disease, vascular thrombosis associated with antiphospholipid syndrome, Wegener's granulomatosis, Sjögren's syndrome, Bell's palsy, Guillain-Barré syndrome, multiple sclerosis, autoimmune thyroid disease, vasculitis, or glomerulonephritis"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4079,
+        "end": 4456,
+        "text": "History or risk of autoimmune disease, including but not limited to systemic lupus erythematosus, rheumatoid arthritis, inflammatory bowel disease, vascular thrombosis associated with antiphospholipid syndrome, Wegener's granulomatosis, Sjögren's syndrome, Bell's palsy, Guillain-Barré syndrome, multiple sclerosis, autoimmune thyroid disease, vasculitis, or glomerulonephritis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5859,
+        "end": 5879,
+        "text": "Known HIV infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6545,
+        "end": 6642,
+        "text": "Patients who are pregnant or lactating, or who are intending to become pregnant during the study."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

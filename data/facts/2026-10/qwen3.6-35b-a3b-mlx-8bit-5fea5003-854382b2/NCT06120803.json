@@ -1,0 +1,68 @@
+{
+  "nctId": "NCT06120803",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 318,
+        "end": 469,
+        "text": "Patient has histopathologically confirmed diagnosis of NSCLC clinical stage III (as per the 8th edition of American Joint Committee on Cancer Staging)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 627,
+        "end": 716,
+        "text": "Patient has Eastern Cooperative Oncology Group (ECOG) performance status score of 0 to 2."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1342,
+        "end": 1418,
+        "text": "Patient has a history of thoracic radiotherapy within 2 years of enrollment."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1098,
+        "end": 1190,
+        "text": "Patient has history of severe liver disease, acute or subacute systemic lupus erythematosus."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "nctId": "NCT06058988",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 128,
+        "text": "Adult patients ≥ 18 years of age with one or more brain tumors planned for neurosurgical resection/biopsy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 128,
+        "text": "Adult patients ≥ 18 years of age with one or more brain tumors planned for neurosurgical resection/biopsy"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 723,
+        "end": 870,
+        "text": "Patients with concomitant leptomeningeal metastasis are eligible provided they have parenchymal brain neoplastic disease requiring resection/biopsy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1392,
+        "end": 1413,
+        "text": "KPS ≥ 60 Or ECOG \\< 2"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 896,
+        "end": 1042,
+        "text": "Cohort A: Brain parenchymal metastases in patients with Her2-expressing/ERBB2- activating-mutant cancer with no prior T-DXd exposure (T-DXd naïve)"
+      },
+      "appliesTo": "Cohort A"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1047,
+        "end": 1176,
+        "text": "Cohort B: Brain parenchymal metastases in patients with Her2-expressing/ERBB2- activating-mutant cancer with prior T-DXd exposure"
+      },
+      "appliesTo": "Cohort B"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1181,
+        "end": 1213,
+        "text": "Cohort C: Recurrent glioblastoma"
+      },
+      "appliesTo": "Cohort C"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1181,
+        "end": 1213,
+        "text": "Cohort C: Recurrent glioblastoma"
+      },
+      "appliesTo": "Cohort C"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1181,
+        "end": 1213,
+        "text": "Cohort C: Recurrent glioblastoma"
+      },
+      "appliesTo": "Cohort C"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1181,
+        "end": 1213,
+        "text": "Cohort C: Recurrent glioblastoma"
+      },
+      "appliesTo": "Cohort C"
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6897,
+        "end": 6963,
+        "text": "History of myocardial infarction within 6 months before enrollment"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6897,
+        "end": 6963,
+        "text": "History of myocardial infarction within 6 months before enrollment"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7390,
+        "end": 7604,
+        "text": "History of (noninfectious) interstitial lung disease (ILD)/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis can not be ruled out by baseline chest CT at Screening."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8229,
+        "end": 8351,
+        "text": "Active primary immunodeficiency, known human immunodeficiency virus (HIV) infection, or active hepatitis B or C infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8229,
+        "end": 8351,
+        "text": "Active primary immunodeficiency, known human immunodeficiency virus (HIV) infection, or active hepatitis B or C infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9987,
+        "end": 10078,
+        "text": "Pregnant or breastfeeding female patients, or patients who are planning to become pregnant."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10369,
+        "end": 10882,
+        "text": "Multiple primary malignancies within 3 years, with the exception of:\n\n  1. adequately resected non-melanoma skin cancer\n  2. carcinoma in situ of the cervix\n  3. Smoldering pre-malignant or malignant conditions with minimal concern for CNS or extracranial progression during treatment such as CLL or MGUS based on the assessment of the treating provider\n  4. curatively treated in-situ disease\n  5. other solid tumors curatively treated\n  6. contralateral breast cancer \\[patients with metastatic breast cancer\\]."
+      },
+      "loose": true
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Adult patients ≥ 18 years of age with one or more brain tumors planned for neurosurgical resection/biopsy",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Adult patients ≥ 18 years of age with one or more brain tumors planned for neurosurgical resection/biopsy",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Metastatic cancer that: Has a history of Her2 expression or activating Her2-mutation",
+      "raw": {
+        "factId": "her2",
+        "rulesOut": [
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "Metastatic cancer that: Has a history of Her2 expression or activating Her2-mutation",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

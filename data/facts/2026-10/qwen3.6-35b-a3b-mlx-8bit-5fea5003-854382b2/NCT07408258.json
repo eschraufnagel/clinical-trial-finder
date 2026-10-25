@@ -1,0 +1,130 @@
+{
+  "nctId": "NCT07408258",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 60,
+        "end": 85,
+        "text": "Must have ECOG score ≤ 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 174,
+        "end": 319,
+        "text": "A histological or cytological diagnosis of metastatic or locally advanced pancreatic cancer, ovarian cancer, colorectal cancer, or breast cancer."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 322,
+        "end": 382,
+        "text": "Must have measurable target lesion according to RECIST V1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2014,
+        "end": 2598,
+        "text": "Patients who have active brain metastases or leptomeningeal metastases. Patients are eligible if brain metastases are adequately treated or not felt to require local treatment (i.e. \\< 10 mm asymptomatic) and patients are asymptomatic or neurologically stable (except for residual signs or symptoms related to the central nervous system (CNS) treatment). Note: Patients with previously treated brain metastases may participate provided that they are radiologically stable, clinically stable, and not requiring steroid treatment within 14 days before the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2014,
+        "end": 2085,
+        "text": "Patients who have active brain metastases or leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2601,
+        "end": 2747,
+        "text": "Patient with a different cancer other than the one treated under this protocol, which requires systemic treatments within 24 months prior to C1D1."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3078,
+        "end": 3313,
+        "text": "Within past 6 months with history of significant cardiovascular events including acute myocardial infarction, acute coronary syndrome, ischemic or hemorrhagic stroke, heart failure NYHA class III or IV, or revascularization procedures."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3991,
+        "end": 4158,
+        "text": "Patients who are pregnant or breastfeeding, or who intend to become pregnant or father a child during the study or within 6 months after the last dosing of study drug."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1865,
+        "end": 2011,
+        "text": "Patients who are on chronic systemic steroid therapy at doses higher than 10 mg/day prednisone or equivalent within 7 days before first treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

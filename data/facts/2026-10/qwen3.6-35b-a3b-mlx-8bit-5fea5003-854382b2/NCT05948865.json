@@ -1,0 +1,107 @@
+{
+  "nctId": "NCT05948865",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 292,
+        "end": 516,
+        "text": "In Part A, patients with solid tumors including but not limited to NSCLC (adenocarcinoma and squamous cell carcinoma), breast cancer, KRAS-wild type colorectal cancer, and head \\& neck cancer based on previous biopsy result."
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 519,
+        "end": 743,
+        "text": "In Part B, Cohort 1 will exclusively include NSCLC patients with documented EGFR mutations based on previous biopsy result and Cohort 2 will be patients with other cancer(s) suggested to have sensitivity to CPO301 in Part A."
+      },
+      "appliesTo": "Part B, Cohort 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 45,
+        "end": 289,
+        "text": "Patients with histologically confirmed locally advanced or metastatic solid tumors who have disease progression, intolerance to prior therapy, are ineligible for available therapies, or refuse standard of care therapy in the metastatic setting."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 948,
+        "end": 1047,
+        "text": "Known, active, or uncontrolled central nervous system (CNS) metastasis or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 948,
+        "end": 1047,
+        "text": "Known, active, or uncontrolled central nervous system (CNS) metastasis or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 746,
+        "end": 842,
+        "text": "At least 1 measurable target lesion present and documented by CT or MRI according to RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 845,
+        "end": 888,
+        "text": "ECOG performance status 0 or 1 at screening"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

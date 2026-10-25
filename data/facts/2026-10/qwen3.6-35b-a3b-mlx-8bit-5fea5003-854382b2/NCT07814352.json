@@ -1,0 +1,258 @@
+{
+  "nctId": "NCT07814352",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 61,
+        "end": 69,
+        "text": "ECOG 0-2"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 72,
+        "end": 161,
+        "text": "Patients must have radiographic and/or pathologically confirmed leptomeningeal metastasis"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 820,
+        "end": 941,
+        "text": "Patients must have a confirmed pathological diagnosis of a metastatic or recurrent melanoma or non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 944,
+        "end": 1003,
+        "text": "Patients will have progressed on standard of care therapies"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 944,
+        "end": 1003,
+        "text": "Patients will have progressed on standard of care therapies"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 944,
+        "end": 1003,
+        "text": "Patients will have progressed on standard of care therapies"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 944,
+        "end": 1003,
+        "text": "Patients will have progressed on standard of care therapies"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 944,
+        "end": 1003,
+        "text": "Patients will have progressed on standard of care therapies"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 693,
+        "end": 819,
+        "text": "Patient's symptoms should experience stability of neurological symptoms for at least 7 days, or on a tapering dose of steroids"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 616,
+        "end": 691,
+        "text": "the dose must be \\<= 8 mg per 24 hours of dexamethasone (or the equivalent)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3395,
+        "end": 3527,
+        "text": "HIV-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3687,
+        "end": 3908,
+        "text": "Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2978,
+        "end": 3142,
+        "text": "Subjects with major medical, neurologic, or psychiatric condition who are judged as unable to fully comply with study therapy or assessments should not be enrolled."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2978,
+        "end": 3142,
+        "text": "Subjects with major medical, neurologic, or psychiatric condition who are judged as unable to fully comply with study therapy or assessments should not be enrolled."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2978,
+        "end": 3142,
+        "text": "Subjects with major medical, neurologic, or psychiatric condition who are judged as unable to fully comply with study therapy or assessments should not be enrolled."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients must have a confirmed pathological diagnosis of a metastatic or recurrent melanoma or non-small cell lung cancer",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have a confirmed pathological diagnosis of a metastatic or recurrent melanoma or non-small cell lung cancer",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "participants of child-bearing potential must agree to use adequate contraception... Should a participant become pregnant or suspect pregnancy while participating in this study, they should inform their treating physician immediately.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "participants of child-bearing potential must agree to use adequate contraception... Should a participant become pregnant or suspect pregnancy while participating in this study, they should inform their treating physician immediately.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "inclusion",
+        "quote": "For patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "No history of unstable angina requiring hospitalization in the last 3 months; No history of myocardial infarction within the last 3 months;",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "No history of unstable angina requiring hospitalization in the last 3 months; No history of myocardial infarction within the last 3 months;",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

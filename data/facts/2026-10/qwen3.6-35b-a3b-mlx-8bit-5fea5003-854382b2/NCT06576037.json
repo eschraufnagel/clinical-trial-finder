@@ -1,0 +1,170 @@
+{
+  "nctId": "NCT06576037",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 176,
+        "text": "Patients must have histologically or cytologically confirmed malignancy of epithelial origin other than ovarian cancer that is metastatic or unresectable"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1010,
+        "end": 1407,
+        "text": "Patients (with the exception of those with prostate cancer) must have measurable disease, defined as at least one lesion that can be accurately measured in at least one dimension (longest diameter to be recorded for non-nodal lesions and short axis for nodal lesions) as ≥10 mm (≥1 cm) with computed tomography (CT) scan,PET-CT, magnetic resonance imaging (MRI) scan, or calipers by clinical exam."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1971,
+        "end": 2051,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤1 (Appendix 1)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10616,
+        "end": 10800,
+        "text": "Symptomatic primary tumors or metastasis in the brain and/or central nervous system (CNS) that are uncontrolled with antiepileptics and/or require prednisone \\>10 mg/day or equivalent."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11223,
+        "end": 11281,
+        "text": "Evidence of leptomeningeal or lymphangitic carcinomatosis."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11286,
+        "end": 11354,
+        "text": "Patients with a history of stem cell or solid organ transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11359,
+        "end": 11385,
+        "text": "Breastfeeding or pregnant."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11390,
+        "end": 11513,
+        "text": "Known history of positive test for human immunodeficiency virus (HIV), hepatitis B virus (HBV), or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11390,
+        "end": 11513,
+        "text": "Known history of positive test for human immunodeficiency virus (HIV), hepatitis B virus (HBV), or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12580,
+        "end": 13020,
+        "text": "History of autoimmune disease including but not limited to inflammatory bowel disease, myasthenia gravis, myositis, autoimmune hepatitis, systemic lupus erythematosus, rheumatoid arthritis, inflammatory bowel disease, Wegener's granulomatosis, Sjögren's syndrome, Guillain-Barré syndrome, multiple sclerosis, vasculitis, or glomerulonephritis that required systemic therapy in the past 2 years (applies to pembrolizumab-based regimen only)."
+      },
+      "appliesTo": "pembrolizumab-based regimen"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13698,
+        "end": 13859,
+        "text": "History of interstitial lung disease or (non-infectious) pneumonitis that required steroids or current pneumonitis (applies to pembrolizumab-based regimen only)."
+      },
+      "appliesTo": "pembrolizumab-based regimen"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12434,
+        "end": 12575,
+        "text": "Concurrent immunosuppressive therapy or steroid therapy (\\>10 mg/day prednisone or equivalent) (applies to pembrolizumab-based regimen only)."
+      },
+      "appliesTo": "pembrolizumab-based regimen"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

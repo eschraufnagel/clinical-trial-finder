@@ -1,0 +1,210 @@
+{
+  "nctId": "NCT07365319",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1814,
+        "end": 1932,
+        "text": "has small cell elements present histologically and/or the tumors are not predominantly non-squamous or squamous NSCLC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 170,
+        "end": 369,
+        "text": "Participant has histologically or cytologically confirmed Stage 4 NSCLC predominately squamous or non-squamous) and is considered a candidate for standard therapy with pembrolizumab and chemotherapy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 790,
+        "end": 906,
+        "text": "Participant has at least 1 lesion with measurable disease at Baseline according to RECIST 1.1 as determined locally."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1331,
+        "end": 1444,
+        "text": "Participant has an ECOG Performance Status of 0 to 1 assessed no more than 10 days before start of the treatment."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1032,
+        "end": 1114,
+        "text": "Participant has not received prior systemic therapy for advanced/metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1032,
+        "end": 1114,
+        "text": "Participant has not received prior systemic therapy for advanced/metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1032,
+        "end": 1114,
+        "text": "Participant has not received prior systemic therapy for advanced/metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1032,
+        "end": 1114,
+        "text": "Participant has not received prior systemic therapy for advanced/metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1032,
+        "end": 1114,
+        "text": "Participant has not received prior systemic therapy for advanced/metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 469,
+        "end": 786,
+        "text": "Participant must have documented evidence that mutation-directed therapy is not indicated, based on the absence of tumor-activating mutations or fusions (e.g., but not limited to EGFR, ALK, RET, ROS1, BRAF) for which approved first-line targeted therapies are available to the participant in their respective country."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 469,
+        "end": 786,
+        "text": "Participant must have documented evidence that mutation-directed therapy is not indicated, based on the absence of tumor-activating mutations or fusions (e.g., but not limited to EGFR, ALK, RET, ROS1, BRAF) for which approved first-line targeted therapies are available to the participant in their respective country."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 469,
+        "end": 786,
+        "text": "Participant must have documented evidence that mutation-directed therapy is not indicated, based on the absence of tumor-activating mutations or fusions (e.g., but not limited to EGFR, ALK, RET, ROS1, BRAF) for which approved first-line targeted therapies are available to the participant in their respective country."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 469,
+        "end": 786,
+        "text": "Participant must have documented evidence that mutation-directed therapy is not indicated, based on the absence of tumor-activating mutations or fusions (e.g., but not limited to EGFR, ALK, RET, ROS1, BRAF) for which approved first-line targeted therapies are available to the participant in their respective country."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 469,
+        "end": 786,
+        "text": "Participant must have documented evidence that mutation-directed therapy is not indicated, based on the absence of tumor-activating mutations or fusions (e.g., but not limited to EGFR, ALK, RET, ROS1, BRAF) for which approved first-line targeted therapies are available to the participant in their respective country."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Participant has tumor tissue available for PD-L1 testing from a site that was not radiated prior to biopsy, and was obtained, ideally, after diagnosis of metastatic disease.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant has tumor tissue available for PD-L1 testing from a site that was not radiated prior to biopsy, and was obtained, ideally, after diagnosis of metastatic disease.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

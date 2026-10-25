@@ -1,0 +1,94 @@
+{
+  "nctId": "NCT06943521",
+  "mappings": [
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 26,
+        "end": 75,
+        "text": "Patients who have failed at least 1 prior therapy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 342,
+        "end": 382,
+        "text": "≥ 1 measurable lesion by the RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 385,
+        "end": 453,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status: 0 to 1"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 701,
+        "end": 1232,
+        "text": "Part 1: Patients must have a confirmed histologic or cytologic diagnosis of one of the following solid tumors for participation in the study: head and neck squamous cell carcinoma (HNSCC), non-small cell lung cancer (NSCLC), esophageal cancer, gastric cancer, biliary tract cancer, pancreatic ductal adenocarcinoma (PDAC), breast cancer, ovarian cancer, cervical cancer, endometrial cancer, prostate cancer, urothelial carcinoma, neuroendocrine tumor (NET) or neuroendocrine carcinoma (NEC), soft tissue sarcoma, and NUT carcinoma."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1262,
+        "end": 1317,
+        "text": "Patients with active brain or leptomeningeal metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1262,
+        "end": 1317,
+        "text": "Patients with active brain or leptomeningeal metastases"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "nctId": "NCT06424067",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 319,
+        "end": 528,
+        "text": "Measurable/evaluable as defined by RECIST 1.1 at baseline of advanced/metastatic non-small cell lung cancer progressed on 2L+ systemic therapy with any molecular subtype and PD-L1 Tumor Proportion Score (TPS)."
+      },
+      "appliesTo": "advanced/metastatic non-small cell lung cancer"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 531,
+        "end": 666,
+        "text": "Measurable/evaluable as defined by RECIST 1.1 at baseline of extensive stage small cell lung cancer progressed on 2L+ systemic therapy."
+      },
+      "appliesTo": "extensive stage small cell lung cancer"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 755,
+        "end": 782,
+        "text": "ECOG performance status 0-2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2538,
+        "end": 2659,
+        "text": "Active untreated brain metastases. Patients are eligible if brain metastases are previously treated and are asymptomatic."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1302,
+        "end": 1587,
+        "text": "Patients who have had a recent (within the last 6 months) occurrence of cardiac event including myocardial infarction, unstable angina, stroke, transient ischemic attack, decompensated heart failure requiring hospitalization, or New York Heart Association Class III or IV heart failure"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3878,
+        "end": 4014,
+        "text": "Female patients who are of child-bearing potential (WOCBP) who are pregnant, planning to become pregnant during the study, or lactating."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2331,
+        "end": 2420,
+        "text": "Concurrent therapy with antineoplastic, immunosuppressive, or immune-modulating therapies"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2331,
+        "end": 2420,
+        "text": "Concurrent therapy with antineoplastic, immunosuppressive, or immune-modulating therapies"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 319,
+        "end": 528,
+        "text": "Measurable/evaluable as defined by RECIST 1.1 at baseline of advanced/metastatic non-small cell lung cancer progressed on 2L+ systemic therapy with any molecular subtype and PD-L1 Tumor Proportion Score (TPS)."
+      },
+      "appliesTo": "advanced/metastatic non-small cell lung cancer"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 319,
+        "end": 528,
+        "text": "Measurable/evaluable as defined by RECIST 1.1 at baseline of advanced/metastatic non-small cell lung cancer progressed on 2L+ systemic therapy with any molecular subtype and PD-L1 Tumor Proportion Score (TPS)."
+      },
+      "appliesTo": "advanced/metastatic non-small cell lung cancer"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 531,
+        "end": 666,
+        "text": "Measurable/evaluable as defined by RECIST 1.1 at baseline of extensive stage small cell lung cancer progressed on 2L+ systemic therapy."
+      },
+      "appliesTo": "extensive stage small cell lung cancer"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

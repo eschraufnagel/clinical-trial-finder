@@ -1,0 +1,143 @@
+{
+  "nctId": "NCT07594626",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 96,
+        "end": 383,
+        "text": "Patients must have pathologically or cytologically confirmed metastatic solid tumor of gastrointestinal origin with MTAP deletion including pancreatic cancer, biliary cancer, esophageal cancer and colon cancer (Cohort A) or other metastatic solid malignancy with MTAP deletion (Cohort B)"
+      },
+      "appliesTo": "COHORT A (INCLUDING SAFETY RUN IN, STAGE I AND STAGE II) AND COHORT B"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 714,
+        "end": 889,
+        "text": "Patients must have at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) version (v) 1.1, measured preferably by computed tomography (CT) scan"
+      },
+      "appliesTo": "COHORT A (INCLUDING SAFETY RUN IN, STAGE I AND STAGE II) AND COHORT B"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1518,
+        "end": 1610,
+        "text": "Patients must exhibit an Eastern Cooperative Oncology Group (ECOG) performance status of 0-1"
+      },
+      "appliesTo": "COHORT A (INCLUDING SAFETY RUN IN, STAGE I AND STAGE II) AND COHORT B"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2998,
+        "end": 3161,
+        "text": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression"
+      },
+      "appliesTo": "COHORT A (INCLUDING SAFETY RUN IN, STAGE I AND STAGE II) AND COHORT B"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10086,
+        "end": 10122,
+        "text": "Patients who are pregnant or nursing"
+      },
+      "appliesTo": "STAGE I AND II, COHORT A (INCLUDING SAFETY RUN IN) AND B"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7422,
+        "end": 7503,
+        "text": "Patients with pre-existing clinically significant interstitial lung disease (ILD)"
+      },
+      "appliesTo": "STAGE I AND II, COHORT A (INCLUDING SAFETY RUN IN) AND B"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11634,
+        "end": 11829,
+        "text": "Patients with a known history of human immunodeficiency virus (HIV), infected patients on effective anti-retroviral therapy must have a viral load undetectable for 6 months prior to registration."
+      },
+      "appliesTo": "STAGE I AND II, COHORT A (INCLUDING SAFETY RUN IN) AND B"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12351,
+        "end": 12451,
+        "text": "Patients with a known history of hepatitis C virus (HCV) infection must have been treated and cured."
+      },
+      "appliesTo": "STAGE I AND II, COHORT A (INCLUDING SAFETY RUN IN) AND B"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients must have pathologically or cytologically confirmed metastatic solid tumor of gastrointestinal origin with MTAP deletion including pancreatic cancer, biliary cancer, esophageal cancer and colon cancer (Cohort A) or other metastatic solid malignancy with MTAP deletion (Cohort B)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have pathologically or cytologically confirmed metastatic solid tumor of gastrointestinal origin with MTAP deletion including pancreatic cancer, biliary cancer, esophageal cancer and colon cancer (Cohort A) or other metastatic solid malignancy with MTAP deletion (Cohort B)",
+        "appliesTo": "COHORT A (INCLUDING SAFETY RUN IN, STAGE I AND STAGE II) AND COHORT B"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

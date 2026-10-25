@@ -1,0 +1,69 @@
+{
+  "nctId": "NCT05227326",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 300,
+        "end": 327,
+        "text": "ECOG performance status ≤ 2"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2417,
+        "end": 2745,
+        "text": "No other prior malignancy is allowed except for the following: adequately treated basal cell or squamous cell skin cancer, in situ cervical cancer, adequately treated Stage I or II cancer from which the patient is currently in complete remission, or any other cancer from which the patient has been disease free for three years."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2253,
+        "end": 2315,
+        "text": "Women who are or are planning to become pregnant or breastfeed"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 413,
+        "end": 647,
+        "text": "Patients with solid tumors failing standard therapies or patients refusing standard treatments (exception: Part B NSCLC combination (EGFR TKI + AOH1996) cohort: patients with stable disease or better on EGFR TKI for at least 2 months)"
+      },
+      "appliesTo": "Part B NSCLC combination (EGFR TKI + AOH1996) cohort"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

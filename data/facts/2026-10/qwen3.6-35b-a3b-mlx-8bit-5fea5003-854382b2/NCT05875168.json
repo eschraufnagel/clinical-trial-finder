@@ -1,0 +1,184 @@
+{
+  "nctId": "NCT05875168",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 240,
+        "end": 280,
+        "text": "Measurable disease based on RECIST V1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 283,
+        "end": 353,
+        "text": "Eastern Cooperative Oncology Group performance status score of 0 or 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 399,
+        "end": 517,
+        "text": "Has a histologically or cytologically documented locally advanced, metastatic, or unresectable solid malignant tumors."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 563,
+        "end": 694,
+        "text": "Has a histologically or cytologically documented locally advanced, metastatic, or unresectable cancer meeting the protocol criteria"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1636,
+        "end": 1719,
+        "text": "Has spinal cord compression or clinically active central nervous system metastases."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1722,
+        "end": 1929,
+        "text": "Has multiple primary malignancies, except adequately resected non-melanoma skin cancer, curatively treated in situ disease, or other solid tumors curatively treated, with no evidence of disease for ≥3 years."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1932,
+        "end": 2191,
+        "text": "Has any history of ILD/pneumonitis irrespective of steroid use, or current ILD, or suspected ILD, or ILD that cannot be ruled out by imaging at Screening. Participants may be eligible if they had history of radiation pneumonitis that did not require steroids."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2194,
+        "end": 2266,
+        "text": "Has active or uncontrolled human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2269,
+        "end": 2357,
+        "text": "Has evidence of active or uncontrolled hepatitis B virus or hepatitis C virus infection."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2360,
+        "end": 2499,
+        "text": "Any of the following within the past 6 months: cerebrovascular accident, transient ischemic attack, or other arterial thromboembolic event."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2502,
+        "end": 2594,
+        "text": "Has an active (ie, symptomatic and/or on-treatment), known, or suspected autoimmune disease."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "histology has no answer none",
+      "quote": "Has a histologically or cytologically documented locally advanced, metastatic, or unresectable solid malignant tumors.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "none"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has a histologically or cytologically documented locally advanced, metastatic, or unresectable solid malignant tumors.",
+        "appliesTo": "Part 1"
+      }
+    },
+    {
+      "reason": "histology has no answer none",
+      "quote": "Has a histologically or cytologically documented locally advanced, metastatic, or unresectable cancer meeting the protocol criteria",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "none"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has a histologically or cytologically documented locally advanced, metastatic, or unresectable cancer meeting the protocol criteria",
+        "appliesTo": "Part 2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

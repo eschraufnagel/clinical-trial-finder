@@ -1,0 +1,217 @@
+{
+  "nctId": "NCT06582771",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 50,
+        "end": 114,
+        "text": "Biopsy-proven metastatic or recurrent non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 117,
+        "end": 190,
+        "text": "KRAS G12C mutation on prior tumor biopsy or cell-free DNA (cfDNA) testing"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 193,
+        "end": 233,
+        "text": "No prior therapy in the advanced setting"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 236,
+        "end": 269,
+        "text": "Measurable disease per RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 272,
+        "end": 312,
+        "text": "Karnofsky performance status (KPS) ≥ 70%"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3983,
+        "end": 4011,
+        "text": "Symptomatic brain metastases"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4149,
+        "end": 4297,
+        "text": "Exposure to prior adjuvant or consolidation anti-PD-1 or PD-(L)1 therapy for stage I-III disease within 12 weeks of start of initiation of sotorasib"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1031,
+        "end": 1241,
+        "text": "Decline first-line chemotherapy and/or anti-PD-(L)1 therapy, or previously have experienced disease progression after adjuvant or consolidation chemotherapy or anti-PD-(L)1 therapy for early stage (I-III) NSCLC"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1031,
+        "end": 1241,
+        "text": "Decline first-line chemotherapy and/or anti-PD-(L)1 therapy, or previously have experienced disease progression after adjuvant or consolidation chemotherapy or anti-PD-(L)1 therapy for early stage (I-III) NSCLC"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 193,
+        "end": 233,
+        "text": "No prior therapy in the advanced setting"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 193,
+        "end": 233,
+        "text": "No prior therapy in the advanced setting"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4361,
+        "end": 4428,
+        "text": "Prior history of \\> grade 1 pneumonitis from any previous treatment"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4431,
+        "end": 4609,
+        "text": "Congestive heart failure defined as New York Heart Association (NYHA) Class III-IV or hospitalization for congestive heart failure (any NYHA class) within 6 months of study Day 1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4759,
+        "end": 4837,
+        "text": "uncontrolled inflammatory GI disease (eg, Crohn's disease, ulcerative colitis)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4840,
+        "end": 4912,
+        "text": "Positive hepatitis B (hepatitis B virus \\[HBV\\]) surface antigen (HBsAg)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5316,
+        "end": 5356,
+        "text": "Positive hepatitis C antibody (anti-HCV)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

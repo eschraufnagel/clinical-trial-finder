@@ -1,0 +1,169 @@
+{
+  "nctId": "NCT07405190",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 155,
+        "text": "Histologically or cytologically confirmed advanced or metastatic non-squamous NSCLC not amenable to curative resection or radiation."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1525,
+        "end": 1628,
+        "text": "At least 1 measurable lesion as assessed by investigator per the RECIST v1.1 criteria for both cohorts."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2475,
+        "end": 2509,
+        "text": "ECOG performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5129,
+        "end": 5299,
+        "text": "Participants previously treated with immune checkpoint inhibitors or other T cell immune-modulating antibodies, including anti-CTLA-4, anti-PD-1 and/or anti-PD-L1 agents."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6791,
+        "end": 7000,
+        "text": "Active autoimmune or lung disease requiring systemic therapy (eg, with disease modifying drugs, prednisone \\>10 mg daily or equivalent, immunosuppressant therapy) within 2 years prior to first ivonescimab dose"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7392,
+        "end": 7685,
+        "text": "Unstable angina, myocardial infarction, congestive heart failure (New York Heart Association \\[NYHA\\] classification ≥ grade 2) or unstable vascular disease (eg, aortic aneurysm at risk of rupture, Moyamoya disease) that required hospitalization within 6 months prior to first ivonescimab dose"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10779,
+        "end": 10912,
+        "text": "Any evidence of current ILD or pneumonitis or a prior history of ILD or non-infectious pneumonitis requiring systemic corticosteroids"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11034,
+        "end": 11121,
+        "text": "Known history of human immunodeficiency virus (HIV) whose viral load is not controlled."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11124,
+        "end": 11204,
+        "text": "Current use of systemic corticosteroids (\\>10 mg daily prednisone or equivalent)"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11207,
+        "end": 11310,
+        "text": "Known history of allogeneic organ transplantation or allogeneic hematopoietic stem cell transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12333,
+        "end": 12397,
+        "text": "Patient is breastfeeding or plans to breastfeed during the study"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Histologically or cytologically confirmed advanced or metastatic NSCLC not amenable to curative resection or radiation.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed advanced or metastatic NSCLC not amenable to curative resection or radiation.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

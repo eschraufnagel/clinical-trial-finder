@@ -1,0 +1,129 @@
+{
+  "nctId": "NCT07672483",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 139,
+        "text": "Relapsed or refractory solid tumor malignancies for whom standard measures do not exist or are no longer effective."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 210,
+        "end": 282,
+        "text": "Participants must have evaluable (measurable or not measurable) disease."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 634,
+        "end": 836,
+        "text": "Participants with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy and close monitoring for over 3 months shows no active progression."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 839,
+        "end": 912,
+        "text": "At least one prior cancer treatment when upfront standard therapy exists."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1112,
+        "end": 1179,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status \\<= 2."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4242,
+        "end": 4316,
+        "text": "Participants with history of primary CNS tumors or leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5569,
+        "end": 5920,
+        "text": "Any form of diagnosed autoimmune disease requiring immune suppression as well as participants with active autoimmune skin diseases such as psoriasis or any history of active systemic autoimmune disease (e.g., Crohn's, rheumatoid arthritis, systemic lupus) requiring systemic immunosuppression/systemic disease-modifying agents within the last 2 years."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6528,
+        "end": 6573,
+        "text": "History of prior solid organ transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6780,
+        "end": 6902,
+        "text": "Pregnancy confirmed with Beta-human chorionic gonadotropin (Beta-HCG) serum or urine pregnancy test in WOCBP at screening."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

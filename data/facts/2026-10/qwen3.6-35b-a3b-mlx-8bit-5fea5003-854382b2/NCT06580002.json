@@ -1,0 +1,59 @@
+{
+  "nctId": "NCT06580002",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms",
+        "treated_stable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1805,
+        "end": 1880,
+        "text": "History of or current presence of primary brain tumors or brain metastases."
+      },
+      "appliesTo": "Cohort A (no prior cranial radiation)"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1931,
+        "end": 1964,
+        "text": "Diagnosed with high grade glioma."
+      },
+      "appliesTo": "Cohort B (prior cranial radiation)"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2048,
+        "end": 2142,
+        "text": "Women who are breastfeeding, pregnant or are planning to get pregnant during the study period."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "nctId": "NCT06271252",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 556,
+        "end": 619,
+        "text": "Extramedullary lesions (\\>1 cm for diameter of the short axis)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 621,
+        "end": 807,
+        "text": "For Phase I (dose-escalation) - Subjects who had received at least 3 prior lines of therapy, had previous exposure to BCMA-Ag+ therapies, and were refractory to the last line of therapy."
+      },
+      "appliesTo": "Phase I (dose-escalation)"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 809,
+        "end": 1054,
+        "text": "For Phase I (dose-expansion) and Phase II: Subjects with previous exposure to BCMA directed therapies including BCMA bispecific antibody (e.g., teclistamab), BCMA antibody directed conjugate (such as BLENREP), and BCMA-CAR-T (such as CARVYKT1TM)"
+      },
+      "appliesTo": "Phase I (dose-expansion) and Phase II"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1277,
+        "end": 1303,
+        "text": "Pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1305,
+        "end": 1361,
+        "text": "Seropositive for history of human immunodeficiency virus"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1362,
+        "end": 1419,
+        "text": "Active Hepatitis B infection and or Hepatitis C infection"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1421,
+        "end": 1469,
+        "text": "Known active or prior history of CNS involvement"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1471,
+        "end": 1701,
+        "text": "History of autoimmune diseases (such as Crohn's disease, rheumatoid arthritis, systemic lupus erythematosus) caused damage to terminal organs or required systemic application of immunosuppressive or other drugs in the past 2 years"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1907,
+        "end": 1958,
+        "text": "Subjects who received allogeneic stem cell therapy."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Diagnosis of MM according to the IMWG criteria (2016 version).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Diagnosis of MM according to the IMWG criteria (2016 version).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

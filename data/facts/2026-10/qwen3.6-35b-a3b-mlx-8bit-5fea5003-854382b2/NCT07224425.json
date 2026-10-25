@@ -1,0 +1,120 @@
+{
+  "nctId": "NCT07224425",
+  "mappings": [
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 714,
+        "end": 783,
+        "text": "Participants should not have received \\>3 previous lines of treatment"
+      },
+      "appliesTo": "Part B only"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1023,
+        "end": 1093,
+        "text": "Eastern cooperative oncology group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1097,
+        "end": 1255,
+        "text": "Presence of at least one measurable lesion outside of central nervous system (CNS) as defined per response evaluation criteria in solid tumours (RECIST v 1.1)"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1872,
+        "end": 1896,
+        "text": "carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2418,
+        "end": 2546,
+        "text": "receiving chronic systemic therapy exceeding prednisone 10 mg daily or equivalent or any other form of immunosuppressive therapy"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2989,
+        "end": 3064,
+        "text": "Prior treatment with organ transplant or hematopoietic stem-cell transplant"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3200,
+        "end": 3355,
+        "text": "Women who are pregnant, breastfeeding or who plan to become pregnant or breastfeeding during the trial or within 4 months after the last dose of BI 3810944"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active untreated CNS metastases",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active untreated CNS metastases",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

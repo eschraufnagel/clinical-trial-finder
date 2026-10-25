@@ -1,0 +1,190 @@
+{
+  "nctId": "NCT07182591",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 279,
+        "end": 378,
+        "text": "Has histologically- or cytologically documented recurrent, metastatic, or unresectable solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 825,
+        "end": 930,
+        "text": "Has measurable disease based on local CT/MRI imaging as assessment by the investigator using RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 934,
+        "end": 1002,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0-1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1374,
+        "end": 1471,
+        "text": "Has histologically or cytologically confirmed, Stage IV NSCLC without actionable gene alteration."
+      },
+      "appliesTo": "Dose Expansion (Part 3) Only"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1822,
+        "end": 1905,
+        "text": "Has spinal cord compression or clinically active central nervous system metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1909,
+        "end": 1956,
+        "text": "Has a history of leptomeningeal carcinomatosis."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2015,
+        "end": 2174,
+        "text": "Any of the following within the past 6 months prior to enrollment: cerebrovascular accident, transient ischemic attack, or other arterial thromboembolic event."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2178,
+        "end": 2370,
+        "text": "Has a history of (noninfectious) interstitial lung disease (ILD)/pneumonitis that required corticosteroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2522,
+        "end": 2563,
+        "text": "Has active or uncontrolled HBV infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2604,
+        "end": 2645,
+        "text": "Has active or uncontrolled HCV infection."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2687,
+        "end": 2836,
+        "text": "For the dose escalation phase (Part 1 and Part 2), has HIV infection. For the dose expansion part (Part 3), has active or uncontrolled HIV infection."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2841,
+        "end": 2917,
+        "text": "Prior organ transplantation, including allogeneic stem cell transplantation."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2922,
+        "end": 2976,
+        "text": "Has an active, known, or suspected autoimmune disease."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2981,
+        "end": 3152,
+        "text": "Has a diagnosis of immunodeficiency or is receiving systemic steroid therapy or any other form of immunosuppressive therapy within 14 days prior to the trial intervention."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "nctId": "NCT05624996",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 232,
+        "text": "Pathologically (histologically or cytologically) proven diagnosis of non-operable stage IIB or III, node positive (American Joint Committee on Cancer \\[AJCC\\] eighth edition) non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1622,
+        "end": 1686,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-2"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3415,
+        "end": 3709,
+        "text": "Prior radiotherapy to the study cancer (local recurrence). Prior radiotherapy for a different cancer/condition to the region of the study cancer that would result in overlap of radiation therapy fields that is determined by the treating physician to impede the treatment of the study malignancy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3712,
+        "end": 3988,
+        "text": "Patients without identifiable primary tumor and at least 1 pathologically enlarged lymph node are not eligible (T3-4N0 or T0N1-3 patients are not eligible). At least 1 radiographically-involved lymph node is required, but pathologic confirmation of involvement is not mandated"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3991,
+        "end": 4679,
+        "text": "Centrally located primary tumor \\< 2 cm from involved nodal disease that would result in significant overlap of the primary SBRT and nodal radiation fields. This does not include proximity to involved segmental and subsegmental lymph nodes (levels 13 and 14) that would not result in overlap of dose to the proximal bronchial tree or esophagus. Centrally located is defined as within or touching the zone of the proximal bronchial tree, which is a volume 2 cm in all directions around the proximal bronchial tree (carina, right and left main bronchi, right and left upper lobe bronchi, intermedius bronchus, right middle lobe bronchus, lingular bronchus right and left lower lobe bronchi)"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4682,
+        "end": 4747,
+        "text": "Participants who are pregnant or unwilling to discontinue nursing"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4750,
+        "end": 5143,
+        "text": "Participants of childbearing potential (participants who may become pregnant or who may impregnate a partner) unwilling to use highly effective contraceptives during therapy and for the Food and Drug Administration (FDA)-labeled contraception timeframe required after the final dose of the selected systemic therapy regimen, because the treatment in this study may be significantly teratogenic"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "with known PD-L1 status prior to registration",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "with known PD-L1 status prior to registration",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "nctId": "NCT07428044",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 224,
+        "end": 255,
+        "text": "Pathologically documented NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 261,
+        "end": 370,
+        "text": "Stage II, IIIA, or selected IIIB, including T3N2 or T4 (by size criteria, not by mediastinal invasion), NSCLC"
+      },
+      "appliesTo": "Neoadjuvant Therapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6917,
+        "end": 7022,
+        "text": "NSCLC that is clinically T4 by virtue of mediastinal organ invasion or stage IIIB by virtue of N3 disease"
+      },
+      "appliesTo": "Adjuvant Therapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7025,
+        "end": 7197,
+        "text": "Patients who on initial assessment by treating thoracic surgeon, appear to require a total pneumonectomy to achieve a complete resection are ineligible for study enrollment"
+      },
+      "appliesTo": "Adjuvant Therapy"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1381,
+        "end": 1425,
+        "text": "Measurable disease as defined by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3238,
+        "end": 3271,
+        "text": "ECOG Performance Status of 0 or 1"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 651,
+        "end": 813,
+        "text": "Molecular testing results on tissue and/or cfDNA from a CLIA-certified laboratory showing presence of a mutation or amplification (defined as ≥ 4 copies) of HER2."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7475,
+        "end": 7654,
+        "text": "History of (noninfectious) ILD or pneumonitis that required steroids or current ILD or pneumonitis or suspected ILD or pneumonitis that cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7957,
+        "end": 8164,
+        "text": "Any autoimmune, connective tissue, or inflammatory disorders (e.g., rheumatoid arthritis, Sjogren's, sarcoidosis) where there is documentation or suspicion of pulmonary involvement, at the time of screening."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8384,
+        "end": 8494,
+        "text": "Active primary immunodeficiency, known uncontrolled active HIV infection, or active hepatitis B or C infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8384,
+        "end": 8494,
+        "text": "Active primary immunodeficiency, known uncontrolled active HIV infection, or active hepatitis B or C infection"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9684,
+        "end": 9768,
+        "text": "Malignancies other than the disease under study within 3 years before Cycle 1, Day 1"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10535,
+        "end": 10707,
+        "text": "Medical history of myocardial infarction, symptomatic congestive heart failure (CHF; New York Heart Association class II-IV), unstable angina, or serious cardiac arrhythmia"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10922,
+        "end": 10992,
+        "text": "Pregnant or lactating or intending to become pregnant during the study"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

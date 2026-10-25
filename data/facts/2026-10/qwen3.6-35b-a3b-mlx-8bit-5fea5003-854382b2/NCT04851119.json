@@ -1,0 +1,94 @@
+{
+  "nctId": "NCT04851119",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 217,
+        "end": 331,
+        "text": "Patients with recurrent or refractory solid tumors including non-Hodgkin lymphoma and desmoid tumors are eligible."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1450,
+        "end": 1508,
+        "text": "Patients must have either measurable or evaluable disease."
+      },
+      "appliesTo": "PART A"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1745,
+        "end": 1783,
+        "text": "Patients must have measurable disease."
+      },
+      "appliesTo": "PART B"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9304,
+        "end": 9417,
+        "text": "Patients with known central nervous system (CNS) metastasis, except for craniopharyngeal tumors, will be excluded"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10191,
+        "end": 10270,
+        "text": "Patients who have received a prior solid organ transplantation are not eligible"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7643,
+        "end": 7804,
+        "text": "Pregnant or breast-feeding women will not be entered on this study because there is yet no available information regarding human fetal or teratogenic toxicities."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

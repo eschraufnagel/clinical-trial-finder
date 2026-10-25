@@ -1,0 +1,290 @@
+{
+  "nctId": "NCT06216301",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1355,
+        "end": 1392,
+        "text": "Mixed small cell and NSCLC histology."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 92,
+        "end": 261,
+        "text": "Histologically or cytologically diagnosis of stage 4 (according to Version 8 of the American Joint Committee on Cancer \\[AJCC\\] criteria) non-squamous or squamous NSCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 264,
+        "end": 343,
+        "text": "Evaluable (measurable or non-measurable) disease in the thorax per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 654,
+        "end": 690,
+        "text": "ECOG Performance Status (PS) of 0-1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1395,
+        "end": 1723,
+        "text": "EGFR sensitizing mutation and/or ALK translocation, and/or ROS1 and/or RET targetable gene rearrangement, and/or METex14 skipping mutation, and/or NTRK1/2 gene fusion and/or BRAF V600 mutations directed therapy is indicated or planned for other targeted therapy, where such testing and therapy is locally approved and available."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1395,
+        "end": 1723,
+        "text": "EGFR sensitizing mutation and/or ALK translocation, and/or ROS1 and/or RET targetable gene rearrangement, and/or METex14 skipping mutation, and/or NTRK1/2 gene fusion and/or BRAF V600 mutations directed therapy is indicated or planned for other targeted therapy, where such testing and therapy is locally approved and available."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1395,
+        "end": 1723,
+        "text": "EGFR sensitizing mutation and/or ALK translocation, and/or ROS1 and/or RET targetable gene rearrangement, and/or METex14 skipping mutation, and/or NTRK1/2 gene fusion and/or BRAF V600 mutations directed therapy is indicated or planned for other targeted therapy, where such testing and therapy is locally approved and available."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1395,
+        "end": 1723,
+        "text": "EGFR sensitizing mutation and/or ALK translocation, and/or ROS1 and/or RET targetable gene rearrangement, and/or METex14 skipping mutation, and/or NTRK1/2 gene fusion and/or BRAF V600 mutations directed therapy is indicated or planned for other targeted therapy, where such testing and therapy is locally approved and available."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1395,
+        "end": 1723,
+        "text": "EGFR sensitizing mutation and/or ALK translocation, and/or ROS1 and/or RET targetable gene rearrangement, and/or METex14 skipping mutation, and/or NTRK1/2 gene fusion and/or BRAF V600 mutations directed therapy is indicated or planned for other targeted therapy, where such testing and therapy is locally approved and available."
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1395,
+        "end": 1723,
+        "text": "EGFR sensitizing mutation and/or ALK translocation, and/or ROS1 and/or RET targetable gene rearrangement, and/or METex14 skipping mutation, and/or NTRK1/2 gene fusion and/or BRAF V600 mutations directed therapy is indicated or planned for other targeted therapy, where such testing and therapy is locally approved and available."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1395,
+        "end": 1723,
+        "text": "EGFR sensitizing mutation and/or ALK translocation, and/or ROS1 and/or RET targetable gene rearrangement, and/or METex14 skipping mutation, and/or NTRK1/2 gene fusion and/or BRAF V600 mutations directed therapy is indicated or planned for other targeted therapy, where such testing and therapy is locally approved and available."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3595,
+        "end": 3798,
+        "text": "Had prior treatment with any other anti-PD-1, or PD-L1 or PD-L2 agent or an antibody or a small molecule targeting other immuno-regulatory receptors or mechanisms in the 12 months prior to randomization."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 346,
+        "end": 416,
+        "text": "Have not received prior systemic treatment for their metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 346,
+        "end": 416,
+        "text": "Have not received prior systemic treatment for their metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 346,
+        "end": 416,
+        "text": "Have not received prior systemic treatment for their metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 346,
+        "end": 416,
+        "text": "Have not received prior systemic treatment for their metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2315,
+        "end": 2426,
+        "text": "Has a known additional malignancy that is progressing or has required active treatment within the past 3 years."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2662,
+        "end": 3035,
+        "text": "Has symptomatic Central Nervous System (CNS) metastases and/or carcinomatous meningitis. Subjects with asymptomatic CNS metastases or with previously treated brain metastases may participate provided they were treated before randomization (if applicable) and are neurologically stable and without requirement of steroid treatment for at least 7 days prior to randomization."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2662,
+        "end": 2750,
+        "text": "Has symptomatic Central Nervous System (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3038,
+        "end": 3209,
+        "text": "Has active autoimmune disease that has required systemic treatment in past 2 years (i.e. with use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3212,
+        "end": 3437,
+        "text": "Has a diagnosis of immunodeficiency or is receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent) or any other form of immunosuppressive therapy within 7 days prior randomization."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4170,
+        "end": 4195,
+        "text": "Pregnant or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

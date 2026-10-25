@@ -1,0 +1,121 @@
+{
+  "nctId": "NCT05405595",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 77,
+        "end": 145,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 202,
+        "end": 286,
+        "text": "At least 1 measurable lesion at baseline according to the definition of RECIST v1.1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 494,
+        "end": 594,
+        "text": "Patients with histologically or cytologically confirmed, locally advanced or metastatic solid tumors"
+      },
+      "appliesTo": "Dose Escalation Phase Only"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1200,
+        "end": 1249,
+        "text": "Central nervous system (CNS) disease involvement."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1295,
+        "end": 1432,
+        "text": "Patients requiring systemic treatment with corticosteroids or other immunosuppressive medications (\\>10 mg/day prednisone or equivalent)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1716,
+        "end": 1768,
+        "text": "Has had an allogeneic tissue/solid organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 829,
+        "end": 863,
+        "text": "Pregnant or breastfeeding females."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior treatment with a PD-1, PD-L1 targeting agent or a next-generation anti-CTLA-4 therapy with enhanced ADCC function.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior treatment with a PD-1, PD-L1 targeting agent or a next-generation anti-CTLA-4 therapy with enhanced ADCC function.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

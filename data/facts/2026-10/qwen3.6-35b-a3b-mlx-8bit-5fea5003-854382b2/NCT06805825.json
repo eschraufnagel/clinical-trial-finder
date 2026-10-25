@@ -1,0 +1,97 @@
+{
+  "nctId": "NCT06805825",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 117,
+        "end": 261,
+        "text": "Histologically or cytologically confirmed locally advanced, metastatic, and/or unresectable GIST, SCLC, ACC, uveal melanoma, NET ChRCC or ccRCC."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1126,
+        "end": 1197,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2513,
+        "end": 2608,
+        "text": "Known brain metastases that are untreated, symptomatic, or require therapy to control symptoms."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2612,
+        "end": 2804,
+        "text": "A condition requiring systemic treatment with corticosteroids (\\>10 mg daily prednisone equivalent) or other immunosuppressive medications within 14 days prior to administration of study drugs"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4057,
+        "end": 4098,
+        "text": "People who are pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed locally advanced, metastatic, and/or unresectable GIST, SCLC, ACC, uveal melanoma, NET ChRCC or ccRCC.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed locally advanced, metastatic, and/or unresectable GIST, SCLC, ACC, uveal melanoma, NET ChRCC or ccRCC.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

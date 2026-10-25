@@ -1,0 +1,171 @@
+{
+  "nctId": "NCT07086768",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 233,
+        "end": 332,
+        "text": "Patients with histologically or cytologically confirmed locally advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 233,
+        "end": 332,
+        "text": "Patients with histologically or cytologically confirmed locally advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 785,
+        "end": 861,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 865,
+        "end": 993,
+        "text": "Presence of at least 1 measurable lesion based on computed tomography (CT) or magnetic resonance imaging (MRI) per RECISIT V1.1."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2324,
+        "end": 3010,
+        "text": "Has active autoimmune disease or a documented history of autoimmune disease, or history of potential autoimmune syndrome that required systemic steroids or immunosuppressive medications, except for patients with vitiligo, endocrinopathies, type 1 diabetes, or patients with resolved childhood asthma/atopy or other syndromes which would not be expected to recur in the absence of an external trigger (e.g., drug-related serum sickness or post-streptococcal glomerulonephritis). Patients with mild asthma who require intermittent use of bronchodilators (such as albuterol) and those who have not been hospitalized for asthma in the preceding 3 years will not be excluded from this study."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3362,
+        "end": 3555,
+        "text": "Has other malignancy, except for adequately treated basal or squamous cell skin cancer or in situ cancers; or any other cancer from which the patient has been disease-free for at least 5 years."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3772,
+        "end": 3944,
+        "text": "Medical history of myocardial (MI) within 6 months before study enrollment, symptomatic congestive heart failure (CHF) (New York Heart Association \\[NYHA\\] Class II to IV)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4456,
+        "end": 4666,
+        "text": "Has a history of (non-infectious) interstitial lung disease (ILD)/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at Screening."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4993,
+        "end": 5207,
+        "text": "Has spinal cord compression or clinically active central nervous system metastases, defined as untreated and symptomatic, or requiring therapy with corticosteroids or anticonvulsants to control associated symptoms."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5311,
+        "end": 5840,
+        "text": "Has active primary immunodeficiency or active human immunodeficiency virus (HIV) infection as determined by plasma HIV ribonucleic acid (RNA) viral load and CD4 count. For the Dose-expansion phase only, participants with undetectable viral load or normalized CD4 count (CD4+ T-cell counts ≥ 350 cells/μL) and no opportunistic infection within the past 12 months will be eligible. These participants must be on established antiretroviral therapy for at least 4 weeks and have an HIV viral load \\<400 copies/mL prior to enrollment."
+      },
+      "appliesTo": "Dose-expansion phase"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5845,
+        "end": 5883,
+        "text": "Has active hepatitis B or C infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6956,
+        "end": 6992,
+        "text": "Women who are pregnant or lactating."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

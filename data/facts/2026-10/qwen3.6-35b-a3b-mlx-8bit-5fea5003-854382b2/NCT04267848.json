@@ -1,0 +1,219 @@
+{
+  "nctId": "NCT04267848",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 689,
+        "end": 854,
+        "text": "Completely resected stage IIA, IIB IIIA or IIIB (T3-4N2) non-small cell lung cancer (NSCLC) (squamous or non-squamous) with negative margins (complete R0 resection)."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 689,
+        "end": 854,
+        "text": "Completely resected stage IIA, IIB IIIA or IIIB (T3-4N2) non-small cell lung cancer (NSCLC) (squamous or non-squamous) with negative margins (complete R0 resection)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2054,
+        "end": 2223,
+        "text": "No active auto-immune disease that has required systemic treatment within the last 2 years (e.g., disease-modifying agents, corticosteroids, or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2054,
+        "end": 2223,
+        "text": "No active auto-immune disease that has required systemic treatment within the last 2 years (e.g., disease-modifying agents, corticosteroids, or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 689,
+        "end": 854,
+        "text": "Completely resected stage IIA, IIB IIIA or IIIB (T3-4N2) non-small cell lung cancer (NSCLC) (squamous or non-squamous) with negative margins (complete R0 resection)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1981,
+        "end": 2051,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS): 0-1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 312,
+        "end": 430,
+        "text": "Local testing of EGFR with no EGFR exon 19 deletion or EGFR L858 R mutation (applicable to non-squamous patients only)"
+      },
+      "appliesTo": "non-squamous patients only"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 433,
+        "end": 562,
+        "text": "Local testing of ALK with no ALK rearrangement (failed testing is considered negative) (applicable to non-squamous patients only)"
+      },
+      "appliesTo": "non-squamous patients only"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1301,
+        "end": 1375,
+        "text": "No prior neoadjuvant or adjuvant therapy for current lung cancer diagnosis"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1378,
+        "end": 1427,
+        "text": "No prior allogeneic tissue/solid organ transplant"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1706,
+        "end": 1794,
+        "text": "No current pneumonitis or history of (non-infectious) pneumonitis that required steroids"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1797,
+        "end": 1959,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3696,
+        "end": 3894,
+        "text": "No known hepatitis C virus (defined as HCV ribonucleic acid \\[RNA\\] \\[qualitative\\] is detected) infection or known history of hepatitis B (defined as hepatitis B surface antigen \\[HBsAg\\] reactive)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2406,
+        "end": 2532,
+        "text": "Not pregnant and not nursing, because this study involves an agent that has known genotoxic, mutagenic and teratogenic effects"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2669,
+        "end": 2802,
+        "text": "No patients with a \"currently active\" second malignancy that is progressing or has required active treatment within the last 3 years."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2054,
+        "end": 2223,
+        "text": "No active auto-immune disease that has required systemic treatment within the last 2 years (e.g., disease-modifying agents, corticosteroids, or immunosuppressive drugs)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

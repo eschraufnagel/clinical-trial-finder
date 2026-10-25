@@ -1,0 +1,113 @@
+{
+  "nctId": "NCT07407582",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 212,
+        "end": 239,
+        "text": "ECOG Performance Status 0-1"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 552,
+        "end": 610,
+        "text": "Prior cisplatin exposure due to a cancer treatment history"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 242,
+        "end": 307,
+        "text": "Histologically or cytologically confirmed treatment-naïve cancer."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 242,
+        "end": 307,
+        "text": "Histologically or cytologically confirmed treatment-naïve cancer."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1039,
+        "end": 1080,
+        "text": "Females during pregnancy or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of prior_pd1",
+      "quote": "Histologically or cytologically confirmed treatment-naïve cancer.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never",
+          "progressed",
+          "stopped_other"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed treatment-naïve cancer.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of prior_adc",
+      "quote": "Histologically or cytologically confirmed treatment-naïve cancer.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "never",
+          "topo_payload",
+          "other"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed treatment-naïve cancer.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

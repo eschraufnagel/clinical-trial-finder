@@ -1,0 +1,220 @@
+{
+  "nctId": "NCT05475171",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 359,
+        "end": 439,
+        "text": "Biopsy or CT scan confirmed recurrent, metastatic, or persistent cervical cancer"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 616,
+        "end": 675,
+        "text": "Eastern Cooperative Oncology Group performance status 0 - 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 679,
+        "end": 712,
+        "text": "Measurable disease by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3621,
+        "end": 3699,
+        "text": "Prior systemic chemotherapy except when used with concurrent radiation therapy"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3703,
+        "end": 3890,
+        "text": "Is pregnant, breastfeeding, or expecting to conceive within the projected duration of the study, starting with the screening visit through 120 days after the last dose of trial treatment."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3894,
+        "end": 3951,
+        "text": "Previous immune checkpoint inhibitor therapy or cytokines"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3955,
+        "end": 4087,
+        "text": "Ongoing or active systemic infection, active hepatitis B or C infection, or known uncontrolled HIV, that might affect host immunity."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3955,
+        "end": 4087,
+        "text": "Ongoing or active systemic infection, active hepatitis B or C infection, or known uncontrolled HIV, that might affect host immunity."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4341,
+        "end": 4484,
+        "text": "History of chronic obstructive pulmonary disease or other intrinsic lung disease requiring systemic steroid therapy, oxygen, or hospitalization"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4488,
+        "end": 4829,
+        "text": "History of clinically significant cardiovascular disease or QTcF \\> 470 within 12 months from first dose of study intervention, including New York Heart Association (NYHA) Class III or IV congestive heart failure, unstable angina, myocardial infarction, cerebral vascular event, or cardiac arrhythmia associated with hemodynamic instability."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5223,
+        "end": 5676,
+        "text": "Has known active CNS metastases and/or carcinomatous meningitis. Participants with previously treated brain metastases may participate provided they are radiologically stable, i.e. without evidence of progression for at least 4 weeks by repeat imaging (note that the repeat imaging should be performed during study screening), clinically stable and without requirement of steroid treatment for at least 14 days prior to first dose of study intervention."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5223,
+        "end": 5287,
+        "text": "Has known active CNS metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5680,
+        "end": 5816,
+        "text": "Has history of a second malignancy, unless potentially curative treatment has been completed with no evidence of malignancy for 2 years."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6072,
+        "end": 6247,
+        "text": "Has active autoimmune disease that has required systemic treatment in the past 2 years (i.e. with use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4891,
+        "end": 5149,
+        "text": "History of immunodeficiency or receiving chronic systemic steroid or other immunosuppressive therapy (in doses exceeding 10 mg daily of prednisone equivalent) or any other form of immunosuppressive therapy within 7 days prior to the first dose of study drug."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "One of the following histologic subtypes: squamous cell carcinoma, adenosquamous, or adenocarcinoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "One of the following histologic subtypes: squamous cell carcinoma, adenosquamous, or adenocarcinoma",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

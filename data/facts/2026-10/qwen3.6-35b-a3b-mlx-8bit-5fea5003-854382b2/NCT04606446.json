@@ -1,0 +1,148 @@
+{
+  "nctId": "NCT04606446",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 123,
+        "end": 233,
+        "text": "Histological or cytological diagnosis of locally advanced or metastatic ER+HER2- breast cancer, CRPC, or NSCLC"
+      },
+      "appliesTo": "Part 1A (Monotherapy Dose Escalation)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 123,
+        "end": 217,
+        "text": "Histological or cytological diagnosis of locally advanced or metastatic ER+HER2- breast cancer"
+      },
+      "appliesTo": "Part 1B, Part 1C, Part 1D and Part 1E (Combination Dose Escalation)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 993,
+        "end": 1079,
+        "text": "Histological or cytological diagnosis of advanced or metastatic ER+HER2- breast cancer"
+      },
+      "appliesTo": "Part 2B (ER+HER2- breast cancer 2-4L, combination with fulvestrant)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3669,
+        "end": 3794,
+        "text": "Participants must have at least 1 measurable lesion as defined by RECIST version 1.1 that has not been previously irradiated."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3797,
+        "end": 3867,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status PS 0 or 1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4366,
+        "end": 4540,
+        "text": "Participants with any other active malignancy within 3 years prior to enrollment, except for adequately treated basal cell or squamous cell skin cancer, or carcinoma in situ."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5470,
+        "end": 5516,
+        "text": "Pregnant or breastfeeding female participants."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Histological or cytological diagnosis of locally advanced or metastatic ER+HER2- breast cancer",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histological or cytological diagnosis of locally advanced or metastatic ER+HER2- breast cancer",
+        "appliesTo": "Part 2A (ER+HER2- breast cancer 2L+, monotherapy)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Histological or cytological diagnosis of advanced or metastatic ER+HER2- breast cancer",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histological or cytological diagnosis of advanced or metastatic ER+HER2- breast cancer",
+        "appliesTo": "Part 2D (ER+HER2- breast cancer 2-4L, combination with PF-07220060 (CDK4i) and fulvestrant)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Histological or cytological diagnosis of advanced or metastatic ER+HER2- breast cancer",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histological or cytological diagnosis of advanced or metastatic ER+HER2- breast cancer",
+        "appliesTo": "Part 2E (ER+HER2- breast cancer 2-4L, combination with vepdegestrant)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

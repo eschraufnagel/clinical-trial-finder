@@ -1,0 +1,204 @@
+{
+  "nctId": "NCT05048212",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2863,
+        "end": 2983,
+        "text": "Symptomatic brain metastases requiring immediate local interventions such as craniotomy or SRS or whole brain radiation."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3656,
+        "end": 3693,
+        "text": "Patients with Leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2509,
+        "end": 2579,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 to 2"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3697,
+        "end": 3827,
+        "text": "Any approved anticancer therapy, including chemotherapy and hormonal therapy within 4 weeks prior to initiation of study treatment"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3697,
+        "end": 3827,
+        "text": "Any approved anticancer therapy, including chemotherapy and hormonal therapy within 4 weeks prior to initiation of study treatment"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8650,
+        "end": 8736,
+        "text": "Malignancies other than the disease under study within 5 years prior to Cycle 1, Day 1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4931,
+        "end": 5305,
+        "text": "History of autoimmune disease, including but not limited to systemic lupus erythematosus, rheumatoid arthritis, inflammatory bowel disease, vascular thrombosis associated with antiphospholipid syndrome,\n\n    Wegener's granulomatosis, Sjögren's syndrome, Bell's palsy, Guillain-Barré syndrome, multiple sclerosis, autoimmune thyroid disease, vasculitis, or glomerulonephritis"
+      },
+      "loose": true
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6428,
+        "end": 6685,
+        "text": "History of idiopathic pulmonary fibrosis, pneumonitis (including drug induced), organizing pneumonia (i.e., bronchiolitis obliterans, cryptogenic organizing pneumonia, etc.), or evidence of active pneumonitis on screening chest computed tomography (CT) scan"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7142,
+        "end": 7166,
+        "text": "History of HIV infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7170,
+        "end": 7232,
+        "text": "active hepatitis B (chronic or acute) or hepatitis C infection"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4781,
+        "end": 4865,
+        "text": "Inability to undergo MRI secondary to Metal implant and Gadolinium contrast allergy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4661,
+        "end": 4716,
+        "text": "Patients who are pregnant, lactating, or breastfeeding."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3421,
+        "end": 3513,
+        "text": "Requiring corticosteroid dose in 10 days prior to administration of first dose of study drug"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Any approved anticancer therapy, including chemotherapy and hormonal therapy within 4 weeks prior to initiation of study treatment",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Any approved anticancer therapy, including chemotherapy and hormonal therapy within 4 weeks prior to initiation of study treatment",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Any approved anticancer therapy, including chemotherapy and hormonal therapy within 4 weeks prior to initiation of study treatment",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Any approved anticancer therapy, including chemotherapy and hormonal therapy within 4 weeks prior to initiation of study treatment",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

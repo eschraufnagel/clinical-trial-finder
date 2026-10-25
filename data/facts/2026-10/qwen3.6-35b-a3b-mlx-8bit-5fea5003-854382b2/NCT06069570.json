@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT06069570",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 144,
+        "end": 212,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 215,
+        "end": 360,
+        "text": "Histologically or cytologically confirmed locally advanced or metastatic NSCLC or locally advanced or metastatic solid tumor with bone metastasis"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 215,
+        "end": 360,
+        "text": "Histologically or cytologically confirmed locally advanced or metastatic NSCLC or locally advanced or metastatic solid tumor with bone metastasis"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 870,
+        "end": 1078,
+        "text": "At least one measurable target lesion based on RECIST v1.1 confirmed by radiological imaging. Participants with isolated bone metastases are eligible for enrollment are not required to have measurable disease"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1834,
+        "end": 1896,
+        "text": "Active autoimmune disease requiring immunosuppressive therapy."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2306,
+        "end": 2380,
+        "text": "Human immunodeficiency virus (HIV), Hepatitis B, or Hepatitis C detection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2306,
+        "end": 2380,
+        "text": "Human immunodeficiency virus (HIV), Hepatitis B, or Hepatitis C detection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2671,
+        "end": 2777,
+        "text": "Breastfeeding or pregnant female, or patient is expecting to conceive or father children during the study."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "nctId": "NCT06441331",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 151,
+        "end": 232,
+        "text": "Tumor which is relapsed or is refractory to at least one line of previous therapy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 332,
+        "end": 651,
+        "text": "Radioactivity uptake within the primary tumor or metastatic tumor sites measured by locally available SRIs ( 111In-based, 99mTc-based, or 68Ga-based SSTR single-photon emission computed tomography (SPECT)/ computed tomography (CT) or positron emission tomography (PET)/CT imaging, which is higher than the liver uptake)"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1757,
+        "end": 1923,
+        "text": "Previous treatment with metaiodobenzyl guanidine (MIBG) if the predicted overall exposure is expected to exceed 2 Gy (gray) to the bone marrow or 23 Gy to the kidney."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1926,
+        "end": 2102,
+        "text": "Previous treatment with external beam radiation therapy (EBRT) if the predicted overall exposure is expected to exceed more than 2 Gy to the bone marrow or 23 Gy to the kidney."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2105,
+        "end": 2175,
+        "text": "Previous treatment with oncologic immune vaccine or CAR-T cell therapy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1449,
+        "end": 1526,
+        "text": "Previous history of acute leukemia unless in remission for at least two years"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2430,
+        "end": 2455,
+        "text": "Other known malignancies."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2458,
+        "end": 2488,
+        "text": "Serious non-malignant disease."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2300,
+        "end": 2392,
+        "text": "Participants who have received a live-attenuated vaccine up to four weeks prior to enrolment"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2395,
+        "end": 2427,
+        "text": "Pregnant or breastfeeding women."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2178,
+        "end": 2202,
+        "text": "Bulky disease in the CNS"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2205,
+        "end": 2297,
+        "text": "Presence of severe renal, hepatic, electrolyte, cardiovascular, or hematological dysfunction"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1529,
+        "end": 1694,
+        "text": "Extensive bone/bone marrow involvement as per Investigator's judgement unless peripheral blood stem cells (PBSC) are available at a minimum of 2.5x106 CD34+ cells/kg"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1360,
+        "end": 1446,
+        "text": "Known hypersensitivity to Lutetium Lu 177 Edotreotide, DOTA/Edotreotide, or excipients"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Confirmed diagnosis somatostatin receptor-positive (SSTR-positive) disease.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Confirmed diagnosis somatostatin receptor-positive (SSTR-positive) disease.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants who have received previous systemic targeted RPT",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants who have received previous systemic targeted RPT",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

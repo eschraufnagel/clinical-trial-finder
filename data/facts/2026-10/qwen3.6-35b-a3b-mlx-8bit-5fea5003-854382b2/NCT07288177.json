@@ -1,0 +1,124 @@
+{
+  "nctId": "NCT07288177",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 149,
+        "text": "Participant has histologically or cytologically confirmed metastatic or locally advanced NSCLC of adenocarcinoma histology"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 638,
+        "end": 700,
+        "text": "Participant has NSCLC with histology other than adenocarcinoma"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 394,
+        "end": 454,
+        "text": "Participant has measurable disease according to RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 457,
+        "end": 557,
+        "text": "Participant has an Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) score of 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1255,
+        "end": 1397,
+        "text": "Participants with newly identified or known unstable (eg, progressing brain metastases) or symptomatic central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1401,
+        "end": 1475,
+        "text": "history of carcinomatous meningitis (also known as leptomeningeal disease)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participant has histologically or cytologically confirmed metastatic or locally advanced NSCLC ... not amenable to curative surgery or radiotherapy.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant has histologically or cytologically confirmed metastatic or locally advanced NSCLC ... not amenable to curative surgery or radiotherapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participant has a past or current malignancy other than the inclusion diagnosis before the planned first dose of trial treatment, or any evidence of residual disease from a previously diagnosed malignancy. ... or any past malignancy considered cured for ≥ 3 years.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participant has a past or current malignancy other than the inclusion diagnosis before the planned first dose of trial treatment, or any evidence of residual disease from a previously diagnosed malignancy. ... or any past malignancy considered cured for ≥ 3 years.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

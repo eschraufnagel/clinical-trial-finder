@@ -1,0 +1,180 @@
+{
+  "nctId": "NCT03546829",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 101,
+        "end": 144,
+        "text": "biopsy-proven or clinically-suspected NSCLC"
+      },
+      "appliesTo": "Randomized Pilot Inclusion"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1553,
+        "end": 1575,
+        "text": "oligoprogressive NSCLC"
+      },
+      "appliesTo": "Safety Trial Inclusion"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1627,
+        "end": 1645,
+        "text": "metastatic disease"
+      },
+      "appliesTo": "Safety Trial Inclusion"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1870,
+        "end": 1921,
+        "text": "Evidence of untreated CNS or leptomeningeal disease"
+      },
+      "appliesTo": "Safety Trial Exclusion"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1870,
+        "end": 1921,
+        "text": "Evidence of untreated CNS or leptomeningeal disease"
+      },
+      "appliesTo": "Safety Trial Exclusion"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 680,
+        "end": 717,
+        "text": "Documented history of HIV, HBV or HCV"
+      },
+      "appliesTo": "Safety Trial Exclusion"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 720,
+        "end": 801,
+        "text": "Active uncontrolled gastrointestinal disorders such as inflammatory bowel disease"
+      },
+      "appliesTo": "Randomized Pilot Exclusion"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2077,
+        "end": 2186,
+        "text": "Use of oral corticosteroids, methotrexate or immunosuppressive drugs during the 4 weeks prior to registration"
+      },
+      "appliesTo": "Safety Trial Exclusion"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1580,
+        "end": 1722,
+        "text": "progressed after 1st line systemic therapy for metastatic disease which included immunotherapy or a tyrosine kinase inhibitors (TKI) for NSCLC"
+      },
+      "appliesTo": "Safety Trial Inclusion"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1580,
+        "end": 1722,
+        "text": "progressed after 1st line systemic therapy for metastatic disease which included immunotherapy or a tyrosine kinase inhibitors (TKI) for NSCLC"
+      },
+      "appliesTo": "Safety Trial Inclusion"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1580,
+        "end": 1645,
+        "text": "progressed after 1st line systemic therapy for metastatic disease"
+      },
+      "appliesTo": "Safety Trial Inclusion"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Documented history of HIV, HBV or HCV",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "controlled",
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Documented history of HIV, HBV or HCV",
+        "appliesTo": "Randomized Pilot Exclusion"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

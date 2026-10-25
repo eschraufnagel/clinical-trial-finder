@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT06899126",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 508,
+        "end": 600,
+        "text": "Histologically documented non-squamous locally advanced unresectable or metastatic\n\n   NSCLC"
+      },
+      "loose": true
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 547,
+        "end": 600,
+        "text": "locally advanced unresectable or metastatic\n\n   NSCLC"
+      },
+      "loose": true
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1112,
+        "end": 1169,
+        "text": "Has no known HER2 mutation based on existing test results"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 874,
+        "end": 1107,
+        "text": "Has no known AGAs (based on the local test results obtained using validated or approved tests as required per local regulation) that have locally available therapies targeting their AGAs in the first-line advanced/metastatic setting."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2431,
+        "end": 2554,
+        "text": "Has a medical history of MI within 6 months before randomization/enrollment or symptomatic CHF (NYHA Class II to Class IV)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2946,
+        "end": 3128,
+        "text": "Has a history of (non-infectious) ILD/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at Screening."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3441,
+        "end": 3600,
+        "text": "Any auto immune, connective tissue, or inflammatory disorders with potential pulmonary involvement (eg, rheumatoid arthritis, Sjogren's syndrome, sarcoidosis)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Has not been treated with systemic anticancer therapy for advanced or metastatic non-squamous NSCLC. ... Participants who received adjuvant or neoadjuvant therapy other than those listed below, including ICI (ie, anti-PD-1/PD-L1) or a platinum-based regimen, are eligible if the last dose of adjuvant/neoadjuvant therapy was given at least 6 months before the date of the first trial dose if their disease has progressed at least 6 months after the last dose date of adjuvant/neoadjuvant therapy.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has not been treated with systemic anticancer therapy for advanced or metastatic non-squamous NSCLC. ... Participants who received adjuvant or neoadjuvant therapy other than those listed below, including ICI (ie, anti-PD-1/PD-L1) or a platinum-based regimen, are eligible if the last dose of adjuvant/neoadjuvant therapy was given at least 6 months before the date of the first trial dose if their disease has progressed at least 6 months after the last dose date of adjuvant/neoadjuvant therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Has not been treated with systemic anticancer therapy for advanced or metastatic non-squamous NSCLC. ... 1. Any agent, including an ADC, containing a chemotherapeutic agent targeting topoisomerase I.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "topo_payload"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has not been treated with systemic anticancer therapy for advanced or metastatic non-squamous NSCLC. ... 1. Any agent, including an ADC, containing a chemotherapeutic agent targeting topoisomerase I.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Has not been treated with systemic anticancer therapy for advanced or metastatic non-squamous NSCLC. ... Participants who received adjuvant or neoadjuvant therapy other than those listed below, including ICI (ie, anti-PD-1/PD-L1) or a platinum-based regimen, are eligible if the last dose of adjuvant/neoadjuvant therapy was given at least 6 months before the date of the first trial dose if their disease has progressed at least 6 months after the last dose date of adjuvant/neoadjuvant therapy.",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has not been treated with systemic anticancer therapy for advanced or metastatic non-squamous NSCLC. ... Participants who received adjuvant or neoadjuvant therapy other than those listed below, including ICI (ie, anti-PD-1/PD-L1) or a platinum-based regimen, are eligible if the last dose of adjuvant/neoadjuvant therapy was given at least 6 months before the date of the first trial dose if their disease has progressed at least 6 months after the last dose date of adjuvant/neoadjuvant therapy.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

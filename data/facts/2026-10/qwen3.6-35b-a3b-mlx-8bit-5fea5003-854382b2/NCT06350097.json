@@ -1,0 +1,159 @@
+{
+  "nctId": "NCT06350097",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 116,
+        "end": 359,
+        "text": "Histologically or cytologically documented nonsquamous NSCLC. NSCLC of mixed histology is allowed if adenocarcinoma is the predominant histology. Mixed small-cell lung cancer and NSCLC histology, and sarcomatoid variant of NSCLC is ineligible."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 363,
+        "end": 581,
+        "text": "Stage IIIB or IIIC or Stage IV metastatic NSCLC or recurrent NSCLC (based on the American Joint Committee on Cancer Edition 8) not amenable to curative surgery or definitive chemoradiation at the time of randomisation."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2359,
+        "end": 2416,
+        "text": "Spinal cord compression and/or unstable brain metastases."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "exon20_insertion",
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 700,
+        "end": 1058,
+        "text": "The tumour harbors at least 1 of the 2 common EGFR mutations known to be associated with EGFR-TKI sensitivity (Ex19del or L858R), either alone or in combination with other genomic alterations, which may include EGFR T790M, assessed by a CLIA-certified (US sites) or an accredited (outside of the US) local laboratory or by central prospective tissue testing."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1271,
+        "end": 1304,
+        "text": "WHO performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1308,
+        "end": 1599,
+        "text": "At least one lesion not previously irradiated that qualifies as a RECIST 1.1 TL at baseline and can be accurately measured at baseline as ≥10 mm in the longest diameter (except lymph nodes, which must have short axis ≥15 mm) with CT or MRI and is suitable for accurate repeated measurements."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 585,
+        "end": 696,
+        "text": "Participants must not have received prior EGFR TKIs or other systemic therapy for Stage IIIB, IIIC or IV NSCLC."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1721,
+        "end": 2063,
+        "text": "As judged by the investigator, any evidence of diseases (such as severe or uncontrolled systemic diseases, including active bleeding diseases, history of allogenic organ transplant which, in the investigator's opinion, makes it undesirable for the participant to participate in the study or that would jeopardise compliance with the protocol."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2317,
+        "end": 2355,
+        "text": "History of another primary malignancy."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2551,
+        "end": 2805,
+        "text": "Past medical history of ILD/penumonitis, including radiation pneumonitis (apart from radiation pneumonitis that did not require steroids), or drug-induced ILD/pneumonitis, or has suspected ILD/pneumonitis that cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2463,
+        "end": 2547,
+        "text": "Has active or uncontrolled hepatitis B or C virus infection, as defined by Protocol."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

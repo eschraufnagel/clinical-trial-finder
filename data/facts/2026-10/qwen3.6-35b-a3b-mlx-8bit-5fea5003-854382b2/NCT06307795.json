@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT06307795",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 40,
+        "end": 105,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status: 0-1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 137,
+        "end": 171,
+        "text": "Measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 238,
+        "end": 311,
+        "text": "With a pathogenetic MET alteration or ROS1 alteration or NTRK alternation"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 238,
+        "end": 311,
+        "text": "With a pathogenetic MET alteration or ROS1 alteration or NTRK alternation"
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 238,
+        "end": 311,
+        "text": "With a pathogenetic MET alteration or ROS1 alteration or NTRK alternation"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 398,
+        "end": 438,
+        "text": "Known active or untreated CNS metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 441,
+        "end": 535,
+        "text": "Participants with carcinomatous meningitis or meningeal metastases, or spinal cord compression"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 336,
+        "end": 395,
+        "text": "Active infection including tuberculosis and HBV, HCV or HIV"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

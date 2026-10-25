@@ -1,0 +1,132 @@
+{
+  "nctId": "NCT05521984",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 221,
+        "text": "Diagnosis of a recurrent primary brain tumor with no curative therapy available OR diagnosis of relapsed/refractory solid tumor with no curative option and has trialed past a second line of therapy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 224,
+        "end": 670,
+        "text": "Measurable disease per the following:\n\n  * For patients with brain tumors: measurable disease pediatric Response Assessment in Neuro-Oncology Criteria (RANO) criteria\n  * For patients with solid tumors: measurable disease using response evaluation criteria in solid tumors (RECIST 1.1). Includes patients with diagnoses of relapsed or refractory sarcomas, neuroblastoma, and Wilms tumor. Other rare solid tumors can be discussed with study chair."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1460,
+        "end": 1505,
+        "text": "Karnofsky or Lansky performance score of ≥ 60"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3755,
+        "end": 3785,
+        "text": "Pregnant and/or breastfeeding."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2604,
+        "end": 2831,
+        "text": "A history of other malignancy with the exceptions of malignancies for which all treatment was completed at least 2 years before registration with no evidence of disease and locally treated skin squamous or basal cell carcinoma."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3351,
+        "end": 3752,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac arrhythmia, peripheral arterial disease, ketoacidosis, severe kidney disease (estimated glomerular filtration rate eGFR \\< 30 mL/min/1.73m\\^2), symptomatic hypotension, and chronic/frequent urinary tract infections or yeast infections."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3909,
+        "end": 4100,
+        "text": "Patients with HIV are eligible unless their CD4+ T-cell counts are \\< 350 cells/mcL or they have a history of AIDS-defining opportunistic infection within the 12 months prior to registration."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2304,
+        "end": 2601,
+        "text": "Current use of high dose dexamethasone (exceeding 4 mg/day). Seven days prior to start of dapagliflozin, patients receiving dexamethasone must be on a stable or decreasing dose (≤ 0.1 mg/kg/day or maximum 4 mg/day). Note that it is preferred that patients not be on dexamethasone during the study."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Diagnosis of a recurrent primary brain tumor with no curative therapy available OR diagnosis of relapsed/refractory solid tumor with no curative option and has trialed past a second line of therapy.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Diagnosis of a recurrent primary brain tumor with no curative therapy available OR diagnosis of relapsed/refractory solid tumor with no curative option and has trialed past a second line of therapy.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

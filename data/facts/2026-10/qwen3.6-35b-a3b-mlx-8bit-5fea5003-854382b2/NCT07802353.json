@@ -1,0 +1,206 @@
+{
+  "nctId": "NCT07802353",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 145,
+        "text": "Histologically or cytologically confirmed breast cancer, non-small cell lung cancer, melanoma, or gastrointestinal cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 509,
+        "end": 579,
+        "text": "At least one intact brain metastasis is planned for surgical resection"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 509,
+        "end": 579,
+        "text": "At least one intact brain metastasis is planned for surgical resection"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 706,
+        "end": 855,
+        "text": "No evidence of leptomeningeal disease based on clinical symptoms, MRI imaging of the brain or spinal cord, and/or lumbar puncture cytologic analysis."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1668,
+        "end": 1699,
+        "text": "Prior whole brain radiotherapy."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1668,
+        "end": 1699,
+        "text": "Prior whole brain radiotherapy."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1668,
+        "end": 1699,
+        "text": "Prior whole brain radiotherapy."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1668,
+        "end": 1699,
+        "text": "Prior whole brain radiotherapy."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1668,
+        "end": 1699,
+        "text": "Prior whole brain radiotherapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1636,
+        "end": 1665,
+        "text": "Pregnant and/or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_srs isn't a fact for this trial's cancer type",
+      "quote": "No prior SRS to the index BM planned for surgical resection.",
+      "raw": {
+        "factId": "prior_srs",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "No prior SRS to the index BM planned for surgical resection.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_cranial_radiotherapy isn't a fact for this trial's cancer type",
+      "quote": "No prior SRS to the index BM planned for surgical resection.",
+      "raw": {
+        "factId": "prior_cranial_radiotherapy",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "No prior SRS to the index BM planned for surgical resection.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_craniotomy isn't a fact for this trial's cancer type",
+      "quote": "No prior therapeutic craniotomy or craniectomy with biopsy.",
+      "raw": {
+        "factId": "prior_craniotomy",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "No prior therapeutic craniotomy or craniectomy with biopsy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "neurologic_instability isn't a fact for this trial's cancer type",
+      "quote": "Neurologic instability despite medical management, such that either the treating team or study investigators feel that urgent craniotomy without awaiting SRS is indicated.",
+      "raw": {
+        "factId": "neurologic_instability",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Neurologic instability despite medical management, such that either the treating team or study investigators feel that urgent craniotomy without awaiting SRS is indicated.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "compliance isn't a fact for this trial's cancer type",
+      "quote": "Judgment by the principal investigator that the patient should not participate in the study if the patient is unlikely to comply with study procedures, restrictions, and requirements.",
+      "raw": {
+        "factId": "compliance",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "exclusion",
+        "quote": "Judgment by the principal investigator that the patient should not participate in the study if the patient is unlikely to comply with study procedures, restrictions, and requirements.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

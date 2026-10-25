@@ -1,0 +1,181 @@
+{
+  "nctId": "NCT06793215",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 93,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 96,
+        "end": 192,
+        "text": "Histologically or cytologically confirmed diagnosis of advanced or metastatic non squamous NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 96,
+        "end": 270,
+        "text": "Histologically or cytologically confirmed diagnosis of advanced or metastatic non squamous NSCLC that is not eligible for curative surgery and/or definitive chemoradiotherapy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 273,
+        "end": 318,
+        "text": "Measurable disease, as defined by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1714,
+        "end": 1782,
+        "text": "Prior treatment with KRAS G12C inhibitors or pan-KRAS/RAS inhibitors"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2095,
+        "end": 2152,
+        "text": "Prior allogeneic stem cell or solid organ transplantation"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2203,
+        "end": 2275,
+        "text": "History of malignancy other than NSCLC within 5 years prior to screening"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2946,
+        "end": 3177,
+        "text": "History of idiopathic pulmonary fibrosis, organizing pneumonia (e.g., bronchiolitis obliterans), drug-induced pneumonitis, or idiopathic pneumonitis, or evidence of active pneumonitis on the screening chest computed tomography scan"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3180,
+        "end": 3249,
+        "text": "Significant cardiovascular disease within 3 months prior to screening"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 762,
+        "end": 849,
+        "text": "Symptomatic, untreated, or actively progressing central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1088,
+        "end": 1121,
+        "text": "History of leptomeningeal disease"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Treatment with systemic immunosuppressive or immunostimulatory medications, including CD137 agonists and immune checkpoint inhibitors",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Treatment with systemic immunosuppressive or immunostimulatory medications, including CD137 agonists and immune checkpoint inhibitors",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Documentation of known PD-L1 expression status in tumor tissue",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Documentation of known PD-L1 expression status in tumor tissue",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "nctId": "NCT06130553",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1579,
+        "end": 1657,
+        "text": "Participants have histologically or cytologically confirmed non-squamous NSCLC"
+      },
+      "appliesTo": "Module 2: Non-squamous NSCLC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1659,
+        "end": 1719,
+        "text": "Stage IIIB/IIIC not amenable to curative therapy or Stage IV"
+      },
+      "appliesTo": "Module 2: Non-squamous NSCLC"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2851,
+        "end": 2892,
+        "text": "symptomatic and unstable brain metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2894,
+        "end": 2916,
+        "text": "leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1038,
+        "end": 1090,
+        "text": "Participants have measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 908,
+        "end": 953,
+        "text": "Participants have ECOG performance status 0-1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3305,
+        "end": 3410,
+        "text": "severe and uncontrolled medical condition that, in the Investigator's opinion, makes participation unsafe"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4268,
+        "end": 4392,
+        "text": "current ILD/pneumonitis, or a history of (non-infectious) ILD/pneumonitis requiring systemic steroids or supplemental oxygen"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4229,
+        "end": 4248,
+        "text": "known HIV infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4101,
+        "end": 4144,
+        "text": "active hepatitis B or hepatitis C infection"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3227,
+        "text": "history of allogeneic organ transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4898,
+        "end": 4951,
+        "text": "pregnant, breastfeeding, or intend to become pregnant"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_lines isn't a fact for this trial's cancer type",
+      "quote": "participants must have had ≥ 1 prior line of systemic treatment in the recurrent/metastatic (advanced) setting",
+      "raw": {
+        "factId": "prior_lines",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "participants must have had ≥ 1 prior line of systemic treatment in the recurrent/metastatic (advanced) setting",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

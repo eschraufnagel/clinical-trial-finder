@@ -1,0 +1,141 @@
+{
+  "nctId": "NCT07339176",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 479,
+        "end": 507,
+        "text": "ECOG performance status 0-1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 511,
+        "end": 599,
+        "text": "Measurable disease per IT-RECIST (Parts A1/A2) and RECIST v1.1 (Part A3), as applicable."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3305,
+        "end": 3511,
+        "text": "Another active malignancy (current or within the past 2 years) other than the disease under study, except specified low-risk cancers treated with curative intent or under active surveillance (per protocol)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3996,
+        "end": 4211,
+        "text": "Uncontrolled or unstable brain metastases (eligible only if neurologically stable for ≥4 weeks, and off steroids or on stable/decreasing steroids ≤10 mg/day prednisone equivalent; carcinomatous meningitis excluded)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2790,
+        "end": 2977,
+        "text": "Active autoimmune disease requiring systemic treatment within the past 6 months, except clinically stable autoimmune conditions in remission not requiring systemic therapy (per protocol)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3008,
+        "end": 3034,
+        "text": "Pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2642,
+        "end": 2676,
+        "text": "History of solid organ transplant."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4768,
+        "end": 5032,
+        "text": "Chronic systemic corticosteroids \\>10 mg/day prednisone equivalent, or systemic immunosuppressive/anti-inflammatory medications within 4 weeks prior to first dose, except permitted topical/inhaled/local formulations or short courses for premedication per protocol."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4561,
+        "end": 4662,
+        "text": "HIV infection with CD4+ count \\<300/μL, detectable viral load, or HIV-related illness within 6 months"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4475,
+        "end": 4553,
+        "text": "Active HCV with detectable HCV RNA (treated HCV permitted if RNA undetectable)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

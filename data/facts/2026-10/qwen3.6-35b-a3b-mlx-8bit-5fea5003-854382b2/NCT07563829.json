@@ -1,0 +1,107 @@
+{
+  "nctId": "NCT07563829",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 112,
+        "end": 374,
+        "text": "Histologically or cytologically confirmed recurrent or metastatic solid tumor refractory to standard of care therapy in one of the following indications: NSCLC, RCC, CRC, PDAC, biliary tract tumors, gastric and gastro-esophageal carcinoma, and ovarian carcinoma."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 112,
+        "end": 374,
+        "text": "Histologically or cytologically confirmed recurrent or metastatic solid tumor refractory to standard of care therapy in one of the following indications: NSCLC, RCC, CRC, PDAC, biliary tract tumors, gastric and gastro-esophageal carcinoma, and ovarian carcinoma."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 377,
+        "end": 420,
+        "text": "Measurable disease by RECIST v1.1 criteria."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2835,
+        "end": 2979,
+        "text": "Clinically or radiographically unstable brain metastases: Participants with known brain metastases should be clinically stable and asymptomatic."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5346,
+        "end": 5470,
+        "text": "Known autoimmune disease requiring immunosuppressive treatment requiring the equivalent of more than 10 mg prednisone daily."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3881,
+        "end": 4314,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, uncompensated respiratory, cardiac, hepatic, or renal disease, active infection (including hepatitis B virus \\[HBV\\], hepatitis C virus \\[HCV\\], human immunodeficiency virus \\[HIV\\] infections except as below, and active clinical tuberculosis), or renal transplant; ongoing or active infection, or social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3881,
+        "end": 4314,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, uncompensated respiratory, cardiac, hepatic, or renal disease, active infection (including hepatitis B virus \\[HBV\\], hepatitis C virus \\[HCV\\], human immunodeficiency virus \\[HIV\\] infections except as below, and active clinical tuberculosis), or renal transplant; ongoing or active infection, or social situations that would limit compliance with study requirements."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

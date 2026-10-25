@@ -1,0 +1,84 @@
+{
+  "nctId": "NCT05872295",
+  "mappings": [
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 178,
+        "text": "HER2 positive solid tumors with expression defined as IHC3+, IHC2+/ISH+, or low HER2 expression defined as IHC2+ (ISH-) or IHC1+ (ISH- /+ or untested)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1382,
+        "end": 1486,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0 or 1 (or equivalent Karnofsky PS)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4016,
+        "end": 4438,
+        "text": "Central nervous system metastatic disease unless treated with definitive local therapy (surgical resection, stereotactic radiotherapy, or whole brain radiotherapy) and participant is clinically, radiologically and neurologically stable for at least 4 weeks prior to the first dose of study drug not on steroid therapy or are on a stable or decreasing dose of steroids for at least 7 days prior to first dose of study drug."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2821,
+        "end": 2996,
+        "text": "History of (noninfectious) ILD/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at Screening."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active second malignancy or history of another malignancy within the last 2 years with the exception of: Treated, non-melanoma skin cancers Treated carcinoma in situ (CIS) (e.g., breast, cervix) Controlled, superficial carcinoma of the urinary bladder T1a or b carcinoma of the prostate treated according to local standard of care, with prostate specific antigen (PSA) within normal limits (WNL) for the institution Papillary thyroid carcinoma Stage I treated surgically for cure",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active second malignancy or history of another malignancy within the last 2 years with the exception of: Treated, non-melanoma skin cancers Treated carcinoma in situ (CIS) (e.g., breast, cervix) Controlled, superficial carcinoma of the urinary bladder T1a or b carcinoma of the prostate treated according to local standard of care, with prostate specific antigen (PSA) within normal limits (WNL) for the institution Papillary thyroid carcinoma Stage I treated surgically for cure",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

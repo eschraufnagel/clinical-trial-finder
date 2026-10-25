@@ -1,0 +1,163 @@
+{
+  "nctId": "NCT06721689",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 884,
+        "end": 924,
+        "text": "Phase 1: evaluable or measurable disease"
+      },
+      "appliesTo": "Phase 1"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 930,
+        "end": 1118,
+        "text": "Phase 2, subjects with Neuroblastoma (NBL): evaluable or measurable disease by International Neuroblastoma Response Criteria (INRC); subjects with only bone marrow disease are not eligible"
+      },
+      "appliesTo": "Phase 2, subjects with Neuroblastoma (NBL)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1124,
+        "end": 1250,
+        "text": "Phase 2, subjects with rhabdomyosarcoma (RMS): measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST)1.1."
+      },
+      "appliesTo": "Phase 2, subjects with rhabdomyosarcoma (RMS)"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1254,
+        "end": 1349,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0-2 (age greater than 16 years)"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8108,
+        "end": 8180,
+        "text": "Subjects with prior allogeneic stem cell or solid organ transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8184,
+        "end": 8214,
+        "text": "Pregnant or lactating females."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8218,
+        "end": 8363,
+        "text": "Subjects with a known history of human immunodeficiency virus (HIV), hepatitis B, and/or hepatitis C (testing not required as part of screening)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8218,
+        "end": 8363,
+        "text": "Subjects with a known history of human immunodeficiency virus (HIV), hepatitis B, and/or hepatitis C (testing not required as part of screening)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8367,
+        "end": 8418,
+        "text": "Subjects with symptomatic congestive heart failure."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Phase 1: Refractory, progressive or relapsed non-central nervous system (CNS) solid tumors",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Phase 1: Refractory, progressive or relapsed non-central nervous system (CNS) solid tumors",
+        "appliesTo": "Phase 1"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Phase 2: Refractory, progressive or relapsed neuroblastoma (NBL) or rhabdomyosarcoma (RMS)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Phase 2: Refractory, progressive or relapsed neuroblastoma (NBL) or rhabdomyosarcoma (RMS)",
+        "appliesTo": "Phase 2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

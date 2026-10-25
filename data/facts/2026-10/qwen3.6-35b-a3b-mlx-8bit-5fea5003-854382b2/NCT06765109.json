@@ -1,0 +1,104 @@
+{
+  "nctId": "NCT06765109",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 174,
+        "text": "Histologically or cytologically confirmed locally advanced (not amenable for multimodality treatment) or metastatic Non-small Cell Lung Cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 178,
+        "end": 266,
+        "text": "Documented Anaplastic Lymphoma Kinase (ALK) rearrangement via testing of tissue or blood"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 399,
+        "end": 490,
+        "text": "prior ALK tyrosine kinase inhibitor \\[TKI\\] such as alectinib is not allowed in any setting"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 495,
+        "end": 604,
+        "text": "Measurable disease (1 or more target lesions per Response Evaluation Criteria in Solid Tumors \\[RECIST\\] 1.1)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1380,
+        "end": 1453,
+        "text": "Active malignancy requiring therapy within 2 years prior to randomization"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1063,
+        "end": 1086,
+        "text": "active Hepatitis B or C"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1237,
+        "end": 1375,
+        "text": "Brain metastases associated with progressive neurological symptoms or requiring increasing doses of corticosteroids to control CNS disease"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

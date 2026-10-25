@@ -1,0 +1,312 @@
+{
+  "nctId": "NCT05005403",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 110,
+        "end": 184,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of \\<= 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 226,
+        "end": 302,
+        "text": "Measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST)"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 367,
+        "end": 521,
+        "text": "NSCLC - Advanced or metastatic progressed on standard of care (SOC) including chemotherapy and prior anti-PD-(L)1 antibody (separately or in combination)."
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 605,
+        "end": 706,
+        "text": "HSNCC - Advanced/metastatic progressed on platinum and PD-1/PD-LI in recurrent or metastatic setting."
+      },
+      "appliesTo": "Head and Neck Squamous Cell Carcinoma"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 997,
+        "end": 1209,
+        "text": "Gastric and Gastroesophageal Junction adenocarcinoma (GEA) - Advanced/metastatic progressed on at least 1 prior cytotoxic chemotherapeutic regimen and if applicable immune checkpoint inhibitor and/or HER2 therapy"
+      },
+      "appliesTo": "Gastric/Esophageal Cancer"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1448,
+        "end": 1575,
+        "text": "Pancreatic Adenocarcinoma (PDAC) - Advanced/metastatic progressed after SOC. Includes adenosquamous carcinoma and post-Whipple."
+      },
+      "appliesTo": "Pancreatic Cancer"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1578,
+        "end": 1757,
+        "text": "Triple Negative Breast Cancer (TNBC) - Progressed after 1 or 2 systemic therapy that must have included taxane and treatment naïve to immunotherapy targeting T-cell co-stimulation"
+      },
+      "appliesTo": "Triple Negative Breast Cancer"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1212,
+        "end": 1445,
+        "text": "High-Grade Serous Ovarian Cancer (HGSOC) - Progressed serous epithelial ovarian, fallopian tube or primary peritoneal cancer post SOC and not eligible for surgical resection. Platinum resistant cannot have \\>5 lines of prior therapy."
+      },
+      "appliesTo": "High-Grade Serous Ovarian Cancer"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 709,
+        "end": 994,
+        "text": "Micro Satellite Stable Colorectal Cancer (MSS-CRC) - Progressed on Oxaliplatin, Irinotecan, a fluoropyrimidine, anti-EGFR, VEGF or VEGFR therapies, BRAFV600E or HER2, other targetable mutations targeted with locally approved therapy, TAS-102, Regorafenib and not MSI-h or MMR-deficient"
+      },
+      "appliesTo": "Micro Satellite Stable Colorectal Cancer"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 367,
+        "end": 521,
+        "text": "NSCLC - Advanced or metastatic progressed on standard of care (SOC) including chemotherapy and prior anti-PD-(L)1 antibody (separately or in combination)."
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 605,
+        "end": 706,
+        "text": "HSNCC - Advanced/metastatic progressed on platinum and PD-1/PD-LI in recurrent or metastatic setting."
+      },
+      "appliesTo": "Head and Neck Squamous Cell Carcinoma"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 367,
+        "end": 602,
+        "text": "NSCLC - Advanced or metastatic progressed on standard of care (SOC) including chemotherapy and prior anti-PD-(L)1 antibody (separately or in combination). Actionable gene alterations are eligible if failed targeted therapeutic options."
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 605,
+        "end": 706,
+        "text": "HSNCC - Advanced/metastatic progressed on platinum and PD-1/PD-LI in recurrent or metastatic setting."
+      },
+      "appliesTo": "Head and Neck Squamous Cell Carcinoma"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 709,
+        "end": 994,
+        "text": "Micro Satellite Stable Colorectal Cancer (MSS-CRC) - Progressed on Oxaliplatin, Irinotecan, a fluoropyrimidine, anti-EGFR, VEGF or VEGFR therapies, BRAFV600E or HER2, other targetable mutations targeted with locally approved therapy, TAS-102, Regorafenib and not MSI-h or MMR-deficient"
+      },
+      "appliesTo": "Micro Satellite Stable Colorectal Cancer"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 997,
+        "end": 1209,
+        "text": "Gastric and Gastroesophageal Junction adenocarcinoma (GEA) - Advanced/metastatic progressed on at least 1 prior cytotoxic chemotherapeutic regimen and if applicable immune checkpoint inhibitor and/or HER2 therapy"
+      },
+      "appliesTo": "Gastric/Esophageal Cancer"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 997,
+        "end": 1209,
+        "text": "Gastric and Gastroesophageal Junction adenocarcinoma (GEA) - Advanced/metastatic progressed on at least 1 prior cytotoxic chemotherapeutic regimen and if applicable immune checkpoint inhibitor and/or HER2 therapy"
+      },
+      "appliesTo": "Gastric/Esophageal Cancer"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1212,
+        "end": 1445,
+        "text": "High-Grade Serous Ovarian Cancer (HGSOC) - Progressed serous epithelial ovarian, fallopian tube or primary peritoneal cancer post SOC and not eligible for surgical resection. Platinum resistant cannot have \\>5 lines of prior therapy."
+      },
+      "appliesTo": "High-Grade Serous Ovarian Cancer"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1578,
+        "end": 1757,
+        "text": "Triple Negative Breast Cancer (TNBC) - Progressed after 1 or 2 systemic therapy that must have included taxane and treatment naïve to immunotherapy targeting T-cell co-stimulation"
+      },
+      "appliesTo": "Triple Negative Breast Cancer"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2024,
+        "end": 2093,
+        "text": "No active autoimmune/immunodeficiency disease with limited exceptions"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2096,
+        "end": 2418,
+        "text": "Combination treatment excludes participants treated with anti-programmed cell death protein 1(PD-1)/Programmed cell death ligand 1 (PD-L1) who had immune mediated toxicity G3 or greater, interstitial lung disease, or hypersensitivity Combination treatment may also require no significant cardiac deficiencies and/or events"
+      },
+      "appliesTo": "Combination treatment"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2421,
+        "end": 2430,
+        "text": "Pregnancy"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2433,
+        "end": 2645,
+        "text": "Excluded medications include anticancer therapy within 5 half-live or 28 days (whichever is shorter), agent targeting Chemokine Receptor (CCR)8, live vaccines, immunosuppressive medication with limited exceptions"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

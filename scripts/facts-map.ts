@@ -4,6 +4,7 @@
  *   npm run facts:map -- --set dev                 the 10 dev trials, on the local model
  *   npm run facts:map -- --set heldout             the 30 held-out trials
  *   npm run facts:map -- --set candidates          all NSCLC candidates; writes a manifest when it finishes
+ *   npm run facts:map -- --set candidates --limit 0   map nothing; rewrite the manifest from the files
  *   npm run facts:map -- --set dev --limit 3       only the first 3 not yet mapped, for timing
  *   npm run facts:map -- --set candidates --model anthropic:claude-haiku-4-5 [--batch]
  *                                                  dry: prints the estimate and exits, unless --spend
@@ -105,15 +106,9 @@ export interface Manifest {
   failed: number;
   rejectedMappings: number;
   mappings: number;
-  seconds: number;
 }
 
-export function buildManifest(
-  dir: string,
-  name: string,
-  candidates: readonly string[],
-  seconds: number,
-): Manifest {
+export function buildManifest(dir: string, name: string, candidates: readonly string[]): Manifest {
   let mapped = 0;
   let rejected = 0;
   let mappings = 0;
@@ -140,7 +135,6 @@ export function buildManifest(
     failed: candidates.length - mapped,
     rejectedMappings: rejected,
     mappings,
-    seconds: Math.round(seconds),
   };
 }
 
@@ -242,12 +236,13 @@ async function main(): Promise<void> {
     const usd = logSpend("facts:map", [{ role: "mapper", spec, adapter }], { batch: flags.batch });
     console.log(`Spent about $${usd.toFixed(2)}.`);
   }
-  if (set === "candidates" && !stopped && remaining(trials, dir).length === 0) {
+  // Written whenever a candidates run ends without hitting its budget, failures
+  // and all: the manifest counts them, and a rerun retries them and rewrites it.
+  if (set === "candidates" && !stopped) {
     const manifest = buildManifest(
       dir,
       name,
       trials.map((t) => t.nctId),
-      seconds,
     );
     writeFileSync(join(dir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
     console.log(`Wrote the manifest: ${manifest.mapped} mapped, ${manifest.failed} failed.`);

@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT04939610",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3489,
+        "end": 3616,
+        "text": "Non-small cell lung cancer (adenocarcinoma and squamous eligible; endocrine, neuroendocrine and small cell tumors are excluded)"
+      },
+      "appliesTo": "Non-small cell lung cancer monotherapy group"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2342,
+        "end": 2473,
+        "text": "Have a histologically and/or cytologically confirmed advanced/metastatic solid tumor not amenable to treatment with curative intent"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8957,
+        "end": 9063,
+        "text": "Symptomatic and/or untreated CNS metastases or leptomeningeal disease or with primary tumor of CNS origin."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1813,
+        "end": 1883,
+        "text": "Have measurable disease per RECIST v1.1 meeting the following criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1701,
+        "end": 1768,
+        "text": "Have an Eastern Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8492,
+        "end": 8622,
+        "text": "History of second malignancy that has been successfully treated, with no evidence of active cancer for 3 years prior to enrollment"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12098,
+        "end": 12146,
+        "text": "Pregnant, suspected pregnancy, or breast feeding"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11283,
+        "end": 11321,
+        "text": "Severe chronic or active HIV infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13365,
+        "end": 13555,
+        "text": "Severe chronic or active infections (including active tuberculosis, HBV, or HCV infection) requiring systemic antibacterial, antifungal or antiviral therapy within 2 weeks before enrollment."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10924,
+        "end": 11038,
+        "text": "Acute coronary syndrome or acute myocardial infarction ≤ 6 months prior to administration of \\[177Lu\\]Lu FAP 2286."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Non-small cell lung cancer (adenocarcinoma and squamous eligible; endocrine, neuroendocrine and small cell tumors are excluded)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Non-small cell lung cancer (adenocarcinoma and squamous eligible; endocrine, neuroendocrine and small cell tumors are excluded)",
+        "appliesTo": "Non small cell lung cancer combination group"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

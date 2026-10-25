@@ -1,0 +1,116 @@
+{
+  "nctId": "NCT06926634",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 166,
+        "end": 229,
+        "text": "excluding small cell lung cancer (SCLC) and Merkel cell cancer."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1410,
+        "end": 1444,
+        "text": "Measurable disease per RECIST 1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6177,
+        "end": 6381,
+        "text": "Known brain metastases or cranial epidural disease unless adequately treated with radiotherapy and/or surgery (including radiosurgery) and stable for at least 4 weeks before first dose of study treatment."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5739,
+        "end": 6071,
+        "text": "Another malignancy that requires active therapy and in the opinion of the Investigator would interfere with monitoring of radiologic assessments of response to Investigational Product, within 2 years before C1D1, except for superficial skin cancers, or localized, low-grade tumors deemed cured and not treated with systemic therapy."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11713,
+        "end": 11980,
+        "text": "Known human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome (AIDS)-related illness except for subjects meeting all of the following criteria: (1) on stable anti-retroviral therapy; (2) CD4+ T cell count ≥ 200/µL; and (3) an undetectable viral load."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11654,
+        "end": 11708,
+        "text": "Known infection with acute or chronic hepatitis B or C"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12913,
+        "end": 12971,
+        "text": "History of solid organ or allogeneic stem cell transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14123,
+        "end": 14153,
+        "text": "Pregnant and/or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

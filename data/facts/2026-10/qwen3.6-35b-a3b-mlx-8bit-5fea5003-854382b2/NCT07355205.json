@@ -1,0 +1,313 @@
+{
+  "nctId": "NCT07355205",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1843,
+        "end": 1892,
+        "text": "Mixed histology including small cell lung cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 66,
+        "end": 117,
+        "text": "previously untreated or recurrent metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 348,
+        "end": 382,
+        "text": "Measurable disease per RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 413,
+        "end": 440,
+        "text": "ECOG performance status ≤ 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 999,
+        "end": 1280,
+        "text": "Patients with brain metastases are eligible if they have previously treated with surgery or radiation therapy, are neurologically stable after a washout period of at least 2 weeks, and are not receiving corticosteroids at dose higher than 10 mg of prednisone or equivalent on C1D1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1938,
+        "end": 1960,
+        "text": "classic EGFR mutations"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1965,
+        "end": 1978,
+        "text": "HER2 mutation"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1983,
+        "end": 1993,
+        "text": "ALK fusion"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1998,
+        "end": 2009,
+        "text": "ROS1 fusion"
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2014,
+        "end": 2024,
+        "text": "RET fusion"
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2029,
+        "end": 2040,
+        "text": "NTRK fusion"
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2045,
+        "end": 2073,
+        "text": "MET Exon14 skipping mutation"
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2078,
+        "end": 2097,
+        "text": "BRAF V600E mutation"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2151,
+        "end": 2388,
+        "text": "Prior chemotherapy in the adjuvant setting or during concurrent radiation therapy for locally advanced disease within 12 months prior to enrollment. If the interval from the last treatment is 12 months or longer, the patient is eligible."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2391,
+        "end": 2438,
+        "text": "Radiation therapy within 14 days prior to C1D1."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2659,
+        "end": 2725,
+        "text": "History of interstitial lung disease or noninfectious pneumonitis,"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2834,
+        "end": 2880,
+        "text": "Clinically significant cardiovascular disease,"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2971,
+        "end": 3016,
+        "text": "History of prior solid-organ transplantation."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3019,
+        "end": 3159,
+        "text": "Concurrent medical condition requiring the use of supra-physiologic doses of corticosteroids (\\> 10 mg/day of oral prednisone or equivalent)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3250,
+        "end": 3349,
+        "text": "HIV-infected if not on effective anti-retroviral therapy with undetectable viral load for 6 months."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3559,
+        "end": 3639,
+        "text": "Evidence of chronic hepatitis B (HBV) that is detectable on suppressive therapy."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4323,
+        "end": 4463,
+        "text": "Any active autoimmune disease or a documented history of autoimmune disease or syndrome that required systemic treatment in the past 2 years"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5065,
+        "end": 5219,
+        "text": "Prior or concurrent malignancy whose natural history has the potential to interfere with the safety or efficacy assessment of the investigational regimen."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5708,
+        "end": 5738,
+        "text": "Pregnant and/or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "nctId": "NCT07189871",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 38,
+        "end": 210,
+        "text": "Participants with a documented history of histopathologically confirmed CRPC\\*, CRC, NSCLC, SCLC, HNSCC, ovarian cancer, cervical cancer, endometrial cancer, TNBC, or ESCC."
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 38,
+        "end": 210,
+        "text": "Participants with a documented history of histopathologically confirmed CRPC\\*, CRC, NSCLC, SCLC, HNSCC, ovarian cancer, cervical cancer, endometrial cancer, TNBC, or ESCC."
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2371,
+        "end": 2655,
+        "text": "Participants with previously treated brain metastases are eligible to participate if:\n\n   * they are neurologically and radiologically stable for at least 28 days prior to the first dose of 177Lu-BetaBart; and\n   * have no history of leptomeningeal disease or spinal cord compression."
+      },
+      "loose": true
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2371,
+        "end": 2655,
+        "text": "Participants with previously treated brain metastases are eligible to participate if:\n\n   * they are neurologically and radiologically stable for at least 28 days prior to the first dose of 177Lu-BetaBart; and\n   * have no history of leptomeningeal disease or spinal cord compression."
+      },
+      "loose": true
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1937,
+        "end": 2008,
+        "text": "Must have at least 1 measurable target lesion according to RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2012,
+        "end": 2076,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2719,
+        "end": 2838,
+        "text": "Any other known, active malignancy, except for treated cervical intraepithelial neoplasia, or non-melanoma skin cancer."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3979,
+        "end": 4026,
+        "text": "Participants who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4332,
+        "end": 4395,
+        "text": "Known active hepatitis B or known active hepatitis C infection."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4631,
+        "end": 4709,
+        "text": "Active autoimmune disease that has required systemic treatment within 90 days."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2681,
+        "end": 2715,
+        "text": "History of prior organ transplant."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

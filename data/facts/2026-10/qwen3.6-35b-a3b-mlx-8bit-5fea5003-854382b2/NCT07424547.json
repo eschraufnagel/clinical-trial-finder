@@ -1,0 +1,155 @@
+{
+  "nctId": "NCT07424547",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 86,
+        "end": 169,
+        "text": "Advanced/unresectable or metastatic solid tumors confirmed by histology or cytology"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 325,
+        "end": 438,
+        "text": "Have at least one measurable lesion, according to the Response Evaluation Criteria in Solid Tumors (RECIST V1.1)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 712,
+        "end": 808,
+        "text": "ECOG performance status of 0-1 and no worsening of the score within 28 days prior to enrollment."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1598,
+        "end": 1850,
+        "text": "History of interstitial lung disease (e.g., ILD/non-infectious pneumonia requiring glucocorticoid treatment in the past), or currently have interstitial lung disease, or are suspected to have such diseases through imaging examinations during screening."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2136,
+        "end": 2342,
+        "text": "Any autoimmune diseases, connective tissue disorders, or inflammatory diseases involving the lungs recorded or suspected during screening (e.g., rheumatoid arthritis, Sjögren's syndrome, sarcoidosis, etc.)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2468,
+        "end": 2784,
+        "text": "Active and clinically significant bacterial, fungal, viral infection, or Hepatitis C infection at screening (HCV antibodies test positive and HCV-RNA levels higher than the lower limit of quantification or 1000 copies/mL (whichever is lower); HIV antibody positive or syphilis antibody positive (with confirmation).."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3239,
+        "end": 3429,
+        "text": "Lactating women (women who are willing to temporarily discontinue breastfeeding will also be excluded), or women confirmed to be pregnant by pregnancy test within 7 days prior to enrollment."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3432,
+        "end": 3619,
+        "text": "Presence of spinal cord compression or clinically active brain metastasis, and/or meningeal metastases, defined as untreated, symptomatic, or requiring corticosteroids or anticonvulsants."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3432,
+        "end": 3619,
+        "text": "Presence of spinal cord compression or clinically active brain metastasis, and/or meningeal metastases, defined as untreated, symptomatic, or requiring corticosteroids or anticonvulsants."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1217,
+        "end": 1305,
+        "text": "History of myocardial infarction or unstable angina within 6 months prior to enrollment."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 947,
+        "end": 1064,
+        "text": "Previously received drug therapy with topoisomerase inhibitor antibody-drug conjugate (e.g., trastuzumab deruxtecan)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT07814248",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 226,
+        "end": 287,
+        "text": "unresectable locally advanced, or metastatic solid malignancy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 652,
+        "end": 764,
+        "text": "Subjects must have measurable disease based on Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 842,
+        "end": 909,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3621,
+        "end": 3715,
+        "text": "unless the subject has undergone curative therapy with no evidence of that disease for 3 years"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3846,
+        "end": 3898,
+        "text": "Subjects who are currently pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4502,
+        "end": 4743,
+        "text": "History of noninfectious interstitial lung disease (ILD) or pneumonitis that required steroids, current ILD or pneumonitis, or suspected ILD or pneumonitis that cannot be ruled out by imaging at Screening or the presence of residual symptoms"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4817,
+        "end": 5057,
+        "text": "myocardial infarction or unstable angina within the last 6 months, symptomatic congestive heart failure (New York Heart Association Classification \\>Class II), or serious uncontrolled cardiac arrhythmia within the last 6 months of Screening"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5500,
+        "end": 5547,
+        "text": "Known active central nervous system metastases."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

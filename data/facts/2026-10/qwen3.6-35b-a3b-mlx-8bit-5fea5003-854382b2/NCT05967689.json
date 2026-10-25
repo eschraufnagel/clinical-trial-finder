@@ -1,0 +1,226 @@
+{
+  "nctId": "NCT05967689",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 161,
+        "end": 223,
+        "text": "Pathologically confirmed, locally advanced or metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 994,
+        "end": 1223,
+        "text": "Participants with brain metastasis must be neurologically stable. Participants must have received central nervous system (CNS)-directed therapy and have no evidence of progression for at least 4 weeks after CNS-directed treatment"
+      },
+      "appliesTo": "Cohort A participants"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2280,
+        "end": 2484,
+        "text": "Participants with brain metastasis must be neurologically stable. Participants must have received CNS-directed therapy and have no evidence of progression for at least 4 weeks after CNS-directed treatment"
+      },
+      "appliesTo": "Cohort B participants"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4043,
+        "end": 4248,
+        "text": "Participants with brain metastasis must be neurologically stable. Participants must have received CNS-directed therapy and have no evidence of progression for at least 4 weeks after CNS- directed treatment"
+      },
+      "appliesTo": "Cohort D participants"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 7233,
+        "end": 7354,
+        "text": "Have received CNS-directed therapy and have no evidence of progression for at least 4 weeks after CNS- directed treatment"
+      },
+      "appliesTo": "DDI Substudy"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4983,
+        "end": 5076,
+        "text": "Measurable disease per Response Evaluation Criteria in Solid Tumors version 1.1 (RECIST 1.1)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5364,
+        "end": 5434,
+        "text": "Eastern Cooperative Oncology Group Performance Status (ECOG PS) 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9998,
+        "end": 10054,
+        "text": "Any prior treatment with an EGFR exon20ins- targeted TKI"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11154,
+        "end": 11698,
+        "text": "History of another primary malignancy ≤2 years prior to the date of first dose of study treatment unless at least one of the following criteria are met:\n\n   1. Adequately treated basal or squamous cell carcinoma of the skin\n   2. Cancer in situ of the breast or cervix\n   3. Participants with previously treated malignancy if all treatment for that malignancy was completed at least 2 years prior to first dose and no evidence of disease\n   4. Participants with concurrent malignancy clinically stable and not requiring tumor-directed treatment"
+      },
+      "loose": true
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11702,
+        "end": 11821,
+        "text": "Known history of hepatitis B, hepatitis C, or human immunodeficiency virus (HIV) that is not controlled with treatment."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12159,
+        "end": 12214,
+        "text": "Is pregnant, lactating, or planning to become pregnant."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10381,
+        "end": 10534,
+        "text": "Past medical history of interstitial lung disease, treatment-related pneumonitis (any grade), or evidence of clinically active interstitial lung disease."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10538,
+        "end": 10920,
+        "text": "Impaired cardiac function or clinically significant cardiac disease including any of the following:\n\n   1. History of congestive heart failure (CHF) Class III/IV according to the New York Heart Association (NYHA) Functional Classification.\n   2. Serious cardiac arrhythmias requiring treatment.\n   3. Resting corrected QT interval (QTc) \\>470 msec using Fridericia's formula (QTcF)."
+      },
+      "loose": true
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10061,
+        "end": 10106,
+        "text": "Participants with leptomeningeal CNS disease."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of brain metastasis(es) characterized as at least one of the following: Newly diagnosed and/or progressive brain metastasis(es) measurable by Response Assessment in Neuro-oncology Brain Metastases (RANO-BM) criteria and not subjected to CNS-directed therapy, AND/OR LMD measurable or non-measurable by RANO-BM criteria",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "none"
+        ],
+        "polarity": "inclusion",
+        "quote": "Presence of brain metastasis(es) characterized as at least one of the following: Newly diagnosed and/or progressive brain metastasis(es) measurable by Response Assessment in Neuro-oncology Brain Metastases (RANO-BM) criteria and not subjected to CNS-directed therapy, AND/OR LMD measurable or non-measurable by RANO-BM criteria",
+        "appliesTo": "Cohort C participants"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with CNS metastases are eligible if both of the following criteria are met: i. Measurable lesions according to RANO-BM... ii. Previously received definitive local treatment and have stable CNS disease (defined as being neurologically stable and off corticosteroid for at least 2 weeks prior to enrollment) OR Asymptomatic CNS metastases ≤ 2 cm in size",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with CNS metastases are eligible if both of the following criteria are met: i. Measurable lesions according to RANO-BM... ii. Previously received definitive local treatment and have stable CNS disease (defined as being neurologically stable and off corticosteroid for at least 2 weeks prior to enrollment) OR Asymptomatic CNS metastases ≤ 2 cm in size",
+        "appliesTo": "Dose Optimization Substudy"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

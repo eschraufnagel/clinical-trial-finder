@@ -1,0 +1,312 @@
+{
+  "nctId": "NCT06265285",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1290,
+        "end": 1381,
+        "text": "Non-small cell lung cancer (NSCLC) with progression on or after platinum-based chemotherapy"
+      },
+      "appliesTo": "Non-small cell lung cancer (NSCLC) with progression on or after platinum-based chemotherapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1555,
+        "end": 1705,
+        "text": "Unresectable advanced, recurrent or metastatic esophageal squamous cell carcinoma (ESCC) after prior fluoropyrimidine- and platinum-based chemotherapy"
+      },
+      "appliesTo": "Unresectable advanced, recurrent or metastatic esophageal squamous cell carcinoma (ESCC) after prior fluoropyrimidine- and platinum-based chemotherapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1712,
+        "end": 1757,
+        "text": "Unresectable or metastatic cutaneous melanoma"
+      },
+      "appliesTo": "Unresectable or metastatic cutaneous melanoma"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1764,
+        "end": 2017,
+        "text": "Locally advanced or metastatic urothelial carcinoma who have disease progression during or following platinum-containing chemotherapy or have disease progression within 12 months of neoadjuvant or adjuvant treatment with platinum-containing chemotherapy"
+      },
+      "appliesTo": "Locally advanced or metastatic urothelial carcinoma who have disease progression during or following platinum-containing chemotherapy or have disease progression within 12 months of neoadjuvant or adjuvant treatment with platinum-containing chemotherapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2024,
+        "end": 2143,
+        "text": "Unresectable or metastatic urothelial carcinoma, as first-line treatment in combination with cisplatin and gemcitabine."
+      },
+      "appliesTo": "Unresectable or metastatic urothelial carcinoma, as first-line treatment in combination with cisplatin and gemcitabine."
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2261,
+        "end": 2397,
+        "text": "Recurrent or metastatic squamous cell carcinoma of the head and neck (SCCHN) with disease progression on or after platinum-based therapy"
+      },
+      "appliesTo": "Recurrent or metastatic squamous cell carcinoma of the head and neck (SCCHN) with disease progression on or after platinum-based therapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2404,
+        "end": 2607,
+        "text": "Microsatellite instability-high (MSI-H) or mismatch repair deficient (dMMR) metastatic colorectal cancer (CRC) that has progressed following treatment with a fluoropyrimidine, oxaliplatin, and irinotecan"
+      },
+      "appliesTo": "Microsatellite instability-high (MSI-H) or mismatch repair deficient (dMMR) metastatic colorectal cancer (CRC) that has progressed following treatment with a fluoropyrimidine, oxaliplatin, and irinotecan"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3034,
+        "end": 3139,
+        "text": "First-line treatment of adult patients with intermediate or poor risk advanced renal cell carcinoma (RCC)"
+      },
+      "appliesTo": "First-line treatment of adult patients with intermediate or poor risk advanced renal cell carcinoma (RCC)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3198,
+        "end": 3262,
+        "text": "Hepatocellular carcinoma (HCC) previously treated with sorafenib"
+      },
+      "appliesTo": "Hepatocellular carcinoma (HCC) previously treated with sorafenib"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4209,
+        "end": 4281,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0 or 1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7194,
+        "end": 7257,
+        "text": "Patients with an active, known or suspected autoimmune disease."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7936,
+        "end": 8140,
+        "text": "Patients with a condition requiring systemic treatment with either corticosteroids ( \\> 10 mg daily prednisone equivalent) ≤ 14 days or other immunosuppressive medications ≤ 30 days prior to registration."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8306,
+        "end": 8444,
+        "text": "Concurrent malignancy (present during screening) requiring treatment or history of prior malignancy active ≤ 2 years prior to registration"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8831,
+        "end": 8944,
+        "text": "Patients have undergone prior solid organ and/or non-autologous hematopoietic stem cell or bone marrow transplant"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8947,
+        "end": 9047,
+        "text": "Patients with active brain metastases or leptomeningeal metastases, aside from the exceptions below."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9795,
+        "end": 9841,
+        "text": "Participants who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9996,
+        "end": 10180,
+        "text": "Known human deficiency virus (HIV) positive with an AIDS defining opportunistic infection within the last year, or a current CD4 count \\< 350 cells/uL, aside from the exceptions below."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10608,
+        "end": 10763,
+        "text": "Any positive test result for hepatitis B virus (HBV) indicating presence of virus (e.g., hepatitis B surface antigen \\[HBsAg, Australia antigen\\]) positive"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10766,
+        "end": 10909,
+        "text": "Any positive test result for hepatitis C virus (HCV) indicating presence of active viral replication (detectable HCV-ribonucleic acid \\[RNA\\])."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Unresectable or metastatic cutaneous melanoma",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Unresectable or metastatic cutaneous melanoma",
+        "appliesTo": "Unresectable or metastatic cutaneous melanoma"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Microsatellite instability-high (MSI-H) or mismatch repair deficient (dMMR) metastatic colorectal cancer (CRC) that has progressed following treatment with a fluoropyrimidine, oxaliplatin, and irinotecan",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Microsatellite instability-high (MSI-H) or mismatch repair deficient (dMMR) metastatic colorectal cancer (CRC) that has progressed following treatment with a fluoropyrimidine, oxaliplatin, and irinotecan",
+        "appliesTo": "Microsatellite instability-high (MSI-H) or mismatch repair deficient (dMMR) metastatic colorectal cancer (CRC) that has progressed following treatment with a fluoropyrimidine, oxaliplatin, and irinotecan"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Single agent nivolumab administered in the adjuvant setting following neoadjuvant nivolumab with platinum doublet chemotherapy for patients with resectable (tumors ≥ 4 cm and/or node positive) non-small cell lung cancer (NSCLC) and no known epidermal growth factor receptor (EGFR) mutations or anaplastic lymphatic kinase (ALK) rearrangements",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Single agent nivolumab administered in the adjuvant setting following neoadjuvant nivolumab with platinum doublet chemotherapy for patients with resectable (tumors ≥ 4 cm and/or node positive) non-small cell lung cancer (NSCLC) and no known epidermal growth factor receptor (EGFR) mutations or anaplastic lymphatic kinase (ALK) rearrangements",
+        "appliesTo": "Single agent nivolumab administered in the adjuvant setting following neoadjuvant nivolumab with platinum doublet chemotherapy for patients with resectable (tumors ≥ 4 cm and/or node positive) non-small cell lung cancer (NSCLC) and no known epidermal growth factor receptor (EGFR) mutations or anaplastic lymphatic kinase (ALK) rearrangements"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with active brain metastases or leptomeningeal metastases, aside from the exceptions below. Participants with brain metastases are eligible if they are: Asymptomatic, Have been treated and participants have neurologically returned to baseline",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with active brain metastases or leptomeningeal metastases, aside from the exceptions below. Participants with brain metastases are eligible if they are: Asymptomatic, Have been treated and participants have neurologically returned to baseline",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

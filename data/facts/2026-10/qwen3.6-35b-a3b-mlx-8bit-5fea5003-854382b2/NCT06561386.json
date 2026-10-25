@@ -1,0 +1,232 @@
+{
+  "nctId": "NCT06561386",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 158,
+        "text": "Participants must have histologically confirmed Stage IV or recurrent Non-small Cell Lung Cancer (NSCLC) of non-squamous (NSQ) histology"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 126,
+        "text": "Participants must have histologically confirmed Stage IV or recurrent Non-small Cell Lung Cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 265,
+        "end": 331,
+        "text": "Participants must have measurable PD-L1 ≥ 1% Tumor Cell (TC) score"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 512,
+        "end": 643,
+        "text": "Participants must have measurable disease by computed tomography (CT) or magnetic resonance imaging (MRI) per RECIST v1.1 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 646,
+        "end": 752,
+        "text": "Participants must have an Easter Cooperative Oncology Group (ECOG) performance status of ≤ 1 at screening."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 870,
+        "end": 925,
+        "text": "Participants must not be pregnant and/or breastfeeding."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 928,
+        "end": 1099,
+        "text": "Participants with epidermal growth factor receptor (EGFR), anaplastic lymphoma kinase (ALK), or ROS-1 mutations that are sensitive to available targeted inhibitor therapy."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 928,
+        "end": 1099,
+        "text": "Participants with epidermal growth factor receptor (EGFR), anaplastic lymphoma kinase (ALK), or ROS-1 mutations that are sensitive to available targeted inhibitor therapy."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 928,
+        "end": 1099,
+        "text": "Participants with epidermal growth factor receptor (EGFR), anaplastic lymphoma kinase (ALK), or ROS-1 mutations that are sensitive to available targeted inhibitor therapy."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1169,
+        "end": 1272,
+        "text": "Participants with known BRAFV600E mutations, that are sensitive to available targeted inhibitor therapy"
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1274,
+        "end": 1355,
+        "text": "participants with known activating rearranged during transfection (RET) mutations"
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1356,
+        "end": 1441,
+        "text": "or neurotrophic tyrosine receptor kinase (NTRK) fusion gene alterations are excluded."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1573,
+        "end": 1650,
+        "text": "Participants must not have untreated central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1653,
+        "end": 1733,
+        "text": "Participants must not have leptomeningeal metastases (carcinomatous meningitis)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1808,
+        "end": 1864,
+        "text": "Participants must not have an active autoimmune disease."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2085,
+        "end": 2281,
+        "text": "Participants must not have had prior treatment with an anti-PD-1, anti-PD-L1, anti-PD-L2, or anti-CTLA-4 antibody, or other antibody or drug targeting T-cell co-stimulation or checkpoint pathways."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants must not have a history of interstitial lung disease or pneumonitis that required oral or intravenous (IV) glucocorticoids to assist with management.",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "past",
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants must not have a history of interstitial lung disease or pneumonitis that required oral or intravenous (IV) glucocorticoids to assist with management.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

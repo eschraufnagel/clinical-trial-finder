@@ -1,0 +1,166 @@
+{
+  "nctId": "NCT06131840",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 42,
+        "end": 217,
+        "text": "Participants in Part A (dose escalation) and Part B (dose optimization) must have histologically- or cytologically-confirmed metastatic or unresectable solid tumor malignancy."
+      },
+      "appliesTo": "Part A (dose escalation) and Part B (dose optimization)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 712,
+        "end": 878,
+        "text": "Participants in Part C (dose expansion) must have one of the following histologically- or cytologically-confirmed metastatic or unresectable solid tumor malignancies."
+      },
+      "appliesTo": "Part C (dose expansion)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2138,
+        "end": 2310,
+        "text": "CRC participants in Part D and Part E (bevacizumab combination therapy) must have histologically confirmed unresectable or metastatic adenocarcinoma of the colon or rectum."
+      },
+      "appliesTo": "Part D and Part E (bevacizumab combination therapy)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2495,
+        "end": 2715,
+        "text": "CRC participants in Part D and Part E (5FU/LV + bevacizumab and 5FU/LV + oxaliplatin + bevacizumab combination therapy) must have histologically confirmed unresectable or metastatic adenocarcinoma of the colon or rectum."
+      },
+      "appliesTo": "Part D and Part E (5FU/LV + bevacizumab and 5FU/LV + oxaliplatin + bevacizumab combination therapy)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3086,
+        "end": 3242,
+        "text": "2L PDAC participants in Part E (5FU/LV combination therapy) must have histologically or cytologically confirmed metastatic pancreatic ductal adenocarcinoma."
+      },
+      "appliesTo": "Part E (5FU/LV combination therapy)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3431,
+        "end": 3600,
+        "text": "1L PDAC participants in Part E (5FU/LV + oxaliplatin combination therapy) must have histologically or cytologically confirmed metastatic pancreatic ductal adenocarcinoma"
+      },
+      "appliesTo": "Part E (5FU/LV + oxaliplatin combination therapy)"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4393,
+        "end": 4472,
+        "text": "An Eastern Cooperative Oncology Group (ECOG) Performance Status score of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4476,
+        "end": 4561,
+        "text": "Measurable disease per Response Evaluation in Solid Tumors (RECIST) v1.1 at baseline."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4776,
+        "end": 4941,
+        "text": "History of another malignancy within 3 years before the first dose of study intervention, or any evidence of residual disease from a previously diagnosed malignancy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4945,
+        "end": 5221,
+        "text": "Active cerebral/meningeal disease related to the underlying malignancy. Participants with a history of cerebral/meningeal disease related to the underlying malignancy are allowed if prior central nervous system disease has been treated and the participant is clinically stable"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4637,
+        "end": 4772,
+        "text": "Prior treatment with a TOPO1-targeting ADC (CPT payload), such as Enhertu (trastuzumab deruxtecan) or Trodelvy (sacituzumab govitecan)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

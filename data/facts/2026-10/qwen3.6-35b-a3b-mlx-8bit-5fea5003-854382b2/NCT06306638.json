@@ -1,0 +1,259 @@
+{
+  "nctId": "NCT06306638",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1113,
+        "end": 1188,
+        "text": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 3"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 573,
+        "end": 723,
+        "text": "Participants have at least one measurable lesion which is also the target lesion for Response Evaluation Criteria in Solid Tumors (RECIST) measurement"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 726,
+        "end": 860,
+        "text": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2106,
+        "end": 2145,
+        "text": "Pregnant or nursing female participants"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of prior_pd1",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never",
+          "progressed",
+          "stopped_other"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of prior_platinum",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "never",
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of prior_targeted",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never",
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of prior_adc",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "never",
+          "topo_payload",
+          "other"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of lines_advanced",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero",
+          "one",
+          "two",
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of other_cancer",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "none",
+          "within_2_years",
+          "two_to_5_years",
+          "over_5_years"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of autoimmune_active",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "no",
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of ild",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "never",
+          "past",
+          "current"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of hiv",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "no",
+          "controlled",
+          "uncontrolled"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of hepatitis_active",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "no",
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of cardiac_recent",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "no",
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of transplant",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "transplant",
+        "rulesOut": [
+          "no",
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of steroids",
+      "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+      "raw": {
+        "factId": "steroids",
+        "rulesOut": [
+          "none",
+          "low_dose",
+          "high_dose"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients amenable to receive standard of care palliative radiotherapy to the target tumor, as determined by the radiation oncologist/s",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "nctId": "NCT07365241",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 134,
+        "text": "Diagnosis of histologically or cytologically confirmed Relapsed/Refractory (R/R) Small Cell Lung Cancer (SCLC)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 925,
+        "end": 1093,
+        "text": "Participants must have an Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 to 1 during the screening period prior to the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1096,
+        "end": 1201,
+        "text": "Participants must have measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1959,
+        "end": 2036,
+        "text": "Participants with known active/symptomatic central nervous system metastases."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2039,
+        "end": 2267,
+        "text": "Participants with a history of interstitial lung disease (ILD) or pneumonitis that previously required treatment with systemic steroids, or any evidence of active ILD/pneumonitis on screening chest computed tomography (CT) scan."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Diagnosis of histologically or cytologically confirmed Relapsed/Refractory (R/R) Small Cell Lung Cancer (SCLC).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Diagnosis of histologically or cytologically confirmed Relapsed/Refractory (R/R) Small Cell Lung Cancer (SCLC).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

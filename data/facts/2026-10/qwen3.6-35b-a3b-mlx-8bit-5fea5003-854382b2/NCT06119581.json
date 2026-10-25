@@ -1,0 +1,241 @@
+{
+  "nctId": "NCT06119581",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1892,
+        "end": 1944,
+        "text": "Have predominantly squamous cell histology for NSCLC"
+      },
+      "appliesTo": "Part B and Safety Lead-In Part B"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 317,
+        "end": 371,
+        "text": "Must have disease with evidence of KRAS G12C mutation."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 440,
+        "end": 491,
+        "text": "Part A: Greater than or equal to (≥)50 percent (%)."
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 520,
+        "end": 534,
+        "text": "Part C: \\<50%."
+      },
+      "appliesTo": "Part C"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 537,
+        "end": 582,
+        "text": "Must have measurable disease per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 585,
+        "end": 632,
+        "text": "Must have an ECOG performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 998,
+        "end": 1144,
+        "text": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as epidermal growth factor receptor (EGFR)"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1419,
+        "end": 1546,
+        "text": "Prior systemic therapy (chemotherapy, immunotherapy, targeted therapy, or biological therapy) for advanced or metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1698,
+        "end": 1782,
+        "text": "Have known active central nervous system metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1698,
+        "end": 1782,
+        "text": "Have known active central nervous system metastases and/or carcinomatous meningitis."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... anaplastic lymphoma kinase (ALK)",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... anaplastic lymphoma kinase (ALK)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... BRAF (V600E)",
+      "raw": {
+        "factId": "braf_v600e",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... BRAF (V600E)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... human epidermal growth factor receptor 2 (HER2)",
+      "raw": {
+        "factId": "her2",
+        "rulesOut": [
+          "mutation",
+          "overexpression"
+        ],
+        "polarity": "exclusion",
+        "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... human epidermal growth factor receptor 2 (HER2)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... MET (exon 14)",
+      "raw": {
+        "factId": "met",
+        "rulesOut": [
+          "exon14_skipping",
+          "amplification"
+        ],
+        "polarity": "exclusion",
+        "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... MET (exon 14)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... ROS1",
+      "raw": {
+        "factId": "ros1",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... ROS1",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... rearranged during transfection (RET)",
+      "raw": {
+        "factId": "ret",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... rearranged during transfection (RET)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... neurotrophic tyrosine receptor kinase (NTRK)1/2/3.",
+      "raw": {
+        "factId": "ntrk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as ... neurotrophic tyrosine receptor kinase (NTRK)1/2/3.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "nctId": "NCT07223424",
+  "mappings": [
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 456,
+        "end": 674,
+        "text": "Patients should either be ICI-naïve (Cohorts A-1, A-2) or be currently receiving adjuvant or front-line PD-(L)1 based therapy singly or in combination with FDA-approved agents (TKIs or chemotherapy) (Cohorts B-1, B-2)."
+      },
+      "appliesTo": "Cohorts A-1, A-2, B-1, B-2"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1396,
+        "end": 1520,
+        "text": "Patients who are treatment-naive (i.e. for whom nivolumab is planned but has not yet been initiated) are eligible to enroll."
+      },
+      "appliesTo": "Cohort A-1"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1841,
+        "end": 1969,
+        "text": "Patients who are treatment-naive (i.e. for whom pembrolizumab is planned but has not yet been initiated) are eligible to enroll."
+      },
+      "appliesTo": "Cohort A-2"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1537,
+        "end": 1824,
+        "text": "Patients who are already receiving treatment with nivolumab (singly or in combination with TKI or chemotherapy) OR a different ICI-therapy but are willing to switch to nivolumab monotherapy or nivolumab based combinations may eligible to enroll if nivolumab is on-label for their cancer."
+      },
+      "appliesTo": "Cohort B-1"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1986,
+        "end": 2289,
+        "text": "Patients who are already receiving treatment with pembrolizumab (singly or in combination with TKI or chemotherapy) OR a different ICI-therapy but are willing to switch to pembrolizumab monotherapy or pembrolizumab based combinations may eligible to enroll if pembrolizumab is on-label for their cancer."
+      },
+      "appliesTo": "Cohort B-2"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2765,
+        "end": 2867,
+        "text": "Patients for whom anti-PD-1 based immunotherapy is planned as neoadjuvant therapy are not appropriate."
+      },
+      "appliesTo": "Cohorts A-2 or B-2"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3275,
+        "end": 3326,
+        "text": "Has had an allogenic tissue/solid organ transplant."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

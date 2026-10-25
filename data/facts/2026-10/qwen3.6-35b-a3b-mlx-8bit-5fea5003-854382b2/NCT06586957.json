@@ -1,0 +1,360 @@
+{
+  "nctId": "NCT06586957",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 626,
+        "end": 655,
+        "text": "Small cell lung cancer (SCLC)"
+      },
+      "appliesTo": "Part 1 Monotherapy Dose Escalation"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 112,
+        "text": "Must have a pathologically confirmed advanced and unresectable or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1054,
+        "end": 1169,
+        "text": "Part 2A: HR+ and HER2- breast cancer that is locally advanced and unresectable (Stage III) or metastatic (Stage IV)"
+      },
+      "appliesTo": "Part 2A"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4634,
+        "end": 4693,
+        "text": "Known active CNS metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4634,
+        "end": 4693,
+        "text": "Known active CNS metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 189,
+        "text": "Must have a pathologically confirmed advanced and unresectable or metastatic solid tumor listed below with documented disease progression on last standard treatment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3800,
+        "end": 3828,
+        "text": "Have adequate organ function"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 260,
+        "end": 385,
+        "text": "subjects must be refractory to, or intolerant of existing therapy(ies) known to provide clinical benefit for their condition."
+      },
+      "appliesTo": "Part 1 Monotherapy Dose Escalation"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1593,
+        "end": 1884,
+        "text": "Part 2B: Advanced platinum-based-chemotherapy resistant or refractory epithelial ovarian/fallopian/primary peritoneal carcinoma or clear cell ovarian cancer (defined as recurrence ≤6 months after completing platinum-based regimen) with progression on at least one platinum containing therapy"
+      },
+      "appliesTo": "Part 2B"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1054,
+        "end": 1296,
+        "text": "Part 2A: HR+ and HER2- breast cancer that is locally advanced and unresectable (Stage III) or metastatic (Stage IV); previously treated with ≥1 line of standard of care (SOC) including CDK4/6 inhibitor plus ET and not suitable for further ET."
+      },
+      "appliesTo": "Part 2A"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1593,
+        "end": 1992,
+        "text": "Part 2B: Advanced platinum-based-chemotherapy resistant or refractory epithelial ovarian/fallopian/primary peritoneal carcinoma or clear cell ovarian cancer (defined as recurrence ≤6 months after completing platinum-based regimen) with progression on at least one platinum containing therapy and previously treated with ≤4 prior lines of systemic therapy administered for advanced/metastatic disease"
+      },
+      "appliesTo": "Part 2B"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2028,
+        "end": 2272,
+        "text": "Part 2C: Advanced unresectable or metastatic gastric, GEJ or esophageal adenocarcinoma with progression on at least one systemic therapy and previously treated with ≤3 prior lines of systemic therapy administered for advanced/metastatic disease"
+      },
+      "appliesTo": "Part 2C"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2305,
+        "end": 2491,
+        "text": "Part 2D: Advanced endometrial adenocarcinoma or uterine papillary serous carcinoma previously treated with ≤4 prior lines of systemic therapy administered for advanced/metastatic disease"
+      },
+      "appliesTo": "Part 2D"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2689,
+        "end": 2847,
+        "text": "Part 2E: Advanced/recurrent uterine carcinosarcoma previously treated with 1 prior platinum-based chemotherapy regimen and ≤3 prior lines of systemic therapy."
+      },
+      "appliesTo": "Part 2E"
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5367,
+        "end": 5466,
+        "text": "Palliative radiation therapy within 14 days or other radiation therapy within 4 weeks prior to C1D1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4696,
+        "end": 4758,
+        "text": "Active interstitial lung disease currently requiring treatment"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4696,
+        "end": 4758,
+        "text": "Active interstitial lung disease currently requiring treatment"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5109,
+        "end": 5184,
+        "text": "Known human immunodeficiency virus (HIV), active hepatitis B or C infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5109,
+        "end": 5184,
+        "text": "Known human immunodeficiency virus (HIV), active hepatitis B or C infection"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4536,
+        "end": 4631,
+        "text": "Clinically significant cardiovascular event within 6 months prior to start of NKT3964 treatment"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4279,
+        "end": 4324,
+        "text": "History of another malignancy with exceptions"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3834,
+        "end": 3989,
+        "text": "Subjects with female reproductive organs must be surgically sterile, post-menopausal, or must be willing to use highly effective method(s) of contraception"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4696,
+        "end": 4758,
+        "text": "Active interstitial lung disease currently requiring treatment"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Small cell lung cancer (SCLC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Small cell lung cancer (SCLC)",
+        "appliesTo": "Part 2 Monotherapy Dose Expansion"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Part 2A: HR+ and HER2- breast cancer that is locally advanced and unresectable (Stage III) or metastatic (Stage IV); previously treated with ≥1 line of standard of care (SOC) including CDK4/6 inhibitor plus ET and not suitable for further ET. Subjects must have received ≤2 lines of systemic cytotoxic therapy (chemotherapy or cytotoxic antibody drug conjugate [ADC]) in the metastatic setting.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 2A: HR+ and HER2- breast cancer that is locally advanced and unresectable (Stage III) or metastatic (Stage IV); previously treated with ≥1 line of standard of care (SOC) including CDK4/6 inhibitor plus ET and not suitable for further ET. Subjects must have received ≤2 lines of systemic cytotoxic therapy (chemotherapy or cytotoxic antibody drug conjugate [ADC]) in the metastatic setting.",
+        "appliesTo": "Part 2A"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Part 3 Combination Dose Escalation: Advanced endometrial adenocarcinoma or uterine papillary serous carcinoma previously treated with ≤4 prior lines of systemic therapy administered for advanced/metastatic disease",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 3 Combination Dose Escalation: Advanced endometrial adenocarcinoma or uterine papillary serous carcinoma previously treated with ≤4 prior lines of systemic therapy administered for advanced/metastatic disease",
+        "appliesTo": "Part 3 Combination Dose Escalation"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Part 4 Combination Dose Expansion: Advanced endometrial adenocarcinoma or uterine papillary serous carcinoma previously treated with ≤4 prior lines of systemic therapy administered for advanced/metastatic disease",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 4 Combination Dose Expansion: Advanced endometrial adenocarcinoma or uterine papillary serous carcinoma previously treated with ≤4 prior lines of systemic therapy administered for advanced/metastatic disease",
+        "appliesTo": "Part 4 Combination Dose Expansion"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "nctId": "NCT07247110",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 100,
+        "end": 184,
+        "text": "Has a confirmed diagnosis of locally advanced unresectable or metastatic solid tumor"
+      },
+      "appliesTo": "Subset of arm MK-4716 Dose Escalation and subset of arm MK-4716 + Cetuximab"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 575,
+        "end": 641,
+        "text": "Has a confirmed diagnosis of metastatic non-small cell lung cancer"
+      },
+      "appliesTo": "Arm MK-4716 + Pembrolizumab"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 264,
+        "end": 353,
+        "text": "Must demonstrate presence of Kirsten rat sarcoma viral oncogene homolog (KRAS) alteration"
+      },
+      "appliesTo": "Subset of arm MK-4716 Dose Escalation and subset of arm MK-4716 + Cetuximab"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 673,
+        "end": 717,
+        "text": "Must demonstrate presence of KRAS alteration"
+      },
+      "appliesTo": "Arm MK-4716 + Pembrolizumab"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 433,
+        "end": 543,
+        "text": "Has received at least 1 prior line of systemic therapy for locally advanced unresectable or metastatic disease"
+      },
+      "appliesTo": "Subset of arm MK-4716 Dose Escalation and subset of arm MK-4716 + Cetuximab"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 769,
+        "end": 791,
+        "text": "Has measurable disease"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1292,
+        "end": 1379,
+        "text": "Has active autoimmune disease that has required systemic treatment in the past 2 years."
+      },
+      "appliesTo": "Arm MK-4716 + Pembrolizumab"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1474,
+        "end": 1523,
+        "text": "History of human immunodeficiency virus infection"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1526,
+        "end": 1636,
+        "text": "Has a known additional malignancy that is progressing or has required active treatment within the past 2 years"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1639,
+        "end": 1723,
+        "text": "Has a known active central nervous system metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1726,
+        "end": 1866,
+        "text": "History of (noninfectious) pneumonitis/interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1919,
+        "end": 1965,
+        "text": "Has Hepatitis B or Hepatitis C virus infection"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1968,
+        "end": 2011,
+        "text": "History of stem cell/solid organ transplant"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of lines_advanced",
+      "quote": "Must be untreated",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero",
+          "one",
+          "two",
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Must be untreated",
+        "appliesTo": "Arm MK-4716 + Pembrolizumab"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

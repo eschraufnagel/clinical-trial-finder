@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT06014658",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1680,
+        "end": 1757,
+        "text": "Cohort A: Histologic or cytologic diagnosis of NSLC (adenocarcinoma and SCC)."
+      },
+      "appliesTo": "Phase 1b dose expansion Cohort A"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1766,
+        "end": 1862,
+        "text": "Cohort B: Histologic or cytologic diagnosis of TNBC or HR positive, HER2 negative breast cancer."
+      },
+      "appliesTo": "Phase 1b dose expansion Cohort B"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1872,
+        "end": 2231,
+        "text": "Cohort C: Histologic or cytologic diagnosis of the following advanced metastatic solid tumors refractory to standard treatment: pancreatic adenocarcinoma, gastric adenocarcinoma, hepatocellular carcinoma, ovarian adenocarcinoma, and squamous cell carcinoma including, but not limited to, primary malignancies of the head and neck, esophagus, cervix, and skin."
+      },
+      "appliesTo": "Phase 1b dose expansion Cohort C"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2813,
+        "end": 2919,
+        "text": "For Dose Expansion (Phase 1b) and Phase 2, patients must have measurable disease according to RECIST v1.1."
+      },
+      "appliesTo": "Phase 1b dose expansion and Phase 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2923,
+        "end": 2988,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4223,
+        "end": 4270,
+        "text": "Uncontrolled central nervous system metastases."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5048,
+        "end": 5337,
+        "text": "Documented history of a cerebral vascular event (stroke or transient ischemic attack), unstable angina, myocardial infarction, or cardiac symptoms (including congestive heart failure) consistent with New York Heart Association Class 3-4 within 6 months prior to the first dose of MBRC-101."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5494,
+        "end": 5911,
+        "text": "Human immunodeficiency virus (HIV) infection with 1 or more of the following: A. Acquired immunodeficiency syndrome (AIDs)-defining opportunistic infection within 6 months of the start of screening; B. A change in antiretroviral therapy within 3 months of the start of screening and viral load \\> 500 copies/mL; C. Receiving antiretroviral therapy that may interfere with study drug; D. CD4 count \\< 350 at screening."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5916,
+        "end": 6076,
+        "text": "Active or symptomatic viral hepatitis. Patients who have been properly treated for hepatitis C infection can be included if they do not have active hepatitis C."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6242,
+        "end": 6399,
+        "text": "History of another malignancy within 3 years before the first dose of study drug, or any evidence of residual disease from a previously diagnosed malignancy."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

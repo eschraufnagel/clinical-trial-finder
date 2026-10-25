@@ -1,0 +1,145 @@
+{
+  "nctId": "NCT05283226",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 267,
+        "end": 370,
+        "text": "Has histologically confirmed unresectable R/M HNSCC (oral cavity, oropharynx, hypopharynx, and larynx)."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 267,
+        "end": 370,
+        "text": "Has histologically confirmed unresectable R/M HNSCC (oral cavity, oropharynx, hypopharynx, and larynx)."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 475,
+        "end": 515,
+        "text": "Has a measurable lesion per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 518,
+        "end": 558,
+        "text": "Has ECOG performance status score of ≤2."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 561,
+        "end": 656,
+        "text": "Must have progressed during or after receiving ICI therapy, such as pembrolizumab or nivolumab."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2292,
+        "end": 2619,
+        "text": "Has uncontrolled brain metastases. Patients are allowed if brain metastasis has been previously treated with surgery, whole brain irradiation, and/or stereotactic radiosurgery and are considered controlled (controlled by the dose ≤10 mg/day of prednisone or equivalent) at the time of the first dose of investigational product."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3743,
+        "end": 4169,
+        "text": "Has tested positive for HIV, HBsAg, HCV antibody, or HCV RNA at screening. However, patients who test positive for HCV antibody, but negative for HCV RNA, will be allowed. In addition, patients with controlled HIV, chronic HBV on suppressive antiviral therapy, or a history of HCV infection status post-curative antiviral treatment with an HCV viral load below limit of quantification are permitted to participate (DHHS 2020)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1965,
+        "end": 2225,
+        "text": "Has cardiac, hepatic, endocrine, pulmonary, or autoimmune disease, interstitial lung disease, renal or psychiatric disorders, not controlled with therapy corresponding to the illness or a condition that contraindicates the use of a taxane or an EGFR inhibitor."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1965,
+        "end": 2225,
+        "text": "Has cardiac, hepatic, endocrine, pulmonary, or autoimmune disease, interstitial lung disease, renal or psychiatric disorders, not controlled with therapy corresponding to the illness or a condition that contraindicates the use of a taxane or an EGFR inhibitor."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Female patient who tested positive for pregnancy. Female patient who is breastfeeding or planning to become pregnant, or male patient planning to father a child within the duration of the study.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Female patient who tested positive for pregnancy. Female patient who is breastfeeding or planning to become pregnant, or male patient planning to father a child within the duration of the study.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

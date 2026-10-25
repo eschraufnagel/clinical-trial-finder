@@ -1,0 +1,155 @@
+{
+  "nctId": "NCT06905197",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1528,
+        "end": 1620,
+        "text": "NSCLC with mixed small cell lung cancer (SCLC) or NSCLC with histologic SCLC transformation."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 109,
+        "end": 237,
+        "text": "Histologically or cytologically confirmed diagnosis of NSCLC, locally advanced or metastatic, not suitable for curative therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 937,
+        "end": 997,
+        "text": "Patients with brain metastases must have a stable BM status."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1001,
+        "end": 1035,
+        "text": "Measurable disease per RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 879,
+        "end": 933,
+        "text": "ECOG 0 or 1 with predicted life expectancy ≥ 12 weeks."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1354,
+        "end": 1524,
+        "text": "Carry other EGFR alterations than T790M and C797X, including but not limited to uncommon EGFR mutations (G719X, S768I, L861Q, exon 20 insertions mutations, etc.)(Part B)."
+      },
+      "appliesTo": "Part B"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3026,
+        "end": 3079,
+        "text": "Spinal cord compression or leptomeningeal metastasis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3083,
+        "end": 3175,
+        "text": "Patients with any other malignancy within 2 years of the first administration of study drug."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3623,
+        "end": 3665,
+        "text": "Past medical history of ILD or active ILD."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3333,
+        "end": 3441,
+        "text": "Patients with active infection, including but not limited to HBV, HCV, HIV and active infection of COVID-19."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3823,
+        "end": 3863,
+        "text": "Women who are pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

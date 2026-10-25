@@ -1,0 +1,160 @@
+{
+  "nctId": "NCT07043608",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 86,
+        "text": "Participants must have unresectable advanced or metastatic RCC"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5911,
+        "end": 6239,
+        "text": "Known brain metastases or cranial epidural disease unless adequately treated with radiotherapy and/or surgery (including radiosurgery) and stable for at least 4 weeks before first dose of study treatment. Note: Eligible subjects must be neurologically asymptomatic and without corticosteroid treatment at the time of enrollment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1412,
+        "end": 1477,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3527,
+        "end": 3693,
+        "text": "Human immunodeficiency virus (HIV)-infected individuals on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13929,
+        "end": 14292,
+        "text": "Known infection with acute or chronic hepatitis B or C, known human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome (AIDS)-related illness except for subjects meeting all of the following criteria: (1) on stable anti-retroviral therapy; (2) Cluster of differentiation 4 positive (CD4+) T cell count ≥ 200/µL; and (3) an undetectable viral load."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9198,
+        "end": 9598,
+        "text": "Malignancy that requires anti-cancer directed therapy within the last 3 years. Exceptions include those cancers that are considered cured by local therapy (e.g. Basal cell carcinoma, squamous cell carcinoma, ductal carcinoma in situ of breast, bladder, or cervix) or other cancers that have low malignant potential and do not require systemic therapy (e.g. Gleason grade \\<6 prostate adenocarcinoma)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11268,
+        "end": 11470,
+        "text": "Stroke (including transient ischemic attack (TIA)), myocardial infarction, or other clinically significant arterial thrombotic and/or ischemic event within 6 months before first dose of study treatment."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15364,
+        "end": 15422,
+        "text": "History of solid organ or allogeneic stem cell transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6756,
+        "end": 7150,
+        "text": "Pregnant and lactating women are excluded from this study because zanzalintinib is an investigational product with the potential for teratogenic or abortifacient effects. Because there is an unknown but potential risk for adverse events in nursing infants secondary to treatment of the mother with zanzalintinib, breastfeeding should be discontinued if the mother is treated with zanzalintinib."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants must have unresectable advanced or metastatic RCC with a predominant clear cell histologic component .",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have unresectable advanced or metastatic RCC with a predominant clear cell histologic component .",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_lines_advanced isn't a fact for this trial's cancer type",
+      "quote": "Previously treated with 1-3 prior lines of therapy in at least one of the following settings:",
+      "raw": {
+        "factId": "prior_lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Previously treated with 1-3 prior lines of therapy in at least one of the following settings:",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT06956690",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 169,
+        "end": 701,
+        "text": "Patients with histologically or cytologically confirmed diagnosis of advanced-stage or metastatic HER3+ solid tumors that are relapsed or refractory to or ineligible for standard therapy, or for whom no standard therapy is available; or the patient has documented their refusal of standard of care therapies. These include the following:\n\n  1. Unresectable or metastatic cutaneous melanoma (HER3+)\n  2. Locally advanced or metastatic mutated EGFR (mEGFR) NSCLC (HER3+)\n  3. Unresectable, locally advanced or metastatic breast cancer"
+      },
+      "loose": true
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1116,
+        "end": 1186,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0-2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3987,
+        "end": 4232,
+        "text": "Leptomeningeal disease, symptomatic or uncontrolled (active) brain metastasis (note: brain metastases not requiring steroids or anti-epileptic therapy are allowed if stable for ≥4 weeks prior to study start and patient is neurologically stable)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3987,
+        "end": 4232,
+        "text": "Leptomeningeal disease, symptomatic or uncontrolled (active) brain metastasis (note: brain metastases not requiring steroids or anti-epileptic therapy are allowed if stable for ≥4 weeks prior to study start and patient is neurologically stable)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4235,
+        "end": 4373,
+        "text": "Pregnant or WOCBP who have a positive b-human chorionic gonadotropin (HCG) test result at Screening or within 7 days prior to study start."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4376,
+        "end": 4474,
+        "text": "Patients with second malignancies that are active (uncontrolled, metastatic) or requiring therapy."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3812,
+        "end": 3984,
+        "text": "Known seropositivity (except after vaccination or confirmed cure for hepatitis) for human immunodeficiency virus (HIV), hepatitis B virus (HBV), or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3812,
+        "end": 3984,
+        "text": "Known seropositivity (except after vaccination or confirmed cure for hepatitis) for human immunodeficiency virus (HIV), hepatitis B virus (HBV), or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3721,
+        "end": 3809,
+        "text": "History of noninfectious or drug-induced pneumonitis or interstitial lung disease (ILD)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2821,
+        "end": 2926,
+        "text": "Autologous or allogeneic stem cell transplantation or allogeneic tissue/organ transplant within 3 months."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "nctId": "NCT07217301",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 444,
+        "end": 625,
+        "text": "Have locally unresectable advanced or metastatic histologically or cytologically confirmed squamous NSCLC. Mixed small cell carcinoma, or other pathological components are excluded."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 444,
+        "end": 550,
+        "text": "Have locally unresectable advanced or metastatic histologically or cytologically confirmed squamous NSCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3023,
+        "end": 3209,
+        "text": "Have at least 1 measurable lesion (target lesion) by computed tomography (CT) or magnetic resonance imaging (MRI) according to Response Evaluation Criteria in Solid Tumors (RECIST) V1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3507,
+        "end": 3589,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) score of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6143,
+        "end": 6231,
+        "text": "Participants with enlarging or symptomatic brain metastases are excluded from the trial."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6611,
+        "end": 6726,
+        "text": "No metastases to meninges, midbrain, pons, medulla oblongata (leptomeningeal metastases), or cerebellar metastases."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5206,
+        "end": 5382,
+        "text": "Epidermal growth factor receptor (EGFR): including exon 19 deletion, exon 21 L858R, exon 20 T790M, exon 20 S768I, exon 21 L861Q, exon 18 G719X, and exon 20 insertion mutations."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5494,
+        "end": 5562,
+        "text": "ROS proto-oncogene 1, receptor tyrosine kinase (ROS1) rearrangement."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5789,
+        "end": 5828,
+        "text": "RET proto-oncogene (RET) rearrangement."
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5642,
+        "end": 5700,
+        "text": "Neurotrophic tyrosine receptor kinase (NTRK) 1/2/3 fusion."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5388,
+        "end": 5435,
+        "text": "Kirsten rat sarcoma virus (KRAS) G12C mutation."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5834,
+        "end": 5935,
+        "text": "V-erb-b2 avian erythroblastic leukemia viral oncogene homolog 2 (ERBB2, also known as HER2) mutation."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5706,
+        "end": 5783,
+        "text": "MET proto-oncogene, receptor tyrosine kinase (MET) exon 14 skipping mutation."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5568,
+        "end": 5636,
+        "text": "B-Raf proto-oncogene, serine/threonine kinase (BRAF) V600E mutation."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 801,
+        "end": 926,
+        "text": "Have had disease progression on or after prior treatment with anti-PD-1/PD-L1 therapy and platinum-based doublet chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 801,
+        "end": 926,
+        "text": "Have had disease progression on or after prior treatment with anti-PD-1/PD-L1 therapy and platinum-based doublet chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 18905,
+        "end": 19129,
+        "text": "Systemic antitumor therapy except anti-PD-1/PD-L1 therapy and platinum-based doublet chemotherapy including but not limited to bispecific antibodies, targeted therapy, antibody drug conjugate, cell therapies, and other ICIs."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 18905,
+        "end": 19129,
+        "text": "Systemic antitumor therapy except anti-PD-1/PD-L1 therapy and platinum-based doublet chemotherapy including but not limited to bispecific antibodies, targeted therapy, antibody drug conjugate, cell therapies, and other ICIs."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1197,
+        "end": 1330,
+        "text": "Received platinum-based chemotherapy and anti-PD-1/PD-L1 therapy sequentially (in either order) as the only 2 prior lines of therapy."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13646,
+        "end": 13834,
+        "text": "Active autoimmune disease requiring systemic treatment (for example, use of disease-modifying drugs, corticosteroids, biologics or immunosuppressants) within 2 years before the first dose."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11485,
+        "end": 11618,
+        "text": "History of or current interstitial lung disease (ILD), pulmonary fibrosis, and drug-related, immune-related and radiation pneumonitis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15200,
+        "end": 15325,
+        "text": "Uncontrolled human immunodeficiency virus (HIV), active syphilis, active hepatitis B virus (HBV), or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15200,
+        "end": 15325,
+        "text": "Uncontrolled human immunodeficiency virus (HIV), active syphilis, active hepatitis B virus (HBV), or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14036,
+        "end": 14144,
+        "text": "Known history of allogeneic organ transplantation and/or allogeneic hematopoietic stem cell transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4464,
+        "end": 4618,
+        "text": "Women who are pregnant or breastfeeding, or intending to become pregnant before, during, or within 6 months after the last dose of any trial intervention."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 18002,
+        "end": 18436,
+        "text": "Diagnosed with other pathologically confirmed malignancies within 5 years prior to informed consent, with the exception of radically treated basal cell carcinoma of the skin, squamous cell carcinoma of the skin, carcinoma in situ, localized prostate cancer, papillary thyroid cancer, and other radically treated malignancies with no known active disease for at least 2 years prior to enrollment and with a very low risk of recurrence."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known actionable genomic alteration, including any of the following driver gene mutations: Kirsten rat sarcoma virus (KRAS) G12C mutation. Anaplastic lymphase kinase (ALK) rearrangement.",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known actionable genomic alteration, including any of the following driver gene mutations: Kirsten rat sarcoma virus (KRAS) G12C mutation. Anaplastic lymphase kinase (ALK) rearrangement.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "nctId": "NCT04899908",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 258,
+        "text": "Participants must have a biopsy proven solid malignancy and at least one intracranial measurable lesion spanning ≥5mm in maximal unidimensional size and radiographically consistent with or pathologically proven to be a brain metastasis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2006,
+        "end": 2069,
+        "text": "Participants with widespread, definitive leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2292,
+        "end": 2565,
+        "text": "Pregnant women are excluded from this study because of the potential deleterious effects of gadolinium on the developing fetus. Because there is an unknown but potential risk for adverse events in nursing infants, women who are breastfeeding are not eligible for this study"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

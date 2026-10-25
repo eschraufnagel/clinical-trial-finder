@@ -1,0 +1,145 @@
+{
+  "nctId": "NCT05168566",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 71,
+        "end": 211,
+        "text": "Histopathological and/or cytopathological confirmation of locally advanced or metastatic NSCLC patients with ≤ 1 prior line of chemotherapy."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 71,
+        "end": 211,
+        "text": "Histopathological and/or cytopathological confirmation of locally advanced or metastatic NSCLC patients with ≤ 1 prior line of chemotherapy."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus",
+        "two"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 71,
+        "end": 211,
+        "text": "Histopathological and/or cytopathological confirmation of locally advanced or metastatic NSCLC patients with ≤ 1 prior line of chemotherapy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 439,
+        "end": 470,
+        "text": "At least one measurable lesion."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 474,
+        "end": 499,
+        "text": "ECOG score of 0, 1, or 2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1796,
+        "end": 1836,
+        "text": "Active central nervous system metastases"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1840,
+        "end": 2098,
+        "text": "Previous or current interstitial lung disease, radiation pneumonitis which requires hormone therapy, or drug-related pneumonia, idiopathic interstitial pulmonary fibrosis identified in a baseline CT scan; uncontrolled massive pleural or pericardial effusion."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2546,
+        "end": 2637,
+        "text": "Previously received solid organ transplantation or hematopoietic stem cell transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2642,
+        "end": 2684,
+        "text": "Females who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2788,
+        "end": 2875,
+        "text": "Have any other primary malignant tumors within 3 years (except some low- risk cancers)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

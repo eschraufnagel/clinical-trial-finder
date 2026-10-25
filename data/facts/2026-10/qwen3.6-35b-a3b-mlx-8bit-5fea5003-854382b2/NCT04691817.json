@@ -1,0 +1,218 @@
+{
+  "nctId": "NCT04691817",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 50,
+        "text": "Advanced non-squamous NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 112,
+        "text": "Advanced non-squamous NSCLC (Stage IV or recurrent after initial curative intent therapy)"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 188,
+        "end": 292,
+        "text": "Exposure to a including checkpoint inhibitor in line of therapy immediately prior to enrollment on trial"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 295,
+        "end": 306,
+        "text": "ECOG PS 0-2"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 331,
+        "end": 400,
+        "text": "Presence of a driver mutation that is susceptible to targeted therapy"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 331,
+        "end": 400,
+        "text": "Presence of a driver mutation that is susceptible to targeted therapy"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 331,
+        "end": 400,
+        "text": "Presence of a driver mutation that is susceptible to targeted therapy"
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 331,
+        "end": 400,
+        "text": "Presence of a driver mutation that is susceptible to targeted therapy"
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 331,
+        "end": 400,
+        "text": "Presence of a driver mutation that is susceptible to targeted therapy"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 331,
+        "end": 400,
+        "text": "Presence of a driver mutation that is susceptible to targeted therapy"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 331,
+        "end": 400,
+        "text": "Presence of a driver mutation that is susceptible to targeted therapy"
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping",
+        "amplification"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 331,
+        "end": 400,
+        "text": "Presence of a driver mutation that is susceptible to targeted therapy"
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 331,
+        "end": 400,
+        "text": "Presence of a driver mutation that is susceptible to targeted therapy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 542,
+        "end": 595,
+        "text": "Evidence of progressing or untreated brain metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 598,
+        "end": 643,
+        "text": "Evidence or history of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 680,
+        "end": 719,
+        "text": "History of an autoimmune disease or IPF"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "nctId": "NCT04515836",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2066,
+        "end": 2300,
+        "text": "Must have a tumor that can be measured according to criteria set by the modified Response Evaluation Criteria in Solid Tumors (RECIST) standards for pleural mesothelioma and RECIST 1.1 for peritoneal and tunica vaginalis mesothelioma."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6519,
+        "end": 6689,
+        "text": "Patients with cancer cells that have moved from one part of their body to the brain (brain metastases) causing the patient to show symptoms/signs of more serious illness."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1278,
+        "end": 1336,
+        "text": "Prior treatment with cisplatin or carboplatin is required."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1339,
+        "end": 1691,
+        "text": "Patients must have platinum-sensitive disease (cancer that responds to treatments with anticancer drugs containing metal platinum). For eligibility in this study, platinum-sensitive disease will be defined as no disease progression while on a platinum agent (chemotherapy drug) or for at least 3 months after completing treatment with a platinum agent."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1938,
+        "end": 2003,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2066,
+        "end": 2300,
+        "text": "Must have a tumor that can be measured according to criteria set by the modified Response Evaluation Criteria in Solid Tumors (RECIST) standards for pleural mesothelioma and RECIST 1.1 for peritoneal and tunica vaginalis mesothelioma."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5119,
+        "end": 5400,
+        "text": "Other malignancy (tumor/cancer) unless it has been treated with no evidence of disease for 3 or more years except: adequately treated non-melanoma skin cancer, curatively treated in situ cancer of the cervix, ductal carcinoma in situ (DCIS), Stage 1, grade 1 endometrial carcinoma."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5403,
+        "end": 5770,
+        "text": "Patients with BAP1 tumor predisposition syndrome will be included in the trial. These patients may be eligible if they have a history of syndrome-related cancers, provided they completed their surgery and chemotherapy more than three years prior to registration, and the patient remains free of disease that continues to re-occur or spread to other parts of the body."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5773,
+        "end": 5969,
+        "text": "Patients with cancer that does not respond to platinum chemotherapy drugs (known as platinum-resistant disease), defined as disease progression during or within 3 months of receiving chemotherapy."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7787,
+        "end": 7913,
+        "text": "Patients who have a compromised immune system, e.g., patients who have tested positive for human immunodeficiency virus (HIV)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7916,
+        "end": 8257,
+        "text": "Patients with known active hepatitis (i.e. Hepatitis B or C) confirmed by medical tests; patients with a past or resolved Hepatitis B infection are eligible. Patients positive for hepatitis C virus are eligible only if samples of the patient's DNA tests negative for hepatitis C, according to genetic tests (using polymerase chain reaction)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9831,
+        "end": 9928,
+        "text": "Previous allogenic bone marrow transplant or double umbilical cord blood transplantation (dUCBT)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10454,
+        "end": 10487,
+        "text": "Pregnant or breast-feeding women."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Must have a medical diagnosis of malignant mesothelioma that has been confirmed by a physician.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Must have a medical diagnosis of malignant mesothelioma that has been confirmed by a physician.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

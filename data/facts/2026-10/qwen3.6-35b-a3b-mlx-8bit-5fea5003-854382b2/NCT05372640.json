@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT05372640",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 211,
+        "text": "Participants must have histologically confirmed malignancy that is metastatic or unresectable and for which standard curative or palliative measures do not exist or are no longer effective"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 214,
+        "end": 329,
+        "text": "Dose Escalation Cohort Only: Participants must have evaluable disease or measurable disease per RECIST 1.1 criteria"
+      },
+      "appliesTo": "Dose Escalation Cohort Only"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1002,
+        "end": 1067,
+        "text": "Participants must have measurable disease per RECIST 1.1 criteria"
+      },
+      "appliesTo": "Dose Expansion Cohort Only"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2237,
+        "end": 2378,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status =\\< 2 for participants \\>= 16 years of age, Lansky \\>= 50% if \\< 16 years of age"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4219,
+        "end": 4435,
+        "text": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression and has been clinically stable for at least 1 month."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3430,
+        "end": 3592,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3747,
+        "end": 3968,
+        "text": "Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12021,
+        "end": 12375,
+        "text": "Pregnant women are excluded from this study because ZEN003694 is a BETi agent with the potential for teratogenic or abortifacient effects. Because there is an unknown but potential risk for adverse events in nursing infants secondary to treatment of the mother with ZEN003694, breastfeeding should be discontinued if the mother is treated with ZEN003694."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13061,
+        "end": 13154,
+        "text": "Myocardial infarction or unstable angina within 6 months prior to the first dose of ZEN003694"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants must have histologically confirmed malignancy that is metastatic or unresectable and for which standard curative or palliative measures do not exist or are no longer effective",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have histologically confirmed malignancy that is metastatic or unresectable and for which standard curative or palliative measures do not exist or are no longer effective",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

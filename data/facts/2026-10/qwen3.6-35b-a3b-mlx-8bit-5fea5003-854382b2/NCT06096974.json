@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT06096974",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 161,
+        "text": "Unresectable or metastatic advanced solid tumors with no standard therapies, or having progressed on or intolerable to standard therapies."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 161,
+        "text": "Unresectable or metastatic advanced solid tumors with no standard therapies, or having progressed on or intolerable to standard therapies."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 303,
+        "end": 394,
+        "text": "Measurable disease with at least one lesion amenable to response assessment per RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 960,
+        "end": 998,
+        "text": "Has an ECOG performance status of 0-1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2683,
+        "end": 2849,
+        "text": "Known symptomatic brain metastases requiring dexamethasone ≥4mg (or equivalent) or requiring steroid dose increase within 14 days prior to the first dose of YL-17231."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3232,
+        "end": 3439,
+        "text": "Human immunodeficiency virus (HIV) infection with a current or a known history of AIDS-defining illness or HIV infection with a CD4+ T cell count \\<350 cells/µL and an HIV viral load more than 400 copies/µL."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3442,
+        "end": 3507,
+        "text": "Patients with active viral (any etiology) hepatitis are excluded."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4154,
+        "end": 4631,
+        "text": "Any of the following cardiac criteria experienced currently or within the last 6 months:\n\n  1. Congestive heart failure (New York Heart Association ≥ Class 2).\n  2. Any clinically significant abnormalities (as assessed by the Investigator) in rhythm, conduction, or morphology of resting electrocardiograms (ECGs), e.g., complete left bundle branch block or third-degree heart block.\n  3. Acute coronary syndrome within 6 months.\n  4. Clinically significant cardiac arrhythmia."
+      },
+      "loose": true
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5299,
+        "end": 5417,
+        "text": "History noninfectious pneumonitis required steroids treatment or concurrent pneumonitis or interstitial lung diseases."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5420,
+        "end": 5666,
+        "text": "An active additional malignancy that is progressing or requires active treatment. Exceptions include basal cell carcinoma of the skin, squamous cell carcinoma of the skin that has undergone potentially curative therapy or in situ cervical cancer."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5893,
+        "end": 6095,
+        "text": "Patients who are pregnant or breastfeeding or expecting to conceive within the projected duration of the trial, starting with the screening visit through 3 months after the last dose of trial treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

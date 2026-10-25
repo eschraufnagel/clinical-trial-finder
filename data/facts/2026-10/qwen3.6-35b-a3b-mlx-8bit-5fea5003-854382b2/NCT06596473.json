@@ -1,0 +1,133 @@
+{
+  "nctId": "NCT06596473",
+  "mappings": [
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 709,
+        "end": 892,
+        "text": "Phase 1b (Dose Expansion) Part B: Histologically confirmed advanced or metastatic select solid tumors who have previously received 0 or 1 line of systemic therapy for advanced disease"
+      },
+      "appliesTo": "Phase 1b (Dose Expansion) Part B"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 506,
+        "end": 706,
+        "text": "Phase 1b (Dose Expansion) Part A: Histologically confirmed advanced or metastatic select solid tumors that were previously treated with and progressed from at least 1 line of standard systemic therapy"
+      },
+      "appliesTo": "Phase 1b (Dose Expansion) Part A"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 228,
+        "end": 503,
+        "text": "Phase 1a (Dose Escalation): Histologically confirmed advanced, metastatic, or unresectable solid tumors, that were previously treated with at least 2 lines of standard systemic therapy or for whom no standard treatment is available in the medical judgment of the investigator"
+      },
+      "appliesTo": "Phase 1a (Dose Escalation)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 895,
+        "end": 943,
+        "text": "≥ 1 measurable lesion as assessed by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 946,
+        "end": 1020,
+        "text": "Stable Eastern Cooperative Oncology Group (ECOG) Performance Status of ≤ 1"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2064,
+        "end": 2137,
+        "text": "Active leptomeningeal disease or uncontrolled, untreated brain metastasis"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2064,
+        "end": 2137,
+        "text": "Active leptomeningeal disease or uncontrolled, untreated brain metastasis"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2140,
+        "end": 2334,
+        "text": "Any malignancy ≤ 2 years before the first dose of study drug(s) except for the specific cancer under investigation in this study and any locally recurring cancer that has been treated curatively"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1749,
+        "end": 1881,
+        "text": "Prior treatment with any carcinoembryonic antigen (CEA)-targeted ADCs or ADCs containing topoisomerase 1 (TOP1) inhibitor as payload"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

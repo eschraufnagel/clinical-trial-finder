@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT05099172",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 183,
+        "end": 227,
+        "text": "small cell or mixed histologies are excluded"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 181,
+        "text": "Documented histologically or cytologically confirmed locally advanced NSCLC, not suitable for definitive therapy or recurrent or metastatic NSCLC at screening"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1027,
+        "end": 1313,
+        "text": "Measurable disease by RECIST v1.1 (or by RANO-BM for participants in Expansion Groups G and H) with at least one lesion that can be accurately measured at baseline with computed tomography (CT) or magnetic resonance imaging (MRI) and that is suitable for accurate repeated measurements."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1532,
+        "end": 1600,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3726,
+        "end": 3958,
+        "text": "Any history of primary brain or leptomeningeal disease (symptomatic or asymptomatic), presence of symptomatic central nervous system (CNS) metastases, or CNS metastases that require local treatment (such as radiotherapy or surgery)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3726,
+        "end": 3958,
+        "text": "Any history of primary brain or leptomeningeal disease (symptomatic or asymptomatic), presence of symptomatic central nervous system (CNS) metastases, or CNS metastases that require local treatment (such as radiotherapy or surgery)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5964,
+        "end": 6392,
+        "text": "Known human immunodeficiency virus (HIV), except as noted below: Participants with history of HIV infection are eligible at the Investigator's discretion provided that: • CD4+ T-cell (CD4+) counts are ≥ 350 cells/uL • The participant has been on established antiretroviral therapy (ART) for at least 4 weeks prior to the start of study drug and has an HIV viral load less than 400 copies/mL prior to start of the study treatment"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6631,
+        "end": 6901,
+        "text": "Active Hepatitis B infection (positive for Hepatitis B surface antigen \\[HbsAg\\]) and Hepatitis B virus \\[HBV\\] DNA).\n  3. Active Hepatitis C infection (positive anti-HCV Antibody and quantitative HCV RNA results greater than the lower limits of detection of the assay)."
+      },
+      "loose": true
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

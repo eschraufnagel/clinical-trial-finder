@@ -1,0 +1,108 @@
+{
+  "nctId": "NCT06022029",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 419,
+        "end": 492,
+        "text": "Participants must have a minimum of one injectable and measurable lesion."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1010,
+        "end": 1218,
+        "text": "Other malignancy active within the previous 2 years except for basal or squamous cell skin cancer, superficial bladder cancer, or carcinoma in situ of the cervix or breast that has completed curative therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1291,
+        "end": 1581,
+        "text": "Brain metastases that are untreated or in the posterior fossa or involve the meninges. Participants with stable or previously treated progressing brain metastases (except in the posterior fossa or involving the meninges) may be permitted in a case-by-case basis at the Sponsor's discretion."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1717,
+        "end": 1783,
+        "text": "Females who are breastfeeding or pregnant at screening or baseline"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2568,
+        "end": 2752,
+        "text": "Has any active or recent history of a known or suspected autoimmune disease or recent history of a syndrome that required systemic corticosteroids (\\>10 mg daily prednisone equivalent)"
+      },
+      "appliesTo": "ONM-501 in Combination with cemiplimab (Part 1b)"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2568,
+        "end": 2752,
+        "text": "Has any active or recent history of a known or suspected autoimmune disease or recent history of a syndrome that required systemic corticosteroids (\\>10 mg daily prednisone equivalent)"
+      },
+      "appliesTo": "ONM-501 in Combination with cemiplimab (Part 1b)"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with solid tumors or lymphomas, confirmed by available histopathology records or current biopsy, that are advanced, nonresectable, or recurrent and progressing since last antitutor therapy, and for which no alternative standard therapy exists.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with solid tumors or lymphomas, confirmed by available histopathology records or current biopsy, that are advanced, nonresectable, or recurrent and progressing since last antitutor therapy, and for which no alternative standard therapy exists.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

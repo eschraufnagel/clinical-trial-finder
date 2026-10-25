@@ -1,0 +1,154 @@
+{
+  "nctId": "NCT07213830",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 108,
+        "end": 179,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 182,
+        "end": 495,
+        "text": "Measurable disease per RECIST version 1.1 (at least one lesion that is measurable by RECIST 1.1. Tumour lesions in a previously irradiated area are considered measurable if progression has been demonstrated in such lesions after radiation) and documented locally advanced or metastatic disease with CT and/or MRI."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1169,
+        "end": 1308,
+        "text": "Have untreated or active primary brain tumour, Central Nervous System (CNS) metastases, leptomeningeal disease, or spinal cord compression."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1169,
+        "end": 1308,
+        "text": "Have untreated or active primary brain tumour, Central Nervous System (CNS) metastases, leptomeningeal disease, or spinal cord compression."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1794,
+        "end": 2080,
+        "text": "History of CS cardiac disease within 6 months prior to the initiation of study intervention, including but not limited to unstable angina, acute myocardial infarction, endoscopic or open-heart cardiac surgery, or heart failure classified as New York Heart Association Grade 2 or higher."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2445,
+        "end": 2473,
+        "text": "Prior organ transplantation."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2559,
+        "end": 2726,
+        "text": "Presence of hepatitis B surface antigen (HBsAg) \\[or hepatitis B core antibody (HBcAb)\\] at screening or within 3 months prior to the first dose of study intervention."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2729,
+        "end": 2849,
+        "text": "Positive hepatitis C antibody test result at screening or within 3 months prior to the first dose of study intervention."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2852,
+        "end": 3475,
+        "text": "Participants with known history of HIV infection are excluded from the study unless they meet the following criteria:\n\n  1. Stable Antiretroviral Therapy: Participants must be on a stable antiretroviral therapy regimen for at least 4 weeks prior to enrolment.\n  2. CD4+ T cell Count: Participants must have a CD4+ T cell count of at least 200 cells/µL.\n  3. Viral Load: Participants must have an undetectable viral load (HIV RNA \\<50 copies/mL)\n  4. No Opportunistic Infections: Participants must not have had any opportunistic infections or other human immunodeficiency virus (HIV)-related illness within the past 6 months"
+      },
+      "loose": true
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3577,
+        "end": 3627,
+        "text": "History of other malignancy within the last years."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3980,
+        "end": 4307,
+        "text": "Treatment with \\>10 mg per day of prednisone (or equivalent) or other immune suppressive drugs within 7 days prior to the initiation of study drug. Exceptions may be made for participants who have had allergic reaction to iodinated contrast media. Steroids for topical, ophthalmic, inhaled, or nasal administration are allowed."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "nctId": "NCT04585490",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2470,
+        "end": 2527,
+        "text": "Mixed small cell and non small cell lung cancer histology"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 68,
+        "end": 248,
+        "text": "NSCLC presenting with locally-advanced, unresectable stage III disease (Version 8 of AJCC Staging Manual) or NSCLC with locoregional recurrence after previous definitive treatment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1148,
+        "end": 1218,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4138,
+        "end": 4592,
+        "text": "Active or prior documented autoimmune or inflammatory disorders which is likely to limit the subjects ability to continue durvalumab on the study (including inflammatory bowel disease \\[eg, colitis or Crohn's disease\\], diverticulitis \\[with the exception of diverticulosis\\], systemic lupus erythematosus, Sarcoidosis syndrome, or Wegener syndrome \\[granulomatosis with polyangiitis; Graves' disease; rheumatoid arthritis; hypophysitis; uveitis; etc\\])."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5076,
+        "end": 5143,
+        "text": "History of organ transplant requiring therapeutic immunosuppression"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5414,
+        "end": 5691,
+        "text": "Active known Hepatitis B \\[known positive results for HBV surface antigen (HBsAg) within 2 months prior to enrollment\\]. EXCEPTION: Subjects with a past or resolved HBV infection, defined as the presence of hepatitis B core antibody (anti-HBc) and absence of HBsAg are eligible"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5694,
+        "end": 5842,
+        "text": "Active known Hepatitis C (HCV). EXCEPTION: Subjects positive for HCV antibody are eligible only if polymerase chain reaction is negative for HCV RNA"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6041,
+        "end": 6067,
+        "text": "Active known HIV infection"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6566,
+        "end": 6591,
+        "text": "Interstitial lung disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6889,
+        "end": 6939,
+        "text": "Female subjects who are pregnant or breast feeding"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Uncontrolled intercurrent illness, including but not limited to: ... Symptomatic congestive heart failure",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled intercurrent illness, including but not limited to: ... Symptomatic congestive heart failure",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

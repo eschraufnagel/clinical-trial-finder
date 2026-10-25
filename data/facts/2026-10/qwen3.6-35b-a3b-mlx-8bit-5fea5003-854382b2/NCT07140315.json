@@ -1,0 +1,56 @@
+{
+  "nctId": "NCT07140315",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 486,
+        "end": 590,
+        "text": "Subjects must score at least 0 to 2 on the Eastern Cooperative Oncology Group (ECOG) Performance Status."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1749,
+        "end": 1969,
+        "text": "Prior treatment, in either de novo disease or during this recurrence, with an anti-PD-L1 or anti-PD-L2 antibody. A minimum of 4 month washout period is required for patients treated with anti-PD-L1 or anti-PD-L2 therapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3318,
+        "end": 3338,
+        "text": "Breastfeeding women."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

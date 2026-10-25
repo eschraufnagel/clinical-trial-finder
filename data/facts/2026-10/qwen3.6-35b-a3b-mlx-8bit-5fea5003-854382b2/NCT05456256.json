@@ -1,0 +1,161 @@
+{
+  "nctId": "NCT05456256",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5819,
+        "end": 6045,
+        "text": "Patients with small cell, squamous cell, large cell, undifferentiated, mesothelioma, or any form of mixed (e.g., small cell and adenocarcinoma or squamous and adenocarcinoma) histopathological diagnosis of primary lung cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 755,
+        "end": 809,
+        "text": "Locally advanced inoperable or metastatic lung cancer."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7434,
+        "end": 7611,
+        "text": "Patients with unstable CNS metastases (characterized by progressive sensory/motor impairment, cognitive/speech impairment, or seizure activity) within 21 days before enrollment."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7615,
+        "end": 7721,
+        "text": "Patients who do not have at least one (1) measurable disease site that has not been previously irradiated."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2015,
+        "end": 2103,
+        "text": "Patients with an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7726,
+        "end": 7873,
+        "text": "Patients who are known to be positive for human immunodeficiency virus (HIV), hepatitis B virus surface antigen (HbsAg) or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7726,
+        "end": 7873,
+        "text": "Patients who are known to be positive for human immunodeficiency virus (HIV), hepatitis B virus surface antigen (HbsAg) or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8307,
+        "end": 8354,
+        "text": "Patients who are pregnant or are breastfeeding."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7878,
+        "end": 8133,
+        "text": "Patients with active infections, active interstitial lung disease, uncontrolled high blood pressure, uncontrolled diabetes mellitus, uncontrolled seizures (not due to CNS metastases) within the last 3 months, or other serious underlying medical condition."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6754,
+        "end": 7055,
+        "text": "Patients with recent onset (within 6 months of randomization) of congestive heart failure (New York Heart Association Classification Class II or greater), angina pectoris, unstable angina pectoris, serious uncontrolled cardiac arrhythmias, myocardial infarction, stroke, or transient ischemic attacks."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients must have been disease-free at least two years for other malignancies, excluding: Curatively-treated basal cell carcinoma, Ductal carcinoma in situ (DCIS) of the breast Non-melanomatous carcinoma of the skin, or Carcinoma in situ of the cervix.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years",
+          "over_5_years"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have been disease-free at least two years for other malignancies, excluding: Curatively-treated basal cell carcinoma, Ductal carcinoma in situ (DCIS) of the breast Non-melanomatous carcinoma of the skin, or Carcinoma in situ of the cervix.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

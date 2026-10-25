@@ -1,0 +1,81 @@
+{
+  "nctId": "NCT06006273",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 140,
+        "end": 236,
+        "text": "Patients have a histologically or radiographically confirmed relapsed or refractory solid tumor."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 295,
+        "end": 455,
+        "text": "Patients may have CNS metastases at study entry, if they are previously treated or stable (defined by not requiring initation or increased steroids for 7 days)."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 255,
+        "end": 292,
+        "text": "Patients must have evaluable disease."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1329,
+        "end": 1628,
+        "text": "Autologous or Allogenic Stem Cell Transplant: Complete resolution of graft versus host disease and no current need for immunosuppressive medication. Greater than 3 months must have elapsed since engraftment and no longer requiring transfusion of platelets or injection of colony stimulating factors."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2932,
+        "end": 2959,
+        "text": "Pregnancy or Breast-Feeding"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

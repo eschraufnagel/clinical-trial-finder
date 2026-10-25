@@ -1,0 +1,226 @@
+{
+  "nctId": "NCT04467723",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 322,
+        "end": 390,
+        "text": "histologically or cytologically confirmed non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 541,
+        "end": 576,
+        "text": "De novo stage IV or recurrent NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 541,
+        "end": 576,
+        "text": "De novo stage IV or recurrent NSCLC"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3231,
+        "end": 3331,
+        "text": "Uncontrolled or symptomatic brain metastasis or leptomeningeal disease that requires use of steroids"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3231,
+        "end": 3331,
+        "text": "Uncontrolled or symptomatic brain metastasis or leptomeningeal disease that requires use of steroids"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 888,
+        "end": 916,
+        "text": "At least 1 measurable lesion"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1308,
+        "end": 1365,
+        "text": "Eastern Cooperative Group (ECOG) Performance Status 0 - 2"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 577,
+        "end": 628,
+        "text": "without actionable mutation (e.g. EGFR/ ALK/ ROS-1)"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 577,
+        "end": 628,
+        "text": "without actionable mutation (e.g. EGFR/ ALK/ ROS-1)"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 577,
+        "end": 628,
+        "text": "without actionable mutation (e.g. EGFR/ ALK/ ROS-1)"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 638,
+        "end": 739,
+        "text": "previously treated with either PD-1 / PD-L1 or the combination of PD1/PDL1 and cytotoxic chemotherapy"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 741,
+        "end": 796,
+        "text": "no more than 2 systemic regimens for metastatic disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3368,
+        "end": 3454,
+        "text": "Previous history of cancer with active treatment within less than 1 year of enrollment"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3457,
+        "end": 3484,
+        "text": "Active auto-immune diseases"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2695,
+        "end": 2778,
+        "text": "Has evidence of active pneumonitis on screening chest computed tomography (CT) scan"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2425,
+        "end": 2441,
+        "text": "Uncontrolled HIV"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2183,
+        "end": 2220,
+        "text": "Myocardial infarction within 6 months"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

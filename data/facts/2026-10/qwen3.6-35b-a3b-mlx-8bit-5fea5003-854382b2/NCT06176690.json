@@ -1,0 +1,85 @@
+{
+  "nctId": "NCT06176690",
+  "mappings": [
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1285,
+        "end": 1357,
+        "text": "Received an investigational small molecule drug within the past 2 weeks."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1361,
+        "end": 1431,
+        "text": "Received anti-CD30 antibody-based therapy within the previous 4 weeks."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1515,
+        "end": 1537,
+        "text": "Pregnant or lactating."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1660,
+        "end": 1763,
+        "text": "Current use of systemic corticosteroids at a dose equivalent to or higher than 10 mg/day of prednisone."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Diagnosis and clinical course falling into one of the following categories: 1. Hodgkin lymphoma 2. CD30+ aggressive B-cell lymphoma 3. ALK-negative anaplastic T cell lymphoma or other peripheral T- cell lymphoma 4. ALK-positive anaplastic T cell lymphoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Diagnosis and clinical course falling into one of the following categories: 1. Hodgkin lymphoma 2. CD30+ aggressive B-cell lymphoma 3. ALK-negative anaplastic T cell lymphoma or other peripheral T- cell lymphoma 4. ALK-positive anaplastic T cell lymphoma",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

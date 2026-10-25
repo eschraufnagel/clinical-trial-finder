@@ -1,0 +1,166 @@
+{
+  "nctId": "NCT07382817",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 124,
+        "end": 250,
+        "text": "Relapsed or refractory disease after at least one line of systemic therapy or intolerant to standard therapy for their cancer."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2674,
+        "end": 2810,
+        "text": "Active central nervous system (CNS) lymphoma including patients with detectable cerebrospinal fluid malignant cells or brain metastases."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2811,
+        "end": 3052,
+        "text": "Patients with prior CNS lymphoma that has been effectively treated will be eligible if treatment was completed at least one year prior to enrolment and there is no evidence of disease on MRI with gadolinium contrast at the time of screening."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1268,
+        "end": 1491,
+        "text": "For non-cutaneous lymphomas, at least one measurable lesion as per Lugano 2014 classification. Subjects with primary cutaneous variants must have at least 1 measurable lesion that is evaluable using the Olsen 2021 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1220,
+        "end": 1264,
+        "text": "ECOG performance status of 0-1 (Appendix 1)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3622,
+        "end": 3805,
+        "text": "History of malignancy other than nonmelanoma skin cancer or carcinoma in situ (e.g. cervix, bladder, breast) unless disease free for at least 2 years and treated with curative intent."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4675,
+        "end": 4875,
+        "text": "Active autoimmune (e.g. Crohn's disease, rheumatoid arthritis, systemic lupus erythematosus) or inflammatory disease (including graft-versus-host disease) requiring systemic immunosuppressive therapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5586,
+        "end": 5754,
+        "text": "Women of child-bearing potential who are pregnant or breastfeeding because of the potentially dangerous effects of the conditioning chemotherapy on the fetus or infant."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Confirmed T/NK cell malignancies as per local histopathological assessment.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Confirmed T/NK cell malignancies as per local histopathological assessment.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Eligible histologies include: extranodal NK/TCL, hepatosplenic TCL, primary cutaneous CD8+ aggressive epidermotropic cytotoxic TCL, subcutaneous panniculitis-like TCL, monomorphic epitheliotropic intestinal TCL, enteropathy-associated TCL, primary cutaneous γδ TCL, peripheral TCL cytotoxic type, Epstein-Barr virus (EBV)+ nodal T/NK cell lymphoma, and other CD94+ T/NK cell malignancies not listed above.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eligible histologies include: extranodal NK/TCL, hepatosplenic TCL, primary cutaneous CD8+ aggressive epidermotropic cytotoxic TCL, subcutaneous panniculitis-like TCL, monomorphic epitheliotropic intestinal TCL, enteropathy-associated TCL, primary cutaneous γδ TCL, peripheral TCL cytotoxic type, Epstein-Barr virus (EBV)+ nodal T/NK cell lymphoma, and other CD94+ T/NK cell malignancies not listed above.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Subjects with aggressive NK cell leukemia and indolent T/NK cell malignancies such as TLGL or NK-LGL.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Subjects with aggressive NK cell leukemia and indolent T/NK cell malignancies such as TLGL or NK-LGL.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

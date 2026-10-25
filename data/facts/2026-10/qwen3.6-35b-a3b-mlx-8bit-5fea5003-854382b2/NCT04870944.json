@@ -1,0 +1,110 @@
+{
+  "nctId": "NCT04870944",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 932,
+        "end": 1093,
+        "text": "Patient's current disease state must be one for which there is no known curative therapy or therapy proven to prolong survival with an acceptable quality of life"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 816,
+        "end": 881,
+        "text": "Part A: Patients must have either measurable or evaluable disease"
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 884,
+        "end": 929,
+        "text": "Part B: Patients must have measurable disease"
+      },
+      "appliesTo": "Part B"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1096,
+        "end": 1214,
+        "text": "Patients must have a performance status corresponding to Easter Cooperative Oncology Group (ECOG) scores of 0, 1 or 2."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7761,
+        "end": 8011,
+        "text": "Pregnant or breast-feeding women will not be entered on this study due to risks of fetal and teratogenic adverse events as seen in animal/human studies, OR because there is yet no available information regarding human fetal or teratogenic toxicities."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10141,
+        "end": 10220,
+        "text": "Patients who have received a prior solid organ transplantation are not eligible"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients must have had histologic verification of malignancy at original diagnosis or relapse, except in patients with diffuse intrinsic brain stem tumors, or patients with pineal tumors and elevations of cerebrospinal fluid (CSF) or serum tumor markers, including alpha-fetoprotein or beta-human chorionic gonadotropin (HCG)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients must have had histologic verification of malignancy at original diagnosis or relapse, except in patients with diffuse intrinsic brain stem tumors, or patients with pineal tumors and elevations of cerebrospinal fluid (CSF) or serum tumor markers, including alpha-fetoprotein or beta-human chorionic gonadotropin (HCG)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "nctId": "NCT07213804",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 42,
+        "end": 160,
+        "text": "Have histologically confirmed high-grade serous or endometrioid ovarian, primary peritoneal, or fallopian tube cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 225,
+        "end": 314,
+        "text": "Have radiographic progression on or after most recent line of systemic anticancer therapy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 317,
+        "end": 393,
+        "text": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of 0-1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 396,
+        "end": 435,
+        "text": "Have measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1663,
+        "end": 1752,
+        "text": "Have received prior antibody-drug conjugate (ADC) with a topoisomerase inhibitor payload."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 601,
+        "end": 675,
+        "text": "Have previously received 1 to 3 prior lines of systemic cytotoxic therapy."
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1333,
+        "end": 1411,
+        "text": "Have previously received 1 to 2 prior lines of systemic cytotoxic chemotherapy"
+      },
+      "appliesTo": "Part B and C"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1571,
+        "end": 1618,
+        "text": "Have not previously received a PARPi treatment."
+      },
+      "appliesTo": "Part C"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1425,
+        "end": 1557,
+        "text": "Have previously received a PARPi, per local product label, with progression on, or within 6 months of completion of PARPi treatment."
+      },
+      "appliesTo": "Part B"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1125,
+        "end": 1330,
+        "text": "Have relapsed after first-line platinum-based chemotherapy and have platinum-sensitive disease defined as radiographic progression greater than (\\>)6 months of their last administration of platinum therapy"
+      },
+      "appliesTo": "Part B and C"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}
