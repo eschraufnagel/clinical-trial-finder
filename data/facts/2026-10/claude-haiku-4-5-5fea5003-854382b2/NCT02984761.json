@@ -1,0 +1,103 @@
+{
+  "nctId": "NCT02984761",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 75,
+        "end": 161,
+        "text": "Any patient with a preliminary diagnosis of stage I Non-Small Cell Lung Cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 604,
+        "end": 644,
+        "text": "Biopsy proven non-small cell lung cancer"
+      },
+      "appliesTo": "Inclusion Criteria for Randomization"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2415,
+        "end": 2719,
+        "text": "Prior history of invasive state I-III malignancy treated with surgery, radiation therapy, chemotherapy, immunotherapy, or targeted therapy in the past 2 years, excluding prostate cancer, low-risk papillary thyroid cancer (less than or equal to 1 cm), follicular lymphoma, or chronic lymphocytic leukemia."
+      },
+      "appliesTo": "Exclusion Criteria for Screening"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2878,
+        "end": 2936,
+        "text": "Ever diagnosed with stage IV metastatic cancer of any type"
+      },
+      "appliesTo": "Exclusion Criteria for Screening"
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2369,
+        "end": 2412,
+        "text": "Prior history of radiotherapy to the thorax"
+      },
+      "appliesTo": "Exclusion Criteria for Screening"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "mixed_small_cell isn't a fact for this trial's cancer type",
+      "quote": "Any patient with a preliminary diagnosis of stage I Non-Small Cell Lung Cancer (NSCLC)",
+      "raw": {
+        "factId": "mixed_small_cell",
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Any patient with a preliminary diagnosis of stage I Non-Small Cell Lung Cancer (NSCLC)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

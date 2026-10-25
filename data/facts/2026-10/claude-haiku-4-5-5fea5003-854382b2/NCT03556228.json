@@ -1,0 +1,85 @@
+{
+  "nctId": "NCT03556228",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1040,
+        "end": 1109,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status: 0 or 1."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2406,
+        "end": 2497,
+        "text": "Currently pregnant, nursing, or planning to become pregnant during the course of the study."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2357,
+        "end": 2403,
+        "text": "Known active infections including HIV disease."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3286,
+        "end": 3363,
+        "text": "Patient has had or is currently having other malignant tumors within 3 years."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4711,
+        "end": 4896,
+        "text": "Subjects who relapsed after prior treatment with PD-1(L1) inhibitors. Relapsed is defined as patients having best overall response of CR or PR after treatment with a PD-1(L1) inhibitor."
+      },
+      "appliesTo": "For combination therapy with Pembrolizumab only"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

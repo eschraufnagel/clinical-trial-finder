@@ -1,0 +1,172 @@
+{
+  "nctId": "NCT03486873",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 517,
+        "end": 595,
+        "text": "Has an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3324,
+        "end": 3407,
+        "text": "Has known active central nervous system metastases and/or carcinomatous meningitis."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3324,
+        "end": 3407,
+        "text": "Has known active central nervous system metastases and/or carcinomatous meningitis."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3786,
+        "end": 3882,
+        "text": "Has a history of (non-infectious) pneumonitis that required steroids or has current pneumonitis."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4169,
+        "end": 4237,
+        "text": "Has a known history of human immunodeficiency virus (HIV) infection."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4240,
+        "end": 4309,
+        "text": "Has a known history of or is positive for hepatitis B or hepatitis C."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5045,
+        "end": 5097,
+        "text": "Has had an allogeneic tissue/solid organ transplant."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3410,
+        "end": 3584,
+        "text": "Has an active autoimmune disease that has required systemic treatment in the past 2 years (i.e., use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2670,
+        "end": 2925,
+        "text": "Has a diagnosis of immunodeficiency or is receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent) or any other form of immunosuppressive therapy within 7 days prior to the Cycle 1 Day 1 of Second Course Phase."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2928,
+        "end": 3011,
+        "text": "Has a known additional malignancy that is progressing or requires active treatment."
+      },
+      "appliesTo": "participants who enter Second Course Phase"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of ild",
+      "quote": "Non-small cell lung cancer (NSCLC) participants only: Has interstitial lung disease.",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "never",
+          "past",
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Non-small cell lung cancer (NSCLC) participants only: Has interstitial lung disease.",
+        "appliesTo": "NSCLC participants who enter Second Course Phase"
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

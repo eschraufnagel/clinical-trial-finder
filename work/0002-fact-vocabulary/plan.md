@@ -408,3 +408,6 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - Beside Haiku on the same prompt (result 05, all 30 trials): wrong hints 26.1%, recall 72.7%, 1.4 s per 1,000 characters, $0.20.
   - **Stopped for Gate 3.**
 - **Gate 3, answered (owner, 2026-10): run all 1,129 on Haiku 4.5** with `--spend --max-calls 1200 --max-usd 10`, and commit the run files (about 6 MB). It goes in the same run directory as the dev and held-out Haiku mappings, which are skipped as already written.
+- **Gate 3, changed (owner, 2026-10): the local model, not Haiku.** The Haiku long run started and was stopped by the owner after 28 new trials (67 of 1,129 in its directory) and about $0.20. The stop skipped the script's spend line, so an estimated line, marked `"estimated": true`, is in `evals/results/spend.jsonl`. The 67 stay committed as a partial run with no manifest.
+  - Why local: with mappings only giving hints, Haiku's lower wrong-hint rate matters less. Recall is about the same (71.8% local, 72.7% Haiku). And the local model is the project's default.
+  - The local long run uses the local run directory, which already holds the dev and held-out trials, so the whole set comes from one model and one prompt.

@@ -1,0 +1,110 @@
+{
+  "nctId": "NCT03706027",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 167,
+        "end": 397,
+        "text": "all primary non-small cell lung cancers otherwise of following types are eligible: squamous cell carcinoma, adenocarcinoma, large cell carcinoma, bronchioalveolar cell carcinoma, or non-small cell carcinoma not otherwise specified"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2730,
+        "end": 2806,
+        "text": "Evidence of regional or distant metastases after appropriate staging studies"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1196,
+        "end": 1255,
+        "text": "Zubrod performance status 0-2 within 4 weeks of study entry"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2839,
+        "end": 2962,
+        "text": "Those with prior malignancy in the past 2 years other than non-melanomatous skin cancer or in situ cancer or thyroid cancer"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2966,
+        "end": 3007,
+        "text": "Previous lung or mediastinal radiotherapy"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3285,
+        "end": 3378,
+        "text": "Pregnant or lactating women, as treatment involves unforeseeable risks to the embryo or fetus"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Eligible patients must have appropriate staging studies identifying them as specific subsets of AJCC stage I or II based on only one of the following combinations of TNM staging: T1, N0, M0; T2 (≤ 5 cm), N0, M0",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "locally_advanced",
+          "metastatic_or_recurrent"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eligible patients must have appropriate staging studies identifying them as specific subsets of AJCC stage I or II based on only one of the following combinations of TNM staging: T1, N0, M0; T2 (≤ 5 cm), N0, M0",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

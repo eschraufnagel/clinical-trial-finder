@@ -1,0 +1,256 @@
+{
+  "nctId": "NCT03526835",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 188,
+        "text": "Histologically or cytologically confirmed solid tumors with evidence of metastatic or locally advanced disease not amenable to standard therapy with curative intent."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 326,
+        "end": 400,
+        "text": "Measurable disease as defined by RECIST version 1.1 by radiologic methods."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 403,
+        "end": 474,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3896,
+        "end": 4075,
+        "text": "Central nervous system metastases that are untreated or symptomatic, or require radiation, surgery, or continued steroid therapy to control symptoms within 14 days of study entry."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4078,
+        "end": 4111,
+        "text": "Known leptomeningeal involvement."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4520,
+        "end": 4602,
+        "text": "Requirement for immunosuppressive medication (e.g. methotrexate, cyclophosphamide)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5898,
+        "end": 6064,
+        "text": "Patients with a history of interstitial lung disease (e.g., pneumonitis or pulmonary fibrosis) or evidence of ILD on baseline chest computerized tomography (CT) scan."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5575,
+        "end": 5801,
+        "text": "History of prior malignancies with the exception of excised cervical intraepithelial neoplasia or nonmelanoma skin cancer, or curatively treated cancer deemed at low risk for recurrence with no evidence of disease for 3 years."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1735,
+        "end": 1929,
+        "text": "No oncogenic missense mutations in KRAS, NRAS, BRAF, or EGFR ectodomain, and no HER2 (ERBB2) or KRAS amplification, as detected in plasma by ctDNA NGS central testing performed during screening."
+      },
+      "appliesTo": "3L+ mCRC (cohort open to enrolment)"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "overexpression"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1735,
+        "end": 1929,
+        "text": "No oncogenic missense mutations in KRAS, NRAS, BRAF, or EGFR ectodomain, and no HER2 (ERBB2) or KRAS amplification, as detected in plasma by ctDNA NGS central testing performed during screening."
+      },
+      "appliesTo": "3L+ mCRC (cohort open to enrolment)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 870,
+        "end": 954,
+        "text": "patients who have progressed on or after, or are intolerant to, anti-PD-(L)1 therapy"
+      },
+      "appliesTo": "SECOND-/THIRD-LINE HNSCC PATIENTS"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 888,
+        "end": 1026,
+        "text": "progressed on or after, or are intolerant to, anti-PD-(L)1 therapy and platinum therapy as monotherapy or in combination with other agents"
+      },
+      "appliesTo": "SECOND-/THIRD-LINE HNSCC PATIENTS"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1031,
+        "end": 1070,
+        "text": "no previous exposure to EGFR inhibitors"
+      },
+      "appliesTo": "SECOND-/THIRD-LINE HNSCC PATIENTS"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2321,
+        "end": 2419,
+        "text": "tumors expressing programmed cell death protein ligand 1 (PD-L1), combined positive score (CPS) ≥1"
+      },
+      "appliesTo": "FIRST-LINE HNSCC (cohort closed to enrolment)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2554,
+        "end": 2656,
+        "text": "patients should not have previous systemic therapy administered in the recurrent or metastatic setting"
+      },
+      "appliesTo": "FIRST-LINE HNSCC (cohort closed to enrolment)"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2907,
+        "end": 2984,
+        "text": "Previous treatments with anti PD-(L)1 or anti-EGFR therapies are not allowed."
+      },
+      "appliesTo": "FIRST-LINE HNSCC (cohort closed to enrolment)"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3371,
+        "end": 3421,
+        "text": "Patients must be naive to prior anti-EGFR therapy."
+      },
+      "appliesTo": "mCRC (cohorts open to enrolment)"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active hepatitis B infection (hepatitis B surface antigen [HBsAg] positive) without receiving antiviral treatment. Positive test for hepatitis C ribonucleic acid (HCV) RNA).",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active hepatitis B infection (hepatitis B surface antigen [HBsAg] positive) without receiving antiviral treatment. Positive test for hepatitis C ribonucleic acid (HCV) RNA).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

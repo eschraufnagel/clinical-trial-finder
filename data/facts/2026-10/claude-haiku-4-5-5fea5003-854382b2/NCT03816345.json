@@ -1,0 +1,164 @@
+{
+  "nctId": "NCT03816345",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2049,
+        "end": 2138,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2 (Karnofsky \\>= 60)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4502,
+        "end": 4533,
+        "text": "Women must not be breastfeeding"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16433,
+        "end": 16486,
+        "text": "Patients with prior allogeneic hematologic transplant"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 7524,
+        "end": 7566,
+        "text": "Prednisone up to 10 mg/day will be allowed"
+      },
+      "appliesTo": "RA-SPECIFIC"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 14860,
+        "end": 14959,
+        "text": "If on treatment, the patient may only be on hydroxychloroquine and prednisone ≤ 10 mg or equivalent"
+      },
+      "appliesTo": "SJS-SPECIFIC"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 13491,
+        "end": 13671,
+        "text": "Patients can be in remission (with no glucocorticoids or immunosuppressive medications) or have low-moderate activity, which is defined as being on prednisone ≤ 10 mg or equivalent"
+      },
+      "appliesTo": "OTHER AUTOIMMUNE DISEASES- NS-SPECIFIC"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 15542,
+        "end": 15656,
+        "text": "For PsA, no change in corticosteroid therapy for at least 1 month prior to baseline and dose must be 10 mg or less"
+      },
+      "appliesTo": "PSO/PSA-SPECIFIC"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate central nervous system (CNS) specific treatment is not required and is unlikely to be required for at least 4 weeks",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate central nervous system (CNS) specific treatment is not required and is unlikely to be required for at least 4 weeks",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of prior_pd1",
+      "quote": "Patients with prior therapy with an anti-PD-1 or anti-PD-L1",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never",
+          "stopped_other",
+          "progressed"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with prior therapy with an anti-PD-1 or anti-PD-L1",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "HIV-infected patients on effective antiretroviral therapy with undetectable viral load within 6 months are eligible for this trial",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "inclusion",
+        "quote": "HIV-infected patients on effective antiretroviral therapy with undetectable viral load within 6 months are eligible for this trial",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "If evidence of chronic hepatitis B virus (HBV) infection, HBV viral load must be undetectable on suppressive therapy if indicated; If history of hepatitis C virus (HCV) infection, must be treated with undetectable HCV viral load",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "If evidence of chronic hepatitis B virus (HBV) infection, HBV viral load must be undetectable on suppressive therapy if indicated; If history of hepatitis C virus (HCV) infection, must be treated with undetectable HCV viral load",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}
