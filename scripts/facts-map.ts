@@ -147,6 +147,11 @@ async function main(): Promise<void> {
     return;
   }
   const limitArg = args.includes("--limit") ? Number(args[args.indexOf("--limit") + 1]) : undefined;
+  if (limitArg !== undefined && !(Number.isInteger(limitArg) && limitArg >= 0)) {
+    console.error("--limit must be a whole number, 0 or more.");
+    process.exitCode = 1;
+    return;
+  }
 
   const { manifest: snapshot, trials: all } = loadSnapshot();
   const vocabulary = loadFactVocabulary();

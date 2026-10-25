@@ -66,7 +66,14 @@ function main(): void {
     process.exitCode = 1;
     return;
   }
-  const { request } = parseArgs(args);
+  let request: ReturnType<typeof parseArgs>["request"];
+  try {
+    ({ request } = parseArgs(args));
+  } catch (error) {
+    console.error(error instanceof Error ? error.message : String(error));
+    process.exitCode = 1;
+    return;
+  }
   const { manifest, trials } = loadSnapshot();
   const cancer = loadVocabulary(request.cancerType);
   const search = searchTrials(trials, manifest, cancer, loadZipPoints(), request);

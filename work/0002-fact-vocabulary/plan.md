@@ -262,6 +262,7 @@ Each step is one commit, through `npm run check && git commit`. No test mocks a 
 - `tests/scripts/facts-candidates.test.ts`, `facts-map.test.ts`, `facts-cli.test.ts`, `model-flags.test.ts`
 - `docs/facts.md`, `work/0002-fact-vocabulary/plan.md`, `gate-1-labels.md`, `gate-1-relabel.txt`, `gate-2-finding.md`
 - `data/facts/trusted.json` (added at Gate 2, removed at step 12), `scripts/lib/model-flags.ts`
+- Added in the re-plan: `scripts/facts-show.ts`, `facts-try.ts`, `tests/facts/run-sample.test.ts`, `tests/scripts/facts-cli.test.ts`, `evals/cases/facts/profiles/example.json`, `data/facts/2026-10/latest`
 
 **Modified:**
 - `tests/boundary.test.ts`, `package.json`
@@ -429,3 +430,10 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
     - The questions that would flag the most trials: measurable disease (120 trials), another cancer (78), pneumonitis or ILD (75), pregnancy (73), leptomeningeal disease (66), HIV (62), autoimmune (59), hepatitis (51).
   - **Pierre 57501, 100 miles:** 2 trials, both mapped; 1 with a hint. Measurable disease would flag both.
 - **Step 16.** `docs/facts.md`, `CLAUDE.md` (layout, commands, boundary sentences, and a constraint that no rule a model reads removes a trial), `README.md` (`facts:try`, with no numbers) and `work/ROADMAP.md` (0002 done; 0003 chooses questions by how many trials an answer would flag).
+- **Step 17, review passes** against `git diff main`.
+  - **Plan compliance.** Every step 1–17 is done or recorded as replaced, and every divergence is in these Records. `run-sample.test.ts` and the `latest` pointer were missing from "Files that change" (Nit, added). The "not touched" paths have no diff.
+  - **Correctness.** Two Nits, fixed: `facts:map --limit` with a missing or bad number mapped nothing and quietly rewrote the manifest, and now refuses; `facts:try` printed a stack trace for a missing search flag, and now prints the search's own message. A third is left: the validator's per-answer `verdicts` path, from revision 2, isn't used by the frozen prompt. It's kept because it's tested and recorded.
+  - **Scope and data.** No PHI: the profile and the test trials are made up. No key anywhere in the branch history. `.env.example` is unchanged from `main`. A key the owner had put there was restored away before any commit. Network only through `src/models/`. Every hosted call is in the spend ledger, one line marked as an estimate.
+  - **Eval integrity.** Labels were written before any prompt ran on them, and changed only at Gate 1, recorded. The held-out set was scored by two models with the same frozen prompt: Haiku at Gate 2, then the local model at step 13, as a model comparison for Gate 3, not tuning. Both bars were missed and are reported as missed. The trust list was chosen on dev and failed on held-out, and both are reported. Tests changed with the vocabulary (`facts-labels`) and the design (`status`), each recorded. Every result records model, quantization, temperature and seed.
+  - **Documentation.** `docs/facts.md`'s numbers match results 01–06, the manifest and the ledger. The README states the design and reports no findings.
+  - `npm run check` passes; `facts:eval -- --check` and `search:eval -- --check` match.
