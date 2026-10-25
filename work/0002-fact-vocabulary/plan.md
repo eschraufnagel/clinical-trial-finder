@@ -428,3 +428,4 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
     - Top hint: NCT02984761, a stage I surgery-or-radiotherapy trial, hinted on extent four times with its own words.
     - The questions that would flag the most trials: measurable disease (120 trials), another cancer (78), pneumonitis or ILD (75), pregnancy (73), leptomeningeal disease (66), HIV (62), autoimmune (59), hepatitis (51).
   - **Pierre 57501, 100 miles:** 2 trials, both mapped; 1 with a hint. Measurable disease would flag both.
+- **Step 16.** `docs/facts.md`, `CLAUDE.md` (layout, commands, boundary sentences, and a constraint that no rule a model reads removes a trial), `README.md` (`facts:try`, with no numbers) and `work/ROADMAP.md` (0002 done; 0003 chooses questions by how many trials an answer would flag).
