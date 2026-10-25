@@ -407,3 +407,4 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - Run directories are about 5.5 KB a trial, so about 6 MB for 1,129.
   - Beside Haiku on the same prompt (result 05, all 30 trials): wrong hints 26.1%, recall 72.7%, 1.4 s per 1,000 characters, $0.20.
   - **Stopped for Gate 3.**
+- **Gate 3, answered (owner, 2026-10): run all 1,129 on Haiku 4.5** with `--spend --max-calls 1200 --max-usd 10`, and commit the run files (about 6 MB). It goes in the same run directory as the dev and held-out Haiku mappings, which are skipped as already written.
