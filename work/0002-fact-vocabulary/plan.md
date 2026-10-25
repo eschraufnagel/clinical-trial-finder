@@ -418,3 +418,13 @@ Written as the work goes: topic counts, vocabulary adjustments, convention quest
   - **The 18 failures:** 17 replies put the whole answer in `reasoning_content`, the model's thinking channel, and left `content` empty. One reply wasn't a JSON object. Reading `reasoning_content` would mean changing the inherited oMLX adapter, which this slice doesn't touch. A trial with no mappings has no hints and is never dropped, so the 18 stay unmapped and named in `failures.json`.
   - **Two changes from the plan:** the manifest is written whenever a candidates run ends without hitting its budget, counting failures as spec §3.4 says, rather than only when nothing failed; and it has no `seconds` field, since a run done in several invocations has no single time. `--limit 0` rewrites the manifest from the files.
   - **Checks:** `tests/facts/run-sample.test.ts` checks 20 files by hash against the manifest and vocabulary. A one-off script checked all 9,625 quotes against the snapshot text: 0 mismatched.
+- **Step 15.** `facts:show` and `facts:try` as re-planned, with formatting tested in `tests/scripts/facts-cli.test.ts`.
+  - **Two choices made while writing them:**
+    - whole-trial hints rank the "most hints" list, with part-of-trial hints counted separately, because the model still maps rules inside other cancers' cohorts (with a scope) despite the prompt;
+    - `dependsOn` lists the facts the person hasn't answered.
+  - **The example profile:** stage IV adenocarcinoma, no brain metastases, ECOG 1, progressed on a PD-1 inhibitor and on platinum, one line for advanced disease. EGFR, ALK and the rest are unknown.
+  - **Chicago 60611, 50 miles:** 188 trials; 181 mapped, 7 not (among the 18 failures).
+    - 59 have a whole-trial hint, 12 a hint only for part of the trial, 110 none. All 188 stay.
+    - Top hint: NCT02984761, a stage I surgery-or-radiotherapy trial, hinted on extent four times with its own words.
+    - The questions that would flag the most trials: measurable disease (120 trials), another cancer (78), pneumonitis or ILD (75), pregnancy (73), leptomeningeal disease (66), HIV (62), autoimmune (59), hepatitis (51).
+  - **Pierre 57501, 100 miles:** 2 trials, both mapped; 1 with a hint. Measurable disease would flag both.
