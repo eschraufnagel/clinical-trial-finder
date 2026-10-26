@@ -1,0 +1,81 @@
+{
+  "nctId": "NCT06603844",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 46,
+        "end": 96,
+        "text": "select locally advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 229,
+        "end": 284,
+        "text": "Measurable disease on imaging as assessed by RECIST 1.1"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 107,
+        "end": 152,
+        "text": "progressed after at least one line of therapy"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 486,
+        "end": 591,
+        "text": "History of solid tumor malignancies other than the disease under study within 3 years of study enrollment"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 848,
+        "end": 910,
+        "text": "Interstitial lung disease within 6 months of study enrollment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

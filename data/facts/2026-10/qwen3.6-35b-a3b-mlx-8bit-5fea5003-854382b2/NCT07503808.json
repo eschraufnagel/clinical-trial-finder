@@ -1,0 +1,216 @@
+{
+  "nctId": "NCT07503808",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 117,
+        "end": 180,
+        "text": "Participants with advanced recurrent or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 237,
+        "end": 410,
+        "text": "NSCLC, ESCC, endometrial cancer, HGSOC, HNSCC, TNBC (estrogen receptor, progesterone receptor, and human epidermal growth factor receptor 2 \\[HER2\\] negative), CRC, and CRPC"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 592,
+        "end": 610,
+        "text": "Measurable disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 614,
+        "end": 693,
+        "text": "Have Eastern Cooperative Oncology Group performance status (ECOG PS) of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 826,
+        "end": 889,
+        "text": "Known symptomatic brain metastases or leptomeningeal metastasis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 826,
+        "end": 889,
+        "text": "Known symptomatic brain metastases or leptomeningeal metastasis"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 926,
+        "end": 988,
+        "text": "any other malignancies within 2 years prior to the first dose."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1040,
+        "end": 1162,
+        "text": "clinically significant cardiac abnormalities and/or cerebrovascular disease (stroke) within 6 months before the first dose"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1199,
+        "end": 1494,
+        "text": "Have history of interstitial pneumonitis, current noninfectious pneumonitis requiring steroid therapy; known or suspected interstitial pneumonitis as seen on screening imaging; other moderate to severe lung diseases seriously affecting respiratory function within 3 months before the first dose."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1717,
+        "end": 1820,
+        "text": "Have history of immunodeficiency, with a positive human immunodeficiency virus (HIV) test at screening."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1824,
+        "end": 1876,
+        "text": "Participants with known or suspected viral hepatitis"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2525,
+        "end": 2595,
+        "text": "Have prior treatment with B7-H3 or PTK7 antibody-drug conjugate (ADC)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2193,
+        "end": 2292,
+        "text": "immunotherapy or biologic targeted antitumor treatments within 3 weeks before the first dose of IMP"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2129,
+        "end": 2191,
+        "text": "Have received chemotherapy within 3 weeks of first dose of IMP"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2749,
+        "end": 2811,
+        "text": "Have received radiotherapy within 2 weeks prior to study entry"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3065,
+        "end": 3208,
+        "text": "Female participants who are pregnant, lactating, or planning to become pregnant during the study period to 7 months after the last dose of IMP."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

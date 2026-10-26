@@ -1,0 +1,227 @@
+{
+  "nctId": "NCT07751042",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 408,
+        "end": 451,
+        "text": "advanced cutaneous melanoma or PD-L1+ NSCLC"
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 502,
+        "end": 545,
+        "text": "locally advanced, or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 552,
+        "end": 607,
+        "text": "At least one measurable lesion per RECIST v1.1 criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 722,
+        "end": 755,
+        "text": "ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 439,
+        "end": 451,
+        "text": "PD-L1+ NSCLC"
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2088,
+        "end": 2195,
+        "text": "Patients with known activating EGFR, STK11 or KEAP1 mutations as well as ALK/ROS1 fusions, are not eligible"
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2088,
+        "end": 2195,
+        "text": "Patients with known activating EGFR, STK11 or KEAP1 mutations as well as ALK/ROS1 fusions, are not eligible"
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2088,
+        "end": 2195,
+        "text": "Patients with known activating EGFR, STK11 or KEAP1 mutations as well as ALK/ROS1 fusions, are not eligible"
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3591,
+        "end": 3695,
+        "text": "History of clinically significant autoimmune disease that has required intervention in the last 6 months"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4998,
+        "end": 5073,
+        "text": "Known HIV infection, active hepatitis B infection, or hepatitis C infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4998,
+        "end": 5073,
+        "text": "Known HIV infection, active hepatitis B infection, or hepatitis C infection"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4151,
+        "end": 4225,
+        "text": "History of solid organ transplant and taking immunosuppressive medications"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7483,
+        "end": 7627,
+        "text": "Currently pregnant (confirmed with a positive pregnancy test), breast-feeding or planning to become pregnant within 6 months following treatment"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7235,
+        "end": 7336,
+        "text": "History of interstitial lung disease or active, non-infectious pneumonitis (combination cohorts only)"
+      },
+      "appliesTo": "combination cohorts"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Untreated CNS tumor, epidural tumor or metastasis, or brain metastasis. Patients with any primary CNS malignancy including glioma and current, active, or progressing CNS malignancy, including carcinomatosis meningitis, are excluded. Patients with treated brain metastases are eligible if there is no evidence of progression for at least 4 weeks after CNS-directed treatment",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "Untreated CNS tumor, epidural tumor or metastasis, or brain metastasis. Patients with any primary CNS malignancy including glioma and current, active, or progressing CNS malignancy, including carcinomatosis meningitis, are excluded. Patients with treated brain metastases are eligible if there is no evidence of progression for at least 4 weeks after CNS-directed treatment",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Medical history of an arterial thrombotic event, stroke, or transient ischemic attack within the past 6 months. Medical history of symptomatic congestive heart failure (New York Heart Association classes II-IV) or a cardiac arrhythmia that required treatment within the past 6 months. Medical history of myocardial infarction or unstable angina within 6 months before C1D1",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Medical history of an arterial thrombotic event, stroke, or transient ischemic attack within the past 6 months. Medical history of symptomatic congestive heart failure (New York Heart Association classes II-IV) or a cardiac arrhythmia that required treatment within the past 6 months. Medical history of myocardial infarction or unstable angina within 6 months before C1D1",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

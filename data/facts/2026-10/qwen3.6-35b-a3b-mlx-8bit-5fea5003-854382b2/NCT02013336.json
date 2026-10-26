@@ -1,0 +1,72 @@
+{
+  "nctId": "NCT02013336",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 131,
+        "end": 212,
+        "text": "Disease progression after prior therapy in locally advanced or metastatic setting"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 215,
+        "end": 327,
+        "text": "Measurable or evaluable disease based on the Response Evaluation Criteria in Solid Tumors (RECIST v1.1) criteria"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1089,
+        "end": 1210,
+        "text": "Pregnant or breast feeding; females of child-bearing potential must test negative for pregnancy at the time of enrollment"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically-confirmed Ewing sarcoma, rhabdomyosarcoma, neuroblastoma, or osteosarcoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically-confirmed Ewing sarcoma, rhabdomyosarcoma, neuroblastoma, or osteosarcoma",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "nctId": "NCT06943755",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 188,
+        "text": "Histologically confirmed, locally advanced/unresectable or metastatic, well-differentiated Grade 1, 2, or 3 NETs of pancreatic origin or extra-pancreatic origin."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 502,
+        "end": 579,
+        "text": "Measurable disease according to RECIST 1.1 as determined by the Investigator."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed, locally advanced/unresectable or metastatic, well-differentiated Grade 1, 2, or 3 NETs of pancreatic origin or extra-pancreatic origin.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed, locally advanced/unresectable or metastatic, well-differentiated Grade 1, 2, or 3 NETs of pancreatic origin or extra-pancreatic origin.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed neuroendocrine carcinomas (including small cell lung cancer), medullary thyroid cancer, pheochromocytoma, paraganglioma, Merkel cell carcinoma, and mixed neuroendocrine non-neuroendocrine neoplasm (MiNEN).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Histologically confirmed neuroendocrine carcinomas (including small cell lung cancer), medullary thyroid cancer, pheochromocytoma, paraganglioma, Merkel cell carcinoma, and mixed neuroendocrine non-neuroendocrine neoplasm (MiNEN).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

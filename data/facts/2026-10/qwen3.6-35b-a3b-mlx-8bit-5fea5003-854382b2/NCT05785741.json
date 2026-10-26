@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT05785741",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3054,
+        "end": 3241,
+        "text": "Pathologically documented advanced/unresectable, or metastatic solid tumors that is refractory to or intolerable with standard treatment, or for which standard treatment is not available."
+      },
+      "appliesTo": "Phase 1 monotherapy"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 483,
+        "end": 634,
+        "text": "At least one measurable lesion as assessed by the investigator according to response evaluation criteria in solid tumors (RECIST) version 1.1 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 678,
+        "end": 758,
+        "text": "Has an Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0-1."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3313,
+        "end": 3590,
+        "text": "Prior treatment with antibody drug conjugate with topoisomerase I inhibitor (except topoisomerase I inhibitor HER2 ADC for backfilled subjects in Combo A of Phase 1 and subjects in Cohort 2e of Phase 2a, and not applicable for subjects enrolled for DLT observation in Phase 1)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3768,
+        "end": 3938,
+        "text": "Has a medical history of myocardial infarction or unstable angina or cerebrovascular accident including transient ischemic attack (TIA) within 6 months before first dose."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5037,
+        "end": 5316,
+        "text": "Has a history of (non-infectious) ILD/pneumonitis and/or radiation pneumonitis that required glucocorticoids, or has current ILD/pneumonitis and/or radiation pneumonitis, or where suspected ILD/pneumonitis and/or radiation pneumonitis cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5949,
+        "end": 5999,
+        "text": "Know human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6110,
+        "end": 6175,
+        "text": "Subjects have active viral (any etiology) hepatitis are excluded."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6180,
+        "end": 6385,
+        "text": "Is a lactating mother (women who are willing to temporarily interrupt breastfeeding will also be excluded), or pregnant as confirmed by serum pregnancy tests performed within 7 days prior to Cycle 1 Day 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6390,
+        "end": 6879,
+        "text": "Has clinically active central nervous system (CNS) metastases, defined as untreated, or symptomatic, or requiring therapy with glucocorticoids or anticonvulsants to control associated symptoms. However, subjects with asymptomatic CNS metastases who are radiologically and neurologically stable for at least 4 weeks following CNS-directed radiotherapy or surgery, and who are on stable or decreasing doses of glucocorticoids equivalent to ≤10 mg/day prednisone are eligible for study entry."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7058,
+        "end": 7422,
+        "text": "Has multiple primary malignancies within 5 years before enrollment, except adequately resected non-melanoma skin cancer (e.g., resected basal or squamous cell skin cancer), curatively treated in-situ disease (e.g., carcinoma in situ of the cervix or breast), other solid tumors curatively treated (e.g., \\< T1 urothelial carcinoma), or contralateral breast cancer."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "nctId": "NCT05701527",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 204,
+        "end": 290,
+        "text": "Demonstrated progression of a locally advanced unresectable or metastatic solid tumour"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 419,
+        "end": 528,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) ≤ 2 for Part A and 0-1 for Parts B, C and D"
+      },
+      "appliesTo": "Part A"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 419,
+        "end": 528,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) ≤ 2 for Part A and 0-1 for Parts B, C and D"
+      },
+      "appliesTo": "Parts B, C and D"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1168,
+        "end": 1206,
+        "text": "Has clinically active brain metastases"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2491,
+        "end": 2779,
+        "text": "Patients with a history of pneumonitis/interstitial lung disease, patients who received live vaccines within 30 days of enrolment, and patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts"
+      },
+      "appliesTo": "pembrolizumab-containing cohorts"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1878,
+        "end": 2483,
+        "text": "Patients who, according to the currently approved Keytruda (pembrolizumab) US package insert (USPI)/summary of product characteristics, had an immune-related adverse event (irAE) for which permanent discontinuation is mandated (any Grade 4 event and Grade 3 events of pneumonitis, hepatitis, and nephritis). Also, patients without formal contraindication due to previous irAE with any immune checkpoint inhibitor (approved or investigational) are not eligible if the AE has not resolved to grade 1 or better and/or still requires steroids (\\>10 mg of prednisone equivalent per day) for ongoing management."
+      },
+      "appliesTo": "pembrolizumab-containing cohorts"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+        "appliesTo": "pembrolizumab-containing cohorts"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients with a history of pneumonitis/interstitial lung disease, patients who received live vaccines within 30 days of enrolment, and patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with a history of pneumonitis/interstitial lung disease, patients who received live vaccines within 30 days of enrolment, and patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+        "appliesTo": "pembrolizumab-containing cohorts"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients who, according to the currently approved Keytruda (pembrolizumab) US package insert (USPI)/summary of product characteristics, had an immune-related adverse event (irAE) for which permanent discontinuation is mandated (any Grade 4 event and Grade 3 events of pneumonitis, hepatitis, and nephritis). Also, patients without formal contraindication due to previous irAE with any immune checkpoint inhibitor (approved or investigational) are not eligible if the AE has not resolved to grade 1 or better and/or still requires steroids (>10 mg of prednisone equivalent per day) for ongoing management.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who, according to the currently approved Keytruda (pembrolizumab) US package insert (USPI)/summary of product characteristics, had an immune-related adverse event (irAE) for which permanent discontinuation is mandated (any Grade 4 event and Grade 3 events of pneumonitis, hepatitis, and nephritis). Also, patients without formal contraindication due to previous irAE with any immune checkpoint inhibitor (approved or investigational) are not eligible if the AE has not resolved to grade 1 or better and/or still requires steroids (>10 mg of prednisone equivalent per day) for ongoing management.",
+        "appliesTo": "pembrolizumab-containing cohorts"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients with a history of pneumonitis/interstitial lung disease, patients who received live vaccines within 30 days of enrolment, and patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with a history of pneumonitis/interstitial lung disease, patients who received live vaccines within 30 days of enrolment, and patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+        "appliesTo": "pembrolizumab-containing cohorts"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients who, according to the currently approved Keytruda (pembrolizumab) US package insert (USPI)/summary of product characteristics, had an immune-related adverse event (irAE) for which permanent discontinuation is mandated (any Grade 4 event and Grade 3 events of pneumonitis, hepatitis, and nephritis). Also, patients without formal contraindication due to previous irAE with any immune checkpoint inhibitor (approved or investigational) are not eligible if the AE has not resolved to grade 1 or better and/or still requires steroids (>10 mg of prednisone equivalent per day) for ongoing management.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who, according to the currently approved Keytruda (pembrolizumab) US package insert (USPI)/summary of product characteristics, had an immune-related adverse event (irAE) for which permanent discontinuation is mandated (any Grade 4 event and Grade 3 events of pneumonitis, hepatitis, and nephritis). Also, patients without formal contraindication due to previous irAE with any immune checkpoint inhibitor (approved or investigational) are not eligible if the AE has not resolved to grade 1 or better and/or still requires steroids (>10 mg of prednisone equivalent per day) for ongoing management.",
+        "appliesTo": "pembrolizumab-containing cohorts"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients with a history of pneumonitis/interstitial lung disease, patients who received live vaccines within 30 days of enrolment, and patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with a history of pneumonitis/interstitial lung disease, patients who received live vaccines within 30 days of enrolment, and patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+        "appliesTo": "pembrolizumab-containing cohorts"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients who, according to the currently approved Keytruda (pembrolizumab) US package insert (USPI)/summary of product characteristics, had an immune-related adverse event (irAE) for which permanent discontinuation is mandated (any Grade 4 event and Grade 3 events of pneumonitis, hepatitis, and nephritis). Also, patients without formal contraindication due to previous irAE with any immune checkpoint inhibitor (approved or investigational) are not eligible if the AE has not resolved to grade 1 or better and/or still requires steroids (>10 mg of prednisone equivalent per day) for ongoing management.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who, according to the currently approved Keytruda (pembrolizumab) US package insert (USPI)/summary of product characteristics, had an immune-related adverse event (irAE) for which permanent discontinuation is mandated (any Grade 4 event and Grade 3 events of pneumonitis, hepatitis, and nephritis). Also, patients without formal contraindication due to previous irAE with any immune checkpoint inhibitor (approved or investigational) are not eligible if the AE has not resolved to grade 1 or better and/or still requires steroids (>10 mg of prednisone equivalent per day) for ongoing management.",
+        "appliesTo": "pembrolizumab-containing cohorts"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients with a history of pneumonitis/interstitial lung disease, patients who received live vaccines within 30 days of enrolment, and patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with a history of pneumonitis/interstitial lung disease, patients who received live vaccines within 30 days of enrolment, and patients who discontinued prior immune checkpoint inhibitors due to Grade 2 myocarditis are excluded from enrolment into pembrolizumab-containing cohorts",
+        "appliesTo": "pembrolizumab-containing cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients who, according to the currently approved Keytruda (pembrolizumab) US package insert (USPI)/summary of product criteria: ",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who, according to the currently approved Keytruda (pembrolizumab) US package insert (USPI)/summary of product criteria: ",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

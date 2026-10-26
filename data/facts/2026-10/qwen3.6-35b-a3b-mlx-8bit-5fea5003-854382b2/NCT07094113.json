@@ -1,0 +1,131 @@
+{
+  "nctId": "NCT07094113",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 109,
+        "end": 177,
+        "text": "Pathologically documented, locally-advanced or metastatic malignancy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 491,
+        "end": 562,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 566,
+        "end": 710,
+        "text": "Disease measurable as defined by Response Evaluation Criteria in Solid Tumors Version 1.1 (RECIST v1.1), as determined by the site investigator."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1002,
+        "end": 1076,
+        "text": "Untreated symptomatic central nervous system or leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1002,
+        "end": 1076,
+        "text": "Untreated symptomatic central nervous system or leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1129,
+        "end": 1181,
+        "text": "History of other malignancy within the past 5 years."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1602,
+        "end": 1636,
+        "text": "History of solid organ transplant."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1816,
+        "end": 1981,
+        "text": "Presence or history of any of the following viral infections: HIV, Hepatitis C, Hepatitis B, and active severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1816,
+        "end": 1981,
+        "text": "Presence or history of any of the following viral infections: HIV, Hepatitis C, Hepatitis B, and active severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

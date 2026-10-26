@@ -1,0 +1,104 @@
+{
+  "nctId": "NCT04410796",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 47,
+        "end": 98,
+        "text": "Biopsy proven metastatic non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 137,
+        "end": 240,
+        "text": "Somatic activating mutation in EGFR in pre-treatment tumor biopsy/ cytology from pleural fluid or cfDNA"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 562,
+        "end": 690,
+        "text": "Measurable (RECIST 1.1) indicator lesion not previously irradiated with measurable disease determined per treating investigator."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3271,
+        "end": 3335,
+        "text": "Any evidence of clinically significant interstitial lung disease"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6191,
+        "end": 6401,
+        "text": "Past medical history of interstitial lung disease, drug-induced interstitial lung disease, radiation pneumonitis which required steroid treatment, or any evidence of clinically active interstitial lung disease."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4199,
+        "end": 4290,
+        "text": "active infection including hepatitis B, hepatitis C and human immunodeficiency virus (HIV)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2939,
+        "end": 2966,
+        "text": "Pregnant or lactating women"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "nctId": "NCT05786924",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 137,
+        "end": 205,
+        "text": "recurrent locally advanced (unresectable) or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 211,
+        "end": 257,
+        "text": "documented RAS or RAF mutations or alterations"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 438,
+        "end": 451,
+        "text": "KRAS non-G12C"
+      },
+      "appliesTo": "Part 1A: Advanced/metastatic NSCLC with KRAS non-G12C, HRAS, NRAS, BRAF or CRAF (RAF1) mutations or alterations"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1101,
+        "end": 1124,
+        "text": "KRAS non-G12C mutations"
+      },
+      "appliesTo": "Part 2A: Advanced/metastatic NSCLC with KRAS non-G12C mutations and/or BRAF mutations"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1315,
+        "end": 1361,
+        "text": "KRAS non-G12C or BRAF mutations or alterations"
+      },
+      "appliesTo": "Part 2A3: Advanced/metastatic NSCLC with KRAS non-G12C or BRAF mutations or alterations and active CNS metastatic disease"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1441,
+        "end": 1459,
+        "text": "KRAS G12C mutation"
+      },
+      "appliesTo": "Part 2A4: Advanced/metastatic NSCLC with a KRAS G12C mutation"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1366,
+        "end": 1395,
+        "text": "active CNS metastatic disease"
+      },
+      "appliesTo": "Part 2A3: Advanced/metastatic NSCLC with KRAS non-G12C or BRAF mutations or alterations and active CNS metastatic disease"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 771,
+        "end": 796,
+        "text": "Colorectal adenocarcinoma"
+      },
+      "appliesTo": "Part 1D: Colorectal adenocarcinoma with KRAS, HRAS, NRAS, BRAF, and/or CRAF (RAF1) mutations or alterations"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1711,
+        "end": 1731,
+        "text": "BTC (adenocarcinoma)"
+      },
+      "appliesTo": "Part 2B3: Advanced/metastatic BTC (adenocarcinoma) with KRAS, HRAS, NRAS, BRAF, and/or CRAF (RAF1) mutations or alterations"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "KRAS non-G12C mutations",
+      "raw": {
+        "factId": "kras",
+        "rulesOut": [
+          "g12c"
+        ],
+        "polarity": "inclusion",
+        "quote": "KRAS non-G12C mutations",
+        "appliesTo": "Part 2A1: Advanced/metastatic NSCLC with KRAS non-G12C mutations"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

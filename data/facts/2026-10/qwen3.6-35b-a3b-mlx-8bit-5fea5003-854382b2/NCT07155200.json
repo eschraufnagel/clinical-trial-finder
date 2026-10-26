@@ -1,0 +1,122 @@
+{
+  "nctId": "NCT07155200",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 65,
+        "end": 165,
+        "text": "small cell lung cancer that has progressed on at least one line of prior platinum-based chemotherapy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 213,
+        "end": 267,
+        "text": "Presence of measurable disease per RECIST 1.1 criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 298,
+        "end": 325,
+        "text": "ECOG performance status ≤ 2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1986,
+        "end": 2081,
+        "text": "Patients with untreated symptomatic brain metastases or with clinically evident CNS hemorrhage."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3221,
+        "end": 3251,
+        "text": "Pregnant and/or breastfeeding."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3357,
+        "end": 3456,
+        "text": "HIV-infected if not on effective anti-retroviral therapy with undetectable viral load for 6 months."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2631,
+        "end": 2728,
+        "text": "Known clinically significant liver disease, including active viral, alcoholic, or other hepatitis"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed small cell lung cancer",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed small cell lung cancer",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

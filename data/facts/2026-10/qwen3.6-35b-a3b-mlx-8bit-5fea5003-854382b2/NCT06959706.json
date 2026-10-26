@@ -1,0 +1,118 @@
+{
+  "nctId": "NCT06959706",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 877,
+        "end": 925,
+        "text": "Non-small cell lung cancer, adenocarcinoma only."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 468,
+        "end": 519,
+        "text": "locally advanced or metastatic disease at Screening"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1954,
+        "end": 1989,
+        "text": "Known symptomatic brain metastases."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1146,
+        "end": 1249,
+        "text": "At least 1 measurable lesion per RECIST v1.1 except for participants with bone-only metastatic disease."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1391,
+        "end": 1449,
+        "text": "Eastern Cooperative Oncology Group Performance Status 0-1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1599,
+        "end": 1680,
+        "text": "Active second malignancy or history of another malignancy within the last 2 years"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2268,
+        "end": 2333,
+        "text": "Prior solid organ or bone marrow progenitor cell transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2651,
+        "end": 2697,
+        "text": "Pregnant or a breastfeeding postpartum female."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

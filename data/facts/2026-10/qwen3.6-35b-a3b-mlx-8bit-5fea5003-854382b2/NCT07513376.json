@@ -1,0 +1,166 @@
+{
+  "nctId": "NCT07513376",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1359,
+        "end": 1590,
+        "text": "Has diagnosis of any 1 of the following: small cell lung cancer (SCLC) or, for mixed tumors, presence of small cell elements, neuroendocrine tumor with large cell components, sarcomatoid carcinoma, or two synchronous primary NSCLCs"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 257,
+        "text": "Has a histological diagnosis of pathological Stage I (tumor ≤4 cm) non-small cell lung cancer (NSCLC) per American Joint Committee on Cancer (AJCC) 9th Edition"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 504,
+        "end": 698,
+        "text": "Has not received other prior treatment outside of definitive surgery (including but not limited to chemotherapy, immunotherapy, targeted therapy, or radiotherapy) for their current Stage I NSCLC"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 504,
+        "end": 698,
+        "text": "Has not received other prior treatment outside of definitive surgery (including but not limited to chemotherapy, immunotherapy, targeted therapy, or radiotherapy) for their current Stage I NSCLC"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 504,
+        "end": 698,
+        "text": "Has not received other prior treatment outside of definitive surgery (including but not limited to chemotherapy, immunotherapy, targeted therapy, or radiotherapy) for their current Stage I NSCLC"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2267,
+        "end": 2354,
+        "text": "Has active autoimmune disease that has required systemic treatment in the past 2 years."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2449,
+        "end": 2593,
+        "text": "Has history of (noninfectious) pneumonitis/interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2685,
+        "end": 2732,
+        "text": "Has history of stem cell/solid organ transplant"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1593,
+        "end": 2050,
+        "text": "Has any clinically significant cardiovascular disease within 12 months before randomization, including a history of coronary artery bypass grafting (CABG) or percutaneous coronary intervention (PCI), valvular heart disease requiring surgical intervention, New York Heart Association Class III-IV heart failure, unstable angina, myocardial infarction (MI), pulmonary hypertension, cardiovascular accident (CVA), or hemodynamically unstable cardiac arrhythmia"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2156,
+        "end": 2264,
+        "text": "Has known additional malignancy that is progressing or has required active treatment within the past 3 years"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 789,
+        "end": 907,
+        "text": "Human immunodeficiency virus (HIV)-infected participants must have well-controlled HIV on antiretroviral therapy (ART)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 910,
+        "end": 1134,
+        "text": "Participants who are hepatitis B surface antigen (HBsAg) positive are eligible if they have received hepatitis B virus (HBV) antiviral therapy for at least 4 weeks, and have undetectable HBV viral load prior to randomization"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

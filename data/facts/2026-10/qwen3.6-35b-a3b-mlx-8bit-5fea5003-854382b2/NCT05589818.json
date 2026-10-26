@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT05589818",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 63,
+        "end": 193,
+        "text": "with locally advanced NSCLC who are ineligible for definitive surgical resection or concurrent chemoradiation, or metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 273,
+        "end": 332,
+        "text": "Patients must not have received any PD-1 or PD-L1 inhibitor"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps0",
+        "ps1",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 335,
+        "end": 423,
+        "text": "ECOG performance status of 2 or 3 at the time of consent and on the first day of therapy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 834,
+        "end": 1103,
+        "text": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS directed therapy is not required and is unlikely to be required during the first cycle of therapy."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2826,
+        "end": 2902,
+        "text": "Patients with known leptomeningeal disease for which CNS therapy is required"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1106,
+        "end": 1237,
+        "text": "Patients with HIV on effective anti-retroviral therapy with an undetectable viral load within 6 months are eligible for this trial."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2361,
+        "end": 2492,
+        "text": "Autoimmune conditions requiring \\>10mg prednisone (or its equivalent) of daily therapy or other systemic immunosuppressive therapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2905,
+        "end": 2935,
+        "text": "Pregnant or lactating patients"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

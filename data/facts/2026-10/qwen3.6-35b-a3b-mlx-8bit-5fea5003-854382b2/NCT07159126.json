@@ -1,0 +1,92 @@
+{
+  "nctId": "NCT07159126",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 597,
+        "end": 697,
+        "text": "Has measurable disease based on local CT/MRI imaging as assessed by the investigator per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1199,
+        "end": 1451,
+        "text": "Has known symptomatic CNS metastases, leptomeningeal disease, or cord compression. Note: Asymptomatic or adequately treated CNS metastases are not exclusionary provided that, in the opinion of the investigator, the participant is neurologically stable."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1199,
+        "end": 1281,
+        "text": "Has known symptomatic CNS metastases, leptomeningeal disease, or cord compression."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1619,
+        "end": 1670,
+        "text": "Myocardial infarction within 6 months prior to SCR."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1842,
+        "end": 2002,
+        "text": "Any of the following within the past 6 months prior to enrollment: cerebrovascular accident, transient ischemic attack, or other arterial thromboembolic events."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2005,
+        "end": 2337,
+        "text": "Clinically severe pulmonary compromise (ie, requiring any supplemental oxygen) resulting from intercurrent pulmonary illnesses including, but not limited to, any underlying pulmonary disorder (ie, pulmonary emboli within 3 months of the trial enrollment, severe asthma, severe COPD, restrictive lung disease, pleural effusion, etc.)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

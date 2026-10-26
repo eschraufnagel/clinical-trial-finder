@@ -1,0 +1,481 @@
+{
+  "nctId": "NCT07602855",
+  "set": "heldout",
+  "criteriaTextSha": "fdf83f4171922c6c2b11eba8e72f563d52b48ecfd49e4aaccaa4bf70c04a5064",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Male or female participants at least 18 years of age (\u226518 years) at the time of signing the informed consent form (ICF).",
+      "start": 120,
+      "end": 240,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Participants with histologically confirmed advanced/metastatic solid tumors, irrespective of mutational status, as defined per cohort, as follows:",
+      "start": 243,
+      "end": 389,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Histologically or cytologically confirmed SCLC (prior pathological diagnosis of complex SCLC \\[such as mixed SCLC and NSCLC\\] or transformed SCLC \\[NSCLC to SCLC\\] is not allowed)",
+      "start": 402,
+      "end": 581,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "ES-SCLC \\[per Veterans Administration Lung Study Group (VALG) criteria\\] at study entry Squamous NSCLC or non-squamous NSCLC",
+      "start": 584,
+      "end": 708,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Histologically or cytologically confirmed Squamous or Non-squamous NSCLC.",
+      "start": 711,
+      "end": 784,
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": "Squamous NSCLC or non-squamous NSCLC"
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Metastatic NSCLC (Stage IV), according to American Joint Committee on Cancer (AJCC) 8th edition,",
+      "start": 787,
+      "end": 883,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable", "locally_advanced"],
+          "appliesTo": "Squamous NSCLC or non-squamous NSCLC"
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Has at least 1 target lesion per RECIST 1.1, as determined by the investigator.",
+      "start": 886,
+      "end": 965,
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Measurable lesions that have been previously irradiated and have been shown to be progressing following irradiation may be considered as TLs.",
+      "start": 966,
+      "end": 1107,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "Has an ECOG performance status of 0 or 1, with no deterioration in the 2 weeks before first dose.",
+      "start": 1110,
+      "end": 1207,
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Has a life expectancy of \u2265 3 months with ability to complete at least 4 cycles of study intervention.",
+      "start": 1210,
+      "end": 1311,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
+    },
+    {
+      "quote": "Has adequate organ function",
+      "start": 1314,
+      "end": 1341,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Is willing to use adequate contraception (contraceptive use by male and female participants should be consistent with local regulations regarding the methods of contraception for those participating in clinical studies).",
+      "start": 1344,
+      "end": 1564,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "For dose expansion only: Tumor tissue (archival tumor tissue or a fresh biopsy) is required for all participants at screening.",
+      "start": 1567,
+      "end": 1693,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Tissue from a newly obtained fresh biopsy is preferred.",
+      "start": 1694,
+      "end": 1749,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "If it is not feasible to obtain a fresh biopsy at screening, archival tumor tissue, (from the most recent biopsy (within 1 year), Formalin Fixation and Paraffin Embedding FFPE) block (preferred), or freshly cut slides is acceptable.",
+      "start": 1750,
+      "end": 1982,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "If archival tissue is unavailable and it is not medically feasible to obtain fresh tissue, the medical monitor should be informed and exemption to the tissue requirement may be granted on a case-by-case basis.",
+      "start": 1983,
+      "end": 2192,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Tumor tissue is necessary for retrospective detection of B7 homolog 3 protein (B7-H3) expression and other biomarker analysis",
+      "start": 2193,
+      "end": 2318,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Has ongoing adverse reaction(s) from prior therapy that has (have) not recovered to \u2264Grade 1 or to baseline status preceding prior therapy (excluding alopecia, hearing loss, vitiligo, endocrinopathy managed with replacement therapy, and Grade 1 neuropathy).",
+      "start": 2425,
+      "end": 2682,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
+    },
+    {
+      "quote": "Has had major surgical procedures or serious trauma within 4 weeks prior to first dose, or plans for major surgical procedures within 4 weeks after the first dose (as determined by the investigator), or minor local procedures (excluding central venous catheterization and port implantation) within 3 days prior to first dose.",
+      "start": 2684,
+      "end": 3009,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Has symptomatic Central Nervous System (CNS) metastases, CNS metastases with hemorrhagic features, CNS metastasis \u2265 1.5 cm, CNS radiation within 7 days prior to first dose, potential need for CNS radiation within the first cycle, or leptomeningeal disease.",
+      "start": 3013,
+      "end": 3269,
+      "mappings": [
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "brain metastasis conditions (symptoms, size, bleeding) not mapped"
+    },
+    {
+      "quote": "Patients must have stopped corticosteroids or be on physiologic corticosteroid replacement therapy (prednisone \u2264 10 mg daily or equivalent).",
+      "start": 3270,
+      "end": 3410,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 20"
+    },
+    {
+      "quote": "Has any of the following:",
+      "start": 3413,
+      "end": 3438,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "heading"
+    },
+    {
+      "quote": "QTc \\>450 msec or QTc \\>480 msec for participants with bundle branch block.",
+      "start": 3444,
+      "end": 3519,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Evidence of current clinically significant arrhythmias or ECG abnormalities (e.g., complete left bundle branch block, third-degree atrioventricular block, second-degree atrioventricular block, PR interval \\>250 msec).",
+      "start": 3524,
+      "end": 3741,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Risk factors of prolonged QTc or arrhythmia events, such as heart failure, refractory hypokalemia, congenital long QT syndrome, family history of long QT syndrome, or unexplained sudden death of any direct relative under 40 years old or any concomitant medications that prolong the QT interval.",
+      "start": 3746,
+      "end": 4040,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Left Ventricular Ejection Fraction (LVEF) \\<50%.",
+      "start": 4045,
+      "end": 4093,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Has severe, uncontrolled or active CV disorders",
+      "start": 4096,
+      "end": 4143,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment: cardiovascular disease"
+    },
+    {
+      "quote": "Serious or poorly controlled hypertension; adjustment of antihypertensive medications due to poor blood pressure control within 2 weeks prior to the first dose; recurrent systolic blood pressure \u2265150 mmHg or diastolic blood pressure \u2265100 mmHg during screening period.",
+      "start": 4146,
+      "end": 4413,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "History of bleeding tendencies or coagulopathy and/or clinically significant bleeding symptoms or risk within 4 weeks prior to first dose, including but not limited to:",
+      "start": 4416,
+      "end": 4584,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "bleeding"
+    },
+    {
+      "quote": "Hemoptysis (defined as coughing up \u2265 1 teaspoon of fresh blood or small blood clots)",
+      "start": 4590,
+      "end": 4674,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "bleeding"
+    },
+    {
+      "quote": "Transient hemoptysis associated with diagnostic bronchoscopy is allowed.",
+      "start": 4679,
+      "end": 4751,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "bleeding"
+    },
+    {
+      "quote": "Nasal bleeding/epistaxis (bloody nasal discharge is allowed)",
+      "start": 4756,
+      "end": 4816,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "bleeding"
+    },
+    {
+      "quote": "Current use of prophylactic or full-dose anticoagulants or anti-platelet agents for therapeutic purposes that is not stable prior to first dose is not allowed.",
+      "start": 4821,
+      "end": 4980,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "bleeding"
+    },
+    {
+      "quote": "Participants with a history of esophageal or gastric varicose vein, severe ulcer, unhealed wound, gastrointestinal perforation, abdominal fistula, gastrointestinal obstruction, intra-abdominal abscess, or acute gastrointestinal hemorrhage within 6 months prior to first dose.",
+      "start": 4983,
+      "end": 5258,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "gastrointestinal conditions"
+    },
+    {
+      "quote": "History of any grade arterial thromboembolic event, Grade 3 and above venous thromboembolic event, as specified in National Cancer Institute-Common Terminology Criteria for Adverse Events (NCI-CTCAE) 6.0, hypertensive crisis, or hypertensive encephalopathy, within 12 months prior to the first dose.",
+      "start": 5261,
+      "end": 5560,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "blood clots"
+    },
+    {
+      "quote": "Serious infections within 4 weeks prior to the first dose, including but not limited to infectious complications, bacteremia, severe pneumonia treated with IV antibiotics for \u2265 2 weeks; active infections with therapeutic IV antibiotics within 2 weeks prior to the first dose or oral antibiotics within 1 week prior to the first dose.",
+      "start": 5563,
+      "end": 5896,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "infection"
+    },
+    {
+      "quote": "Participants who are receiving or have received prophylactic antibiotics (e.g., prophylaxis against urinary infections) are allowed.",
+      "start": 5897,
+      "end": 6029,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 36"
+    },
+    {
+      "quote": "Any evidence of current Interstitial Lung Disease (ILD)/non-infectious pneumonitis OR a prior history of ILD/non-infectious pneumonitis requiring high-dose glucocorticoids OR suspected ILD/non-infectious pneumonitis that cannot be ruled out by imaging.",
+      "start": 6032,
+      "end": 6284,
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "steroid-requiring history not mapped"
+    },
+    {
+      "quote": "Examples of suspected ILD/pneumonitis by imaging include the presence of lung parenchymal fibrosis, such as combined pulmonary fibrosis and emphysema (CPFE) and any radiographic features consistent with interstitial lung abnormalities, including but not limited to, extensive ground glass opacities, reticular opacities, traction bronchiectasis, and honeycombing.",
+      "start": 6285,
+      "end": 6648,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "Participants with moderate to severe pulmonary disease or current clinically significant pulmonary compromise that, in the investigator's judgment, could jeopardize safety or study conduct.",
+      "start": 6651,
+      "end": 6840,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "lung conditions"
+    },
+    {
+      "quote": "Examples include severe/poorly controlled asthma or Chronic Obstructive Pulmonary Disease (COPD) (including acute exacerbation of COPD within 4 weeks before first dose), restrictive lung disease, significant pleural effusion (clinically significant pleural effusion on Study Day 1.",
+      "start": 6841,
+      "end": 7122,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "Baseline oxygen saturation \\< 90% on room air.) or structural lung abnormalities, pulmonary involvement from autoimmune/connective tissue disorders (e.g., rheumatoid arthritis, Sj\u00f6gren's, sarcoidosis), or any condition requiring continuous supplemental oxygen or causing marked respiratory impairment (e.g., dyspnea at rest, greatly reduced exercise tolerance, or significantly decreased lung function).",
+      "start": 7123,
+      "end": 7526,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "Treatment of pleural effusions to meet eligibility is permitted.",
+      "start": 7527,
+      "end": 7591,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "History of allergy or hypersensitivity to Ris-Rez (antibody-drug conjugate (ADC), antibody, payload \\[GSK5757810\\]).",
+      "start": 7594,
+      "end": 7710,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
+    },
+    {
+      "quote": "History of severe allergies (e.g., anaphylactic shock), or severe infusion-related reactions (IRRs), or idiosyncrasy to recombinant humanized or mouse proteins.",
+      "start": 7711,
+      "end": 7871,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
+    },
+    {
+      "quote": "Has received prior anticancer therapy within 14 days of the first dose of study intervention or having to continue these medications during the study.",
+      "start": 7874,
+      "end": 8024,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Participants that had any macromolecular anticancer drug (including immunotherapies such as monoclonal antibodies and bispecific antibodies) within 28 days prior to the first dose of study intervention are excluded.",
+      "start": 8025,
+      "end": 8240,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "History of local radiotherapy within 2 weeks prior to the first dose of study intervention; more than 30% of bone marrow irradiation or extensive radiotherapy within 4 weeks before the first dose of study intervention",
+      "start": 8243,
+      "end": 8460,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Has received any transfusion of blood products (including platelets or red blood cells) or administration of colony-stimulating factors (including granulocyte colony-stimulating factor (G-CSF), granulocyte macrophage colony-stimulating factor (GM-CSF), or recombinant erythropoietin) within 14 days before enrollment.",
+      "start": 8463,
+      "end": 8780,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "G-CSF prophylaxis prior to administration of Ris-Rez is permitted.",
+      "start": 8781,
+      "end": 8847,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Has received immunosuppressive agents within 30 days prior to first dose of study treatment (or requires long-term (30 days or longer) glucocorticoid therapy).",
+      "start": 8850,
+      "end": 9009,
+      "mappings": [
+        {
+          "factId": "steroids",
+          "rulesOut": ["high_dose"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "other immunosuppressive agents not mapped"
+    },
+    {
+      "quote": "Low-dose corticosteroids (prednisone \u226410 mg/day or equivalent) may be administered.",
+      "start": 9010,
+      "end": 9093,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 51"
+    },
+    {
+      "quote": "Use of inhaled or topical steroids and prophylactic corticosteroids for procedures and pre-infusion prophylaxis are permitted.",
+      "start": 9094,
+      "end": 9220,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 51"
+    },
+    {
+      "quote": "Participant with history of nephrotic syndrome or Grade 3 proteinuria or protein urine \\>1+ on dipstick or 24-h urine protein quantitation \u2265 1.0 g at Screening.",
+      "start": 9223,
+      "end": 9383,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "History of abdominal or gastrointestinal fistula, tracheoesophageal fistula or any Grade 4 fistula, gastrointestinal perforation, or intra-abdominal abscess.",
+      "start": 9386,
+      "end": 9543,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "fistula or perforation"
+    },
+    {
+      "quote": "Has any active renal condition (e.g., requirement for dialysis, or any other significant renal condition that could affect the participant's safety).",
+      "start": 9546,
+      "end": 9695,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Renal obstruction successfully managed by stenting is permitted.",
+      "start": 9696,
+      "end": 9760,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    }
+  ]
+}

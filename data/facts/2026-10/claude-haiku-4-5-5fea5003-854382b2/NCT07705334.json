@@ -1,0 +1,145 @@
+{
+  "nctId": "NCT07705334",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 353,
+        "end": 379,
+        "text": "NSCLC (adeno and squamous)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 158,
+        "end": 193,
+        "text": "advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 493,
+        "end": 581,
+        "text": "Stable CNS metastases ≥4 weeks post-radiotherapy and off steroids ≥14 days are permitted"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 585,
+        "end": 621,
+        "text": "≥1 measurable lesion per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 88,
+        "end": 115,
+        "text": "ECOG performance status 0-1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1247,
+        "end": 1374,
+        "text": "History of another malignancy (with standard exceptions for in situ disease, non-melanoma skin cancers, and remission ≥2 years)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1378,
+        "end": 1425,
+        "text": "Active HBV (HBV-DNA \\>ULN), HCV (HCV-RNA \\>ULN)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1430,
+        "end": 1516,
+        "text": "HIV (well-controlled HIV with CD4 ≥350 cells/µL and undetectable viral load permitted)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1576,
+        "end": 1631,
+        "text": "Compromised pulmonary function within 6 months pre-dose"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1636,
+        "end": 1662,
+        "text": "Pregnancy or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

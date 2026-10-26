@@ -1,0 +1,392 @@
+{
+  "nctId": "NCT03175224",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 266,
+        "end": 313,
+        "text": "unresectable or metastatic disease (Stage 3b/4)"
+      },
+      "appliesTo": "Cohort A1 / Exon 14 NSCLC MET inhibitor naive in first line"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 266,
+        "end": 300,
+        "text": "unresectable or metastatic disease"
+      },
+      "appliesTo": "Cohort C / MET amplification basket tumor types excluding primary CNS tumors"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1958,
+        "end": 1990,
+        "text": "Unresectable or metastatic NSCLC"
+      },
+      "appliesTo": "Cohort C2 / EGFR positive NSCLC with acquired MET amplification (APL-101 Add-on Therapy)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4027,
+        "end": 4061,
+        "text": "Unresectable or metastatic disease"
+      },
+      "appliesTo": "Cohort F / Basket tumor types harboring wild-type MET with over-expression of HGF and MET"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4464,
+        "end": 4582,
+        "text": "Presence of ≥1 measurable lesion (scan done ≤28 days of C1D1) to serve as target lesion according to relevant criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4586,
+        "end": 4617,
+        "text": "ECOG performance status of 0-1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6046,
+        "end": 6146,
+        "text": "Known actionable mutation/gene rearrangement of EGFR (except for NSCLC subjects in Cohort C and C-2)"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 642,
+        "end": 711,
+        "text": "pretreated subjects refractory to or intolerant of standard therapies"
+      },
+      "appliesTo": "Cohort A2 / Exon 14 NSCLC - MET inhibitor naïve"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 717,
+        "end": 800,
+        "text": "no more than three lines of prior therapy in the unresectable or metastatic setting"
+      },
+      "appliesTo": "Cohort A2 / Exon 14 NSCLC - MET inhibitor naïve"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1316,
+        "end": 1395,
+        "text": "no more than 3 prior lines of therapy in the unresectable or metastatic setting"
+      },
+      "appliesTo": "Cohort C / MET amplification basket tumor types excluding primary CNS tumors"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1659,
+        "end": 1775,
+        "text": "previously untreated or treated with no more than 3 prior lines of therapy in the unresectable or metastatic setting"
+      },
+      "appliesTo": "Cohort C1 / MET amplification and wild-type EGFR NSCLC"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8317,
+        "end": 8376,
+        "text": "History of another malignancy within 3 years prior to C1D1."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8285,
+        "end": 8312,
+        "text": "Women who are breastfeeding"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2453,
+        "end": 2574,
+        "text": "no history of interstitial lung disease (ILD)/pneumonitis, Grade ≥3 liver toxicity or QT prolongation with EGFR-I therapy"
+      },
+      "appliesTo": "Cohort C2 / EGFR positive NSCLC with acquired MET amplification (APL-101 Add-on Therapy)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9278,
+        "end": 9403,
+        "text": "Symptomatic and/or neurologically unstable CNS metastases, or who require an increase in steroid dose to control CNS disease."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic disease (Stage 3b/4)",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic disease (Stage 3b/4)",
+        "appliesTo": "Cohort A2 / Exon 14 NSCLC - MET inhibitor naïve"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic disease",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic disease",
+        "appliesTo": "Cohort C1 / MET amplification and wild-type EGFR NSCLC"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic disease",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic disease",
+        "appliesTo": "Cohort D / MET fusion basket tumor types excluding primary CNS tumors"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic disease",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic disease",
+        "appliesTo": "Cohort E / Primary CNS tumors with MET alterations"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known actionable mutation/gene rearrangement of ALK",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known actionable mutation/gene rearrangement of ALK",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known actionable mutation/gene rearrangement of ROS1",
+      "raw": {
+        "factId": "ros1",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known actionable mutation/gene rearrangement of ROS1",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known actionable mutation/gene rearrangement of RET",
+      "raw": {
+        "factId": "ret",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known actionable mutation/gene rearrangement of RET",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known actionable mutation/gene rearrangement of NTRK",
+      "raw": {
+        "factId": "ntrk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known actionable mutation/gene rearrangement of NTRK",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known actionable mutation/gene rearrangement of KRAS",
+      "raw": {
+        "factId": "kras",
+        "rulesOut": [
+          "g12c",
+          "other_mutation"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known actionable mutation/gene rearrangement of KRAS",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known actionable mutation/gene rearrangement of BRAF",
+      "raw": {
+        "factId": "braf_v600e",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known actionable mutation/gene rearrangement of BRAF",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "no more than 3 prior lines of therapy in the unresectable or metastatic setting",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "no more than 3 prior lines of therapy in the unresectable or metastatic setting",
+        "appliesTo": "Cohort D / MET fusion basket tumor types excluding primary CNS tumors"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "no more than 3 prior lines of therapy in the unresectable or metastatic setting",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "no more than 3 prior lines of therapy in the unresectable or metastatic setting",
+        "appliesTo": "Cohort E / Primary CNS tumors with MET alterations"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "no more than 3 prior lines of therapy in the unresectable or metastatic setting",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "no more than 3 prior lines of therapy in the unresectable or metastatic setting",
+        "appliesTo": "Cohort F / Basket tumor types harboring wild-type MET with over-expression of HGF and MET"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

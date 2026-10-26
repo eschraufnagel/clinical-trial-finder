@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT07335497",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 55,
+        "end": 130,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 - 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 214,
+        "end": 260,
+        "text": "Have measurable disease defined by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 915,
+        "end": 986,
+        "text": "Has malignancies other than disease under study within the past 3 years"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 989,
+        "end": 1099,
+        "text": "Has conditions requiring treatment with clinically significant or increasing doses of systemic steroid therapy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1230,
+        "end": 1280,
+        "text": "Has active central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1283,
+        "end": 1394,
+        "text": "Has active autoimmune disease requiring systemic therapy in the past 2 years (replacement therapy is permitted)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1470,
+        "end": 1538,
+        "text": "Has a history of noninfectious pneumonitis/interstitial lung disease"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1651,
+        "end": 1722,
+        "text": "Has undergone prior allogeneic stem cell or solid organ transplantation"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

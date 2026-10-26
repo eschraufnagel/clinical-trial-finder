@@ -1,0 +1,113 @@
+{
+  "nctId": "NCT01720836",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 388,
+        "end": 415,
+        "text": "ECOG performance status 0-1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1567,
+        "end": 1634,
+        "text": "No history of prior malignancy, except for non-melanoma skin cancer"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "low_dose",
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2024,
+        "end": 2123,
+        "text": "Patients may not be receiving any steroids or other anti-immune therapy at the time of registration"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3068,
+        "end": 3123,
+        "text": "known HIV-positive patients are excluded from the study"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3126,
+        "end": 3206,
+        "text": "Subjects with a history of known autoimmune disease are excluded from this study"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2866,
+        "end": 2909,
+        "text": "Pregnant women are excluded from this study"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known Hepatitis B on immunomodulators (i.e. interferon); Known Hepatitis C on immunomodulators (i.e. interferon)",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known Hepatitis B on immunomodulators (i.e. interferon); Known Hepatitis C on immunomodulators (i.e. interferon)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

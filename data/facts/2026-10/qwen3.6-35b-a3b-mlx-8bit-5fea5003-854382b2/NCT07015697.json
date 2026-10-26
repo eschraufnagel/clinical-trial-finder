@@ -1,0 +1,82 @@
+{
+  "nctId": "NCT07015697",
+  "mappings": [
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 121,
+        "end": 235,
+        "text": "If HER2 status is required for eligibility (for all populations), a documented HER2 test result must be available."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1784,
+        "end": 1850,
+        "text": "Part 2 only: At least 1 RECIST 1.1 measurable lesion on CT or MRI."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1492,
+        "end": 1611,
+        "text": "participants may not have received more than 2 prior lines of cytotoxic therapy in the recurrent or metastatic setting."
+      },
+      "appliesTo": "HR+ HER-2low/ultralow BC"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2121,
+        "end": 2240,
+        "text": "Medical history of MI within 6 months before enrollment or symptomatic CHF (New York Heart Association class II to IV)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2612,
+        "end": 2794,
+        "text": "Has a history of (non-infectious) ILD/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

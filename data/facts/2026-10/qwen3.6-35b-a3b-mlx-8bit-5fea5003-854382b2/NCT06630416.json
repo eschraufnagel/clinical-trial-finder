@@ -1,0 +1,134 @@
+{
+  "nctId": "NCT06630416",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 193,
+        "text": "Patients must have pathologically or cytologically confirmed metastatic urothelial bladder carcinoma (Arm A) or other metastatic/locally-advanced solid malignancy (Arm B)"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 439,
+        "end": 616,
+        "text": "Patients must have at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors version 1.1 (RECIST v1.1), measured preferably by computed tomography (CT) scan."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 726,
+        "end": 972,
+        "text": "Patients must have progressive disease despite two prior lines of therapy in the metastatic setting or locally advanced setting unless the patient was not suitable for an approved second line regimen due to intolerance or another clinical factor;"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1247,
+        "end": 1340,
+        "text": "Patients must exhibit an Eastern Cooperative Oncology Group (ECOG) performance status of 0-2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3853,
+        "end": 4017,
+        "text": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8532,
+        "end": 8603,
+        "text": "Patients of child bearing (POCB) potential who are pregnant or nursing."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pemetrexed isn't a fact for this trial's cancer type",
+      "quote": "Patients who received prior pemetrexed containing chemotherapy.",
+      "raw": {
+        "factId": "prior_pemetrexed",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who received prior pemetrexed containing chemotherapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients who have an uncontrolled intercurrent illness including, but not limited to any of the following: ... Symptomatic congestive heart failure ... Unstable angina pectoris ... Any other illness or condition that the treating investigator feels would interfere with study compliance or would compromise the patient's safety or study endpoints",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients who have an uncontrolled intercurrent illness including, but not limited to any of the following: ... Symptomatic congestive heart failure ... Unstable angina pectoris ... Any other illness or condition that the treating investigator feels would interfere with study compliance or would compromise the patient's safety or study endpoints",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, should have a clinical risk assessment of cardiac function using the New York Heart Association Functional Classification. Note: To be eligible for this trial, patients should be class 2B or better",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, should have a clinical risk assessment of cardiac function using the New York Heart Association Functional Classification. Note: To be eligible for this trial, patients should be class 2B or better",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

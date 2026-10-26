@@ -1,0 +1,109 @@
+{
+  "nctId": "NCT07085091",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 225,
+        "text": "Participants with locally advanced, recurrent or metastatic histologically confirmed HNSCC, NSCLC, ESCC, CRC; locally advanced or recurrent disease must not be amenable to resection with curative intent"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 249,
+        "end": 363,
+        "text": "Participants who have relapsed or progressed following prior anticancer therapy in the advanced/metastatic setting"
+      },
+      "appliesTo": "Dose Escalation"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 584,
+        "end": 668,
+        "text": "Received no more than 3 prior lines of therapy in the advanced or metastatic setting"
+      },
+      "appliesTo": "HNSCC"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1020,
+        "end": 1115,
+        "text": "received no more than 2 prior lines of systemic chemotherapy in the advanced/metastatic setting"
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1124,
+        "end": 1205,
+        "text": "Received no more than 3 prior lines of therapy in the advanced/metastatic setting"
+      },
+      "appliesTo": "ESCC"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1407,
+        "end": 1479,
+        "text": "no more than 4 prior lines of therapy in the advanced/metastatic setting"
+      },
+      "appliesTo": "CRC"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2155,
+        "end": 2235,
+        "text": "Prior treatment with any ADCs that have an active TOP1 inhibitor-based component"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

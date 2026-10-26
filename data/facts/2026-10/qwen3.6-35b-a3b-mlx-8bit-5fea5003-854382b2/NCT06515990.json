@@ -1,0 +1,132 @@
+{
+  "nctId": "NCT06515990",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 185,
+        "end": 491,
+        "text": "Participants who have pathologically or cytologically documented metastatic/advanced NSCLC, gastroesophageal cancer, CRC, HCC, pancreatic cancer, or HNSCC, not curable with standard local therapies (i.e., surgery and/or radiation) and have progressed on standard therapy, or intolerant to standard therapy."
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 185,
+        "end": 491,
+        "text": "Participants who have pathologically or cytologically documented metastatic/advanced NSCLC, gastroesophageal cancer, CRC, HCC, pancreatic cancer, or HNSCC, not curable with standard local therapies (i.e., surgery and/or radiation) and have progressed on standard therapy, or intolerant to standard therapy."
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 595,
+        "end": 695,
+        "text": "Participants must have an Eastern Cooperative Oncology Group performance status (ECOG PS) of 0 to 2."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 739,
+        "end": 837,
+        "text": "Has measurable disease based on response evaluation criteria in solid tumors (RECIST) version 1.1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 949,
+        "end": 1016,
+        "text": "Participants have another active invasive malignancy within 5 years"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2194,
+        "end": 2377,
+        "text": "Individuals with brain metastases can be enrolled only if treated, non-progressive brain metastases and off high-dose steroids (\\>20 mg prednisone or equivalent) for at least 4 weeks."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3219,
+        "end": 3281,
+        "text": "Known active hepatitis B (HBV) or hepatitis C (HCV) infection."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3739,
+        "end": 3819,
+        "text": "Known human immunodeficiency virus (HIV) infection which is not well controlled."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5460,
+        "end": 5565,
+        "text": "Females who are pregnant or lactating or who intend to become pregnant during participation in the study."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

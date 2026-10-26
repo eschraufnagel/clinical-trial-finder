@@ -1,0 +1,106 @@
+{
+  "nctId": "NCT05283330",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3,
+        "end": 104,
+        "text": "Adult participants (age ≥ 18 years old) with any of the following advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1857,
+        "end": 1910,
+        "text": "Eastern Cooperative Oncology Group (ECOG) status 0-1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1384,
+        "end": 1497,
+        "text": "Presence of at least 1 measurable lesion per RECIST 1.1 as assessed by the Investigator (not applicable for GBM)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1113,
+        "end": 1214,
+        "text": "All participants must have progressed on at least 2 prior systemic therapies, except for recurrent GB"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1113,
+        "end": 1214,
+        "text": "All participants must have progressed on at least 2 prior systemic therapies, except for recurrent GB"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1113,
+        "end": 1214,
+        "text": "All participants must have progressed on at least 2 prior systemic therapies, except for recurrent GB"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1113,
+        "end": 1214,
+        "text": "All participants must have progressed on at least 2 prior systemic therapies, except for recurrent GB"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

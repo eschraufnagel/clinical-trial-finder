@@ -1,0 +1,169 @@
+{
+  "nctId": "NCT04389281",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 251,
+        "end": 281,
+        "text": "ECOG Performance Status of ≤ 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 285,
+        "end": 515,
+        "text": "Subjects with histologically or cytologically confirmed advanced solid tumors which have progressed after standard therapy(ies), intolerant to standard therapy, refused standard therapy or for which no standard therapy(ies) exist."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 772,
+        "end": 824,
+        "text": "The tumor must be measurable as per RECIST criteria."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1289,
+        "end": 1537,
+        "text": "A patient with prior brain metastasis may be considered if they have completed their treatment for brain metastasis at least 4 weeks prior to day 1 of treatment, have been off of corticosteroids for ≥ 2 weeks, and brain metastases are asymptomatic."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6615,
+        "end": 6881,
+        "text": "Has a known additional other primary malignancy that is active and/or progressive requiring treatment; exceptions include basal cell skin cancer, in situ cervical or bladder cancer, or other cancer for which the patient has been disease-free for at least five years."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6331,
+        "end": 6451,
+        "text": "Known diagnosis of human immunodeficiency virus (HIV), hepatitis B or hepatitis C infection (NOTE: testing not required)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6331,
+        "end": 6451,
+        "text": "Known diagnosis of human immunodeficiency virus (HIV), hepatitis B or hepatitis C infection (NOTE: testing not required)"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8295,
+        "end": 8399,
+        "text": "Subjects with active autoimmune disease requiring 10 mg or greater of prednisone and/or biologic agents."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5675,
+        "end": 5700,
+        "text": "Pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 285,
+        "end": 515,
+        "text": "Subjects with histologically or cytologically confirmed advanced solid tumors which have progressed after standard therapy(ies), intolerant to standard therapy, refused standard therapy or for which no standard therapy(ies) exist."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 10538,
+        "end": 10618,
+        "text": "For the STS Cohort, participants must have received at least one prior treatment"
+      },
+      "appliesTo": "STS Cohort"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For the TNBC Cohort, participants must have received at least one prior treatment",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "For the TNBC Cohort, participants must have received at least one prior treatment",
+        "appliesTo": "TNBC Cohort"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

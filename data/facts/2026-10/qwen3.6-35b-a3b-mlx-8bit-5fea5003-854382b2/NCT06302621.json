@@ -1,0 +1,178 @@
+{
+  "nctId": "NCT06302621",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 37,
+        "end": 110,
+        "text": "Unresectable or metastatic, histologically confirmed advanced solid tumor"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7296,
+        "end": 7478,
+        "text": "Active central nervous system (CNS) metastases are not eligible. Patients with asymptomatic and treated brain metastases may participate provided that they are stable for ≥ 2 months."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7479,
+        "end": 7572,
+        "text": "Patients with suspected or confirmed leptomeningeal disease are not eligible even if treated."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1387,
+        "end": 1452,
+        "text": "Measurable or non-measurable disease as determined by RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 768,
+        "end": 814,
+        "text": "Eastern Cooperative Oncology Group (ECOG) 0-1."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4683,
+        "end": 4866,
+        "text": "For patients treated with a prior FGFR inhibitor, those with known activating mutation(s) in the FGFR2 kinase domain on ctDNA or biopsy analysis within 8 weeks of start of study drugs"
+      },
+      "appliesTo": "Dose expansion cohort 1"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3653,
+        "end": 3732,
+        "text": "Prior FGFR inhibitor treatment at any time prior to treatment start is required"
+      },
+      "appliesTo": "Dose expansion cohort 2"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5988,
+        "end": 6032,
+        "text": "Known pre-existing interstitial lung disease"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7637,
+        "end": 7957,
+        "text": "Clinically significant, active cardiovascular disease such as uncontrolled hypertension, congestive heart failure New York Heart Association (NYHA) classification of 3, unstable angina or poorly controlled arrhythmia, or history of myocardial infarction within 6 months prior to planned start of pemigatinib and afatinib"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8763,
+        "end": 8793,
+        "text": "Active hepatitis B virus (HBV)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9235,
+        "end": 9456,
+        "text": "Known human immunodeficiency virus (HIV) and on anti-retroviral therapy for HIV(excluded due to potential drug-drug interactions between anti-retroviral medications and study treatment but HIV itself is not an exclusion)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9797,
+        "end": 10221,
+        "text": "Pregnancy during the study or within 30 days of the last dose of study intervention. Also excluded are any persons of childbearing potential, including men who are able to father a child, who are unwilling to use a medically acceptable method of contraception during the trial (see below section 3.3). Lactation and breastfeeding during the study or within 30 days of the last dose of study intervention is also not allowed."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6851,
+        "end": 7021,
+        "text": "Patients with a history of another primary malignancy that is currently clinically significant, and has potential for metastases or currently requires active intervention"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

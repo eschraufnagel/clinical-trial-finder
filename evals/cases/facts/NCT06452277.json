@@ -1,0 +1,208 @@
+{
+  "nctId": "NCT06452277",
+  "set": "heldout",
+  "criteriaTextSha": "7cf26fabb64d3e71ead7bdf984bca7cfdaf0590bfc9d528a86749691e3bf4538",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Participant must be \u226518 years of age or over the legal age of consent in countries where that is greater than 18 years at the time of signing the informed consent.",
+      "start": 23,
+      "end": 186,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Documented histologically or cytologically confirmed locally advanced non-squamous NSCLC, not suitable for definitive therapy or metastatic non-squamous NSCLC at screening (small cell or mixed histologies are excluded) (Stage III-IV NSCLC).",
+      "start": 189,
+      "end": 429,
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["squamous", "mixed_small_cell"],
+          "appliesTo": null
+        },
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Documented activating HER2 mutation in the tyrosine kinase domain (TKD) assessed by tissue molecular test in a CLIA-certified (US sites) or an equally accredited (outside of the US) local laboratory.",
+      "start": 432,
+      "end": 631,
+      "mappings": [
+        {
+          "factId": "her2",
+          "rulesOut": ["overexpression", "none_found"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "However, participants may be included at the discretion of the investigator if the laboratory performing the assay is not CLIA or similar certified but the laboratory is locally accredited.",
+      "start": 632,
+      "end": 821,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "No prior systemic therapy for locally advanced or metastatic disease.",
+      "start": 824,
+      "end": 893,
+      "mappings": [
+        {
+          "factId": "lines_advanced",
+          "rulesOut": ["one", "two", "three_plus"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "No prior treatment with a HER2 ex20ins-targeted therapy (e.g. poziotinib, trastuzumab deruxtecan).",
+      "start": 894,
+      "end": 992,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "prior targeted therapy: HER2-directed"
+    },
+    {
+      "quote": "Participants who received adjuvant or neoadjuvant therapy are eligible if the adjuvant/neoadjuvant therapy was completed at least 12 months prior to the start of screening.",
+      "start": 993,
+      "end": 1165,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 5"
+    },
+    {
+      "quote": "Eligible to receive treatment with the selected platinum-based doublet-chemotherapy (i.e. cisplatin/pemetrexed or carboplatin/pemetrexed) and pembrolizumab in accordance with the SmPC/Product Information.",
+      "start": 1168,
+      "end": 1372,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "fit for platinum doublet and pembrolizumab"
+    },
+    {
+      "quote": "Known history of prior malignancy except if the participant has undergone potentially curative therapy with no evidence of that disease recurrence for five years since initiation of that therapy.",
+      "start": 1397,
+      "end": 1592,
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years", "two_to_5_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "in situ, skin and other exceptions not mapped"
+    },
+    {
+      "quote": "Exception: the following cancer types are acceptable within five years if curatively treated or under surveillance:",
+      "start": 1593,
+      "end": 1708,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 9"
+    },
+    {
+      "quote": "a. in situ cancers of cervix, breast, or skin,",
+      "start": 1714,
+      "end": 1760,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 9"
+    },
+    {
+      "quote": "b. superficial bladder cancer (Ta, Tis and T1),",
+      "start": 1765,
+      "end": 1812,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 9"
+    },
+    {
+      "quote": "c. limited-stage prostate cancer,",
+      "start": 1817,
+      "end": 1850,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 9"
+    },
+    {
+      "quote": "d. basal or squamous cancers of the skin.",
+      "start": 1855,
+      "end": 1896,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 9"
+    },
+    {
+      "quote": "Tumors with targetable alterations with approved available therapy, with the exception of HER2 mutation in the TKD.",
+      "start": 1899,
+      "end": 2014,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "other targetable alterations"
+    },
+    {
+      "quote": "Inability to discontinue treatment with chronic systemic corticosteroids.",
+      "start": 2017,
+      "end": 2090,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "steroids: able to stop"
+    },
+    {
+      "quote": "Participants who require intermittent use of bronchodilators, inhaled steroids, or local steroid injections would not be excluded from the study.",
+      "start": 2091,
+      "end": 2236,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 16"
+    },
+    {
+      "quote": "Replacement therapy (e.g., physiologic corticosteroid replacement therapy for adrenal or pituitary insufficiency) is acceptable, provided that the dose is stable for \\>4 weeks prior to planned start of study intervention.",
+      "start": 2237,
+      "end": 2458,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 16"
+    },
+    {
+      "quote": "Pre-existing peripheral neuropathy that is Grade \u22652 by CTCAE (v5.0).",
+      "start": 2461,
+      "end": 2529,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "neuropathy"
+    },
+    {
+      "quote": "History of severe hypersensitivity reaction to treatment with a monoclonal antibody.",
+      "start": 2532,
+      "end": 2616,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "allergy to monoclonal antibodies"
+    },
+    {
+      "quote": "Prior radiotherapy outside of the brain within 21 days before of planned start of study intervention.",
+      "start": 2619,
+      "end": 2720,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Participants must have recovered from all radiation-related toxicities and not require corticosteroids.",
+      "start": 2721,
+      "end": 2824,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "recovery from radiation side effects"
+    }
+  ]
+}

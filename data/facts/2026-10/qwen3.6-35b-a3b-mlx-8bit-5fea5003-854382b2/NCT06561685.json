@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT06561685",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 102,
+        "text": "Have one of the following locally advanced or metastatic solid tumor malignancy"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1356,
+        "end": 1452,
+        "text": "Participants must have received at least one line of therapy for advanced or metastatic disease."
+      },
+      "appliesTo": "Phase 1b expansion (Part A)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1780,
+        "end": 1875,
+        "text": "Phase 1a backfill and Phase 1b expansion: Measurable disease required as defined by RECIST v1.1"
+      },
+      "appliesTo": "Phase 1a backfill and Phase 1b expansion"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1878,
+        "end": 1962,
+        "text": "Have an Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2497,
+        "end": 2607,
+        "text": "Participants with active and/or treated for an additional primary malignancy within 2 years prior to enrolment"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2610,
+        "end": 2794,
+        "text": "Participants who are pregnant, breastfeeding or plan to breastfeed or expecting to conceive or father children during study or within 6 months after the last dose of study intervention"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2797,
+        "end": 2964,
+        "text": "Participants with history of active autoimmune diseases, history of allogenic stem cell/organ transplant or compromised immune system within past 2 years (Part C only)"
+      },
+      "appliesTo": "Part C"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2797,
+        "end": 2964,
+        "text": "Participants with history of active autoimmune diseases, history of allogenic stem cell/organ transplant or compromised immune system within past 2 years (Part C only)"
+      },
+      "appliesTo": "Part C"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "nctId": "NCT05903092",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2081,
+        "end": 2351,
+        "text": "Extensive disease (American Joint Committee on Cancer Stage (8th edition) IV SCLC \\[T any, N any, M1 a/b\\]), OR T3-4 disease due to multiple lung nodules that are too extensive or have tumor/nodal volume that is too large to be encompassed in a tolerable radiation plan."
+      },
+      "appliesTo": "Extensive Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3310,
+        "end": 3420,
+        "text": "Limited-stage disease (American Joint Committee on Cancer Stage (8th edition) I-III SCLC \\[T any, N any, M0\\])"
+      },
+      "appliesTo": "Limited Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2870,
+        "end": 3055,
+        "text": "Subjects with treated brain metastasis or untreated asymptomatic brain metastasis that is clinically stable per investigator discretion and not requiring systemic steroids for ≥ 7 days."
+      },
+      "appliesTo": "Extensive Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3896,
+        "end": 3928,
+        "text": "No evidence of brain metastasis."
+      },
+      "appliesTo": "Limited Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2822,
+        "end": 2866,
+        "text": "Measurable disease according to RECIST v1.1."
+      },
+      "appliesTo": "Extensive Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3144,
+        "end": 3175,
+        "text": "ECOG Performance Status of 0-2."
+      },
+      "appliesTo": "Extensive Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4101,
+        "end": 4132,
+        "text": "ECOG Performance Status of 0-1."
+      },
+      "appliesTo": "Limited Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2355,
+        "end": 2577,
+        "text": "No prior systemic therapy for small-cell lung cancer, with the following exceptions: Up to one cycle of platinum doublet chemotherapy with or without durvalumab is allowed up to 4 weeks prior to registration on this study."
+      },
+      "appliesTo": "Extensive Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3424,
+        "end": 3748,
+        "text": "Has received platinum (cis- or carboplatin) and etoposide chemotherapy (4 cycles preferred; 3 cycles allowed if disease control is achieved and no additional benefit is expected with an additional cycle of chemotherapy in the opinion of the investigator) administered concurrently with radiation (60-66Gy daily or 45Gy BID)."
+      },
+      "appliesTo": "Limited Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2355,
+        "end": 2577,
+        "text": "No prior systemic therapy for small-cell lung cancer, with the following exceptions: Up to one cycle of platinum doublet chemotherapy with or without durvalumab is allowed up to 4 weeks prior to registration on this study."
+      },
+      "appliesTo": "Extensive Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3424,
+        "end": 3748,
+        "text": "Has received platinum (cis- or carboplatin) and etoposide chemotherapy (4 cycles preferred; 3 cycles allowed if disease control is achieved and no additional benefit is expected with an additional cycle of chemotherapy in the opinion of the investigator) administered concurrently with radiation (60-66Gy daily or 45Gy BID)."
+      },
+      "appliesTo": "Limited Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3984,
+        "end": 4097,
+        "text": "Ability to start study treatment within 56 days of completing chemo-radiation, counting from whichever ends later"
+      },
+      "appliesTo": "Limited Stage Specific Inclusion Criteria"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6576,
+        "end": 6788,
+        "text": "Patients with a prior or concurrent malignancy whose natural history or treatment has the potential to interfere with the safety or efficacy assessment of the investigational regimen, per investigator discretion."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6793,
+        "end": 6834,
+        "text": "History of leptomeningeal carcinomatosis."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6839,
+        "end": 6883,
+        "text": "History of allogeneic organ transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6450,
+        "end": 6475,
+        "text": "Pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4932,
+        "end": 5231,
+        "text": "Active or prior documented autoimmune or inflammatory disorders (including inflammatory bowel disease \\[e.g., ulcerative colitis or Crohn's disease\\], systemic lupus erythematosus, sarcoidosis, Wegener syndrome \\[granulomatosis with polyangiitis\\], rheumatoid arthritis, hypophysitis, uveitis, etc)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4588,
+        "end": 4686,
+        "text": "Known to have tested positive for human immunodeficiency virus (HIV) (positive HIV 1/2 antibodies)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7052,
+        "end": 7281,
+        "text": "Current or prior use of immunosuppressive medication within 7 days before the first dose of monalizumab and durvalumab (applicable to 'on study' durvalumab for MOZART-ES cohort who may have received prior one dose of durvalumab)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed diagnosis of small cell lung cancer",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed diagnosis of small cell lung cancer",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Uncontrolled intercurrent illness, including but not limited to, ongoing or active infection, symptomatic congestive heart failure, uncontrolled hypertension, unstable angina pectoral, cardiac arrhythmia, interstitial lung disease, serious chronic gastrointestinal conditions associated with diarrhea, or psychiatric illness/social situations that would limit compliance with study requirement, substantially increase risk of incurring AEs or compromise the ability of the patient to give written informed consent.",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled intercurrent illness, including but not limited to, ongoing or active infection, symptomatic congestive heart failure, uncontrolled hypertension, unstable angina pectoral, cardiac arrhythmia, interstitial lung disease, serious chronic gastrointestinal conditions associated with diarrhea, or psychiatric illness/social situations that would limit compliance with study requirement, substantially increase risk of incurring AEs or compromise the ability of the patient to give written informed consent.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

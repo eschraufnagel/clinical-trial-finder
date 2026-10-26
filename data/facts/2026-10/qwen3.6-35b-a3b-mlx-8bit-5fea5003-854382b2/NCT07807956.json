@@ -1,0 +1,115 @@
+{
+  "nctId": "NCT07807956",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 64,
+        "end": 384,
+        "text": "Participants with a diagnosis of a malignant solid tumor by histology (WHO criteria), including, but not limited to non-small cell lung cancer (NSCLC), colorectal cancer (CRC), head and neck squamous cell carcinoma (HNSCC), PDAC, gastroesophageal adenocarcinoma (GEA), ovarian cancer (OC), and biliary tract cancer (BTC)"
+      },
+      "appliesTo": "Part 1 monotherapy dose escalation only"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 387,
+        "end": 420,
+        "text": "ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 423,
+        "end": 497,
+        "text": "Participants with evaluable and measurable disease per RECIST Version 1.1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 589,
+        "end": 745,
+        "text": "No known active disease present within 3 years prior to first dose of study treatment and felt to be at low risk of recurrence by the treating investigator."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1115,
+        "end": 1383,
+        "text": "Untreated brain or meningeal metastases (i.e., subjects with history of metastases are eligible provided they do not require ongoing steroid treatment for cerebral edema and have shown clinical and radiographic stability for at least 14 days after definitive therapy)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1386,
+        "end": 1556,
+        "text": "History of interstitial lung disease (ILD) or pneumonitis that required treatment with systemic steroids or any evidence of ILD or pneumonitis on Screening chest CT scan."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "ovarian_histology isn't a fact for this trial's cancer type",
+      "quote": "Participants with ovarian cancer with histologies other than high grade serous ovarian cancer including endometrioid, low grade, clear cell, mucinous, or borderline ovarian tumor.",
+      "raw": {
+        "factId": "ovarian_histology",
+        "rulesOut": [
+          "endometrioid",
+          "low_grade",
+          "clear_cell",
+          "mucinous",
+          "borderline"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with ovarian cancer with histologies other than high grade serous ovarian cancer including endometrioid, low grade, clear cell, mucinous, or borderline ovarian tumor.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

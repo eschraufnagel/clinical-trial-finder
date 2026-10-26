@@ -1,0 +1,173 @@
+{
+  "nctId": "NCT06792552",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5883,
+        "end": 6001,
+        "text": "mixed nonsmall cell and small cell carcinoma, or adenosquamous cell lung cancer with an adenocarcinoma component \\<50%"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6534,
+        "end": 6718,
+        "text": "Known untreated CNS metastases and/or leptomeningeal metastases. Participants are eligible if CNS metastases have been treated and participants have neurologically returned to baseline"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6534,
+        "end": 6597,
+        "text": "Known untreated CNS metastases and/or leptomeningeal metastases"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4648,
+        "end": 4724,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1191,
+        "end": 1265,
+        "text": "presence of at least one measurable lesion according to RECIST Version 1.1"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6306,
+        "end": 6456,
+        "text": "Any other malignancy within 2 years prior to the first dose of the study treatment except for localized cancers that are considered to have been cured"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7680,
+        "end": 7836,
+        "text": "History of non-infectious pneumonitis that has required a course of oral or intravenous steroids to assist with recovery, or interstitial lung disease (ILD)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9488,
+        "end": 9589,
+        "text": "Known human immunodeficiency virus (HIV) infection or known acquired immunodeficiency syndrome (AIDS)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9595,
+        "end": 9638,
+        "text": "Active hepatitis B or hepatitis C infection"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9714,
+        "end": 9786,
+        "text": "History of allogeneic organ transplantation or graft-versus-host disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9859,
+        "end": 9899,
+        "text": "Participant is pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7932,
+        "end": 8142,
+        "text": "Prior exposure to an ADC with a topoisomerase I inhibitor payload (e.g., raludotatug deruxtecan/DS-6000) for all cohorts except for the topoisomerase inhibitor payload ADC-pretreated participants in PROC cohort"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

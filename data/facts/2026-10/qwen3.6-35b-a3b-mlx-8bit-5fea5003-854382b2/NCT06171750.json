@@ -1,0 +1,180 @@
+{
+  "nctId": "NCT06171750",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 78,
+        "end": 240,
+        "text": "histologically or cytologically confirmed diagnosis of cutaneous, subcutaneous, soft tissue, or nodal advanced solid tumor malignancy; metastatic disease eligible"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 243,
+        "end": 277,
+        "text": "measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1250,
+        "end": 1277,
+        "text": "ECOG performance status 0-1"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1469,
+        "end": 1613,
+        "text": "Human immunodeficiency virus (HIV) infected participants must be on anti-retroviral therapy (ART) and have well-controlled HIV infection/disease"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1055,
+        "end": 1247,
+        "text": "documented disease progression, be refractory to, or intolerant of existing SOC therapy(ies) known to provide clinical benefit (including surgical cure) or not be eligible for SOC therapy(ies)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2597,
+        "end": 2771,
+        "text": "a woman of childbearing potential (WOCBP) who has a positive serum pregnancy test (within 72 hours) prior to the start of treatment or female participant who is breastfeeding"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2774,
+        "end": 2801,
+        "text": "prior organ transplantation"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2804,
+        "end": 2962,
+        "text": "known history of hepatitis B virus, known active hepatitis C virus, or a positive serological test at screening within 28 days prior to the start of treatment"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3064,
+        "end": 3264,
+        "text": "active autoimmune disease or medical conditions requiring chronic steroid (i.e., ≥ 20 mg/day prednisone or equivalent) or other immunosuppressive therapy within 28 days prior to the start of treatment"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3267,
+        "end": 3319,
+        "text": "known active central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3322,
+        "end": 3557,
+        "text": "congestive heart failure (\\> New York Heart Association Class II), active coronary artery disease, unevaluated new onset angina within 3 months or unstable angina (angina symptoms at rest), or clinically significant cardiac arrhythmias"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4312,
+        "end": 4525,
+        "text": "Part 3 only: prior Grade 3 or greater immune-mediated adverse events (imAEs) following treatment with an agent that blocks the programmed cell death protein 1 (PD-1)/programmed cell death ligand 1 (PD-L1) pathway."
+      },
+      "appliesTo": "Part 3 CSCC Combination Cohort"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "hiv has no answer yes",
+      "quote": "have primary or acquired immunodeficient states (e.g., leukemia, lymphoma)",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "have primary or acquired immunodeficient states (e.g., leukemia, lymphoma)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

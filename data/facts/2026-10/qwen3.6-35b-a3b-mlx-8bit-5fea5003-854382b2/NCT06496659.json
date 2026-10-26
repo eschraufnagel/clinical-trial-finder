@@ -1,0 +1,82 @@
+{
+  "nctId": "NCT06496659",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 93,
+        "text": "Patients must have histologically confirmed non-small-cell lung cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 102,
+        "end": 251,
+        "text": "clinically staged as ≤ycT1cN0M0 (tumor size 3cm or less on greatest dimension measured by cross-sectional imaging) after receiving induction therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2903,
+        "end": 3062,
+        "text": "Patients with evidence of distant metastases including brain metastases will be excluded from this study because they will not benefit from surgical resection."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4110,
+        "end": 4290,
+        "text": "Patients with another malignancy within 3 years (except for non-melanoma skin cancer, CIS of cervix (a preinvasive carcinomatous change of the cervix), superficial bladder cancer)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2611,
+        "end": 2674,
+        "text": "Patients who have had prior lung resection or thoracic surgery."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

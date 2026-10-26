@@ -1,0 +1,166 @@
+{
+  "nctId": "NCT06764771",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 64,
+        "end": 174,
+        "text": "Histologically confirmed diagnosis of a locally advanced and unresectable or metastatic solid tumor malignancy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 604,
+        "end": 702,
+        "text": "Participants must have an Eastern Cooperative Oncology Groups (ECOG) Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 705,
+        "end": 763,
+        "text": "Participants must have measurable disease per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 788,
+        "end": 838,
+        "text": "Untreated central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 841,
+        "end": 894,
+        "text": "Leptomeningeal metastasis (carcinomatous meningitis)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1035,
+        "end": 1093,
+        "text": "History of pneumonitis or interstitial lung disease (ILD)."
+      },
+      "appliesTo": "Parts 1B, 1C, 2B, 2C only (combination with adagrasib)"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 449,
+        "end": 486,
+        "text": "solid tumors with KRAS G12C mutation."
+      },
+      "appliesTo": "Part 1B"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 501,
+        "end": 531,
+        "text": "NSCLC with KRAS G12C mutation."
+      },
+      "appliesTo": "Part 2B"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 552,
+        "end": 600,
+        "text": "colorectal cancer (CRC) with KRAS G12C mutation."
+      },
+      "appliesTo": "Parts 1C, 2C"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Part 2B: NSCLC with KRAS G12C mutation.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 2B: NSCLC with KRAS G12C mutation.",
+        "appliesTo": "Part 2B"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Histologically confirmed diagnosis of a locally advanced and unresectable or metastatic solid tumor malignancy with any of the following tumor types: ... non-small cell lung cancer (NSCLC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed diagnosis of a locally advanced and unresectable or metastatic solid tumor malignancy with any of the following tumor types: ... non-small cell lung cancer (NSCLC)",
+        "appliesTo": "Part 1A"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

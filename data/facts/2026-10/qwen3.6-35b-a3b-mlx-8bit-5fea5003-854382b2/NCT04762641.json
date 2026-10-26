@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT04762641",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 86,
+        "end": 156,
+        "text": "progressive locally advanced (unresectable) or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1161,
+        "end": 1318,
+        "text": "Prior chemotherapy or radiation therapy within 2 weeks or targeted small molecule therapy within 5 half-lives prior to the first administration of study drug"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1161,
+        "end": 1215,
+        "text": "Prior chemotherapy or radiation therapy within 2 weeks"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1474,
+        "end": 1610,
+        "text": "Requiring or received systemic steroid therapy or any other immunosuppressive therapy within 14 days prior to study drug administration."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1474,
+        "end": 1610,
+        "text": "Requiring or received systemic steroid therapy or any other immunosuppressive therapy within 14 days prior to study drug administration."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1940,
+        "end": 2032,
+        "text": "History of drug-induced pneumonitis (interstitial lung disease) or currently has pneumonitis"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically and/or cytologically confirmed diagnosis of any progressive locally advanced (unresectable) or metastatic solid tumors",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Histologically and/or cytologically confirmed diagnosis of any progressive locally advanced (unresectable) or metastatic solid tumors",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior anticancer monoclonal antibody treatment or investigational therapy within 28 days prior to the first administration of study drug",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior anticancer monoclonal antibody treatment or investigational therapy within 28 days prior to the first administration of study drug",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "nctId": "NCT05941507",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 52,
+        "end": 115,
+        "text": "histologically or cytologically confirmed advanced solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 457,
+        "end": 513,
+        "text": "Measurable disease as defined by RECIST v1.1 or RANO-BM."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 793,
+        "end": 863,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1263,
+        "end": 1367,
+        "text": "Active or progressing central nervous system (CNS) metastases or any evidence of leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1263,
+        "end": 1367,
+        "text": "Active or progressing central nervous system (CNS) metastases or any evidence of leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2204,
+        "end": 2299,
+        "text": "Concomitant use of systemic steroids at dose of \\>10 mg of prednisone or its equivalent per day"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

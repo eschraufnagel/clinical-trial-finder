@@ -1,0 +1,271 @@
+{
+  "nctId": "NCT04683250",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 233,
+        "end": 302,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance score of 0 or 1"
+      },
+      "appliesTo": "Phase I - Common inclusion criteria for Dose-Escalation / Dose-Expansion"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2246,
+        "end": 2312,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance score of 0-2"
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 612,
+        "end": 633,
+        "text": "Advanced solid tumors"
+      },
+      "appliesTo": "Phase I Dose-Escalation - Specific inclusion criteria"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1833,
+        "end": 1863,
+        "text": "Locally advanced or metastatic"
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1329,
+        "end": 1375,
+        "text": "Measurable disease as determined by RECIST 1.1"
+      },
+      "appliesTo": "Phase I Dose-Expansion - Specific inclusion criteria"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 707,
+        "end": 791,
+        "text": "If patient has brain and/or leptomeningeal metastases, (s)he should be asymptomatic."
+      },
+      "appliesTo": "Phase I Dose-Escalation - Specific inclusion criteria"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 707,
+        "end": 791,
+        "text": "If patient has brain and/or leptomeningeal metastases, (s)he should be asymptomatic."
+      },
+      "appliesTo": "Phase I Dose-Escalation - Specific inclusion criteria"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4207,
+        "end": 4292,
+        "text": "Presence of known EGFR, KRAS, ALK, HER2, ROS1, BRAF and METex14 activating mutations."
+      },
+      "appliesTo": "Phase I Dose-Expansion - and Phase II specific exclusion criteria"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4207,
+        "end": 4292,
+        "text": "Presence of known EGFR, KRAS, ALK, HER2, ROS1, BRAF and METex14 activating mutations."
+      },
+      "appliesTo": "Phase I Dose-Expansion - and Phase II specific exclusion criteria"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4207,
+        "end": 4292,
+        "text": "Presence of known EGFR, KRAS, ALK, HER2, ROS1, BRAF and METex14 activating mutations."
+      },
+      "appliesTo": "Phase I Dose-Expansion - and Phase II specific exclusion criteria"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4207,
+        "end": 4292,
+        "text": "Presence of known EGFR, KRAS, ALK, HER2, ROS1, BRAF and METex14 activating mutations."
+      },
+      "appliesTo": "Phase I Dose-Expansion - and Phase II specific exclusion criteria"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4207,
+        "end": 4292,
+        "text": "Presence of known EGFR, KRAS, ALK, HER2, ROS1, BRAF and METex14 activating mutations."
+      },
+      "appliesTo": "Phase I Dose-Expansion - and Phase II specific exclusion criteria"
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4207,
+        "end": 4292,
+        "text": "Presence of known EGFR, KRAS, ALK, HER2, ROS1, BRAF and METex14 activating mutations."
+      },
+      "appliesTo": "Phase I Dose-Expansion - and Phase II specific exclusion criteria"
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4207,
+        "end": 4292,
+        "text": "Presence of known EGFR, KRAS, ALK, HER2, ROS1, BRAF and METex14 activating mutations."
+      },
+      "appliesTo": "Phase I Dose-Expansion - and Phase II specific exclusion criteria"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Measurable disease as determined by RECIST 1.1",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "Measurable disease as determined by RECIST 1.1",
+        "appliesTo": "Phase II"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "If patient has brain and/or leptomeningeal metastases,(s)he should have: asymptomatic untreated brain/leptomeningeal metastases off steroids and anticonvulsant for at least 7 days or asymptomatic brain metastases already treated with local therapy and be clinically stable on steroids and anticonvulsant for at least 7 days before study drug administration.",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "symptoms"
+        ],
+        "polarity": "inclusion",
+        "quote": "If patient has brain and/or leptomeningeal metastases,(s)he should have: asymptomatic untreated brain/leptomeningeal metastases off steroids and anticonvulsant for at least 7 days or asymptomatic brain metastases already treated with local therapy and be clinically stable on steroids and anticonvulsant for at least 7 days before study drug administration.",
+        "appliesTo": "Phase I Dose-Expansion - Specific inclusion criteria"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "If patient has brain and/or leptomeningeal metastases,(s)he should have: asymptomatic untreated brain/leptomeningeal metastases off steroids and anticonvulsant for at least 7 days or asymptomatic brain metastases already treated with local therapy and be clinically stable on steroids and anticonvulsant for at least 7 days before study drug administration.",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "symptoms"
+        ],
+        "polarity": "inclusion",
+        "quote": "If patient has brain and/or leptomeningeal metastases,(s)he should have: asymptomatic untreated brain/leptomeningeal metastases off steroids and anticonvulsant for at least 7 days or asymptomatic brain metastases already treated with local therapy and be clinically stable on steroids and anticonvulsant for at least 7 days before study drug administration.",
+        "appliesTo": "Phase II"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "If patient has brain and/or leptomeningeal metastases,(s)he should have: asymptomatic untreated brain/leptomeningeal metastases off steroids and anticonvulsant for at least 7 days or asymptomatic brain metastases already treated with local therapy and be clinically stable on steroids and anticonvulsant for at least 7 days before study drug administration.",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "If patient has brain and/or leptomeningeal metastases,(s)he should have: asymptomatic untreated brain/leptomeningeal metastases off steroids and anticonvulsant for at least 7 days or asymptomatic brain metastases already treated with local therapy and be clinically stable on steroids and anticonvulsant for at least 7 days before study drug administration.",
+        "appliesTo": "Phase I Dose-Expansion - Specific inclusion criteria"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "If patient has brain and/or leptomeningeal metastases,(s)he should have: asymptomatic untreated brain/leptomeningeal metastases off steroids and anticonvulsant for at least 7 days or asymptomatic brain metastases already treated with local therapy and be clinically stable on steroids and anticonvulsant for at least 7 days before study drug administration.",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "If patient has brain and/or leptomeningeal metastases,(s)he should have: asymptomatic untreated brain/leptomeningeal metastases off steroids and anticonvulsant for at least 7 days or asymptomatic brain metastases already treated with local therapy and be clinically stable on steroids and anticonvulsant for at least 7 days before study drug administration.",
+        "appliesTo": "Phase II"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

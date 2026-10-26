@@ -1,0 +1,108 @@
+{
+  "nctId": "NCT07136779",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 298,
+        "end": 384,
+        "text": "Histologically or cytologically confirmed unresectable advanced/metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 340,
+        "end": 384,
+        "text": "unresectable advanced/metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 556,
+        "end": 651,
+        "text": "At least one measurable lesion as assessed by the investigator according to RECIST v1.1criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 717,
+        "end": 744,
+        "text": "ECOG performance status 0-1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1452,
+        "end": 1786,
+        "text": "Known or suspected brain metastases, or spinal cord compression, unless the condition has been treated, asymptomatic, and has been stable without requiring escalating doses of corticosteroids (equivalent to ≤10 mg/day prednisone) or anti-convulsant medications for at least four weeks prior for the first dose of investigational drug."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1873,
+        "end": 1952,
+        "text": "Prior treatment with any ADC carrying a TOP1i payload (including prior VBC101)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1959,
+        "end": 2230,
+        "text": "Has a medical history of interstitial lung diseases (e.g., non-infectious interstitial pneumonia, pneumonitis, pulmonary fibrosis, and severe radiation pneumonitis) or current interstitial lung diseases or who are suspected to have these diseases by imaging at screening."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

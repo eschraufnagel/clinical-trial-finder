@@ -1,0 +1,179 @@
+{
+  "nctId": "NCT05254184",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 89,
+        "text": "Histologically- or cytologically-proven non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 90,
+        "end": 168,
+        "text": "deemed to be locally advanced/unresectable or metastatic as per AJCC version 9"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 493,
+        "end": 538,
+        "text": "Measurable disease as defined by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 864,
+        "end": 895,
+        "text": "ECOG performance status 0 or 1."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 541,
+        "end": 704,
+        "text": "Have one of the KRAS mutations (KRASG12C, KRASG12V, KRASG12D, KRASG12A, KRASG13D or KRASG12R) included in the vaccine at the time of vaccination expressed in tumor"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5400,
+        "end": 5442,
+        "text": "Untreated or symptomatic brain metastases."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5609,
+        "end": 5707,
+        "text": "Has an active known autoimmune disease or which has required systemic therapy in the last 2 years."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5992,
+        "end": 6116,
+        "text": "Known history of interstitial lung disease or of (non-infectious) pneumonitis that required steroids or current pneumonitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6197,
+        "end": 6314,
+        "text": "Has a known history of Human Immunodeficiency Virus (HIV) (HIV1/2 antibodies), hepatitis B, or hepatitis C infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6197,
+        "end": 6314,
+        "text": "Has a known history of Human Immunodeficiency Virus (HIV) (HIV1/2 antibodies), hepatitis B, or hepatitis C infection."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6583,
+        "end": 6806,
+        "text": "Patients who have been diagnosed with another cancer or myeloproliferative disorder in the past 5 years except for superficial bladder cancer, non-melanoma skin cancers, or a low-grade prostate cancer not requiring therapy."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6848,
+        "end": 7052,
+        "text": "Presence of any tissue or organ allograft, regardless of need for immunosuppression, including corneal allograft. Patients with a history of allogeneic hematopoietic stem cell transplant will be excluded."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7468,
+        "end": 7505,
+        "text": "Patient is pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

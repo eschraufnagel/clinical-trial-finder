@@ -1,0 +1,83 @@
+{
+  "nctId": "NCT06907043",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 520,
+        "end": 583,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 641,
+        "end": 714,
+        "text": "Should have evaluable disease as defined by RECIST1.1 and/or CA125 or PSA"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1744,
+        "end": 1790,
+        "text": "Any untreated brain lesions \\> 2.0 cm in size."
+      },
+      "appliesTo": "CNS Exclusion Criteria"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2209,
+        "end": 2251,
+        "text": "Known, symptomatic leptomeningeal disease."
+      },
+      "appliesTo": "CNS Exclusion Criteria"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1931,
+        "end": 1971,
+        "text": "requirement for \\> 10 mg prednisone/day."
+      },
+      "appliesTo": "CNS Exclusion Criteria"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

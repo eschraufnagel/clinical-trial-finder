@@ -1,0 +1,509 @@
+{
+  "nctId": "NCT06865339",
+  "set": "heldout",
+  "criteriaTextSha": "a77d4a2f3a718008f6e3ac6023c5b73420487f453dc6f88e5cc448297521a5ce",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Previously untreated and biopsy-proven NSCLC, with measurable disease (at least 1 unidimensional, radiographically measurable lesion based on RECIST v1.1) and one of the following stages: (prior resection or stereotactic radiotherapy for early-stage disease is allowed)",
+      "start": 23,
+      "end": 292,
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        },
+        {
+          "factId": "extent",
+          "rulesOut": ["metastatic_or_recurrent"],
+          "appliesTo": null
+        },
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "previously untreated not mapped"
+    },
+    {
+      "quote": "AJCC version 8 Stage II disease, medically or technically unresectable",
+      "start": 298,
+      "end": 368,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "AJCC version 8 Stage III disease, eligible for non-surgical treatment",
+      "start": 373,
+      "end": 442,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "Determination of PD-L1 expression on pretreatment tumor specimen using a clinically validated assay",
+      "start": 445,
+      "end": 544,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Eligible for standard nonsurgical treatment for Stage III NSCLC, i.e., chemotherapy and concurrent RT followed by adjuvant durvalumab",
+      "start": 547,
+      "end": 680,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "fit for chemoradiation"
+    },
+    {
+      "quote": "Whole body PET/CT within 42 days prior to study entry demonstrating hypermetabolic pulmonary lesion(s) and/or thoracic lymph node(s)",
+      "start": 683,
+      "end": 815,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "MRI of the brain or head CT with contrast within 42 days prior to study entry",
+      "start": 818,
+      "end": 895,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "PFTs within 42 days of study entry",
+      "start": 898,
+      "end": 932,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status 0-2",
+      "start": 935,
+      "end": 999,
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps3_4"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Adequate end-organ function for study therapy, as per clinician assessment and including:",
+      "start": 1002,
+      "end": 1091,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Hemoglobin \u2265 9.0 g/dL",
+      "start": 1097,
+      "end": 1118,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Absolute neutrophil count (ANC) \u2265 1.5 x 109/L (\\> 1500 per mm3)",
+      "start": 1123,
+      "end": 1186,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Platelet count \u2265 100 x 109/L (\\>100,000 per mm3)",
+      "start": 1191,
+      "end": 1239,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Serum bilirubin \u2264 1.5 x institutional upper limit of normal (ULN).",
+      "start": 1244,
+      "end": 1310,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "This will not apply to subjects with confirmed Gilbert's syndrome (persistent or recurrent hyperbilirubinemia that is predominantly unconjugated in the absence of hemolysis or hepatic pathology), who will be allowed only in consultation with their physician",
+      "start": 1311,
+      "end": 1568,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "AST (SGOT)/ALT (SGPT), and alkaline phosphatase \u2264 2.5 x institutional upper limit of normal (ULN)",
+      "start": 1573,
+      "end": 1670,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Serum creatinine clearance \\>30 mL/min by the Cockcroft-Gault formula (as below) or by 24-hour urine collection for determination of creatinine clearance: (except for patients planned to receive pemetrexed, in which case serum creatinine clearance needs to \\>45 ml/min)",
+      "start": 1675,
+      "end": 1944,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Males: Weight (kg) x (140 - Age) \u00f7 (72 x serum creatinine (mg/dL))",
+      "start": 1952,
+      "end": 2018,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Females: 0.85 x Weight (kg) x (140 - Age) \u00f7 (72 x serum creatinine (mg/dL))",
+      "start": 2025,
+      "end": 2100,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "A female participant is eligible to participate if she is not pregnant (see Exclusion Criteria), not breastfeeding, and at least one of the following conditions applies:",
+      "start": 2103,
+      "end": 2272,
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Not a woman of childbearing potential (WOCBP) as defined in the Appendix",
+      "start": 2278,
+      "end": 2350,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "A WOCBP who agrees to follow the contraceptive guidance in the Appendix during the treatment period and for at least 6 months (180 days) after the last dose of study treatment with cemiplimab and fianlimab",
+      "start": 2355,
+      "end": 2560,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "A WOCBP who agrees to follow the contraceptive guidance in the Appendix and for at least 6 months after the last dose of chemotherapy or as specified in FDA prescribing labels (e.g. 14 months after the last dose of cisplatin)",
+      "start": 2565,
+      "end": 2790,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "A male participant must agree to use contraception during the treatment period and for at least 6 months after the last dose of study treatment and refrain from donating sperm during this period",
+      "start": 2793,
+      "end": 2987,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "The participant (or legally acceptable representative if applicable) provides written informed consent for the trial",
+      "start": 2990,
+      "end": 3106,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Presence of known sensitizing epidermal growth factor (EGFR) mutation or anaplastic lymphoma kinase (ALK) fusion",
+      "start": 3131,
+      "end": 3243,
+      "mappings": [
+        {
+          "factId": "egfr",
+          "rulesOut": ["common_sensitizing"],
+          "appliesTo": null
+        },
+        {
+          "factId": "alk",
+          "rulesOut": ["found"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "o Determination of EGFR/ALK mutation status is required for non-squamous cell carcinoma histologies and recommended for squamous cell carcinoma",
+      "start": 3247,
+      "end": 3390,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Prior therapy with an anti-PD-1, anti-PD-L1, or LAG-3 inhibitor",
+      "start": 3393,
+      "end": 3456,
+      "mappings": [
+        {
+          "factId": "prior_pd1",
+          "rulesOut": ["progressed", "stopped_other"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "LAG-3 inhibitor not mapped"
+    },
+    {
+      "quote": "Patient currently participating in or has participated in a study of an investigational agent or has used an investigational device within 4 weeks prior to the first dose of study treatment",
+      "start": 3459,
+      "end": 3648,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Active malignancy other than lung cancer that (1) requires active treatment other than hormonal therapy and (2) is deemed by the treating physicians to be likely to affect the patient's life expectancy",
+      "start": 3651,
+      "end": 3852,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "other cancer: active and needing treatment only"
+    },
+    {
+      "quote": "A history of (non-infectious) pneumonitis that required steroids or current pneumonitis",
+      "start": 3855,
+      "end": 3942,
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "history of steroid-requiring pneumonitis not mapped"
+    },
+    {
+      "quote": "Known history of myocarditis",
+      "start": 3945,
+      "end": 3973,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "myocarditis"
+    },
+    {
+      "quote": "Troponin T (TnT) or troponin I (TnI) \\> 2x institutional ULN at baseline.",
+      "start": 3976,
+      "end": 4049,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Patients with TnT or TnI levels between \\> 1 to 2x ULN are permitted if repeat levels within 24 hours are \u2264 1x ULN.",
+      "start": 4050,
+      "end": 4165,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 33"
+    },
+    {
+      "quote": "If TnT or TnI levels are \\> 1 to 2x ULN within 24 hours, the subject may undergo a cardiac evaluation and be considered for treatment by the investigator based on the medical judgement in the patient's best interest",
+      "start": 4166,
+      "end": 4381,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 33"
+    },
+    {
+      "quote": "Known active Bacillus Tuberculosis (TB)",
+      "start": 4384,
+      "end": 4423,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "infection"
+    },
+    {
+      "quote": "Known psychiatric or substance abuse disorders that would interfere with cooperation with the requirements of the trial",
+      "start": 4426,
+      "end": 4545,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "psychiatric"
+    },
+    {
+      "quote": "Pregnancy, assessed with urine pregnancy test within 72 hours prior to study treatment allocation.",
+      "start": 4548,
+      "end": 4646,
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "If urine pregnancy test is positive or cannot be confirmed as negative, a serum pregnancy test is required.",
+      "start": 4647,
+      "end": 4754,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "If more than 72 hours elapse between screening pregnancy test and the first dose of study treatment, another pregnancy test (urine or serum) must be performed and must be negative",
+      "start": 4755,
+      "end": 4934,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Ongoing or recent (within 2 years) evidence of an autoimmune disease that required systemic treatment with immunosuppressive agents.",
+      "start": 4937,
+      "end": 5069,
+      "mappings": [
+        {
+          "factId": "autoimmune_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "The following are non-exclusionary: vitiligo, childhood asthma that has resolved, residual hypothyroidism that requires only hormone replacement, psoriasis not requiring systemic treatment",
+      "start": 5070,
+      "end": 5258,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 41"
+    },
+    {
+      "quote": "History or current evidence of significant (CTCAE grade \u22652) local or systemic infection (e.g., cellulitis, pneumonia, septicemia) requiring systemic antibiotic treatment within 2 weeks prior to the first dose of trial medication",
+      "start": 5261,
+      "end": 5489,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "infection"
+    },
+    {
+      "quote": "Active infection requiring therapy",
+      "start": 5492,
+      "end": 5526,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "infection"
+    },
+    {
+      "quote": "Uncontrolled infection with HIV, Hepatitis B Virus (HBV), or Hepatitis C Virus (HCV) infection; or diagnosis of immunodeficiency that is related to, or results in chronic infection",
+      "start": 5529,
+      "end": 5709,
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["uncontrolled"],
+          "appliesTo": null
+        },
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "immunodeficiency not mapped"
+    },
+    {
+      "quote": "Patients with known HIV who have controlled infection (undetectable viral load and CD4 count above 350 either spontaneously or on a stable antiviral regimen) are permitted.",
+      "start": 5715,
+      "end": 5887,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 45"
+    },
+    {
+      "quote": "For patients with controlled HIV infection, monitoring will be performed per local standards",
+      "start": 5888,
+      "end": 5980,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 45"
+    },
+    {
+      "quote": "Patients with known hepatitis B (HepBsAg+) who have controlled infection (serum hepatitis B virus DNA PCR that is below the limit of detection AND receiving anti-viral therapy for hepatitis B) are permitted.",
+      "start": 5985,
+      "end": 6192,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 45"
+    },
+    {
+      "quote": "Patients with controlled infections must undergo periodic monitoring of HBV DNA per local standards and must remain on anti-viral therapy for at least 6 months beyond the last dose of investigational study drug",
+      "start": 6193,
+      "end": 6403,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 45"
+    },
+    {
+      "quote": "Patients who are known hepatitis C virus antibody positive (HCV Ab+) who have controlled infection (undetectable HCV RNA by polymerase chain reaction (PCR) either spontaneously or in response to a successful prior course of anti-HCV therapy) are permitted",
+      "start": 6408,
+      "end": 6663,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 45"
+    },
+    {
+      "quote": "Patients with HIV or hepatitis must be reviewed by a qualified specialist (e.g., infectious disease or hepatologist) managing this disease prior to commencing and regularly throughout the duration of their participation in the trial",
+      "start": 6668,
+      "end": 6900,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 45"
+    },
+    {
+      "quote": "Diagnosis of immunodeficiency or ongoing chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent) or any other form of immunosuppressive therapy within 7 days prior to the first dose of study drug",
+      "start": 6903,
+      "end": 7134,
+      "mappings": [
+        {
+          "factId": "steroids",
+          "rulesOut": ["high_dose"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "immunodeficiency and other immunosuppressants not mapped"
+    },
+    {
+      "quote": "Known hypersensitivity to the active substances or to any of the excipients",
+      "start": 7137,
+      "end": 7212,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
+    },
+    {
+      "quote": "Received a live vaccine within 30 days of planned start of study medication o Live or live attenuated vaccination with replicating potential.",
+      "start": 7215,
+      "end": 7356,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "If a patient intends to receive a COVID-19 vaccine before the start of study drug, participation in the study should be delayed at least 1 week after any COVID-19 vaccination.",
+      "start": 7357,
+      "end": 7532,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "During the treatment period, it is recommended to delay COVID-19 vaccination until patients are receiving and tolerating a steady dose of study drug.",
+      "start": 7533,
+      "end": 7682,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "A vaccine dose should not be less than 48 hours before or after study drug dosing",
+      "start": 7683,
+      "end": 7764,
+      "mappings": [],
+      "unmapped": "procedure"
+    }
+  ]
+}

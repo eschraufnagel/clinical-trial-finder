@@ -1,0 +1,83 @@
+{
+  "nctId": "NCT07196644",
+  "mappings": [
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 203,
+        "text": "Locally advanced/metastatic solid tumors with documented MET amplification via Local next generation sequencing (NGS) or Central NGS via FoundationOne Companion Diagnostic (F1CDx)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 206,
+        "end": 276,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 to 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 279,
+        "end": 470,
+        "text": "Measurable disease at baseline per Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1 or Response Assessment in Neuro-Oncology (RANO) 2.0 criteria as appropriate to tumor type."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 723,
+        "end": 915,
+        "text": "If participant has central nervous system (CNS) metastasis, these should be clinically asymptomatic or radiologically stable (i.e., without evidence of progression after definitive treatment)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 940,
+        "end": 1058,
+        "text": "Current, historical, or suspected (non-infectious) interstitial lung disease (ILD)/pneumonitis that required steroids."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

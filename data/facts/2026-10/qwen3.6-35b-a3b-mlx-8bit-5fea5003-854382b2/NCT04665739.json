@@ -1,0 +1,133 @@
+{
+  "nctId": "NCT04665739",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1008,
+        "end": 1072,
+        "text": "Recurrent or locally-advanced/unresectable or metastatic disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1650,
+        "end": 1820,
+        "text": "Patients must have measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) version (v)1.1 by computer tomography (CT) scan or magnetic imaging (MRI)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5181,
+        "end": 5245,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5875,
+        "end": 5998,
+        "text": "No known central nervous system metastases unless treated and clinically stable for at least 14 days prior to registration."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6098,
+        "end": 6295,
+        "text": "No other currently active malignancy that requires therapy or is expected to require therapy during the study (excluding non-melanoma skin cancers or in situ carcinomas, such as breast or cervical)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6312,
+        "end": 6518,
+        "text": "No known active hepatitis B (defined as hepatitis B surface antigen \\[HbsAg\\] reactive) or known active hepatitis C virus (defined as hepatitis C virus \\[HCV\\] ribonucleic acid \\[RNA\\] viral load detected)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6736,
+        "end": 6927,
+        "text": "Patients with known human immunodeficiency virus (HIV) infections on effective anti-retroviral therapy with undetectable viral load within 6 months of registration are eligible for this trial"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4968,
+        "end": 4996,
+        "text": "Not pregnant and not nursing"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients with poorly-differentiated or high-grade neuroendocrine carcinoma (i.e. large cell neuroendocrine carcinoma of lung, small cell lung cancer) or mixed tumors (i.e. adenocarcinoid tumor) are not eligible",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with poorly-differentiated or high-grade neuroendocrine carcinoma (i.e. large cell neuroendocrine carcinoma of lung, small cell lung cancer) or mixed tumors (i.e. adenocarcinoid tumor) are not eligible",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "nctId": "NCT04991025",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 162,
+        "text": "Untreated stage II-III (AJCC 8th edition) non-small cell lung cancers with operable and resectable disease determined by a thoracic surgeon"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 162,
+        "text": "Untreated stage II-III (AJCC 8th edition) non-small cell lung cancers with operable and resectable disease determined by a thoracic surgeon"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1347,
+        "end": 1465,
+        "text": "Presence of at least one site of measurable disease as defined by the Response Evaluation Criteria in Solid Tumors 1.1"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1566,
+        "end": 1803,
+        "text": "Negative HIV test at screening, with the following exception: patients with a positive HIV test at screening are eligible provided they are stable on anti-retroviral therapy, have a CD4 count ³ 200/µL, and have an undetectable viral load"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6321,
+        "end": 6364,
+        "text": "Acute or chronic Hepatitis B or C infection"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3568,
+        "end": 3628,
+        "text": "Active or history of autoimmune disease or immune deficiency"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4960,
+        "end": 5192,
+        "text": "History of idiopathic pulmonary fibrosis, organizing pneumonia (e.g., bronchiolitis obliterans), drug-induced pneumonitis, or idiopathic pneumonitis, or evidence of active pneumonitis on screening chest computed tomography (CT) scan"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5782,
+        "end": 5997,
+        "text": "Significant cardiovascular disease (such as New York Heart Association Class II or greater cardiac disease, or cerebrovascular accident) within 3 months prior to initiation of study treatment, or unstable arrhythmia"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7638,
+        "end": 7695,
+        "text": "Prior allogeneic stem cell or solid organ transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9106,
+        "end": 9408,
+        "text": "Pregnancy or breastfeeding, or intention of becoming pregnant during study treatment or within 5 months after the final dose of nivolumab, within 3 months after the final dose of Certolizumab pegol, and within 6 months after the final dose of carboplatin, cisplatin, pemetrexed or gemcitabine treatment"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2406,
+        "end": 2561,
+        "text": "Presence of an FDA approved targeted therapy for patients with NSCLC harboring a genomic aberration for which an FDA-approved targeted therapy is indicated"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8287,
+        "end": 8435,
+        "text": "Prior treatment with CD137 agonists or immune checkpoint blockade therapies, including anti-CTLA-4, anti-PD-1, and anti-PD-L1 therapeutic antibodies"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2633,
+        "end": 2937,
+        "text": "Treatment with systemic immunosuppressive medication (including, but not limited to, corticosteroids, cyclophosphamide, azathioprine, methotrexate, thalidomide) within 2 weeks prior to initiation of study treatment, or anticipation of need for systemic immunosuppressive medication during study treatment"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

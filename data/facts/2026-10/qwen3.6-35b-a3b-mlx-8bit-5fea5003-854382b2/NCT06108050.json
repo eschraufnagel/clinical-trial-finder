@@ -1,0 +1,153 @@
+{
+  "nctId": "NCT06108050",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 48,
+        "end": 124,
+        "text": "Histological or cytological diagnosis of advanced or metastatic solid tumor."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 48,
+        "end": 124,
+        "text": "Histological or cytological diagnosis of advanced or metastatic solid tumor."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1023,
+        "end": 1044,
+        "text": "ECOG score of 0 to 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1047,
+        "end": 1098,
+        "text": "Measurable disease per RECIST version 1.1 criteria."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1756,
+        "end": 1804,
+        "text": "Primary CNS tumor or symptomatic CNS metastases."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1807,
+        "end": 1977,
+        "text": "Have a second primary malignancy treated within the previous 2 years (exceptions: non-metastatic, non-melanomatous skin cancers, carcinoma in-situ, and melanoma in-situ)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1980,
+        "end": 2084,
+        "text": "Active autoimmune disease (in the last 2 years) requiring systemic steroids or immunosuppressive agents."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2087,
+        "end": 2241,
+        "text": "Active or history of pneumonitis (noninfectious) or interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2304,
+        "end": 2439,
+        "text": "Clinically significant ischemic/hemorrhagic cerebrovascular accident/stroke and/or clinically significant active cardiovascular disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2770,
+        "end": 2896,
+        "text": "Participant is pregnant, breastfeeding, or expecting to conceive or father children within the projected duration of the study"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2899,
+        "end": 2938,
+        "text": "Had a stem cell/solid organ transplant."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

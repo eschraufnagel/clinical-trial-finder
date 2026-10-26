@@ -1,0 +1,284 @@
+{
+  "nctId": "NCT05588388",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 145,
+        "end": 311,
+        "text": "Histologically or cytologically confirmed ES-SCLC (per the Veterans Administration Lung Study Group staging system), and radiographic confirmation of LM at diagnosis."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 904,
+        "end": 1079,
+        "text": "Asymptomatic patients with treated or untreated CNS lesions are eligible if there is no progression between completion of CNS-directed therapy and screening radiographic study"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5142,
+        "end": 5175,
+        "text": "History of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 867,
+        "end": 901,
+        "text": "Measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1710,
+        "end": 1741,
+        "text": "ECOG Performance Status of 0-2."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 545,
+        "end": 576,
+        "text": "No prior treatment for ES-SCLC."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 545,
+        "end": 576,
+        "text": "No prior treatment for ES-SCLC."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 545,
+        "end": 576,
+        "text": "No prior treatment for ES-SCLC."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 545,
+        "end": 576,
+        "text": "No prior treatment for ES-SCLC."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 545,
+        "end": 576,
+        "text": "No prior treatment for ES-SCLC."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 583,
+        "end": 864,
+        "text": "patients who have received prior chemoradiotherapy for limited-stage SCLC must have been treated with curative intent and experienced a treatment-free interval of at least six months since the last chemotherapy, radiotherapy or chemoradiotherapy cycle prior to diagnosis of ES-SCLC"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9963,
+        "end": 10366,
+        "text": "History of malignancy other than SCLC within 3 years prior to screening, with the exception of malignancies with a negligible risk of metastasis or death (e.g., 5-year OS rate greater-than 90%), such as adequately treated carcinoma in situ of the cervix, non-melanoma skin carcinoma, localized prostate cancer, ductal carcinoma in situ, or Stage I uterine cancer treated surgically with curative intent."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7721,
+        "end": 8069,
+        "text": "Active or history of autoimmune disease or immune deficiency, including, but not limited to, myasthenia gravis, myositis, autoimmune hepatitis, systemic lupus erythematosus, rheumatoid arthritis, inflammatory bowel disease, antiphospholipid antibody syndrome, Wegener granulomatosis, Sjögren syndrome, Guillain-Barré syndrome, or multiple sclerosis"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9181,
+        "end": 9413,
+        "text": "History of idiopathic pulmonary fibrosis, organizing pneumonia (e.g., bronchiolitis obliterans), drug-induced pneumonitis, or idiopathic pneumonitis, or evidence of active pneumonitis on screening chest computed tomography (CT) scan"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11172,
+        "end": 11416,
+        "text": "Known human immunodeficiency virus (HIV) infection. HIV-infected subjects on effective anti-retroviral therapy are eligible if the most recent viral load test performed within six months of screening (based on medical chart review) is negative."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11419,
+        "end": 11444,
+        "text": "Known chronic hepatitis B"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9524,
+        "end": 9779,
+        "text": "Significant cardiovascular disease (such as New York Heart Association Class II or greater cardiac disease, myocardial infarction, or cerebrovascular accident) within 3 months prior to initiation of study treatment, unstable arrhythmia, or unstable angina"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10836,
+        "end": 10893,
+        "text": "Prior allogeneic stem cell or solid organ transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2914,
+        "end": 2980,
+        "text": "Negative serum pregnancy test for women of childbearing potential."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1583,
+        "end": 1707,
+        "text": "Concurrent therapy of corticosteroids ≤ 10 mg of oral prednisone or equivalent and/or anticonvulsant therapy at stable dose."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed ES-SCLC (per the Veterans Administration Lung Study Group staging system), and radiographic confirmation of LM at diagnosis.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed ES-SCLC (per the Veterans Administration Lung Study Group staging system), and radiographic confirmation of LM at diagnosis.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

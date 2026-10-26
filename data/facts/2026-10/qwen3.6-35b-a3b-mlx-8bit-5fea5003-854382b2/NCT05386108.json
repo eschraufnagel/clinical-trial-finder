@@ -1,0 +1,160 @@
+{
+  "nctId": "NCT05386108",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5585,
+        "end": 5715,
+        "text": "Breast cancer treatment-naïve participants (that is, not having received any systemic therapy) in the advanced/metastatic setting."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1502,
+        "end": 1612,
+        "text": "In Phase 2, participants must have at least one active and measurable brain metastasis per RECIST version 1.1."
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5351,
+        "end": 5534,
+        "text": "Participant has leptomeningeal metastases, defined as having positive cerebrospinal fluid (CSF) cytology or unequivocal radiologic and clinical evidence of leptomeningeal involvement."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1502,
+        "end": 1612,
+        "text": "In Phase 2, participants must have at least one active and measurable brain metastasis per RECIST version 1.1."
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3853,
+        "end": 3938,
+        "text": "Participant has an Eastern Cooperative Oncology Group (ECOG) performance status of ≤2"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6442,
+        "end": 6826,
+        "text": "Participant has a concurrent malignancy or malignancy within 3 years of enrollment, with the exception of adequately treated basal or squamous cell skin cancer, superficial bladder cancer, carcinoma in situ of the cervix, or second primary breast cancer; and any other malignancy that is considered in complete remission by the Investigator(s) that is approved by the Medical Monitor."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8210,
+        "end": 8369,
+        "text": "Participants known to be human immunodeficiency virus positive (HIV+) are allowed as long as they have undetectable viral load (viral suppression) at baseline."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8016,
+        "end": 8203,
+        "text": "Participants with hepatitis B virus (HBV) and/or hepatitis C virus (HCV) infection must have undetectable viral load (or detected below the lower limit of quantification) during screening"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5719,
+        "end": 5855,
+        "text": "History of pulmonary embolism (PE), cardiovascular accident (CVA), myocardial infarction (MI) in the past 6 months from screening visit."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9727,
+        "end": 9769,
+        "text": "Females who are pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participant has the signed informed consent form before any study-related activities according to local guidelines.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participant has the signed informed consent form before any study-related activities according to local guidelines.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

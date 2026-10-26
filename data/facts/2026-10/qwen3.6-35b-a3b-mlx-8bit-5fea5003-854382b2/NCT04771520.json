@@ -1,0 +1,94 @@
+{
+  "nctId": "NCT04771520",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 385,
+        "end": 441,
+        "text": "Patient has a locally advanced or metastatic solid tumor"
+      },
+      "appliesTo": "Cohorts 1 and 2"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1300,
+        "end": 1393,
+        "text": "Measurable disease per the RECIST v1.1 or RANO criteria, as appropriate, for Cohorts 1 and 2."
+      },
+      "appliesTo": "Cohorts 1 and 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3083,
+        "end": 3144,
+        "text": "Eastern Cooperative Oncology Group performance status of 0-2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4571,
+        "end": 4711,
+        "text": "Patients with meningeal carcinomatosis, leptomeningeal carcinomatosis, spinal cord compression, or symptomatic or unstable brain metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4571,
+        "end": 4711,
+        "text": "Patients with meningeal carcinomatosis, leptomeningeal carcinomatosis, spinal cord compression, or symptomatic or unstable brain metastases."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7245,
+        "end": 7322,
+        "text": "Known additional malignancy that is progressing or requires active treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "nctId": "NCT06974110",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 42,
+        "end": 108,
+        "text": "Participants have unresectable advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 347,
+        "end": 475,
+        "text": "Have at least 1 lesion at baseline (measurable or non-measurable) suitable for repeat imaging evaluation by RECIST and/or PCWG-3"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 479,
+        "end": 490,
+        "text": "ECOG PS ≤ 2"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1292,
+        "end": 1328,
+        "text": "Patient is pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1332,
+        "end": 1571,
+        "text": "Known to be HIV positive, unless all of the following criteria are met:\n\n   1. Undetectable viral load or CD4+ count ≥300 cells/μL\n   2. Receiving highly active antiretroviral therapy\n   3. No AIDS-related illness within the past 12 months"
+      },
+      "loose": true
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1019,
+        "end": 1131,
+        "text": "Known CNS metastasis associated with progressive neurological symptoms (stable doses of corticosteroids allowed)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

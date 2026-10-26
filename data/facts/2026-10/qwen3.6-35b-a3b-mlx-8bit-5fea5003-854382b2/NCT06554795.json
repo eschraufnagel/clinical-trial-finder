@@ -1,0 +1,144 @@
+{
+  "nctId": "NCT06554795",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 103,
+        "end": 189,
+        "text": "Histologically or cytologically confirmed unresectable advanced/metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 351,
+        "end": 447,
+        "text": "At least one measurable lesion as assessed by the Investigator according to RECIST v1.1 criteria"
+      },
+      "appliesTo": "backfill participants in phase 1a and participants in phase 1b/2a"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 703,
+        "end": 783,
+        "text": "Has an Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0-1."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2800,
+        "end": 3115,
+        "text": "Has a medical history of interstitial lung diseases (e.g., non-infectious interstitial pneumonia, pneumonitis, pulmonary fibrosis, and severe radiation pneumonitis which needs glucocorticoids and antibiotics) or current interstitial lung diseases or who are suspected to have these diseases by imaging at screening."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3414,
+        "end": 3590,
+        "text": "Has an active autoimmune disease that has required systemic treatment in past 2 years (i.e., with use of disease modifying agents, corticosteroids, or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3904,
+        "end": 3954,
+        "text": "Know human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3959,
+        "end": 3986,
+        "text": "Has active viral hepatitis."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3991,
+        "end": 4102,
+        "text": "Is a lactating mother, or pregnant as confirmed by pregnancy tests performed within 7 days prior to enrollment."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4107,
+        "end": 4327,
+        "text": "Has spinal cord compression or clinically active central nervous system (CNS) metastases, defined as untreated and symptomatic, or requiring therapy with corticosteroids or anticonvulsants to control associated symptoms."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4328,
+        "end": 4598,
+        "text": "Participants with asymptomatic CNS metastases who are radiologically and neurologically stable for at least 4 weeks following CNS-directed therapy, and are on stable or decreasing doses of corticosteroids equivalent to ≤10 mg/day prednisone are eligible for study entry."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

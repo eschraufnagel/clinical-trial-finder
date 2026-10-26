@@ -1,0 +1,61 @@
+{
+  "nctId": "NCT07819136",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 251,
+        "text": "Participants have histologically-confirmed unresectable, locally advanced, or metastatic solid tumors which exhibit the PIK3CA H1047R mutation in tumor tissue and/or blood (circulating tumor deoxyribonucleic acid \\[ctDNA\\])."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 254,
+        "end": 581,
+        "text": "For Phase 1A and planned monotherapy cohorts in Phase 1B, participants have experienced progressive disease, relapsed disease, or be intolerant to at least one established standard systemic anti-cancer treatment for a given tumor type, or in the opinion of the Investigator have been considered ineligible for standard therapy."
+      },
+      "appliesTo": "Phase 1A and planned monotherapy cohorts in Phase 1B"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants have histologically-confirmed unresectable, locally advanced, or metastatic solid tumors which exhibit the PIK3CA H1047R mutation in tumor tissue and/or blood (circulating tumor deoxyribonucleic acid [ctDNA]).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants have histologically-confirmed unresectable, locally advanced, or metastatic solid tumors which exhibit the PIK3CA H1047R mutation in tumor tissue and/or blood (circulating tumor deoxyribonucleic acid [ctDNA]).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

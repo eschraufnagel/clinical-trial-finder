@@ -1,0 +1,129 @@
+{
+  "nctId": "NCT06126276",
+  "mappings": [
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 208,
+        "end": 277,
+        "text": "Patients must have a HER2 amplified solid tumor except breast cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 799,
+        "end": 849,
+        "text": "Patients must have recurrent or persistent disease"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1348,
+        "end": 1583,
+        "text": "Patients with treated brain metastases are eligible if follow up brain imaging after central nervous system (CNS) directed therapy shows no evidence of progression for 3 months or more and patient is not on steroids and is asymptomatic"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1586,
+        "end": 1617,
+        "text": "No known leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1215,
+        "end": 1345,
+        "text": "Patients must have measurable disease based on RECIST 1.1. A second measurable lesion outside of the biopsiable lesion is required"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1620,
+        "end": 1686,
+        "text": "Patients may have received up to 5 prior lines of systemic therapy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2218,
+        "end": 2285,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of ≤ 2"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2288,
+        "end": 2316,
+        "text": "Not pregnant and not nursing"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3802,
+        "end": 3890,
+        "text": "No interstitial lung disease with ongoing signs and symptoms at the time of registration"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

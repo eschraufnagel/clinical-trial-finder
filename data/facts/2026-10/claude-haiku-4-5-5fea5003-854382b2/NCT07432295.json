@@ -1,0 +1,194 @@
+{
+  "nctId": "NCT07432295",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 171,
+        "text": "Histologically confirmed unresectable, locally advanced, or metastatic gastric, gastroesophageal junction (GEJ), or esophageal adenocarcinoma (EAC)."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 400,
+        "end": 445,
+        "text": "At least 1 measurable lesion per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 448,
+        "end": 479,
+        "text": "ECOG performance status 0 or 1."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 373,
+        "end": 397,
+        "text": "PD-L1 positive (CPS ≥1)."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1039,
+        "end": 1060,
+        "text": "HER2-positive tumors."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1063,
+        "end": 1137,
+        "text": "Second malignancy within 3 years, except certain skin or cervical cancers."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1212,
+        "end": 1322,
+        "text": "Active autoimmune disease requiring systemic therapy within past 2 years or ongoing immunosuppressive therapy."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1325,
+        "end": 1415,
+        "text": "Active pneumonitis or history requiring steroids/immunosuppressive therapy within 3 years."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1668,
+        "end": 1774,
+        "text": "Active CNS metastases or carcinomatous meningitis (previously treated brain metastases allowed if stable)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1668,
+        "end": 1774,
+        "text": "Active CNS metastases or carcinomatous meningitis (previously treated brain metastases allowed if stable)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1921,
+        "end": 2039,
+        "text": "Active or uncontrolled HIV, hepatitis B, or hepatitis C infection, or immunodeficiency (controlled infection allowed)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1921,
+        "end": 2039,
+        "text": "Active or uncontrolled HIV, hepatitis B, or hepatitis C infection, or immunodeficiency (controlled infection allowed)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1777,
+        "end": 1918,
+        "text": "Significant cardiovascular disease (NYHA Class 3-4 CHF, recent MI, unstable angina, TIA/stroke, or major cardiac procedures within 6 months)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1921,
+        "end": 2039,
+        "text": "Active or uncontrolled HIV, hepatitis B, or hepatitis C infection, or immunodeficiency (controlled infection allowed)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

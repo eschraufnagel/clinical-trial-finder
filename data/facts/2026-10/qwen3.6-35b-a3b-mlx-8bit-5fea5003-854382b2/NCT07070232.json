@@ -1,0 +1,394 @@
+{
+  "nctId": "NCT07070232",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1480,
+        "end": 1640,
+        "text": "Cohort 1B and 1C: Have advanced (i.e., metastatic or locally recurrent where local therapy with curative intent is not possible) non-squamous or squamous NSCLC."
+      },
+      "appliesTo": "Cohort 1B and 1C"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 218,
+        "end": 334,
+        "text": "Have histologic or cytologic documented advanced disease, either at relapse or upon diagnosis of metastatic disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 569,
+        "end": 616,
+        "text": "Have measurable disease defined by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 619,
+        "end": 658,
+        "text": "Have ECOG performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1659,
+        "end": 1848,
+        "text": "Have no actionable genomic alterations, such as EGFR mutations, anaplastic lymphoma kinase rearrangements, or other genomic alterations for which targeted molecular therapies are available."
+      },
+      "appliesTo": "Cohort 1B"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1659,
+        "end": 1848,
+        "text": "Have no actionable genomic alterations, such as EGFR mutations, anaplastic lymphoma kinase rearrangements, or other genomic alterations for which targeted molecular therapies are available."
+      },
+      "appliesTo": "Cohort 1B"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1659,
+        "end": 1848,
+        "text": "Have no actionable genomic alterations, such as EGFR mutations, anaplastic lymphoma kinase rearrangements, or other genomic alterations for which targeted molecular therapies are available."
+      },
+      "appliesTo": "Cohort 1B"
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1659,
+        "end": 1848,
+        "text": "Have no actionable genomic alterations, such as EGFR mutations, anaplastic lymphoma kinase rearrangements, or other genomic alterations for which targeted molecular therapies are available."
+      },
+      "appliesTo": "Cohort 1B"
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1659,
+        "end": 1848,
+        "text": "Have no actionable genomic alterations, such as EGFR mutations, anaplastic lymphoma kinase rearrangements, or other genomic alterations for which targeted molecular therapies are available."
+      },
+      "appliesTo": "Cohort 1B"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "high",
+        "low"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1849,
+        "end": 2001,
+        "text": "For enrolled participants with predominantly squamous histology tumors, molecular testing will not be required in cases where it is not part of the SoC."
+      },
+      "appliesTo": "Cohort 1B"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 943,
+        "end": 1011,
+        "text": "Participants must have previously received a PD-1 or PD-L1 inhibitor"
+      },
+      "appliesTo": "Cohort 1A"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2006,
+        "end": 2210,
+        "text": "Have experienced relapse or progression during or after treatment with standard systemic therapy including platinum-based chemotherapy and/or immune checkpoint inhibitor in the advanced/metastatic setting"
+      },
+      "appliesTo": "Cohort 1B"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2270,
+        "end": 2362,
+        "text": "Participants must have received 1 to 3 lines of systemic treatment in the metastatic setting"
+      },
+      "appliesTo": "Cohort 1B"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2609,
+        "end": 2732,
+        "text": "Have documented positive test results for an EGFR-sensitizing mutation (EGFR-sensitizing mutation Exon 21-L858R and 19del)."
+      },
+      "appliesTo": "Cohort 1C"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2737,
+        "end": 2935,
+        "text": "Participants must have received one or two prior lines of systemic therapy for advanced and/or metastatic disease, which must include treatment with an approved EGFR Tyrosine Kinase Inhibitors (TKI)"
+      },
+      "appliesTo": "Cohort 1C"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2737,
+        "end": 2850,
+        "text": "Participants must have received one or two prior lines of systemic therapy for advanced and/or metastatic disease"
+      },
+      "appliesTo": "Cohort 1C"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4077,
+        "end": 4184,
+        "text": "Previously been treated with a PD-1 or PD-L1 inhibitor, if clinically indicated and available per local SoC"
+      },
+      "appliesTo": "Cohort 1D"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5264,
+        "end": 5362,
+        "text": "Have experienced disease progression on at least one and no more than three lines of prior therapy"
+      },
+      "appliesTo": "Cohorts 1E and 1F"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5477,
+        "end": 5549,
+        "text": "Have received one or two lines of systemic therapy for metastatic tumors"
+      },
+      "appliesTo": "Cohorts 1E and 1F"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6281,
+        "end": 6392,
+        "text": "Had disease progression during or after one prior line of anti-cancer therapy for recurrent/metastatic disease."
+      },
+      "appliesTo": "Cohort 2D"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6412,
+        "end": 6505,
+        "text": "Has received two or more lines of prior anti-cancer therapy for recurrent/metastatic disease."
+      },
+      "appliesTo": "Cohort 2D"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6833,
+        "end": 6954,
+        "text": "Must have received at least one line to a maximum of three lines of prior SoC treatment for recurrent/metastatic disease."
+      },
+      "appliesTo": "Cohort 2E"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 7145,
+        "end": 7279,
+        "text": "Must have received platinum-based chemotherapy, with or without an anti-PD-(L)1 agent and bevacizumab for metastatic/recurrent disease"
+      },
+      "appliesTo": "Cohort 1G and 2F"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8767,
+        "end": 8980,
+        "text": "Have a history of (non-infectious) interstitial lung disease (ILD) /pneumonitis that required steroids, have current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9118,
+        "end": 9196,
+        "text": "Are a participant of child-bearing potential who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7704,
+        "end": 7802,
+        "text": "Have an uncontrolled concomitant or intercurrent illness that contra-indicates study participation"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7704,
+        "end": 7802,
+        "text": "Have an uncontrolled concomitant or intercurrent illness that contra-indicates study participation"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7704,
+        "end": 7802,
+        "text": "Have an uncontrolled concomitant or intercurrent illness that contra-indicates study participation"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7704,
+        "end": 7802,
+        "text": "Have an uncontrolled concomitant or intercurrent illness that contra-indicates study participation"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

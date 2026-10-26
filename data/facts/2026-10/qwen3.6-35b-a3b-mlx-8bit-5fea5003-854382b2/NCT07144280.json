@@ -1,0 +1,82 @@
+{
+  "nctId": "NCT07144280",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 384,
+        "end": 465,
+        "text": "Note: Participants with a neuroendocrine component or histology are not eligible."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 383,
+        "text": "Histologically or cytologically confirmed diagnosis of NSCLC with locally advanced, unresectable Stage IIIB or IIIC not eligible for definitive chemoradiotherapy or metastatic (Stage IV: M1a, M1b, or M1c) disease per the American Joint Committee on Cancer (AJCC) Staging Manual, Version 8.0, and the Union for International Cancer Control (UICC) Staging System."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2916,
+        "end": 3048,
+        "text": "Any central nervous system (CNS) lesions, unless definitively treated with CNS-directed local therapy (surgery and/or radiotherapy)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3512,
+        "end": 3582,
+        "text": "Participants with a history of leptomeningeal metastasis are excluded."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2469,
+        "end": 2627,
+        "text": "History of another malignancy within 3 years before the first dose of PF-08046054, or any evidence of residual disease from a previously diagnosed malignancy."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

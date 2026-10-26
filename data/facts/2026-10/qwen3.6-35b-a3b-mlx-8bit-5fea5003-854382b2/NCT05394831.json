@@ -1,0 +1,159 @@
+{
+  "nctId": "NCT05394831",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3859,
+        "end": 4024,
+        "text": "NSCLC with mixed squamous cell histology and tumor with histological transformation (presence of transition from NSCLC to SCLC and epithelial mesenchymal transition)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 85,
+        "end": 202,
+        "text": "Subjects with pathologically confirmed and finally diagnosed advanced and/or metastatic NSCLC with active EGFR mutant"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4073,
+        "end": 4549,
+        "text": "Subjects requiring steroid escalation within 28 days before start of the study due to spinal cord compression with uncontrolled symptoms or Central Nervous System (CNS) metastasis or for CNS disease treatment; patients requiring local CNS disease treatment; and subjects with leptomeningeal disease. However, these subjects may be included in the study if they are systemically asymptomatic and stable 2 weeks after gamma knife therapy or 4 weeks after whole-brain irradiation"
+      },
+      "appliesTo": "For Part A, B, and Cohort 4 of Part C"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4073,
+        "end": 4549,
+        "text": "Subjects requiring steroid escalation within 28 days before start of the study due to spinal cord compression with uncontrolled symptoms or Central Nervous System (CNS) metastasis or for CNS disease treatment; patients requiring local CNS disease treatment; and subjects with leptomeningeal disease. However, these subjects may be included in the study if they are systemically asymptomatic and stable 2 weeks after gamma knife therapy or 4 weeks after whole-brain irradiation"
+      },
+      "appliesTo": "For Part A, B, and Cohort 4 of Part C"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1496,
+        "end": 1621,
+        "text": "For Part C, subjects with at least 1 measurable lesion that has not been previously radiated as defined by RECIST version 1.1"
+      },
+      "appliesTo": "For Part C"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1625,
+        "end": 1669,
+        "text": "Subjects with ECOG performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 85,
+        "end": 202,
+        "text": "Subjects with pathologically confirmed and finally diagnosed advanced and/or metastatic NSCLC with active EGFR mutant"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6966,
+        "end": 7287,
+        "text": "Subjects with active malignancy other than appropriately treated basal cell cancer or squamous cell skin cancer or carcinoma in situ within 2 years before enrollment. However, those who completed all anticancer treatments at least 2 years ago and are considered previously cured at the time of enrollment can be enrolled."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7291,
+        "end": 7416,
+        "text": "Subjects with evidence/past history of interstitial lung disease (ILD) or radiological pneumonia requiring steroid treatment."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7811,
+        "end": 8042,
+        "text": "Subjects with other uncontrolled active infections, e.g. human immunodeficiency virus (HIV), HBV or HCV, including subjects with suspected active or latent tuberculosis (confirmed with interferon-gamma emission analysis positivity)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3427,
+        "end": 3532,
+        "text": "Must not breastfeed during the study and up to 90 days after the last dose of the investigational product"
+      },
+      "appliesTo": "For women with childbearing potential"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

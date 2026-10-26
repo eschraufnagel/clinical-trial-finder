@@ -1,0 +1,112 @@
+{
+  "nctId": "NCT06240728",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 227,
+        "end": 523,
+        "text": "Non-small cell lung carcinoma (NSCLC), small cell lung carcinoma (SCLC), renal cell carcinoma (RCC), colorectal carcinoma (CRC), gastric and gastro-esophageal carcinoma, esophageal adenocarcinoma, biliary tract cancers, ovarian carcinoma, and other solid tumor types known to express B7-H7/HHLA2."
+      },
+      "appliesTo": "Phase 1a (Dose Escalation)"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 614,
+        "end": 715,
+        "text": "participants who have clear cell RCC, EGFR mutant lung adenocarcinoma, or gastric/GEJ adenocarcinoma."
+      },
+      "appliesTo": "Phase 1b including Part 1b (Dose Expansion) and Part 1c (Randomized Dose Comparison)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 98,
+        "text": "Histologically or cytologically confirmed recurrent, metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 973,
+        "end": 1025,
+        "text": "Phase 1b: Measurable disease by RECIST v1.1 criteria"
+      },
+      "appliesTo": "Phase 1b including Part 1b (Dose Expansion) and Part 1c (Randomized Dose Comparison)"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1172,
+        "end": 1244,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0, 1, or 2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1959,
+        "end": 2127,
+        "text": "Participants with known brain metastases are excluded unless they are clinically stable, with no new or enlarging brain metastases as evidenced on MRI during screening."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2409,
+        "end": 2533,
+        "text": "Known autoimmune disease requiring immunosuppressive treatment requiring the equivalent of more than 10 mg prednisone daily."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

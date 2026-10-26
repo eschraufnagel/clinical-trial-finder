@@ -1,0 +1,149 @@
+{
+  "nctId": "NCT04696575",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 258,
+        "end": 487,
+        "text": "Patient should have extensive stage disease, defined as, malignant pleural effusion, pulmonary metastases in a different lobe in the ipsilateral lung or contralateral lung, and/or the presence of extra-thoracic metastatic disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 490,
+        "end": 640,
+        "text": "Must have measurable disease based on Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 prior to starting platinum-based systemic chemotherapy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 49,
+        "end": 168,
+        "text": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of =\\< 1 at the time of study treatment initiation"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1506,
+        "end": 1591,
+        "text": "Received no more than one-line of treatment with platinum-based chemotherapy for SCLC"
+      },
+      "appliesTo": "Patients who have progressed on prior treatment for SCLC"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2523,
+        "end": 2551,
+        "text": "Symptomatic brain metastasis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2993,
+        "end": 3050,
+        "text": "Leptomeningeal involvement regardless of treatment status"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5117,
+        "end": 5429,
+        "text": "Contraindications to atezolizumab: Patients with active autoimmune disorder or prior history of autoimmune disorder requiring immunosuppressive agents within preceding two years will not be allowed to receive atezolizumab but will be able to receive the other drugs included in the treatment regimen, if eligible"
+      },
+      "appliesTo": "Contraindications to atezolizumab"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3332,
+        "end": 3552,
+        "text": "Positive for immunosuppressive disease, acquired immunodeficiency syndrome (AIDS) or other immune depressing diseases. For human immunodeficiency virus (HIV), HVC and HBC-mandatory testing is required prior to enrollment"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3913,
+        "end": 4140,
+        "text": "Patients with active/untreated hepatitis C virus (HCV) will be excluded from the study; patients who test positive for HCV antibody are eligible only if polymerase chain reaction (PCR) is negative for HCV ribonucleic acid (RNA)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed diagnosis of small cell lung cancer (SCLC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed diagnosis of small cell lung cancer (SCLC)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

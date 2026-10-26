@@ -1,0 +1,130 @@
+{
+  "nctId": "NCT06179069",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 49,
+        "end": 145,
+        "text": "Participant with metastatic or extensive-stage small cell lung cancer (de novo, not transformed)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1281,
+        "end": 1352,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1355,
+        "end": 1460,
+        "text": "Subjects must have at least one measurable target lesion as defined by RECIST v1.1 on CT, PET/CT, or MRI."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1654,
+        "end": 1770,
+        "text": "Participants with another known malignancy that is progressing or requires active treatment within the last 2 years."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2046,
+        "end": 2119,
+        "text": "Symptomatic or untreated brain metastasis requiring concurrent treatment."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2597,
+        "end": 2634,
+        "text": "Subjects with leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3838,
+        "end": 3876,
+        "text": "Pregnant or nursing (lactating) women."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3668,
+        "end": 3835,
+        "text": "Lung-specific intercurrent clinically significant illnesses and any autoimmune, connective tissue, or inflammatory disorders, including but not limited to pneumonitis."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3668,
+        "end": 3835,
+        "text": "Lung-specific intercurrent clinically significant illnesses and any autoimmune, connective tissue, or inflammatory disorders, including but not limited to pneumonitis."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

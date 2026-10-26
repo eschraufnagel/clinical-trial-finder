@@ -1,0 +1,170 @@
+{
+  "nctId": "NCT07594522",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 13,
+        "end": 83,
+        "text": "Patients must have pathologically confirmed non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 86,
+        "end": 376,
+        "text": "Early Stage NSCLC Stage IA2 - IIA (tumor size \\> 1cm and ≤ 5cm, N0M0), select IIB (tumor size \\>5cm and ≤ 7cm, N0M0). Multiple (up to 2) primary lung cancers allowed. Isolated parenchymal recurrences (tumor size ≤ 7cm and up to 2 separate ipsilateral lesions) of initially TanyN0M0 disease."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1307,
+        "end": 1337,
+        "text": "ECOG Performance Status of ≤ 1"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1165,
+        "end": 1213,
+        "text": "No prior receipt of immune checkpoint inhibitors"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7884,
+        "end": 8121,
+        "text": "No prior therapy with an anti-PD-1, anti-PD-L1, anti-PD-L2, anti-CD137, anti-Cytotoxic T-lymphocyte-associated antigen-4 (CTLA-4) antibody, or any other antibody or drug specifically targeting T-cell co-stimulation or checkpoint pathways"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3608,
+        "end": 3979,
+        "text": "No active or prior documented autoimmune or inflammatory disorders, including inflammatory bowel disease (e.g., colitis or Crohn's disease), diverticulitis (with the exception of diverticulosis), systemic lupus erythematosus, sarcoidosis syndrome, or Wegener syndrome (granulomatosis with polyangiitis, Graves' disease, rheumatoid arthritis, hypophysitis, uveitis, etc.)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4422,
+        "end": 4509,
+        "text": "No history of allogenic organ transplantation with exception of corneal transplantation"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4512,
+        "end": 4607,
+        "text": "No history of idiopathic pulmonary fibrosis or evidence of interstitial lung disease on imaging"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4771,
+        "end": 4848,
+        "text": "Active or recurrent hepatic disorders including cirrhosis, hepatitis B and C."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5326,
+        "end": 5385,
+        "text": "Human Immunodeficiency Virus (positive HIV 1/2 antibodies)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1340,
+        "end": 1368,
+        "text": "Not Pregnant and Not Nursing"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "No current or prior use of a systemic immunosuppressive medication within 4 weeks prior to study treatment Day 1. The following are exceptions to this criterion: ... ii. Systemic corticosteroids at physiologic doses not to exceed 10 mg/day of prednisone or its equivalent for less than 30 days.",
+      "raw": {
+        "factId": "steroids",
+        "rulesOut": [
+          "high_dose"
+        ],
+        "polarity": "exclusion",
+        "quote": "No current or prior use of a systemic immunosuppressive medication within 4 weeks prior to study treatment Day 1. The following are exceptions to this criterion: ... ii. Systemic corticosteroids at physiologic doses not to exceed 10 mg/day of prednisone or its equivalent for less than 30 days.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

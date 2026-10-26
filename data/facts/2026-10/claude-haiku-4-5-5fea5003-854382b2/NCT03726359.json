@@ -1,0 +1,47 @@
+{
+  "nctId": "NCT03726359",
+  "mappings": [
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1156,
+        "end": 1254,
+        "text": "Patients with definitive leptomeningeal metastases, based on cerebrospinal fluid (CSF) examination"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 156,
+        "end": 494,
+        "text": "Intact (unresected) brain metastases measuring ≥3 cm and ≤ 6 cm in largest dimension on gadolinium contrast enhanced MRI obtained within 30 days prior to registration OR Surgically resected brain metastasis for which postoperative stereotactic radiotherapy is indicated, with expected target measuring ≥3 cm and ≤6 cm in largest dimension"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

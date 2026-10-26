@@ -1,0 +1,180 @@
+{
+  "nctId": "NCT06108232",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 189,
+        "end": 216,
+        "text": "Stage II, III or IV disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 235,
+        "end": 274,
+        "text": "Performance status ≤2 on the ECOG scale"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 904,
+        "end": 1060,
+        "text": "Bi-dimensionally measurable disease, with at least one nodal lesion ≥ 1.5 cm or one extra-nodal lesion \\> 1 cm in longest diameter by CT, PET/CT, and/or MRI"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6076,
+        "end": 6146,
+        "text": "Known active central nervous system lymphoma or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6149,
+        "end": 6327,
+        "text": "Any prior history of other malignancy besides B-NHL, unless the patient has been free of disease for ≥ 3 years and felt to be at low risk for recurrence by the treating physician"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6754,
+        "end": 6919,
+        "text": "Uncontrolled human immunodeficiency virus (HIV), or active Hepatitis C Virus, or active Hepatitis B Virus infection, or any uncontrolled active significant infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6754,
+        "end": 6919,
+        "text": "Uncontrolled human immunodeficiency virus (HIV), or active Hepatitis C Virus, or active Hepatitis B Virus infection, or any uncontrolled active significant infection"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9748,
+        "end": 9937,
+        "text": "Patients who have an active autoimmune disease that has required systemic treatment in past 2 years (i.e., with use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10140,
+        "end": 10250,
+        "text": "Patients who have a history of (non-infectious) pneumonitis that required steroids or has current pneumonitis."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8187,
+        "end": 8361,
+        "text": "Clinically significant cardiovascular disease such as uncontrolled or symptomatic arrhythmias, congestive heart failure, or myocardial infarction within 6 months of Screening"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9043,
+        "end": 9073,
+        "text": "Lactating or pregnant subjects"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9285,
+        "end": 9431,
+        "text": "Patients taking corticosteroids during the last 4 weeks, unless administered at a dose equivalent to \\< 10 mg/day prednisone (over these 4 weeks)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically diagnosed follicular lymphoma grade 1-3a",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically diagnosed follicular lymphoma grade 1-3a",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

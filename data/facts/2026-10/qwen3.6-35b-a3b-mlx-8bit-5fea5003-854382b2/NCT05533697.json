@@ -1,0 +1,188 @@
+{
+  "nctId": "NCT05533697",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 260,
+        "end": 338,
+        "text": "Participant has histologically confirmed locally advanced or metastatic cancer"
+      },
+      "appliesTo": "Dose Escalation (Arm 1a)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1074,
+        "end": 1234,
+        "text": "Participant has histologically confirmed locally advanced or metastatic, and CPI refractory melanoma or locally advanced or metastatic, and CPI refractory NSCLC"
+      },
+      "appliesTo": "Dose Confirmation (Arm 1b)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2908,
+        "end": 3003,
+        "text": "Participant has histologically confirmed:\n\n  1. Arm 2a: Locally advanced or metastatic melanoma"
+      },
+      "appliesTo": "Dose Expansion Arms (Arm 2a)",
+      "loose": true
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3095,
+        "end": 3158,
+        "text": "2. Arm 2b: Newly diagnosed locally advanced or metastatic NSCLC"
+      },
+      "appliesTo": "Dose Expansion Arms (Arm 2b)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3334,
+        "end": 3384,
+        "text": "3. Arm 2c: Locally advanced or metastatic melanoma"
+      },
+      "appliesTo": "Dose Expansion Arms (Arm 2c)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3497,
+        "end": 3536,
+        "text": "4. Arm 2d: Advanced/metastatic melanoma"
+      },
+      "appliesTo": "Dose Expansion Arms (Arm 2d)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 551,
+        "end": 603,
+        "text": "with measurable disease as determined by RECIST v1.1"
+      },
+      "appliesTo": "Dose Escalation (Arm 1a)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3645,
+        "end": 3720,
+        "text": "All participants must have measurable disease as determined by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4646,
+        "end": 4732,
+        "text": "Participant has an Eastern Cooperative Oncology Group (ECOG) performance status of ≤1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4827,
+        "end": 4894,
+        "text": "Participant has active central nervous system tumors or metastases."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7858,
+        "end": 7947,
+        "text": "Also including but not limited to, ongoing or active infection, interstitial lung disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6586,
+        "end": 6661,
+        "text": "Participant who is pregnant, breastfeeding, or is of childbearing potential"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "with measurable disease as determined by RECIST v1.1",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "with measurable disease as determined by RECIST v1.1",
+        "appliesTo": "Dose Confirmation (Arm 1b)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

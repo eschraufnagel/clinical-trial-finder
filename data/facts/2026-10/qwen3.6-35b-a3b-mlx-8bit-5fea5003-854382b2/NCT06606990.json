@@ -1,0 +1,105 @@
+{
+  "nctId": "NCT06606990",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 103,
+        "text": "Patients must have histologically confirmed solid tumors with metastatic disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 350,
+        "end": 471,
+        "text": "Patients must have measurable disease as defined by Response Evaluation Criteria in Solid Tumors (RECIST) version (v) 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 834,
+        "end": 898,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2831,
+        "end": 3049,
+        "text": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression for ≥ 1 month after treatment of the brain metastases."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2452,
+        "end": 2615,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6438,
+        "end": 6563,
+        "text": "Patients with chronic, active HBV or HCV infections that require ongoing antiviral treatment will be excluded from the trial."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5837,
+        "end": 5895,
+        "text": "Pregnant and lactating women are excluded from this trial."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

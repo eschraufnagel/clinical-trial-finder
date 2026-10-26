@@ -1,0 +1,155 @@
+{
+  "nctId": "NCT07488923",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 506,
+        "end": 1045,
+        "text": "Have histologically and/or cytologically confirmed diagnosis of select advanced or metastatic R/R solid tumor malignancy in one of the following: R/R SCLC, R/R GEP-NEC, R/R high-grade NEPC, R/R epNEC with biopsy-documented DLL3 expression on archival tissue or fresh biopsy by local or central assessment. CNS NEC is excluded. Participants with mixed histologies for any of these indications qualify if the small cell/neuroendocrine tumor cell percentage is \\> 50%, except for high-grade NEPC where neuroendocrine component must be \\> 20%."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 219,
+        "end": 319,
+        "text": "Participants with locally advanced disease who are eligible for curative resection will be excluded."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 322,
+        "end": 503,
+        "text": "Have documented radiological disease progression/relapse during or after their most recent line of anti-cancer therapy with measurable disease on imaging, as assessed by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1048,
+        "end": 1119,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Score (PS) 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 72,
+        "end": 218,
+        "text": "Have been previously treated with at least one line of systemic standard of care (SOC) anti-cancer therapy for their respective cancer indication."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1439,
+        "end": 1519,
+        "text": "Prior allogeneic organ transplant (including allogeneic bone marrow transplant)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2080,
+        "end": 2583,
+        "text": "History of any other malignancy known to be active, with the exception of completely removed in situ cervical intra-epithelial neoplasia, non-melanoma skin cancer, ductal carcinoma in situ, early-stage prostate cancer that has been adequately treated, and other cancers from which the participant has been disease free for 3 years or longer or does not require treatment and in the opinion of investigator after discussion with the medical monitor are not likely to impact the patient's life expectancy."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2586,
+        "end": 2922,
+        "text": "One or more of the following cardiac criteria: Unstable angina, Myocardial infarction within 6 months prior to Screening, New York Heart Association Class III to IV heart failure, clinically important abnormalities in rhythm, conduction, or morphology of resting ECG (e.g., complete left bundle branch block or third-degree heart block)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3346,
+        "end": 3494,
+        "text": "Known brain metastases unless asymptomatic and not requiring steroids for at least 2 weeks prior to the first dose of any study drug administration."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3497,
+        "end": 3824,
+        "text": "Active systemic autoimmune disease or any other condition that requires, or is anticipated to require, systemic treatment with steroids or other systemic immunosuppressive agents, or participants who have received such agents within 4 weeks of leukapheresis and ML261 administration (further details provided in protocol body)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3827,
+        "end": 3963,
+        "text": "Evidence of interstitial lung disease (such as idiopathic pulmonary fibrosis) or active pneumonitis of any etiology requiring treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

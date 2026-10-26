@@ -1,0 +1,572 @@
+{
+  "nctId": "NCT06792552",
+  "set": "heldout",
+  "criteriaTextSha": "4d55a7a97017428cbb98eb1e27cdf41dfb82a548d934a0314dd5100bb7b8d108",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Written informed consent is obtained prior to any procedures that are not considered standard of care.",
+      "start": 24,
+      "end": 126,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "\u226518 years of age.",
+      "start": 130,
+      "end": 147,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "In Part 1:",
+      "start": 151,
+      "end": 161,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "heading"
+    },
+    {
+      "quote": "Participants with histologically or cytologically confirmed advanced solid tumors, who have failed or are ineligible for standard of care therapies.",
+      "start": 169,
+      "end": 317,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": "In Part 1"
+        }
+      ],
+      "unmapped": null,
+      "note": "failed or ineligible for standard care not mapped"
+    },
+    {
+      "quote": "Have progressed on at least one prior systematic anti-tumor regimen, and presence of at least one evaluable lesion according to RECIST Version 1.1.",
+      "start": 324,
+      "end": 471,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "prior therapy not clearly for advanced disease"
+    },
+    {
+      "quote": "Measurable lesions are required in the backfill period.",
+      "start": 472,
+      "end": 527,
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": "in the backfill period"
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "In the backfill period, eligible tumor types are limited to high-grade serous ovarian cancer, high-grade endometrioid ovarian cancer, USC, clear cell RCC, papillary RCC and adenocarcinoma of NSCLC without actionable mutation of epidermal growth factor receptor (EGFR).",
+      "start": 534,
+      "end": 802,
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["squamous", "other_nsclc", "mixed_small_cell"],
+          "appliesTo": "In the backfill period"
+        },
+        {
+          "factId": "egfr",
+          "rulesOut": ["common_sensitizing", "exon20_insertion"],
+          "appliesTo": "In the backfill period"
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "For participants with NSCLC, presence of CDH6 expression through immunohistochemical examination of tumor tissue by central laboratory is required.",
+      "start": 803,
+      "end": 950,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "CDH6 expression"
+    },
+    {
+      "quote": "In Part 2: Participants must have a diagnosis of specific type of metastatic or locally advanced solid tumors and have progressed on or cannot benefit from the most recent systematic anti-tumor regimen (unless otherwise specified), with presence of at least one measurable lesion according to RECIST Version 1.1.",
+      "start": 954,
+      "end": 1266,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": "In Part 2"
+        },
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": "In Part 2"
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Participants with histologically or cytologically confirmed high-grade serous ovarian cancer, high-grade endometrioid ovarian cancer, primary peritoneal cancer, or fallopian tube cancer.",
+      "start": 1319,
+      "end": 1505,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Have platinum-resistant disease, defined as: participants who have only had 1 line of platinum-based therapy must have received at least 4 cycles of platinum, must have had a best response of CR or PR, and then progressed between \\>90 days and \u2264180 days after the date of the last dose of platinum; participants who have received \u22652 lines of platinum therapy must have progressed \u2264180 days after the date of the last dose of platinum.",
+      "start": 1512,
+      "end": 1946,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "At least one line of therapy containing anti-VEGF therapy (e.g., bevacizumab or suvemcitug or their biosimilar), unless the participant is not eligible for treatment with anti- angiogenic treatment due to precautions/intolerance.",
+      "start": 1953,
+      "end": 2182,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Has had prior poly-ADP ribose polymerase (PARP) inhibitors for subjects with documented breast cancer gene (BRCA) mutation (germline and/or somatic), unless the subject is not eligible for treatment with a PARP inhibitor.",
+      "start": 2183,
+      "end": 2404,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Has had prior treatment with mirvetuximab soravtansine for participants with documented high folate receptor alpha expression, unless the subject is not eligible for treatment with mirvetuximab soravtansine due to precautions/intolerance, or if the treatment is not approved or available locally.",
+      "start": 2405,
+      "end": 2701,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "In the PROC cohort, topoisomerase inhibitor payload ADC-pretreated participants should have received at least one prior topoisomerase inhibitor payload ADC.",
+      "start": 2702,
+      "end": 2858,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Participants with histologically- or cytologically-confirmed clear cell RCC or papillary RCC.",
+      "start": 2898,
+      "end": 2991,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "For clear cell RCC: Participants who have progressed on or after systemic treatment including a programmed cell death protein 1 or programmed death ligand 1 (PD-1/PD-L1) checkpoint inhibitor and a vascular endothelial growth factor-tyrosine kinase inhibitor (VEGF-TKI), either given concurrently or in separate lines of therapy.",
+      "start": 2998,
+      "end": 3326,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "For papillary RCC: Participants without any prior systemic treatment is acceptable.",
+      "start": 3333,
+      "end": 3416,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Participants with histologically- or cytologically-confirmed USC.",
+      "start": 3460,
+      "end": 3525,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Have progressed on or after systemic treatment that contained platinum-based chemotherapy.",
+      "start": 3532,
+      "end": 3622,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Participants with histologically- or cytologically-confirmed adenocarcinoma of NSCLC without actionable mutation of EGFR.",
+      "start": 3668,
+      "end": 3789,
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["squamous", "other_nsclc", "mixed_small_cell"],
+          "appliesTo": "Non-Small Cell Lung Cancer cohort"
+        },
+        {
+          "factId": "egfr",
+          "rulesOut": ["common_sensitizing", "exon20_insertion"],
+          "appliesTo": "Non-Small Cell Lung Cancer cohort"
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Presence of CDH6 expression through immunohistochemical examination of tumor tissue.",
+      "start": 3796,
+      "end": 3880,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "CDH6 expression"
+    },
+    {
+      "quote": "For participants without actionable mutations: Have progressed on or after systemic treatment including anti-PD-1/PD-L1 antibody and platinum-based chemotherapy, either given concurrently or in separate lines of therapy.",
+      "start": 3887,
+      "end": 4107,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "requirement conditional on mutation status"
+    },
+    {
+      "quote": "Progression within 6 months after completion of adjuvant therapy is considered failure of first-line therapy.",
+      "start": 4108,
+      "end": 4217,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "For participants with actionable mutations other than EGFR: Have failed at least one established standard anti-cancer targeted therapy, anti-PD-1/PD-L1 antibody and platinum-based chemotherapy (PD-1/PD-L1 and chemotherapy either given concurrently or in separate lines of therapy) or in the opinion of the Investigator have been considered ineligible for a particular form of standard of care therapy on medical grounds.",
+      "start": 4224,
+      "end": 4644,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "requirement conditional on mutation status"
+    },
+    {
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1.",
+      "start": 4648,
+      "end": 4725,
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Life expectancy of \u226512 weeks.",
+      "start": 4729,
+      "end": 4758,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
+    },
+    {
+      "quote": "Have adequate organ function as indicated by the laboratory values listed within the protocol.",
+      "start": 4762,
+      "end": 4856,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Women of childbearing potential (WOCBP) must have a negative serum pregnancy test within 72 hours prior to the start of study treatment.",
+      "start": 4860,
+      "end": 4996,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "WOCBP or male participants who have sexual relations with WOCBP are required to use highly effective contraceptive methods, and agree to refrain from donating sperm/egg from signing of informed consent through 180 days after the last dose of study treatment.",
+      "start": 4997,
+      "end": 5255,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Able to provide tumor tissue sample (archival or newly obtained core or excisional biopsy).",
+      "start": 5259,
+      "end": 5350,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "For Part 1: At biomarker-screening (for NSCLC) or screening (for non-NSCLC) visit of a tumor lesion not previously irradiated for CDH6 testing.",
+      "start": 5351,
+      "end": 5494,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "For Part 2: Willing to undergo fresh tumor biopsy at biomarker-screening visit (for NSCLC) and screening visit (non-NSCLC) from a lesion that can be biopsied at an acceptable clinical risk as judged by the investigator.",
+      "start": 5496,
+      "end": 5715,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "For Part 2: has clear cell, mucinous or sarcomatous histology, mixed tumors containing any histology, or low-grade/borderline ovarian cancer; mixed nonsmall cell and small cell carcinoma, or adenosquamous cell lung cancer with an adenocarcinoma component \\<50% (the participant is eligible if the adenocarcinoma component is \u226550%).",
+      "start": 5741,
+      "end": 6072,
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": "For Part 2"
+        }
+      ],
+      "unmapped": null,
+      "note": "adenosquamous rule not mapped"
+    },
+    {
+      "quote": "For Part 2: Participants with primary platinum refractory ovarian cancer, defined as disease that did not respond to (CR or PR) or has progressed within 3 months of the last dose of first line platinum-containing chemotherapy.",
+      "start": 6076,
+      "end": 6302,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Any other malignancy within 2 years prior to the first dose of the study treatment except for localized cancers that are considered to have been cured and in the opinion of the Investigator present a low risk for recurrence.",
+      "start": 6306,
+      "end": 6530,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "other cancer: within 2 years unless cured"
+    },
+    {
+      "quote": "Known untreated CNS metastases and/or leptomeningeal metastases.",
+      "start": 6534,
+      "end": 6598,
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
+          "appliesTo": null
+        },
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Participants are eligible if CNS metastases have been treated and participants have neurologically returned to baseline (except for residual signs or symptoms related to the CNS treatment).",
+      "start": 6599,
+      "end": 6788,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 37"
+    },
+    {
+      "quote": "In addition, participants must have been either off corticosteroids, or on a stable or decreasing dose of \u226410 mg daily prednisone (or equivalent) for at least 2 weeks prior to the first dose of study treatment.",
+      "start": 6789,
+      "end": 6999,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 37"
+    },
+    {
+      "quote": "Imaging performed within 28 days prior to the first dose of study treatment must document radiographic stability of CNS lesions and be performed after completion of any CNS-directed therapy.",
+      "start": 7000,
+      "end": 7190,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 37"
+    },
+    {
+      "quote": "History of bowel obstruction within 3 months prior to the first dose of study treatment.",
+      "start": 7194,
+      "end": 7282,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "bowel obstruction"
+    },
+    {
+      "quote": "Known psychiatric disorder or drug abuse that would interfere the study requirements.",
+      "start": 7286,
+      "end": 7371,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "psychiatric"
+    },
+    {
+      "quote": "Uncontrollable pleural effusion, pericardial effusion, or ascites requiring drainage or medical intervention within 4 weeks before the first dose of study treatment.",
+      "start": 7375,
+      "end": 7540,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "symptomatic pleural effusion or ascites"
+    },
+    {
+      "quote": "Any active infection requires systemic treatment via intravenous infusion within 2 weeks prior to the first dose of study treatment.",
+      "start": 7544,
+      "end": 7676,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "infection"
+    },
+    {
+      "quote": "History of non-infectious pneumonitis that has required a course of oral or intravenous steroids to assist with recovery, or interstitial lung disease (ILD) or severe obstructive pulmonary disease.",
+      "start": 7680,
+      "end": 7877,
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "steroid-requiring pneumonitis history and COPD not mapped"
+    },
+    {
+      "quote": "Prior exposure to other CDH6-targeted agents.",
+      "start": 7882,
+      "end": 7927,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "prior CDH6-targeted drug"
+    },
+    {
+      "quote": "Prior exposure to an ADC with a topoisomerase I inhibitor payload (e.g., raludotatug deruxtecan/DS-6000) for all cohorts except for the topoisomerase inhibitor payload ADC-pretreated participants in PROC cohort.",
+      "start": 7932,
+      "end": 8143,
+      "mappings": [
+        {
+          "factId": "prior_adc",
+          "rulesOut": ["topo_payload"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "the exception is for an ovarian cohort"
+    },
+    {
+      "quote": "Has not recovered (i.e., to CTCAE version 5.0 Grade 1 or to baseline) from previous anticancer therapy-induced AEs.",
+      "start": 8148,
+      "end": 8263,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
+    },
+    {
+      "quote": "Grade \u22642 AEs with no impact on participant safety are exceptions to this criterion and may qualify for the study.",
+      "start": 8264,
+      "end": 8377,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
+    },
+    {
+      "quote": "Currently participating or has participated in a study of an investigational agent or using an investigational device within 4 weeks of first dose of SIM0505.",
+      "start": 8382,
+      "end": 8540,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Major surgery within 2 weeks of receiving the first dose of study treatment.",
+      "start": 8545,
+      "end": 8621,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Has received prior anti-cancer therapies within the following time frames prior to the first dose of study treatment: previous cytotoxic therapy, anticancer targeted small molecules (e.g., tyrosine kinase inhibitors), hormonal agents within 2 weeks; anti-cancer antibody or ADC within 5 half-lives or 4 weeks (whichever is shorter) prior to the first dose of study treatment; Chinese medicines/herbal preparations with anticancer indication taken within 2 weeks; and/or radiation therapy within 2 weeks for focal radiation or within 4 weeks for wide-field radiation.",
+      "start": 8626,
+      "end": 9192,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Use of any live vaccine therapy within 4 weeks prior to the first dose of study treatment.",
+      "start": 9197,
+      "end": 9287,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Administration of strong or moderate CYP3A4 inhibitors or drugs with known risk of Torsades de Pointes (TdP) \u2264 7 days or 3 half-lives (whichever is longer) prior to the first dose of SIM0505.",
+      "start": 9292,
+      "end": 9483,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Known human immunodeficiency virus (HIV) infection or known acquired immunodeficiency syndrome (AIDS).",
+      "start": 9488,
+      "end": 9590,
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["controlled", "uncontrolled"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Active hepatitis B or hepatitis C infection.",
+      "start": 9595,
+      "end": 9639,
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Participants with clinically significant cardiovascular diseases.",
+      "start": 9644,
+      "end": 9709,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment: cardiovascular disease"
+    },
+    {
+      "quote": "History of allogeneic organ transplantation or graft-versus-host disease.",
+      "start": 9714,
+      "end": 9787,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "transplant: allogeneic only"
+    },
+    {
+      "quote": "Known hypersensitivity to study drug or any of the excipients.",
+      "start": 9792,
+      "end": 9854,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
+    },
+    {
+      "quote": "Participant is pregnant or breastfeeding.",
+      "start": 9859,
+      "end": 9900,
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Other conditions that researchers consider inappropriate for inclusion.",
+      "start": 9905,
+      "end": 9976,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "nctId": "NCT06673329",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 269,
+        "end": 439,
+        "text": "Histology-proven primary advanced or metastatic solid organ malignancy treated with immunotherapy. Patients being treated with curative intent are not eligible to enroll."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 189,
+        "end": 266,
+        "text": "Intent-to-treat or prior treatment with systemic steroids for irAE management"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3350,
+        "end": 3387,
+        "text": "History of or active Crohn's disease."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3390,
+        "end": 3521,
+        "text": "Myocardial infarction, unstable angina pectoris or stroke within the past 12 months prior to the first investigational product dose"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3162,
+        "end": 3213,
+        "text": "Evidence of active hepatitis B, C, or tuberculosis."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3103,
+        "end": 3159,
+        "text": "Chronic or current severe infection requiring IV therapy"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

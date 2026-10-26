@@ -1,0 +1,253 @@
+{
+  "nctId": "NCT06695845",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 109,
+        "end": 185,
+        "text": "Participants with locally advanced, unresectable, or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 892,
+        "end": 1059,
+        "text": "Presence of at least 1 measurable lesion as assessed by Independent Central Review (ICR) based on Response Evaluation Criteria in Solid Tumors Version 1.1 (RECIST 1.1)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1063,
+        "end": 1138,
+        "text": "Has Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2162,
+        "end": 2242,
+        "text": "Has known or suspected leptomeningeal disease and/or untreated brain metastasis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2162,
+        "end": 2242,
+        "text": "Has known or suspected leptomeningeal disease and/or untreated brain metastasis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2447,
+        "end": 2502,
+        "text": "Has known Human Immunodeficiency Virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2506,
+        "end": 2544,
+        "text": "Has active hepatitis B or C infection."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 699,
+        "end": 790,
+        "text": "HER2 overexpression (IHC 3+) must be determined by a sponsor designated central laboratory."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 275,
+        "end": 375,
+        "text": "who have progressed following at least 1 prior systemic treatment for metastatic or advanced disease"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 445,
+        "end": 521,
+        "text": "Prior treatment with HER2-targeted therapy is not permitted (Cohort 1 only)."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 633,
+        "end": 695,
+        "text": "prior therapy with trastuzumab deruxtecan (T-DXd) is required."
+      },
+      "appliesTo": "Cohort 2 or Cohort 3"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3500,
+        "end": 3577,
+        "text": "Colorectal Cancer (CRC) participants with known KRAS/NRAS and BRAF mutations."
+      },
+      "appliesTo": "Colorectal Cancer"
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3500,
+        "end": 3577,
+        "text": "Colorectal Cancer (CRC) participants with known KRAS/NRAS and BRAF mutations."
+      },
+      "appliesTo": "Colorectal Cancer"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3582,
+        "end": 3677,
+        "text": "Non-Small Cell Lung Cancer (NSCLC) participants with known ALK, EGFR mutations and ROS1 fusion."
+      },
+      "appliesTo": "Non-Small Cell Lung Cancer"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3582,
+        "end": 3677,
+        "text": "Non-Small Cell Lung Cancer (NSCLC) participants with known ALK, EGFR mutations and ROS1 fusion."
+      },
+      "appliesTo": "Non-Small Cell Lung Cancer"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3582,
+        "end": 3677,
+        "text": "Non-Small Cell Lung Cancer (NSCLC) participants with known ALK, EGFR mutations and ROS1 fusion."
+      },
+      "appliesTo": "Non-Small Cell Lung Cancer"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3682,
+        "end": 3791,
+        "text": "Female participants who are breastfeeding or pregnant, and female and male participants planning a pregnancy."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "All participants must have adequate tumor sample for submission to allow central HER2 testing.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "All participants must have adequate tumor sample for submission to allow central HER2 testing.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

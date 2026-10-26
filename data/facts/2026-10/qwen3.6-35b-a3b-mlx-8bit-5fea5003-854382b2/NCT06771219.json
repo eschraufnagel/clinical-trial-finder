@@ -1,0 +1,106 @@
+{
+  "nctId": "NCT06771219",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 91,
+        "end": 162,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 274,
+        "end": 334,
+        "text": "Presence of metastatic or recurrent locally advanced cancer."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 338,
+        "end": 386,
+        "text": "Presence of radiographically measurable disease."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 390,
+        "end": 759,
+        "text": "Prior receipt of one or more commercially available therapies that are indicated within product labelling or recommended under current guidelines as appropriate treatment for the subject's cancer (unless evolving data support application of SLV-154 in previously untreated subjects with high unmet medical need and inadequate and/or poorly tolerated treatment options)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1655,
+        "end": 1790,
+        "text": "Negative viral serology or adequate therapy for human immunodeficiency virus (HIV), hepatitis B (HBV), and hepatitis C (HCV) infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3706,
+        "end": 3733,
+        "text": "Pregnancy or breastfeeding."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3228,
+        "end": 3450,
+        "text": "Presence of another cancer with disease manifestations or therapy that could adversely affect subject safety or longevity, create the potential for drug-drug interactions, or compromise the interpretation of study results."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

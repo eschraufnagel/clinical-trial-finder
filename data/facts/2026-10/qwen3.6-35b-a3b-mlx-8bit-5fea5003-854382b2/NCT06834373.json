@@ -1,0 +1,196 @@
+{
+  "nctId": "NCT06834373",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 40,
+        "end": 371,
+        "text": "Confirmed pathology diagnosis according to 2016 World Health Organization (WHO) classification including patients with diseases listed below with relapsed, progressive and/or refractory disease (Cheson et al. 2014) following treatment with one or two prior lines of standard therapy, no more than two lines of therapy are permitted"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1136,
+        "end": 1307,
+        "text": "Measurable disease by PET-CT with at least one lymph node or other type of lesion that has a size \\> 1.5 cm in the transverse diameter, as defined by Lugano classification"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1566,
+        "end": 1642,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0, 1, or 2"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3095,
+        "end": 3272,
+        "text": "Any of the following because this study involves an investigational agent that has known genotoxic, mutagenic, and teratogenic effects:\n\n  * Pregnant persons\n  * Nursing persons"
+      },
+      "loose": true
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 255,
+        "end": 371,
+        "text": "following treatment with one or two prior lines of standard therapy, no more than two lines of therapy are permitted"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5348,
+        "end": 5461,
+        "text": "Any prior CAR-T or other T-cell targeting treatment (approved or investigational) ≤ 4 weeks prior to registration"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6020,
+        "end": 6064,
+        "text": "Chemotherapy ≤ 2 weeks prior to registration"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5747,
+        "end": 5965,
+        "text": "Prior autologous stem cell transplantation (SCT) ≤ 3 months prior to registration. If subject had autologous SCT \\> 3 months prior to the start of registration, any treatment-related toxicity is unresolved (grade \\> 1)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7485,
+        "end": 7659,
+        "text": "Immunocompromised patients and patients known to be HIV positive and currently receiving antiretroviral therapy, as there is currently no safety data in HIV positive patients"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7662,
+        "end": 7737,
+        "text": "Subject has known chronic active hepatitis B or C virus (HBV/HCV) infection"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6432,
+        "end": 6792,
+        "text": "Impaired cardiac function or clinically significant cardiac diseases including, but not limited to:\n\n  * Symptomatic congestive heart failure\n  * History of myocardial infarction ≤ 6 months, or congestive heart failure requiring use of ongoing maintenance therapy for life-threatening ventricular arrhythmias\n  * Unstable angina pectoris\n  * Cardiac arrhythmia"
+      },
+      "loose": true
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6795,
+        "end": 7153,
+        "text": "Uncontrolled intercurrent non-cardiac illness including, but not limited to:\n\n  * Ongoing or active infection\n  * Psychiatric illness/social situations\n  * Dyspnea at rest due to complications of advanced malignancy or other disease that requires continuous oxygen therapy (such as interstitial lung disease or chronic obstructive pulmonary disease \\[COPD\\])"
+      },
+      "loose": true
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Confirmed pathology diagnosis according to 2016 World Health Organization (WHO) classification including patients with diseases listed below with relapsed, progressive and/or refractory disease (Cheson et al. 2014) following treatment with one or two prior lines of standard therapy, no more than two lines of therapy are permitted: * Diffuse large B-cell lymphoma not otherwise specified (NOS) including: * Transformed lymphoma * Germinal center B-cell type * Activated B-cell type * High-grade B-cell lymphoma (HGBCL), NOS * High grade B-cell lymphoma with MYC and BCL2 translocation * Primary mediastinal (thymic) large B-cell lymphoma * Grade 3B follicular lymphoma * T-cell/histiocyte-rich large B-cell lymphoma * Large B-cell lymphoma with IRF4 rearrangement * Primary cutaneous diffuse large B-cell lymphoma (DLBCL), leg type * Epstein-Barr virus (EBV) positive DLBCL, NOS * DLBCL associated with chronic inflammation * Intravascular large B-cell lymphoma * ALK positive large B-cell lymphoma * NOTE: Richters transformation patients are excluded",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Confirmed pathology diagnosis according to 2016 World Health Organization (WHO) classification including patients with diseases listed below with relapsed, progressive and/or refractory disease (Cheson et al. 2014) following treatment with one or two prior lines of standard therapy, no more than two lines of therapy are permitted: * Diffuse large B-cell lymphoma not otherwise specified (NOS) including: * Transformed lymphoma * Germinal center B-cell type * Activated B-cell type * High-grade B-cell lymphoma (HGBCL), NOS * High grade B-cell lymphoma with MYC and BCL2 translocation * Primary mediastinal (thymic) large B-cell lymphoma * Grade 3B follicular lymphoma * T-cell/histiocyte-rich large B-cell lymphoma * Large B-cell lymphoma with IRF4 rearrangement * Primary cutaneous diffuse large B-cell lymphoma (DLBCL), leg type * Epstein-Barr virus (EBV) positive DLBCL, NOS * DLBCL associated with chronic inflammation * Intravascular large B-cell lymphoma * ALK positive large B-cell lymphoma * NOTE: Richters transformation patients are excluded",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Any prior systemic anti-cancer treatment (approved or investigational) ≤ 5 half-lives or 4 weeks prior to registration, whichever is shorter",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Any prior systemic anti-cancer treatment (approved or investigational) ≤ 5 half-lives or 4 weeks prior to registration, whichever is shorter",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

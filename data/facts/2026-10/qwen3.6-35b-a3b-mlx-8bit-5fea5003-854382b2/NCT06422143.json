@@ -1,0 +1,195 @@
+{
+  "nctId": "NCT06422143",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 121,
+        "text": "Histologically or cytologically confirmed diagnosis of squamous non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 124,
+        "end": 209,
+        "text": "Stage IV: M1a, M1b, M1c, American Joint Committee on Cancer Staging Manual, version 8"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 214,
+        "end": 348,
+        "text": "Measurable disease per Response Evaluation Criteria in Solid Tumours (RECIST) 1.1 as assessed by the local site investigator/radiology"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 383,
+        "end": 509,
+        "text": "Has Eastern Cooperative Oncology Group Performance Status (ECOG PS) score of 0 or 1 assessed within 7 days prior to allocation"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 662,
+        "end": 780,
+        "text": "Human immunodeficiency virus (HIV)-infected participants must have well controlled HIV on antiretroviral therapy (ART)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 783,
+        "end": 1001,
+        "text": "Participants who are hepatitis B surface antigen (HBsAg)-positive are eligible if they have received hepatitis B virus (HBV) antiviral therapy for at least 4 weeks and have undetectable HBV viral load before allocation"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1004,
+        "end": 1126,
+        "text": "Participants with history of hepatitis C virus (HCV) infection are eligible if HCV viral load is undetectable at screening"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3513,
+        "end": 3686,
+        "text": "Received prior therapy with an anti-programmed cell death 1 protein (PD-1), anti-programmed cell death ligand 1 (PD-L1), or anti programmed cell death ligand 2 (PD-L2) agent"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4020,
+        "end": 4128,
+        "text": "Received prior treatment with a trophoblast cell-surface antigen 2 (TROP2)-targeted antidrug conjugate (ADC)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4844,
+        "end": 4955,
+        "text": "Has a known additional malignancy that is progressing or has required active treatment within the past 3 years."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4958,
+        "end": 5032,
+        "text": "Has known central nervous system (CNS) metastases/carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5154,
+        "end": 5236,
+        "text": "Active autoimmune disease that has required systemic treatment in the past 2 years"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5330,
+        "end": 5539,
+        "text": "Has a history of (noninfectious)pneumonitis/ILD that required steroids, has current pneumonitis/ILD, or has suspected ILD or pneumonitis that cannot be ruled out by standard diagnostic assessments at Screening"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5588,
+        "end": 5639,
+        "text": "History of allogeneic tissue/solid organ transplant"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT06299839",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 825,
+        "end": 860,
+        "text": "Tumor cannot be surgically resected"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3194,
+        "end": 3244,
+        "text": "Known or active central nervous system metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3781,
+        "end": 3847,
+        "text": "Patients with confirmed leptomeningeal disease are to be excluded."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4904,
+        "end": 4990,
+        "text": "Active interstitial pneumonia, including clinically significant radiation pneumonitis."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4",
+        "ps2"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1539,
+        "end": 1644,
+        "text": "Patient must have an Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1 (Appendix B)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5502,
+        "end": 5540,
+        "text": "Pregnant or lactating female patients."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5733,
+        "end": 5993,
+        "text": "Clinically active bacterial, fungal, or viral infections, hepatitis B (hepatitis B virus surface antigen positive and hepatitis B virus DNA over 1000 IU/ml) or hepatitis C (hepatitis C virus RNA positive), human immunodeficiency virus infection (HIV positive)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5733,
+        "end": 5993,
+        "text": "Clinically active bacterial, fungal, or viral infections, hepatitis B (hepatitis B virus surface antigen positive and hepatitis B virus DNA over 1000 IU/ml) or hepatitis C (hepatitis C virus RNA positive), human immunodeficiency virus infection (HIV positive)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

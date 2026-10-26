@@ -1,0 +1,182 @@
+{
+  "nctId": "NCT06918132",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent",
+        "locally_advanced"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3355,
+        "end": 3389,
+        "text": "Unresectable or metastatic disease"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 585,
+        "end": 671,
+        "text": "PD-L1 expression ≥ 1% by tumor proportion score (TPS) using immunohistochemistry (IHC)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1116,
+        "end": 1188,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3433,
+        "end": 3539,
+        "text": "Prior systemic anti-cancer therapy or radiation therapy for the same cancer being studied in this protocol"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3198,
+        "end": 3352,
+        "text": "Presence of targetable alterations \\[Epiderman Growth Factor Receptor (EGFR), anaplastic lymphoma kinase (ALK), receptor tyrosine kinase (ROS1)\\] in tumor"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3544,
+        "end": 3793,
+        "text": "Interstitial lung disease (e.g., idiopathic pulmonary fibrosis or organizing pneumonia), or active, noninfectious pneumonitis that required immune-suppressive doses of glucocorticoids to assist with management, or pneumonitis within the last 5 years"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3798,
+        "end": 3870,
+        "text": "Autoimmune disease (including any history of inflammatory bowel disease)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4273,
+        "end": 4449,
+        "text": "Patients requiring systemic treatment with either corticosteroids (\\> 10 mg daily prednisone equivalents) or other immunosuppressive medications ≤14 days prior to registration."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4614,
+        "end": 4649,
+        "text": "Patients with organ transplantation"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4652,
+        "end": 4873,
+        "text": "History of myocardial infarction ≤ 6 months prior to registration, or congestive heart failure requiring use of ongoing maintenance therapy for life-threatening ventricular arrhythmias; or prior immune-related myocarditis"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2980,
+        "end": 2996,
+        "text": "Pregnant persons"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Uncontrolled intercurrent non-cardiac illness including, but not limited to: ... Uncontrolled infection with HIV, hepatitis B virus (HBV), or hepatitis C virus (HCV) or diagnosis of immunodeficiency that is related to, or results in chronic infection.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled intercurrent non-cardiac illness including, but not limited to: ... Uncontrolled infection with HIV, hepatitis B virus (HBV), or hepatitis C virus (HCV) or diagnosis of immunodeficiency that is related to, or results in chronic infection.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Uncontrolled intercurrent non-cardiac illness including, but not limited to: ... Uncontrolled infection with HIV, hepatitis B virus (HBV), or hepatitis C virus (HCV) or diagnosis of immunodeficiency that is related to, or results in chronic infection.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled intercurrent non-cardiac illness including, but not limited to: ... Uncontrolled infection with HIV, hepatitis B virus (HBV), or hepatitis C virus (HCV) or diagnosis of immunodeficiency that is related to, or results in chronic infection.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

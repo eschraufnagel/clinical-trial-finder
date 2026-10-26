@@ -1,0 +1,91 @@
+{
+  "nctId": "NCT06667141",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 60,
+        "end": 163,
+        "text": "Histologically or cytologically proven metastatic, recurrent or locally advanced selected solid tumors."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 269,
+        "end": 362,
+        "text": "Subjects should have received no more than 3 lines of systemic therapy for recurrent disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 510,
+        "end": 601,
+        "text": "Disease must be measurable with at least 1 unidimensional measurable lesion by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 634,
+        "end": 685,
+        "text": "Must have progressed after prior line of treatment."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 730,
+        "end": 783,
+        "text": "Participants with known symptomatic brain metastases."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1090,
+        "end": 1126,
+        "text": "Women who are pregnant or lactating."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

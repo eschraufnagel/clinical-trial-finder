@@ -1,0 +1,172 @@
+{
+  "nctId": "NCT06865339",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 177,
+        "text": "Previously untreated and biopsy-proven NSCLC, with measurable disease (at least 1 unidimensional, radiographically measurable lesion based on RECIST v1.1)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 935,
+        "end": 999,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-2"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3131,
+        "end": 3243,
+        "text": "Presence of known sensitizing epidermal growth factor (EGFR) mutation or anaplastic lymphoma kinase (ALK) fusion"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3131,
+        "end": 3243,
+        "text": "Presence of known sensitizing epidermal growth factor (EGFR) mutation or anaplastic lymphoma kinase (ALK) fusion"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3393,
+        "end": 3456,
+        "text": "Prior therapy with an anti-PD-1, anti-PD-L1, or LAG-3 inhibitor"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3855,
+        "end": 3942,
+        "text": "A history of (non-infectious) pneumonitis that required steroids or current pneumonitis"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4937,
+        "end": 5068,
+        "text": "Ongoing or recent (within 2 years) evidence of an autoimmune disease that required systemic treatment with immunosuppressive agents"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5529,
+        "end": 5623,
+        "text": "Uncontrolled infection with HIV, Hepatitis B Virus (HBV), or Hepatitis C Virus (HCV) infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5529,
+        "end": 5623,
+        "text": "Uncontrolled infection with HIV, Hepatitis B Virus (HBV), or Hepatitis C Virus (HCV) infection"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6903,
+        "end": 7035,
+        "text": "Diagnosis of immunodeficiency or ongoing chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4548,
+        "end": 4645,
+        "text": "Pregnancy, assessed with urine pregnancy test within 72 hours prior to study treatment allocation"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Previously untreated and biopsy-proven NSCLC, with measurable disease (at least 1 unidimensional, radiographically measurable lesion based on RECIST v1.1) and one of the following stages: (prior resection or stereotactic radiotherapy for early-stage disease is allowed) AJCC version 8 Stage II disease, medically or technically unresectable; AJCC version 8 Stage III disease, eligible for non-surgical treatment",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "metastatic_or_recurrent"
+        ],
+        "polarity": "inclusion",
+        "quote": "Previously untreated and biopsy-proven NSCLC, with measurable disease (at least 1 unidimensional, radiographically measurable lesion based on RECIST v1.1) and one of the following stages: (prior resection or stereotactic radiotherapy for early-stage disease is allowed) AJCC version 8 Stage II disease, medically or technically unresectable; AJCC version 8 Stage III disease, eligible for non-surgical treatment",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

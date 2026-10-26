@@ -1,0 +1,43 @@
+{
+  "nctId": "NCT07132190",
+  "mappings": [
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1108,
+        "end": 1171,
+        "text": "Participants with widespread, definitive leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1175,
+        "end": 1456,
+        "text": "Pregnant women are excluded from this study because of the potential deleterious effects of gadolinium on the developing fetus. Because there is an unknown but potential risk for adverse events in nursing infants, women who are breastfeeding are not eligible for this study as well"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT05632809",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 49,
+        "end": 99,
+        "text": "Histologic diagnosis of non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 181,
+        "end": 215,
+        "text": "Definitive cancer treatment intent"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 790,
+        "end": 798,
+        "text": "ECOG 0-2"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 910,
+        "end": 1048,
+        "text": "HIV infection, cellular immune deficiencies, hypogammaglobulinemia or dysgammaglobulinemia, or hereditary or congenital immunodeficiencies"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1052,
+        "end": 1166,
+        "text": "Prior diagnosis of hepatitis B or C (unless anti-hepatitis C therapy has produced a sustained virologic response);"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1170,
+        "end": 1285,
+        "text": "History of clinically significant autoimmune disease, Crohn's disease, ulcerative colitis, or inflammatory disease."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2056,
+        "end": 2111,
+        "text": "Prior exposure to any anti-PD-1 or anti-PD-L1 antibody."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2384,
+        "end": 2549,
+        "text": "Evidence of clinically significant interstitial lung disease or active noninfectious pneumonitis during the course of chemoradiation that is unresolved to ≤ grade 1."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

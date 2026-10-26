@@ -1,0 +1,166 @@
+{
+  "nctId": "NCT05501665",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1675,
+        "end": 1701,
+        "text": "Mixed small cell histology"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 125,
+        "end": 273,
+        "text": "diagnosis of stage IVA or IVB (M1b or M1c) or locally advanced (not eligible for standard of care \\[SOC\\] chemoradiation) non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 274,
+        "end": 379,
+        "text": "with evaluable disease per Response Evaluation Criteria in Solid Tumors (RECIST) version (v) 1.1 criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 543,
+        "end": 610,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1900,
+        "end": 2068,
+        "text": "Brain metastases that would require administration of whole brain radiotherapy for management on required screening brain MRI within 21 days of day 1 of study treatment"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2402,
+        "end": 2469,
+        "text": "History of organ transplant requiring therapeutic immunosuppression"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2472,
+        "end": 2777,
+        "text": "Known clinically significant (per study physician) acute or chronic infections including human immunodeficiency virus (HIV), hepatitis B virus (HBV), hepatitis C virus (HCV) or active tuberculosis (testing not required). Patients with HBV and HCV must be on stable dose of antiviral therapy on study entry"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2472,
+        "end": 2777,
+        "text": "Known clinically significant (per study physician) acute or chronic infections including human immunodeficiency virus (HIV), hepatitis B virus (HBV), hepatitis C virus (HCV) or active tuberculosis (testing not required). Patients with HBV and HCV must be on stable dose of antiviral therapy on study entry"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3429,
+        "end": 3656,
+        "text": "History of prior independent malignancy within 3 years of enrollment, except for adequately treated basal or squamous cell carcinoma of the skin, adequately treated carcinoma in situ (e.g. cervix or non-invasive bladder cancer)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3922,
+        "end": 4165,
+        "text": "Current or prior use of immunosuppressive medications within 28 days of enrollment with exception of intranasal or inhaled corticosteroids or systemic steroids at physiologic doses (equivalent to less than or equal to 10 mg/day of prednisone)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4412,
+        "end": 4485,
+        "text": "Active autoimmune disease requiring systemic treatment within past 1 year"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Receipt of prior >1 cycle of immune checkpoint inhibitor for current malignancy (prior cytotoxic chemotherapy is allowed)",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Receipt of prior >1 cycle of immune checkpoint inhibitor for current malignancy (prior cytotoxic chemotherapy is allowed)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "nctId": "NCT05208047",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 28,
+        "end": 108,
+        "text": "Histologically confirmed locally advanced, metastatic, and/or unresectable GIST."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1002,
+        "end": 1105,
+        "text": "Have at least 1 measurable lesion according to mRECIST v1.1 (Part1a, Part 1b, Part 2, GIST 1L Substudy)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2001,
+        "end": 2110,
+        "text": "Seropositive for HIV 1 or 2, or positive for hepatitis B surface antigen or hepatitis C virus (HCV) antibody."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2001,
+        "end": 2110,
+        "text": "Seropositive for HIV 1 or 2, or positive for hepatitis B surface antigen or hepatitis C virus (HCV) antibody."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Eastern Cooperative Oncology Group (ECOG) Status 0 to 2 (Part 1a, Part 1b, Part 2, DDI Substudy)",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eastern Cooperative Oncology Group (ECOG) Status 0 to 2 (Part 1a, Part 1b, Part 2, DDI Substudy)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

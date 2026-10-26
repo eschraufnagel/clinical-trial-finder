@@ -1,0 +1,133 @@
+{
+  "nctId": "NCT06600789",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4040,
+        "end": 4169,
+        "text": "Clinically confirmed locally advanced or metastatic solid malignancy for which there is no potentially curative treatment option."
+      },
+      "appliesTo": "Additional Module 1 inclusion criteria"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4040,
+        "end": 4169,
+        "text": "Clinically confirmed locally advanced or metastatic solid malignancy for which there is no potentially curative treatment option."
+      },
+      "appliesTo": "Additional Module 1 inclusion criteria"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1748,
+        "end": 1802,
+        "text": "Any current or prior central nervous system metastases"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1357,
+        "end": 1559,
+        "text": "Participants with any other malignancy that have been active or treated within the past 3 years prior to enrolment, with the exception of cervical intraepithelial neoplasia and non-melanoma skin cancer."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1694,
+        "end": 1745,
+        "text": "Active or documented history of autoimmune disease."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2010,
+        "end": 2231,
+        "text": "Human immunodeficiency virus (HIV) infection, unless the study participant on anti-retroviral therapy for at least 4 weeks (28 days) and has not had an opportunistic infection within the past 12 months prior to enrolment."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2234,
+        "end": 2459,
+        "text": "Active hepatitis B virus (HBV) or hepatitis C virus (HCV) infection, unless participant with HBV patient is on a suppressive antiviral therapy, or participant with HCV has a viral load below the limit of quantification (LoQ)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2462,
+        "end": 2503,
+        "text": "Participant is breastfeeding or pregnant."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "low_dose",
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2625,
+        "end": 2696,
+        "text": "Receipt of corticosteroids within 14 days before the first dose of IMP."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "nctId": "NCT04499053",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 52,
+        "text": "Patients with stage IV NSCLC"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 53,
+        "end": 120,
+        "text": "who had undergone no previous systemic therapy for stage IV disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 507,
+        "end": 574,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-2"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3069,
+        "end": 3153,
+        "text": "Sensitizing EGFR mutations (deletion in exon 19, L858R in exon 21, G719X, and L861Q)"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3154,
+        "end": 3179,
+        "text": "and/or ALK translocations"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3580,
+        "end": 3601,
+        "text": "No measurable disease"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4584,
+        "end": 4626,
+        "text": "History of allogenic organ transplantation"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 291,
+        "end": 333,
+        "text": "Documented HIV viral load \\< 400 copies/mL"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7220,
+        "end": 7269,
+        "text": "Female patients who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7483,
+        "end": 7601,
+        "text": "Patients who have received prior anti-PD-1, anti PD-L1 or anti CTLA-4 within 12 months of the first dose of durvalumab"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5735,
+        "end": 5953,
+        "text": "Patients with prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active or prior documented autoimmune or inflammatory disorders... The following are exceptions to this criterion: ... Patients without active disease in the last 5 years may be included",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active or prior documented autoimmune or inflammatory disorders... The following are exceptions to this criterion: ... Patients without active disease in the last 5 years may be included",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Uncontrolled intercurrent illness, including but not limited to, ... interstitial lung disease",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled intercurrent illness, including but not limited to, ... interstitial lung disease",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

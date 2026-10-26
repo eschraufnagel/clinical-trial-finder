@@ -1,0 +1,130 @@
+{
+  "nctId": "NCT06635785",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 267,
+        "end": 398,
+        "text": "Patients must have a histological or cytological diagnosis of solid tumors and have metastatic disease or locally advanced disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 401,
+        "end": 447,
+        "text": "Measurable disease as determined by RECIST 1.1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2291,
+        "end": 2355,
+        "text": "Patients who have brain metastases or leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2291,
+        "end": 2355,
+        "text": "Patients who have brain metastases or leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2358,
+        "end": 2504,
+        "text": "Patient with a different cancer other than the one treated under this protocol, which requires systemic treatments within 24 months prior to C1D1."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2736,
+        "end": 3144,
+        "text": "Within past 6 months with history of significant cardiovascular acute myocardial infarction, acute coronary syndrome, ischemic or hemorrhagic stroke, revascularization procedures, acute pulmonary embolism or any disorders resulted in LVEF \\< 40% at the time of screening or colitis, small bowel obstruction, hepatitis or pancreatitis adrenal insufficiency, or severe immunotherapy related AE (irAE≥ grade 3)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3843,
+        "end": 3998,
+        "text": "Patients who are pregnant or breastfeeding or plan pregnancy or fathering the child during the study or within 6 months after the last dosing of study drug"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2142,
+        "end": 2288,
+        "text": "Patients who are on chronic systemic steroid therapy at doses higher than 10 mg/day prednisone or equivalent within 7 days before first treatment."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4717,
+        "end": 4904,
+        "text": "With a history of interstitial lung disease, non-infectious pneumonitis, or uncontrolled systemic diseases, including diabetes, hypertension, pulmonary fibrosis, acute lung diseases, etc."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

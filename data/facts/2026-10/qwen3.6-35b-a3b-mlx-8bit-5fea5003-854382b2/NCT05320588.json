@@ -1,0 +1,92 @@
+{
+  "nctId": "NCT05320588",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 123,
+        "text": "Patients histologically or cytologically documented, locally advanced or metastatic solid tumor."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 368,
+        "end": 438,
+        "text": "Measurable disease as determined by RECIST v.1.1 or bone only disease."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 441,
+        "end": 512,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 753,
+        "end": 854,
+        "text": "Human Immunodeficiency virus (HIV) infection, active hepatitis B infection, or hepatitis C infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 753,
+        "end": 854,
+        "text": "Human Immunodeficiency virus (HIV) infection, active hepatitis B infection, or hepatitis C infection."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 888,
+        "end": 978,
+        "text": "Untreated central nervous system (CNS), epidural tumor or metastasis, or brain metastasis."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

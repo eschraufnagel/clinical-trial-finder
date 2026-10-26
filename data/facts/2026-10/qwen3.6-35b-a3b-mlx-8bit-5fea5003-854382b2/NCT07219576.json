@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT07219576",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 111,
+        "text": "Advanced or metastatic clear cell renal cell carcinoma or non-small cell lung carcinoma"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 393,
+        "end": 473,
+        "text": "Measurable disease per Response Evaluation Criteria in Solid Tumors version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 477,
+        "end": 541,
+        "text": "Eastern Cooperative Oncology Group performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2600,
+        "end": 2873,
+        "text": "Known active central nervous system metastases and/or carcinomatous meningitis. Patients with previously treated brain metastases may participate, provided they are clinically stable and without the requirement of steroid treatment for at least 14 days prior to enrollment."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2877,
+        "end": 2974,
+        "text": "Known active or history of autoimmune disease that requires steroids or immunosuppressive agents."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3983,
+        "end": 4125,
+        "text": "Active immunodeficiency virus (HIV) infection. To be enrolled, patients with history of HIV must have an undetectable viral load at screening."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4130,
+        "end": 4317,
+        "text": "Active hepatitis B or hepatitis C virus infections. To be enrolled, patients with a history of these infections must have been treated and cured with undetectable viral load at screening."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4392,
+        "end": 4483,
+        "text": "Cerebral vascular accident/stroke or myocardial infarction (\\<6 months prior to enrollment)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4790,
+        "end": 4895,
+        "text": "Known additional malignancy that is progressing or has required active treatment within the past 2 years."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3474,
+        "end": 3550,
+        "text": "receiving systemic steroid therapy (equivalent of prednisone \\> 10 mg daily)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

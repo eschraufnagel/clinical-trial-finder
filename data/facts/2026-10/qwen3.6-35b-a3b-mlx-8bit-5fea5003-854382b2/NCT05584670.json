@@ -1,0 +1,278 @@
+{
+  "nctId": "NCT05584670",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 73,
+        "end": 139,
+        "text": "Participants with advanced unresectable or metastatic solid tumors"
+      },
+      "appliesTo": "Dose escalation Part 1A and Japan Cohort F"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 317,
+        "end": 529,
+        "text": "Participants with advanced unresectable or metastatic melanoma, NSCLC; renal cell carcinoma (RCC); HCC, colorectal cancer (MSI-H/dMMR), malignant pleural mesothelioma or esophageal squamous cell carcinoma (ESCC)."
+      },
+      "appliesTo": "Dose escalation Part 1B"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 710,
+        "end": 818,
+        "text": "Histologically or cytologically confirmed diagnosis of advanced unresectable or metastatic colorectal cancer"
+      },
+      "appliesTo": "Dose escalation Part 1C"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1026,
+        "end": 1126,
+        "text": "Histologically or cytologically confirmed diagnosis of metastatic non-small cell lung cancer (NSCLC)"
+      },
+      "appliesTo": "Participants in Cohorts A1 and A2 (Part 2A)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1168,
+        "end": 1289,
+        "text": "Histologically or cytologically confirmed diagnosis of advanced unresectable or metastatic hepatocellular carcinoma (HCC)"
+      },
+      "appliesTo": "Participants in Cohort B (part 2A)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1548,
+        "end": 1729,
+        "text": "Histologically or cytologically confirmed diagnosis of advanced unresectable or metastatic gastric cancer (GC) or Siewert Type 2 \\& 3 gastro esophageal junction (GEJ) adenocarcinoma"
+      },
+      "appliesTo": "Participants in Cohorts C1 and C2 (part 2A)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2436,
+        "end": 2545,
+        "text": "Histologically or cytologically confirmed diagnosis of advanced unresectable or metastatic colorectal cancer."
+      },
+      "appliesTo": "Participants in Part 2A Cohorts E1 and E2, Part 2B Cohort E3 and Part 2D Cohorts H1 and H2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2965,
+        "end": 3060,
+        "text": "Participants with histologically confirmed unresectable locally advanced or metastatic melanoma"
+      },
+      "appliesTo": "Part 2C Cohorts G1, G2 and G3"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4589,
+        "end": 4641,
+        "text": "At least 1 measurable lesion per RECIST 1.1 criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4928,
+        "end": 4994,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≥2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5314,
+        "end": 5372,
+        "text": "Known active brain metastases or leptomeningeal metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5314,
+        "end": 5372,
+        "text": "Known active brain metastases or leptomeningeal metastases"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5722,
+        "end": 5911,
+        "text": "Has any condition requiring ongoing/continuous corticosteroid therapy (\\>10 mg prednisone/day or an anti-inflammatory equivalent) within 1 week prior to the first dose of the study medicine"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5914,
+        "end": 6071,
+        "text": "Any clinically significant cardiac (including valvular) or vascular (thromboembolic disorders) disease, within 6 months prior to the first IMP administration"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6074,
+        "end": 6276,
+        "text": "Ongoing or recent (within 2 years) evidence of significant autoimmune disease that required treatment with systemic immunosuppressive treatments, which may suggest risk for immune-related adverse events"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6279,
+        "end": 6439,
+        "text": "Has a known history or any evidence of interstitial lung disease or active, non-infectious pneumonitis within 3 years prior to the first dose of the study drug."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6442,
+        "end": 6496,
+        "text": "Organ transplant requiring immunosuppressive treatment"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6499,
+        "end": 6650,
+        "text": "Uncontrolled or active infection with human immunodeficiency virus (HIV), hepatitis B, or hepatitis C infection, or has a diagnosis of immunodeficiency"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6499,
+        "end": 6650,
+        "text": "Uncontrolled or active infection with human immunodeficiency virus (HIV), hepatitis B, or hepatitis C infection, or has a diagnosis of immunodeficiency"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5189,
+        "end": 5311,
+        "text": "Diagnosed of any other malignancies, either progressing or requiring active treatments, within 2 years prior to enrollment"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

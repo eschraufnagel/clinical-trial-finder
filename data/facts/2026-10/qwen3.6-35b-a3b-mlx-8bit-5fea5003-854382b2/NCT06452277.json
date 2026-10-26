@@ -1,0 +1,122 @@
+{
+  "nctId": "NCT06452277",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 189,
+        "end": 360,
+        "text": "Documented histologically or cytologically confirmed locally advanced non-squamous NSCLC, not suitable for definitive therapy or metastatic non-squamous NSCLC at screening"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "overexpression",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 432,
+        "end": 503,
+        "text": "Documented activating HER2 mutation in the tyrosine kinase domain (TKD)"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 894,
+        "end": 991,
+        "text": "No prior treatment with a HER2 ex20ins-targeted therapy (e.g. poziotinib, trastuzumab deruxtecan)"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 894,
+        "end": 991,
+        "text": "No prior treatment with a HER2 ex20ins-targeted therapy (e.g. poziotinib, trastuzumab deruxtecan)"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 824,
+        "end": 892,
+        "text": "No prior systemic therapy for locally advanced or metastatic disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1397,
+        "end": 1591,
+        "text": "Known history of prior malignancy except if the participant has undergone potentially curative therapy with no evidence of that disease recurrence for five years since initiation of that therapy"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2017,
+        "end": 2089,
+        "text": "Inability to discontinue treatment with chronic systemic corticosteroids"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Documented histologically or cytologically confirmed locally advanced non-squamous NSCLC... (small cell or mixed histologies are excluded)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Documented histologically or cytologically confirmed locally advanced non-squamous NSCLC... (small cell or mixed histologies are excluded)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

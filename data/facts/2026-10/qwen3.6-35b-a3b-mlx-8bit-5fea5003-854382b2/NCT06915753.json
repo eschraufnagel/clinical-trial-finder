@@ -1,0 +1,125 @@
+{
+  "nctId": "NCT06915753",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 267,
+        "end": 385,
+        "text": "Histologically confirmed locally advanced unresectable/metastatic HCC or histologically confirmed advanced solid tumor"
+      },
+      "appliesTo": "All Patients"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 943,
+        "end": 999,
+        "text": "Histologically confirmed locally advanced/metastatic HCC"
+      },
+      "appliesTo": "Part B, Cohort 1"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3057,
+        "end": 3108,
+        "text": "Active, symptomatic, or untreated brain metastases."
+      },
+      "appliesTo": "All Patients"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1353,
+        "end": 1397,
+        "text": "At least 1 measurable lesion by RECIST v1.1."
+      },
+      "appliesTo": "Part B, Cohort 1"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3593,
+        "end": 3671,
+        "text": "Known fibrolamellar HCC, sarcomatoid HCC, or mixed cholangiocarcinoma and HCC."
+      },
+      "appliesTo": "Part B, Cohort 1"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3768,
+        "end": 3825,
+        "text": "Histologically confirmed locally advanced/metastatic HCC."
+      },
+      "appliesTo": "Part B, Cohort 2"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Histologically confirmed locally advanced/metastatic HCC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed locally advanced/metastatic HCC",
+        "appliesTo": "Part B, Cohort 2"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "At least 1 measurable lesion by RECIST v1.1.",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "At least 1 measurable lesion by RECIST v1.1.",
+        "appliesTo": "Part B, Cohort 2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

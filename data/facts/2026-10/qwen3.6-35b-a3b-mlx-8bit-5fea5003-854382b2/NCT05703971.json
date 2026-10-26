@@ -1,0 +1,170 @@
+{
+  "nctId": "NCT05703971",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 56,
+        "end": 127,
+        "text": "Documented history of histologically or cytologically confirmed ES-SCLC"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 410,
+        "end": 492,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG PS) score from 0 to 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 761,
+        "end": 837,
+        "text": "Asymptomatic brain metastases must meet ALL criteria of the following (a-d):"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 224,
+        "end": 407,
+        "text": "Complete Response (CR), Partial Response (PR), or Stable Disease (SD) after receiving at least three cycles, and no more than four cycles, of atezolizumab, carboplatin, and etoposide."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 224,
+        "end": 407,
+        "text": "Complete Response (CR), Partial Response (PR), or Stable Disease (SD) after receiving at least three cycles, and no more than four cycles, of atezolizumab, carboplatin, and etoposide."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 224,
+        "end": 407,
+        "text": "Complete Response (CR), Partial Response (PR), or Stable Disease (SD) after receiving at least three cycles, and no more than four cycles, of atezolizumab, carboplatin, and etoposide."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3045,
+        "end": 3103,
+        "text": "History of autoimmune disease requiring immunosuppression."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3106,
+        "end": 3175,
+        "text": "History of myocardial infarction or unstable angina within ≤6 months."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3178,
+        "end": 3263,
+        "text": "Known human immunodeficiency virus (HIV) infection or has active hepatitis infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3178,
+        "end": 3263,
+        "text": "Known human immunodeficiency virus (HIV) infection or has active hepatitis infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3266,
+        "end": 3305,
+        "text": "Female who is pregnant or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Documented history of histologically or cytologically confirmed ES-SCLC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Documented history of histologically or cytologically confirmed ES-SCLC",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "nctId": "NCT05691491",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 127,
+        "end": 527,
+        "text": "In dose escalation, any solid tumor patients with either O6-methylguanine DNA methyltransferase (MGMT) promoter hypermethylation positivity on testing / pre-screening of archival tissue OR an extracranial solid tumor where TMZ is considered a standard of care per National Comprehensive Cancer Network (NCCN) guidelines (neuroendocrine tumor, small cell lung cancer, melanoma or soft tissue sarcoma)."
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 124,
+        "text": "Patients must have histologically or cytologically confirmed diagnosis of metastatic advanced cancer."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2288,
+        "end": 2406,
+        "text": "Measurable disease on CT and/or MRI per Response Evaluation Criteria in Solid Tumors (RECIST) version (v)1.1 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2409,
+        "end": 2499,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status =\\< 2 (or Karnofsky \\>= 60%)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3682,
+        "end": 3858,
+        "text": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression for 4 weeks."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5754,
+        "end": 5899,
+        "text": "Pregnant women are excluded from this study because M1774 is an ATR inhibiting agent with the potential for teratogenic or abortifacient effects."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3139,
+        "end": 3302,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3458,
+        "end": 3679,
+        "text": "Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

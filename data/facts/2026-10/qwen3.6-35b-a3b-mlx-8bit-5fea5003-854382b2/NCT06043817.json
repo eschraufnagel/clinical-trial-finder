@@ -1,0 +1,145 @@
+{
+  "nctId": "NCT06043817",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 28,
+        "end": 93,
+        "text": "Has histologically- or cytologically confirmed diagnosis of NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 88,
+        "end": 171,
+        "text": "NSCLC Stage IIIB/C or IV not eligible for curative intent surgery or chemoradiation"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 909,
+        "end": 965,
+        "text": "Has at least one measurable tumor lesion per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1023,
+        "end": 1103,
+        "text": "Has Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 183,
+        "end": 278,
+        "text": "Tumor tissue EGFR or HER2 exon 20 insertion mutations confirmed by qualified local laboratories"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 183,
+        "end": 278,
+        "text": "Tumor tissue EGFR or HER2 exon 20 insertion mutations confirmed by qualified local laboratories"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 492,
+        "end": 604,
+        "text": "Has received at least 1, but not more than 2, prior lines of approved treatment for advanced or metastatic NSCLC"
+      },
+      "appliesTo": "Part 2 and Part 3"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 606,
+        "end": 675,
+        "text": "1 of which must be platinum-based chemotherapy unless contraindicated"
+      },
+      "appliesTo": "Part 2 and Part 3"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1322,
+        "end": 1454,
+        "text": "Has history (within ≤2 years before screening) of solid tumor or hematological malignancy that is histologically distinct from NSCLC"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1458,
+        "end": 1500,
+        "text": "Has symptomatic brain or spinal metastases"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

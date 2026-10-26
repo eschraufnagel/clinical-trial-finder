@@ -1,0 +1,205 @@
+{
+  "nctId": "NCT06066424",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 197,
+        "end": 505,
+        "text": "In the dose escalation, participants must have histologically documented locally advanced, unresectable, or metastatic solid tumor that has relapsed or progressed following local standard treatments that are known to prolong survival, or for which no standard treatment is available, or refused such therapy."
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 509,
+        "end": 634,
+        "text": "In dose expansion Cohort 1, patients must have histologically documented locally advanced, unresectable, or metastatic NSCLC."
+      },
+      "appliesTo": "dose expansion Cohort 1"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1005,
+        "end": 1213,
+        "text": "In dose expansion Cohort 2, patients must have histology documented locally advanced or metastatic HER2-negative/HER2-low breast cancer (IHC 0, IHC 1, or IHC 2+/ in situ hybridization negative) breast cancer."
+      },
+      "appliesTo": "dose expansion Cohort 2"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3046,
+        "end": 3168,
+        "text": "Participants must have measurable disease per the Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 (Appendix 3)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1814,
+        "end": 1924,
+        "text": "Participants must have an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 (Appendix 3)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5163,
+        "end": 5340,
+        "text": "Pregnant, breastfeeding, or expecting to conceive within the projected duration of the study, starting with the screening visit through 6 months post TROP2-CAR-NK cell infusion."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7745,
+        "end": 8024,
+        "text": "Known active CNS metastases and/or carcinomatous meningitis. Patients with previously treated brain metastases may participate if they completed radiation therapy, are clinically stable, and without requirement of steroid treatment for at least 2 weeks prior to study enrollment."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7745,
+        "end": 7805,
+        "text": "Known active CNS metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8029,
+        "end": 8202,
+        "text": "Active autoimmune disease that has required systemic treatment in the past 2 years (i.e., with use of disease-modifying agents, corticosteroids, or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8362,
+        "end": 8459,
+        "text": "History of interstitial lung disease (ILD) that required steroids or has current pneumonitis/ILD."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8513,
+        "end": 8564,
+        "text": "Known human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8569,
+        "end": 8636,
+        "text": "Known active or chronic hepatitis B or hepatitis C virus infection."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9158,
+        "end": 9209,
+        "text": "Has had an allogenic tissue/solid organ transplant."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9214,
+        "end": 9533,
+        "text": "Clinically significant cardiovascular disease within 12 months prior to the start of lymphodepleting chemotherapy, including New York Heart Association Class III or IV congestive heart failure, unstable angina, myocardial infarction, cerebrovascular event, or cardiac arrhythmia associated with hemodynamic instability."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7257,
+        "end": 7358,
+        "text": "receiving chronic systemic steroid therapy (in doses exceeding 10 mg daily of prednisone equivalent)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

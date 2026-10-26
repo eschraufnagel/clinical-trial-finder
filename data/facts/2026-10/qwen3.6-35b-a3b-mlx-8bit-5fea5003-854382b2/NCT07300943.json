@@ -1,0 +1,81 @@
+{
+  "nctId": "NCT07300943",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 61,
+        "end": 155,
+        "text": "Patients must have metastatic or unresectable disease not suitable for further local treatment"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 335,
+        "end": 414,
+        "text": "An Eastern Cooperative Oncology Group (ECOG) Performance Status score of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 417,
+        "end": 470,
+        "text": "Measurable disease per RECIST version 1.1 at baseline"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1194,
+        "end": 1411,
+        "text": "Clinically significant autoimmune disease, either currently present or present within the previous 2 years, including a current requirement for systemic immunosuppressive therapy equivalent to \\>10 mg/prednisone daily"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 495,
+        "end": 535,
+        "text": "Prior anti-tumor treatment with an ATRi."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

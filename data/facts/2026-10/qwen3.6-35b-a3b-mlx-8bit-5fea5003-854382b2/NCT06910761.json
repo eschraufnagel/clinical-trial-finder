@@ -1,0 +1,115 @@
+{
+  "nctId": "NCT06910761",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 383,
+        "end": 451,
+        "text": "Histologically confirmed breast cancer or non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 454,
+        "end": 532,
+        "text": "Leptomeningeal disease established either radiographically and/or CSF cytology"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1563,
+        "end": 1689,
+        "text": "Patients with multiple or serious major neurologic symptoms (including encephalopathy) per physician / investigator assessment"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1940,
+        "end": 2132,
+        "text": "Patients with a history or evidence of HIV infection (unless on effective anti-retroviral therapy with undetectable viral load based on prior tests within 6 months are eligible for this trial)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2304,
+        "end": 2541,
+        "text": "Patients with a history or evidence of hepatitis C virus (HCV) infection unless treated and cured. (Patients with HCV infection who are currently on treatment are eligible if they have an undetectable HCV viral load based on prior tests)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2544,
+        "end": 2771,
+        "text": "Other active malignancy. Patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the study are eligible for this trial"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2774,
+        "end": 2813,
+        "text": "Females only: Pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1420,
+        "end": 1560,
+        "text": "Any prior radiation that in the opinion of the investigator unable to respect normal tissue tolerances and preclude craniospinal irradiation"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

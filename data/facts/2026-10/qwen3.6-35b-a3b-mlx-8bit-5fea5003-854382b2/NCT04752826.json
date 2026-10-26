@@ -1,0 +1,155 @@
+{
+  "nctId": "NCT04752826",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 105,
+        "end": 203,
+        "text": "Histologically confirmed advanced or metastatic malignancy eligible for an enrolling study cohort."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 317,
+        "end": 409,
+        "text": "At least one measurable lesion according to the response criteria specified in the protocol."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 412,
+        "end": 476,
+        "text": "Eastern Cooperative Oncology Group performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 967,
+        "end": 1036,
+        "text": "Active central nervous system metastases or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 967,
+        "end": 1036,
+        "text": "Active central nervous system metastases or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1040,
+        "end": 1160,
+        "text": "Active or clinically significant autoimmune disease, immunodeficiency, or use of prohibited immunosuppressive treatment."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1746,
+        "end": 1837,
+        "text": "Prior allogeneic tissue or solid-organ transplantation or active graft-versus-host disease."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1840,
+        "end": 1944,
+        "text": "Pregnancy or breastfeeding, or unwillingness to comply with protocol-defined contraceptive requirements."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2012,
+        "end": 2090,
+        "text": "Another active malignancy, except for protocol-defined permitted malignancies."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1396,
+        "end": 1542,
+        "text": "History of clinically significant immune-mediated toxicity, including pneumonitis, associated with previous immune-checkpoint inhibitor treatment."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1545,
+        "end": 1700,
+        "text": "Uncontrolled or clinically significant cardiovascular disease, serious infection, or another condition that could compromise safety or study participation."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,381 @@
+{
+  "nctId": "NCT05541822",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 849,
+        "end": 908,
+        "text": "Non-squamous histology (confirmed by histology or cytology)"
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 296,
+        "end": 389,
+        "text": "must have histologically or cytologically confirmed NSCLC, advanced, recurrent, or metastatic"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8770,
+        "end": 9179,
+        "text": "Known active central nervous system (CNS) primary tumor or metastases and/or carcinomatous meningitis. Patients with previously treated brain metastases may participate provided they are clinically stable for at least 4 weeks prior to first dose of study medication(s), have no evidence of new or enlarging brain metastases and are off steroids for at least 15 days prior to first dose of study medication(s)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8770,
+        "end": 8872,
+        "text": "Known active central nervous system (CNS) primary tumor or metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2985,
+        "end": 3077,
+        "text": "At least one measurable lesion per response evaluation criteria in solid tumors (RECIST) 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 152,
+        "end": 226,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS), 0 or 1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 917,
+        "end": 1039,
+        "text": "EGFR mutation-positive including exon 19 deletions or exon 21 L858R as detected by an FDA-approved or other validated test"
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6126,
+        "end": 6402,
+        "text": "Existing genetic data from the patient's tumor tissue showing known molecular alterations which would make them eligible for targeted therapies (e.g., EGFR mutations, ALK rearrangements, KRAS mutation, ROS1 translocation, BRAF mutation, RET alteration, and NTRK fusion, etc.)."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6126,
+        "end": 6402,
+        "text": "Existing genetic data from the patient's tumor tissue showing known molecular alterations which would make them eligible for targeted therapies (e.g., EGFR mutations, ALK rearrangements, KRAS mutation, ROS1 translocation, BRAF mutation, RET alteration, and NTRK fusion, etc.)."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6126,
+        "end": 6402,
+        "text": "Existing genetic data from the patient's tumor tissue showing known molecular alterations which would make them eligible for targeted therapies (e.g., EGFR mutations, ALK rearrangements, KRAS mutation, ROS1 translocation, BRAF mutation, RET alteration, and NTRK fusion, etc.)."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6126,
+        "end": 6402,
+        "text": "Existing genetic data from the patient's tumor tissue showing known molecular alterations which would make them eligible for targeted therapies (e.g., EGFR mutations, ALK rearrangements, KRAS mutation, ROS1 translocation, BRAF mutation, RET alteration, and NTRK fusion, etc.)."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6126,
+        "end": 6402,
+        "text": "Existing genetic data from the patient's tumor tissue showing known molecular alterations which would make them eligible for targeted therapies (e.g., EGFR mutations, ALK rearrangements, KRAS mutation, ROS1 translocation, BRAF mutation, RET alteration, and NTRK fusion, etc.)."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6126,
+        "end": 6402,
+        "text": "Existing genetic data from the patient's tumor tissue showing known molecular alterations which would make them eligible for targeted therapies (e.g., EGFR mutations, ALK rearrangements, KRAS mutation, ROS1 translocation, BRAF mutation, RET alteration, and NTRK fusion, etc.)."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5898,
+        "end": 5991,
+        "text": "Previous treatment with c-MET inhibitors or hepatocyte growth factor (HGF)-targeting therapy."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5999,
+        "end": 6079,
+        "text": "For Cohort 2, prior chemotherapy for advanced, recurrent, or metastatic setting."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2682,
+        "end": 2763,
+        "text": "progressed after standard of care with no greater than 2 prior treatment regimens"
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9823,
+        "end": 9991,
+        "text": "Use of systemic corticosteroids \\> 10 mg/day prednisone or equivalent within 30 days or other immunosuppressive drugs within 30 days prior to first drug administration."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7127,
+        "end": 7449,
+        "text": "Past medical history of Interstitial Lung Disease (ILD)/pneumonitis, drug-induced or radiation ILD/pneumonitis that required steroid treatment or other immune suppressive agents, or evidence of current symptomatic interstitial lung disease or unexplained pulmonary symptoms indicative of ILD such dyspnea, cough, or fever."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12840,
+        "end": 13008,
+        "text": "Congestive heart failure (CHF), defined as New York Heart Association (NYHA) class III-IV or hospitalization for CHF (any NYHA class), within 6 months of randomization."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7696,
+        "end": 7732,
+        "text": "Prior organ or stem cell transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3186,
+        "end": 3217,
+        "text": "Not breast feed or be pregnant."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9823,
+        "end": 9991,
+        "text": "Use of systemic corticosteroids \\> 10 mg/day prednisone or equivalent within 30 days or other immunosuppressive drugs within 30 days prior to first drug administration."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Existing genetic data from the patient's tumor tissue showing known molecular alterations which would make them eligible for targeted therapies (e.g., EGFR mutations, ALK rearrangements, KRAS mutation, ROS1 translocation, BRAF mutation, RET alteration, and NTRK fusion, etc.).",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "exclusion",
+        "quote": "Existing genetic data from the patient's tumor tissue showing known molecular alterations which would make them eligible for targeted therapies (e.g., EGFR mutations, ALK rearrangements, KRAS mutation, ROS1 translocation, BRAF mutation, RET alteration, and NTRK fusion, etc.).",
+        "appliesTo": "Cohort 1"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Cohort 1: MET exon 14 skipping suspected by local or central biomarker assessment. ... Cohort 2: MET amplification or overexpression from tumor sample collected following progression on 1st line 3rd generation EGFR-TKI",
+      "raw": {
+        "factId": "met",
+        "rulesOut": [
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "Cohort 1: MET exon 14 skipping suspected by local or central biomarker assessment. ... Cohort 2: MET amplification or overexpression from tumor sample collected following progression on 1st line 3rd generation EGFR-TKI",
+        "appliesTo": "Cohort 1 and Cohort 2"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Has been receiving: ... antibody-drug conjugates ... within 6 weeks of the start of study treatment",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "topo_payload",
+          "other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Has been receiving: ... antibody-drug conjugates ... within 6 weeks of the start of study treatment",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History or clinical evidence of any malignant disease other than disease to be treated in current protocol that has been diagnosed and/or required therapy within the past 3 years.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History or clinical evidence of any malignant disease other than disease to be treated in current protocol that has been diagnosed and/or required therapy within the past 3 years.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known active infection with human immunodeficiency virus (HIV) ... unless the patients fall into below categories ... CD4+ cells ≥ 350 cells/µL ... No history of AIDS ... No history of opportunistic infection in the past 12 months",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known active infection with human immunodeficiency virus (HIV) ... unless the patients fall into below categories ... CD4+ cells ≥ 350 cells/µL ... No history of AIDS ... No history of opportunistic infection in the past 12 months",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known active infection with ... hepatitis B virus (HBV), or hepatitis C virus (HCV), unless the patients fall into below categories ... Undetectable viral load ... Concurrent HBV treatment and undetectable viral load",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known active infection with ... hepatitis B virus (HBV), or hepatitis C virus (HCV), unless the patients fall into below categories ... Undetectable viral load ... Concurrent HBV treatment and undetectable viral load",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "nctId": "NCT04469530",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 109,
+        "end": 411,
+        "text": "Subjects must have one of the following high-risk malignant pediatric extracranial solid tumors and be in complete remission or have minimal abnormalities on imaging studies after completion of upfront therapy administered with curative intent (cohort 1) or after completion of initial relapse regimen."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1128,
+        "end": 1210,
+        "text": "Subjects must be in complete remission or with minimal radiological abnormalities."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1128,
+        "end": 1210,
+        "text": "Subjects must be in complete remission or with minimal radiological abnormalities."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1395,
+        "end": 1491,
+        "text": "Karnofsky ≥ 50% for subjects \\> 16 years of age and Lansky ≥ 50% for subjects ≤ 16 years of age."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3022,
+        "end": 3143,
+        "text": "Pregnant or breast-feeding women will not be entered on this study as there may be fetal risks or teratogenic toxicities."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3428,
+        "end": 3541,
+        "text": "Subjects receiving corticosteroids must be on a stable or decreasing dose of corticosteroid for the prior 7 days."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Primary central nervous system (CNS) tumors and lymphomas are not eligible.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Primary central nervous system (CNS) tumors and lymphomas are not eligible.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

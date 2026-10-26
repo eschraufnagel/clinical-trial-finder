@@ -1,0 +1,120 @@
+{
+  "nctId": "NCT06445114",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 263,
+        "text": "AJCC 8th edition T0-3N0-2 p16-positive oropharyngeal (tonsil, base of tongue, glossotonsillar sulcus, soft palate, oropharyngeal wall) squamous cell carcinoma or squamous cell carcinoma of unknown primary involving the cervical lymph nodes."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 263,
+        "text": "AJCC 8th edition T0-3N0-2 p16-positive oropharyngeal (tonsil, base of tongue, glossotonsillar sulcus, soft palate, oropharyngeal wall) squamous cell carcinoma or squamous cell carcinoma of unknown primary involving the cervical lymph nodes."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2970,
+        "end": 3024,
+        "text": "Radiologic or clinical evidence of distant metastasis."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3027,
+        "end": 3045,
+        "text": "Recurrent disease."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2931,
+        "end": 2967,
+        "text": "AJCC 8th edition pT4 or cN3 disease."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3241,
+        "end": 3688,
+        "text": "Prior active invasive (not in situ) malignancy within the prior 2 years, excluding cutaneous basal cell or squamous cell carcinoma, low or intermediate risk prostate cancer, papillary thyroid cancer, stage T1aN0 kidney cancer, low-grade T1-2N0 salivary cancer, AJCC 8th edition stage I-II breast cancer, well-differentiated neuroendocrine tumors (e.g., carcinoid tumors), low grade non-Hodgkin lymphoma, or Stage 0, I, and III cutaneous melanomas."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4404,
+        "end": 4437,
+        "text": "Pregnant or breast-feeding women."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active connective tissue disease (e.g. systemic lupus erythematosus, scleroderma) requiring immunosuppression.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active connective tissue disease (e.g. systemic lupus erythematosus, scleroderma) requiring immunosuppression.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "nctId": "NCT06922591",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 95,
+        "end": 120,
+        "text": "Has an ECOG PS of 0 or 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 259,
+        "end": 351,
+        "text": "Pathologically documented metastatic PDAC or locally advanced, recurrent or metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 466,
+        "end": 522,
+        "text": "Has evidence of measurable disease based on RECIST v1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1472,
+        "end": 1579,
+        "text": "Has known or suspected active or untreated CNS metastases associated with progressive neurological symptoms"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1876,
+        "end": 1934,
+        "text": "History of or presence of active interstitial lung disease"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1635,
+        "end": 1820,
+        "text": "Is known to be HIV positive, unless all the following criteria are met:\n\n    1. CD4+ count ≥300/µL.\n    2. Undetectable viral load.\n    3. Receiving highly active antiretroviral therapy"
+      },
+      "loose": true
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1939,
+        "end": 1987,
+        "text": "Is a female patient who is pregnant or lactating"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

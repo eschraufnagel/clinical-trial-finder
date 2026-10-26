@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT07694986",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 550,
+        "end": 601,
+        "text": "Patients must have an ECOG performance scale of ≤2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 783,
+        "end": 1006,
+        "text": "Coincident brain or spinal cord metastases are allowed if these are stable and do not require local therapy at the time of enrollment. Individuals with previously treated stable brain metastases are eligible to participate."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 169,
+        "end": 217,
+        "text": "Trial participants must have a diagnosis of LMD."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4061,
+        "end": 4110,
+        "text": "Use of any immunotherapy within the last 4 weeks."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5618,
+        "end": 5698,
+        "text": "Has a known history of Human Immunodeficiency Virus (HIV) (HIV 1, 2 antibodies)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5727,
+        "end": 5800,
+        "text": "Has known active or chronic hepatitis B (HBV) or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5829,
+        "end": 5926,
+        "text": "ORGAN TRANSPLANTATION: Prior organ transplantation including allogenic stem-cell transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5392,
+        "end": 5615,
+        "text": "Is pregnant or breastfeeding or expecting to conceive or father children within the projected duration of the trial, starting with the pre-screening or screening visit through 90 days after the last dose of trial treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

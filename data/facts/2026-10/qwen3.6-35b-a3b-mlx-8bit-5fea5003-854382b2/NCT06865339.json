@@ -1,0 +1,180 @@
+{
+  "nctId": "NCT06865339",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 182,
+        "end": 442,
+        "text": "one of the following stages: (prior resection or stereotactic radiotherapy for early-stage disease is allowed)\n\n  * AJCC version 8 Stage II disease, medically or technically unresectable\n  * AJCC version 8 Stage III disease, eligible for non-surgical treatment"
+      },
+      "loose": true
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 48,
+        "end": 67,
+        "text": "biopsy-proven NSCLC"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 69,
+        "end": 177,
+        "text": "with measurable disease (at least 1 unidimensional, radiographically measurable lesion based on RECIST v1.1)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 935,
+        "end": 999,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-2"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3393,
+        "end": 3456,
+        "text": "Prior therapy with an anti-PD-1, anti-PD-L1, or LAG-3 inhibitor"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3131,
+        "end": 3243,
+        "text": "Presence of known sensitizing epidermal growth factor (EGFR) mutation or anaplastic lymphoma kinase (ALK) fusion"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3131,
+        "end": 3243,
+        "text": "Presence of known sensitizing epidermal growth factor (EGFR) mutation or anaplastic lymphoma kinase (ALK) fusion"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4937,
+        "end": 5069,
+        "text": "Ongoing or recent (within 2 years) evidence of an autoimmune disease that required systemic treatment with immunosuppressive agents."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5529,
+        "end": 5623,
+        "text": "Uncontrolled infection with HIV, Hepatitis B Virus (HBV), or Hepatitis C Virus (HCV) infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5529,
+        "end": 5623,
+        "text": "Uncontrolled infection with HIV, Hepatitis B Virus (HBV), or Hepatitis C Virus (HCV) infection"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6903,
+        "end": 7035,
+        "text": "Diagnosis of immunodeficiency or ongoing chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4548,
+        "end": 4646,
+        "text": "Pregnancy, assessed with urine pregnancy test within 72 hours prior to study treatment allocation."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Determination of PD-L1 expression on pretreatment tumor specimen using a clinically validated assay",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Determination of PD-L1 expression on pretreatment tumor specimen using a clinically validated assay",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

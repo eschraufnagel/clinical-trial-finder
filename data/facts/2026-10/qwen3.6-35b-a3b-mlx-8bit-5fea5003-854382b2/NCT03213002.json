@@ -1,0 +1,110 @@
+{
+  "nctId": "NCT03213002",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 66,
+        "end": 156,
+        "text": "Have a pathology proven diagnosis of any of newly diagnosed Glioblastoma Multiforme WHO IV"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 860,
+        "end": 1109,
+        "text": "Prior chemotherapy with capecitabine or temozolomide for other prior malignancies. Patients previously treated with continuous infusion 5-FU or any schedule of DTIC, which are similar to capecitabine and temozolomide, respectively, will be excluded."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1113,
+        "end": 1206,
+        "text": "Prior chemotherapies for newly diagnosed GBM or AA, other than temozolomide during radiation."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1631,
+        "end": 1660,
+        "text": "Performance status, KPS \\< 70"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1464,
+        "end": 1627,
+        "text": "Prior malignancies in the last 5 years other than curatively treated carcinoma in-situ previously treated with curative intent (cancer free for the past one year)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2256,
+        "end": 2292,
+        "text": "Women who are pregnant or lactating."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Have a pathology proven diagnosis of any of newly diagnosed Glioblastoma Multiforme WHO IV",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Have a pathology proven diagnosis of any of newly diagnosed Glioblastoma Multiforme WHO IV",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

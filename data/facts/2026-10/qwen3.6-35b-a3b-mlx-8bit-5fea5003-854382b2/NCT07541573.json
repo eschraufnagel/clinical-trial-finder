@@ -1,0 +1,116 @@
+{
+  "nctId": "NCT07541573",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 57,
+        "text": "Measurable disease per RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 185,
+        "end": 215,
+        "text": "ECOG Performance Status 0 to 2"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1920,
+        "end": 2086,
+        "text": "Anti-cancer treatment including surgery, radiotherapy, chemotherapy, other immunotherapy, or investigational therapy within 14 days prior to the 1st dose of GTB-5550."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2187,
+        "end": 2239,
+        "text": "Prior organ allograft or allogeneic transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2393,
+        "end": 2489,
+        "text": "Pregnant or breastfeeding or planning pregnancy within 4 months after the last dose of GTB-5550."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2721,
+        "end": 3087,
+        "text": "Prior malignancy other than the one under treatment except for the following: adequately treated basal cell or squamous cell skin cancer, in situ cervical cancer, adequately treated Stage I or II cancer which is currently in complete remission, or any other cancer from which the patient has been disease-free for 1 year after surgical or other definitive treatment."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3090,
+        "end": 3278,
+        "text": "Active autoimmune disease that has required systemic treatment (except replacement therapy) within the past 1 year or any other diseases requiring immunosuppressive therapy while on study."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3090,
+        "end": 3440,
+        "text": "Active autoimmune disease that has required systemic treatment (except replacement therapy) within the past 1 year or any other diseases requiring immunosuppressive therapy while on study. Inhaled or topical steroids, and adrenal replacement steroid doses ≤10 mg daily prednisone equivalent, are permitted in the absence of active autoimmune disease."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

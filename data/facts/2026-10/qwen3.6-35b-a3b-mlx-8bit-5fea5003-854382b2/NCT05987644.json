@@ -1,0 +1,116 @@
+{
+  "nctId": "NCT05987644",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 523,
+        "end": 591,
+        "text": "ECOG Performance Status of ≤ 2 within 14 days prior to registration."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 595,
+        "end": 706,
+        "text": "Histological or cytological confirmation of Stage IV (per AJCC 8th edition) non-small cell lung cancer (NSCLC)."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 595,
+        "end": 706,
+        "text": "Histological or cytological confirmation of Stage IV (per AJCC 8th edition) non-small cell lung cancer (NSCLC)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 710,
+        "end": 762,
+        "text": "At least one intracranial metastasis on MRI imaging."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 848,
+        "end": 1037,
+        "text": "All subjects must have brain metastases and be either asymptomatic or minimally symptomatic per investigator discretion without plan for surgical intervention within 28 days of study start."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 766,
+        "end": 844,
+        "text": "Confirmation of positive ALK rearrangement per local standard of care testing."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3465,
+        "end": 3490,
+        "text": "Pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3926,
+        "end": 3996,
+        "text": "Acute viral, autoimmune, alcoholic, or other types of acute hepatitis."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

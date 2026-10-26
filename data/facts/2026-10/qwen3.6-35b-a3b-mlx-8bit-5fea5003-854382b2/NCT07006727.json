@@ -1,0 +1,110 @@
+{
+  "nctId": "NCT07006727",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 118,
+        "end": 163,
+        "text": "Locally advanced, unresectable, or metastatic"
+      },
+      "appliesTo": "Dose Escalation Only"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3183,
+        "end": 3217,
+        "text": "Presence of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3222,
+        "end": 3309,
+        "text": "symptomatic CNS metastases or of CNS metastases that require local CNS-directed therapy"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3312,
+        "end": 3384,
+        "text": "History of or current interstitial lung disease or pneumonitis ≥ Grade 2"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1911,
+        "end": 1988,
+        "text": "Patients should have received no more than 2 prior lines of systemic therapy."
+      },
+      "appliesTo": "Dose expansion only"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2182,
+        "end": 2248,
+        "text": "Patients must have at least one measurable lesion (per RECIST 1.1)"
+      },
+      "appliesTo": "Dose expansion only"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Locally advanced, unresectable, or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Locally advanced, unresectable, or metastatic",
+        "appliesTo": "Dose expansion only"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

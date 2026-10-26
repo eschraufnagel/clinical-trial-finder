@@ -1,0 +1,149 @@
+{
+  "nctId": "NCT05614739",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 50,
+        "end": 103,
+        "text": "Locally advanced or metastatic solid tumor malignancy"
+      },
+      "appliesTo": "Cohort A1, C1, D1, and D2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 168,
+        "end": 229,
+        "text": "Urothelial cancer (UC) that is locally advanced or metastatic"
+      },
+      "appliesTo": "Cohort A2, B2, B5 and B7"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 295,
+        "end": 351,
+        "text": "Urothelial cancer that is locally advanced or metastatic"
+      },
+      "appliesTo": "Cohorts B1 and B4"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 402,
+        "end": 432,
+        "text": "Muscle Invasive Bladder Cancer"
+      },
+      "appliesTo": "Cohort B6"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 662,
+        "end": 724,
+        "text": "Low Grade Intermediate Risk Non-Muscle Invasive Bladder cancer"
+      },
+      "appliesTo": "Cohort B8"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 985,
+        "end": 1039,
+        "text": "Measurable disease required as defined by RECIST v1.1."
+      },
+      "appliesTo": "Cohorts A2, B1, B2, B4, B5, B7, and C1"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2037,
+        "end": 2173,
+        "text": "Participants who are pregnant, lactating, or plan to breastfeed during the study or within 6 months of the last dose of study treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Urothelial cancer that is locally advanced or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Urothelial cancer that is locally advanced or metastatic",
+        "appliesTo": "Cohort B7"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of: 0 or 1",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of: 0 or 1",
+        "appliesTo": "Cohorts A1, A2, B5, B6, B7, and B8"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of: Less than or equal to 2",
+      "raw": {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of: Less than or equal to 2",
+        "appliesTo": "Cohorts B1, B2, B4, C1, DI and D2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

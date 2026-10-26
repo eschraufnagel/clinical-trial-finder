@@ -1,0 +1,60 @@
+{
+  "nctId": "NCT06803680",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 718,
+        "end": 767,
+        "text": "≥ 1 measurable lesion as assessed by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 770,
+        "end": 848,
+        "text": "Stable Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Only participants with CLDN6+ high-grade OC (ie, ovarian cancer, fallopian tube cancer, or primary peritoneal cancer) will be enrolled in dose escalation cohorts, starting from Protocol Amendment 3.0.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Only participants with CLDN6+ high-grade OC (ie, ovarian cancer, fallopian tube cancer, or primary peritoneal cancer) will be enrolled in dose escalation cohorts, starting from Protocol Amendment 3.0.",
+        "appliesTo": "dose escalation cohorts"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

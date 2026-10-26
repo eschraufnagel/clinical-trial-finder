@@ -1,0 +1,81 @@
+{
+  "nctId": "NCT03726359",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 153,
+        "text": "Pathologically proven diagnosis of a non-hematological malignancy other than small cell lung cancer within 5 years of registration"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1593,
+        "end": 1697,
+        "text": "Patients with measurable brain metastasis resulting from small cell lung cancer and germ cell malignancy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 156,
+        "end": 494,
+        "text": "Intact (unresected) brain metastases measuring ≥3 cm and ≤ 6 cm in largest dimension on gadolinium contrast enhanced MRI obtained within 30 days prior to registration OR Surgically resected brain metastasis for which postoperative stereotactic radiotherapy is indicated, with expected target measuring ≥3 cm and ≤6 cm in largest dimension"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1156,
+        "end": 1254,
+        "text": "Patients with definitive leptomeningeal metastases, based on cerebrospinal fluid (CSF) examination"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_radiation isn't a fact for this trial's cancer type",
+      "quote": "Previous treatment of the target lesion with radiotherapy",
+      "raw": {
+        "factId": "prior_radiation",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Previous treatment of the target lesion with radiotherapy",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

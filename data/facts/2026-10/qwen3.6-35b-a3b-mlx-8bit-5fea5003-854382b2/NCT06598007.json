@@ -1,0 +1,170 @@
+{
+  "nctId": "NCT06598007",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 213,
+        "end": 390,
+        "text": "Histologically/cytologically confirmed, locally advanced unresectable or metastatic solid tumors that are refractory to standard therapy, or for whom no standard therapy exists."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 506,
+        "end": 721,
+        "text": "Has measurable disease per RECIST Version 1.1. that was not in a prior radiation or other locally treated area unless imaging-based progression has been clearly documented following radiation or other local therapy."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 792,
+        "end": 863,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3524,
+        "end": 3694,
+        "text": "Females who are pregnant or nursing, or any participant who is planning to become pregnant (self or partner) at any time during the study, including the Follow-up Period."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3330,
+        "end": 3521,
+        "text": "Evidence of severe or uncontrolled systemic diseases, infection, or laboratory finding that in the view of the PI or designee makes it undesirable for the patient to participate in the trial."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5624,
+        "end": 6230,
+        "text": "Positive test for hepatitis C antibody (HCV), hepatitis B surface antigen (HBsAg), or human immunodeficiency virus (HIV) antibodies (HIV-1/-2) at Screening, unless the participant meets 1 of the following criteria:\n\n  1. Has chronic hepatitis B virus (HBV) infection or virologically suppressed (VS) HBV AND has been on suppressive antiviral therapy (unless it is a prohibited medication per exclusion criteria #12) for at least 4 weeks.\n  2. Has chronic HCV infection but has completed curative antiviral treatment (note: patients may be HCV antibody positive but must be HCV RNA negative to be eligible)."
+      },
+      "loose": true
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5624,
+        "end": 6230,
+        "text": "Positive test for hepatitis C antibody (HCV), hepatitis B surface antigen (HBsAg), or human immunodeficiency virus (HIV) antibodies (HIV-1/-2) at Screening, unless the participant meets 1 of the following criteria:\n\n  1. Has chronic hepatitis B virus (HBV) infection or virologically suppressed (VS) HBV AND has been on suppressive antiviral therapy (unless it is a prohibited medication per exclusion criteria #12) for at least 4 weeks.\n  2. Has chronic HCV infection but has completed curative antiviral treatment (note: patients may be HCV antibody positive but must be HCV RNA negative to be eligible)."
+      },
+      "loose": true
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 213,
+        "end": 390,
+        "text": "Histologically/cytologically confirmed, locally advanced unresectable or metastatic solid tumors that are refractory to standard therapy, or for whom no standard therapy exists."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2544,
+        "end": 2916,
+        "text": "During Phase 1 Dose Escalation, receiving concurrent anticancer treatment (including chemotherapy, targeted drugs, radiotherapy \\[excluding the following small-area radiotherapy for bone metastasis\\], endocrine therapy, antitumor traditional Chinese Medicine), except during Phase 2b, Standard Care Chemotherapy (FOLFOX-based regimen) for advanced CRC patients is allowed."
+      },
+      "appliesTo": "Phase 1 Dose Escalation"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2544,
+        "end": 2916,
+        "text": "During Phase 1 Dose Escalation, receiving concurrent anticancer treatment (including chemotherapy, targeted drugs, radiotherapy \\[excluding the following small-area radiotherapy for bone metastasis\\], endocrine therapy, antitumor traditional Chinese Medicine), except during Phase 2b, Standard Care Chemotherapy (FOLFOX-based regimen) for advanced CRC patients is allowed."
+      },
+      "appliesTo": "Phase 1 Dose Escalation"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "During Phase 1 Dose Escalation, receiving concurrent anticancer treatment (including chemotherapy, targeted drugs, radiotherapy [excluding the following small-area radiotherapy for bone metastasis], endocrine therapy, antitumor traditional Chinese Medicine), except during Phase 2b, Standard Care Chemotherapy (FOLFOX-based regimen) for advanced CRC patients is allowed.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "During Phase 1 Dose Escalation, receiving concurrent anticancer treatment (including chemotherapy, targeted drugs, radiotherapy [excluding the following small-area radiotherapy for bone metastasis], endocrine therapy, antitumor traditional Chinese Medicine), except during Phase 2b, Standard Care Chemotherapy (FOLFOX-based regimen) for advanced CRC patients is allowed.",
+        "appliesTo": "Phase 1 Dose Escalation"
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "During Phase 1 Dose Escalation, receiving concurrent anticancer treatment (including chemotherapy, targeted drugs, radiotherapy [excluding the following small-area radiotherapy for bone metastasis], endocrine therapy, antitumor traditional Chinese Medicine), except during Phase 2b, Standard Care Chemotherapy (FOLFOX-based regimen) for advanced CRC patients is allowed.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "During Phase 1 Dose Escalation, receiving concurrent anticancer treatment (including chemotherapy, targeted drugs, radiotherapy [excluding the following small-area radiotherapy for bone metastasis], endocrine therapy, antitumor traditional Chinese Medicine), except during Phase 2b, Standard Care Chemotherapy (FOLFOX-based regimen) for advanced CRC patients is allowed.",
+        "appliesTo": "Phase 1 Dose Escalation"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

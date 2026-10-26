@@ -1,0 +1,118 @@
+{
+  "nctId": "NCT06548672",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 70,
+        "end": 137,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 141,
+        "end": 233,
+        "text": "Subjects with locally advanced or metastatic solid tumors confirmed by histology or cytology"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 732,
+        "end": 801,
+        "text": "Subjects with at least one measurable lesion according to RECIST 1.1."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1329,
+        "end": 1356,
+        "text": "Pregnant or lactating women"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1722,
+        "end": 1787,
+        "text": "Previously received allogeneic tissue/solid organ transplantation"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1936,
+        "end": 2339,
+        "text": "Known active CNS metastases and/or cancerous meningitis. Subjects with previously treated brain metastases who meet the following conditions are permitted to participate in the study: radiologically stable, that is, repeat imaging shows no evidence of progression for at least 4 weeks, clinically stable, and no steroid therapy is required for at least 14 days prior to the first dose of study treatment"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2515,
+        "end": 2666,
+        "text": "Has a history of (non-infectious) pneumonitis / interstitial lung disease that required steroids or has current pneumonitis / interstitial lung disease"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3107,
+        "end": 3546,
+        "text": "Cardiovascular disease of clinical significance: Including New York Heart Association \\[NYHA\\] Class II-IV, congestive heart failure, second-degree or higher heart block, myocardial infarction within the past 3 months, unstable arrhythmia or unstable angina, marked QT interval prolongation (12-lead ECG showing baseline-corrected QTc interval \\>480 ms), cerebral infarction within 3 months, or having received PTCA or CABG within 6 months"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

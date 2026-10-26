@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT06398418",
+  "mappings": [
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 333,
+        "end": 698,
+        "text": "Refractory to anti-PD (checkpoint Protein on Immune Cells called T cells)-1/L1 therapy per RECIST v1.1 defined as subject who has disease progression after receiving at least two complete cycles of ICI (immune checkpoint inhibitors) therapy or disease progression 6 months from initiation of ICI (immune checkpoint inhibitors) therapy while still on active therapy."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 744,
+        "end": 817,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0, 1 or 2"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 820,
+        "end": 1020,
+        "text": "Subjects must have evaluable disease by CT (computer tomography) or MRI (magnet resonance imaging) per RECIST 1.1 criteria or clinically apparent disease that the investigator can follow for response."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1949,
+        "end": 2039,
+        "text": "Subjects with untreated brain metastasis. Treated brain metastasis are permitted if stable"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2042,
+        "end": 2078,
+        "text": "More than 4 prior systemic therapies"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1551,
+        "end": 1610,
+        "text": "History of solid organ transplant or bone marrow transplant"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1855,
+        "end": 1946,
+        "text": "Pregnant or breastfeeding or planning to conceive or father a child during the trial period"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1410,
+        "end": 1500,
+        "text": "Coexisting severe chronic diseases other than cancer (autoimmunity, inflammatory diseases)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1686,
+        "end": 1774,
+        "text": "Ongoing systemic immunosuppressive therapy, with the exclusion of prednisone (10 mg/day)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Unresectable stage III or stage IV melanoma, basal cell carcinoma, or squamous cell carcinoma as per the American Joint Committee on Cancer 2017 Guidelines (8th Edition) (8th Edition) regardless of BRAF mutation status and other solid tumors.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Unresectable stage III or stage IV melanoma, basal cell carcinoma, or squamous cell carcinoma as per the American Joint Committee on Cancer 2017 Guidelines (8th Edition) (8th Edition) regardless of BRAF mutation status and other solid tumors.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

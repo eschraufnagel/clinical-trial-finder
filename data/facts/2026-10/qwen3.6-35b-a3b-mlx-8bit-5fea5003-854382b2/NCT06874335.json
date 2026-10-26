@@ -1,0 +1,172 @@
+{
+  "nctId": "NCT06874335",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 565,
+        "end": 684,
+        "text": "Patients with histologically or cytologically confirmed locally advanced/metastatic relapsed or refractory solid tumors"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5684,
+        "end": 5835,
+        "text": "known active brain metastases.\n\n   NOTE: Participants with previously treated, clinically stable, radiologically stable brain metastases maybe eligible"
+      },
+      "loose": true
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5628,
+        "end": 5680,
+        "text": "current or previously treated leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2347,
+        "end": 2411,
+        "text": "Measurable advanced or metastatic tumors per RECIST 1.1 criteria"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2415,
+        "end": 2510,
+        "text": "Patients must exhibit an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4134,
+        "end": 4226,
+        "text": "Prior treatment with antibody drug conjugate (ADC) with a topoisomerase-I inhibitor payload."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4531,
+        "end": 4605,
+        "text": "Myocardial infarction, unstable angina, or stroke ≤ 6 months prior to C1D1"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8317,
+        "end": 8583,
+        "text": "History of (noninfectious) clinically significant interstitial lung disease (ILD)/pneumonitis that required steroids, active clinically significant ILD/pneumonitis, or suspected clinically significant ILD/pneumonitis that cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9319,
+        "end": 9377,
+        "text": "Prior allogeneic stem cell or solid organ transplantation."
+      },
+      "appliesTo": "Combination Specific Exclusion Criteria"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9470,
+        "end": 9711,
+        "text": "New York Heart Association heart failure classifications of Class II, III, or IV; or myocardial infarction, or acute coronary syndrome within 12 months of first dose of study medication; or\n\nTransient ischemic attack or stroke within 1 year."
+      },
+      "appliesTo": "Combination Specific Exclusion Criteria",
+      "loose": true
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known active infection with human immunodeficiency virus (HIV)... Participants with human immunodeficiency virus (HIV) infection with acquired immune deficiency syndrome (AIDS) defining illness are not eligible for enrollment; however, participants who have had HIV infection and who have a cluster of differentiation 4 (CD4) + T cell count >350 cells/μL and no history of an AIDS-defining illness are eligible for entry",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known active infection with human immunodeficiency virus (HIV)... Participants with human immunodeficiency virus (HIV) infection with acquired immune deficiency syndrome (AIDS) defining illness are not eligible for enrollment; however, participants who have had HIV infection and who have a cluster of differentiation 4 (CD4) + T cell count >350 cells/μL and no history of an AIDS-defining illness are eligible for entry",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Has an active second malignancy. Note: participants with a history of malignancy that have been completely treated, with no evidence of active cancer for 3 years prior to enrollment... are allowed",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Has an active second malignancy. Note: participants with a history of malignancy that have been completely treated, with no evidence of active cancer for 3 years prior to enrollment... are allowed",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

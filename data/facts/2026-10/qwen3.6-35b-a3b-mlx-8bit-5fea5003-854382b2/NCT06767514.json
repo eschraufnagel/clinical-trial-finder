@@ -1,0 +1,195 @@
+{
+  "nctId": "NCT06767514",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 186,
+        "end": 213,
+        "text": "Metastatic (Stage IV) NSCLC"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 216,
+        "end": 288,
+        "text": "Histologically or cytologically confirmed squamous or non-squamous NSCLC"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 291,
+        "end": 450,
+        "text": "Tumor demonstrates high PD-L1 expression ( TPS\\>50%) based on a 22C3 immunohistochemistry ( IHC) clinical assay approved / cleared by local health authorities."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 453,
+        "end": 519,
+        "text": "At least one measurable noncerebral lesion according to RECIST 1.1"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 522,
+        "end": 571,
+        "text": "No prior systemic treatment for metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 522,
+        "end": 571,
+        "text": "No prior systemic treatment for metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 522,
+        "end": 571,
+        "text": "No prior systemic treatment for metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 522,
+        "end": 571,
+        "text": "No prior systemic treatment for metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 522,
+        "end": 571,
+        "text": "No prior systemic treatment for metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1174,
+        "end": 1361,
+        "text": "Symptomatic CNS metastases, CNS metastasis ≥ 1.5 cm, CNS radiation within 7 days prior to randomization, potential need for CNS radiation within the first cycle, or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1174,
+        "end": 1361,
+        "text": "Symptomatic CNS metastases, CNS metastasis ≥ 1.5 cm, CNS radiation within 7 days prior to randomization, potential need for CNS radiation within the first cycle, or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1364,
+        "end": 1554,
+        "text": "Other prior malignancy (including previously treated NSCLC) unless the patient has undergone curative therapy with no evidence of recurrence of the disease for 3 years prior to randomization"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1557,
+        "end": 1617,
+        "text": "Active autoimmune or lung disease requiring systemic therapy"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1839,
+        "end": 1946,
+        "text": "History of noninfectious pneumonia requiring systemic corticosteroids, or current interstitial lung disease"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

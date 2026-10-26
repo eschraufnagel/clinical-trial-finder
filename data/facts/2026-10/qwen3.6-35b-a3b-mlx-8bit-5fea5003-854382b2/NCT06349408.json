@@ -1,0 +1,80 @@
+{
+  "nctId": "NCT06349408",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 75,
+        "end": 158,
+        "text": "Has an Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0 or 1;"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 259,
+        "end": 432,
+        "text": "At least 1 evaluable lesion according to Response Evaluation Criteria in Solid Tumors (RECIST) Version 1.1. for dose escalation , and 1 measurable lesion for dose expansion."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 796,
+        "end": 960,
+        "text": "Progressed or refractory to an ADC that consists of an Exatecan derivative that is a topoisomerase I inhibitor or intolerable with an ADC that consists of Exatecan;"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1421,
+        "end": 1479,
+        "text": "Known symptomatic central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1483,
+        "end": 1590,
+        "text": "History of pneumonia requiring corticosteroids therapy, or history of clinically significant lung diseases;"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

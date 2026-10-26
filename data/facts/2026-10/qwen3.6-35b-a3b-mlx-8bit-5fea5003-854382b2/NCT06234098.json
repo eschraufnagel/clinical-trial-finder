@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT06234098",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 122,
+        "text": "The patient has a histologically or cytologically confirmed unresectable or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 530,
+        "end": 634,
+        "text": "Patient should have at least 1 measurable lesion per RECIST version 1.1 as assessed by the investigator."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 955,
+        "end": 1008,
+        "text": "The patient has an ECOG performance status of 0 to 2."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4687,
+        "end": 4743,
+        "text": "Patients with an active uncontrolled autoimmune disease."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5110,
+        "end": 5400,
+        "text": "History of interstitial lung disease, idiopathic pulmonary fibrosis, pneumonitis (including drug induced), organizing pneumonia (i.e., bronchiolitis obliterans, cryptogenic organizing pneumonia, etc.), or evidence of active pneumonitis on chest computed tomography scan in the last 6 months"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5791,
+        "end": 5877,
+        "text": "Recipient of an allogeneic bone marrow transplantation or solid organ transplantation."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5948,
+        "end": 5999,
+        "text": "History of known human immunodeficiency virus (HIV)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6001,
+        "end": 6263,
+        "text": "unresolved viral hepatitis as documented by the detection of hepatitis B surface antigen (HBsAg), hepatitis C virus (HCV) antibody at the time of the screening visit, and known quantitative HCV RNA results greater than the lower limits of detection of the assay."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6332,
+        "end": 6423,
+        "text": "Myocardial infarction or stroke within 6 months prior to the initiation of study treatment."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9961,
+        "end": 10138,
+        "text": "Requires systemic treatment with either corticosteroids (\\> 10 mg daily prednisone equivalent) or other immunosuppressive medications within 14 days prior to Day 1 of treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For Part B Dose Expansion in TNBC only: Histologically or cytologically confirmed metastatic triple-negative breast cancer (mTNBC) who had received at least two prior treatments",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero",
+          "one",
+          "two"
+        ],
+        "polarity": "inclusion",
+        "quote": "For Part B Dose Expansion in TNBC only: Histologically or cytologically confirmed metastatic triple-negative breast cancer (mTNBC) who had received at least two prior treatments",
+        "appliesTo": "Part B Dose Expansion in TNBC only"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

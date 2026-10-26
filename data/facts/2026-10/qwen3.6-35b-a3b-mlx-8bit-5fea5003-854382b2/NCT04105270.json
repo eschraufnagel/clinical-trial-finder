@@ -1,0 +1,242 @@
+{
+  "nctId": "NCT04105270",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 91,
+        "text": "Histologically or cytologically confirmed adenocarcinoma of the lung"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 100,
+        "end": 137,
+        "text": "unresectable stage IIIB/C or stage IV"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1180,
+        "end": 1268,
+        "text": "Patients with treated brain metastasis are eligible as long as they have stable symptoms"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3178,
+        "end": 3248,
+        "text": "Has untreated brain metastasis or active leptomeningeal carcinomatosis"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 275,
+        "end": 313,
+        "text": "Measurable disease based on RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1391,
+        "end": 1424,
+        "text": "ECOG Performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 139,
+        "end": 194,
+        "text": "does not have an EGFR sensitizing (activating) mutation"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 195,
+        "end": 223,
+        "text": "or ALK or ROS1 translocation"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 195,
+        "end": 223,
+        "text": "or ALK or ROS1 translocation"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3531,
+        "end": 3814,
+        "text": "Prior treatment with any other anti-PD-1, or PD-L1, including durvalumab or an anti-PD-L2 agent or an antibody or a small molecule targeting other immuno-regulatory receptors except as adjuvant therapy for NSCLC so long as it has been greater than six months since the last treatment"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4280,
+        "end": 4378,
+        "text": "Active or prior documented autoimmune disease within the past 2 years requiring systemic treatment"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6467,
+        "end": 6592,
+        "text": "Has active or prior history of (non-infectious) pneumonitis that required steroids or patients with interstitial lung disease"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5223,
+        "end": 5385,
+        "text": "History of Human Immunodeficiency Virus (HIV) (known HIV 1/2 antibodies positive) who are on anti-retroviral treatment for \\< 6 months and absolute CD4 count\\<500"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5448,
+        "end": 5482,
+        "text": "Has known active Hepatitis B or C."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6261,
+        "end": 6328,
+        "text": "Myocardial infarction or stroke within 3 months prior to enrollment"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5042,
+        "end": 5113,
+        "text": "History of organ transplant that requires therapeutic immunosuppression"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2767,
+        "end": 2798,
+        "text": "Not pregnant or breast feeding."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7244,
+        "end": 7505,
+        "text": "History of another primary malignancy (excluding non-melanoma skin cancer) within 5 years prior to starting RMT, except if the patient has undergone potentially curative therapy with no evidence of disease recurrence for 5 years since initiation of that therapy"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

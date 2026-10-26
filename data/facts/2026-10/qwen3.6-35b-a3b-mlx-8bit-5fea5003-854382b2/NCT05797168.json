@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT05797168",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 888,
+        "end": 952,
+        "text": "Eastern Cooperative Oncology Group Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1473,
+        "end": 1530,
+        "text": "Participants must have measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4678,
+        "end": 4762,
+        "text": "Patients with spinal cord compression or a history of leptomeningeal carcinomatosis."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4765,
+        "end": 4985,
+        "text": "Patients with brain metastases unless, asymptomatic, stable, and not requiring continuous corticosteroids at a dose of \\> 10 mg prednisone/day or equivalent for at least 4 weeks prior to first dose of study intervention."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5405,
+        "end": 5639,
+        "text": "Active infection, including tuberculosis and infections with hepatitis B virus (HBV; verified by known positive hepatitis B surface antigen \\[HBsAg\\] result), hepatitis C virus (HCV) or known HIV infection that is not well controlled."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5405,
+        "end": 5639,
+        "text": "Active infection, including tuberculosis and infections with hepatitis B virus (HBV; verified by known positive hepatitis B surface antigen \\[HBsAg\\] result), hepatitis C virus (HCV) or known HIV infection that is not well controlled."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7028,
+        "end": 7253,
+        "text": "Patient has active ILD/pneumonitis or has a history of (non-infectious) ILD/pneumonitis that required oral or IV steroids or supplemental oxygen, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7465,
+        "end": 7643,
+        "text": "Malignancy treated with curative intent and with no known active disease for at least 2 years prior to screening of study intervention and with low potential risk for recurrence."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8462,
+        "end": 8678,
+        "text": "Acute coronary syndrome/acute myocardial infarction, unstable angina pectoris, coronary intervention procedure with percutaneous coronary intervention, or coronary artery bypass grafting within 6 months of screening."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10835,
+        "end": 11008,
+        "text": "For women only - currently pregnant (confirmed with positive pregnancy test or suspected), lactating, breastfeeding, or intention to become pregnant during the study period."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

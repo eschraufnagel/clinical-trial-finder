@@ -1,0 +1,192 @@
+{
+  "nctId": "NCT07476287",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 101,
+        "end": 150,
+        "text": "Histologically or cytologically confirmed T-SCLC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 288,
+        "end": 347,
+        "text": "Participants have not received systemic therapy for T-SCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 350,
+        "end": 428,
+        "text": "Have at least one measurable lesion as the target lesion based on RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 512,
+        "end": 576,
+        "text": "Eastern Cooperative Oncology Group performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 894,
+        "end": 992,
+        "text": "Active or untreated CNS disease, including brain, brainstem, spinal cord, or meningeal metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1384,
+        "end": 1406,
+        "text": "Leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1636,
+        "end": 1719,
+        "text": "History of another malignancy (other than NSCLC) within 3 years prior to first dose"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2024,
+        "end": 2094,
+        "text": "History of allogeneic organ or hematopoietic stem cell transplantation"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2097,
+        "end": 2175,
+        "text": "Active autoimmune disease requiring systemic treatment within the past 2 years"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2374,
+        "end": 2444,
+        "text": "Prior or current non-infectious pneumonitis requiring systemic therapy"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3216,
+        "end": 3239,
+        "text": "Active hepatitis B or C"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3244,
+        "end": 3270,
+        "text": "Uncontrolled HIV infection"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3973,
+        "end": 4011,
+        "text": "Pregnant or breastfeeding participants"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3694,
+        "end": 3781,
+        "text": "Use of prohibited concomitant medications, including high-dose systemic corticosteroids"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

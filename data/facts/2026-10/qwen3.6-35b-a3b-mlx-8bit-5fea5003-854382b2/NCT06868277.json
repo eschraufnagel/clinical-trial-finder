@@ -1,0 +1,194 @@
+{
+  "nctId": "NCT06868277",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2159,
+        "end": 2222,
+        "text": "Presence of small cell and neuroendocrine histology components."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 136,
+        "end": 287,
+        "text": "Stage IV mNSCLC (metastatic non-small cell lung cancer) (based on the American Joint Committee on Cancer Edition 8) not amenable to curative treatment."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2225,
+        "end": 2375,
+        "text": "Brain metastases unless asymptomatic, stable, and not requiring steroids or anticonvulsants for at least 4 weeks prior to start of study intervention."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2788,
+        "end": 2913,
+        "text": "Any prior treatment with an anti-PD-1 (programmed cell death protein 1) or anti-PD-L1 (anti-programmed death-ligand 1) agent."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2473,
+        "end": 2572,
+        "text": "Any prior systemic therapy received for advanced or mNSCLC (metastatic non-small cell lung cancer)."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2473,
+        "end": 2572,
+        "text": "Any prior systemic therapy received for advanced or mNSCLC (metastatic non-small cell lung cancer)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 737,
+        "end": 947,
+        "text": "WHO (World Health Organization)/ECOG (Eastern Cooperative Oncology Group) performance status of 0 or 1, with no deterioration over the previous 2 weeks prior to baseline at screening and prior to randomization."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1076,
+        "end": 1496,
+        "text": "At least one lesion not previously irradiated that qualifies as a RECIST 1.1 (Response Evaluation Criteria in Solid Tumors, Version 1.1) TL (target lesion) at baseline and can be accurately measured at baseline as ≥ 10 mm in the longest diameter (except lymph nodes, which must have short axis ≥ 15 mm) with CT (computed tomography) or MRI (magnetic resonance imaging) and is suitable for accurate repeated measurements."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1943,
+        "end": 2156,
+        "text": "History of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention and of low potential risk for recurrence."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1797,
+        "end": 1940,
+        "text": "Active or prior documented autoimmune or inflammatory disorders requiring chronic treatment with steroids or other immunosuppressive treatment."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1766,
+        "end": 1794,
+        "text": "History of organ transplant."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 290,
+        "end": 509,
+        "text": "Absence of sensitizing EGFR (epidermal growth factor) mutations and ALK (anaplastic lymphoma kinase) and ROS1 (c-ros oncogene 1) rearrangements. Negative assay result is required for all non-squamous histology subtypes."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 290,
+        "end": 509,
+        "text": "Absence of sensitizing EGFR (epidermal growth factor) mutations and ALK (anaplastic lymphoma kinase) and ROS1 (c-ros oncogene 1) rearrangements. Negative assay result is required for all non-squamous histology subtypes."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 290,
+        "end": 509,
+        "text": "Absence of sensitizing EGFR (epidermal growth factor) mutations and ALK (anaplastic lymphoma kinase) and ROS1 (c-ros oncogene 1) rearrangements. Negative assay result is required for all non-squamous histology subtypes."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

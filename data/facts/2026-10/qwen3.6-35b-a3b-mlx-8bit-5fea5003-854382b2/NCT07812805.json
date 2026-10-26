@@ -1,0 +1,111 @@
+{
+  "nctId": "NCT07812805",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 253,
+        "end": 387,
+        "text": "Histologically and/or cytologically confirmed diagnosis of selected advanced or metastatic solid tumors (relapsed/refractory disease)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1756,
+        "end": 2343,
+        "text": "Patients with secondary metastasis to the CNS are eligible if they have had all brain metastases resected or have received radiation therapy ending at least 4 weeks prior to C1D1 and they meet all of the following criteria:\n\n   1. Residual neurological symptoms ≤ Grade 1\n   2. No glucocorticoids requirement or patients may be receiving low doses of glucocorticoids (not exceeding a dose equivalent to prednisone 10 mg daily), provided the dose has been stable for at least 2 weeks prior to C1D1\n   3. Follow-up MRI or CT scan shows no progression of treated lesions and no new lesions."
+      },
+      "loose": true
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2347,
+        "end": 2466,
+        "text": "Measurable disease on imaging, as assessed by RECIST v1.1 and/or RANO-BM for brain metastases (Eisenhauer et al, 2009)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2470,
+        "end": 2498,
+        "text": "ECOG performance status ≤ 2."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5789,
+        "end": 6183,
+        "text": "History of solid tumor malignancy other than the diseases under study, diagnosed within (≤) the last 3 years of study enrollment, excluding adequately treated basal cell carcinoma of the skin, squamous cell carcinoma of the skin, or in situ cervical cancer, in situ breast cancer, in situ prostate cancer (patients must have shown no evidence of active disease for 2 years prior to enrollment)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9900,
+        "end": 9940,
+        "text": "Current pregnancy and/or breast-feeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically and/or cytologically confirmed diagnosis of selected advanced or metastatic solid tumors (relapsed/refractory disease).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically and/or cytologically confirmed diagnosis of selected advanced or metastatic solid tumors (relapsed/refractory disease).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

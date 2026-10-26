@@ -1,0 +1,307 @@
+{
+  "nctId": "NCT06364410",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 151,
+        "text": "In the dose escalation, patients must have a histologically documented locally advanced, unresectable, or metastatic solid tumor"
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 602,
+        "end": 764,
+        "text": "In the dose expansion, patients must have histologically documented locally advanced, unresectable or metastatic gastric or gastroesophageal junction (GEJ) cancer"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1595,
+        "end": 1681,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 1 (Karnofsky ≥ 70%)."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 328,
+        "end": 478,
+        "text": "HER2 expression by immunohistochemistry (IHC) (1+, 2+, or 3+) or HER2 amplification by in situ hybridization (ISH) or next generation sequencing (NGS)"
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 894,
+        "end": 968,
+        "text": "HER2 expression by IHC (1+, 2+, or 3+) or HER2 amplification by ISH or NGS"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 569,
+        "end": 599,
+        "text": "T-DXd (DS-8201a)-naive disease"
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13358,
+        "end": 13443,
+        "text": "Patients with prior treatment with T-DXd (DS-8201a) or other topoisomerase inhibitors"
+      },
+      "appliesTo": "dose escalation and dose expansion"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4858,
+        "end": 5014,
+        "text": "Human immunodeficiency virus-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5169,
+        "end": 5389,
+        "text": "Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11048,
+        "end": 11206,
+        "text": "Pregnant women are excluded from this study because T-DXd (DS-8201a) and azenosertib (ZN-c3) have the potential risk for teratogenic or abortifacient effects."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11207,
+        "end": 11471,
+        "text": "Because there is an unknown but potential risk for AEs in nursing infants secondary to treatment of the mother with T-DXd (DS-8201a) and azenosertib (ZN-c3), breastfeeding should be discontinued if the mother is treated with T-DXd (DS-8201a) or azenosertib (ZN-c3)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11474,
+        "end": 11638,
+        "text": "Patients with history of non-infectious pneumonitis/interstitial lung disease (ILD), current ILD, or where suspected ILD cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12250,
+        "end": 12554,
+        "text": "Patients with a medical history of myocardial infarction within 6 months before enrollment, symptomatic congestive heart failure (New York Heart Association class IIb to IV), and/or troponin levels consistent with myocardial infarction as defined according to the manufacturer 28 days prior to enrollment"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13533,
+        "end": 13632,
+        "text": "Patients with prior allogeneic organ transplantation including allogeneic stem cell transplantation"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "In the dose escalation, patients must have a histologically documented locally advanced, unresectable, or metastatic solid tumor",
+      "raw": {
+        "factId": "histology",
+        "verdicts": {
+          "adenocarcinoma": "allowed",
+          "squamous": "allowed",
+          "other_nsclc": "allowed",
+          "mixed_small_cell": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "In the dose escalation, patients must have a histologically documented locally advanced, unresectable, or metastatic solid tumor",
+        "appliesTo": "dose escalation",
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "In the dose expansion, patients must have histologically documented locally advanced, unresectable or metastatic gastric or gastroesophageal junction (GEJ) cancer",
+      "raw": {
+        "factId": "histology",
+        "verdicts": {
+          "adenocarcinoma": "allowed",
+          "squamous": "allowed",
+          "other_nsclc": "allowed",
+          "mixed_small_cell": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "In the dose expansion, patients must have histologically documented locally advanced, unresectable or metastatic gastric or gastroesophageal junction (GEJ) cancer",
+        "appliesTo": "dose expansion",
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression",
+      "raw": {
+        "factId": "brain_mets",
+        "verdicts": {
+          "none": "allowed",
+          "treated_stable": "allowed",
+          "not_stable_no_symptoms": "unclear",
+          "symptoms": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS-specific treatment is not required and is unlikely to be required during the first cycle of study treatment",
+      "raw": {
+        "factId": "brain_mets",
+        "verdicts": {
+          "none": "allowed",
+          "treated_stable": "allowed",
+          "not_stable_no_symptoms": "unclear",
+          "symptoms": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS-specific treatment is not required and is unlikely to be required during the first cycle of study treatment",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS-specific treatment is not required and is unlikely to be required during the first cycle of study treatment",
+      "raw": {
+        "factId": "leptomeningeal",
+        "verdicts": {
+          "no": "allowed",
+          "yes": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS-specific treatment is not required and is unlikely to be required during the first cycle of study treatment",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "For the dose escalation and dose expansion, patients can have evaluable or measurable disease",
+      "raw": {
+        "factId": "measurable_disease",
+        "verdicts": {
+          "yes": "allowed",
+          "no": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "For the dose escalation and dose expansion, patients can have evaluable or measurable disease",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "T-DXd (DS-8201a)-naive disease",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "topo_payload"
+        ],
+        "polarity": "inclusion",
+        "quote": "T-DXd (DS-8201a)-naive disease",
+        "appliesTo": "dose expansion"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

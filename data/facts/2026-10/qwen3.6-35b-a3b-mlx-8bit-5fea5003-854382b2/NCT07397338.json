@@ -1,0 +1,108 @@
+{
+  "nctId": "NCT07397338",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 82,
+        "end": 153,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 389,
+        "end": 550,
+        "text": "Non-squamous NSCLC without a treatable driver mutation in other oncogenes that has not received prior systemic treatment (Arms A \\& B for Part 2 Dose Expansion)."
+      },
+      "appliesTo": "Arms A & B for Part 2 Dose Expansion"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 926,
+        "end": 964,
+        "text": "Head and neck squamous cell carcinoma."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 156,
+        "end": 288,
+        "text": "Histologically confirmed, locally advanced or metastatic solid tumor malignancy with documented RAS mutation in KRAS, HRAS, or NRAS."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 754,
+        "end": 788,
+        "text": "Measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 553,
+        "end": 751,
+        "text": "Solid tumor or CRC previously treated with no more than 2 prior lines of therapy for advanced disease and progressed or been intolerant to prior standard therapies (Arm C for Part 2 Dose Expansion)."
+      },
+      "appliesTo": "Arm C for Part 2 Dose Expansion"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 389,
+        "end": 550,
+        "text": "Non-squamous NSCLC without a treatable driver mutation in other oncogenes that has not received prior systemic treatment (Arms A \\& B for Part 2 Dose Expansion)."
+      },
+      "appliesTo": "Arms A & B for Part 2 Dose Expansion"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

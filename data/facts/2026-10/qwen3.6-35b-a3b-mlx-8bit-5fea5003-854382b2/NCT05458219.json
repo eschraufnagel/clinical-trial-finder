@@ -1,0 +1,196 @@
+{
+  "nctId": "NCT05458219",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2194,
+        "end": 2308,
+        "text": "Participants with histopathologically confirmed unresectable locally advanced or metastatic malignant solid tumors"
+      },
+      "appliesTo": "Phase Ia dose escalation phase"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2484,
+        "end": 2618,
+        "text": "Participants with histopathologically confirmed unresectable locally advanced or metastatic G/GEJ AC, PDAC, BTC, or other solid tumors"
+      },
+      "appliesTo": "Phase Ia dose expansion, Dose Optimization"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2484,
+        "end": 2584,
+        "text": "Participants with histopathologically confirmed unresectable locally advanced or metastatic G/GEJ AC"
+      },
+      "appliesTo": "Phase Ib Cohort A"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9151,
+        "end": 9201,
+        "text": "Has symptomatic central nervous system metastases."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9897,
+        "end": 10241,
+        "text": "Has a history of pneumonitis requiring corticosteroids therapy, or a history of interstitial lung disease, non-infectious pneumonitis, severely impaired lung function or uncontrolled lung disease, such as pulmonary fibrosis, severe radiation pneumonitis, acute lung injury, or suspected of having the above diseases during the screening period."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10608,
+        "end": 10698,
+        "text": "Participants infected with human immunodeficiency virus (HIV) (HIV 1/2 antibody positive)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10703,
+        "end": 11059,
+        "text": "Acute or chronic active hepatitis B (defined as hepatitis B surface antigen (HBsAg) and/or hepatitis B core antibody positive (HBcAb) with hepatitis B virus DNA copies ≥ 104 copies/mL or ≥ 2000 IU/mL or above the lower limit of detection) or acute or chronic active hepatitis C \\[hepatitis C virus antibody (HCVAb) positive with HCV RNA \\> 103 copies/mL\\]."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12053,
+        "end": 12263,
+        "text": "Has one or more arterial thromboembolic event, including myocardial infarction, unstable angina, cerebrovascular accident, transient ischemic attack, etc., within 6 months prior to the first dose of study drug."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15352,
+        "end": 15468,
+        "text": "Has a history of allogeneic organ transplantation and history of allogeneic hematopoietic stem cell transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15724,
+        "end": 15774,
+        "text": "Female participants who are pregnant or lactating."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants with histopathologically confirmed unresectable locally advanced or metastatic G/GEJ AC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histopathologically confirmed unresectable locally advanced or metastatic G/GEJ AC",
+        "appliesTo": "Phase Ib Cohort B"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with histopathologically confirmed unresectable locally advanced or metastatic PDAC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histopathologically confirmed unresectable locally advanced or metastatic PDAC",
+        "appliesTo": "Phase Ib Cohort C"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with histopathologically confirmed unresectable locally advanced or metastatic BTC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histopathologically confirmed unresectable locally advanced or metastatic BTC",
+        "appliesTo": "Inclusion criteria for Phase Ib Cohort D"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Has a history of other primary malignancies, with the following exceptions: Curatively treated malignancy with no known active disease for ≥ 2 years prior to study enrollment and is at minimal risk of recurrence;",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Has a history of other primary malignancies, with the following exceptions: Curatively treated malignancy with no known active disease for ≥ 2 years prior to study enrollment and is at minimal risk of recurrence;",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

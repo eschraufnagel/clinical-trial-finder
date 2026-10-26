@@ -1,0 +1,144 @@
+{
+  "nctId": "NCT04665206",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 92,
+        "end": 141,
+        "text": "metastatic or unresectable malignant mesothelioma"
+      },
+      "appliesTo": "Part 3 Combination Cohort A"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 293,
+        "end": 366,
+        "text": "incurable locally advanced (inoperable or recurrent), or metastatic NSCLC"
+      },
+      "appliesTo": "Part 3 Combination Cohort B"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 538,
+        "end": 595,
+        "text": "metastatic or unresectable malignant pleural mesothelioma"
+      },
+      "appliesTo": "Part 3 Combination Cohort C"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 643,
+        "end": 788,
+        "text": "Measurable disease per RECIST v1.1 for non-pleural mesothelioma or other solid tumors or modified RECIST v1.1 for malignant pleural mesothelioma."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 922,
+        "end": 932,
+        "text": "ECOG: 0-1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1041,
+        "end": 1112,
+        "text": "Active brain metastases or primary CNS (central nervous system) tumors."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1115,
+        "end": 1151,
+        "text": "History of leptomeningeal metastases"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1256,
+        "end": 1274,
+        "text": "Known HIV positive"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1278,
+        "end": 1311,
+        "text": "active Hepatitis B or Hepatitis C"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1575,
+        "end": 1614,
+        "text": "Women who are pregnant or breastfeeding"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

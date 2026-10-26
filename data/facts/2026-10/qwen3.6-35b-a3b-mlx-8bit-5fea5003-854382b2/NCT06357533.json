@@ -1,0 +1,195 @@
+{
+  "nctId": "NCT06357533",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 911,
+        "end": 1051,
+        "text": "Squamous cell histology, or predominantly squamous cell histology NSCLC; mixed small cell lung cancer; NSCLC histology, sarcomatoid variant."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 88,
+        "end": 250,
+        "text": "Stage IIIB or IIIC or Stage IV metastatic NSCLC (according to Edition 8 of the AJCC staging manual) not amenable to curative surgery or definitive chemoradiation."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1841,
+        "end": 2032,
+        "text": "Spinal cord compression, or brain metastases unless participant treated and no longer symptomatic, radiologically stable, and who require no treatment with corticosteroids or anticonvulsants."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2035,
+        "end": 2075,
+        "text": "History of leptomeningeal carcinomatosis"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 641,
+        "end": 744,
+        "text": "At least one lesion, not previously irradiated that qualifies as a RECIST 1.1 target lesion at baseline"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 747,
+        "end": 780,
+        "text": "ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 253,
+        "end": 290,
+        "text": "Absence of sensitising EGFR mutations"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 292,
+        "end": 323,
+        "text": "and ALK and ROS1 rearrangements"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 292,
+        "end": 323,
+        "text": "and ALK and ROS1 rearrangements"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 582,
+        "end": 638,
+        "text": "Known tumour PD-L1 expression status defined as TC ≥ 50%"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1054,
+        "end": 1106,
+        "text": "History of another primary malignancy within 3 years"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1502,
+        "end": 1755,
+        "text": "History of any ILD/pneumonitis, including radiation pneumonitis (apart from radiation pneumonitis that did not require steroids), or drug-induced ILD/pneumonitis, has current or suspected ILD/pneumonitis that cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2125,
+        "end": 2224,
+        "text": "Active infection with TB, HBV, HCV, Hepatitis A, or known HIV infection that is not well controlled"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2125,
+        "end": 2224,
+        "text": "Active infection with TB, HBV, HCV, Hepatitis A, or known HIV infection that is not well controlled"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

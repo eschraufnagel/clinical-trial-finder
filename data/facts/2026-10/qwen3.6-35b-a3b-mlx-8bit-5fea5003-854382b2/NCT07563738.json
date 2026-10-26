@@ -1,0 +1,269 @@
+{
+  "nctId": "NCT07563738",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 859,
+        "end": 960,
+        "text": "Participants with histologically or cytologically confirmed metastatic adenocarcinoma of the pancreas"
+      },
+      "appliesTo": "Arm B"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1047,
+        "end": 1156,
+        "text": "Participants with histologically or cytologically confirmed diagnosis of locally advanced or metastatic NSCLC"
+      },
+      "appliesTo": "Arm C"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 587,
+        "end": 710,
+        "text": "Participants with histologically or cytologically confirmed diagnosis of advanced (unresectable or metastatic) mesothelioma"
+      },
+      "appliesTo": "Ipilimumab/nivolumab cohort"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1047,
+        "end": 1181,
+        "text": "Participants with histologically or cytologically confirmed diagnosis of locally advanced or metastatic NSCLC and a KRAS G12C-mutation"
+      },
+      "appliesTo": "Arm C"
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2418,
+        "end": 2552,
+        "text": "Participants with histologically or cytologically confirmed diagnosis of locally advanced or metastatic NSCLC and a KRAS G12C mutation"
+      },
+      "appliesTo": "Sotorasib cohort, pretreated"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 859,
+        "end": 960,
+        "text": "Participants with histologically or cytologically confirmed metastatic adenocarcinoma of the pancreas"
+      },
+      "appliesTo": "Arm B"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2700,
+        "end": 2806,
+        "text": "Participants must have measurable disease by response evaluation criteria in solid tumours (RECIST) v. 1.1"
+      },
+      "appliesTo": "Part 2 only"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3271,
+        "end": 3507,
+        "text": "Other malignancy active within the previous 2 years except for basal cell or squamous cell skin cancer, superficial bladder cancer, or carcinoma in situ of the cervix or breast, for which the participants has completed curative therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4478,
+        "end": 4634,
+        "text": "Participants with brain or subdural metastases are not eligible, unless the metastases are asymptomatic and have been adequately treated with local therapy."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4701,
+        "end": 4784,
+        "text": "Known positive tests for hepatitis B surface antigen or hepatitis C virus (HCV) RNA"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4786,
+        "end": 4836,
+        "text": "known human immunodeficiency virus (HIV) infection"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7455,
+        "end": 7534,
+        "text": "Female participants who are breastfeeding or pregnant at screening or baseline."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5159,
+        "end": 5351,
+        "text": "Immunosuppressive doses of systemic medications, such as steroids or absorbed topical steroids (doses \\>10 mg/day prednisone or equivalent) within 2 days before trial treatment administration."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with histologically or cytologically confirmed advanced (unresectable or metastatic) mesothelioma",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histologically or cytologically confirmed advanced (unresectable or metastatic) mesothelioma",
+        "appliesTo": "Arm A"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants with histologically or cytologically confirmed metastatic adenocarcinoma of the pancreas",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histologically or cytologically confirmed metastatic adenocarcinoma of the pancreas",
+        "appliesTo": "Nab-paclitaxel/gemcitabine cohort"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants with histologically or cytologically confirmed diagnosis of locally advanced or metastatic NSCLC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histologically or cytologically confirmed diagnosis of locally advanced or metastatic NSCLC",
+        "appliesTo": "Sotorasib cohort, treatment naïve"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants with histologically or cytologically confirmed diagnosis of locally advanced or metastatic NSCLC",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histologically or cytologically confirmed diagnosis of locally advanced or metastatic NSCLC",
+        "appliesTo": "Sotorasib cohort, pretreated"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants with histologically or cytologically confirmed diagnosis of locally advanced or metastatic NSCLC and a KRAS G12C-mutation",
+      "raw": {
+        "factId": "kras",
+        "rulesOut": [
+          "other_mutation",
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histologically or cytologically confirmed diagnosis of locally advanced or metastatic NSCLC and a KRAS G12C-mutation",
+        "appliesTo": "Sotorasib cohort, treatment naïve"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants with histologically or cytologically confirmed metastatic adenocarcinoma of the pancreas",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with histologically or cytologically confirmed metastatic adenocarcinoma of the pancreas",
+        "appliesTo": "Nab-paclitaxel/gemcitabine cohort"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

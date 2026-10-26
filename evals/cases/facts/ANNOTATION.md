@@ -1,0 +1,114 @@
+# Fact labels: the convention
+
+How a trial's eligibility text is labelled against the fact vocabulary (`data/facts/vocabulary.json`), for slice 0002's measurement. Written before any trial was labelled. A rule a reader can disagree with is worth more than judgment calls that felt right at the time.
+
+These are **reading conventions, not clinical judgments.** The labeller doesn't decide whether a rule is sensible, only what it says in the vocabulary's terms.
+
+## Who wrote the labels, and why that limits the claim
+
+The labels, the vocabulary and the mapping prompt have one author, Claude. Agreement between the model's mappings and these labels is partly agreement between a prompt and its author. Labels are written before any prompt runs on these trials, and a separate agent relabels a sample blind at Gate 1. No clinician has checked them.
+
+## The unit: a passage
+
+`npm run facts:sample` splits each trial's text into passages, using the same naive splitter as the inherited criterion labels (`splitPassages` in `scripts/label-criteria.ts`). Each passage gets **either** one or more mappings, **or** one `unmapped` category. Never both, and never neither.
+
+- A passage holding two rules that map to two facts ("No active brain metastases or leptomeningeal disease") gets two mappings.
+- A passage holding a rule that maps and one that doesn't ("No active hepatitis B or C, and adequate liver function") gets the mapping, plus a `note` naming what was left out.
+- A badly split passage is left as split. The labeller labels what is there. If a rule is cut in half, each half is labelled for what it says, and a `note` says so.
+
+## Rule 1: map only what clearly states a requirement on one fact
+
+A rule maps when a reader who knows only the vocabulary would agree that **some answer to that fact, on its own, makes the person ineligible.**
+
+- "ECOG performance status 0 or 1" maps to `ecog`.
+- "Adequate organ function" doesn't map: no fact covers it.
+- "Patients must have received prior systemic therapy" maps to `lines_advanced`, ruling out `zero`, **only** if the passage makes clear the therapy was for advanced disease. Otherwise it's `trial-specific`.
+- **When in doubt, don't map.** A rule left unmapped costs a question later, in stage two. A wrong mapping costs a trial.
+
+## Rule 2: `rulesOut` is exactly what the rule excludes
+
+List every answer the rule clearly makes ineligible, and no answer whose fit is uncertain.
+
+- **Inclusion** "EGFR exon 19 deletion or L858R mutation": `egfr`, ruling out `exon20_insertion`, `other_mutation` and `none_found`.
+- **Exclusion** "Prior treatment with a PD-1 or PD-L1 inhibitor": `prior_pd1`, ruling out `progressed` and `stopped_other`.
+- **Inclusion** "Disease progression on or after a PD-1 or PD-L1 inhibitor": `prior_pd1`, ruling out `never` and `stopped_other`. A person who stopped for side effects hasn't progressed on it.
+- **Not tested is unknown.** No biomarker fact has a "not tested" answer, so a rule never rules it out. "Must have a known EGFR mutation" rules out `none_found` and nothing about someone untested: they could be tested.
+- **No rule rules out every answer.** If it seems to, the rule isn't about this fact.
+- **Thresholds that fall inside an answer** rule out only the answers wholly on the wrong side:
+  - "No other malignancy within 3 years" rules out `within_2_years`. `two_to_5_years` straddles the threshold, so it isn't ruled out, and the note says so.
+  - "No other malignancy within 5 years" rules out `within_2_years` and `two_to_5_years`.
+  - "At least one but no more than two prior lines" rules out `zero` and `three_plus`, if the lines are for advanced disease.
+- **Exceptions that the answers can express are honoured.** "No brain metastases unless treated and stable for at least 4 weeks" rules out `not_stable_no_symptoms` and `symptoms`. `treated_stable` fits.
+- **Exceptions the answers can't express leave the rule's core.** "No prior immunotherapy within 6 months": no answer says when. The rule doesn't clearly exclude any answer of `prior_pd1`, so it's `trial-specific` with a note.
+
+## Rule 3: rules for part of a trial carry `appliesTo`
+
+When a rule is scoped to an arm, cohort, part or phase, `appliesTo` holds the scope as the trial words it ("Cohort B", "Part 2 (dose expansion)"). Otherwise it's `null`.
+
+- "Cohort A: EGFR-mutant NSCLC; Cohort B: KRAS G12C NSCLC" gives two mappings. `egfr` ruling out `none_found`, `appliesTo` "Cohort A"; and `kras` ruling out `other_mutation` and `none_found`, `appliesTo` "Cohort B".
+- A heading the splitter dropped still scopes the passages under it. The labeller reads the full text to see it.
+- A rule scoped to part of the trial never rules out the whole trial. Getting `appliesTo` wrong is the worst error the mapper can make.
+
+## Rule 4: what an unmapped passage is
+
+| Category | When | Example |
+| --- | --- | --- |
+| `organ-function` | A lab value or organ-function threshold | "ANC ≥ 1.5 × 10⁹/L", "adequate hepatic function" |
+| `procedure` | Consent, contraception, compliance, washout periods, tissue samples, willingness | "Must provide archival tumor tissue", "No anticancer therapy within 21 days" |
+| `vocabulary-gap` | A fact about the person that would plausibly split many trials, but the vocabulary lacks it. A `note` is required and names the missing fact in a few words, the same words each time for the same gap | "Prior osimertinib specifically" → note "prior third-generation EGFR TKI" |
+| `trial-specific` | A fact about the person unlikely to recur across trials, or a requirement too entangled to map | "No prior treatment with an anti-TIGIT antibody" |
+| `not-a-rule` | A heading, a definition, a sentence fragment, a note to the investigator | "Inclusion Criteria", "Note: stable is defined as…" |
+
+`vocabulary-gap` versus `trial-specific`: the test is whether a question about it would be worth asking across many trials. Prior EGFR TKI generation would be; prior anti-TIGIT antibody wouldn't.
+
+### Defaults for rules that recur
+
+Settled after reading the first dev trials, before any label was written:
+
+- **Age, sex and cancer type** are the search's job (0001). A passage that only states them is `not-a-rule`, note "search". This includes a cohort for another cancer type ("Cohort B2: cutaneous squamous cell carcinoma"). If such a passage also says something about extent or histology for a type that includes NSCLC, map that part.
+- **Washouts, vaccines, concurrent medicines and drug interactions** are `procedure`.
+- **ECG, QTc and blood pressure readings** are `organ-function`, like labs.
+- **These are `trial-specific`, with a short note:**
+  - life expectancy;
+  - the investigator's judgment;
+  - recovery from earlier side effects;
+  - allergy to the study drug;
+  - infections other than HIV and hepatitis;
+  - a prior drug or biomarker the vocabulary doesn't name and few trials ask about.
+- **The same fact with a different window or threshold** is a `vocabulary-gap`, with the note naming the fact and the difference. Examples:
+  - "autoimmune disease currently requiring systemic treatment": the fact's window is 2 years;
+  - "systemic steroids, except up to 2 mg/day dexamethasone": the fact's threshold is 10 mg prednisone;
+  - "pneumonitis that required steroids": the fact has no steroid condition.
+
+  These make the cost of a coarse vocabulary visible at Gate 1.
+- **Pregnancy and breastfeeding** are one fact. A trial that excludes pregnancy and requires breastfeeding to stop excludes both, so each of its passages maps to `pregnant_or_breastfeeding` ruling out `yes`. A trial that excludes only one of them is a `vocabulary-gap`.
+- **Rules inside a cohort for another cancer type** ("CRC cohort: no more than 4 prior lines") can't apply to a person with NSCLC. They are `not-a-rule`, note "search", like the cohort's own definition. *Added at Gate 1.*
+- **A heading that states the rule itself** ("Known HIV, hepatitis B or C, as defined below:") gets the rule's mappings, as its items do. A heading that only introduces a list ("Prior therapies:") stays `not-a-rule`. *Added at Gate 1.*
+- **A sentence that only permits** ("Subjects may have received prior anti-PD-1 therapy") or only explains is `not-a-rule`, note "permits".
+- **An exception sentence that refines a rule mapped in an earlier passage** is `not-a-rule`, note "exception to n". The mapped passage already reflects it. If the exception adds a condition the vocabulary can't express, the note says so.
+
+### After Gate 1: brain metastases, steroids and antibody-drug conjugates
+
+The vocabulary changed at Gate 1 (`work/0002-fact-vocabulary/gate-1-labels.md`):
+
+- **`brain_mets`**:
+  - "Active", "unstable", "uncontrolled", "untreated" or "progressing" brain metastases rule out `not_stable_no_symptoms` and `symptoms`. "Untreated" is read as trials use it, meaning not yet controlled.
+  - "Symptomatic" brain metastases alone rule out `symptoms` only.
+  - Any known brain metastases rule out every answer but `none`.
+- **`steroids`**:
+  - "More than 10 mg prednisone a day", or "except replacement or low doses up to 10 mg", rules out `high_dose`.
+  - Systemic steroids with no dose allowed rule out `low_dose` and `high_dose`.
+  - A different threshold, or "able to stop", stays a gap.
+- **`prior_adc`**: a topoisomerase I payload ADC (T-DXd, Dato-DXd, sacituzumab, "TOP1i ADC") rules out `topo_payload`. A single named drug or a target (TROP2) stays a gap.
+- **`autoimmune_active`** means immune-suppressing treatment in the last 2 years. The usual exceptions (thyroid hormone, insulin, vitiligo, skin-only psoriasis) are inside the meaning, so a rule listing them maps.
+
+## Worked cases
+
+1. **"Patients with brain metastases are eligible if treated and clinically stable, off steroids for ≥ 14 days."** → `brain_mets` ruling out `not_stable_no_symptoms` and `symptoms`. The steroid part sits inside the exception, so the note records "steroid condition not mapped". `steroids` isn't mapped from this sentence: it governs only people with brain metastases.
+2. **"Prior immunotherapy is allowed if the last dose was more than 6 months before enrollment."** → `trial-specific`, note "time window not in vocabulary". No answer of `prior_pd1` is clearly excluded.
+3. **Biomarker cohort:** "Cohort 2: NSCLC with MET exon 14 skipping" → `met` ruling out `amplification` and `none_found`, `appliesTo` "Cohort 2".
+4. **"No history of another malignancy within 3 years, except adequately treated basal cell carcinoma."** → `other_cancer` ruling out `within_2_years`, note "3-year window; skin cancer exception not mapped". The exception would only move a person out of `within_2_years`, and someone in that group whose other cancer was a basal cell carcinoma is wrongly ruled out. Recorded as a known cost in the note.
+5. **"Creatinine clearance ≥ 50 mL/min."** → `organ-function`.
+6. **"Histologically or cytologically confirmed NSCLC."** → `histology` ruling out `mixed_small_cell`. A tumour with a small-cell component isn't NSCLC as trials use the term. Other histologies fit.
+7. **"Stage IV or recurrent NSCLC not amenable to curative therapy."** → `extent` ruling out `early_resectable` and `locally_advanced`.
+8. **"Squamous or non-squamous NSCLC."** → as case 6: `histology` ruling out `mixed_small_cell`, and nothing else. "Non-squamous NSCLC" alone rules out `squamous` and `mixed_small_cell`.

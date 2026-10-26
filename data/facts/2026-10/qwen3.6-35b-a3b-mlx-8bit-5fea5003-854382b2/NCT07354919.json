@@ -1,0 +1,84 @@
+{
+  "nctId": "NCT07354919",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 67,
+        "end": 232,
+        "text": "Histologically or cytologically proven cancer of the prostate (carcinoma), breast (carcinoma), pancreas (carcinoma), and lung (non-small cell lung carcinoma (NSCLC))"
+      },
+      "appliesTo": "lung (non-small cell lung carcinoma (NSCLC))"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 352,
+        "end": 453,
+        "text": "Advanced stage (locally advanced or metastatic) with no definitive plans for curative-intent therapy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 635,
+        "end": 695,
+        "text": "At least one measurable lesion meeting RECIST v1.1 criteria."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4096,
+        "end": 4140,
+        "text": "Current, active, untreated brain metastases."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3848,
+        "end": 3940,
+        "text": "Any previous gastrointestinal surgery, except uncomplicated appendectomy or cholecystectomy."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

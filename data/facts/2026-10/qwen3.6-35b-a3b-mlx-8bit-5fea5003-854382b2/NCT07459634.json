@@ -1,0 +1,123 @@
+{
+  "nctId": "NCT07459634",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 152,
+        "text": "Participant has histologically or cytologically confirmed ES-SCLC (per Veterans Administration Lung Study Group staging system)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 272,
+        "end": 350,
+        "text": "Has Eastern Cooperative Oncology Group Performance Status (ECOG PS) of 0 or 1."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 614,
+        "end": 665,
+        "text": "Clinically confirmed leptomeningeal carcinomatosis."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 891,
+        "end": 953,
+        "text": "Presence or history of Central Nervous System (CNS) metastases"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 957,
+        "end": 1001,
+        "text": "History of allogeneic organ transplantation."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1005,
+        "end": 1187,
+        "text": "History of idiopathic pulmonary fibrosis, organizing pneumonia, drug-induced pneumonitis, or idiopathic pneumonitis, or evidence of active pneumonitis on the screening chest CT scan."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1396,
+        "end": 1532,
+        "text": "Pregnant or breastfeeding or intending to become pregnant during the study or within 6 months after the last dose of study intervention."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participant has histologically or cytologically confirmed ES-SCLC (per Veterans Administration Lung Study Group staging system).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant has histologically or cytologically confirmed ES-SCLC (per Veterans Administration Lung Study Group staging system).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

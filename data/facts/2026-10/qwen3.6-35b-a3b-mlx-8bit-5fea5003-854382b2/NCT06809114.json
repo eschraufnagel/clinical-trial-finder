@@ -1,0 +1,158 @@
+{
+  "nctId": "NCT06809114",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 109,
+        "end": 211,
+        "text": "Eastern cooperative oncology group (ECOG) Performance Status score of 0 or 1 at screening and on C1D1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 215,
+        "end": 297,
+        "text": "Pathologically documented, definitively diagnosed, advanced/metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 467,
+        "end": 576,
+        "text": "Subjects must have measurable lesion according to response evaluation criteria in solid tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 631,
+        "end": 968,
+        "text": "Subjects (with documented CLDN6 expression after the lower three dose levels) will be enrolled, including but not limited to the following histological subtypes: serous or endometrioid ovarian cancer, primary peritoneal cancer or fallopian tube cancer, endometrial cancer, NSCLC, breast cancer, esophageal cancer, and gastric/GEJ cancer."
+      },
+      "appliesTo": "Monotherapy dose escalation study (Phase 1a)"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2264,
+        "end": 2337,
+        "text": "Cohort 2: 24-30 subjects with advanced/metastatic CLDN6-expressing NSCLC."
+      },
+      "appliesTo": "Monotherapy cohort expansion study (Phase 1b)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5536,
+        "end": 5988,
+        "text": "Presence of active or untreated metastases to central nervous system or meninges or other evidence showing that metastatic lesions in central nervous system or meninges that have not yet been controlled at screening. Note: Subjects with central nervous system or meningeal metastases who are free of neurological symptoms not managed with steroids and stable by imagining 28 days after treatment prior to the first dose may be considered for enrollment"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5992,
+        "end": 6027,
+        "text": "Presence of leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6032,
+        "end": 6077,
+        "text": "Prior treatment with any ADC targeting CLDN6."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6155,
+        "end": 6237,
+        "text": "Subjects who have received prior allogeneic or autologous bone marrow transplants."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6242,
+        "end": 6375,
+        "text": "Subjects who are pregnant (as confirmed by pregnancy tests performed within 7 days before enrollment) or planning to become pregnant."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4820,
+        "end": 5080,
+        "text": "Presence of other active invasive cancers other than the one treated in this study within 5 years prior to screening, except appropriately treated BCC of the skin or in situ carcinoma of uterine cervix, or other local tumors considered cured by local treatment"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

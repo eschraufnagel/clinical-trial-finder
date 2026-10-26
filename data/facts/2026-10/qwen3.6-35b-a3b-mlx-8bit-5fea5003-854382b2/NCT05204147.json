@@ -1,0 +1,82 @@
+{
+  "nctId": "NCT05204147",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 100,
+        "text": "Patients must have a histologic diagnosis of a malignancy that expresses CEA."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 671,
+        "end": 768,
+        "text": "Patients must have an advanced disease for which no standard or effective treatment is available."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2072,
+        "end": 2130,
+        "text": "Presence of measurable disease is required for study entry"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3268,
+        "end": 3554,
+        "text": "Patients with recurrent or progressive brain or leptomeningeal involvement with cancer. Patients that have had previous therapies for brain metastasis or leptomeningeal disease with demonstrated response or stable disease at least four weeks after therapy will be eligible for the trial"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3268,
+        "end": 3554,
+        "text": "Patients with recurrent or progressive brain or leptomeningeal involvement with cancer. Patients that have had previous therapies for brain metastasis or leptomeningeal disease with demonstrated response or stable disease at least four weeks after therapy will be eligible for the trial"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

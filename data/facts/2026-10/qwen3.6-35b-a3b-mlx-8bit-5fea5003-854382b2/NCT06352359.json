@@ -1,0 +1,129 @@
+{
+  "nctId": "NCT06352359",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 48,
+        "text": "Must have ECOG score ≤ 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 85,
+        "end": 192,
+        "text": "A histological or cytological diagnosis of solid tumors and metastatic disease or locally advanced disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 195,
+        "end": 255,
+        "text": "Must have measurable target lesion according to RECIST V1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1922,
+        "end": 2604,
+        "text": "Patients who have active brain metastases or leptomeningeal metastases. Patients who have active brain metastases or leptomeningeal metastases. Patients are eligible if brain metastases are adequately treated, and patients are asymptomatic or neurologically stable (except for residual signs or symptoms related to the central nervous system (CNS) treatment). Note: Patients with previously treated brain metastases may participate provided they are radiologically stable (i.e. no evidence of progression for ≥4 weeks by repeat imaging performed during study screening), clinically stable, and not requiring steroid treatment within 14 days before the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1922,
+        "end": 2604,
+        "text": "Patients who have active brain metastases or leptomeningeal metastases. Patients who have active brain metastases or leptomeningeal metastases. Patients are eligible if brain metastases are adequately treated, and patients are asymptomatic or neurologically stable (except for residual signs or symptoms related to the central nervous system (CNS) treatment). Note: Patients with previously treated brain metastases may participate provided they are radiologically stable (i.e. no evidence of progression for ≥4 weeks by repeat imaging performed during study screening), clinically stable, and not requiring steroid treatment within 14 days before the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2607,
+        "end": 2753,
+        "text": "Patient with a different cancer other than the one treated under this protocol, which requires systemic treatments within 24 months prior to C1D1."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2985,
+        "end": 3393,
+        "text": "Within past 6 months with history of significant cardiovascular acute myocardial infarction, acute coronary syndrome, ischemic or hemorrhagic stroke, revascularization procedures, acute pulmonary embolism or any disorders resulted in LVEF \\< 40% at the time of screening or colitis, small bowel obstruction, hepatitis or pancreatitis adrenal insufficiency, or severe immunotherapy related AE (irAE≥ grade 3)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4092,
+        "end": 4247,
+        "text": "Patients who are pregnant or breastfeeding or plan pregnancy or fathering the child during the study or within 6 months after the last dosing of study drug"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1773,
+        "end": 1919,
+        "text": "Patients who are on chronic systemic steroid therapy at doses higher than 10 mg/day prednisone or equivalent within 7 days before first treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

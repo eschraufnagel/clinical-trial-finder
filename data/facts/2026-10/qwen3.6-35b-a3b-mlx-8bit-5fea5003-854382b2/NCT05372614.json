@@ -1,0 +1,131 @@
+{
+  "nctId": "NCT05372614",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 639,
+        "end": 747,
+        "text": "Patients enrolling in the Part 2 Pancreatic Cohort must have a diagnosis of pancreatic adenocarcinoma (PDAC)"
+      },
+      "appliesTo": "Part 2 Pancreatic Cohort"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 112,
+        "text": "Patients must have histologically confirmed malignancy that is metastatic or unresectable"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3030,
+        "end": 3115,
+        "text": "Patients must have Eastern Cooperative Oncology Group (ECOG) performance status =\\< 1"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 788,
+        "end": 841,
+        "text": "Patients must have a solid tumor with HER2-positivity"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2628,
+        "end": 2691,
+        "text": "patients may not have received neratinib or DS-8201a previously"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12932,
+        "end": 13151,
+        "text": "Patients with a history of (non-infectious) interstitial lung disease (ILD)/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14611,
+        "end": 14748,
+        "text": "Patients with a medical history of myocardial infarction within 6 months before enrollment, or symptomatic congestive heart failure (CHF)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16129,
+        "end": 16172,
+        "text": "Pregnant women are excluded from this study"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 17471,
+        "end": 17570,
+        "text": "Patients with prior allogeneic organ transplantation including allogeneic stem cell transplantation"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

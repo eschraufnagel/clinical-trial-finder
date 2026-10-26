@@ -1,0 +1,82 @@
+{
+  "nctId": "NCT06667908",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 472,
+        "end": 587,
+        "text": "Have locally advanced unresectable stage III NSCLC according to the eighth edition lung cancer stage classification"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 852,
+        "end": 930,
+        "text": "Have an eastern cooperative oncology group (ECOG) performance status of 0 to 1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1328,
+        "end": 1420,
+        "text": "Another concurrent or prior primary malignancy within the last 36 months at informed consent"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1071,
+        "end": 1325,
+        "text": "Any of the following within 3 months prior to enrollment/randomization: severe or unstable angina, myocardial infarction, clinically significant ventricular arrhythmias or heart failure New York heart association functional classification class III to IV"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 955,
+        "end": 1068,
+        "text": "Medical history of: (a) Primary immunodeficiency (b) Organ transplant that requires therapeutic immunosuppression"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

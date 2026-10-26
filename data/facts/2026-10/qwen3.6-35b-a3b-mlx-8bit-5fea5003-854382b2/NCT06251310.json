@@ -1,0 +1,82 @@
+{
+  "nctId": "NCT06251310",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 93,
+        "text": "Histologically confirmed, metastatic, or unresectable solid cancer"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1590,
+        "end": 1628,
+        "text": "Evidence of symptomatic CNS metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1630,
+        "end": 1659,
+        "text": "leptomeningeal carcinomatosis"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1393,
+        "end": 1426,
+        "text": "Measurable disease per RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1429,
+        "end": 1495,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤1"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

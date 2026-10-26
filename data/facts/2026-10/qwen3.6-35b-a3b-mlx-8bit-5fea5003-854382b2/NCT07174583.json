@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT07174583",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2250,
+        "end": 2301,
+        "text": "Have mixed SCLC and NSCLC histology are not allowed"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2357,
+        "end": 2409,
+        "text": "Participants with limited stage SCLC are ineligible."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2413,
+        "end": 2527,
+        "text": "Subjects with locally untreated (radiotherapy or surgery) or active central nervous system (CNS) tumor metastasis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1494,
+        "end": 1607,
+        "text": "Have at least 1 measurable lesion according to Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1611,
+        "end": 1698,
+        "text": "Have Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) score of 0 or 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2531,
+        "end": 2597,
+        "text": "Have had other malignancies within 2 years prior to the first dose"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3574,
+        "end": 3773,
+        "text": "Have history of immunodeficiency, with a positive human immunodeficiency virus (HIV) test at screening (HIV antibody positive and HIV-RNA above the lower limit of detection of the analytical method)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6980,
+        "end": 7123,
+        "text": "Female subjects who are pregnant, lactating, or planning to become pregnant during the study period to 8 months after the last dose of the IMP."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

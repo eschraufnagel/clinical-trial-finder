@@ -1,0 +1,192 @@
+{
+  "nctId": "NCT06275360",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 93,
+        "text": "Patient must have a performance status of 0-1 (ECOG Performance Scale)"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 259,
+        "end": 309,
+        "text": "PD-L1 tumor expression greater than or equal to 1%"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 312,
+        "end": 367,
+        "text": "Presence of measurable disease according to RECIST v1.1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 516,
+        "end": 606,
+        "text": "Active autoimmune disease that has requires immunosuppressive therapy in the previous year"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 609,
+        "end": 674,
+        "text": "Uncontrolled primary or acquired immunodeficiency (including HIV)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 677,
+        "end": 784,
+        "text": "Baseline corticosteroid usage (\\>10 mg prednisone or equivalent daily) aside from supportive medication use"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 787,
+        "end": 849,
+        "text": "Tumor with known EGFR, ALK, ROS1, MET or RET mutations/fusions"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 787,
+        "end": 849,
+        "text": "Tumor with known EGFR, ALK, ROS1, MET or RET mutations/fusions"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 787,
+        "end": 849,
+        "text": "Tumor with known EGFR, ALK, ROS1, MET or RET mutations/fusions"
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping",
+        "amplification"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 787,
+        "end": 849,
+        "text": "Tumor with known EGFR, ALK, ROS1, MET or RET mutations/fusions"
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 787,
+        "end": 849,
+        "text": "Tumor with known EGFR, ALK, ROS1, MET or RET mutations/fusions"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1175,
+        "end": 1378,
+        "text": "Is pregnant or breastfeeding or expecting to conceive or father children within the projected duration of the trial, starting with informed consent through 180 days after the last dose of trial treatment"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1440,
+        "end": 1483,
+        "text": "Has known active Hepatitis B or Hepatitis C"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1545,
+        "end": 1589,
+        "text": "Known diagnosis of Interstitial Lung Disease"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

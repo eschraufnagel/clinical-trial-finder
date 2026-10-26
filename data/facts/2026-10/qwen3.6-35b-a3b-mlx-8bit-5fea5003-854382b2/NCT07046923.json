@@ -1,0 +1,111 @@
+{
+  "nctId": "NCT07046923",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 132,
+        "text": "Non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 137,
+        "end": 166,
+        "text": "Small cell lung cancer (SCLC)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 811,
+        "end": 906,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of greater than or equal to (≤) 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 909,
+        "end": 1065,
+        "text": "For dose optimization/dose and expansion cohorts (Cohort A2, Cohort B/C): Measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      },
+      "appliesTo": "dose optimization/dose and expansion cohorts (Cohort A2, Cohort B/C)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1673,
+        "end": 1772,
+        "text": "Individual with known or suspected history of uncontrolled central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2024,
+        "end": 2073,
+        "text": "History of pneumonitis/interstitial lung disease."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2076,
+        "end": 2217,
+        "text": "Individuals who are pregnant, breastfeeding, or plan to breastfeed during the trial or within 30 days of the last dose of trial intervention."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

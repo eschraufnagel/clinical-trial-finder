@@ -1,0 +1,96 @@
+{
+  "nctId": "NCT04299191",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 915,
+        "end": 1037,
+        "text": "Patients must have a Lansky or Karnofsky performance status score of ≥ 50%, corresponding to ECOG categories of 0, 1 or 2."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1390,
+        "end": 1621,
+        "text": "Able to undergo adequate tumor imaging, via computerized tomography (CT) or magnetic resonance imaging (MRI) scans or any other standardized tumor assessment method based on tumor type (PET, MIBG, etc) to evaluate disease evolution"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4682,
+        "end": 4739,
+        "text": "Pregnant female patients are not eligible for this study."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3702,
+        "end": 3933,
+        "text": "Known impairment of gastrointestinal (GI) function that could alter the absorption of study drug (e.g. active Crohn's disease, malabsorption syndrome or states, unresolved diarrhea, small bowel resection or gastric by-pass surgery)"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3329,
+        "end": 3698,
+        "text": "A history of significant or uncontrolled cardiovascular disease, including New York Heart Association Class III-IV heart failure, a left ventricular ejection fraction which is clinically significantly abnormal as measured by 2-dimensional (2-D) echocardiogram or Multi Gated Acquisition(MUGA) scan, unstable angina or myocardial infarction within the preceding 6 months"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Diagnosis: Patients must have a histologically- or cytologically-confirmed advanced solid malignancy that is progressive, recurrent or refractory to standard-of-care treatment, or for which there is no standard therapy. Examples of tumors that lack a standard therapy include, but are not limited to, high-grade glioma, diffuse midline glioma, and diffuse intrinsic pontine glioma.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Diagnosis: Patients must have a histologically- or cytologically-confirmed advanced solid malignancy that is progressive, recurrent or refractory to standard-of-care treatment, or for which there is no standard therapy. Examples of tumors that lack a standard therapy include, but are not limited to, high-grade glioma, diffuse midline glioma, and diffuse intrinsic pontine glioma.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

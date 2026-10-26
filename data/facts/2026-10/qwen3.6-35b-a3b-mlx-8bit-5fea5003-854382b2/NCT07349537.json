@@ -1,0 +1,70 @@
+{
+  "nctId": "NCT07349537",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 82,
+        "end": 153,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 156,
+        "end": 255,
+        "text": "Pathologically documented, locally advanced or metastatic KRAS G12V-mutated solid tumor malignancy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 396,
+        "end": 422,
+        "text": "Measurable per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 156,
+        "end": 255,
+        "text": "Pathologically documented, locally advanced or metastatic KRAS G12V-mutated solid tumor malignancy."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

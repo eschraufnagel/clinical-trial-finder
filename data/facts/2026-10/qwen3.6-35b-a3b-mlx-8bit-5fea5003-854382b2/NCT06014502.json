@@ -1,0 +1,220 @@
+{
+  "nctId": "NCT06014502",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 47,
+        "end": 135,
+        "text": "Patients must have histologically confirmed locally advanced, or metastatic solid tumors"
+      },
+      "appliesTo": "Part 1 Dose-escalation"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 281,
+        "end": 363,
+        "text": "Patients must have histologically confirmed locally advanced, or metastatic cancer"
+      },
+      "appliesTo": "Part 2 Dose-expansion"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 488,
+        "end": 533,
+        "text": "≤ 2 prior lines of therapy in relapse setting"
+      },
+      "appliesTo": "Part 2 Dose-expansion: Nasopharyngeal"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2612,
+        "end": 2680,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2714,
+        "end": 2768,
+        "text": "At least 1 measurable lesion as defined by RECIST 1.1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4428,
+        "end": 4539,
+        "text": "Secondary malignancy other than the target malignancy to be investigated in this trial within the last 2 years."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4764,
+        "end": 4980,
+        "text": "History of myocardial infarction, ischemic heart disease, symptomatic congestive heart failure (New York Heart Association (NYHA) Class III IV), or significant cardiac arrhythmias within 3 months of study enrollment."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6312,
+        "end": 6643,
+        "text": "Active human immunodeficiency virus (HIV) infection (Exception: patients with well-controlled HIV \\[e.g., CD4 ≥ 350 cells/uL and undetectable viral load\\] who have been on an effective \\[drug, dosage, and schedule associated with reduction and control of the viral load\\] antiretroviral therapy \\[ART\\] for ≥ 4 weeks are eligible)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6789,
+        "end": 6868,
+        "text": "Active or chronic hepatitis B virus (HBV) or hepatitis C virus (HCV) infection."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7146,
+        "end": 7185,
+        "text": "History of solid organ transplantation."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7188,
+        "end": 7635,
+        "text": "Newly diagnosed, uncontrolled, and/or untreated cancer-related central nervous system disease. Patients with treated brain metastases that are radiographically or clinically stable for at least 28 days after therapy and have no evidence of cavitation or hemorrhage in the brain lesion(s) are eligible if they are asymptomatic and do not require corticosteroids (the patient must have discontinued steroids at least 14 days prior to Cycle 1 Day 1)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7882,
+        "end": 8217,
+        "text": "Abnormal pulmonary function within the previous 6 months prior to Cycle 1 Day 1, including history of or active pneumonitis, interstitial lung disease requiring the use of steroids, idiopathic pulmonary fibrosis, recurrent pleural effusion (including malignant origin), severe dyspnea at rest or requiring supplementary oxygen therapy."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "lines_advanced has no answer four_plus",
+      "quote": "≤ 3 prior lines of therapy in relapse setting",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "four_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "≤ 3 prior lines of therapy in relapse setting",
+        "appliesTo": "Part 2 Dose-expansion: Ovarian (high-grade epithelial, fallopian tube, or primary peritoneal)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "≤ 2 prior lines of therapy in relapse setting",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "≤ 2 prior lines of therapy in relapse setting",
+        "appliesTo": "Part 2 Dose-expansion: NSCLC (non-mutated, squamous/non-squamous)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "≤ 2 prior lines of therapy in relapse setting",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "≤ 2 prior lines of therapy in relapse setting",
+        "appliesTo": "Part 2 Dose-expansion: Head and neck squamous cell carcinoma (HPV+)"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active, uncontrolled, or prior documented autoimmune disorders including but not limited to inflammatory bowel disease (including Crohn's disease and ulcerative colitis), rheumatoid arthritis, systemic sclerosis (scleroder), Systemic Lupus Erythematosus, or autoimmune vasculitis (e.g., Wegener's Granulomatosis).",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active, uncontrolled, or prior documented autoimmune disorders including but not limited to inflammatory bowel disease (including Crohn's disease and ulcerative colitis), rheumatoid arthritis, systemic sclerosis (scleroder), Systemic Lupus Erythematosus, or autoimmune vasculitis (e.g., Wegener's Granulomatosis).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

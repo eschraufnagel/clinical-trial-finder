@@ -1,0 +1,327 @@
+{
+  "nctId": "NCT05983432",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 183,
+        "end": 408,
+        "text": "Has histologically documented, incurable, locally advanced or metastatic epithelial origin malignant cancer, priority to include the following tumor types: NSCLC, HER2 - breast cancer, esophageal cancer, SCLC, NPC, and HNSCC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 183,
+        "end": 290,
+        "text": "Has histologically documented, incurable, locally advanced or metastatic epithelial origin malignant cancer"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1860,
+        "end": 2019,
+        "text": "Has at least one measurable lesion based on RECIST V1.1 (with the exception of Prostate adenocarcinoma cohort, where subjects with bone metastasis are allowed)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2023,
+        "end": 2100,
+        "text": "Has an Eastern Cooperative Oncology Group performance status (ECOG PS) 0 to 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10330,
+        "end": 10777,
+        "text": "Participants with primary tumors in the central nervous system (CNS) and active or untreated CNS metastases and/or carcinomatous meningitis should be excluded. Participants with previously treated brain metastases may participate provided they are clinically stable for at least 4 weeks and have no evidence of new or enlarging brain metastases and no requirements for corticosteroids 14 days prior to dosing with the investigational product (IP)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10330,
+        "end": 10489,
+        "text": "Participants with primary tumors in the central nervous system (CNS) and active or untreated CNS metastases and/or carcinomatous meningitis should be excluded."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9558,
+        "end": 9794,
+        "text": "Other malignant tumors were diagnosed within 5 years prior to the first administration with the following exceptions: basal cell carcinoma of the skin, squamous cell carcinoma of the skin and/or carcinoma in situ after radical resection"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9149,
+        "end": 9554,
+        "text": "Active autoimmune diseases and inflammatory diseases, such as: systemic lupus erythematosus, psoriasis requiring systemic treatment, rheumatoid arthritis, inflammatory bowel disease and Hashimoto's thyroiditis, etc., except for Type I diabetes, hypothyroidism that can be controlled only by standard of care treatment, and skin diseases that do not require systemic treatment (such as vitiligo, psoriasis)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9963,
+        "end": 10096,
+        "text": "Participants have Grade 3 lung disease defined according to NCI-CTCAE v5.0, a history of interstitial lung disease (ILD)/ pneumonitis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11429,
+        "end": 11705,
+        "text": "Known Human immunodeficiency virus antibody (HIVAb) positive, active tuberculosis, active Hepatitis B virus infection (HBV-DNA copy number\\> the lower limit of detection) or active Hepatitis C virus infection (HCV antibody positive and HCV-RNA \\> the lower limit of detection)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11429,
+        "end": 11705,
+        "text": "Known Human immunodeficiency virus antibody (HIVAb) positive, active tuberculosis, active Hepatitis B virus infection (HBV-DNA copy number\\> the lower limit of detection) or active Hepatitis C virus infection (HCV antibody positive and HCV-RNA \\> the lower limit of detection)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11958,
+        "end": 12004,
+        "text": "Participants who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11036,
+        "end": 11129,
+        "text": "Participants have a history of autologous or allogeneic stem cell transplantation (Allo-HSCT)"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12595,
+        "end": 12682,
+        "text": "Participants treated with more than two systemic chemotherapies prior to randomization."
+      },
+      "appliesTo": "For NSCLC EGFRmut"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "two"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13261,
+        "end": 13382,
+        "text": "Participants received more than 1 prior line of systemic chemotherapy therapy for locally advanced or metastatic disease."
+      },
+      "appliesTo": "For Esophageal Carcinoma"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13486,
+        "end": 13529,
+        "text": "Prior treatment with systemic chemotherapy."
+      },
+      "appliesTo": "For Prostate adenocarcinoma"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13598,
+        "end": 13710,
+        "text": "Participants received more than 1 prior line of systemic chemotherapy for locally advanced or metastatic disease"
+      },
+      "appliesTo": "For NSCLC with EGFR WT squamous or adenocarcinoma histology"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13740,
+        "end": 13810,
+        "text": "Participants received more than 1 prior line of systemic chemotherapy."
+      },
+      "appliesTo": "For Ovarian Carcinoma"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14181,
+        "end": 14241,
+        "text": "if received more than 1 prior line of systemic chemotherapy."
+      },
+      "appliesTo": "For Cervical Carcinoma"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12137,
+        "end": 12336,
+        "text": "Participants who have received prior therapy with any ADC targeting EGFR and/or HER3 or containing a topoisomerase 1 inhibitor payload (all dose expansion cohorts with exception of TNBC noted below)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12844,
+        "end": 12924,
+        "text": "Previously documented EGFR Exon 20 insertion mutations as primary EGFR mutations"
+      },
+      "appliesTo": "For NSCLC EGFRmut"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 183,
+        "end": 408,
+        "text": "Has histologically documented, incurable, locally advanced or metastatic epithelial origin malignant cancer, priority to include the following tumor types: NSCLC, HER2 - breast cancer, esophageal cancer, SCLC, NPC, and HNSCC."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants treated with more than two systemic chemotherapies prior to randomization.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants treated with more than two systemic chemotherapies prior to randomization.",
+        "appliesTo": "For Triple-Negative Breast Cancer (TNBC, HER2-/HR-)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants received more than 1 prior line of systemic chemotherapy.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "two",
+          "three_plus"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants received more than 1 prior line of systemic chemotherapy.",
+        "appliesTo": "For Endometrial Carcinoma"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

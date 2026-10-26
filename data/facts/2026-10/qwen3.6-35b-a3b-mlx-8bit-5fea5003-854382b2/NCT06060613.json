@@ -1,0 +1,133 @@
+{
+  "nctId": "NCT06060613",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 117,
+        "end": 271,
+        "text": "Participant has a histologically confirmed diagnosis of advanced/metastatic melanoma or relapsed refractory metastatic non-small cell lung cancer (NSCLC)."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 117,
+        "end": 271,
+        "text": "Participant has a histologically confirmed diagnosis of advanced/metastatic melanoma or relapsed refractory metastatic non-small cell lung cancer (NSCLC)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4698,
+        "end": 4923,
+        "text": "Participant has a history of brain metastases or leptomeningeal disease. Participants may be considered for enrollment if they have 4 or fewer brain metastatic lesions that are that have been treated, if clinically indicated."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4698,
+        "end": 4770,
+        "text": "Participant has a history of brain metastases or leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3549,
+        "end": 3675,
+        "text": "After tumor tissue procurement, the participant will have at least one remaining measurable lesion, as defined by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3679,
+        "end": 3827,
+        "text": "Participant has an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 and an estimated life expectancy of greater than 6 months."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5529,
+        "end": 5637,
+        "text": "Participant had another primary malignancy within the previous 3 years (with protocol specified exceptions)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5641,
+        "end": 5763,
+        "text": "Participant has a history of allogeneic organ transplant, allogeneic cell therapy, or genetically engineered cell therapy."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5813,
+        "end": 5912,
+        "text": "Participant requires systemic steroid therapy of greater than10 mg/day of prednisone or equivalent."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

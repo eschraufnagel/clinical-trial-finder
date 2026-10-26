@@ -1,0 +1,146 @@
+{
+  "nctId": "NCT05512208",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 886,
+        "end": 1028,
+        "text": "Progression (radiographic or clinical) or recurrence of gynecological cancer after at least one prior systemic therapy for metastatic disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1435,
+        "end": 1478,
+        "text": "Measurable disease according to RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1482,
+        "end": 1541,
+        "text": "An Eastern Cooperative Group (ECOG) performance status ≤ 2."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3846,
+        "end": 3928,
+        "text": "History of prior malignancy with recurrence \\<3 years from the time of enrollment."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5516,
+        "end": 5587,
+        "text": "Symptomatic brain metastases requiring steroids or other interventions."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6460,
+        "end": 6579,
+        "text": "Known hepatitis B, hepatitis C, or human immunodeficiency virus (HIV) infection that is active and/or requires therapy."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6460,
+        "end": 6579,
+        "text": "Known hepatitis B, hepatitis C, or human immunodeficiency virus (HIV) infection that is active and/or requires therapy."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7529,
+        "end": 7575,
+        "text": "myocardial infarction within the last 6 months"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8017,
+        "end": 8067,
+        "text": "Female subjects who are pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically proven gynecological cancers (endometrioid, MOC, HGSOC and solid gynecological cancers)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically proven gynecological cancers (endometrioid, MOC, HGSOC and solid gynecological cancers)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

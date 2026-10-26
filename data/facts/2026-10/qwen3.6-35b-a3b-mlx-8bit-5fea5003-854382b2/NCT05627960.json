@@ -1,0 +1,105 @@
+{
+  "nctId": "NCT05627960",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 224,
+        "end": 313,
+        "text": "Radiographic evidence of at least 1 measurable metastatic lesion per RECIST 1.1 criteria."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4075,
+        "end": 4200,
+        "text": "Uncontrolled or untreated CNS metastases and treated CNS metastases are allowed, as long as the patient is clinically stable."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4204,
+        "end": 4249,
+        "text": "Presence carcinomatous meningeal involvement."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 224,
+        "end": 313,
+        "text": "Radiographic evidence of at least 1 measurable metastatic lesion per RECIST 1.1 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1248,
+        "end": 1296,
+        "text": "ECOG performance status must be ≤2 (Appendix A)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4747,
+        "end": 4892,
+        "text": "History of any other malignancies in the last 2 years except for in-situ cancer, basal or squamous cell skin cancer treated with curative intent."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4426,
+        "end": 4539,
+        "text": "Since the teratogenic potential of AG01 is currently unknown, females who are pregnant or lactating are excluded."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

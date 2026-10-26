@@ -1,0 +1,95 @@
+{
+  "nctId": "NCT06867484",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 60,
+        "text": "Diagnosed with ER+HER2- breast cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1803,
+        "end": 1821,
+        "text": "Distant metastasis"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 708,
+        "end": 753,
+        "text": "Eastern Cooperative Oncology Group (ECOG) ≤ 2"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1755,
+        "end": 1781,
+        "text": "Pregnancy or breastfeeding"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2155,
+        "end": 2208,
+        "text": "Connective tissue disorder (e.g., scleroderma, lupus)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2120,
+        "end": 2152,
+        "text": "Other malignancies (except skin)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

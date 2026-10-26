@@ -1,0 +1,486 @@
+{
+  "nctId": "NCT06330064",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2093,
+        "end": 2119,
+        "text": "unresectable or metastatic"
+      },
+      "appliesTo": "Additional Inclusion Criteria for EC Participants"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2050,
+        "end": 2198,
+        "text": "Pathologically or cytologically documented unresectable or metastatic squamous cell carcinoma of the oral cavity, oropharynx, hypopharynx, or larynx"
+      },
+      "appliesTo": "Additional Inclusion Criteria for HNSCC Participants"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3244,
+        "end": 3339,
+        "text": "Pathologically or cytologically documented unresectable or metastatic pancreatic adenocarcinoma"
+      },
+      "appliesTo": "Additional Inclusion Criteria for PDAC Participants"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12831,
+        "end": 13048,
+        "text": "Clinically active brain metastases, spinal cord compression, or leptomeningeal carcinomatosis, defined as untreated or symptomatic, or requiring therapy with steroids or anticonvulsants to control associated symptoms."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12831,
+        "end": 13048,
+        "text": "Clinically active brain metastases, spinal cord compression, or leptomeningeal carcinomatosis, defined as untreated or symptomatic, or requiring therapy with steroids or anticonvulsants to control associated symptoms."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 646,
+        "end": 856,
+        "text": "At least 1 measurable lesion on computed tomography (CT) or magnetic resonance imaging (MRI) according to Response Evaluation Criteria in Solid Tumors version 1.1 (RECIST v1.1), as assessed by the investigator."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1185,
+        "end": 1263,
+        "text": "Has an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13139,
+        "end": 13232,
+        "text": "Any history of interstitial lung disease (ILD)/pneumonitis, current ILD, or suspicion of ILD."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically or cytologically documented EC of any histological carcinoma subtype or endometrial carcinosarcoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically or cytologically documented EC of any histological carcinoma subtype or endometrial carcinosarcoma",
+        "appliesTo": "Additional Inclusion Criteria for EC Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically or cytologically documented unresectable or metastatic CRC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically or cytologically documented unresectable or metastatic CRC",
+        "appliesTo": "Additional Inclusion Criteria for CRC Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically or cytologically documented unresectable or metastatic HCC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically or cytologically documented unresectable or metastatic HCC",
+        "appliesTo": "Additional Inclusion Criteria for HCC Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically or cytologically documented unresectable or metastatic Ad-eso/GEJ/Gastric",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically or cytologically documented unresectable or metastatic Ad-eso/GEJ/Gastric",
+        "appliesTo": "Additional Inclusion Criteria for Ad-eso/GEJ/Gastric Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically or cytologically documented unresectable or metastatic UC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically or cytologically documented unresectable or metastatic UC",
+        "appliesTo": "Additional Inclusion Criteria for UC Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed unresectable or metastatic CC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed unresectable or metastatic CC",
+        "appliesTo": "Additional Inclusion Criteria for CC Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed high-grade serous OVC, high-grade endometrioid OVC, primary peritoneal cancer, or fallopian tube cancer",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed high-grade serous OVC, high-grade endometrioid OVC, primary peritoneal cancer, or fallopian tube cancer",
+        "appliesTo": "Additional Inclusion Criteria for OVC Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically or cytologically documented unresectable or metastatic BTC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically or cytologically documented unresectable or metastatic BTC",
+        "appliesTo": "Additional Inclusion Criteria for BTC Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically or cytologically documented unresectable or metastatic BC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically or cytologically documented unresectable or metastatic BC",
+        "appliesTo": "Additional Inclusion Criteria for HER2-Low BC Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically or cytologically documented unresectable or metastatic BC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically or cytologically documented unresectable or metastatic BC",
+        "appliesTo": "Additional Inclusion Criteria for HER2 IHC 0 BC Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed cutaneous (acral and non-acral) melanoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed cutaneous (acral and non-acral) melanoma",
+        "appliesTo": "Additional Inclusion Criteria for Cutaneous (Acral and Non-acral) Melanoma Participants"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed NEC types other than neuroendocrine prostate cancer (NEPC), small cell lung cancer (SCLC), and Merkel Cell Carcinoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed NEC types other than neuroendocrine prostate cancer (NEPC), small cell lung cancer (SCLC), and Merkel Cell Carcinoma",
+        "appliesTo": "Additional Inclusion Criteria for NEC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for HNSCC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for PDAC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for CRC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for HCC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for Ad-eso/GEJ/Gastric Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for UC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for CC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for BTC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for HER2-Low BC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for HER2 IHC 0 BC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for Cutaneous (Acral and Non-acral) Melanoma Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for NEC Participants"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "unresectable or metastatic",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "unresectable or metastatic",
+        "appliesTo": "Additional Inclusion Criteria for OVC Participants"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

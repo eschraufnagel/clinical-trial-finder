@@ -1,0 +1,80 @@
+{
+  "nctId": "NCT02693535",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 124,
+        "end": 188,
+        "text": "Histologically-proven locally advanced or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 540,
+        "end": 619,
+        "text": "Performance status 0-2 (Per Eastern Cooperative Oncology Group (ECOG) criteria)"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1411,
+        "end": 1515,
+        "text": "Patients must have disease that can be objectively measured by physical, laboratory or radiographic exam"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4500,
+        "end": 4606,
+        "text": "Patients with primary brain tumors or new, untreated or progressive leptomeningeal metastases are excluded"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4500,
+        "end": 4606,
+        "text": "Patients with primary brain tumors or new, untreated or progressive leptomeningeal metastases are excluded"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

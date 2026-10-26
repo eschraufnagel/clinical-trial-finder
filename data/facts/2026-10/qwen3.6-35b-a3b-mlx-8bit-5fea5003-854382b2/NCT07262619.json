@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT07262619",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 144,
+        "end": 245,
+        "text": "has histologically or cytologically documented advanced (unresectable and/or metastatic) solid tumor."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1172,
+        "end": 1314,
+        "text": "has measurable disease at baseline according to Response Evaluation Criteria in Solid Tumors version 1.1 (RECIST 1.1) as determined by the PI."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1318,
+        "end": 1383,
+        "text": "has an Eastern Cooperative Oncology Group (ECOG) score of 0 to 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2192,
+        "end": 2301,
+        "text": "has known additional malignancy that is progressing or has required active treatment within the past 3 years."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2305,
+        "end": 2394,
+        "text": "has known active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2864,
+        "end": 3039,
+        "text": "has active autoimmune disease that has required systemic treatment in the past 2 years (ie, with use of disease modifying agents, corticosteroids, or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3248,
+        "end": 3402,
+        "text": "has history of (non-infectious) pneumonitis/pneumonitis/interstitial lung disease that required steroids or current pneumonitis/interstitial lung disease."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1912,
+        "end": 2188,
+        "text": "In Parts 1B and Part 2 Rescue: diagnosis of immunodeficiency or is receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent) or any other form of immunosuppressive therapy within 7 days prior to the first dose of study intervention."
+      },
+      "appliesTo": "Parts 1B and Part 2 Rescue"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

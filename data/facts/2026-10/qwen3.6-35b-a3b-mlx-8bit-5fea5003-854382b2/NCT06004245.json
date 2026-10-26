@@ -1,0 +1,308 @@
+{
+  "nctId": "NCT06004245",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 99,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 226,
+        "end": 279,
+        "text": "advanced (unresectable and/or metastatic) solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1620,
+        "end": 1729,
+        "text": "Presence of measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2546,
+        "end": 2690,
+        "text": "Known uncontrolled central nervous system (CNS) metastases (progressing or requiring anticonvulsants or corticosteroids for symptomatic control)"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2691,
+        "end": 2722,
+        "text": "and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3234,
+        "end": 3429,
+        "text": "Has a positive test at screening for hepatitis B virus, hepatitis C virus, or for human immodeficiency virus (HIV), per local diagnostic standard and in accordance with local laws and regulations"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3234,
+        "end": 3429,
+        "text": "Has a positive test at screening for hepatitis B virus, hepatitis C virus, or for human immodeficiency virus (HIV), per local diagnostic standard and in accordance with local laws and regulations"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3580,
+        "end": 3690,
+        "text": "Significant cardiovascular/cerebrovascular disease within 6 months prior to Day 1 of study drug administration"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4057,
+        "end": 4133,
+        "text": "Pregnancy, breastfeeding, or intention of becoming pregnant during the study"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 282,
+        "end": 445,
+        "text": "For monotherapy only (solid tumor): Have received and then progressed following or are intolerant to at least 2 standard treatment regimens in the advanced setting"
+      },
+      "appliesTo": "For monotherapy only (solid tumor)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 530,
+        "end": 737,
+        "text": "For the combination with bevacizumab only: Advanced, or metastatic colorectal adenocarcinoma (CRC) treated with at least 2 but no more than 3 prior lines of systemic therapy for the treatment of advanced CRC"
+      },
+      "appliesTo": "For the combination with bevacizumab only"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1427,
+        "end": 1588,
+        "text": "For the combination with pembrolizumab only: Histologically confirmed locally advanced, or metastatic CRC with no prior systemic treatment for metastatic disease"
+      },
+      "appliesTo": "For the combination with pembrolizumab only"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 530,
+        "end": 628,
+        "text": "For the combination with bevacizumab only: Advanced, or metastatic colorectal adenocarcinoma (CRC)"
+      },
+      "appliesTo": "For the combination with bevacizumab only"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1427,
+        "end": 1532,
+        "text": "For the combination with pembrolizumab only: Histologically confirmed locally advanced, or metastatic CRC"
+      },
+      "appliesTo": "For the combination with pembrolizumab only"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1427,
+        "end": 1617,
+        "text": "For the combination with pembrolizumab only: Histologically confirmed locally advanced, or metastatic CRC with no prior systemic treatment for metastatic disease and not amenable to surgery."
+      },
+      "appliesTo": "For the combination with pembrolizumab only"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For the combination with bevacizumab only: Prior treatment regimens must have included (unless not eligible for or intolerant to any of these agents): An immune checkpoint inhibitor",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "For the combination with bevacizumab only: Prior treatment regimens must have included (unless not eligible for or intolerant to any of these agents): An immune checkpoint inhibitor",
+        "appliesTo": "For the combination with bevacizumab only"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For the combination with bevacizumab only: Prior treatment regimens must have included (unless not eligible for or intolerant to any of these agents): ... Fluoropyrimidine, Irinotecan and/or oxaliplatin",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "For the combination with bevacizumab only: Prior treatment regimens must have included (unless not eligible for or intolerant to any of these agents): ... Fluoropyrimidine, Irinotecan and/or oxaliplatin",
+        "appliesTo": "For the combination with bevacizumab only"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For the combination with bevacizumab only: Prior treatment regimens must have included (unless not eligible for or intolerant to any of these agents): ... +/- an anti-VEGF monoclonal antibody",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "For the combination with bevacizumab only: Prior treatment regimens must have included (unless not eligible for or intolerant to any of these agents): ... +/- an anti-VEGF monoclonal antibody",
+        "appliesTo": "For the combination with bevacizumab only"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only: Active or history of autoimmune disease or immune deficiency with some exceptions",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only: Active or history of autoimmune disease or immune deficiency with some exceptions",
+        "appliesTo": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only: History of interstitial lung disease or pneumonitis",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "past",
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only: History of interstitial lung disease or pneumonitis",
+        "appliesTo": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only: Treatment with systemic immunosuppressive medication (such as corticosteroids) within 2 weeks prior to initiation of study treatment with some exceptions",
+      "raw": {
+        "factId": "steroids",
+        "rulesOut": [
+          "low_dose",
+          "high_dose"
+        ],
+        "polarity": "exclusion",
+        "quote": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only: Treatment with systemic immunosuppressive medication (such as corticosteroids) within 2 weeks prior to initiation of study treatment with some exceptions",
+        "appliesTo": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only: Treatment with organ transplant/graft tissue",
+      "raw": {
+        "factId": "transplant",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only: Treatment with organ transplant/graft tissue",
+        "appliesTo": "Additional Exclusion Criteria for the Combination with Pembrolizumab Only"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

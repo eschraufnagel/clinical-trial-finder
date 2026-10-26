@@ -1,0 +1,307 @@
+{
+  "nctId": "NCT05700721",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 177,
+        "end": 208,
+        "text": "Advanced small cell lung cancer"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 212,
+        "end": 247,
+        "text": "Advanced non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 251,
+        "end": 289,
+        "text": "Advanced Triple Negative Breast Cancer"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 103,
+        "end": 127,
+        "text": "Advanced BRCA1/2m cancer"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 131,
+        "end": 173,
+        "text": "Advanced HRR-aberrant, non-BRCA1/2m cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 103,
+        "end": 127,
+        "text": "Advanced BRCA1/2m cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 131,
+        "end": 173,
+        "text": "Advanced HRR-aberrant, non-BRCA1/2m cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 177,
+        "end": 208,
+        "text": "Advanced small cell lung cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 212,
+        "end": 247,
+        "text": "Advanced non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 251,
+        "end": 289,
+        "text": "Advanced Triple Negative Breast Cancer"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 48,
+        "end": 86,
+        "text": "Participant must have brain metastasis"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2191,
+        "end": 2253,
+        "text": "Participant must have at least one measurable brain metastasis"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2436,
+        "end": 2448,
+        "text": "unirradiated"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6533,
+        "end": 6594,
+        "text": "Participant must not have evidence of leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2191,
+        "end": 2253,
+        "text": "Participant must have at least one measurable brain metastasis"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1189,
+        "end": 1282,
+        "text": "Participant must have an Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 2."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6598,
+        "end": 6697,
+        "text": "Participant must not have previously received a combination of PARP inhibitor and PD-1/L1inhibitor."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6698,
+        "end": 6787,
+        "text": "Participant must not have previously received equivalent of full dose single agent PARPi."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8045,
+        "end": 8114,
+        "text": "Participants with an inactive, known or suspected autoimmune disease."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8401,
+        "end": 8466,
+        "text": "Participant must not have a history of interstitial lung disease."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8645,
+        "end": 8795,
+        "text": "Participant has a history of a second malignancy, unless potentially curative treatment has been completed with no evidence of malignancy for 2 years."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8864,
+        "end": 8933,
+        "text": "Participant has a known history of active hepatitis B or hepatitis C."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9015,
+        "end": 9239,
+        "text": "Participants who have a known history of HIV positive and are on effective anti-retroviral therapy with documented undetectable viral load and CD4 count ≥350 within 6 months of the first dose of study treatment are eligible."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

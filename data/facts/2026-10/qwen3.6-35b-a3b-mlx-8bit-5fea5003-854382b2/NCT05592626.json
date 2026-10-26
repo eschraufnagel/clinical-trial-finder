@@ -1,0 +1,201 @@
+{
+  "nctId": "NCT05592626",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 139,
+        "text": "Participants must have histologically confirmed solid tumors that are unresectable, locally advanced, or metastatic"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 254,
+        "end": 378,
+        "text": "Participants should not have received more than three regimens of prior therapies for their advanced or metastatic diseases."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 379,
+        "end": 495,
+        "text": "For Phase 2 Cohorts 8 and 10 (see below), participants should not have received more than one line of prior therapy."
+      },
+      "appliesTo": "Phase 2 Cohorts 8 and 10"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1307,
+        "end": 1463,
+        "text": "Symptomatic central nervous system (CNS) metastases must have been treated, be asymptomatic for ≥ 14 days, and meet the following at the time of enrollment:"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1598,
+        "end": 1655,
+        "text": "No concurrent leptomeningeal disease or cord compression."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2292,
+        "end": 2367,
+        "text": "Participants with a history of known autoimmune disease with exceptions of:"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2913,
+        "end": 3060,
+        "text": "Treatment with \\>10 mg per day of prednisone (or equivalent) or other immune-suppressive drugs within 7 days prior to the initiation of study drug."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3617,
+        "end": 3778,
+        "text": "Monoclonal antibodies, antibody-drug conjugates, radioimmunoconjugates, or similar investigational therapies within 6 weeks prior to the initiation of study drug"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4489,
+        "end": 4619,
+        "text": "Participants who are known to be human immunodeficiency virus positive or hepatitis B or C positive and have uncontrolled disease."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4489,
+        "end": 4619,
+        "text": "Participants who are known to be human immunodeficiency virus positive or hepatitis B or C positive and have uncontrolled disease."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4624,
+        "end": 4689,
+        "text": "Second primary invasive malignancy not in remission for ≥ 1 year."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4981,
+        "end": 5036,
+        "text": "Pregnant, likely to become pregnant, or lactating women"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "For Phase 2, participants must have one of the following solid tumors: ... 4. NSCLC (recurrent or Primary Stage 4)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "For Phase 2, participants must have one of the following solid tumors: ... 4. NSCLC (recurrent or Primary Stage 4)",
+        "appliesTo": "Phase 2"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "For Phase 2, participants must have one of the following solid tumors: ... 5. CRC with pMMR/MSS (without TMB-H requirement)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "For Phase 2, participants must have one of the following solid tumors: ... 5. CRC with pMMR/MSS (without TMB-H requirement)",
+        "appliesTo": "Phase 2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

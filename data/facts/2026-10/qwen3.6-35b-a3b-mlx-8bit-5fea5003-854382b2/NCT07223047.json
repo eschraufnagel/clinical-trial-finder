@@ -1,0 +1,95 @@
+{
+  "nctId": "NCT07223047",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 157,
+        "text": "Participants must have a histologically confirmed diagnosis of a locally advanced and unresectable or metastatic solid tumor malignancy"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 263,
+        "end": 324,
+        "text": "Participants must, for Arm D, have a PD-L1 expression (≥50%)."
+      },
+      "appliesTo": "Arm D"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 559,
+        "end": 636,
+        "text": "Participants must not have untreated central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 639,
+        "end": 807,
+        "text": "Participants must not have concurrent malignancy (present during screening) requiring treatment or history of prior malignancy active within 2 years prior to treatment."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 810,
+        "end": 935,
+        "text": "Participants must not have a history of, or any evidence of, interstitial lung disease or active, non-infectious pneumonitis."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 260,
+        "text": "Participants must have a histologically confirmed diagnosis of a locally advanced and unresectable or metastatic solid tumor malignancy with a known Kirsten rat sarcoma viral oncogene homolog (KRAS) alteration (mutation or amplification)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

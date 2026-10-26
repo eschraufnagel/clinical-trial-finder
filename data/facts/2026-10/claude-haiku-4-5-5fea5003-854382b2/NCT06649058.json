@@ -1,0 +1,96 @@
+{
+  "nctId": "NCT06649058",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1086,
+        "end": 1191,
+        "text": "Histologically confirmed metastatic cancer with at least one measurable metastasis in the brain (≥ 5 mm)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2542,
+        "end": 2616,
+        "text": "History of known leptomeningeal involvement (radiographic or cytological)."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2620,
+        "end": 2676,
+        "text": "Small cell lung cancer, lymphoma, or leukemia histology."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1195,
+        "end": 1288,
+        "text": "At least one measurable intracranial target lesion which was not previously treated with SRS."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2026,
+        "end": 2054,
+        "text": "ECOG performance status ≤ 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3496,
+        "end": 3628,
+        "text": "History of a second malignancy, unless potentially curative treatment has been completed with no evidence of malignancy for 2 years."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

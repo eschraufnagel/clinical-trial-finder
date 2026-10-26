@@ -1,0 +1,202 @@
+{
+  "nctId": "NCT07133425",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 341,
+        "end": 421,
+        "text": "Participants with histologically documented locally advanced or metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 341,
+        "end": 421,
+        "text": "Participants with histologically documented locally advanced or metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 631,
+        "end": 804,
+        "text": "Prior immune checkpoint inhibitor (anti-PD-(L)1) exposure. Participants need to have received at least 6 weeks of exposure to anti-PD-(L)1 and developed disease progression."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1029,
+        "end": 1064,
+        "text": "Measurable disease per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1068,
+        "end": 1140,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 ."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3207,
+        "end": 3509,
+        "text": "Participants with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression and participant is clinically stable without requirement of steroid treatment for ≥ 7 days prior to the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3936,
+        "end": 4003,
+        "text": "Participants with an active, known or suspected autoimmune disease."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4293,
+        "end": 4501,
+        "text": "Participants with a condition requiring systemic treatment with either corticosteroid (\\>10 mg daily prednisone equivalent) or other immunosuppressive medications within 14 days of study treatment initiation."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4632,
+        "end": 4719,
+        "text": "History of interstitial lung disease (ILD) or checkpoint inhibitor-induced pneumonitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4723,
+        "end": 4831,
+        "text": "Known history of positive test for human immunodeficiency virus or known acquired immunodeficiency syndrome."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4835,
+        "end": 4901,
+        "text": "Acute or chronic hepatitis B virus or hepatitis C virus infection."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5013,
+        "end": 5083,
+        "text": "Previous solid organ or allogeneic hematopoietic stem cell transplant."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5203,
+        "end": 5342,
+        "text": "Significant cardiovascular/cerebrovascular disease, including stroke, myocardial infarction, or prolonged QTc (\\> 480msec) within 3 months."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7177,
+        "end": 7260,
+        "text": "Has a known additional malignancy that is progressing or requires active treatment."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3885,
+        "end": 3932,
+        "text": "Participants who are pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

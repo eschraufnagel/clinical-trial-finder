@@ -1,0 +1,200 @@
+{
+  "nctId": "NCT06293898",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2339,
+        "end": 2437,
+        "text": "At least one measurable lesion based on RECIST (Response Evaluation Criteria in Solid Tumors) V1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2441,
+        "end": 2514,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG PS) of 0 to 1"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 330,
+        "end": 455,
+        "text": "Documented locally advanced or metastatic HER2-expressing (IHC 1+ to 3+ and/or HER2 gene amplification or activating mutation"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10454,
+        "end": 10539,
+        "text": "active or untreated CNS metastases and/or carcinomatous meningitis should be excluded"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9768,
+        "end": 9929,
+        "text": "Participants who have a history of noninfectious interstitial lung disease (ILD)/ pneumonitis that required treatment with steroids, have current ILD/pneumonitis"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8563,
+        "end": 8778,
+        "text": "Active autoimmune diseases and inflammatory diseases, such as systemic lupus erythematosus, psoriasis requiring systemic treatment, rheumatoid arthritis, inflammatory bowel disease, and Hashimoto's thyroiditis, etc."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11676,
+        "end": 11768,
+        "text": "Participants with known human immunodeficiency virus (HIV) infection (HIV antibody positive)"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13475,
+        "end": 13552,
+        "text": "For Dose Expansion Only: Prior treatment with any topoisomerase inhibitor ADC"
+      },
+      "appliesTo": "Dose Expansion"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Participants with progression or recurrence following receipt of an ADC (eg, enfortumab vedotin or disitamab vedotin) and anti-PD1/PD-L1 therapy",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Participants with progression or recurrence following receipt of an ADC (eg, enfortumab vedotin or disitamab vedotin) and anti-PD1/PD-L1 therapy",
+        "appliesTo": "Part A: Randomized Doses"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Documented locally advanced or metastatic HER2-expressing...solid tumor(s) not amenable to curative surgery or radiation",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Documented locally advanced or metastatic HER2-expressing...solid tumor(s) not amenable to curative surgery or radiation",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with primary tumors in the central nervous system (CNS) and active or untreated CNS metastases...should be excluded. Patients with previously treated brain metastases may participate provided they are clinically stable for at least 4 weeks",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with primary tumors in the central nervous system (CNS) and active or untreated CNS metastases...should be excluded. Patients with previously treated brain metastases may participate provided they are clinically stable for at least 4 weeks",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with other prior malignancies except for...or other malignancy treated with curative intent with a disease-free interval of at least 3 years prior to screening",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with other prior malignancies except for...or other malignancy treated with curative intent with a disease-free interval of at least 3 years prior to screening",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with active hepatitis B virus (HBV) infection (positive HBsAg test)...Participants with active hepatitis C virus (HCV) infection (HCV antibody positive and HCV RNA > the lower limit of detection)",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with active hepatitis B virus (HBV) infection (positive HBsAg test)...Participants with active hepatitis C virus (HCV) infection (HCV antibody positive and HCV RNA > the lower limit of detection)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with history of severe heart disease...or history of myocardial infarction or unstable angina pectoris within 6 months before enrollment",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with history of severe heart disease...or history of myocardial infarction or unstable angina pectoris within 6 months before enrollment",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

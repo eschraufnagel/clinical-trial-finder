@@ -1,0 +1,128 @@
+{
+  "nctId": "NCT07326566",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 813,
+        "end": 915,
+        "text": "Recurrent multifocal disease, metastatic, leptomeningeal, or extracranial GBM, or gliomatosis cerebri."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 813,
+        "end": 915,
+        "text": "Recurrent multifocal disease, metastatic, leptomeningeal, or extracranial GBM, or gliomatosis cerebri."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 813,
+        "end": 915,
+        "text": "Recurrent multifocal disease, metastatic, leptomeningeal, or extracranial GBM, or gliomatosis cerebri."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 136,
+        "end": 288,
+        "text": "Positive EGFR status in the brain tumor as determined by a commercially available test or validated laboratory assay (CLIA or comparable certification)."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 345,
+        "end": 402,
+        "text": "For Part 2 (Randomized, Controlled Trial) ONLY: EGFRvIII."
+      },
+      "appliesTo": "Part 2 (Randomized, Controlled Trial)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 523,
+        "end": 676,
+        "text": "No treatment for newly diagnosed GBM other than surgery followed by standard-of-care adjuvant postoperative radiation (54 to 60 Gy) and TMZ chemotherapy."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1320,
+        "end": 1391,
+        "text": "Significant other uncontrolled health conditions or other malignancies."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Newly diagnosed histologically confirmed glioblastoma that is isocitrate dehydrogenase wild type (IDH-WT).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Newly diagnosed histologically confirmed glioblastoma that is isocitrate dehydrogenase wild type (IDH-WT).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "nctId": "NCT06452160",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 133,
+        "end": 199,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Score 0 or 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 267,
+        "end": 387,
+        "text": "locally advanced or metastatic mesothelioma (MM), epithelioid hemangioendothelioma (EHE), or other advanced solid tumors"
+      },
+      "appliesTo": "Dose escalation phase"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 624,
+        "end": 668,
+        "text": "locally advanced or metastatic MM, EHE, etc."
+      },
+      "appliesTo": "Dose expansion phase"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 969,
+        "end": 999,
+        "text": "At least one measurable lesion"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1369,
+        "end": 1408,
+        "text": "Women who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1228,
+        "end": 1291,
+        "text": "unstable or symptomatic Central Nervous System (CNS) metastasis"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

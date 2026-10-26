@@ -1,0 +1,103 @@
+{
+  "nctId": "NCT06305715",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 532,
+        "end": 658,
+        "text": "Patient must have advanced disease, either stage IV or stage IIIB/C that is not amenable to definitive multi-modality therapy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 919,
+        "end": 982,
+        "text": "Patient must have measurable disease as defined by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 986,
+        "end": 1075,
+        "text": "Patient must have Eastern Cooperative Oncology Group (ECOG) Performance status of 0 to 2."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 662,
+        "end": 726,
+        "text": "Patient must not have received prior targeted therapy for NSCLC."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 727,
+        "end": 915,
+        "text": "A subject may receive up to 2 cycles of standard cytotoxic chemotherapy for NSCLC prior to trial enrollment. For example, a cycle of carboplatin and pemetrexed is given once every 3 weeks."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2115,
+        "end": 2160,
+        "text": "Women must not be pregnant or breast-feeding."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 48,
+        "end": 141,
+        "text": "Patient must have a pathologically-confirmed diagnosis of non-small cell lung cancer (NSCLC)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

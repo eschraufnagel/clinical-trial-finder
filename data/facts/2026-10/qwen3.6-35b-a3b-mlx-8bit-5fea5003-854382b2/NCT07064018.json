@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT07064018",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 87,
+        "end": 164,
+        "text": "Subjects with advanced histologically or cytologically confirmed solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 479,
+        "end": 532,
+        "text": "Disease that is considered measurable by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 535,
+        "end": 603,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3197,
+        "end": 3254,
+        "text": "Untreated metastases to the Central Nervous System (CNS)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2736,
+        "end": 2901,
+        "text": "Patients with cancers with known driver mutations for which there are known and effective targeted therapies that have not received those therapies, but are able to."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3084,
+        "end": 3194,
+        "text": "Unstable angina pectoris, angioplasty, cardiac stenting, or myocardial infarction 6 months before study entry."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3555,
+        "end": 3618,
+        "text": "Pregnant (positive serum or urine pregnancy test) or lactating."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3415,
+        "end": 3552,
+        "text": "HIV infection with CD4+ count \\< 350 cells/µL or Acquired Immunodeficiency (AIDS)-defining opportunistic infection in previous 12 months."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

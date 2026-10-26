@@ -1,0 +1,140 @@
+{
+  "nctId": "NCT05882058",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 980,
+        "end": 1052,
+        "text": "Patients must have progressed or recurred after standard of care therapy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1922,
+        "end": 1980,
+        "text": "Eastern Cooperative Oncology Group (ECOG) score of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1985,
+        "end": 2132,
+        "text": "Measurable lesions as defined per Response Evaluation Criteria In Solid Tumours (RECIST) v 1.1 within 21 days prior to the first dose of BI 764532."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3727,
+        "end": 3769,
+        "text": "Untreated or symptomatic brain metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4397,
+        "end": 4431,
+        "text": "Presence of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4518,
+        "end": 4613,
+        "text": "Active/previous history of interstitial lung disease or non-infectious pneumonitis (any grade)."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 980,
+        "end": 1152,
+        "text": "Patients must have progressed or recurred after standard of care therapy\n   * SCLC: after at least two prior lines of therapy, including at least one platinum-based regimen"
+      },
+      "appliesTo": "Part 1",
+      "loose": true
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 980,
+        "end": 1105,
+        "text": "Patients must have progressed or recurred after standard of care therapy\n   * SCLC: after at least two prior lines of therapy"
+      },
+      "appliesTo": "Part 1",
+      "loose": true
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Histologically or cytologically confirmed, cancer of the following histologies: Small cell lung cancer (SCLC) ... Large cell neuroendocrine carcinoma (LCNEC) of the lung",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed, cancer of the following histologies: Small cell lung cancer (SCLC) ... Large cell neuroendocrine carcinoma (LCNEC) of the lung",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "nctId": "NCT07856394",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 333,
+        "end": 435,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-3 assessed within 30 days of enrollment"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1089,
+        "end": 1155,
+        "text": "Prior RT to the current target site \\< 3 months from randomization"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1861,
+        "end": 1966,
+        "text": "History of myocardial infarction or decompensated congestive heart failure (CHF) within the last 6 months"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1969,
+        "end": 1989,
+        "text": "On a transplant list"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2079,
+        "end": 2095,
+        "text": "Pregnant persons"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2100,
+        "end": 2115,
+        "text": "Nursing persons"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically proven primary or metastatic solid malignant tumors from any histologic subtype",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Histologically proven primary or metastatic solid malignant tumors from any histologic subtype",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Measurable primary or metastatic bulky tumor defined as tumor > 5 cm in largest dimension not eligible for surgical resection or not an ideal candidate for alternative local therapies, e.g., cryoablation, etc.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Measurable primary or metastatic bulky tumor defined as tumor > 5 cm in largest dimension not eligible for surgical resection or not an ideal candidate for alternative local therapies, e.g., cryoablation, etc.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

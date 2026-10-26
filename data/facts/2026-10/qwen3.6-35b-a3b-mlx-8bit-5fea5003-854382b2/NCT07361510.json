@@ -1,0 +1,129 @@
+{
+  "nctId": "NCT07361510",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 205,
+        "text": "Participants must have a histologically or cytologically confirmed diagnosis of Non-Small Cell Lung Cancer (NSCLC) (squamous and nonsquamous) with Stage IIIB/IIIC or Stage IV disease."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 208,
+        "end": 284,
+        "text": "Participants must have a programmed death ligand-1 (PD-L1) expression ≥ 50%."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 287,
+        "end": 402,
+        "text": "Participants must have measurable disease as defined by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 405,
+        "end": 506,
+        "text": "Participants must have no prior systemic anti-tumor therapy for locally advanced or metastatic NSCLC."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 509,
+        "end": 600,
+        "text": "Participants must have an Eastern Cooperative Oncology Group (ECOG) Performance Status 0-1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 764,
+        "end": 856,
+        "text": "Participants must not have any symptomatic untreated central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 764,
+        "end": 938,
+        "text": "Participants must not have any symptomatic untreated central nervous system (CNS) metastases, leptomeningeal metastases (carcinomatous meningitis) or spinal cord compression."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1361,
+        "end": 1412,
+        "text": "Participants must not an active autoimmune disease."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Participants must have a histologically or cytologically confirmed diagnosis of Non-Small Cell Lung Cancer (NSCLC) (squamous and nonsquamous)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Participants must have a histologically or cytologically confirmed diagnosis of Non-Small Cell Lung Cancer (NSCLC) (squamous and nonsquamous)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

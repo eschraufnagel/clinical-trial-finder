@@ -1,0 +1,149 @@
+{
+  "nctId": "NCT05184816",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 74,
+        "end": 114,
+        "text": "ECOG performance status ≤ 2 or KPS ≥ 60."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1481,
+        "end": 1635,
+        "text": "Patients can have concomitant parenchymal brain metastases at study entry as long as they do not require active treatment or have been previously treated."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2912,
+        "end": 3279,
+        "text": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab"
+      },
+      "appliesTo": "For patients with both intracranial and extracranial disease progression at the time of study screening, necessitating change to their systemic tumor-directed therapy"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2912,
+        "end": 3279,
+        "text": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab"
+      },
+      "appliesTo": "For patients with both intracranial and extracranial disease progression at the time of study screening, necessitating change to their systemic tumor-directed therapy"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2912,
+        "end": 3279,
+        "text": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab"
+      },
+      "appliesTo": "For patients with both intracranial and extracranial disease progression at the time of study screening, necessitating change to their systemic tumor-directed therapy"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2912,
+        "end": 3279,
+        "text": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab"
+      },
+      "appliesTo": "For patients with both intracranial and extracranial disease progression at the time of study screening, necessitating change to their systemic tumor-directed therapy"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "LM from any solid tumor malignancy (1a and 1b), that is either: Newly diagnosed: As evidenced by positive CSF cytology, CTC count >3.0/3.0 mL, or unequivocal radiographic evidence of LM on contrast-enhanced MRI, OR Recurrent: As evidenced by unequivocal radiographic progression on contrast-enhanced MRI, the development of newly or recurrently positive CSF cytology, or a clinically-relevant rise in CSF CTCs at the discretion of the treating Investigator. There are no restrictions on the number of recurrences. OR Persistent: As evidenced by any detectable disease (abnormal leptomeningeal enhancement on contrast-enhanced MRI; positive, suspicious, or atypical cytology; positive CSF CTCs; extrinsic cells on CSF cell count differential; or clinical symptoms attributed to LM) after receiving LM-directed radiation or systemic therapy.",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "LM from any solid tumor malignancy (1a and 1b), that is either: Newly diagnosed: As evidenced by positive CSF cytology, CTC count >3.0/3.0 mL, or unequivocal radiographic evidence of LM on contrast-enhanced MRI, OR Recurrent: As evidenced by unequivocal radiographic progression on contrast-enhanced MRI, the development of newly or recurrently positive CSF cytology, or a clinically-relevant rise in CSF CTCs at the discretion of the treating Investigator. There are no restrictions on the number of recurrences. OR Persistent: As evidenced by any detectable disease (abnormal leptomeningeal enhancement on contrast-enhanced MRI; positive, suspicious, or atypical cytology; positive CSF CTCs; extrinsic cells on CSF cell count differential; or clinical symptoms attributed to LM) after receiving LM-directed radiation or systemic therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab",
+        "appliesTo": "For patients with both intracranial and extracranial disease progression at the time of study screening, necessitating change to their systemic tumor-directed therapy"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab",
+        "appliesTo": "For patients with both intracranial and extracranial disease progression at the time of study screening, necessitating change to their systemic tumor-directed therapy"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Examples of systemic CNS-active treatments include but are not limited to: bevacizumab, temozolomide, carmustine, lomustine, etoposide, carboplatin, cisplatin, pemetrexed, doxorubicin, high-dose erlotinib, osimertinib, lorlatinib, lapatinib, tucatinib, capecitabine, dabrafenib, trametinib, vemurafenib, cobimetinib, ipilimumab, nivolumab, pembrolizumab, atezolizumab",
+        "appliesTo": "For patients with both intracranial and extracranial disease progression at the time of study screening, necessitating change to their systemic tumor-directed therapy"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

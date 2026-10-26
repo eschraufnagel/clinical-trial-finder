@@ -1,0 +1,132 @@
+{
+  "nctId": "NCT07356453",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 100,
+        "end": 216,
+        "text": "Patient has histologically and/or cytologically confirmed diagnosis of advanced or metastatic selected solid tumors."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 100,
+        "end": 216,
+        "text": "Patient has histologically and/or cytologically confirmed diagnosis of advanced or metastatic selected solid tumors."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2110,
+        "end": 2242,
+        "text": "Patient has measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1 at Clinical Screening;"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3610,
+        "end": 3879,
+        "text": "Patients must have an Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0 to 2 with \\>/=3 months of life expectancy for Dose Escalation cohorts, and an ECOG PS of 0 to 1 with \\>/=3 months of life expectancy for backfilling and Dose Expansion cohorts;"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5446,
+        "end": 5787,
+        "text": "Patient has known metastatic central nervous system malignant disease or leptomeningeal disease; Note: Patients previously treated for brain metastasis who are asymptomatic, receiving \\</=10 mg/day prednisone equivalent, not requiring anti-epileptic therapy, and without evidence of radiological progression for at least 4 weeks are allowed."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5446,
+        "end": 5542,
+        "text": "Patient has known metastatic central nervous system malignant disease or leptomeningeal disease;"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5388,
+        "end": 5442,
+        "text": "Patient has uncontrolled HIV or hepatitis C infection;"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5388,
+        "end": 5442,
+        "text": "Patient has uncontrolled HIV or hepatitis C infection;"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patient has had history of other malignancy diagnosed </=5 years prior to consent, except for any locally occurring cancer that has been treated with curative intent with no evidence of disease for >2 years at the time of consent",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patient has had history of other malignancy diagnosed </=5 years prior to consent, except for any locally occurring cancer that has been treated with curative intent with no evidence of disease for >2 years at the time of consent",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

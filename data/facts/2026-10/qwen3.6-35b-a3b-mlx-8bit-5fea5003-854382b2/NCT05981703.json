@@ -1,0 +1,133 @@
+{
+  "nctId": "NCT05981703",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 157,
+        "end": 222,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status ≤ 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 226,
+        "end": 347,
+        "text": "Phase 1a: Participants with histologically or cytologically confirmed advanced, metastatic, and unresectable solid tumors"
+      },
+      "appliesTo": "Phase 1a"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 667,
+        "end": 775,
+        "text": "Phase 1b: Participants with histologically confirmed locally advanced unresectable or metastatic tumor types"
+      },
+      "appliesTo": "Phase 1b"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1104,
+        "end": 1142,
+        "text": "≥ 1 measurable lesion per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2275,
+        "end": 2349,
+        "text": "Active leptomeningeal disease or uncontrolled, untreated brain metastasis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2275,
+        "end": 2349,
+        "text": "Active leptomeningeal disease or uncontrolled, untreated brain metastasis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2434,
+        "end": 2643,
+        "text": "Any malignancy ≤ 3 years before the first dose of study treatment(s) except for the specific cancer under investigation in this study and any locally recurring cancer that has been treated with curative intent"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2772,
+        "end": 2984,
+        "text": "Any condition that required systemic treatment with either corticosteroids (\\> 10 mg daily of prednisone or equivalent) or other immunosuppressive medication ≤ 14 days before the first dose of study treatment(s)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2988,
+        "end": 3133,
+        "text": "History of interstitial lung disease, noninfectious pneumonitis, or uncontrolled lung diseases including pulmonary fibrosis, acute lung diseases."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

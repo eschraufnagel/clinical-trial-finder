@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT05673928",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 86,
+        "text": "Histologically confirmed HER2-positive metastatic solid tumor."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 86,
+        "text": "Histologically confirmed HER2-positive metastatic solid tumor."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 983,
+        "end": 1050,
+        "text": "Measurable (per the RECIST v1.1) or evaluable extracranial disease."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1352,
+        "end": 1433,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-2 (Appendix B)."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 356,
+        "text": "Histologically confirmed HER2-positive metastatic solid tumor. HER2 positivity defined as HER2 overexpression by immunohistochemistry (IHC) 3+ or 2+ and fluorescence in situ hybridization (FISH) positive and/or HER2 amplification by in situ hybridization (ISH) or next generation sequencing (NGS) and/or activating ERBB2 mutation(s)"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1205,
+        "end": 1307,
+        "text": "Patients with breast and gastric cancer must have received at least 1 line of HER2 targeted treatment."
+      },
+      "appliesTo": "Patients with breast and gastric cancer"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8506,
+        "end": 8616,
+        "text": "Evidence within 1 year of the start of study treatment of another malignancy that required systemic treatment."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8008,
+        "end": 8059,
+        "text": "Known positive human immunodeficiency virus status."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7912,
+        "end": 8003,
+        "text": "Known carrier of hepatitis B or hepatitis C virus or has other known chronic liver disease."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8064,
+        "end": 8225,
+        "text": "Patients who are pregnant, breastfeeding, or planning to become pregnant from the time of informed consent until 7 months after the last dose of study treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients must have one of the following on the screening brain MRI: Untreated brain metastases not requiring immediate local CNS therapy; Previously treated brain metastases with progression of previous lesions or new lesions, but not requiring immediate local CNS therapy; At least one measurable untreated brain lesion ≥0.5 cm and <3.0 cm in the longest axis",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "none"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have one of the following on the screening brain MRI: Untreated brain metastases not requiring immediate local CNS therapy; Previously treated brain metastases with progression of previous lesions or new lesions, but not requiring immediate local CNS therapy; At least one measurable untreated brain lesion ≥0.5 cm and <3.0 cm in the longest axis",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

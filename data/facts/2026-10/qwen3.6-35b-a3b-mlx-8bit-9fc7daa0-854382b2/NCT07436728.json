@@ -1,0 +1,268 @@
+{
+  "nctId": "NCT07436728",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 711,
+        "end": 779,
+        "text": "Non-small cell lung cancer (NSCLC) (both squamous and non-squamous)."
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 416,
+        "end": 459,
+        "text": "locally advanced or metastatic solid tumors"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6480,
+        "end": 6875,
+        "text": "History of brain metastasis or leptomeningeal disease unless:\n\n     a) Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR b) Received stereotactic radiosurgery and is off corticosteroids for brain metastases AND c) Is without neurologic dysfunction that would confound the evaluation of neurologic and other adverse events (AEs)."
+      },
+      "loose": true
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6480,
+        "end": 6875,
+        "text": "History of brain metastasis or leptomeningeal disease unless:\n\n     a) Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR b) Received stereotactic radiosurgery and is off corticosteroids for brain metastases AND c) Is without neurologic dysfunction that would confound the evaluation of neurologic and other adverse events (AEs)."
+      },
+      "loose": true
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4157,
+        "end": 4363,
+        "text": "Participants must have at least 1 lesion that meets the definition of measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 criteria (radiologically measured by the investigator)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4082,
+        "end": 4153,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3286,
+        "end": 3420,
+        "text": "Confirmed PD-L1 positive by an FDA approved, Conformité Européene (CE)-marked, or other health-authority equivalent test in local lab."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1081,
+        "end": 1291,
+        "text": "Participants with no known activating mutations: have received platinum-based chemotherapy and anti-programmed death protein 1 (PD-1)/programmed death ligand 1 (PD-L1) for locally advanced or metastatic disease"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1081,
+        "end": 1291,
+        "text": "Participants with no known activating mutations: have received platinum-based chemotherapy and anti-programmed death protein 1 (PD-1)/programmed death ligand 1 (PD-L1) for locally advanced or metastatic disease"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1985,
+        "end": 2101,
+        "text": "Participants should have received no more than 3 prior lines of therapies for locally advanced or metastatic cancer."
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10334,
+        "end": 10416,
+        "text": "Diagnosed with a second primary invasive malignancy not in remission for ≥3 years."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6133,
+        "end": 6474,
+        "text": "History of known autoimmune disease, except for:\n\n     a) Vitiligo. b) Psoriasis not requiring systemic treatment for \\>1 year before receipt of TAK-505.\n\n     c) History of Graves' disease in participants now euthyroid for \\>4 weeks. d) Hypothyroidism managed by thyroid hormone replacement. e) Alopecia. f) Well-controlled diabetes type 1."
+      },
+      "loose": true
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7956,
+        "end": 8295,
+        "text": "Active diagnosis of a lung condition including:\n\n     a) Pneumonitis b) Interstitial lung disease c) Severe chronic obstructive pulmonary disease d) Idiopathic pulmonary fibrosis e) Other restrictive lung diseases f) Acute symptomatic pulmonary embolism g) Grade ≥2 pleural effusion not controlled by tap or requiring indwelling catheters."
+      },
+      "loose": true
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10722,
+        "end": 10861,
+        "text": "Known to be Human Immunodeficiency Virus (HIV) positive or hepatitis B or C positive as defined below:\n\n      1. Positive serology for HIV."
+      },
+      "loose": true
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10868,
+        "end": 10978,
+        "text": "2. Positive hepatitis B surface antigen (HBsAg) test.\n      3. Positive hepatitis C virus (HCV) antibody test."
+      },
+      "loose": true
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6881,
+        "end": 7910,
+        "text": "History of any of the following ≤6 months before the first dose of trial intervention:\n\n     a) Congestive heart failure New York Heart Association (NYHA) Grade III or IV. b) Unstable angina. c) Myocardial infarction. d) Unstable symptomatic ischemic heart disease. e) Uncontrolled hypertension despite appropriate medical therapy. f) Any ongoing symptomatic cardiac arrhythmias of Grade greater than (\\>) 2 (including acute atrial flutter/fibrillation, ventricular fibrillation, or ventricular tachycardia). Chronic, stable atrial fibrillation on stable anticoagulant therapy, including lowmolecular-weight heparin, is allowed.\n\n     g) Acute symptomatic pulmonary embolism, or symptomatic cerebrovascular events, or any other serious cardiac condition (for example, pericardial effusion or restrictive cardiomyopathy).\n\n     h) Left ventricular ejection fraction (LVEF) less than (\\<) 50%, as measured by echocardiogram or multigated acquisition scan (MUGA) within 4 weeks before receiving the first dose of trial intervention."
+      },
+      "loose": true
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9972,
+        "end": 10121,
+        "text": "History of a bone marrow transplantation within the past 5 years or solid organ transplantation (as a recipient) and use of immunosuppressive agents."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11974,
+        "end": 12559,
+        "text": "Used corticosteroids or other immunosuppressive medication, concurrently or within 14 days of administration of TAK-505, except for:\n\n      a) Topical, intranasal, inhaled, ocular, or intra-articular corticosteroids. b) Physiologic doses of replacement steroid (for example, for adrenal insufficiency).\n\n      c) Steroid premedication for hypersensitivity reactions and antiemetic use. d) Stable steroid dose (established for ≥28 days before the first dose of TAK-505) for previously treated brain metastasis. Corticosteroid dose on C1D1 should be ≤15 mg/d of prednisone or equivalent."
+      },
+      "loose": true
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Has a positive serum pregnancy test during the screening period or a positive urine pregnancy test on Day 1 before the first dose of trial intervention. Is capable of breastfeeding but does not agree to forego breastfeeding from the first dose of trial intervention through 180 days after the last dose of trial intervention.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Has a positive serum pregnancy test during the screening period or a positive urine pregnancy test on Day 1 before the first dose of trial intervention. Is capable of breastfeeding but does not agree to forego breastfeeding from the first dose of trial intervention through 180 days after the last dose of trial intervention.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

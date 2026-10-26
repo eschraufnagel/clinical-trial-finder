@@ -1,0 +1,178 @@
+{
+  "nctId": "NCT05985655",
+  "set": "dev",
+  "criteriaTextSha": "afd59addbce953690fcb06bc910fba01c14bb4423625e1248537ca3053e7b38f",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status 0-1.",
+      "start": 27,
+      "end": 92,
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Life expectancy \\> 3 months.",
+      "start": 95,
+      "end": 123,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
+    },
+    {
+      "quote": "One of the following histologically or cytologically confirmed advanced solid tumors: head and neck squamous cell carcinoma (HNSCC), pancreatic adenocarcinoma, non-small cell lung cancer (NSCLC), breast carcinoma (hormone receptor-positive \\[HR+\\] and Human Epidermal Growth Receptor 2 negative \\[HER2-\\] that has progressed to a prior treatment with Cyclin-Dependent Kinase 4 (CDK4)/ Cyclin-Dependent Kinase 6 \\[CDK6\\] inhibitor), or platinum-resistant high-grade epithelial ovarian, primary peritoneal, or fallopian tube cancers (HGSOC), or triple negative breast cancer (TNBC).",
+      "start": 126,
+      "end": 706,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Must have disease that is advanced (ie, surgery or radiotherapy are not considered to be potentially curative), recurrent, or metastatic following SoC treatments.",
+      "start": 709,
+      "end": 871,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "locally advanced not clearly excluded; \"following standard treatments\" not mapped"
+    },
+    {
+      "quote": "Adequate hematological, liver, and renal function.",
+      "start": 874,
+      "end": 924,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Must have tumor lesion(s) or metastases amenable to biopsy, excluding bone metastases.",
+      "start": 927,
+      "end": 1013,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Active and clinically significant (CS) infection.",
+      "start": 1042,
+      "end": 1091,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "infection"
+    },
+    {
+      "quote": "Refractory nausea and/or vomiting, chronic gastrointestinal disease, or previous significant bowel resection, with CS sequelae that would preclude adequate absorption of GTAEXS617.",
+      "start": 1094,
+      "end": 1274,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "absorption"
+    },
+    {
+      "quote": "Symptomatic central nervous system (CNS) malignancy or metastases.",
+      "start": 1277,
+      "end": 1343,
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["symptoms"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Concurrent active or previous malignancy.",
+      "start": 1346,
+      "end": 1387,
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years", "two_to_5_years", "over_5_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Prior organ or allogeneic stem-cell transplantation.",
+      "start": 1390,
+      "end": 1442,
+      "mappings": [
+        {
+          "factId": "transplant",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Moderate or severe cardiovascular disease.",
+      "start": 1445,
+      "end": 1487,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment: cardiovascular disease"
+    },
+    {
+      "quote": "Received anticancer therapy within 28 days or 5 half-lives (whichever is shorter) before the first dose of the study treatment.",
+      "start": 1490,
+      "end": 1617,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Received treatment with known strong/moderate inhibitors and/or strong inducers of cytochrome P450 3A isoform subfamily (CYP3A) within 14 days or 5 half-lives before the first dose of study treatment.",
+      "start": 1620,
+      "end": 1820,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Received treatment with known inhibitors or inducers of P-glycoprotein (P-gp) or breast cancer resistance protein (BCRP) within 14 days or 5 half-lives before the first dose of study treatment.",
+      "start": 1823,
+      "end": 2016,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Received treatment with known substrates of organic anion transporting peptide or BCRP within 14 days or 5 half-lives before the first dose of study treatment.",
+      "start": 2019,
+      "end": 2178,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Unresolved or unstable serious toxic side-effects of prior chemotherapy or radiotherapy",
+      "start": 2181,
+      "end": 2268,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
+    },
+    {
+      "quote": "Has had or is scheduled to have major surgery \\<28 days prior to the first dose of study treatment.",
+      "start": 2271,
+      "end": 2370,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Note: Other protocol Inclusion/Exclusion criteria may apply.",
+      "start": 2372,
+      "end": 2432,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    }
+  ]
+}

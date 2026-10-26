@@ -1,0 +1,193 @@
+{
+  "nctId": "NCT05382559",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 107,
+        "text": "Participant has locally advanced (unresectable) or metastatic solid tumor malignancy"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5706,
+        "end": 5848,
+        "text": "Participant must have pathologically documented locally advanced or metastatic (unresectable Stage IIIB-IV) non-small cell lung cancer (NSCLC)"
+      },
+      "appliesTo": "For ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H)"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5850,
+        "end": 5911,
+        "text": "Note: for Cohort H only, the tumor must be non-squamous NSCLC"
+      },
+      "appliesTo": "For ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6846,
+        "end": 6996,
+        "text": "Participant has symptomatic or untreated central nervous system (CNS) metastases. Participants with asymptomatic, treated CNS metastases are eligible."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6999,
+        "end": 7083,
+        "text": "Participant has leptomeningeal disease as a manifestation of the current malignancy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1486,
+        "end": 1594,
+        "text": "Participant has at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1726,
+        "end": 1833,
+        "text": "Participant has an ECOG performance status of 0, 1 or 2 for dose escalation, and 0 or 1 for dose expansion."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7086,
+        "end": 7399,
+        "text": "Participant has a prior malignancy active (i.e., requiring treatment or intervention) within the previous 2 years, except for local malignancies that have been apparently cured, such as basal or squamous cell skin cancer, superficial bladder cancer or carcinoma in situ of the cervix or breast, which are allowed."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7512,
+        "end": 7693,
+        "text": "Participant with active hepatitis B (including acute hepatitis B virus \\[HBV\\] or chronic HBV) or hepatitis C virus \\[HCV\\] (ribonucleic acid \\[RNA\\] detected by qualitative assay)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7780,
+        "end": 7862,
+        "text": "Participant has a known history of human immunodeficiency virus \\[HIV\\] infection."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7937,
+        "end": 8056,
+        "text": "Participant has had a myocardial infarction or unstable angina within 6 months prior to the start of study intervention"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9532,
+        "end": 9703,
+        "text": "History of interstitial lung disease requiring systemic steroid treatment. Note that a participant with resolved pulmonary infections or radiation pneumonitis is eligible."
+      },
+      "appliesTo": "For ASP3082 Combination Therapy"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3186,
+        "end": 3285,
+        "text": "Female participant is not pregnant, confirmed by pregnancy test and medical evaluation by interview"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4096,
+        "end": 4255,
+        "text": "Female participant must agree not to breastfeed starting at screening and throughout the study period and for 6 months after study intervention administration."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

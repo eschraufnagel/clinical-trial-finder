@@ -1,0 +1,175 @@
+{
+  "nctId": "NCT07098338",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 411,
+        "end": 482,
+        "text": "Histologically or cytologically documented advanced or metastatic NSCLC"
+      },
+      "appliesTo": "Sub-Study 1 and Sub-Study 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 712,
+        "end": 796,
+        "text": "Histologically or cytologically documented advanced or metastatic non-squamous NSCLC"
+      },
+      "appliesTo": "Sub-Study 3"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 712,
+        "end": 796,
+        "text": "Histologically or cytologically documented advanced or metastatic non-squamous NSCLC"
+      },
+      "appliesTo": "Sub-Study 3"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 485,
+        "end": 547,
+        "text": "PD-L1 TC ≥ 1% (TC≥ 50% for sub-study 1, 1-49% for sub-study 2)"
+      },
+      "appliesTo": "Sub-Study 1 and Sub-Study 2"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 550,
+        "end": 662,
+        "text": "Absence of sensitizing EGFR mutations or ALK rearrangements. No known other Actionable Genomic Alterations(AGAs)"
+      },
+      "appliesTo": "Sub-Study 1 and Sub-Study 2"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 550,
+        "end": 662,
+        "text": "Absence of sensitizing EGFR mutations or ALK rearrangements. No known other Actionable Genomic Alterations(AGAs)"
+      },
+      "appliesTo": "Sub-Study 1 and Sub-Study 2"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1330,
+        "end": 1419,
+        "text": "Spinal cord compression or leptomeningeal carcinomatosis for sub-study 1 and sub-study 2."
+      },
+      "appliesTo": "Sub-Study 1 and Sub-Study 2"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1471,
+        "end": 1496,
+        "text": "Unstable brain metastases"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1499,
+        "end": 1537,
+        "text": "History of another primary malignancy."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1540,
+        "end": 1647,
+        "text": "Active infection, including TB and infections with HIV, HBV (verified by known positive HBsAg result), HCV."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1696,
+        "end": 1815,
+        "text": "Receipt of prior systemic chemotherapy/chemoradiation/immunotherapy for advanced NSCLC for sub-study 1 and sub-study 2."
+      },
+      "appliesTo": "Sub-Study 1 and Sub-Study 2"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1818,
+        "end": 1859,
+        "text": "Prior exposure to immune-mediated therapy"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

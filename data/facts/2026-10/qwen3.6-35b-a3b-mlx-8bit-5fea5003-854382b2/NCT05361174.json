@@ -1,0 +1,119 @@
+{
+  "nctId": "NCT05361174",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 157,
+        "text": "Participants must have a confirmed diagnosis of Stage IIIC, IIID, or IV unresectable or metastatic melanoma or Stage III or IV NSCLC."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 437,
+        "end": 512,
+        "text": "Participants who should have received no more than 3 prior lines of therapy"
+      },
+      "appliesTo": "Cohort 2 (NSCLC)"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 880,
+        "end": 976,
+        "text": "Participants who have an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1054,
+        "end": 1166,
+        "text": "Participants who have at least one measurable lesion, following resection of the lesion for IOV-4001 generation."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1716,
+        "end": 1777,
+        "text": "Participants who have symptomatic untreated brain metastases."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1781,
+        "end": 1943,
+        "text": "Participants who have had a history of allogeneic organ transplant or any form of cell therapy involving prior conditioning chemotherapy within the past 20 years."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1947,
+        "end": 2053,
+        "text": "Participants who require systemic steroid therapy 10 mg/day prednisone or another steroid equivalent dose."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2120,
+        "end": 2197,
+        "text": "Participants who have another primary malignancy within the previous 3 years."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

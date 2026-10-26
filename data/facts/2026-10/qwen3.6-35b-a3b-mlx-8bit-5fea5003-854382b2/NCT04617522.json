@@ -1,0 +1,118 @@
+{
+  "nctId": "NCT04617522",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 47,
+        "end": 143,
+        "text": "Histologically confirmed advanced or metastatic solid tumor that is measurable or nonmeasurable."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 47,
+        "end": 143,
+        "text": "Histologically confirmed advanced or metastatic solid tumor that is measurable or nonmeasurable."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 146,
+        "end": 227,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0, 1, or 2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1782,
+        "end": 2302,
+        "text": "Have known active central nervous system (CNS) metastases and/or carcinomatous meningitis. Individuals with previously treated brain metastases may participate provided they have stable CNS disease for at least 4 weeks prior to the first dose of study drug and all neurologic symptoms have returned to baseline, have no evidence of new or enlarging brain metastases, and are taking \\< 20 mg/day of prednisone or its equivalent. All individuals with carcinomatous meningitis are excluded regardless of clinical stability."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1782,
+        "end": 2302,
+        "text": "Have known active central nervous system (CNS) metastases and/or carcinomatous meningitis. Individuals with previously treated brain metastases may participate provided they have stable CNS disease for at least 4 weeks prior to the first dose of study drug and all neurologic symptoms have returned to baseline, have no evidence of new or enlarging brain metastases, and are taking \\< 20 mg/day of prednisone or its equivalent. All individuals with carcinomatous meningitis are excluded regardless of clinical stability."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2340,
+        "end": 2494,
+        "text": "Have active chronic inflammatory bowel disease (ulcerative colitis or Crohn's disease) or gastrointestinal (GI) perforation within 6 months of enrollment."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2574,
+        "end": 2774,
+        "text": "High-dose systemic corticosteroids (≥20 mg of prednisone or its equivalent) are not allowed within 2 weeks of Check-In. However, inhaled, intranasal, intra-articular, and topical steroids are allowed."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically confirmed advanced or metastatic solid tumor that is measurable or nonmeasurable.",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed advanced or metastatic solid tumor that is measurable or nonmeasurable.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

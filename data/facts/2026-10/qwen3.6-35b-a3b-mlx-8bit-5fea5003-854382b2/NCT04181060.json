@@ -1,0 +1,168 @@
+{
+  "nctId": "NCT04181060",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 129,
+        "text": "Patient must have a pathologically-confirmed diagnosis of non-squamous, non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 344,
+        "text": "Patient must have advanced disease, defined as - either stage IV disease, stage IIIB disease not amenable to definitive multi-modality therapy, or recurrent disease after a prior diagnosis of stage I-III disease."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "exon20_insertion",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 504,
+        "end": 760,
+        "text": "Patient must have somatic activating sensitizing mutation in EGFR (e.g. but not limited to Exon 19 deletion, L858R, E709X, G719X, exon 19 insertions, L861Q, S768I). Patients with non-sensitizing mutations in EGFR (EGFR exon 20 insertions) are not eligible."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1081,
+        "end": 1419,
+        "text": "NOTE: Prior treatment with an EGFR TKI is not allowed, however if a candidate for this study has already started osimertinib within 21 days prior to randomization, the exact osimertinib start date is known, and the patient had the required study baseline imaging completed prior to the osimertinib start date, the patient will be eligible"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2473,
+        "end": 2550,
+        "text": "Patient must not have had any prior systemic treatment for metastatic disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2589,
+        "end": 2680,
+        "text": "Patient must have an Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2683,
+        "end": 2869,
+        "text": "Patient must not be pregnant or breast-feeding due to the potential harm to an unborn fetus and possible risk for adverse events in nursing infants with the treatment regimens being used"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4958,
+        "end": 5120,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5275,
+        "end": 5495,
+        "text": "Patients with a history of hepatitis C virus (HCV) infection must have been treated and cured. For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5731,
+        "end": 6014,
+        "text": "Patients with untreated brain metastases or leptomeningeal disease are eligible if the treating physician determines that immediate CNS specific treatment is not required provided the metastatic lesions are non-hemorrhagic and are neurologically stable without glucocorticoid therapy"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5731,
+        "end": 6014,
+        "text": "Patients with untreated brain metastases or leptomeningeal disease are eligible if the treating physician determines that immediate CNS specific treatment is not required provided the metastatic lesions are non-hemorrhagic and are neurologically stable without glucocorticoid therapy"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8063,
+        "end": 8291,
+        "text": "Patient must not have a medical history of interstitial lung disease, drug-induced interstitial lung disease, radiation pneumonitis which required steroid treatment, or any evidence of clinically active interstitial lung disease"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

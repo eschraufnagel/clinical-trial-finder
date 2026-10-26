@@ -1,0 +1,126 @@
+{
+  "nctId": "NCT07223047",
+  "set": "heldout",
+  "criteriaTextSha": "c21bcc80c6ef2ee05a0782c8719b8b821664cf3afc50e307556729b361a2d146",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Inclusion Criteria",
+      "start": 0,
+      "end": 18,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "heading"
+    },
+    {
+      "quote": "Participants must have a histologically confirmed diagnosis of a locally advanced and unresectable or metastatic solid tumor malignancy with a known Kirsten rat sarcoma viral oncogene homolog (KRAS) alteration (mutation or amplification).",
+      "start": 22,
+      "end": 260,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        },
+        {
+          "factId": "kras",
+          "rulesOut": ["none_found"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Participants must, for Arm D, have a PD-L1 expression (\u226550%).",
+      "start": 263,
+      "end": 324,
+      "mappings": [
+        {
+          "factId": "pdl1",
+          "rulesOut": ["low", "negative"],
+          "appliesTo": "for Arm D"
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Participants must have previously received, be ineligible for, or decline (after having been provided adequate information to make an informed decision) the protocol defined standard of care (SoC) treatments.",
+      "start": 327,
+      "end": 535,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "permits"
+    },
+    {
+      "quote": "Exclusion Criteria",
+      "start": 537,
+      "end": 555,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "heading"
+    },
+    {
+      "quote": "Participants must not have untreated central nervous system (CNS) metastases.",
+      "start": 559,
+      "end": 636,
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Participants must not have concurrent malignancy (present during screening) requiring treatment or history of prior malignancy active within 2 years prior to treatment.",
+      "start": 639,
+      "end": 807,
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Participants must not have a history of, or any evidence of, interstitial lung disease or active, non-infectious pneumonitis.",
+      "start": 810,
+      "end": 935,
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "history of ILD, as distinct from pneumonitis, not mapped"
+    },
+    {
+      "quote": "A history of radiation pneumonitis in the radiation field is permitted.",
+      "start": 936,
+      "end": 1007,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 8"
+    },
+    {
+      "quote": "Participants must not have a history of prior severe cutaneous adverse reactions (SCARs), including Stevens-Johnson Syndrome (SJS) and toxic epidermal necrolysis (TEN).",
+      "start": 1010,
+      "end": 1178,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "severe skin reactions"
+    },
+    {
+      "quote": "Other protocol-defined Inclusion/Exclusion criteria apply.",
+      "start": 1181,
+      "end": 1239,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "nctId": "NCT07389239",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 157,
+        "text": "Adult subjects (18 years and older) with histologically or cytologically of advanced (metastatic or inoperable) advanced solid tumors."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4308,
+        "end": 4427,
+        "text": "A minimum of one measurable lesion defined as meeting the criteria for measurable disease according RECIST1.1 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5795,
+        "end": 5855,
+        "text": "ECOG performance status ≤1 (Karnofsky ≥80%, see Appendix A)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8222,
+        "end": 8684,
+        "text": "Known cases of clinically active brain metastases (brain MRI as clinically indicated) because of their poor prognosis and because they often develop progressive neurologic dysfunction that would confound the evaluation of neurologic and other adverse events. Prior evidence of brain metastasis successfully treated with surgery or radiation therapy will not be exclusion for participation as long as they are deemed under control at the time of study enrollment."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8864,
+        "end": 8892,
+        "text": "Pregnancy or breast-feeding."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7510,
+        "end": 7672,
+        "text": "Patients with active autoimmune disease requiring doses of corticosteroids of ≥ 10 mg/day of prednisone (or its equivalent) or other immunosuppressive treatments."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9508,
+        "end": 9578,
+        "text": "Patients with history of pneumonitis and/or interstitial lung disease."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7047,
+        "end": 7507,
+        "text": "Patients with uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure with New York Heart Association class III or IV disease, patients with a LVEF \\< 45%, a myocardial infarction within 6 months prior to study entry or a history of myocarditis, unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4925,
+        "end": 5249,
+        "text": "Patients must have received prior anti-cancer treatment(s) or an investigational product(s) within 28 days or 5 half-lives, whichever is longer, prior to the first dose of study treatment(s) AND unresolved or unstable serious toxic side-effects of prior chemotherapy/treatment must have recovered to Grade 1 per CTCAE (v5.0)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "nctId": "NCT06892379",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 165,
+        "end": 255,
+        "text": "Participants have at least 1 target lesion other than CNS lesions according to RECIST 1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 165,
+        "end": 255,
+        "text": "Participants have at least 1 target lesion other than CNS lesions according to RECIST 1.1."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 357,
+        "end": 536,
+        "text": "Drug therapy targeting CDH17 (such as small molecule targeted drugs, monoclonal antibodies, bispecific antibodies, antibody-drug conjugates, or chimeric antigen receptor T cells)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 543,
+        "end": 727,
+        "text": "Anti-tumor drugs within 14 days prior to the first dose of study treatment; any other IMPs or macromolecular anti-tumor drugs within 28 days prior to the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 734,
+        "end": 940,
+        "text": "Local radiotherapy within 2 weeks prior to the first dose of study treatment; irradiation of more than 30% of bone marrow or extensive radiotherapy within 4 weeks prior to the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 947,
+        "end": 1019,
+        "text": "Major surgery within 4 weeks prior to the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2231,
+        "end": 2290,
+        "text": "Participants who are allergic to any component of HS-20110."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1793,
+        "end": 1994,
+        "text": "Participants who have any Grade ≥ 2 residual toxicity according to Common Terminology Criteria for Adverse Events (CTCAE, version 5.0) from prior therapies (except alopecia and residual neurotoxicity)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1517,
+        "end": 1608,
+        "text": "Current use of drugs known to prolong the QT interval or that may cause torsade de pointes."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2231,
+        "end": 2290,
+        "text": "Participants who are allergic to any component of HS-20110."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

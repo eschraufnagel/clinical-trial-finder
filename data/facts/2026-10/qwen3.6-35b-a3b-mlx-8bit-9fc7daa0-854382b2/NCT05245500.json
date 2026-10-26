@@ -1,0 +1,99 @@
+{
+  "nctId": "NCT05245500",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 155,
+        "end": 189,
+        "text": "Unresectable or metastatic disease"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 566,
+        "end": 589,
+        "text": "Active brain metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 593,
+        "end": 617,
+        "text": "carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 193,
+        "end": 248,
+        "text": "Presence of a tumor lesion amenable to mandatory biopsy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 385,
+        "end": 455,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Histologically confirmed diagnosis of a solid tumor malignancy",
+      "raw": {
+        "factId": "histology",
+        "verdicts": {
+          "adenocarcinoma": "allowed",
+          "squamous": "allowed",
+          "other_nsclc": "allowed",
+          "mixed_small_cell": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed diagnosis of a solid tumor malignancy",
+        "appliesTo": null,
+        "rulesOut": []
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

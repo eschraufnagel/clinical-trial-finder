@@ -1,0 +1,260 @@
+{
+  "nctId": "NCT04789486",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2055,
+        "end": 2089,
+        "text": "No evidence of distant metastasis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 863,
+        "end": 1182,
+        "text": "* Participants must have measurable disease, defined as a lesion that can be accurately measured in at least one dimension (longest diameter to be recorded for non-nodal lesions and short axis for nodal lesions) as ≥20 mm with conventional techniques or as ≥10 mm with spiral CT scan, MRI, or calipers by clinical exam."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2157,
+        "end": 2219,
+        "text": "* ECOG performance status ≤2 (Karnofsky ≥60%, see Appendix A)."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3157,
+        "end": 3283,
+        "text": "Participants who have had prior radiation therapy to the chest or abdomen that would overlap with the current treatment field."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1755,
+        "end": 2052,
+        "text": "Completion of at least 3 months of standard induction chemotherapy for LAPC, which should consist of either FOLFIRINOX, gemcitabine and nab-paclitaxel, or another standard combination of induction chemotherapy agent, with a washout period no longer than 10 weeks prior to first dose of study drug."
+      },
+      "appliesTo": "Locally advanced, unresectable pancreatic cancer"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3286,
+        "end": 3350,
+        "text": "Participants who are receiving any other investigational agents."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3286,
+        "end": 3350,
+        "text": "Participants who are receiving any other investigational agents."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1755,
+        "end": 2052,
+        "text": "Completion of at least 3 months of standard induction chemotherapy for LAPC, which should consist of either FOLFIRINOX, gemcitabine and nab-paclitaxel, or another standard combination of induction chemotherapy agent, with a washout period no longer than 10 weeks prior to first dose of study drug."
+      },
+      "appliesTo": "Locally advanced, unresectable pancreatic cancer"
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3157,
+        "end": 3283,
+        "text": "Participants who have had prior radiation therapy to the chest or abdomen that would overlap with the current treatment field."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3157,
+        "end": 3283,
+        "text": "Participants who have had prior radiation therapy to the chest or abdomen that would overlap with the current treatment field."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3475,
+        "end": 3746,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3475,
+        "end": 3746,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4132,
+        "end": 4407,
+        "text": "Known HIV-positive participants on combination antiretroviral therapy are ineligible because of the potential for pharmacokinetic interactions with AGuIX. In addition, these participants are at increased risk of lethal infections when treated with marrow-suppressive therapy."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3475,
+        "end": 3746,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3475,
+        "end": 3746,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3475,
+        "end": 3746,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3749,
+        "end": 4093,
+        "text": "Pregnant women are excluded from this study because AGuIX is contrast agent with the potential for teratogenic or abortifacient effects. Because there is an unknown but potential risk for adverse events in nursing infants secondary to treatment of the mother with AGuIX, breastfeeding should be discontinued if the mother is treated with AGuIX."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "low_dose",
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3475,
+        "end": 3746,
+        "text": "Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac arrhythmia, or psychiatric illness/social situations that would limit compliance with study requirements."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients should have clinical, radiographical, cytological, or histological confirmation of NSCLC or lung or nodal metastases from another primary cancer... OR Histologically or cytologically confirmed pancreatic ductal adenocarcinoma of the pancreatic head, body or tail.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients should have clinical, radiographical, cytological, or histological confirmation of NSCLC or lung or nodal metastases from another primary cancer... OR Histologically or cytologically confirmed pancreatic ductal adenocarcinoma of the pancreatic head, body or tail.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

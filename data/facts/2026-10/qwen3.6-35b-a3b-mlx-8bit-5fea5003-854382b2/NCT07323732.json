@@ -1,0 +1,80 @@
+{
+  "nctId": "NCT07323732",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 234,
+        "end": 320,
+        "text": "Stage I - II NSCLC (as per the American Joint Commission on Cancer (AJCC) 8th edition)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 585,
+        "end": 639,
+        "text": "Interstitial Lung Disease diagnosis (one of the below)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 963,
+        "end": 995,
+        "text": "ECOG performance status of 0 - 3"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2678,
+        "end": 2727,
+        "text": "Female patients who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2128,
+        "end": 2155,
+        "text": "Previous thoracic radiation"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "nctId": "NCT05242965",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 101,
+        "text": "Histologically-confirmed diagnosis of stage IV non-squamous or squamous NSCLC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 101,
+        "text": "Histologically-confirmed diagnosis of stage IV non-squamous or squamous NSCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 104,
+        "end": 229,
+        "text": "Have measurable disease based on Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 within one month of first vaccine."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1194,
+        "end": 1290,
+        "text": "Patients must have Eastern Cooperative Oncology Group (ECOG) Performance Status Score of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3011,
+        "end": 3092,
+        "text": "Patients with central nervous system (CNS) metastasis that have not been treated."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3499,
+        "end": 3614,
+        "text": "Patients with any clinically significant autoimmune disease that requires active treatment with immunosuppressants."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3885,
+        "end": 4135,
+        "text": "Has a known history of another prior invasive malignancy within 2 years, except subjects with early stage cancer that has undergone potentially curative therapy with no evidence of that disease recurrence for 2 years since initiation of that therapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4211,
+        "end": 4254,
+        "text": "Patients who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4257,
+        "end": 4507,
+        "text": "Patients with genetic driver alterations (e.g EGFR, ALK, ROS1, BRAF, MET ex 14, RET) for which targeted treatment exist and are Food and Drug Association (FDA) approved, except if the subject is not eligible or has progressed through those therapies."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4257,
+        "end": 4507,
+        "text": "Patients with genetic driver alterations (e.g EGFR, ALK, ROS1, BRAF, MET ex 14, RET) for which targeted treatment exist and are Food and Drug Association (FDA) approved, except if the subject is not eligible or has progressed through those therapies."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4257,
+        "end": 4507,
+        "text": "Patients with genetic driver alterations (e.g EGFR, ALK, ROS1, BRAF, MET ex 14, RET) for which targeted treatment exist and are Food and Drug Association (FDA) approved, except if the subject is not eligible or has progressed through those therapies."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4257,
+        "end": 4507,
+        "text": "Patients with genetic driver alterations (e.g EGFR, ALK, ROS1, BRAF, MET ex 14, RET) for which targeted treatment exist and are Food and Drug Association (FDA) approved, except if the subject is not eligible or has progressed through those therapies."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4257,
+        "end": 4507,
+        "text": "Patients with genetic driver alterations (e.g EGFR, ALK, ROS1, BRAF, MET ex 14, RET) for which targeted treatment exist and are Food and Drug Association (FDA) approved, except if the subject is not eligible or has progressed through those therapies."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4257,
+        "end": 4507,
+        "text": "Patients with genetic driver alterations (e.g EGFR, ALK, ROS1, BRAF, MET ex 14, RET) for which targeted treatment exist and are Food and Drug Association (FDA) approved, except if the subject is not eligible or has progressed through those therapies."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

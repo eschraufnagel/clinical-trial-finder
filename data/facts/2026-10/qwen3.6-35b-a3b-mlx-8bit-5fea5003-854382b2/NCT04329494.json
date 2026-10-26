@@ -1,0 +1,311 @@
+{
+  "nctId": "NCT04329494",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 113,
+        "end": 224,
+        "text": "Patients must have histologically confirmed ovarian, uterine, gastric, appendiceal or colorectal cancer with PC"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 264,
+        "end": 335,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) =\\< 2"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1199,
+        "end": 1299,
+        "text": "Patients must have progressed on at least one evidence-based chemotherapeutic regimen (Arm 1 and 2)."
+      },
+      "appliesTo": "Arm 1 and 2"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1300,
+        "end": 1414,
+        "text": "For Arm 3, patients should have stable or responsive disease on at least 4 months first-line systemic chemotherapy"
+      },
+      "appliesTo": "Arm 3"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1199,
+        "end": 1299,
+        "text": "Patients must have progressed on at least one evidence-based chemotherapeutic regimen (Arm 1 and 2)."
+      },
+      "appliesTo": "Arm 1 and 2"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1300,
+        "end": 1414,
+        "text": "For Arm 3, patients should have stable or responsive disease on at least 4 months first-line systemic chemotherapy"
+      },
+      "appliesTo": "Arm 3"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6234,
+        "end": 6320,
+        "text": "Arm 3 (colorectal/appendiceal): Progression on first- AND second-line systemic therapy"
+      },
+      "appliesTo": "Arm 3 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4622,
+        "end": 4742,
+        "text": "Arm 2 (colorectal/appendiceal): Patients may not be receiving any other investigational or concurrent anti-cancer agents"
+      },
+      "appliesTo": "Arm 2 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7568,
+        "end": 7674,
+        "text": "Arm 3 (colorectal/appendiceal): Patients may not be receiving any other investigational anti-cancer agents"
+      },
+      "appliesTo": "Arm 3 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4622,
+        "end": 4742,
+        "text": "Arm 2 (colorectal/appendiceal): Patients may not be receiving any other investigational or concurrent anti-cancer agents"
+      },
+      "appliesTo": "Arm 2 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7568,
+        "end": 7674,
+        "text": "Arm 3 (colorectal/appendiceal): Patients may not be receiving any other investigational anti-cancer agents"
+      },
+      "appliesTo": "Arm 3 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5502,
+        "end": 5543,
+        "text": "Arm 2 (colorectal/appendiceal): Pregnancy"
+      },
+      "appliesTo": "Arm 2 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8434,
+        "end": 8475,
+        "text": "Arm 3 (colorectal/appendiceal): Pregnancy"
+      },
+      "appliesTo": "Arm 3 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5263,
+        "end": 5412,
+        "text": "Arm 2 (colorectal/appendiceal): Immunocompromised patients such as those with an immunosuppressive medication or a known disease of the immune system"
+      },
+      "appliesTo": "Arm 2 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8195,
+        "end": 8344,
+        "text": "Arm 3 (colorectal/appendiceal): Immunocompromised patients such as those with an immunosuppressive medication or a known disease of the immune system"
+      },
+      "appliesTo": "Arm 3 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5684,
+        "end": 5947,
+        "text": "Arm 2 (colorectal/appendiceal): New York Heart Association (NYHA) class 3 or 4; myocardial infarction, acute coronary syndrome, diabetes mellitus with ketoacidosis or chronic obstructive pulmonary disease (COPD) requiring hospitalization in the preceding 6 months"
+      },
+      "appliesTo": "Arm 2 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8616,
+        "end": 8879,
+        "text": "Arm 3 (colorectal/appendiceal): New York Heart Association (NYHA) class 3 or 4; myocardial infarction, acute coronary syndrome, diabetes mellitus with ketoacidosis or chronic obstructive pulmonary disease (COPD) requiring hospitalization in the preceding 6 months"
+      },
+      "appliesTo": "Arm 3 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4745,
+        "end": 4845,
+        "text": "Arm 2 (colorectal/appendiceal): Ascites due to decompensated liver cirrhosis; portal vein thrombosis"
+      },
+      "appliesTo": "Arm 2 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7677,
+        "end": 7777,
+        "text": "Arm 3 (colorectal/appendiceal): Ascites due to decompensated liver cirrhosis; portal vein thrombosis"
+      },
+      "appliesTo": "Arm 3 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4943,
+        "end": 5260,
+        "text": "Arm 2 (colorectal/appendiceal): Uncontrolled intercurrent illness including, but not limited to ongoing or active infection, symptomatic congestive heart failure, severe myocardial insufficiency, recent myocardial infarction, severe arrhythmias, severe renal impairment, myelosuppression, or severe hepatic impairment"
+      },
+      "appliesTo": "Arm 2 (colorectal/appendiceal)"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7875,
+        "end": 8192,
+        "text": "Arm 3 (colorectal/appendiceal): Uncontrolled intercurrent illness including, but not limited to ongoing or active infection, symptomatic congestive heart failure, severe myocardial insufficiency, recent myocardial infarction, severe arrhythmias, severe renal impairment, myelosuppression, or severe hepatic impairment"
+      },
+      "appliesTo": "Arm 3 (colorectal/appendiceal)"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients must have histologically confirmed ovarian, uterine, gastric, appendiceal or colorectal cancer with PC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients must have histologically confirmed ovarian, uterine, gastric, appendiceal or colorectal cancer with PC",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

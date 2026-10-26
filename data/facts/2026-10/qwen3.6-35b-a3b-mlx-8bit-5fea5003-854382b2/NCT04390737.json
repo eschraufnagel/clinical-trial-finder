@@ -1,0 +1,131 @@
+{
+  "nctId": "NCT04390737",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1707,
+        "end": 1820,
+        "text": "Patients must have disease not amenable to surgery, radiation, or combined modality therapy with curative intent."
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1477,
+        "end": 1537,
+        "text": "Measurable target lesions by RECIST v1.1 in at least 1 site."
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2862,
+        "end": 2925,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤1"
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6685,
+        "end": 6746,
+        "text": "Previously received treatment with EZH2 or EZH1/2 inhibitors."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4272,
+        "end": 4316,
+        "text": "Patients with prior transplant are excluded;"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6512,
+        "end": 6546,
+        "text": "Pregnant or breast-feeding female;"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4511,
+        "end": 4599,
+        "text": "HIV (human immunodeficiency virus) infection, active hepatitis B or hepatitis C patients"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4511,
+        "end": 4599,
+        "text": "HIV (human immunodeficiency virus) infection, active hepatitis B or hepatitis C patients"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5542,
+        "end": 5725,
+        "text": "History of acute coronary syndromes (including myocardial infarction and unstable angina), coronary angioplasty, or stenting within the past 3 months prior to first dose of study drug"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

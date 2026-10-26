@@ -1,0 +1,459 @@
+{
+  "nctId": "NCT07287995",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3323,
+        "end": 3438,
+        "text": "Participant has locally advanced unresectable or metastatic NSCLC (adenocarcinoma only, no mixed histology allowed)"
+      },
+      "appliesTo": "NSCLC first line (1L) ASP2998 + Pembrolizumab + Carboplatin Dose Escalation and Expansion Cohort(s)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 202,
+        "end": 300,
+        "text": "Participant has a confirmed diagnosis of locally advanced unresectable or metastatic solid tumors."
+      },
+      "appliesTo": "ASP2998 monotherapy dose escalation (excluding urothelial and non-small cell lung cancer (NSCLC) tumor-specific backfill participants)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1164,
+        "end": 1355,
+        "text": "Participant has locally advanced unresectable or metastatic NSCLC with known programmed cell death-1 (PD-L1) status, without actionable oncogenic alteration (AGA), according to local testing."
+      },
+      "appliesTo": "ASP2998 NSCLC second line (2L)+ Monotherapy Dose Expansion Cohort(s)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3323,
+        "end": 3505,
+        "text": "Participant has locally advanced unresectable or metastatic NSCLC (adenocarcinoma only, no mixed histology allowed), with known PD-L1 status, without AGA, according to local testing."
+      },
+      "appliesTo": "NSCLC first line (1L) ASP2998 + Pembrolizumab + Carboplatin Dose Escalation and Expansion Cohort(s)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5056,
+        "end": 5187,
+        "text": "Participant has locally advanced unresectable or metastatic NSCLC with known PD-L1 status, without AGA, according to local testing."
+      },
+      "appliesTo": "NSCLC 2L+ ASP2998 + Pembrolizumab Dose Escalation Cohort(s)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10398,
+        "end": 10675,
+        "text": "Participant has known active central nervous system (CNS) metastases. NOTE: A participant with CNS metastases that have been treated with surgery and/or radiation therapy, who is no longer taking pharmacologic doses of glucocorticoids and is neurologically stable, is eligible."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12127,
+        "end": 12211,
+        "text": "Participant has leptomeningeal disease as a manifestation of the current malignancy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8047,
+        "end": 8155,
+        "text": "Participant has at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 7954,
+        "end": 8044,
+        "text": "Participant has an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 592,
+        "end": 876,
+        "text": "Participant must have one of the following malignancies: Urothelial carcinoma, NSCLC (nonsquamous cell histology), Gastric/ gastroesophageal junction (GEJ) cancer, Breast cancer (human epidermal growth factor receptor 2 \\[HER2\\]-negative; local testing for HER2 status is acceptable)."
+      },
+      "appliesTo": "ASP2998 monotherapy dose escalation (excluding urothelial and non-small cell lung cancer (NSCLC) tumor-specific backfill participants)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1360,
+        "end": 1631,
+        "text": "Participant must have histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic NSCLC that has progressed on or after receiving platinum-based chemotherapy and/or checkpoint inhibitors according to local/regional standard of care."
+      },
+      "appliesTo": "ASP2998 NSCLC second line (2L)+ Monotherapy Dose Expansion Cohort(s)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5192,
+        "end": 5343,
+        "text": "Participant has progressed on or after receiving platinum-based chemotherapy and/or checkpoint inhibitors according to local/regional standard of care."
+      },
+      "appliesTo": "NSCLC 2L+ ASP2998 + Pembrolizumab Dose Escalation Cohort(s)"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1360,
+        "end": 1631,
+        "text": "Participant must have histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic NSCLC that has progressed on or after receiving platinum-based chemotherapy and/or checkpoint inhibitors according to local/regional standard of care."
+      },
+      "appliesTo": "ASP2998 NSCLC second line (2L)+ Monotherapy Dose Expansion Cohort(s)"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5192,
+        "end": 5343,
+        "text": "Participant has progressed on or after receiving platinum-based chemotherapy and/or checkpoint inhibitors according to local/regional standard of care."
+      },
+      "appliesTo": "NSCLC 2L+ ASP2998 + Pembrolizumab Dose Escalation Cohort(s)"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2207,
+        "end": 2545,
+        "text": "Participant must have histologically or cytologically confirmed diagnosis of urothelial carcinoma (i.e., cancer of the bladder, renal pelvis, ureter or urethra) in locally advanced unresectable or metastatic setting that has progressed on a combination of enfortumab vedotin and pembrolizumab according to local/regional standard of care."
+      },
+      "appliesTo": "ASP2998 Urothelial Carcinoma Monotherapy Dose Expansion Cohort(s)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1857,
+        "end": 1921,
+        "text": "Participant must have had no more than 3 prior lines of therapy."
+      },
+      "appliesTo": "ASP2998 NSCLC second line (2L)+ Monotherapy Dose Expansion Cohort(s)"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11584,
+        "end": 11743,
+        "text": "Participant has active or prior autoimmune or inflammatory disorders requiring systemic anti-inflammatory or immunosuppressive therapy within the past 3 years."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15287,
+        "end": 15494,
+        "text": "Participant has a history of non-infectious interstitial lung disease (ILD)/pneumonitis, has current Grade ≥ 1 ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13573,
+        "end": 13722,
+        "text": "Participant has a known history of human immunodeficiency virus (HIV) infection with acquired immunodeficiency syndrome (AIDS)-related complications."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13043,
+        "end": 13489,
+        "text": "Participant has jaundice or known current active liver disease from any cause, including hepatitis A (hepatitis A virus (HAV) immunoglobulin M (IgM) positive, but testing for hepatitis A viral load in screening is not required), hepatitis B (hepatis B virus (HBV) (hepatitis B surface antigen positive, or HBV DNA positive if HBsAg is negative and anti-HBs and/or anti-HBc positive)), or hepatitis C (HCV antibody positive, confirmed by HCV RNA)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14696,
+        "end": 14856,
+        "text": "Participant must not have had unstable angina (symptoms at rest) or new-onset angina within the last 3 months or myocardial infarction within the past 6 months."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13573,
+        "end": 13722,
+        "text": "Participant has a known history of human immunodeficiency virus (HIV) infection with acquired immunodeficiency syndrome (AIDS)-related complications."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12661,
+        "end": 12886,
+        "text": "Participant has a condition requiring systemic treatment with either corticosteroids (\\> 10 mg daily prednisone equivalents) or other immunosuppressive medications within 14 days of first administration of study intervention."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participant has a confirmed diagnosis of locally advanced unresectable or metastatic solid tumors. ... Participant must have one of the following malignancies: Urothelial carcinoma, NSCLC (nonsquamous cell histology), Gastric/ gastroesophageal junction (GEJ) cancer, Breast cancer (human epidermal growth factor receptor 2 [HER2]-negative; local testing for HER2 status is acceptable). For all tumor types, any component of neuroendocrine histology is ineligible.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant has a confirmed diagnosis of locally advanced unresectable or metastatic solid tumors. ... Participant must have one of the following malignancies: Urothelial carcinoma, NSCLC (nonsquamous cell histology), Gastric/ gastroesophageal junction (GEJ) cancer, Breast cancer (human epidermal growth factor receptor 2 [HER2]-negative; local testing for HER2 status is acceptable). For all tumor types, any component of neuroendocrine histology is ineligible.",
+        "appliesTo": "ASP2998 monotherapy dose escalation (excluding urothelial and non-small cell lung cancer (NSCLC) tumor-specific backfill participants)"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participant has locally advanced unresectable or metastatic NSCLC with known programmed cell death-1 (PD-L1) status, without actionable oncogenic alteration (AGA), according to local testing. Participant must have histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic NSCLC that has progressed on or after receiving platinum-based chemotherapy and/or checkpoint inhibitors according to local/regional standard of care.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant has locally advanced unresectable or metastatic NSCLC with known programmed cell death-1 (PD-L1) status, without actionable oncogenic alteration (AGA), according to local testing. Participant must have histologically or cytologically confirmed diagnosis of locally advanced unresectable or metastatic NSCLC that has progressed on or after receiving platinum-based chemotherapy and/or checkpoint inhibitors according to local/regional standard of care.",
+        "appliesTo": "ASP2998 NSCLC second line (2L)+ Monotherapy Dose Expansion Cohort(s)"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participant has locally advanced unresectable or metastatic NSCLC with known PD-L1 status, without AGA, according to local testing. Participant has progressed on or after receiving platinum-based chemotherapy and/or checkpoint inhibitors according to local/regional standard of care.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant has locally advanced unresectable or metastatic NSCLC with known PD-L1 status, without AGA, according to local testing. Participant has progressed on or after receiving platinum-based chemotherapy and/or checkpoint inhibitors according to local/regional standard of care.",
+        "appliesTo": "NSCLC 2L+ ASP2998 + Pembrolizumab Dose Escalation Cohort(s)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant must have histologically or cytologically confirmed diagnosis of urothelial carcinoma (i.e., cancer of the bladder, renal pelvis, ureter or urethra) in locally advanced unresectable or metastatic setting that has progressed on a combination of enfortumab vedotin and pembrolizumab according to local/regional standard of care.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant must have histologically or cytologically confirmed diagnosis of urothelial carcinoma (i.e., cancer of the bladder, renal pelvis, ureter or urethra) in locally advanced unresectable or metastatic setting that has progressed on a combination of enfortumab vedotin and pembrolizumab according to local/regional standard of care.",
+        "appliesTo": "Urothelial Carcinoma 2L+ ASP2998 + Pembrolizumab Dose Escalation Cohort(s)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant must have histologically or cytologically confirmed diagnosis of urothelial carcinoma (i.e., cancer of the bladder, renal pelvis, ureter or urethra) in locally advanced unresectable or metastatic setting that has progressed on a combination of enfortumab vedotin and pembrolizumab according to local/regional standard of care.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant must have histologically or cytologically confirmed diagnosis of urothelial carcinoma (i.e., cancer of the bladder, renal pelvis, ureter or urethra) in locally advanced unresectable or metastatic setting that has progressed on a combination of enfortumab vedotin and pembrolizumab according to local/regional standard of care.",
+        "appliesTo": "Urothelial Carcinoma 2L+ ASP2998 + Enfortumab Vedotin Dose Escalation Cohort(s)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant must have had no more than 3 prior lines of therapy.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant must have had no more than 3 prior lines of therapy.",
+        "appliesTo": "ASP2998 Urothelial Carcinoma Monotherapy Dose Expansion Cohort(s)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant must have had no more than 3 prior lines of therapy.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant must have had no more than 3 prior lines of therapy.",
+        "appliesTo": "NSCLC 2L+ ASP2998 + Pembrolizumab Dose Escalation Cohort(s)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant must have had no more than 3 prior lines of therapy.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant must have had no more than 3 prior lines of therapy.",
+        "appliesTo": "Urothelial Carcinoma 2L+ ASP2998 + Pembrolizumab Dose Escalation Cohort(s)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant must have had no more than 3 prior lines of therapy.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant must have had no more than 3 prior lines of therapy.",
+        "appliesTo": "Urothelial Carcinoma 2L+ ASP2998 + Enfortumab Vedotin Dose Escalation Cohort(s)"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Female participant is not pregnant and at least 1 of the following conditions apply: ... Female participant must not be breastfeeding or lactating starting at screening and throughout the investigational period and for 7 months after final study intervention administration.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Female participant is not pregnant and at least 1 of the following conditions apply: ... Female participant must not be breastfeeding or lactating starting at screening and throughout the investigational period and for 7 months after final study intervention administration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participant has a known additional malignancy that requires active treatment, with the exception of any of the following: ... Locally curable malignancies that have been apparently cured with no recurrence in the past 2 years.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participant has a known additional malignancy that requires active treatment, with the exception of any of the following: ... Locally curable malignancies that have been apparently cured with no recurrence in the past 2 years.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

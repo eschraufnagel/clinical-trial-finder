@@ -1,0 +1,148 @@
+{
+  "nctId": "NCT06332755",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 97,
+        "end": 342,
+        "text": "Participants must have 1 of the following histologically confirmed advanced or metastatic solid tumors with measurable or non-measurable disease as determined by RECIST v1.1,\n\n   \\- NSCLC, HNSCC, RCC, urothelial carcinoma, or malignant melanoma."
+      },
+      "appliesTo": "Phase 1a only",
+      "loose": true
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 964,
+        "end": 1196,
+        "text": "Must have histologically confirmed advanced or metastatic NSCLC without actionable genomic alteration that have approved therapies in the location where the participant's live and with measurable disease as determined by RECIST v1.1"
+      },
+      "appliesTo": "Phase 1b only"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 97,
+        "end": 270,
+        "text": "Participants must have 1 of the following histologically confirmed advanced or metastatic solid tumors with measurable or non-measurable disease as determined by RECIST v1.1"
+      },
+      "appliesTo": "Phase 1a only"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 964,
+        "end": 1196,
+        "text": "Must have histologically confirmed advanced or metastatic NSCLC without actionable genomic alteration that have approved therapies in the location where the participant's live and with measurable disease as determined by RECIST v1.1"
+      },
+      "appliesTo": "Phase 1b only"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1144,
+        "end": 1196,
+        "text": "with measurable disease as determined by RECIST v1.1"
+      },
+      "appliesTo": "Phase 1b only"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 588,
+        "end": 668,
+        "text": "Eastern Cooperative Oncology Group Performance Status (ECOG PS) score of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1288,
+        "end": 1384,
+        "text": "Untreated or unstable brain or central nervous system (CNS) metastases or Leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1288,
+        "end": 1384,
+        "text": "Untreated or unstable brain or central nervous system (CNS) metastases or Leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1775,
+        "end": 1852,
+        "text": "Participants must not have an active, known, or suspected autoimmune disease."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2106,
+        "end": 2239,
+        "text": "Pregnant or lactating or expecting to conceive a child during the study or within 6 months after the last dose of study intervention."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "nctId": "NCT07390539",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 37,
+        "end": 239,
+        "text": "Participants must have histologically and/or molecularly confirmed CNS embryonal tumor (see eligible tumor types below), OR ependymoma that is recurrent/progressive following standard of care treatment."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2282,
+        "end": 2439,
+        "text": "Participants must have evaluable disease in the central nervous system to be eligible. Evaluable disease includes either measurable OR non-measurable disease"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8944,
+        "end": 9136,
+        "text": "Participants with any prior immunodeficiency or history of autoimmune disease requiring systemic steroids/ immunosuppressive medication/ disease-modifying agents within the last two (2) years."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9214,
+        "end": 9314,
+        "text": "Ongoing infection with HIV or hepatitis B (HBsAg positive) or hepatitis C virus (anti-HCV positive)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9214,
+        "end": 9314,
+        "text": "Ongoing infection with HIV or hepatitis B (HBsAg positive) or hepatitis C virus (anti-HCV positive)."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10090,
+        "end": 10129,
+        "text": "Current systemic corticosteroid therapy"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants must have histologically and/or molecularly confirmed CNS embryonal tumor (see eligible tumor types below), OR ependymoma that is recurrent/progressive following standard of care treatment.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have histologically and/or molecularly confirmed CNS embryonal tumor (see eligible tumor types below), OR ependymoma that is recurrent/progressive following standard of care treatment.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants must have evaluable disease in the central nervous system to be eligible. Evaluable disease includes either measurable OR non-measurable disease... Note: Leptomeningeal (LM) disease is considered non-measurable but evaluable.",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have evaluable disease in the central nervous system to be eligible. Evaluable disease includes either measurable OR non-measurable disease... Note: Leptomeningeal (LM) disease is considered non-measurable but evaluable.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

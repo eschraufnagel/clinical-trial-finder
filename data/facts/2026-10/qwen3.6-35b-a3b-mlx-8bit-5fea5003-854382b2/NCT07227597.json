@@ -1,0 +1,242 @@
+{
+  "nctId": "NCT07227597",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 207,
+        "text": "Has a histologically or cytologically confirmed diagnosis of extensive-stage small cell lung cancer (ES-SCLC)"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 305,
+        "end": 518,
+        "text": "Completed 3 to 4 cycles of platinum + etoposide chemotherapy with concurrent approved anti-programmed cell death 1/Ligand 1 (anti PD-1/L1) as first line (1L) treatment of ES-SCLC within 6 weeks prior to enrollment"
+      },
+      "appliesTo": "For participants receiving gocatamig + ifinatamab deruxtecan (I-DXd) in maintenance only"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1021,
+        "end": 1064,
+        "text": "No prior systemic ES-SCLC treatment allowed"
+      },
+      "appliesTo": "For participants receiving gocatamig + I-DXd in induction and maintenance, or gocatamig + I-DXd in induction followed by gocatamig + atezolizumab in maintenance, or carboplatin + etoposide + atezolizumab in induction followed by atezolizumab in maintenance"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1021,
+        "end": 1064,
+        "text": "No prior systemic ES-SCLC treatment allowed"
+      },
+      "appliesTo": "For participants receiving gocatamig + I-DXd in induction and maintenance, or gocatamig + I-DXd in induction followed by gocatamig + atezolizumab in maintenance, or carboplatin + etoposide + atezolizumab in induction followed by atezolizumab in maintenance"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1021,
+        "end": 1064,
+        "text": "No prior systemic ES-SCLC treatment allowed"
+      },
+      "appliesTo": "For participants receiving gocatamig + I-DXd in induction and maintenance, or gocatamig + I-DXd in induction followed by gocatamig + atezolizumab in maintenance, or carboplatin + etoposide + atezolizumab in induction followed by atezolizumab in maintenance"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 305,
+        "end": 518,
+        "text": "Completed 3 to 4 cycles of platinum + etoposide chemotherapy with concurrent approved anti-programmed cell death 1/Ligand 1 (anti PD-1/L1) as first line (1L) treatment of ES-SCLC within 6 weeks prior to enrollment"
+      },
+      "appliesTo": "For participants receiving gocatamig + ifinatamab deruxtecan (I-DXd) in maintenance only"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1021,
+        "end": 1064,
+        "text": "No prior systemic ES-SCLC treatment allowed"
+      },
+      "appliesTo": "For participants receiving gocatamig + I-DXd in induction and maintenance, or gocatamig + I-DXd in induction followed by gocatamig + atezolizumab in maintenance, or carboplatin + etoposide + atezolizumab in induction followed by atezolizumab in maintenance"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1410,
+        "end": 1496,
+        "text": "Measurable disease by RECIST 1.1 as assessed by the local site investigator/radiology."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1843,
+        "end": 2018,
+        "text": "Has any history of interstitial lung disease (ILD)/pneumonitis irrespective of steroid use, current ILD, ILD that cannot be ruled out by imaging at screening, or suspected ILD"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2248,
+        "end": 2568,
+        "text": "Has history of coronary/peripheral artery bypass graft and/or any coronary/peripheral angioplasty or clinically significant cardiovascular disease such as myocardial infarction, symptomatic congestive heart failure (CHF), and/or uncontrolled cardiac arrhythmia within 6 months before the first dose of study intervention"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2778,
+        "end": 2833,
+        "text": "Has history of allogeneic tissue/solid organ transplant"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2836,
+        "end": 2873,
+        "text": "Has history of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2876,
+        "end": 3005,
+        "text": "Is infected with human immunodeficiency virus (HIV) and has a history of Kaposi's sarcoma and/or Multicentric Castleman's Disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3428,
+        "end": 3536,
+        "text": "Has known additional malignancy that is progressing or has required active treatment within the past 3 years"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3539,
+        "end": 3652,
+        "text": "Has active autoimmune disease that has required systemic treatment in the past 2 years except replacement therapy"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Has a histologically or cytologically confirmed diagnosis of extensive-stage small cell lung cancer (ES-SCLC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has a histologically or cytologically confirmed diagnosis of extensive-stage small cell lung cancer (ES-SCLC)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Has received prior therapy with an anti-programmed cell death protein 1 (anti-PD-1), anti-programmed cell death ligand 1 (anti-PD-L1), or anti-programmed cell death ligand 2 (anti-PD-L2) agent or with an agent directed to another stimulatory or coinhibitory T-cell receptor",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Has received prior therapy with an anti-programmed cell death protein 1 (anti-PD-1), anti-programmed cell death ligand 1 (anti-PD-L1), or anti-programmed cell death ligand 2 (anti-PD-L2) agent or with an agent directed to another stimulatory or coinhibitory T-cell receptor",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

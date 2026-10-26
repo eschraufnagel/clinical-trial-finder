@@ -1,0 +1,263 @@
+{
+  "nctId": "NCT05123482",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 598,
+        "end": 737,
+        "text": "Histologically or cytologically confirmed metastatic or locally advanced/recurrent breast cancer, ovarian cancer, BTC or endometrial cancer"
+      },
+      "appliesTo": "Sub-Study 1 Part A"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 796,
+        "end": 916,
+        "text": "Histologically or cytologically confirmed metastatic or locally advanced and recurrent disease for the respective cohort"
+      },
+      "appliesTo": "Sub-Study 1 Part B"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1202,
+        "end": 1379,
+        "text": "Histologically or cytologically confirmed metastatic or locally advanced/recurrent breast cancer, ovarian cancer, BTC, endometrial cancer or squamous non-small cell lung cancer."
+      },
+      "appliesTo": "Sub-Study 2 Part A"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1872,
+        "end": 2028,
+        "text": "Histologically or cytologically confirmed metastatic or locally advanced/recurrent breast cancer, endometrial cancer or squamous non-small cell lung cancer."
+      },
+      "appliesTo": "Sub-Study 4 Part A"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 329,
+        "end": 363,
+        "text": "Measurable disease per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 366,
+        "end": 431,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status: 0-1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2959,
+        "end": 3155,
+        "text": "Brain metastases unless treated, asymptomatic, stable, and not requiring continuous corticosteroids at a dose of \\> 10 mg prednisone/day or equivalent for at least 4 weeks prior to start of study."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2886,
+        "end": 2956,
+        "text": "Spinal cord compression or a history of leptomeningeal carcinomatosis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3158,
+        "end": 3217,
+        "text": "Active infection including tuberculosis and HBV, HCV or HIV"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3220,
+        "end": 3396,
+        "text": "History of (non-infectious) ILD/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3779,
+        "end": 3982,
+        "text": "Acute coronary syndrome/acute myocardial infarction, unstable angina pectoris, coronary intervention procedure with percutaneous coronary intervention, or coronary artery bypass grafting within 6 months."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3988,
+        "end": 4127,
+        "text": "History of brain perfusion problems (eg, carotid stenosis) or stroke, or transient ischemic attack in the last 6 months prior to screening."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4936,
+        "end": 5079,
+        "text": "Active or prior documented autoimmune or inflammatory disorders requiring chronic treatment with steroids or other immunosuppressive treatment."
+      },
+      "appliesTo": "Sub-Study 2 Part A"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5082,
+        "end": 5109,
+        "text": "History of organ transplant"
+      },
+      "appliesTo": "Sub-Study 2 Part A"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2031,
+        "end": 2166,
+        "text": "Participants must have progressed following at least one but no more than 3 prior lines of treatment for metastatic or relapsed disease"
+      },
+      "appliesTo": "Sub-Study 4 Part A"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5167,
+        "end": 5282,
+        "text": "Previous treatment with any therapy that contains a TOP1i (eg. irinotecan, topotecan, trastuzumab deruxtecan, etc.)"
+      },
+      "appliesTo": "Sub-Study 2 Part B"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Histologically or cytologically confirmed metastatic or locally advanced/recurrent breast cancer, ovarian cancer, BTC, endometrial cancer or squamous non-small cell lung cancer.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed metastatic or locally advanced/recurrent breast cancer, ovarian cancer, BTC, endometrial cancer or squamous non-small cell lung cancer.",
+        "appliesTo": "Sub-Study 3 Part A"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Previous treatment with any therapy that contains a TOP1i (eg. irinotecan, topotecan, trastuzumab deruxtecan, etc.)",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "topo_payload"
+        ],
+        "polarity": "exclusion",
+        "quote": "Previous treatment with any therapy that contains a TOP1i (eg. irinotecan, topotecan, trastuzumab deruxtecan, etc.)",
+        "appliesTo": "Sub-Study 3 Part A"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Previous treatment with any therapy that contains a TOP1i (eg. irinotecan, topotecan, trastuzumab deruxtecan, etc.)",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "topo_payload"
+        ],
+        "polarity": "exclusion",
+        "quote": "Previous treatment with any therapy that contains a TOP1i (eg. irinotecan, topotecan, trastuzumab deruxtecan, etc.)",
+        "appliesTo": "Sub-Study 4 Part A"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

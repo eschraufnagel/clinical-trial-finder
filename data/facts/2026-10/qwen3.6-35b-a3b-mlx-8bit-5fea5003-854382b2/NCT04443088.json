@@ -1,0 +1,156 @@
+{
+  "nctId": "NCT04443088",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 295,
+        "end": 372,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status score of 0 or 1;"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 376,
+        "end": 549,
+        "text": "Patients with histologically or cytologically confirmed advanced solid tumors which have progressed on or following standard therapy or for which no standard therapy exists;"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 597,
+        "end": 732,
+        "text": "Patients with at least one measurable lesion by computed tomography (CT) or magnetic resonance imaging (MRI), according to RECIST v1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2943,
+        "end": 3048,
+        "text": "Known malignant central nervous system disease other than neurologically stable, treated brain metastases"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2233,
+        "end": 2478,
+        "text": "History (≤5 years) or current evidence of cancer that is histologically distinct from the cancer under study, except for cervical carcinoma in situ, superficial non-invasive bladder tumors, or curatively treated Stage I non-melanoma skin cancer."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2662,
+        "end": 2939,
+        "text": "History of severe autoimmune disease (including significant ongoing immune-related adverse events of prior immune-oncology therapy) or autoimmune disorder that requires chronic systemic corticosteroid treatment at immunosuppressive doses (prednisone \\>10 mg/day or equivalent);"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3386,
+        "end": 3539,
+        "text": "Seropositive status for human immunodeficiency virus (HIV), hepatitis B virus (HBV), or hepatitis C virus (HCV) at any time before the start of treatment"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4016,
+        "end": 4243,
+        "text": "History (≤6 months before the start of treatment) or evidence of any of the following: acute myocardial infarction, unstable angina pectoris, coronary artery bypass graft, cerebrovascular accident, or transient ischemic attack;"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5631,
+        "end": 5694,
+        "text": "History of an allogeneic bone marrow or solid organ transplant;"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4998,
+        "end": 5038,
+        "text": "Women who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7986,
+        "end": 8163,
+        "text": "Has a history of (non-infectious) pneumonitis / interstitial lung disease that required steroids or has current pneumonitis / interstitial lung disease or radiation pneumonitis."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

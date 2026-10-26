@@ -1,0 +1,120 @@
+{
+  "nctId": "NCT06581432",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 180,
+        "end": 281,
+        "text": "Histologically or cytologically confirmed locally advanced, unresectable, or metastatic solid tumours"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 180,
+        "end": 281,
+        "text": "Histologically or cytologically confirmed locally advanced, unresectable, or metastatic solid tumours"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1512,
+        "end": 1585,
+        "text": "Uncontrolled or symptomatic brain or subdural metastases during screening"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1588,
+        "end": 1629,
+        "text": "Known diagnosis of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 539,
+        "end": 708,
+        "text": "Presence of ≥1 measurable lesion outside the central nervous system (CNS) according to Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 (investigator assessed)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 711,
+        "end": 781,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1097,
+        "end": 1509,
+        "text": "Previous or concomitant malignancies other than the one treated in this trial within the previous 3 years except the following effectively treated cancers: nonmelanoma skin cancers, carcinoma in situ of the cervix, ductal carcinoma in situ of the breast, localized prostate cancer on watchful waiting or active surveillance, and other effectively treated malignancies that are considered cured by local treatment"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 49,
+        "end": 177,
+        "text": "Documented Human epidermal growth factor receptor 2 (HER2)-positive status or known activating HER2 mutations (by local testing)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

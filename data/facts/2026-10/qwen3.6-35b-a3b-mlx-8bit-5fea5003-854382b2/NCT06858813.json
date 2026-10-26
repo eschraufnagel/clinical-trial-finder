@@ -1,0 +1,149 @@
+{
+  "nctId": "NCT06858813",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 94,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 584,
+        "end": 638,
+        "text": "Locally advanced or metastatic and/or unresectable HCC"
+      },
+      "appliesTo": "Part 1 and Part 2 - participants with HCC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1673,
+        "end": 1744,
+        "text": "Advanced or metastatic LUSC that is not amenable to surgical resection."
+      },
+      "appliesTo": "Part 1 only - participants with squamous-cell non-small cell lung cancer (LUSC)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1125,
+        "end": 1188,
+        "text": "Part 1: Failure of at least 1 prior systemic treatment for HCC."
+      },
+      "appliesTo": "Part 1 and Part 2 - participants with HCC"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1749,
+        "end": 2059,
+        "text": "Must have failed at least 1 prior line of therapy that included at least platinum-based chemotherapy and an immune CPI, and/or an appropriate targeted therapy (if applicable), or is not suitable for other approved therapeutic options that have demonstrated clinical benefit at the judgment of the investigator."
+      },
+      "appliesTo": "Part 1 only - participants with squamous-cell non-small cell lung cancer (LUSC)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one",
+        "two"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2060,
+        "end": 2176,
+        "text": "Participants should have no more than 2 lines of prior cytotoxic chemotherapy excluding neoadjuvant and/or adjuvant."
+      },
+      "appliesTo": "Part 1 only - participants with squamous-cell non-small cell lung cancer (LUSC)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2386,
+        "end": 2658,
+        "text": "Untreated brain or meningeal metastases (i.e., participants with history of metastases are eligible provided they do not require ongoing steroid treatment for cerebral edema and have shown clinical and radiographic stability for at least 14 days after definitive therapy)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2386,
+        "end": 2425,
+        "text": "Untreated brain or meningeal metastases"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2727,
+        "end": 2927,
+        "text": "History of interstitial lung disease (ILD) or pneumonitis that required treatment with systemic steroids, or any evidence of active ILD or pneumonitis on screening chest computed tomography (CT) scan."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 443,
+        "end": 485,
+        "text": "Measurable disease per RECIST version 1.1."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

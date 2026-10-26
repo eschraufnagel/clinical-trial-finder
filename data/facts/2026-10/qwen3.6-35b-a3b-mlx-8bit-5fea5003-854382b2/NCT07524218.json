@@ -1,0 +1,94 @@
+{
+  "nctId": "NCT07524218",
+  "mappings": [
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 460,
+        "end": 511,
+        "text": "No plan for systemic adjuvant therapy after surgery"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 460,
+        "end": 511,
+        "text": "No plan for systemic adjuvant therapy after surgery"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 680,
+        "end": 705,
+        "text": "Pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 708,
+        "end": 759,
+        "text": "Active second malignancy requiring systemic therapy"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "No plan for systemic adjuvant therapy after surgery",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "No plan for systemic adjuvant therapy after surgery",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "No plan for systemic adjuvant therapy after surgery",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "No plan for systemic adjuvant therapy after surgery",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

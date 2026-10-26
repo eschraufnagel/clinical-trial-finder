@@ -1,0 +1,272 @@
+{
+  "nctId": "NCT07276373",
+  "set": "heldout",
+  "criteriaTextSha": "6d20d26a614c0b00c07255651d7c9817caf9442adfc7f7aa316d8c0e260f3537",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Signed and dated institutional review board (IRB)/ independent ethics committee (IEC)-approved informed consent form (ICF)",
+      "start": 31,
+      "end": 153,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Has solid malignancies that have received all available standard therapies for the specific tumor type or for which no standard therapy exists, unless patient is intolerant of treatment",
+      "start": 156,
+      "end": 341,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "exhausted standard therapies"
+    },
+    {
+      "quote": "Has a life expectancy of \u2265 3 months",
+      "start": 344,
+      "end": 379,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
+    },
+    {
+      "quote": "Has evaluable disease based on RECIST v1.1",
+      "start": 382,
+      "end": 424,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "evaluable disease"
+    },
+    {
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+      "start": 427,
+      "end": 497,
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Has adequate organ function",
+      "start": 500,
+      "end": 527,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Negative serum or urine pregnancy test for female patients of childbearing potential",
+      "start": 530,
+      "end": 614,
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Agreement to use appropriate precautions to avoid pregnancy, unless the patient and/or their sole sexual partner is permanently sterilized",
+      "start": 617,
+      "end": 755,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Past or current immune-related adverse events (irAEs) due to anti-programmed cell death protein 1 ligand 1 (PD\\[L\\]1) therapy that meet any of the following criteria:",
+      "start": 788,
+      "end": 954,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "prior PD-1: stopped for a severe immune side effect"
+    },
+    {
+      "quote": "Grade \u2265 3",
+      "start": 961,
+      "end": 970,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "part of 9"
+    },
+    {
+      "quote": "Resulted in discontinuation of anti-PD(L)1 therapy",
+      "start": 976,
+      "end": 1026,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "part of 9"
+    },
+    {
+      "quote": "Medical history of an autoimmune or inflammatory disease requiring immunosuppressive therapy",
+      "start": 1029,
+      "end": 1121,
+      "mappings": [
+        {
+          "factId": "autoimmune_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "any history, not only 2 years"
+    },
+    {
+      "quote": "Medical history of adrenal insufficiency",
+      "start": 1124,
+      "end": 1164,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "adrenal insufficiency"
+    },
+    {
+      "quote": "Has had any major surgery within 4 weeks prior to the first dose of study treatment",
+      "start": 1167,
+      "end": 1250,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Concurrent treatment with mifepristone or another glucocorticoid receptor (GR) modulator",
+      "start": 1253,
+      "end": 1341,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Unable to swallow, retain, or absorb oral medication",
+      "start": 1344,
+      "end": 1396,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "able to take pills"
+    },
+    {
+      "quote": "Concurrent participation in another interventional clinical trial",
+      "start": 1399,
+      "end": 1464,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Has toxicities due to prior therapies that are reversible and have not resolved",
+      "start": 1467,
+      "end": 1546,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
+    },
+    {
+      "quote": "Requirement for treatment with prohibited medications, including but not limited to systemic corticosteroids and cytochrome P450(CYP)3A inducers or inhibitors",
+      "start": 1549,
+      "end": 1707,
+      "mappings": [
+        {
+          "factId": "steroids",
+          "rulesOut": ["low_dose", "high_dose"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "CYP3A medicines not mapped"
+    },
+    {
+      "quote": "Has a known history of severe hypersensitivity to any of the study drugs, or other human/humanized monoclonal antibodies",
+      "start": 1710,
+      "end": 1830,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "allergy to study drug"
+    },
+    {
+      "quote": "Pregnant or lactating patients or female patients expecting to conceive children within the projected duration of the trial",
+      "start": 1833,
+      "end": 1956,
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Has clinically significant uncontrolled condition(s) which, in the opinion of the Investigator, may confound the results of the trial or interfere with the patient's safety or participation",
+      "start": 1959,
+      "end": 2148,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment"
+    },
+    {
+      "quote": "Known psychiatric disorder that would interfere with trial compliance",
+      "start": 2151,
+      "end": 2220,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "psychiatric"
+    },
+    {
+      "quote": "Has infection with HIV, hepatitis C virus, or hepatitis B virus",
+      "start": 2223,
+      "end": 2286,
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["controlled", "uncontrolled"],
+          "appliesTo": null
+        },
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Has untreated parenchymal brain metastasis or has uncontrolled central nervous system metastases",
+      "start": 2289,
+      "end": 2385,
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Has a history of another malignancy within 2 years prior to study treatment, unless cured",
+      "start": 2388,
+      "end": 2477,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "other cancer: within 2 years unless cured"
+    },
+    {
+      "quote": "Has received prior autologous or allogeneic organ or tissue transplantation",
+      "start": 2480,
+      "end": 2555,
+      "mappings": [
+        {
+          "factId": "transplant",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "A QTcF interval \\>450 msec, a family history of long QT syndrome or unexplained sudden death at young age, or a requirement for use of medication that may prolong the QTc interval",
+      "start": 2558,
+      "end": 2737,
+      "mappings": [],
+      "unmapped": "organ-function"
+    }
+  ]
+}

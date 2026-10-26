@@ -1,0 +1,237 @@
+{
+  "nctId": "NCT04796012",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 51,
+        "end": 129,
+        "text": "Relapsed or refractory solid tumor after at least one prior course of therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 203,
+        "end": 456,
+        "text": "Patients with CNS malignancy or asymptomatic CNS metastases may be enrolled, provided all of the following criteria are met.\n\n      * No metastatic or primary disease affecting the brainstem, midbrain, pons, or cerebellum, or within 10 mm of optic nerve"
+      },
+      "loose": true
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 465,
+        "end": 501,
+        "text": "No history of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1030,
+        "end": 1108,
+        "text": "For RMS efficacy cohort, disease must be measurable as defined by RECIST v1.1."
+      },
+      "appliesTo": "RMS efficacy cohort"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 834,
+        "end": 949,
+        "text": "Lansky Performance Status (patients \\< 16 years old) or Karnofsky Performance Status (patients ≥ 16 years old) ≥ 50"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14693,
+        "end": 14832,
+        "text": "Prior treatment with CD137 agonists or immune checkpoint blockade therapies to include all anti-PD-1, and anti-PD-L1 therapeutic antibodies"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 51,
+        "end": 129,
+        "text": "Relapsed or refractory solid tumor after at least one prior course of therapy."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 51,
+        "end": 129,
+        "text": "Relapsed or refractory solid tumor after at least one prior course of therapy."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14629,
+        "end": 14686,
+        "text": "Prior allogeneic stem cell or solid organ transplantation"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7590,
+        "end": 7915,
+        "text": "Active or history of autoimmune disease or immune deficiency, including, but not limited to, myasthenia gravis, myositis, autoimmune hepatitis, systemic lupus erythematosus, rheumatoid arthritis, inflammatory bowel disease, antiphospholipid antibody syndrome, Guillain-Barré syndrome, multiple sclerosis, or Kawasaki syndrome"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9636,
+        "end": 9868,
+        "text": "History of idiopathic pulmonary fibrosis, organizing pneumonia (e.g., bronchiolitis obliterans), drug-induced pneumonitis, or idiopathic pneumonitis, or evidence of active pneumonitis on screening chest computed tomography (CT) scan"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4801,
+        "end": 4872,
+        "text": "Negative HIV and hepatitis B surface antigen (HBsAg) tests at screening"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4801,
+        "end": 4872,
+        "text": "Negative HIV and hepatitis B surface antigen (HBsAg) tests at screening"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9965,
+        "end": 10220,
+        "text": "Significant cardiovascular disease (such as New York Heart Association Class II or greater cardiac disease, myocardial infarction, or cerebrovascular accident) within 3 months prior to initiation of study treatment, unstable arrhythmia, or unstable angina"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14629,
+        "end": 14686,
+        "text": "Prior allogeneic stem cell or solid organ transplantation"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7256,
+        "end": 7399,
+        "text": "Pregnancy or breastfeeding, or intention of becoming pregnant during study treatment or within 5 months after the final dose of study treatment"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Must have histologically confirmed rhabdomyosarcoma (RMS) for RMS efficacy cohort.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "other_nsclc",
+          "mixed_small_cell",
+          "adenocarcinoma",
+          "squamous"
+        ],
+        "polarity": "inclusion",
+        "quote": "Must have histologically confirmed rhabdomyosarcoma (RMS) for RMS efficacy cohort.",
+        "appliesTo": "RMS efficacy cohort"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

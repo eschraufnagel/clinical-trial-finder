@@ -1,0 +1,134 @@
+{
+  "nctId": "NCT06120283",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 51,
+        "end": 161,
+        "text": "Participants with histologically or cytologically confirmed advanced, metastatic, or unresectable solid tumors"
+      },
+      "appliesTo": "Phase 1a (Dose Escalation)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 337,
+        "end": 435,
+        "text": "participants must have received at least 1 prior line of treatment for advanced/metastatic disease"
+      },
+      "appliesTo": "Phase 1a (Dose Escalation) combination with elacestrant"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 649,
+        "end": 789,
+        "text": "participants with HR+ breast cancer must have received at least 1 prior line of treatment including endocrine therapy and a CDK4/6 inhibitor"
+      },
+      "appliesTo": "Phase 1a Safety Expansion combination with fulvestrant"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1054,
+        "end": 1238,
+        "text": "participants with HR+/HER2- breast cancer enrolled in regions where CDK4/6 inhibitors are approved and available must have received 1-2 lines of therapy for advanced/metastatic disease"
+      },
+      "appliesTo": "Phase 1b combination with fulvestrant"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1562,
+        "end": 1634,
+        "text": "Stable Eastern Cooperative Oncology Group (ECOG) Performance Status ≤ 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1893,
+        "end": 1933,
+        "text": "uncontrolled, untreated brain metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1861,
+        "end": 1889,
+        "text": "Known leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1937,
+        "end": 2005,
+        "text": "Any malignancy ≤ 3 years before the first dose of study treatment(s)"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2668,
+        "end": 2737,
+        "text": "Prior allogeneic stem cell transplantation, or organ transplantation."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

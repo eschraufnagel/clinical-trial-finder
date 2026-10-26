@@ -1,0 +1,197 @@
+{
+  "nctId": "NCT05068232",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 327,
+        "end": 432,
+        "text": "Have a histologic/clinically confirmed diagnosis of small cell lung cancer with known metastatic disease."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 576,
+        "end": 715,
+        "text": "Brain metastases must be asymptomatic or treated and stable off steroids and anti-convulsant for at least 2 weeks prior to study treatment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 719,
+        "end": 793,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0, 1, or 2"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1141,
+        "end": 1475,
+        "text": "Have measurable disease based on Response Evaluation Criteria in Solid Tumor (RECIST 1.1) including at least ONE lesion that meets criteria for ablative radiation, including 0.25 cc to 65 cc of viable tumor (i.e. primary disease or metastases) approximately 5cm in maximal dimension. Tumors larger than 65 cc can be partially treated."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5585,
+        "end": 5625,
+        "text": "History of leptomeningeal carcinomatosis"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8555,
+        "end": 8688,
+        "text": "Has prior exposure to anti-PD (Programmed death-ligand 1) 1/PD-L1 or anti- cytotoxic T lymphocyte-associated antigen (CTLA4) therapy."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8454,
+        "end": 8550,
+        "text": "Has received prior chemotherapy, immunotherapy or thoracic radiation for small cell lung cancer."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3856,
+        "end": 4230,
+        "text": "Active or prior documented autoimmune or inflammatory disorders (including inflammatory bowel disease \\[e.g., colitis or Crohn's disease\\], diverticulitis \\[with the exception of diverticulosis\\], systemic lupus erythematosus, Sarcoidosis syndrome, or Wegener syndrome \\[granulomatosis with polyangiitis, Graves' disease, rheumatoid arthritis, hypophysitis, uveitis, etc\\])."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6727,
+        "end": 7013,
+        "text": "Active infection including tuberculosis (clinical evaluation that includes clinical history, physical examination and radiographic findings, and tuberculosis (TB) testing in line with local practice), hepatitis B (known positive HBV surface antigen (HBsAg) result), hepatitis C, or HIV."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6727,
+        "end": 7013,
+        "text": "Active infection including tuberculosis (clinical evaluation that includes clinical history, physical examination and radiographic findings, and tuberculosis (TB) testing in line with local practice), hepatitis B (known positive HBV surface antigen (HBsAg) result), hepatitis C, or HIV."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8002,
+        "end": 8231,
+        "text": "Female patients who are pregnant or breastfeeding or male or female patients of reproductive potential who are not willing to employ effective birth control from screening to 90 days after the last dose of durvalumab monotherapy."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3809,
+        "end": 3852,
+        "text": "History of allogenic organ transplantation."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Have a histologic/clinically confirmed diagnosis of small cell lung cancer with known metastatic disease.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Have a histologic/clinically confirmed diagnosis of small cell lung cancer with known metastatic disease.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of another primary malignancy except for Malignancy treated with curative intent and with no known active disease ≥5 years before the first dose of IP and of low potential risk for recurrence",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of another primary malignancy except for Malignancy treated with curative intent and with no known active disease ≥5 years before the first dose of IP and of low potential risk for recurrence",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

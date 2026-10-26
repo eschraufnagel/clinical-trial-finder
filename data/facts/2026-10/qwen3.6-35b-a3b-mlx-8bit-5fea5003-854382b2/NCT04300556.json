@@ -1,0 +1,256 @@
+{
+  "nctId": "NCT04300556",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 744,
+        "end": 839,
+        "text": "NSCLC adenocarcinoma: Histologically or cytologically confirmed metastatic NSCLC adenocarcinoma"
+      },
+      "appliesTo": "NSCLC adenocarcinoma arm"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 275,
+        "end": 328,
+        "text": "Histologically confirmed diagnosis of metastatic TNBC"
+      },
+      "appliesTo": "TNBC arm"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 766,
+        "end": 839,
+        "text": "Histologically or cytologically confirmed metastatic NSCLC adenocarcinoma"
+      },
+      "appliesTo": "NSCLC adenocarcinoma arm"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1159,
+        "end": 1234,
+        "text": "Histologically confirmed diagnosis of advanced, recurrent or metastatic EC."
+      },
+      "appliesTo": "EC arm"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1394,
+        "end": 1530,
+        "text": "Histologically confirmed diagnosis of high grade serous epithelial ovarian cancer or primary peritoneal cancer or fallopian tube cancer."
+      },
+      "appliesTo": "OC arm"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10232,
+        "end": 10590,
+        "text": "Participants with brain or subdural metastases are not eligible, unless they have completed local therapy and have discontinued the use of corticosteroids for this indication for at least 2 weeks before starting treatment in this study. Brain metastases must be stable for at least 4 weeks on 2 consecutive scans of the brain before starting study treatment."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10594,
+        "end": 10634,
+        "text": "Diagnosed with meningeal carcinomatosis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5148,
+        "end": 5277,
+        "text": "Measurable disease meeting the following criteria (confirmed by central radiographic review, in the Dose-Confirmation Part only):"
+      },
+      "appliesTo": "Dose-Confirmation Part"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5799,
+        "end": 5817,
+        "text": "ECOG PS of 0 or 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10638,
+        "end": 10931,
+        "text": "Any other invasive malignancy that required treatment (other than definitive surgery) or has shown evidence of recurrence/progression (except for non-melanoma skin cancer, or histologically confirmed complete excision of carcinoma in situ) during the 2 years prior to starting study treatment."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10974,
+        "end": 11230,
+        "text": "History within 6 months prior to the first dose of study drug of: congestive heart failure greater than New York Heart Association (NYHA) Class II); unstable angina; myocardial infarction; stroke; cardiac arrhythmia associated with hemodynamic instability."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12172,
+        "end": 12259,
+        "text": "Known to be Human Immunodeficiency Virus (HIV) positive. Testing at entry not required."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12264,
+        "end": 12333,
+        "text": "Active viral hepatitis (B or C as demonstrated by positive serology)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12441,
+        "end": 12507,
+        "text": "Females who are breastfeeding or pregnant at Screening or Baseline"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16092,
+        "end": 16292,
+        "text": "Current ILD/pneumonitis, or ILD/pneumonitis is suspected at Screening or history of interstitial lung disease (ILD)/pneumonitis of any severity including ILD/pneumonitis from prior anticancer therapy."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16909,
+        "end": 16929,
+        "text": "Prior pneumonectomy."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16934,
+        "end": 17149,
+        "text": "History of chest radiotherapy. Participants with history of chest wall radiation (example, history of breast cancer) may be permitted if chest wall radiation is documented \\> 2 years before starting study treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants with endometrial leiomyosarcoma, endometrial stromal sarcoma or other soft tissue sarcoma histology.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with endometrial leiomyosarcoma, endometrial stromal sarcoma or other soft tissue sarcoma histology.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

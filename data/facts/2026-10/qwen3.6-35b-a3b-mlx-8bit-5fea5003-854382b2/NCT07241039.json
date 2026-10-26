@@ -1,0 +1,85 @@
+{
+  "nctId": "NCT07241039",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1276,
+        "end": 1379,
+        "text": "Evaluable and measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) Version 1.1."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1548,
+        "end": 1645,
+        "text": "history of primary immunodeficiency, bone marrow transplantation, or solid organ transplantation."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For head and neck squamous cell carcinoma (HNSCC) participants enrolled in backfill (Part 1 and 3)... Paired biopsies are encouraged (when safe and feasible) but not required for subjects with squamous non-small cell lung cancer (sqNSCLC) enrolled in the backfill (Part 1 and 3).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "For head and neck squamous cell carcinoma (HNSCC) participants enrolled in backfill (Part 1 and 3)... Paired biopsies are encouraged (when safe and feasible) but not required for subjects with squamous non-small cell lung cancer (sqNSCLC) enrolled in the backfill (Part 1 and 3).",
+        "appliesTo": "backfill (Part 1 and 3)"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active autoimmune diseases besides vitiligo, type 1 diabetes, hypothyroidism, hypopituitarism and psoriasis (not requiring systemic treatment)... Active inflammatory bowel disease unfit for trial in the opinion of the investigator, including subjects requiring systemic therapy with biologics or immunosuppressive therapy within the past 2 years.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active autoimmune diseases besides vitiligo, type 1 diabetes, hypothyroidism, hypopituitarism and psoriasis (not requiring systemic treatment)... Active inflammatory bowel disease unfit for trial in the opinion of the investigator, including subjects requiring systemic therapy with biologics or immunosuppressive therapy within the past 2 years.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Current or prior use of immunosuppressive medication within 14 days prior to the first dose of the study treatment... Systemic corticosteroids at doses not to exceed 10 mg/day of prednisone or equivalent.",
+      "raw": {
+        "factId": "steroids",
+        "rulesOut": [
+          "high_dose"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current or prior use of immunosuppressive medication within 14 days prior to the first dose of the study treatment... Systemic corticosteroids at doses not to exceed 10 mg/day of prednisone or equivalent.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

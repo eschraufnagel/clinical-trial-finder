@@ -1,0 +1,80 @@
+{
+  "nctId": "NCT06974370",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 21,
+        "end": 154,
+        "text": "Pathologically (histologically or cytologically) proven diagnosis of a solid tumor malignancies within 5 years prior to registration."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 320,
+        "end": 452,
+        "text": "unequivocal imaging confirmation of extracranial metastatic disease (e.g. CT of the chest/abdomen/pelvis, PET/CT, etc.) is required."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1205,
+        "end": 1283,
+        "text": "At least 1 brain metastasis that not planned for radiation therapy or surgery."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2610,
+        "end": 2644,
+        "text": "Known leptomeningeal disease (LMD)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2053,
+        "end": 2190,
+        "text": "Patients pregnant or nursing due to the potential for congenital abnormalities and the potential of this regimen to harm nursing infants."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

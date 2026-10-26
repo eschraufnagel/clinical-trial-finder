@@ -1,0 +1,196 @@
+{
+  "nctId": "NCT06333899",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 140,
+        "end": 314,
+        "text": "Patients with newly diagnosed high-grade glioma (HGG), including diffuse intrinsic pontine gliomas (DIPG), whose tumors harbor an ALK or ROS-1 fusion alteration are eligible."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2752,
+        "end": 2841,
+        "text": "Patients with seizure disorder may be enrolled if on anticonvulsants and well controlled."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1108,
+        "end": 1297,
+        "text": "Patients with leptomeningeal disease only, with no definitive identifiable primary tumor, and documented ALK or ROS-1 fusion, must be discussed with the Study Chair on a case-by-case basis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 315,
+        "end": 416,
+        "text": "Patients must have had histologically verified high-grade glioma from diagnostic biopsy or resection."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1324,
+        "end": 1418,
+        "text": "Karnofsky ≥ 50% for patients \\> 16 years of age and Lansky ≥ 50 for patients ≤ 16 years of age"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 247,
+        "end": 314,
+        "text": "whose tumors harbor an ALK or ROS-1 fusion alteration are eligible."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 247,
+        "end": 314,
+        "text": "whose tumors harbor an ALK or ROS-1 fusion alteration are eligible."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4029,
+        "end": 4228,
+        "text": "Patients who have previously received or are currently receiving other anti-cancer agents, including chemotherapy, immunotherapy, monoclonal antibodies, biologic or targeted therapy, are not eligible"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4029,
+        "end": 4228,
+        "text": "Patients who have previously received or are currently receiving other anti-cancer agents, including chemotherapy, immunotherapy, monoclonal antibodies, biologic or targeted therapy, are not eligible"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4029,
+        "end": 4228,
+        "text": "Patients who have previously received or are currently receiving other anti-cancer agents, including chemotherapy, immunotherapy, monoclonal antibodies, biologic or targeted therapy, are not eligible"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4029,
+        "end": 4228,
+        "text": "Patients who have previously received or are currently receiving other anti-cancer agents, including chemotherapy, immunotherapy, monoclonal antibodies, biologic or targeted therapy, are not eligible"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4341,
+        "end": 4419,
+        "text": "Patients who have received prior solid organ transplantation are not eligible."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3081,
+        "end": 3241,
+        "text": "Pregnant or breast-feeding women will not be entered on this study due to unknown risks of fetal and teratogenic adverse events as seen in animal/human studies."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Patients with newly diagnosed high-grade glioma (HGG), including diffuse intrinsic pontine gliomas (DIPG), whose tumors harbor an ALK or ROS-1 fusion alteration are eligible. Patients must have had histologically verified high-grade glioma from diagnostic biopsy or resection.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with newly diagnosed high-grade glioma (HGG), including diffuse intrinsic pontine gliomas (DIPG), whose tumors harbor an ALK or ROS-1 fusion alteration are eligible. Patients must have had histologically verified high-grade glioma from diagnostic biopsy or resection.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "nctId": "NCT07660094",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 88,
+        "end": 152,
+        "text": "Histologically confirmed metastatic Stage IV non-squamous NSCLC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 88,
+        "end": 152,
+        "text": "Histologically confirmed metastatic Stage IV non-squamous NSCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 156,
+        "end": 257,
+        "text": "Measurable disease per RECIST v1.1 with at least 1 thoracic lesion amenable to intratumoral injection"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 925,
+        "end": 995,
+        "text": "Must have received platinum-based chemotherapy in any line of therapy."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1198,
+        "end": 1245,
+        "text": "ECOG performance status of 0 or 1 at screening."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2969,
+        "end": 3100,
+        "text": "Has a known actionable genomic alteration, including EGFR, ALK, or ROS1 rearrangements, for which approved targeted therapy exists."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2969,
+        "end": 3100,
+        "text": "Has a known actionable genomic alteration, including EGFR, ALK, or ROS1 rearrangements, for which approved targeted therapy exists."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2969,
+        "end": 3100,
+        "text": "Has a known actionable genomic alteration, including EGFR, ALK, or ROS1 rearrangements, for which approved targeted therapy exists."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3441,
+        "end": 3571,
+        "text": "Has a known history of active autoimmune disease requiring systemic immunosuppressive therapy within the past 2 years is excluded."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3909,
+        "end": 3993,
+        "text": "Clinically active central nervous system (CNS) metastases or leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3909,
+        "end": 3993,
+        "text": "Clinically active central nervous system (CNS) metastases or leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5230,
+        "end": 5363,
+        "text": "Has a known history of Human Immunodeficiency Virus (HIV) infection and/or acquired immunodeficiency syndrome (AIDS)-related illness."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5920,
+        "end": 6011,
+        "text": "Myocardial infarction or uncontrolled/unstable angina within 6 months before randomization."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7239,
+        "end": 7373,
+        "text": "Participants of childbearing potential, who are pregnant, lactating, or intend to become pregnant or father children during the study."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Has a known active or known prior history of Hepatitis B (HBV) infection ... or known active Hepatitis C (HCV) ...",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Has a known active or known prior history of Hepatitis B (HBV) infection ... or known active Hepatitis C (HCV) ...",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "nctId": "NCT06712927",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 103,
+        "text": "Histologically confirmed non-uveal melanoma that has metastasized to the brain."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 103,
+        "text": "Histologically confirmed non-uveal melanoma that has metastasized to the brain."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 533,
+        "end": 681,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-1 for Cohort A (asymptomatic), ECOG performance status 0-2 for Cohort B (symptomatic)"
+      },
+      "appliesTo": "Cohort A (asymptomatic) and Cohort B (symptomatic)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 685,
+        "end": 779,
+        "text": "No prior anti-CTLA-4, anti-PD-1, or anti-LAG-3 therapy for unresectable stage III/IV melanoma."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6378,
+        "end": 6517,
+        "text": "Active autoimmune disease that has required systemic therapy with corticosteroids or other immunosuppressive agents within the past 3 years"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6734,
+        "end": 6812,
+        "text": "History of leptomeningeal metastasis determined by imaging or lumbar puncture."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6906,
+        "end": 7218,
+        "text": "History of clinically significant cardiac disease or congestive heart failure \\> New York Heart Association (NYHA) class 2. Subjects must not have unstable angina (anginal symptoms at rest) or new-onset angina within the last 3 months or myocardial infarction within the past 6 months or a history of myocarditis"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6862,
+        "end": 6902,
+        "text": "Women who are breast-feeding or pregnant"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5889,
+        "end": 5943,
+        "text": "Another primary malignancy within the previous 3 years"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8145,
+        "end": 8189,
+        "text": "Dexamethasone use \\> 4mg/day (or equivalent)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed non-uveal melanoma that has metastasized to the brain.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed non-uveal melanoma that has metastasized to the brain.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

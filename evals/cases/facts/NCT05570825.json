@@ -1,0 +1,533 @@
+{
+  "nctId": "NCT05570825",
+  "set": "heldout",
+  "criteriaTextSha": "e48fa6713c84fa580a7546500c5f0a4e0393ef2c9b703231732a021dc016c2cb",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Subjects aged 18 years and older",
+      "start": 23,
+      "end": 55,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Pathologically or cytologically confirmed non-small cell lung cancer with no known oncogenic EGFR mutation, ALK rearrangement, ROS1 rearrangement or RET rearrangement",
+      "start": 58,
+      "end": 224,
+      "mappings": [
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": null
+        },
+        {
+          "factId": "egfr",
+          "rulesOut": ["common_sensitizing", "exon20_insertion"],
+          "appliesTo": null
+        },
+        {
+          "factId": "alk",
+          "rulesOut": ["found"],
+          "appliesTo": null
+        },
+        {
+          "factId": "ros1",
+          "rulesOut": ["found"],
+          "appliesTo": null
+        },
+        {
+          "factId": "ret",
+          "rulesOut": ["found"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Tumoral PD-L1 expression \\>=1% by any Clinical Laboratory Improvement Act (CLIA)-certified assay",
+      "start": 227,
+      "end": 323,
+      "mappings": [
+        {
+          "factId": "pdl1",
+          "rulesOut": ["negative"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Metastatic or recurrent non-small cell lung cancer (NSCLC).",
+      "start": 326,
+      "end": 385,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Stage IIIC per 8th edition TNM stage classification is allowed if not amenable to curative surgery or radiation per investigator judgment",
+      "start": 386,
+      "end": 523,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 4"
+    },
+    {
+      "quote": "At least one site of measurable disease as determined by the Investigator, using Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 criteria",
+      "start": 526,
+      "end": 673,
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0 or 1.",
+      "start": 676,
+      "end": 749,
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Subjects must have ECOG PS 0 or 1 at the time of informed consent and at the time of treatment initiation",
+      "start": 750,
+      "end": 855,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "Must be willing to provide pre-treatment archived specimen or undergo a biopsy procedure if archived specimen is not available",
+      "start": 858,
+      "end": 984,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Must be willing to provide an on-treatment biopsy, if deemed safe by the treating physician",
+      "start": 987,
+      "end": 1078,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Platelet count \\>= 100,000/uL",
+      "start": 1081,
+      "end": 1110,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Absolute neutrophil count \\>= 1,500/uL",
+      "start": 1113,
+      "end": 1151,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Hemoglobin \\>= 8g/dL",
+      "start": 1154,
+      "end": 1174,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Aspartate aminotransferase (AST) and alanine aminotransferase (ALT) =\\< 2.5 times upper limit of normal",
+      "start": 1177,
+      "end": 1280,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Creatinine =\\< 2.0 mg/dL",
+      "start": 1283,
+      "end": 1307,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Women of child-bearing potential and sexually active men must agree to use adequate contraception (hormonal or barrier method) prior to treatment initiation, during treatment and for three months after completing treatment",
+      "start": 1310,
+      "end": 1532,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Negative beta-human chorionic gonadotropin (hCG) pregnancy test at screening for patients of childbearing potential.",
+      "start": 1535,
+      "end": 1651,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Pregnant or breast feeding women are not eligible",
+      "start": 1652,
+      "end": 1701,
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Signed and dated informed consent document indicating that the patient has been informed of all the pertinent aspects of the trial prior to enrollment",
+      "start": 1704,
+      "end": 1854,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Participants must not have received prior chemotherapy or immune checkpoint inhibitor or immune-modulatory therapy (e.g. anti-PD\\[L\\]1, anti-CTLA4, anti-TIM3, anti-GITR, anti-TIGIT, anti-LAG3), for metastatic or recurrent NSCLC, with the following exceptions:",
+      "start": 1879,
+      "end": 2138,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "prior therapy: by setting (metastatic or curative)"
+    },
+    {
+      "quote": "Participants may have received prior chemotherapy, immune checkpoint inhibitor, and/or immune modulatory therapy in the curative setting if the last dose of treatment was more than (\\>) 24 weeks prior to consenting",
+      "start": 2144,
+      "end": 2358,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 20"
+    },
+    {
+      "quote": "For patients with NSCLC harboring an oncogenic alteration other than listed may have received prior small molecule inhibitor therapy (e.g.",
+      "start": 2363,
+      "end": 2501,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 20"
+    },
+    {
+      "quote": "MET inhibitor for MET exon 14 mutated NSCLC).",
+      "start": 2502,
+      "end": 2547,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 20"
+    },
+    {
+      "quote": "A wash-out period of at least 5 half-lives is required prior to start of study treatment",
+      "start": 2548,
+      "end": 2636,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 20"
+    },
+    {
+      "quote": "Presence of other active cancers within the last 2 years.",
+      "start": 2639,
+      "end": 2696,
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Patients with any prior early stage cancer who have received definitive local treatment at least 2 years previously and no evidence of recurrence are eligible.",
+      "start": 2697,
+      "end": 2856,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 25"
+    },
+    {
+      "quote": "All patients with previously treated in situ carcinoma are eligible, as patients with history of non-melanoma skin cancer",
+      "start": 2857,
+      "end": 2978,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 25"
+    },
+    {
+      "quote": "Symptomatic central nervous system (CNS) metastases; participants with known brain metastasis must be asymptomatic with no steroids or escalating doses of antiepileptics within 7 days prior to start of study treatment",
+      "start": 2981,
+      "end": 3198,
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["symptoms"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "no steroids for them not mapped"
+    },
+    {
+      "quote": "Patients with untreated CNS metastases may be enrolled as long as they meet the above criteria.",
+      "start": 3204,
+      "end": 3299,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 28"
+    },
+    {
+      "quote": "Patients with bulky CNS metastases should consider receiving radiation prior to study entry per investigator judgment",
+      "start": 3300,
+      "end": 3417,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 28"
+    },
+    {
+      "quote": "Participants with spinal cord compression must have received local treatment and must have been symptomatically stable with no use of steroids for at least 7 days prior to start of study treatment",
+      "start": 3420,
+      "end": 3616,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "spinal cord compression"
+    },
+    {
+      "quote": "Participants must not have an active autoimmune disease that has required immune modulating treatment within (\\<) 365 days prior to consenting (i.e., disease modifying agents, corticosteroids).",
+      "start": 3619,
+      "end": 3812,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "autoimmune: 1-year window"
+    },
+    {
+      "quote": "Replacement therapy (e.g., thyroxine, insulin, or physiologic corticosteroid replacement therapy for adrenal or pituitary insufficiency) is allowed",
+      "start": 3813,
+      "end": 3960,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 32"
+    },
+    {
+      "quote": "Inability to discontinue systemic corticosteroid therapy; systemic steroids must be tapered off 7 days prior to first dose of SX-682",
+      "start": 3963,
+      "end": 4095,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "steroids: able to stop"
+    },
+    {
+      "quote": "Known history of primary immunodeficiency",
+      "start": 4098,
+      "end": 4139,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "immunodeficiency"
+    },
+    {
+      "quote": "History of organ transplant that requires use of immunosuppressives",
+      "start": 4142,
+      "end": 4209,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "transplant: on immunosuppressive drugs"
+    },
+    {
+      "quote": "Current symptomatic pneumonitis and any past history of immune checkpoint inhibitor related pneumonitis regardless of steroid treatment history",
+      "start": 4212,
+      "end": 4355,
+      "mappings": [
+        {
+          "factId": "ild",
+          "rulesOut": ["current"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "past immunotherapy pneumonitis not mapped"
+    },
+    {
+      "quote": "History of non-infectious pneumonitis (e.g. radiation pneumonitis) that required steroids within 3 months of start of study treatment",
+      "start": 4358,
+      "end": 4491,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "pneumonitis: steroid-requiring within 3 months"
+    },
+    {
+      "quote": "Radiotherapy within 7 days of start of study treatment",
+      "start": 4494,
+      "end": 4548,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Major surgery within 21 days of start of study treatment.",
+      "start": 4551,
+      "end": 4608,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Minor surgery within 2 weeks of start of study treatment.",
+      "start": 4609,
+      "end": 4666,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Placement of vascular access device and biopsies are not considered major or minor surgery and are allowed",
+      "start": 4667,
+      "end": 4773,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Electrocardiogram (EKG) demonstrating a corrected QT (QTc) interval \\> 480 msec on three consecutive EKGs or patients with congenital long QT syndrome",
+      "start": 4776,
+      "end": 4926,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Severe lung disease (e.g. chronic obstructive pulmonary disease \\[COPD\\]) who cannot stop steroids 7 days prior to start of study treatment",
+      "start": 4929,
+      "end": 5068,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "lung disease on steroids"
+    },
+    {
+      "quote": "Serious cerebrovascular and cardiac disease defined as:",
+      "start": 5071,
+      "end": 5126,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "heading"
+    },
+    {
+      "quote": "Active unstable angina pectoris",
+      "start": 5132,
+      "end": 5163,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "heart conditions"
+    },
+    {
+      "quote": "Congestive heart failure NYHA (New York Heart Association) \\> grade 3",
+      "start": 5168,
+      "end": 5237,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "heart conditions"
+    },
+    {
+      "quote": "Acute myocardial infarction within 3 months of consenting",
+      "start": 5242,
+      "end": 5299,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "cardiac: 3-month window"
+    },
+    {
+      "quote": "Stroke or transient ischemic attack within 3 months of consenting",
+      "start": 5304,
+      "end": 5369,
+      "mappings": [],
+      "unmapped": "vocabulary-gap",
+      "note": "cardiac: 3-month window"
+    },
+    {
+      "quote": "Known active chronic infections: Active hepatitis B, hepatitis C and tuberculosis.",
+      "start": 5372,
+      "end": 5454,
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "tuberculosis not mapped"
+    },
+    {
+      "quote": "Testing is not required for assessment of eligibility.",
+      "start": 5455,
+      "end": 5509,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    },
+    {
+      "quote": "Active infection requiring IV antibiotics within 7 days of study treatment initiation",
+      "start": 5510,
+      "end": 5595,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "infection"
+    },
+    {
+      "quote": "Hepatitis C virus (HCV) infection: Patients with known history of HCV infection are eligible if HCV viral load is below the limit of quantification per local assay",
+      "start": 5601,
+      "end": 5764,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 50"
+    },
+    {
+      "quote": "Hepatitis B virus (HBV) infection: Patients with known history of HBV infection are eligible if HBV viral load is below the limit of quantification and negative hepatitis B virus surface antigen (HBsAg) per local assay",
+      "start": 5769,
+      "end": 5987,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 50"
+    },
+    {
+      "quote": "Known uncontrolled HIV (human immunodeficiency virus) infection",
+      "start": 5990,
+      "end": 6053,
+      "mappings": [
+        {
+          "factId": "hiv",
+          "rulesOut": ["uncontrolled"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Participants with known HIV infection are allowed if they are receiving anti-retroviral therapy, have CD4+ T-cell count \\>= 350 cells/uL within 6 months prior to study treatment initiation and no history of acquired immunodeficiency syndrome (AIDS)-defining opportunistic infection",
+      "start": 6059,
+      "end": 6340,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "exception to 55"
+    },
+    {
+      "quote": "Any serious or uncontrolled concomitant disorder that, in the opinion of the investigator, would compromise the patient's ability to complete the study",
+      "start": 6343,
+      "end": 6494,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment"
+    },
+    {
+      "quote": "Patient with any significant history of non-compliance to medical regimens or with inability to grant reliable informed consent",
+      "start": 6497,
+      "end": 6624,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "compliance"
+    }
+  ]
+}

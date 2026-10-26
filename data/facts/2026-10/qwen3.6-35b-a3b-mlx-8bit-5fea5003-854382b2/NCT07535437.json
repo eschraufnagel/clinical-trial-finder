@@ -1,0 +1,217 @@
+{
+  "nctId": "NCT07535437",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 65,
+        "end": 116,
+        "text": "Biopsy-proven metastatic non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 65,
+        "end": 116,
+        "text": "Biopsy-proven metastatic non-small cell lung cancer"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 418,
+        "end": 497,
+        "text": "At least one measurable (RECIST 1.1) indicator lesion not previously irradiated"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 500,
+        "end": 511,
+        "text": "ECOG PS 0-1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "exon20_insertion"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 119,
+        "end": 280,
+        "text": "Somatic activating mutation in EGFR in pre-treatment tumor biopsy or cfDNA (including all mutations with sensitivity to osimertinib) by any CLIA certified assay."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3290,
+        "end": 3335,
+        "text": "Prior exposure to anti-PD-1 inhibitor therapy"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3338,
+        "end": 3484,
+        "text": "Prior exposure to antibody drug conjugate (ADC) containing chemotherapeutic agent targeting topoisomerase I, TROP2 antibody (Study Cohort A only)."
+      },
+      "appliesTo": "Study Cohort A only"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4881,
+        "end": 5046,
+        "text": "Active (eg, with disease modifying drugs, prednisone \\>10 mg daily or equivalent, immunosuppressant therapy) or prior documented autoimmune or inflammatory disorders"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6200,
+        "end": 6498,
+        "text": "Unstable angina, myocardial infarction, congestive heart failure (New York Heart Association \\[NYHA\\] classification ≥ grade 2) or unstable vascular disease (eg, aortic aneurysm at risk of rupture, Moyamoya disease) that required hospitalization within 12 months prior to first study drug treatment"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8362,
+        "end": 8522,
+        "text": "Malignancy treated with curative intent and with no known active disease ≥ 2 years before the first dose of study drugs and of low potential risk for recurrence"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8690,
+        "end": 8920,
+        "text": "Symptomatic CNS metastases, CNS metastases with hemorrhagic features, CNS radiation within 7 days prior to first study drug treatment, potential need for CNS radiation within the first cycle, or symptomatic leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9915,
+        "end": 9976,
+        "text": "History of interstitial lung disease (ILD) requiring steroids"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10062,
+        "end": 10149,
+        "text": "Known history of human immunodeficiency virus (HIV) whose viral load is not controlled."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10152,
+        "end": 10255,
+        "text": "Known history of allogeneic organ transplantation or allogeneic hematopoietic stem cell transplantation"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10507,
+        "end": 10658,
+        "text": "All patients with active hepatitis C (hepatitis C virus \\[HCV\\] antibody positive with HCV RNA levels above the lower limit of detection) are excluded."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9979,
+        "end": 10059,
+        "text": "Current use of systemic corticosteroids (\\>10 mg daily prednisone or equivalent)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

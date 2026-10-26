@@ -1,0 +1,194 @@
+{
+  "nctId": "NCT05467748",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3931,
+        "end": 4008,
+        "text": "Primary diagnosis of low to intermediate grade of neuroendocrine lung cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 234,
+        "end": 322,
+        "text": "Patients with histologically confirmed diagnosis of advanced non-small cell lung cancer."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4011,
+        "end": 4288,
+        "text": "Clinically active cerebral metastases. Patients with a prior diagnosis of cerebral metastases may be enrolled, provided that lesions have been adequately treated with radiation therapy or surgery, and have not required steroids for at least one month prior to study initiation."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1538,
+        "end": 1631,
+        "text": "Have measurable disease per RECIST v1.1 as assessed by the investigator and site radiologist."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2828,
+        "end": 2837,
+        "text": "ECOG 0-1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4940,
+        "end": 4969,
+        "text": "EGFR or ALK altered patients."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4940,
+        "end": 4969,
+        "text": "EGFR or ALK altered patients."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5085,
+        "end": 5372,
+        "text": "Has an active autoimmune disease that requires systemic treatment within the past 2 years or a documented history of clinically severe autoimmune disease, or a syndrome that requires systemic immunosuppressive agents, such as more than 10 mg of prednisone per day to control the disease."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5674,
+        "end": 5906,
+        "text": "Patient is positive for Human Immunodeficiency Virus (HIV) (HIV 1 2 antibodies), active Hepatitis B (HBsAg reactive) or Hepatitis C (HCV RNA is detected); patients with negative Hepatitis C antibody testing may not need RNA testing."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5674,
+        "end": 5906,
+        "text": "Patient is positive for Human Immunodeficiency Virus (HIV) (HIV 1 2 antibodies), active Hepatitis B (HBsAg reactive) or Hepatitis C (HCV RNA is detected); patients with negative Hepatitis C antibody testing may not need RNA testing."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5909,
+        "end": 5993,
+        "text": "History of non-infectious pneumonitis that required steroids or current pneumonitis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7683,
+        "end": 7793,
+        "text": "Has a known additional malignancy that is progressing or has required active treatment within the past 3 year."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8664,
+        "end": 8735,
+        "text": "Subjects who undergone an allogenic tissue/solid organ transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8937,
+        "end": 9158,
+        "text": "Pregnant female subjects or breastfeeding, or expecting to conceive or father children within the projected duration of the trial, starting with the screening visit through 183 days after the last dose of study treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

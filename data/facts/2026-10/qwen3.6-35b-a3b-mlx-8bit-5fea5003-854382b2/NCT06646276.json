@@ -1,0 +1,85 @@
+{
+  "nctId": "NCT06646276",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 107,
+        "text": "Participants must have diagnosis of Extensive-Stage Small Cell Lung Cancer (ES-SCLC)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 110,
+        "end": 235,
+        "text": "Participants must be Healthy enough to do their normal activities with little or no help based on the ECOG performance scale."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 238,
+        "end": 405,
+        "text": "Participants must have at least one tumor that can be measured using special imaging techniques like a CT scan or MRI at a site other than the brain and nervous system"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 536,
+        "end": 657,
+        "text": "Participants have certain health conditions, like spread of small cell lung cancer to the brain that are causing symptoms"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants must have diagnosis of Extensive-Stage Small Cell Lung Cancer (ES-SCLC).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have diagnosis of Extensive-Stage Small Cell Lung Cancer (ES-SCLC).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

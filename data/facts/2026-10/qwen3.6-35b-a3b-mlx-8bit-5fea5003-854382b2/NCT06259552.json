@@ -1,0 +1,144 @@
+{
+  "nctId": "NCT06259552",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 286,
+        "end": 382,
+        "text": "Histologically or cytologically documented locally advanced or metastatic solid tumor malignancy"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 286,
+        "end": 382,
+        "text": "Histologically or cytologically documented locally advanced or metastatic solid tumor malignancy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 501,
+        "end": 571,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 575,
+        "end": 631,
+        "text": "Has at least 1 measurable lesion per RECIST 1.1 criteria"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3267,
+        "end": 3512,
+        "text": "Active brain or leptomeningeal metastasis. Except patients with known brain metastases if they have been treated and MRI shows no evidence of progression for at least 8 weeks and require less than 10 mg/day prednisone/prednisolone or equivalent."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3267,
+        "end": 3512,
+        "text": "Active brain or leptomeningeal metastasis. Except patients with known brain metastases if they have been treated and MRI shows no evidence of progression for at least 8 weeks and require less than 10 mg/day prednisone/prednisolone or equivalent."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2979,
+        "end": 3201,
+        "text": "History of prior malignancy, except for adequately treated in situ cancer, basal cell, or squamous cell skin cancer, or other cancers (eg, breast, prostate) for which the patient has been disease free for at least 3 years."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3931,
+        "end": 4099,
+        "text": "Immunosuppressive systemic medication, except topical corticosteroids or systemic corticosteroids at a dose level of ≤ 10 mg/d of prednisone/prednisolone or equivalent."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4213,
+        "end": 4294,
+        "text": "Prior solid organ or bone marrow transplantation (except cornea transplantation)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4299,
+        "end": 4669,
+        "text": "History of clinically significant cardiovascular events (e.g. DVT ≤ 6 months, PE ≤ 12 months, MI or hospitalization for CHF ≤ 12 months, bleeding disorder or bleeding event ≤ 6 months, current clinically significant arrhythmia or unstable angina pectoris, current uncontrolled history of cerebrovascular accident in the past 6 months, current uncontrolled hypertension)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

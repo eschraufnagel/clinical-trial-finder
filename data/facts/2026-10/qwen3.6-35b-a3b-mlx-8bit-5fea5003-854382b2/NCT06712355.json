@@ -1,0 +1,106 @@
+{
+  "nctId": "NCT06712355",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1493,
+        "end": 1571,
+        "text": "Have histologically or cytologically confirmed SCLC with combined histologies."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 486,
+        "text": "Have histologically or cytologically confirmed ES-SCLC (using the AJCC \\[American Joint Committee on Cancer\\] tumor node metastasis staging system combined with Veterans Administration Lung Study Group \\[VALG\\]'s two stage classification scheme). For AJCC tumor node metastasis staging system: AJCC 8th edition stage IV (T any, N any, M1a/b/c), or T3\\~4 for multiple lung nodules or tumor/nodule volume that cannot be encompassed in a tolerable radiotherapy plan."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 821,
+        "end": 901,
+        "text": "Have at least one measurable lesion as the targeted lesion based on RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1327,
+        "end": 1398,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3102,
+        "end": 3203,
+        "text": "Participants with untreated brain metastases that are symptomatic or large (e.g., greater than 2 cm)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3487,
+        "end": 3537,
+        "text": "Participants with known leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2529,
+        "end": 2723,
+        "text": "Have received systemic corticosteroids (at a dosage greater than 10 mg/day of prednisone or an equivalent dose of other corticosteroids) within 7 days prior to the initiation of study treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "nctId": "NCT06470971",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 58,
+        "end": 132,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0, 1, or 2"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 816,
+        "end": 888,
+        "text": "Patients who are on prednisone ≤ 10 mg/day (d) or equivalent are allowed"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 276,
+        "end": 392,
+        "text": "Patients must have had prior severe irAE while on ICI monotherapy or in combination with other anticancer treatment."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2907,
+        "end": 2946,
+        "text": "Women who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3199,
+        "end": 3364,
+        "text": "Has active autoimmune disease or irAE requiring systemic treatment with steroids (\\> 10 mg daily doses of prednisone or equivalent) or other immunosuppressive agents"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3790,
+        "end": 3934,
+        "text": "Has a known history of HIV-1/2 with detectable viral load and/or CD4 (cluster of differentiation 4) count \\< 300/mL within the previous 3 months"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3937,
+        "end": 4110,
+        "text": "Has detectable hepatitis B virus (HBV) or hepatitis C virus (HCV) viral load polymerase chain reaction (PCR) if there is a known history of active hepatitis B or hepatitis C"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4298,
+        "end": 4530,
+        "text": "Presence of a transplanted solid organ (with the exception of a corneal transplant more than 3 months prior to screening) or having received an allogeneic bone marrow transplant or an allogeneic peripheral blood stem cell transplant"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

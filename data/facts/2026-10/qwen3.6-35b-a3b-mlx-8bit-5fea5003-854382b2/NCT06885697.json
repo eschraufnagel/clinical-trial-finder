@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT06885697",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 236,
+        "end": 376,
+        "text": "Participant must have unresectable, locally advanced, or metastatic, or recurrent mesothelioma and other mesothelin expressing solid tumors."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 377,
+        "end": 514,
+        "text": "For participants with mesothelioma only those with epithelioid or biphasic histology (with \\>80% epithelioid component) will be eligible."
+      },
+      "appliesTo": "mesothelioma"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1142,
+        "end": 1215,
+        "text": "Participant must have at least 1 measurable lesion by RECIST version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1380,
+        "end": 1451,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3274,
+        "end": 3668,
+        "text": "Participants with CNS metastases, leptomeningeal disease or carcinomatous meningitis are eligible if they are asymptomatic, have completed their treatment for CNS disease and have recovered from the acute effects of radiation therapy or surgery prior to study entry. Participants must have radiographically stable CNS disease without associated edema at least three months prior to study entry."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3274,
+        "end": 3668,
+        "text": "Participants with CNS metastases, leptomeningeal disease or carcinomatous meningitis are eligible if they are asymptomatic, have completed their treatment for CNS disease and have recovered from the acute effects of radiation therapy or surgery prior to study entry. Participants must have radiographically stable CNS disease without associated edema at least three months prior to study entry."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5076,
+        "end": 5265,
+        "text": "Participants with active or history of autoimmune or immune mediated disease such as multiple sclerosis, lupus, inflammatory bowel disease, rheumatoid arthritis, or small vessel vasculitis."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5787,
+        "end": 5939,
+        "text": "Participants with lung fibrosis, inflammatory lung disease or evidence of pneumonitis on baseline imaging studies or medical history of these disorders."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7002,
+        "end": 7047,
+        "text": "Positive serology for HIV, HTLV-1, or HTLV-2."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7644,
+        "end": 7781,
+        "text": "Participant is pregnant or intends to be pregnant during the required period of contraception for participants of childbearing potential."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participant has active infection with HIV, hepatitis B virus, HCV, or HTLV as defined below: Active hepatitis B infection as demonstrated by test for hepatitis B surface antigen. ... Active hepatitis C infection as demonstrated by hepatitis C RNA test.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participant has active infection with HIV, hepatitis B virus, HCV, or HTLV as defined below: Active hepatitis B infection as demonstrated by test for hepatitis B surface antigen. ... Active hepatitis C infection as demonstrated by hepatitis C RNA test.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

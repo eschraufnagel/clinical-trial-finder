@@ -1,0 +1,378 @@
+{
+  "nctId": "NCT05267626",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 32,
+        "end": 129,
+        "text": "Patients must have measurable disease as per RECIST v1.1 criteria and documented by CT and/or MRI"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 173,
+        "end": 241,
+        "text": "Cutaneous melanoma that is either locally unresectable or metastatic"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1227,
+        "end": 1289,
+        "text": "Unresectable locally advanced or metastatic cutaneous melanoma"
+      },
+      "appliesTo": "Part 4"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 875,
+        "end": 925,
+        "text": "NSCLC: Unresectable locally advanced or metastatic"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1168,
+        "end": 1192,
+        "text": "NSCLC as described above"
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 875,
+        "end": 978,
+        "text": "NSCLC: Unresectable locally advanced or metastatic PD-L1-positive (tumor proportion score \\[TPS\\] ≥ 1%)"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1168,
+        "end": 1192,
+        "text": "NSCLC as described above"
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 875,
+        "end": 1026,
+        "text": "NSCLC: Unresectable locally advanced or metastatic PD-L1-positive (tumor proportion score \\[TPS\\] ≥ 1%) NSCLC not harboring an activating EGFR mutation"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1168,
+        "end": 1192,
+        "text": "NSCLC as described above"
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 875,
+        "end": 1047,
+        "text": "NSCLC: Unresectable locally advanced or metastatic PD-L1-positive (tumor proportion score \\[TPS\\] ≥ 1%) NSCLC not harboring an activating EGFR mutation or ALK rearrangement"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1168,
+        "end": 1192,
+        "text": "NSCLC as described above"
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 875,
+        "end": 1157,
+        "text": "NSCLC: Unresectable locally advanced or metastatic PD-L1-positive (tumor proportion score \\[TPS\\] ≥ 1%) NSCLC not harboring an activating EGFR mutation or ALK rearrangement and has progressed during or following treatment with an anti-PDx with or without platinum-based chemotherapy"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1168,
+        "end": 1192,
+        "text": "NSCLC as described above"
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1227,
+        "end": 1397,
+        "text": "Unresectable locally advanced or metastatic cutaneous melanoma that has progressed during or following treatment with an anti-PDx (unless ineligible for anti-PDx therapy)"
+      },
+      "appliesTo": "Part 4"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 875,
+        "end": 1157,
+        "text": "NSCLC: Unresectable locally advanced or metastatic PD-L1-positive (tumor proportion score \\[TPS\\] ≥ 1%) NSCLC not harboring an activating EGFR mutation or ALK rearrangement and has progressed during or following treatment with an anti-PDx with or without platinum-based chemotherapy"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1168,
+        "end": 1192,
+        "text": "NSCLC as described above"
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1402,
+        "end": 1497,
+        "text": "Patients with BRAF mutations must either be ineligible for or have refused a BRAF+MEK inhibitor"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 409,
+        "end": 549,
+        "text": "Must have objective progression after receiving at least two cycles of prior doublet therapy (anti-PD-1/anti-CTLA-4 or anti-PD-1/anti-LAG-3)"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1502,
+        "end": 1643,
+        "text": "Must have objective progression after receiving at least two cycles of prior doublet therapy (anti-PD-1/anti-CTLA-4 or anti-PD-1/anti-LAG-3)."
+      },
+      "appliesTo": "Part 4"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 409,
+        "end": 549,
+        "text": "Must have objective progression after receiving at least two cycles of prior doublet therapy (anti-PD-1/anti-CTLA-4 or anti-PD-1/anti-LAG-3)"
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1502,
+        "end": 1643,
+        "text": "Must have objective progression after receiving at least two cycles of prior doublet therapy (anti-PD-1/anti-CTLA-4 or anti-PD-1/anti-LAG-3)."
+      },
+      "appliesTo": "Part 4"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3358,
+        "end": 3513,
+        "text": "Symptomatic central nervous system (CNS) metastases must have been treated, be asymptomatic for ≥ 14 days, and meet the following at the time of enrollment"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3640,
+        "end": 3696,
+        "text": "No concurrent leptomeningeal disease or cord compression"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3721,
+        "end": 3791,
+        "text": "Patients with a history of known autoimmune disease with exceptions of"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4270,
+        "end": 4422,
+        "text": "Treatment with \\> 10 mg per day of prednisone (or equivalent) or other immune-suppressive drugs within the 7 days prior to the initiation of study drug."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5426,
+        "end": 5491,
+        "text": "Second primary invasive malignancy not in remission for ≥ 1 year."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Unresectable locally advanced or metastatic cutaneous melanoma",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Unresectable locally advanced or metastatic cutaneous melanoma",
+        "appliesTo": "Part 4"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients with BRAF mutations must either be ineligible for or have refused a BRAF+MEK inhibitor",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with BRAF mutations must either be ineligible for or have refused a BRAF+MEK inhibitor",
+        "appliesTo": "Part 4"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

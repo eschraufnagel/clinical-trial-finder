@@ -1,0 +1,182 @@
+{
+  "nctId": "NCT07286149",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 227,
+        "text": "Has histologically or cytologically confirmed diagnosis of advanced or metastatic non-squamous non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1024,
+        "end": 1119,
+        "text": "Has a diagnosis of small cell lung cancer or, for mixed tumors, presence of small cell elements"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 98,
+        "end": 227,
+        "text": "Has histologically or cytologically confirmed diagnosis of advanced or metastatic non-squamous non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1215,
+        "end": 1303,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1435,
+        "end": 1477,
+        "text": "Has evidence of any leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1306,
+        "end": 1432,
+        "text": "Has active inflammatory bowel disease requiring immunosuppressive medication or previous history of inflammatory bowel disease"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2321,
+        "end": 2444,
+        "text": "Has any history of interstitial lung disease (ILD)/pneumonitis irrespective of steroid use or current ILD, or suspected ILD"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 787,
+        "end": 924,
+        "text": "Participants with human immunodeficiency virus (HIV) infection must have well-controlled HIV on antiretroviral therapy (ART) per protocol"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2210,
+        "end": 2318,
+        "text": "Has known additional malignancy that is progressing or has required active treatment within the past 3 years"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 437,
+        "end": 619,
+        "text": "Has documented disease progression after receiving 1-2 prior lines of programmed cell death protein 1 (PD-1)/programmed death-ligand 1 (PD-L1) therapy and platinum-based chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 437,
+        "end": 619,
+        "text": "Has documented disease progression after receiving 1-2 prior lines of programmed cell death protein 1 (PD-1)/programmed death-ligand 1 (PD-L1) therapy and platinum-based chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 437,
+        "end": 619,
+        "text": "Has documented disease progression after receiving 1-2 prior lines of programmed cell death protein 1 (PD-1)/programmed death-ligand 1 (PD-L1) therapy and platinum-based chemotherapy"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 230,
+        "end": 434,
+        "text": "Has tumor tissue or circulating tumor deoxyribonucleic acid (ctDNA) that demonstrates the presence of Kirsten rat sarcoma viral oncogene (KRAS) mutation of glycine to cysteine at codon 12 (G12C) mutations"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

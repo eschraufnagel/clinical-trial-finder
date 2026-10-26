@@ -1,0 +1,165 @@
+{
+  "nctId": "NCT07213817",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 108,
+        "end": 214,
+        "text": "Participants with histologically or cytologically documented, locally advanced, or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 464,
+        "end": 577,
+        "text": "Participants must have measurable disease per Response Evaluation Criteria in Solid Tumours (RECIST) version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 580,
+        "end": 651,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1709,
+        "end": 1848,
+        "text": "Known second malignancy either progressing or requiring active treatment within the last 2 years prior to first dose of study intervention."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2150,
+        "end": 2187,
+        "text": "Previous solid organ transplantation."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2330,
+        "end": 2646,
+        "text": "Active brain metastases or leptomeningeal metastases with exception to asymptomatic and treated brain metastases (i.e. no neurological symptoms, no requirements for corticosteroids and lesions \\<1.5 cm), which are stable and not expected to become symptomatic in the next 3 months in the opinion of the investigator."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2330,
+        "end": 2646,
+        "text": "Active brain metastases or leptomeningeal metastases with exception to asymptomatic and treated brain metastases (i.e. no neurological symptoms, no requirements for corticosteroids and lesions \\<1.5 cm), which are stable and not expected to become symptomatic in the next 3 months in the opinion of the investigator."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2799,
+        "end": 3105,
+        "text": "History of clinically significant cardiac disease within 6 months prior to the initiation of study intervention, including but not limited to unstable angina, acute myocardial infarction, endoscopic or open-heart cardiac surgery, or heart failure classified as New York Heart Association Grade 2 or higher."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3293,
+        "end": 3438,
+        "text": "History of noninfectious interstitial lung disease (ILD)/pneumonitis/radiation pneumonitis that required steroids or has current ILD/pneumonitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4081,
+        "end": 4147,
+        "text": "Participants with uncontrolled human immunodeficiency virus (HIV)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4238,
+        "end": 4317,
+        "text": "Known active infection with hepatitis B virus (HBV) OR hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4395,
+        "end": 4553,
+        "text": "Ongoing immunosuppressive therapy, including systemic corticosteroids. NOTE: Physiologic replacement or use of topical or inhaled corticosteroids are allowed."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

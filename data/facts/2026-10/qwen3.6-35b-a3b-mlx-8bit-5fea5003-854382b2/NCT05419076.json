@@ -1,0 +1,69 @@
+{
+  "nctId": "NCT05419076",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 69,
+        "text": "Histologic diagnosis of small cell lung cancer"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 72,
+        "end": 148,
+        "text": "Radiographic diagnosis of up to 20 brain metastases on contrast-enhanced MRI"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 490,
+        "end": 566,
+        "text": "Leptomeningeal disease confirmed on lumbar puncture, MRI brain, or MRI spine"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 170,
+        "end": 208,
+        "text": "Performance status KPS 60-100/ECOG 0-2"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

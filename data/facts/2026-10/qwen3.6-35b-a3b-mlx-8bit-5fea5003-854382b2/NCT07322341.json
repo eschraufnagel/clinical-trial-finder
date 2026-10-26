@@ -1,0 +1,278 @@
+{
+  "nctId": "NCT07322341",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 279,
+        "text": "Pathologically or cytologically confirmed non-small cell lung cancer with no known oncogenic EGFR mutation, ALK fusion, ROS1 fusion or RET fusions."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 563,
+        "end": 729,
+        "text": "Metastatic or recurrent NSCLC. Stage 3C per 8th edition TNM stage classification is allowed if not amenable to curative surgery or radiation per investigator judgment"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4421,
+        "end": 4773,
+        "text": "Symptomatic central nervous system (CNS) metastases; participants with known brain metastasis must be asymptomatic with no ongoing requirement for steroids within 7 days prior to start of study treatment, no history of intracranial hemorrhage or spinal cord hemorrhage. If the patient is receiving anti-convulsant therapy, the dose is considered stable"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8710,
+        "end": 8743,
+        "text": "History of leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1984,
+        "end": 2171,
+        "text": "Participants must have at least one site of measurable disease as determined by the investigator, using RECIST v 1.1 criteria documented within 28 days prior to study treatment initiation"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2174,
+        "end": 2341,
+        "text": "Participants must have Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0 or 1 at the time of informed consent and at the time of treatment initiation"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 279,
+        "text": "Pathologically or cytologically confirmed non-small cell lung cancer with no known oncogenic EGFR mutation, ALK fusion, ROS1 fusion or RET fusions."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 279,
+        "text": "Pathologically or cytologically confirmed non-small cell lung cancer with no known oncogenic EGFR mutation, ALK fusion, ROS1 fusion or RET fusions."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 279,
+        "text": "Pathologically or cytologically confirmed non-small cell lung cancer with no known oncogenic EGFR mutation, ALK fusion, ROS1 fusion or RET fusions."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 132,
+        "end": 279,
+        "text": "Pathologically or cytologically confirmed non-small cell lung cancer with no known oncogenic EGFR mutation, ALK fusion, ROS1 fusion or RET fusions."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 732,
+        "end": 876,
+        "text": "Participants must have received and progressed on at least 6 weeks of treatment with prior anti-PD-1 or anti-PD-L1 therapy for advanced disease."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 877,
+        "end": 951,
+        "text": "Also, participants must have received prior platinum doublet chemotherapy."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4085,
+        "end": 4284,
+        "text": "Presence of other active cancers within the last 2 years. Participants with another cancer who have received definitive therapy at least 2 years previously and no evidence of recurrence are eligible."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5202,
+        "end": 5398,
+        "text": "Participants must not have an active autoimmune disease that has required immune modulating treatment within 1 year prior to consenting (i.e., disease modifying agents, long term corticosteroids)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5934,
+        "end": 6077,
+        "text": "Current symptomatic pneumonitis and any past history of immune checkpoint inhibitor related pneumonitis regardless of steroid treatment history"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7882,
+        "end": 7945,
+        "text": "Known uncontrolled HIV (human immunodeficiency virus) infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7190,
+        "end": 7272,
+        "text": "Known active chronic infections: Active hepatitis B, hepatitis C and tuberculosis."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5819,
+        "end": 5931,
+        "text": "History of organ transplant or prior allogenic stem cell transplantation that requires use of immunosuppressives"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3906,
+        "end": 4060,
+        "text": "Pregnant or breast-feeding women or intention of becoming pregnant during study treatment or within 5 months of last dose of atezolizumab are not eligible"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5600,
+        "end": 5715,
+        "text": "Inability to discontinue corticosteroid therapy; steroids must be tapered off 7 days prior to first dose of SX-682."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Serious cerebrovascular and cardiac disease defined as: ... Acute myocardial infarction within 3 months of consenting ... Stroke or transient ischemic attack within 3 months of consenting",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Serious cerebrovascular and cardiac disease defined as: ... Acute myocardial infarction within 3 months of consenting ... Stroke or transient ischemic attack within 3 months of consenting",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

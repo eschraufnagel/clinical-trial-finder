@@ -1,0 +1,121 @@
+{
+  "nctId": "NCT07160725",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 82,
+        "text": "Participants must have an ECOG performance status of 0 to 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 85,
+        "end": 188,
+        "text": "Participants must have measurable disease by RECIST v1.1 (radiologically measured by the Investigator)."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 191,
+        "end": 373,
+        "text": "Participants must have documented histologically or cytologically confirmed advanced, unresectable/metastatic solid tumors, including NSCLC, HNSCC, TNBC, and HR+/HER2- breast cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 191,
+        "end": 373,
+        "text": "Participants must have documented histologically or cytologically confirmed advanced, unresectable/metastatic solid tumors, including NSCLC, HNSCC, TNBC, and HR+/HER2- breast cancer."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 397,
+        "end": 633,
+        "text": "Participants are eligible if CNS metastases have been treated and do not require immediate treatment or have been treated and have neurologically returned to baseline (except for residual signs or symptoms related to the CNS treatment)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 636,
+        "end": 815,
+        "text": "Participants must not have concurrent malignancy (present during Screening) requiring treatment or history of prior malignancy active within 2 years prior to treatment assignment."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 979,
+        "end": 1095,
+        "text": "For participants in Part 1B and 2B: Active autoimmune disease or requirement for systemic immunosuppressive therapy."
+      },
+      "appliesTo": "Part 1B and 2B"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1098,
+        "end": 1258,
+        "text": "For participants in Part 1B and 2B: History of interstitial lung disease (ILD) or pneumonitis requiring systemic steroids, or current/suspected ILD/pneumonitis."
+      },
+      "appliesTo": "Part 1B and 2B"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

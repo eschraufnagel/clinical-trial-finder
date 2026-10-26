@@ -1,0 +1,270 @@
+{
+  "nctId": "NCT04270591",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 219,
+        "end": 294,
+        "text": "Histologically or cytologically confirmed diagnosis of NSCLC including PSC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 298,
+        "end": 472,
+        "text": "Patients with stage IIIb or IIIc NSCLC who are not candidates for definitive surgical resection or concurrent chemoradiation or patients with stage IV NSCLC (AJCC version 8)."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 476,
+        "end": 942,
+        "text": "For Phase Ib study, patients should carry at least one of the following MET alterations (by local or Sponsor-designated central laboratory screening):\n\n   * METex14 skipping mutation who had previously treated by other MET inhibitor(s) or\n   * METex14 skipping mutation who had received 3 or more lines prior systemic therapies without MET inhibitor for the advanced NSCLC or\n   * MET amplification GCN ≥ 4 or MET/CEP7 ratio ≥ 2) or\n   * MET over-expression (IHC2+)."
+      },
+      "appliesTo": "Phase Ib study",
+      "loose": true
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 946,
+        "end": 1367,
+        "text": "For Phase II study, patients with METex14 skipping mutation in tumor or ctDNA samples (local testing is acceptable for eligibility, however if the results of the central laboratory is available, the report of the central laboratory shall prevail); all patients in Phase II study will have confirmation of METex14 skipping mutation by Sponsor-designated central laboratory but this result is not necessary for eligibility."
+      },
+      "appliesTo": "Phase II study"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1814,
+        "end": 2003,
+        "text": "For Phase II study, patients are not eligible for chemotherapy or refuse chemotherapy after well-informed or have failed one or two prior lines of systemic therapies for the advanced NSCLC."
+      },
+      "appliesTo": "Phase II study"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2507,
+        "end": 2576,
+        "text": "For Phase II study, at least one measurable lesion as per RECIST 1.1."
+      },
+      "appliesTo": "Phase II study"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2719,
+        "end": 2753,
+        "text": "ECOG Performance Status (PS): 0-1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3702,
+        "end": 3868,
+        "text": "Patients with targetable activating EGFR mutation, ALK rearrangement, ROS1 rearrangement, BRAF mutation or NTRK fusion that have available standard of care therapies."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3702,
+        "end": 3868,
+        "text": "Patients with targetable activating EGFR mutation, ALK rearrangement, ROS1 rearrangement, BRAF mutation or NTRK fusion that have available standard of care therapies."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3702,
+        "end": 3868,
+        "text": "Patients with targetable activating EGFR mutation, ALK rearrangement, ROS1 rearrangement, BRAF mutation or NTRK fusion that have available standard of care therapies."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3702,
+        "end": 3868,
+        "text": "Patients with targetable activating EGFR mutation, ALK rearrangement, ROS1 rearrangement, BRAF mutation or NTRK fusion that have available standard of care therapies."
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3702,
+        "end": 3868,
+        "text": "Patients with targetable activating EGFR mutation, ALK rearrangement, ROS1 rearrangement, BRAF mutation or NTRK fusion that have available standard of care therapies."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3872,
+        "end": 4022,
+        "text": "Patients who have symptomatic CNS metastasis which is neurologically unstable or those who have CNS disease requiring increase in the dose of steroid."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4807,
+        "end": 5084,
+        "text": "Evidence of past or current primary malignancies other than NSCLC (except for non-melanoma skin cancer, in situ breast cancer or in situ cervical carcinoma and superficial bladder cancer, or other cancer curatively treated and with no evidence of disease for at least 5 years)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5327,
+        "end": 5491,
+        "text": "Acute myocardial infarction, severe or unstable angina pectoris, coronary artery or peripheral artery bypass graft received within 6 months prior to the first dose;"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6114,
+        "end": 6585,
+        "text": "Known HIV infection with a history of acquired immunodeficiency syndrome (AIDS)-defining opportunity infection within the past 12 months; active hepatitis B and hepatitis C. Patients whose test results meet one of the following will not be enrolled:\n\n   * for patients in China and Japan, confirmed HIV antibody positive. For patients in the US, patients with a history of HIV but no history of AIDS or an AIDS-defining opportunistic infection are allowed to be enrolled;"
+      },
+      "loose": true
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6252,
+        "end": 6287,
+        "text": "active hepatitis B and hepatitis C."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8187,
+        "end": 8431,
+        "text": "Any diseases or medical conditions, at the investigator's discretion, that may be unstable or influence their safety or study compliance, including organ transplantation, abuse of psychotropic medication, alcohol abuse or history of drug abuse."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8850,
+        "end": 8886,
+        "text": "Pregnant or breast-feeding patients."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8671,
+        "end": 8845,
+        "text": "Patients with a history of interstitial lung disease (ILD), drug-induced ILD, radiation pneumonitis which required steroid treatment or any evidence of clinically active ILD."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

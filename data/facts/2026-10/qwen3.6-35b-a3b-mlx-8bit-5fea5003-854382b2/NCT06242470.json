@@ -1,0 +1,116 @@
+{
+  "nctId": "NCT06242470",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 514,
+        "end": 571,
+        "text": "Unresectable, locally advanced or metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1000,
+        "end": 1110,
+        "text": "Measurable disease per RECIST v1.1. Participants with metastatic CRPC without measurable disease are eligible."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1736,
+        "end": 2096,
+        "text": "Patients with history of prior central nervous system (CNS) metastasis must have been treated, be asymptomatic, and not have concurrent treatment for CNS disease, progression of CNS metastases on magnetic resonance imaging, computed tomography or positron emission tomography, or history of leptomeningeal disease or cord compression at the time of enrollment."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1736,
+        "end": 2096,
+        "text": "Patients with history of prior central nervous system (CNS) metastasis must have been treated, be asymptomatic, and not have concurrent treatment for CNS disease, progression of CNS metastases on magnetic resonance imaging, computed tomography or positron emission tomography, or history of leptomeningeal disease or cord compression at the time of enrollment."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1472,
+        "end": 1733,
+        "text": "Another cancer that required treatment within the past 2 years, with the exception of those with low risk of cancer spreading or death such as adequately treated non melanomatous skin cancer, localized prostate cancer (Gleason Score \\< 6), or carcinoma in situ."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2356,
+        "end": 2423,
+        "text": "Prior autologous or allogeneic stem cell or solid organ transplant."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2646,
+        "end": 2803,
+        "text": "Known history of hepatitis B or C infection or known positive test for hepatitis B surface antigen or core antigen, or hepatitis C polymerase chain reaction."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2806,
+        "end": 2912,
+        "text": "Known positive testing for human immunodeficiency virus or history of acquired immune deficiency syndrome."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

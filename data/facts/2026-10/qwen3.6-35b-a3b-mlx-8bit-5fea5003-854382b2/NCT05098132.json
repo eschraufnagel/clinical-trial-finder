@@ -1,0 +1,103 @@
+{
+  "nctId": "NCT05098132",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 224,
+        "end": 258,
+        "text": "Non-squamous (NSQ) cell histology."
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 145,
+        "end": 218,
+        "text": "Stage IV or Stage IIIB/IIIC and not a candidate for definitive treatment."
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 707,
+        "end": 785,
+        "text": "Prior immune checkpoint inhibitor (anti-PD\\[L\\]1 and/or anti-CTLA-4) treatment"
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 972,
+        "end": 1018,
+        "text": "Known active central nervous system metastases"
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1021,
+        "end": 1060,
+        "text": "Any history of carcinomatous meningitis"
+      },
+      "appliesTo": "Phase 2"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "PD-L1 negative (TPS <1%), OR; STK11 mutated on tumor tissue or ctDNA",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low"
+        ],
+        "polarity": "inclusion",
+        "quote": "PD-L1 negative (TPS <1%), OR; STK11 mutated on tumor tissue or ctDNA",
+        "appliesTo": "Phase 2"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

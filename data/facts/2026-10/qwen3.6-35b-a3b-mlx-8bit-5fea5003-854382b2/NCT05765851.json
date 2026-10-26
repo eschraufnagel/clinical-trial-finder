@@ -1,0 +1,209 @@
+{
+  "nctId": "NCT05765851",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 310,
+        "end": 436,
+        "text": "Pathologically documented HER2-expressing or HER2-mutated (activating mutation) solid tumor that is unresectable or metastatic"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 485,
+        "end": 697,
+        "text": "Presence of at least 1 measurable lesion based on computed tomography (CT) or magnetic resonance imaging (MRI) per Response Evaluation Criteria in Solid Tumors version 1.1 (RECIST v1.1) by investigator assessment"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 700,
+        "end": 775,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) of 0 or 1"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 310,
+        "end": 436,
+        "text": "Pathologically documented HER2-expressing or HER2-mutated (activating mutation) solid tumor that is unresectable or metastatic"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6011,
+        "end": 6264,
+        "text": "Has had prior treatment with antibody-drug conjugate that consists of an exatecan derivative that is a topoisomerase I inhibitor including prior participation in a study involving an antibody-drug conjugate produced by Daiichi Sankyo and/or AstraZeneca."
+      },
+      "appliesTo": "Dose Expansion (Phase 2)"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3032,
+        "end": 3241,
+        "text": "Has a history of (non-infectious) interstitial lung disease (ILD)/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at Screening"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3244,
+        "end": 3457,
+        "text": "Has spinal cord compression or clinically active central nervous system metastases, defined as untreated and symptomatic, or requiring therapy with corticosteroids or anticonvulsants to control associated symptoms"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3460,
+        "end": 3551,
+        "text": "Has multiple primary malignancies within 3 years. Exceptions are specified in the protocol."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5269,
+        "end": 5328,
+        "text": "Any autoimmune, connective tissue or inflammatory disorders"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2653,
+        "end": 2834,
+        "text": "Medical history of myocardial infarction (MI) within 6 months before study enrollment, symptomatic congestive heart failure (CHF) (New York Heart Association \\[NYHA\\] Class II to IV"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4457,
+        "end": 4529,
+        "text": "Has active or uncontrolled human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4832,
+        "end": 4870,
+        "text": "Has active or uncontrolled HBV or HCV."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5066,
+        "end": 5135,
+        "text": "Female who is pregnant, breastfeeding, or planning to become pregnant"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3812,
+        "end": 3945,
+        "text": "Is requiring concomitant use of chronic systemic (IV or oral) corticosteroids or other immunosuppressive medications during the study"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically documented HER2-expressing or HER2-mutated (activating mutation) solid tumor that is unresectable or metastatic",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically documented HER2-expressing or HER2-mutated (activating mutation) solid tumor that is unresectable or metastatic",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

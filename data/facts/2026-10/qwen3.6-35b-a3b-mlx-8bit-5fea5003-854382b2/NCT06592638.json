@@ -1,0 +1,110 @@
+{
+  "nctId": "NCT06592638",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 191,
+        "end": 261,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 111,
+        "text": "Small cell lung cancer (SCLC), who failed or intolerant to available standard treatments"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1806,
+        "end": 1841,
+        "text": "A female who is pregnant or nursing"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1452,
+        "end": 1607,
+        "text": "Active infection (such as acute bacterial infection, tuberculosis, active hepatitis B/C, active syphilis, or active human immunodeficiency virus infection)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1452,
+        "end": 1607,
+        "text": "Active infection (such as acute bacterial infection, tuberculosis, active hepatitis B/C, active syphilis, or active human immunodeficiency virus infection)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Small cell lung cancer (SCLC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Small cell lung cancer (SCLC)",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Systemic immunosuppressive medications, such as corticosteroid (doses > 10 mg/day prednisone or equivalent dose) within 14 days prior to the study entry",
+      "raw": {
+        "factId": "steroids",
+        "rulesOut": [
+          "high_dose"
+        ],
+        "polarity": "exclusion",
+        "quote": "Systemic immunosuppressive medications, such as corticosteroid (doses > 10 mg/day prednisone or equivalent dose) within 14 days prior to the study entry",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

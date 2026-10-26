@@ -1,0 +1,141 @@
+{
+  "nctId": "NCT06136884",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 107,
+        "end": 163,
+        "text": "metastatic or locally advanced unresectable solid tumors"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3516,
+        "end": 3608,
+        "text": "Patients with symptomatic brain metastases requiring treatment and/or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3516,
+        "end": 3608,
+        "text": "Patients with symptomatic brain metastases requiring treatment and/or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1725,
+        "end": 1769,
+        "text": "Measurable disease per RECIST v1.1 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3419,
+        "end": 3490,
+        "text": "An Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3612,
+        "end": 3793,
+        "text": "Patients with a previous history of another malignancy (other than cured basal cell or squamous cell carcinoma of the skin or cured in-situ carcinoma) within 3 years of study entry."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4239,
+        "end": 4386,
+        "text": "Known human immunodeficiency virus, hepatitis B virus (HBV), or hepatitis C virus (HCV) infection (excluding cured HBV and/or cured HCV infection)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4239,
+        "end": 4386,
+        "text": "Known human immunodeficiency virus, hepatitis B virus (HBV), or hepatitis C virus (HCV) infection (excluding cured HBV and/or cured HCV infection)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4658,
+        "end": 4877,
+        "text": "Patients with clinically significant autoimmune disease, either currently present of present within 2 years, including a current requirement for systemic immunosuppressive therapy equivalent to \\> 10 mg/prednisone daily"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4122,
+        "end": 4235,
+        "text": "Pregnant or breast-feeding patients or any patient with child-bearing potential not using adequate contraception."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

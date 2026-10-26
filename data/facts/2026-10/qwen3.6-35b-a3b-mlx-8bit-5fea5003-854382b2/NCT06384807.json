@@ -1,0 +1,156 @@
+{
+  "nctId": "NCT06384807",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 73,
+        "end": 158,
+        "text": "Unresectable, incurable, locally advanced or metastatic epithelial-origin solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 475,
+        "end": 511,
+        "text": "Measurable disease (per RECIST 1.1)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 514,
+        "end": 582,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status 0 or 1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2062,
+        "end": 2293,
+        "text": "histologically or cytologically documented advanced (locally, recurrent, inoperable, cannot betreated with curative intent) or metastatic cancer including Endometrial Carcinoma that is confirmed as proficient mismatch repair (pMMR)"
+      },
+      "appliesTo": "BHV-1510 in Combination"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2613,
+        "end": 2726,
+        "text": "Has symptomatic brain metastases or has had any radiation or surgery for brain metastases within 4 weeks of C1D1."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3711,
+        "end": 3775,
+        "text": "Has current or previously treated leptomeningeal carcinomatosis."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2904,
+        "end": 3206,
+        "text": "Has a medical history of interstitial lung disease (eg, noninfectious interstitial pneumonia requiring steroid treatment, pneumonitis, pulmonary fibrosis, or severe radiation pneumonitis) or current interstitial lung disease or are suspected to have any of these diseases based on imaging at Screening."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2296,
+        "end": 2498,
+        "text": "received ≤ 2 prior lines of systemic anti-cancer therapy and at most one prior anti-programmed cell death protein 1 (PD-1) (programmed death-ligand 1 \\[PD-L1\\]) therapy for advanced/ metastatic disease."
+      },
+      "appliesTo": "BHV-1510 in Combination"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2296,
+        "end": 2352,
+        "text": "received ≤ 2 prior lines of systemic anti-cancer therapy"
+      },
+      "appliesTo": "BHV-1510 in Combination"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4260,
+        "end": 4318,
+        "text": "Prior allogeneic stem cell or solid organ transplantation."
+      },
+      "appliesTo": "BHV-1510 in Combination Specific Exclusion Criteria"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2527,
+        "end": 2563,
+        "text": "Women who are pregnant or lactating."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

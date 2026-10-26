@@ -1,0 +1,175 @@
+{
+  "nctId": "NCT07436728",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4082,
+        "end": 4153,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4157,
+        "end": 4316,
+        "text": "Participants must have at least 1 lesion that meets the definition of measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 criteria"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6480,
+        "end": 6794,
+        "text": "History of brain metastasis or leptomeningeal disease unless:\n\n     a) Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR b) Received stereotactic radiosurgery and is off corticosteroids for brain metastases AND c) Is without neurologic dysfunction"
+      },
+      "loose": true
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6051,
+        "end": 6108,
+        "text": "No concurrent leptomeningeal disease or cord compression."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7956,
+        "end": 8053,
+        "text": "Active diagnosis of a lung condition including:\n\n     a) Pneumonitis b) Interstitial lung disease"
+      },
+      "loose": true
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6881,
+        "end": 7098,
+        "text": "History of any of the following ≤6 months before the first dose of trial intervention:\n\n     a) Congestive heart failure New York Heart Association (NYHA) Grade III or IV. b) Unstable angina. c) Myocardial infarction."
+      },
+      "loose": true
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9972,
+        "end": 10121,
+        "text": "History of a bone marrow transplantation within the past 5 years or solid organ transplantation (as a recipient) and use of immunosuppressive agents."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10722,
+        "end": 10806,
+        "text": "Known to be Human Immunodeficiency Virus (HIV) positive or hepatitis B or C positive"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10868,
+        "end": 10978,
+        "text": "2. Positive hepatitis B surface antigen (HBsAg) test.\n      3. Positive hepatitis C virus (HCV) antibody test."
+      },
+      "loose": true
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10334,
+        "end": 10416,
+        "text": "Diagnosed with a second primary invasive malignancy not in remission for ≥3 years."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13097,
+        "end": 13249,
+        "text": "Has a positive serum pregnancy test during the screening period or a positive urine pregnancy test on Day 1 before the first dose of trial intervention."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Used corticosteroids or other immunosuppressive medication, concurrently or within 14 days of administration of TAK-505, except for: a) Topical, intranasal, inhaled, ocular, or intra-articular corticosteroids. b) Physiologic doses of replacement steroid. c) Steroid premedication for hypersensitivity reactions and antiemetic use. d) Stable steroid dose (established for ≥28 days before the first dose of TAK-505) for previously treated brain metastasis. Corticosteroid dose on C1D1 should be ≤15 mg/d of prednisone or equivalent.",
+      "raw": {
+        "factId": "steroids",
+        "rulesOut": [
+          "high_dose"
+        ],
+        "polarity": "exclusion",
+        "quote": "Used corticosteroids or other immunosuppressive medication, concurrently or within 14 days of administration of TAK-505, except for: a) Topical, intranasal, inhaled, ocular, or intra-articular corticosteroids. b) Physiologic doses of replacement steroid. c) Steroid premedication for hypersensitivity reactions and antiemetic use. d) Stable steroid dose (established for ≥28 days before the first dose of TAK-505) for previously treated brain metastasis. Corticosteroid dose on C1D1 should be ≤15 mg/d of prednisone or equivalent.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

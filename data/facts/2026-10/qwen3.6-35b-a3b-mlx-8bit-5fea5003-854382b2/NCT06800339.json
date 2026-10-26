@@ -1,0 +1,242 @@
+{
+  "nctId": "NCT06800339",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2430,
+        "end": 2512,
+        "text": "Presence of metastatic (Stage IV) disease, including malignancy pleural effusions."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 161,
+        "end": 397,
+        "text": "Participants with histologically confirmed stage II-IIIC(N3) NSCLC (per the 8th International Association for the Study of Lung Cancer) with disease that is considered borderline resectable prior to initiation of RT or systemic therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2980,
+        "end": 3044,
+        "text": "Participants with brain metastases are excluded from this study."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3989,
+        "end": 4059,
+        "text": "Participants with large-cell neuroendocrine carcinoma tumor histology."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2781,
+        "end": 2881,
+        "text": "Participants with known sensitizing EGFR (L858R or Exon 19 deletion) mutations or ALK translocation."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2781,
+        "end": 2881,
+        "text": "Participants with known sensitizing EGFR (L858R or Exon 19 deletion) mutations or ALK translocation."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3207,
+        "end": 3286,
+        "text": "Participants with active autoimmune disease which would preclude immunotherapy."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3572,
+        "end": 3765,
+        "text": "Participants with a condition requiring systemic treatment with either corticosteroids (\\>10 mg daily prednisone equivalent) or other immunosuppressive medications within 14 days of enrollment."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4279,
+        "end": 4395,
+        "text": "Participants with active hepatitis B (positive hepatitis B surface antigen) or hepatitis C virus (positive HCV RNA)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4824,
+        "end": 4953,
+        "text": "Participants with poorly controlled or untreated human immunodeficiency virus (HIV) or acquired immunodeficiency syndrome (AIDS)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5300,
+        "end": 5547,
+        "text": "Active prior malignancy within the previous 3 years, except for locally curable cancers that have been apparently cured, such as basal or squamous cell skin cancer, superficial bladder cancer or carcinoma in situ of the prostate, cervix or breast."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5633,
+        "end": 5677,
+        "text": "History of allogeneic organ transplantation."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4155,
+        "end": 4274,
+        "text": "Prior therapy with an anti-PD-(L)1, anti-CTLA-4 antibody or any other antibody targeting t-cell co-regulatory pathways."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4063,
+        "end": 4150,
+        "text": "Prior administration of chemotherapy or any other cancer therapy for early-stage NSCLC."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4063,
+        "end": 4150,
+        "text": "Prior administration of chemotherapy or any other cancer therapy for early-stage NSCLC."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4063,
+        "end": 4150,
+        "text": "Prior administration of chemotherapy or any other cancer therapy for early-stage NSCLC."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4063,
+        "end": 4150,
+        "text": "Prior administration of chemotherapy or any other cancer therapy for early-stage NSCLC."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4063,
+        "end": 4150,
+        "text": "Prior administration of chemotherapy or any other cancer therapy for early-stage NSCLC."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

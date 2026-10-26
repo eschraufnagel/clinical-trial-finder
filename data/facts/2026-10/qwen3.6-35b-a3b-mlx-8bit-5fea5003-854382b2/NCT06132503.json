@@ -1,0 +1,181 @@
+{
+  "nctId": "NCT06132503",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 347,
+        "end": 426,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status: 0-2 at screening."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 430,
+        "end": 507,
+        "text": "For Lymphoma patients. At least one bi-dimensionally measurable disease site."
+      },
+      "appliesTo": "Phase 1a and Phase 1b"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5219,
+        "end": 5349,
+        "text": "History or suspicion of central nervous system (CNS) lymphoma or meningeal involvement or central nervous system (CNS) metastases."
+      },
+      "appliesTo": "All Patients: Phase 1a and Phase 1b"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5353,
+        "end": 5521,
+        "text": "History of or active concurrent malignancy other than NHL (Phase 1a and Phase 1b) or solid tumor (Phase 1a only) unless the patient has been disease-free for ≥ 2 years."
+      },
+      "appliesTo": "All Patients: Phase 1a and Phase 1b"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6536,
+        "end": 6593,
+        "text": "Myocardial infarction within 3 months prior to Screening."
+      },
+      "appliesTo": "All Patients: Phase 1a and Phase 1b"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8139,
+        "end": 8191,
+        "text": "Prior allogeneic hematopoietic stem cell transplant."
+      },
+      "appliesTo": "All Patients: Phase 1a and Phase 1b"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8196,
+        "end": 8369,
+        "text": "Autologous hematopoietic stem cell transplant within 6 months prior to first dose of study drug or patient has progressed within 6 months from the day of stem cell infusion."
+      },
+      "appliesTo": "All Patients: Phase 1a and Phase 1b"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7575,
+        "end": 7750,
+        "text": "Hepatitis B and/or hepatitis C infection (as detected by positive testing for hepatitis B surface antigen \\[HbsAg\\] or antibody to hepatitis C virus with confirmatory testing)"
+      },
+      "appliesTo": "All Patients: Phase 1a and Phase 1b"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7754,
+        "end": 7856,
+        "text": "known seropositivity for or history of active viral infection with human immunodeficiency virus (HIV)."
+      },
+      "appliesTo": "All Patients: Phase 1a and Phase 1b"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8093,
+        "end": 8134,
+        "text": "The patient is pregnant or breastfeeding."
+      },
+      "appliesTo": "All Patients: Phase 1a and Phase 1b"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed diagnosis of B-cell NHL according to the 2016 World Health Organization (WHO) classification that has relapsed from or is refractory to at least two prior standard of care treatments or tumors for whom standard therapies are not available.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed diagnosis of B-cell NHL according to the 2016 World Health Organization (WHO) classification that has relapsed from or is refractory to at least two prior standard of care treatments or tumors for whom standard therapies are not available.",
+        "appliesTo": "Phase 1a ONLY"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed diagnosis of DLBCL or MCL according to the 2016 WHO classification.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed diagnosis of DLBCL or MCL according to the 2016 WHO classification.",
+        "appliesTo": "Phase 1b ONLY"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "nctId": "NCT07300150",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 82,
+        "end": 163,
+        "text": "Histologically or cytologically confirmed advanced or metastatic solid malignancy"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 166,
+        "end": 349,
+        "text": "Participant has a pathologically documented, locally advanced or metastatic malignancy with any KRAS mutation or wild-type (WT) KRAS amplification identified through molecular testing"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 641,
+        "end": 681,
+        "text": "Measurable disease (RECIST 1.1 Criteria)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 684,
+        "end": 714,
+        "text": "ECOG Performance Status 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 875,
+        "end": 927,
+        "text": "Active brain metastasis or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1292,
+        "end": 1347,
+        "text": "History of any other malignancy within the past 2 years"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 464,
+        "end": 549,
+        "text": "Participant must have received at least 1 and no more than 4 prior systemic therapies"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2831,
+        "end": 2907,
+        "text": "Significant cardiovascular disease within 6 months of starting study therapy"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2985,
+        "end": 3304,
+        "text": "Known HIV infection with a CD4+ T-cell count \\<200 cells/mcL and/or a detectable viral load per parameters of assay and/or on an anti-retroviral regimen containing a strong or moderate CYP3A4/5 inhibitor or inducer and/or on a new anti-retroviral regimen for less than 28 days prior to the initiation of study treatment"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4615,
+        "end": 4754,
+        "text": "Women who are lactating/breast feeding or who plan to breastfeed while on study through 28 days after receiving the last dose of study drug"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4757,
+        "end": 4867,
+        "text": "Active HBV infection. Participants with resolved infection or who are on Stable antiviral therapy are eligible"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4870,
+        "end": 5013,
+        "text": "Active HCV infection. Participants who have completed definitive antiviral therapy with post treatment confirmation of eradication are eligible"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

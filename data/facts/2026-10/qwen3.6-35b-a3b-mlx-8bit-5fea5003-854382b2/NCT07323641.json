@@ -1,0 +1,229 @@
+{
+  "nctId": "NCT07323641",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 588,
+        "end": 725,
+        "text": "Predominantly adenocarcinoma histology. (Small cell or predominantly squamous cell or sarcomatoid/pleiomorphic histologies are excluded.)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 107,
+        "end": 203,
+        "text": "Cytologically or histologically confirmed non small cell lung cancer (NSCLC), which is incurable"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5281,
+        "end": 5445,
+        "text": "Progressive or symptomatic brain metastases. Brain metastases that have been radiated, are asymptomatic, and on a stable or decreasing dose of steroids are allowed."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5446,
+        "end": 5480,
+        "text": "Leptomeningeal disease is excluded"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1494,
+        "end": 1531,
+        "text": "Measurable disease, as per RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1534,
+        "end": 1601,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 212,
+        "end": 455,
+        "text": "activating and sensitizing EGFR mutation (e.g., exon 20 insertion mutations are excluded). Enrollment of patients with mutations other than exon 19 deletion and the L858R point mutation require literature supporting sensitivity to osimertinib."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1144,
+        "end": 1424,
+        "text": "subjects must have c-MET overexpressing NSCLC as assessed by a Certified Laboratory Improvement Amendments (CLIA)-certified laboratory using the VENTANA MET (SP44) RxDx assay, with intermediate or high expression, defined as either ≥ 25% and \\< 50% (intermediate) or ≥ 50% (high)."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 728,
+        "end": 845,
+        "text": "Progressed on osimertinib. Osimertinib must have been included in the last systemic therapy prior to trial enrollment"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5021,
+        "end": 5074,
+        "text": "Thoracic radiation of ≥ 30 grey (Gy) within 6 months."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7120,
+        "end": 7180,
+        "text": "History of another cancer within 2 years of study initiation"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7889,
+        "end": 7950,
+        "text": "myocardial infarction within 6 months, stroke within 6 months"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6847,
+        "end": 6947,
+        "text": "Patient with a history of HIV with an undetectable viral load and a CD4 count over 200 are eligible."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6948,
+        "end": 7117,
+        "text": "Patients with a history of hepatitis B or hepatitis C, an undetectable viral load, and liver function tests (LFT) testing which meets criteria for the study are eligible"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6426,
+        "end": 6591,
+        "text": "Major surgical procedures or serious trauma within 4 weeks prior to cycle (C) 1 day (D) 1, or plans for major surgical procedures within 4 weeks after the first dose"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2602,
+        "end": 2699,
+        "text": "Female participants of childbearing potential must have a negative urine or serum pregnancy test."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6106,
+        "end": 6423,
+        "text": "Subject must not have a history of idiopathic lung disease, drug-induced idiopathic lung disease, idiopathic pulmonary fibrosis, organizing pneumonia (e.g., bronchiolitis obliterans), drug-induced pneumonitis, radiation pneumonitis, idiopathic pneumonitis, or evidence of active pneumonitis on screening chest CT scan"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "nctId": "NCT07509034",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 152,
+        "end": 218,
+        "text": "that has recurred following or is refractory to first-line therapy"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 292,
+        "end": 359,
+        "text": "Eastern Cooperative Oncology Group Performance Status (ECOG PS) 0-2"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1191,
+        "end": 1288,
+        "text": "At least 1 measurable lesion by Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4701,
+        "end": 4726,
+        "text": "Positive serology for HIV"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4732,
+        "end": 4816,
+        "text": "Active HBV infection as demonstrated by test for hepatitis B surface antigen (HBsAg)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5348,
+        "end": 5469,
+        "text": "Pregnancy confirmed with beta-human chorionic gonadotropin (beta-HCG) serum or urine pregnancy test in IOCBP at screening"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed small cell lung cancer (SCLC) or extrapulmonary neuroendocrine cancers (EP-NEC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed small cell lung cancer (SCLC) or extrapulmonary neuroendocrine cancers (EP-NEC)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

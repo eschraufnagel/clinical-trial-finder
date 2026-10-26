@@ -1,0 +1,192 @@
+{
+  "nctId": "NCT07017829",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 41,
+        "end": 159,
+        "text": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 1 at the time of study treatment initiation."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2625,
+        "end": 2659,
+        "text": "Active/untreated brain metastasis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2938,
+        "end": 2996,
+        "text": "Leptomeningeal involvement regardless of treatment status."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2999,
+        "end": 3123,
+        "text": "Tumor with oncogenic mutation based on standard of care broad genomic profiling in EGFR, ALK, ROS1, RET, MET, or NTRK genes."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2999,
+        "end": 3123,
+        "text": "Tumor with oncogenic mutation based on standard of care broad genomic profiling in EGFR, ALK, ROS1, RET, MET, or NTRK genes."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2999,
+        "end": 3123,
+        "text": "Tumor with oncogenic mutation based on standard of care broad genomic profiling in EGFR, ALK, ROS1, RET, MET, or NTRK genes."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2999,
+        "end": 3123,
+        "text": "Tumor with oncogenic mutation based on standard of care broad genomic profiling in EGFR, ALK, ROS1, RET, MET, or NTRK genes."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping",
+        "amplification"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2999,
+        "end": 3123,
+        "text": "Tumor with oncogenic mutation based on standard of care broad genomic profiling in EGFR, ALK, ROS1, RET, MET, or NTRK genes."
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2999,
+        "end": 3123,
+        "text": "Tumor with oncogenic mutation based on standard of care broad genomic profiling in EGFR, ALK, ROS1, RET, MET, or NTRK genes."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3126,
+        "end": 3592,
+        "text": "History of autoimmune disorder, with exception of patients with vitiligo or endocrine-related autoimmune conditions receiving appropriate hormonal supplementation who are eligible. Systemic use of immunosuppressant drugs such as steroids (except as hormone replacement therapy or short-course supportive medication such as chemotherapy or drug allergy, etc.), azathioprine, tacrolimus, cyclosporine, etc. within 4 weeks before the first administration of study drug."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4185,
+        "end": 4300,
+        "text": "Has known immunosuppressive disease (e.g., HIV, AIDS or other immune depressing disease). Testing is not mandatory."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5389,
+        "end": 5798,
+        "text": "Patients diagnosed with an invasive cancer within 2 years prior to starting protocol therapy with the following exceptions: non-melanoma skin cancers, in-situ cancers, and prostate cancer Gleason ≤ 6 (under surveillance or treated), early-stage node-negative estrogen receptor positive (ER+)/progesterone receptor positive (PR+) breast cancer with Oncotype Dx score \\< 25 not taking adjuvant hormonal therapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5801,
+        "end": 5841,
+        "text": "Pregnant or nursing female participants."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1409,
+        "end": 1519,
+        "text": "Patients must have measurable disease as defined in Response Evaluation Criteria in Solid Tumors (RECIST) 1.1."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "nctId": "NCT06747585",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 62,
+        "end": 227,
+        "text": "Have histologically or cytologically confirmed advanced locally recurrent and inoperable or metastatic SqNSCLC, HNSCC (nasopharyngeal cancer included), ESCC or CSCC."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 915,
+        "end": 1026,
+        "text": "Diagnosed with cancers of predominantly non-squamous histology (eg, adenosquamous carcinoma) or adenocarcinoma."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 62,
+        "end": 227,
+        "text": "Have histologically or cytologically confirmed advanced locally recurrent and inoperable or metastatic SqNSCLC, HNSCC (nasopharyngeal cancer included), ESCC or CSCC."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 230,
+        "end": 368,
+        "text": "Phase I Dose Escalation: Have received at least one systemic standard of care regimen and being refractory or intolerant to the treatment."
+      },
+      "appliesTo": "Phase I Dose Escalation"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 371,
+        "end": 521,
+        "text": "Phase I RDE and Phase II: Have received no more than 2 lines of systemic standard of care regimen and being refractory or intolerant to the treatment."
+      },
+      "appliesTo": "Phase I RDE and Phase II"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 591,
+        "end": 687,
+        "text": "Have a performance status of 0 or 1 on the Eastern Cooperative Oncology Group Performance Scale."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 820,
+        "end": 890,
+        "text": "Have measurable disease based on RECIST 1.1 as determined by the site."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1246,
+        "end": 1335,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1246,
+        "end": 1335,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

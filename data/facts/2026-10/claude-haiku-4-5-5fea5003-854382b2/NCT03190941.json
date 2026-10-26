@@ -1,0 +1,112 @@
+{
+  "nctId": "NCT03190941",
+  "mappings": [
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 129,
+        "text": "Measurable (per RECIST V1.1 criteria, metastatic, or unresectable malignancy expressing G12V mutated KRAS"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1677,
+        "end": 2001,
+        "text": "Patients with 3 or fewer brain metastases that are less than 1 cm in diameter and asymptomatic are eligible. Lesions that have been treated with stereotactic radiosurgery must be clinically stable for one month after treatment for the patient to be eligible. Patients\n\nwith surgically resected brain metastases are eligible."
+      },
+      "loose": true
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2081,
+        "end": 2123,
+        "text": "Clinical performance status of ECOG 0 or 1"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2729,
+        "end": 2759,
+        "text": "Seronegative for HIV antibody."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3035,
+        "end": 3115,
+        "text": "Seronegative for hepatitis B antigen, and seronegative for hepatitis C antibody."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4424,
+        "end": 4576,
+        "text": "Women of child-bearing potential who are pregnant or breastfeeding because of the potentially dangerous effects of the treatment on the fetus or infant."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "low_dose",
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4579,
+        "end": 4615,
+        "text": "Concurrent systemic steroid therapy."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

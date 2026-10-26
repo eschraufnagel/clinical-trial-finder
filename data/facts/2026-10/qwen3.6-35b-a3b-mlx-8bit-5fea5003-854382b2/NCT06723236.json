@@ -1,0 +1,178 @@
+{
+  "nctId": "NCT06723236",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 300,
+        "text": "Participants in dose escalation or supplemental cohorts must have histologically proven unresectable, locally advanced or metastatic solid tumor limited to one of the following types: NSCLC adenocarcinoma, cholangiocarcinoma, colorectal carcinoma (CRC), or pancreatic carcinoma"
+      },
+      "appliesTo": "dose escalation or supplemental cohorts"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 167,
+        "text": "Participants in dose escalation or supplemental cohorts must have histologically proven unresectable, locally advanced or metastatic solid tumor"
+      },
+      "appliesTo": "dose escalation or supplemental cohorts"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2225,
+        "end": 2278,
+        "text": "Active brain metastases or leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2225,
+        "end": 2278,
+        "text": "Active brain metastases or leptomeningeal metastases."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2281,
+        "end": 2332,
+        "text": "Prior stem cell, tissue, or solid organ transplant."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2335,
+        "end": 2401,
+        "text": "Another malignancy that required treatment within the past 2 years"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1505,
+        "end": 1611,
+        "text": "Participants must have at least one lesion that meets the definition of measurable disease by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1961,
+        "end": 2038,
+        "text": "Participants must not be pregnant, planning to be pregnant, or breastfeeding."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 740,
+        "end": 828,
+        "text": "no more than 2 prior lines of cytotoxic chemotherapy for advanced or metastatic disease."
+      },
+      "appliesTo": "expansion cohorts"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants in expansion cohorts must have either NSCLC adenocarcinoma with",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants in expansion cohorts must have either NSCLC adenocarcinoma with",
+        "appliesTo": "expansion cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants in expansion cohorts must have either ... Colorectal adenocarcinoma with",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants in expansion cohorts must have either ... Colorectal adenocarcinoma with",
+        "appliesTo": "expansion cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants in expansion cohorts must have either ... NSCLC adenocarcinoma with progression on or following anti-PD-1/PD-L1 inhibitor ... or ... Pancreatic cancer ... or ... Colorectal adenocarcinoma with Progression during or following standard therapy",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants in expansion cohorts must have either ... NSCLC adenocarcinoma with progression on or following anti-PD-1/PD-L1 inhibitor ... or ... Pancreatic cancer ... or ... Colorectal adenocarcinoma with Progression during or following standard therapy",
+        "appliesTo": "expansion cohorts"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "nctId": "NCT05277168",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 172,
+        "end": 203,
+        "text": "ECOG performance status of 0-1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 241,
+        "end": 405,
+        "text": "Subjects with pathologically diagnosed advanced relapsed or refractory solid tumors, either gastric and gastroesophageal junction (GEJ) cancer, or pancreatic cancer"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 241,
+        "end": 405,
+        "text": "Subjects with pathologically diagnosed advanced relapsed or refractory solid tumors, either gastric and gastroesophageal junction (GEJ) cancer, or pancreatic cancer"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1519,
+        "end": 1580,
+        "text": "Has at least one measurable lesion as defined by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3739,
+        "end": 4003,
+        "text": "Subjects with known brain metastases, unless the participant is \\> 1 month from definitive therapy (surgery or radiotherapy), has no evidence of tumor growth on an imaging study and is clinically stable with respect to the tumor at the start of study intervention."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4007,
+        "end": 4268,
+        "text": "Subjects with a second primary cancer, except adequately treated non-melanoma skin cancer, curatively treated in situ cancer of the cervix, and other solid tumors curatively treated with no evidence of disease for ≥ 3 years prior to the first dose of the study."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4273,
+        "end": 4506,
+        "text": "Class III-IV cardiac insufficiency as per the New York Heart Association (NYHA) criteria; arrhythmia requiring long-term drug control; unstable angina or acute myocardial infarction within 6 months before the first dose of the study."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4511,
+        "end": 4732,
+        "text": "Subjects with a history of clinically significant lung diseases (e.g., interstitial pneumonia, radiation pneumonia, and pulmonary fibrosis) or who are suspected to have these diseases by chest imaging at screening period."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4867,
+        "end": 5058,
+        "text": "Hepatitis B (HBV, chronic or acute; defined as having a known positive hepatitis B surface antigen \\[HbsAg\\] test at the time of screening) or hepatitis C (HCV) infection requiring treatment."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5063,
+        "end": 5225,
+        "text": "Has a history of immunodeficiency (including positive results of HIV test in screening, and other acquired and congenital immunodeficiencies) or organ transplant."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

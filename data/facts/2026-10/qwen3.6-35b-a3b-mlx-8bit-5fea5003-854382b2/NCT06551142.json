@@ -1,0 +1,143 @@
+{
+  "nctId": "NCT06551142",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 89,
+        "end": 164,
+        "text": "Participants with histologically confirmed advanced/metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 89,
+        "end": 164,
+        "text": "Participants with histologically confirmed advanced/metastatic solid tumors"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1271,
+        "end": 1549,
+        "text": "evidence of brain metastasis (unless meeting the following criteria at the same time: asymptomatic; medically stable for at least 4 weeks prior to initial dosing; no steroid treatment required for at least 4 weeks prior to initial dosing; and no midline shift due to herniation)"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1681,
+        "end": 1724,
+        "text": "evidence of meningeal/brainstem involvement"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 573,
+        "end": 652,
+        "text": "Has at least 1 target lesion per RECIST 1.1, as determined by the investigator."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 658,
+        "end": 698,
+        "text": "Has an ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1160,
+        "end": 1245,
+        "text": "Prior treatment with orlotamab, enoblituzumab, I-Dxd, or other B7-H3 targeted agents."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2761,
+        "end": 2999,
+        "text": "Participants with evidence of current ILD/non-infectious pneumonitis OR a prior history of ILD/non-infectious pneumonitis requiring high-dose glucocorticoids OR suspected ILD/non-infectious pneumonitis that cannot be ruled out by imaging."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3002,
+        "end": 3110,
+        "text": "Has a history of autoimmune disease that has required systemic treatments in the 2 years prior to screening."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3359,
+        "end": 3463,
+        "text": "Has any history of prior allogenic or autologous bone marrow transplant or other solid organ transplant."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

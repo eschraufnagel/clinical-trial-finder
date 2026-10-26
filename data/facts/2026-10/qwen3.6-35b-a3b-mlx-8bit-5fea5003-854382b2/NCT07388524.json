@@ -1,0 +1,205 @@
+{
+  "nctId": "NCT07388524",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 152,
+        "end": 287,
+        "text": "Tumors with any histology are allowed including both squamous and non-squamous subtypes, except those containing small-cell morphology."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 140,
+        "text": "Pathologically stage IA3 or IB NSCLC per American Joint Committee on Cancer (AJCC) Cancer Staging Manual, 9th edition"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1306,
+        "end": 1432,
+        "text": "PD-L1 immunohistochemistry showing tumor proportion score (TPS) ≥ 50%, by an Food and Drug Administration (FDA)-approved assay"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1547,
+        "end": 1595,
+        "text": "No EGFR exon 19 deletion (del) or L858R mutation"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1547,
+        "end": 1609,
+        "text": "No EGFR exon 19 deletion (del) or L858R mutation or ALK fusion"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2001,
+        "end": 2075,
+        "text": "No prior neoadjuvant or adjuvant therapy for current lung cancer diagnosis"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2331,
+        "end": 2465,
+        "text": "No current pneumonitis or history of (non-infectious) pneumonitis that required steroids or history of interstitial lung disease (ILD)"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2468,
+        "end": 2558,
+        "text": "No active auto-immune disease that has required systemic treatment within the last 2 years"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3156,
+        "end": 3236,
+        "text": "No history of prior allogeneic bone marrow, stem cell, or solid organ transplant"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3239,
+        "end": 3357,
+        "text": "Patient has not received continuous systemic treatment with corticosteroids (\\> 10 mg daily prednisone or equivalents)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4177,
+        "end": 4241,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4850,
+        "end": 4878,
+        "text": "Not pregnant and not nursing"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5357,
+        "end": 5507,
+        "text": "Patients with known HIV infection on effective anti-retroviral therapy with undetectable viral load within 6 months prior to registration are eligible"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "No active hepatitis B ... or hepatitis C ... infection",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "No active hepatitis B ... or hepatitis C ... infection",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with known history or current symptoms of heart failure ... should be class 2B or better",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with known history or current symptoms of heart failure ... should be class 2B or better",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

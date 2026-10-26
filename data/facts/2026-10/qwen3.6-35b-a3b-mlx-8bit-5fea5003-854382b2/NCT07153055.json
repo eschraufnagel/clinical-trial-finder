@@ -1,0 +1,123 @@
+{
+  "nctId": "NCT07153055",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1400,
+        "end": 1454,
+        "text": "Must have measurable disease per RECIST (version 1.1)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3707,
+        "end": 3868,
+        "text": "Symptomatic or unstable brain metastases, requiring \\> 2 mg dexamethasone orally daily, or received palliative radiation to the CNS within 2 weeks of enrollment."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3872,
+        "end": 4036,
+        "text": "Patients with known history of interstitial lung disease (ILD) or pneumonitis (\\> grade 1) or ILD/pneumonitis (\\> grade 1) related to antineoplastic drug treatment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1458,
+        "end": 1486,
+        "text": "ECOG performance status ≤ 2."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "exon20_insertion"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3416,
+        "end": 3619,
+        "text": "Patients who have tumors harboring EGFR exon 20 insertion alterations, EGFR C797S, or known mechanisms of resistance to osimertinib (i.e., MET amplification) aside from histologic transformation to SCLC."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "amplification"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3416,
+        "end": 3619,
+        "text": "Patients who have tumors harboring EGFR exon 20 insertion alterations, EGFR C797S, or known mechanisms of resistance to osimertinib (i.e., MET amplification) aside from histologic transformation to SCLC."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3623,
+        "end": 3703,
+        "text": "Patients who are pregnant (treatment can cause fetal harm) and/or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Must have a histologically or cytologically confirmed transformation to small cell lung carcinoma/cancer.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Must have a histologically or cytologically confirmed transformation to small cell lung carcinoma/cancer.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "nctId": "NCT05061550",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1084,
+        "end": 1157,
+        "text": "Participants with small-cell lung cancer or mixed small-cell lung cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 104,
+        "text": "Newly diagnosed NSCLC patients with resectable disease (Stage IIA to Stage IIIB)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 107,
+        "end": 185,
+        "text": "WHO or Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 584,
+        "end": 660,
+        "text": "Participants with baseline PD-L1 expression status \\<1% (Arms 6 and 7 only)."
+      },
+      "appliesTo": "Arms 6 and 7 only"
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 514,
+        "end": 581,
+        "text": "Participants with sensitising EGFR mutations or ALK translocations."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 514,
+        "end": 581,
+        "text": "Participants with sensitising EGFR mutations or ALK translocations."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 663,
+        "end": 727,
+        "text": "Active or prior documented autoimmune or inflammatory disorders."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1043,
+        "end": 1081,
+        "text": "History of another primary malignancy."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1206,
+        "end": 1415,
+        "text": "History of non-infectious interstitial lung disease (ILD) ILD/pneumonitis that required steroids, has current ILD/pneumonitis, or has suspected ILD/pneumonitis that cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2805,
+        "end": 2872,
+        "text": "Active or uncontrolled infections including HBA, HBV, HCV, and HIV."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

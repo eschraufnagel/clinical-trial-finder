@@ -1,0 +1,194 @@
+{
+  "nctId": "NCT05742607",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8692,
+        "end": 8761,
+        "text": "Patients with small-cell lung cancer or mixed small-cell lung cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 644,
+        "end": 948,
+        "text": "Patients should have resectable disease (Stage IIA to Stage IIIA; Stage IIIB - Nodal stage N2 after the first 40 patients \\[cohort 2\\]), according to Version 8 of IASLC Staging Manual in Thoracic Oncology (2016), and be candidates for lobectomy, sleeve resection, or bilobectomy at the time of screening."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2038,
+        "end": 2173,
+        "text": "WHO Performance Status (WHO PS) score or Eastern Cooperative Oncology Group Performance Status (ECOG PS) score of 0 or 1 at enrollment."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6649,
+        "end": 6712,
+        "text": "Patients with sensitizing EGFR mutations or ALK translocations."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6649,
+        "end": 6712,
+        "text": "Patients with sensitizing EGFR mutations or ALK translocations."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8360,
+        "end": 8520,
+        "text": "Malignancy treated with curative intent and with no known active disease ≥5 years before the first dose of study drugs and of low potential risk for recurrence."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6764,
+        "end": 7142,
+        "text": "Active or prior documented autoimmune or inflammatory disorders (including inflammatory bowel disease \\[e.g., colitis or Crohn's disease\\], diverticulitis \\[with the exception of diverticulosis\\], systemic lupus erythematosus, sarcoidosis syndrome, or Wegener syndrome \\[e.g., granulomatosis with polyangiitis, Graves' disease, rheumatoid arthritis, hypophysitis, or uveitis\\])."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7615,
+        "end": 8089,
+        "text": "Uncontrolled intercurrent illness, including but not limited to, uncontrolled hypertension, unstable angina pectoris, uncontrolled cardiac arrhythmia, active interstitial lung disease (ILD), serious chronic gastrointestinal conditions associated with diarrhea, or psychiatric illness/social situations that would limit compliance with study requirement, substantially increase risk of incurring AEs, or compromise the ability of the patient to give written informed consent."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8812,
+        "end": 9110,
+        "text": "Active infection including tuberculosis (clinical evaluation that includes clinical history, physical examination and radiographic findings, and tuberculosis testing in line with local practice), hepatitis B (known positive hepatitis B surface antigen \\[HBsAg\\] result) and hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10102,
+        "end": 10228,
+        "text": "Presence of cardiac disease, including myocardial infarction or unstable angina pectoris within 6 months prior to study entry."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6716,
+        "end": 6760,
+        "text": "History of allogeneic organ transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12046,
+        "end": 12281,
+        "text": "Female patients who are pregnant or breastfeeding, or male or female patients of reproductive potential who are not willing to employ effective birth control from screening to 180 days after the last dose of study drugs administration."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5043,
+        "end": 5173,
+        "text": "Note: For Cohort 2 (PD-L1-positive cohort), only patients with PD-L1 expression tumor proportion score (TPS) ≥1% will be enrolled."
+      },
+      "appliesTo": "Cohort 2 (PD-L1-positive cohort)"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 12868,
+        "end": 12963,
+        "text": "Only for patients in Cohort 2: Patients with PD-L1 expression TPS \\<1% or unknown PD-L1 status."
+      },
+      "appliesTo": "Cohort 2"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

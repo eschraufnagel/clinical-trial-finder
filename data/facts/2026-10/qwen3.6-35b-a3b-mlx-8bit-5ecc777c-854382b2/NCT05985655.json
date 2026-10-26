@@ -1,0 +1,68 @@
+{
+  "nctId": "NCT05985655",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 27,
+        "end": 92,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0-1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 709,
+        "end": 871,
+        "text": "Must have disease that is advanced (ie, surgery or radiotherapy are not considered to be potentially curative), recurrent, or metastatic following SoC treatments."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1277,
+        "end": 1343,
+        "text": "Symptomatic central nervous system (CNS) malignancy or metastases."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 927,
+        "end": 1013,
+        "text": "Must have tumor lesion(s) or metastases amenable to biopsy, excluding bone metastases."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5ecc777c8cf0",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

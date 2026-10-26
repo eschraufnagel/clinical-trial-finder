@@ -1,0 +1,145 @@
+{
+  "nctId": "NCT07778316",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 341,
+        "end": 416,
+        "text": "Participants who progressed or recurred following 1 platinum-based regimen."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 419,
+        "end": 499,
+        "text": "Measurable disease as defined per RECIST 1.1 within the 21-day screening period."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 502,
+        "end": 557,
+        "text": "Eastern Cooperative Oncology Group (ECOG) PS of 0 or 1."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 341,
+        "end": 416,
+        "text": "Participants who progressed or recurred following 1 platinum-based regimen."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2480,
+        "end": 2550,
+        "text": "Receiving another anticancer therapy for a malignancy other than SCLC."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2553,
+        "end": 2607,
+        "text": "More than 1 prior line of anticancer therapy for SCLC."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1484,
+        "end": 1577,
+        "text": "History of other malignancy within the past 2 years, with exceptions defined in the protocol."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1653,
+        "end": 1692,
+        "text": "History of solid organ transplantation."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1331,
+        "end": 1481,
+        "text": "Current evidence or history of non-infectious pneumonitis/ILD (interstitial lung disease) that required steroids or other immunosuppressive treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Any previous diagnosis of non-small cell lung cancer (NSCLC), epidermal growth factor receptor (EGFR) activating mutation that has transformed to SCLC, or mixed SCLC and NSCLC histology, with exceptions defined in the protocol.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "Any previous diagnosis of non-small cell lung cancer (NSCLC), epidermal growth factor receptor (EGFR) activating mutation that has transformed to SCLC, or mixed SCLC and NSCLC histology, with exceptions defined in the protocol.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

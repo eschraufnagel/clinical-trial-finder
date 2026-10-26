@@ -1,0 +1,292 @@
+{
+  "nctId": "NCT07111520",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 461,
+        "end": 603,
+        "text": "Have advanced (i.e., metastatic or locally recurrent where local therapy with curative intent is not possible) non-squamous or squamous NSCLC."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 218,
+        "end": 265,
+        "text": "Have measurable disease defined by RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 268,
+        "end": 337,
+        "text": "Have Eastern Cooperative Oncology Group performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11325,
+        "end": 11513,
+        "text": "Have clinically active central nervous system metastases, defined as untreated and symptomatic, or requiring therapy with corticosteroids or anticonvulsants to control associated symptoms."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10867,
+        "end": 11080,
+        "text": "Have a history of (non-infectious) interstitial lung disease (ILD) /pneumonitis that required steroids, have current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8464,
+        "end": 8544,
+        "text": "Part 2b (Cohort D1) 1L, squamous or non-squamous NSCLC, AGA-negative, PD-L1 ≥50%"
+      },
+      "appliesTo": "Part 2b (Cohort D1) 1L, squamous or non-squamous NSCLC, AGA-negative, PD-L1 ≥50%"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "high",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8549,
+        "end": 8630,
+        "text": "Part 2b (Cohort D2) 1L, squamous or non-squamous NSCLC, AGA-negative, PD-L1 \\<50%"
+      },
+      "appliesTo": "Part 2b (Cohort D2) 1L, squamous or non-squamous NSCLC, AGA-negative, PD-L1 <50%"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 641,
+        "end": 718,
+        "text": "Part 1, 2L+, squamous or non-squamous NSCLC, AGA-negative/positive, any PD-L1"
+      },
+      "appliesTo": "Part 1, 2L+, squamous or non-squamous NSCLC, AGA-negative/positive, any PD-L1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3925,
+        "end": 4014,
+        "text": "Part 2a (Cohort A), 2L+, squamous or non-squamous NSCLC, AGA-negative/positive, any PD-L1"
+      },
+      "appliesTo": "Part 2a (Cohort A), 2L+, squamous or non-squamous NSCLC, AGA-negative/positive, any PD-L1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6164,
+        "end": 6243,
+        "text": "Part 2a (Cohort B), 1L, squamous or non-squamous NSCLC, AGA-negative, any PD-L1"
+      },
+      "appliesTo": "Part 2a (Cohort B), 1L, squamous or non-squamous NSCLC, AGA-negative, any PD-L1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6728,
+        "end": 6836,
+        "text": "Part 2b (Cohort C), 2L+, squamous or non-squamous NSCLC, AGA-negative or EGFR activating mutation, any PD-L1"
+      },
+      "appliesTo": "Part 2b (Cohort C), 2L+, squamous or non-squamous NSCLC, AGA-negative or EGFR activating mutation, any PD-L1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8464,
+        "end": 8630,
+        "text": "Part 2b (Cohort D1) 1L, squamous or non-squamous NSCLC, AGA-negative, PD-L1 ≥50% and Part 2b (Cohort D2) 1L, squamous or non-squamous NSCLC, AGA-negative, PD-L1 \\<50%"
+      },
+      "appliesTo": "Part 2b (Cohort D1) 1L, squamous or non-squamous NSCLC, AGA-negative, PD-L1 ≥50% and Part 2b (Cohort D2) 1L, squamous or non-squamous NSCLC, AGA-negative, PD-L1 <50%"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9237,
+        "end": 9486,
+        "text": "Had disease progression on or were intolerant to prior treatment with an agent targeting HER3 (including antibody, ADC, cell therapy, and other drugs) or with a topoisomerase I inhibitor payload (including topoisomerase I inhibitor-containing ADCs)."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12157,
+        "end": 12284,
+        "text": "Have a history of Grade ≥3 immune-related adverse events that led to treatment discontinuation of a prior checkpoint inhibitor."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11867,
+        "end": 11991,
+        "text": "Have a history of small bowel obstruction requiring hospitalization within the past 3 months prior to the first dose of IMP."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Have advanced (i.e., metastatic or locally recurrent where local therapy with curative intent is not possible) non-squamous or squamous NSCLC.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Have advanced (i.e., metastatic or locally recurrent where local therapy with curative intent is not possible) non-squamous or squamous NSCLC.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "for AGA-positive NSCLC only (excluding EGFR activating mutation): Have documented positive test results for one or more actionable genomic alteration... Must have received at least one prior systemic therapy for advanced disease, which must have included targeted treatment for actionable genomic alterations",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "for AGA-positive NSCLC only (excluding EGFR activating mutation): Have documented positive test results for one or more actionable genomic alteration... Must have received at least one prior systemic therapy for advanced disease, which must have included targeted treatment for actionable genomic alterations",
+        "appliesTo": "Part 1, 2L+, squamous or non-squamous NSCLC, AGA-negative/positive, any PD-L1"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "for AGA-positive NSCLC only, with EGFR activation mutation: Have documented positive test results for an EGFR-sensitizing mutation... Participants must have received one or two prior lines of systemic therapy for advanced and/or metastatic disease, which must include treatment with an approved EGFR TKI",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "for AGA-positive NSCLC only, with EGFR activation mutation: Have documented positive test results for an EGFR-sensitizing mutation... Participants must have received one or two prior lines of systemic therapy for advanced and/or metastatic disease, which must include treatment with an approved EGFR TKI",
+        "appliesTo": "Part 1, 2L+, squamous or non-squamous NSCLC, AGA-negative/positive, any PD-L1"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "for AGA-positive NSCLC only, excluding EGFR activating mutation: Have documented positive test results for one or more actionable genomic alterations... May have received 1 to 4 lines of systemic treatment, of which one prior systemic therapy for advanced disease must have included targeted treatment for actionable genomic alterations",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "for AGA-positive NSCLC only, excluding EGFR activating mutation: Have documented positive test results for one or more actionable genomic alterations... May have received 1 to 4 lines of systemic treatment, of which one prior systemic therapy for advanced disease must have included targeted treatment for actionable genomic alterations",
+        "appliesTo": "Part 2a (Cohort A), 2L+, squamous or non-squamous NSCLC, AGA-negative/positive, any PD-L1"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "for AGA-positive NSCLC only, with EGFR activation mutation: Have documented positive test results for an EGFR-sensitizing mutation... Participants must have received one or two prior lines of systemic therapy for advanced and/or metastatic disease, which must include treatment with an approved EGFR TKI",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "for AGA-positive NSCLC only, with EGFR activation mutation: Have documented positive test results for an EGFR-sensitizing mutation... Participants must have received one or two prior lines of systemic therapy for advanced and/or metastatic disease, which must include treatment with an approved EGFR TKI",
+        "appliesTo": "Part 2a (Cohort A), 2L+, squamous or non-squamous NSCLC, AGA-negative/positive, any PD-L1"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "for EGFR-sensitizing mutation NSCLC only: Have documented positive test results for an EGFR-sensitizing mutation... Have received 1 or 2 prior systemic therapies for advanced and/or metastatic disease with an approved EGFR TKI",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "for EGFR-sensitizing mutation NSCLC only: Have documented positive test results for an EGFR-sensitizing mutation... Have received 1 or 2 prior systemic therapies for advanced and/or metastatic disease with an approved EGFR TKI",
+        "appliesTo": "Part 2b (Cohort C), 2L+, squamous or non-squamous NSCLC, AGA-negative or EGFR activating mutation, any PD-L1"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

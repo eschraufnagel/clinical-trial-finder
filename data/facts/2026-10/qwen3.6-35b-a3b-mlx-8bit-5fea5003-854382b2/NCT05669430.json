@@ -1,0 +1,327 @@
+{
+  "nctId": "NCT05669430",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 55,
+        "end": 168,
+        "text": "Previously treated, histologically-confirmed advanced solid malignancy with progressive disease requiring therapy"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 297,
+        "end": 408,
+        "text": "Participants must have measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST version 1.1)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 537,
+        "end": 570,
+        "text": "ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 827,
+        "end": 902,
+        "text": "Disease-free of active second/secondary or prior malignancies for ≥ 2 years"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2559,
+        "end": 2679,
+        "text": "Has a known additional malignancy that is progressing or has required active treatment within the past 2 years from C1D1"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1568,
+        "end": 1701,
+        "text": "Participant has active autoimmune disease or other medical conditions requiring chronic systemic steroid or immunosuppressive therapy"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1704,
+        "end": 1737,
+        "text": "History of major organ transplant"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1740,
+        "end": 1775,
+        "text": "History of a bone marrow transplant"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1778,
+        "end": 1843,
+        "text": "Symptomatic central nervous system (CNS) malignancy or metastasis"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1877,
+        "end": 1902,
+        "text": "Pregnant or nursing women"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 411,
+        "end": 534,
+        "text": "For participants who have received prior treatment with a checkpoint inhibitor there must be documented disease progression"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 411,
+        "end": 534,
+        "text": "For participants who have received prior treatment with a checkpoint inhibitor there must be documented disease progression"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 223,
+        "end": 294,
+        "text": "Must have received, be not eligible or decline standard of care therapy"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 223,
+        "end": 294,
+        "text": "Must have received, be not eligible or decline standard of care therapy"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 223,
+        "end": 294,
+        "text": "Must have received, be not eligible or decline standard of care therapy"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 55,
+        "end": 168,
+        "text": "Previously treated, histologically-confirmed advanced solid malignancy with progressive disease requiring therapy"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2682,
+        "end": 2790,
+        "text": "Has received radiation therapy to the lung that is higher than 30 Gy within 6 months prior to C1D1 for NSCLC"
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3068,
+        "end": 3219,
+        "text": "Has a history of (non-infectious) pneumonitis / interstitial lung disease that required steroids or has current pneumonitis / interstitial lung disease"
+      },
+      "appliesTo": "Parts C and D"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2470,
+        "end": 2556,
+        "text": "Any history of an immune related ≥ Grade 3 AE attributed to prior cancer immunotherapy"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Parts B, C and D may include the following tumor types: ... Non-small cell lung cancer",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "mixed_small_cell",
+          "other_nsclc"
+        ],
+        "polarity": "inclusion",
+        "quote": "Parts B, C and D may include the following tumor types: ... Non-small cell lung cancer",
+        "appliesTo": "Non-small cell lung cancer"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Parts B, C and D may include the following tumor types: ... Squamous head and neck carcinoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "mixed_small_cell",
+          "other_nsclc"
+        ],
+        "polarity": "inclusion",
+        "quote": "Parts B, C and D may include the following tumor types: ... Squamous head and neck carcinoma",
+        "appliesTo": "Squamous head and neck carcinoma"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Parts B, C and D may include the following tumor types: ... Endometrial carcinoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "mixed_small_cell",
+          "other_nsclc"
+        ],
+        "polarity": "inclusion",
+        "quote": "Parts B, C and D may include the following tumor types: ... Endometrial carcinoma",
+        "appliesTo": "Endometrial carcinoma"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Parts B, C and D may include the following tumor types: ... Cutaneous melanoma",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "mixed_small_cell",
+          "other_nsclc"
+        ],
+        "polarity": "inclusion",
+        "quote": "Parts B, C and D may include the following tumor types: ... Cutaneous melanoma",
+        "appliesTo": "Cutaneous melanoma"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Parts B, C and D may include the following tumor types: ... Proficient MMR (pMMR)/MSS adenocarcinoma of the colon or rectum",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "mixed_small_cell",
+          "other_nsclc"
+        ],
+        "polarity": "inclusion",
+        "quote": "Parts B, C and D may include the following tumor types: ... Proficient MMR (pMMR)/MSS adenocarcinoma of the colon or rectum",
+        "appliesTo": "Proficient MMR (pMMR)/MSS adenocarcinoma of the colon or rectum"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

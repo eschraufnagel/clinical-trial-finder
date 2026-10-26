@@ -1,0 +1,132 @@
+{
+  "nctId": "NCT06427941",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 920,
+        "end": 1098,
+        "text": "Glypican-3 (GPC3)-positive squamous non-small cell lung cancer (NSCLC): Histologically confirmed GPC3-positive squamous NSCLC with prior exposure to a checkpoint inhibitor (CPI)."
+      },
+      "appliesTo": "Glypican-3 (GPC3)-positive squamous non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 28,
+        "end": 129,
+        "text": "Participants must have one of the following unresectable, locally advanced, or metastatic tumor types"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1294,
+        "end": 1359,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status ≤ 1."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1631,
+        "end": 1704,
+        "text": "Active leptomeningeal disease or uncontrolled/untreated brain metastases."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1631,
+        "end": 1704,
+        "text": "Active leptomeningeal disease or uncontrolled/untreated brain metastases."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1708,
+        "end": 1796,
+        "text": "Active autoimmune disease or a history of autoimmune disease with potential for relapse."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1800,
+        "end": 2008,
+        "text": "Any malignancy diagnosed ≤ 2 years before the first dose of study drug(s), except: The cancer type under investigation in this study, or Locally recurring malignancies previously treated with curative intent."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2012,
+        "end": 2184,
+        "text": "Requirement for systemic corticosteroids (\\> 10 mg/day prednisone or equivalent) or other immunosuppressive therapy within 14 days prior to the first dose of study drug(s)."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1102,
+        "end": 1290,
+        "text": "At least one evaluable lesion for dose escalation, and at least one measurable lesion for safety expansion, as defined by Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

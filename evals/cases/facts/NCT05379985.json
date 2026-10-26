@@ -1,0 +1,102 @@
+{
+  "nctId": "NCT05379985",
+  "set": "heldout",
+  "criteriaTextSha": "8c355078e08006c3b019c2191b87ad9cd61a8997c44813a8dce02b9b51889e95",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Histologically confirmed advanced solid tumor with specific KRAS G12 mutations (dose escalation) or RAS mutations (dose optimization/expansion) identified through deoxyribonucleic acid (DNA) sequencing.",
+      "start": 23,
+      "end": 225,
+      "mappings": [
+        {
+          "factId": "kras",
+          "rulesOut": ["none_found"],
+          "appliesTo": "dose escalation"
+        }
+      ],
+      "unmapped": null,
+      "note": "expansion takes any RAS mutation, which a KRAS test can miss"
+    },
+    {
+      "quote": "PDAC with wild-type RAS (expansion).",
+      "start": 226,
+      "end": 262,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Treatment naive or have received prior standard therapy appropriate for tumor type and stage",
+      "start": 265,
+      "end": 357,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "permits"
+    },
+    {
+      "quote": "Have Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+      "start": 360,
+      "end": 435,
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Adequate organ function",
+      "start": 438,
+      "end": 461,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Primary central nervous system (CNS) tumors",
+      "start": 486,
+      "end": 529,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Active, untreated brain metastases",
+      "start": 532,
+      "end": 566,
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Known or suspected impairment of gastrointestinal function that may prohibit ability to swallow or absorb an oral medication",
+      "start": 569,
+      "end": 693,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "able to take pills"
+    },
+    {
+      "quote": "History of any other unstable or clinically significant concurrent medical condition that would, in the opinion of the investigator, jeopardize the safety of a participant, impact their expected survival through the end of the study participation, and/or impact their ability to comply with the protocol prior/concomitant therapy",
+      "start": 696,
+      "end": 1025,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment"
+    },
+    {
+      "quote": "Other inclusion/exclusion criteria may apply.",
+      "start": 1027,
+      "end": 1072,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    }
+  ]
+}

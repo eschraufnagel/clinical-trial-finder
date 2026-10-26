@@ -1,0 +1,79 @@
+{
+  "nctId": "NCT05674825",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1388,
+        "end": 1479,
+        "text": "Unresectable disease, as determined by a disease-appropriate multidisciplinary tumor board."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1581,
+        "end": 1642,
+        "text": "Localized disease and are eligible for neoadjuvant treatment."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1675,
+        "end": 1844,
+        "text": "Disease where no conventional therapy leads to a survival benefit \\> six months in the respective cohort and line of therapy for which the patient is otherwise eligible."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2154,
+        "end": 2532,
+        "text": "Patient must have measurable disease for malignancy: defined as at least one lesion that can be accurately measured in at least one dimension (longest diameter to be recorded for non-nodal lesions and short axis for nodal lesions) as ≥20 mm with conventional techniques or as ≥10 mm with spiral CT scan, positron emission tomography (PET) -CT, MRI, or calipers by clinical exam."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2536,
+        "end": 2600,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status 0-2"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "nctId": "NCT05245500",
+  "set": "dev",
+  "criteriaTextSha": "28237ce33cb8b82bca854c75580a4412a86d37395e1052149afc5b79735cd843",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Inclusion Criteria",
+      "start": 0,
+      "end": 18,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "heading"
+    },
+    {
+      "quote": "Histologically confirmed diagnosis of a solid tumor malignancy with homozygous deletion of the MTAP gene detected in tumor tissue.",
+      "start": 22,
+      "end": 152,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "MTAP deletion"
+    },
+    {
+      "quote": "Unresectable or metastatic disease.",
+      "start": 155,
+      "end": 190,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Presence of a tumor lesion amenable to mandatory biopsy for pharmacodynamic evaluation at baseline and on-study unless Sponsor-confirmed as medically unsafe or infeasible.",
+      "start": 193,
+      "end": 364,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Age \u2265 18 years.",
+      "start": 367,
+      "end": 382,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1.",
+      "start": 385,
+      "end": 456,
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Adequate organ function.",
+      "start": 459,
+      "end": 483,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Exclusion Criteria",
+      "start": 485,
+      "end": 503,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "heading"
+    },
+    {
+      "quote": "Prior treatment with a PRMT5 or MAT2A inhibitor therapy.",
+      "start": 507,
+      "end": 563,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "prior PRMT5 or MAT2A inhibitor"
+    },
+    {
+      "quote": "Active brain metastases or carcinomatous meningitis.",
+      "start": 566,
+      "end": 618,
+      "mappings": [
+        {
+          "factId": "brain_mets",
+          "rulesOut": ["not_stable_no_symptoms", "symptoms"],
+          "appliesTo": null
+        },
+        {
+          "factId": "leptomeningeal",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "History of significant hemoptysis or hemorrhage within 4 weeks of the first dose of study treatment.",
+      "start": 621,
+      "end": 721,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "bleeding"
+    },
+    {
+      "quote": "Major surgery within 4 weeks of first dose of study treatment.",
+      "start": 724,
+      "end": 786,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "History of intestinal disease, inflammatory bowel disease, major gastric surgery, or other gastrointestinal conditions (eg, uncontrolled nausea, vomiting, malabsorption syndrome) likely to alter absorption of study treatment or result in inability to swallow oral medications.",
+      "start": 789,
+      "end": 1065,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "absorption"
+    },
+    {
+      "quote": "Cardiac abnormalities.",
+      "start": 1068,
+      "end": 1090,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment: cardiac abnormalities"
+    },
+    {
+      "quote": "Other protocol-defined Inclusion/Exclusion criteria apply.",
+      "start": 1093,
+      "end": 1151,
+      "mappings": [],
+      "unmapped": "not-a-rule"
+    }
+  ]
+}

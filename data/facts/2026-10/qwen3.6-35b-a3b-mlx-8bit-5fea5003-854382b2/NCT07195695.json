@@ -1,0 +1,108 @@
+{
+  "nctId": "NCT07195695",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1260,
+        "end": 1352,
+        "text": "Diagnosis of NSCLC with mixed histology/positive neuroendocrine markers (synaptophysin/CD56)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 984,
+        "end": 1038,
+        "text": "Pretherapeutic classification not exceeding Stage IIIB"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "overexpression"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 612,
+        "end": 735,
+        "text": "HER2 mutation: Documented Tyrosine kinase domain (TKD) activating Human epidermal growth factor receptor 2 (HER2) mutations"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1087,
+        "end": 1144,
+        "text": "Eastern Cooperative Oncology Group (ECOG) score of 0 or 1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1526,
+        "end": 1672,
+        "text": "Co-occurring actionable mutation with approved targeted therapy (e.g. Epidermal growth factor receptor (EGFR) or Anaplastic lymphoma kinase (ALK))"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1526,
+        "end": 1672,
+        "text": "Co-occurring actionable mutation with approved targeted therapy (e.g. Epidermal growth factor receptor (EGFR) or Anaplastic lymphoma kinase (ALK))"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History or presence of Active or known pre-existing or history of non-infectious interstitial lung disease/pneumonitis",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "past",
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "History or presence of Active or known pre-existing or history of non-infectious interstitial lung disease/pneumonitis",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

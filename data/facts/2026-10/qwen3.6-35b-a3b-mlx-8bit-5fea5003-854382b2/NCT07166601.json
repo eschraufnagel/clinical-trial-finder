@@ -1,0 +1,100 @@
+{
+  "nctId": "NCT07166601",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 51,
+        "end": 114,
+        "text": "Participants with certain advanced/metastatic solid tumor types"
+      },
+      "appliesTo": "Part 1- M0324 Monotherapy"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 324,
+        "end": 381,
+        "text": "Participants with certain advanced/metastatic tumor types"
+      },
+      "appliesTo": "Part 2- M0324 Combination with Pembrolizumab"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 860,
+        "end": 942,
+        "text": "Participants with previously untreated metastatic pancreatic ductal adenocarcinoma"
+      },
+      "appliesTo": "Part 3- M0324 Combination with mFOLFIRINOX"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 860,
+        "end": 942,
+        "text": "Participants with previously untreated metastatic pancreatic ductal adenocarcinoma"
+      },
+      "appliesTo": "Part 3- M0324 Combination with mFOLFIRINOX"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 860,
+        "end": 942,
+        "text": "Participants with previously untreated metastatic pancreatic ductal adenocarcinoma"
+      },
+      "appliesTo": "Part 3- M0324 Combination with mFOLFIRINOX"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1364,
+        "end": 1448,
+        "text": "Participant has a history of malignancy within 3 years before the date of enrollment"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

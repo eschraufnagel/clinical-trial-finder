@@ -1,0 +1,162 @@
+{
+  "nctId": "NCT07531095",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "squamous",
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 150,
+        "end": 214,
+        "text": "Participants with Histologically or cytologically confirmed SCLC"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 218,
+        "end": 354,
+        "text": "For Part 1, participants must have SCLC that has progressed or recurred following at least 1 line of platinum-based anti-cancer therapy."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 357,
+        "end": 474,
+        "text": "For Parts 1 and 2, participants must have progressed or recurred following at least 1 line of platinum-based therapy."
+      },
+      "appliesTo": "Parts 1 and 2"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 523,
+        "end": 672,
+        "text": "For Part 3, participants must have extensive-stage SCLC (ES-SCLC) with no prior systemic treatment other than 1 cycle of platinum-based chemotherapy."
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 523,
+        "end": 588,
+        "text": "For Part 3, participants must have extensive-stage SCLC (ES-SCLC)"
+      },
+      "appliesTo": "Part 3"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 793,
+        "end": 861,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 864,
+        "end": 950,
+        "text": "At least 1 measurable lesion as defined per RECIST v1.1 within 21-day screening period"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1108,
+        "end": 1250,
+        "text": "Symptomatic CNS metastases. Participants with treated brain metastases are eligible provided they meet the criteria specified in the protocol."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1253,
+        "end": 1308,
+        "text": "History of interstitial lung disease (ILD)/pneumonitis."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1311,
+        "end": 1404,
+        "text": "Received thoracic radiation therapy within 90 days prior to first dose of trial intervention."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1477,
+        "end": 1594,
+        "text": "Prior exposure to topoisomerase I inhibitors or antibody-drug conjugate (ADC) with topoisomerase I inhibitor payload."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

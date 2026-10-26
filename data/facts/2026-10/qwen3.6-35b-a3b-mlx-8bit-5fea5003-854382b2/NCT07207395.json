@@ -1,0 +1,129 @@
+{
+  "nctId": "NCT07207395",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 73,
+        "end": 196,
+        "text": "Participants with a histologically confirmed diagnosis of locally advanced or metastatic NSCLC harboring an STK11 mutation."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 73,
+        "end": 196,
+        "text": "Participants with a histologically confirmed diagnosis of locally advanced or metastatic NSCLC harboring an STK11 mutation."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 870,
+        "end": 943,
+        "text": "Must have at least one measurable lesion on CT scan or MRI per RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1206,
+        "end": 1273,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2515,
+        "end": 2760,
+        "text": "Known malignant central nervous system disease other than neurologically stable, treated brain metastases- defined as metastasis having no evidence of progression or hemorrhage for at least 4 weeks after treatment (including brain radiotherapy)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3584,
+        "end": 3762,
+        "text": "History of other previous or concurrent cancer that would interfere with the determination of safety or efficacy assessment with respect to the qualifying solid tumor malignancy."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4797,
+        "end": 4893,
+        "text": "Known active human immunodeficiency viruses infection or active infection with hepatitis B or C."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4797,
+        "end": 4893,
+        "text": "Known active human immunodeficiency viruses infection or active infection with hepatitis B or C."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5254,
+        "end": 5457,
+        "text": "Pregnant or breastfeeding or expecting to conceive or father children within the projected duration of the trial, starting with the Screening Visit through 90 days after the last dose of trial treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

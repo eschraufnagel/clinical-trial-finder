@@ -1,0 +1,181 @@
+{
+  "nctId": "NCT03750227",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2140,
+        "end": 2228,
+        "text": "Known or clinically suspected primary germ cell tumor, small cell carcinoma, or lymphoma"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 116,
+        "end": 243,
+        "text": "clinical history of known or suspected metastatic disease with an intraparenchymal brain tumor consistent with brain metastasis"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 116,
+        "end": 243,
+        "text": "clinical history of known or suspected metastatic disease with an intraparenchymal brain tumor consistent with brain metastasis"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2712,
+        "end": 2828,
+        "text": "Indication for long-term (anticipated greater than 4 weeks) 4 mg dexamethasone equivalent of steroids or bevacizumab"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2650,
+        "end": 2709,
+        "text": "Indication for surgical resection of \\>= 2 brain metastases"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2520,
+        "end": 2583,
+        "text": "A brain metastasis that is located =\\< 5 mm of the optic chiasm"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2586,
+        "end": 2622,
+        "text": "Any brain metastasis \\> 5 cm in size"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2626,
+        "end": 2647,
+        "text": "> 10 brain metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2484,
+        "end": 2517,
+        "text": "Leptomeningeal metastasis/disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 562,
+        "end": 633,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) =\\< 2"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1556,
+        "end": 1823,
+        "text": "Immunocompromised patients and patients known to be human immunodeficiency virus (HIV) positive and currently receiving antiretroviral therapy. \\* NOTE: Patients known to be HIV, but without clinical evidence of an immunocompromised state, are eligible for this trial"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1150,
+        "end": 1164,
+        "text": "Pregnant women"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1169,
+        "end": 1182,
+        "text": "Nursing women"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

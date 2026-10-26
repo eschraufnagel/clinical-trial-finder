@@ -1,0 +1,180 @@
+{
+  "nctId": "NCT04486833",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 42,
+        "end": 91,
+        "text": "Histologically or cytologically documented NSCLC."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 95,
+        "end": 195,
+        "text": "Stage III or IV NSCLC or recurrent NSCLC that is not potentially curable by radiotherapy or surgery."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1144,
+        "end": 1226,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG PS) score from 0 to 1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 199,
+        "end": 383,
+        "text": "The NSCLC must be epidermal growth factor receptor (EGFR) mutation positive-positive based on results from most recent tissue biopsy or most recent evaluation of circulating tumor DNA."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 724,
+        "end": 768,
+        "text": "Must have measurable disease per RECIST 1.1."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3523,
+        "end": 3675,
+        "text": "Other genetic characteristics (such as ALK, ROS, BRAF V600E mutations) which make them a candidate for treatment with other approved targeted therapies."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3523,
+        "end": 3675,
+        "text": "Other genetic characteristics (such as ALK, ROS, BRAF V600E mutations) which make them a candidate for treatment with other approved targeted therapies."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3523,
+        "end": 3675,
+        "text": "Other genetic characteristics (such as ALK, ROS, BRAF V600E mutations) which make them a candidate for treatment with other approved targeted therapies."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4174,
+        "end": 4243,
+        "text": "History of myocardial infarction or unstable angina within ≤6 months."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4247,
+        "end": 4332,
+        "text": "Known human immunodeficiency virus (HIV) infection or has active hepatitis infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4247,
+        "end": 4332,
+        "text": "Known human immunodeficiency virus (HIV) infection or has active hepatitis infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4337,
+        "end": 4377,
+        "text": "Female who is pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Asymptomatic brain metastases must meet ALL criteria of the following (a-d): ... 4. Post-treatment imaging must demonstrate stability or regression of the brain metastases.",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "inclusion",
+        "quote": "Asymptomatic brain metastases must meet ALL criteria of the following (a-d): ... 4. Post-treatment imaging must demonstrate stability or regression of the brain metastases.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

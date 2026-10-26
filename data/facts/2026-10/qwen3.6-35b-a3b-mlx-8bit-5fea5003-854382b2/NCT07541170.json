@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT07541170",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 93,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 96,
+        "end": 210,
+        "text": "Histological or cytological diagnosis of clinical Stage II-IIIB NSCLC of either non-squamous or squamous histology"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 506,
+        "end": 561,
+        "text": "No evidence of disease recurrence or metastatic disease"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 564,
+        "end": 617,
+        "text": "Documentation of the presence of a KRAS G12C mutation"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 270,
+        "end": 431,
+        "text": "Prior treatment with neoadjuvant immune checkpoint inhibitor (pembrolizumab or nivolumab) in combination with histology-based platinum-based doublet chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 270,
+        "end": 431,
+        "text": "Prior treatment with neoadjuvant immune checkpoint inhibitor (pembrolizumab or nivolumab) in combination with histology-based platinum-based doublet chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 705,
+        "end": 815,
+        "text": "Prior treatment with a KRAS inhibitor or any other anti-cancer therapy not otherwise specified in the protocol"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 818,
+        "end": 954,
+        "text": "Prior treatment with radiation therapy for NSCLC, with the exception of localized symptom-directed radiation prior to surgical resection"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1087,
+        "end": 1147,
+        "text": "Active or history of autoimmune disease or immune deficiency"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1150,
+        "end": 1184,
+        "text": "Significant cardiovascular disease"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

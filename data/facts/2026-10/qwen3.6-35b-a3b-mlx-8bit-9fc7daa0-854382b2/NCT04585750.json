@@ -1,0 +1,237 @@
+{
+  "nctId": "NCT04585750",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 115,
+        "end": 189,
+        "text": "Locally advanced or metastatic solid malignancy with a TP53 Y220C mutation"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 115,
+        "end": 189,
+        "text": "Locally advanced or metastatic solid malignancy with a TP53 Y220C mutation"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 192,
+        "end": 250,
+        "text": "Eastern Cooperative Oncology Group (ECOG) status of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 369,
+        "end": 413,
+        "text": "Measurable disease per RECIST v1.1 (Phase 2)"
+      },
+      "appliesTo": "Phase 2"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 369,
+        "end": 387,
+        "text": "Measurable disease"
+      },
+      "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 834,
+        "end": 950,
+        "text": "Brain metastases, unless neurologically stable and do not require steroids to treat associated neurological symptoms"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 771,
+        "end": 831,
+        "text": "History of leptomeningeal disease or spinal cord compression"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 506,
+        "end": 564,
+        "text": "Anti-PD-1/PD-L1 naive or must have progressed on treatment"
+      },
+      "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2070,
+        "end": 2314,
+        "text": "Received prior therapy with an anti-PD-1, anti-PD-L1, or anti-PD-L2 agent or with an agent directed to another stimulatory or co-inhibitory T-cell receptor and discontinued from that treatment due to a Grade 3 or higher immune-related AE (irAE)"
+      },
+      "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "low_dose",
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2423,
+        "end": 2550,
+        "text": "Diagnosis of immunodeficiency or receiving chronic systemic steroid therapy within 7 days prior to the first dose of study drug"
+      },
+      "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2630,
+        "end": 2708,
+        "text": "Active autoimmune disease that has required systemic treatment in past 2 years"
+      },
+      "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2746,
+        "end": 2846,
+        "text": "History of (non-infectious) or active pneumonitis / interstitial lung disease that required steroids"
+      },
+      "appliesTo": "Phase 1b (rezatapopt) + pembrolizumab combination"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2895,
+        "end": 2925,
+        "text": "Known history of HIV infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1656,
+        "end": 1750,
+        "text": "Known, active uncontrolled Hepatitis B, Hepatitis C, or human immunodeficiency virus infection"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1509,
+        "end": 1542,
+        "text": "History of prior organ transplant"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 253,
+        "end": 340,
+        "text": "Previously treated with one or more lines of anticancer therapy and progressive disease"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1827,
+        "end": 1975,
+        "text": "Known KRAS mutation, defined as a single nucleotide variant (SNV) (Phase 2). Exception: Ovarian cancer patients with a known KRAS SNV are permitted."
+      },
+      "appliesTo": "Phase 2"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

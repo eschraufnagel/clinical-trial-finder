@@ -1,0 +1,178 @@
+{
+  "nctId": "NCT06910657",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 199,
+        "end": 227,
+        "text": "ECOG performance status ≤ 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 230,
+        "end": 265,
+        "text": "Measurable disease per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 45,
+        "end": 196,
+        "text": "Histologically or cytologically confirmed advanced solid tumors that have progressed despite standard therapy, or for which no standard therapy exists."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 45,
+        "end": 196,
+        "text": "Histologically or cytologically confirmed advanced solid tumors that have progressed despite standard therapy, or for which no standard therapy exists."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 45,
+        "end": 196,
+        "text": "Histologically or cytologically confirmed advanced solid tumors that have progressed despite standard therapy, or for which no standard therapy exists."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 45,
+        "end": 196,
+        "text": "Histologically or cytologically confirmed advanced solid tumors that have progressed despite standard therapy, or for which no standard therapy exists."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1070,
+        "end": 1138,
+        "text": "Active or symptomatic autoimmune disease requiring systemic therapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1141,
+        "end": 1205,
+        "text": "Active or untreated CNS metastases (unless stable per protocol)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1279,
+        "end": 1345,
+        "text": "Interstitial lung disease or prior pneumonitis requiring steroids."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1208,
+        "end": 1276,
+        "text": "Significant cardiac disease (e.g., NYHA Class III/IV heart failure)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 875,
+        "end": 963,
+        "text": "History of hepatitis B, hepatitis C, or HIV (unless meeting protocol-specific criteria)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 875,
+        "end": 963,
+        "text": "History of hepatitis B, hepatitis C, or HIV (unless meeting protocol-specific criteria)."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1348,
+        "end": 1403,
+        "text": "Conditions requiring chronic immunosuppressive therapy."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

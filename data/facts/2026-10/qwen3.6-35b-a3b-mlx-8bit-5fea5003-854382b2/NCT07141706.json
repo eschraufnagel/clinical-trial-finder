@@ -1,0 +1,146 @@
+{
+  "nctId": "NCT07141706",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 53,
+        "end": 110,
+        "text": "Unresectable advanced or metastatic selected solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 275,
+        "end": 379,
+        "text": "At least one measurable lesion as assessed by the investigator according to RECIST version 1.1 criteria."
+      },
+      "appliesTo": "Phase 1a and Phase 1b"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 499,
+        "end": 521,
+        "text": "Has an ECOG PS of 0-1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1903,
+        "end": 1941,
+        "text": "Has clinically active brain metastases"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2005,
+        "end": 2038,
+        "text": "Concurrent malignancy \\< 3 years."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 954,
+        "end": 1030,
+        "text": "Prior treatment with antibody-drug conjugate with topoisomerase I inhibitor."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1699,
+        "end": 1749,
+        "text": "Known human immunodeficiency virus (HIV) infection"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1469,
+        "end": 1518,
+        "text": "Has a history of (non-infectious) ILD/pneumonitis"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1150,
+        "end": 1250,
+        "text": "Has a medical history of myocardial infarction or unstable angina within 6 months before enrollment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Chronic, active, or uncontrolled hepatitis B; Known chronic, active, or uncontrolled hepatitis C",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Chronic, active, or uncontrolled hepatitis B; Known chronic, active, or uncontrolled hepatitis C",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

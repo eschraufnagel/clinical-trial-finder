@@ -1,0 +1,454 @@
+{
+  "nctId": "NCT07098806",
+  "mappings": [
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 200,
+        "end": 312,
+        "text": "Documented LM from any primary solid tumor cancer per EANO-ESMO Clinical Practice Guidelines (Types I or IIA-C)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 316,
+        "end": 358,
+        "text": "Karnofsky performance status of 70 to 100."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4032,
+        "end": 4120,
+        "text": "Prior: Systemically delivered therapy given less than 28 days before study registration."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4032,
+        "end": 4120,
+        "text": "Prior: Systemically delivered therapy given less than 28 days before study registration."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3704,
+        "end": 3781,
+        "text": "Prior: Intrathecal therapy given less than 14 days before study registration."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3704,
+        "end": 3781,
+        "text": "Prior: Intrathecal therapy given less than 14 days before study registration."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3824,
+        "end": 4023,
+        "text": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3824,
+        "end": 4023,
+        "text": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Concurrent: Intrathecal therapy.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Intrathecal therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Concurrent: Intrathecal therapy.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Intrathecal therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Concurrent: Intrathecal therapy.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Intrathecal therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_adc has no answer received",
+      "quote": "Concurrent: Intrathecal therapy.",
+      "raw": {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Intrathecal therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Concurrent: Intrathecal therapy.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Intrathecal therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Concurrent: Intrathecal therapy.",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Intrathecal therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Systemically delivered therapy given less than 28 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior: Intrathecal therapy given less than 14 days before study registration.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Systemically delivered therapy UNLESS LM develops while on systemically delivered therapy AND the systemically delivered therapy is NOT associated with more than grade 1 myelosuppression.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Concurrent: Intrathecal therapy.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Intrathecal therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Concurrent: Intrathecal therapy.",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Concurrent: Intrathecal therapy.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "nctId": "NCT06040541",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 92,
+        "text": "Pathologically documented, locally advanced or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 258,
+        "end": 288,
+        "text": "ECOG performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 385,
+        "end": 472,
+        "text": "Known or suspected leptomeningeal or active brain metastases or spinal cord compression"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 385,
+        "end": 472,
+        "text": "Known or suspected leptomeningeal or active brain metastases or spinal cord compression"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 602,
+        "end": 799,
+        "text": "Participant was previously treated with an investigational KRAS G12D inhibitor, pan- or multi-RAS inhibitor, or had prior therapy with any direct RAS-targeted therapy (eg, degraders and inhibitors)"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 121,
+        "end": 255,
+        "text": "Received and progressed or been intolerant to prior standard therapy (including targeted therapy) appropriate for tumor type and stage"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

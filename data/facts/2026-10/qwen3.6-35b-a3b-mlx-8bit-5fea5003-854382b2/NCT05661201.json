@@ -1,0 +1,129 @@
+{
+  "nctId": "NCT05661201",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 70,
+        "text": "Advanced/unresectable or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 71,
+        "end": 196,
+        "text": "with a pathogenic KRAS mutation via polymerase chain reaction (PCR), next-generation sequencing (NGS), or other standard test"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2818,
+        "end": 2858,
+        "text": "Have measurable disease by RECIST v. 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 648,
+        "end": 715,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0-2"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3232,
+        "end": 3440,
+        "text": "Brain metastases unless they have been previously treated with surgery and/or radiation at least 4 weeks prior to C1D1 and have a baseline MRI that shows no evidence of active/progressing intracranial disease"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3962,
+        "end": 4041,
+        "text": "Concurrent malignancy or malignancy within 2 years prior to starting study drug"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4299,
+        "end": 4328,
+        "text": "Active hepatitis B, C, or HIV"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4694,
+        "end": 4911,
+        "text": "History of acute coronary syndromes (including myocardial infarction, unstable angina, coronary artery bypass grafting, coronary angioplasty, or stenting) or symptomatic pericarditis within 6 months prior to screening"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 466,
+        "end": 558,
+        "text": "patients must have been exposed to 2 or fewer lines of systemic therapy for advanced disease"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "nctId": "NCT04094610",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 807,
+        "end": 972,
+        "text": "Subjects with a primary CNS tumor or CNS metastases must be neurologically stable on a stable or decreasing dose of steroids for at least 7 days prior to enrollment."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 28,
+        "end": 303,
+        "text": "Documented genetic ROS1 point mutation, fusion, or amplification or NTRK1-3 fusion as identified by local testing in a Clinical Laboratory Improvement Amendments (CLIA) laboratory in the US or equivalently accredited diagnostic lab outside the United States (US) is required."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 28,
+        "end": 303,
+        "text": "Documented genetic ROS1 point mutation, fusion, or amplification or NTRK1-3 fusion as identified by local testing in a Clinical Laboratory Improvement Amendments (CLIA) laboratory in the US or equivalently accredited diagnostic lab outside the United States (US) is required."
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 28,
+        "end": 303,
+        "text": "Documented genetic ROS1 point mutation, fusion, or amplification or NTRK1-3 fusion as identified by local testing in a Clinical Laboratory Improvement Amendments (CLIA) laboratory in the US or equivalently accredited diagnostic lab outside the United States (US) is required."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Locally Advanced Solid Tumors; Metastatic Solid Tumors",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Locally Advanced Solid Tumors; Metastatic Solid Tumors",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "All subjects must have measurable disease by RECIST v1.1 or Response Assessment in Neuro-Ooncology (RANO) criteria at time of enrollment.",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "All subjects must have measurable disease by RECIST v1.1 or Response Assessment in Neuro-Ooncology (RANO) criteria at time of enrollment.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

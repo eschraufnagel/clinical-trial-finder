@@ -1,0 +1,184 @@
+{
+  "nctId": "NCT06719362",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 195,
+        "end": 323,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) of 0-1 for subjects with solid tumors other than glioblastoma."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1095,
+        "end": 1368,
+        "text": "Eligible tumor types in Part 1 Dose Escalation will include subjects with histologically or cytologically confirmed metastatic or unresectable solid tumors who have developed disease progression following standard systemic therapy in the unresectable or metastatic setting."
+      },
+      "appliesTo": "Part 1 Dose Escalation"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1633,
+        "end": 1776,
+        "text": "Subjects with solid tumors other than glioblastoma must have measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      },
+      "appliesTo": "Part 1 Dose Escalation"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5356,
+        "end": 5471,
+        "text": "CNS metastases or leptomeningeal carcinomatosis (applicable to subjects with solid tumors other than glioblastoma)."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5977,
+        "end": 6108,
+        "text": "Treatment with corticosteroids greater than the equivalent of prednisone 10 mg/day within 2 weeks of cycle 1 day 1 is exclusionary."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6418,
+        "end": 6644,
+        "text": "History of severe pulmonary disease defined as either of the following:\n\n   * History of interstitial lung disease, non-infectious pneumonitis (including immune checkpoint inhibitor induced pneumonitis), or pulmonary fibrosis."
+      },
+      "loose": true
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6697,
+        "end": 6760,
+        "text": "History of allogeneic stem cell or solid organ transplantation."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6764,
+        "end": 6872,
+        "text": "History of autoimmune disease that required systemic immunosuppressive therapy within 2 years of enrollment."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7523,
+        "end": 7564,
+        "text": "Women who are pregnant or breast feeding."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7726,
+        "end": 8094,
+        "text": "Subjects with human immunodeficiency virus (HIV) are eligible for participation if the following criteria are met: CD4+ T cell count ≥350 cells/µL, No history of AIDS-defining opportunistic infections within 12 months of enrollment, Subjects must be on antiretroviral therapy for at least 4 weeks and have an HIV viral load less than 400 copies/mL prior to enrollment."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8101,
+        "end": 8327,
+        "text": "Subjects with chronic hepatitis B (HBV) who are on suppressive antiviral therapy prior to enrollment are eligible. Subjects with chronic HBV who are not eligible for treatment with suppressive antiviral therapy are ineligible."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4337,
+        "end": 4425,
+        "text": "History of other active malignancy that required treatment within 2 years of enrollment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "CNS metastases or leptomeningeal carcinomatosis (applicable to subjects with solid tumors other than glioblastoma). Subjects with brain metastases are eligible for participation if one of the following criteria are met: ... The subject is neurologically asymptomatic and there are ≤ 4 CNS metastases no larger than 1 cm.",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "CNS metastases or leptomeningeal carcinomatosis (applicable to subjects with solid tumors other than glioblastoma). Subjects with brain metastases are eligible for participation if one of the following criteria are met: ... The subject is neurologically asymptomatic and there are ≤ 4 CNS metastases no larger than 1 cm.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "nctId": "NCT05536141",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 87,
+        "text": "Must have at least one measurable lesion per RECIST guidance"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 90,
+        "end": 163,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of ≤ 1"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1010,
+        "end": 1105,
+        "text": "For all expansion cohorts: prior treatment with an hypoxia inducible factor (HIF)-2α inhibitor."
+      },
+      "appliesTo": "dose-expansion"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1106,
+        "end": 1198,
+        "text": "For the casdatifan + cabozantinib combination cohort, any prior treatment with cabozantinib."
+      },
+      "appliesTo": "casdatifan + cabozantinib combination cohort"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1199,
+        "end": 1333,
+        "text": "For casdatifan + zimberelimab and casdatifan + zimberelimab + ipilimumab cohorts, any prior systemic treatment when cancer is present."
+      },
+      "appliesTo": "casdatifan + zimberelimab and casdatifan + zimberelimab + ipilimumab cohorts"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed ccRCC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed ccRCC",
+        "appliesTo": "dose-expansion"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

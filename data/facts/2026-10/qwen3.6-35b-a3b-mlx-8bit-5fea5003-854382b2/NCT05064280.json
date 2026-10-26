@@ -1,0 +1,295 @@
+{
+  "nctId": "NCT05064280",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 117,
+        "end": 446,
+        "text": "Male/female patients who are at least 18 years of age on the day of signing informed consent with histologically or cytologically confirmed TNBC (Cohort 1), NSCLC (Cohort 2), or solid tumors other than TNBC and NSCLC (Cohort 3) with brain metastasis and with or without active extracranial disease will be enrolled in this study."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 117,
+        "end": 446,
+        "text": "Male/female patients who are at least 18 years of age on the day of signing informed consent with histologically or cytologically confirmed TNBC (Cohort 1), NSCLC (Cohort 2), or solid tumors other than TNBC and NSCLC (Cohort 3) with brain metastasis and with or without active extracranial disease will be enrolled in this study."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 117,
+        "end": 446,
+        "text": "Male/female patients who are at least 18 years of age on the day of signing informed consent with histologically or cytologically confirmed TNBC (Cohort 1), NSCLC (Cohort 2), or solid tumors other than TNBC and NSCLC (Cohort 3) with brain metastasis and with or without active extracranial disease will be enrolled in this study."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5149,
+        "end": 5279,
+        "text": "Patients with clinical or radiographic evidence of leptomeningeal metastases or other metastatic systemic disease are not allowed."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 450,
+        "end": 777,
+        "text": "Has at least 1 measurable brain metastasis: Presence of at least 1 independently verified measurable brain metastasis in accordance with mRECIST (Appendix 1) that can be accurately assessed at baseline and suitable for accurate repeated measurements and with a tumor diameter of 0.5-3 cm on magnetic resonance imaging \\[MRI\\])."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2588,
+        "end": 2676,
+        "text": "Has Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1 (Appendix 7)."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4656,
+        "end": 4822,
+        "text": "Has NSCLC with an oncogenic driver mutation (mutation\\[s\\] in EGFR, ERBB2, or BRAF V600E; fusion/rearrangement\\[s\\] in ALK, ROS1, NTRK, or RET; or MET amplification)."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4656,
+        "end": 4822,
+        "text": "Has NSCLC with an oncogenic driver mutation (mutation\\[s\\] in EGFR, ERBB2, or BRAF V600E; fusion/rearrangement\\[s\\] in ALK, ROS1, NTRK, or RET; or MET amplification)."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4656,
+        "end": 4822,
+        "text": "Has NSCLC with an oncogenic driver mutation (mutation\\[s\\] in EGFR, ERBB2, or BRAF V600E; fusion/rearrangement\\[s\\] in ALK, ROS1, NTRK, or RET; or MET amplification)."
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4656,
+        "end": 4822,
+        "text": "Has NSCLC with an oncogenic driver mutation (mutation\\[s\\] in EGFR, ERBB2, or BRAF V600E; fusion/rearrangement\\[s\\] in ALK, ROS1, NTRK, or RET; or MET amplification)."
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4656,
+        "end": 4822,
+        "text": "Has NSCLC with an oncogenic driver mutation (mutation\\[s\\] in EGFR, ERBB2, or BRAF V600E; fusion/rearrangement\\[s\\] in ALK, ROS1, NTRK, or RET; or MET amplification)."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "amplification"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4656,
+        "end": 4822,
+        "text": "Has NSCLC with an oncogenic driver mutation (mutation\\[s\\] in EGFR, ERBB2, or BRAF V600E; fusion/rearrangement\\[s\\] in ALK, ROS1, NTRK, or RET; or MET amplification)."
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4656,
+        "end": 4822,
+        "text": "Has NSCLC with an oncogenic driver mutation (mutation\\[s\\] in EGFR, ERBB2, or BRAF V600E; fusion/rearrangement\\[s\\] in ALK, ROS1, NTRK, or RET; or MET amplification)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8155,
+        "end": 8266,
+        "text": "Has a known additional malignancy that is progressing or has required active treatment within the past 5 years."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7248,
+        "end": 7465,
+        "text": "Is currently participating in or has participated in a study of an investigational agent or has used an investigational device within 28 days or 5 half-lives, whichever is shorter, prior to study treatment initiation."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8974,
+        "end": 9122,
+        "text": "Has a history of (non-infectious) pneumonitis/interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9183,
+        "end": 9235,
+        "text": "Has a known history of human immunodeficiency virus."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9240,
+        "end": 9413,
+        "text": "Concurrent active Hepatitis B (defined as HBsAg positive and/or detectable HBV DNA) and Hepatitis C virus (defined as anti-HCV Ab positive and detectable HCV RNA) infection."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10601,
+        "end": 10914,
+        "text": "Has significant cardiac impairment including but not limited to history of congestive heart failure greater than New York Heart Association Class II (Appendix 8), unstable angina, myocardial infarction or stroke within previous 6 months, or cardiac arrhythmia requiring medical treatment at the time of screening."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11616,
+        "end": 11668,
+        "text": "Has had an allogeneic tissue/solid organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10078,
+        "end": 10285,
+        "text": "Is pregnant or breastfeeding or expecting to conceive or father children within the projected duration of the study, starting with the screening visit through 120 days after the last dose of study treatment."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7248,
+        "end": 7465,
+        "text": "Is currently participating in or has participated in a study of an investigational agent or has used an investigational device within 28 days or 5 half-lives, whichever is shorter, prior to study treatment initiation."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

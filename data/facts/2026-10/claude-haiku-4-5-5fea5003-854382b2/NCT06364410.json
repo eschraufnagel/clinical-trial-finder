@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT06364410",
+  "mappings": [
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 328,
+        "end": 478,
+        "text": "HER2 expression by immunohistochemistry (IHC) (1+, 2+, or 3+) or HER2 amplification by in situ hybridization (ISH) or next generation sequencing (NGS)"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13358,
+        "end": 13443,
+        "text": "Patients with prior treatment with T-DXd (DS-8201a) or other topoisomerase inhibitors"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1595,
+        "end": 1662,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5392,
+        "end": 5555,
+        "text": "Patients with treated brain metastases are eligible if follow-up brain imaging after central nervous system (CNS)-directed therapy shows no evidence of progression"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11474,
+        "end": 11638,
+        "text": "Patients with history of non-infectious pneumonitis/interstitial lung disease (ILD), current ILD, or where suspected ILD cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4858,
+        "end": 5014,
+        "text": "Human immunodeficiency virus-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5017,
+        "end": 5166,
+        "text": "For patients with evidence of chronic hepatitis B virus (HBV) infection, the HBV viral load must be undetectable on suppressive therapy, if indicated"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12250,
+        "end": 12340,
+        "text": "Patients with a medical history of myocardial infarction within 6 months before enrollment"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13533,
+        "end": 13632,
+        "text": "Patients with prior allogeneic organ transplantation including allogeneic stem cell transplantation"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS-specific treatment is not required",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS-specific treatment is not required",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

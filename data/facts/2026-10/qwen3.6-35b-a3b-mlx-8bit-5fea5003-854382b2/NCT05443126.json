@@ -1,0 +1,169 @@
+{
+  "nctId": "NCT05443126",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 57,
+        "end": 116,
+        "text": "Must be ≥18 years of age, with documented RET-altered NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 507,
+        "end": 634,
+        "text": "Must have locally advanced or metastatic NSCLC with RET fusion who are eligible to receive platinum-based doublet chemotherapy."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1341,
+        "end": 1440,
+        "text": "Spinal cord compression or brain metastases. Patients with stable brain metastases can be enrolled."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1341,
+        "end": 1385,
+        "text": "Spinal cord compression or brain metastases."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 462,
+        "end": 503,
+        "text": "Measurable disease defined by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 57,
+        "end": 116,
+        "text": "Must be ≥18 years of age, with documented RET-altered NSCLC"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1282,
+        "end": 1337,
+        "text": "Any known major driver gene alterations other than RET."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1650,
+        "end": 1718,
+        "text": "Participants with active hepatitis B infection or active hepatitis C"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1722,
+        "end": 1921,
+        "text": "Participants with active HIV infection. Patients living with HIV may be eligible if they have adequate CD4+ T-cell count and no history of AIDS-defining opportunistic infections in the past 12 months"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2164,
+        "end": 2401,
+        "text": "any factor that increases the risk of QTc prolongation or of arrhythmic events , or congestive heart failure Grade III-IV according to the New York Heart Association, myocardial infarction, or unstable angina within the previous 6 months"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 638,
+        "end": 724,
+        "text": "First line patients: Must not have received a Selective RET inhibitor or chemotherapy."
+      },
+      "appliesTo": "First line patients"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 638,
+        "end": 724,
+        "text": "First line patients: Must not have received a Selective RET inhibitor or chemotherapy."
+      },
+      "appliesTo": "First line patients"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

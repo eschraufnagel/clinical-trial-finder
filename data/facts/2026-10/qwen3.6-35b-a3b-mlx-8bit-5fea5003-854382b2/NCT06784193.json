@@ -1,0 +1,99 @@
+{
+  "nctId": "NCT06784193",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 227,
+        "end": 292,
+        "text": "Participants must have a tumor that is unresectable or metastatic"
+      },
+      "appliesTo": "Part 1A (Dose escalation for OP-3136 monotherapy)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 481,
+        "end": 613,
+        "text": "Participants with advanced or metastatic ER+ HER2- breast cancer that have progressed on or after at least 1 prior line of treatment"
+      },
+      "appliesTo": "Part 1B (Dose escalation for OP-3136 in combination with fulvestrant)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2169,
+        "end": 2338,
+        "text": "Participants must have progressed on or after at least 1 prior line of treatment that included endocrine therapy and CDK 4/6 inhibitor in advanced or metastatic setting."
+      },
+      "appliesTo": "Part 2B (Dose Expansion in ER+ HER2- mBC for OP-3136 in combination with fulvestrant OR Dose Expansion in ER+ HER2- mBC for OP-3136 in combination with palazestrant)"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2806,
+        "end": 2989,
+        "text": "Known active or symptomatic central nervous system (CNS) metastases, carcinomatous meningitis, leptomeningeal disease, or a spinal cord compression that require CNS-specific treatment"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants with advanced or metastatic ER+ HER2- breast cancer that have progressed on or after at least 1 prior line of treatment",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with advanced or metastatic ER+ HER2- breast cancer that have progressed on or after at least 1 prior line of treatment",
+        "appliesTo": "Part 1C (Dose escalation for OP-3136 in combination with palazestrant)"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known active or symptomatic central nervous system (CNS) metastases... or participants who did not demonstrate clinical and radiologic stability during the last 2 months prior to the first dose of study treatment",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known active or symptomatic central nervous system (CNS) metastases... or participants who did not demonstrate clinical and radiologic stability during the last 2 months prior to the first dose of study treatment",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

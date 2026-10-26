@@ -1,0 +1,209 @@
+{
+  "nctId": "NCT06425926",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 54,
+        "end": 138,
+        "text": "Cytologically or histologically confirmed locally advanced or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 420,
+        "end": 447,
+        "text": "ECOG performance status 0-1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1513,
+        "end": 1613,
+        "text": "Measurable disease according to Response Evaluation Criteria in Solid Tumors (RECIST) version (v)1.1"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1796,
+        "end": 1901,
+        "text": "Participants must have received no more than 3 prior lines of therapy in the advanced/metastatic setting."
+      },
+      "appliesTo": "Phase 1 Expansion Cohorts"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3443,
+        "end": 3547,
+        "text": "Participants must have received no more than 2 prior lines of therapy in the advanced/metastatic setting"
+      },
+      "appliesTo": "BRAF wild-type melanoma or RCC"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4037,
+        "end": 4171,
+        "text": "Brain metastases that have been treated and are clinically stable for at least 4 weeks prior to the first administration of study drug"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4766,
+        "end": 4857,
+        "text": "Has an active autoimmune disease that has required systemic treatment in the past 12 months"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5147,
+        "end": 5271,
+        "text": "At time of screening, is receiving systemic steroid therapy (greater than or equal to 10 mg/day of prednisone or equivalent)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5391,
+        "end": 5571,
+        "text": "Has active and clinically significant bacterial, fungal, or viral infection, including known hepatitis B virus (HBV), hepatitis C virus (HCV), or human immunodeficiency virus (HIV)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5391,
+        "end": 5571,
+        "text": "Has active and clinically significant bacterial, fungal, or viral infection, including known hepatitis B virus (HBV), hepatitis C virus (HCV), or human immunodeficiency virus (HIV)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 854,
+        "end": 879,
+        "text": "Non pregnant participants"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have received no more than 3 prior lines of therapy in the advanced/metastatic setting.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have received no more than 3 prior lines of therapy in the advanced/metastatic setting.",
+        "appliesTo": "TNBC"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have received no more than 3 prior lines of therapy in the advanced/metastatic setting.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have received no more than 3 prior lines of therapy in the advanced/metastatic setting.",
+        "appliesTo": "Ovarian Cancer"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have received no more than 3 prior lines of therapy in the advanced/metastatic setting.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have received no more than 3 prior lines of therapy in the advanced/metastatic setting.",
+        "appliesTo": "Tumors with AKT3 mutation/amplification"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participants must have received no more than 3 prior lines of therapy in the advanced/metastatic setting.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have received no more than 3 prior lines of therapy in the advanced/metastatic setting.",
+        "appliesTo": "BRAF (V600) mutant melanoma or NSCLC"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

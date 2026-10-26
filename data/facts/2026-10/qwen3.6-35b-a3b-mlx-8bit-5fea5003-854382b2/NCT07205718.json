@@ -1,0 +1,326 @@
+{
+  "nctId": "NCT07205718",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 180,
+        "end": 251,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5120,
+        "end": 5178,
+        "text": "Nonsquamous and squamous nonsmall cell lung cancer (NSCLC)"
+      },
+      "appliesTo": "For expansion in NSCLC (post programmed cell death-ligand 1 [PD-L1] treatment)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4769,
+        "end": 4812,
+        "text": "locally advanced or metastatic solid tumors"
+      },
+      "appliesTo": "For expansion in NSCLC (post programmed cell death-ligand 1 [PD-L1] treatment)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5360,
+        "end": 5530,
+        "text": "Participants with metastatic or advanced solid tumors must have radiographically measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) Version 1.1."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8536,
+        "end": 8594,
+        "text": "Tumors must have a PD-L1 combined Positive Score (CPS) ≥1."
+      },
+      "appliesTo": "For phase 1b backfill and possible expansion in SCCHN"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6588,
+        "end": 6749,
+        "text": "Participants must have received at least 6 weeks of 1 prior anti-PD-(L)1 therapy, and this must have been given during the immediately preceding line of therapy."
+      },
+      "appliesTo": "For expansion in NSCLC (post programmed cell death-ligand 1 [PD-L1] treatment)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 7571,
+        "end": 7662,
+        "text": "Anti-PD-(L)1 therapy must have been given during the immediately preceding line of therapy."
+      },
+      "appliesTo": "For phase 1b backfill and possible expansion in SCCHN (post PD-(L)1 treatment)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8984,
+        "end": 9131,
+        "text": "Disease progression while on or following at least 6 weeks of 1 prior anti-PD-(L)1 therapy in the recurrent locally advanced or metastatic setting."
+      },
+      "appliesTo": "For dose expansion in gastroesophageal adenocarcinoma (GEA) (post PD-(L)1 treatment)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6502,
+        "end": 6580,
+        "text": "No more than 1 line of therapy in advanced or metastatic setting is permitted."
+      },
+      "appliesTo": "For expansion in NSCLC (post programmed cell death-ligand 1 [PD-L1] treatment)"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 9783,
+        "end": 9897,
+        "text": "Participants must have had at least 1, and no more than 2, lines of therapy in the advanced or metastatic setting."
+      },
+      "appliesTo": "For phase 1b backfill and possible expansion in PDAC"
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15277,
+        "end": 15430,
+        "text": "Radiation therapy within 14 days (42 days for radiation to the lungs) and/or systemic treatment with radionuclides within 42 days before C1D1 of TAK-188."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12413,
+        "end": 12563,
+        "text": "Participants with autoimmune diseases which currently require ongoing systemic therapy or have required systemic therapy within the preceding 3 months"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12947,
+        "end": 13134,
+        "text": "Participants with a diagnosis of an identified congenital or acquired immunodeficiency (for example, common variable immunodeficiency, uncontrolled HIV infections, organ transplantation)."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13139,
+        "end": 13271,
+        "text": "Chronic, active hepatitis (for example, participants with known hepatitis B surface antigen seropositive and/or detectable HCV RNA)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16421,
+        "end": 16486,
+        "text": "Recipients of stem cell transplantation or organ transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16491,
+        "end": 16682,
+        "text": "Female participants who are lactating or have a positive serum/urine pregnancy test during the screening period or a positive serum/urine pregnancy test on Day 1 before first dose of TAK-188."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15813,
+        "end": 15863,
+        "text": "Physiological doses of replacement steroid therapy"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of known brain metastasis or leptomeningeal disease unless: Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR Stereotactic radiosurgery and off corticosteroids for brain metastases",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of known brain metastasis or leptomeningeal disease unless: Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR Stereotactic radiosurgery and off corticosteroids for brain metastases",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of known brain metastasis or leptomeningeal disease unless: Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR Stereotactic radiosurgery and off corticosteroids for brain metastases",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of known brain metastasis or leptomeningeal disease unless: Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR Stereotactic radiosurgery and off corticosteroids for brain metastases",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Tumors must have a PD-L1 combined Positive Score (CPS) ≥1.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "Tumors must have a PD-L1 combined Positive Score (CPS) ≥1.",
+        "appliesTo": "For dose expansion in gastroesophageal adenocarcinoma (GEA) (post PD-(L)1 treatment)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "No more than 1 line of therapy in advanced or metastatic setting is permitted.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "No more than 1 line of therapy in advanced or metastatic setting is permitted.",
+        "appliesTo": "For phase 1b backfill and possible expansion in SCCHN (post PD-(L)1 treatment)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "No more than 1 line of therapy in advanced or metastatic setting is permitted.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "No more than 1 line of therapy in advanced or metastatic setting is permitted.",
+        "appliesTo": "For dose expansion in gastroesophageal adenocarcinoma (GEA) (post PD-(L)1 treatment)"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active diagnosis of lung conditions including: Pneumonitis. Interstitial lung disease.",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active diagnosis of lung conditions including: Pneumonitis. Interstitial lung disease.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of any of the following cardiac illnesses within 6 months before first dose of TAK-188: Congestive heart failure New York Heart Association Grade III or IV. Unstable angina, myocardial infarction.",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of any of the following cardiac illnesses within 6 months before first dose of TAK-188: Congestive heart failure New York Heart Association Grade III or IV. Unstable angina, myocardial infarction.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

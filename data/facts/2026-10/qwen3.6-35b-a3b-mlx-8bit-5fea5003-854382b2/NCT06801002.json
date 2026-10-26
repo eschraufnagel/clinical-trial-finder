@@ -1,0 +1,188 @@
+{
+  "nctId": "NCT06801002",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 148,
+        "end": 237,
+        "text": "Solid tumors: have a histologically confirmed relapsed or refractory advanced solid tumor"
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 148,
+        "end": 237,
+        "text": "Solid tumors: have a histologically confirmed relapsed or refractory advanced solid tumor"
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 762,
+        "end": 869,
+        "text": "Solid tumors: per Response evaluation criteria in solid tumors (RECIST) 1.1 with at least one target lesion"
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1112,
+        "end": 1177,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2509,
+        "end": 2808,
+        "text": "Known active central nervous system (CNS) metastases and/or carcinomatous meningitis. Subjects with previously treated brain metastases may participate provided they are clinically stable for at least 2 weeks prior to study entry, as long as the dose is ≤ 4 mg of dexamethasone or equivalent per day"
+      },
+      "appliesTo": "solid tumor subjects"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2509,
+        "end": 2594,
+        "text": "Known active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      },
+      "appliesTo": "solid tumor subjects"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 148,
+        "end": 363,
+        "text": "Solid tumors: have a histologically confirmed relapsed or refractory advanced solid tumor for which no standard approved treatment is available, or is ineligible for, or did not tolerate standard approved treatment."
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 148,
+        "end": 363,
+        "text": "Solid tumors: have a histologically confirmed relapsed or refractory advanced solid tumor for which no standard approved treatment is available, or is ineligible for, or did not tolerate standard approved treatment."
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 148,
+        "end": 363,
+        "text": "Solid tumors: have a histologically confirmed relapsed or refractory advanced solid tumor for which no standard approved treatment is available, or is ineligible for, or did not tolerate standard approved treatment."
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 148,
+        "end": 363,
+        "text": "Solid tumors: have a histologically confirmed relapsed or refractory advanced solid tumor for which no standard approved treatment is available, or is ineligible for, or did not tolerate standard approved treatment."
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 148,
+        "end": 363,
+        "text": "Solid tumors: have a histologically confirmed relapsed or refractory advanced solid tumor for which no standard approved treatment is available, or is ineligible for, or did not tolerate standard approved treatment."
+      },
+      "appliesTo": "Solid tumors"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2100,
+        "end": 2275,
+        "text": "Has another malignant disease requiring treatment, with the exception of curatively treated malignancies or malignancies with very low potential for recurrence or progression."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3625,
+        "end": 3672,
+        "text": "Female participants: pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

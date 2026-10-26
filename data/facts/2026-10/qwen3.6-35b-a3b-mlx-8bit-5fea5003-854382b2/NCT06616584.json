@@ -1,0 +1,131 @@
+{
+  "nctId": "NCT06616584",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1140,
+        "end": 1333,
+        "text": "Participants must have received exactly one anti-PD-1 or anti-PD-L1 therapy for advanced disease (stage IV or recurrent disease, or stage I-III disease in certain circumstances outlined below)."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1140,
+        "end": 1333,
+        "text": "Participants must have received exactly one anti-PD-1 or anti-PD-L1 therapy for advanced disease (stage IV or recurrent disease, or stage I-III disease in certain circumstances outlined below)."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2615,
+        "end": 2785,
+        "text": "Participants must have received platinum-based chemotherapy and experienced disease progression (in the opinion of the treating investigator) during or after this regimen"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5239,
+        "end": 5400,
+        "text": "Participants' most recent Zubrod/Eastern Cooperative Oncology Group (ECOG) performance status must be 0-1 and be documented within 28 days prior to randomization"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6549,
+        "end": 6770,
+        "text": "Participants must not have an active autoimmune disease that has required systemic treatment within 730 days prior to randomization (i.e., with use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7654,
+        "end": 7752,
+        "text": "Participants must not have any history of organ transplant that requires use of immunosuppressives"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8303,
+        "end": 8443,
+        "text": "Participants must not have a history of (non-infectious) pneumonitis that required steroids or current pneumonitis/interstitial lung disease"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10391,
+        "end": 10565,
+        "text": "Participants must not be pregnant or breastfeeding (nursing includes breast milk fed to an infant by any means, including from the breast, milk expressed by hand, or pumped)."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1140,
+        "end": 1333,
+        "text": "Participants must have received exactly one anti-PD-1 or anti-PD-L1 therapy for advanced disease (stage IV or recurrent disease, or stage I-III disease in certain circumstances outlined below)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

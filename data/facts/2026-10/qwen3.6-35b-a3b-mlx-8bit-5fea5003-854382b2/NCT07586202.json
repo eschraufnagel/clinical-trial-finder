@@ -1,0 +1,206 @@
+{
+  "nctId": "NCT07586202",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 134,
+        "text": "Participant must have histologically or cytologically confirmed non-squamous non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 186,
+        "text": "Participant must have histologically or cytologically confirmed non-squamous non-small cell lung cancer (NSCLC) with completely resectable Stage II-IIIB N2 disease"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 789,
+        "end": 867,
+        "text": "Have an eastern cooperative oncology group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 926,
+        "end": 1145,
+        "text": "Medical history of (non-infectious) interstitial lung disease (ILD)/pneumonitis, or has current interstitial lung disease (ILD)/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1307,
+        "end": 1795,
+        "text": "Presence of primary driver mutations (anaplastic lymphoma kinase \\[ALK\\], mesenchymal-epithelial transition \\[MET\\], human epidermal growth factor receptor 2 \\[HER2\\], proto-oncogene tyrosine-protein kinase ROS \\[ROS1\\], neurotrophic tyrosine receptor kinase \\[NTRK\\], B-Raf proto-oncogene \\[BRAF\\], REarranged during transfection \\[RET\\], or kirsten rat sarcoma viral oncogene homolog \\[KRAS\\]) , besides EGFR Exon 19del or Exon 21 L858R mutations, as determined by local genomic testing"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1307,
+        "end": 1795,
+        "text": "Presence of primary driver mutations (anaplastic lymphoma kinase \\[ALK\\], mesenchymal-epithelial transition \\[MET\\], human epidermal growth factor receptor 2 \\[HER2\\], proto-oncogene tyrosine-protein kinase ROS \\[ROS1\\], neurotrophic tyrosine receptor kinase \\[NTRK\\], B-Raf proto-oncogene \\[BRAF\\], REarranged during transfection \\[RET\\], or kirsten rat sarcoma viral oncogene homolog \\[KRAS\\]) , besides EGFR Exon 19del or Exon 21 L858R mutations, as determined by local genomic testing"
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping",
+        "amplification"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1307,
+        "end": 1795,
+        "text": "Presence of primary driver mutations (anaplastic lymphoma kinase \\[ALK\\], mesenchymal-epithelial transition \\[MET\\], human epidermal growth factor receptor 2 \\[HER2\\], proto-oncogene tyrosine-protein kinase ROS \\[ROS1\\], neurotrophic tyrosine receptor kinase \\[NTRK\\], B-Raf proto-oncogene \\[BRAF\\], REarranged during transfection \\[RET\\], or kirsten rat sarcoma viral oncogene homolog \\[KRAS\\]) , besides EGFR Exon 19del or Exon 21 L858R mutations, as determined by local genomic testing"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1307,
+        "end": 1795,
+        "text": "Presence of primary driver mutations (anaplastic lymphoma kinase \\[ALK\\], mesenchymal-epithelial transition \\[MET\\], human epidermal growth factor receptor 2 \\[HER2\\], proto-oncogene tyrosine-protein kinase ROS \\[ROS1\\], neurotrophic tyrosine receptor kinase \\[NTRK\\], B-Raf proto-oncogene \\[BRAF\\], REarranged during transfection \\[RET\\], or kirsten rat sarcoma viral oncogene homolog \\[KRAS\\]) , besides EGFR Exon 19del or Exon 21 L858R mutations, as determined by local genomic testing"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1307,
+        "end": 1795,
+        "text": "Presence of primary driver mutations (anaplastic lymphoma kinase \\[ALK\\], mesenchymal-epithelial transition \\[MET\\], human epidermal growth factor receptor 2 \\[HER2\\], proto-oncogene tyrosine-protein kinase ROS \\[ROS1\\], neurotrophic tyrosine receptor kinase \\[NTRK\\], B-Raf proto-oncogene \\[BRAF\\], REarranged during transfection \\[RET\\], or kirsten rat sarcoma viral oncogene homolog \\[KRAS\\]) , besides EGFR Exon 19del or Exon 21 L858R mutations, as determined by local genomic testing"
+      }
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1307,
+        "end": 1795,
+        "text": "Presence of primary driver mutations (anaplastic lymphoma kinase \\[ALK\\], mesenchymal-epithelial transition \\[MET\\], human epidermal growth factor receptor 2 \\[HER2\\], proto-oncogene tyrosine-protein kinase ROS \\[ROS1\\], neurotrophic tyrosine receptor kinase \\[NTRK\\], B-Raf proto-oncogene \\[BRAF\\], REarranged during transfection \\[RET\\], or kirsten rat sarcoma viral oncogene homolog \\[KRAS\\]) , besides EGFR Exon 19del or Exon 21 L858R mutations, as determined by local genomic testing"
+      }
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1307,
+        "end": 1795,
+        "text": "Presence of primary driver mutations (anaplastic lymphoma kinase \\[ALK\\], mesenchymal-epithelial transition \\[MET\\], human epidermal growth factor receptor 2 \\[HER2\\], proto-oncogene tyrosine-protein kinase ROS \\[ROS1\\], neurotrophic tyrosine receptor kinase \\[NTRK\\], B-Raf proto-oncogene \\[BRAF\\], REarranged during transfection \\[RET\\], or kirsten rat sarcoma viral oncogene homolog \\[KRAS\\]) , besides EGFR Exon 19del or Exon 21 L858R mutations, as determined by local genomic testing"
+      }
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1307,
+        "end": 1795,
+        "text": "Presence of primary driver mutations (anaplastic lymphoma kinase \\[ALK\\], mesenchymal-epithelial transition \\[MET\\], human epidermal growth factor receptor 2 \\[HER2\\], proto-oncogene tyrosine-protein kinase ROS \\[ROS1\\], neurotrophic tyrosine receptor kinase \\[NTRK\\], B-Raf proto-oncogene \\[BRAF\\], REarranged during transfection \\[RET\\], or kirsten rat sarcoma viral oncogene homolog \\[KRAS\\]) , besides EGFR Exon 19del or Exon 21 L858R mutations, as determined by local genomic testing"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1307,
+        "end": 1795,
+        "text": "Presence of primary driver mutations (anaplastic lymphoma kinase \\[ALK\\], mesenchymal-epithelial transition \\[MET\\], human epidermal growth factor receptor 2 \\[HER2\\], proto-oncogene tyrosine-protein kinase ROS \\[ROS1\\], neurotrophic tyrosine receptor kinase \\[NTRK\\], B-Raf proto-oncogene \\[BRAF\\], REarranged during transfection \\[RET\\], or kirsten rat sarcoma viral oncogene homolog \\[KRAS\\]) , besides EGFR Exon 19del or Exon 21 L858R mutations, as determined by local genomic testing"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1798,
+        "end": 1992,
+        "text": "Prior treatment with any systemic anti-cancer therapy for NSCLC including EGFR-tyrosine kinase inhibitor (TKI) therapy, chemotherapy, biologic therapy, immunotherapy, or any investigational drug"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1798,
+        "end": 1992,
+        "text": "Prior treatment with any systemic anti-cancer therapy for NSCLC including EGFR-tyrosine kinase inhibitor (TKI) therapy, chemotherapy, biologic therapy, immunotherapy, or any investigational drug"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

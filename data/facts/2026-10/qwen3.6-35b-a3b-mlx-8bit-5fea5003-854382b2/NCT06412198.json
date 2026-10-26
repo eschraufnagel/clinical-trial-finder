@@ -1,0 +1,173 @@
+{
+  "nctId": "NCT06412198",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 413,
+        "end": 448,
+        "text": "Unresectable or metastatic disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 605,
+        "end": 650,
+        "text": "Presence of measurable disease per RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1352,
+        "end": 1423,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 179,
+        "end": 214,
+        "text": "Confirmed KRASG12C mutation status."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3906,
+        "end": 3943,
+        "text": "Prior PD1 or CTLA4 inhibition therapy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4523,
+        "end": 4828,
+        "text": "Active brain metastases, unless adequately treated and participant is neurologically stable (except for residual symptoms of central nervous system treatment) for at least 2 weeks prior to enrollment without corticosteroids or are on a stable or decreasing dose of ≤ 10 mg daily prednisone (or equivalent)"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5581,
+        "end": 5634,
+        "text": "Participants with symptomatic leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5848,
+        "end": 6089,
+        "text": "Known human immunodeficiency virus (HIV) infection or acute or chronic hepatitis B (HBV) or C (HCV) infection as tested in a CLIA certified lab using a positive HIV antibody test. For Hepatitis B and C, an antigen that is drawn and positive."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5363,
+        "end": 5474,
+        "text": "Pregnancy. Women of child-bearing potential must have a negative serum or urine pregnancy test during screening"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4159,
+        "end": 4330,
+        "text": "Active autoimmune disease that has required systemic treatment in the past 2 years (i.e. with use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed diagnosis of advanced/metastatic microsatellite stable colorectal cancer",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed diagnosis of advanced/metastatic microsatellite stable colorectal cancer",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Known human immunodeficiency virus (HIV) infection or acute or chronic hepatitis B (HBV) or C (HCV) infection as tested in a CLIA certified lab using a positive HIV antibody test. ... Participants treated for HIV with no detectable viral load on current regimen for at least 1 month prior to randomization;",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Known human immunodeficiency virus (HIV) infection or acute or chronic hepatitis B (HBV) or C (HCV) infection as tested in a CLIA certified lab using a positive HIV antibody test. ... Participants treated for HIV with no detectable viral load on current regimen for at least 1 month prior to randomization;",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

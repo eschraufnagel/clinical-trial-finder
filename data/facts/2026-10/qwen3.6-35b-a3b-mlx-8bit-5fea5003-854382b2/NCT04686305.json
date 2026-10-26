@@ -1,0 +1,220 @@
+{
+  "nctId": "NCT04686305",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 108,
+        "text": "Histologically documented unresectable locally advanced/metastatic non-squamous NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 108,
+        "text": "Histologically documented unresectable locally advanced/metastatic non-squamous NSCLC"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 111,
+        "end": 206,
+        "text": "Part 1: Progression after 1 or 2 lines of systemic therapy for recurrent or metastatic setting."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 395,
+        "end": 487,
+        "text": "Part 3, Part 4 and Part 5: Patient must be treatment-naïve for advanced or metastatic NSCLC."
+      },
+      "appliesTo": "Part 3, Part 4 and Part 5"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1038,
+        "end": 1071,
+        "text": "HER2 mutation if previously known"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 702,
+        "end": 775,
+        "text": "HER2overexpression status as determined by central review of tumor tissue"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 778,
+        "end": 817,
+        "text": "WHO / ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 820,
+        "end": 891,
+        "text": "Measurable target disease assessed by the investigator using RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1074,
+        "end": 1255,
+        "text": "Has a history of (non-infectious) ILD/pneumonitis that required steroids, has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1409,
+        "end": 1667,
+        "text": "Active primary immunodeficiency known HIV infection, or active chronic and resolved hepatitis B (positive hepatitis B virus surface antigen \\[HBsAg+ve\\] or hepatitis B virus core antibody (anti-HBc +ve) regardless of HBV DNA level)) or hepatitis C infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1409,
+        "end": 1667,
+        "text": "Active primary immunodeficiency known HIV infection, or active chronic and resolved hepatitis B (positive hepatitis B virus surface antigen \\[HBsAg+ve\\] or hepatitis B virus core antibody (anti-HBc +ve) regardless of HBV DNA level)) or hepatitis C infection."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2006,
+        "end": 2215,
+        "text": "Spinal cord compression or clinically active central nervous system metastases, defined as untreated and symptomatic, or requiring therapy with corticosteroids or anticonvulsants to control associated symptoms"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2218,
+        "end": 2470,
+        "text": "Medical history of myocardial infarction within 6 months before treatment assignment, symptomatic CHF (New York Heart Association Class II to IV), clinically important cardiac arrhythmias, or a recent (\\< 6 months) cardiovascular event including stroke"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2473,
+        "end": 2716,
+        "text": "For Part 3, Part 4 and Part 5: Cardiomyopathy of any etiology, symptomatic CHF (as defined by New York Heart Association Class \\> II), unstable angina pectoris, history of MI within the past 12 months, or cardiac arrhythmia are to be excluded."
+      },
+      "appliesTo": "Part 3, Part 4 and Part 5"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3109,
+        "end": 3425,
+        "text": "For Part 3, Part 4 and Part 5: Active non-infectious skin disease (including any grade rash, urticarial, dermatitis, ulceration, or psoriasis) requiring systemic treatment, active or prior documented autoimmune or inflammatory disorders requiring chronic treatment with steroids or other immunosuppressive treatment."
+      },
+      "appliesTo": "Part 3, Part 4 and Part 5"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3675,
+        "end": 3848,
+        "text": "Part 3, Part 4 and Part 5 patients must not have had prior exposure to anti-PD-1, anti-PD-L1, anti-CTLA-4, anti-TIGIT or any other experimental immunotherapy in any setting."
+      },
+      "appliesTo": "Part 3, Part 4 and Part 5"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

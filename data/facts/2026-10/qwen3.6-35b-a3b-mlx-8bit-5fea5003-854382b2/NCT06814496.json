@@ -1,0 +1,174 @@
+{
+  "nctId": "NCT06814496",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 935,
+        "end": 1067,
+        "text": "Subjects who progressed or recurred after at least one line of therapy and are considered treatment refractory per standard of care."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6213,
+        "end": 6270,
+        "text": "Leptomeningeal disease requiring craniospinal irradiation"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1908,
+        "end": 2006,
+        "text": "Measurable lesions as defined per RECIST 1.1 within 28 days prior to the first dose of tarlatamab."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1596,
+        "end": 1667,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6274,
+        "end": 6354,
+        "text": "Has evidence of interstitial lung disease or active, non-infectious pneumonitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8871,
+        "end": 9060,
+        "text": "Active autoimmune disease that has required systemic treatment (except replacement therapy) within the past 2 years or any other diseases requiring immunosuppressive therapy while on study."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9064,
+        "end": 9203,
+        "text": "Human immunodeficiency virus (HIV) infection. a. Subjects with HIV infection on antiviral therapy and undetectable viral load are permitted"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Histologically or cytologically confirmed relapsed/refractory: ... 4. DLL3+ (≥1% by IHC) Note: If patients are DLL3 negative per IHC but have a DLL3 prevalant tumor type, they will be allowed to enroll on the study.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed relapsed/refractory: ... 4. DLL3+ (≥1% by IHC) Note: If patients are DLL3 negative per IHC but have a DLL3 prevalant tumor type, they will be allowed to enroll on the study.",
+        "appliesTo": "Non Small Cell Lung Cancer"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Subjects with treated brain metastases are eligible (untreated brain metastases are ineligible) provided they meet the following criteria: ... 2. There is no evidence of radiographic central nervous system (CNS) progression following therapy and by the time of study screening. ... 4. Any CNS disease is asymptomatic for at least 7 days",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "inclusion",
+        "quote": "Subjects with treated brain metastases are eligible (untreated brain metastases are ineligible) provided they meet the following criteria: ... 2. There is no evidence of radiographic central nervous system (CNS) progression following therapy and by the time of study screening. ... 4. Any CNS disease is asymptomatic for at least 7 days",
+        "appliesTo": "extracranial RT sites"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Exclusion of hepatitis infection based on the following results and/or criteria: a. Positive for hepatitis B surface antigen (HBsAg) ... c. Positive hepatitis C virus antibody (HCVAb): hepatitis C virus RNA by PCR is necessary. Detectable hepatitis C virus RNA suggests chronic hepatitis C.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Exclusion of hepatitis infection based on the following results and/or criteria: a. Positive for hepatitis B surface antigen (HBsAg) ... c. Positive hepatitis C virus antibody (HCVAb): hepatitis C virus RNA by PCR is necessary. Detectable hepatitis C virus RNA suggests chronic hepatitis C.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Myocardial infarction and/or symptomatic congestive heart failure (New York Heart Association > class II) within 12 months of first dose of tarlatamab. History of arterial thrombosis (i.e., stroke or transient ischemic attack) within 12 months of first dose of tarlatamab.",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Myocardial infarction and/or symptomatic congestive heart failure (New York Heart Association > class II) within 12 months of first dose of tarlatamab. History of arterial thrombosis (i.e., stroke or transient ischemic attack) within 12 months of first dose of tarlatamab.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Female subjects who are breastfeeding or who plan to breastfeed while on study through 60 days after the last dose of tarlatamab. Female subjects planning to become pregnant while on study through 60 days after the last dose of tarlatamab. Female subjects of childbearing potential with a positive pregnancy test assessed at screening and/or day 1 by a highly sensitive urine or serum pregnancy test.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Female subjects who are breastfeeding or who plan to breastfeed while on study through 60 days after the last dose of tarlatamab. Female subjects planning to become pregnant while on study through 60 days after the last dose of tarlatamab. Female subjects of childbearing potential with a positive pregnancy test assessed at screening and/or day 1 by a highly sensitive urine or serum pregnancy test.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

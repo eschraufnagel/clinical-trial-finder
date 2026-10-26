@@ -1,0 +1,225 @@
+{
+  "nctId": "NCT06362252",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 421,
+        "end": 529,
+        "text": "Has histologically or cytologically confirmed diagnosis of ES-SCLC who will require first-line (IL) therapy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 817,
+        "end": 999,
+        "text": "For Cohort 2, participant has at least one measurable lesion according to RECIST v1.1 on computed tomography (CT) or magnetic resonance imaging (MRI) as assessed by the investigator."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1177,
+        "end": 1252,
+        "text": "Has ECOG PS of ≤1 (assessed within 7 days before enrollment/randomization)."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3507,
+        "end": 3698,
+        "text": "Has received prior treatment with CD137 agonists or ICIs, including anti-cytotoxic T-cell lymphocyte-4, anti-PD-1, and anti-PD-L1 therapeutic antibodies, except for atezolizumab for Cohort 1."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3254,
+        "end": 3362,
+        "text": "Has received prior treatment with orlotamab, enoblituzumab, or other B7-H3 targeted agents, including I-DXd."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3366,
+        "end": 3503,
+        "text": "Prior discontinuation of an ADC that consists of an exatecan derivative (eg, trastuzumab deruxtecan) due to treatment-related toxicities."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3952,
+        "end": 4174,
+        "text": "Has clinically active brain metastases, spinal cord compression, or leptomeningeal carcinomatosis, defined as untreated and symptomatic, or requiring therapy with steroids or anticonvulsants to control associated symptoms."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3952,
+        "end": 4174,
+        "text": "Has clinically active brain metastases, spinal cord compression, or leptomeningeal carcinomatosis, defined as untreated and symptomatic, or requiring therapy with steroids or anticonvulsants to control associated symptoms."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4285,
+        "end": 4467,
+        "text": "Has history of (non-infectious) ILD/pneumonitis that required corticosteroids, current ILD/pneumonitis, or suspected ILD/pneumonitis that cannot be ruled out by imaging at Screening."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4567,
+        "end": 4823,
+        "text": "Is on chronic steroid treatment (dose of 10 mg daily or more prednisone equivalent), except for low-dose inhaled steroids (for asthma/chronic obstructive pulmonary disease, topical steroids (for mild skin conditions), or intra-articular steroid injections."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4828,
+        "end": 5137,
+        "text": "Has history of malignancy other than SCLC within the 5 years prior to randomization/enrollment, except adequately resected non-melanoma skin cancer, curatively treated in situ disease, superficial gastrointestinal tract tumors, and non-muscle invasive bladder cancer curatively resected by endoscopic surgery."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5142,
+        "end": 5218,
+        "text": "Has history of allogeneic bone marrow, stem cell, or solid organ transplant."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5648,
+        "end": 5720,
+        "text": "Has active or uncontrolled human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5725,
+        "end": 5798,
+        "text": "Has active or uncontrolled hepatitis B or C virus (HBV or HCV) infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5994,
+        "end": 6070,
+        "text": "Is a female who is pregnant or breastfeeding or planning to become pregnant."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Has histologically or cytologically confirmed diagnosis of ES-SCLC who will require first-line (IL) therapy.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has histologically or cytologically confirmed diagnosis of ES-SCLC who will require first-line (IL) therapy.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

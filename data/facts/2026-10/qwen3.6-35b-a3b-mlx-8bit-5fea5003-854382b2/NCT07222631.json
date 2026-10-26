@@ -1,0 +1,199 @@
+{
+  "nctId": "NCT07222631",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 95,
+        "end": 232,
+        "text": "Phase 1 (Dose-Escalation): Histologically or cytologically confirmed locally advanced or metastatic solid tumor or non-Hodgkin lymphomas."
+      },
+      "appliesTo": "Phase 1 (Dose-Escalation)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 760,
+        "end": 871,
+        "text": "Phase 2 (Dose-Expansion/ Combination Therapy): Histologically or cytologically confirmed non-Hodgkin lymphomas."
+      },
+      "appliesTo": "Phase 2 (Dose-Expansion/ Combination Therapy)"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1662,
+        "end": 1779,
+        "text": "For solid cancer, at least one measurable lesion based on response evaluation criteria in solid tumors (RECIST v1.1)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2507,
+        "end": 2565,
+        "text": "Eastern Cooperative Oncology Group Performance Status: ≤ 2"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2571,
+        "end": 2679,
+        "text": "Female Participants: A female participant is eligible to participate if she is not pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5101,
+        "end": 5130,
+        "text": "Prior solid organ transplant."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5134,
+        "end": 5538,
+        "text": "Clinically significant cardiovascular disease including any of the following within 6 months before first dose of study drug: myocardial infarction or coronary artery bypass grafting, unstable angina pectoris, serious cardiac ventricular arrhythmia requiring medication, congestive heart failure per New York Heart Association class III or IV, cerebrovascular accident, or poorly controlled hypertension."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5542,
+        "end": 5781,
+        "text": "History of any other malignancy in the past 2 years other than completely resected nonmelanoma skin cancer or carcinoma in situ of the uterine cervix, anus, prostate, bladder, breast, or indolent malignancies that do not require treatment."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6360,
+        "end": 6426,
+        "text": "Active hepatitis B or hepatitis C infection regardless of viremia."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6431,
+        "end": 6543,
+        "text": "Known history of human immunodeficiency virus infection with viral load \\>50 copies/ml at the time of screening."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6548,
+        "end": 6687,
+        "text": "Active autoimmune disease requiring \\>10 mg of prednisone daily or equivalent, disease-modifying antirheumatic drugs, or immunosuppression."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7561,
+        "end": 7686,
+        "text": "Known active central nervous system metastases. Participants with previously treated stable brain metastases may participate."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Phase 1 (Dose-Escalation): Histologically or cytologically confirmed locally advanced or metastatic solid tumor or non-Hodgkin lymphomas.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Phase 1 (Dose-Escalation): Histologically or cytologically confirmed locally advanced or metastatic solid tumor or non-Hodgkin lymphomas.",
+        "appliesTo": "Phase 1 (Dose-Escalation)"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Phase 2 (Dose-Expansion/ Combination Therapy): Histologically or cytologically confirmed non-Hodgkin lymphomas.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Phase 2 (Dose-Expansion/ Combination Therapy): Histologically or cytologically confirmed non-Hodgkin lymphomas.",
+        "appliesTo": "Phase 2 (Dose-Expansion/ Combination Therapy)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

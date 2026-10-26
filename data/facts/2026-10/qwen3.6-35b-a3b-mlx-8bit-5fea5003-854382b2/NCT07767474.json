@@ -1,0 +1,136 @@
+{
+  "nctId": "NCT07767474",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 156,
+        "text": "Has histologically or cytologically confirmed advanced solid tumor malignancy that is metastatic or locally advanced and unresectable"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 230,
+        "end": 269,
+        "text": "ECOG performance status score of 0 or 1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 952,
+        "end": 999,
+        "text": "Has at least 1 measurable lesion per RECIST 1.1"
+      },
+      "appliesTo": "Part 1a (monotherapy dose escalation)"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1368,
+        "end": 1521,
+        "text": "Has history (within ≤2 years before screening) of a solid tumor or hematological malignancy that is histologically distinct from the cancer being studied"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1524,
+        "end": 1695,
+        "text": "Has symptomatic CNS metastases at screening or asymptomatic CNS metastases requiring corticosteroids to control symptoms within 28 days prior to the first dose of ATX-898."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2245,
+        "end": 2322,
+        "text": "For ribocicilib only: has history of pneumonitis or interstitial lung disease"
+      },
+      "appliesTo": "ribocicilib"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Has at least 1 measurable lesion per RECIST 1.1",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has at least 1 measurable lesion per RECIST 1.1",
+        "appliesTo": "Part 1b (monotherapy dose expansion)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Has at least 1 measurable lesion per RECIST 1.1",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has at least 1 measurable lesion per RECIST 1.1",
+        "appliesTo": "Part 2a (combination dose escalation)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Has at least 1 measurable lesion per RECIST 1.1",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has at least 1 measurable lesion per RECIST 1.1",
+        "appliesTo": "Part 2b (combination dose expansion)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

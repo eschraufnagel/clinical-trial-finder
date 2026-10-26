@@ -1,0 +1,132 @@
+{
+  "nctId": "NCT03093116",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 92,
+        "end": 135,
+        "text": "locally advanced, or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 319,
+        "end": 330,
+        "text": "ECOG PS 0-1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 482,
+        "end": 549,
+        "text": "At least 1 measurable target lesion according to RECIST version 1.1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4975,
+        "end": 5033,
+        "text": "Symptomatic brain metastases or leptomeningeal involvement"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4975,
+        "end": 5033,
+        "text": "Symptomatic brain metastases or leptomeningeal involvement"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5038,
+        "end": 5233,
+        "text": "History of previous cancer, except for squamous cell or basal-cell carcinoma of the skin, or any in situ carcinoma that has been completely resected, requiring therapy within the previous 2 years"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5498,
+        "end": 5717,
+        "text": "Clinically significant cardiovascular disease (either active or within 6 months prior to enrollment): myocardial infarction, unstable angina, coronary/peripheral artery bypass graft, symptomatic congestive heart failure"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6688,
+        "end": 6763,
+        "text": "Known active infections (bacterial, fungal, viral including HIV positivity)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6976,
+        "end": 7142,
+        "text": "History of extensive, disseminated, bilateral, or presence of CTCAE grade 3 or 4 interstitial fibrosis or interstitial lung disease including a history of pneumonitis"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

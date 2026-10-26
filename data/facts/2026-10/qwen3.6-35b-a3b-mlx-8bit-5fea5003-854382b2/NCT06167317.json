@@ -1,0 +1,221 @@
+{
+  "nctId": "NCT06167317",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 203,
+        "end": 271,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 to 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 274,
+        "end": 391,
+        "text": "Measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 criteria by investigator assessment."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1217,
+        "end": 1388,
+        "text": "Individuals must have received, been intolerant to, or been ineligible for all treatment known to confer clinical benefit or have a contraindication to receive the therapy"
+      },
+      "appliesTo": "Part A (GS-0201 Monotherapy Dose Escalation)"
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7259,
+        "end": 7388,
+        "text": "Individuals who previously received topoisomerase 1 inhibitors or antibody-drug conjugates containing a topoisomerase 1 inhibitor"
+      },
+      "appliesTo": "Parts C (Dose Escalation) and D (Dose Expansion): Combination Cohorts"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7029,
+        "end": 7123,
+        "text": "Individuals with active chronic inflammatory bowel disease (ulcerative colitis, Crohn disease)"
+      },
+      "appliesTo": "Parts C (Dose Escalation) and D (Dose Expansion): Combination Cohorts"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4678,
+        "end": 4735,
+        "text": "Have known active central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4738,
+        "end": 4847,
+        "text": "Individuals with carcinomatous meningitis or primary CNS tumors are excluded regardless of clinical stability"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4911,
+        "end": 4990,
+        "text": "Myocardial infarction or unstable angina pectoris within 6 months of enrollment"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5561,
+        "end": 5632,
+        "text": "Have active hepatitis B virus (HBV) or hepatitis C virus (HCV), or HIV."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6156,
+        "end": 6291,
+        "text": "History of pneumonitis requiring treatment with corticosteroids, interstitial lung disease, or radiation pneumonitis requiring steroids"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3998,
+        "end": 4215,
+        "text": "Any prior allogeneic tissue/solid organ transplantation, including allogeneic hematopoietic stem cell transplantation. Individuals with a history of autologous hematopoietic stem cell transplantation are also excluded"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2375,
+        "end": 2404,
+        "text": "Pregnant or lactating females"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4467,
+        "end": 4546,
+        "text": "requires systemic corticosteroids (\\> 10 mg of prednisone daily, or equivalent)"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Individuals must have received, been intolerant to, or been ineligible for all treatment known to confer clinical benefit or have a contraindication to receive the therapy",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Individuals must have received, been intolerant to, or been ineligible for all treatment known to confer clinical benefit or have a contraindication to receive the therapy",
+        "appliesTo": "Part B (Dose Expansion)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Individuals must have received, been intolerant to, or been ineligible for all treatment known to confer clinical benefit or have a contraindication to receive the therapy",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Individuals must have received, been intolerant to, or been ineligible for all treatment known to confer clinical benefit or have a contraindication to receive the therapy",
+        "appliesTo": "Part C (Dose Escalation)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Individuals must have received, been intolerant to, or been ineligible for all treatment known to confer clinical benefit or have a contraindication to receive the therapy",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "Individuals must have received, been intolerant to, or been ineligible for all treatment known to confer clinical benefit or have a contraindication to receive the therapy",
+        "appliesTo": "Part D (Dose Expansion)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

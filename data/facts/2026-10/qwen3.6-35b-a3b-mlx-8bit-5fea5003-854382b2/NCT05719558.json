@@ -1,0 +1,445 @@
+{
+  "nctId": "NCT05719558",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 269,
+        "end": 406,
+        "text": "NSCLC-adenocarcinoma, squamous cell carcinoma and adenosquamous are included; large cell carcinoma and sarcomatoid carcinoma are excluded"
+      },
+      "appliesTo": "monotherapy dose escalation"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 40,
+        "end": 173,
+        "text": "Participant has locally-advanced (unresectable or metastatic solid tumor) confirmed by available pathology records or current biopsy."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 10068,
+        "end": 10169,
+        "text": "Participant has metastatic adenocarcinoma of the lung, confirmed by pathology records/current biopsy."
+      },
+      "appliesTo": "NSCLC (1L) ASP1002 + pembrolizumab + pemetrexed + carboplatin"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 11178,
+        "end": 11452,
+        "text": "Participant has Stage IV NSCLC without AGA and has progressed after a platinum-based chemotherapy and a checkpoint inhibitor either concomitantly or in sequence (for participants who received a checkpoint inhibitor as monotherapy in the first line for NSCLC with TPS ≥ 50%)."
+      },
+      "appliesTo": "NSCLC (2L/3L) ASP1002 + ramucirumab + docetaxel"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 12241,
+        "end": 12395,
+        "text": "Participant has histologically confirmed metastatic solid tumor known to highly express CLDN4 based on published literature, as determined by the sponsor."
+      },
+      "appliesTo": "Select CLDN4-expressing Tumors ASP1002 + pembrolizumab"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13533,
+        "end": 13989,
+        "text": "Symptomatic CNS metastases or evidence of uncontrolled CNS disease even if asymptomatic (e.g. progression on scans). Participants with previously treated CNS metastases are eligible, if they are clinically stable/have no evidence of CNS progression by imaging for at least 4 weeks prior to start of study intervention and are not requiring immunosuppressive doses of systemic steroids (equivalent to \\> 10 mg per day of prednisone) for longer than 2 weeks."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 18552,
+        "end": 18575,
+        "text": "leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2850,
+        "end": 3040,
+        "text": "Participant has at least 1 measurable lesion per RECIST v1.1. Lesions situated in a previously irradiated area are considered measurable if progression has been demonstrated in such lesions."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3043,
+        "end": 3152,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Status of 0 or 1 within 7 days before the first dose of study drug."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "mutation",
+        "overexpression"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5723,
+        "end": 5769,
+        "text": "Participant is AGA-negative and HER2-negative."
+      },
+      "appliesTo": "Combination-specific Inclusion Criteria for MSS-mCRC (2L) ASP1002 + bevacizumab + mFOLFOX6"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15257,
+        "end": 15669,
+        "text": "Participant with human immunodeficiency virus (HIV) infection. However, participants with HIV infection with CD4+ T cell counts \\>/=350 cells/μL and no history of acquired immunodeficiency syndrome (AIDS)-defining opportunistic infections within the past 6 months or controlled disease on stable HAART without evidence of uncontrolled infection or clinically-relevant drug interactions with ASP1002 are eligible."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 19535,
+        "end": 19604,
+        "text": "Unique to China: participant has a positive HIV antibody test result."
+      },
+      "appliesTo": "Unique to China"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 15672,
+        "end": 16148,
+        "text": "Any of the following per screening serology test:\n\n  1. Hepatitis A virus antibodies immunoglobulin (IgM)\n  2. Positive HBsAg or detectable hepatitis B DNA. Participant with negative HBsAg, positive anti-HBc, must have HBV DNA testing performed.Participant is eligible if hepatitis B DNA is undetectable.\n  3. hepatitis C virus (HCV) antibodies unless HCV Ribonucleic acid (RNA) is undetectable d HCV antibodies, and antigens (UNIQUE to Japan), unless HCV RNA is undetectable."
+      },
+      "loose": true
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16151,
+        "end": 16348,
+        "text": "History of drug or radiation induced pneumonitis, interstitial lung disease (ILD), currently has pneumonitis, or prior history of ILD/non-infectious pneumonitis requiring high-dose glucocorticoids."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14366,
+        "end": 14888,
+        "text": "Myocardial infarction or unstable angina within 6 months prior to the start of study intervention or currently has an uncontrolled illness including, but not limited to, symptomatic congestive heart failure, clinically significant cardiac disease, unstable angina pectoris, cardiac arrhythmia, complete left bundle branch block, obligate use of a cardiac pacemaker, long QT syndrome, right bundle branch block with left anterior hemiblock (bifascicular block) or severe hypertension not controlled with medical management."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 16712,
+        "end": 16794,
+        "text": "Participant has received a prior allogeneic bone marrow or solid organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1529,
+        "end": 1592,
+        "text": "Female participant is not pregnant, confirmed by pregnancy test"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5026,
+        "end": 5261,
+        "text": "Female participant is not pregnant as confirmed by pregnancy test, not breastfeeding and must not donate ova starting at first administration of study intervention and for at least 9 months after final study intervention administration"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 17382,
+        "end": 17821,
+        "text": "Participant requires or has received systemic steroid therapy or any other immunosuppressive therapy within 14 days prior to ASP1002 administration. Participants using a physiologic replacement dose of corticosteroids equivalent to 10 mg per day of prednisone or less are allowed, as is receiving a single dose of systemic corticosteroids, or receiving systemic corticosteroids as premedication for radiologic imaging contrast is eligible."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 18850,
+        "end": 19218,
+        "text": "Prior malignancy, other than the current malignancy for which the participant is seeking treatment, active (i.e., requiring treatment or intervention) within the previous 2 years except for locally curable malignancies that have been apparently cured, such as basal or squamous cell skin cancer, superficial bladder cancer or carcinoma in situ of the cervix or breast."
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "high"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 9899,
+        "end": 10065,
+        "text": "Participant has PD-L1 low or negative (TPS \\< 50 %) TPS = 1% to 49% or negative (TPS \\< 1%) and AGA-negative Stage IV adenocarcinoma (mixed histology is not allowed)."
+      },
+      "appliesTo": "NSCLC (1L) ASP1002 + pembrolizumab + pemetrexed + carboplatin"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1341,
+        "end": 1526,
+        "text": "Participant has progressed, is intolerant, has refused, or there are no approved therapies that impart significant clinical benefit (no limit to the number of prior treatment regimens)."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1907,
+        "end": 2101,
+        "text": "Participant has progressed, is intolerant, has refused, or there are no standard approved therapies that impart significant clinical benefit (no limit to the number of prior treatment regimens)."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 12461,
+        "end": 12654,
+        "text": "Participant has progressed, is intolerant, has refused, or there are no standard approved therapies that impart significant clinical benefit(s).Participant is eligible to receive pembrolizumab."
+      },
+      "appliesTo": "Select CLDN4-expressing Tumors ASP1002 + pembrolizumab"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5772,
+        "end": 5937,
+        "text": "Participant has progressed or is intolerant to 1L irinotecan-based therapy for their metastatic disease. Participant is eligible to receive mFOLFOX6 and bevacizumab."
+      },
+      "appliesTo": "Combination-specific Inclusion Criteria for MSS-mCRC (2L) ASP1002 + bevacizumab + mFOLFOX6"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6774,
+        "end": 7089,
+        "text": "Participant has progressed or is intolerant to 1L oxaliplatin-based therapy for their metastatic disease. Participants who have received oxaliplatin as adjuvant therapy and had disease relapse \\< 12 months from completion of adjuvant therapy are eligible. Participant is eligible to receive FOLFIRI and bevacizumab."
+      },
+      "appliesTo": "Combination-specific Inclusion Criteria for MSS-mCRC (2L) ASP1002 + bevacizumab + FOLFIRI"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 7833,
+        "end": 8198,
+        "text": "Participant has MSS-mCRC and has progressed radiographically on or was intolerant to previous therapy with a fluoropyrimidine, irinotecan and oxaliplatin, with/without anti-VEGF monoclonal antibody; with/without an anti-EGFR monoclonal antibody (if RAS wild-type); and a BRAF inhibitor (if known BRAFV600E \\[i.e., Val600Glu\\] mutation) for their metastatic disease."
+      },
+      "appliesTo": "Combination-specific Inclusion Criteria for MSS-mCRC (3L) AGA-negative, HER2-negative ASP1002 + bevacizumab + TAS-102"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8978,
+        "end": 9167,
+        "text": "Participant has progressed or is intolerant to 5-FU, oxaliplatin and irinotecan containing regimens as well as only one of the following: TAS-102 ± bevacizumab, fruquintinib or regorafenib."
+      },
+      "appliesTo": "Combination-specific Inclusion Criteria for MSS-mCRC (4L) ASP1002 + bevacizumab"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 10170,
+        "end": 10460,
+        "text": "Participant has not received prior systemic treatment for their advanced/metastatic NSCLC. Participant who remains disease free for 12 months following the completion of neoadjuvant/adjuvant treatment is eligible. Participant is eligible to receive pembrolizumab + pemetrexed + carboplatin."
+      },
+      "appliesTo": "NSCLC (1L) ASP1002 + pembrolizumab + pemetrexed + carboplatin"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 11178,
+        "end": 11452,
+        "text": "Participant has Stage IV NSCLC without AGA and has progressed after a platinum-based chemotherapy and a checkpoint inhibitor either concomitantly or in sequence (for participants who received a checkpoint inhibitor as monotherapy in the first line for NSCLC with TPS ≥ 50%)."
+      },
+      "appliesTo": "NSCLC (2L/3L) ASP1002 + ramucirumab + docetaxel"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant is AGA-negative and HER2-negative.",
+      "raw": {
+        "factId": "her2",
+        "rulesOut": [
+          "mutation",
+          "overexpression"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant is AGA-negative and HER2-negative.",
+        "appliesTo": "Combination-specific Inclusion Criteria for MSS-mCRC (2L) ASP1002 + bevacizumab + FOLFIRI"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant is AGA-negative and HER2-negative.",
+      "raw": {
+        "factId": "her2",
+        "rulesOut": [
+          "mutation",
+          "overexpression"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant is AGA-negative and HER2-negative.",
+        "appliesTo": "Combination-specific Inclusion Criteria for MSS-mCRC (3L) AGA-negative, HER2-negative ASP1002 + bevacizumab + TAS-102"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant is AGA-negative and HER2-negative.",
+      "raw": {
+        "factId": "her2",
+        "rulesOut": [
+          "mutation",
+          "overexpression"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant is AGA-negative and HER2-negative.",
+        "appliesTo": "Combination-specific Inclusion Criteria for MSS-mCRC (4L) ASP1002 + bevacizumab"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

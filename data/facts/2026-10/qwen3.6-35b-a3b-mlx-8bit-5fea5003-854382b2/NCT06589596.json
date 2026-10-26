@@ -1,0 +1,92 @@
+{
+  "nctId": "NCT06589596",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 106,
+        "end": 218,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1 or Karnofsky Performance Scale (KPS) ≥ 70"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1262,
+        "end": 1330,
+        "text": "Active leptomeningeal disease or symptomatic spinal cord compression"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1429,
+        "end": 1616,
+        "text": "Any malignancy ≤ 2 years before first dose of study drug except for the specific cancer under investigation in this study and any locally recurring cancer that has been treated curatively"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1699,
+        "end": 1746,
+        "text": "Serologically active hepatitis B or C infection"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1749,
+        "end": 1867,
+        "text": "Known HIV infection. Participants with treated HIV infection may be included in Phase 1b if they meet certain criteria"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2335,
+        "end": 2392,
+        "text": "Female participants who are pregnant or are breastfeeding"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

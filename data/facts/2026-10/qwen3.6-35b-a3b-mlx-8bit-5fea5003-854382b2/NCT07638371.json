@@ -1,0 +1,195 @@
+{
+  "nctId": "NCT07638371",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1175,
+        "end": 1468,
+        "text": "For NSCLC: Patients harboring genomic aberrations such as non-resistant EGFR mutations, ALK rearrangement, ROS rearrangement, and BRAF V600E mutation for which FDA-approved targeted therapies are available must have received prior treatment with the applicable FDA-approved targeted therapies."
+      },
+      "appliesTo": "NSCLC cohort"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 127,
+        "end": 200,
+        "text": "Histologically confirmed advanced or metastatic, unresectable solid tumor"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3721,
+        "end": 3995,
+        "text": "Untreated central nervous system (CNS) metastatic disease, leptomeningeal disease, or cord compression. Patients previously treated for CNS metastases that are radiographically and neurologically stable and off steroids for at least 2 weeks prior to enrollment are eligible."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3721,
+        "end": 3824,
+        "text": "Untreated central nervous system (CNS) metastatic disease, leptomeningeal disease, or cord compression."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2110,
+        "end": 2152,
+        "text": "Measurable disease per RECIST version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2285,
+        "end": 2318,
+        "text": "ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3045,
+        "end": 3121,
+        "text": "Previous allogeneic stem cell transplantation or prior organ transplantation"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3124,
+        "end": 3498,
+        "text": "History of primary immunodeficiency, autoimmune, or inflammatory disease including inflammatory bowel disease, systemic lupus erythematosus, rheumatoid arthritis, myasthenia gravis, or Grave's disease that in the past year has required systemic treatment with corticosteroids \\> 10mg/day of prednisone or equivalent doses of other corticosteroids or immunosuppressive drugs."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4911,
+        "end": 4938,
+        "text": "Pregnant or lactating women"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5522,
+        "end": 5562,
+        "text": "Positive serologic test results for HIV."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 260,
+        "end": 430,
+        "text": "Subject has advanced solid cancer, defined as unresectable, advanced, and/or metastatic disease after at least 1 line of systemic standard of care (SOC) treatment regimen"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1186,
+        "end": 1468,
+        "text": "Patients harboring genomic aberrations such as non-resistant EGFR mutations, ALK rearrangement, ROS rearrangement, and BRAF V600E mutation for which FDA-approved targeted therapies are available must have received prior treatment with the applicable FDA-approved targeted therapies."
+      },
+      "appliesTo": "NSCLC cohort"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1469,
+        "end": 1661,
+        "text": "Patients with the appropriate PD-L1 expression score must have received treatment with an FDA-approved checkpoint inhibitor with or without chemotherapy consistent with the FDA-approved label."
+      },
+      "appliesTo": "NSCLC cohort"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Acute or chronic HBV infection as assessed by serologic (HBVsAg) or PCR results, defined as HBVsAg+, HBVcAb+, HBV PCR+. Acute or chronic HCV infection as assessed by serologic (HCV ab) or PCR results, defined as HCV Ab+ with reflex to positive HCV PCR",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Acute or chronic HBV infection as assessed by serologic (HBVsAg) or PCR results, defined as HBVsAg+, HBVcAb+, HBV PCR+. Acute or chronic HCV infection as assessed by serologic (HCV ab) or PCR results, defined as HCV Ab+ with reflex to positive HCV PCR",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "nctId": "NCT05107674",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 106,
+        "end": 167,
+        "text": "Patients must have disease that is metastatic or unresectable"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 345,
+        "end": 416,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 45,
+        "end": 103,
+        "text": "Measurable disease per disease-specific response criteria."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1658,
+        "end": 1692,
+        "text": "Active untreated brain metastases."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3279,
+        "end": 3387,
+        "text": "History of uveitis, or an active autoimmune disease that has required systemic treatment in the past 2 years"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4102,
+        "end": 4237,
+        "text": "Pregnant, breastfeeding, or planning to become pregnant while enrolled in this study or within 6 months after the last dose of NX-1607."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6105,
+        "end": 6187,
+        "text": "Use of systemic corticosteroids (\\> 20 mg prednisone or equivalent) within 15 days"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2348,
+        "end": 2409,
+        "text": "autologous or allogeneic stem cell transplant within 100 days"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Histological or cytological diagnosis of ... NSCLC",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "other_nsclc"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histological or cytological diagnosis of ... NSCLC",
+        "appliesTo": "NSCLC"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active known second malignancy with the exception of any of the following: ... Adequately treated Stage I cancer from which the patient is currently in remission and has been in remission for ≥ 2 years. ... Any other cancer from which the patient has been disease-free for ≥ 2 years.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active known second malignancy with the exception of any of the following: ... Adequately treated Stage I cancer from which the patient is currently in remission and has been in remission for ≥ 2 years. ... Any other cancer from which the patient has been disease-free for ≥ 2 years.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Infection with human immunodeficiency virus (HIV)-1 or HIV-2. Exception: Patients with well controlled HIV ... are eligible.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Infection with human immunodeficiency virus (HIV)-1 or HIV-2. Exception: Patients with well controlled HIV ... are eligible.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Current active hepatitis, including hepatitis A ... hepatitis B ... or hepatitis C",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Current active hepatitis, including hepatitis A ... hepatitis B ... or hepatitis C",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Any of the following within 6 months prior to the first dose of NX-1607 or ongoing: Myocardial infarction ... Unstable angina ... Unstable symptomatic ischemic heart disease ... New York Heart Association Class III or IV heart failure ... Thromboembolic events",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Any of the following within 6 months prior to the first dose of NX-1607 or ongoing: Myocardial infarction ... Unstable angina ... Unstable symptomatic ischemic heart disease ... New York Heart Association Class III or IV heart failure ... Thromboembolic events",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

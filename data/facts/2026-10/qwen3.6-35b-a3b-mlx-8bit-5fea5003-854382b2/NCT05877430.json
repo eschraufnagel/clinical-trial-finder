@@ -1,0 +1,220 @@
+{
+  "nctId": "NCT05877430",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 141,
+        "end": 233,
+        "text": "Pathologically documented histological or cytological evidence of NSCLC, HNSCC, or melanoma."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 377,
+        "end": 459,
+        "text": "Diagnosis of locally advanced unresectable or metastatic NSCLC, HNSCC, or melanoma"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 237,
+        "end": 373,
+        "text": "Has at least 1 measurable target lesion per RECIST v1.1 that has not been resected/biopsied/or irradiated before enrollment in the study"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1576,
+        "end": 1609,
+        "text": "ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 629,
+        "end": 756,
+        "text": "NSCLC: Subjects with metastatic or with unresectable, recurrent NSCLC whose tumors must have no EGFR or ALK genomic aberrations"
+      },
+      "appliesTo": "ICI treatment-naive subjects"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 629,
+        "end": 756,
+        "text": "NSCLC: Subjects with metastatic or with unresectable, recurrent NSCLC whose tumors must have no EGFR or ALK genomic aberrations"
+      },
+      "appliesTo": "ICI treatment-naive subjects"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "low",
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 629,
+        "end": 786,
+        "text": "NSCLC: Subjects with metastatic or with unresectable, recurrent NSCLC whose tumors must have no EGFR or ALK genomic aberrations and express PD-L1 \\[TPS≥50%\\]"
+      },
+      "appliesTo": "ICI treatment-naive subjects"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2114,
+        "end": 2187,
+        "text": "With uncontrolled or untreated brain metastasis or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2114,
+        "end": 2187,
+        "text": "With uncontrolled or untreated brain metastasis or leptomeningeal disease"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2191,
+        "end": 2273,
+        "text": "Active autoimmune disease that has required systemic treatment in the past 2 years"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2527,
+        "end": 2576,
+        "text": "Female subjects who are pregnant or breastfeeding"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2823,
+        "end": 2914,
+        "text": "Diagnosis of prior immunodeficiency or organ transplant requiring immunosuppressive therapy"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3197,
+        "end": 3326,
+        "text": "Has active interstitial lung disease (ILD)/pneumonitis or a history of ILD/pneumonitis requiring treatment with systemic steroids"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3649,
+        "end": 3761,
+        "text": "Untreated chronic hepatitis B or chronic HBV carriers with HBV DNA\\>500 IU/mL (or \\>2500 copies/mL) at screening"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4524,
+        "end": 4554,
+        "text": "Known history of HIV infection"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5078,
+        "end": 5141,
+        "text": "Currently active, clinically significant cardiovascular disease"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

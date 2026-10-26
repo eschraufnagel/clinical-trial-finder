@@ -1,0 +1,140 @@
+{
+  "nctId": "NCT07288359",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 45,
+        "end": 138,
+        "text": "Patients with one of the following histologically or cytologically confirmed advanced cancers"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1186,
+        "end": 1234,
+        "text": "Measurable disease as determined by RECIST v1.1."
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1991,
+        "end": 2054,
+        "text": "Presence of symptomatic central nervous system (CNS) metastases"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2058,
+        "end": 2174,
+        "text": "CNS metastases that require local therapy or increasing doses of corticosteroids within 2 weeks prior to study entry"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1099,
+        "end": 1178,
+        "text": "no prior cytotoxic chemotherapy or antibody-drug-conjugate for advanced disease"
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 332,
+        "end": 521,
+        "text": "with disease progression on or following at least one line of hormone-based therapy in combination with a CDK4/6i and at least one additional line of systemic therapy for metastatic disease"
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1053,
+        "end": 1094,
+        "text": "no more than 2 lines of endocrine therapy"
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one",
+        "two"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 616,
+        "end": 688,
+        "text": "no more than 3 prior lines of therapy for advanced or metastatic disease"
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one",
+        "two"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 830,
+        "end": 899,
+        "text": "no more than 3 prior lines of systemic therapy for metastatic disease"
+      },
+      "appliesTo": "Phase I"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

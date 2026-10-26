@@ -1,0 +1,58 @@
+{
+  "nctId": "NCT03706027",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 167,
+        "end": 398,
+        "text": "all primary non-small cell lung cancers otherwise of following types are eligible: squamous cell carcinoma, adenocarcinoma, large cell carcinoma, bronchioalveolar cell carcinoma, or non-small cell carcinoma not otherwise specified."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2839,
+        "end": 2963,
+        "text": "Those with prior malignancy in the past 2 years other than non-melanomatous skin cancer or in situ cancer or thyroid cancer."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Eligible patients must have appropriate staging studies identifying them as specific subsets of AJCC stage I or II based on only one of the following combinations of TNM staging: T1, N0, M0; T2 (≤ 5 cm), N0, M0",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "locally_advanced",
+          "metastatic_or_recurrent"
+        ],
+        "polarity": "inclusion",
+        "quote": "Eligible patients must have appropriate staging studies identifying them as specific subsets of AJCC stage I or II based on only one of the following combinations of TNM staging: T1, N0, M0; T2 (≤ 5 cm), N0, M0",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -18,6 +18,7 @@ These come from the product intent. Do not violate them, and flag it if an instr
 - No secrets in the repo, including in example config.
 - No cloud deployment surface. No hosting config, no infrastructure code.
 - The person's oncologist and the trial team decide. The agent produces a shortlist with its evidence and its unknowns, and hands off. An unknown never excludes a trial. No code path tells a person they are eligible for a trial or should join one.
+- No rule a model reads removes a trial. A model's mapping of a trial's rules onto the facts is a "may not fit" hint, shown with the trial's words, and a reason to ask a question; nothing a person answers drops a trial (`docs/facts.md`, measured in slice 0002).
 
 ## How work is done here
 
@@ -86,6 +87,7 @@ work/            the intent/spec/plan chain, one folder per slice
 src/
   trials/        trial loading, the snapshot, and the registry requests (the fetches are run from scripts/)
   search/        the search: purpose, cancer type, age and sex, distance; no model
+  facts/         the fact vocabulary, the mapper that reads trial rules onto it, and the hints a profile gets
   criteria/      eligibility parser
   screening/     per-trial screening agent: stage two, for a shortlisted trial
   plain/         plain-language renderings of criteria, and the check that decides whether one is shown
@@ -97,9 +99,11 @@ data/
   snapshot/      the pinned registry snapshot, one folder per month, gzipped JSONL plus a manifest
   geo/           ZIP code locations from the Census gazetteer
   cancer-types/  the search vocabulary, one file per cancer type plus generic.json
+  facts/         the fact vocabulary, and mapping runs by snapshot month and run name
 evals/
   cases/         eval task definitions: labels and vignettes
   search/        the search measurement: labels loader, metrics, result checks
+  facts/         the fact measurement: labels, coverage, grading, result checks
   graders/       deterministic graders
   participant/   the simulated participant
   results/       committed run output
@@ -108,7 +112,7 @@ tests/           deterministic tests only
 local/           settings, keys and spend ledgers; gitignored
 ```
 
-New parts (the shared fact vocabulary, question selection, the shortlist) get their own directories under `src/` when the slice that needs them is planned.
+New parts (question selection, the shortlist) get their own directories under `src/` when the slice that needs them is planned.
 
 **Inherited, measured elsewhere.** `data/trials/` holds the prescreening repository's twelve pinned NSCLC protocols (`src/trials/corpus.ts`), `data/plain/` their plain renderings, and `evals/cases/` its hand-made labels and vignettes. They're here because the copied modules' tests read them, and because they're a labelled starting set. Every number measured on them was measured in the prescreening repository. None is a result of this one.
 
@@ -120,7 +124,7 @@ Three boundaries matter more than the rest. Nothing outside `src/models/` calls 
 - `fetch()` to `clinicaltrials.gov` in `src/trials/registry.ts`, called by `npm run fetch:trials` and `npm run snapshot:fetch`
 - listening on `127.0.0.1` in `src/server/start.ts`, which doesn't exist yet
 
-Widening any of them is a visible change to that test. The same test keeps `createAdapter` out of `src/` beyond `src/models/`, keeps concrete adapters out of `scripts/` as well as `src/`, allows the key variables to be named only in `src/models/keys.ts`, keeps `src/` from importing `evals/`, and keeps the labelling tool from reaching the parser or a model. It also keeps the search labelling tools (`search:sample`, `search:show`) from seeing the search beyond `normalize.ts`, and keeps `src/search/` from reaching a model, the parser or the screening agent.
+Widening any of them is a visible change to that test. The same test keeps `createAdapter` out of `src/` beyond `src/models/`, keeps concrete adapters out of `scripts/` as well as `src/`, allows the key variables to be named only in `src/models/keys.ts`, keeps `src/` from importing `evals/`, and keeps the labelling tool from reaching the parser or a model. It also keeps the search labelling tools (`search:sample`, `search:show`) from seeing the search beyond `normalize.ts`, and keeps `src/search/` from reaching a model, the parser, the screening agent or `src/facts/`. The facts labelling tools (`facts:sample`, `facts:label-show`) reach `src/facts/` only for the vocabulary and its types; `src/facts/status.ts` and `vocabulary.ts` reach no model; and nothing under `src/facts/` reaches the model factory, because the mapper takes its adapter as an argument.
 
 A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
 
@@ -146,6 +150,13 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run search:sample` | draw the held-out and dev sets into a label skeleton; refuses to overwrite |
 | `npm run search:show -- <NCT ID>` | print a trial for labelling; `--brief`, `--next N` |
 | `npm run search:eval` | score the search against the labels and write a result; `-- --dev` dev only, `-- --check` rerun the latest result and fail on any difference |
+| `npm run facts:topics` | count how many NSCLC candidates' rules mention each topic. Deterministic |
+| `npm run facts:sample` | draw the fact-label sets into skeletons; refuses to overwrite |
+| `npm run facts:label-show -- <NCT ID>` | print a trial's passages for fact labelling; `--next`, `--vocabulary` |
+| `npm run facts:map -- --set dev\|heldout\|candidates` | map trials' rules onto the facts, on the local model by default; resumable. `--model <spec>` is dry without `--spend`. Loads `.env` |
+| `npm run facts:eval` | `-- --coverage` from the labels alone; `-- --run <dir> --set dev\|heldout` grade a run; `-- --check` regrade the latest result |
+| `npm run facts:show -- <NCT ID>` | print a trial's mappings, from the run named in `data/facts/<month>/latest` |
+| `npm run facts:try -- <search flags> --profile <file>` | search, then a profile's hints and the questions that would flag the most trials |
 
 Run `npm run check` before every commit and before opening a PR, and commit only if it passes: `npm run check && git commit ...`.
 

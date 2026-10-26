@@ -1,0 +1,102 @@
+{
+  "nctId": "NCT04516447",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 36,
+        "end": 179,
+        "text": "Histologically or cytologically confirmed FIGO Stage III/IV high-grade serous or endometrioid ovarian, fallopian tube, or peritoneal carcinoma."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 182,
+        "end": 299,
+        "text": "Subjects must have received 1 or 2 prior therapeutic regimens/lines of therapy in the advanced or metastatic setting."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 588,
+        "end": 716,
+        "text": "Subjects must have received 6 cycles of platinum-based doublet chemotherapy in the 1L or 2L setting as their most recent therapy"
+      },
+      "appliesTo": "Part 2 Dose Escalation"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero",
+        "one",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1175,
+        "end": 1312,
+        "text": "Subjects must have at least 4 cycles of platinum-based chemotherapy in 2L and have Complete Response, Partial Response, or Stable Disease"
+      },
+      "appliesTo": "Part 2 Dose Expansion"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1471,
+        "end": 1570,
+        "text": "Histology of abdominal adenocarcinoma of unknown origin or diagnosis of a borderline ovarian tumor."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1573,
+        "end": 1640,
+        "text": "Subjects with carcinosarcomas (even if there is a serous component)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

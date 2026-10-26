@@ -1,0 +1,131 @@
+{
+  "nctId": "NCT05144698",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 70,
+        "end": 138,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of ≤ 2."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 142,
+        "end": 255,
+        "text": "Advanced metastatic, recurrent, and unresectable solid tumor that has relapsed after ≥ one prior line of therapy."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 523,
+        "end": 803,
+        "text": "Subject with solid tumors with genetic alterations and mutations (including but not limited to BRAF, BRCA, EGFR mutations, and ALK translocations) must have either received targeted therapy for such conditions or provided written documentation of refusal to receive such regimens."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 807,
+        "end": 908,
+        "text": "Exposure to an anti-PD-(L)1 monoclonal antibody therapeutic in the most recent line of prior therapy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1478,
+        "end": 1553,
+        "text": "Presence of measurable disease to permit monitoring by RECISTv1.1 Criteria."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2942,
+        "end": 3000,
+        "text": "Other active malignancy (except non-melanoma skin cancer)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3421,
+        "end": 3521,
+        "text": "Cancer metastasis to the central nervous system, unless such metastasis has been adequately treated."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3526,
+        "end": 3561,
+        "text": "Pregnant or breastfeeding patients."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3265,
+        "end": 3323,
+        "text": "Myocardial infarction within 6 months prior to enrollment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

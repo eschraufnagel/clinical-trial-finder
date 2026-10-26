@@ -1,0 +1,70 @@
+{
+  "nctId": "NCT05502523",
+  "set": "heldout",
+  "criteriaTextSha": "c02d807c82a9fe93d69c48987cbc725870ee99a8e8a9ae509f18a4ad3b7d7274",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Any patients 18 years of age or older with confirmed or suspected early-stage (stage I-III) NSCLC",
+      "start": 23,
+      "end": 120,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["metastatic_or_recurrent"],
+          "appliesTo": null
+        },
+        {
+          "factId": "histology",
+          "rulesOut": ["mixed_small_cell"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "age is the search's"
+    },
+    {
+      "quote": "Eligible and scheduled for surgical anatomic lung resection (e.g. lobectomy or segmentectomy) as routine clinical care for their disease",
+      "start": 123,
+      "end": 259,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["locally_advanced", "metastatic_or_recurrent"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Previous cancer diagnosis within 5 years (except ductal carcinoma in situ \\[DCIS\\] of the breast, superficial bladder cancer, non-melanoma skin primary, other malignancy that does not require treatment).",
+      "start": 284,
+      "end": 487,
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years", "two_to_5_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "in situ and skin exceptions not mapped"
+    },
+    {
+      "quote": "Preoperative chemotherapy, immunotherapy, or radiation therapy",
+      "start": 490,
+      "end": 552,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "no therapy before surgery"
+    },
+    {
+      "quote": "Receipt of perioperative blood transfusion",
+      "start": 555,
+      "end": 597,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "blood transfusion"
+    }
+  ]
+}

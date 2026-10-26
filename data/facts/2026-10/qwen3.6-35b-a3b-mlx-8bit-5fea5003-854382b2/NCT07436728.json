@@ -1,0 +1,212 @@
+{
+  "nctId": "NCT07436728",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 711,
+        "end": 779,
+        "text": "Non-small cell lung cancer (NSCLC) (both squamous and non-squamous)."
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1023,
+        "end": 1076,
+        "text": "Metastatic or advanced squamous or non-squamous NSCLC"
+      },
+      "appliesTo": "dose expansion"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 416,
+        "end": 459,
+        "text": "locally advanced or metastatic solid tumors"
+      },
+      "appliesTo": "dose escalation"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4082,
+        "end": 4153,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4157,
+        "end": 4316,
+        "text": "Participants must have at least 1 lesion that meets the definition of measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 criteria"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6480,
+        "end": 6794,
+        "text": "History of brain metastasis or leptomeningeal disease unless:\n\n     a) Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR b) Received stereotactic radiosurgery and is off corticosteroids for brain metastases AND c) Is without neurologic dysfunction"
+      },
+      "loose": true
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6480,
+        "end": 6794,
+        "text": "History of brain metastasis or leptomeningeal disease unless:\n\n     a) Brain metastases are stable on cranial imaging (that is, ≥4 weeks) following prior surgery, whole-brain radiation OR b) Received stereotactic radiosurgery and is off corticosteroids for brain metastases AND c) Is without neurologic dysfunction"
+      },
+      "loose": true
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7956,
+        "end": 8053,
+        "text": "Active diagnosis of a lung condition including:\n\n     a) Pneumonitis b) Interstitial lung disease"
+      },
+      "loose": true
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10722,
+        "end": 10861,
+        "text": "Known to be Human Immunodeficiency Virus (HIV) positive or hepatitis B or C positive as defined below:\n\n      1. Positive serology for HIV."
+      },
+      "loose": true
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10868,
+        "end": 10978,
+        "text": "2. Positive hepatitis B surface antigen (HBsAg) test.\n      3. Positive hepatitis C virus (HCV) antibody test."
+      },
+      "loose": true
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9972,
+        "end": 10121,
+        "text": "History of a bone marrow transplantation within the past 5 years or solid organ transplantation (as a recipient) and use of immunosuppressive agents."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10334,
+        "end": 10416,
+        "text": "Diagnosed with a second primary invasive malignancy not in remission for ≥3 years."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13097,
+        "end": 13249,
+        "text": "Has a positive serum pregnancy test during the screening period or a positive urine pregnancy test on Day 1 before the first dose of trial intervention."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13256,
+        "end": 13428,
+        "text": "Is capable of breastfeeding but does not agree to forego breastfeeding from the first dose of trial intervention through 180 days after the last dose of trial intervention."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "locally advanced or metastatic solid tumors",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "locally advanced or metastatic solid tumors",
+        "appliesTo": "dose expansion"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

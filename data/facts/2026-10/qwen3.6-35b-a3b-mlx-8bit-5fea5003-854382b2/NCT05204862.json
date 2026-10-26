@@ -1,0 +1,196 @@
+{
+  "nctId": "NCT05204862",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 291,
+        "end": 488,
+        "text": "Measurable disease as defined by Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1; except for Phase1a that can enroll patients with either measurable and/or non-measurable disease."
+      },
+      "appliesTo": "Phase 1b and 2a"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 491,
+        "end": 540,
+        "text": "Eastern Cooperative Oncology Group (ECOG) 0 or 1."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 728,
+        "end": 1005,
+        "text": "Histologically or cytologically documented advanced solid tumor for which no effective standard therapy exists, and for which standard therapy containing an anti-PD-(L)1 agent has failed after an initial response or stabilization of at least 4-month duration (Phase 1b and 2a)."
+      },
+      "appliesTo": "Phase 1b and 2a"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 571,
+        "end": 725,
+        "text": "Histologically or cytologically documented advanced solid tumor for which no effective standard therapy exists, or standard therapy has failed (Phase 1a)."
+      },
+      "appliesTo": "Phase 1a"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 728,
+        "end": 1005,
+        "text": "Histologically or cytologically documented advanced solid tumor for which no effective standard therapy exists, and for which standard therapy containing an anti-PD-(L)1 agent has failed after an initial response or stabilization of at least 4-month duration (Phase 1b and 2a)."
+      },
+      "appliesTo": "Phase 1b and 2a"
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2546,
+        "end": 2628,
+        "text": "Myocardial infarction within 6 months prior to screening, or pericardial effusion."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2631,
+        "end": 2703,
+        "text": "History of cardiac or aortic surgery within 6 months prior to screening."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2706,
+        "end": 2893,
+        "text": "Unstable angina pectoris, cerebrovascular accident, transient ischemic attack, or symptomatic pulmonary embolism; deep venous thrombosis; arterial occlusive disease in the past 12 months."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2896,
+        "end": 2964,
+        "text": "Congestive heart failure of New York Heart Association class III/IV."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3313,
+        "end": 3765,
+        "text": "Active and clinically significant bacterial, fungal, or viral infection, including active or known history of hepatitis B virus (defined as hepatitis B surface antigen \\[HbsAg\\] reactive), or known active hepatitis C virus (defined as hepatitis C virus ribonucleic acid \\[qualitative\\] is detected), known human immunodeficiency virus or acquired immunodeficiency syndrome related illness. However, an inactive hepatitis B virus carrier can be enrolled"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3768,
+        "end": 3815,
+        "text": "Current or history of interstitial pneumonitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7076,
+        "end": 7204,
+        "text": "Active autoimmune disease or history of autoimmune disease, except vitiligo, hypothyroidism, or resolved childhood asthma/atropy"
+      },
+      "appliesTo": "Anti PD1 antibody combination therapy part"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6911,
+        "end": 7073,
+        "text": "Use of oral, inhaled, or topical corticosteroid, at doses \\> 10mg/day prednisolone or equivalent and the dose must be stable over 4 weeks prior to Day1 of Cycle1."
+      },
+      "appliesTo": "Anti PD1 antibody combination therapy part"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "low_dose",
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6818,
+        "end": 6908,
+        "text": "Unable to stop chronic systemic steroid therapy or any other immunosuppressive mediacation"
+      },
+      "appliesTo": "Anti PD1 antibody combination therapy part"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

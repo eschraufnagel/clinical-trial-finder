@@ -1,0 +1,71 @@
+{
+  "nctId": "NCT05023772",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1839,
+        "end": 2018,
+        "text": "Primary tumors of radiosensitive histology (lymphoma, multiple myeloma, small cell carcinoma, germ cell tumors), as conventional radiation is likely to be effective in such cases."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 998,
+        "end": 1068,
+        "text": "ECOG performance status \\<2 or Karnofsky performance status (KPS) \\>50"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_radiation isn't a fact for this trial's cancer type",
+      "quote": "Prior conventional irradiation of the spine site and level to be treated with an interval shorter than 3 months.",
+      "raw": {
+        "factId": "prior_radiation",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior conventional irradiation of the spine site and level to be treated with an interval shorter than 3 months.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_radiation isn't a fact for this trial's cancer type",
+      "quote": "Prior conventional radiation to the same site is allowed as long as there is a greater than 3 months interval.",
+      "raw": {
+        "factId": "prior_radiation",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Prior conventional radiation to the same site is allowed as long as there is a greater than 3 months interval.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

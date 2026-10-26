@@ -1,0 +1,230 @@
+{
+  "nctId": "NCT07227025",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 103,
+        "text": "Participant must have histologically or cytologically confirmed metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 103,
+        "text": "Participant must have histologically or cytologically confirmed metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 168,
+        "text": "Participant must have histologically or cytologically confirmed metastatic NSCLC characterized by a KRAS G12C mutation at the time of enrollment."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 851,
+        "end": 975,
+        "text": "Participant must have at least 1 measurable lesion, according to RECIST version.1.1, that has not been previously irradiated"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 978,
+        "end": 1250,
+        "text": "May have brain metastases only if previously definitively, locally treated, and participant is clinically stable and asymptomatic for greater than (\\>) 2 weeks and is off or receiving low-dose corticosteroid treatment for at least 2 weeks prior to start of study treatment"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1489,
+        "end": 1567,
+        "text": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1758,
+        "end": 1949,
+        "text": "Medical history of (non-infectious) interstitial lung disease (ILD)/pneumonitis, or has current ILD/pneumonitis, or where suspected ILD/pneumonitis cannot be ruled out by imaging at screening"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of primary driver mutations (epidermal growth factor receptor [EGFR]...",
+      "raw": {
+        "factId": "egfr",
+        "rulesOut": [
+          "common_sensitizing",
+          "exon20_insertion",
+          "other_mutation"
+        ],
+        "polarity": "exclusion",
+        "quote": "Presence of primary driver mutations (epidermal growth factor receptor [EGFR]...",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of primary driver mutations (...anaplastic lymphoma kinase [ALK]...",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Presence of primary driver mutations (...anaplastic lymphoma kinase [ALK]...",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of primary driver mutations (...mesenchymal-epithelial transition [MET]...",
+      "raw": {
+        "factId": "met",
+        "rulesOut": [
+          "exon14_skipping",
+          "amplification"
+        ],
+        "polarity": "exclusion",
+        "quote": "Presence of primary driver mutations (...mesenchymal-epithelial transition [MET]...",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of primary driver mutations (...human epidermal growth factor receptor 2 [HER2]...",
+      "raw": {
+        "factId": "her2",
+        "rulesOut": [
+          "mutation",
+          "overexpression"
+        ],
+        "polarity": "exclusion",
+        "quote": "Presence of primary driver mutations (...human epidermal growth factor receptor 2 [HER2]...",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of primary driver mutations (...ROS1...",
+      "raw": {
+        "factId": "ros1",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Presence of primary driver mutations (...ROS1...",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of primary driver mutations (...neurotrophic tyrosine receptor kinase [NTRK]...",
+      "raw": {
+        "factId": "ntrk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Presence of primary driver mutations (...neurotrophic tyrosine receptor kinase [NTRK]...",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of primary driver mutations (...B-Raf proto-oncogene [BRAF]...",
+      "raw": {
+        "factId": "braf_v600e",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Presence of primary driver mutations (...B-Raf proto-oncogene [BRAF]...",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of primary driver mutations (...rearranged during Transfection [RET]...",
+      "raw": {
+        "factId": "ret",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Presence of primary driver mutations (...rearranged during Transfection [RET]...",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Presence of primary driver mutations (...and other KRAS mutations besides G12C)",
+      "raw": {
+        "factId": "kras",
+        "rulesOut": [
+          "other_mutation"
+        ],
+        "polarity": "exclusion",
+        "quote": "Presence of primary driver mutations (...and other KRAS mutations besides G12C)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

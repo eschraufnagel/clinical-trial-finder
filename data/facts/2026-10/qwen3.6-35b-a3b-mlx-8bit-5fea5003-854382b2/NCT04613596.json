@@ -1,0 +1,135 @@
+{
+  "nctId": "NCT04613596",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 156,
+        "end": 250,
+        "text": "Histologically confirmed diagnosis of unresectable or metastatic squamous or nonsquamous NSCLC"
+      },
+      "appliesTo": "Phase 3"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 70,
+        "end": 102,
+        "text": "unresectable or metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 306,
+        "end": 350,
+        "text": "Presence of measurable disease per RECIST1.1"
+      },
+      "appliesTo": "Phase 3"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 681,
+        "end": 769,
+        "text": "Prior systemic treatment for locally advanced or metastatic NSCLC including chemotherapy"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1444,
+        "end": 1533,
+        "text": "Radiation to the lung \\> 30 Gy within 6 months prior to the first dose of study treatment"
+      },
+      "appliesTo": "Phase 3"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1090,
+        "end": 1218,
+        "text": "Ongoing use of systemic corticosteroids for control of symptoms of brain lesions at a total daily dose of \\> 10 mg of prednisone"
+      },
+      "appliesTo": "Phase 3"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "Prior systemic treatment for locally advanced or metastatic NSCLC including ... immune checkpoint inhibitor therapy",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior systemic treatment for locally advanced or metastatic NSCLC including ... immune checkpoint inhibitor therapy",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Patients with known central nervous system (CNS) lesions must not have any of the following: ... manifest neurologic progression due to brain lesions",
+      "raw": {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "symptoms"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with known central nervous system (CNS) lesions must not have any of the following: ... manifest neurologic progression due to brain lesions",
+        "appliesTo": "Phase 3"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Prior systemic treatment for locally advanced or metastatic NSCLC including ... a therapy targeting KRAS G12C mutation",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Prior systemic treatment for locally advanced or metastatic NSCLC including ... a therapy targeting KRAS G12C mutation",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

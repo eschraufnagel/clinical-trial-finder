@@ -1,0 +1,218 @@
+{
+  "nctId": "NCT04855656",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 159,
+        "end": 230,
+        "text": "ECOG score of 0, 1, (or 2 for module 1) for patients \\>16 years of age."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 233,
+        "end": 301,
+        "text": "Locally advanced or metastatic resistant or refractory solid tumors."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 867,
+        "end": 905,
+        "text": "Measurable disease as per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2263,
+        "end": 2306,
+        "text": "Uncontrolled, symptomatic brain metastases."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1588,
+        "end": 1736,
+        "text": "Chemotherapy or small molecule antineoplastic agent given within 21 days or \\<5 half-lives, whichever is shorter, prior to first dose of study drug."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1588,
+        "end": 1736,
+        "text": "Chemotherapy or small molecule antineoplastic agent given within 21 days or \\<5 half-lives, whichever is shorter, prior to first dose of study drug."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1936,
+        "end": 1979,
+        "text": "Patients who are pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1739,
+        "end": 1933,
+        "text": "History or current condition, therapy, or laboratory abnormality that might confound the study results or interfere with the patient's participation for the full duration of the study treatment."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1739,
+        "end": 1933,
+        "text": "History or current condition, therapy, or laboratory abnormality that might confound the study results or interfere with the patient's participation for the full duration of the study treatment."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1982,
+        "end": 2193,
+        "text": "Life-threatening illness, medical condition, active uncontrolled infection, or organ system dysfunction or other reasons which, in the investigator's opinion, could compromise the participating patient's safety."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1982,
+        "end": 2193,
+        "text": "Life-threatening illness, medical condition, active uncontrolled infection, or organ system dysfunction or other reasons which, in the investigator's opinion, could compromise the participating patient's safety."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1982,
+        "end": 2193,
+        "text": "Life-threatening illness, medical condition, active uncontrolled infection, or organ system dysfunction or other reasons which, in the investigator's opinion, could compromise the participating patient's safety."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1739,
+        "end": 1933,
+        "text": "History or current condition, therapy, or laboratory abnormality that might confound the study results or interfere with the patient's participation for the full duration of the study treatment."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1739,
+        "end": 1933,
+        "text": "History or current condition, therapy, or laboratory abnormality that might confound the study results or interfere with the patient's participation for the full duration of the study treatment."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1739,
+        "end": 1933,
+        "text": "History or current condition, therapy, or laboratory abnormality that might confound the study results or interfere with the patient's participation for the full duration of the study treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of prior_pd1",
+      "quote": "Certain prior anti-cancer therapy",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never",
+          "progressed",
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "quote": "Certain prior anti-cancer therapy",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

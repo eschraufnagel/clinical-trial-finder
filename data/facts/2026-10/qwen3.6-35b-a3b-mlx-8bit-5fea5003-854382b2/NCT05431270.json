@@ -1,0 +1,105 @@
+{
+  "nctId": "NCT05431270",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 110,
+        "text": "At least one measurable lesion as defined by RECIST V1.1 criteria for solid tumors."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2583,
+        "end": 2617,
+        "text": "ECOG performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3320,
+        "end": 3438,
+        "text": "Patients with untreated brain or central nervous system (CNS) metastases or brain/CNS metastases that have progressed."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2864,
+        "end": 3022,
+        "text": "Autoimmune disease requiring systemic treatment within the past twelve months. Active autoimmune disease or a history of autoimmune diseases that may relapse."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2741,
+        "end": 2777,
+        "text": "Women who are pregnant or lactating."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3176,
+        "end": 3316,
+        "text": "Patients who have experienced Grade ≥ 3 immune-related events, such as (non-infectious) pneumonitis, interstitial lung disease, myocarditis."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3442,
+        "end": 3492,
+        "text": "Impaired cardiac function or significant diseases."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

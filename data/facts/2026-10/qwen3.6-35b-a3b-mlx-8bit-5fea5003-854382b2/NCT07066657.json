@@ -1,0 +1,132 @@
+{
+  "nctId": "NCT07066657",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 213,
+        "end": 304,
+        "text": "Patients with histologically and cytologically confirmed advanced or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 400,
+        "end": 526,
+        "text": "Patients must have at least one measurable lesion according to the Response Evaluation Criteria in Solid Tumors (RECIST v1.1)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 530,
+        "end": 581,
+        "text": "The score of ECOG for performance status is 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1555,
+        "end": 1617,
+        "text": "Symptomatic Central nervous system and/or meninges metastasis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1555,
+        "end": 1617,
+        "text": "Symptomatic Central nervous system and/or meninges metastasis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 830,
+        "end": 865,
+        "text": "Patients with more than one cancer."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2294,
+        "end": 2353,
+        "text": "Infection of active hepatitis B, active hepatitis C, or HIV"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2294,
+        "end": 2353,
+        "text": "Infection of active hepatitis B, active hepatitis C, or HIV"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1880,
+        "end": 2194,
+        "text": "History of previous or combined interstitial pneumonia, current interstitial pneumonia, or suspected interstitial pneumonia that cannot be ruled out through imaging during screening, severe chronic obstructive pulmonary disease with respiratory failure, severe pulmonary dysfunction, symptomatic bronchospasm, etc."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

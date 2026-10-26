@@ -1,0 +1,321 @@
+{
+  "nctId": "NCT07730021",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 563,
+        "end": 618,
+        "text": "any compounds of neuroendocrine histology is ineligible"
+      },
+      "appliesTo": "For the ASP388B monotherapy dose escalation (excluding the tumor-specific backfill participants)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 152,
+        "end": 250,
+        "text": "Participant has a confirmed diagnosis of locally advanced unresectable or metastatic solid tumors."
+      },
+      "appliesTo": "For the ASP388B monotherapy dose escalation (excluding the tumor-specific backfill participants)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2335,
+        "end": 2440,
+        "text": "Participant has locally advanced or metastatic disease that is not amenable to curative intent treatment."
+      },
+      "appliesTo": "For the ASP388B 2L+HNSCC monotherapy dose expansion (including the tumor-specific backfill participants from the monotherapy dose escalation)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4382,
+        "end": 4467,
+        "text": "Participant has recurrent or metastatic disease that is incurable by local therapies."
+      },
+      "appliesTo": "For the ASP388B 1L HNSCC (Excluding NPC and Salivary Gland Tumors) combination therapy dose escalation and expansion (including the tumor-specific backfill participants from combination therapy dose escalation)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7762,
+        "end": 8037,
+        "text": "Participant has known active central nervous system (CNS) metastases. NOTE: A participant with CNS metastases who has been treated with surgery and/or radiation therapy, who is no longer taking pharmacologic doses of glucocorticoids and is neurologically stable, is eligible."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9051,
+        "end": 9135,
+        "text": "Participant has leptomeningeal disease as a manifestation of the current malignancy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5590,
+        "end": 5651,
+        "text": "Participant has at least 1 measurable lesion per RECIST v1.1."
+      },
+      "appliesTo": "For the ASP388B 1L ESCC combination therapy dose escalation and expansion"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5783,
+        "end": 5836,
+        "text": "Participant has an ECOG performance status of 0 or 1."
+      },
+      "appliesTo": "For the ASP388B 1L ESCC combination therapy dose escalation and expansion"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8260,
+        "end": 8733,
+        "text": "Participant has active or prior autoimmune or inflammatory disorders requiring systemic therapy within the past 2 years including inflammatory skin conditions, inflammatory bowel disease (e.g., ulcerative colitis or Crohn's disease), diverticulitis (with the exception of diverticulosis), celiac disease, systemic lupus erythematosus, Sarcoidosis syndrome, Wegener syndrome (granulomatosis with polyangiitis), Graves' disease, rheumatoid arthritis, hypophysitis or uveitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9609,
+        "end": 9690,
+        "text": "Participant has a known history of HIV infection with AIDS-related complications."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10690,
+        "end": 10829,
+        "text": "Participant must not have had acute coronary syndrome, new-onset angina or coronary revascularization (PCI/CABG) within the past 12 months."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12064,
+        "end": 12934,
+        "text": "Participant has a history of pleurodesis with impaired lung mechanics, recent (\\< 6 weeks) pleurodesis or pleural surgery (decortication, pleurectomy), drug-induced fibrosing ILD, trapped lung, complicated pleural effusion, uncontrolled malignant pleural effusion, idiopathic pulmonary fibrosis, pneumonectomy, organizing pneumonia, drug-induced pneumonitis, idiopathic pneumonitis, noninfectious ILD/pneumonitis, fibrotic lung disease or connective tissue disorder with pulmonary involvement. Any participant with a history of radiation pneumonitis that required treatment (e.g., steroid) will be excluded, regardless of resolution. NOTE: Participant with previously diagnosed Grade 1 radiation pneumonitis is allowed to be screened for the study. However, radiation pneumonitis must be confined to the previously irradiated area of the lung and be completely resolved."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12937,
+        "end": 13125,
+        "text": "Participant has current Grade ≥ 1 ILD/pneumonitis, evidence of active pneumonitis on screening chest CT scan, or suspected ILD/pneumonitis that cannot be ruled out by imaging at screening."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "any compounds of neuroendocrine histology is ineligible",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "any compounds of neuroendocrine histology is ineligible",
+        "appliesTo": "For the ASP388B 2L+HNSCC monotherapy dose expansion (including the tumor-specific backfill participants from the monotherapy dose escalation)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "any compounds of neuroendocrine histology is ineligible",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "any compounds of neuroendocrine histology is ineligible",
+        "appliesTo": "For the ASP388B 2L+ESCC monotherapy dose expansion (including the tumor-specific backfill participants from the monotherapy dose escalation)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "any compounds of neuroendocrine histology is ineligible",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "any compounds of neuroendocrine histology is ineligible",
+        "appliesTo": "For the ASP388B 1L HNSCC (Excluding NPC and Salivary Gland Tumors) combination therapy dose escalation and expansion (including the tumor-specific backfill participants from combination therapy dose escalation)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "any compounds of neuroendocrine histology is ineligible",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "any compounds of neuroendocrine histology is ineligible",
+        "appliesTo": "For the ASP388B 1L ESCC combination therapy dose escalation and expansion (including the tumor-specific backfill participants from combination therapy dose escalation)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "any compounds of neuroendocrine histology is ineligible",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "exclusion",
+        "quote": "any compounds of neuroendocrine histology is ineligible",
+        "appliesTo": "For the ASP388B 1L ESCC combination therapy dose escalation and expansion"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant has locally advanced or metastatic disease that is not amenable to curative intent treatment.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant has locally advanced or metastatic disease that is not amenable to curative intent treatment.",
+        "appliesTo": "For the ASP388B 2L+ESCC monotherapy dose expansion (including the tumor-specific backfill participants from the monotherapy dose escalation)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant has recurrent or metastatic disease that is incurable by local therapies.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant has recurrent or metastatic disease that is incurable by local therapies.",
+        "appliesTo": "For the ASP388B 1L ESCC combination therapy dose escalation and expansion (including the tumor-specific backfill participants from combination therapy dose escalation)"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Participant has recurrent or metastatic disease that is incurable by local therapies.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participant has recurrent or metastatic disease that is incurable by local therapies.",
+        "appliesTo": "For the ASP388B 1L ESCC combination therapy dose escalation and expansion"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participant has a known additional malignancy that requires active treatment, with the exception of any of the following: ... Adequately treated stage I cancer from which the participant is currently in remission and has been in remission for ≥ 2 years ... Any other cancer from which the participant has been disease-free for ≥ 5 years",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participant has a known additional malignancy that requires active treatment, with the exception of any of the following: ... Adequately treated stage I cancer from which the participant is currently in remission and has been in remission for ≥ 2 years ... Any other cancer from which the participant has been disease-free for ≥ 5 years",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Female participant is not pregnant and at least 1 of the following conditions apply: ... Female participant must not be breastfeeding or lactating starting at screening and throughout the investigational period and for 5 half-lives (approximately 7 months after final study intervention administration or after at least 9 months for participants with 1L ESCC receiving combination therapy, or per local labeling requirements, whichever is longer).",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Female participant is not pregnant and at least 1 of the following conditions apply: ... Female participant must not be breastfeeding or lactating starting at screening and throughout the investigational period and for 5 half-lives (approximately 7 months after final study intervention administration or after at least 9 months for participants with 1L ESCC receiving combination therapy, or per local labeling requirements, whichever is longer).",
+        "appliesTo": "For the ASP388B 1L ESCC combination therapy dose escalation and expansion"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

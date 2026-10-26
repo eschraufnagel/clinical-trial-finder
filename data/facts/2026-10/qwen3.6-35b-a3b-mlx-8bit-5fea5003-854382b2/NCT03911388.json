@@ -1,0 +1,157 @@
+{
+  "nctId": "NCT03911388",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 347,
+        "end": 565,
+        "text": "which is progressive or recurrent despite standard care including surgery, radiotherapy, and/or chemotherapy. A pathologically proven secondary malignant cerebellar tumor without curative treatment options is eligible."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 356,
+        "end": 455,
+        "text": "progressive or recurrent despite standard care including surgery, radiotherapy, and/or chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 356,
+        "end": 455,
+        "text": "progressive or recurrent despite standard care including surgery, radiotherapy, and/or chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 356,
+        "end": 455,
+        "text": "progressive or recurrent despite standard care including surgery, radiotherapy, and/or chemotherapy"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 356,
+        "end": 455,
+        "text": "progressive or recurrent despite standard care including surgery, radiotherapy, and/or chemotherapy"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 356,
+        "end": 455,
+        "text": "progressive or recurrent despite standard care including surgery, radiotherapy, and/or chemotherapy"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3409,
+        "end": 3438,
+        "text": "Pregnant or lactating females"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4343,
+        "end": 4398,
+        "text": "Known human immunodeficiency virus (HIV) seropositivity"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3880,
+        "end": 4010,
+        "text": "requires ongoing systemic corticosteroid therapy at a dose \\> 2 mg/day of dexamethasone (or equivalent) at the time of inoculation"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2516,
+        "end": 2625,
+        "text": "Autologous bone marrow transplant: Patients must be ≥ 3 months since transplant prior to G207 administration."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Pathologically proven malignant cerebellar brain tumor (including medulloblastoma, glioblastoma multiforme, giant cell glioblastoma, anaplastic astrocytoma, primitive neuroectodermal tumor, ependymoma, atypical teratoid/rhabdoid tumor, germ cell tumor, or other high-grade malignant tumor)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Pathologically proven malignant cerebellar brain tumor (including medulloblastoma, glioblastoma multiforme, giant cell glioblastoma, anaplastic astrocytoma, primitive neuroectodermal tumor, ependymoma, atypical teratoid/rhabdoid tumor, germ cell tumor, or other high-grade malignant tumor)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

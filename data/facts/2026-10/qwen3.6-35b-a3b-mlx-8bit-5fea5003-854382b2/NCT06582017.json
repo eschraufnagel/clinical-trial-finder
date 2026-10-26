@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT06582017",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 61,
+        "end": 156,
+        "text": "Histopathologically confirmed diagnosis of an advanced, unresectable, or metastatic solid tumor"
+      },
+      "appliesTo": "Solid Tumors"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1068,
+        "end": 1148,
+        "text": "Must have at least 1 measurable lesion by RECIST version 1.1 (solid tumors only)"
+      },
+      "appliesTo": "Solid Tumors"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 968,
+        "end": 1064,
+        "text": "An Eastern Cooperative Oncology Group (ECOG) performance status scale of 0, 1, or 2 at Screening"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3080,
+        "end": 3223,
+        "text": "Received prior anticancer therapy within 28 days or 5x the half-life (whichever is shorter) prior to the first dose of investigational product."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3227,
+        "end": 3390,
+        "text": "Participants who received wide-field radiation therapy within 4 weeks prior to first dose of investigational product, (2 weeks for limited field radiation therapy)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3472,
+        "end": 3563,
+        "text": "Chronic use of systemic corticosteroids of more than 20 mg/day of prednisone or equivalent."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3839,
+        "end": 3903,
+        "text": "Active autoimmune disorders not controlled with current therapy."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2993,
+        "end": 3025,
+        "text": "Female participant is lactating."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "nctId": "NCT07123103",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 98,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 272,
+        "end": 371,
+        "text": "Primary brain tumors or known active brain metastases, leptomeningeal, or cranial epidural disease."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 272,
+        "end": 371,
+        "text": "Primary brain tumors or known active brain metastases, leptomeningeal, or cranial epidural disease."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 374,
+        "end": 465,
+        "text": "History of interstitial lung disease (ILD) of any grade or history of organizing pneumonia."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 574,
+        "end": 653,
+        "text": "Known history of immunodeficiency virus (HIV) unless specific criteria are met."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 656,
+        "end": 739,
+        "text": "Active infection with hepatitis C virus (HCV) defined as positive for HCV antibody."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

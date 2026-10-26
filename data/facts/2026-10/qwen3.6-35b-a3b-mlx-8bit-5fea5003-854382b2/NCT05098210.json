@@ -1,0 +1,274 @@
+{
+  "nctId": "NCT05098210",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 70,
+        "end": 146,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0, 1, or 2"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 523,
+        "end": 850,
+        "text": "Measurable disease by Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 criteria: Participants must have measurable disease, defined as at least one target lesion that can be measured in at least one dimension (longest diameter to be recorded) as \\>= 10 mm, unless lymph node in which case short axis must be \\>= 15 mm."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1963,
+        "end": 2119,
+        "text": "Patients with active interstitial lung disease (ILD)/pneumonitis or a history of ILD/pneumonitis requiring treatment with systemic steroids will be excluded"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11445,
+        "end": 11836,
+        "text": "History of autoimmune disease that has not been controlled with treatment in the last 12 months, including, but not limited to, systemic lupus erythematosus, rheumatoid arthritis, inflammatory bowel disease, vascular thrombosis associated with antiphospholipid syndrome, Wegener granulomatosis, Sjogren syndrome, Guillain-Barre syndrome, multiple sclerosis, vasculitis, or glomerulonephritis"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10759,
+        "end": 10840,
+        "text": "Prior allogeneic bone marrow transplantation or prior solid organ transplantation"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10843,
+        "end": 10880,
+        "text": "Known positive test for HIV infection"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4548,
+        "end": 4771,
+        "text": "History of detectable disease during/after treatment with a PD-1 or PD-L1 inhibitor, as defined by the Society of Immunotherapy of Cancer's definition of primary or secondary resistance (Kluger and others \\[et al.\\], 2020):"
+      },
+      "appliesTo": "MELANOMA SPECIFIC"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 7350,
+        "end": 7577,
+        "text": "Patients must have received at least one line of systemic therapy in the metastatic or stage II or III setting including a PD-1 or PD-L1 inhibitor prior to enrollment on the study and have progressive or recurrent disease after"
+      },
+      "appliesTo": "NON-SMALL CELL LUNG CANCER SPECIFIC"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6682,
+        "end": 6852,
+        "text": "Patients must have received at least one line of systemic therapy in the metastatic setting prior to enrollment on the study and have progressive/persistent disease after"
+      },
+      "appliesTo": "BREAST CANCER SPECIFIC"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6682,
+        "end": 6852,
+        "text": "Patients must have received at least one line of systemic therapy in the metastatic setting prior to enrollment on the study and have progressive/persistent disease after"
+      },
+      "appliesTo": "BREAST CANCER SPECIFIC"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 7350,
+        "end": 7577,
+        "text": "Patients must have received at least one line of systemic therapy in the metastatic or stage II or III setting including a PD-1 or PD-L1 inhibitor prior to enrollment on the study and have progressive or recurrent disease after"
+      },
+      "appliesTo": "NON-SMALL CELL LUNG CANCER SPECIFIC"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4243,
+        "end": 4476,
+        "text": "Patients must have received stage specific standard of care therapy per National Comprehensive Cancer Network (NCCN) guidelines and have persistent/recurrent disease after at least one line of therapy prior to enrollment on the study"
+      },
+      "appliesTo": "MELANOMA SPECIFIC"
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "negative"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 14823,
+        "end": 15025,
+        "text": "NON-SMALL CELL LUNG CANCER SPECIFIC: Activating mutations in EGFR or genetic alterations in ROS1 or Alk, as these mutations are associated with lower mutation burden and non-response to immune therapies"
+      },
+      "appliesTo": "NON-SMALL CELL LUNG CANCER SPECIFIC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6855,
+        "end": 7019,
+        "text": "NON-SMALL CELL LUNG CANCER SPECIFIC: Tissue confirmation of stage III unresectable or stage IV (recurrent or de novo metastatic) non-small cell lung cancer (NSCLC):"
+      },
+      "appliesTo": "NON-SMALL CELL LUNG CANCER SPECIFIC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5370,
+        "end": 5520,
+        "text": "BREAST CANCER SPECIFIC: Tissue confirmation of stage IV (recurrent or de novo metastatic) hormone receptor (HR) positive, HER2 negative breast cancer:"
+      },
+      "appliesTo": "BREAST CANCER SPECIFIC"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9810,
+        "end": 10241,
+        "text": "Patients with known symptomatic brain metastases. Patients with previously diagnosed brain metastases are eligible if they have completed their treatment and have recovered from the acute effects of radiation therapy or surgery prior to study entry, have discontinued corticosteroid treatment for these metastases for at least 4 weeks and are neurologically stable for \\>= 1 months (confirmed by magnetic resonance imaging \\[MRI\\])"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "overexpression",
+        "mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5370,
+        "end": 5520,
+        "text": "BREAST CANCER SPECIFIC: Tissue confirmation of stage IV (recurrent or de novo metastatic) hormone receptor (HR) positive, HER2 negative breast cancer:"
+      },
+      "appliesTo": "BREAST CANCER SPECIFIC"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active uncontrolled infection: individuals with a history of hepatitis C who have successfully completed antiviral therapy with an undetectable viral load, and those with hepatitis B who have, per standard practice, hepatitis well-controlled on medication (e.g. AST and ALT < 5 x ULN) can be included",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active uncontrolled infection: individuals with a history of hepatitis C who have successfully completed antiviral therapy with an undetectable viral load, and those with hepatitis B who have, per standard practice, hepatitis well-controlled on medication (e.g. AST and ALT < 5 x ULN) can be included",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "MELANOMA SPECIFIC: Histologically confirmed metastatic (recurrent or de novo stage IV) or unresectable locally advanced (stage IIIC or IIID) cutaneous, acral, conjunctival or mucosal melanoma, as defined by the American Joint Committee on Cancer (AJCC) v8.0.",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "quote": "MELANOMA SPECIFIC: Histologically confirmed metastatic (recurrent or de novo stage IV) or unresectable locally advanced (stage IIIC or IIID) cutaneous, acral, conjunctival or mucosal melanoma, as defined by the American Joint Committee on Cancer (AJCC) v8.0.",
+        "appliesTo": "MELANOMA SPECIFIC"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "NON-SMALL CELL LUNG CANCER SPECIFIC: Activating mutations in EGFR or genetic alterations in ROS1 or Alk, as these mutations are associated with lower mutation burden and non-response to immune therapies",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "NON-SMALL CELL LUNG CANCER SPECIFIC: Activating mutations in EGFR or genetic alterations in ROS1 or Alk, as these mutations are associated with lower mutation burden and non-response to immune therapies",
+        "appliesTo": "NON-SMALL CELL LUNG CANCER SPECIFIC"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "nctId": "NCT02128906",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 177,
+        "text": "Pathologically confirmed squamous cell carcinoma, undifferentiated carcinoma, or poorly differentiated carcinoma of the oropharynx, larynx, or hypopharynx"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 178,
+        "end": 216,
+        "text": "with no evidence of distant metastasis"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2428,
+        "end": 2489,
+        "text": "Patients must have measurable disease according to RECIST 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2333,
+        "end": 2397,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status 0-1"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5788,
+        "end": 5883,
+        "text": "HIV-positive patients receiving combination anti-retroviral therapy are excluded from the study"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5050,
+        "end": 5182,
+        "text": "Women must not be pregnant or breast feeding because chemotherapy and/or cetuximab may be harmful to the fetus or the nursing infant"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4554,
+        "end": 4780,
+        "text": "No unstable angina or myocardial infarction within the prior 6 months; no symptomatic congestive heart failure; no serious cardiac arrhythmia requiring medication; no cerebrovascular ischemia or stroke within the past 6 months"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2022,
+        "end": 2258,
+        "text": "Patients with a history of curatively-treated non-HNSCC malignancy must be disease-free for at least 2 years except for carcinoma-in-situ of cervix, non-melanomatous skin cancer, or T1-2, N0, M0 resected differentiated thyroid carcinoma"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

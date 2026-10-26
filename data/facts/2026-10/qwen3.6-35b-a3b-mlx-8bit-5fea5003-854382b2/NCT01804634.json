@@ -1,0 +1,135 @@
+{
+  "nctId": "NCT01804634",
+  "mappings": [
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2002,
+        "end": 2072,
+        "text": "Patients do not need to have measurable disease at time of enrollment."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2788,
+        "end": 2837,
+        "text": "Good performance status (Karnofsky/Lansky 60-100)"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3374,
+        "end": 3426,
+        "text": "Uncontrolled viral, bacterial, or fungal infections."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3258,
+        "end": 3372,
+        "text": "Women of childbearing potential who currently are pregnant (HCG+) or who are not practicing adequate contraception"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3117,
+        "end": 3129,
+        "text": "HIV-positive"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 0,
+        "end": 68,
+        "text": "Presence of a suitable related HLA-haploidentical bone marrow donor."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Any other solid tumor and soft tissue sarcoma with an estimated <10% chance of survival will be considered on a case by case basis at the departmental tumor board and/or sarcoma meeting",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Any other solid tumor and soft tissue sarcoma with an estimated <10% chance of survival will be considered on a case by case basis at the departmental tumor board and/or sarcoma meeting",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "prior_bmt isn't a fact for this trial's cancer type",
+      "quote": "Patients who relapse after either single or tandem autologous BMT are eligible (> 6 months must have elapsed from start of last BMT).",
+      "raw": {
+        "factId": "prior_bmt",
+        "rulesOut": [
+          "within_6_months"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients who relapse after either single or tandem autologous BMT are eligible (> 6 months must have elapsed from start of last BMT).",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Refractory and/or Relapsed Metastatic Solid Tumors",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "Refractory and/or Relapsed Metastatic Solid Tumors",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

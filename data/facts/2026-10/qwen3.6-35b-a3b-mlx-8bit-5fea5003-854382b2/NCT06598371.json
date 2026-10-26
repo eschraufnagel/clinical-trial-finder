@@ -1,0 +1,274 @@
+{
+  "nctId": "NCT06598371",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8819,
+        "end": 8910,
+        "text": "Large cell neuroendocrine NSCLC (defined as pathology with \\>10% neuroendocrine components)"
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 80,
+        "end": 238,
+        "text": "Unresectable, incurable and/or metastatic histologically and/or cytologically confirmed cutaneous, acral, or unknown primary melanoma (Stage IIIC or Stage IV)"
+      },
+      "appliesTo": "Melanoma"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 665,
+        "end": 854,
+        "text": "Histologically and/or cytologically confirmed primary diagnosis of NSCLC which has progressed on at least 1 line and no more than 4 lines of prior therapy in the advanced/metastatic setting"
+      },
+      "appliesTo": "NSCLC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1598,
+        "end": 1694,
+        "text": "Locally advanced recurrent and/or metastatic histologically and/or cytologically confirmed HNSCC"
+      },
+      "appliesTo": "HNSCC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1987,
+        "end": 2079,
+        "text": "Advanced, metastatic histologically and/or cytologically confirmed colorectal adenocarcinoma"
+      },
+      "appliesTo": "Colorectal"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2285,
+        "end": 2413,
+        "text": "Locally advanced, recurrent, or metastatic histologically and/or cytologically confirmed pancreatic ductal adenocarcinoma (PDAC)"
+      },
+      "appliesTo": "Pancreatic"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2542,
+        "end": 2793,
+        "text": "Recurrent, metastatic, or persistent histologically and/or cytologically confirmed squamous cell carcinoma (SCC), adenosquamous carcinoma, or adenocarcinoma of the cervix that is not amenable to curative treatment with surgery and/or radiation therapy"
+      },
+      "appliesTo": "Cervical"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3018,
+        "end": 3136,
+        "text": "At least one measurable lesion per RECIST v1.1 (Eisenhauer 2009) following tumor resection for KSQ-004EX manufacturing"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3644,
+        "end": 3711,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8914,
+        "end": 9042,
+        "text": "Symptomatic and/or untreated brain metastases (of any size or number) including active leptomeningeal or parenchymal metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8914,
+        "end": 9042,
+        "text": "Symptomatic and/or untreated brain metastases (of any size or number) including active leptomeningeal or parenchymal metastases."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7962,
+        "end": 8250,
+        "text": "Active or prior documented autoimmune or inflammatory disorders (including inflammatory bowel disease \\[eg, Grade ≥ 2 colitis or Crohn's disease\\], systemic lupus erythematosus, sarcoidosis syndrome, or Wegener syndrome \\[granulomatosis with polyangiitis\\], rheumatoid arthritis, etc.\\])."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9346,
+        "end": 9442,
+        "text": "Seropositive for human immunodeficiency virus (HIV) 1 or 2 or acquired immunodeficiency syndrome"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9447,
+        "end": 9519,
+        "text": "active infection with hepatitis B virus (HBV) or hepatitis C virus (HCV)"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10438,
+        "end": 10581,
+        "text": "History of stroke, transient ischemic attack, unstable angina, or myocardial infarction, within 3 months prior to first dose of study treatment"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9901,
+        "end": 9954,
+        "text": "Previous solid organ or hematopoietic cell transplant"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9308,
+        "end": 9341,
+        "text": "Women who are pregnant or nursing"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9959,
+        "end": 10047,
+        "text": "Need for treatment with steroids at stable doses (\\> 10 mg/day prednisone or equivalent)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11891,
+        "end": 12121,
+        "text": "Known additional malignancy that is active and/or progressive requiring treatment; exceptions including basal cell or squamous cell skin cancer, or other cancer for which the participants has been disease-free for at least 2 years"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11649,
+        "end": 11756,
+        "text": "Suspected pneumonitis or interstitial lung disease (confirmed by radiography or computed tomography \\[CT\\])"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

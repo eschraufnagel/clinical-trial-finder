@@ -1,0 +1,99 @@
+{
+  "nctId": "NCT06902272",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1465,
+        "end": 1531,
+        "text": "Presence of locally advanced, unresectable, or metastatic disease."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 136,
+        "end": 205,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) 0-1"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 554,
+        "end": 655,
+        "text": "Measurable disease according to Response Evaluation Criteria in Solid Tumors version 1.1 (RECIST 1.1)"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1771,
+        "end": 1844,
+        "text": "Participants with known epidermal growth factor receptor (EGFR) mutations"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1771,
+        "end": 1894,
+        "text": "Participants with known epidermal growth factor receptor (EGFR) mutations or anaplastic lymphoma kinase (ALK) translocation"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Participants must have tumor tissue available for programmed cell death ligand 1 (PD-L1) immunohistochemical (IHC) testing performed by a third-party analyzing lab during the screening period",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have tumor tissue available for programmed cell death ligand 1 (PD-L1) immunohistochemical (IHC) testing performed by a third-party analyzing lab during the screening period",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

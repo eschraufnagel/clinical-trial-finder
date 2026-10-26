@@ -1,0 +1,249 @@
+{
+  "nctId": "NCT03550391",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 178,
+        "text": "Patients must have 5 or more brain metastases as counted on a T1 contrast enhanced MRI obtained ≤ 30 days from randomization (maximum 15 brain metastases)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2837,
+        "end": 2918,
+        "text": "Surgical resection of a brain metastasis (stereotactic biopsies will be allowed)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2475,
+        "end": 2747,
+        "text": "Widespread definitive leptomeningeal metastasis. This includes cranial nerve palsy, leptomeningeal carcinomatosis, ependymal involvement, cranial nerve involvement on imaging, suspicious linear meningeal enhancement, or cerebrospinal fluid (CSF) positive for tumour cells."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 708,
+        "end": 743,
+        "text": "ECOG performance status 0, 1, or 2."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2293,
+        "end": 2325,
+        "text": "Prior cranial radiation therapy."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2328,
+        "end": 2409,
+        "text": "Planned cytotoxic chemotherapy within 48 hours prior or after the SRS or HA-WBRT."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2103,
+        "end": 2129,
+        "text": "Pregnant or nursing women."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3184,
+        "end": 3267,
+        "text": "Current use of NMDA antagonists, such as amantadine, ketamine, or dextromethorphan."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

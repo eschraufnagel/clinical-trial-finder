@@ -1,0 +1,162 @@
+{
+  "nctId": "NCT07154706",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 76,
+        "text": "Histologically confirmed stage IB, II, or IIIA NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 49,
+        "end": 76,
+        "text": "stage IB, II, or IIIA NSCLC"
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 130,
+        "end": 176,
+        "text": "Documented ROS1 rearrangement in primary tumor"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 809,
+        "end": 879,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3444,
+        "end": 3499,
+        "text": "Co-mutations of epidermal growth factor receptor (EGFR)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4633,
+        "end": 4784,
+        "text": "Currently have or have a history of interstitial lung disease (ILD), drug-related pneumonitis, or radiation pneumonitis that required steroid treatment"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4392,
+        "end": 4528,
+        "text": "Have active and clinically significant bacterial, fungal, or viral infection, including hepatitis B virus (HBV), hepatitis C virus (HCV)"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4533,
+        "end": 4628,
+        "text": "known human immunodeficiency virus (HIV)- or acquired immunodeficiency syndrome-related illness"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Has previously received 1 or more of the following cancer treatments: ... Any adjuvant anticancer therapy (including investigational therapy) for treatment of NSCLC other than standard postoperative platinum-based doublet chemotherapy.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "quote": "Has previously received 1 or more of the following cancer treatments: ... Any adjuvant anticancer therapy (including investigational therapy) for treatment of NSCLC other than standard postoperative platinum-based doublet chemotherapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Co-mutations of ... anaplastic lymphoma kinase (ALK) fusion",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "exclusion",
+        "quote": "Co-mutations of ... anaplastic lymphoma kinase (ALK) fusion",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of other malignancies except ... other tumors curatively treated with no evidence of disease for >3 years",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of other malignancies except ... other tumors curatively treated with no evidence of disease for >3 years",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

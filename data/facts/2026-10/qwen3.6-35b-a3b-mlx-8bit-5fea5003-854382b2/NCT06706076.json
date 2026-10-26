@@ -1,0 +1,117 @@
+{
+  "nctId": "NCT06706076",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 52,
+        "end": 126,
+        "text": "Pathologically confirmed diagnosis of locally advanced or metastatic NSCLC"
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 693,
+        "end": 756,
+        "text": "histological transformation (eg, to small cell carcinoma, etc.)"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 206,
+        "end": 284,
+        "text": "Has at least 1 measurable target extracranial lesion according to RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 287,
+        "end": 345,
+        "text": "Eastern Cooperative Oncology Group Performance Status ≤ 1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 540,
+        "end": 605,
+        "text": "History of any concurrent malignancy within the previous 2 years."
+      }
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "amplification"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 608,
+        "end": 689,
+        "text": "Known other oncogenic driver alterations (eg, moderate or high MET amplification)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 879,
+        "end": 940,
+        "text": "Active or history of interstitial lung disease from any cause"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 943,
+        "end": 1002,
+        "text": "Clinically significant cardiovascular event within 6 months"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

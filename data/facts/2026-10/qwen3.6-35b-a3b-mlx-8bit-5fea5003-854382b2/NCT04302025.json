@@ -1,0 +1,186 @@
+{
+  "nctId": "NCT04302025",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 82,
+        "end": 177,
+        "text": "Newly diagnosed early-stage NSCLC stages IB, IIA, IIB, IIIA, or selected IIIB (T3N2 only) NSCLC"
+      },
+      "appliesTo": "Neoadjuvant Therapy"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 172,
+        "end": 215,
+        "text": "NSCLC of squamous or non-squamous histology"
+      },
+      "appliesTo": "Neoadjuvant Therapy"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1472,
+        "end": 1517,
+        "text": "Measurable disease, as defined by RECIST v1.1"
+      },
+      "appliesTo": "Neoadjuvant Therapy"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4",
+        "ps2"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2195,
+        "end": 2265,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1"
+      },
+      "appliesTo": "Neoadjuvant Therapy"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4",
+        "ps2"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3103,
+        "end": 3136,
+        "text": "ECOG Performance Status of 0 or 1"
+      },
+      "appliesTo": "Adjuvant Therapy (TKI Cohorts and KRAS G12C cohort [if continuing on Divarasib])"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3544,
+        "end": 3630,
+        "text": "Malignancies other than the disease under study within 3 years prior to Cycle 1, Day 1"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3314,
+        "end": 3437,
+        "text": "Any prior therapy for lung cancer, including chemotherapy, targeted therapy, immunotherapy, or radiotherapy, within 2 years"
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3314,
+        "end": 3437,
+        "text": "Any prior therapy for lung cancer, including chemotherapy, targeted therapy, immunotherapy, or radiotherapy, within 2 years"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3314,
+        "end": 3437,
+        "text": "Any prior therapy for lung cancer, including chemotherapy, targeted therapy, immunotherapy, or radiotherapy, within 2 years"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3314,
+        "end": 3437,
+        "text": "Any prior therapy for lung cancer, including chemotherapy, targeted therapy, immunotherapy, or radiotherapy, within 2 years"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3314,
+        "end": 3437,
+        "text": "Any prior therapy for lung cancer, including chemotherapy, targeted therapy, immunotherapy, or radiotherapy, within 2 years"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3849,
+        "end": 4205,
+        "text": "Participants known to be positive for human immunodeficiency virus (HIV) are excluded if they meet any of the following criteria: cluster of differentiation 4 (CD4)+ T-cell count of \\<350 cells/microliters (cells/µL); detectable HIV viral load; history of an opportunistic infection within the past 12 months; on stable antiretroviral therapy for \\<4 weeks"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4458,
+        "end": 4529,
+        "text": "Pregnant or lactating, or intending to become pregnant during the study"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

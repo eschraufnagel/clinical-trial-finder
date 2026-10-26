@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT07374848",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 169,
+        "text": "Adult men and women ≥18 years of age at the time of signing the ICF with an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 206,
+        "end": 363,
+        "text": "Participants must have histologically confirmed and documented diagnosis of locally advanced unresectable and/or metastatic sarcoma or a selected solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 788,
+        "end": 874,
+        "text": "Participants must have at least one measurable target lesion as defined by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 491,
+        "end": 615,
+        "text": "Participants with sarcoma should have received no more than 2 lines of previous systemic therapies in the metastatic setting"
+      },
+      "appliesTo": "sarcoma"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 618,
+        "end": 785,
+        "text": "Participants with selected epithelial solid tumors should have received no more than 3 lines of previous systemic therapy in the metastatic/relapsed refractory setting"
+      },
+      "appliesTo": "selected epithelial solid tumors"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1000,
+        "end": 1094,
+        "text": "Participants with another known malignancy that has required treatment within the last 2 years"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1097,
+        "end": 1251,
+        "text": "Symptomatic central nervous system (CNS) metastasis, and/or those requiring therapy with corticosteroids or anticonvulsants to control associated symptoms"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1254,
+        "end": 1297,
+        "text": "Participants with leptomeningeal metastasis"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1399,
+        "end": 1471,
+        "text": "Prior treatment with a topoisomerase-1 inhibitor antibody drug conjugate"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1743,
+        "end": 1780,
+        "text": "Pregnant or nursing (lactating) women"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

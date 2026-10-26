@@ -1,0 +1,135 @@
+{
+  "nctId": "NCT07099898",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 216,
+        "end": 311,
+        "text": "Has histologically or cytologically confirmed extensive-stage small cell lung cancer (ES-SCLC)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1769,
+        "end": 2014,
+        "text": "Has symptomatic brain metastases or untreated progression exclusively due to brain metastasis during or after the last treatment prior to screening, evidence of leptomeningeal/meningeal/brainstem metastasis or evidence of spinal cord metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1769,
+        "end": 2014,
+        "text": "Has symptomatic brain metastases or untreated progression exclusively due to brain metastasis during or after the last treatment prior to screening, evidence of leptomeningeal/meningeal/brainstem metastasis or evidence of spinal cord metastases."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 615,
+        "end": 694,
+        "text": "Has at least 1 target lesion per RECIST 1.1, as determined by the investigator."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 844,
+        "end": 912,
+        "text": "Has adequate organ function and an ECOG performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1133,
+        "end": 1281,
+        "text": "Has received any prior therapy with an Antibody-drug conjugate (ADC) with a Topoisomerase-1 (TOPO1)-inhibitor payload or treatments targeting B7-H3."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2017,
+        "end": 2171,
+        "text": "Has any evidence of current interstitial lung disease or pneumonitis or a prior history of ILD or non-infectious pneumonitis requiring high dose steroids."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2296,
+        "end": 2333,
+        "text": "Has active Hepatitis B or Hepatitis C"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Has histologically or cytologically confirmed extensive-stage small cell lung cancer (ES-SCLC).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has histologically or cytologically confirmed extensive-stage small cell lung cancer (ES-SCLC).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "nctId": "NCT05859074",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 40,
+        "end": 366,
+        "text": "Histologically or cytologically documented advanced or metastatic cancer that has relapsed from or is refractory to standard treatment in two lines of prior therapy in the advanced setting unless there are fewer than two FDA approved lines of therapy for the particular disease, or for which no standard treatment is available"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 369,
+        "end": 665,
+        "text": "At least 2 tumors suitable for direct or ultrasound-guided injection defined as at least one cutaneous, subcutaneous, or nodal lesion or aggregate of lesions, ≥0.5 cm for any single lesion and cumulative lesion dimensions. One lesion must meet criteria for RECIST measurable disease if in Part 2."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1221,
+        "end": 1288,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6956,
+        "end": 7019,
+        "text": "Has known active CNS metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6956,
+        "end": 7019,
+        "text": "Has known active CNS metastases and/or carcinomatous meningitis"
+      }
+    },
+    {
+      "factId": "pdl1",
+      "rulesOut": [
+        "high",
+        "low"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2827,
+        "end": 2953,
+        "text": "These patients should be refractory to anti-PD-1 therapy, with the exception of patients with HNSCC with PD-L1 expression \\<1."
+      },
+      "appliesTo": "Parts 1b and 2b"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2827,
+        "end": 2953,
+        "text": "These patients should be refractory to anti-PD-1 therapy, with the exception of patients with HNSCC with PD-L1 expression \\<1."
+      },
+      "appliesTo": "Parts 1b and 2b"
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2977,
+        "end": 3056,
+        "text": "Patients with BRAF-mutated melanoma should have received BRAF-targeted therapy."
+      },
+      "appliesTo": "Parts 1a, 2a and 2b"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7531,
+        "end": 7719,
+        "text": "History or evidence of autoimmune disease that has required systemic treatment in the past 2 years (i.e., with use of disease modifying agents, corticosteroids, or immunosuppressive drugs)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7790,
+        "end": 7973,
+        "text": "History of idiopathic pulmonary fibrosis, pneumonitis (including drug induced), organizing pneumonia, active interstitial lung disease (ILD) requiring treatment with systemic steroids"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4698,
+        "end": 4793,
+        "text": "Acute or chronic active viral disease or positive test for hepatitis B virus, hepatitis C virus"
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5737,
+        "end": 6058,
+        "text": "History of myocardial infarction, myocarditis, congestive heart failure (as defined by New York Heart Association Functional Classsification III or IV), unstable angina, serious uncontrolled cardiac arrhythmia,or significant cardiovascular or cerebrovascular event in the 6 months before the first dose of study treatment"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7081,
+        "end": 7196,
+        "text": "Patient is pregnant or breast-feeding, or expecting to conceive or father children within the duration of the trial"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8348,
+        "end": 8502,
+        "text": "Current use of steroids such as prednisone 10 mg/daily or greater (or its equivalent) or immunosupressants within 2 weeks of initiation of study treatment"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Part 1a: Patients with cutaneous squamous cell carcinoma (cSCC), basal cell carcinoma (BCC), melanoma, Merkel cell carcinoma, sebaceous carcinoma, extramammary Paget's disease, Kaposi sarcoma, HNSCC, adnexal carcinoma, and angiosarcoma... Part 2a: Patients with cutaneous squamous cell carcinoma (cSCC), basal cell carcinoma (BCC), melanoma, Merkel cell carcinoma, sebaceous carcinoma, extramammary Paget's disease, Kaposi sarcoma, HNSCC, adnexal carcinoma, and angiosarcoma... Parts 1b and 2b: Patients must have cSCC, Merkel cell carcinoma, melanoma, or head and neck squamous cell carcinoma.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Part 1a: Patients with cutaneous squamous cell carcinoma (cSCC), basal cell carcinoma (BCC), melanoma, Merkel cell carcinoma, sebaceous carcinoma, extramammary Paget's disease, Kaposi sarcoma, HNSCC, adnexal carcinoma, and angiosarcoma... Part 2a: Patients with cutaneous squamous cell carcinoma (cSCC), basal cell carcinoma (BCC), melanoma, Merkel cell carcinoma, sebaceous carcinoma, extramammary Paget's disease, Kaposi sarcoma, HNSCC, adnexal carcinoma, and angiosarcoma... Parts 1b and 2b: Patients must have cSCC, Merkel cell carcinoma, melanoma, or head and neck squamous cell carcinoma.",
+        "appliesTo": "Part 1a, Part 2a, Parts 1b and 2b"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Acute or chronic active viral disease or positive test for hepatitis B virus, hepatitis C virus, human immunodeficiency virus (HIV) with CD4 count <100mg/m3... a. Patients with HIV are allowed on study if CD4 count is >100 cells/mm3.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "Acute or chronic active viral disease or positive test for hepatitis B virus, hepatitis C virus, human immunodeficiency virus (HIV) with CD4 count <100mg/m3... a. Patients with HIV are allowed on study if CD4 count is >100 cells/mm3.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

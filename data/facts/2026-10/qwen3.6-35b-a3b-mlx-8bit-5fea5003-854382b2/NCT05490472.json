@@ -1,0 +1,106 @@
+{
+  "nctId": "NCT05490472",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 103,
+        "text": "Must have Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 157,
+        "end": 251,
+        "text": "Must have histologically or cytologically confirmed metastatic or locally advanced solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 475,
+        "end": 529,
+        "text": "Must have at least 1 measurable lesion per RECIST v1.1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 659,
+        "end": 843,
+        "text": "Has central nervous system (CNS) metastases or carcinomatous meningitis, except if CNS metastases treated and no evidence of radiographic progression or hemorrhage for at least 28 days"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 659,
+        "end": 843,
+        "text": "Has central nervous system (CNS) metastases or carcinomatous meningitis, except if CNS metastases treated and no evidence of radiographic progression or hemorrhage for at least 28 days"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 908,
+        "end": 971,
+        "text": "Active hepatitis B virus (HBV), hepatitis C virus (HCV), or HIV"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 908,
+        "end": 971,
+        "text": "Active hepatitis B virus (HBV), hepatitis C virus (HCV), or HIV"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

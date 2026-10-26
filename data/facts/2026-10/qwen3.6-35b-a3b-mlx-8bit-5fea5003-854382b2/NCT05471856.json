@@ -1,0 +1,92 @@
+{
+  "nctId": "NCT05471856",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 81,
+        "end": 157,
+        "text": "advanced, unresectable and/or metastatic or relapsed/refractory solid tumour"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 159,
+        "end": 271,
+        "text": "Patient must have at least one measurable lesion (according to Response Criteria in Solid Tumours (RECIST 1.1))."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 601,
+        "end": 678,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status score of 0 or 1."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2675,
+        "end": 2817,
+        "text": "Immunosuppressive therapies including, but not limited to, systemic corticosteroids at doses exceeding \\>10 mg/day of prednisone or equivalent"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3073,
+        "end": 3163,
+        "text": "Evidence of active, non-treatment related autoimmune disease, except for endocrinopathies."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current",
+        "past"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3166,
+        "end": 3311,
+        "text": "History or complication of pneumonitis or interstitial lung disease within the last 12 months, or any prior pneumonitis related to immunotherapy."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

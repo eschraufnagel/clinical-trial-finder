@@ -1,0 +1,179 @@
+{
+  "nctId": "NCT04999384",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 206,
+        "end": 277,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 320,
+        "end": 475,
+        "text": "Subjects with histologically or cytologically confirmed advanced solid tumors that are metastatic or unresectable, or relapsed or refractory (r/r) lymphoma"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11651,
+        "end": 11886,
+        "text": "Spinal cord compression not definitively treated with surgery and/or radiation, or previously diagnosed and treated but without evidence that disease has been clinically stable for \\>/=2 weeks prior to the first dose of the study drug."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11623,
+        "end": 11646,
+        "text": "Leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5191,
+        "end": 5430,
+        "text": "Have been discontinued treatment due to a Grade 3 or higher immune-related AE (irAE) from prior anti-PD-1or anti-PD-L1 therapy, or with an agent directed to another stimulatory or co-inhibitory T-cell receptor (e.g., CTLA-4, OX 40, CD137)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7482,
+        "end": 7592,
+        "text": "Have had an allogenic tissue (e.g., bone marrow or stem cells)/solid organ transplant within the past 5 years."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7596,
+        "end": 7837,
+        "text": "Have a diagnosis of immunodeficiency or is receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent) or any other form of immunosuppressive therapy within 7 days prior the first dose of study drug."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7842,
+        "end": 8268,
+        "text": "With a history of another primary malignancy within the past 2 years, with the following exceptions: basal or squamous cell skin cancer, or carcinoma in situ of the cervix or breast that has undergone potentially curative therapy; or patients with a prior history of or clinically stable concurrent malignancy provided the malignancy is clinically insignificant, no treatment is required, and the patient is clinically stable."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8343,
+        "end": 8523,
+        "text": "Have an active autoimmune disease that has required systemic treatment in the past 2 years (i.e., with use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8728,
+        "end": 8830,
+        "text": "Have a history of (non-infectious) pneumonitis that has required steroids or have current pneumonitis."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8949,
+        "end": 9224,
+        "text": "Significant cardiovascular (CV) impairment: history of congestive heart failure greater than New York Heart Association (NYHA) Class II, uncontrolled arterial hypertension, unstable angina, myocardial infarction, or stroke within 6 months of the first dose of the study drug;"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11282,
+        "end": 11488,
+        "text": "Is pregnant or breastfeeding or expecting to conceive or father children within the projected duration of the study, starting with the screening visit through 90 days after the last dose of study treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Patients with or without measurable disease are considered eligible.",
+      "raw": {
+        "factId": "measurable_disease",
+        "rulesOut": [],
+        "polarity": "inclusion",
+        "quote": "Patients with or without measurable disease are considered eligible.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

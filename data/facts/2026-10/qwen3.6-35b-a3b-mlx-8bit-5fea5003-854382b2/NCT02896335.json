@@ -1,0 +1,187 @@
+{
+  "nctId": "NCT02896335",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 130,
+        "end": 245,
+        "text": "Participants must have histologically or cytologically confirmed disease from breast cancer or melanoma (Cohort 2)."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 248,
+        "end": 401,
+        "text": "Participants must have measurable disease in the CNS, defined as at least one lesion that can be accurately measured in at least one dimension as ≥10 mm."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 248,
+        "end": 401,
+        "text": "Participants must have measurable disease in the CNS, defined as at least one lesion that can be accurately measured in at least one dimension as ≥10 mm."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1203,
+        "end": 1273,
+        "text": "ECOG performance status of 0, 1 or 2 (Karnofsky ≥ 60, see Appendix A)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4995,
+        "end": 5043,
+        "text": "Leptomeningeal involvement of cancer (Cohort 1)."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6386,
+        "end": 6497,
+        "text": "Pregnant women are excluded from this study because the effect of palbociclib on a developing fetus is unknown."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7657,
+        "end": 7811,
+        "text": "HIV-positive participants on combination antiretroviral therapy are ineligible because of the potential for pharmacokinetic interactions with palbociclib."
+      },
+      "appliesTo": "Cohort 1"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8060,
+        "end": 8117,
+        "text": "In Cohort 2, HIV-positive patients will NOT be permitted."
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8532,
+        "end": 8569,
+        "text": "Active auto immune disease (Cohort 2)"
+      },
+      "appliesTo": "Cohort 2"
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8722,
+        "end": 8863,
+        "text": "History of (non-infectious) pneumonitis/interstitial lung disease that required steroids or has current pneumonitis/interstitial lung disease"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8866,
+        "end": 8932,
+        "text": "History of Hepatitis B or known active Hepatitis C virus infection"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8688,
+        "end": 8719,
+        "text": "History of allogenic transplant"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8625,
+        "end": 8685,
+        "text": "Prior treatment with PD-1 or PD-L1 blocking agent (Cohort 2)"
+      },
+      "appliesTo": "Cohort 2"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "nctId": "NCT04219254",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 395,
+        "end": 516,
+        "text": "For patients with NSCLC (phase 2A SC cohorts):\n\nHave a histologically confirmed diagnosis of advanced or metastatic NSCLC"
+      },
+      "appliesTo": "phase 2A SC cohorts",
+      "loose": true
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 395,
+        "end": 516,
+        "text": "For patients with NSCLC (phase 2A SC cohorts):\n\nHave a histologically confirmed diagnosis of advanced or metastatic NSCLC"
+      },
+      "appliesTo": "phase 2A SC cohorts",
+      "loose": true
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1840,
+        "end": 1953,
+        "text": "Has at least 1 measurable disease lesion as defined by Response Evaluation Criteria in Solid Tumors (RECIST v1.1)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2263,
+        "end": 2301,
+        "text": "Has an ECOG performance status of 0-1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2991,
+        "end": 3080,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2991,
+        "end": 3080,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3521,
+        "end": 3574,
+        "text": "Has an active, known or suspected autoimmune disease."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4207,
+        "end": 4243,
+        "text": "Has a known history of HIV infection"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4153,
+        "end": 4204,
+        "text": "Has had an allogenic tissue/solid organ transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3577,
+        "end": 3684,
+        "text": "Is a female subject and has the ability to become pregnant (or already pregnant or lactating/breastfeeding)"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2851,
+        "end": 2988,
+        "text": "Needs doses of prednisolone \\>10 mg daily (or equipotent doses of other corticosteroids) while on the study, other than as premedication."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3423,
+        "end": 3518,
+        "text": "Has a history of (non-infectious) pneumonitis that required steroids or has current pneumonitis"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5213,
+        "end": 5435,
+        "text": "Has a known additional malignancy of another type, with the exception of adequately treated cone-biopsied carcinoma in situ (e.g., breast carcinoma, cervical cancer in situ) and basal or squamous cell carcinoma of the skin"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_pd1 has no answer received",
+      "quote": "For patients with NSCLC (phase 2A SC cohorts): Have not received prior systemic immunotherapy or chemotherapy treatment for their advanced/metastatic NSCLC.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "For patients with NSCLC (phase 2A SC cohorts): Have not received prior systemic immunotherapy or chemotherapy treatment for their advanced/metastatic NSCLC.",
+        "appliesTo": "phase 2A SC cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For patients with NSCLC (phase 2A SC cohorts): ...not have an EGFR sensitizing (activating) mutation",
+      "raw": {
+        "factId": "egfr",
+        "rulesOut": [
+          "common_sensitizing",
+          "exon20_insertion",
+          "other_mutation"
+        ],
+        "polarity": "inclusion",
+        "quote": "For patients with NSCLC (phase 2A SC cohorts): ...not have an EGFR sensitizing (activating) mutation",
+        "appliesTo": "phase 2A SC cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For patients with NSCLC (phase 2A SC cohorts): ...or an ALK translocation.",
+      "raw": {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "inclusion",
+        "quote": "For patients with NSCLC (phase 2A SC cohorts): ...or an ALK translocation.",
+        "appliesTo": "phase 2A SC cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For patients with NSCLC (phase 2A SC cohorts): Have a PD-L1 positive (TPS≥50%) tumor as determined by IHC at a local laboratory.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "low",
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "quote": "For patients with NSCLC (phase 2A SC cohorts): Have a PD-L1 positive (TPS≥50%) tumor as determined by IHC at a local laboratory.",
+        "appliesTo": "phase 2A SC cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Phase I only: Subjects must have received at least 2 doses of an approved anti-PD-1/L1 mAb, and have documented progression on or within 12 weeks from the last dose of anti-PD-1/L1 mAb.",
+      "raw": {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Phase I only: Subjects must have received at least 2 doses of an approved anti-PD-1/L1 mAb, and have documented progression on or within 12 weeks from the last dose of anti-PD-1/L1 mAb.",
+        "appliesTo": "Phase I only"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For patients with NSCLC (phase 2A SC cohorts): Have not received prior systemic immunotherapy or chemotherapy treatment for their advanced/metastatic NSCLC.",
+      "raw": {
+        "factId": "prior_platinum",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "For patients with NSCLC (phase 2A SC cohorts): Have not received prior systemic immunotherapy or chemotherapy treatment for their advanced/metastatic NSCLC.",
+        "appliesTo": "phase 2A SC cohorts"
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "For patients with NSCLC (phase 2A SC cohorts): Have not received prior systemic immunotherapy or chemotherapy treatment for their advanced/metastatic NSCLC.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "inclusion",
+        "quote": "For patients with NSCLC (phase 2A SC cohorts): Have not received prior systemic immunotherapy or chemotherapy treatment for their advanced/metastatic NSCLC.",
+        "appliesTo": "phase 2A SC cohorts"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

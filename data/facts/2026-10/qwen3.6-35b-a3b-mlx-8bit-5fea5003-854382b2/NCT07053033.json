@@ -1,0 +1,79 @@
+{
+  "nctId": "NCT07053033",
+  "mappings": [
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 387,
+        "end": 545,
+        "text": "Radiographic concern for progression of a solid tumor brain metastasis that has received prior stereotactic radiosurgery ≥ 3 months prior to study enrollment."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "none"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 702,
+        "end": 767,
+        "text": "Have active tumor on pathology from surgery/LITT for this lesion."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 907,
+        "end": 1011,
+        "text": "Have no radiographic evidence of leptomeningeal disease on radiology report or neuro-radiologist review."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1238,
+        "end": 1374,
+        "text": "Patients with brain metastases from hematologic malignancies due to significant differences in radiosensitivity and treatment paradigms."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1484,
+        "end": 1605,
+        "text": "Pregnant women are excluded from this study because radiation has the potential for teratogenic or abortifacient effects."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

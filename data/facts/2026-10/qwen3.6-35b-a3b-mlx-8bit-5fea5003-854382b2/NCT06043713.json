@@ -1,0 +1,167 @@
+{
+  "nctId": "NCT06043713",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 38,
+        "end": 73,
+        "text": "Diagnosis of metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 693,
+        "end": 926,
+        "text": "Participants must have measurable disease, defined as at least one target lesion that can be measured in at least one dimension (longest diameter to be recorded) as ≥ 10 mm, unless lymph node in which case short axis must be ≥ 15 mm."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3546,
+        "end": 3615,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of =\\< 1"
+      }
+    },
+    {
+      "factId": "kras",
+      "rulesOut": [
+        "g12c",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 448,
+        "end": 632,
+        "text": "Previously documented KRASG12V mutation in tumor or plasma cell-free deoxyribonucleic acid (cfDNA) specimens by polymerase chain reaction (PCR) or next-generation sequencing (NGS) test"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2842,
+        "end": 3191,
+        "text": "Patients with solid tumors harboring targetable molecular alterations including but not limited to EGFR mutations, ALK, ROS, NTRK fusions, microsatellite instability (MSI)-high, tumor mutational burden (TMB) high, BRAF v600 mutations, HER2 amplifications, must have been treated or refused treatment with applicable targeted therapies, as applicable"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2609,
+        "end": 2824,
+        "text": "Participants must have progressed on or be intolerant to at least one lines of prior therapy including any targeted therapies indicated for participants with each of the tumor types eligible to enroll, as applicable"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8749,
+        "end": 8826,
+        "text": "Prior solid organ transplant or allogeneic hematopoietic stem cell transplant"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9432,
+        "end": 9576,
+        "text": "Pregnancy, breastfeeding, or expecting to conceive or father children for the duration of the trial through 4 months after last T-cell infusion."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9888,
+        "end": 10008,
+        "text": "Active autoimmune disease: Participants with active autoimmune disease requiring immunosuppressive therapy are excluded."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10088,
+        "end": 10170,
+        "text": "Corticosteroid therapy at a dose equivalent of \\> 0.5 mg/kg of prednisone per day."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10528,
+        "end": 10725,
+        "text": "Active uncontrolled infection: Human immunodeficiency virus (HIV) positive participants on highly active antiretroviral therapy (HAART) with a CD4 count \\> 500 cells/mm\\^3 are considered controlled"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11281,
+        "end": 11519,
+        "text": "Untreated brain metastases: Participants with small asymptomatic brain metastases (\\< 1 cm) or those with brain metastases previously treated and controlled with surgery or radiotherapy will be considered for inclusion at discretion of PI"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

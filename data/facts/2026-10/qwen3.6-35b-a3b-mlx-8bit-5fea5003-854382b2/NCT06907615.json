@@ -1,0 +1,301 @@
+{
+  "nctId": "NCT06907615",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3496,
+        "end": 3644,
+        "text": "Histologically or cytologically confirmed tumor containing components of small cell lung cancer, neuroendocrine carcinoma, or sarcomatoid carcinoma;"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 380,
+        "end": 480,
+        "text": "locally advanced (stage IIIB/IIIC) or metastatic (stage IV) NSCLC not suitable for radical treatment"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4450,
+        "end": 4988,
+        "text": "Presence of spinal cord compression or clinically active metastases to central nervous system (referring to untreated or symptomatic metastases, or metastases requiring corticosteroids or anticonvulsants to control associated symptoms), carcinomatous meningitis. Subjects who have previously received treatment for brain metastases (such as whole brain radiotherapy or stereotactic brain radiotherapy) may be eligible, provided that they are clinically stable for at least 4 weeks with no imaging evidence of brain metastasis progression;"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1745,
+        "end": 1832,
+        "text": "At least one measurable lesion as per RECIST 1.1 within 4 weeks prior to randomization;"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2825,
+        "end": 2883,
+        "text": "ECOG PS score of 0-1 within 1 week prior to randomization;"
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 803,
+        "end": 908,
+        "text": "Subjects with non-squamous NSCLC must have documented negative test results for EGFR and ALK alterations."
+      },
+      "appliesTo": "Subjects without actionable genomic alterations (AGAs)"
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 803,
+        "end": 908,
+        "text": "Subjects with non-squamous NSCLC must have documented negative test results for EGFR and ALK alterations."
+      },
+      "appliesTo": "Subjects without actionable genomic alterations (AGAs)"
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1157,
+        "end": 1260,
+        "text": "No other known actionable genomic alterations, such as ROS1, NTRK, BRAF, MET exon 14 skipping, and RET;"
+      },
+      "appliesTo": "Subjects without actionable genomic alterations (AGAs)"
+    },
+    {
+      "factId": "ntrk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1157,
+        "end": 1260,
+        "text": "No other known actionable genomic alterations, such as ROS1, NTRK, BRAF, MET exon 14 skipping, and RET;"
+      },
+      "appliesTo": "Subjects without actionable genomic alterations (AGAs)"
+    },
+    {
+      "factId": "braf_v600e",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1157,
+        "end": 1260,
+        "text": "No other known actionable genomic alterations, such as ROS1, NTRK, BRAF, MET exon 14 skipping, and RET;"
+      },
+      "appliesTo": "Subjects without actionable genomic alterations (AGAs)"
+    },
+    {
+      "factId": "met",
+      "rulesOut": [
+        "exon14_skipping"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1157,
+        "end": 1260,
+        "text": "No other known actionable genomic alterations, such as ROS1, NTRK, BRAF, MET exon 14 skipping, and RET;"
+      },
+      "appliesTo": "Subjects without actionable genomic alterations (AGAs)"
+    },
+    {
+      "factId": "ret",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1157,
+        "end": 1260,
+        "text": "No other known actionable genomic alterations, such as ROS1, NTRK, BRAF, MET exon 14 skipping, and RET;"
+      },
+      "appliesTo": "Subjects without actionable genomic alterations (AGAs)"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1268,
+        "end": 1387,
+        "text": "Prior standard treatment failure of ≥ 1 line, including at least anti-PD-(L)1 antibody and platinum-based chemotherapy;"
+      },
+      "appliesTo": "Subjects without actionable genomic alterations (AGAs)"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1268,
+        "end": 1387,
+        "text": "Prior standard treatment failure of ≥ 1 line, including at least anti-PD-(L)1 antibody and platinum-based chemotherapy;"
+      },
+      "appliesTo": "Subjects without actionable genomic alterations (AGAs)"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1521,
+        "end": 1742,
+        "text": "Prior standard treatment failure of ≥ 1 line, including at least targeted therapy for driver gene alterations (patients with EGFR mutations must be previously treated with EGFR inhibitors) and platinum-based chemotherapy;"
+      },
+      "appliesTo": "Subjects with AGAs"
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1521,
+        "end": 1742,
+        "text": "Prior standard treatment failure of ≥ 1 line, including at least targeted therapy for driver gene alterations (patients with EGFR mutations must be previously treated with EGFR inhibitors) and platinum-based chemotherapy;"
+      },
+      "appliesTo": "Subjects with AGAs"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3813,
+        "end": 3995,
+        "text": "History of any second malignancy within 2 years prior to randomization, except for early-stage malignancies (carcinoma in situ or stage I tumors) that have received radical treatment"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled",
+        "controlled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7660,
+        "end": 7809,
+        "text": "Patients with a history of immunodeficiency, including human immunodeficiency virus (HIV)-positive or other acquired or congenital immunodeficiencies"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7850,
+        "end": 7916,
+        "text": "Patients with active HBV or HCV infection or HBV/HCV co-infection;"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7919,
+        "end": 7947,
+        "text": "Pregnant or lactating women;"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6704,
+        "end": 6881,
+        "text": "Patients who have received systemic corticosteroids (prednisone \\> 10 mg/d or equivalent dose of similar drug) or other immunosuppressants within 2 weeks prior to randomization;"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Subjects with current or prior history of clinically significant pulmonary impairment due to pulmonary comorbidities, including but not limited to any underlying lung disease (e.g., ... interstitial pneumonia ...)",
+      "raw": {
+        "factId": "ild",
+        "rulesOut": [
+          "current"
+        ],
+        "polarity": "exclusion",
+        "quote": "Subjects with current or prior history of clinically significant pulmonary impairment due to pulmonary comorbidities, including but not limited to any underlying lung disease (e.g., ... interstitial pneumonia ...)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

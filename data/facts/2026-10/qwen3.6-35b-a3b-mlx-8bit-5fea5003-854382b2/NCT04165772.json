@@ -1,0 +1,257 @@
+{
+  "nctId": "NCT04165772",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3816,
+        "end": 3859,
+        "text": "Presence of metastatic or recurrent disease"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 536,
+        "end": 570,
+        "text": "No evidence of distant metastases."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 323,
+        "end": 457,
+        "text": "Solid tumors that in standard practice would be treated with neoadjuvant therapy or surgery (depending on tumor type) (Cohorts 1 \\& 2)"
+      },
+      "appliesTo": "Cohorts 1 & 2"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 156,
+        "end": 190,
+        "text": "ECOG performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4726,
+        "end": 4967,
+        "text": "Active autoimmune disease requiring systemic treatment within the past 2 years or documented history of clinically severe autoimmune disease, or a syndrome that requires systemic steroids or immunosuppressive agents at non-physiologic doses."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5685,
+        "end": 5757,
+        "text": "Known history of Human Immunodeficiency Virus (HIV) (HIV 1/2 antibodies)"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5760,
+        "end": 5867,
+        "text": "Known active Hepatitis B (e.g., HBsAg reactive) or Hepatitis C (e.g., HCV RNA \\[qualitative\\] is detected)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5870,
+        "end": 6098,
+        "text": "Women who are pregnant or breastfeeding, or men expecting to conceive or father children within the projected duration of the trial, starting with the pre-screening visit through 150 days after the last dose of study medication."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6924,
+        "end": 6961,
+        "text": "History of interstitial lung disease."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3862,
+        "end": 3921,
+        "text": "Prior radiation therapy, chemotherapy, or surgery for tumor"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5277,
+        "end": 5682,
+        "text": "Other Anticancer or Experimental Therapy. No other experimental therapies (including chemotherapy, radiation, hormonal treatment, antibody therapy, immunotherapy, gene therapy, vaccine therapy, angiogenesis inhibitors, matrix metalloprotease inhibitors, thalidomide, anti-VEGF/Flk-1 monoclonal antibody or other experimental drugs) of any kind are permitted while the patient is receiving study treatment."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5017,
+        "end": 5149,
+        "text": "Cohort 1 \\& 3: Received prior therapy with an antibody or drug specifically targeting T- cell co-stimulation or checkpoint pathways."
+      },
+      "appliesTo": "Cohort 1 & 3"
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5152,
+        "end": 5274,
+        "text": "Experienced ≥ Grade 3 immune-related AE with prior immunotherapy, except for non-clinically significant lab abnormalities."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4337,
+        "end": 4530,
+        "text": "Cohort 1 Only: Other invasive malignancy ≤ 5 years prior to registration. Exceptions are non-melanoma skin cancer that has undergone potentially curative therapy and in situ cervical carcinoma."
+      },
+      "appliesTo": "Cohort 1 Only"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4533,
+        "end": 4723,
+        "text": "Diagnosis of immunodeficiency or receiving systemic steroid therapy or any other form of non- physiologic dose immunosuppressive therapy within 7 days prior to first dose of trial treatment."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed locally advanced solid tumor (Cohorts 1 & 2)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed locally advanced solid tumor (Cohorts 1 & 2)",
+        "appliesTo": "Cohorts 1 & 2"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically confirmed endometrial cancer (Cohort 3)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically confirmed endometrial cancer (Cohort 3)",
+        "appliesTo": "Cohort 3"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Endometrial cancer that is clinically FIGO 2009 Stage I or II (Cohort 3).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Endometrial cancer that is clinically FIGO 2009 Stage I or II (Cohort 3).",
+        "appliesTo": "Cohort 3"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

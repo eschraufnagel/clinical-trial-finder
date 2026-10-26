@@ -1,0 +1,96 @@
+{
+  "nctId": "NCT07174336",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 746,
+        "end": 854,
+        "text": "locally advanced breast cancer not amenable to curative therapy (for example, surgery) or metastatic disease"
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3212,
+        "end": 3274,
+        "text": "History of leptomeningeal disease or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3277,
+        "end": 3689,
+        "text": "Have known and untreated or active central nervous system (CNS) metastases. Exception: Asymptomatic brain or spinal metastases if treated by surgery, surgery plus radiotherapy, or radiotherapy alone with no evidence of radiographic progression or hemorrhage within at least 28 days before randomization and no requirement for anticonvulsants or systemic corticosteroids for at least 28 days before randomization."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3966,
+        "end": 4077,
+        "text": "receiving chronic systemic steroid therapy (dose more than 10 milligrams \\[mg\\] daily of prednisone equivalent)"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1700,
+        "end": 1844,
+        "text": "Received 0-2 prior systemic treatments for advanced breast cancer not amenable to curative therapy (for example, surgery) or metastatic disease."
+      },
+      "appliesTo": "Part 1"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "one",
+        "two",
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1932,
+        "end": 2073,
+        "text": "Received 0 prior systemic treatment for advanced breast cancer not amenable to curative therapy (for example, surgery) or metastatic disease."
+      },
+      "appliesTo": "Part 2"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

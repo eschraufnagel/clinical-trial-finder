@@ -4,7 +4,7 @@
 
 **An AI assistant that helps a person with cancer find clinical trials worth asking their oncologist about.** It asks what they know about their cancer and their treatment so far, searches a saved copy of ClinicalTrials.gov, and gives back a short list. For each trial it says why the trial may fit, what's still unknown and what to ask. It never says a person is eligible. Their oncologist and the trial team decide that.
 
-> **A proof of concept, not for real use, and not finished.** So far it has the research and the search. It will only ever be tried with made-up patients, and it will never contact anyone.
+> **A proof of concept, not for real use, and not finished.** So far it has the research, the search, and the reading of trial rules into questions. It will only ever be tried with made-up patients, and it will never contact anyone.
 
 ## The problem
 
@@ -33,6 +33,14 @@ npm run search -- --cancer nsclc --zip 60611 --miles 50 --age 64 --sex female
 ```
 
 How it works and how well it does: [docs/search.md](docs/search.md).
+
+An AI model has read every lung cancer candidate's eligibility rules ahead of time. A made-up person's answers then show which trials may not fit them, quoting each trial's own words, and which questions would matter most. No trial is ever dropped because of what the model read:
+
+```
+npm run facts:try -- --cancer nsclc --zip 60611 --miles 50 --age 64 --sex female --profile evals/cases/facts/profiles/example.json
+```
+
+Why the model only hints: [docs/facts.md](docs/facts.md).
 
 ## How it's being built
 

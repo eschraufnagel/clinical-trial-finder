@@ -1,0 +1,142 @@
+{
+  "nctId": "NCT05725291",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 206,
+        "end": 500,
+        "text": "Patients with histologically confirmed, unresectable advanced solid tumor. Preferred tumor types include head and neck, non-small cell lung, esophageal, pancreatic, large cell lung, colorectal, cervical, breast, bladder, gastric, biliary tract, skin squamous cell, liver, and basal cell cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 206,
+        "end": 280,
+        "text": "Patients with histologically confirmed, unresectable advanced solid tumor."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 776,
+        "end": 852,
+        "text": "Patients must have at least one measurable lesion as per RECIST version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 855,
+        "end": 923,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1682,
+        "end": 1722,
+        "text": "Central nervous system (CNS) metastasis."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1632,
+        "end": 1679,
+        "text": "Prior therapy with ADC based on Top1 inhibitor."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2361,
+        "end": 2439,
+        "text": "Radiotherapy to lung field at a total radiation dose of ≥20 Gy within 6 months"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2714,
+        "end": 2773,
+        "text": "Prior allogeneic or autologous bone marrow transplantation."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2776,
+        "end": 3090,
+        "text": "Significant cardiac disease, such as recent (within six months prior to first dose of the IMP) myocardial infarction or acute coronary syndromes (including unstable angina pectoris), congestive heart failure (New York Heart Association class III or IV), uncontrolled hypertension, uncontrolled cardiac arrhythmias."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3093,
+        "end": 3128,
+        "text": "Pregnant or breast-feeding females."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

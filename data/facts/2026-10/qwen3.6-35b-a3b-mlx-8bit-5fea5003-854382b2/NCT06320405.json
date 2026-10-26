@@ -1,0 +1,129 @@
+{
+  "nctId": "NCT06320405",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 359,
+        "end": 444,
+        "text": "Certified, documented diagnosis of a metastatic solid tumor based on pathology review"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 447,
+        "end": 559,
+        "text": "Presence of at least one lesion that is measurable per Response Evaluation Criteria in Solid Tumors (RECIST) 1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1307,
+        "end": 1390,
+        "text": "Eastern Cooperative Oncology Group (ECOG) status (performance status \\[PS\\]) of 0-1"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4709,
+        "end": 4997,
+        "text": "New or progressive brain metastases. Patients with brain metastases not requiring immediate central nervous system (CNS) specific treatment or stable for at least 4 weeks prior to study day -8 are eligible at the discretion of the investigator given that neurologic symptoms are resolved."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5002,
+        "end": 5062,
+        "text": "Patients with active leptomeningeal disease are not eligible"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5419,
+        "end": 5509,
+        "text": "History of organ transplantation, including hematopoietic stem cell transplantation (HSCT)"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5512,
+        "end": 5593,
+        "text": "Clinical evidence of interstitial lung disease or active non-infectious pneumonia"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5596,
+        "end": 5775,
+        "text": "Active autoimmune disease requiring systemic immunosuppression in excess of physiologic maintenance doses of corticosteroids (≤ 10 mg/day of prednisone or equivalent is permitted)"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6606,
+        "end": 6766,
+        "text": "Persons of childbearing potential (PCBP) who are pregnant (i.e., positive pregnancy test within 7 days prior to study day -8) or breastfeeding are not eligible."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

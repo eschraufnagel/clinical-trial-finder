@@ -1,0 +1,388 @@
+{
+  "nctId": "NCT05503797",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 97,
+        "end": 156,
+        "text": "Histologic diagnosis of a solid tumor or primary CNS tumor."
+      },
+      "appliesTo": "Subprotocol A"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3151,
+        "end": 3266,
+        "text": "Histologic diagnosis of a rare BRAF V600E-mutated solid tumor that is unresectable, locally advanced or metastatic."
+      },
+      "appliesTo": "Subprotocol C"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3838,
+        "end": 3948,
+        "text": "Histologic diagnosis of a solid tumor harboring a BRAF V600E mutation and not eligible for other subprotocols."
+      },
+      "appliesTo": "Subprotocol D"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1668,
+        "end": 1720,
+        "text": "unresectable, locally advanced or metastatic disease"
+      },
+      "appliesTo": "Subprotocol B"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1668,
+        "end": 1712,
+        "text": "unresectable, locally advanced or metastatic"
+      },
+      "appliesTo": "Subprotocol C"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6445,
+        "end": 6476,
+        "text": "Participant has CNS metastases."
+      },
+      "appliesTo": "Subprotocol C"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7242,
+        "end": 7300,
+        "text": "Participant has a non-CNS solid tumor with CNS metastases."
+      },
+      "appliesTo": "Subprotocol D"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2621,
+        "end": 2719,
+        "text": "Measurable disease based upon specified response criteria, as determined by the radiographic BICR."
+      },
+      "appliesTo": "Subprotocol B"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3270,
+        "end": 3317,
+        "text": "Measurable disease on CT, MRI, or physical exam"
+      },
+      "appliesTo": "Subprotocol C"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3952,
+        "end": 4000,
+        "text": "Measurable disease on CT, MRI, or physical exam."
+      },
+      "appliesTo": "Subprotocol D"
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 476,
+        "end": 646,
+        "text": "Received all available standard therapy, is intolerant to available therapies, or the investigator has determined that treatment with standard therapy is not appropriate."
+      },
+      "appliesTo": "Subprotocol A"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2857,
+        "end": 3072,
+        "text": "Participants who are receiving corticosteroid treatment must be on a stable or decreasing dose of ≤8 mg/day of dexamethasone or equivalent corticosteroid treatment for 7 days prior to first dose of study treatments."
+      },
+      "appliesTo": "Subprotocol B"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4864,
+        "end": 4950,
+        "text": "Uncontrolled intercurrent illness that would limit compliance with study requirements."
+      },
+      "appliesTo": "Subprotocol A"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4954,
+        "end": 5017,
+        "text": "HIV infection with exceptions; discuss with treating physician."
+      },
+      "appliesTo": "Subprotocol A"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6228,
+        "end": 6350,
+        "text": "Diagnosis of colorectal adenocarcinoma or pancreatic ductal adenocarcinoma (neuroendocrine or acinar tumors are eligible)."
+      },
+      "appliesTo": "Subprotocol C"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6354,
+        "end": 6441,
+        "text": "Diagnosis of BRAF V600E-mutated cutaneous melanoma, papillary thyroid cancer, or NSCLC."
+      },
+      "appliesTo": "Subprotocol C"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6732,
+        "end": 6891,
+        "text": "Participants with prostate, breast, or gynecologic cancers with known activating mutations that lead to constitutive hormone receptor activation (AR-V7, ESR1)."
+      },
+      "appliesTo": "Subprotocol C"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7624,
+        "end": 7855,
+        "text": "History of acute or chronic cardiovascular disease or surgery, hypertension, with systolic blood pressure \\>160mm HG, history of QTc abnormalities, or clinical significantly ECG abnormalities (for participants in the ECG substudy)."
+      },
+      "appliesTo": "Subprotocol D"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Grade ≥2 changes in AST, ALT, GGT, or bilirubin attributed to prior immune checkpoint inhibitor treatment are exclusionary, even if resolved.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "exclusion",
+        "quote": "Grade ≥2 changes in AST, ALT, GGT, or bilirubin attributed to prior immune checkpoint inhibitor treatment are exclusionary, even if resolved.",
+        "appliesTo": "Subprotocol A"
+      }
+    },
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Grade ≥ 2 changes in AST, ALT, gamma-glutamyl transaminase (GGT), or bilirubin attributed to prior immune checkpoint inhibitor treatment are exclusionary, even if resolved.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "exclusion",
+        "quote": "Grade ≥ 2 changes in AST, ALT, gamma-glutamyl transaminase (GGT), or bilirubin attributed to prior immune checkpoint inhibitor treatment are exclusionary, even if resolved.",
+        "appliesTo": "Subprotocol B"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Received all available standard therapy, is intolerant to available therapies, or the investigator has determined that treatment with standard therapy is not appropriate.",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Received all available standard therapy, is intolerant to available therapies, or the investigator has determined that treatment with standard therapy is not appropriate.",
+        "appliesTo": "Subprotocol C"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Uncontrolled intercurrent illness that would limit compliance with study requirements.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled intercurrent illness that would limit compliance with study requirements.",
+        "appliesTo": "Subprotocol B"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Uncontrolled intercurrent illness that would limit compliance with study requirements.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled intercurrent illness that would limit compliance with study requirements.",
+        "appliesTo": "Subprotocol C"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Uncontrolled intercurrent illness that would limit compliance with study requirements.",
+      "raw": {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Uncontrolled intercurrent illness that would limit compliance with study requirements.",
+        "appliesTo": "Subprotocol D"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "HIV infection with exceptions; discuss with treating physician.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "HIV infection with exceptions; discuss with treating physician.",
+        "appliesTo": "Subprotocol B"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "HIV infection with exceptions; discuss with treating physician.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "HIV infection with exceptions; discuss with treating physician.",
+        "appliesTo": "Subprotocol C"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "HIV infection with exceptions; discuss with treating physician.",
+      "raw": {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "quote": "HIV infection with exceptions; discuss with treating physician.",
+        "appliesTo": "Subprotocol D"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

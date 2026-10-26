@@ -1,0 +1,195 @@
+{
+  "nctId": "NCT06066138",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 383,
+        "text": "Participants with a locally advanced or metastatic pathologically confirmed cancer whose NCI Licensed Independent Practitioner (LIP) determined they are candidates for treatment with atezolizumab, either alone or in combination with other FDA-approved drug(s), for example, TMB-high, PDL-1 positive, or other disease states that respond to PD(L)-1 inhibitors."
+      },
+      "appliesTo": "Locally Advanced Non Small Cell Lung Cancer; Metastatic Non Small Cell Lung Cancer; Locally Advanced Small Cell Lung Cancer; Metastatic Small Cell Lung Cancer"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 106,
+        "text": "Participants with a locally advanced or metastatic pathologically confirmed cancer"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 672,
+        "end": 715,
+        "text": "Measurable disease per RECIST 1.1 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 718,
+        "end": 749,
+        "text": "ECOG performance status of 0-2."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2602,
+        "end": 2774,
+        "text": "Participants with history of treated brain metastases must have follow-up brain imaging after central nervous system (CNS)-directed therapy with no evidence of progression."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3715,
+        "end": 3923,
+        "text": "Prior treatment with immune checkpoint blockade therapies, including anti-CTLA-4, anti-PD-1, and anti-PD-L1 therapeutic antibodies; (including atezolizumab) within 28 days prior to study treatment initiation."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3926,
+        "end": 4251,
+        "text": "History or risk of autoimmune disease, including, but not limited to, myasthenia gravis, myositis, autoimmune hepatitis, systemic lupus erythematosus, rheumatoid arthritis, inflammatory bowel disease, antiphospholipid antibody syndrome, Wegener granulomatosis, Sjogren syndrome, Guillain-Barre syndrome, or multiple sclerosis"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5469,
+        "end": 5569,
+        "text": "Participants with prior allogeneic bone marrow transplantation or prior solid organ transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6649,
+        "end": 6783,
+        "text": "Pregnancy (confirmed with Beta-Human chorionic gonadotropin (Beta-HCG) serum or urine pregnancy test in IOCBP performed at screening)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2183,
+        "end": 2335,
+        "text": "Participants with history of human immunodeficiency virus (HIV) infection must be on effective anti-retroviral therapy and have undetectable viral load."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5928,
+        "end": 6186,
+        "text": "History of idiopathic pulmonary fibrosis, pneumonitis (including drug induced), organizing pneumonia (i.e., bronchiolitis obliterans, cryptogenic organizing pneumonia, etc.), or evidence of active pneumonitis on screening chest computed tomography (CT) scan."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3283,
+        "end": 3674,
+        "text": "Participants who have received immunostimulatory agents, including, but not limited to, IFN-alpha, IFN-gamma, or IL-2, immunosuppressive medications, and any herbal medicines within 1 month prior to study treatment initiation. NOTE: Physiologic doses of systemic steroids (\\<= 10 mg prednisone or equivalent) or local (e.g., topical, nasal, intraarticular, inhaled) steroid use is permitted."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with history of chronic hepatitis B virus (HBV) infection must be on suppressive therapy, if indicated, and have undetectable HBV viral load. Participants with history of hepatitis C virus (HCV) infection must have an undetectable HCV viral load.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants with history of chronic hepatitis B virus (HBV) infection must be on suppressive therapy, if indicated, and have undetectable HBV viral load. Participants with history of hepatitis C virus (HCV) infection must have an undetectable HCV viral load.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Participants with significant cardiovascular disease (such as New York Heart Association Class II or greater cardiac disease, myocardial infarction, or cerebrovascular accident, unstable arrhythmia, or unstable angina within 3 months prior to study treatment initiation.",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Participants with significant cardiovascular disease (such as New York Heart Association Class II or greater cardiac disease, myocardial infarction, or cerebrovascular accident, unstable arrhythmia, or unstable angina within 3 months prior to study treatment initiation.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

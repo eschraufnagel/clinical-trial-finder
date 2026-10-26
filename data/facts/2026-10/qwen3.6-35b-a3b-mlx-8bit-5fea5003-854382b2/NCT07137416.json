@@ -1,0 +1,237 @@
+{
+  "nctId": "NCT07137416",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 51,
+        "end": 235,
+        "text": "Patients must have histologically confirmed malignancy that is metastatic or unresectable and for which standard curative or palliative measures do not exist or are no longer effective"
+      },
+      "appliesTo": "DOSE ESCALATION PHASE ONLY"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 265,
+        "end": 404,
+        "text": "Participants must have histologically or cytologically confirmed invasive breast cancer, with either locally advanced or metastatic disease"
+      },
+      "appliesTo": "DOSE EXPANSION PHASE ONLY"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 620,
+        "end": 702,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2 (Karnofsky ≥ 60%)"
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1678,
+        "end": 1751,
+        "text": "Patients must have had at least one prior line of cytotoxic chemotherapy."
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2286,
+        "end": 2323,
+        "text": "HER2-positive (IHC 3+) solid cancers,"
+      },
+      "appliesTo": "DOSE ESCALATION PHASE ONLY"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2328,
+        "end": 2574,
+        "text": "HR+ HER2 positive/low/ultralow breast cancer or triple negative breast cancer (TNBC) HER2-low breast cancer, with HER2 positive defined by the current American Society of Clinical Oncology (ASCO)/College of American Pathologists (CAP) guidelines,"
+      },
+      "appliesTo": "DOSE ESCALATION PHASE ONLY"
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2579,
+        "end": 2686,
+        "text": "HER2-low, with HER2-low defined as IHC 2+/in situ hybridization (ISH)-, IHC 1+/ISH-, or IHC 1+/ISH untested"
+      },
+      "appliesTo": "DOSE ESCALATION PHASE ONLY"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3081,
+        "end": 3208,
+        "text": "Participants must have evaluable or measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) version (v)1.1"
+      },
+      "appliesTo": "DOSE ESCALATION PHASE ONLY"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3243,
+        "end": 3368,
+        "text": "Participants must have at least one lesion that is not within a previously radiated field that is measurable per RECIST v1.1."
+      },
+      "appliesTo": "DOSE EXPANSION PHASE ONLY"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3796,
+        "end": 3958,
+        "text": "Human immunodeficiency virus (HIV)-infected patients on effective anti-retroviral therapy with undetectable viral load within 6 months are eligible for this trial"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4208,
+        "end": 4333,
+        "text": "For patients with HCV infection who are currently on treatment, they are eligible if they have an undetectable HCV viral load"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4502,
+        "end": 4772,
+        "text": "Patients with new or progressive brain metastases (active brain metastases) or leptomeningeal disease are eligible if the treating physician determines that immediate CNS specific treatment is not required and is unlikely to be required during the first cycle of therapy"
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11634,
+        "end": 11788,
+        "text": "Pregnant women are excluded from this study because CX-5461 (pidnarulex) and T-DXd are agents with the potential for teratogenic or abortifacient effects."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7962,
+        "end": 8181,
+        "text": "Patients who have had chest radiation therapy within 4 weeks (2 weeks for palliative stereotactic radiation therapy). These patients will be excluded because T-DXd is known to increase the risk of developing pneumonitis"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8206,
+        "end": 8515,
+        "text": "Patients with a history of (non-infectious) interstitial lung disease (ILD) that required steroids, have current ILD, or where there is suspected ILD that cannot be ruled out by imaging at screening. These patients will be excluded because T-DXd is known to increase the risk of developing ILD and pneumonitis"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_cancer isn't a fact for this trial's cancer type",
+      "quote": "Patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial",
+      "raw": {
+        "factId": "prior_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years",
+          "over_5_years"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Either the primary invasive tumor and/or the metastasis must be: HER2-low, with HER2-low defined as IHC 2+/ISH-, IHC 1+/ISH-, or IHC 1+/ISH untested. Any estrogen receptor (ER) and progesterone receptor (PR) expression is permitted but must be known, or HR+ HER2-ultralow defined as IHC 0 with membrane staining",
+      "raw": {
+        "factId": "her2",
+        "rulesOut": [
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "quote": "Either the primary invasive tumor and/or the metastasis must be: HER2-low, with HER2-low defined as IHC 2+/ISH-, IHC 1+/ISH-, or IHC 1+/ISH untested. Any estrogen receptor (ER) and progesterone receptor (PR) expression is permitted but must be known, or HR+ HER2-ultralow defined as IHC 0 with membrane staining",
+        "appliesTo": "DOSE EXPANSION PHASE ONLY"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

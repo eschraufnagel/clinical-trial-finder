@@ -1,0 +1,245 @@
+{
+  "nctId": "NCT07705334",
+  "set": "dev",
+  "criteriaTextSha": "d6a33b8f70c1a4e9bafa06e8923f329fb544c505a9416b212a1a37f59d81319a",
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "passages": [
+    {
+      "quote": "Male or female \u226518 years of age.",
+      "start": 23,
+      "end": 55,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search"
+    },
+    {
+      "quote": "Life expectancy \\>3 months.",
+      "start": 58,
+      "end": 85,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "life expectancy"
+    },
+    {
+      "quote": "ECOG performance status 0-1.",
+      "start": 88,
+      "end": 116,
+      "mappings": [
+        {
+          "factId": "ecog",
+          "rulesOut": ["ps2", "ps3_4"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Histologically/cytologically confirmed advanced or metastatic solid tumors that have progressed on or are intolerant/unsuitable for standard therapies.",
+      "start": 119,
+      "end": 270,
+      "mappings": [
+        {
+          "factId": "extent",
+          "rulesOut": ["early_resectable"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "progressed on, or unsuitable for, standard therapy not mapped"
+    },
+    {
+      "quote": "Eligible tumor types: TNBC, HR+ breast cancer, colon cancer, gastric cancer, HCC, NSCLC (adeno and squamous), mesothelioma, pancreatic cancer, HRPC, soft tissue sarcoma; other tumor types after Medical Monitor discussion.",
+      "start": 271,
+      "end": 492,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "search; tumor types, others after discussion"
+    },
+    {
+      "quote": "Stable CNS metastases \u22654 weeks post-radiotherapy and off steroids \u226514 days are permitted.",
+      "start": 493,
+      "end": 582,
+      "mappings": [],
+      "unmapped": "not-a-rule",
+      "note": "permits"
+    },
+    {
+      "quote": "\u22651 measurable lesion per RECIST v1.1 (prostate cancer with bone-only disease and elevated PSA assessed by PCWG3).",
+      "start": 585,
+      "end": 698,
+      "mappings": [
+        {
+          "factId": "measurable_disease",
+          "rulesOut": ["no"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Accessible tumor for biopsy",
+      "start": 701,
+      "end": 728,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Adequate organ/bone marrow function.",
+      "start": 731,
+      "end": 767,
+      "mappings": [],
+      "unmapped": "organ-function"
+    },
+    {
+      "quote": "Willingness and ability to provide informed consent.",
+      "start": 770,
+      "end": 822,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Negative serum pregnancy test and use of effective contraception through 90 days after last dose for women of childbearing potential.",
+      "start": 825,
+      "end": 958,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Male participants must use barrier contraception or abstinence and not donate sperm through 90 days after last dose.",
+      "start": 961,
+      "end": 1077,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "High-risk cardiovascular disease.",
+      "start": 1102,
+      "end": 1135,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment: high-risk cardiovascular disease"
+    },
+    {
+      "quote": "Concurrent anti-cancer treatment.",
+      "start": 1138,
+      "end": 1171,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Active infection requiring systemic treatment within 2 weeks pre-dose.",
+      "start": 1174,
+      "end": 1244,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "infection"
+    },
+    {
+      "quote": "History of another malignancy (with standard exceptions for in situ disease, non-melanoma skin cancers, and remission \u22652 years).",
+      "start": 1247,
+      "end": 1375,
+      "mappings": [
+        {
+          "factId": "other_cancer",
+          "rulesOut": ["within_2_years"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "in situ and skin cancer exceptions not mapped"
+    },
+    {
+      "quote": "Active HBV (HBV-DNA \\>ULN), HCV (HCV-RNA \\>ULN), or HIV (well-controlled HIV with CD4 \u2265350 cells/\u00b5L and undetectable viral load permitted); AIDS-defining opportunistic infection within 12 months.",
+      "start": 1378,
+      "end": 1573,
+      "mappings": [
+        {
+          "factId": "hepatitis_active",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        },
+        {
+          "factId": "hiv",
+          "rulesOut": ["uncontrolled"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null,
+      "note": "AIDS-defining infection not mapped"
+    },
+    {
+      "quote": "Compromised pulmonary function within 6 months pre-dose .",
+      "start": 1576,
+      "end": 1633,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "pulmonary function"
+    },
+    {
+      "quote": "Pregnancy or breastfeeding.",
+      "start": 1636,
+      "end": 1663,
+      "mappings": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "rulesOut": ["yes"],
+          "appliesTo": null
+        }
+      ],
+      "unmapped": null
+    },
+    {
+      "quote": "Recent radiotherapy, systemic anti-tumor therapy, other investigational therapy without appropriate washout.",
+      "start": 1666,
+      "end": 1774,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Major surgery \u22644 weeks pre-dose.",
+      "start": 1777,
+      "end": 1809,
+      "mappings": [],
+      "unmapped": "procedure"
+    },
+    {
+      "quote": "Unable to swallow tablets or conditions affecting GI absorption.",
+      "start": 1812,
+      "end": 1876,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "able to take pills"
+    },
+    {
+      "quote": "Any medical or psychiatric disorders affecting compliance and/or interpretation of study results.",
+      "start": 1879,
+      "end": 1976,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "judgment"
+    },
+    {
+      "quote": "Persistent toxicities from prior anti-cancer therapy (exceptions apply)",
+      "start": 1979,
+      "end": 2050,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "recovery from earlier side effects"
+    },
+    {
+      "quote": "Clinically significant corneal disease.",
+      "start": 2053,
+      "end": 2092,
+      "mappings": [],
+      "unmapped": "trial-specific",
+      "note": "corneal disease"
+    },
+    {
+      "quote": "Unable to comply with prohibited concomitant medication restrictions.",
+      "start": 2095,
+      "end": 2164,
+      "mappings": [],
+      "unmapped": "procedure"
+    }
+  ]
+}

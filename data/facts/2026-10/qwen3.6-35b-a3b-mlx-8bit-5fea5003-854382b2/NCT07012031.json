@@ -1,0 +1,155 @@
+{
+  "nctId": "NCT07012031",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 139,
+        "text": "Patients must have histologically or cytologically documented locally advanced or metastatic KRAS\\^G12C-mutant NSCLC"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 139,
+        "text": "Patients must have histologically or cytologically documented locally advanced or metastatic KRAS\\^G12C-mutant NSCLC"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1970,
+        "end": 2102,
+        "text": "Patients must have measurable disease, as defined by RECIST v1.1 using computed tomography (CT) or magnetic resonance imaging (MRI)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2606,
+        "end": 2688,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2 (Karnofsky ≥ 60%)"
+      }
+    },
+    {
+      "factId": "her2",
+      "rulesOut": [
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1646,
+        "end": 1752,
+        "text": "Patients must also have ERBB2 (HER2) mutations status identified by tumor tissue or plasma ctDNA profiling"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8892,
+        "end": 9076,
+        "text": "Patients with a history of (non-infectious) interstitial lung disease (ILD) that required steroids, has current ILD, or where suspected ILD cannot be ruled out by imaging at screening."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10324,
+        "end": 10549,
+        "text": "Patients who have had prior treatment with an antibody drug conjugate with a topoisomerase 1 inhibitor payload (i.e., sacituzumab govitecan, datopotomab deruxtecan, or trastuzumab deruxtecan) or with a topoisomerase inhibitor"
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9951,
+        "end": 10073,
+        "text": "Patients who have had chest radiation therapy within 4 weeks (2 weeks for palliative stereotactic body radiation therapy)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12905,
+        "end": 13127,
+        "text": "Pregnant women are excluded from this study because trastuzumab deruxtecan (DS-8201a) is a HER2-directed antibody conjugated to a topoisomerase 1 inhibitor agent with the potential for teratogenic or abortifacient effects."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13465,
+        "end": 13835,
+        "text": "Patients with uncontrolled or significant cardiovascular disease (i.e., history of myocardial infarction within 6 months from screening, symptomatic congestive heart failure \\[CHF\\] \\[New York Heart Association class II to IV\\], troponin levels consistent with myocardial infarction 28 days prior to enrollment, history of unstable angina, or serious cardiac arrhythmia)"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13908,
+        "end": 14128,
+        "text": "Patients with a prior or concurrent malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment of the investigational regimen are eligible for this trial"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

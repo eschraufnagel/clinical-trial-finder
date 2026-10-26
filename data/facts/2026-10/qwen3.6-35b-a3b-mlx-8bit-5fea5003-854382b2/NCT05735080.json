@@ -1,0 +1,159 @@
+{
+  "nctId": "NCT05735080",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 72,
+        "text": "Advanced unresectable or metastatic HR+/HER2- BC"
+      },
+      "appliesTo": "HR+/HER2- BC"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 188,
+        "end": 294,
+        "text": "Advanced/ metastatic platinum-resistant or platinum-refractory high grade serous epithelial ovarian cancer"
+      },
+      "appliesTo": "Ovarian Cancer"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 435,
+        "end": 469,
+        "text": "Advanced or metastatic solid tumor"
+      },
+      "appliesTo": "Solid Tumor"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 609,
+        "end": 665,
+        "text": "At least one measurable lesion as defined by RECIST v1.1"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 709,
+        "end": 749,
+        "text": "ECOG performance status score of 0 or 1."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1382,
+        "end": 1598,
+        "text": "Have central nervous system (CNS) metastases or spinal cord compression that is associated with progressive neurological symptoms or requires corticosteroids (within 4 weeks of enrollment) to control the CNS disease."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1667,
+        "end": 1743,
+        "text": "Have visceral crisis, lymphangitic spread, or leptomeningeal carcinomatosis."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1747,
+        "end": 1935,
+        "text": "Have clinically active ongoing interstitial lung disease (ILD) of any etiology, including drug-induced ILD, and radiation pneumonitis within 28 days prior to initiation of study treatment."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2504,
+        "end": 2595,
+        "text": "Known HIV infection, including AIDS-related illness, or have active, uncontrolled infection"
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2504,
+        "end": 2710,
+        "text": "Known HIV infection, including AIDS-related illness, or have active, uncontrolled infection (viral, bacterial, or fungal), including tuberculosis, hepatitis B virus, hepatitis C virus, or COVID-19 infection"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "History of other malignancies, except for the following: ... (3) other curatively treated solid tumor with no evidence of disease for ≥ 3 years.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "History of other malignancies, except for the following: ... (3) other curatively treated solid tumor with no evidence of disease for ≥ 3 years.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

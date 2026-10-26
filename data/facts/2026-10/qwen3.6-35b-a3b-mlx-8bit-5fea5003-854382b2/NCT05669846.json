@@ -1,0 +1,191 @@
+{
+  "nctId": "NCT05669846",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6921,
+        "end": 7086,
+        "text": "Diagnosis of NSCLC histologies other than squamous and/or adenocarcinoma histologies including small cell, large cell, neuroendocrine and/or sarcomatoid histologies."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 693,
+        "end": 770,
+        "text": "Histologically or cytologically confirmed diagnosis of stage IV PD-L1+ NSCLC."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10501,
+        "end": 10579,
+        "text": "Active (i.e., symptomatic or growing) central nervous system (CNS) metastases."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3425,
+        "end": 3579,
+        "text": "Patients with leptomeningeal involvement (leptomeningeal enhancement on MRI/CT imaging and/or positive CSF cytology) are excluded regardless of stability."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5040,
+        "end": 5091,
+        "text": "Presence of measurable disease based on RECIST 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5648,
+        "end": 5727,
+        "text": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1208,
+        "end": 1409,
+        "text": "Participants must have progressed on treatment with an anti-PD(L)1 ICI administered either as monotherapy or in combination with other checkpoint inhibitors or other standard/investigational therapies."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13605,
+        "end": 13812,
+        "text": "Is pregnant or breastfeeding or expecting to conceive or father children within the projected duration of the study, starting with the Screening visit through 120 days after the last dose of trial treatment."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11135,
+        "end": 11272,
+        "text": "Has a systemic disease that requires systemic pharmacologic doses of corticosteroids greater than 10 mg daily prednisone (or equivalent)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11827,
+        "end": 11958,
+        "text": "Has a history of interstitial lung disease or active, non-infectious pneumonitis that required steroids or has current pneumonitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12856,
+        "end": 12908,
+        "text": "Active human immunodeficiency virus (HIV) infection."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12973,
+        "end": 13146,
+        "text": "Concurrent active Hepatitis B (defined as HBsAg positive and/or detectable HBV DNA) and Hepatitis C virus (defined as anti-HCV Ab positive and detectable HCV RNA) infection."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 12236,
+        "end": 12389,
+        "text": "Patients with a history of unstable angina, serious uncontrolled cardiac arrhythmia, or myocardial infarction 6 months prior to study entry are excluded."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 13815,
+        "end": 13866,
+        "text": "Has had an allogenic tissue/solid organ transplant."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

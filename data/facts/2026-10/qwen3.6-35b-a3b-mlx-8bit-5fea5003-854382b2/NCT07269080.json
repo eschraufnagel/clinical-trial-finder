@@ -1,0 +1,204 @@
+{
+  "nctId": "NCT07269080",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 70,
+        "end": 125,
+        "text": "ECOG (0, 1, or 2) within 30 days prior to registration."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 128,
+        "end": 257,
+        "text": "Subjects with advanced solid tumors with at least 3 but no more than 10 sites of metastatic disease, excluding the primary tumor."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3235,
+        "end": 3437,
+        "text": "Patients with symptomatic brain metastases, a single metastasis greater than 5 cm in size, or any brain metastasis greater than 3 cm in size. Patients with total brain metastases volume exceeding 30 cc."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2390,
+        "end": 2453,
+        "text": "History of interstitial lung disease or G3 or worse pneumonitis"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2529,
+        "end": 2621,
+        "text": "Active autoimmune disease requiring immunosuppression in the last two years from enrollment."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2725,
+        "end": 3074,
+        "text": "Use of systemic corticosteroids equivalent to prednisone ≥10 mg daily within 14 days prior to registration, or requirement for systemic corticosteroids at screening for disease control, unless used as physiologic replacement (e.g., adrenal insufficiency). Subjects who require systemic steroids ≥10 mg/day for clinical management will be ineligible."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1255,
+        "end": 1514,
+        "text": "Subjects receiving treatment for \\>3 months with an FDA-approved immunotherapy agent such as a PD-1 inhibitor, a PD-L1 inhibitor, a CTLA-4 inhibitor, or an LAG-3 inhibitor; either as monotherapy or in combination with another FDA-approved immunotherapy agent."
+      }
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1515,
+        "end": 1686,
+        "text": "Subjects may have received prior combination cytotoxic chemotherapy and immunotherapy, but must be receiving only immunotherapy for at least 30 days prior to registration."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1255,
+        "end": 1514,
+        "text": "Subjects receiving treatment for \\>3 months with an FDA-approved immunotherapy agent such as a PD-1 inhibitor, a PD-L1 inhibitor, a CTLA-4 inhibitor, or an LAG-3 inhibitor; either as monotherapy or in combination with another FDA-approved immunotherapy agent."
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1255,
+        "end": 1514,
+        "text": "Subjects receiving treatment for \\>3 months with an FDA-approved immunotherapy agent such as a PD-1 inhibitor, a PD-L1 inhibitor, a CTLA-4 inhibitor, or an LAG-3 inhibitor; either as monotherapy or in combination with another FDA-approved immunotherapy agent."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1255,
+        "end": 1514,
+        "text": "Subjects receiving treatment for \\>3 months with an FDA-approved immunotherapy agent such as a PD-1 inhibitor, a PD-L1 inhibitor, a CTLA-4 inhibitor, or an LAG-3 inhibitor; either as monotherapy or in combination with another FDA-approved immunotherapy agent."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3077,
+        "end": 3140,
+        "text": "Substantial overlap with a previously treated radiation volume."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3670,
+        "end": 3892,
+        "text": "Any prior or concurrent malignancy whose natural history or treatment has the potential to interfere with the safety or efficacy assessment of this investigational regimen, as determined by the treating medical oncologist."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 850,
+        "end": 920,
+        "text": "Women of childbearing potential must not be pregnant or breastfeeding."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3648,
+        "end": 3667,
+        "text": "Pregnant or nursing"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

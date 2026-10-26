@@ -1,0 +1,167 @@
+{
+  "nctId": "NCT06088771",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 22,
+        "end": 96,
+        "text": "Histological diagnosis of NSCLC is required before initiation of treatment"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1345,
+        "end": 1422,
+        "text": "Patient is determined to be a surgical candidate for resection of their tumor"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1132,
+        "end": 1141,
+        "text": "ECOG 0-1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4174,
+        "end": 4266,
+        "text": "any patient for whom we already have tissue or ctDNA evidence of an activating EGFR mutation"
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4267,
+        "end": 4299,
+        "text": "or an ALK or ROS1 rearrangement."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4267,
+        "end": 4299,
+        "text": "or an ALK or ROS1 rearrangement."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5811,
+        "end": 5896,
+        "text": "Has active autoimmune disease that has required systemic treatment in the past 1 year"
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6145,
+        "end": 6229,
+        "text": "Has a known additional malignancy that is progressing and requires active treatment."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6894,
+        "end": 6986,
+        "text": "HIV positive with detectable viral load, or anyone not on stable anti-viral (HAART) regimen."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6989,
+        "end": 7125,
+        "text": "Has known active Hepatitis B (e.g., HBV detected by PCR (\\>200 IU/ml) or active Hepatitis C (e.g., HCV RNA \\[qualitative\\] is detected)."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7226,
+        "end": 7314,
+        "text": "History of allogeneic hematopoietic cell transplantation or solid organ transplantation."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7715,
+        "end": 7836,
+        "text": "Any evidence of current ILD or pneumonitis or a prior history of ILD or pneumonitis requiring oral or IV glucocorticoids."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

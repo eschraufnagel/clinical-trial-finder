@@ -1,0 +1,292 @@
+{
+  "nctId": "NCT06090266",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 159,
+        "end": 671,
+        "text": "Histological diagnosis as follows:\n\n   1. Parts A and B (Cohorts A1, A2, and B1): subjects must have a histological diagnosis of any type of carcinoma, sarcoma, or melanoma with progressive metastatic disease, or progressive locally advanced disease not amenable to local therapy with curative intent.\n   2. Part B (Expansion Cohorts B2-B3): subjects must have a histological diagnosis of the relevant tumor type (CSCC or PROC) with advanced/metastatic disease not amenable to local therapy with curative intent."
+      },
+      "loose": true
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 241,
+        "end": 460,
+        "text": "subjects must have a histological diagnosis of any type of carcinoma, sarcoma, or melanoma with progressive metastatic disease, or progressive locally advanced disease not amenable to local therapy with curative intent."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5222,
+        "end": 5844,
+        "text": "Subject has a known active central nervous system (CNS) primary tumor or metastases and/or carcinomatous meningitis. Subjects with previously treated brain metastases may participate provided they are clinically stable for at least 4 weeks prior to study entry, have no radiological evidence of new or enlarging brain metastases, and are off steroids or on a stable dose up to an equivalent of prednisone 10 mg/day for at least 15 days prior to first dose of study medication. Subjects who have symptoms consistent with CNS metastasis must have a negative magnetic resonance imaging (MRI) scan during the screening period."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5222,
+        "end": 5338,
+        "text": "Subject has a known active central nervous system (CNS) primary tumor or metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2135,
+        "end": 2189,
+        "text": "Subjects must have measurable disease per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4874,
+        "end": 4960,
+        "text": "Subject has an Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) \\> 2."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 765,
+        "end": 1150,
+        "text": "Subjects must have experienced progressive disease (PD) on an established standard systemic anti-cancer therapy for a given tumor type or have been intolerant to such therapy, or in the opinion of the Investigator have been considered ineligible for a particular form of standard therapy on medical grounds. Subjects must have no available proven curative or life prolonging therapies."
+      },
+      "appliesTo": "Part A (dose-escalation) and Cohort B1 (monotherapy expansion)"
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2985,
+        "end": 3201,
+        "text": "Minimum of 2 weeks since the last dose of other hormone therapy and 3 weeks since the last dose of other systemic cancer therapy or radiotherapy (\\> 4 weeks in case of nitrosoureas or radio-immuno conjugate therapy)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5848,
+        "end": 6159,
+        "text": "Subject has a known history of a hematologic malignancy, malignant primary brain tumor, or another malignant primary solid tumor (other than that under study), unless the subject has undergone potentially curative therapy with no evidence of recurrent disease for at least 3 years before the start of treatment."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8095,
+        "end": 8236,
+        "text": "Autoimmune disease or inflammatory condition requiring systemic anti-inflammatory therapy with exceptions as noted in Exclusion Criterion 10."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9091,
+        "end": 9117,
+        "text": "Interstitial lung disease."
+      },
+      "appliesTo": "Cohorts A2, B1, B2, and B3"
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7028,
+        "end": 7263,
+        "text": "Uncontrolled infection with human immunodeficiency virus (HIV). Subjects on stable highly active antiretroviral therapy (HAART) with undetectable viral load and normal CD4 counts for at least 6 months prior to study entry are eligible."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7686,
+        "end": 7795,
+        "text": "Known active hepatitis C as determined by positive serology and confirmed by polymerase chain reaction (PCR)."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9699,
+        "end": 10188,
+        "text": "History or clinical evidence of any surgical or medical condition that the Investigator judges as likely to interfere with the results of the study or pose an additional risk in participating, e.g., rapidly progressive or uncontrolled disease involving a major organ system-vascular, cardiac, pulmonary, gastrointestinal, gynecologic, hematologic, neurologic, neoplastic, renal, endocrine, autoimmune or an immunodeficiency, or clinically significant active psychiatric or abuse disorders."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4964,
+        "end": 5000,
+        "text": "Prior organ or stem cell transplant."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10324,
+        "end": 10448,
+        "text": "Subject is pregnant or breastfeeding or expecting to conceive or father children within the projected duration of the study."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8335,
+        "end": 8583,
+        "text": "Use of systemic corticosteroids within 15 days or other immunosuppressive drugs within 30 days prior to start of the study, with the exception of corticosteroids as replacement therapy up to an equivalent of prednisone 10 mg/day, which are allowed."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Subjects must have experienced progressive disease (PD) on an established standard systemic anti-cancer therapy for a given tumor type or have been intolerant to such therapy, or in the opinion of the Investigator have been considered ineligible for a particular form of standard therapy on medical grounds. Subjects must have no available proven curative or life prolonging therapies.",
+      "raw": {
+        "factId": "prior_pd1",
+        "verdicts": {
+          "never": "unclear",
+          "progressed": "allowed",
+          "stopped_other": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Subjects must have experienced progressive disease (PD) on an established standard systemic anti-cancer therapy for a given tumor type or have been intolerant to such therapy, or in the opinion of the Investigator have been considered ineligible for a particular form of standard therapy on medical grounds. Subjects must have no available proven curative or life prolonging therapies.",
+        "appliesTo": "Part A (dose-escalation) and Cohort B1 (monotherapy expansion)",
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Cohort B3 subjects (PROC) must have received platinum-based therapy and experienced disease progression on or within 6 months of completion of such therapy.",
+      "raw": {
+        "factId": "prior_platinum",
+        "verdicts": {
+          "never": "unclear",
+          "received": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Cohort B3 subjects (PROC) must have received platinum-based therapy and experienced disease progression on or within 6 months of completion of such therapy.",
+        "appliesTo": "Cohort B3 (dose-expansion)",
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Subjects must have experienced progressive disease (PD) on an established standard systemic anti-cancer therapy for a given tumor type or have been intolerant to such therapy, or in the opinion of the Investigator have been considered ineligible for a particular form of standard therapy on medical grounds. Subjects must have no available proven curative or life prolonging therapies.",
+      "raw": {
+        "factId": "prior_targeted",
+        "verdicts": {
+          "never": "unclear",
+          "received": "allowed"
+        },
+        "polarity": "inclusion",
+        "quote": "Subjects must have experienced progressive disease (PD) on an established standard systemic anti-cancer therapy for a given tumor type or have been intolerant to such therapy, or in the opinion of the Investigator have been considered ineligible for a particular form of standard therapy on medical grounds. Subjects must have no available proven curative or life prolonging therapies.",
+        "appliesTo": "Part A (dose-escalation) and Cohort B1 (monotherapy expansion)",
+        "rulesOut": []
+      }
+    },
+    {
+      "reason": "rulesOut is empty",
+      "quote": "Subjects must have experienced progressive disease (PD) on an established standard systemic anti-cancer therapy for a given tumor type or have been intolerant to such therapy, or in the opinion of the Investigator have been considered ineligible for a particular form of standard therapy on medical grounds. Subjects must have no available proven curative or life prolonging therapies.",
+      "raw": {
+        "factId": "prior_adc",
+        "verdicts": {
+          "never": "unclear",
+          "topo_payload": "unclear",
+          "other": "unclear"
+        },
+        "polarity": "inclusion",
+        "quote": "Subjects must have experienced progressive disease (PD) on an established standard systemic anti-cancer therapy for a given tumor type or have been intolerant to such therapy, or in the opinion of the Investigator have been considered ineligible for a particular form of standard therapy on medical grounds. Subjects must have no available proven curative or life prolonging therapies.",
+        "appliesTo": "Part A (dose-escalation) and Cohort B1 (monotherapy expansion)",
+        "rulesOut": []
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "9fc7daa0b186",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

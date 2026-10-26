@@ -1,0 +1,155 @@
+{
+  "nctId": "NCT07095868",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 24,
+        "end": 136,
+        "text": "Selected types of solid tumor that are pathologically confirmed unresectable advanced, recurrent, or metastatic."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 140,
+        "end": 293,
+        "text": "Patients with at least 1 evaluable lesion assessed by Investigators within 28 days prior to the first dose of study treatment as defined per RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 297,
+        "end": 381,
+        "text": "Eastern Cooperative Oncology Group performance status (ECOG PS) 0 or 1 at Screening."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1166,
+        "end": 1321,
+        "text": "Histologically/cytologically confirmed nasopharynx cancer. Has non-squamous histology NSCLC. If small cell elements are present, the patient is ineligible."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1325,
+        "end": 1414,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1325,
+        "end": 1414,
+        "text": "Has known active central nervous system (CNS) metastases and/or carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1627,
+        "end": 1813,
+        "text": "Has active autoimmune disease that has required systemic treatment in past 2 years or history of autoimmune disease that has possibility of relapse or at risk of having these conditions."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2566,
+        "end": 2682,
+        "text": "Patients known to be human immunodeficiency virus (HIV)-positive or have acquired immune deficiency syndrome (AIDS)."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 844,
+        "end": 1162,
+        "text": "Has a diagnosed and/or treated additional malignancy within 5 years prior to the first dose of study treatment except for: curatively treated basal cell carcinoma of the skin, squamous cell carcinoma of the skin, superficial bladder cancer, and curatively resected in situ breast, cervical cancer, and prostate cancer."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1458,
+        "end": 1623,
+        "text": "Use of systemic corticosteroid (\\> 10 mg/day prednisone or equivalent) or other immunosuppressive medication within 14 days before the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2123,
+        "end": 2247,
+        "text": "Cerebrovascular events (stroke, transient ischemic attack, etc.) within 6 months prior to the first dose of study treatment."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

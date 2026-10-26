@@ -1,0 +1,93 @@
+{
+  "nctId": "NCT07108114",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 91,
+        "end": 166,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0, 1, or 2."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 274,
+        "end": 364,
+        "text": "Presence of metastatic disease that has progressed during or following previous treatment."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 368,
+        "end": 416,
+        "text": "Presence of radiographically measurable disease."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2981,
+        "end": 3167,
+        "text": "Malignancy involving the central nervous system unless brain metastases have been previously treated with radiotherapy, have been stable for ≥4 weeks, and do not require corticosteroids."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1469,
+        "end": 1604,
+        "text": "Negative viral serology or adequate therapy for human immunodeficiency virus (HIV), hepatitis B (HBV), and hepatitis C (HCV) infection."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3649,
+        "end": 3676,
+        "text": "Pregnancy or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

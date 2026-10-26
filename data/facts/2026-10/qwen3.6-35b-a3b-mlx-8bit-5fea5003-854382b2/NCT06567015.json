@@ -1,0 +1,210 @@
+{
+  "nctId": "NCT06567015",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 401,
+        "end": 537,
+        "text": "Histological confirmation of locally advanced or metastatic, EGFR-mutant (ex19del or L858R mutations) non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 401,
+        "end": 635,
+        "text": "Histological confirmation of locally advanced or metastatic, EGFR-mutant (ex19del or L858R mutations) non-small cell lung cancer (NSCLC) Stage IIIB/C or IV (AJCC 8th edition) not eligible for curative intent surgery or chemoradiation."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1549,
+        "end": 1612,
+        "text": "At least one measurable target lesion according to RECIST v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1616,
+        "end": 1681,
+        "text": "Eastern cooperative oncology group (ECOG) performance status 0-1."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "exon20_insertion",
+        "other_mutation",
+        "none_found"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 401,
+        "end": 537,
+        "text": "Histological confirmation of locally advanced or metastatic, EGFR-mutant (ex19del or L858R mutations) non-small cell lung cancer (NSCLC)"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 639,
+        "end": 985,
+        "text": "Part 1 Disease progression on a 3rd generation EGFR TKI-based therapy (administered as monotherapy or in combination) received at any prior line of treatment.\n\n   Part 2: Disease progression after a 3rd generation EGFR TKI-based therapy (administered as monotherapy or in combination) given as first or second line of systemic anti-cancer therapy"
+      },
+      "loose": true
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "zero"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 639,
+        "end": 1049,
+        "text": "Part 1 Disease progression on a 3rd generation EGFR TKI-based therapy (administered as monotherapy or in combination) received at any prior line of treatment.\n\n   Part 2: Disease progression after a 3rd generation EGFR TKI-based therapy (administered as monotherapy or in combination) given as first or second line of systemic anti-cancer therapy and no more than 2 prior lines of systemic anti-cancer therapy."
+      },
+      "loose": true
+    },
+    {
+      "factId": "prior_platinum",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5100,
+        "end": 5193,
+        "text": "Participant with rapid progressive disease eligible to receive a platinum-based chemotherapy."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5565,
+        "end": 5783,
+        "text": "Participants with a previous malignancy that completed all curative anticancer treatment at least 2 years before signing informed consent and with no evidence of residual disease from the prior malignancy at screening."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6212,
+        "end": 6537,
+        "text": "Spinal cord compression or CNS metastases that are associated with progressive neurological symptoms or require increasing doses of corticosteroids to control the CNS disease. If a participant requires corticosteroids for management of CNS disease, the dose must have been stable for 2 weeks prior to enrollment in the trial."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6685,
+        "end": 6918,
+        "text": "Active, bacterial, fungal, or viral infection, including, but not limited to: Hepatitis B Virus (HBV), Hepatitis C Virus (HCV), and known Human Immunodeficiency Virus (HIV) or Acquired Immunodeficiency Syndrome (AIDS)-related illness"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8431,
+        "end": 8602,
+        "text": "Past medical history of Interstitial Lung Disease (ILD), drug-induced ILD, radiation pneumonitis that required steroid treatment, or any evidence of clinically active ILD."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8748,
+        "end": 8777,
+        "text": "Women who are breast feeding."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of pdl1",
+      "quote": "Part 1: Participants candidate for targeted therapies available to them (such as but not limited to therapies targeting ALK, BRAF, MET, NTRK, ROS1) as identified by local testing performed after progression to the last line of systemic therapy. Part 2: Participants candidate for targeted therapies available to them such as, but not limited to: ALK, BRAF, MET (ex14 mutation and amplification), NTRK, ROSI, HER2 (mutations and amplification) as identified by local testing performed after progression to 3rd generation EGFR TKI-based therapy.",
+      "raw": {
+        "factId": "pdl1",
+        "rulesOut": [
+          "high",
+          "low",
+          "negative"
+        ],
+        "polarity": "exclusion",
+        "quote": "Part 1: Participants candidate for targeted therapies available to them (such as but not limited to therapies targeting ALK, BRAF, MET, NTRK, ROS1) as identified by local testing performed after progression to the last line of systemic therapy. Part 2: Participants candidate for targeted therapies available to them such as, but not limited to: ALK, BRAF, MET (ex14 mutation and amplification), NTRK, ROSI, HER2 (mutations and amplification) as identified by local testing performed after progression to 3rd generation EGFR TKI-based therapy.",
+        "appliesTo": null
+      }
+    },
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Impaired cardiovascular function or clinically significant cardiovascular disease (either active or within 6 months prior to signing informed consent), including any of the following: Myocardial infarction, acute coronary syndromes including unstable angina, coronary/peripheral artery bypass graft, coronary angioplasty or stenting. Symptomatic congestive heart failure (New York Heart Association Classification Class ≥ II). Cerebrovascular accident or transient ischemic attack.",
+      "raw": {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Impaired cardiovascular function or clinically significant cardiovascular disease (either active or within 6 months prior to signing informed consent), including any of the following: Myocardial infarction, acute coronary syndromes including unstable angina, coronary/peripheral artery bypass graft, coronary angioplasty or stenting. Symptomatic congestive heart failure (New York Heart Association Classification Class ≥ II). Cerebrovascular accident or transient ischemic attack.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "nctId": "NCT06312137",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2374,
+        "end": 2445,
+        "text": "Diagnosis of SCLC or, for mixed tumors, presence of small cell elements"
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 219,
+        "end": 328,
+        "text": "resectable clinical Stage II, IIIA or IIIB (with nodal involvement \\[N2\\]) per AJCC eighth edition guidelines"
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 331,
+        "end": 497,
+        "text": "Has confirmation that either epidermal growth factor receptor (EGFR)-directed or anaplastic lymphoma kinase (ALK)-directed therapy is not indicated as primary therapy"
+      }
+    },
+    {
+      "factId": "prior_adc",
+      "rulesOut": [
+        "topo_payload",
+        "other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3316,
+        "end": 3454,
+        "text": "Has received prior systemic anticancer therapy including investigational agents within 4 weeks before the first dose of study intervention"
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4248,
+        "end": 4337,
+        "text": "Has an active autoimmune disease that has required systemic treatment in the past 2 years"
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4340,
+        "end": 4555,
+        "text": "Has a history of (noninfectious) interstitial lung disease (ILD)/pneumonitis, has current ILD/pneumonitis, or has suspected ILD or pneumonitis that cannot be ruled out by standard diagnostic assessments at screening"
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4954,
+        "end": 5011,
+        "text": "Has a history of allogeneic tissue/solid organ transplant"
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3929,
+        "end": 4030,
+        "text": "receiving chronic systemic steroid therapy (in dosing exceeding 10 mg daily of prednisone equivalent)"
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

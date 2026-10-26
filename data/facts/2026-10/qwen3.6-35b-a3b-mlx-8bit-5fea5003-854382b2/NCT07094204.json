@@ -1,0 +1,181 @@
+{
+  "nctId": "NCT07094204",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 132,
+        "text": "Participant has histologically confirmed locally advanced (unresectable) or metastatic solid tumor malignancy"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9103,
+        "end": 9264,
+        "text": "Participant has symptomatic or untreated central nervous system (CNS) metastases. Participants with stable, asymptomatic and treated CNS metastases are eligible."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9267,
+        "end": 9351,
+        "text": "Participant has leptomeningeal disease as a manifestation of the current malignancy."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6399,
+        "end": 6507,
+        "text": "Participant has at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 6639,
+        "end": 6729,
+        "text": "Participant has an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9729,
+        "end": 9904,
+        "text": "Participant with active hepatitis B (including acute hepatitis B virus (HBV) or chronic HBV) or hepatitis C virus (HCV) (Ribonucleic acid (RNA) detected by qualitative assay)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9991,
+        "end": 10141,
+        "text": "Participant has a known history of human immunodeficiency virus (HIV) infection with Acquired Immune Deficiency Syndrome (AIDS) related complications."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 10216,
+        "end": 10837,
+        "text": "Participant has had a myocardial infarction or unstable angina within 6 months prior to the start of study intervention or currently has an uncontrolled illness including, but not limited to symptomatic congestive heart failure, clinically significant cardiac disease, unstable angina pectoris, cardiac arrhythmia (including but not limited to uncontrolled atrial fibrillation, recent restoration of rhythm after atrial fibrillation, clinically significant conduction disorder within 6 months prior to the start of study intervention, or ventricular arrhythmias), obligate use of a cardiac pacemaker, or long QT syndrome."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9354,
+        "end": 9726,
+        "text": "Participant has another prior malignancy active (i.e., requiring treatment or intervention) within the previous 2 years different from the primary malignancy for this study, except for local malignancies that have been apparently cured, such as basal or squamous cell skin cancer, superficial bladder cancer or carcinoma in situ of the cervix or breast, which are allowed."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 14074,
+        "end": 14178,
+        "text": "Participant has a history of pneumonitis/interstitial lung disease (ILD) or has current pneumonitis/ILD."
+      }
+    },
+    {
+      "factId": "chest_radiation_6m",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 11675,
+        "end": 11816,
+        "text": "Participant has received any radiotherapy (including stereotactic radiosurgery) within 14 days prior to the first dose of study intervention."
+      }
+    },
+    {
+      "factId": "lines_advanced",
+      "rulesOut": [
+        "three_plus"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1693,
+        "end": 1775,
+        "text": "No more than 2 prior lines of systemic therapy are allowed in the advanced setting"
+      },
+      "appliesTo": "[pancreatic ductal adenocarcinoma (PDAC) Expansion Cohort(s)]"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "No more than 2 prior lines of systemic therapy are allowed in the advanced setting",
+      "raw": {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "quote": "No more than 2 prior lines of systemic therapy are allowed in the advanced setting",
+        "appliesTo": "[PDAC Expansion Cohort(s)]"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

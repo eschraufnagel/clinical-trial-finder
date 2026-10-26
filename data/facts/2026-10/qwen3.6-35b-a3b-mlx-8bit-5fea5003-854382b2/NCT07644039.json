@@ -1,0 +1,194 @@
+{
+  "nctId": "NCT07644039",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 383,
+        "end": 594,
+        "text": "Have advanced disease, as defined by progressive, relapsed, or metastatic disease that is not amenable to multimodal ablative or excisional treatments with curative intent, according to international guidelines."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 598,
+        "end": 680,
+        "text": "Have measurable disease according to RECIST1.1 (or mRECIST v1.1 where applicable)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1058,
+        "end": 1147,
+        "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status (PS) of 0 or 1 at screening."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1151,
+        "end": 1399,
+        "text": "Individuals with central nervous system (CNS) metastases are eligible, as long as all of the following are met:\n\n   1. Asymptomatic or minimally symptomatic and stable, with no worsening symptoms in the 4 weeks prior to start of study intervention."
+      },
+      "loose": true
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4434,
+        "end": 4471,
+        "text": "Presence of carcinomatous meningitis."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4239,
+        "end": 4430,
+        "text": "History of other malignancies within 3 years prior to start of study intervention, except adequately resected non-melanoma skin cancer or other in-situ disease at neglectable risk of relapse."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5775,
+        "end": 6098,
+        "text": "History of autoimmune or connective tissue disease that (a) in the opinion of the investigator may have a significant risk of worsening with study intervention or (b) has a history or risk of significant mg/day of prednisone equivalent or other systemic immunosuppressants in the previous 1 year to control a disease flare."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5154,
+        "end": 5312,
+        "text": "History of interstitial lung disease (ILD) or pneumonitis that have required steroids or other forms of immunosuppression, or any ongoing or suspicion of ILD."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8248,
+        "end": 8578,
+        "text": "Active HIV infection. Inclusion is allowed if:\n\n   1. Undergoing adequate anti-viral treatment and regular clinical oversight with good compliance.\n   2. Undetectable human immunodeficiency virus (HIV) viral load.\n   3. CD4+ lymphocyte count over 350 per millimeter cube.\n   4. No evidence or suspicion of opportunistic infection."
+      },
+      "loose": true
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4545,
+        "end": 4657,
+        "text": "History of myocardial, CNS, or other arterial infarction within 6 months before the start of study intervention."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6335,
+        "end": 6382,
+        "text": "Prior bone marrow or stem cell transplantation."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9449,
+        "end": 9624,
+        "text": "Women who are pregnant or breastfeeding and fertile participants (men and women) who are not using a highly effective method of contraception (see inclusion criterion No. 13)."
+      }
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7989,
+        "end": 8098,
+        "text": "Corticosteroids: must be \\<= 10 mg/day of prednisone equivalent within 3 days of start of study intervention."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "quote does not appear in the criteria text",
+      "quote": "Active hepatitis B or C? No. Yes. Active hepatitis B or C? No. Yes.",
+      "raw": {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Active hepatitis B or C? No. Yes. Active hepatitis B or C? No. Yes.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

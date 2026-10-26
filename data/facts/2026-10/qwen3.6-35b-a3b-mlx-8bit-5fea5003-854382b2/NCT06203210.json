@@ -1,0 +1,112 @@
+{
+  "nctId": "NCT06203210",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 371,
+        "end": 467,
+        "text": "Has histologically or cytologically documented extensive-stage small cell lung cancer (ES-SCLC)."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 866,
+        "end": 956,
+        "text": "Has at least 1 measurable lesion according to RECIST v1.1 as assessed by the investigator."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1063,
+        "end": 1149,
+        "text": "Has ECOG PS of less than or equal to (≤)1 within 7 days prior to Cycle 1 Day 1 (C1D1)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1153,
+        "end": 1263,
+        "text": "Participants with brain metastasis/leptomeningeal disease are eligible if protocol specified criteria are met."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1153,
+        "end": 1263,
+        "text": "Participants with brain metastasis/leptomeningeal disease are eligible if protocol specified criteria are met."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2130,
+        "end": 2498,
+        "text": "All of the following indicators of interstitial lung disease (ILD)/pneumonitis are excluded:\n\n   1. Any history of ILD/pneumonitis irrespective of steroid use, except for a history of radiation pneumonitis that did not require steroids.\n   2. Current diagnosis of ILD.\n   3. Clinical or radiographic suspicion of ILD for which the diagnosis of ILD cannot be ruled out."
+      },
+      "loose": true
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Has histologically or cytologically documented extensive-stage small cell lung cancer (ES-SCLC).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Has histologically or cytologically documented extensive-stage small cell lung cancer (ES-SCLC).",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "nctId": "NCT06532565",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 118,
+        "text": "Participants diagnosed with histologically or cytologically confirmed advanced solid tumors"
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 243,
+        "end": 334,
+        "text": "Measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 criteria."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 337,
+        "end": 405,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 to 1."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 643,
+        "end": 709,
+        "text": "Positive serum pregnancy test or participant who is breastfeeding."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1391,
+        "end": 1495,
+        "text": "Any prior allogeneic tissue/solid organ transplantation, including allogeneic stem cell transplantation."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1606,
+        "end": 1700,
+        "text": "Have known active central nervous system (CNS) metastases and/or leptomeningeal disease (LMD)."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1606,
+        "end": 1700,
+        "text": "Have known active central nervous system (CNS) metastases and/or leptomeningeal disease (LMD)."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1764,
+        "end": 1913,
+        "text": "History of autoimmune disease or active autoimmune disease that has required systemic treatment within 2 years prior to the start of study treatment."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1916,
+        "end": 1949,
+        "text": "Have an active second malignancy."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2382,
+        "end": 2453,
+        "text": "Have active hepatitis B virus (HBV) or hepatitis C virus (HCV), or HIV."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2382,
+        "end": 2453,
+        "text": "Have active hepatitis B virus (HBV) or hepatitis C virus (HCV), or HIV."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2512,
+        "end": 2592,
+        "text": "Myocardial infarction or unstable angina pectoris within 6 months of enrollment."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2122,
+        "end": 2290,
+        "text": "History of pneumonitis requiring treatment with corticosteroids, interstitial lung disease, or severe radiation pneumonitis (excluding localized radiation pneumonitis)."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

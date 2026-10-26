@@ -1,0 +1,99 @@
+{
+  "nctId": "NCT07155174",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 23,
+        "end": 126,
+        "text": "Diagnosis of histologically or cytologically confirmed extensive stage small cell lung cancer (ES-SCLC)"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 174,
+        "end": 324,
+        "text": "Have an Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 to 1 during the screening period prior to the first dose of study treatment."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 327,
+        "end": 414,
+        "text": "Have measurable disease per Response Evaluation Criteria in Solid Tumors (RECIST v1.1)."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 679,
+        "end": 763,
+        "text": "Known active/symptomatic central nervous system (CNS) metastases should be excluded."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 766,
+        "end": 982,
+        "text": "History of interstitial lung disease (ILD) or pneumonitis that required treatment with systemic steroids, or any evidence of active ILD/pneumonitis on screening chest computed tomography (CT) scan should be excluded."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Diagnosis of histologically or cytologically confirmed extensive stage small cell lung cancer (ES-SCLC)",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Diagnosis of histologically or cytologically confirmed extensive stage small cell lung cancer (ES-SCLC)",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "nctId": "NCT05232409",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 66,
+        "end": 146,
+        "text": "Stage IV or unresectable stage 3 histologically confirmed solid tumor malignancy"
+      },
+      "appliesTo": "Dose escalation zeaxanthin monotherapy"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 578,
+        "end": 611,
+        "text": "Performance status ECOG 0, 1 or 2"
+      },
+      "appliesTo": "Dose escalation zeaxanthin monotherapy"
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 5732,
+        "end": 5765,
+        "text": "Performance status ECOG 0, 1or 2."
+      },
+      "appliesTo": "dose escalation zeoxanthin plus pembrolizumab"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3059,
+        "end": 3202,
+        "text": "Patients with active brain metastases requiring palliation with steroids and not stable for at least 4 weeks post radiation therapy or surgery."
+      },
+      "appliesTo": "Dose escalation zeaxanthin monotherapy"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 9266,
+        "end": 9404,
+        "text": "Patients with active brain metastases requiring palliation with steroids not stable for at least 4 weeks post radiation therapy or surgery"
+      },
+      "appliesTo": "zeoxanthin plus pembrolizumab"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3206,
+        "end": 3235,
+        "text": "Leptomeningeal carcinomatosis"
+      },
+      "appliesTo": "Dose escalation zeaxanthin monotherapy"
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3639,
+        "end": 3718,
+        "text": "Patients with another primary malignancy not in remission for at least 3 years."
+      },
+      "appliesTo": "Dose escalation zeaxanthin monotherapy"
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4078,
+        "end": 4227,
+        "text": "Patients must not be pregnant or nursing due to the potential for congenital abnormalities and the potential of this regimen to harm nursing infants."
+      },
+      "appliesTo": "Dose escalation zeaxanthin monotherapy"
+    },
+    {
+      "factId": "steroids",
+      "rulesOut": [
+        "high_dose"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 8441,
+        "end": 8547,
+        "text": "Patients taking oral steroids at or greater than the equivalent of 10 milligrams of oral prednisone daily."
+      },
+      "appliesTo": "zeoxanthin plus pembrolizumab"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Stage IV or unresectable stage 3 histologically confirmed solid tumor malignancy",
+      "raw": {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "quote": "Stage IV or unresectable stage 3 histologically confirmed solid tumor malignancy",
+        "appliesTo": "dose escalation zeoxanthin plus pembrolizumab"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Leptomeningeal carcinomatosis",
+      "raw": {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Leptomeningeal carcinomatosis",
+        "appliesTo": "zeoxanthin plus pembrolizumab"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients with another primary malignancy not in remission for at least 3 years.",
+      "raw": {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients with another primary malignancy not in remission for at least 3 years.",
+        "appliesTo": "zeoxanthin plus pembrolizumab"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients must not be pregnant or nursing due to the potential for congenital abnormalities and the potential of this regimen to harm nursing infants.",
+      "raw": {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "quote": "Patients must not be pregnant or nursing due to the potential for congenital abnormalities and the potential of this regimen to harm nursing infants.",
+        "appliesTo": "zeoxanthin plus pembrolizumab"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

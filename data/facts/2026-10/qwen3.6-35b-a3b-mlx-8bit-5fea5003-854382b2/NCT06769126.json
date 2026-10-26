@@ -1,0 +1,216 @@
+{
+  "nctId": "NCT06769126",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 376,
+        "end": 452,
+        "text": "Participants must not have a history of limited stage small cell lung cancer"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1114,
+        "end": 1292,
+        "text": "Participants must not have received any anti PD-1 or anti PD-L1 (including durvalumab \\[MEDI4736\\]) treatment for SCLC prior to starting frontline induction treatment for ES-SCLC"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1351,
+        "end": 1616,
+        "text": "Participants must not have received anti PD-1 or anti PD-L1 other than durvalumab (MEDI4736) as part of frontline induction treatment for ES-SCLC. Participants must have not received atezolizumab, pembrolizumab, or nivolumab as part of frontline induction treatment"
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 10668,
+        "end": 10793,
+        "text": "Participants must not have received atezolizumab, pembrolizumab, or nivolumab as part of their frontline induction treatment."
+      },
+      "appliesTo": "STEP 2: COHORT REGISTRATION AND MAINTENANCE RANDOMIZATION"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8071,
+        "end": 8506,
+        "text": "Participant must not have leptomeningeal disease, spinal cord compression, or symptomatic brain metastases unless: (1) metastases have been locally treated and have remained clinically controlled and asymptomatic for at least 14 days following treatment, and prior to step 2 randomization, AND (2) participant has no residual neurological dysfunction and has been off corticosteroids for at least 24 hours prior to step 2 randomization"
+      },
+      "appliesTo": "STEP 2: COHORT REGISTRATION AND MAINTENANCE RANDOMIZATION"
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 8071,
+        "end": 8506,
+        "text": "Participant must not have leptomeningeal disease, spinal cord compression, or symptomatic brain metastases unless: (1) metastases have been locally treated and have remained clinically controlled and asymptomatic for at least 14 days following treatment, and prior to step 2 randomization, AND (2) participant has no residual neurological dysfunction and has been off corticosteroids for at least 24 hours prior to step 2 randomization"
+      },
+      "appliesTo": "STEP 2: COHORT REGISTRATION AND MAINTENANCE RANDOMIZATION"
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3413,
+        "end": 3727,
+        "text": "Participants must not have medical contraindications to receiving immunotherapy, including history of non-infectious pneumonitis that required steroids or active autoimmune disease that has required systemic treatment with disease modifying agents, corticosteroids or immunosuppressive drugs in the past two years."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 4084,
+        "end": 4252,
+        "text": "Participants must not be pregnant or nursing (nursing includes breast milk fed to an infant by any means, including from the breast, milk expressed by hand, or pumped)."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2912,
+        "end": 3011,
+        "text": "Participants must have Zubrod performance status of 0-2 within 28 days prior to step 1 registration"
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 11190,
+        "end": 11276,
+        "text": "Participants must have Zubrod performance status of 0-2 within 28 days prior to step 2"
+      },
+      "appliesTo": "STEP 2: COHORT REGISTRATION AND MAINTENANCE RANDOMIZATION"
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 3289,
+        "end": 3354,
+        "text": "Participants must not have had an allogenic organ transplantation"
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 12573,
+        "end": 12839,
+        "text": "Participants with a known history of human immunodeficiency virus (HIV)-infection must be on effective anti-retroviral therapy at registration and have undetectable viral load test on the most recent test results obtained within 6 months prior to step 2 registration"
+      },
+      "appliesTo": "STEP 2: COHORT REGISTRATION AND MAINTENANCE RANDOMIZATION"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 12901,
+        "end": 13140,
+        "text": "Participants with a known history of chronic hepatitis B virus (HBV) infection must have undetectable HBV viral load while on suppressive therapy on the most recent test results obtained within 6 months prior to randomization, if indicated"
+      },
+      "appliesTo": "STEP 2: COHORT REGISTRATION AND MAINTENANCE RANDOMIZATION"
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 13202,
+        "end": 13542,
+        "text": "Participants with a known history of hepatitis C virus (HCV) infection must have been treated and cured or currently be receiving treatment for HVC. Participants currently being treated for HCV infection must have undetectable HCV viral load test on the most recent test results obtained within 6 months prior to randomization, if indicated"
+      },
+      "appliesTo": "STEP 2: COHORT REGISTRATION AND MAINTENANCE RANDOMIZATION"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants must not have a history of limited stage small cell lung cancer",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must not have a history of limited stage small cell lung cancer",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

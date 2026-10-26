@@ -1,0 +1,203 @@
+{
+  "nctId": "NCT06385262",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 43,
+        "end": 116,
+        "text": "Histological/cytological diagnosis of non-small cell lung cancer (NSCLC)."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "locally_advanced",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 314,
+        "end": 387,
+        "text": "Clinical stage IB, IIA/IIB, or III (N0-2) amenable to surgical resection."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 474,
+        "end": 545,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 660,
+        "end": 742,
+        "text": "Measurable disease per Response Evaluation Criteria in Solid Tumours (RECIST) 1.1."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 746,
+        "end": 832,
+        "text": "No active invasive malignancy in the past 2 years other than non-melanoma skin cancer."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing",
+        "exon20_insertion",
+        "other_mutation"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3165,
+        "end": 3246,
+        "text": "Participants with known EGFR mutations, ALK translocation, or ROS1 translocation."
+      }
+    },
+    {
+      "factId": "alk",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3165,
+        "end": 3246,
+        "text": "Participants with known EGFR mutations, ALK translocation, or ROS1 translocation."
+      }
+    },
+    {
+      "factId": "ros1",
+      "rulesOut": [
+        "found"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3165,
+        "end": 3246,
+        "text": "Participants with known EGFR mutations, ALK translocation, or ROS1 translocation."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3485,
+        "end": 3551,
+        "text": "Prior therapy with an anti-PD-1, anti-PD-L-1, or anti-PD-L2 agent."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3622,
+        "end": 3729,
+        "text": "Known active Hepatitis B (e.g., HBsAg reactive) or Hepatitis C (e.g., HCV RNA \\[qualitative\\] is detected)."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3968,
+        "end": 4040,
+        "text": "Known history of, or any evidence of active, non-infectious pneumonitis."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4045,
+        "end": 4184,
+        "text": "Uncontrolled infection with human immunodeficiency virus (HIV), hepatitis B virus (HBV) or HCV infection; or diagnosis of immunodeficiency."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 4850,
+        "end": 5021,
+        "text": "Active autoimmune disease that has required systemic treatment in the past 2 years (i.e. with use of disease modifying agents, corticosteroids or immunosuppressive drugs)."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6106,
+        "end": 6328,
+        "text": "Pregnant or breastfeeding, or expecting to conceive or father children within the projected duration of the trial, starting with the pre-screening or screening visit through 120 days after the last dose of study treatment."
+      }
+    },
+    {
+      "factId": "cardiac_recent",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 7017,
+        "end": 7231,
+        "text": "Myocardial infarction having occurred less than 6 months prior to study enrollment, any known uncontrolled arrhythmia, symptomatic angina pectoris, active ischemia, or cardiac failure not controlled by medications."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

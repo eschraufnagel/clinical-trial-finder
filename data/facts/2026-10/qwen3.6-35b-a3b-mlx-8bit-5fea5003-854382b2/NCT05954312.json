@@ -1,0 +1,159 @@
+{
+  "nctId": "NCT05954312",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 45,
+        "end": 126,
+        "text": "Histologically or cytologically confirmed metastatic or unresectable solid tumor."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 45,
+        "end": 126,
+        "text": "Histologically or cytologically confirmed metastatic or unresectable solid tumor."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 129,
+        "end": 254,
+        "text": "Measurable disease by Response Evaluation Criteria in Solid Tumors Version 1.1 (RECIST v1.1) as assessed by the Investigator."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 348,
+        "end": 412,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status ≤1."
+      }
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 528,
+        "end": 703,
+        "text": "Participants with squamous non-small cell lung cancer (sqNSCLC) with or without nuclear factor erythroid 2-related factor 2 (NRF2 \\[NFE2L2\\]) and/or cullin 3 (CUL3) mutations."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 706,
+        "end": 862,
+        "text": "Participants with advanced sqNSCLC must be refractory to or have progressed on or after a platinum-based doublet regimen and an immune checkpoint inhibitor."
+      },
+      "appliesTo": "Part 2"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 865,
+        "end": 1256,
+        "text": "Participants with advanced head and neck squamous cell carcinoma (HNSCC) must have received prior treatment with platinum-based chemotherapy, an immune checkpoint inhibitor (for tumors with known programmed death-ligand 1 \\[PD-L1\\] expression, microsatellite instability-high, or mismatch repair deficiency, and an anti-epidermal growth factor receptor agent) (Combination Expansion Cohort)."
+      },
+      "appliesTo": "Combination Expansion Cohort"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "adenocarcinoma",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1259,
+        "end": 1500,
+        "text": "Participants with advanced esophageal squamous cell carcinoma (ESCC) must have received prior treatment with platinum-based chemotherapy, an immune checkpoint inhibitor (for tumors with known PD-L1 expression) (Combination Expansion Cohort)."
+      },
+      "appliesTo": "Combination Expansion Cohort"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "treated_stable",
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2403,
+        "end": 2493,
+        "text": "History or presence of central nervous system (CNS) metastases or spinal cord compression."
+      }
+    },
+    {
+      "factId": "ild",
+      "rulesOut": [
+        "past",
+        "current"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 3086,
+        "end": 3322,
+        "text": "Medical history of (noninfectious) pneumonitis/interstitial lung disease (ILD), drug induced ILD, radiation pneumonitis that required steroid treatment, or any evidence of clinically active pneumonitis/ILD (Combination Expansion Cohort)"
+      },
+      "appliesTo": "Combination Expansion Cohort"
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

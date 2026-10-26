@@ -1,0 +1,97 @@
+{
+  "nctId": "NCT05696782",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "metastatic_or_recurrent"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 235,
+        "end": 306,
+        "text": "Unresectable or medically inoperable as determined by the investigator."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1044,
+        "end": 1075,
+        "text": "ECOG performance status of 0-2."
+      }
+    },
+    {
+      "factId": "egfr",
+      "rulesOut": [
+        "common_sensitizing"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1625,
+        "end": 1808,
+        "text": "Nonsmall cell lung cancer is known to have a tumor with a mutation in EGFR associated with sensitivity to first-line therapy with a tyrosine kinase inhibitor (i.e., Ex19del or L858R)."
+      }
+    },
+    {
+      "factId": "prior_pd1",
+      "rulesOut": [
+        "progressed",
+        "stopped_other"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2141,
+        "end": 2223,
+        "text": "Prior exposure to an immune checkpoint inhibitor targeting CTLA-4, PD-1, or PD-L1."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2226,
+        "end": 2315,
+        "text": "Active autoimmune disease requiring systemic immunosuppression at the time of enrollment."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2704,
+        "end": 2747,
+        "text": "Patients who are pregnant or breastfeeding."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

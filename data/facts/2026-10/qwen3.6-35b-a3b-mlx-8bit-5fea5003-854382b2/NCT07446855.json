@@ -1,0 +1,213 @@
+{
+  "nctId": "NCT07446855",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 28,
+        "end": 94,
+        "text": "Documented locally advanced or metastatic solid tumour malignancy."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 97,
+        "end": 259,
+        "text": "Eastern cooperative oncology group (ECOG) performance status of 0 or 1 with no deterioration over the previous 2 weeks prior to screening and first day of dosing."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1587,
+        "end": 1628,
+        "text": "Participants must have evaluable disease."
+      },
+      "appliesTo": "Part A (AZD4956 in Combination with Saruparib Dose Escalation) and Part A-PD (PD Backfill Cohorts)"
+    },
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "squamous",
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1048,
+        "end": 1242,
+        "text": "Histologically or cytologically confirmed carcinoma of the breast with recurrent locally advanced or metastatic disease and evidence of a predicted loss of function germline or somatic mutation."
+      },
+      "appliesTo": "Part A (AZD4956 in Combination with Saruparib Dose Escalation) and Part A-PD (PD Backfill Cohorts)"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 2113,
+        "end": 2322,
+        "text": "Participants must have documented metastatic disease by clear evidence of ≥ 1 bone lesion (defined as one lesion with positive uptake on bone scan) and/or ≥ 1 soft tissue lesion (measurable or non-measurable)."
+      },
+      "appliesTo": "Part A-Non-PD (Non-PD Backfill Cohorts) and Part B (Dose Expansion Cohorts)"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2723,
+        "end": 2818,
+        "text": "Spinal cord compression or symptomatic and unstable brain metastases or leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "leptomeningeal",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2723,
+        "end": 2818,
+        "text": "Spinal cord compression or symptomatic and unstable brain metastases or leptomeningeal disease."
+      }
+    },
+    {
+      "factId": "transplant",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2821,
+        "end": 2853,
+        "text": "Allogenic organ transplantation."
+      }
+    },
+    {
+      "factId": "hepatitis_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2856,
+        "end": 2949,
+        "text": "Known to have active infection, including hepatitis B virus (HBV) or hepatitis C virus (HCV)."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "controlled",
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 2952,
+        "end": 3019,
+        "text": "Known history of infection with human immunodeficiency virus (HIV)."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed advanced ovarian, fallopian tube, or primary peritoneal cancer.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed advanced ovarian, fallopian tube, or primary peritoneal cancer.",
+        "appliesTo": "Part A (AZD4956 in Combination with Saruparib Dose Escalation) and Part A-PD (PD Backfill Cohorts)"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed adenocarcinoma of the prostate and advanced/metastatic castrate resistant prostate cancer (CRPC).",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed adenocarcinoma of the prostate and advanced/metastatic castrate resistant prostate cancer (CRPC).",
+        "appliesTo": "Part A (AZD4956 in Combination with Saruparib Dose Escalation) and Part A-PD (PD Backfill Cohorts)"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Histologically or cytologically confirmed advanced/metastatic pancreatic cancer.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Histologically or cytologically confirmed advanced/metastatic pancreatic cancer.",
+        "appliesTo": "Part A (AZD4956 in Combination with Saruparib Dose Escalation) and Part A-PD (PD Backfill Cohorts)"
+      }
+    },
+    {
+      "reason": "rules out every answer of histology",
+      "quote": "Participants must have histologically or cytologically confirmed adenocarcinoma of the prostate and advanced/metastatic CRPC.",
+      "raw": {
+        "factId": "histology",
+        "rulesOut": [
+          "adenocarcinoma",
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "quote": "Participants must have histologically or cytologically confirmed adenocarcinoma of the prostate and advanced/metastatic CRPC.",
+        "appliesTo": "Part A-Non-PD (Non-PD Backfill Cohorts) and Part B (Dose Expansion Cohorts)"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

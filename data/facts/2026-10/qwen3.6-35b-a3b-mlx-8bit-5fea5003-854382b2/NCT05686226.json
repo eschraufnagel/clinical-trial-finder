@@ -1,0 +1,132 @@
+{
+  "nctId": "NCT05686226",
+  "mappings": [
+    {
+      "factId": "histology",
+      "rulesOut": [
+        "other_nsclc",
+        "mixed_small_cell"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 100,
+        "end": 192,
+        "text": "Histologically or cytologically confirmed metastatic or refractory/recurrent HPV-16+ cancer."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 100,
+        "end": 192,
+        "text": "Histologically or cytologically confirmed metastatic or refractory/recurrent HPV-16+ cancer."
+      }
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 589,
+        "end": 651,
+        "text": "Measurable disease as assessed by RECIST Criteria Version 1.1."
+      }
+    },
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 674,
+        "end": 755,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status 0 or 1 at screening."
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 970,
+        "end": 1270,
+        "text": "Patients with three or fewer brain metastases that have been treated with surgery or stereotactic radiosurgery are eligible. Lesions that have been treated with stereotactic radiosurgery must be clinically stable for one month before protocol treatment. Patients must be fully recovered from surgery."
+      }
+    },
+    {
+      "factId": "pregnant_or_breastfeeding",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 1275,
+        "end": 1386,
+        "text": "Negative pregnancy test for women under 55 and all women who have had a menstrual period in the last 12 months."
+      }
+    },
+    {
+      "factId": "hiv",
+      "rulesOut": [
+        "uncontrolled"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5433,
+        "end": 5613,
+        "text": "Participants with a systemic immunodeficiency including acquired deficiency such as HIV or primary immunodeficiency such as Severe Combined Immunodeficiency Disease are ineligible."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 5948,
+        "end": 6168,
+        "text": "Participants with potentially severe autoimmune diseases such as Crohn's disease, ulcerative colitis, rheumatoid arthritis, autoimmune hepatitis, autoimmune pancreatitis, or systemic lupus erythematosus are not eligible."
+      }
+    },
+    {
+      "factId": "other_cancer",
+      "rulesOut": [
+        "within_2_years",
+        "two_to_5_years",
+        "over_5_years"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 6731,
+        "end": 6829,
+        "text": "Participants with prior or concurrent malignancy that do not meet the above criteria are excluded."
+      }
+    }
+  ],
+  "rejected": [],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

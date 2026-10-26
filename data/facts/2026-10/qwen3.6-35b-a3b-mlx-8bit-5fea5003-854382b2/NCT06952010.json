@@ -1,0 +1,72 @@
+{
+  "nctId": "NCT06952010",
+  "mappings": [
+    {
+      "factId": "ecog",
+      "rulesOut": [
+        "ps2",
+        "ps3_4"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 27,
+        "end": 98,
+        "text": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 1."
+      }
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 142,
+        "end": 193,
+        "text": "Have a recurrent advanced or metastatic solid tumor"
+      }
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "not_stable_no_symptoms",
+        "symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 729,
+        "end": 783,
+        "text": "Primary brain tumors or known active brain metastases."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "prior_lines isn't a fact for this trial's cancer type",
+      "quote": "Received at least 1 line of prior systemic anticancer therapy in the recurrent or metastatic setting.",
+      "raw": {
+        "factId": "prior_lines",
+        "rulesOut": [
+          "zero"
+        ],
+        "polarity": "inclusion",
+        "quote": "Received at least 1 line of prior systemic anticancer therapy in the recurrent or metastatic setting.",
+        "appliesTo": null
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}

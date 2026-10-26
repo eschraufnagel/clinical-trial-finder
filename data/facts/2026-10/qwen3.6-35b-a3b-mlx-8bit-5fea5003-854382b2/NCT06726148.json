@@ -1,0 +1,215 @@
+{
+  "nctId": "NCT06726148",
+  "mappings": [
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 307,
+        "end": 431,
+        "text": "Histologically and/or cytologically confirmed diagnosis of locally advanced or metastatic cancer with a CCNE1 amplification."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "extent",
+      "rulesOut": [
+        "early_resectable",
+        "locally_advanced"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 737,
+        "end": 937,
+        "text": "HR+/HER2- aBC with disease progression on an aromatase inhibitor or tamoxifen in combination with a CDK4/6 inhibitor for unresectable/metastatic disease with no more than 2 lines of endocrine therapy."
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "measurable_disease",
+      "rulesOut": [
+        "no"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 939,
+        "end": 987,
+        "text": "Measurable disease as determined by RECIST v1.1."
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "brain_mets",
+      "rulesOut": [
+        "symptoms",
+        "not_stable_no_symptoms"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1518,
+        "end": 1677,
+        "text": "Presence of symptomatic CNS metastases or CNS metastases that require local therapy or increasing doses of corticosteroids within 2 weeks prior to study entry."
+      }
+    },
+    {
+      "factId": "autoimmune_active",
+      "rulesOut": [
+        "yes"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1361,
+        "end": 1516,
+        "text": "Clinically significant, uncontrolled heart disease and/or cardiac repolarization abnormality including MI, CABG, long QT syndrome, or risk factors for TdP."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "exclusion",
+      "source": {
+        "start": 1208,
+        "end": 1261,
+        "text": "Previous treatment with a CDK2 inhibitor at any time."
+      }
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "received"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 101,
+        "end": 305,
+        "text": "HR+/HER2- aBC with disease progression on or following at least one line of hormone-based therapy in combination with a CDK4/6i and at least one additional line of systemic therapy for metastatic disease."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 737,
+        "end": 937,
+        "text": "HR+/HER2- aBC with disease progression on an aromatase inhibitor or tamoxifen in combination with a CDK4/6 inhibitor for unresectable/metastatic disease with no more than 2 lines of endocrine therapy."
+      },
+      "appliesTo": "Phase II"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 532,
+        "end": 613,
+        "text": "Patients with ES-SCLC and disease progression on or after standard of care (SoC)."
+      },
+      "appliesTo": "Phase I"
+    },
+    {
+      "factId": "prior_targeted",
+      "rulesOut": [
+        "never"
+      ],
+      "polarity": "inclusion",
+      "source": {
+        "start": 101,
+        "end": 305,
+        "text": "HR+/HER2- aBC with disease progression on or following at least one line of hormone-based therapy in combination with a CDK4/6i and at least one additional line of systemic therapy for metastatic disease."
+      },
+      "appliesTo": "Phase I"
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "HR+/HER2- aBC with disease progression on an aromatase inhibitor or tamoxifen in combination with a CDK4/6 inhibitor for unresectable/metastatic disease with no more than 2 lines of endocrine therapy.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "HR+/HER2- aBC with disease progression on an aromatase inhibitor or tamoxifen in combination with a CDK4/6 inhibitor for unresectable/metastatic disease with no more than 2 lines of endocrine therapy.",
+        "appliesTo": "Phase II"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients with ES-SCLC and disease progression on or after standard of care (SoC).",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with ES-SCLC and disease progression on or after standard of care (SoC).",
+        "appliesTo": "Phase I"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "HR+/HER2- aBC with disease progression on or following at least one line of hormone-based therapy in combination with a CDK4/6i and at least one additional line of systemic therapy for metastatic disease.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "HR+/HER2- aBC with disease progression on or following at least one line of hormone-based therapy in combination with a CDK4/6i and at least one additional line of systemic therapy for metastatic disease.",
+        "appliesTo": "Phase I"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "HR+/HER2- aBC with disease progression on an aromatase inhibitor or tamoxifen in combination with a CDK4/6 inhibitor for unresectable/metastatic disease with no more than 2 lines of endocrine therapy.",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "HR+/HER2- aBC with disease progression on an aromatase inhibitor or tamoxifen in combination with a CDK4/6 inhibitor for unresectable/metastatic disease with no more than 2 lines of endocrine therapy.",
+        "appliesTo": "Phase II"
+      }
+    },
+    {
+      "reason": "repeats a mapping already made",
+      "quote": "Patients with ES-SCLC and disease progression on or after standard of care (SoC).",
+      "raw": {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "never"
+        ],
+        "polarity": "inclusion",
+        "quote": "Patients with ES-SCLC and disease progression on or after standard of care (SoC).",
+        "appliesTo": "Phase I"
+      }
+    }
+  ],
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "5fea50034aea",
+    "timestamp": "2026-10",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+    "normalizeVersion": "2",
+    "snapshotMonth": "2026-10",
+    "cancerType": "nsclc"
+  }
+}
