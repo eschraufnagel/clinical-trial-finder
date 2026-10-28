@@ -73,6 +73,8 @@ It measures the full record against the intake alone and against the conversatio
   - A scorer that wastes questions puts the burden on a person who is unwell.
 - **Can be no:** if no scorer comes near the record arm even with knows-all, the gap is in the mappings or the order, not the chooser. That's written up as the finding, and 0004 is re-planned around it.
 
+**Gate 2, as answered** (owner, 2026-10; `gate-2-finding.md`): scorer `shortlist`, budget 8, fixed intake, short list of 10. The order stays as the spec pinned it for held-out; whether to change it is 0004's first question.
+
 **Gate 3: is the reader good enough for free text on the page?** (spec §7.3)
 - **What the owner sees:**
   - held-out exact, lost, wrong and invented, with intervals, against the proposed bars: invented ≤ 5%, exact ≥ 85%;
@@ -309,4 +311,4 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **Curves:** `shortlist` reaches the plateau in 1 to 4 follow-ups, `count` in 6 to 8. With what the patients know, the conversation ends at 90% agreement; knowing everything, at 100% by question 8.
   - **The order favours trials the mapper read little:** short-list trials carry about half the average candidate's mappings.
   - Record: `gate-2-finding.md` and `gate-2-transcripts.txt`. **→ Gate 2.**
-
+- **Gate 2.** As recommended: `shortlist`, budget 8; the order kept, and handed to 0004.

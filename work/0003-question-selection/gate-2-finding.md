@@ -92,4 +92,8 @@ This follows from the spec's order (§2), which excludes "the number of facts ma
 
 ## Answer
 
-*To be filled in by the owner.*
+**Owner, 2026-10: as recommended.**
+- **Frozen in `data/questions/conversation.json`:** scorer `shortlist`, budget 8, the fixed intake of 8, a short list of 10.
+- **The order is kept as the spec pinned it** for held-out, and goes to 0004 as its first question.
+
+Held-out is then scored once (below).
