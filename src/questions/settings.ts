@@ -37,6 +37,14 @@ export interface ConversationSettings {
   sha256: string;
 }
 
+/** The facts never asked of someone of this sex. */
+export function skippedFacts(
+  settings: Pick<ConversationSettings, "skip">,
+  sex: "female" | "male",
+): string[] {
+  return settings.skip.filter((r) => r.sex === sex).map((r) => r.factId);
+}
+
 export class ConversationSettingsError extends Error {
   constructor(where: string, problems: readonly string[]) {
     super(`Invalid conversation settings ${where}:\n${problems.map((p) => `  - ${p}`).join("\n")}`);

@@ -155,18 +155,21 @@ export function orderFor(
 
 /**
  * Facts the short list's trials map that the person hasn't answered, with how
- * many of those trials map each: the start of the oncologist sheet. Most
- * first, then vocabulary order.
+ * many of those trials map each: the start of the oncologist sheet. Facts
+ * never asked of this person (`skipped`, such as pregnancy for a man) aren't
+ * questions for anyone. Most first, then vocabulary order.
  */
 export function openQuestions(
   shortlist: readonly OrderEntry[],
   profile: Profile,
   vocabulary: FactVocabulary,
+  skipped: readonly string[] = [],
 ): { factId: string; trials: number }[] {
   const counts = new Map<string, number>();
   for (const e of shortlist) {
     for (const factId of e.status?.unknown ?? []) {
-      if (profile[factId] === undefined) counts.set(factId, (counts.get(factId) ?? 0) + 1);
+      if (profile[factId] === undefined && !skipped.includes(factId))
+        counts.set(factId, (counts.get(factId) ?? 0) + 1);
     }
   }
   const position = new Map(vocabulary.facts.map((f, i) => [f.id, i]));

@@ -1,0 +1,154 @@
+# questions:try on two dev patients, settings as committed at step 9 (scorer shortlist, budget 10)
+
+$ npm run questions:try -- --patient evals/cases/patients/dev/p08.json
+p08: 99 trials from the search.
+
+ 1. What type of lung cancer cell did the biopsy show?  (intake)
+    Adenocarcinoma
+ 2. How far has the cancer spread?  (intake)
+    It has spread further, or come back
+    moved down: NCT04267848; moved up: NCT04939610
+ 3. Has the cancer spread to the brain?  (intake)
+    No
+    moved down: NCT03550391; moved up: NCT05098132
+ 4. Which is closest to how you are day to day?  (intake)
+    Up and about, but can't do heavy work
+ 5. Have you had chemotherapy with carboplatin or cisplatin?  (intake)
+    Yes
+    moved down: NCT04181060; moved up: NCT05176483
+ 6. Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?  (intake)
+    Yes, and the cancer grew during or after it
+    moved down: NCT05098132; moved up: NCT05382559
+ 7. Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?  (intake)
+    No
+ 8. How many treatments have you had since the cancer became advanced?  (intake)
+    Three or more
+    moved down: NCT04614103; moved up: NCT05422911
+ 9. Is there a tumor that scans can measure?  (follow-up, score 3.00)
+    Yes
+10. Has the cancer spread to the lining of the brain or spinal cord?  (follow-up, score 3.00)
+    doesn't know
+11. Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?  (follow-up, score 2.67)
+    No
+12. In the last 6 months, have you had a heart attack, a stroke, or heart failure that needed hospital care?  (follow-up, score 2.50)
+    Yes
+    moved down: NCT04585750 NCT04657068 NCT04895709 NCT04939610 NCT05382559; moved up: NCT05544019 NCT05579366 NCT05768139 NCT05919264 NCT06119581
+13. Have you had another kind of cancer?  (follow-up, score 1.00)
+    No
+14. Did testing find an EGFR mutation?  (follow-up, score 0.75)
+    doesn't know
+15. Did testing find a KRAS mutation?  (follow-up, score 0.67)
+    doesn't know
+16. What was the PD-L1 test result?  (follow-up, score 0.67)
+    doesn't know
+
+Stopped: no answer to any question left could change the short list.
+
+Short list, nearest first among trials with fewest hints:
+  NCT02693535  1 mi  TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs That Target a Specific Abnormality in a Tumor Gene in People With Advanced Stage Cancer
+    no hint from these answers
+  NCT04317534  1 mi  Adjuvant Pembrolizumab vs Observation Following Curative Resection for Stage I Non-small Cell Lung Cancer (NSCLC) With Primary Tumors Between 1-4 cm
+    not mapped: no hints either way
+  NCT04389632  1 mi  A Study of Sigvotatug Vedotin in Advanced Solid Tumors
+    no hint from these answers
+  NCT05176483  1 mi  Study of Zanzalintinib in Combination With Immuno-Oncology or Other Agents in Participants With Solid Tumors
+    not mapped: no hints either way
+  NCT05422911  1 mi  Abiraterone, Enzalutamide, or Apalutamide in Castrate-sensitive Prostate Cancer.
+    no hint from these answers
+  NCT05544019  1 mi  Study of SGR-1505 in Mature B-Cell Neoplasms
+    no hint from these answers
+  NCT05579366  1 mi  Rinatabart Sesutecan (Rina-S, PRO1184, GEN1184) for Advanced Solid Tumors (GCT1184-01/ PRO1184-001)
+    no hint from these answers
+  NCT05768139  1 mi  First-in-Human Study of Tersolisib (STX-478) as Monotherapy and in Combination With Other Antineoplastic Agents in Participants With Advanced Solid Tumors
+    no hint from these answers
+  NCT05919264  1 mi  FOG-001 in Locally Advanced or Metastatic Solid Tumors
+    no hint from these answers
+  NCT06119581  1 mi  A Study of First-Line Olomorasib (LY3537982) and Pembrolizumab With or Without Chemotherapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer
+    no hint from these answers
+
+Questions for the oncologist, by how many short-list trials ask about them:
+    4  Has the cancer spread to the lining of the brain or spinal cord?
+    1  Did testing find an EGFR mutation?
+    1  Did testing find a KRAS mutation?
+    1  What was the PD-L1 test result?
+
+None of this says a trial fits. The oncologist and the trial team decide.
+
+$ npm run questions:try -- --patient evals/cases/patients/dev/p17.json
+p17: 1061 trials from the search.
+
+ 1. What type of lung cancer cell did the biopsy show?  (intake)
+    Adenocarcinoma
+ 2. How far has the cancer spread?  (intake)
+    It has spread further, or come back
+    moved down: NCT04267848 NCT06498635 NCT07293247; moved up: NCT06627647 NCT06758401 NCT07291037
+ 3. Has the cancer spread to the brain?  (intake)
+    No
+ 4. Which is closest to how you are day to day?  (intake)
+    Up and about, but can't do heavy work
+ 5. Have you had chemotherapy with carboplatin or cisplatin?  (intake)
+    Yes
+    moved down: NCT05642572; moved up: NCT06170788
+ 6. Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?  (intake)
+    Yes, and the cancer grew during or after it
+    moved down: NCT06116682 NCT06627647 NCT06758401; moved up: NCT06890598 NCT07190248 NCT07403721
+ 7. Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?  (intake)
+    No
+ 8. How many treatments have you had since the cancer became advanced?  (intake)
+    One
+ 9. Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?  (follow-up, score 3.67)
+    Yes, now
+    moved down: NCT06031688 NCT06126276 NCT06616584 NCT07291037 NCT06170788 NCT07190248; moved up: NCT05405413 NCT05901285 NCT05948865 NCT06119581 NCT06881784 NCT06997029
+10. Is there a tumor that scans can measure?  (follow-up, score 4.00)
+    doesn't know
+11. Has the cancer spread to the lining of the brain or spinal cord?  (follow-up, score 2.00)
+    doesn't know
+12. Did testing find an EGFR mutation?  (follow-up, score 1.50)
+    doesn't know
+13. Did testing find a KRAS mutation?  (follow-up, score 1.33)
+    doesn't know
+14. Are you pregnant or breastfeeding?  (follow-up, score 1.00)
+    No
+15. In the last 2 years, have you needed medicine that calms the immune system, such as steroids or immunosuppressants, for an autoimmune disease like lupus or Crohn's? Thyroid hormone, insulin and skin creams don't count.  (follow-up, score 1.00)
+    No
+16. What was the PD-L1 test result?  (follow-up, score 0.67)
+    doesn't know
+17. Have you had another kind of cancer?  (follow-up, score 0.50)
+    No
+18. Do you have active hepatitis B or C?  (follow-up, score 0.50)
+    No
+
+Stopped: the question budget was reached.
+
+Short list, nearest first among trials with fewest hints:
+  NCT02693535  6 mi  TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs That Target a Specific Abnormality in a Tumor Gene in People With Advanced Stage Cancer
+    no hint from these answers
+  NCT05335928  108 mi  Abatacept in Immune Checkpoint Inhibitor Myocarditis
+    no hint from these answers
+  NCT06890598  111 mi  Study of Olomorasib (LY3537982) in Combination With Standard of Care in Participants With Resected or Unresectable KRAS G12C-mutant Non-Small Cell Lung Cancer
+    no hint from these answers
+  NCT07403721  111 mi  AMG 436 as Monotherapy and Combination Therapy in Participants With MSI-H/dMMR Solid Tumors
+    no hint from these answers
+  NCT05405413  188 mi  CAncer TReatment INformed by the Molecular Tumor Board At Dartmouth
+    no hint from these answers
+  NCT05901285  188 mi  Phase 1 Study of Intratumoral Administration of VAX014 With Expansion in Combination With a Checkpoint Inhibitor in Subjects With Advanced Solid Tumors
+    no hint from these answers
+  NCT05948865  188 mi  A Phase 1 Study of CPO301 in Adult Patients With Advanced or Metastatic Solid Tumors
+    no hint from these answers
+  NCT06119581  188 mi  A Study of First-Line Olomorasib (LY3537982) and Pembrolizumab With or Without Chemotherapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer
+    no hint from these answers
+  NCT06881784  188 mi  Study of Daraxonrasib (RMC-6236) in Patients With RAS Mutated NSCLC (RASolve 301)
+    no hint from these answers
+  NCT06997029  188 mi  A Phase 1 Study of BMS-986500 as Monotherapy or Combination Therapy in Advanced Solid Tumors
+    no hint from these answers
+
+Questions for the oncologist, by how many short-list trials ask about them:
+    8  Is there a tumor that scans can measure?
+    4  Has the cancer spread to the lining of the brain or spinal cord?
+    2  Did testing find an EGFR mutation?
+    2  Did testing find a KRAS mutation?
+    1  Did testing find an ALK change?
+    1  What was the PD-L1 test result?
+    1  Do you have HIV?
+
+None of this says a trial fits. The oncologist and the trial team decide.

@@ -303,3 +303,10 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **The curve runs the conversation again with a budget of 20.** The same choices are made, so the conversation arm's list is the curve's at the budget.
   - **Would-flag is re-derived from the rows** through the record row's `recordFlagged`. The curves are checked only by `--check`, which reruns.
   - **The metrics test's numbers were worked out by hand before it ran,** and all of them held. One expectation in the result test was wrong: the fixture's all-zero hash matched the file name it was meant to reject. It was corrected while the test was written.
+- **Step 9.** `questions:try`, the boundary block "question choice and the order reach no model", and the CLI and no-verdict tests.
+  - **A bug found in the first transcript, and fixed in this step:** the oncologist sheet asked a man whether he was pregnant. `openQuestions` now takes the facts skipped for this person (`skippedFacts` in `settings.ts`), with a test.
+  - **Dev run** `evals/results/questions/dev/01-e935d9c2c86e.json`, about 4 seconds; `--check --dev` matches it.
+  - **Curves:** `shortlist` reaches the plateau in 1 to 4 follow-ups, `count` in 6 to 8. With what the patients know, the conversation ends at 90% agreement; knowing everything, at 100% by question 8.
+  - **The order favours trials the mapper read little:** short-list trials carry about half the average candidate's mappings.
+  - Record: `gate-2-finding.md` and `gate-2-transcripts.txt`. **→ Gate 2.**
+

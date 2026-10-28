@@ -670,6 +670,73 @@ describe("the fact status reaches no model, and src/facts/ builds none", () => {
 });
 
 /**
+ * This repository's slice 0003: choosing a question, stopping, and ordering
+ * the trials are pure functions. No model chooses, stops or orders. The one
+ * part that reads a model's output, the reader (`read.ts`, `prompt.ts`),
+ * takes its adapter as an argument, so nothing under `src/questions/` builds
+ * one. The patients are checked before anything reads them.
+ */
+describe("question choice and the order reach no model", () => {
+  const dirOf = (name: string) => fileURLToPath(new URL(`../src/${name}/`, import.meta.url));
+  const filesIn = (name: string, except: readonly string[] = []) =>
+    readdirSync(dirOf(name))
+      .filter((n) => n.endsWith(".ts") && !except.includes(n))
+      .map((n) => join(dirOf(name), n));
+  const READER = ["read.ts", "prompt.ts"];
+  const pure = [
+    ...new Set(
+      [...filesIn("shortlist"), ...filesIn("questions", [...READER, "index.ts"])].flatMap(
+        reachableModules,
+      ),
+    ),
+  ];
+  const all = [...new Set(filesIn("questions").flatMap(reachableModules))];
+  const patients = reachableModules(
+    fileURLToPath(new URL("../evals/questions/patients.ts", import.meta.url)),
+  );
+
+  const forbidden = (file: string): boolean =>
+    file.includes(`${sep}models${sep}`) ||
+    file.endsWith(`criteria${sep}parse.ts`) ||
+    file.includes(`${sep}screening${sep}`) ||
+    file.includes(`${sep}plain${sep}`) ||
+    file.includes(`${sep}transport${sep}`);
+  const isFactory = (file: string): boolean =>
+    file.endsWith(`models${sep}factory.ts`) || file.endsWith(`models${sep}index.ts`);
+  const isModel = (file: string): boolean => file.includes(`${sep}models${sep}`);
+
+  it("walks a real graph", () => {
+    expect(pure.some((m) => m.endsWith(`questions${sep}select.ts`))).toBe(true);
+    expect(pure.some((m) => m.endsWith(`shortlist${sep}order.ts`))).toBe(true);
+    expect(pure.some((m) => m.endsWith(`facts${sep}status.ts`))).toBe(true);
+    expect(patients.some((m) => m.endsWith(`facts${sep}vocabulary.ts`))).toBe(true);
+  });
+
+  it("keeps the chooser, the conversation, the settings and the order away from models and agents", () => {
+    expect(pure.filter(forbidden)).toEqual([]);
+  });
+
+  it("keeps all of src/questions/ away from the factory", () => {
+    expect(all.filter(isFactory)).toEqual([]);
+  });
+
+  it("keeps the patient loader away from any model", () => {
+    expect(patients.filter(isModel)).toEqual([]);
+  });
+
+  it("would catch each", () => {
+    expect(forbidden(`${sep}src${sep}models${sep}types.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}criteria${sep}parse.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}screening${sep}agent.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}plain${sep}check.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}transport${sep}types.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}criteria${sep}normalize.ts`)).toBe(false);
+    expect(isFactory(`${sep}src${sep}models${sep}factory.ts`)).toBe(true);
+    expect(isFactory(`${sep}src${sep}models${sep}fake.ts`)).toBe(false);
+  });
+});
+
+/**
  * Slice 0004's two boundaries: the application cannot see the measurement, and
  * nothing outside `src/models/` chooses which model to call.
  *

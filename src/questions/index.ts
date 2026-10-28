@@ -27,4 +27,5 @@ export {
   SCORERS,
   type ScorerName,
   type SkipRule,
+  skippedFacts,
 } from "./settings.js";

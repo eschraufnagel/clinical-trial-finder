@@ -12,6 +12,7 @@ import {
   type ConversationSettings,
   SCORERS,
   type ScorerName,
+  skippedFacts,
 } from "../../src/questions/settings.js";
 import type { OrderEntry } from "../../src/shortlist/order.js";
 import { shortlistOf } from "../../src/shortlist/order.js";
@@ -58,6 +59,7 @@ export function armsFor(
   const answer = options.answer ?? fromKnowledge;
   const cancerType = patient.search.cancerType;
   const size = settings.shortlistSize;
+  const skipped = skippedFacts(settings, patient.search.sex);
   const ids = (entries: readonly OrderEntry[]) => entries.map((e) => e.candidate.nctId);
 
   const recordProfile: Record<string, string> = {};
@@ -123,7 +125,7 @@ export function armsFor(
         return n + (status?.hints.length ?? 0) + (status?.partHints.length ?? 0);
       }, 0),
       noMappingPlaces: list.filter((id) => unmapped.has(id)).length,
-      openQuestions: openQuestions(shortlist, profile, vocabulary).length,
+      openQuestions: openQuestions(shortlist, profile, vocabulary, skipped).length,
       curve,
     };
   };

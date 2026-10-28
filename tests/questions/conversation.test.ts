@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { openQuestions, runConversation } from "../../src/questions/conversation.js";
 import { UNKNOWN } from "../../src/questions/select.js";
+import { skippedFacts } from "../../src/questions/settings.js";
 import { SETTINGS, trials, vocabulary } from "./fixture.js";
 
 const knows =
@@ -99,6 +100,12 @@ describe("openQuestions", () => {
       { factId: "ecog", trials: 1 },
       { factId: "pregnant_or_breastfeeding", trials: 1 },
     ]);
+  });
+
+  it("leaves out a fact never asked of this person, such as pregnancy for a man", () => {
+    const r = run({}, { sex: "male", scorer: "fixed", budget: 0 });
+    const open = openQuestions(r.shortlist, r.profile, vocabulary, skippedFacts(SETTINGS, "male"));
+    expect(open.map((o) => o.factId)).not.toContain("pregnant_or_breastfeeding");
   });
 
   it("leaves out answered facts, including ones with hints", () => {
