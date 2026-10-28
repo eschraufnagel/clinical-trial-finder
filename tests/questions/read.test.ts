@@ -61,8 +61,8 @@ describe("readReply", () => {
       [
         `Question: ${fact.question}`,
         "Answers:",
-        ...fact.answers.map((a) => `- ${a.id}: ${a.words}`),
-        "- unknown: the reply doesn't say",
+        ...fact.answers.map((a) => `- "${a.id}": ${a.words}`),
+        '- "unknown": the reply doesn\'t say',
         "",
         `Reply: ${JSON.stringify(REPLY)}`,
       ].join("\n"),

@@ -328,3 +328,15 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **The grading is in `reads.ts`, not a separate `read-grade.ts`.**
   - **Results answered from reads go to `evals/results/questions/with-reads/`,** so they never become the latest held-out result.
   - **Tests:** grading on a hand-worked fixture, and resume and failures with the fake adapter.
+- **Step 12, dev reads** (local `Qwen3.6-35B-A3B-MLX-8bit`, 8-bit, temperature 0, seed 20260921; 93 pairs, about 100 s each run). Three prompts, all committed under `evals/results/questions/reads/`:
+
+  | Prompt | Change | Exact (of 54) | Lost | Wrong | Invented (of 39) |
+  | --- | --- | ---: | ---: | ---: | ---: |
+  | `26b2af74` | original | 52 | 2 | 0 | 0 |
+  | `c4cedd44` | revision 1: a line saying the answer is an id copied from the list | 51 | 3 | 0 | 0 |
+  | `8cb01749` | revision 2: original wording; the layout quotes the ids (`READER_LAYOUT` 2) | **54** | 0 | 0 | 0 |
+
+  - **Every loss was ECOG,** answered with `[1]`, a position in the list, where the id `ps1` reads like an ECOG score. The reader read each one as unknown, as designed.
+  - **Revision 1's extra instruction made it worse,** as in 0002. Revision 2 changed the layout, not the words.
+  - **`READER_LAYOUT` is now part of the prompt version,** as `SIMULATOR_LAYOUT` is for the participant.
+  - **Frozen:** `8cb01749`.

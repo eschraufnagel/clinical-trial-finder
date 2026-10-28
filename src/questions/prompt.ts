@@ -9,6 +9,13 @@ import type { Fact } from "../facts/types.js";
  * Written after the patients' replies were committed and before it was run on
  * any of them. Its rules restate `evals/cases/patients/AUTHORING.md` Rule 5
  * in general terms; no reply's wording is copied into it.
+ *
+ * Revisions on dev, each a new version (work/0003-question-selection/plan.md, Records):
+ * - 1: the local model twice answered ECOG with `[1]`, a position in the list.
+ *   A line saying the answer is an id copied from the list made it three.
+ *   Withdrawn.
+ * - 2: the system prompt is the original again; the layout quotes the answer
+ *   ids, so "ps1" reads as a string to copy, not a score.
  */
 export const READER_SYSTEM_PROMPT = `You read one reply from a person with lung cancer to one question about their health, and decide which of the question's fixed answers the reply states.
 
@@ -22,14 +29,21 @@ Rules:
 
 Return JSON only: {"answer": "<one answer id, or unknown>"}`;
 
-export const READER_PROMPT_VERSION = hashPrompt(READER_SYSTEM_PROMPT);
+/**
+ * Revision of how `buildReaderPrompt` lays out the question, which is code and
+ * can't be hashed directly. Bump it whenever the layout changes what the model
+ * sees. Layout 2 quotes the answer ids.
+ */
+export const READER_LAYOUT = 2;
+
+export const READER_PROMPT_VERSION = hashPrompt(`${READER_SYSTEM_PROMPT}\nlayout ${READER_LAYOUT}`);
 
 export function buildReaderPrompt(fact: Fact, reply: string): string {
   return [
     `Question: ${fact.question}`,
     "Answers:",
-    ...fact.answers.map((a) => `- ${a.id}: ${a.words}`),
-    "- unknown: the reply doesn't say",
+    ...fact.answers.map((a) => `- "${a.id}": ${a.words}`),
+    '- "unknown": the reply doesn\'t say',
     "",
     `Reply: ${JSON.stringify(reply)}`,
   ].join("\n");
