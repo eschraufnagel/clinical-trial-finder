@@ -34,7 +34,7 @@ work/0001-<name>/
   plan.md      files that change, stages and gates, order of work, risks, proof
 ```
 
-For each slice:
+For each slice (`/next-slice`, in `.claude/skills/next-slice/`, does steps 1 to 3 and stops at the plan):
 
 1. Write `intent.md`. Do not start from the product intent alone; each slice gets its own.
 2. Write `spec.md` from the intent.
