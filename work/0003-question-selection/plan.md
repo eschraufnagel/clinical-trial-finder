@@ -233,8 +233,8 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - `src/facts/run.ts`
 - `data/questions/conversation.json`
 - `evals/cases/patients/AUTHORING.md`, `dev/*.json`, `heldout/*.json` (20 in all)
-- `evals/questions/patients.ts`, `arms.ts`, `metrics.ts`, `result.ts`, `read-grade.ts`
-- `evals/results/questions/` (dev and held-out results), `evals/results/questions/reads/`
+- `evals/questions/patients.ts`, `arms.ts`, `metrics.ts`, `result.ts`, `reads.ts`
+- `evals/results/questions/` (dev and held-out results), `evals/results/questions/reads/`, `evals/results/questions/with-reads/`
 - `scripts/questions-split.ts`, `questions-eval.ts`, `questions-try.ts`, `questions-read.ts`
 - `tests/shortlist/order.test.ts`
 - `tests/questions/settings.test.ts`, `select.test.ts`, `conversation.test.ts`, `read.test.ts`
@@ -323,3 +323,8 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **A failure of the adapter itself is thrown, not read as unknown,** so a run records it and retries rather than counting it as a "don't know". This refines spec §7.1, which read bad JSON as unknown: JSON of the wrong shape still reads as unknown.
   - `src/questions/index.ts` doesn't export the reader, so the barrel stays model-free.
   - **The local model wasn't answering at the start of stage C** (connection refused on 127.0.0.1:8000).
+- **Step 12, code.** `scripts/questions-read.ts` (`questions:read`), `evals/questions/reads.ts` (pairs, grading, `fromReads`), and `questions:eval -- --reads`.
+  - **Reads files are named `evals/results/questions/reads/<set>-<model>-<prompt>.json`,** one per set, model and prompt, not `NN-<prompt>.json`. A stopped run resumes into its own file, and a prompt revision gets a new one. (Amended from the plan's naming.)
+  - **The grading is in `reads.ts`, not a separate `read-grade.ts`.**
+  - **Results answered from reads go to `evals/results/questions/with-reads/`,** so they never become the latest held-out result.
+  - **Tests:** grading on a hand-worked fixture, and resume and failures with the fake adapter.

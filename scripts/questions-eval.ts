@@ -4,17 +4,20 @@
  *   npm run questions:eval                    dev and held-out; write evals/results/questions/NN-<settings>.json
  *   npm run questions:eval -- --dev           dev only; write evals/results/questions/dev/
  *   npm run questions:eval -- --check [--dev] rerun the latest committed result; non-zero on any difference
+ *   npm run questions:eval -- --reads <file>  answer from a reads file (questions:read) instead of what
+ *                                             the patients know; write evals/results/questions/with-reads/
  *
  * Deterministic: no model, no network, no clock. Each patient's search runs
  * on the snapshot, their trials' mappings come from the run named in
  * data/facts/<month>/latest, and their answers from what they know.
  */
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { basename, join } from "node:path";
+import { basename, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { armsFor } from "../evals/questions/arms.js";
 import type { ArmSummary } from "../evals/questions/metrics.js";
 import { loadPatients, type Patient, type PatientSet } from "../evals/questions/patients.js";
+import { fromReads, type ReadsFile, readReadsFile } from "../evals/questions/reads.js";
 import {
   patientsSha256,
   type QuestionsEvalResult,
@@ -68,7 +71,11 @@ export function trialsFor(patient: Patient, ctx: EvalContext): TrialInput[] {
   }));
 }
 
-export function scorePatients(sets: readonly PatientSet[], ctx: EvalContext): QuestionsEvalResult {
+export function scorePatients(
+  sets: readonly PatientSet[],
+  ctx: EvalContext,
+  reads?: { path: string; file: ReadsFile },
+): QuestionsEvalResult {
   const { vocabulary, settings } = ctx;
   const manifest = JSON.parse(readFileSync(join(ctx.runDir, "manifest.json"), "utf8")) as {
     run: { promptVersion: string; vocabularySha256: string };
@@ -77,6 +84,7 @@ export function scorePatients(sets: readonly PatientSet[], ctx: EvalContext): Qu
     loadPatients(set, vocabulary, ctx.zips).flatMap((patient) =>
       armsFor(patient, set, trialsFor(patient, ctx), vocabulary, settings, {
         fromStart: set === "dev",
+        ...(reads === undefined ? {} : { answer: fromReads(reads.file) }),
       }),
     ),
   );
@@ -93,7 +101,10 @@ export function scorePatients(sets: readonly PatientSet[], ctx: EvalContext): Qu
       vocabularySha256: manifest.run.vocabularySha256,
     },
     snapshot: { month: ctx.snapshot.manifest.month, sha256: ctx.snapshot.manifest.sha256 },
-    reads: null,
+    reads:
+      reads === undefined
+        ? null
+        : relative(fileURLToPath(new URL("..", import.meta.url)), reads.path),
     rows,
     summaries: summariesFor(rows, sets),
   };
@@ -140,9 +151,18 @@ export function formatSummaries(set: PatientSet, summaries: readonly ArmSummary[
 
 function main(): void {
   const args = process.argv.slice(2);
+  const readsArg = args.includes("--reads") ? args[args.indexOf("--reads") + 1] : undefined;
+  const reads =
+    readsArg === undefined ? undefined : { path: readsArg, file: readReadsFile(readsArg) };
   const devOnly = args.includes("--dev");
-  const dir = devOnly ? join(RESULTS_DIR, "dev") : RESULTS_DIR;
-  const sets: PatientSet[] = devOnly ? ["dev"] : ["dev", "heldout"];
+  const dir =
+    reads !== undefined
+      ? join(RESULTS_DIR, "with-reads")
+      : devOnly
+        ? join(RESULTS_DIR, "dev")
+        : RESULTS_DIR;
+  const sets: PatientSet[] =
+    reads !== undefined ? [reads.file.set] : devOnly ? ["dev"] : ["dev", "heldout"];
 
   if (args.includes("--check")) {
     const file = latestResultFile(dir);
@@ -152,7 +172,18 @@ function main(): void {
       return;
     }
     const committed = readResult(file);
-    const rerun = scorePatients(committed.sets, loadContext());
+    const rerun = scorePatients(
+      committed.sets,
+      loadContext(),
+      committed.reads === null
+        ? undefined
+        : {
+            path: join(fileURLToPath(new URL("..", import.meta.url)), committed.reads),
+            file: readReadsFile(
+              join(fileURLToPath(new URL("..", import.meta.url)), committed.reads),
+            ),
+          },
+    );
     const differing = rerun.rows.filter(
       (row, i) => JSON.stringify(row) !== JSON.stringify(committed.rows[i]),
     );
@@ -170,7 +201,7 @@ function main(): void {
     return;
   }
 
-  const result = scorePatients(sets, loadContext());
+  const result = scorePatients(sets, loadContext(), reads);
   mkdirSync(dir, { recursive: true });
   const path = join(dir, nextRunFile(dir, result.settingsSha256.slice(0, 12)));
   writeFileSync(path, `${JSON.stringify(result, null, 2)}\n`, "utf8");

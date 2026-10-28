@@ -38,7 +38,11 @@ function resultFiles(dir: string): string[] {
 }
 
 describe("committed results", () => {
-  const files = [...resultFiles(RESULTS), ...resultFiles(join(RESULTS, "dev"))];
+  const files = [
+    ...resultFiles(RESULTS),
+    ...resultFiles(join(RESULTS, "dev")),
+    ...resultFiles(join(RESULTS, "with-reads")),
+  ];
 
   it("are numbered result files, each checked below", () => {
     expect(files.every((f) => /\/\d+-[0-9a-f]{12}\.json$/.test(f))).toBe(true);
