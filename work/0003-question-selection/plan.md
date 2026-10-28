@@ -291,3 +291,4 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
 - **Step 3.** 20 patients written, revised once to Rule 4's rates before the split (26 facts made unknown, 11 made known), then split by hash: 3 dev (p08, p11, p17), 17 held-out. Rates 91% / 30% / 35%. p19's search keeps 2 trials. The blind reading agreed on all 434 hand-written replies. `questions:split` added to `package.json`. Record: `gate-1-patients.md`.
 - **Gate 1.** Accepted, 3 dev.
 - **Step 4.** Run loader moved to `src/facts/run.ts`; `facts:show` and `facts:try` print as before.
+- **Step 5.** `src/shortlist/order.ts`: `orderTrials`, `shortlistOf` and `ORDER_KEYS`. An entry is a candidate and its status, or `null` for a trial the run didn't map.
