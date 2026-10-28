@@ -290,3 +290,4 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
 - **Step 2.** `AUTHORING.md` and the patient loader. Spec §5.2 amended: the coherence rule "prior treatments no more than the lines allow" is dropped, because adjuvant treatment before a recurrence counts toward no advanced line and checking it would take a clinical judgment. The loader checks the other three.
 - **Step 3.** 20 patients written, revised once to Rule 4's rates before the split (26 facts made unknown, 11 made known), then split by hash: 3 dev (p08, p11, p17), 17 held-out. Rates 91% / 30% / 35%. p19's search keeps 2 trials. The blind reading agreed on all 434 hand-written replies. `questions:split` added to `package.json`. Record: `gate-1-patients.md`.
 - **Gate 1.** Accepted, 3 dev.
+- **Step 4.** Run loader moved to `src/facts/run.ts`; `facts:show` and `facts:try` print as before.
