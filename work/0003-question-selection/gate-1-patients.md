@@ -93,4 +93,4 @@ A separate agent read every hand-written reply: 380 `says` replies and 54 specif
 
 ## Answer
 
-*To be filled in by the owner.*
+**Owner, 2026-10: accept the patients as they are, with 3 on dev** (option a). No patient is added or changed. Gate 2 chooses from the 3 dev patients' curves, shown per patient as well as summed.

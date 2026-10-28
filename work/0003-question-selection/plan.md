@@ -53,6 +53,8 @@ It measures the full record against the intake alone and against the conversatio
 - **The answer can be no.** Ambiguous replies are rewritten. If the knowledge rates are off, or a group the product is for is missing (no one with a driver, nobody rural), patients are added or changed, in one commit, before stage B.
 - **Delegable:** the blind reading needs no clinical judgment. `docs/questions.md` says no clinician checked the patients.
 
+**Gate 1, as answered** (owner, 2026-10; `gate-1-patients.md`): the 20 patients are accepted as written, with 3 on dev (p08, p11, p17). None is added.
+
 **Gate 2: which scorer and budget go to held-out?** (spec §4.1, §6.3)
 - **What the owner sees:**
   - the dev curves (agreement and would-flag after 0–20 follow-ups) for `fixed`, `count` and `shortlist`;
@@ -287,3 +289,4 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
 - **Step 1.** Intent, spec and plan committed. Baseline 817 passed and 8 expected fail.
 - **Step 2.** `AUTHORING.md` and the patient loader. Spec §5.2 amended: the coherence rule "prior treatments no more than the lines allow" is dropped, because adjuvant treatment before a recurrence counts toward no advanced line and checking it would take a clinical judgment. The loader checks the other three.
 - **Step 3.** 20 patients written, revised once to Rule 4's rates before the split (26 facts made unknown, 11 made known), then split by hash: 3 dev (p08, p11, p17), 17 held-out. Rates 91% / 30% / 35%. p19's search keeps 2 trials. The blind reading agreed on all 434 hand-written replies. `questions:split` added to `package.json`. Record: `gate-1-patients.md`.
+- **Gate 1.** Accepted, 3 dev.
