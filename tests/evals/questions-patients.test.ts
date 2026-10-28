@@ -14,6 +14,7 @@ import {
   setFor,
 } from "../../evals/questions/patients.js";
 import { factsFor, loadFactVocabulary } from "../../src/facts/vocabulary.js";
+import { loadZipPoints } from "../../src/search/geo.js";
 
 const vocabulary = loadFactVocabulary();
 const ZIPS = new Map([["60611", { lat: 41.89, lon: -87.62 }]]);
@@ -176,5 +177,18 @@ describe("knowledgeRates", () => {
       { whoKnows: "oncologist", held: 0, known: 0 },
       { whoKnows: "records", held: 1, known: 0 },
     ]);
+  });
+});
+
+describe("the committed patients", () => {
+  const zips = loadZipPoints();
+
+  it("load, each in the set its hash sends it to, twenty in all", () => {
+    const dev = loadPatients("dev", vocabulary, zips);
+    const heldout = loadPatients("heldout", vocabulary, zips);
+    expect(dev.length + heldout.length).toBe(20);
+    expect([...dev, ...heldout].map((p) => p.id).sort()).toEqual(
+      Array.from({ length: 20 }, (_, i) => `p${String(i + 1).padStart(2, "0")}`),
+    );
   });
 });

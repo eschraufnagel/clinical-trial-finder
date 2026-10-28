@@ -76,7 +76,27 @@ Every patient is made up. No name, no date of birth, no employer, no doctor or h
 
 ## Coverage
 
-Filled in once the twenty are written.
+Filled in once the twenty were written and split. "Not tested" means the record has no EGFR result; some of those have a PD-L1 result only.
 
-| Patient | Histology | Extent | Lines | Driver (known?) | Brain | ECOG | Other | Place |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Patient (set) | Age, sex | Histology | Extent | Lines | Driver (known?) | Brain | ECOG | Other | Place |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| p08 (dev) | 69 M | adeno | metastatic | three+ | HER2 mutation (knows) | none | 1 | recent heart attack; prior ADC | 97201, 50 mi |
+| p11 (dev) | 61 M | other (large cell) | locally adv. | one | not tested | none | 1 | pneumonitis past; hepatitis; recent chest radiation | 41501, anywhere |
+| p17 (dev) | 63 F | adeno | metastatic | one | RET (doesn't know) | none | 1 | pneumonitis current; steroids low dose | 04401, anywhere |
+| p01 (heldout) | 64 F | adeno | metastatic | one | none found | none | 1 | — | 60611, 50 mi |
+| p02 (heldout) | 71 M | squamous | metastatic | two | none found | none | 1 | other cancer over 5 years | 60611, 25 mi |
+| p03 (heldout) | 58 F | adeno | metastatic | one | EGFR common sensitizing (knows) | treated, stable | 1 | — | 57501, anywhere |
+| p04 (heldout) | 49 M | adeno | metastatic | two | ALK (knows) | untreated, no symptoms | 0 | — | 77030, 100 mi |
+| p05 (heldout) | 77 F | adeno | metastatic | one | KRAS g12c (doesn't know) | none | 2 | other cancer within 2 years; steroids low dose | 02115, 50 mi |
+| p06 (heldout) | 66 M | squamous | locally adv. | zero | not tested | none | 1 | pneumonitis past | 59801, anywhere |
+| p07 (heldout) | 55 F | adeno | early | zero | none found | none | 0 | — | 38655, 150 mi |
+| p09 (heldout) | 82 M | squamous | metastatic | one | not tested | none | 2 | other cancer two to 5 years | 85004, 25 mi |
+| p10 (heldout) | 45 F | adeno | metastatic | one | ROS1 (knows) | treated, stable | 0 | autoimmune | 14201, 100 mi |
+| p12 (heldout) | 73 F | adeno | metastatic | zero | KRAS other mutation (doesn't know) | symptoms | 2 | steroids high dose | 30303, 50 mi |
+| p13 (heldout) | 52 M | adeno | metastatic | one | EGFR exon20 insertion (knows) | none | 1 | HIV controlled | 10032, 25 mi |
+| p14 (heldout) | 67 F | mixed small cell | metastatic | two | not tested | none | 1 | — | 68102, 150 mi |
+| p15 (heldout) | 59 M | adeno | metastatic | two | MET exon14 skipping (knows) | none | 1 | — | 55905, anywhere |
+| p16 (heldout) | 76 M | squamous | metastatic | one | not tested | none | 1 | other cancer over 5 years; transplant | 87501, 100 mi |
+| p18 (heldout) | 47 M | adeno | locally adv. | zero | BRAF V600E (knows) | none | 0 | — | 60611, 100 mi |
+| p19 (heldout) | 80 F | squamous | locally adv. | one | not tested | none | 2 | other cancer over 5 years; recent chest radiation | 57501, 100 mi |
+| p20 (heldout) | 68 M | adeno | metastatic | two | none found | treated, stable | 1 | prior ADC | 77030, 50 mi |
