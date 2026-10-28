@@ -340,3 +340,8 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **Revision 1's extra instruction made it worse,** as in 0002. Revision 2 changed the layout, not the words.
   - **`READER_LAYOUT` is now part of the prompt version,** as `SIMULATOR_LAYOUT` is for the participant.
   - **Frozen:** `8cb01749`.
+- **Step 13.** Held-out read once with the frozen prompt `8cb01749` (527 pairs, 572 s, 0 failed).
+  - **Known replies:** 326 of 326 exact (95% interval 98.8% to 100%).
+  - **Don't-know replies:** 1 of 201 invented (0.5%; 0.1% to 2.8%). p05's "Non-small cell, that's all I remember" was read as another non-small cell type, where her record says adenocarcinoma.
+  - **Conversations answered from the readings** (`evals/results/questions/with-reads/02-867d9528f7e8.json`; dev in `01`): only p05 changes. Her conversation's agreement rose from 70% to 80%, and her intake list's would-flag from 50% to 60%.
+  - `--check --reads` matches. Record: `gate-3-reader.md`. **→ Gate 3.**

@@ -1,0 +1,4234 @@
+{
+  "version": 1,
+  "set": "heldout",
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "8cb01749dcc3",
+    "timestamp": "2026-10"
+  },
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "patientsSha256": "1bc2770b4d4af32f5863c3f7515f9d15e2013a6350bf46145f801ec8111addb3",
+  "items": [
+    {
+      "patient": "p01",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "The biopsy said adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p01",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "It has spread to my bones and my liver.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p01",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, the brain scans have all been clear.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p01",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "I'd have to ask my oncologist.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "measurable_disease",
+      "kind": "says",
+      "reply": "Yes, there are spots in my liver they measure on every scan.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p01",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I'm up and about all day, but I can't do heavy jobs like gardening any more.",
+      "expected": "ps1",
+      "answer": "ps1"
+    },
+    {
+      "patient": "p01",
+      "factId": "egfr",
+      "kind": "says",
+      "reply": "They tested for EGFR and it came back negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p01",
+      "factId": "alk",
+      "kind": "says",
+      "reply": "ALK was negative too, I remember that one.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p01",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "I'm afraid I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "I'd have to ask my oncologist.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "I'm afraid I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "kras",
+      "kind": "dontKnow",
+      "reply": "I think KRAS was on the report but I can't remember what it said.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "I'm afraid I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "I'd have to ask my oncologist.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "I'm afraid I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "pdl1",
+      "kind": "dontKnow",
+      "reply": "There was a PD-L1 number, I think it was somewhere in the middle? I'd have to look.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "I had Keytruda with my chemo, and the cancer grew while I was on it.",
+      "expected": "progressed",
+      "answer": "progressed"
+    },
+    {
+      "patient": "p01",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, carboplatin, four rounds.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p01",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No, there was no mutation to target, so no pills like that.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p01",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "I'd have to ask my oncologist.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p01",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Just the one, the chemo with Keytruda.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p01",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation at all.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No, this is my first cancer.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p01",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No, nothing like that.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No, never had lung inflammation.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p01",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No, I don't have hepatitis.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No, my heart's been fine.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No transplant.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, I'm 64.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No steroids.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p02",
+      "factId": "histology",
+      "kind": "dontKnow",
+      "reply": "Some long word. Squa-something maybe? Don't hold me to it.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "Spread. Other lung and the bones.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p02",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "Brain's clear.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p02",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "No idea. Ask the doc.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I get around fine. Can't lift much anymore.",
+      "expected": "ps1",
+      "answer": "ps1"
+    },
+    {
+      "patient": "p02",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "No idea. Ask the doc.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "Couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "No idea. Ask the doc.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "kras",
+      "kind": "phrase",
+      "reply": "Couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "No idea. Ask the doc.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "Opdivo. It quit working, the scan showed it growing.",
+      "expected": "progressed",
+      "answer": "progressed"
+    },
+    {
+      "patient": "p02",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yep, cisplatin first.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p02",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No pills like that.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p02",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "No idea. Ask the doc.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Two. The chemo, then the Opdivo.",
+      "expected": "two",
+      "answer": "two"
+    },
+    {
+      "patient": "p02",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p02",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "Prostate cancer, about twelve years back. They took care of it.",
+      "expected": "over_5_years",
+      "answer": "over_5_years"
+    },
+    {
+      "patient": "p02",
+      "factId": "autoimmune_active",
+      "kind": "dontKnow",
+      "reply": "Don't know what counts as that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "Nope.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p02",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p02",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "Never been tested for that, far as I know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p02",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p02",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "I'm a man, so no.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p02",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "None.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p03",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma of the lung.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p03",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "It's stage four, it went to my brain and some lymph nodes.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p03",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "Yes, two spots in the brain. They had radiation last spring and the MRIs since show them stable.",
+      "expected": "treated_stable",
+      "answer": "treated_stable"
+    },
+    {
+      "patient": "p03",
+      "factId": "leptomeningeal",
+      "kind": "dontKnow",
+      "reply": "The lining? I don't think anyone has said, honestly.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p03",
+      "factId": "measurable_disease",
+      "kind": "says",
+      "reply": "Yes, the lymph nodes are what they measure.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p03",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I still do the books and get around, but I tire out and can't do the heavy ranch work.",
+      "expected": "ps1",
+      "answer": "ps1"
+    },
+    {
+      "patient": "p03",
+      "factId": "egfr",
+      "kind": "says",
+      "reply": "EGFR exon 19 deletion.",
+      "expected": "common_sensitizing",
+      "answer": "common_sensitizing"
+    },
+    {
+      "patient": "p03",
+      "factId": "alk",
+      "kind": "says",
+      "reply": "My report says ALK negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p03",
+      "factId": "ros1",
+      "kind": "says",
+      "reply": "ROS1 negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p03",
+      "factId": "ret",
+      "kind": "dontKnow",
+      "reply": "I'd have to dig out the full report for RET, I'm not sure it was on there.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p03",
+      "factId": "ntrk",
+      "kind": "says",
+      "reply": "NTRK negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p03",
+      "factId": "kras",
+      "kind": "says",
+      "reply": "KRAS, not detected.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p03",
+      "factId": "her2",
+      "kind": "says",
+      "reply": "HER2 negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p03",
+      "factId": "met",
+      "kind": "says",
+      "reply": "MET negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p03",
+      "factId": "braf_v600e",
+      "kind": "says",
+      "reply": "BRAF not detected.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p03",
+      "factId": "pdl1",
+      "kind": "says",
+      "reply": "PD-L1 was less than 1 percent.",
+      "expected": "negative",
+      "answer": "negative"
+    },
+    {
+      "patient": "p03",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No immunotherapy.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p03",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No, I've never had chemo.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p03",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "Yes, I take Tagrisso every day.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p03",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p03",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One, just the Tagrisso.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p03",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No, the radiation was only to my head.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No other cancers.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p03",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No, never.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p03",
+      "factId": "hiv",
+      "kind": "dontKnow",
+      "reply": "I've never been tested for that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p03",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No heart problems.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, I'm not.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "I was on dexamethasone around the radiation, but not any more. None now.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p04",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p04",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "Metastatic. Pleura, liver, and now the brain.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p04",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "The last MRI found three new small spots in the brain. Not treated yet, and I don't have any symptoms.",
+      "expected": "not_stable_no_symptoms",
+      "answer": "not_stable_no_symptoms"
+    },
+    {
+      "patient": "p04",
+      "factId": "leptomeningeal",
+      "kind": "says",
+      "reply": "No leptomeningeal disease, the MRI report said so specifically.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "measurable_disease",
+      "kind": "says",
+      "reply": "Yes, there are target lesions in the liver they measure each scan.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p04",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "Fully active. I still run and work full time.",
+      "expected": "ps0",
+      "answer": "ps0"
+    },
+    {
+      "patient": "p04",
+      "factId": "egfr",
+      "kind": "says",
+      "reply": "EGFR wild type, no mutation.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p04",
+      "factId": "alk",
+      "kind": "says",
+      "reply": "ALK fusion positive, EML4-ALK.",
+      "expected": "found",
+      "answer": "found"
+    },
+    {
+      "patient": "p04",
+      "factId": "ros1",
+      "kind": "says",
+      "reply": "ROS1 negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p04",
+      "factId": "ret",
+      "kind": "says",
+      "reply": "RET negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p04",
+      "factId": "ntrk",
+      "kind": "says",
+      "reply": "NTRK negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p04",
+      "factId": "kras",
+      "kind": "says",
+      "reply": "No KRAS mutation.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p04",
+      "factId": "her2",
+      "kind": "says",
+      "reply": "HER2 negative on the panel.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p04",
+      "factId": "met",
+      "kind": "says",
+      "reply": "MET negative, no exon 14 and no amplification.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p04",
+      "factId": "braf_v600e",
+      "kind": "says",
+      "reply": "BRAF negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p04",
+      "factId": "pdl1",
+      "kind": "says",
+      "reply": "PD-L1 was 20 percent.",
+      "expected": "low",
+      "answer": "low"
+    },
+    {
+      "patient": "p04",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No, never had immunotherapy.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p04",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No chemo.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p04",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "Yes, Alecensa first and now Lorbrena.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p04",
+      "factId": "prior_adc",
+      "kind": "says",
+      "reply": "No, no antibody-drug conjugates.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p04",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Two: alectinib, then lorlatinib.",
+      "expected": "two",
+      "answer": "two"
+    },
+    {
+      "patient": "p04",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p04",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No pneumonitis.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p04",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "Negative.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "Not applicable, I'm male.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No steroids.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p05",
+      "factId": "histology",
+      "kind": "dontKnow",
+      "reply": "Non-small cell, that's all I remember.",
+      "expected": "unknown",
+      "answer": "other_nsclc"
+    },
+    {
+      "patient": "p05",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "It's spread to my liver and the bones in my back.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p05",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, nothing in the brain.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p05",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Oh, I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "You'd have to ask my doctor, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I'm up for most of the day but I can't work or do much, I rest a lot in the afternoons.",
+      "expected": "ps2",
+      "answer": "ps2"
+    },
+    {
+      "patient": "p05",
+      "factId": "egfr",
+      "kind": "dontKnow",
+      "reply": "I'm not sure they ever told me about EGFR.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "You'd have to ask my doctor, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "I don't remember.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "Oh, I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "You'd have to ask my doctor, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "kras",
+      "kind": "dontKnow",
+      "reply": "They mentioned a gene, KRAS or something like it, but I don't know what they found.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Oh, I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "You'd have to ask my doctor, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "I don't remember.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "Oh, I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "Keytruda, with the chemo. My scans got worse on it.",
+      "expected": "progressed",
+      "answer": "progressed"
+    },
+    {
+      "patient": "p05",
+      "factId": "prior_platinum",
+      "kind": "dontKnow",
+      "reply": "I had chemo, but I don't know the name of it.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No, no pills for the cancer.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p05",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "You'd have to ask my doctor, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "lines_advanced",
+      "kind": "dontKnow",
+      "reply": "Is the chemo and the Keytruda one or two? I don't know how they count.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "Yes, breast cancer, I finished treatment for it last year.",
+      "expected": "within_2_years",
+      "answer": "within_2_years"
+    },
+    {
+      "patient": "p05",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p05",
+      "factId": "hiv",
+      "kind": "dontKnow",
+      "reply": "I've never been tested for HIV, I suppose.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "Goodness, no.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "Prednisone, 5 milligrams every morning.",
+      "expected": "low_dose",
+      "answer": "low_dose"
+    },
+    {
+      "patient": "p06",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Squamous cell, they said.",
+      "expected": "squamous",
+      "answer": "squamous"
+    },
+    {
+      "patient": "p06",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "It's in my chest, the lung and lymph nodes in the middle. Too big for surgery, they said.",
+      "expected": "locally_advanced",
+      "answer": "locally_advanced"
+    },
+    {
+      "patient": "p06",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, they did a brain scan and it's clean.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p06",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "No clue.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I'm up and around, just can't do the heavy work I used to.",
+      "expected": "ps1",
+      "answer": "ps1"
+    },
+    {
+      "patient": "p06",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "No clue.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "Ask the doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "No clue.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "kras",
+      "kind": "phrase",
+      "reply": "Ask the doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "No clue.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Ask the doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "pdl1",
+      "kind": "dontKnow",
+      "reply": "Some PD number? Didn't stick.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No, haven't started any treatment.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p06",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No chemo yet.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p06",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p06",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "No clue.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "None yet, I just got diagnosed.",
+      "expected": "zero",
+      "answer": "zero"
+    },
+    {
+      "patient": "p06",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p06",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "Had pneumonitis about eight years ago from a bad flu. Cleared up.",
+      "expected": "past",
+      "answer": "past"
+    },
+    {
+      "patient": "p06",
+      "factId": "hiv",
+      "kind": "dontKnow",
+      "reply": "Never been tested.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "Never checked, so I couldn't say.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "Ha. No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "Nope.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p07",
+      "factId": "histology",
+      "kind": "dontKnow",
+      "reply": "I'm sorry, I don't remember the type.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "They caught it early, I'm sorry, it's just the one spot and they say surgery can take it out.",
+      "expected": "early_resectable",
+      "answer": "early_resectable"
+    },
+    {
+      "patient": "p07",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, the brain is fine.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p07",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "I'm not sure, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "I'm sorry, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I'm doing everything I always did, work and all.",
+      "expected": "ps0",
+      "answer": "ps0"
+    },
+    {
+      "patient": "p07",
+      "factId": "egfr",
+      "kind": "dontKnow",
+      "reply": "I'm sorry, I think they tested for something like that but I don't know the result.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "I'm not sure, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "I'm sorry, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "I'm not sure, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "I'm sorry, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "kras",
+      "kind": "phrase",
+      "reply": "I'm not sure, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "I'm sorry, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "I'm not sure, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "I'm sorry, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "I'm not sure, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No, I haven't had any treatment yet.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p07",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No chemo.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p07",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p07",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "I'm not sure, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "None, I haven't had treatment.",
+      "expected": "zero",
+      "answer": "zero"
+    },
+    {
+      "patient": "p07",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No, never.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p07",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "ild",
+      "kind": "dontKnow",
+      "reply": "I had a bad chest infection once, I'm sorry, I don't know if that's the same thing.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, I'm not, sorry.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p09",
+      "factId": "histology",
+      "kind": "dontKnow",
+      "reply": "Dad can't remember and I wasn't at that appointment.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "Dad's cancer has spread to his liver.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p09",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, not in the brain.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p09",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "We don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "Neither of us knows, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "He's up more than half the day but he can't do any work now, he naps a lot.",
+      "expected": "ps2",
+      "answer": "ps2"
+    },
+    {
+      "patient": "p09",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "We don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "Neither of us knows, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "I'd have to ask his doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "We don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "Neither of us knows, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "kras",
+      "kind": "phrase",
+      "reply": "I'd have to ask his doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "We don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "Neither of us knows, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "I'd have to ask his doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "pdl1",
+      "kind": "dontKnow",
+      "reply": "They mentioned PD-L1 being something, high maybe? I really am not sure.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "He had Keytruda but they stopped it because it gave him bad colitis.",
+      "expected": "stopped_other",
+      "answer": "stopped_other"
+    },
+    {
+      "patient": "p09",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, he had carboplatin with it.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p09",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p09",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "Neither of us knows, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One, the chemo and Keytruda together.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p09",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "He had bladder cancer three years ago, treated with surgery.",
+      "expected": "two_to_5_years",
+      "answer": "two_to_5_years"
+    },
+    {
+      "patient": "p09",
+      "factId": "autoimmune_active",
+      "kind": "dontKnow",
+      "reply": "He takes a lot of medicines, I'm not sure what they're all for.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "ild",
+      "kind": "dontKnow",
+      "reply": "Not that I know of, but I'm not sure what his lungs showed before.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "He's a man, so no.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "Not anymore, he finished the prednisone for the colitis last month.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p10",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p10",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "Metastatic, to the brain and the other lung.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p10",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "Yes, one lesion, treated with radiosurgery a year ago, stable since.",
+      "expected": "treated_stable",
+      "answer": "treated_stable"
+    },
+    {
+      "patient": "p10",
+      "factId": "leptomeningeal",
+      "kind": "says",
+      "reply": "No leptomeningeal spread.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p10",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "Fully active, I'm still working full shifts.",
+      "expected": "ps0",
+      "answer": "ps0"
+    },
+    {
+      "patient": "p10",
+      "factId": "egfr",
+      "kind": "says",
+      "reply": "EGFR negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p10",
+      "factId": "alk",
+      "kind": "says",
+      "reply": "ALK negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p10",
+      "factId": "ros1",
+      "kind": "says",
+      "reply": "ROS1 fusion, positive.",
+      "expected": "found",
+      "answer": "found"
+    },
+    {
+      "patient": "p10",
+      "factId": "ret",
+      "kind": "dontKnow",
+      "reply": "I didn't see RET on my report, so I can't say.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p10",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p10",
+      "factId": "kras",
+      "kind": "says",
+      "reply": "KRAS negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p10",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p10",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "Not something I've been told.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p10",
+      "factId": "braf_v600e",
+      "kind": "says",
+      "reply": "BRAF negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p10",
+      "factId": "pdl1",
+      "kind": "says",
+      "reply": "PD-L1 5 percent.",
+      "expected": "low",
+      "answer": "low"
+    },
+    {
+      "patient": "p10",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No immunotherapy.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p10",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No chemo.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p10",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "Yes, Rozlytrek, entrectinib.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p10",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "Not something I've been told.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p10",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p10",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No chest radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p10",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "Yes, I have Crohn's and I'm on Humira for it.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p10",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p10",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, I'm not pregnant or breastfeeding.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No steroids.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p12",
+      "factId": "histology",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "It's everywhere. Brain, bones.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p12",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "Yes. It's in my brain, I've had headaches and a seizure.",
+      "expected": "symptoms",
+      "answer": "symptoms"
+    },
+    {
+      "patient": "p12",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "My son might know. I don't.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "Up a good part of the day, but I can't work at all.",
+      "expected": "ps2",
+      "answer": "ps2"
+    },
+    {
+      "patient": "p12",
+      "factId": "egfr",
+      "kind": "dontKnow",
+      "reply": "Son thinks EGFR was tested. Doesn't know what it said.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "My son might know. I don't.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "My son might know. I don't.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "kras",
+      "kind": "dontKnow",
+      "reply": "Maybe something about KRAS? Not sure.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "My son might know. I don't.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "pdl1",
+      "kind": "says",
+      "reply": "My son says the PD-L1 was high, over 50 percent.",
+      "expected": "high",
+      "answer": "high"
+    },
+    {
+      "patient": "p12",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No treatment yet.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p12",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p12",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p12",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "My son might know. I don't.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "None. They only just found it.",
+      "expected": "zero",
+      "answer": "zero"
+    },
+    {
+      "patient": "p12",
+      "factId": "chest_radiation_6m",
+      "kind": "dontKnow",
+      "reply": "They talked about radiation for my head. Not sure about the chest.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p12",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p12",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p12",
+      "factId": "hiv",
+      "kind": "dontKnow",
+      "reply": "Don't think I've been tested.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "Never been tested.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p12",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p12",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p12",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "Dexamethasone for the swelling. The doctor said it's a high dose, more than 10 of prednisone.",
+      "expected": "high_dose",
+      "answer": "high_dose"
+    },
+    {
+      "patient": "p13",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p13",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "Stage 4, it's in the bones and lymph nodes.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p13",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No brain involvement.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p13",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "I'd need to check my portal.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p13",
+      "factId": "measurable_disease",
+      "kind": "says",
+      "reply": "Yes, there's a node they measure on every scan.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p13",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "Up and about, working from home, just can't do anything strenuous.",
+      "expected": "ps1",
+      "answer": "ps1"
+    },
+    {
+      "patient": "p13",
+      "factId": "egfr",
+      "kind": "says",
+      "reply": "EGFR exon 20 insertion.",
+      "expected": "exon20_insertion",
+      "answer": "exon20_insertion"
+    },
+    {
+      "patient": "p13",
+      "factId": "alk",
+      "kind": "says",
+      "reply": "ALK negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p13",
+      "factId": "ros1",
+      "kind": "says",
+      "reply": "ROS1 negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p13",
+      "factId": "ret",
+      "kind": "says",
+      "reply": "RET negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p13",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "Don't know offhand.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p13",
+      "factId": "kras",
+      "kind": "says",
+      "reply": "KRAS negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p13",
+      "factId": "her2",
+      "kind": "dontKnow",
+      "reply": "HER2 may have been on the panel, I'd have to check.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p13",
+      "factId": "met",
+      "kind": "says",
+      "reply": "MET negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p13",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Don't know offhand.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p13",
+      "factId": "pdl1",
+      "kind": "says",
+      "reply": "PD-L1 zero percent.",
+      "expected": "negative",
+      "answer": "negative"
+    },
+    {
+      "patient": "p13",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No immunotherapy.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p13",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Carboplatin, along with Rybrevant.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p13",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No pills. The Rybrevant was an infusion.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p13",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "I'd need to check my portal.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p13",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One so far.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p13",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p13",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p13",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "Yes, HIV, undetectable on my meds for years.",
+      "expected": "controlled",
+      "answer": "controlled"
+    },
+    {
+      "patient": "p13",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, male.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "None.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p14",
+      "factId": "histology",
+      "kind": "dontKnow",
+      "reply": "They said non-small cell, and then something about it being mixed? I didn't follow.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "Oh, it's spread, to the liver and some lymph nodes, they told me in the summer.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p14",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, they checked my brain and it's fine, thank the Lord.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p14",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "I don't know, honey.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "Oh, I wouldn't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I'm up and about, I just can't do the heavy cleaning anymore.",
+      "expected": "ps1",
+      "answer": "ps1"
+    },
+    {
+      "patient": "p14",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "I don't know, honey.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "Oh, I wouldn't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "You'd have to ask them.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "I don't know, honey.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "Oh, I wouldn't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "kras",
+      "kind": "phrase",
+      "reply": "You'd have to ask them.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "I don't know, honey.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "Oh, I wouldn't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "You'd have to ask them.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "I don't know, honey.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "I had Tecentriq, the immune one, and it stopped working, the cancer grew.",
+      "expected": "progressed",
+      "answer": "progressed"
+    },
+    {
+      "patient": "p14",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, carboplatin, twice now actually.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p14",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p14",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "Oh, I wouldn't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "lines_advanced",
+      "kind": "dontKnow",
+      "reply": "Oh, I don't know how they count them, honey.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No, just this one.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p14",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "ild",
+      "kind": "dontKnow",
+      "reply": "They said something about inflammation once? I don't know if it was the lungs.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "Oh heavens, no.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "steroids",
+      "kind": "dontKnow",
+      "reply": "I take a little white pill in the morning, I'm not sure what it is.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p15",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "Metastatic, liver and bone.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p15",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, brain MRIs have been negative.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p15",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Good question, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "measurable_disease",
+      "kind": "dontKnow",
+      "reply": "Measurable? What does that mean exactly? I'm not sure.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "Up and about all day, but nothing strenuous.",
+      "expected": "ps1",
+      "answer": "ps1"
+    },
+    {
+      "patient": "p15",
+      "factId": "egfr",
+      "kind": "says",
+      "reply": "EGFR negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p15",
+      "factId": "alk",
+      "kind": "says",
+      "reply": "ALK negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p15",
+      "factId": "ros1",
+      "kind": "says",
+      "reply": "ROS1 negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p15",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "Good question, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "kras",
+      "kind": "says",
+      "reply": "No KRAS mutation.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p15",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "met",
+      "kind": "says",
+      "reply": "MET exon 14 skipping.",
+      "expected": "exon14_skipping",
+      "answer": "exon14_skipping"
+    },
+    {
+      "patient": "p15",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "pdl1",
+      "kind": "dontKnow",
+      "reply": "PD-L1... is that the immunotherapy marker? I think they said low, but I may be mixing it up.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No immunotherapy so far.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p15",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, carboplatin and pemetrexed after the pill stopped working.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p15",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "Yes, Tabrecta, capmatinib.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p15",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "Good question, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Two: Tabrecta, then the chemo.",
+      "expected": "two",
+      "answer": "two"
+    },
+    {
+      "patient": "p15",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p15",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p15",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, I'm a man.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No steroids.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p16",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Squamous cell carcinoma.",
+      "expected": "squamous",
+      "answer": "squamous"
+    },
+    {
+      "patient": "p16",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "It's in the liver now.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p16",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p16",
+      "factId": "leptomeningeal",
+      "kind": "says",
+      "reply": "No, the doctor said the lining of the brain and spine is clear.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "measurable_disease",
+      "kind": "says",
+      "reply": "Yes, the liver tumor, they measure it every scan.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p16",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I'm up and around but I can't do the heavy work.",
+      "expected": "ps1",
+      "answer": "ps1"
+    },
+    {
+      "patient": "p16",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "That I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "That I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "kras",
+      "kind": "phrase",
+      "reply": "That I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "That I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "That I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "Libtayo with carboplatin. It grew on that.",
+      "expected": "progressed",
+      "answer": "progressed"
+    },
+    {
+      "patient": "p16",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Carboplatin, yes.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p16",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p16",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "That I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p16",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "Melanoma on my back, removed in 2009.",
+      "expected": "over_5_years",
+      "answer": "over_5_years"
+    },
+    {
+      "patient": "p16",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p16",
+      "factId": "hiv",
+      "kind": "dontKnow",
+      "reply": "Never been tested for it.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "Yes, a kidney transplant in 2011.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p16",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, on two counts.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p18",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "adenocarcinoma",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p18",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "only in my chest but they say surgery wont work",
+      "expected": "locally_advanced",
+      "answer": "locally_advanced"
+    },
+    {
+      "patient": "p18",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "no",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p18",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "not sure, gotta ask my dr",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "dunno",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "fully active, still working 50 hrs a week",
+      "expected": "ps0",
+      "answer": "ps0"
+    },
+    {
+      "patient": "p18",
+      "factId": "egfr",
+      "kind": "says",
+      "reply": "egfr negative",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p18",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "not sure, gotta ask my dr",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "dunno",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "not sure, gotta ask my dr",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "dunno",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "kras",
+      "kind": "phrase",
+      "reply": "not sure, gotta ask my dr",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "dunno",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "not sure, gotta ask my dr",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "braf_v600e",
+      "kind": "says",
+      "reply": "BRAF V600E positive",
+      "expected": "found",
+      "answer": "found"
+    },
+    {
+      "patient": "p18",
+      "factId": "pdl1",
+      "kind": "dontKnow",
+      "reply": "pd-l1 was on there, low? or medium? dont remember",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "no treatment yet",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p18",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "no chemo yet",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p18",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "no",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p18",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "not sure, gotta ask my dr",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "none yet",
+      "expected": "zero",
+      "answer": "zero"
+    },
+    {
+      "patient": "p18",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "no",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p18",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "no",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p18",
+      "factId": "autoimmune_active",
+      "kind": "dontKnow",
+      "reply": "not sure what counts as that",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "no",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p18",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "no",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p18",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "never been tested i think",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "no",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p18",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "no",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p18",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "no lol im a guy",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p18",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "no",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p19",
+      "factId": "histology",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "It's in my lung and the glands nearby. They said it's too far along for an operation.",
+      "expected": "locally_advanced",
+      "answer": "locally_advanced"
+    },
+    {
+      "patient": "p19",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, nothing in my head.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p19",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "I'm not sure, you'd have to ask my neighbor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I'm up for more than half the day, but I can't do any work, I sit a lot.",
+      "expected": "ps2",
+      "answer": "ps2"
+    },
+    {
+      "patient": "p19",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "I'm not sure, you'd have to ask my neighbor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "Oh, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "I'm not sure, you'd have to ask my neighbor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "kras",
+      "kind": "phrase",
+      "reply": "Oh, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "I'm not sure, you'd have to ask my neighbor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Oh, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No, not that immune one.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p19",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, I had the carboplatin with my radiation.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p19",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p19",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "I'm not sure, you'd have to ask my neighbor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "lines_advanced",
+      "kind": "dontKnow",
+      "reply": "How many? I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "Yes, I finished radiation on my chest in the summer, about two months ago.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p19",
+      "factId": "other_cancer",
+      "kind": "dontKnow",
+      "reply": "I had something taken off my skin once, I think it was a cancer, but I don't remember what kind or when.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "ild",
+      "kind": "dontKnow",
+      "reply": "Inflammation? Maybe, I don't recall.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "hepatitis_active",
+      "kind": "phrase",
+      "reply": "Oh, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, dear, I'm eighty.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "steroids",
+      "kind": "dontKnow",
+      "reply": "I take a lot of pills. One might be a steroid, I couldn't say.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p20",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "Stage 4. Brain and bones.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "metastatic_or_recurrent"
+    },
+    {
+      "patient": "p20",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "Had two spots in the brain, they zapped them last year. Stable since.",
+      "expected": "treated_stable",
+      "answer": "treated_stable"
+    },
+    {
+      "patient": "p20",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "Ask my doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I get around. Can't do heavy work.",
+      "expected": "ps1",
+      "answer": "ps1"
+    },
+    {
+      "patient": "p20",
+      "factId": "egfr",
+      "kind": "says",
+      "reply": "No EGFR.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p20",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "Ask my doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "No idea.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "Ask my doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "kras",
+      "kind": "says",
+      "reply": "KRAS negative.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p20",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "Ask my doctor.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "No idea.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "pdl1",
+      "kind": "dontKnow",
+      "reply": "Something about PD-L1. Don't recall the number.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "Chemo and Keytruda. Didn't work, it grew.",
+      "expected": "progressed",
+      "answer": "progressed"
+    },
+    {
+      "patient": "p20",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, carboplatin.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p20",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p20",
+      "factId": "prior_adc",
+      "kind": "dontKnow",
+      "reply": "The second one was some new infusion, a long name with 'deruxtecan' maybe? Not sure.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Two.",
+      "expected": "two",
+      "answer": "two"
+    },
+    {
+      "patient": "p20",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p20",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p20",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "Never checked.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    }
+  ],
+  "failures": {}
+}
