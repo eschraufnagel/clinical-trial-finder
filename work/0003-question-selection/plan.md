@@ -312,3 +312,9 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **The order favours trials the mapper read little:** short-list trials carry about half the average candidate's mappings.
   - Record: `gate-2-finding.md` and `gate-2-transcripts.txt`. **→ Gate 2.**
 - **Gate 2.** As recommended: `shortlist`, budget 8; the order kept, and handed to 0004.
+- **Step 10.** Settings frozen: `shortlist`, budget 8. Held-out was scored once, in `evals/results/questions/01-867d9528f7e8.json` (18 s); `--check` matches it.
+  - **At 8 follow-ups:** agreement 89% for `shortlist`, 85% for `count`, 83% for `fixed` and 79% for the intake alone. Knowing everything, `shortlist` reaches 95%.
+  - **Per patient,** `shortlist` is never worse than either other scorer.
+  - **Dev's "faster" didn't hold:** `count` leads at 2 to 5 follow-ups.
+  - Written into `gate-2-finding.md`.
+

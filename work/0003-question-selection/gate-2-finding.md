@@ -97,3 +97,43 @@ This follows from the spec's order (§2), which excludes "the number of facts ma
 - **The order is kept as the spec pinned it** for held-out, and goes to 0004 as its first question.
 
 Held-out is then scored once (below).
+
+## Held-out, scored once
+
+17 patients, with the frozen settings: scorer `shortlist`, budget 8, intake of 8, short list of 10. The run is [`evals/results/questions/01-867d9528f7e8.json`](../../evals/results/questions/01-867d9528f7e8.json), which holds dev too, rerun under the same settings. It is deterministic, and `npm run questions:eval -- --check` reruns it row for row.
+
+| Arm | Scorer | Agreement | Would-flag | Follow-ups | "Don't know" |
+| --- | --- | ---: | ---: | ---: | ---: |
+| record | — | 100% | 6% | 0 | 0 |
+| intake only | — | 79% | 20% | 0 | 0 |
+| conversation | fixed | 83% | 17% | 8 | 97 |
+| conversation | count | 85% | 15% | 8 | 49 |
+| conversation | **shortlist** | **89%** | **12%** | 7.5 | 44 |
+| knows all | count | 90% | 14% | 8 | 4 |
+| knows all | **shortlist** | **95%** | **10%** | 7.5 | 4 |
+
+The record arm's 6% is p19. Her search keeps 2 trials and the record flags both, so her whole list is flagged.
+
+**Agreement after k follow-ups**, conversation arms:
+
+| k | 0 | 2 | 4 | 6 | 8 | 10 | 14 | 20 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| fixed | 79% | 79% | 82% | 82% | 83% | 85% | 85% | 91% |
+| count | 79% | **82%** | **84%** | 85% | 85% | 85% | 89% | 92% |
+| shortlist | 79% | 79% | 81% | 85% | **89%** | **90%** | **92%** | 92% |
+
+**Per patient, at 8 follow-ups:** `shortlist` is never worse than either other scorer. It's better than `count` for 4 patients and level for 13, and better than `fixed` for 7 and level for 10.
+
+### What held-out says
+
+- **`shortlist` ends higher, but it isn't faster early.** Dev's "1 to 4 questions where `count` takes 6 to 8" didn't hold:
+  - on held-out, `count` leads at 2 to 5 follow-ups;
+  - the two are level at 6;
+  - `shortlist` leads from 7 on;
+  - at the frozen budget of 8, `shortlist` has 89% against 85%.
+
+  The honest summary is that `shortlist` is better by the budget, and no better before it.
+- **The intake does more on held-out than on dev:** 79% against dev's 50%. Many held-out patients' short lists are settled by the intake alone (p01, p18, p19 at 100%). The follow-ups add 10 points on held-out and 40 on dev.
+- **Knowing everything is worth about 6 points** (95% against 89%), and the chooser comes close to the record when the patient knows. For 7 patients knows-all still doesn't reach 100% by question 8, so budget 8 is short for a patient who could answer everything.
+- **About a third of `shortlist`'s questions come back "don't know"** (44 of 128). `fixed` wastes more (97); `count` about the same (49).
+- **The order's bias is unchanged by this:** short-list trials carry fewer mappings than the average candidate, and 0 to 5 short-list places per patient hold a trial with no mappings at all (31 over the 17). This is 0004's first question.
