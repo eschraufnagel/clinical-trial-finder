@@ -121,6 +121,14 @@ export function scorePatients(
   };
 }
 
+/** The settings a `--check` reruns a committed result under. */
+export function settingsForCheck(
+  _committed: Pick<QuestionsEvalResult, "settings" | "settingsSha256">,
+  current: ConversationSettings,
+): ConversationSettings {
+  return current;
+}
+
 export function latestResultFile(dir: string): string | undefined {
   let names: string[];
   try {
@@ -183,9 +191,10 @@ function main(): void {
       return;
     }
     const committed = readResult(file);
+    const ctx = loadContext();
     const rerun = scorePatients(
       committed.sets,
-      loadContext(),
+      { ...ctx, settings: settingsForCheck(committed, ctx.settings) },
       committed.reads === null
         ? undefined
         : {
