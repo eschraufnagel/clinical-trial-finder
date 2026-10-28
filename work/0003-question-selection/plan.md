@@ -298,3 +298,8 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **`order.ts` gained `keyOf` and `compareKeys`,** so the chooser compares counts by the one definition of the order.
   - **Timing:** about 50 ms per conversation for 1,060 trials.
   - **While the tests were first written,** five of their expectations were wrong about the fixture, not the code: NCT04 and NCT05 don't map HIV, `brain_mets` is mapped by no trial, and a budget of 0 leaves ECOG open. They were corrected in the same commit; no existing test changed.
+- **Step 8.** `evals/questions/arms.ts`, `metrics.ts` and `result.ts`, and `scripts/questions-eval.ts` (`questions:eval`, with `--dev` and `--check`).
+  - **Dev results go to `evals/results/questions/dev/`,** and held-out runs, which include dev, go to `evals/results/questions/`, as `search:eval` does.
+  - **The curve runs the conversation again with a budget of 20.** The same choices are made, so the conversation arm's list is the curve's at the budget.
+  - **Would-flag is re-derived from the rows** through the record row's `recordFlagged`. The curves are checked only by `--check`, which reruns.
+  - **The metrics test's numbers were worked out by hand before it ran,** and all of them held. One expectation in the result test was wrong: the fixture's all-zero hash matched the file name it was meant to reject. It was corrected while the test was written.
