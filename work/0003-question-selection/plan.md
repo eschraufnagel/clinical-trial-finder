@@ -239,7 +239,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - `tests/evals/questions-patients.test.ts`, `questions-metrics.test.ts`, `questions-result.test.ts`, `questions-read-grade.test.ts`
 - `tests/scripts/questions-cli.test.ts`, `questions-read.test.ts`
 - `docs/questions.md`
-- `work/0003-question-selection/intent.md`, `spec.md`, `plan.md`, `gate-1-patients.md`, `gate-2-finding.md`, `gate-3-reader.md`
+- `work/0003-question-selection/intent.md`, `spec.md`, `plan.md`, `gate-1-patients.md`, `gate-2-finding.md`, `gate-2-transcripts.txt`, `gate-3-reader.md`
 
 **Modified:**
 - `src/facts/index.ts`, and `scripts/facts-map.ts` and `scripts/facts-show.ts` (the loader move)
