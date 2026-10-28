@@ -1,5 +1,6 @@
 export { type MapOptions, mapTrialFacts } from "./map.js";
 export { PROMPT_VERSION, SYSTEM_PROMPT } from "./prompt.js";
+export { FACTS_DATA_DIR, readTrialFacts, runDirFor } from "./run.js";
 export {
   dependsOn,
   type Profile,

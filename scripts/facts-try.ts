@@ -10,6 +10,7 @@
  * unanswered questions would flag the most trials. No model, no network.
  */
 import { readFileSync } from "node:fs";
+import { readTrialFacts, runDirFor } from "../src/facts/run.js";
 import { dependsOn, type Profile, statusFor, type TrialStatus } from "../src/facts/status.js";
 import type { FactVocabulary } from "../src/facts/types.js";
 import { loadFactVocabulary } from "../src/facts/vocabulary.js";
@@ -17,7 +18,7 @@ import { loadZipPoints } from "../src/search/geo.js";
 import { searchTrials } from "../src/search/search.js";
 import { loadVocabulary } from "../src/search/vocabulary.js";
 import { loadSnapshot } from "../src/trials/snapshot-load.js";
-import { describeMapping, readTrialFacts, runDirFor } from "./facts-show.js";
+import { describeMapping } from "./facts-show.js";
 import { formatResult, parseArgs } from "./search.js";
 
 export interface TryResult {

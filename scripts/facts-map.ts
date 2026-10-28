@@ -17,10 +17,10 @@
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { fileURLToPath } from "node:url";
 import { FACT_LABELS_DIR, type FactLabels } from "../evals/facts/labels.js";
 import { mapTrialFacts } from "../src/facts/map.js";
 import { buildUserPrompt, PROMPT_VERSION, SYSTEM_PROMPT } from "../src/facts/prompt.js";
+import { FACTS_DATA_DIR } from "../src/facts/run.js";
 import type { FactVocabulary } from "../src/facts/types.js";
 import { factsFor, loadFactVocabulary } from "../src/facts/vocabulary.js";
 import {
@@ -38,8 +38,6 @@ import { loadSnapshot } from "../src/trials/snapshot-load.js";
 import type { SnapshotTrial } from "../src/trials/snapshot-types.js";
 import { candidateIds } from "./facts-candidates.js";
 import { logSpend, planPaidRun, readModelFlags, roleLine } from "./lib/model-flags.js";
-
-export const FACTS_DATA_DIR = fileURLToPath(new URL("../data/facts", import.meta.url));
 
 /** About 15 mappings of 40 tokens each: an expectation for the estimate, not a cap. */
 const EXPECTED_OUTPUT_TOKENS = 600;

@@ -7,25 +7,10 @@
  * mapping is a hint the trial may not fit someone with those answers, never a
  * reason to drop the trial (`work/0002-fact-vocabulary/gate-2-finding.md`).
  */
-import { existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { readTrialFacts, runDirFor } from "../src/facts/run.js";
 import type { FactVocabulary, TrialFacts } from "../src/facts/types.js";
 import { loadFactVocabulary } from "../src/facts/vocabulary.js";
 import { loadSnapshot } from "../src/trials/snapshot-load.js";
-import { FACTS_DATA_DIR } from "./facts-map.js";
-
-/** The run directory named in `<month>/latest`, or the one given. */
-export function runDirFor(month: string, given: string | undefined): string {
-  if (given !== undefined) return given;
-  const latest = join(FACTS_DATA_DIR, month, "latest");
-  if (!existsSync(latest)) throw new Error(`No ${latest}: give --run <dir>.`);
-  return join(FACTS_DATA_DIR, month, readFileSync(latest, "utf8").trim());
-}
-
-export function readTrialFacts(dir: string, nctId: string): TrialFacts | undefined {
-  const path = join(dir, `${nctId}.json`);
-  return existsSync(path) ? (JSON.parse(readFileSync(path, "utf8")) as TrialFacts) : undefined;
-}
 
 /** "ecog: rules out ps2, ps3_4" in the answers' own words. */
 export function describeMapping(
