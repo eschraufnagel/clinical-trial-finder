@@ -121,12 +121,16 @@ export function scorePatients(
   };
 }
 
-/** The settings a `--check` reruns a committed result under. */
+/**
+ * The settings a `--check` reruns a committed result under: the ones it
+ * records, so a dev result made before Gate 2 froze the settings still checks.
+ * The vocabulary, patients and run are today's, and must reproduce it.
+ */
 export function settingsForCheck(
-  _committed: Pick<QuestionsEvalResult, "settings" | "settingsSha256">,
-  current: ConversationSettings,
+  committed: Pick<QuestionsEvalResult, "settings" | "settingsSha256">,
+  _current: ConversationSettings,
 ): ConversationSettings {
-  return current;
+  return { ...committed.settings, sha256: committed.settingsSha256 };
 }
 
 export function latestResultFile(dir: string): string | undefined {
