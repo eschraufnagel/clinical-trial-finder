@@ -293,3 +293,8 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
 - **Step 4.** Run loader moved to `src/facts/run.ts`; `facts:show` and `facts:try` print as before.
 - **Step 5.** `src/shortlist/order.ts`: `orderTrials`, `shortlistOf` and `ORDER_KEYS`. An entry is a candidate and its status, or `null` for a trial the run didn't map.
 - **Step 6.** `data/questions/conversation.json` and `src/questions/settings.ts`. `loadConversationSettings(vocabulary, path?, cancerType?)` takes the vocabulary first, so the committed file is the default.
+- **Step 7.** `src/questions/select.ts` and `conversation.ts`.
+  - **`shortlistChange` is exact and cheap.** An answer only adds hints, so only short-list trials that gain one can leave, and the trials that take their places are the next ones below that gain none. A test checks it against re-sorting every trial, for every fact and answer.
+  - **`order.ts` gained `keyOf` and `compareKeys`,** so the chooser compares counts by the one definition of the order.
+  - **Timing:** about 50 ms per conversation for 1,060 trials.
+  - **While the tests were first written,** five of their expectations were wrong about the fixture, not the code: NCT04 and NCT05 don't map HIV, `brain_mets` is mapped by no trial, and a budget of 0 leaves ECOG open. They were corrected in the same commit; no existing test changed.
