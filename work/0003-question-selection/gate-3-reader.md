@@ -70,4 +70,4 @@ So 100% exact and 0.5% invented are **upper bounds** for real replies, not estim
 
 ## Answer
 
-*To be filled in by the owner.*
+**Owner, 2026-10: free text, with each reading shown back for the person to confirm or change.** 0004's intent starts from this. The confirm step is part of the page, not optional.

@@ -87,6 +87,8 @@ It measures the full record against the intake alone and against the conversatio
   - buttons first and free text as an option, recorded for 0004's intent.
 - **What it costs to be wrong:** An invented fact puts an answer in a person's profile that they never gave. It moves trials and hides questions from the oncologist sheet. 0004's page design follows from this answer.
 
+**Gate 3, as answered** (owner, 2026-10; `gate-3-reader.md`): free text in 0004, with each reading shown back for the person to confirm or change.
+
 Stage B′ and D need no gate of their own.
 
 ### Steps
@@ -345,3 +347,4 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **Don't-know replies:** 1 of 201 invented (0.5%; 0.1% to 2.8%). p05's "Non-small cell, that's all I remember" was read as another non-small cell type, where her record says adenocarcinoma.
   - **Conversations answered from the readings** (`evals/results/questions/with-reads/02-867d9528f7e8.json`; dev in `01`): only p05 changes. Her conversation's agreement rose from 70% to 80%, and her intake list's would-flag from 50% to 60%.
   - `--check --reads` matches. Record: `gate-3-reader.md`. **→ Gate 3.**
+- **Gate 3.** Free text, with each reading confirmed by the person.
