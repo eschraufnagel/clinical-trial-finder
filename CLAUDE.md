@@ -162,7 +162,7 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run facts:show -- <NCT ID>` | print a trial's mappings, from the run named in `data/facts/<month>/latest` |
 | `npm run facts:try -- <search flags> --profile <file>` | search, then a profile's hints and the questions that would flag the most trials |
 | `npm run questions:split` | move newly written patients from `evals/cases/patients/staging/` into their sets by hash; refuses once the sets hold patients |
-| `npm run questions:try -- --patient <file>` | one made-up patient's conversation, step by step, then the short list and the oncologist's questions; `--scorer`, `--budget`, `--run` |
+| `npm run questions:try -- --patient <file>` | one made-up patient's conversation, step by step, then the short list and the oncologist's questions; `--scorer`, `--budget`, `--run`, `--reads <file>` |
 | `npm run questions:eval` | every patient through every arm, and write a result; `-- --dev`; `-- --reads <file>` answers from a reads file; `-- --check` reruns the latest and fails on any difference |
 | `npm run questions:read -- --set dev\|heldout` | read every patient's replies on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
 

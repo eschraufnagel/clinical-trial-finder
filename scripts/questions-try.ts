@@ -2,10 +2,11 @@
  * One made-up patient's conversation, step by step (spec 0003 §1).
  *
  *   npm run questions:try -- --patient evals/cases/patients/dev/p08.json
- *       [--scorer fixed|count|shortlist] [--budget N] [--run <dir>]
+ *       [--scorer fixed|count|shortlist] [--budget N] [--run <dir>] [--reads <file>]
  *
  * Runs the patient's search, then the intake and the chosen questions,
- * answered from what the patient knows. Prints each question, the answer or
+ * answered from what the patient knows, or with `--reads` from the reader's
+ * readings of their replies (questions:read). Prints each question, the answer or
  * "doesn't know", and which trials entered or left the short list; then the
  * stop, the short list with each trial's hints in the trial's own words, and
  * the questions left for the oncologist. No trial is dropped, and nothing
@@ -13,6 +14,7 @@
  */
 import { fromKnowledge } from "../evals/questions/arms.js";
 import { loadPatient } from "../evals/questions/patients.js";
+import { fromReads, readReadsFile } from "../evals/questions/reads.js";
 import type { FactVocabulary } from "../src/facts/types.js";
 import {
   type ConversationResult,
@@ -107,13 +109,15 @@ function main(): void {
   const ctx = loadContext(value("--run"));
   const patient = loadPatient(path, ctx.vocabulary, ctx.zips);
   const trials = trialsFor(patient, ctx);
+  const readsPath = value("--reads");
+  const answerFrom = readsPath === undefined ? fromKnowledge : fromReads(readReadsFile(readsPath));
   const result = runConversation({
     trials,
     vocabulary: ctx.vocabulary,
     settings: ctx.settings,
     cancerType: patient.search.cancerType,
     sex: patient.search.sex,
-    answer: (factId) => fromKnowledge(patient, factId),
+    answer: (factId) => answerFrom(patient, factId),
     ...(scorer === undefined ? {} : { scorer: scorer as ScorerName }),
     ...(budget === undefined ? {} : { budget: Number(budget) }),
   });

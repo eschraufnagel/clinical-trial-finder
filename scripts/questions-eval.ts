@@ -77,6 +77,17 @@ export function scorePatients(
   reads?: { path: string; file: ReadsFile },
 ): QuestionsEvalResult {
   const { vocabulary, settings } = ctx;
+  if (reads !== undefined) {
+    // Readings of replies a patient no longer gives would answer for them silently.
+    for (const set of sets) {
+      if (reads.file.set !== set || reads.file.patientsSha256 !== patientsSha256(set))
+        throw new Error(
+          `${reads.path} was read from other patients than the committed ${set} set.`,
+        );
+    }
+    if (reads.file.vocabularySha256 !== vocabulary.sha256)
+      throw new Error(`${reads.path} was read with another vocabulary.`);
+  }
   const manifest = JSON.parse(readFileSync(join(ctx.runDir, "manifest.json"), "utf8")) as {
     run: { promptVersion: string; vocabularySha256: string };
   };

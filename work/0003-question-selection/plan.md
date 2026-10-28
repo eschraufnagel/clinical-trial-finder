@@ -238,7 +238,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - `evals/questions/patients.ts`, `arms.ts`, `metrics.ts`, `result.ts`, `reads.ts`
 - `evals/results/questions/` (dev and held-out results), `evals/results/questions/reads/`, `evals/results/questions/with-reads/`
 - `scripts/questions-split.ts`, `questions-eval.ts`, `questions-try.ts`, `questions-read.ts`
-- `tests/shortlist/order.test.ts`
+- `tests/shortlist/order.test.ts`, and `tests/questions/fixture.ts` (made-up trials the chooser's, metrics' and CLI tests share)
 - `tests/questions/settings.test.ts`, `select.test.ts`, `conversation.test.ts`, `read.test.ts`
 - `tests/evals/questions-patients.test.ts`, `questions-metrics.test.ts`, `questions-result.test.ts`, `questions-read-grade.test.ts`
 - `tests/scripts/questions-cli.test.ts`, `questions-read.test.ts`
@@ -246,7 +246,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - `work/0003-question-selection/intent.md`, `spec.md`, `plan.md`, `gate-1-patients.md`, `gate-2-finding.md`, `gate-2-transcripts.txt`, `gate-3-reader.md`
 
 **Modified:**
-- `src/facts/index.ts`, and `scripts/facts-map.ts` and `scripts/facts-show.ts` (the loader move)
+- `src/facts/index.ts`, and `scripts/facts-map.ts`, `scripts/facts-show.ts` and `scripts/facts-try.ts` (the loader move)
 - `tests/boundary.test.ts`, `package.json`, `biome.jsonc`
 - `CLAUDE.md`, `README.md`, `work/ROADMAP.md`
 
@@ -349,3 +349,19 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - `--check --reads` matches. Record: `gate-3-reader.md`. **→ Gate 3.**
 - **Gate 3.** Free text, with each reading confirmed by the person.
 - **Step 14.** `docs/questions.md`; one example and a link in `README.md`; `work/ROADMAP.md` (0003 done, 0004 updated with the Gate 2 and Gate 3 answers); `CLAUDE.md` (layout, the new boundary sentence, four commands including `questions:split`).
+- **Step 15, review passes** (`REVIEW.md`). The paths listed as not touched have no diff against `main`. `search:eval -- --check`, `facts:eval -- --check` and both `questions:eval -- --check` runs match. `spend.jsonl` is unchanged.
+  - **Pass 1, plan compliance.**
+    - *Important, fixed:* `questions:try` lacked the `--reads` flag that spec §1 and §8 and step 9 name. Added.
+    - *Important, fixed:* the plan's file list missed `scripts/facts-try.ts` (the loader move) and `tests/questions/fixture.ts`. Added.
+    - *Nit:* `read-grade.ts` became part of `reads.ts`, and the reads files' naming changed. Both are recorded at step 12.
+  - **Pass 2, correctness.**
+    - *Important, fixed:* `questions:eval --reads` didn't check that the reads file came from the committed patients and vocabulary, so a changed reply would have been answered with a stale reading. It now refuses.
+    - *Important, fixed at step 9:* the oncologist sheet asked a man about pregnancy.
+    - *Nit:* the new guard has no unit test, because `scorePatients` needs the snapshot. It's exercised by `--check --reads`.
+  - **Pass 3, scope and data.** No findings. Made-up patients only. No network beyond the local model on loopback. No hosted spend: the one hosted run was dry. `.env` was neither created nor edited.
+  - **Pass 4, eval integrity.**
+    - *Nit:* five expectations in step 7's new tests and one in step 8's were corrected while the tests were first written, each recorded with the reason. No existing test was changed to pass.
+    - *Nit:* the selection results name the mapping run but not its quantization, temperature and seed. Those are in the run's manifest, and `docs/questions.md` states them.
+    - *Nit:* the Gate 1 blind reader was a Claude model. This is stated in `gate-1-patients.md` and the docs' limits.
+    - Held-out was scored once for selection and read once for the reader. The reader's prompt had two revisions on dev, within the plan's two.
+  - **Pass 5, documentation.** The README gives one example and a link, and no numbers. The docs' numbers were checked against the result files, which caught two wrong claims, both corrected: when `count` leads, and why first-line trials surface. The limits are stated: one author, agreement measured against the mapper rather than the truth, the order's bias, clean replies, and small samples.
