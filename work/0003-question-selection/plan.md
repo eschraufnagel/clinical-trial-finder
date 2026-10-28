@@ -285,3 +285,4 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 Written as the work goes: the baseline, the split, the knowledge rates, the blind reading, the gate answers, the dev curves, held-out, the reader's revisions and numbers, and the review findings.
 
 - **Step 1.** Intent, spec and plan committed. Baseline 817 passed and 8 expected fail.
+- **Step 2.** `AUTHORING.md` and the patient loader. Spec §5.2 amended: the coherence rule "prior treatments no more than the lines allow" is dropped, because adjuvant treatment before a recurrence counts toward no advanced line and checking it would take a clinical judgment. The loader checks the other three.
