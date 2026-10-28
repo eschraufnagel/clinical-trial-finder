@@ -348,3 +348,4 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **Conversations answered from the readings** (`evals/results/questions/with-reads/02-867d9528f7e8.json`; dev in `01`): only p05 changes. Her conversation's agreement rose from 70% to 80%, and her intake list's would-flag from 50% to 60%.
   - `--check --reads` matches. Record: `gate-3-reader.md`. **→ Gate 3.**
 - **Gate 3.** Free text, with each reading confirmed by the person.
+- **Step 14.** `docs/questions.md`; one example and a link in `README.md`; `work/ROADMAP.md` (0003 done, 0004 updated with the Gate 2 and Gate 3 answers); `CLAUDE.md` (layout, the new boundary sentence, four commands including `questions:split`).

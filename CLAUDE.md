@@ -88,6 +88,8 @@ src/
   trials/        trial loading, the snapshot, and the registry requests (the fetches are run from scripts/)
   search/        the search: purpose, cancer type, age and sex, distance; no model
   facts/         the fact vocabulary, the mapper that reads trial rules onto it, and the hints a profile gets
+  questions/     the conversation: intake, choosing the next question, stopping, and the reader of replies
+  shortlist/     the order of the trials a search keeps, and the short list at its top
   criteria/      eligibility parser
   screening/     per-trial screening agent: stage two, for a shortlisted trial
   plain/         plain-language renderings of criteria, and the check that decides whether one is shown
@@ -100,10 +102,12 @@ data/
   geo/           ZIP code locations from the Census gazetteer
   cancer-types/  the search vocabulary, one file per cancer type plus generic.json
   facts/         the fact vocabulary, and mapping runs by snapshot month and run name
+  questions/     the conversation's settings: intake, skips, short-list size, budget, scorer
 evals/
-  cases/         eval task definitions: labels and vignettes
+  cases/         eval task definitions: labels, vignettes, and patients (cases/patients/)
   search/        the search measurement: labels loader, metrics, result checks
   facts/         the fact measurement: labels, coverage, grading, result checks
+  questions/     the question measurement: made-up patients, arms, metrics, readings, result checks
   graders/       deterministic graders
   participant/   the simulated participant
   results/       committed run output
@@ -112,7 +116,7 @@ tests/           deterministic tests only
 local/           settings, keys and spend ledgers; gitignored
 ```
 
-New parts (question selection, the shortlist) get their own directories under `src/` when the slice that needs them is planned.
+New parts get their own directories under `src/` when the slice that needs them is planned.
 
 **Inherited, measured elsewhere.** `data/trials/` holds the prescreening repository's twelve pinned NSCLC protocols (`src/trials/corpus.ts`), `data/plain/` their plain renderings, and `evals/cases/` its hand-made labels and vignettes. They're here because the copied modules' tests read them, and because they're a labelled starting set. Every number measured on them was measured in the prescreening repository. None is a result of this one.
 
@@ -124,7 +128,7 @@ Three boundaries matter more than the rest. Nothing outside `src/models/` calls 
 - `fetch()` to `clinicaltrials.gov` in `src/trials/registry.ts`, called by `npm run fetch:trials` and `npm run snapshot:fetch`
 - listening on `127.0.0.1` in `src/server/start.ts`, which doesn't exist yet
 
-Widening any of them is a visible change to that test. The same test keeps `createAdapter` out of `src/` beyond `src/models/`, keeps concrete adapters out of `scripts/` as well as `src/`, allows the key variables to be named only in `src/models/keys.ts`, keeps `src/` from importing `evals/`, and keeps the labelling tool from reaching the parser or a model. It also keeps the search labelling tools (`search:sample`, `search:show`) from seeing the search beyond `normalize.ts`, and keeps `src/search/` from reaching a model, the parser, the screening agent or `src/facts/`. The facts labelling tools (`facts:sample`, `facts:label-show`) reach `src/facts/` only for the vocabulary and its types; `src/facts/status.ts` and `vocabulary.ts` reach no model; and nothing under `src/facts/` reaches the model factory, because the mapper takes its adapter as an argument.
+Widening any of them is a visible change to that test. The same test keeps `createAdapter` out of `src/` beyond `src/models/`, keeps concrete adapters out of `scripts/` as well as `src/`, allows the key variables to be named only in `src/models/keys.ts`, keeps `src/` from importing `evals/`, and keeps the labelling tool from reaching the parser or a model. It also keeps the search labelling tools (`search:sample`, `search:show`) from seeing the search beyond `normalize.ts`, and keeps `src/search/` from reaching a model, the parser, the screening agent or `src/facts/`. The facts labelling tools (`facts:sample`, `facts:label-show`) reach `src/facts/` only for the vocabulary and its types; `src/facts/status.ts` and `vocabulary.ts` reach no model; and nothing under `src/facts/` reaches the model factory, because the mapper takes its adapter as an argument. `src/shortlist/` and `src/questions/`, apart from the reader (`read.ts`, `prompt.ts`), reach no model module, the parser, the screening agent, `src/plain/` or `src/transport/`; nothing under `src/questions/` reaches the factory, because the reader takes its adapter; and the patient loader reaches no model.
 
 A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
 
@@ -157,6 +161,10 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run facts:eval` | `-- --coverage` from the labels alone; `-- --run <dir> --set dev\|heldout` grade a run; `-- --check` regrade the latest result |
 | `npm run facts:show -- <NCT ID>` | print a trial's mappings, from the run named in `data/facts/<month>/latest` |
 | `npm run facts:try -- <search flags> --profile <file>` | search, then a profile's hints and the questions that would flag the most trials |
+| `npm run questions:split` | move newly written patients from `evals/cases/patients/staging/` into their sets by hash; refuses once the sets hold patients |
+| `npm run questions:try -- --patient <file>` | one made-up patient's conversation, step by step, then the short list and the oncologist's questions; `--scorer`, `--budget`, `--run` |
+| `npm run questions:eval` | every patient through every arm, and write a result; `-- --dev`; `-- --reads <file>` answers from a reads file; `-- --check` reruns the latest and fails on any difference |
+| `npm run questions:read -- --set dev\|heldout` | read every patient's replies on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
 
 Run `npm run check` before every commit and before opening a PR, and commit only if it passes: `npm run check && git commit ...`.
 
