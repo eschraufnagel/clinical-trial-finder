@@ -318,3 +318,8 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
   - **Dev's "faster" didn't hold:** `count` leads at 2 to 5 follow-ups.
   - Written into `gate-2-finding.md`.
 
+- **Step 11.** `src/questions/prompt.ts` and `read.ts`, with fake-adapter tests.
+  - **`objectFrom` is copied, not imported:** `src/screening/calls.ts` imports the rest of the screening agent.
+  - **A failure of the adapter itself is thrown, not read as unknown,** so a run records it and retries rather than counting it as a "don't know". This refines spec §7.1, which read bad JSON as unknown: JSON of the wrong shape still reads as unknown.
+  - `src/questions/index.ts` doesn't export the reader, so the barrel stays model-free.
+  - **The local model wasn't answering at the start of stage C** (connection refused on 127.0.0.1:8000).
