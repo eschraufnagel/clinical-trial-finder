@@ -292,3 +292,4 @@ Written as the work goes: the baseline, the split, the knowledge rates, the blin
 - **Gate 1.** Accepted, 3 dev.
 - **Step 4.** Run loader moved to `src/facts/run.ts`; `facts:show` and `facts:try` print as before.
 - **Step 5.** `src/shortlist/order.ts`: `orderTrials`, `shortlistOf` and `ORDER_KEYS`. An entry is a candidate and its status, or `null` for a trial the run didn't map.
+- **Step 6.** `data/questions/conversation.json` and `src/questions/settings.ts`. `loadConversationSettings(vocabulary, path?, cancerType?)` takes the vocabulary first, so the committed file is the default.
