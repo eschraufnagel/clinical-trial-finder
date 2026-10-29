@@ -48,6 +48,15 @@ export interface ArmRow {
   noMappingPlaces: number;
   /** Unanswered facts that short-list trials map: the oncologist sheet's length. */
   openQuestions: number;
+  /**
+   * Slice 0004, absent from older results. Mean mappings per short-list
+   * trial, a trial with none counting 0; `null` for an empty short list.
+   */
+  shortlistMappings?: number | null;
+  /** Mean mappings per candidate the search kept; `null` for none. */
+  candidateMappings?: number | null;
+  /** Median miles to the short list's nearest sites, leaving out unknown distances. */
+  medianMiles?: number | null;
   /** Agreement and would-flag after 0 to `CURVE_LENGTH` follow-ups, for the conversation arms. */
   curve: CurvePoint[] | null;
 }
@@ -78,6 +87,14 @@ export interface ArmSummary {
   pushedDown: number;
   noMappingPlaces: number;
   openQuestions: number;
+  /**
+   * Slice 0004, present only when every row carries the numbers: the mean
+   * over patients of short-list mappings ÷ candidate mappings. 1 means the
+   * short list is read as fully as the average trial the search kept.
+   */
+  readRatio?: number | null;
+  /** The mean over patients of the short list's median miles. */
+  medianMiles?: number | null;
   curve: CurvePoint[] | null;
 }
 
@@ -103,6 +120,18 @@ export function summarize(rows: readonly ArmRow[]): ArmSummary[] {
         pushedDown: sum(group.map((r) => r.pushedDown)),
         noMappingPlaces: sum(group.map((r) => r.noMappingPlaces)),
         openQuestions: mean(group.map((r) => r.openQuestions)) ?? 0,
+        ...(group.every((r) => r.shortlistMappings !== undefined)
+          ? {
+              readRatio: mean(
+                group.map((r) =>
+                  r.shortlistMappings == null || !r.candidateMappings
+                    ? null
+                    : r.shortlistMappings / r.candidateMappings,
+                ),
+              ),
+              medianMiles: mean(group.map((r) => r.medianMiles ?? null)),
+            }
+          : {}),
         curve:
           curves.length === 0
             ? null
@@ -114,6 +143,16 @@ export function summarize(rows: readonly ArmRow[]): ArmSummary[] {
     }
   }
   return summaries;
+}
+
+/** The median, or `null` for none. */
+export function median(values: readonly number[]): number | null {
+  const sorted = [...values].sort((a, b) => a - b);
+  if (sorted.length === 0) return null;
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 1
+    ? (sorted[mid] ?? null)
+    : ((sorted[mid - 1] ?? 0) + (sorted[mid] ?? 0)) / 2;
 }
 
 function mean(values: readonly (number | null)[]): number | null {

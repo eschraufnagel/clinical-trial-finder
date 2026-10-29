@@ -162,4 +162,12 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 
 - **Step 4:** `Situation` gains `ordering`, the order its `order` is in. `TrialIndex` is unchanged: a trial maps a fact exactly when it has an entry for it in `deltas`, which is all the recount needs to know that an answer adds a fact checked. Results made before this slice record no order; `settingsForCheck` and the result type read that as `hints`. `--check` matched 03 and dev/01.
 
+- **Step 5:**
+  - `--order` is refused without `--dev`. A run under another order than the file's records a checksum of the file plus the order (`withOrder`), so its name says which settings ran.
+  - `--check` compares only the fields a committed result records (`asRecorded`), so results from before this step still check on every field they have.
+  - The new summary fields (`readRatio`, `medianMiles`) appear only when every row carries the numbers.
+  - `armsFor` ordered the record arm and the no-answers list under the default order. Fixed to use the settings' order: harmless under `hints`, wrong under any other.
+  - `read-first` first counted only trials missing from the run as unread. The spec says trials with no mappings, which includes trials the run read no rule from. Fixed, with a test, before the dev run reported in `gate-1-order.md`.
+  - Dev runs: `dev/02-867d9528f7e8` (`hints`), `dev/03-2a7b65215742` (`checked`), `dev/04-92afa01686ff` (`read-first`).
+
 (Filled in as gates are answered and the plan diverges.)

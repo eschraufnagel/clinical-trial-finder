@@ -22,7 +22,8 @@ import type { Candidate } from "../search/types.js";
  *   compared with more of the person's answers first. It rewards how much of
  *   a trial was checked, not what the trial offers.
  * - `read-first`: among trials with equal hints, trials with mappings before
- *   trials the run has none for.
+ *   trials with none, whether the run has no file for them or read no rule
+ *   of theirs onto a fact.
  */
 export const ORDERS = {
   hints: ["wholeTrialHints", "partHints", "miles", "nctId"],
@@ -64,7 +65,7 @@ export interface OrderKey {
   partHints: number;
   /** Facts the trial maps that the person answered with no hint: `status.fits`. */
   checked: number;
-  /** 1 when the run has no mappings for the trial, else 0. */
+  /** 1 when the trial has no mappings: the run has none for it, or read no rule of it onto a fact. */
   unread: number;
   /** Whole miles to the nearest recruiting site; no distance sorts last. */
   miles: number;
@@ -76,7 +77,9 @@ export function keyOf(entry: OrderEntry): OrderKey {
     wholeTrialHints: entry.status?.hints.length ?? 0,
     partHints: entry.status?.partHints.length ?? 0,
     checked: entry.status?.fits.length ?? 0,
-    unread: entry.status === null ? 1 : 0,
+    // A status's fits and unknowns are every fact the trial maps, whatever the answers.
+    unread:
+      entry.status === null || entry.status.fits.length + entry.status.unknown.length === 0 ? 1 : 0,
     miles: entry.candidate.nearestSite?.miles ?? Number.POSITIVE_INFINITY,
     nctId: entry.candidate.nctId,
   };

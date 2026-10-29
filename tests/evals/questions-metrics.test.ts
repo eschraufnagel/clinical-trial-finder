@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { armsFor } from "../../evals/questions/arms.js";
-import { agreement, summarize, wouldFlag } from "../../evals/questions/metrics.js";
+import { agreement, median, summarize, wouldFlag } from "../../evals/questions/metrics.js";
 import type { Patient } from "../../evals/questions/patients.js";
 import { factsFor } from "../../src/facts/vocabulary.js";
 import { SETTINGS, trials, vocabulary } from "../questions/fixture.js";
@@ -133,5 +133,42 @@ describe("summarize", () => {
     expect(summary?.followUps).toBe(2.5);
     expect(summary?.dontKnows).toBe(2);
     expect(summary?.stops).toEqual({ "nothing-left": 2 });
+  });
+});
+
+describe("how much the short list was read, and how far (slice 0004)", () => {
+  // The fixture's trials carry 2, 1, 1, 1, 1, 1, 0 and no mappings: 7/8 a candidate.
+  const rows = armsFor(A, "dev", trials(), vocabulary, SETTINGS);
+  const record = rows.find((r) => r.arm === "record");
+
+  it("records mappings per short-list trial and per candidate, and the median miles", () => {
+    // A's record flags NCT01 and NCT03, so her list is NCT02, NCT04, NCT05 at 2, 4, 5 miles.
+    expect(record?.shortlist).toEqual(["NCT02", "NCT04", "NCT05"]);
+    expect(record?.shortlistMappings).toBe(1);
+    expect(record?.candidateMappings).toBe(7 / 8);
+    expect(record?.medianMiles).toBe(4);
+  });
+
+  it("summarizes them as the read ratio, only when every row has them", () => {
+    const summary = summarize(rows.filter((r) => r.arm === "record"))[0];
+    expect(summary?.readRatio).toBeCloseTo(8 / 7);
+    expect(summary?.medianMiles).toBe(4);
+    const old = rows.filter((r) => r.arm === "record").map(({ shortlistMappings, ...r }) => r);
+    expect(summarize(old)[0]).not.toHaveProperty("readRatio");
+  });
+
+  it("orders the record arm under the settings' order", () => {
+    const checked = armsFor(A, "dev", trials(), vocabulary, { ...SETTINGS, order: "checked" });
+    // Pregnancy "no" is checked for NCT02 and NCT04 to NCT06, and NCT01 and NCT03 carry
+    // hints: the four tie on hints and checks, so miles decide, as under hints.
+    expect(checked.find((r) => r.arm === "record")?.shortlist).toEqual(["NCT02", "NCT04", "NCT05"]);
+  });
+});
+
+describe("median", () => {
+  it("is the middle value, or the mean of the middle two, or null", () => {
+    expect(median([5, 1, 3])).toBe(3);
+    expect(median([4, 1, 3, 2])).toBe(2.5);
+    expect(median([])).toBeNull();
   });
 });

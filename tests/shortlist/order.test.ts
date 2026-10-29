@@ -118,12 +118,15 @@ describe("the orders of slice 0004", () => {
   });
 
   it("read-first: trials with mappings before trials with none, among equal hints", () => {
-    const unread = entry("NCT1", 1, 0, 0, false);
-    const read = entry("NCT2", 50);
+    const notInRun = entry("NCT1", 1, 0, 0, false);
+    const read = entry("NCT2", 50, 0, 0, true, 1);
     const hinted = entry("NCT3", 2, 1);
-    expect(ids(orderTrials([unread, read, hinted], "read-first"))).toEqual([
+    // In the run, but no rule of it mapped onto a fact: no fits, no unknowns.
+    const noRules = entry("NCT4", 1);
+    expect(ids(orderTrials([notInRun, read, hinted, noRules], "read-first"))).toEqual([
       "NCT2",
       "NCT1",
+      "NCT4",
       "NCT3",
     ]);
   });

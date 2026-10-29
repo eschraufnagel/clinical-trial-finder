@@ -1,0 +1,5293 @@
+{
+  "version": 1,
+  "sets": [
+    "dev"
+  ],
+  "patientsSha256": {
+    "dev": "e25b1dd5f2bf9c88dd525f5fca966baa6c5c4281812f28e11677cf9ebef65179"
+  },
+  "settings": {
+    "version": 1,
+    "intake": [
+      "histology",
+      "extent",
+      "brain_mets",
+      "ecog",
+      "prior_platinum",
+      "prior_pd1",
+      "prior_targeted",
+      "lines_advanced"
+    ],
+    "skip": [
+      {
+        "factId": "pregnant_or_breastfeeding",
+        "sex": "male"
+      }
+    ],
+    "shortlistSize": 10,
+    "budget": 8,
+    "scorer": "shortlist",
+    "order": "checked"
+  },
+  "settingsSha256": "2a7b652157421fac7c735de231df45ba58dc73be4b5c77c956d5db63f64529bd",
+  "run": {
+    "name": "qwen3.6-35b-a3b-mlx-8bit-5fea5003-854382b2",
+    "promptVersion": "5fea50034aea",
+    "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b"
+  },
+  "snapshot": {
+    "month": "2026-10",
+    "sha256": "76099a0ec4886d38f906ada584c4d8d106d5afaadcc865de501e3031f1cf6a3d"
+  },
+  "reads": null,
+  "rows": [
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "record",
+      "scorer": null,
+      "candidates": 99,
+      "asked": [],
+      "followUps": 0,
+      "dontKnows": 0,
+      "stop": null,
+      "shortlist": [
+        "NCT06130553",
+        "NCT06719362",
+        "NCT06218914",
+        "NCT06320405",
+        "NCT06242470",
+        "NCT06402201",
+        "NCT06459973",
+        "NCT07356453",
+        "NCT04389632",
+        "NCT06253871"
+      ],
+      "agreement": 1,
+      "wouldFlag": 0,
+      "pushedDown": 9,
+      "pushedDownHints": 17,
+      "noMappingPlaces": 0,
+      "openQuestions": 0,
+      "shortlistMappings": 8.8,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": null,
+      "recordFlagged": [
+        "NCT04181060",
+        "NCT04585750",
+        "NCT04614103",
+        "NCT04657068",
+        "NCT04939610",
+        "NCT05382559",
+        "NCT05642572",
+        "NCT05703971",
+        "NCT05875168",
+        "NCT06031688",
+        "NCT06119581",
+        "NCT06126276",
+        "NCT06171750",
+        "NCT06357533",
+        "NCT06793215",
+        "NCT06809114",
+        "NCT07229313"
+      ]
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "intake",
+      "scorer": null,
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "three_plus"
+        }
+      ],
+      "followUps": 0,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT05703971",
+        "NCT06293898",
+        "NCT06793215",
+        "NCT04585750",
+        "NCT04939610",
+        "NCT05382559",
+        "NCT06119581",
+        "NCT06130553",
+        "NCT06171750",
+        "NCT06218914"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.7,
+      "pushedDown": 9,
+      "pushedDownHints": 5,
+      "noMappingPlaces": 0,
+      "openQuestions": 15,
+      "shortlistMappings": 12.8,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": null
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "conversation",
+      "scorer": "fixed",
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "three_plus"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        },
+        {
+          "factId": "alk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ros1",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ret",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ntrk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "kras",
+          "reply": "unknown"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 7,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06293898",
+        "NCT05703971",
+        "NCT06793215",
+        "NCT04585750",
+        "NCT04939610",
+        "NCT05382559",
+        "NCT06119581",
+        "NCT06130553",
+        "NCT06171750",
+        "NCT06218914"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.7,
+      "pushedDown": 9,
+      "pushedDownHints": 5,
+      "noMappingPlaces": 0,
+      "openQuestions": 14,
+      "shortlistMappings": 12.8,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.9
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.3
+        }
+      ]
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "conversation",
+      "scorer": "count",
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "three_plus"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ild",
+          "reply": "never"
+        },
+        {
+          "factId": "hiv",
+          "reply": "no"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "unknown"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 2,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06293898",
+        "NCT04585750",
+        "NCT05382559",
+        "NCT06130553",
+        "NCT06793215",
+        "NCT06357533",
+        "NCT04939610",
+        "NCT05703971",
+        "NCT05875168",
+        "NCT06171750"
+      ],
+      "agreement": 0.1,
+      "wouldFlag": 0.8,
+      "pushedDown": 9,
+      "pushedDownHints": 10,
+      "noMappingPlaces": 0,
+      "openQuestions": 11,
+      "shortlistMappings": 13.4,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.3
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.3
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.3
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        }
+      ]
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "conversation",
+      "scorer": "shortlist",
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "three_plus"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        },
+        {
+          "factId": "hiv",
+          "reply": "no"
+        },
+        {
+          "factId": "ild",
+          "reply": "never"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "unknown"
+        },
+        {
+          "factId": "cardiac_recent",
+          "reply": "yes"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 2,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06130553",
+        "NCT06293898",
+        "NCT06357533",
+        "NCT06253871",
+        "NCT06719362",
+        "NCT07356453",
+        "NCT07229313",
+        "NCT06218914",
+        "NCT06242470",
+        "NCT06320405"
+      ],
+      "agreement": 0.7,
+      "wouldFlag": 0.2,
+      "pushedDown": 10,
+      "pushedDownHints": 12,
+      "noMappingPlaces": 0,
+      "openQuestions": 10,
+      "shortlistMappings": 11,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.3
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        }
+      ]
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "knows-all",
+      "scorer": "fixed",
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "three_plus"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "no"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "egfr",
+          "reply": "none_found"
+        },
+        {
+          "factId": "alk",
+          "reply": "none_found"
+        },
+        {
+          "factId": "ros1",
+          "reply": "none_found"
+        },
+        {
+          "factId": "ret",
+          "reply": "none_found"
+        },
+        {
+          "factId": "ntrk",
+          "reply": "none_found"
+        },
+        {
+          "factId": "kras",
+          "reply": "none_found"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06031688",
+        "NCT06357533",
+        "NCT04585750",
+        "NCT06293898",
+        "NCT06793215",
+        "NCT05382559",
+        "NCT05703971",
+        "NCT06130553",
+        "NCT06809114",
+        "NCT06855771"
+      ],
+      "agreement": 0.1,
+      "wouldFlag": 0.7,
+      "pushedDown": 9,
+      "pushedDownHints": 6,
+      "noMappingPlaces": 0,
+      "openQuestions": 12,
+      "shortlistMappings": 13.4,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        }
+      ]
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "knows-all",
+      "scorer": "count",
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "three_plus"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "no"
+        },
+        {
+          "factId": "ild",
+          "reply": "never"
+        },
+        {
+          "factId": "hiv",
+          "reply": "no"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT04585750",
+        "NCT06130553",
+        "NCT06293898",
+        "NCT05382559",
+        "NCT06719362",
+        "NCT06793215",
+        "NCT06357533",
+        "NCT04657068",
+        "NCT05703971",
+        "NCT05875168"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.7,
+      "pushedDown": 8,
+      "pushedDownHints": 11,
+      "noMappingPlaces": 0,
+      "openQuestions": 9,
+      "shortlistMappings": 14.6,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        }
+      ]
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "knows-all",
+      "scorer": "shortlist",
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "three_plus"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        },
+        {
+          "factId": "hiv",
+          "reply": "no"
+        },
+        {
+          "factId": "ild",
+          "reply": "never"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "no"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "cardiac_recent",
+          "reply": "yes"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06130553",
+        "NCT06293898",
+        "NCT06719362",
+        "NCT06357533",
+        "NCT06320405",
+        "NCT07356453",
+        "NCT06218914",
+        "NCT06242470",
+        "NCT06253871",
+        "NCT06809114"
+      ],
+      "agreement": 0.7,
+      "wouldFlag": 0.2,
+      "pushedDown": 10,
+      "pushedDownHints": 13,
+      "noMappingPlaces": 0,
+      "openQuestions": 8,
+      "shortlistMappings": 11.3,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        }
+      ]
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "from-start",
+      "scorer": "fixed",
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        },
+        {
+          "factId": "alk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ros1",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ret",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ntrk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "kras",
+          "reply": "unknown"
+        },
+        {
+          "factId": "her2",
+          "reply": "mutation"
+        },
+        {
+          "factId": "met",
+          "reply": "unknown"
+        },
+        {
+          "factId": "braf_v600e",
+          "reply": "unknown"
+        },
+        {
+          "factId": "pdl1",
+          "reply": "unknown"
+        }
+      ],
+      "followUps": 16,
+      "dontKnows": 10,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06293898",
+        "NCT04614103",
+        "NCT04939610",
+        "NCT05382559",
+        "NCT05642572",
+        "NCT06126276",
+        "NCT06130553",
+        "NCT06431594",
+        "NCT06793215",
+        "NCT06809114"
+      ],
+      "agreement": 0.1,
+      "wouldFlag": 0.7,
+      "pushedDown": 9,
+      "pushedDownHints": 2,
+      "noMappingPlaces": 0,
+      "openQuestions": 19,
+      "shortlistMappings": 12.9,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": null
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "from-start",
+      "scorer": "count",
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ild",
+          "reply": "never"
+        },
+        {
+          "factId": "hiv",
+          "reply": "no"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "unknown"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "three_plus"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "cardiac_recent",
+          "reply": "yes"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        }
+      ],
+      "followUps": 16,
+      "dontKnows": 2,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06293898",
+        "NCT06130553",
+        "NCT06357533",
+        "NCT04181060",
+        "NCT06719362",
+        "NCT06218914",
+        "NCT06242470",
+        "NCT06253871",
+        "NCT06809114",
+        "NCT07356453"
+      ],
+      "agreement": 0.6,
+      "wouldFlag": 0.3,
+      "pushedDown": 9,
+      "pushedDownHints": 12,
+      "noMappingPlaces": 0,
+      "openQuestions": 10,
+      "shortlistMappings": 11.6,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": null
+    },
+    {
+      "patient": "p08",
+      "set": "dev",
+      "arm": "from-start",
+      "scorer": "shortlist",
+      "candidates": 99,
+      "asked": [
+        {
+          "factId": "lines_advanced",
+          "reply": "three_plus"
+        },
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "hiv",
+          "reply": "no"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "ild",
+          "reply": "never"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "cardiac_recent",
+          "reply": "yes"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "unknown"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        },
+        {
+          "factId": "prior_adc",
+          "reply": "topo_payload"
+        }
+      ],
+      "followUps": 16,
+      "dontKnows": 2,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06130553",
+        "NCT06357533",
+        "NCT06719362",
+        "NCT04181060",
+        "NCT06242470",
+        "NCT06253871",
+        "NCT07356453",
+        "NCT04389632",
+        "NCT06218914",
+        "NCT06320405"
+      ],
+      "agreement": 0.8,
+      "wouldFlag": 0.2,
+      "pushedDown": 8,
+      "pushedDownHints": 11,
+      "noMappingPlaces": 0,
+      "openQuestions": 9,
+      "shortlistMappings": 9.8,
+      "candidateMappings": 9.303030303030303,
+      "medianMiles": 1,
+      "curve": null
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "record",
+      "scorer": null,
+      "candidates": 1058,
+      "asked": [],
+      "followUps": 0,
+      "dontKnows": 0,
+      "stop": null,
+      "shortlist": [
+        "NCT07095868",
+        "NCT05867251",
+        "NCT07822919",
+        "NCT04892953",
+        "NCT06352359",
+        "NCT06801834",
+        "NCT07227298",
+        "NCT06398418",
+        "NCT07374848",
+        "NCT07404332"
+      ],
+      "agreement": 1,
+      "wouldFlag": 0,
+      "pushedDown": 10,
+      "pushedDownHints": 25,
+      "noMappingPlaces": 0,
+      "openQuestions": 2,
+      "shortlistMappings": 9.8,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 288.5,
+      "curve": null,
+      "recordFlagged": [
+        "NCT03191149",
+        "NCT05720117",
+        "NCT05789082",
+        "NCT05879146",
+        "NCT06014502",
+        "NCT06249048",
+        "NCT06568939",
+        "NCT06793215",
+        "NCT06892379",
+        "NCT07155187",
+        "NCT07207395",
+        "NCT07222566",
+        "NCT07277413",
+        "NCT07287995",
+        "NCT07489066",
+        "NCT07566052",
+        "NCT07659782"
+      ]
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "intake",
+      "scorer": null,
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        }
+      ],
+      "followUps": 0,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT07287995",
+        "NCT07566052",
+        "NCT05879146",
+        "NCT06568939",
+        "NCT05267626",
+        "NCT06043817",
+        "NCT07659782",
+        "NCT05886920",
+        "NCT07155187",
+        "NCT06040541"
+      ],
+      "agreement": 0,
+      "wouldFlag": 0.6,
+      "pushedDown": 10,
+      "pushedDownHints": 14,
+      "noMappingPlaces": 0,
+      "openQuestions": 21,
+      "shortlistMappings": 13.6,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 202,
+      "curve": null
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "conversation",
+      "scorer": "fixed",
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        },
+        {
+          "factId": "alk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ros1",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ret",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ntrk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "kras",
+          "reply": "unknown"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 8,
+      "stop": "budget",
+      "shortlist": [
+        "NCT07287995",
+        "NCT07566052",
+        "NCT05879146",
+        "NCT06568939",
+        "NCT05267626",
+        "NCT06043817",
+        "NCT07659782",
+        "NCT05886920",
+        "NCT07155187",
+        "NCT06040541"
+      ],
+      "agreement": 0,
+      "wouldFlag": 0.6,
+      "pushedDown": 10,
+      "pushedDownHints": 14,
+      "noMappingPlaces": 0,
+      "openQuestions": 21,
+      "shortlistMappings": 13.6,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 202,
+      "curve": [
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.1
+        }
+      ]
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "conversation",
+      "scorer": "count",
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "hiv",
+          "reply": "unknown"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ild",
+          "reply": "past"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "yes"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 3,
+      "stop": "budget",
+      "shortlist": [
+        "NCT05267626",
+        "NCT06043817",
+        "NCT07227298",
+        "NCT07822919",
+        "NCT04892953",
+        "NCT05879146",
+        "NCT05985655",
+        "NCT06561685",
+        "NCT05216432",
+        "NCT05886920"
+      ],
+      "agreement": 0.3,
+      "wouldFlag": 0.1,
+      "pushedDown": 10,
+      "pushedDownHints": 24,
+      "noMappingPlaces": 0,
+      "openQuestions": 15,
+      "shortlistMappings": 12.7,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 249.5,
+      "curve": [
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        }
+      ]
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "conversation",
+      "scorer": "shortlist",
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ild",
+          "reply": "past"
+        },
+        {
+          "factId": "hiv",
+          "reply": "unknown"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "yes"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 4,
+      "stop": "budget",
+      "shortlist": [
+        "NCT05267626",
+        "NCT06043817",
+        "NCT07227298",
+        "NCT05879146",
+        "NCT05216432",
+        "NCT05886920",
+        "NCT05867251",
+        "NCT07098338",
+        "NCT07095868",
+        "NCT07822919"
+      ],
+      "agreement": 0.4,
+      "wouldFlag": 0.1,
+      "pushedDown": 10,
+      "pushedDownHints": 24,
+      "noMappingPlaces": 0,
+      "openQuestions": 16,
+      "shortlistMappings": 13.4,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 266,
+      "curve": [
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        }
+      ]
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "knows-all",
+      "scorer": "fixed",
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "no"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        },
+        {
+          "factId": "alk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ros1",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ret",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ntrk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "kras",
+          "reply": "unknown"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 6,
+      "stop": "budget",
+      "shortlist": [
+        "NCT07287995",
+        "NCT05267626",
+        "NCT07566052",
+        "NCT05879146",
+        "NCT06568939",
+        "NCT06793215",
+        "NCT06043817",
+        "NCT06801834",
+        "NCT07659782",
+        "NCT07227298"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.6,
+      "pushedDown": 10,
+      "pushedDownHints": 14,
+      "noMappingPlaces": 0,
+      "openQuestions": 14,
+      "shortlistMappings": 13.5,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 212,
+      "curve": [
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        }
+      ]
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "knows-all",
+      "scorer": "count",
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "hiv",
+          "reply": "no"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "no"
+        },
+        {
+          "factId": "ild",
+          "reply": "past"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "yes"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT05267626",
+        "NCT07227298",
+        "NCT07095868",
+        "NCT07822919",
+        "NCT04892953",
+        "NCT05879146",
+        "NCT06043817",
+        "NCT05867251",
+        "NCT07098338",
+        "NCT03016819"
+      ],
+      "agreement": 0.5,
+      "wouldFlag": 0.1,
+      "pushedDown": 10,
+      "pushedDownHints": 24,
+      "noMappingPlaces": 0,
+      "openQuestions": 7,
+      "shortlistMappings": 12.1,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 289,
+      "curve": [
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        }
+      ]
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "knows-all",
+      "scorer": "shortlist",
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "ild",
+          "reply": "past"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "no"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "yes"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "steroids",
+          "reply": "none"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 1,
+      "stop": "budget",
+      "shortlist": [
+        "NCT05267626",
+        "NCT07227298",
+        "NCT07095868",
+        "NCT06043817",
+        "NCT06801834",
+        "NCT05886920",
+        "NCT05867251",
+        "NCT07822919",
+        "NCT07404332",
+        "NCT04892953"
+      ],
+      "agreement": 0.7,
+      "wouldFlag": 0,
+      "pushedDown": 10,
+      "pushedDownHints": 24,
+      "noMappingPlaces": 0,
+      "openQuestions": 13,
+      "shortlistMappings": 12.4,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 266,
+      "curve": [
+        {
+          "agreement": 0,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0
+        }
+      ]
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "from-start",
+      "scorer": "fixed",
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        },
+        {
+          "factId": "alk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ros1",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ret",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ntrk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "kras",
+          "reply": "unknown"
+        },
+        {
+          "factId": "her2",
+          "reply": "unknown"
+        },
+        {
+          "factId": "met",
+          "reply": "unknown"
+        },
+        {
+          "factId": "braf_v600e",
+          "reply": "unknown"
+        },
+        {
+          "factId": "pdl1",
+          "reply": "unknown"
+        }
+      ],
+      "followUps": 16,
+      "dontKnows": 12,
+      "stop": "budget",
+      "shortlist": [
+        "NCT05789082",
+        "NCT07155187",
+        "NCT07222566",
+        "NCT07489066",
+        "NCT05720117",
+        "NCT07207395",
+        "NCT06568939",
+        "NCT03191149",
+        "NCT05985655",
+        "NCT06793215"
+      ],
+      "agreement": 0,
+      "wouldFlag": 0.9,
+      "pushedDown": 10,
+      "pushedDownHints": 8,
+      "noMappingPlaces": 0,
+      "openQuestions": 16,
+      "shortlistMappings": 10.8,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 156,
+      "curve": null
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "from-start",
+      "scorer": "count",
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "hiv",
+          "reply": "unknown"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ild",
+          "reply": "past"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "yes"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        },
+        {
+          "factId": "cardiac_recent",
+          "reply": "no"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        }
+      ],
+      "followUps": 16,
+      "dontKnows": 3,
+      "stop": "budget",
+      "shortlist": [
+        "NCT05267626",
+        "NCT07227298",
+        "NCT07095868",
+        "NCT07822919",
+        "NCT04892953",
+        "NCT05879146",
+        "NCT05985655",
+        "NCT06561685",
+        "NCT06892379",
+        "NCT06043817"
+      ],
+      "agreement": 0.4,
+      "wouldFlag": 0.2,
+      "pushedDown": 10,
+      "pushedDownHints": 22,
+      "noMappingPlaces": 0,
+      "openQuestions": 11,
+      "shortlistMappings": 11.5,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 215.5,
+      "curve": null
+    },
+    {
+      "patient": "p11",
+      "set": "dev",
+      "arm": "from-start",
+      "scorer": "shortlist",
+      "candidates": 1058,
+      "asked": [
+        {
+          "factId": "prior_adc",
+          "reply": "unknown"
+        },
+        {
+          "factId": "kras",
+          "reply": "unknown"
+        },
+        {
+          "factId": "pdl1",
+          "reply": "unknown"
+        },
+        {
+          "factId": "her2",
+          "reply": "unknown"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "histology",
+          "reply": "other_nsclc"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "extent",
+          "reply": "locally_advanced"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ild",
+          "reply": "past"
+        }
+      ],
+      "followUps": 16,
+      "dontKnows": 6,
+      "stop": "budget",
+      "shortlist": [
+        "NCT07566052",
+        "NCT05267626",
+        "NCT06043817",
+        "NCT05879146",
+        "NCT06014502",
+        "NCT06249048",
+        "NCT07227298",
+        "NCT05216432",
+        "NCT05886920",
+        "NCT07277413"
+      ],
+      "agreement": 0.1,
+      "wouldFlag": 0.5,
+      "pushedDown": 10,
+      "pushedDownHints": 19,
+      "noMappingPlaces": 0,
+      "openQuestions": 19,
+      "shortlistMappings": 14.3,
+      "candidateMappings": 8.583175803402646,
+      "medianMiles": 249.5,
+      "curve": null
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "record",
+      "scorer": null,
+      "candidates": 1061,
+      "asked": [],
+      "followUps": 0,
+      "dontKnows": 0,
+      "stop": null,
+      "shortlist": [
+        "NCT07205718",
+        "NCT07660094",
+        "NCT07027488",
+        "NCT06249048",
+        "NCT06750185",
+        "NCT04614103",
+        "NCT07566052",
+        "NCT07116057",
+        "NCT07564401",
+        "NCT06651593"
+      ],
+      "agreement": 1,
+      "wouldFlag": 0,
+      "pushedDown": 10,
+      "pushedDownHints": 18,
+      "noMappingPlaces": 0,
+      "openQuestions": 0,
+      "shortlistMappings": 13.9,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 399,
+      "curve": null,
+      "recordFlagged": [
+        "NCT03191149",
+        "NCT04270591",
+        "NCT04467723",
+        "NCT04691817",
+        "NCT04787042",
+        "NCT05242965",
+        "NCT05642572",
+        "NCT05719558",
+        "NCT05815173",
+        "NCT05879146",
+        "NCT06043817",
+        "NCT06350097",
+        "NCT06357533",
+        "NCT06362369",
+        "NCT06495125",
+        "NCT06568939",
+        "NCT06695845",
+        "NCT06780085",
+        "NCT07155187",
+        "NCT07287995",
+        "NCT07288034",
+        "NCT07291037",
+        "NCT07322341",
+        "NCT07488676",
+        "NCT07659782"
+      ]
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "intake",
+      "scorer": null,
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        }
+      ],
+      "followUps": 0,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06750185",
+        "NCT07287995",
+        "NCT07566052",
+        "NCT06495125",
+        "NCT05879146",
+        "NCT06568939",
+        "NCT07659782",
+        "NCT06043817",
+        "NCT06780085",
+        "NCT05703971"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.7,
+      "pushedDown": 10,
+      "pushedDownHints": 6,
+      "noMappingPlaces": 0,
+      "openQuestions": 21,
+      "shortlistMappings": 14.1,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 439,
+      "curve": null
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "conversation",
+      "scorer": "fixed",
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        },
+        {
+          "factId": "alk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ros1",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ret",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ntrk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "kras",
+          "reply": "unknown"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 8,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06750185",
+        "NCT07287995",
+        "NCT07566052",
+        "NCT06495125",
+        "NCT05879146",
+        "NCT06568939",
+        "NCT07659782",
+        "NCT06043817",
+        "NCT06780085",
+        "NCT05703971"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.7,
+      "pushedDown": 10,
+      "pushedDownHints": 6,
+      "noMappingPlaces": 0,
+      "openQuestions": 21,
+      "shortlistMappings": 14.1,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 439,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.3
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.3
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.2
+        }
+      ]
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "conversation",
+      "scorer": "count",
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "reply": "no"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "hiv",
+          "reply": "unknown"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ild",
+          "reply": "current"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 3,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06495125",
+        "NCT07566052",
+        "NCT07116057",
+        "NCT05703971",
+        "NCT06249048",
+        "NCT07205718",
+        "NCT07659782",
+        "NCT04389281",
+        "NCT05234307",
+        "NCT05267626"
+      ],
+      "agreement": 0.4,
+      "wouldFlag": 0.2,
+      "pushedDown": 10,
+      "pushedDownHints": 12,
+      "noMappingPlaces": 0,
+      "openQuestions": 18,
+      "shortlistMappings": 15.3,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 594.5,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.3
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        }
+      ]
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "conversation",
+      "scorer": "shortlist",
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "hiv",
+          "reply": "unknown"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        },
+        {
+          "factId": "ild",
+          "reply": "current"
+        },
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "reply": "no"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 3,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06495125",
+        "NCT07566052",
+        "NCT07116057",
+        "NCT05703971",
+        "NCT06249048",
+        "NCT07205718",
+        "NCT07659782",
+        "NCT04389281",
+        "NCT05234307",
+        "NCT05267626"
+      ],
+      "agreement": 0.4,
+      "wouldFlag": 0.2,
+      "pushedDown": 10,
+      "pushedDownHints": 12,
+      "noMappingPlaces": 0,
+      "openQuestions": 18,
+      "shortlistMappings": 15.3,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 594.5,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.1
+        }
+      ]
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "knows-all",
+      "scorer": "fixed",
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "no"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "egfr",
+          "reply": "none_found"
+        },
+        {
+          "factId": "alk",
+          "reply": "none_found"
+        },
+        {
+          "factId": "ros1",
+          "reply": "none_found"
+        },
+        {
+          "factId": "ret",
+          "reply": "found"
+        },
+        {
+          "factId": "ntrk",
+          "reply": "none_found"
+        },
+        {
+          "factId": "kras",
+          "reply": "none_found"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06750185",
+        "NCT06695845",
+        "NCT06780085",
+        "NCT04467723",
+        "NCT07660094",
+        "NCT05267626",
+        "NCT07288034",
+        "NCT04270591",
+        "NCT04787042",
+        "NCT06357533"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.7,
+      "pushedDown": 10,
+      "pushedDownHints": 9,
+      "noMappingPlaces": 0,
+      "openQuestions": 15,
+      "shortlistMappings": 17.8,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 470,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.5
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0
+        }
+      ]
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "knows-all",
+      "scorer": "count",
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "reply": "no"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "hiv",
+          "reply": "no"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "no"
+        },
+        {
+          "factId": "ild",
+          "reply": "current"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06495125",
+        "NCT07566052",
+        "NCT07116057",
+        "NCT06249048",
+        "NCT07564401",
+        "NCT05901285",
+        "NCT06644755",
+        "NCT07027488",
+        "NCT07205718",
+        "NCT06270706"
+      ],
+      "agreement": 0.6,
+      "wouldFlag": 0.1,
+      "pushedDown": 10,
+      "pushedDownHints": 12,
+      "noMappingPlaces": 0,
+      "openQuestions": 14,
+      "shortlistMappings": 14,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 392.5,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.8
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.5,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.7,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.2
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        }
+      ]
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "knows-all",
+      "scorer": "shortlist",
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "yes"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "no"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "egfr",
+          "reply": "none_found"
+        },
+        {
+          "factId": "alk",
+          "reply": "none_found"
+        },
+        {
+          "factId": "ild",
+          "reply": "current"
+        },
+        {
+          "factId": "ros1",
+          "reply": "none_found"
+        },
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "reply": "no"
+        }
+      ],
+      "followUps": 8,
+      "dontKnows": 0,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06495125",
+        "NCT07660094",
+        "NCT06750185",
+        "NCT06695845",
+        "NCT05267626",
+        "NCT04691817",
+        "NCT05886920",
+        "NCT05242965",
+        "NCT04892953",
+        "NCT03808337"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.4,
+      "pushedDown": 10,
+      "pushedDownHints": 13,
+      "noMappingPlaces": 0,
+      "openQuestions": 14,
+      "shortlistMappings": 16.3,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 598.5,
+      "curve": [
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.1,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.6
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.7
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.3
+        },
+        {
+          "agreement": 0.3,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.2,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.4
+        },
+        {
+          "agreement": 0.4,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.6,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.8,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 0.9,
+          "wouldFlag": 0.1
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        },
+        {
+          "agreement": 1,
+          "wouldFlag": 0
+        }
+      ]
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "from-start",
+      "scorer": "fixed",
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        },
+        {
+          "factId": "alk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ros1",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ret",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ntrk",
+          "reply": "unknown"
+        },
+        {
+          "factId": "kras",
+          "reply": "unknown"
+        },
+        {
+          "factId": "her2",
+          "reply": "unknown"
+        },
+        {
+          "factId": "met",
+          "reply": "unknown"
+        },
+        {
+          "factId": "braf_v600e",
+          "reply": "unknown"
+        },
+        {
+          "factId": "pdl1",
+          "reply": "unknown"
+        }
+      ],
+      "followUps": 16,
+      "dontKnows": 12,
+      "stop": "budget",
+      "shortlist": [
+        "NCT05642572",
+        "NCT07291037",
+        "NCT05948865",
+        "NCT06362369",
+        "NCT07155187",
+        "NCT06712355",
+        "NCT03191149",
+        "NCT03310879",
+        "NCT04787042",
+        "NCT04890613"
+      ],
+      "agreement": 0,
+      "wouldFlag": 0.6,
+      "pushedDown": 9,
+      "pushedDownHints": 3,
+      "noMappingPlaces": 0,
+      "openQuestions": 25,
+      "shortlistMappings": 11.7,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 194,
+      "curve": null
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "from-start",
+      "scorer": "count",
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "reply": "no"
+        },
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "hiv",
+          "reply": "unknown"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "ild",
+          "reply": "current"
+        },
+        {
+          "factId": "autoimmune_active",
+          "reply": "no"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        },
+        {
+          "factId": "transplant",
+          "reply": "no"
+        },
+        {
+          "factId": "cardiac_recent",
+          "reply": "no"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        }
+      ],
+      "followUps": 16,
+      "dontKnows": 3,
+      "stop": "budget",
+      "shortlist": [
+        "NCT06249048",
+        "NCT06495125",
+        "NCT06171750",
+        "NCT07116057",
+        "NCT07189871",
+        "NCT07337525",
+        "NCT07636785",
+        "NCT07222631",
+        "NCT05642572",
+        "NCT05836324"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.2,
+      "pushedDown": 9,
+      "pushedDownHints": 9,
+      "noMappingPlaces": 0,
+      "openQuestions": 16,
+      "shortlistMappings": 13.6,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 744,
+      "curve": null
+    },
+    {
+      "patient": "p17",
+      "set": "dev",
+      "arm": "from-start",
+      "scorer": "shortlist",
+      "candidates": 1061,
+      "asked": [
+        {
+          "factId": "prior_adc",
+          "reply": "unknown"
+        },
+        {
+          "factId": "kras",
+          "reply": "unknown"
+        },
+        {
+          "factId": "prior_targeted",
+          "reply": "never"
+        },
+        {
+          "factId": "egfr",
+          "reply": "unknown"
+        },
+        {
+          "factId": "prior_pd1",
+          "reply": "progressed"
+        },
+        {
+          "factId": "lines_advanced",
+          "reply": "one"
+        },
+        {
+          "factId": "histology",
+          "reply": "adenocarcinoma"
+        },
+        {
+          "factId": "other_cancer",
+          "reply": "none"
+        },
+        {
+          "factId": "extent",
+          "reply": "metastatic_or_recurrent"
+        },
+        {
+          "factId": "ecog",
+          "reply": "ps1"
+        },
+        {
+          "factId": "prior_platinum",
+          "reply": "received"
+        },
+        {
+          "factId": "leptomeningeal",
+          "reply": "unknown"
+        },
+        {
+          "factId": "brain_mets",
+          "reply": "none"
+        },
+        {
+          "factId": "measurable_disease",
+          "reply": "unknown"
+        },
+        {
+          "factId": "hepatitis_active",
+          "reply": "no"
+        },
+        {
+          "factId": "hiv",
+          "reply": "unknown"
+        }
+      ],
+      "followUps": 16,
+      "dontKnows": 6,
+      "stop": "budget",
+      "shortlist": [
+        "NCT07566052",
+        "NCT06495125",
+        "NCT07287995",
+        "NCT07322341",
+        "NCT06750185",
+        "NCT05719558",
+        "NCT06350097",
+        "NCT06568939",
+        "NCT05815173",
+        "NCT07488676"
+      ],
+      "agreement": 0.2,
+      "wouldFlag": 0.8,
+      "pushedDown": 10,
+      "pushedDownHints": 6,
+      "noMappingPlaces": 0,
+      "openQuestions": 20,
+      "shortlistMappings": 17.3,
+      "candidateMappings": 8.604147031102734,
+      "medianMiles": 373.5,
+      "curve": null
+    }
+  ],
+  "summaries": {
+    "dev": [
+      {
+        "arm": "record",
+        "scorer": null,
+        "patients": 3,
+        "agreement": 1,
+        "wouldFlag": 0,
+        "followUps": 0,
+        "dontKnows": 0,
+        "stops": {},
+        "pushedDown": 29,
+        "noMappingPlaces": 0,
+        "openQuestions": 0.6666666666666666,
+        "readRatio": 1.2343989737426382,
+        "medianMiles": 229.5,
+        "curve": null
+      },
+      {
+        "arm": "intake",
+        "scorer": null,
+        "patients": 3,
+        "agreement": 0.13333333333333333,
+        "wouldFlag": 0.6666666666666666,
+        "followUps": 0,
+        "dontKnows": 0,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 29,
+        "noMappingPlaces": 0,
+        "openQuestions": 19,
+        "readRatio": 1.5330451750020213,
+        "medianMiles": 214,
+        "curve": null
+      },
+      {
+        "arm": "conversation",
+        "scorer": "fixed",
+        "patients": 3,
+        "agreement": 0.13333333333333333,
+        "wouldFlag": 0.6666666666666666,
+        "followUps": 8,
+        "dontKnows": 23,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 29,
+        "noMappingPlaces": 0,
+        "openQuestions": 18.666666666666668,
+        "readRatio": 1.5330451750020213,
+        "medianMiles": 214,
+        "curve": [
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.7666666666666666
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.7333333333333334
+          },
+          {
+            "agreement": 0.26666666666666666,
+            "wouldFlag": 0.5666666666666667
+          },
+          {
+            "agreement": 0.26666666666666666,
+            "wouldFlag": 0.5666666666666667
+          },
+          {
+            "agreement": 0.3333333333333333,
+            "wouldFlag": 0.39999999999999997
+          },
+          {
+            "agreement": 0.5333333333333333,
+            "wouldFlag": 0.20000000000000004
+          }
+        ]
+      },
+      {
+        "arm": "conversation",
+        "scorer": "count",
+        "patients": 3,
+        "agreement": 0.26666666666666666,
+        "wouldFlag": 0.3666666666666667,
+        "followUps": 8,
+        "dontKnows": 8,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 29,
+        "noMappingPlaces": 0,
+        "openQuestions": 14.666666666666666,
+        "readRatio": 1.5660806587601621,
+        "medianMiles": 281.6666666666667,
+        "curve": [
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.7000000000000001
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.7333333333333334
+          },
+          {
+            "agreement": 0.10000000000000002,
+            "wouldFlag": 0.7666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.23333333333333336,
+            "wouldFlag": 0.43333333333333335
+          },
+          {
+            "agreement": 0.3,
+            "wouldFlag": 0.39999999999999997
+          },
+          {
+            "agreement": 0.26666666666666666,
+            "wouldFlag": 0.3666666666666667
+          },
+          {
+            "agreement": 0.5,
+            "wouldFlag": 0.19999999999999998
+          },
+          {
+            "agreement": 0.5666666666666667,
+            "wouldFlag": 0.16666666666666666
+          },
+          {
+            "agreement": 0.5666666666666667,
+            "wouldFlag": 0.16666666666666666
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          }
+        ]
+      },
+      {
+        "arm": "conversation",
+        "scorer": "shortlist",
+        "patients": 3,
+        "agreement": 0.5,
+        "wouldFlag": 0.16666666666666666,
+        "followUps": 8,
+        "dontKnows": 9,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 30,
+        "noMappingPlaces": 0,
+        "openQuestions": 14.666666666666666,
+        "readRatio": 1.5072721383632661,
+        "medianMiles": 287.1666666666667,
+        "curve": [
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.7333333333333334
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.7333333333333334
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.6
+          },
+          {
+            "agreement": 0.23333333333333336,
+            "wouldFlag": 0.43333333333333335
+          },
+          {
+            "agreement": 0.3666666666666667,
+            "wouldFlag": 0.2333333333333333
+          },
+          {
+            "agreement": 0.5,
+            "wouldFlag": 0.16666666666666666
+          },
+          {
+            "agreement": 0.5333333333333333,
+            "wouldFlag": 0.16666666666666666
+          },
+          {
+            "agreement": 0.6333333333333333,
+            "wouldFlag": 0.13333333333333333
+          },
+          {
+            "agreement": 0.6333333333333333,
+            "wouldFlag": 0.13333333333333333
+          },
+          {
+            "agreement": 0.6333333333333333,
+            "wouldFlag": 0.13333333333333333
+          },
+          {
+            "agreement": 0.6333333333333333,
+            "wouldFlag": 0.13333333333333333
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.10000000000000002
+          }
+        ]
+      },
+      {
+        "arm": "knows-all",
+        "scorer": "fixed",
+        "patients": 3,
+        "agreement": 0.16666666666666666,
+        "wouldFlag": 0.6666666666666666,
+        "followUps": 8,
+        "dontKnows": 6,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 29,
+        "noMappingPlaces": 0,
+        "openQuestions": 13.666666666666666,
+        "readRatio": 1.6940017113952333,
+        "medianMiles": 227.66666666666666,
+        "curve": [
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.6333333333333333
+          },
+          {
+            "agreement": 0.20000000000000004,
+            "wouldFlag": 0.6333333333333333
+          },
+          {
+            "agreement": 0.20000000000000004,
+            "wouldFlag": 0.6333333333333333
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.6333333333333333
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.20000000000000004,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.6999999999999998
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.20000000000000004,
+            "wouldFlag": 0.6333333333333333
+          },
+          {
+            "agreement": 0.20000000000000004,
+            "wouldFlag": 0.6
+          },
+          {
+            "agreement": 0.20000000000000004,
+            "wouldFlag": 0.6
+          },
+          {
+            "agreement": 0.20000000000000004,
+            "wouldFlag": 0.5666666666666668
+          },
+          {
+            "agreement": 0.3333333333333333,
+            "wouldFlag": 0.5333333333333333
+          },
+          {
+            "agreement": 0.3333333333333333,
+            "wouldFlag": 0.5333333333333333
+          },
+          {
+            "agreement": 0.4000000000000001,
+            "wouldFlag": 0.5333333333333333
+          },
+          {
+            "agreement": 0.26666666666666666,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.39999999999999997,
+            "wouldFlag": 0.39999999999999997
+          },
+          {
+            "agreement": 0.39999999999999997,
+            "wouldFlag": 0.4666666666666666
+          },
+          {
+            "agreement": 0.5,
+            "wouldFlag": 0.26666666666666666
+          },
+          {
+            "agreement": 0.7666666666666666,
+            "wouldFlag": 0
+          }
+        ]
+      },
+      {
+        "arm": "knows-all",
+        "scorer": "count",
+        "patients": 3,
+        "agreement": 0.4333333333333333,
+        "wouldFlag": 0.3,
+        "followUps": 8,
+        "dontKnows": 0,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 28,
+        "noMappingPlaces": 0,
+        "openQuestions": 10,
+        "readRatio": 1.5354126918467885,
+        "medianMiles": 227.5,
+        "curve": [
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6999999999999998
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.7333333333333334
+          },
+          {
+            "agreement": 0.10000000000000002,
+            "wouldFlag": 0.7666666666666666
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.7333333333333334
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.7333333333333334
+          },
+          {
+            "agreement": 0.30000000000000004,
+            "wouldFlag": 0.39999999999999997
+          },
+          {
+            "agreement": 0.39999999999999997,
+            "wouldFlag": 0.3333333333333333
+          },
+          {
+            "agreement": 0.4333333333333333,
+            "wouldFlag": 0.3
+          },
+          {
+            "agreement": 0.6333333333333333,
+            "wouldFlag": 0.13333333333333333
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.13333333333333333
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.13333333333333333
+          },
+          {
+            "agreement": 0.7000000000000001,
+            "wouldFlag": 0.16666666666666666
+          },
+          {
+            "agreement": 0.7333333333333334,
+            "wouldFlag": 0.16666666666666666
+          },
+          {
+            "agreement": 0.8000000000000002,
+            "wouldFlag": 0.13333333333333333
+          },
+          {
+            "agreement": 0.8000000000000002,
+            "wouldFlag": 0.13333333333333333
+          },
+          {
+            "agreement": 0.8333333333333334,
+            "wouldFlag": 0.06666666666666667
+          },
+          {
+            "agreement": 0.8333333333333334,
+            "wouldFlag": 0.06666666666666667
+          },
+          {
+            "agreement": 0.8333333333333334,
+            "wouldFlag": 0.06666666666666667
+          },
+          {
+            "agreement": 0.8333333333333334,
+            "wouldFlag": 0.06666666666666667
+          },
+          {
+            "agreement": 0.9,
+            "wouldFlag": 0
+          }
+        ]
+      },
+      {
+        "arm": "knows-all",
+        "scorer": "shortlist",
+        "patients": 3,
+        "agreement": 0.5333333333333333,
+        "wouldFlag": 0.20000000000000004,
+        "followUps": 8,
+        "dontKnows": 1,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 30,
+        "noMappingPlaces": 0,
+        "openQuestions": 11.666666666666666,
+        "readRatio": 1.5179266683313852,
+        "medianMiles": 288.5,
+        "curve": [
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6666666666666666
+          },
+          {
+            "agreement": 0.13333333333333333,
+            "wouldFlag": 0.6999999999999998
+          },
+          {
+            "agreement": 0.20000000000000004,
+            "wouldFlag": 0.6
+          },
+          {
+            "agreement": 0.16666666666666666,
+            "wouldFlag": 0.6
+          },
+          {
+            "agreement": 0.2333333333333333,
+            "wouldFlag": 0.5
+          },
+          {
+            "agreement": 0.2333333333333333,
+            "wouldFlag": 0.5
+          },
+          {
+            "agreement": 0.3666666666666667,
+            "wouldFlag": 0.36666666666666664
+          },
+          {
+            "agreement": 0.5,
+            "wouldFlag": 0.26666666666666666
+          },
+          {
+            "agreement": 0.5333333333333333,
+            "wouldFlag": 0.20000000000000004
+          },
+          {
+            "agreement": 0.6,
+            "wouldFlag": 0.20000000000000004
+          },
+          {
+            "agreement": 0.6666666666666666,
+            "wouldFlag": 0.06666666666666667
+          },
+          {
+            "agreement": 0.7000000000000001,
+            "wouldFlag": 0.10000000000000002
+          },
+          {
+            "agreement": 0.7666666666666666,
+            "wouldFlag": 0.06666666666666667
+          },
+          {
+            "agreement": 0.8333333333333334,
+            "wouldFlag": 0.06666666666666667
+          },
+          {
+            "agreement": 0.8333333333333334,
+            "wouldFlag": 0.06666666666666667
+          },
+          {
+            "agreement": 0.8333333333333334,
+            "wouldFlag": 0.06666666666666667
+          },
+          {
+            "agreement": 0.8333333333333334,
+            "wouldFlag": 0.03333333333333333
+          },
+          {
+            "agreement": 0.8333333333333334,
+            "wouldFlag": 0.03333333333333333
+          },
+          {
+            "agreement": 0.8666666666666667,
+            "wouldFlag": 0.03333333333333333
+          },
+          {
+            "agreement": 0.9,
+            "wouldFlag": 0
+          },
+          {
+            "agreement": 0.9,
+            "wouldFlag": 0
+          }
+        ]
+      },
+      {
+        "arm": "from-start",
+        "scorer": "fixed",
+        "patients": 3,
+        "agreement": 0.03333333333333333,
+        "wouldFlag": 0.7333333333333334,
+        "followUps": 16,
+        "dontKnows": 34,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 28,
+        "noMappingPlaces": 0,
+        "openQuestions": 20,
+        "readRatio": 1.3349099566923313,
+        "medianMiles": 117,
+        "curve": null
+      },
+      {
+        "arm": "from-start",
+        "scorer": "count",
+        "patients": 3,
+        "agreement": 0.39999999999999997,
+        "wouldFlag": 0.2333333333333333,
+        "followUps": 16,
+        "dontKnows": 8,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 28,
+        "noMappingPlaces": 0,
+        "openQuestions": 12.333333333333334,
+        "readRatio": 1.3891230332417976,
+        "medianMiles": 320.1666666666667,
+        "curve": null
+      },
+      {
+        "arm": "from-start",
+        "scorer": "shortlist",
+        "patients": 3,
+        "agreement": 0.3666666666666667,
+        "wouldFlag": 0.5,
+        "followUps": 16,
+        "dontKnows": 14,
+        "stops": {
+          "budget": 3
+        },
+        "pushedDown": 28,
+        "noMappingPlaces": 0,
+        "openQuestions": 16,
+        "readRatio": 1.5767095104942161,
+        "medianMiles": 208,
+        "curve": null
+      }
+    ]
+  }
+}
