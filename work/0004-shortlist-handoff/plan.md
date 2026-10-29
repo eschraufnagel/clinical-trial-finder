@@ -184,4 +184,12 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `scripts/app.ts` uses a provisional reader until step 11: scripted "don't know" with `--fake`, none otherwise.
   - Age is checked as 0 to 120, not adults only: nothing in the product limits it.
 
+- **Step 11:**
+  - One role, the reader, with one cap per conversation ($0.10, from $0.05 to $5).
+  - The connection test reads a made-up reply ("Do you have a cat?") and fails unless it's read right.
+  - The conversation's adapter is built on its first reading. A missing key or a switched model surfaces as that reply's fallback, with the reason, and every key is taken out of any error the page may show.
+  - Each admitted model's estimate is the dev patients' average reading, priced as `questions:read` prices it, times 16 readings: about $0.008 on Claude Haiku 4.5.
+  - Spend lines are dated by month (`monthStamp()`), as CLAUDE.md asks.
+  - `scripts/app.ts` imports `workloadFor` and `READS_DIR` from `scripts/questions-read.ts`.
+
 (Filled in as gates are answered and the plan diverges.)

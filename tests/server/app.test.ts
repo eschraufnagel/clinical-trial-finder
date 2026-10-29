@@ -1,16 +1,29 @@
+import { mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import Fastify from "fastify";
 import { describe, expect, it } from "vitest";
 import { configureApp } from "../../src/server/app.js";
+import { SettingsStore } from "../../src/server/settings.js";
 import { FORM, finderOptions, settle } from "./fixture.js";
 
 /** The server in memory, through `inject`: no socket is opened. */
-function app() {
+function app(store?: SettingsStore) {
   const server = Fastify();
   configureApp(server, {
     port: 5099,
     mode: "scripted",
     info: { snapshotMonth: "2000-01", mappingRun: "run" },
     finder: finderOptions(),
+    ...(store === undefined
+      ? {}
+      : {
+          settings: {
+            store,
+            test: async () => ({ ok: true as const, usd: 0, servedModel: "scripted", read: "x" }),
+            localModels: async () => ({ reachable: false, models: [] }),
+          },
+        }),
   });
   return server;
 }
@@ -21,7 +34,14 @@ describe("the server's guards and info", () => {
   it("says what the page runs on", async () => {
     const res = await app().inject({ url: "/api/info", headers: HOST });
     expect(res.statusCode).toBe(200);
-    expect(res.json()).toEqual({ mode: "scripted", snapshotMonth: "2000-01", mappingRun: "run" });
+    expect(res.json()).toEqual({
+      mode: "scripted",
+      snapshotMonth: "2000-01",
+      mappingRun: "run",
+      model: "a scripted reader",
+      measured: false,
+      hosted: null,
+    });
   });
 
   it("refuses a request addressed to another host, or another port", async () => {
@@ -103,5 +123,74 @@ describe("the conversation's routes", () => {
     expect(del.statusCode).toBe(204);
     const gone = await server.inject({ url: `/api/finder/${id}/view`, headers: HOST });
     expect(gone.statusCode).toBe(404);
+  });
+});
+
+describe("the Settings routes", () => {
+  const SENTINEL = "test-key-00000000";
+  const ORIGIN = { ...HOST, origin: "http://127.0.0.1:5099" };
+  const store = () =>
+    new SettingsStore(join(mkdtempSync(join(tmpdir(), "finder-app-")), "local"), { env: {} });
+
+  it("save a key and choose a model from this page only, and never send a key back", async () => {
+    const server = app(store());
+    const bodies: string[] = [];
+    const send = async (method: "PUT" | "DELETE" | "POST", url: string, payload?: object) => {
+      const res = await server.inject({
+        method,
+        url,
+        headers: ORIGIN,
+        ...(payload === undefined ? {} : { payload }),
+      });
+      bodies.push(res.body);
+      return res;
+    };
+    expect((await send("PUT", "/api/settings/keys/anthropic", { key: SENTINEL })).statusCode).toBe(
+      200,
+    );
+    const chosen = await send("PUT", "/api/settings", {
+      choice: { provider: "anthropic", model: "claude-haiku-4-5" },
+    });
+    expect(chosen.json().choice).toEqual({ provider: "anthropic", model: "claude-haiku-4-5" });
+    expect(
+      (
+        await send("POST", "/api/settings/test", {
+          provider: "anthropic",
+          model: "claude-haiku-4-5",
+        })
+      ).json(),
+    ).toMatchObject({ ok: true });
+    bodies.push((await server.inject({ url: "/api/settings", headers: HOST })).body);
+    expect((await send("DELETE", "/api/settings/keys/anthropic")).statusCode).toBe(200);
+    expect(bodies.length).toBe(5);
+    expect(bodies.filter((b) => b.includes(SENTINEL))).toEqual([]);
+  });
+
+  it("refuse a write from no origin, another origin, or without JSON", async () => {
+    const server = app(store());
+    const put = (headers: Record<string, string>, payload: string) =>
+      server.inject({ method: "PUT", url: "/api/settings/keys/anthropic", headers, payload });
+    const json = { "content-type": "application/json" };
+    expect((await put({ ...HOST, ...json }, `{"key":"${SENTINEL}"}`)).json()).toEqual({
+      error: "wrong-origin",
+    });
+    expect((await put({ ...HOST, ...json, origin: "https://evil.example" }, "{}")).statusCode).toBe(
+      403,
+    );
+    expect((await put({ ...ORIGIN, "content-type": "text/plain" }, SENTINEL)).json()).toEqual({
+      error: "json-only",
+    });
+  });
+
+  it("refuse a setting that can't be right, saying why", async () => {
+    const server = app(store());
+    const res = await server.inject({
+      method: "PUT",
+      url: "/api/settings",
+      headers: ORIGIN,
+      payload: { caps: { conversationUsd: 9 } },
+    });
+    expect(res.statusCode).toBe(400);
+    expect(res.json().error).toMatch(/between/);
   });
 });

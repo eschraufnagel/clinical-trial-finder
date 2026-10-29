@@ -850,6 +850,53 @@ describe("only src/models/ chooses a model", () => {
  * application, when one exists, gets its adapter from `createLocalAdapter` or
  * `createAppAdapter`, and the slice that adds it pins which file may.
  */
+/** The running app's factory, and the one file that may name it (slice 0004). */
+const APP_MODELS = `${sep}src${sep}server${sep}models.ts`;
+const E2E_DIR = fileURLToPath(new URL("../e2e", import.meta.url));
+
+function usesAppFactory(source: string): boolean {
+  return /\bcreateAppAdapter\b/.test(stripTypeOnlyImports(stripComments(source)));
+}
+
+/**
+ * Slice 0004: the page reaches a hosted provider only when a person chose
+ * one in Settings and saved a key there, through `createAppAdapter`, which
+ * always wraps it in the budget, and only from the one server file that
+ * builds the app's models. Naming `createAdapter` would be the way around
+ * both, so it's forbidden everywhere the app runs. Copied from the
+ * prescreening repository.
+ */
+describe("the running application reaches a hosted provider only through Settings", () => {
+  const APP_FILES = [
+    ...allSourceFiles(resolve(SRC_DIR, "server")),
+    ...allSourceFiles(resolve(SRC_DIR, "transport")),
+    ...allSourceFiles(resolve(SRC_DIR, "web")),
+    resolve(SCRIPTS_DIR, "app.ts"),
+    ...(existsSync(E2E_DIR) ? allSourceFiles(E2E_DIR) : []),
+  ];
+
+  it("covers the page, the server, the transport and the app launcher", () => {
+    expect(APP_FILES.some((f) => f.endsWith(`server${sep}finder.ts`))).toBe(true);
+    expect(APP_FILES.some((f) => f.endsWith(`scripts${sep}app.ts`))).toBe(true);
+  });
+
+  it("never names the factory that builds frontier adapters", () => {
+    expect(APP_FILES.filter((f) => usesFrontierFactory(readFileSync(f, "utf8")))).toEqual([]);
+  });
+
+  it("names the app's factory only in the server file that builds the app's models", () => {
+    const naming = [...allSourceFiles(SRC_DIR), ...allSourceFiles(SCRIPTS_DIR)].filter(
+      (f) => !isNetworkExempt(f) && usesAppFactory(readFileSync(f, "utf8")),
+    );
+    expect(naming.map((f) => f.slice(f.indexOf(`${sep}src${sep}`)))).toEqual([APP_MODELS]);
+  });
+
+  it("would catch the app's factory named anywhere else", () => {
+    expect(usesAppFactory('import { createAppAdapter } from "../models/index.js";')).toBe(true);
+    expect(usesAppFactory("// createAppAdapter lives in src/server/models.ts")).toBe(false);
+  });
+});
+
 describe("the application tree never builds a frontier adapter", () => {
   const files = allSourceFiles(SRC_DIR).filter((f) => !isNetworkExempt(f));
 

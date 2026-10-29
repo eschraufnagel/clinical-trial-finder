@@ -1,8 +1,22 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { extname, join, relative, sep } from "node:path";
-import type { FastifyInstance } from "fastify";
+import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
+import {
+  type AppChoice,
+  catalogEntry,
+  type LocalModels,
+  PROVIDER_NAMES,
+  type Provider,
+} from "../models/index.js";
 import { WebTransport } from "../transport/web/transport.js";
 import { type FinderOptions, FinderService } from "./finder.js";
+import type { ConnectionResult } from "./models.js";
+import {
+  isProviderChoice,
+  SettingsError,
+  type SettingsPatch,
+  type SettingsStore,
+} from "./settings.js";
 
 /**
  * The composition root (spec 0004 §9): the one place that knows a browser is
@@ -22,6 +36,15 @@ export interface AppOptions {
   info: { snapshotMonth: string; mappingRun: string };
   /** The conversation service's data and reader; the transport is made here. */
   finder: Omit<FinderOptions, "transport">;
+  /** Settings. Without it, there's no Settings screen. */
+  settings?: SettingsRoutesOptions;
+}
+
+export interface SettingsRoutesOptions {
+  store: SettingsStore;
+  /** Settings' Test: one reading, through the chosen model. Scripted in fake mode. */
+  test: (choice: AppChoice) => Promise<ConnectionResult>;
+  localModels: () => Promise<LocalModels>;
 }
 
 export interface App {
@@ -33,9 +56,20 @@ export function configureApp(app: FastifyInstance, options: AppOptions): App {
   const transport = new WebTransport();
   const finder = new FinderService({ ...options.finder, transport });
   registerGuards(app, options.port);
-  app.get("/api/info", () => ({ mode: options.mode, ...options.info }));
+  app.get("/api/info", () => {
+    const key = options.finder.reader.current();
+    return {
+      mode: options.mode,
+      ...options.info,
+      model: options.finder.reader.name(key),
+      measured: options.finder.reader.measured(key),
+      // Where a reply typed now would go, for the note beside every text box.
+      hosted: options.finder.reader.hosted?.(key) ?? null,
+    };
+  });
   transport.register(app);
   registerFinderRoutes(app, finder);
+  if (options.settings !== undefined) registerSettingsRoutes(app, options, options.settings);
   registerPage(app, options.webDir);
   return { finder, transport };
 }
@@ -84,6 +118,91 @@ function registerFinderRoutes(app: FastifyInstance, finder: FinderService): void
       ? reply.code(204).send()
       : reply.code(404).send({ error: "unknown-conversation" }),
   );
+}
+
+/**
+ * Settings. Keys go in and never come out: every answer is the store's view,
+ * which has no field for one. Copied from the prescreening repository.
+ *
+ * Each route that changes something needs this app's own `Origin` and a JSON
+ * body. The general guard lets a request with no `Origin` through, for curl
+ * and tests; these don't, because what they change spends the owner's money.
+ * A page on another site can't send JSON here without a preflight, which
+ * this server never answers.
+ */
+function registerSettingsRoutes(
+  app: FastifyInstance,
+  options: AppOptions,
+  settings: SettingsRoutesOptions,
+): void {
+  const { store } = settings;
+  const origins = ownOrigins(options.port);
+  const view = () => store.view(options.mode);
+
+  const ownOrigin = async (request: FastifyRequest, reply: FastifyReply) => {
+    if (!origins.has(request.headers.origin ?? "")) {
+      return reply.code(403).send({ error: "wrong-origin" });
+    }
+    const json = (request.headers["content-type"] ?? "").startsWith("application/json");
+    if (request.method !== "DELETE" && !json) {
+      return reply.code(403).send({ error: "json-only" });
+    }
+  };
+  const refusing = (reply: FastifyReply, act: () => void) => {
+    try {
+      act();
+      return view();
+    } catch (error) {
+      if (error instanceof SettingsError) {
+        return reply.code(400).send({ error: error.message });
+      }
+      throw error;
+    }
+  };
+
+  app.get("/api/settings", view);
+
+  app.put<{ Body: SettingsPatch }>("/api/settings", { onRequest: ownOrigin }, (request, reply) =>
+    refusing(reply, () => store.update(request.body ?? {})),
+  );
+
+  app.put<{ Params: { provider: string }; Body: { key?: unknown } }>(
+    "/api/settings/keys/:provider",
+    { onRequest: ownOrigin },
+    (request, reply) =>
+      refusing(reply, () => store.saveKey(request.params.provider, request.body?.key)),
+  );
+
+  app.delete<{ Params: { provider: string } }>(
+    "/api/settings/keys/:provider",
+    { onRequest: ownOrigin },
+    (request, reply) => refusing(reply, () => store.removeKey(request.params.provider)),
+  );
+
+  app.post<{ Body: { provider?: unknown; model?: unknown } }>(
+    "/api/settings/test",
+    { onRequest: ownOrigin },
+    async (request, reply) => {
+      const { provider, model } = request.body ?? {};
+      if (!isProviderChoice(provider)) {
+        return reply.code(400).send({ error: "provider must be omlx, anthropic, openai or xai" });
+      }
+      const name =
+        provider === "omlx"
+          ? store.view(options.mode).local.model
+          : typeof model === "string"
+            ? model
+            : "";
+      if (provider !== "omlx" && catalogEntry(provider as Provider, name) === undefined) {
+        return reply
+          .code(400)
+          .send({ error: `${PROVIDER_NAMES[provider]} has no admitted model ${name}` });
+      }
+      return settings.test({ provider, model: name });
+    },
+  );
+
+  app.get("/api/settings/local-models", () => settings.localModels());
 }
 
 const LOCAL_NAMES: readonly string[] = ["127.0.0.1", "localhost"];

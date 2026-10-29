@@ -135,15 +135,21 @@ describe("falling back to the answers", () => {
     expect(finder.view(id)?.answers).toEqual([]);
   });
 
-  it("when the model fails, or has reached the cap", async () => {
-    const r = scriptedReader({
-      down: { kind: "error", message: "connection refused" },
-    });
+  it("when the model fails, saying why", async () => {
+    const r = scriptedReader({ down: { kind: "error", message: "connection refused" } });
     const { transport, id, last } = started(r);
     transport.send(id, "down");
     await settle();
-    expect(last()?.text).toBe(WORDS.unavailable);
+    expect(last()?.text).toBe(`${WORDS.unavailable} connection refused`);
     expect(transport.view(id)?.status).toBe("idle");
+  });
+
+  it("when the conversation has reached its cost cap", async () => {
+    const r = scriptedReader({ capped: { kind: "error", message: "budget: $0.10 reached" } });
+    const { transport, id, last } = started(r);
+    transport.send(id, "capped");
+    await settle();
+    expect(last()?.text).toBe(WORDS.capped);
   });
 
   it("when no model could be built, saying why", async () => {

@@ -25,6 +25,7 @@ export function scriptedReader(
     released: 0,
     current: () => "scripted",
     name: () => "a scripted reader",
+    measured: () => false,
     forConversation: () => {
       if (options.unbuildable !== undefined)
         throw new ModelError("Cannot use the model", [options.unbuildable]);

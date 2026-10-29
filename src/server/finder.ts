@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type { FactVocabulary } from "../facts/types.js";
 import { isBudgetStop } from "../models/budget.js";
-import type { ModelAdapter } from "../models/types.js";
+import { type ModelAdapter, ModelError } from "../models/types.js";
 import {
   answer,
   type ConversationState,
@@ -30,8 +30,9 @@ import type { Choice, InboundMessage, MessageTransport } from "../transport/type
  * reading is shown back: **nothing typed enters the answers until the person
  * confirms it**. A picked answer needs no confirm, since the person picked the
  * answer's own words. If the reading can't be used, or the model can't be
- * reached, the question falls back to its choices, so the conversation works
- * with no model at all.
+ * reached, the question falls back to its choices, saying why, so the
+ * conversation works with no model at all. The reader is expected to have
+ * taken any key out of what it throws (`src/server/models.ts` does).
  *
  * Sessions live in memory: a reload continues one, a restart forgets it.
  */
@@ -42,6 +43,10 @@ export interface ReaderSource {
   current(): string;
   /** The model's name, for "Read by …" on the page. */
   name(key: string): string;
+  /** Whether a committed held-out reading run measured the model. */
+  measured(key: string): boolean;
+  /** The hosted provider's name a key sends replies to, or null for this machine. */
+  hosted?(key: string): string | null;
   /** The adapter one conversation reads with, for the model it started on. Throws if none can be built. */
   forConversation(key: string): ModelAdapter;
   /** A conversation ended or was cleared: log what it spent. */
@@ -90,6 +95,10 @@ export interface FinderView {
   answers: AnswerView[];
   /** The reader's model, for "Read by …". */
   model: string;
+  /** Whether a committed held-out reading run measured it. */
+  measured: boolean;
+  /** The hosted provider replies go to, or null when they stay on this machine. */
+  hosted: string | null;
 }
 
 interface Pending {
@@ -222,6 +231,8 @@ export class FinderService {
         choices: this.#answerChoices(step.factId),
       })),
       model: this.#options.reader.name(session.key),
+      measured: this.#options.reader.measured(session.key),
+      hosted: this.#options.reader.hosted?.(session.key) ?? null,
     };
   }
 
@@ -301,7 +312,12 @@ export class FinderService {
       reading = await readReply(fact, text, session.adapter);
     } catch (error) {
       if (!this.#sessions.has(id)) return;
-      this.#offer(id, isBudgetStop(error) ? WORDS.capped : WORDS.unavailable, factId);
+      const why = error instanceof ModelError ? (error.problems[0] ?? "") : "";
+      this.#offer(
+        id,
+        isBudgetStop(error) ? WORDS.capped : `${WORDS.unavailable} ${why}`.trim(),
+        factId,
+      );
       return;
     }
     if (!this.#sessions.has(id)) return;
