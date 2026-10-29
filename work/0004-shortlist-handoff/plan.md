@@ -39,6 +39,8 @@ What exists to build on:
   - an order that keeps under-read trials on top tells a person "nothing against these" where nothing was read.
 - **Can be no to all three:** if none moves the read ratio meaningfully, keep `hints`, and the page's "how much was read" line on every card (§5.2) carries the explanation. That's written up as the finding.
 
+**Gate 1, as answered** (owner, 2026-10; `gate-1-order.md`): `read-first`.
+
 **Gate 2: spend on a hosted reading run?** (§8.6, OQ 7)
 - **What's decided:** whether `questions:read --set heldout --model anthropic:claude-haiku-4-5 --spend --max-usd 1` runs once.
 - **What the owner sees:** the dry run's estimate (expected well under $1), and what the page will say either way.
@@ -169,5 +171,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `armsFor` ordered the record arm and the no-answers list under the default order. Fixed to use the settings' order: harmless under `hints`, wrong under any other.
   - `read-first` first counted only trials missing from the run as unread. The spec says trials with no mappings, which includes trials the run read no rule from. Fixed, with a test, before the dev run reported in `gate-1-order.md`.
   - Dev runs: `dev/02-867d9528f7e8` (`hints`), `dev/03-2a7b65215742` (`checked`), `dev/04-92afa01686ff` (`read-first`).
+
+- **Step 6:** the held-out rerun is `04-7543ffb2cb2e` (the plan said `02`; 01 to 03 already existed), and with reads `with-reads/03-7543ffb2cb2e`. Unread places on held-out short lists fall from 30 to 2; agreement falls about 2 points and would-flag rises about 1 (`gate-1-order.md`).
 
 (Filled in as gates are answered and the plan diverges.)

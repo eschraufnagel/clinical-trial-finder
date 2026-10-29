@@ -104,10 +104,40 @@ p08 has lung cancer, and p08's short list under every order but `checked` holds 
 **What it costs to be wrong:**
 - Held-out is rerun once with this order (step 6), beside 0003's result. It can't be rerun cleanly again.
 - The page, the browser test's expected list and `docs/page.md` are built on it.
-- With 3 dev patients, this is a direction. `read-first`'s effect is structural, though: it moves only trials with no mappings, and only among trials with equal hints. So it can't do on held-out what it didn't do here.
+- With 3 dev patients, this is a direction. `read-first`'s effect is structural, though: it moves only trials with no mappings, and only among trials with equal hints. (Held-out, below, showed a small cost this sentence didn't expect.)
 
 **The alternative** is `hints` unchanged, with the per-card line alone carrying the explanation. That leaves 30 held-out short-list places for trials no rule was read from.
 
 ## Answer
 
-(The owner's, at the gate.)
+**Owner, 2026-10: `read-first`.** Written into `data/questions/conversation.json` as `"order": "read-first"`. Held-out is then rerun once (below).
+
+## Held-out, rerun once
+
+17 patients, under the frozen settings with `read-first`. The run is [`04-7543ffb2cb2e.json`](../../evals/results/questions/04-7543ffb2cb2e.json), which reruns dev too. The conversation answered from the reader's held-out readings is [`with-reads/03-7543ffb2cb2e.json`](../../evals/results/questions/with-reads/03-7543ffb2cb2e.json). Held-out had been scored before, in 0003, under `hints`. That result, [`03-867d9528f7e8.json`](../../evals/results/questions/03-867d9528f7e8.json), stays as it is, and this is a second look, not a replacement.
+
+| Arm | Scorer | Agreement, `hints` → `read-first` | Would-flag | Unread places | Read ratio |
+| --- | --- | --- | --- | --- | --- |
+| record | — | 100% → 100% | 5.9% → 5.9% | 33 → 5 | 0.71 → 0.85 |
+| intake only | — | 79% → 75% | 20% → 24% | 26 → 2 | → 0.98 |
+| conversation | fixed | 83% → 79% | 17% → 21% | 27 → 2 | → 0.95 |
+| conversation | count | 85% → 84% | 15% → 17% | 29 → 2 | → 0.94 |
+| conversation | **shortlist** | **89% → 88%** | **12% → 13%** | **30 → 2** | **0.78 → 0.92** |
+| knows all | shortlist | 95% → 92% | 10% → 11% | 33 → 2 | → 0.89 |
+
+The read ratio under `hints` is computed from 0003's committed short lists and the mapping run, since that result predates the field. The other `hints` ratios aren't computed.
+
+**Agreement after k follow-ups,** conversation, `shortlist`:
+
+| k | 0 | 2 | 4 | 6 | 8 | 10 | 14 | 20 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `hints` | 79% | 79% | 81% | 85% | 89% | 90% | 92% | 92% |
+| `read-first` | 75% | 75% | 80% | 85% | 88% | 88% | 90% | 90% |
+
+### What held-out says
+
+- **It does what dev said on unread trials:** 30 short-list places to 2. The 2 left, and the record arm's 5, are p07 (46 candidates) and p12 (106). Their searches hold too few read trials free of hints to fill ten places.
+- **The read ratio rises more than on dev,** from 0.78 to 0.92. Held-out's short lists had more unread trials to replace.
+- **It costs a little, which dev didn't show.** Agreement falls about 2 points and would-flag rises about 1, in the conversation arm. The recommendation above said `read-first` "can't do on held-out what it didn't do here". That was wrong: three patients' agreement fell 10 points each (p09, p12, p18).
+- **Part of the would-flag rise is structural.** A trial with no mappings can never be flagged by the record, so would-flag counts it as safe. Replacing it with a read trial can only keep would-flag level or raise it. p12's and p18's rises are each one read trial, flagged by the full record, in a place an unread trial held under `hints`. Under `hints` that place went to a trial nobody had read; it wasn't safer, only unmeasured.
+- **The scorer comparison holds.** `shortlist` still ends highest at 8 follow-ups (88% against `count`'s 84% and `fixed`'s 79%).
