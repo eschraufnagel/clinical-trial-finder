@@ -37,6 +37,7 @@ export interface SheetTrial {
   phase: Words;
   site: Words;
   read: Words;
+  thin: Words | null;
   hints: HintView[];
 }
 
@@ -151,6 +152,7 @@ export function oncologistSheet(input: SheetInput): SheetView {
       phase: t.phase,
       site: t.site,
       read: t.read,
+      thin: t.thin,
       hints: t.hints,
     })),
     closing: ours(

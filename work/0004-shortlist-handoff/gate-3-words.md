@@ -79,4 +79,6 @@ npm run app -- --fake
 
 ## Answers
 
-(The owner's, at the gates.)
+**Owner, 2026-10: as recommended.**
+- **Gate 2:** yes. Run the Claude Haiku 4.5 held-out reading once, as written above.
+- **Gate 3:** cards whose rules were thinly read lead with "Few of this trial's rules could be checked against your answers.", before "nothing conflicts". The rest of the wording stands as it is.

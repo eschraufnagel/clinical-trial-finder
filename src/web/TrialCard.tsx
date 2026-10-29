@@ -41,6 +41,11 @@ export function TrialCard({ trial, rank }: { trial: TrialView; rank: number }) {
       <p className="read">
         <W w={trial.read} />
       </p>
+      {trial.thin === null ? null : (
+        <p className="flag thin">
+          <W w={trial.thin} />
+        </p>
+      )}
 
       {trial.hints.length === 0 ? null : (
         <section className="hints">

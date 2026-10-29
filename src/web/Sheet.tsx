@@ -88,6 +88,12 @@ export function Sheet({ id }: { id: string }) {
             <strong>{trial.nctId}</strong> <W w={trial.title} />
             <br />
             <W w={trial.phase} /> <W w={trial.site} /> <W w={trial.read} />
+            {trial.thin === null ? null : (
+              <>
+                {" "}
+                <W w={trial.thin} />
+              </>
+            )}
             {trial.hints.length === 0 ? null : (
               <ul>
                 {trial.hints.map((h) => (

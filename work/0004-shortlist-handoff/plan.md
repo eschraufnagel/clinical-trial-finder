@@ -52,6 +52,8 @@ What exists to build on:
 - **What it costs to be wrong:** stage E pins the wording in the browser test and describes it in `docs/`. A page that reads as advice is the one thing the product intent rules out (§7 of the research).
 - **Can be no:** wording is rewritten in `copy.ts`, `explain.ts`, `sheet.ts`, and the gate is answered again.
 
+**Gates 2 and 3, as answered** (owner, 2026-10; `gate-3-words.md`): yes to one Claude Haiku 4.5 held-out reading run; a line on thinly read cards, the rest as it stands.
+
 Stages A, B′ and C need no gate: A is proven by `--check`; B′ applies a choice already made; C ends in tests.
 
 ### Steps

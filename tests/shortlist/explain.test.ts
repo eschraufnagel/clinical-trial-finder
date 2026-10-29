@@ -6,6 +6,8 @@ import {
   describeOrder,
   describeTrial,
   milesWords,
+  THIN_READ,
+  THIN_WORDS,
 } from "../../src/shortlist/explain.js";
 import { phaseWords } from "../../src/shortlist/phase.js";
 import { candidate, mapping, trialFacts, trials, vocabulary } from "../questions/fixture.js";
@@ -48,6 +50,40 @@ describe("describeOrder", () => {
     expect(trialIn(v, "NCT08")?.read).toEqual({
       ours: "This tool couldn't read this trial's rules. Ask about it like any other.",
     });
+  });
+
+  it("leads a thinly read trial with a plain line, and no other (0004 Gate 3)", () => {
+    expect(THIN_READ).toBeCloseTo(1 / 3);
+    const v = view({});
+    // NCT01 maps 2 of the questions: thin. NCT07 maps none, NCT08 isn't in the run: their own line.
+    expect(trialIn(v, "NCT01")?.thin).toEqual({ ours: THIN_WORDS });
+    expect(trialIn(v, "NCT07")?.thin).toBeNull();
+    expect(trialIn(v, "NCT08")?.thin).toBeNull();
+    // A trial read for a third of the questions or more isn't thin.
+    const many = factsFor(vocabulary, "nsclc")
+      .slice(0, Math.ceil(TOTAL / 3))
+      .map((f) => mapping(f.id, [f.answers[0]?.id ?? ""]));
+    const wellRead = describeTrial(
+      {
+        candidate: candidate("NCT09", 1),
+        status: {
+          nctId: "NCT09",
+          hints: [],
+          partHints: [],
+          fits: [],
+          unknown: many.map((m) => m.factId),
+        },
+      },
+      {
+        order: [],
+        orderName: "read-first",
+        shortlistSize: 3,
+        profile: {},
+        vocabulary,
+        cancerType: "nsclc",
+      },
+    );
+    expect(wellRead.thin).toBeNull();
   });
 
   it("lists what the answers checked, with the person's own words", () => {

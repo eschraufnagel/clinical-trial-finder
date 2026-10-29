@@ -50,6 +50,11 @@ export interface TrialView {
   flags: Words[];
   /** How much of its rules were read onto the questions here. */
   read: Words;
+  /**
+   * On a trial read for fewer than `THIN_READ` of the questions, said before
+   * "nothing conflicts" so that can't stand alone (0004 Gate 3).
+   */
+  thin: Words | null;
   checked: CheckedFact[];
   checkedNote: Words;
   hints: HintView[];
@@ -96,6 +101,14 @@ export const FLAG_WORDS: Readonly<Record<Flag, string>> = {
   "age-limit-unread": "Its age limits couldn't be read. Check them in the full record.",
   "site-distance-unknown": "The distance to some of its sites isn't known.",
 };
+
+/**
+ * A trial read for fewer than this share of the questions is "thinly read"
+ * (0004 Gate 3): about a third. A trial with no mappings has its own line.
+ */
+export const THIN_READ = 1 / 3;
+
+export const THIN_WORDS = "Few of this trial's rules could be checked against your answers.";
 
 export const WHO_WORDS: Readonly<Record<WhoKnows, string>> = {
   patient: "You could find out",
@@ -193,6 +206,7 @@ function describeWith(entry: OrderEntry, input: DescribeInput, context: Context)
           ? "None of this trial's rules could be matched to the questions here. Ask about it like any other."
           : `Its rules were read for ${mapped} of the ${total} questions here.`,
     ),
+    thin: mapped > 0 && mapped < THIN_READ * total ? ours(THIN_WORDS) : null,
     checked: (status?.fits ?? []).map((factId) => {
       const words = input.said?.[factId];
       return {
