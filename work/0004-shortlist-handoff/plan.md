@@ -174,4 +174,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 
 - **Step 6:** the held-out rerun is `04-7543ffb2cb2e` (the plan said `02`; 01 to 03 already existed), and with reads `with-reads/03-7543ffb2cb2e`. Unread places on held-out short lists fall from 30 to 2; agreement falls about 2 points and would-flag rises about 1 (`gate-1-order.md`).
 
+- **Step 7:** each trial's view also says how much of its rules were read, and tells "not in the run" apart from "no rule mapped". The person's words are a third kind of text, `said`, which the verdict scan skips, as it skips the registry's. The scan covers each arm's whole order, not only its short list.
+- **Step 8:** the sheet's rows of answers say "Chose from a list" or "Didn't know" where the person typed nothing. The result with both checks is `05-7543ffb2cb2e` (the plan said `03`). It equals `04` row for row apart from `verdictHits` and `sheetMissing`, which are 0 in all 169 rows.
+
 (Filled in as gates are answered and the plan diverges.)

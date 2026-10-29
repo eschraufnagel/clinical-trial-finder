@@ -17,6 +17,7 @@ import {
 import { describeOrder } from "../../src/shortlist/explain.js";
 import type { OrderEntry } from "../../src/shortlist/order.js";
 import { shortlistOf } from "../../src/shortlist/order.js";
+import { oncologistSheet, sheetMissing } from "../../src/shortlist/sheet.js";
 import { oursIn, verdictHits } from "../../src/shortlist/words.js";
 import {
   type ArmName,
@@ -119,7 +120,7 @@ export function armsFor(
         patient.says[f] === undefined ? [] : [[f, patient.says[f]]],
       ),
     );
-    const view = describeOrder({
+    const described = {
       order,
       orderName: settings.order,
       shortlistSize: size,
@@ -128,6 +129,11 @@ export function armsFor(
       vocabulary,
       cancerType,
       skipped,
+    };
+    const view = describeOrder(described);
+    const sheet = oncologistSheet({
+      ...described,
+      asked: result?.steps.map((s) => s.factId) ?? Object.keys(profile),
     });
     return {
       patient: patient.id,
@@ -157,7 +163,8 @@ export function armsFor(
           return miles === null || miles === undefined ? [] : [miles];
         }),
       ),
-      verdictHits: verdictHits(oursIn(view)).length,
+      verdictHits: verdictHits(oursIn([view, sheet])).length,
+      sheetMissing: sheetMissing(sheet, shortlist, skipped).length,
       curve,
     };
   };

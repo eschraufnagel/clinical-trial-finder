@@ -174,14 +174,19 @@ export function asRecorded(rerun: unknown, committed: unknown): unknown {
 
 /**
  * Rows whose views break a rule a result may not break (slice 0004): text
- * this project writes that states a verdict. A run with any writes nothing.
+ * this project writes that states a verdict, or an oncologist sheet that
+ * misses an unknown. A run with any writes nothing.
  */
 export function brokenRules(rows: readonly ArmRow[]): string[] {
-  return rows.flatMap((r) =>
-    (r.verdictHits ?? 0) > 0
-      ? [`${r.patient} ${r.arm} ${r.scorer ?? ""}: ${r.verdictHits} verdict words`]
-      : [],
-  );
+  return rows.flatMap((r) => {
+    const where = `${r.patient} ${r.arm} ${r.scorer ?? ""}`;
+    return [
+      ...((r.verdictHits ?? 0) > 0 ? [`${where}: ${r.verdictHits} verdict words`] : []),
+      ...((r.sheetMissing ?? 0) > 0
+        ? [`${where}: the sheet misses ${r.sheetMissing} unknowns`]
+        : []),
+    ];
+  });
 }
 
 export function latestResultFile(dir: string): string | undefined {

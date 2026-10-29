@@ -62,6 +62,11 @@ export interface ArmRow {
    * this arm's whole order that match a verdict pattern. Must be 0.
    */
   verdictHits?: number;
+  /**
+   * Slice 0004, absent from older results: unanswered facts of short-list
+   * trials that the oncologist sheet neither asks nor shows as a hint. Must be 0.
+   */
+  sheetMissing?: number;
   /** Agreement and would-flag after 0 to `CURVE_LENGTH` follow-ups, for the conversation arms. */
   curve: CurvePoint[] | null;
 }
