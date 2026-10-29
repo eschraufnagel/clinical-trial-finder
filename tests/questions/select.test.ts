@@ -7,7 +7,9 @@ import {
   rank,
   type Situation,
   shortlistChange,
+  shortlistChangeByRecount,
 } from "../../src/questions/select.js";
+import { ORDER_NAMES } from "../../src/shortlist/order.js";
 import { SETTINGS, trials, vocabulary } from "./fixture.js";
 
 function situation(overrides: Partial<Situation> = {}): Situation {
@@ -21,6 +23,7 @@ function situation(overrides: Partial<Situation> = {}): Situation {
     skip: SETTINGS.skip,
     sex: "female",
     shortlistSize: SETTINGS.shortlistSize,
+    ordering: "hints",
     followUps: 0,
     budget: 10,
     ...overrides,
@@ -70,23 +73,64 @@ describe("the scorers", () => {
 });
 
 describe("shortlistChange", () => {
-  it("matches reordering every trial, for every fact and answer", () => {
+  const profiles = [{}, { hiv: "no" }, { ecog: "ps2" }, { pregnant_or_breastfeeding: "no" }];
+
+  it("matches reordering every trial, for every order, fact and answer", () => {
     const input = trials();
-    for (const profile of [{}, { hiv: "no" }, { ecog: "ps2" }]) {
-      const s = situation({ profile, order: orderFor(input, profile, vocabulary) });
-      const before = s.order.slice(0, 3).map((e) => e.candidate.nctId);
-      for (const fact of askable(s)) {
-        if (profile[fact.id as keyof typeof profile] !== undefined) continue;
-        for (const answer of fact.answers) {
-          const after = orderFor(input, { ...profile, [fact.id]: answer.id }, vocabulary)
-            .slice(0, 3)
-            .map((e) => e.candidate.nctId);
-          expect(shortlistChange(s, fact.id, answer.id), `${fact.id}=${answer.id}`).toBe(
-            after.filter((id) => !before.includes(id)).length,
-          );
+    for (const ordering of ORDER_NAMES) {
+      for (const profile of profiles) {
+        const order = orderFor(input, profile, vocabulary, ordering);
+        const s = situation({ profile, order, ordering });
+        const before = s.order.slice(0, 3).map((e) => e.candidate.nctId);
+        for (const fact of askable(s)) {
+          if (profile[fact.id as keyof typeof profile] !== undefined) continue;
+          for (const answer of fact.answers) {
+            const after = orderFor(
+              input,
+              { ...profile, [fact.id]: answer.id },
+              vocabulary,
+              ordering,
+            )
+              .slice(0, 3)
+              .map((e) => e.candidate.nctId);
+            expect(
+              shortlistChange(s, fact.id, answer.id),
+              `${ordering}: ${fact.id}=${answer.id}`,
+            ).toBe(after.filter((id) => !before.includes(id)).length);
+          }
         }
       }
     }
+  });
+
+  it("recounts to what the shortcut gives, under the orders the shortcut serves", () => {
+    const input = trials();
+    for (const ordering of ["hints", "read-first"] as const) {
+      for (const profile of profiles) {
+        const order = orderFor(input, profile, vocabulary, ordering);
+        const s = situation({ profile, order, ordering });
+        for (const fact of askable(s)) {
+          for (const answer of fact.answers) {
+            expect(shortlistChangeByRecount(s, fact.id, answer.id)).toBe(
+              shortlistChange(s, fact.id, answer.id),
+            );
+          }
+        }
+      }
+    }
+  });
+
+  it("under checked, counts trials an answer moves up, which hints never does", () => {
+    // Pregnancy "no": NCT02 and NCT04 to NCT06 map pregnancy and don't rule
+    // "no" out, so each gains a fact checked, and NCT04 and NCT05 rise into
+    // the short list past NCT01 and NCT03.
+    const input = trials();
+    const checked = situation({
+      order: orderFor(input, {}, vocabulary, "checked"),
+      ordering: "checked",
+    });
+    expect(shortlistChange(checked, "pregnant_or_breastfeeding", "no")).toBe(2);
+    expect(shortlistChange(situation(), "pregnant_or_breastfeeding", "no")).toBe(0);
   });
 });
 

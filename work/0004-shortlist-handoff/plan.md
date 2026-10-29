@@ -160,4 +160,6 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - **Step 2:** the step that returns the next question is `nextStep`, not `nextQuestion`, which `select.ts` already exports. `current` returns `ConversationSoFar`, whose `stop` is `null` until the conversation stops. `--check` matched 03-867d9528f7e8, dev/01-e935d9c2c86e and with-reads/02-867d9528f7e8 row for row. 914 tests.
 - **Step 3:** `trialsForSearch(request, snapshot, zips, facts)` takes a lookup for a trial's mappings rather than a run directory: the measurement reads each file as before, and the server will pass the map from `loadAllTrialFacts`. `--check` matched 03 and dev/01 again.
 
+- **Step 4:** `Situation` gains `ordering`, the order its `order` is in. `TrialIndex` is unchanged: a trial maps a fact exactly when it has an entry for it in `deltas`, which is all the recount needs to know that an answer adds a fact checked. Results made before this slice record no order; `settingsForCheck` and the result type read that as `hints`. `--check` matched 03 and dev/01.
+
 (Filled in as gates are answered and the plan diverges.)

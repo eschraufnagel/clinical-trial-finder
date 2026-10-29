@@ -1,6 +1,6 @@
 import { type Profile, statusFor } from "../facts/status.js";
 import type { FactVocabulary } from "../facts/types.js";
-import { type OrderEntry, orderTrials, shortlistOf } from "../shortlist/order.js";
+import { type OrderEntry, type OrderName, orderTrials, shortlistOf } from "../shortlist/order.js";
 import {
   indexTrials,
   nextQuestion,
@@ -130,7 +130,7 @@ export function startConversation(input: StartInput): ConversationState {
     profile: {},
     asked: new Set(),
     steps: [],
-    order: orderFor(trials, {}, vocabulary),
+    order: orderFor(trials, {}, vocabulary, settings.order),
     followUps: 0,
     stop: null,
     pending: null,
@@ -156,6 +156,7 @@ export function nextStep(state: ConversationState): NextStep {
     skip: input.settings.skip,
     sex: input.sex,
     shortlistSize: input.settings.shortlistSize,
+    ordering: input.settings.order,
     followUps: state.followUps,
     budget: state.budget,
   };
@@ -187,7 +188,7 @@ export function answer(state: ConversationState, factId: string, reply: string):
   state.asked.add(factId);
   if (reply !== UNKNOWN) {
     state.profile[factId] = reply;
-    state.order = orderFor(input.trials, state.profile, input.vocabulary);
+    state.order = orderFor(input.trials, state.profile, input.vocabulary, input.settings.order);
   }
   const after = shortlistIds(state);
   const step: Step = {
@@ -219,7 +220,8 @@ export function changeAnswer(state: ConversationState, factId: string, reply: st
     throw new Error(`${factId} has no answer ${reply}`);
   if (reply === UNKNOWN) delete state.profile[factId];
   else state.profile[factId] = reply;
-  state.order = orderFor(state.input.trials, state.profile, state.input.vocabulary);
+  const { trials, vocabulary, settings } = state.input;
+  state.order = orderFor(trials, state.profile, vocabulary, settings.order);
   stopNow(state);
 }
 
@@ -244,17 +246,19 @@ function shortlistIds(state: ConversationState): string[] {
   return shortlistOf(state.order, state.input.settings.shortlistSize).map((e) => e.candidate.nctId);
 }
 
-/** Every trial in order under a profile. A trial the run didn't map has no status. */
+/** Every trial in an order under a profile. A trial the run didn't map has no status. */
 export function orderFor(
   trials: readonly TrialInput[],
   profile: Profile,
   vocabulary: FactVocabulary,
+  order: OrderName = "hints",
 ): OrderEntry[] {
   return orderTrials(
     trials.map((t) => ({
       candidate: t.candidate,
       status: t.facts === null ? null : statusFor(t.facts, profile, vocabulary),
     })),
+    order,
   );
 }
 

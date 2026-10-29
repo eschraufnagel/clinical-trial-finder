@@ -116,13 +116,18 @@ export function scorePatients(
 /**
  * The settings a `--check` reruns a committed result under: the ones it
  * records, so a dev result made before Gate 2 froze the settings still checks.
+ * A result from before slice 0004 records no order, and ran under `hints`.
  * The vocabulary, patients and run are today's, and must reproduce it.
  */
 export function settingsForCheck(
   committed: Pick<QuestionsEvalResult, "settings" | "settingsSha256">,
   _current: ConversationSettings,
 ): ConversationSettings {
-  return { ...committed.settings, sha256: committed.settingsSha256 };
+  return {
+    ...committed.settings,
+    order: committed.settings.order ?? "hints",
+    sha256: committed.settingsSha256,
+  };
 }
 
 export function latestResultFile(dir: string): string | undefined {

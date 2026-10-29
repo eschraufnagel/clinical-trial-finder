@@ -14,7 +14,10 @@ export interface QuestionsEvalResult {
   sets: PatientSet[];
   /** Per set, of the patient files' names and bytes, so a changed patient is a different experiment. */
   patientsSha256: Partial<Record<PatientSet, string>>;
-  settings: Omit<ConversationSettings, "sha256">;
+  /** `order` is absent from results made before slice 0004, which ran under `hints`. */
+  settings: Omit<ConversationSettings, "sha256" | "order"> & {
+    order?: ConversationSettings["order"];
+  };
   settingsSha256: string;
   run: { name: string; promptVersion: string; vocabularySha256: string };
   snapshot: { month: string; sha256: string };
