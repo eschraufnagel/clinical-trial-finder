@@ -47,8 +47,8 @@ import { describe, expect, it } from "vitest";
  *   touches Fastify is handed an instance by type, and opens nothing.
  * - **Browser requests:** only `src/transport/web/client.ts` may call
  *   `fetch()`, and only with a string or template literal starting with `/`:
- *   the page's own origin, never a variable that could hold a URL. A page's
- *   own API client is added to the list by the slice that writes it.
+ *   the page's own origin, never a variable that could hold a URL. Slice
+ *   0004 adds the page's own API client, `src/web/api.ts`, to the list.
  *
  * ## One registry host, from slice 0013
  *
@@ -73,10 +73,15 @@ const EXEMPT_PATTERN = "fetch()";
 /** The one file allowed to listen, on loopback only. */
 const LISTEN_FILE = `${sep}server${sep}start.ts`;
 /** Browser files allowed `fetch()` by relative literal only. */
-const RELATIVE_FETCH_FILES: readonly string[] = [`${sep}transport${sep}web${sep}client.ts`];
-/** Entry points with no `index.ts`: the browser half of the transport. */
+const RELATIVE_FETCH_FILES: readonly string[] = [
+  `${sep}transport${sep}web${sep}client.ts`,
+  // Slice 0004: the page's own API client.
+  `${sep}web${sep}api.ts`,
+];
+/** Entry points with no `index.ts`: the browser half of the transport, and the page (slice 0004). */
 const EXTRA_ENTRIES: readonly string[] = [
   fileURLToPath(new URL("../src/transport/web/client.ts", import.meta.url)),
+  fileURLToPath(new URL("../src/web/main.tsx", import.meta.url)),
 ];
 
 /** Hosts a network-exempt module may address. Mirrors `LOOPBACK_HOSTS` in config.ts. */
@@ -278,6 +283,9 @@ describe("no network under src/", () => {
     expect(modules.some((m) => m.endsWith(`screening${sep}session.ts`))).toBe(true);
     // Slice 0005: the browser client.
     expect(modules.some((m) => m.endsWith(`transport${sep}web${sep}client.ts`))).toBe(true);
+    // Slice 0004 of this repository: the page and the server.
+    expect(modules.some((m) => m.endsWith(`web${sep}main.tsx`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`server${sep}start.ts`))).toBe(true);
     expect(modules.some((m) => m.endsWith(`plain${sep}render.ts`))).toBe(true);
     expect(modules.some((m) => m.endsWith(`plain${sep}load.ts`))).toBe(true);
   });
@@ -746,7 +754,7 @@ describe("question choice and the order reach no model", () => {
 function allSourceFiles(dir: string): string[] {
   return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const path = resolve(dir, entry.name);
-    return entry.isDirectory() ? allSourceFiles(path) : path.endsWith(".ts") ? [path] : [];
+    return entry.isDirectory() ? allSourceFiles(path) : /\.tsx?$/.test(path) ? [path] : [];
   });
 }
 
@@ -1016,5 +1024,77 @@ describe("tests can share modules", () => {
     expect(replacesShared('vi.mock("../src/models/omlx.js");')).toBe(true);
     expect(replacesShared("vi.spyOn(console, 'log');")).toBe(true);
     expect(replacesShared("const x = new FakeModelAdapter();")).toBe(false);
+  });
+});
+
+/**
+ * Slice 0004: the page runs in a browser. Its tsconfig sees Node's types only
+ * so it can import the server's response types, which makes this the check
+ * that nothing Node-only slipped into browser code. Copied from the
+ * prescreening repository.
+ */
+function usesNode(source: string): boolean {
+  const code = stripTypeOnlyImports(stripComments(source));
+  return /from\s+["']node:/.test(code) || /\bprocess\./.test(code);
+}
+
+describe("the page is browser code", () => {
+  const files = allSourceFiles(resolve(SRC_DIR, "web"));
+
+  it("walks the page's files", () => {
+    expect(files.some((f) => f.endsWith("main.tsx"))).toBe(true);
+  });
+
+  it("imports no Node module and reads no process state", () => {
+    expect(files.filter((f) => usesNode(readFileSync(f, "utf8")))).toEqual([]);
+  });
+
+  it("is imported by nothing else under src/", () => {
+    const WEB_DIR = resolve(SRC_DIR, "web") + sep;
+    const intoWeb = (file: string) =>
+      [...stripComments(readFileSync(file, "utf8")).matchAll(/from\s+["'](\.[^"']+)["']/g)].some(
+        (m) => resolve(dirname(file), m[1] ?? "").startsWith(WEB_DIR),
+      );
+    const offenders = allSourceFiles(SRC_DIR).filter((f) => !f.startsWith(WEB_DIR) && intoWeb(f));
+    expect(offenders).toEqual([]);
+  });
+
+  it("would catch either, and ignores a type-only import", () => {
+    expect(usesNode('import { readFileSync } from "node:fs";')).toBe(true);
+    expect(usesNode("const key = process.env.KEY;")).toBe(true);
+    expect(usesNode('import type { X } from "node:fs";')).toBe(false);
+  });
+});
+
+/**
+ * Slice 0004: the browser test runs the page with the scripted reader, so
+ * `npm run test:e2e` can never reach a model, local or hosted. Copied from
+ * the prescreening repository.
+ */
+const PLAYWRIGHT_CONFIG = fileURLToPath(new URL("../playwright.config.ts", import.meta.url));
+
+/** The `command:` string in Playwright's config, or "" if there is none. */
+function webServerCommand(config: string): string {
+  const m = /\bcommand:\s*(?:"([^"]*)"|'([^']*)'|`([^`]*)`)/.exec(stripComments(config));
+  return m?.[1] ?? m?.[2] ?? m?.[3] ?? "";
+}
+
+/** Whether a command runs the app with the scripted reader and names no model. */
+function runsScriptedReaderOnly(command: string): boolean {
+  return /\s--fake\b/.test(command) && !/--(model|spend|reader|provider)\b/.test(command);
+}
+
+describe("the browser test reaches no model", () => {
+  it("starts its server with the scripted reader and no model flag", () => {
+    const command = webServerCommand(readFileSync(PLAYWRIGHT_CONFIG, "utf8"));
+    expect(command).toContain("npm run app");
+    expect(runsScriptedReaderOnly(command)).toBe(true);
+  });
+
+  it("would catch a browser test given a model", () => {
+    expect(runsScriptedReaderOnly("npm run app -- --fake --port 5035")).toBe(true);
+    expect(runsScriptedReaderOnly("npm run app -- --port 5035")).toBe(false);
+    expect(runsScriptedReaderOnly("npm run app -- --fake --model omlx")).toBe(false);
+    expect(runsScriptedReaderOnly("npm run app -- --fake --spend")).toBe(false);
   });
 });
