@@ -37,6 +37,7 @@ describe("oncologistSheet", () => {
       ["pregnant_or_breastfeeding", 1],
     ]);
     expect(view.questions[0]?.count).toEqual({ ours: "2 of these 3 trials ask about this." });
+    expect(view.questions[1]?.count).toEqual({ ours: "1 of these 3 trials asks about this." });
   });
 
   it("says what to bring for the open questions records would answer", () => {

@@ -192,4 +192,10 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - Spend lines are dated by month (`monthStamp()`), as CLAUDE.md asks.
   - `scripts/app.ts` imports `workloadFor` and `READS_DIR` from `scripts/questions-read.ts`.
 
+- **Step 12:**
+  - The page's logic with no DOM in it (routes, which buttons a message offers) is in `src/web/logic.ts`, tested in `tests/web/logic.test.ts`.
+  - `Words.tsx` renders the project's text plainly, the trial's words marked `data-registry` and the person's `data-said`.
+  - After a message ending "Which is closest?", the answers show unfolded. The fallback now gives its reason before that question.
+  - Tried in the browser pane with `--fake`. That turned up "1 miles away", "1 of these 10 trials ask", and a list heading that repeated the page title; all fixed.
+
 (Filled in as gates are answered and the plan diverges.)

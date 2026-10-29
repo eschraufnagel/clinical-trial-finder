@@ -1,7 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { factsFor } from "../../src/facts/vocabulary.js";
 import { orderFor } from "../../src/questions/conversation.js";
-import { type DescribeInput, describeOrder, describeTrial } from "../../src/shortlist/explain.js";
+import {
+  type DescribeInput,
+  describeOrder,
+  describeTrial,
+  milesWords,
+} from "../../src/shortlist/explain.js";
 import { phaseWords } from "../../src/shortlist/phase.js";
 import { candidate, mapping, trialFacts, trials, vocabulary } from "../questions/fixture.js";
 
@@ -144,6 +149,15 @@ describe("describeOrder", () => {
     expect(t.phase).toEqual({ ours: phaseWords(["PHASE2"]) });
     expect(t.link.href).toBe("https://clinicaltrials.gov/study/NCT09");
     expect(t.title).toEqual({ registry: "Trial NCT09" });
+  });
+});
+
+describe("milesWords", () => {
+  it("says one mile, many miles, under a mile, or not known", () => {
+    expect(milesWords(1)).toBe("1 mile away");
+    expect(milesWords(12)).toBe("12 miles away");
+    expect(milesWords(0)).toBe("under a mile away");
+    expect(milesWords(null)).toBe("distance not known");
   });
 });
 

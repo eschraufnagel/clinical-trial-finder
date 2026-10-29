@@ -105,11 +105,18 @@ export const WHO_WORDS: Readonly<Record<WhoKnows, string>> = {
 
 const WHO_ORDER: readonly WhoKnows[] = ["patient", "oncologist", "records"];
 
+/** "1 mile away", "12 miles away", "under a mile away", "distance not known". */
+export function milesWords(miles: number | null): string {
+  if (miles === null) return "distance not known";
+  if (miles === 0) return "under a mile away";
+  return `${miles} ${miles === 1 ? "mile" : "miles"} away`;
+}
+
 export function describeOrder(input: DescribeInput): OrderView {
   const context = contextOf(input);
   const trials = input.order.map((entry) => describeWith(entry, input, context));
   return {
-    heading: ours("Trials to ask your oncologist about"),
+    heading: ours("Your list"),
     note: ours(
       `${ORDER_WORDS[input.orderName]} The order isn't a ranking of which trial would work for you. Nothing here says whether you could take part in any trial; your oncologist and each trial's team decide that.`,
     ),
@@ -170,7 +177,7 @@ function describeWith(entry: OrderEntry, input: DescribeInput, context: Context)
   const siteWords =
     site === null
       ? "No recruiting site is listed."
-      : `Nearest site: ${place.length === 0 ? "not named" : place.join(", ")}${site.miles === null ? ", distance not known." : `, ${site.miles} miles away.`}`;
+      : `Nearest site: ${place.length === 0 ? "not named" : place.join(", ")}, ${milesWords(site.miles)}.`;
 
   return {
     nctId: candidate.nctId,

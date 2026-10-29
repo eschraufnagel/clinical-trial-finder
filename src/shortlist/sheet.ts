@@ -121,7 +121,9 @@ export function oncologistSheet(input: SheetInput): SheetView {
     factId,
     question: question(factId),
     trials,
-    count: ours(`${trials} of these ${shortlist.length} trials ask about this.`),
+    count: ours(
+      `${trials} of these ${shortlist.length} trials ${trials === 1 ? "asks" : "ask"} about this.`,
+    ),
   }));
 
   const bringItems = new Map<string, Words[]>();

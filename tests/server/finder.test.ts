@@ -140,7 +140,9 @@ describe("falling back to the answers", () => {
     const { transport, id, last } = started(r);
     transport.send(id, "down");
     await settle();
-    expect(last()?.text).toBe(`${WORDS.unavailable} connection refused`);
+    expect(last()?.text).toBe(
+      "I couldn't read that just now: connection refused. Which is closest?",
+    );
     expect(transport.view(id)?.status).toBe("idle");
   });
 
@@ -158,7 +160,9 @@ describe("falling back to the answers", () => {
     );
     transport.send(id, "No.");
     await settle();
-    expect(last()?.text).toMatch(/^I couldn't read that just now\. Which is closest\? Cannot use/);
+    expect(last()?.text).toBe(
+      "I couldn't read that just now: No key saved for Anthropic. Add one in Settings. Which is closest?",
+    );
     expect(last()?.choices?.length).toBeGreaterThan(1);
   });
 });

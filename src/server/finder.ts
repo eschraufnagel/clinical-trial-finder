@@ -135,6 +135,7 @@ export const WORDS = {
   closest: "Which is closest?",
   unclear: "I couldn't tell from that. Which is closest?",
   unavailable: "I couldn't read that just now. Which is closest?",
+  unavailableBecause: (why: string) => `I couldn't read that just now: ${why} Which is closest?`,
   capped:
     "This conversation has reached its cost cap in Settings, so I can't read replies. Which is closest?",
   done: "That's all the questions. Your list of trials to ask about is ready.",
@@ -181,7 +182,12 @@ export class FinderService {
     try {
       adapter = reader.forConversation(key);
     } catch (error) {
-      noAdapter = error instanceof Error ? error.message : String(error);
+      noAdapter =
+        error instanceof ModelError
+          ? (error.problems[0] ?? error.message)
+          : error instanceof Error
+            ? error.message
+            : String(error);
     }
     const id = this.#options.newId?.() ?? randomUUID();
     this.#sessions.set(id, {
@@ -304,7 +310,13 @@ export class FinderService {
     if (session === undefined || fact === undefined) return;
     session.pending = null;
     if (session.adapter === null) {
-      this.#offer(id, `${WORDS.unavailable} ${session.noAdapter ?? ""}`.trim(), factId);
+      this.#offer(
+        id,
+        session.noAdapter === null
+          ? WORDS.unavailable
+          : WORDS.unavailableBecause(withStop(session.noAdapter)),
+        factId,
+      );
       return;
     }
     let reading: Reading;
@@ -312,10 +324,14 @@ export class FinderService {
       reading = await readReply(fact, text, session.adapter);
     } catch (error) {
       if (!this.#sessions.has(id)) return;
-      const why = error instanceof ModelError ? (error.problems[0] ?? "") : "";
+      const why = error instanceof ModelError ? error.problems[0] : undefined;
       this.#offer(
         id,
-        isBudgetStop(error) ? WORDS.capped : `${WORDS.unavailable} ${why}`.trim(),
+        isBudgetStop(error)
+          ? WORDS.capped
+          : why === undefined
+            ? WORDS.unavailable
+            : WORDS.unavailableBecause(withStop(why)),
         factId,
       );
       return;
@@ -388,6 +404,12 @@ export class FinderService {
       { id: UNKNOWN, label: "I don't know" },
     ];
   }
+}
+
+/** A reason, ending in a full stop, to go before "Which is closest?". */
+function withStop(reason: string): string {
+  const trimmed = reason.trim();
+  return /[.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`;
 }
 
 /** The search form, checked field by field. */
