@@ -25,7 +25,8 @@ export interface TrialInput {
   facts: TrialFacts | null;
 }
 
-export type StopReason = "budget" | "nothing-left" | "stable";
+/** `person`: the person asked for the list, or changed an answer (slice 0004). */
+export type StopReason = "budget" | "nothing-left" | "stable" | "person";
 
 interface HintDelta {
   whole: number;

@@ -21,7 +21,7 @@ import {
   openQuestions,
   runConversation,
 } from "../src/questions/conversation.js";
-import { UNKNOWN } from "../src/questions/select.js";
+import { type StopReason, UNKNOWN } from "../src/questions/select.js";
 import { SCORERS, type ScorerName, skippedFacts } from "../src/questions/settings.js";
 import { describeMapping } from "./facts-show.js";
 import { loadContext, trialsFor } from "./questions-eval.js";
@@ -30,7 +30,8 @@ const STOPS = {
   budget: "the question budget was reached",
   "nothing-left": "no question is left that any of these trials asks about",
   stable: "no answer to any question left could change the short list",
-} as const;
+  person: "the person asked for the list",
+} as const satisfies Record<StopReason, string>;
 
 export function formatTry(
   patientId: string,

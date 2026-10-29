@@ -1,5 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { openQuestions, runConversation } from "../../src/questions/conversation.js";
+import {
+  answer,
+  changeAnswer,
+  current,
+  nextStep,
+  openQuestions,
+  runConversation,
+  type StartInput,
+  startConversation,
+  stopNow,
+} from "../../src/questions/conversation.js";
 import { UNKNOWN } from "../../src/questions/select.js";
 import { skippedFacts } from "../../src/questions/settings.js";
 import { SETTINGS, trials, vocabulary } from "./fixture.js";
@@ -89,6 +99,103 @@ describe("runConversation", () => {
 
   it("refuses an answer the fact doesn't have", () => {
     expect(() => run({ brain_mets: "maybe" })).toThrow(/brain_mets has no answer maybe/);
+  });
+});
+
+describe("the conversation as steps", () => {
+  const start = (extra: Partial<StartInput> = {}) =>
+    startConversation({
+      trials: trials(),
+      vocabulary,
+      settings: SETTINGS,
+      cancerType: "nsclc",
+      sex: "female",
+      ...extra,
+    });
+
+  /** Drives the steps by hand with the same answers `run` gives. */
+  function stepped(answers: Record<string, string>, extra: Partial<StartInput> = {}) {
+    const state = start(extra);
+    for (let next = nextStep(state); !("stop" in next); next = nextStep(state)) {
+      answer(state, next.factId, knows(answers)(next.factId));
+    }
+    return current(state);
+  }
+
+  it("gives what runConversation gives, for every scorer and arm", () => {
+    const cases: [Record<string, string>, Partial<StartInput>][] = [
+      [{ hiv: "uncontrolled" }, {}],
+      [{ hiv: "uncontrolled", ecog: "ps2" }, { scorer: "count" }],
+      [{ pregnant_or_breastfeeding: "yes" }, { scorer: "fixed" }],
+      [{}, { intake: false, scorer: "fixed", budget: 1 }],
+      [{ ecog: "ps3_4" }, { sex: "male", scorer: "count" }],
+    ];
+    for (const [answers, extra] of cases) {
+      expect(stepped(answers, extra)).toEqual(run(answers, extra));
+    }
+  });
+
+  it("asks the same question until it is answered", () => {
+    const state = start();
+    expect(nextStep(state)).toEqual(nextStep(state));
+    expect(nextStep(state)).toEqual({ factId: "brain_mets", phase: "intake", score: null });
+  });
+
+  it("refuses a fact out of turn, an answer the fact doesn't have, and answers after a stop", () => {
+    const state = start();
+    expect(() => answer(state, "hiv", "no")).toThrow(/hiv isn't the next question/);
+    expect(() => answer(state, "brain_mets", "maybe")).toThrow(/brain_mets has no answer maybe/);
+    stopNow(state);
+    expect(() => answer(state, "brain_mets", UNKNOWN)).toThrow(/stopped \(person\)/);
+  });
+
+  it("stops at the person's request, with the order as it stands", () => {
+    const state = start();
+    answer(state, "brain_mets", UNKNOWN);
+    stopNow(state);
+    expect(nextStep(state)).toEqual({ stop: "person" });
+    const so = current(state);
+    expect(so.stop).toBe("person");
+    expect(so.order).toHaveLength(8);
+    expect(so.shortlist.map((e) => e.candidate.nctId)).toEqual(["NCT01", "NCT02", "NCT03"]);
+  });
+
+  it("keeps the reason of a conversation already stopped", () => {
+    const state = start({ settings: { ...SETTINGS, shortlistSize: 8 } });
+    answer(state, "brain_mets", UNKNOWN);
+    expect(nextStep(state)).toEqual({ stop: "stable" });
+    stopNow(state);
+    expect(current(state).stop).toBe("stable");
+  });
+
+  it("changes an answer: the order follows, and no more questions are chosen", () => {
+    const state = start();
+    answer(state, "brain_mets", UNKNOWN);
+    const next = nextStep(state);
+    expect(next).toMatchObject({ factId: "hiv" });
+    answer(state, "hiv", "no");
+    changeAnswer(state, "hiv", "uncontrolled");
+    expect(current(state).shortlist.map((e) => e.candidate.nctId)).toEqual([
+      "NCT02",
+      "NCT04",
+      "NCT05",
+    ]);
+    expect(current(state).profile).toEqual({ hiv: "uncontrolled" });
+    expect(nextStep(state)).toEqual({ stop: "person" });
+    changeAnswer(state, "hiv", UNKNOWN);
+    expect(current(state).profile).toEqual({});
+    expect(current(state).shortlist.map((e) => e.candidate.nctId)).toEqual([
+      "NCT01",
+      "NCT02",
+      "NCT03",
+    ]);
+  });
+
+  it("refuses to change a fact never asked, or to an answer it doesn't have", () => {
+    const state = start();
+    expect(() => changeAnswer(state, "hiv", "no")).toThrow(/hiv hasn't been asked/);
+    answer(state, "brain_mets", UNKNOWN);
+    expect(() => changeAnswer(state, "brain_mets", "maybe")).toThrow(/has no answer maybe/);
   });
 });
 

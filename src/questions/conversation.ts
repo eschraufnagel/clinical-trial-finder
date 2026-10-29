@@ -6,6 +6,7 @@ import {
   nextQuestion,
   type Situation,
   type StopReason,
+  type TrialIndex,
   type TrialInput,
   UNKNOWN,
 } from "./select.js";
@@ -14,8 +15,11 @@ import type { ConversationSettings, ScorerName } from "./settings.js";
 /**
  * The conversation (spec 0003 §4.3): the intake, in order, then one chosen
  * question at a time until a stop. Pure apart from `answer`, which stands for
- * the person: a patient's knowledge in the measurement, a cached reading of
- * their reply, or later the page.
+ * the person: a patient's knowledge in the measurement, or a cached reading
+ * of their reply. Since slice 0004 it is also a set of steps
+ * (`startConversation`, `nextStep`, `answer`, `changeAnswer`, `stopNow`,
+ * `current`), for the page, where the person answers one question at a time;
+ * `runConversation` is a loop over them.
  *
  * `answer` returns an answer id, or `UNKNOWN`. An unknown marks the fact as
  * asked and changes nothing else. No answer removes a trial: it adds hints,
@@ -60,83 +64,184 @@ export interface ConversationResult {
   shortlist: OrderEntry[];
 }
 
+/** Where a conversation stands: `stop` is `null` until it has stopped. */
+export interface ConversationSoFar extends Omit<ConversationResult, "stop"> {
+  stop: StopReason | null;
+}
+
+/** What a conversation needs to start: everything but the person. */
+export type StartInput = Omit<ConversationInput, "answer">;
+
+/** The next question to ask, or why the conversation has stopped. */
+export type NextStep =
+  | { factId: string; phase: Step["phase"]; score: number | null }
+  | { stop: StopReason };
+
+/**
+ * A conversation in progress (slice 0004), driven one step at a time: by
+ * `runConversation` with every answer known, or by the page with a person
+ * answering. Opaque outside this module; read it with `current`.
+ */
+export interface ConversationState {
+  readonly input: StartInput;
+  readonly index: TrialIndex;
+  readonly scorer: ScorerName;
+  readonly budget: number;
+  /** The intake still to ask, in order. */
+  readonly intake: string[];
+  readonly excluded: ReadonlySet<string>;
+  readonly profile: Record<string, string>;
+  readonly asked: Set<string>;
+  readonly steps: Step[];
+  order: OrderEntry[];
+  followUps: number;
+  stop: StopReason | null;
+  /** The last `nextStep`, kept so `answer` needn't rank the facts again. */
+  pending: NextStep | null;
+}
+
 export function runConversation(input: ConversationInput): ConversationResult {
+  const state = startConversation(input);
+  for (;;) {
+    const next = nextStep(state);
+    if ("stop" in next) break;
+    answer(state, next.factId, input.answer(next.factId));
+  }
+  const result = current(state);
+  if (result.stop === null) throw new Error("the conversation ended without a stop");
+  return { ...result, stop: result.stop };
+}
+
+export function startConversation(input: StartInput): ConversationState {
   const { trials, vocabulary, settings, cancerType, sex } = input;
   const index = indexTrials(trials, vocabulary, cancerType);
-  const scorer = input.scorer ?? settings.scorer;
   const useIntake = input.intake !== false;
-  const budget = (input.budget ?? settings.budget) + (useIntake ? 0 : settings.intake.length);
   const skipped = (factId: string) =>
     settings.skip.some((r) => r.factId === factId && r.sex === sex);
-
-  const profile: Record<string, string> = {};
-  const asked = new Set<string>();
-  const steps: Step[] = [];
-  let order = orderFor(trials, profile, vocabulary);
-  const ids = () => shortlistOf(order, settings.shortlistSize).map((e) => e.candidate.nctId);
-
-  const ask = (factId: string, phase: Step["phase"], score: number | null): void => {
-    const fact = index.facts.find((f) => f.id === factId);
-    if (fact === undefined) throw new Error(`${factId} isn't a fact for ${cancerType}`);
-    const reply = input.answer(factId);
-    if (reply !== UNKNOWN && !fact.answers.some((a) => a.id === reply))
-      throw new Error(`${factId} has no answer ${reply}`);
-    const before = ids();
-    asked.add(factId);
-    if (reply !== UNKNOWN) {
-      profile[factId] = reply;
-      order = orderFor(trials, profile, vocabulary);
-    }
-    const after = ids();
-    steps.push({
-      factId,
-      phase,
-      reply,
-      score,
-      before,
-      after,
-      entered: after.filter((id) => !before.includes(id)),
-      left: before.filter((id) => !after.includes(id)),
-    });
-  };
-
-  const intake = useIntake
-    ? settings.intake.filter((f) => !skipped(f) && index.facts.some((x) => x.id === f))
-    : [];
-  for (const factId of intake) ask(factId, "intake", null);
-
-  const excluded = new Set(useIntake ? settings.intake : []);
-  let followUps = 0;
-  let stop: StopReason;
-  for (;;) {
-    const situation: Situation = {
-      index,
-      order,
-      profile,
-      asked,
-      excluded,
-      skip: settings.skip,
-      sex,
-      shortlistSize: settings.shortlistSize,
-      followUps,
-      budget,
-    };
-    const next = nextQuestion(situation, scorer);
-    if ("stop" in next) {
-      stop = next.stop;
-      break;
-    }
-    ask(next.factId, "follow-up", next.score);
-    followUps++;
-  }
-
   return {
-    steps,
-    stop,
-    profile: { ...profile },
-    order,
-    shortlist: shortlistOf(order, settings.shortlistSize),
+    input,
+    index,
+    scorer: input.scorer ?? settings.scorer,
+    budget: (input.budget ?? settings.budget) + (useIntake ? 0 : settings.intake.length),
+    intake: useIntake
+      ? settings.intake.filter((f) => !skipped(f) && index.facts.some((x) => x.id === f))
+      : [],
+    excluded: new Set(useIntake ? settings.intake : []),
+    profile: {},
+    asked: new Set(),
+    steps: [],
+    order: orderFor(trials, {}, vocabulary),
+    followUps: 0,
+    stop: null,
+    pending: null,
   };
+}
+
+/** The next question, or the stop. Asking it twice gives the same answer. */
+export function nextStep(state: ConversationState): NextStep {
+  if (state.stop !== null) return { stop: state.stop };
+  if (state.pending !== null) return state.pending;
+  const intake = state.intake[0];
+  if (intake !== undefined) {
+    state.pending = { factId: intake, phase: "intake", score: null };
+    return state.pending;
+  }
+  const { input } = state;
+  const situation: Situation = {
+    index: state.index,
+    order: state.order,
+    profile: state.profile,
+    asked: state.asked,
+    excluded: state.excluded,
+    skip: input.settings.skip,
+    sex: input.sex,
+    shortlistSize: input.settings.shortlistSize,
+    followUps: state.followUps,
+    budget: state.budget,
+  };
+  const next = nextQuestion(situation, state.scorer);
+  if ("stop" in next) {
+    state.stop = next.stop;
+    return { stop: next.stop };
+  }
+  state.pending = { factId: next.factId, phase: "follow-up", score: next.score };
+  return state.pending;
+}
+
+/**
+ * Answers the next question with an answer id or `UNKNOWN`. Refuses any
+ * other fact, and an answer the fact doesn't have. An unknown marks the fact
+ * asked and moves nothing.
+ */
+export function answer(state: ConversationState, factId: string, reply: string): Step {
+  const next = nextStep(state);
+  if ("stop" in next) throw new Error(`The conversation has stopped (${next.stop})`);
+  if (next.factId !== factId) throw new Error(`${factId} isn't the next question`);
+  const { input } = state;
+  const fact = state.index.facts.find((f) => f.id === factId);
+  if (fact === undefined) throw new Error(`${factId} isn't a fact for ${input.cancerType}`);
+  if (reply !== UNKNOWN && !fact.answers.some((a) => a.id === reply))
+    throw new Error(`${factId} has no answer ${reply}`);
+
+  const before = shortlistIds(state);
+  state.asked.add(factId);
+  if (reply !== UNKNOWN) {
+    state.profile[factId] = reply;
+    state.order = orderFor(input.trials, state.profile, input.vocabulary);
+  }
+  const after = shortlistIds(state);
+  const step: Step = {
+    factId,
+    phase: next.phase,
+    reply,
+    score: next.score,
+    before,
+    after,
+    entered: after.filter((id) => !before.includes(id)),
+    left: before.filter((id) => !after.includes(id)),
+  };
+  state.steps.push(step);
+  if (next.phase === "intake") state.intake.shift();
+  else state.followUps++;
+  state.pending = null;
+  return step;
+}
+
+/**
+ * Changes the answer to a fact already asked, to an answer id or `UNKNOWN`.
+ * The order follows the new answer. No more questions are chosen: a
+ * conversation not yet stopped stops, as the person's choice.
+ */
+export function changeAnswer(state: ConversationState, factId: string, reply: string): void {
+  if (!state.asked.has(factId)) throw new Error(`${factId} hasn't been asked`);
+  const fact = state.index.facts.find((f) => f.id === factId);
+  if (reply !== UNKNOWN && !fact?.answers.some((a) => a.id === reply))
+    throw new Error(`${factId} has no answer ${reply}`);
+  if (reply === UNKNOWN) delete state.profile[factId];
+  else state.profile[factId] = reply;
+  state.order = orderFor(state.input.trials, state.profile, state.input.vocabulary);
+  stopNow(state);
+}
+
+/** Stops the questions at the person's request. A conversation already stopped keeps its reason. */
+export function stopNow(state: ConversationState): void {
+  state.stop ??= "person";
+  state.pending = null;
+}
+
+/** The conversation as it stands. */
+export function current(state: ConversationState): ConversationSoFar {
+  return {
+    steps: [...state.steps],
+    stop: state.stop,
+    profile: { ...state.profile },
+    order: state.order,
+    shortlist: shortlistOf(state.order, state.input.settings.shortlistSize),
+  };
+}
+
+function shortlistIds(state: ConversationState): string[] {
+  return shortlistOf(state.order, state.input.settings.shortlistSize).map((e) => e.candidate.nctId);
 }
 
 /** Every trial in order under a profile. A trial the run didn't map has no status. */
