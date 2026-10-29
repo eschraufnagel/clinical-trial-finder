@@ -20,9 +20,9 @@ import {
   catalogEntry,
   estimate,
   FakeModelAdapter,
-  ModelError,
   PROVIDERS,
 } from "../src/models/index.js";
+import { READER_PROMPT_VERSION } from "../src/questions/prompt.js";
 import { loadConversationSettings } from "../src/questions/settings.js";
 import { loadAllTrialFacts, trialsForSearch } from "../src/questions/trials.js";
 import { loadZipPoints } from "../src/search/geo.js";
@@ -54,20 +54,37 @@ export function parseAppArgs(args: readonly string[]): AppArgs {
 }
 
 /**
- * The scripted reader for `--fake`, until step 13 of the plan reads from the
- * committed readings: every reply read as "I don't know".
+ * The scripted reader for `--fake` (spec 0004 §9.4): a reply is read as the
+ * local model read it in the committed reading runs on the current prompt,
+ * found by the question and the reply's exact text; anything else reads as
+ * unknown. Typing a made-up patient's reply gives the model's own recorded
+ * reading of it, with no model running.
  */
-function provisionalReader(fake: boolean): ReaderSource {
+export function scriptedReader(vocabulary: ReturnType<typeof loadFactVocabulary>): ReaderSource {
+  const questions = new Map(vocabulary.facts.map((f) => [f.id, f.question]));
+  const readings = new Map<string, string>();
+  for (const name of readdirSync(READS_DIR)) {
+    if (!name.endsWith(`-${READER_PROMPT_VERSION.slice(0, 8)}.json`)) continue;
+    const file = JSON.parse(readFileSync(join(READS_DIR, name), "utf8")) as {
+      items: { factId: string; reply: string; answer: string }[];
+    };
+    for (const item of file.items)
+      readings.set(`${questions.get(item.factId)}\n${item.reply}`, item.answer);
+  }
   return {
-    current: () => (fake ? "scripted" : "none"),
-    name: (key) => (key === "scripted" ? "a scripted reader" : "no model"),
+    current: () => "scripted",
+    name: () => "a scripted reader",
     measured: () => false,
-    forConversation: () => {
-      if (!fake) throw new ModelError("No model is set up yet", ["Choose an answer instead."]);
-      return new FakeModelAdapter([], {
-        respond: () => ({ kind: "json", content: { answer: "unknown" } }),
-      });
-    },
+    forConversation: () =>
+      new FakeModelAdapter([], {
+        respond: (request) => {
+          const question = /^Question: (.*)$/m.exec(request.user)?.[1];
+          const reply = /^Reply: (".*")$/m.exec(request.user)?.[1];
+          const text = reply === undefined ? "" : (JSON.parse(reply) as string);
+          const answer = readings.get(`${question}\n${text}`) ?? "unknown";
+          return { kind: "json", content: { answer } };
+        },
+      }),
     release: () => {},
   };
 }
@@ -149,7 +166,7 @@ async function main(): Promise<void> {
       localModels: () => localModels(models),
     },
     finder: {
-      reader: args.fake ? provisionalReader(true) : settingsReader(models),
+      reader: args.fake ? scriptedReader(vocabulary) : settingsReader(models),
       trialsFor: (search) => trialsForSearch(search, snapshot, zips, (id) => facts.get(id)),
       interventions: (id) => interventions.get(id) ?? [],
       vocabulary,

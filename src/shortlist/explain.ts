@@ -205,7 +205,7 @@ function describeWith(entry: OrderEntry, input: DescribeInput, context: Context)
     checkedNote: ours(
       (status?.fits.length ?? 0) === 0
         ? "None of your answers so far could be checked against what was read of its rules."
-        : "What your answers checked: nothing in what was read of its rules conflicts with these.",
+        : "Nothing in what was read of its rules conflicts with these answers.",
     ),
     hints: hintMappings.map((m) => ({
       factId: m.factId,

@@ -198,4 +198,10 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - After a message ending "Which is closest?", the answers show unfolded. The fallback now gives its reason before that question.
   - Tried in the browser pane with `--fake`. That turned up "1 miles away", "1 of these 10 trials ask", and a list heading that repeated the page title; all fixed.
 
+- **Step 13:**
+  - The `--fake` reader looks each reply up by its question and exact text, in the committed reading runs on the current prompt (dev and held-out, `8cb01749`).
+  - The two patients' pages are in `gate-3-pages.md`, generated over HTTP from a `--fake` server by a scratch script that isn't committed. Its procedure is in that file's header. The page's short lists equal `questions:try --reads` for both patients.
+  - The card's "checked" note no longer repeats its heading.
+  - The hosted run needs `--max-calls 600`: its 527 calls exceed the default cap of 100.
+
 (Filled in as gates are answered and the plan diverges.)
