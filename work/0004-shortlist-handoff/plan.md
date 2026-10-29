@@ -157,4 +157,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 
 - **Step 1, baseline:** `npm run check` exits 0; 907 tests (899 passed, 8 expected to fail), `npm test` 0.57 s.
 
+- **Step 2:** the step that returns the next question is `nextStep`, not `nextQuestion`, which `select.ts` already exports. `current` returns `ConversationSoFar`, whose `stop` is `null` until the conversation stops. `--check` matched 03-867d9528f7e8, dev/01-e935d9c2c86e and with-reads/02-867d9528f7e8 row for row. 914 tests.
+- **Step 3:** `trialsForSearch(request, snapshot, zips, facts)` takes a lookup for a trial's mappings rather than a run directory: the measurement reads each file as before, and the server will pass the map from `loadAllTrialFacts`. `--check` matched 03 and dev/01 again.
+
 (Filled in as gates are answered and the plan diverges.)

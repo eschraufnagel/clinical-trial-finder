@@ -30,9 +30,8 @@ import type { FactVocabulary } from "../src/facts/types.js";
 import { loadFactVocabulary } from "../src/facts/vocabulary.js";
 import type { TrialInput } from "../src/questions/select.js";
 import { type ConversationSettings, loadConversationSettings } from "../src/questions/settings.js";
+import { trialsForSearch } from "../src/questions/trials.js";
 import { loadZipPoints, type Point } from "../src/search/geo.js";
-import { searchTrials } from "../src/search/search.js";
-import { loadVocabulary } from "../src/search/vocabulary.js";
 import { loadSnapshot } from "../src/trials/snapshot-load.js";
 
 export const RESULTS_DIR = fileURLToPath(new URL("../evals/results/questions", import.meta.url));
@@ -59,16 +58,9 @@ export function loadContext(run?: string): EvalContext {
 
 /** A patient's search, with each trial's mappings from the run, or `null` where it has none. */
 export function trialsFor(patient: Patient, ctx: EvalContext): TrialInput[] {
-  const cancer = loadVocabulary(patient.search.cancerType);
-  const { manifest, trials } = ctx.snapshot;
-  const result = searchTrials(trials, manifest, cancer, ctx.zips, {
-    ...patient.search,
-    purposes: ["TREATMENT"],
-  });
-  return result.candidates.map((candidate) => ({
-    candidate,
-    facts: readTrialFacts(ctx.runDir, candidate.nctId) ?? null,
-  }));
+  return trialsForSearch(patient.search, ctx.snapshot, ctx.zips, (nctId) =>
+    readTrialFacts(ctx.runDir, nctId),
+  );
 }
 
 export function scorePatients(
