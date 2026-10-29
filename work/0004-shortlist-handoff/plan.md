@@ -177,4 +177,11 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - **Step 7:** each trial's view also says how much of its rules were read, and tells "not in the run" apart from "no rule mapped". The person's words are a third kind of text, `said`, which the verdict scan skips, as it skips the registry's. The scan covers each arm's whole order, not only its short list.
 - **Step 8:** the sheet's rows of answers say "Chose from a list" or "Didn't know" where the person typed nothing. The result with both checks is `05-7543ffb2cb2e` (the plan said `03`). It equals `04` row for row apart from `verdictHits` and `sheetMissing`, which are 0 in all 169 rows.
 
+- **Step 10:**
+  - Each question offers its fixed answers and "I don't know" as choices directly. That's "one tap away" (0003 Gate 3), and it needs no separate "Choose an answer" message. The page may fold them away.
+  - Text typed while a reading waits for its confirm is read again, as a new reply to the same question.
+  - The service is tested over `MemoryTransport` (`tests/server/finder.test.ts`) and its routes through `app.inject` (`tests/server/app.test.ts`).
+  - `scripts/app.ts` uses a provisional reader until step 11: scripted "don't know" with `--fake`, none otherwise.
+  - Age is checked as 0 to 120, not adults only: nothing in the product limits it.
+
 (Filled in as gates are answered and the plan diverges.)

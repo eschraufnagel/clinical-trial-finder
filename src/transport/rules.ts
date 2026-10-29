@@ -28,7 +28,12 @@ export type Refusal =
    */
   | { code: 409; reason: "not-started" }
   /** "Try again" when nothing failed. */
-  | { code: 409; reason: "nothing-to-retry" };
+  | { code: 409; reason: "nothing-to-retry" }
+  /**
+   * A choice the last agent message didn't offer (slice 0004). Refused, so a
+   * button left over from an earlier question can't answer the current one.
+   */
+  | { code: 409; reason: "not-a-choice" };
 
 export type InboundCheck = { ok: true; text: string } | ({ ok: false } & Refusal);
 

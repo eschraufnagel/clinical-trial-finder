@@ -1,6 +1,8 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { extname, join, relative, sep } from "node:path";
 import type { FastifyInstance } from "fastify";
+import { WebTransport } from "../transport/web/transport.js";
+import { type FinderOptions, FinderService } from "./finder.js";
 
 /**
  * The composition root (spec 0004 §9): the one place that knows a browser is
@@ -18,12 +20,70 @@ export interface AppOptions {
   mode: "live" | "scripted";
   /** What `/api/info` says about the data the page runs on. */
   info: { snapshotMonth: string; mappingRun: string };
+  /** The conversation service's data and reader; the transport is made here. */
+  finder: Omit<FinderOptions, "transport">;
 }
 
-export function configureApp(app: FastifyInstance, options: AppOptions): void {
+export interface App {
+  finder: FinderService;
+  transport: WebTransport;
+}
+
+export function configureApp(app: FastifyInstance, options: AppOptions): App {
+  const transport = new WebTransport();
+  const finder = new FinderService({ ...options.finder, transport });
   registerGuards(app, options.port);
   app.get("/api/info", () => ({ mode: options.mode, ...options.info }));
+  transport.register(app);
+  registerFinderRoutes(app, finder);
   registerPage(app, options.webDir);
+  return { finder, transport };
+}
+
+interface Params {
+  id: string;
+}
+
+/**
+ * The conversation's own routes (spec 0004 §9.2): start one from the search
+ * form, see its short list and sheet, change an answer, stop, start over.
+ * The questions and replies go through the transport's routes.
+ */
+function registerFinderRoutes(app: FastifyInstance, finder: FinderService): void {
+  app.post("/api/finder", (request, reply) => {
+    const outcome = finder.start(request.body);
+    return outcome.ok
+      ? reply.code(201).send({ id: outcome.id })
+      : reply.code(400).send({ error: outcome.error, field: outcome.field });
+  });
+
+  app.get<{ Params: Params }>("/api/finder/:id/view", (request, reply) => {
+    const view = finder.view(request.params.id);
+    return view === undefined ? reply.code(404).send({ error: "unknown-conversation" }) : view;
+  });
+
+  app.put<{ Params: Params & { factId: string } }>(
+    "/api/finder/:id/answers/:factId",
+    (request, reply) => {
+      const body = (request.body ?? {}) as { answer?: unknown };
+      const outcome = finder.changeAnswer(request.params.id, request.params.factId, body.answer);
+      if (outcome === "unknown") return reply.code(404).send({ error: "unknown-conversation" });
+      if (outcome === "refused") return reply.code(400).send({ error: "not-an-answer" });
+      return reply.code(204).send();
+    },
+  );
+
+  app.post<{ Params: Params }>("/api/finder/:id/stop", (request, reply) =>
+    finder.stop(request.params.id)
+      ? reply.code(204).send()
+      : reply.code(404).send({ error: "unknown-conversation" }),
+  );
+
+  app.delete<{ Params: Params }>("/api/finder/:id", (request, reply) =>
+    finder.remove(request.params.id)
+      ? reply.code(204).send()
+      : reply.code(404).send({ error: "unknown-conversation" }),
+  );
 }
 
 const LOCAL_NAMES: readonly string[] = ["127.0.0.1", "localhost"];

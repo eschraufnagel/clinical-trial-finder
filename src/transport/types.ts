@@ -12,7 +12,19 @@
 /** A participant message, as the transport accepted it. */
 export interface InboundMessage {
   conversationId: string;
+  /** What the person typed, or the label of the choice they picked. */
   text: string;
+  /** The id of the choice they picked, when they picked one (slice 0004). */
+  choice?: string;
+}
+
+/**
+ * A reply an agent message offers as a button (slice 0004): a fixed answer,
+ * "I don't know", or "That's right". Picking one sends its id.
+ */
+export interface Choice {
+  id: string;
+  label: string;
 }
 
 /** Where a conversation stands, from the participant's side. */
@@ -32,6 +44,10 @@ export type ChannelStatus =
 export interface ChannelMessage {
   from: "agent" | "participant";
   text: string;
+  /** On an agent message: the replies it offers as buttons, besides free text (slice 0004). */
+  choices?: Choice[];
+  /** On a participant message: the choice picked, when one was. */
+  choice?: string;
 }
 
 export interface MessageTransport {
@@ -55,8 +71,8 @@ export interface MessageTransport {
     status: ChannelStatus,
     detail?: string,
   ): void;
-  /** Delivers an agent message to the participant. */
-  deliver(conversationId: string, text: string): void;
+  /** Delivers an agent message to the participant, with the choices it offers, if any. */
+  deliver(conversationId: string, text: string, choices?: readonly Choice[]): void;
   /** Tells the participant's side what the agent is doing. */
   setStatus(conversationId: string, status: ChannelStatus, detail?: string): void;
   /**

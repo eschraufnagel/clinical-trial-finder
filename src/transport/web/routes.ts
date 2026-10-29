@@ -17,6 +17,14 @@ function refuse(reply: FastifyReply, refusal: Refusal): FastifyReply {
   return reply.code(refusal.code).send({ error: refusal.reason });
 }
 
+function choiceOf(body: unknown): string | undefined {
+  if (typeof body !== "object" || body === null) {
+    return undefined;
+  }
+  const choice = (body as Record<string, unknown>)["choice"];
+  return typeof choice === "string" ? choice : undefined;
+}
+
 function textOf(body: unknown): string | undefined {
   if (typeof body !== "object" || body === null) {
     return undefined;
@@ -33,12 +41,17 @@ export function registerMessageRoutes(app: FastifyInstance, ledger: ChannelLedge
       : reply.send(view);
   });
 
+  // Text the person typed, or since slice 0004 a choice they picked: `{ text }` or `{ choice }`.
   app.post<{ Params: Params }>("/api/conversations/:id/messages", (request, reply) => {
+    const choice = choiceOf(request.body);
     const text = textOf(request.body);
-    if (text === undefined) {
+    if (choice === undefined && text === undefined) {
       return refuse(reply, { code: 400, reason: "empty" });
     }
-    const check = ledger.accept(request.params.id, text);
+    const check =
+      choice !== undefined
+        ? ledger.acceptChoice(request.params.id, choice)
+        : ledger.accept(request.params.id, text ?? "");
     return check.ok ? reply.code(202).send({ accepted: true }) : refuse(reply, check);
   });
 
