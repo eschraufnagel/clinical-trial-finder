@@ -14,8 +14,10 @@ import {
   type ScorerName,
   skippedFacts,
 } from "../../src/questions/settings.js";
+import { describeOrder } from "../../src/shortlist/explain.js";
 import type { OrderEntry } from "../../src/shortlist/order.js";
 import { shortlistOf } from "../../src/shortlist/order.js";
+import { oursIn, verdictHits } from "../../src/shortlist/words.js";
 import {
   type ArmName,
   type ArmRow,
@@ -111,6 +113,22 @@ export function armsFor(
     const byId = new Map(order.map((e) => [e.candidate.nctId, e]));
     const pushed = noAnswerList.filter((id) => !list.includes(id));
     const followUps = result?.steps.filter((s) => s.phase === "follow-up") ?? [];
+    // The person's words, for the facts they answered by saying so.
+    const saidFor = Object.fromEntries(
+      Object.keys(profile).flatMap((f) =>
+        patient.says[f] === undefined ? [] : [[f, patient.says[f]]],
+      ),
+    );
+    const view = describeOrder({
+      order,
+      orderName: settings.order,
+      shortlistSize: size,
+      profile,
+      said: saidFor,
+      vocabulary,
+      cancerType,
+      skipped,
+    });
     return {
       patient: patient.id,
       set,
@@ -139,6 +157,7 @@ export function armsFor(
           return miles === null || miles === undefined ? [] : [miles];
         }),
       ),
+      verdictHits: verdictHits(oursIn(view)).length,
       curve,
     };
   };

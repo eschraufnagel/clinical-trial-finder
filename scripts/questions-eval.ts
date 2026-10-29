@@ -17,7 +17,7 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { armsFor } from "../evals/questions/arms.js";
-import type { ArmSummary } from "../evals/questions/metrics.js";
+import type { ArmRow, ArmSummary } from "../evals/questions/metrics.js";
 import { loadPatients, type Patient, type PatientSet } from "../evals/questions/patients.js";
 import { fromReads, type ReadsFile, readReadsFile } from "../evals/questions/reads.js";
 import {
@@ -172,6 +172,18 @@ export function asRecorded(rerun: unknown, committed: unknown): unknown {
   return rerun;
 }
 
+/**
+ * Rows whose views break a rule a result may not break (slice 0004): text
+ * this project writes that states a verdict. A run with any writes nothing.
+ */
+export function brokenRules(rows: readonly ArmRow[]): string[] {
+  return rows.flatMap((r) =>
+    (r.verdictHits ?? 0) > 0
+      ? [`${r.patient} ${r.arm} ${r.scorer ?? ""}: ${r.verdictHits} verdict words`]
+      : [],
+  );
+}
+
 export function latestResultFile(dir: string): string | undefined {
   let names: string[];
   try {
@@ -251,6 +263,12 @@ function main(): void {
       (row, i) =>
         JSON.stringify(asRecorded(row, committed.rows[i])) !== JSON.stringify(committed.rows[i]),
     );
+    const broken = brokenRules(rerun.rows);
+    if (broken.length > 0) {
+      console.error(`${file}'s rerun breaks a rule:\n${broken.join("\n")}`);
+      process.exitCode = 1;
+      return;
+    }
     if (
       differing.length > 0 ||
       rerun.rows.length !== committed.rows.length ||
@@ -281,6 +299,12 @@ function main(): void {
   const settings =
     orderArg === undefined ? ctx.settings : withOrder(ctx.settings, orderArg as OrderName);
   const result = scorePatients(sets, { ...ctx, settings }, reads);
+  const broken = brokenRules(result.rows);
+  if (broken.length > 0) {
+    console.error(`Not written: ${broken.length} rows break a rule.\n${broken.join("\n")}`);
+    process.exitCode = 1;
+    return;
+  }
   mkdirSync(dir, { recursive: true });
   const path = join(dir, nextRunFile(dir, result.settingsSha256.slice(0, 12)));
   writeFileSync(path, `${JSON.stringify(result, null, 2)}\n`, "utf8");

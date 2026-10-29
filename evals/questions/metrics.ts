@@ -57,6 +57,11 @@ export interface ArmRow {
   candidateMappings?: number | null;
   /** Median miles to the short list's nearest sites, leaving out unknown distances. */
   medianMiles?: number | null;
+  /**
+   * Slice 0004, absent from older results: `ours` strings in the view of
+   * this arm's whole order that match a verdict pattern. Must be 0.
+   */
+  verdictHits?: number;
   /** Agreement and would-flag after 0 to `CURVE_LENGTH` follow-ups, for the conversation arms. */
   curve: CurvePoint[] | null;
 }
