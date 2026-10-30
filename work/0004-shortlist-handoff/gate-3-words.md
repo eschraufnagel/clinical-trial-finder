@@ -82,3 +82,29 @@ npm run app -- --fake
 **Owner, 2026-10: as recommended.**
 - **Gate 2:** yes. Run the Claude Haiku 4.5 held-out reading once, as written above.
 - **Gate 3:** cards whose rules were thinly read lead with "Few of this trial's rules could be checked against your answers.", before "nothing conflicts". The rest of the wording stands as it is.
+
+## Gate 2, as run
+
+[`heldout-claude-haiku-4-5-8cb01749.json`](../../evals/results/questions/reads/heldout-claude-haiku-4-5-8cb01749.json).
+- **The run:** 527 calls, 107,294 input and 8,492 output tokens, **$0.15**.
+- **Recorded as:** temperature 0; no seed (the Claude API has none); reasoning off; prompt `8cb01749`. It ran once, with no retries.
+
+**The model answered every call, but 290 of the 527 readings couldn't be used:**
+
+| | Count |
+| --- | ---: |
+| Readings used | 237 |
+| Rejected: the output was cut off at the reader's 64-token limit | 87 |
+| Failed: the output wasn't JSON the adapter accepts | 203 |
+
+- **Of the readings used:**
+  - known replies read exactly: 217 of 229, 94.8% (91.1% to 97.0%);
+  - "don't know" replies turned into an answer: 0 of 95.
+- **Of the 241 known replies:** 12 failed or were cut off, and 229 were read.
+- **The local model's figures, on the same 527 pairs:** 326 of 326 exactly, 1 of 201 invented, none unusable.
+
+**Most likely why:** Haiku explains before or around its answer. That runs past 64 tokens, or wraps the JSON in prose, which `src/models/json.ts` deliberately doesn't forgive. The prompt was tuned on the local model, which answers in JSON mode.
+
+The run can't confirm this. `questions:read` kept only the first line of each failure, without the reason. That's a bug, now fixed (`3def5eb` the failing test, `2def7f2` the fix): a failure now keeps its reason.
+
+**What it means for the page:** with Haiku chosen, about 55% of typed replies would fall back to the buttons ("I couldn't read that just now…"). The confirm step means none of them would be read wrong. They'd be asked again as choices.
