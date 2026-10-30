@@ -51,6 +51,23 @@ describe("readAll", () => {
     expect(file.failures).toEqual({});
   });
 
+  // Found in 0004's hosted run: a failure recorded only the error's first
+  // line, "Anthropic request to … failed:", and not why.
+  it.fails("records why a reading failed, not only that it did", async () => {
+    const path = join(mkdtempSync(join(tmpdir(), "reads-")), "dev-fake.json");
+    const adapter = new FakeModelAdapter([{ kind: "error", message: "HTTP 429: rate limited" }]);
+    await readAll({
+      set: "dev",
+      patients: [patient],
+      vocabulary,
+      path,
+      patientsSha256: "a",
+      adapter,
+    });
+    const file = JSON.parse(readFileSync(path, "utf8")) as ReadsFile;
+    expect(Object.values(file.failures)[0]).toContain("HTTP 429: rate limited");
+  });
+
   it("refuses a file read from other patients", async () => {
     const path = join(mkdtempSync(join(tmpdir(), "reads-")), "dev-fake.json");
     const adapter = new FakeModelAdapter([], {
