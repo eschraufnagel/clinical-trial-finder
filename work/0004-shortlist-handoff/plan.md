@@ -206,4 +206,10 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - The card's "checked" note no longer repeats its heading.
   - The hosted run needs `--max-calls 600`: its 527 calls exceed the default cap of 100.
 
+- **Step 14:**
+  - Six browser tests cover spec cases 1 to 7; cases 5 and 6 share one test. They pass in about 20 s against `npm run app -- --fake`. Case 2's expected short list is computed in the test by `runConversation` from the committed dev readings.
+  - Playwright 1.63's Chromium was already installed on this machine, so nothing was downloaded.
+  - The note that replies go to a hosted provider can't show under `--fake`, which reads with no provider. It's tested at the server instead (`reader.hosted`, `/api/info`), and its sentence by the copy scan.
+  - `biome.jsonc` now excludes `e2e/.out/`. Biome had been scanning Playwright's traces there and running for hours.
+
 (Filled in as gates are answered and the plan diverges.)
