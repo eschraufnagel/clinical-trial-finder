@@ -64,9 +64,9 @@ For bug fixes: write the failing test first, commit it, then make it pass. Do no
 ## Conventions
 
 - **Language:** TypeScript, strict mode. Node 24 LTS or newer (`engines.node: ">=24"`).
-- **Stack:** Vitest for tests, Biome for lint and format. Fastify is a dependency because `src/transport/web/` types against it. React + Vite and a local Fastify server come with the first slice that adds a page.
+- **Stack:** Vitest for tests, Biome for lint and format, Playwright for the browser test. The page is React, built by Vite into `dist/web/`, and served by a local Fastify server. `tsconfig.web.json` types the page, with the DOM; `tsconfig.json` types everything else, without it.
 - **Dependencies:** kept small. Adding one is a plan-level decision, not an implementation detail.
-- **Model access** goes through the adapters in `src/models/`, and anything outside it gets one from a factory. `createLocalAdapter` builds oMLX only. `createAdapter` also builds Anthropic, OpenAI and xAI, always inside the budget wrapper, for scripts. `createAppAdapter` is the running app's: oMLX, or the provider chosen in Settings with the key saved there, always inside the budget wrapper. The app doesn't exist yet; the slice that adds it and its Settings pins which file may name the factory, and widens `tests/boundary.test.ts` to match. A hosted key for the app comes only from Settings, never from `.env`. A script's model is chosen by a spec on the command line, never by `.env`, which holds keys only. Admitted frontier models, their prices and what each accepts are in `src/models/catalog.ts`. Adding one is a one-entry diff with its price.
+- **Model access** goes through the adapters in `src/models/`, and anything outside it gets one from a factory. `createLocalAdapter` builds oMLX only. `createAdapter` also builds Anthropic, OpenAI and xAI, always inside the budget wrapper, for scripts. `createAppAdapter` is the running app's: oMLX, or the provider chosen in Settings with the key saved there, always inside the budget wrapper. `src/server/models.ts` is the one app file that names it, and `tests/boundary.test.ts` holds that. A hosted key for the app comes only from Settings, never from `.env`. A script's model is chosen by a spec on the command line, never by `.env`, which holds keys only. Admitted frontier models, their prices and what each accepts are in `src/models/catalog.ts`. Adding one is a one-entry diff with its price.
 - **Paid runs are dry by default.** A run naming a frontier provider prints its roles and an estimate and exits, unless given `--spend`. It's capped per invocation (`--max-calls`, `--max-usd`) and appends what it spent to `evals/results/spend.jsonl`. Never pass `--spend` without the owner's go-ahead, and never create or edit `.env`. The one line already in that ledger is the prescreening repository's smoke run, which `tests/models/catalog.test.ts` reads to date the adapter it tested.
 - **Transport** goes through the `MessageTransport` interface. The conversation layer does not know it is talking to a web UI.
 - **`tests/` and `evals/` are different things.** `tests/` is deterministic, fast, and runs on every commit. `evals/` measures model behavior, is slower and non-deterministic, and runs on a schedule and before release. Do not put model-dependent assertions in `tests/`.
@@ -95,6 +95,8 @@ src/
   plain/         plain-language renderings of criteria, and the check that decides whether one is shown
   models/        model adapter (the only place a model is called)
   transport/     MessageTransport interface and the web implementation
+  server/        the local server: the conversation service, Settings, the app's models, and the one file that listens
+  web/           the page, React; every fixed sentence in copy.ts
 data/
   trials/        saved trial JSON, committed, trimmed to fields in use
   plain/         committed plain-language renderings
@@ -113,6 +115,7 @@ evals/
   results/       committed run output
 scripts/         scripts run by a person, never imported by the application
 tests/           deterministic tests only
+e2e/             the browser test, run against npm run app -- --fake
 local/           settings, keys and spend ledgers; gitignored
 ```
 
@@ -124,11 +127,14 @@ Three boundaries matter more than the rest. Nothing outside `src/models/` calls 
 
 - `fetch()` to loopback in `src/models/`
 - one frontier host per file in `src/models/`: `api.anthropic.com` in `anthropic.ts` and `anthropic-batch.ts`, `api.openai.com` in `openai.ts`, `api.x.ai` in `xai.ts`
-- relative-path `fetch()` in `src/transport/web/client.ts`
+- relative-path `fetch()` in `src/transport/web/client.ts` and `src/web/api.ts`
 - `fetch()` to `clinicaltrials.gov` in `src/trials/registry.ts`, called by `npm run fetch:trials` and `npm run snapshot:fetch`
-- listening on `127.0.0.1` in `src/server/start.ts`, which doesn't exist yet
+- listening on `127.0.0.1` in `src/server/start.ts`
 
-Widening any of them is a visible change to that test. The same test keeps `createAdapter` out of `src/` beyond `src/models/`, keeps concrete adapters out of `scripts/` as well as `src/`, allows the key variables to be named only in `src/models/keys.ts`, keeps `src/` from importing `evals/`, and keeps the labelling tool from reaching the parser or a model. It also keeps the search labelling tools (`search:sample`, `search:show`) from seeing the search beyond `normalize.ts`, and keeps `src/search/` from reaching a model, the parser, the screening agent or `src/facts/`. The facts labelling tools (`facts:sample`, `facts:label-show`) reach `src/facts/` only for the vocabulary and its types; `src/facts/status.ts` and `vocabulary.ts` reach no model; and nothing under `src/facts/` reaches the model factory, because the mapper takes its adapter as an argument. `src/shortlist/` and `src/questions/`, apart from the reader (`read.ts`, `prompt.ts`), reach no model module, the parser, the screening agent, `src/plain/` or `src/transport/`; nothing under `src/questions/` reaches the factory, because the reader takes its adapter; and the patient loader reaches no model.
+Widening any of them is a visible change to that test. The same test keeps `createAdapter` out of `src/` beyond `src/models/`, keeps concrete adapters out of `scripts/` as well as `src/`, allows the key variables to be named only in `src/models/keys.ts`, keeps `src/` from importing `evals/`, and keeps the labelling tool from reaching the parser or a model. It also keeps the search labelling tools (`search:sample`, `search:show`) from seeing the search beyond `normalize.ts`, and keeps `src/search/` from reaching a model, the parser, the screening agent or `src/facts/`. The facts labelling tools (`facts:sample`, `facts:label-show`) reach `src/facts/` only for the vocabulary and its types; `src/facts/status.ts` and `vocabulary.ts` reach no model; and nothing under `src/facts/` reaches the model factory, because the mapper takes its adapter as an argument. `src/shortlist/` and `src/questions/`, apart from the reader (`read.ts`, `prompt.ts`), reach no model module, the parser, the screening agent, `src/plain/` or `src/transport/`; nothing under `src/questions/` reaches the factory, because the reader takes its adapter; and the patient loader reaches no model. Since slice 0004, the test also:
+- keeps `createAppAdapter` in `src/server/models.ts` alone, and `createAdapter` out of the page, the server, the transport, `scripts/app.ts` and `e2e/`;
+- keeps `src/web/` free of Node and unimported by the rest of `src/`;
+- holds the browser test's server to `--fake`.
 
 A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
 
@@ -143,7 +149,7 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm install` | install |
 | `npm run check` | typecheck, then lint, then `npm test`, stopping at the first failure and exiting non-zero. Run it before every commit, and commit only if it exits 0 |
 | `npm test` | Vitest. Deterministic, no network, runs in under a second |
-| `npm run typecheck` | `tsc --noEmit` |
+| `npm run typecheck` | `tsc --noEmit`, then the page's (`tsconfig.web.json`) |
 | `npm run lint` | `biome check .` — Biome is linter and formatter; there is no ESLint |
 | `npm run format` | `biome format --write .` |
 | `npm run fetch:trials` | refetch the twelve pinned protocols, overwriting fixtures. `-- --dry-run` reports registry drift without writing. Run by a person, deliberately |
@@ -164,6 +170,8 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run questions:split` | move newly written patients from `evals/cases/patients/staging/` into their sets by hash; refuses once the sets hold patients |
 | `npm run questions:try -- --patient <file>` | one made-up patient's conversation, step by step, then the short list and the oncologist's questions; `--scorer`, `--budget`, `--run`, `--reads <file>` |
 | `npm run questions:eval` | every patient through every arm, and write a result; `-- --dev`; `-- --reads <file>` answers from a reads file; `-- --check` reruns the latest and fails on any difference |
+| `npm run app` | build the page and serve it at http://127.0.0.1:5025, on the model chosen in its Settings (kept in `local/`). `-- --fake` reads replies from the committed readings, no model; `--port`, `--settings-dir` |
+| `npm run test:e2e` | the browser test, against `npm run app -- --fake` on port 5035; never part of `npm test` |
 | `npm run questions:read -- --set dev\|heldout` | read every patient's replies on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
 
 Run `npm run check` before every commit and before opening a PR, and commit only if it passes: `npm run check && git commit ...`.

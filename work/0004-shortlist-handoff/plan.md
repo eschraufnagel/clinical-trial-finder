@@ -212,4 +212,10 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - The note that replies go to a hosted provider can't show under `--fake`, which reads with no provider. It's tested at the server instead (`reader.hosted`, `/api/info`), and its sentence by the copy scan.
   - `biome.jsonc` now excludes `e2e/.out/`. Biome had been scanning Playwright's traces there and running for hours.
 
+- **Step 15:**
+  - The hosted run read 237 of 527 replies; 87 were cut off and 203 weren't JSON (`gate-3-words.md`).
+  - Its failures kept no reason. That was a bug in `questions:read`, fixed failing test first (`3def5eb`, `2def7f2`).
+  - Owner, 2026-10: Settings show each measured model's numbers (readable, exact, invented) rather than a bare "measured" (`79c7118`). No further spend.
+- **Step 16:** `docs/page.md` is new. `docs/questions.md` has the order, held-out scored again, and the hosted run. README has the page in two lines; ROADMAP marks 0004 done, with the other-cancer trials as open question 6. `CLAUDE.md` has the stack, the factory's file, the new folders, commands and boundaries.
+
 (Filled in as gates are answered and the plan diverges.)
