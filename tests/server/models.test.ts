@@ -41,7 +41,7 @@ function reading(answer: string): Fixture {
 function storeWithKey(): SettingsStore {
   const store = new SettingsStore(join(mkdtempSync(join(tmpdir(), "finder-models-")), "local"), {
     env: {},
-    measured: ["claude-haiku-4-5"],
+    measured: [{ model: "claude-haiku-4-5", readable: 0.45, exact: 1, invented: 0 }],
   });
   store.saveKey("anthropic", SENTINEL_KEY);
   store.update({ choice: HAIKU });

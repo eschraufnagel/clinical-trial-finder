@@ -21,8 +21,22 @@ describe("npm run app", () => {
     expect(() => parseAppArgs(["--port", "80"])).toThrow(/--port/);
   });
 
-  it("knows which models a committed held-out reading run measured", () => {
-    expect(measuredModels()).toContain("Qwen3.6-35B-A3B-MLX-8bit");
+  it("knows what each committed held-out reading run measured", () => {
+    const byModel = new Map(measuredModels().map((m) => [m.model, m]));
+    // The local model read every reply: 326 of 326 exactly, 1 of 201 don't-knows invented.
+    expect(byModel.get("Qwen3.6-35B-A3B-MLX-8bit")).toEqual({
+      model: "Qwen3.6-35B-A3B-MLX-8bit",
+      readable: 1,
+      exact: 1,
+      invented: 1 / 201,
+    });
+    // Claude Haiku 4.5 could read 237 of 527: 217 of 217 exactly, 0 of 20 invented.
+    expect(byModel.get("claude-haiku-4-5")).toEqual({
+      model: "claude-haiku-4-5",
+      readable: 237 / 527,
+      exact: 1,
+      invented: 0,
+    });
   });
 
   it("with --fake, reads a made-up patient's reply as the local model read it, and anything else as unknown", async () => {

@@ -36,6 +36,17 @@ import {
 
 export type ProviderChoice = "omlx" | Provider;
 
+/** What a committed held-out reading run measured for a model (spec 0004 §8.5). */
+export interface Measurement {
+  model: string;
+  /** Share of all replies read onto an answer or "unknown"; the rest fall back to the buttons. */
+  readable: number;
+  /** Of the readable replies that stated an answer, the share read exactly. */
+  exact: number;
+  /** Of the readable "don't know" replies, the share turned into an answer. */
+  invented: number;
+}
+
 export interface Caps {
   /** Dollars one conversation's readings may spend on a hosted model. */
   conversationUsd: number;
@@ -62,6 +73,8 @@ export interface ModelView {
   cheapest: boolean;
   /** Whether a committed held-out reading run measured this model. */
   measured: boolean;
+  /** What that run found, or null. */
+  measurement: Measurement | null;
   /** Expected dollars for one conversation's readings. */
   estimateUsd: number | null;
 }
@@ -90,6 +103,7 @@ export interface SettingsView {
     /** Whether `OMLX_API_KEY` is set in the environment, for "using the key from .env". */
     keyFromEnv: boolean;
     measured: boolean;
+    measurement: Measurement | null;
   };
   caps: Caps;
   pricesAsOf: string;
@@ -124,8 +138,8 @@ export function isProviderChoice(value: unknown): value is ProviderChoice {
 
 export interface SettingsStoreOptions {
   env?: NodeJS.ProcessEnv;
-  /** Model names a committed held-out reading run measured. */
-  measured?: readonly string[];
+  /** What committed held-out reading runs measured, by model. */
+  measured?: readonly Measurement[];
   estimates?: Estimates;
 }
 
@@ -133,7 +147,7 @@ export class SettingsStore {
   readonly #file: string;
   readonly #dir: string;
   readonly #env: NodeJS.ProcessEnv;
-  readonly #measured: ReadonlySet<string>;
+  readonly #measured: ReadonlyMap<string, Measurement>;
   readonly #estimates: Estimates;
   #saved: SettingsFile;
 
@@ -142,7 +156,7 @@ export class SettingsStore {
     this.#dir = dir;
     this.#file = join(dir, "settings.json");
     this.#env = options.env ?? process.env;
-    this.#measured = new Set(options.measured ?? []);
+    this.#measured = new Map((options.measured ?? []).map((m) => [m.model, m]));
     this.#estimates = options.estimates ?? {};
     this.#saved = existsSync(this.#file) ? read(this.#file) : { version: 1 };
   }
@@ -165,6 +179,11 @@ export class SettingsStore {
   /** Whether a committed held-out reading run measured this model. */
   measured(model: string): boolean {
     return this.#measured.has(model);
+  }
+
+  /** What a committed held-out reading run found for this model, or null. */
+  measurement(model: string): Measurement | null {
+    return this.#measured.get(model) ?? null;
   }
 
   /** What the app's factory needs. Server code only: never sent to the page. */
@@ -201,6 +220,7 @@ export class SettingsStore {
             tested: entry?.smokeTested ?? null,
             cheapest: DEFAULT_MODEL_FOR[provider] === model,
             measured: this.measured(model),
+            measurement: this.measurement(model),
             estimateUsd: this.#estimates[`${provider}:${model}`] ?? null,
           };
         }),
@@ -213,6 +233,7 @@ export class SettingsStore {
         keyHint: hint("omlx"),
         keyFromEnv: orUndefined(this.#env["OMLX_API_KEY"]) !== undefined,
         measured: this.measured(this.#localModel()),
+        measurement: this.measurement(this.#localModel()),
       },
       caps: this.caps(),
       pricesAsOf: PRICES_AS_OF,

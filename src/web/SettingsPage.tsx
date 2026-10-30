@@ -119,7 +119,9 @@ export function SettingsPage() {
           <button type="button" onClick={() => void act(putSettings({ local }))}>
             {t.saveCap}
           </button>
-          <p className="note">{view.local.measured ? t.measured : t.unmeasured}</p>
+          <p className="note">
+            {view.local.measurement === null ? t.unmeasured : measured(view.local.measurement)}
+          </p>
           <KeyField
             label={t.keyLocal}
             saved={view.local.keyHint}
@@ -147,7 +149,8 @@ export function SettingsPage() {
               {t.price(entry.inputPerMillion, entry.outputPerMillion)}{" "}
               {entry.estimateUsd === null ? null : t.estimate(formatUsd(entry.estimateUsd))}{" "}
               {entry.tested === null ? t.untested : t.tested(entry.tested)}{" "}
-              {entry.measured ? t.measured : t.unmeasured} {t.pricesAsOf(view.pricesAsOf)}
+              {entry.measurement === null ? t.unmeasured : measured(entry.measurement)}{" "}
+              {t.pricesAsOf(view.pricesAsOf)}
             </p>
           )}
           <KeyField
@@ -201,6 +204,12 @@ export function SettingsPage() {
       {message === null ? null : <output className="note">{message}</output>}
     </section>
   );
+}
+
+/** A measurement, in the page's words, as whole percentages. */
+function measured(m: { readable: number; exact: number; invented: number }): string {
+  const pct = (x: number) => `${Math.round(x * 100)}%`;
+  return COPY.settings.measurement(pct(m.readable), pct(m.exact), pct(m.invented));
 }
 
 function KeyField(props: {

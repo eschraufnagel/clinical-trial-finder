@@ -28,7 +28,7 @@ import { loadAllTrialFacts, trialsForSearch } from "../src/questions/trials.js";
 import { loadZipPoints } from "../src/search/geo.js";
 import type { ReaderSource } from "../src/server/finder.js";
 import { localModels, settingsReader, testConnection } from "../src/server/models.js";
-import { type Estimates, SettingsStore } from "../src/server/settings.js";
+import { type Estimates, type Measurement, SettingsStore } from "../src/server/settings.js";
 import { startServer } from "../src/server/start.js";
 import { loadSnapshot } from "../src/trials/snapshot-load.js";
 import { READS_DIR, workloadFor } from "./questions-read.js";
@@ -90,17 +90,31 @@ export function scriptedReader(vocabulary: ReturnType<typeof loadFactVocabulary>
 }
 
 /**
- * The models a committed held-out reading run measured (spec 0004 §8.5), by
- * the model name each file records. Read here because `src/` doesn't import
- * `evals/`, and the files are the record.
+ * What each committed held-out reading run measured (spec 0004 §8.5), by
+ * the model each file records: how many replies it could read, how exactly
+ * it read those that stated an answer, and how often it invented one. Read
+ * here because `src/` doesn't import `evals/`, and the files are the record.
  */
-export function measuredModels(dir: string = READS_DIR): string[] {
+export function measuredModels(dir: string = READS_DIR): Measurement[] {
   return readdirSync(dir)
     .filter((name) => name.startsWith("heldout-") && name.endsWith(".json"))
-    .map(
-      (name) =>
-        (JSON.parse(readFileSync(join(dir, name), "utf8")) as { run: { model: string } }).run.model,
-    );
+    .map((name) => {
+      const file = JSON.parse(readFileSync(join(dir, name), "utf8")) as {
+        run: { model: string };
+        items: { kind: string; expected: string; answer: string; rejected?: string }[];
+        failures: Record<string, string>;
+      };
+      const read = file.items.filter((i) => i.rejected === undefined);
+      const known = read.filter((i) => i.kind === "says");
+      const dontKnow = read.filter((i) => i.kind !== "says");
+      const share = (n: number, of: number) => (of === 0 ? 0 : n / of);
+      return {
+        model: file.run.model,
+        readable: share(read.length, file.items.length + Object.keys(file.failures).length),
+        exact: share(known.filter((i) => i.answer === i.expected).length, known.length),
+        invented: share(dontKnow.filter((i) => i.answer !== "unknown").length, dontKnow.length),
+      };
+    });
 }
 
 /**

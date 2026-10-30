@@ -66,7 +66,10 @@ describe("the settings store", () => {
   it("marks which models were measured, priced and smoke-tested, and each provider's cheapest", () => {
     const store = new SettingsStore(freshDir(), {
       env: { OMLX_MODEL: "Local-8bit" },
-      measured: ["Local-8bit", "claude-haiku-4-5"],
+      measured: [
+        { model: "Local-8bit", readable: 1, exact: 1, invented: 0.005 },
+        { model: "claude-haiku-4-5", readable: 0.45, exact: 1, invented: 0 },
+      ],
       estimates: { "anthropic:claude-haiku-4-5": 0.007 },
     });
     const view = store.view("live");
@@ -75,11 +78,14 @@ describe("the settings store", () => {
       tested: "2026-10",
       cheapest: true,
       measured: true,
+      measurement: { model: "claude-haiku-4-5", readable: 0.45, exact: 1, invented: 0 },
       estimateUsd: 0.007,
     });
     const openai = view.providers.find((p) => p.provider === "openai");
-    expect(openai?.models.every((m) => !m.measured && m.estimateUsd === null)).toBe(true);
-    expect(view.local.measured).toBe(true);
+    expect(
+      openai?.models.every((m) => !m.measured && m.measurement === null && m.estimateUsd === null),
+    ).toBe(true);
+    expect(view.local).toMatchObject({ measured: true, measurement: { readable: 1 } });
   });
 
   it("refuses what can't be right, and never repeats a key", () => {

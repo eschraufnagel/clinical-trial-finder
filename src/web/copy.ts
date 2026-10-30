@@ -101,7 +101,8 @@ export const COPY = {
     inUse: "In use",
     cap: "Most one conversation may spend on a hosted model, in dollars",
     saveCap: "Save",
-    measured: "Its readings were measured.",
+    measurement: (readable: string, exact: string, invented: string) =>
+      `Measured on made-up patients' replies: it could read ${readable} of them, and the rest would fall back to the answer buttons. Of the replies that stated an answer, it read ${exact} exactly; of the "I don't know"s, it turned ${invented} into an answer.`,
     unmeasured: "Its readings haven't been measured.",
     estimate: (usd: string) => `About ${usd} a conversation.`,
     price: (input: number, output: number) => `$${input} in, $${output} out, per million tokens.`,
