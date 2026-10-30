@@ -218,4 +218,24 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - Owner, 2026-10: Settings show each measured model's numbers (readable, exact, invented) rather than a bare "measured" (`79c7118`). No further spend.
 - **Step 16:** `docs/page.md` is new. `docs/questions.md` has the order, held-out scored again, and the hosted run. README has the page in two lines; ROADMAP marks 0004 done, with the other-cancer trials as open question 6. `CLAUDE.md` has the stack, the factory's file, the new folders, commands and boundaries.
 
+- **Step 17, the review passes** (`REVIEW.md`):
+  - **Pass 1, plan compliance:**
+    - two files changed that the file list didn't name: `tsconfig.json` (excludes `src/web/`, includes `e2e/`) and `scripts/questions-read.ts` (the failure-reason fix, step 15). Both recorded here. Nit.
+    - `nextStep` for `nextQuestion`, and `trialsForSearch`'s lookup, are recorded at steps 2 and 3.
+  - **Pass 2, correctness, Important:** a conversation's spend was logged only at its end, so closing the tab partway lost it from `local/spend.jsonl`. The cap held. Fixed failing test first (`6ba22eb`, then the fix): spend is handed back after every reading, and `ConversationModel` logs only what's new.
+  - **Pass 3, scope and data:** nothing found.
+    - Every patient and reply is made up. The only key in the diff is a test sentinel.
+    - No network outside the named exceptions, which `tests/boundary.test.ts` holds.
+    - The committed reads file can't carry a key (`failureText`).
+  - **Pass 4, eval integrity:**
+    - `--check` compares only the fields a committed result records (`asRecorded`): older results check on everything they have.
+    - Two server tests changed with the behaviour they pin, the fallback's reason and `/api/info`'s fields. Neither was loosened.
+    - Held-out was looked at a second time, as Gate 1 says.
+    - The hosted run records model, temperature, no seed, and reasoning off.
+  - **Pass 5, documentation:**
+    - the README stays short and reports no findings;
+    - every number in `docs/page.md` and `docs/questions.md` traces to a committed result;
+    - the limits are stated, including the other-cancer trials and Haiku's 45%.
+  - Added to `CLAUDE.md`'s "Things Claude gets wrong": an unquoted variable in zsh. It happened twice in this slice.
+
 (Filled in as gates are answered and the plan diverges.)

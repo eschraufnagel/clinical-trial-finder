@@ -49,7 +49,11 @@ export interface ReaderSource {
   hosted?(key: string): string | null;
   /** The adapter one conversation reads with, for the model it started on. Throws if none can be built. */
   forConversation(key: string): ModelAdapter;
-  /** A conversation ended or was cleared: log what it spent. */
+  /**
+   * Log what a conversation has spent since the last call: after each
+   * reading, and when it ends or is cleared, so closing the tab partway loses
+   * nothing. Called again with nothing new, it logs nothing.
+   */
   release(adapter: ModelAdapter): void;
 }
 
@@ -323,6 +327,7 @@ export class FinderService {
     try {
       reading = await readReply(fact, text, session.adapter);
     } catch (error) {
+      this.#options.reader.release(session.adapter);
       if (!this.#sessions.has(id)) return;
       const why = error instanceof ModelError ? error.problems[0] : undefined;
       this.#offer(
@@ -336,6 +341,7 @@ export class FinderService {
       );
       return;
     }
+    this.#options.reader.release(session.adapter);
     if (!this.#sessions.has(id)) return;
     if (reading.rejected !== undefined) {
       this.#offer(id, WORDS.unclear, factId);

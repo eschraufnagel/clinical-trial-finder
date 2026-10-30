@@ -185,3 +185,4 @@ When the same mistake happens twice, the correction goes here. Keep entries shor
 - **Reading lint by its last line.** `npm run lint 2>&1 | tail -1` prints nothing useful when Biome fails. Read the exit code (`npx biome check . >/dev/null; echo $?`) before committing.
 - **Letting a failed check through to a commit.** Commit through `npm run check && git commit ...`, never after a check whose exit code wasn't the gate.
 - **Naming a regex helper `escape`.** It shadows a global and fails Biome's `noShadowRestrictedNames`. Call it `escapeRegExp`.
+- **Passing flags through an unquoted variable in zsh.** zsh doesn't split `$ARGS`, so `npm run x -- $ARGS` passes one argument, and a script that ignores flags it doesn't know runs the wrong thing: `questions:eval` wrote two results instead of checking. Write the flags out.

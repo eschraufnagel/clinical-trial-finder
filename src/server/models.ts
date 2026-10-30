@@ -129,7 +129,7 @@ export class ConversationModel implements ModelAdapter {
         ]);
   }
 
-  /** Logs what was spent since the last log, if anything. */
+  /** Logs what was spent since the last log, if anything: after each reading, and at the end. */
   release(): void {
     const inner = this.#inner;
     const spent = inner === undefined ? undefined : spentBy(inner);

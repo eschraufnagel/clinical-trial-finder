@@ -222,7 +222,7 @@ describe("stopping, changing and starting over", () => {
 
   // Found in the review passes: spend was logged only when a conversation
   // finished or was cleared, so closing the tab partway lost it.
-  it.fails("hands each reading's spend back as it goes, not only at the end", async () => {
+  it("hands each reading's spend back as it goes, not only at the end", async () => {
     const { transport, id, reader } = started();
     transport.send(id, "No idea.");
     await settle();
