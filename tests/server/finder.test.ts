@@ -220,6 +220,15 @@ describe("stopping, changing and starting over", () => {
     expect(transport.delivered(id).filter((t) => t === WORDS.stopped)).toHaveLength(1);
   });
 
+  // Found in the review passes: spend was logged only when a conversation
+  // finished or was cleared, so closing the tab partway lost it.
+  it.fails("hands each reading's spend back as it goes, not only at the end", async () => {
+    const { transport, id, reader } = started();
+    transport.send(id, "No idea.");
+    await settle();
+    expect(reader.released).toBe(1);
+  });
+
   it("forgets a conversation on start over", () => {
     const { transport, finder, id } = started();
     expect(finder.remove(id)).toBe(true);
