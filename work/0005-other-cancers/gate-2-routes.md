@@ -34,4 +34,8 @@ Dev is 0001's labels and `places-dev`: 197 labelled candidates, 26 of them not f
 
 ## Answer
 
-(The owner's.)
+**Owner, 2026-10: as recommended.**
+- The others file is frozen as committed in `56fa740`.
+- All four routes go to held-out.
+- Marked trials move down, and none is removed.
+- NCT07476287 is relabelled relevant "unclear", to match 0001's label for transformed small cell lung cancer. That was the leaning above, made before held-out is scored.
