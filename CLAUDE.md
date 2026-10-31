@@ -89,13 +89,14 @@ src/
   search/        the search: purpose, cancer type, age and sex, distance, and the mark on trials for other cancers; no model
   facts/         the fact vocabulary, the mapper that reads trial rules onto it, and the hints a profile gets
   questions/     the conversation: intake, choosing the next question, stopping, and the reader of replies
+  check/         the deeper check: a picked trial's parse cache, the link to answered facts, what it carries, the record
   shortlist/     the order of the trials a search keeps, and the short list at its top
   criteria/      eligibility parser
   screening/     per-trial screening agent: stage two, for a shortlisted trial
   plain/         plain-language renderings of criteria, and the check that decides whether one is shown
   models/        model adapter (the only place a model is called)
-  transport/     MessageTransport interface and the web implementation
-  server/        the local server: the conversation service, Settings, the app's models, and the one file that listens
+  transport/     MessageTransport interface, the web implementation, and the router that shares it
+  server/        the local server: the conversation and check services, Settings, the app's models, and the one file that listens
   web/           the page, React; every fixed sentence in copy.ts
 data/
   trials/        saved trial JSON, committed, trimmed to fields in use
@@ -104,14 +105,16 @@ data/
   geo/           ZIP code locations from the Census gazetteer
   cancer-types/  the search vocabulary, one file per cancer type plus generic.json, and <type>-others.json for the mark
   facts/         the fact vocabulary, and mapping runs by snapshot month and run name
+  criteria/      parses of picked trials' rules, by snapshot month and run name, for the check's measurement and --fake
   questions/     the conversation's settings: intake, skips, short-list size, budget, scorer
 evals/
-  cases/         eval task definitions: labels, vignettes, and patients (cases/patients/)
+  cases/         eval task definitions: labels, vignettes, patients (cases/patients/), and the check's pair labels (cases/check/)
   search/        the search measurement: labels loader, metrics, result checks, and the mark's scoring and places
   facts/         the fact measurement: labels, coverage, grading, result checks
   questions/     the question measurement: made-up patients, arms, metrics, readings, result checks
+  check/         the check's measurement: picks, pair labels, the runner, metrics, result checks
   graders/       deterministic graders
-  participant/   the simulated participant
+  participant/   the simulated participants: the vignette one, and the made-up patient for the check
   results/       committed run output
 scripts/         scripts run by a person, never imported by the application
 tests/           deterministic tests only
@@ -137,6 +140,14 @@ Widening any of them is a visible change to that test. The same test keeps `crea
 - holds the browser test's server to `--fake`.
 
 Since slice 0005, it also keeps the other-cancer labelling tool (`other:sample`) away from `src/search/other.ts` and any model. It may know the candidates, but not what the check marks.
+
+Since slice 0007, it also:
+- keeps `src/check/link.ts`, `carry.ts` and `record.ts` away from every model module and the parser;
+- keeps all of `src/check/` away from the factory, the page, the transport and the server: whoever starts a check passes the adapter in;
+- keeps `src/screening/` away from `src/check/` and `src/facts/`: the agent receives what the conversation carried as its own type;
+- keeps the pair labelling tool (`check:label-show`) away from the parser, the link, the screening agent and any model.
+
+The conversation and the check share the app's one transport through `routeByConversation` in `src/transport/`, so neither knows how messages are delivered.
 
 A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
 
@@ -174,9 +185,12 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run questions:split` | move newly written patients from `evals/cases/patients/staging/` into their sets by hash; refuses once the sets hold patients |
 | `npm run questions:try -- --patient <file>` | one made-up patient's conversation, step by step, then the short list and the oncologist's questions; `--scorer`, `--budget`, `--run`, `--reads <file>` |
 | `npm run questions:eval` | every patient through every arm, and write a result; `-- --dev`; `-- --reads <file>` answers from a reads file; `-- --check` reruns the latest and fails on any difference |
-| `npm run app` | build the page and serve it at http://127.0.0.1:5025, on the model chosen in its Settings (kept in `local/`). `-- --fake` reads replies from the committed readings, no model; `--port`, `--settings-dir` |
+| `npm run app` | build the page and serve it at http://127.0.0.1:5025, on the model chosen in its Settings (kept in `local/`; a checked trial's parse is cached in `local/parses/`). `-- --fake` reads replies from the committed readings and checks committed parses by taps, no model; `--port`, `--settings-dir` |
 | `npm run test:e2e` | the browser test, against `npm run app -- --fake` on port 5035; never part of `npm test` |
 | `npm run questions:read -- --set dev\|heldout` | read every patient's replies on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
+| `npm run check:label-show -- <patient> <NCT ID>` | print a patient's file and a picked trial's rules, numbered, for pair labelling; `--next`. Reaches no parser, link or model |
+| `npm run check:parse -- --set dev\|heldout` | parse the picked trials' rules into `data/criteria/<month>/<run>/`, on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
+| `npm run check:eval` | check every pair on the local model and write a result: `-- --dev` dev only; with no flag held-out, refused once a held-out result exists; `-- --check [--dev]` regrade the latest from its transcripts and fail on any difference. Resumable. Loads `.env` |
 
 Run `npm run check` before every commit and before opening a PR, and commit only if it passes: `npm run check && git commit ...`.
 
