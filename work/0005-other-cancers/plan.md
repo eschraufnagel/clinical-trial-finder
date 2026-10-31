@@ -326,3 +326,9 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - Held-out `01-d16e940b9df3`: 29 of 43 not-for-NSCLC trials marked. On `sample`, no relevant trial is marked and every route passes the bar, so `routes` is unchanged.
   - On `places-heldout`, `rules` marks one relevant trial, NCT03947385, written up in `gate-2-routes.md` for Gate 3.
 - **Step 10:** `other-last` in `ORDERS`, with key `other`, and the shortcut test covering it on a fixture with one marked trial. `ORDER_WORDS` needed a sentence for the new order: "Trials whose records name only other cancers come last. …". It goes to Gate 3 with the card's words. `--check` still matches 0004's results.
+- **Step 11:**
+  - `"order": "other-last"`. The held-out rerun is `06-8eea38fafad5`, which reruns dev too. With reads it's `with-reads/04-8eea38fafad5`. 0004's `05` and `with-reads/03` stay committed.
+  - **22 trials reached a short list for the first time under `other-last`.** They're labelled as a new set, `places-other-last`, so every place is counted: 19 relevant, and 3 not (NCT07165132, NCT07195916, NCT07278479). These labels were written after the check existed. `OTHER_SETS` gains the set.
+  - **Places held by trials not for NSCLC, held-out conversation arm (`shortlist`):** 35 → 6, for 15 → 5 patients. With reads: 34 → 6. The full record's short list: 38 → 9.
+  - **No marked trial is on any held-out short list.** One relevant trial left a short list because it's marked: NCT03947385, on one patient's.
+  - **Agreement falls 3 points and would-flag rises about 5,** conversation arm (`shortlist`): 88% → 85% and 12.9% → 17.6%. `gate-3-page.md` takes this up.

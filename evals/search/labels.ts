@@ -21,8 +21,12 @@ export const OTHER_LABELS = fileURLToPath(
 
 /** 0001's sets. */
 export const NSCLC_SETS = ["heldout", "dev"] as const;
-/** 0005's sets, accepted only where a reader asks for them. */
-export const OTHER_SETS = ["places-dev", "places-heldout", "sample"] as const;
+/**
+ * 0005's sets, accepted only where a reader asks for them. `places-other-last`
+ * is the trials that first reached a short list under `other-last`, labelled
+ * after the check existed, to count places (plan step 11).
+ */
+export const OTHER_SETS = ["places-dev", "places-heldout", "sample", "places-other-last"] as const;
 
 export type LabelSetName = (typeof NSCLC_SETS)[number] | (typeof OTHER_SETS)[number];
 
