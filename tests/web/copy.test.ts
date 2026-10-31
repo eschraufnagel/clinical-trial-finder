@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
+import { CHECK_WORDS, READING_WORDS, TAPS } from "../../src/server/check.js";
 import { CONFIRM, WORDS } from "../../src/server/finder.js";
 import { verdictHits } from "../../src/shortlist/words.js";
 import { COPY } from "../../src/web/copy.js";
@@ -30,8 +31,15 @@ function jsxWords(source: string): string[] {
 }
 
 describe("the page's words", () => {
-  it("state no verdict, in the page's copy or the conversation's own messages", () => {
-    const all = [...strings(COPY), ...strings(WORDS), ...CONFIRM.map((c) => c.label)];
+  it("state no verdict, in the page's copy or the conversation's and the check's own messages", () => {
+    const all = [
+      ...strings(COPY),
+      ...strings(WORDS),
+      ...CONFIRM.map((c) => c.label),
+      ...strings(CHECK_WORDS),
+      ...strings(READING_WORDS),
+      ...TAPS.map((c) => c.label),
+    ];
     expect(all.length).toBeGreaterThan(60);
     expect(verdictHits(all)).toEqual([]);
   });

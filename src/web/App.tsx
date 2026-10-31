@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getInfo, type Info } from "./api.js";
+import { Check } from "./Check.js";
 import { Conversation } from "./Conversation.js";
 import { COPY } from "./copy.js";
 import { hashOf, type Route, routeFrom } from "./logic.js";
@@ -41,6 +42,7 @@ export function App() {
           </a>
           {id === null ? null : <a href={hashOf({ view: "list", id })}>{n.list}</a>}
           {id === null ? null : <a href={hashOf({ view: "sheet", id })}>{n.sheet}</a>}
+          {route.view === "check" ? <a href={hashOf(route)}>{n.check}</a> : null}
           <a href={hashOf({ view: "settings" })}>{n.settings}</a>
         </nav>
         <p className="banner">{COPY.madeUp}</p>
@@ -57,7 +59,12 @@ export function App() {
             onStartOver={() => go({ view: "start" })}
           />
         ) : route.view === "list" ? (
-          <ShortList id={route.id} />
+          <ShortList
+            id={route.id}
+            onCheck={(check) => go({ view: "check", id: route.id, check })}
+          />
+        ) : route.view === "check" ? (
+          <Check check={route.check} onList={() => go({ view: "list", id: route.id })} />
         ) : route.view === "sheet" ? (
           <Sheet id={route.id} />
         ) : (

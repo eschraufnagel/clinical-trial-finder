@@ -559,3 +559,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - The "Stop and show the record" tap ends the trial in hand and goes on to the next; `POST /api/check/:id/stop` ends the check.
   - The check's test data moved into `tests/server/fixture.ts` (`checkOptions`), so the app's route test uses it too.
 - **Step 16, `--fake` for the check:** `checkData` in `scripts/app.ts`. On a model, a trial is parsed when first checked, into `<settings dir>/parses/`. With `--fake`, parses come only from `data/criteria/<month>/latest`'s run, a trial without one isn't checkable, questions are fixed, and typed text gets `CHECK_WORDS.tapsOnly`. `npm run test:e2e` passes, 7 of 7.
+- **Step 17, the page:** ticks and **Check these** on the list (`ShortList.tsx`, only for trials `GET /api/finder/:id/checkable` names; ticks are kept in the list view, not on `TrialCard`), `Check.tsx`, `Record.tsx`, the `#/check/<conversation>/<check>` route, `api.ts`'s four calls, and every new sentence in `copy.ts`. Settings' cap now reads "one conversation, or one trial checked".
+  - The messages, the reply box and the confirm step moved out of `Conversation.tsx` into `Channel.tsx`, which both views use; the conversation's markup is unchanged and its browser tests pass. The check shows its taps unfolded.
+  - `asksToChoose` also knows the check's fallback ending, "Please choose an answer."
+  - A record's folded "About the trial, not you" stays folded in print, as a closed `<details>` does in the browser.
