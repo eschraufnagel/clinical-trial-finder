@@ -232,3 +232,25 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `docs/page.md`: Settings' measured line says which run counts; Haiku's row and paragraph are the schema run's; its Limits entry is rewritten.
   - `work/ROADMAP.md`: 0006 **Done**, with its measure. `CLAUDE.md`: one sentence in "Model access".
   - The README is unchanged: its list of parts doesn't change, and it reports no findings.
+- **Step 9, the review passes** (`REVIEW.md`):
+  - **Pass 1, plan compliance:**
+    - Every changed file is in "Files that change". Nothing in the plan is left undone; the contingency stage B′ didn't run, because Gate 2 chose held-out.
+    - Divergences are recorded where they happened: the descriptor pin extended at step 2; the cost per call at step 5; the overturned bar at Gate 2; the docs fix of "slice 0006" to 0008 at step 8.
+    - **Nit:** `spec.md` §5.3 expects held-out at "about $0.15 to $0.20"; it cost $0.29, because structured outputs adds about 300 input tokens a call (step 5). The spec was a proposal and stays as written; the plan's Records and the docs give the real figure.
+  - **Pass 2, correctness:**
+    - **Nit, fixed here:** a line of `scripts/questions-read.ts`'s header comment ran past the file's width.
+    - `measuredModels` throws on two matching held-out runs for one model, which would stop `npm run app` at start. Tested; today there is one per model.
+    - **Not a code fault, but the finding the PR must lead with:** with the schema, Haiku read two plain "No"s as "Yes" on held-out, and one stated count wrong on dev. The local model and 0004's Haiku read those replies right. Nothing in the request or the schema explains it, and the reader's checks can't catch an answer that is a valid id. Keeping the schema request or reverting it is the owner's call at PR review (plan, "Stage C needs no gate").
+  - **Pass 3, scope and data:** nothing found.
+    - The replies are 0003's made-up patients'. No key appears in either reads file or the spend ledger; neither run had a failure whose text could carry one.
+    - The one new network shape is a field in the Anthropic body, to the host `tests/boundary.test.ts` already admits. `.env` wasn't created or edited.
+    - No reading becomes a verdict: a wrong reading is shown to the person to confirm, and a confirmed one only adds a hint, which never removes a trial.
+  - **Pass 4, eval integrity:**
+    - The bar for held-out was frozen at Gate 1 before any schema-constrained output was seen, and criterion 2 was overturned at Gate 2 after dev's numbers. That's said in `gate-2-dev.md`, `docs/questions.md`, `work/ROADMAP.md`, and must be in the PR.
+    - Held-out was read once, and nothing was tuned after it. The prompt didn't change.
+    - Tests were extended, not loosened. The two changes to `app.test.ts`'s committed-file expectation each came in the commit that caused them (steps 4 and 7).
+    - Both runs record model, quantization (none), temperature 0, seed (none, with its reason), reasoning off, prompt `8cb01749dcc3` and `schema: "enforced"`.
+  - **Pass 5, documentation:**
+    - The README is unchanged and still true: it names the hosted choice in Settings and reports no findings.
+    - Every number in `docs/questions.md`, `docs/page.md` and the roadmap traces to the two committed reads files, 0004's file, or the spend ledger.
+    - The limits are stated: one hosted model measured, two wrong readings with the schema, the overturned bar, and clean replies by construction.

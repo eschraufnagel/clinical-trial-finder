@@ -10,8 +10,9 @@
  * goes, and a rerun skips the pairs already read and retries the ones that
  * failed, so a stopped run resumes. A changed prompt is a new file, never an
  * overwrite, and so is a run whose adapter enforces the reader's schema
- * (slice 0006): its name ends `-schema`. `npm run questions:eval -- --reads <file>` then answers the
- * conversations from these readings, with no further model calls.
+ * (slice 0006): its name ends `-schema`. `npm run questions:eval -- --reads
+ * <file>` then answers the conversations from these readings, with no further
+ * model calls.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
