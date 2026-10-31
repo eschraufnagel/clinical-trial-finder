@@ -484,3 +484,9 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **Not one is a trial for another cancer.** None of the 59 picks is limited to cancers other than NSCLC by its text, so the 14 unmarked trials for other cancers from 0005 don't appear here. OQ 11's hope that the check would count them isn't testable on these picks.
   - **The two calls closest to Rule 2's line, for Gate 1 to look at first:** p11 × NCT05624996 (the record's chest radiation read as "radiotherapy to the study cancer", which the person's own words about their one line support) and p04 × NCT04872166 (brain metastases read as "central nervous system disease involvement").
   - NCT02693535 (TAPUR) is in 10 pairs, and none is clearly ruled out: its genomic-profile rule needs knowledge of which targets qualify.
+- **Step 9:**
+  - `evals/participant/patient.ts` (`simulatePatient`, `patientFlags`, `patientFidelityCheck`), `PATIENT_PARTICIPANT_SYSTEM_PROMPT` and `PATIENT_SIMULATOR_VERSION`; `readReply` exported from `simulate.ts` for reuse, unchanged.
+  - **Divergences:**
+    - The prompt lists every fact for the cancer, not only those the patient knows. A fact they don't know is shown as "you don't know", with `replyFor`'s way of saying so, so the model never has to decide what an unlisted fact would be. A "don't know" about a fact the conversation asked still counts as a repeat, so it has to be citable.
+    - So `usedFacts` are any of the cancer's fact ids, not only `knows`. An id outside them is kept and flagged (`unknown-fact`), as the vignette participant does, rather than filtered.
+  - The blindness test is a type assertion (`expectTypeOf`), checked by `tsc`.

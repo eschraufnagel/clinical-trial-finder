@@ -243,7 +243,7 @@ function topicOf(quote: string): string {
   return normalize(quote).text.replace(/\s+/g, " ").trim();
 }
 
-function readReply(content: unknown): {
+export function readReply(content: unknown): {
   reply?: { message: string; usedFacts: string[] };
   problems: string[];
 } {
