@@ -138,7 +138,8 @@ export async function checkPair(input: PairInput): Promise<PairTranscript> {
       lines.push({ speaker: "agent", text: reply.text });
     }
   } catch (e) {
-    error = e instanceof Error ? e.message.split("\n")[0] : String(e);
+    // The whole reason, up to a few lines: the first line of a model error only says which call.
+    error = (e instanceof Error ? e.message : String(e)).slice(0, 600);
   }
 
   const state = check.session.state();

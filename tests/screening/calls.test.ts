@@ -226,7 +226,8 @@ describe("read", () => {
 
     expect((await read(adapter, READ)).value).toEqual([]);
     // Raised from 1,024 in 0009: a reply can speak to a dozen criteria, each with a statement.
-    expect(adapter.requests[0]?.maxOutputTokens).toBe(2048);
+    // Raised to 4,096 in this repository's 0007: a basket trial's rule per cancer type.
+    expect(adapter.requests[0]?.maxOutputTokens).toBe(4096);
   });
 
   it("retries on an unrecognised reading value, then fails", async () => {

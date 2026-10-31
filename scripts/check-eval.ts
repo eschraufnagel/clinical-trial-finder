@@ -78,7 +78,7 @@ export function latestResult(dir: string): string | undefined {
 
 function readTranscripts(dir: string): PairTranscript[] {
   return readdirSync(dir)
-    .filter((n) => n.endsWith(".json"))
+    .filter((n) => /^p\d+-NCT\d+\.json$/.test(n))
     .sort()
     .map((n) => JSON.parse(readFileSync(join(dir, n), "utf8")) as PairTranscript);
 }
@@ -162,7 +162,13 @@ async function main(): Promise<void> {
     return;
   }
   const adapter: ModelAdapter =
-    plan.kind === "spend" ? createAdapter(spec, { budget: plan.budget }) : createLocalAdapter(spec);
+    // Reasoning off, as the screening agent ran in the prescreening repository
+    // and as the page runs it (`src/server/models.ts`): on the pinned local
+    // model, reasoning on puts the answer in the reasoning channel and leaves
+    // the reply empty. The parse keeps the parser's default (`check:parse`).
+    plan.kind === "spend"
+      ? createAdapter(spec, { budget: plan.budget, thinking: false })
+      : createLocalAdapter(spec, { thinking: false });
 
   const parseRun = relative(join(ROOT, "data", "criteria"), parseDir);
   const hash = runHash([
@@ -172,11 +178,16 @@ async function main(): Promise<void> {
     parseRun,
     String(LINK_THRESHOLD),
     adapter.descriptor.model,
+    `thinking ${adapter.descriptor.thinking ?? "default"}`,
   ]);
   const runsDir = join(RESULTS_DIR, "runs", `${set}-${hash}`);
   mkdirSync(runsDir, { recursive: true });
   const fileOf = (p: { patient: string; nctId: string }) =>
     join(runsDir, `${p.patient}-${p.nctId}.json`);
+  const failuresPath = join(runsDir, "failures.json");
+  const failures: Record<string, string> = existsSync(failuresPath)
+    ? (JSON.parse(readFileSync(failuresPath, "utf8")) as Record<string, string>)
+    : {};
   const todo = picks.filter((p) => !existsSync(fileOf(p)));
   console.log(
     `Run ${set}-${hash}: ${picks.length - todo.length} of ${picks.length} pairs done; checking ${todo.length}.`,
@@ -202,12 +213,20 @@ async function main(): Promise<void> {
         participant: adapter,
         fidelity: adapter,
       });
-      writeFileSync(fileOf(pick), `${JSON.stringify(transcript, null, 2)}\n`, "utf8");
+      // A check that stopped on an error isn't a measurement of that pair. It's
+      // kept aside with its reason, and a rerun tries the pair again.
+      if (transcript.error === undefined) {
+        writeFileSync(fileOf(pick), `${JSON.stringify(transcript, null, 2)}\n`, "utf8");
+        delete failures[`${pick.patient} ${pick.nctId}`];
+      } else {
+        failures[`${pick.patient} ${pick.nctId}`] = transcript.error;
+      }
+      writeFileSync(failuresPath, `${JSON.stringify(failures, null, 2)}\n`, "utf8");
       const questions = transcript.transcript.filter((x) => x.kind === "question").length;
       console.log(
         `${pick.patient} ${pick.nctId}  ${((Date.now() - t0) / 1000).toFixed(0).padStart(5)} s  ` +
           `${transcript.parse}, ${Object.keys(transcript.carried).length} carried, ${questions} asked` +
-          `${transcript.error === undefined ? "" : `, stopped: ${transcript.error}`}`,
+          `${transcript.error === undefined ? "" : `, stopped: ${transcript.error.split("\n").slice(0, 2).join(" ")}`}`,
       );
     } catch (error) {
       if (isBudgetStop(error)) {
