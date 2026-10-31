@@ -180,6 +180,12 @@ export interface CarriedFact {
   /** What the person typed, or the tapped answer's own words. */
   words: string;
   /**
+   * The question the conversation asked, which `words` answer. Shown beside
+   * them on the record, so a rule closed by an answer to a different question
+   * (a wrong link) is visible to the person and their oncologist.
+   */
+  question: string;
+  /**
    * Whether the fact mapping says this rule excludes that answer. A hint, as
    * on the list: the mapper is wrong about a quarter of the time.
    */

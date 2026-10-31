@@ -67,7 +67,9 @@ function transcript(findings: Finding[], extra: Partial<PairTranscript> = {}): P
     nctId: "NCT00000001",
     set: "dev",
     rank: 1,
-    conversation: { prior_pd1: { answer: "progressed", words: "Keytruda, it grew." } },
+    conversation: {
+      prior_pd1: { answer: "progressed", words: "Keytruda, it grew.", question: "Asked before?" },
+    },
     parse: "parsed",
     criteria: CRITERIA,
     sources: SOURCES,
@@ -107,7 +109,13 @@ const notRuledOut: PairLabel = {
 
 const carriedP2 = finding("P2", "from-conversation", {
   earlier: [
-    { factId: "prior_pd1", answer: "progressed", words: "Keytruda, it grew.", mayNotFit: true },
+    {
+      factId: "prior_pd1",
+      answer: "progressed",
+      words: "Keytruda, it grew.",
+      question: "Asked before?",
+      mayNotFit: true,
+    },
   ],
 });
 const askedP2 = finding("P2", "holds", { evidence: [{ turn: 2, quote: "Yes", reading: "holds" }] });

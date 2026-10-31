@@ -379,7 +379,13 @@ describe("slice 0009: corrections and criteria that don't apply", () => {
 describe("what the conversation carried (slice 0007 here)", () => {
   const carried = {
     L8: [
-      { factId: "lines_advanced", answer: "zero", words: "No treatment yet.", mayNotFit: false },
+      {
+        factId: "lines_advanced",
+        answer: "zero",
+        words: "No treatment yet.",
+        question: "Asked before?",
+        mayNotFit: false,
+      },
     ],
   };
 
@@ -540,7 +546,15 @@ describe("fixed questions (slice 0007 here, for --fake)", () => {
     const s = ScreeningSession.create(STUDY, CRITERIA, new FakeModelAdapter([]), {
       fixedQuestions: true,
       carried: {
-        L8: [{ factId: "lines_advanced", answer: "zero", words: "None.", mayNotFit: false }],
+        L8: [
+          {
+            factId: "lines_advanced",
+            answer: "zero",
+            words: "None.",
+            question: "Asked before?",
+            mayNotFit: false,
+          },
+        ],
       },
     });
     expect((await s.start()).text).toMatch(/already covered 1 of its rules/);

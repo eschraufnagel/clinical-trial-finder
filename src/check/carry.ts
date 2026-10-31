@@ -17,6 +17,8 @@ export interface ConversationAnswer {
   answer: string;
   /** What they typed, or the tapped answer's own words. */
   words: string;
+  /** The conversation's question, in the vocabulary's words. */
+  question: string;
 }
 
 export function carriedFor(
@@ -37,6 +39,7 @@ export function carriedFor(
         factId: l.factId,
         answer: a.answer,
         words: a.words,
+        question: a.question,
         mayNotFit: mayNotFit || (prior?.mayNotFit ?? false),
       });
     }

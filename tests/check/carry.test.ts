@@ -12,8 +12,11 @@ const linked = (factId: string, rulesOut: string[]): LinkedFact => ({
 });
 
 const answers = new Map([
-  ["prior_pd1", { answer: "progressed", words: "Keytruda, and it grew anyway." }],
-  ["ecog", { answer: "unknown", words: "Not sure what they wrote." }],
+  [
+    "prior_pd1",
+    { answer: "progressed", words: "Keytruda, and it grew anyway.", question: "Asked before?" },
+  ],
+  ["ecog", { answer: "unknown", words: "Not sure what they wrote.", question: "Asked before?" }],
 ]);
 
 describe("carriedFor", () => {
@@ -25,6 +28,7 @@ describe("carriedFor", () => {
           factId: "prior_pd1",
           answer: "progressed",
           words: "Keytruda, and it grew anyway.",
+          question: "Asked before?",
           mayNotFit: true,
         },
       ],
@@ -34,7 +38,13 @@ describe("carriedFor", () => {
   it("carries an unknown, which never may-not-fit", () => {
     const carried = carriedFor(new Map([["P1", [linked("ecog", ["ps2", "ps3_4"])]]]), answers);
     expect(carried["P1"]).toEqual([
-      { factId: "ecog", answer: "unknown", words: "Not sure what they wrote.", mayNotFit: false },
+      {
+        factId: "ecog",
+        answer: "unknown",
+        words: "Not sure what they wrote.",
+        question: "Asked before?",
+        mayNotFit: false,
+      },
     ]);
   });
 

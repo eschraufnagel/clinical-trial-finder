@@ -55,11 +55,25 @@ export function countsLine(mayNotFit: number, records: number): string {
   );
 }
 
+/** An earlier answer carried onto a rule: the conversation's question, and the person's answer to it. */
+export interface EarlierAnswer {
+  asked: Words;
+  said: Words;
+}
+
 export interface RecordLine {
   criterionId: string;
   /** Whether the rule is something the trial requires or excludes. */
   kind: Words;
   rule: Words;
+  /**
+   * The conversation's answers that covered this rule, each beside the
+   * question it answered. The question is shown because the link is a
+   * model's reading: when it ties a rule to the wrong question, the person
+   * and their oncologist can see it.
+   */
+  earlier: EarlierAnswer[];
+  /** What the person said to the check about this rule. */
   said: Words[];
   /** `MAY_NOT_FIT`, `NOTHING_CONFLICTS`, or nothing. */
   flag: Words | null;
@@ -143,6 +157,7 @@ export function recordWithoutParse(
     if (a === undefined) {
       placed.records.push({
         ...base,
+        earlier: [],
         said: [],
         flag: null,
         mayNotFit: false,
@@ -153,7 +168,8 @@ export function recordWithoutParse(
     const mayNotFit = m.rulesOut.includes(a.answer);
     placed.earlier.push({
       ...base,
-      said: [said(a.words)],
+      earlier: [{ asked: ours(a.question), said: said(a.words) }],
+      said: [],
       flag: mayNotFit ? ours(MAY_NOT_FIT) : null,
       mayNotFit,
       why: a.answer === "unknown" ? ours(WHY.didntKnow) : null,
@@ -167,14 +183,15 @@ function lineFor(
   f: Finding,
   wording: string,
 ): { place: Place; line: RecordLine } {
-  const earlier = f.earlier ?? [];
-  const earlierSaid = earlier.map((e) => said(e.words));
-  const earlierHint = earlier.some((e) => e.mayNotFit);
+  const carried = f.earlier ?? [];
+  const earlier = carried.map((e) => ({ asked: ours(e.question), said: said(e.words) }));
+  const earlierHint = carried.some((e) => e.mayNotFit);
   const quotes = f.evidence.map((e) => said(e.quote));
   const base = {
     criterionId: c.id,
     kind: ours(c.polarity === "inclusion" ? REQUIRED : EXCLUDED),
     rule: registry(wording),
+    earlier,
   };
   // The statement is true of them and the trial excludes it, or false and the trial requires it.
   const conflicts = (value: string | undefined) =>
@@ -183,12 +200,12 @@ function lineFor(
 
   switch (f.status) {
     case "from-conversation": {
-      const didntKnow = earlier.some((e) => e.answer === "unknown");
+      const didntKnow = carried.some((e) => e.answer === "unknown");
       return {
         place: "earlier",
         line: {
           ...base,
-          said: earlierSaid,
+          said: [],
           flag: earlierHint ? ours(MAY_NOT_FIT) : null,
           mayNotFit: earlierHint,
           why: didntKnow ? ours(WHY.didntKnow) : null,
@@ -216,7 +233,7 @@ function lineFor(
         place: "records",
         line: {
           ...base,
-          said: [...earlierSaid, ...quotes],
+          said: quotes,
           flag: mayNotFit ? ours(MAY_NOT_FIT) : null,
           mayNotFit,
           why: ours(whyFor(f)),
@@ -229,7 +246,7 @@ function lineFor(
         place: lab ? "records" : "aboutTrial",
         line: {
           ...base,
-          said: earlierSaid,
+          said: [],
           flag: earlierHint ? ours(MAY_NOT_FIT) : null,
           mayNotFit: earlierHint,
           why: lab ? ours(WHY.labValue) : null,
@@ -268,7 +285,10 @@ function assemble(
 ): TrialRecord {
   const all = [...placed.earlier, ...placed.told, ...placed.records, ...placed.aboutTrial];
   const mayNotFit = all.filter((l) => l.mayNotFit).length;
-  const records = placed.records.length;
+  // A rule the conversation's "I don't know" covered is as open as one the
+  // check left unresolved: it goes to the oncologist too, and counts.
+  const didntKnow = placed.earlier.filter((l) => !l.mayNotFit && isWhy(l, WHY.didntKnow));
+  const records = placed.records.length + didntKnow.length;
   const section = (heading: string, lines: RecordLine[], folded = false): RecordSection => ({
     heading: ours(heading),
     lines,
@@ -290,10 +310,15 @@ function assemble(
         ...all
           .filter((l) => l.mayNotFit)
           .map((l) => ({ rule: l.rule, question: ours(ASK_MAY_NOT_FIT) })),
-        ...placed.records
-          .filter((l) => !l.mayNotFit)
-          .map((l) => ({ rule: l.rule, question: ours(ASK_RECORDS) })),
+        ...[...placed.records.filter((l) => !l.mayNotFit), ...didntKnow].map((l) => ({
+          rule: l.rule,
+          question: ours(ASK_RECORDS),
+        })),
       ],
     },
   };
+}
+
+function isWhy(line: RecordLine, why: string): boolean {
+  return line.why !== null && "ours" in line.why && line.why.ours === why;
 }

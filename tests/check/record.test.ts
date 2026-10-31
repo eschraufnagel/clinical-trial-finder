@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  ASK_RECORDS,
   MAY_NOT_FIT,
   NOTHING_CONFLICTS,
   recordFor,
@@ -49,6 +50,7 @@ const CASES: Array<[ScreeningCriterion, Finding]> = [
           factId: "prior_pd1",
           answer: "progressed",
           words: "It grew on Keytruda.",
+          question: "Asked before?",
           mayNotFit: true,
         },
       ],
@@ -57,7 +59,15 @@ const CASES: Array<[ScreeningCriterion, Finding]> = [
   [
     crit("E2", "inclusion"),
     finding("E2", "from-conversation", "answered-earlier", {
-      earlier: [{ factId: "ecog", answer: "unknown", words: "No idea.", mayNotFit: false }],
+      earlier: [
+        {
+          factId: "ecog",
+          answer: "unknown",
+          words: "No idea.",
+          question: "Asked before?",
+          mayNotFit: false,
+        },
+      ],
     }),
   ],
   [
@@ -143,8 +153,15 @@ describe("recordFor", () => {
   });
 
   it("takes an earlier answer's hint from the mapping, and says when they didn't know", () => {
-    expect(line("E1")).toMatchObject({ mayNotFit: true, said: [{ said: "It grew on Keytruda." }] });
+    expect(line("E1")).toMatchObject({ mayNotFit: true, said: [] });
     expect(line("E2")).toMatchObject({ mayNotFit: false, why: { ours: WHY.didntKnow } });
+  });
+
+  it("shows each earlier answer beside the question it answered (Gate 1 R2)", () => {
+    expect(line("E1")?.earlier).toEqual([
+      { asked: { ours: "Asked before?" }, said: { said: "It grew on Keytruda." } },
+    ]);
+    expect(line("T1")?.earlier).toEqual([]);
   });
 
   it("says why a rule needs records", () => {
@@ -162,10 +179,14 @@ describe("recordFor", () => {
     expect(line("T1")?.said).toEqual([{ said: "Yes, last year" }]);
   });
 
-  it("counts, and asks the oncologist about every may-not-fit and every records rule", () => {
+  it("counts, and asks the oncologist about every may-not-fit, every records rule, and every earlier don't-know", () => {
     expect(record.counts.mayNotFit).toBe(4);
-    expect(record.counts.records).toBe(10);
-    expect(record.toAsk.items).toHaveLength(4 + 9);
+    expect(record.counts.records).toBe(11);
+    expect(record.toAsk.items).toHaveLength(4 + 10);
+    expect(record.toAsk.items).toContainEqual({
+      rule: line("E2")?.rule,
+      question: { ours: ASK_RECORDS },
+    });
   });
 
   it("has no field for a verdict, and no verdict words in anything ours", () => {
@@ -204,13 +225,19 @@ describe("recordWithoutParse", () => {
   const r = recordWithoutParse(
     STUDY,
     mappings,
-    new Map([["prior_pd1", { answer: "progressed", words: "It grew." }]]),
+    new Map([
+      ["prior_pd1", { answer: "progressed", words: "It grew.", question: "Asked before?" }],
+    ]),
   );
 
   it("leads by saying the rules couldn't be read, and shows the mappings with the answers", () => {
     expect(r.lead).not.toBeNull();
     expect(r.earlier.lines).toEqual([
-      expect.objectContaining({ mayNotFit: true, rule: { registry: "No PD-1." } }),
+      expect.objectContaining({
+        mayNotFit: true,
+        rule: { registry: "No PD-1." },
+        earlier: [{ asked: { ours: "Asked before?" }, said: { said: "It grew." } }],
+      }),
     ]);
     expect(r.records.lines).toEqual([expect.objectContaining({ why: { ours: WHY.notAsked } })]);
     expect(verdictHits(oursIn(r))).toEqual([]);

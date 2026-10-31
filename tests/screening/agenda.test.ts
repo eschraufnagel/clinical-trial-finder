@@ -157,6 +157,7 @@ describe("what the conversation carried (slice 0007 here)", () => {
     factId,
     answer,
     words: "what they said",
+    question: "Asked before?",
     mayNotFit: false,
   });
 

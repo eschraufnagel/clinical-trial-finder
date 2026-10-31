@@ -521,3 +521,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `ScreeningSession` checks the model's phrased question with `verdictHits` and, on a hit, asks `fixedQuestion(criterion)` instead. The ask call is still made and counted; no prompt changes, so `PROMPT_VERSION` stands. `src/screening/` now imports `src/shortlist/words.ts`, which is pure.
   - The scoring scans a fixed question's template, not the trial's words it quotes, as `src/shortlist/words.ts` leaves `registry` text unscanned.
   - `CHECK_REVISION` (`evals/check/run.ts`) joins `check:eval`'s run hash, at 2, so the rerun is a new run directory, not a resume of dev's first.
+- **Step 12c, R2: an earlier answer shows the question it answered, and a carried "I don't know" goes to the oncologist.**
+  - `ConversationAnswer` and `CarriedFact` gain `question`, the vocabulary's question the conversation asked. `RecordLine` gains `earlier: { asked, said }[]`; `said` now holds only what the person told the check.
+  - A rule covered by a carried "I don't know", with no hint against it, is listed under "To ask your oncologist" with "Do my records settle this rule?", and counts among the rules that need records or the oncologist.
+  - The record tests' expectations follow the new fields and the count (10 → 11, toAsk 13 → 14), and a test for the pairing is added.

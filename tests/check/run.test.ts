@@ -131,13 +131,21 @@ describe("startCheck", () => {
       criteriaText: TEXT,
       parsed,
       facts,
-      answers: new Map([["ecog", { answer: "ps2", words: "I rest half the day." }]]),
+      answers: new Map([
+        ["ecog", { answer: "ps2", words: "I rest half the day.", question: "Asked before?" }],
+      ]),
       adapter: new FakeModelAdapter([]),
       fixedQuestions: true,
     });
 
     expect(check.carried["P1"]).toEqual([
-      { factId: "ecog", answer: "ps2", words: "I rest half the day.", mayNotFit: true },
+      {
+        factId: "ecog",
+        answer: "ps2",
+        words: "I rest half the day.",
+        question: "Asked before?",
+        mayNotFit: true,
+      },
     ]);
     const opening = await check.session.start();
     expect(opening.text).toMatch(/covered 1 of its rules/);
@@ -149,7 +157,8 @@ describe("startCheck", () => {
     expect(record.earlier.lines[0]).toMatchObject({
       mayNotFit: true,
       rule: { registry: ECOG },
-      said: [{ said: "I rest half the day." }],
+      earlier: [{ asked: { ours: "Asked before?" }, said: { said: "I rest half the day." } }],
+      said: [],
     });
     expect(record.told.lines[0]).toMatchObject({
       mayNotFit: false,
@@ -164,7 +173,7 @@ describe("startCheck", () => {
       criteriaText: TEXT,
       parsed,
       facts: undefined,
-      answers: new Map([["ecog", { answer: "ps1", words: "Fine." }]]),
+      answers: new Map([["ecog", { answer: "ps1", words: "Fine.", question: "Asked before?" }]]),
       adapter: new FakeModelAdapter([]),
       fixedQuestions: true,
     });

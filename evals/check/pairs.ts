@@ -90,7 +90,11 @@ export function conversationFor(patient: Patient, ctx: CheckContext): PatientCon
   const answers = new Map(
     result.steps.map((s) => [
       s.factId,
-      { answer: s.reply, words: replyFor(patient, s.factId, ctx.vocabulary) },
+      {
+        answer: s.reply,
+        words: replyFor(patient, s.factId, ctx.vocabulary),
+        question: ctx.vocabulary.facts.find((f) => f.id === s.factId)?.question ?? s.factId,
+      },
     ]),
   );
   return { patient, trials, result, answers };
