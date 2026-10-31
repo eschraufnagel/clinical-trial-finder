@@ -8,6 +8,7 @@ import {
 } from "../../evals/check/result.js";
 import type { PairTranscript } from "../../evals/check/transcript.js";
 import { recordFor } from "../../src/check/record.js";
+import { fixedQuestion } from "../../src/screening/templates.js";
 import type { Finding, ScreeningCriterion, Turn } from "../../src/screening/types.js";
 
 /**
@@ -184,6 +185,26 @@ describe("scorePair", () => {
     expect(row.verdictHits).toEqual(["You are eligible."]);
     expect(row.unknownsMissing).toEqual(["P2"]);
     expect(row.orderMoved).toBe(true);
+  });
+
+  it("scans a fixed question's template, not the trial's words it quotes", () => {
+    const eligible: ScreeningCriterion = {
+      id: "P2",
+      polarity: "exclusion",
+      type: "patient",
+      text: "Not eligible for immunotherapy",
+    };
+    const t = transcript([p1, askedP2, p3], {
+      criteria: CRITERIA.map((c) => (c.id === "P2" ? eligible : c)),
+    });
+    t.transcript = TURNS.map((x) => (x.index === 1 ? { ...x, text: fixedQuestion(eligible) } : x));
+    expect(scorePair(t, notRuledOut, TEXT).verdictHits).toEqual([]);
+    t.transcript = TURNS.map((x) =>
+      x.index === 1 ? { ...x, text: "Are you eligible for immunotherapy?" } : x,
+    );
+    expect(scorePair(t, notRuledOut, TEXT).verdictHits).toEqual([
+      "Are you eligible for immunotherapy?",
+    ]);
   });
 });
 

@@ -100,4 +100,4 @@ The bar failed on a guarantee the code can make outright. And two of dev's four 
 
 ## Answer
 
-*Awaiting the owner.*
+**Choice 1, as recommended (2026-10).** Revise on dev with R1 to R4, rerun dev once, and bring Gate 1 back. The labels, the link's threshold and the record's other words stand as they are; the page stays in this slice. Held-out isn't run until Gate 1 is asked again.

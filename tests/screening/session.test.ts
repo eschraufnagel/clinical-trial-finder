@@ -547,6 +547,29 @@ describe("fixed questions (slice 0007 here, for --fake)", () => {
   });
 });
 
+describe("a phrased question with a verdict word (slice 0007 here, Gate 1 R1)", () => {
+  it("is replaced by the criterion in its own words", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("To help us check your eligibility, have you had any anti-cancer therapy?"),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter);
+    const first = await s.start();
+    expect(adapter.requests).toHaveLength(1);
+    expect(first.text).toMatch(/“Previous anti-cancer therapy”\. Does this describe you\?$/);
+    expect(first.text).not.toMatch(/eligib/);
+    expect(s.state().transcript.at(-1)).toMatchObject({ kind: "question", criterionId: "L8" });
+  });
+
+  it("leaves a question without one as the model phrased it", async () => {
+    const s = ScreeningSession.create(
+      STUDY,
+      CRITERIA,
+      new FakeModelAdapter([askR("Have you had any anti-cancer therapy?")]),
+    );
+    expect((await s.start()).text).toMatch(/Have you had any anti-cancer therapy\?$/);
+  });
+});
+
 describe("stop (slice 0007 here)", () => {
   it("closes where it stands, every open criterion as not asked, with no model call", async () => {
     const adapter = new FakeModelAdapter([askR("Have you had any anti-cancer therapy?")]);

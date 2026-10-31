@@ -516,3 +516,8 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **Against the frozen bar, criterion 1 fails:** the agent phrased one question "To help us check eligibility…". Criteria 2 to 5 pass.
   - **Not foreseen by the plan:** 1 of 4 dev and 7 of 16 held-out ruled-out pairs turn on facts the patient doesn't know.
   - `gate-1-dev.md` and `gate-1-records.txt` written. It recommends revising on dev (R1 to R4, no prompt change), rerunning dev, and asking Gate 1 again. **Stopped at Gate 1.**
+- **Gate 1, first answer: revise on dev, as recommended.** R1 to R4, each its own commit, then dev again on the local model, then Gate 1 again. Labels, threshold and the rest of the record's words unchanged.
+- **Step 12b, R1: a phrased question with a verdict word becomes the fixed question.**
+  - `ScreeningSession` checks the model's phrased question with `verdictHits` and, on a hit, asks `fixedQuestion(criterion)` instead. The ask call is still made and counted; no prompt changes, so `PROMPT_VERSION` stands. `src/screening/` now imports `src/shortlist/words.ts`, which is pure.
+  - The scoring scans a fixed question's template, not the trial's words it quotes, as `src/shortlist/words.ts` leaves `registry` text unscanned.
+  - `CHECK_REVISION` (`evals/check/run.ts`) joins `check:eval`'s run hash, at 2, so the rerun is a new run directory, not a resume of dev's first.

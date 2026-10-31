@@ -1,4 +1,5 @@
 import { type ModelAdapter, monthStamp } from "../models/types.js";
+import { verdictHits } from "../shortlist/words.js";
 import { initialProgress, nextCriterion, raisability } from "./agenda.js";
 import { applyReadings, finalize, type Reading } from "./apply.js";
 import { ask, type CallResult, read } from "./calls.js";
@@ -243,6 +244,13 @@ export class ScreeningSession {
             ...(followUp === undefined ? {} : { followUp }),
           });
     draft.calls += question.calls;
+    // A phrased question never carries a verdict word ("to check your
+    // eligibility"): code decides, as for the agent's other guarantees, and
+    // the criterion is asked in its own words instead. No prompt changes.
+    const text =
+      draft.fixedQuestions !== true && verdictHits([question.value]).length > 0
+        ? fixedQuestion(criterion)
+        : question.value;
 
     progress.timesAsked += 1;
     draft.pending = criterion.id;
@@ -250,10 +258,10 @@ export class ScreeningSession {
       index: draft.transcript.length,
       speaker: "agent",
       kind: "question",
-      text: question.value,
+      text,
       criterionId: criterion.id,
     });
-    return { kind: "message", text: question.value };
+    return { kind: "message", text };
   }
 
   /**

@@ -11,8 +11,9 @@
  * the moment it finishes, and a rerun skips pairs already written, so a
  * stopped run resumes. The result is written when every pair has a
  * transcript. The hash covers the labels, the agent's and the participant's
- * prompts, the parse run, the link's threshold and the model, so a change to
- * any of them is a new run, never a silent mix.
+ * prompts, the parse run, the link's threshold, the model and the check's
+ * revision (`CHECK_REVISION`), so a change to any of them is a new run, never
+ * a silent mix.
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, relative } from "node:path";
@@ -33,7 +34,7 @@ import {
   runHash,
   scoreTranscripts,
 } from "../evals/check/result.js";
-import { checkPair } from "../evals/check/run.js";
+import { CHECK_REVISION, checkPair } from "../evals/check/run.js";
 import type { PairTranscript } from "../evals/check/transcript.js";
 import { PATIENT_SIMULATOR_VERSION } from "../evals/participant/prompt.js";
 import type { PatientSet } from "../evals/questions/patients.js";
@@ -179,6 +180,7 @@ async function main(): Promise<void> {
     String(LINK_THRESHOLD),
     adapter.descriptor.model,
     `thinking ${adapter.descriptor.thinking ?? "default"}`,
+    `check ${CHECK_REVISION}`,
   ]);
   const runsDir = join(RESULTS_DIR, "runs", `${set}-${hash}`);
   mkdirSync(runsDir, { recursive: true });

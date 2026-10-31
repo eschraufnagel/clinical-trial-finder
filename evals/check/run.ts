@@ -25,6 +25,15 @@ import type { PairTranscript, ParticipantTurn } from "./transcript.js";
  * are passed in: the agent's, the participant's and the fidelity check's.
  */
 
+/**
+ * Moves when the check's own code changes what a transcript holds without
+ * moving a prompt: the record's sections, the agent's fallback to a fixed
+ * question. It's part of `check:eval`'s run hash, so a revision is a new run,
+ * never a mix with transcripts the old code wrote. 1 was dev's first run; 2
+ * is after Gate 1's revisions (R1 to R3).
+ */
+export const CHECK_REVISION = 2;
+
 /** Far beyond any trial's criteria twice over; a guard against a loop, never a budget. */
 export const MAX_TURNS = 400;
 

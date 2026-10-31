@@ -1,5 +1,6 @@
 import { LINK_THRESHOLD, overlap } from "../../src/check/link.js";
 import type { RecordLine, TrialRecord } from "../../src/check/record.js";
+import { FIXED_QUESTION_TEMPLATE, fixedQuestion } from "../../src/screening/templates.js";
 import { oursIn, verdictHits } from "../../src/shortlist/words.js";
 import { wilson } from "../search/metrics.js";
 import type { PairLabel } from "./pairs.js";
@@ -122,7 +123,15 @@ export function scorePair(t: PairTranscript, label: PairLabel, criteriaText: str
     ? []
     : counted.filter((l) => l.line.mayNotFit).map((l) => l.line.criterionId);
 
-  const agentText = t.transcript.filter((x) => x.speaker === "agent").map((x) => x.text);
+  // A fixed question quotes the trial's own words, which aren't ours to scan
+  // (`src/shortlist/words.ts`), so only its template is.
+  const criteria = new Map(t.criteria.map((c) => [c.id, c]));
+  const agentText = t.transcript
+    .filter((x) => x.speaker === "agent")
+    .map((x) => {
+      const c = x.criterionId === undefined ? undefined : criteria.get(x.criterionId);
+      return c !== undefined && x.text === fixedQuestion(c) ? FIXED_QUESTION_TEMPLATE : x.text;
+    });
   const onRecord = new Set(
     [...t.record.records.lines, ...t.record.earlier.lines].map((l) => l.criterionId),
   );
