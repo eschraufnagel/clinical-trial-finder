@@ -121,3 +121,30 @@ Together they hold 7 of the 35 places.
 - The two cases above go into `ANNOTATION.md` as edge cases settled at this gate. Done; no label changes.
 - The slice goes on to stage B.
 - A second blind pass on the labels the check is scored on, before held-out is used. Below.
+
+## The second blind pass
+
+**What was drawn:** 70 held-out trials not in the first pass, by a fixed rule written before anyone looked:
+- **all 42** labelled not relevant, in `places-heldout` and `sample` (the check's possible gains);
+- **28** labelled relevant whose conditions name another cancer and nothing about the lung (the basket trials at risk).
+
+Two separate agents took 35 each. Each saw only `ANNOTATION.md`, with the edge cases above added, and `search:show` output.
+
+**70 of 70 agree on relevant or not.** Four differ only on "unclear":
+
+| Trial | Mine | Blind | The blind labeller's reason, in short |
+| --- | --- | --- | --- |
+| NCT03947385 | yes | yes (unclear) | relevant through "Other Solid Tumors" with GNAQ/11 or PRKC changes, but the rules print only uveal melanoma text |
+| NCT05824975 | yes | yes (unclear) | conditions name selected cancers, the rules say "advanced or metastatic solid tumors" with no list |
+| NCT06597721 | yes | **yes (unclear)** | the title says "Selected Advanced Solid Tumours", and the selection isn't named |
+| NCT06885281 | no | no (unclear) | "Selected Solid Tumors", but the rules require neuroendocrine carcinomas |
+
+**Recommendation:**
+- **Change NCT06597721 to "unclear: …".** The convention's own example of an unnamed list is "selected solid tumors", and its title says just that. I missed it. This loosens the bar by one trial: a route may mark one relevant "unclear" trial (spec §7).
+- **Keep the other three.** NCT03947385's "Other Solid Tumors" group is a cohort, not an unnamed selection. NCT05824975's rules are open with no selection word. NCT06885281 stays not relevant either way.
+
+**What it can and can't tell you.** Three labellers have now read the 44 not-relevant held-out labels (the 42 here and 2 in the first pass) and 30 of the riskiest relevant ones, and agree on relevant-or-not for every one. All three are models working from the same written convention, and no clinician has checked any label.
+
+## Answer, the second pass
+
+(The owner's.)
