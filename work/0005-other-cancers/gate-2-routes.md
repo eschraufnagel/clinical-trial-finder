@@ -39,3 +39,32 @@ Dev is 0001's labels and `places-dev`: 197 labelled candidates, 26 of them not f
 - All four routes go to held-out.
 - Marked trials move down, and none is removed.
 - NCT07476287 is relabelled relevant "unclear", to match 0001's label for transformed small cell lung cancer. That was the leaning above, made before held-out is scored.
+
+## Held-out, scored once
+
+[`evals/results/search/other/01-d16e940b9df3.json`](../../evals/results/search/other/01-d16e940b9df3.json), with the others file frozen at Gate 2 (`othersSha256` `d16e940b…`). `npm run other:eval -- --check` reruns it. A second held-out run is refused.
+
+250 labelled candidates, 43 of them not for NSCLC.
+
+| Route | `sample`: gains | `sample`: costs, and "unclear" | Bar (spec §7) | `places-heldout`: gains | `places-heldout`: costs |
+| --- | ---: | --- | --- | ---: | --- |
+| `small-cell` | 6 | 0, 0 | passes | 5 | 0 |
+| `biomarker` | 0 | 0, 0 | passes | 2 | 0 |
+| `listing` | 5 | 0, 0 | passes | 3 | 0 |
+| `rules` | 5 | 0, 0 | passes | 4 | **1: NCT03947385** |
+| **any** | **15 of 24** | 0 | | **14 of 19** | 1 |
+
+**Every route passes the bar, so by its rule all four stay adopted.** `routes` in the others file is unchanged.
+
+**What the bar didn't catch.** The bar is on `sample`, by design: `places-heldout` overlaps with what the order will show. On `places-heldout`, `rules` marks one trial labelled relevant:
+- **NCT03947385,** IDE196 in solid tumors with GNAQ/11 mutations or PRKC fusions. Its conditions name uveal melanoma, cutaneous melanoma and colorectal cancer beside "Other Solid Tumors". Its inclusion lines name only melanoma.
+- **Labels:** I labelled it relevant through the "Other Solid Tumors" group. The second blind labeller labelled it relevant "unclear".
+- **Why it's marked:** `rules` can't see the other-solid-tumors cohort, which appears only in a condition, not in an inclusion line.
+- **What it means:** the trial is on held-out patients' short lists, so `other-last` would move it down for them.
+
+It goes to Gate 3 with the rerun. One way to close it is for `rules` to leave alone any trial whose conditions say "other solid tumors". That would be a change made after seeing held-out, and would have to be reported as such.
+
+**Left unmarked:** 14 of 43, among them:
+- blood cancers whose titles or conditions read generically;
+- breast and gynecologic trials listed under "solid tumor";
+- NCT07407933, small cell lung cancer, whose title says "Advanced Solid Tumors".

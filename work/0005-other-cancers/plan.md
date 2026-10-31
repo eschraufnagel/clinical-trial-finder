@@ -321,3 +321,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `scoreRoutes` and `passesBar` in `evals/search/other.ts`. `other:eval` has `--dev`, held-out (refused once a held-out result exists) and `--check`.
   - Dev result `dev/01-d16e940b9df3`: 17 of 26 not-for-NSCLC trials marked, no relevant trial marked.
   - `gate-2-routes.md` written. **Stopped at Gate 2.**
+- **Gate 2, as answered** (owner, 2026-10): as recommended. The file is frozen, all four routes go to held-out, and marks move trials without removing them. NCT07476287 is relabelled relevant "unclear", as 0001 labels transformed SCLC.
+- **Step 9:**
+  - Held-out `01-d16e940b9df3`: 29 of 43 not-for-NSCLC trials marked. On `sample`, no relevant trial is marked and every route passes the bar, so `routes` is unchanged.
+  - On `places-heldout`, `rules` marks one relevant trial, NCT03947385, written up in `gate-2-routes.md` for Gate 3.
