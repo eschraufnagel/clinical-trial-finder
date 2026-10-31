@@ -215,3 +215,4 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **The one wrong reading:** p11 `lines_advanced`, "One, the radiation with chemo and then the Imfinzi.", read as "two" where the reply says "one". The local model read it as "one".
   - **Input per call is about 2.5 times 0004's:** 47,266 input tokens for 93 calls, about 508 each, against about 204 each in 0004's held-out run. Structured outputs adds about 300 tokens a call that the estimate doesn't count. Held-out at that rate is about $0.30, under its $0.50 cap.
   - **Against the frozen bar, criterion 2 fails:** one reply stating an answer was read as a different answer. Criteria 1 and 3 pass.
+- **Step 6:** `gate-2-dev.md` written. It says the dev run fails the frozen bar on criterion 2, and recommends overturning that criterion and running held-out once; stopping is the frozen rule's answer. **Stopped at Gate 2.**
