@@ -209,3 +209,9 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
     - The estimate counts about twice the input tokens 0004's run used (224,814 against 107,294 on the same 527 pairs), as the estimates are written to.
   - `gate-1-spend.md` written. **Stopped at Gate 1.**
 - **Gate 1, as answered** (owner, 2026-10; `gate-1-spend.md`): as recommended. One dev run under `--max-calls 150 --max-usd 0.10`, and the bar frozen as written in §5.2.
+- **Step 5:**
+  - The dev run, as approved at Gate 1: `dev-claude-haiku-4-5-8cb01749-schema.json`, 93 calls in 79 s, **$0.052**, no retries and no 400. The run record says `schema: "enforced"`.
+  - **Read at all: 93 of 93.** Replies stating an answer: 53 of 54 exact, 1 wrong. "Don't know" replies: 0 of 39 invented. No failures, no rejections.
+  - **The one wrong reading:** p11 `lines_advanced`, "One, the radiation with chemo and then the Imfinzi.", read as "two" where the reply says "one". The local model read it as "one".
+  - **Input per call is about 2.5 times 0004's:** 47,266 input tokens for 93 calls, about 508 each, against about 204 each in 0004's held-out run. Structured outputs adds about 300 tokens a call that the estimate doesn't count. Held-out at that rate is about $0.30, under its $0.50 cap.
+  - **Against the frozen bar, criterion 2 fails:** one reply stating an answer was read as a different answer. Criteria 1 and 3 pass.
