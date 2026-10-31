@@ -303,3 +303,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
     - **continuation and extension studies** that take only people already in a parent study (NCT03486873, NCT05203172, NCT07415031): relevant, "unclear", since they don't limit cancer type;
     - **supportive-care trials** that treat a side effect or symptom in anyone with cancer (myocarditis, cardiotoxicity, depression, smoking cessation, perioperative pain): relevant when they take any cancer type or name lung cancer, as the convention's "a symptom being treated" says.
   - **Blind relabel:** 20 trials drawn by `sha256("0005-blind:" + nctId)`, 10 from each set, labelled by a separate agent given only `ANNOTATION.md` and `search:show`. It agreed on relevant or not for all 20. It marked two "unclear" that I didn't: NCT06580002 (cognitive impairment after cancer treatment, lung cancer among the conditions) and NCT06582017 ("lung" named without a subtype). Its labels are kept for the Gate 1 page, not in the label file.
+- **Step 6:**
+  - `evals/search/other.ts`: `placesHeld` and `summarizePlaces`. `npm run other:eval -- --places <result>` prints them, tested in `tests/evals/search-other.test.ts`.
+  - On 0004's results, trials not for NSCLC hold 35 of 162 held-out short-list places in the conversation arm (`shortlist`), for 15 of 17 patients. With reads: 34. The full record's list: 38. Every short-list trial has a label.
+  - `gate-1-labels.md` written. **Stopped at Gate 1.**
