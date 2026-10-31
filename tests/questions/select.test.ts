@@ -72,12 +72,31 @@ describe("the scorers", () => {
   });
 });
 
+/** The fixture with NCT02, on the short list by distance, marked as about other cancers only (slice 0005). */
+function markedTrials() {
+  return trials().map((t) =>
+    t.candidate.nctId === "NCT02"
+      ? {
+          ...t,
+          candidate: {
+            ...t.candidate,
+            other: {
+              route: "listing" as const,
+              cancers: ["prostate cancer"],
+              evidence: ["Prostate Cancer"],
+            },
+          },
+        }
+      : t,
+  );
+}
+
 describe("shortlistChange", () => {
   const profiles = [{}, { hiv: "no" }, { ecog: "ps2" }, { pregnant_or_breastfeeding: "no" }];
 
   it("matches reordering every trial, for every order, fact and answer", () => {
-    const input = trials();
     for (const ordering of ORDER_NAMES) {
+      const input = ordering === "other-last" ? markedTrials() : trials();
       for (const profile of profiles) {
         const order = orderFor(input, profile, vocabulary, ordering);
         const s = situation({ profile, order, ordering });
@@ -104,8 +123,8 @@ describe("shortlistChange", () => {
   });
 
   it("recounts to what the shortcut gives, under the orders the shortcut serves", () => {
-    const input = trials();
-    for (const ordering of ["hints", "read-first"] as const) {
+    for (const ordering of ["hints", "read-first", "other-last"] as const) {
+      const input = ordering === "other-last" ? markedTrials() : trials();
       for (const profile of profiles) {
         const order = orderFor(input, profile, vocabulary, ordering);
         const s = situation({ profile, order, ordering });

@@ -14,8 +14,9 @@ import type { Candidate } from "../search/types.js";
 
 /**
  * The orders a conversation may use (slice 0004, spec §2.1), each a list of
- * keys taken in turn. Every one keeps whole-trial hints first: a hint is the
- * one thing a person's answers say against a trial.
+ * keys taken in turn. Every one keeps whole-trial hints first among trials
+ * the search didn't mark: a hint is the one thing a person's answers say
+ * against a trial.
  *
  * - `hints`: slice 0003's order.
  * - `checked`: among trials with equal hints, the ones whose rules were
@@ -24,11 +25,16 @@ import type { Candidate } from "../search/types.js";
  * - `read-first`: among trials with equal hints, trials with mappings before
  *   trials with none, whether the run has no file for them or read no rule
  *   of theirs onto a fact.
+ * - `other-last` (slice 0005, spec §5.1): `read-first` behind one key, a
+ *   trial whose record is about other cancers only after every other. The
+ *   mark is about the whole trial and a hint about one rule, so it comes
+ *   first. It depends on no answer.
  */
 export const ORDERS = {
   hints: ["wholeTrialHints", "partHints", "miles", "nctId"],
   checked: ["wholeTrialHints", "partHints", "checked", "miles", "nctId"],
   "read-first": ["wholeTrialHints", "partHints", "unread", "miles", "nctId"],
+  "other-last": ["other", "wholeTrialHints", "partHints", "unread", "miles", "nctId"],
 } as const satisfies Record<string, readonly (keyof OrderKey)[]>;
 
 export type OrderName = keyof typeof ORDERS;
@@ -61,6 +67,8 @@ export function compareEntries(a: OrderEntry, b: OrderEntry, order: OrderName = 
 
 /** What the orders read from an entry, and nothing else. */
 export interface OrderKey {
+  /** 1 when the search marked the trial's record as about other cancers only (slice 0005). */
+  other: number;
   wholeTrialHints: number;
   partHints: number;
   /** Facts the trial maps that the person answered with no hint: `status.fits`. */
@@ -74,6 +82,7 @@ export interface OrderKey {
 
 export function keyOf(entry: OrderEntry): OrderKey {
   return {
+    other: entry.candidate.other === undefined ? 0 : 1,
     wholeTrialHints: entry.status?.hints.length ?? 0,
     partHints: entry.status?.partHints.length ?? 0,
     checked: entry.status?.fits.length ?? 0,

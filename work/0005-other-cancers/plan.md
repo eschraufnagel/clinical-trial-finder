@@ -325,3 +325,4 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - **Step 9:**
   - Held-out `01-d16e940b9df3`: 29 of 43 not-for-NSCLC trials marked. On `sample`, no relevant trial is marked and every route passes the bar, so `routes` is unchanged.
   - On `places-heldout`, `rules` marks one relevant trial, NCT03947385, written up in `gate-2-routes.md` for Gate 3.
+- **Step 10:** `other-last` in `ORDERS`, with key `other`, and the shortcut test covering it on a fixture with one marked trial. `ORDER_WORDS` needed a sentence for the new order: "Trials whose records name only other cancers come last. …". It goes to Gate 3 with the card's words. `--check` still matches 0004's results.

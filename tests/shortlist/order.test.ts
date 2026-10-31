@@ -99,6 +99,7 @@ describe("the orders of slice 0004", () => {
       hints: ["wholeTrialHints", "partHints", "miles", "nctId"],
       checked: ["wholeTrialHints", "partHints", "checked", "miles", "nctId"],
       "read-first": ["wholeTrialHints", "partHints", "unread", "miles", "nctId"],
+      "other-last": ["other", "wholeTrialHints", "partHints", "unread", "miles", "nctId"],
     });
     expect(ORDER_KEYS).toBe(ORDERS.hints);
   });
@@ -134,6 +135,36 @@ describe("the orders of slice 0004", () => {
   it("drops nothing, under any order", () => {
     const input = [entry("NCT3", 3, 4), entry("NCT1", 1, 2, 0, false), entry("NCT2", 2, 0, 1)];
     for (const name of ORDER_NAMES) expect(orderTrials(input, name)).toHaveLength(3);
+  });
+});
+
+describe("the order of slice 0005", () => {
+  const marked = (e: OrderEntry): OrderEntry => ({
+    ...e,
+    candidate: {
+      ...e.candidate,
+      other: { route: "listing", cancers: ["prostate cancer"], evidence: ["Prostate Cancer"] },
+    },
+  });
+
+  it("other-last: a marked trial after every unmarked one, hinted or unread", () => {
+    const prostate = marked(entry("NCT1", 1, 0, 0, true, 3));
+    const hinted = entry("NCT2", 90, 2);
+    const unread = entry("NCT3", 50, 0, 0, false);
+    const read = entry("NCT4", 80, 0, 0, true, 1);
+    expect(ids(orderTrials([prostate, hinted, unread, read], "other-last"))).toEqual([
+      "NCT4",
+      "NCT3",
+      "NCT2",
+      "NCT1",
+    ]);
+  });
+
+  it("the other orders don't read the mark", () => {
+    const input = [marked(entry("NCT1", 1)), entry("NCT2", 2)];
+    for (const name of ORDER_NAMES.filter((n) => n !== "other-last")) {
+      expect(ids(orderTrials(input, name))).toEqual(["NCT1", "NCT2"]);
+    }
   });
 });
 

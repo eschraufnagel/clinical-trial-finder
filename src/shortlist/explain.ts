@@ -93,6 +93,8 @@ export const ORDER_WORDS: Readonly<Record<OrderName, string>> = {
     "Trials with the fewest conflicts with your answers come first, then those whose rules your answers checked most, then the nearest.",
   "read-first":
     "Trials with the fewest conflicts with your answers come first. Among those, trials whose rules could be read come before trials whose rules couldn't, then the nearest.",
+  "other-last":
+    "Trials whose records name only other cancers come last. Before them, trials with the fewest conflicts with your answers come first. Among those, trials whose rules could be read come before trials whose rules couldn't, then the nearest.",
 };
 
 export const FLAG_WORDS: Readonly<Record<Flag, string>> = {
