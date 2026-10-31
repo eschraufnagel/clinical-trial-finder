@@ -535,3 +535,4 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **The bar passes on all five:** 0 verdict words, 0 unknowns missing, 0 orders moved, 25 fidelity flags read (24 as before, 1 new from R1's fixed question), questions saved on every pair.
   - Saved 46 of 169 (27%); 110 asked. **Caught 0 of 4; 0 of the 3 the patient could know.** False alarms on 3 of 5, the same 17 lines. R1 fired once, R3 relabelled 30 lines, and R2 and R4 changed the record and scoring as intended.
   - `gate-1-dev.md` asks Gate 1 again, recommending held-out. **Stopped at Gate 1.**
+- **Gate 1, second answer: run held-out.** Stage C runs as planned.
