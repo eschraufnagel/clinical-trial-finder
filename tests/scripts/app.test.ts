@@ -1,11 +1,14 @@
-import { mkdtempSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { measuredModels, parseAppArgs, scriptedReader } from "../../scripts/app.js";
+import { checkData, measuredModels, parseAppArgs, scriptedReader } from "../../scripts/app.js";
+import { criteriaSha256 } from "../../src/check/parse-cache.js";
 import { loadFactVocabulary } from "../../src/facts/vocabulary.js";
+import { FakeModelAdapter } from "../../src/models/index.js";
 import { READER_PROMPT_VERSION } from "../../src/questions/prompt.js";
 import { readReply } from "../../src/questions/read.js";
+import { getTrial } from "../../src/trials/index.js";
 
 const vocabulary = loadFactVocabulary();
 const fact = (id: string) => {
@@ -142,5 +145,63 @@ describe("npm run app", () => {
       (await readReply(fact("extent"), "The biopsy said adenocarcinoma.", adapter)).answer,
     ).toBe("unknown");
     expect(reader.measured(reader.current())).toBe(false);
+  });
+});
+
+describe("npm run app's check (slice 0007)", () => {
+  const parsed = getTrial("NCT04316364");
+  const unparsed = getTrial("NCT04841811");
+  const trials = new Map([parsed, unparsed].map((t) => [t.nctId, t]));
+
+  /** A committed parse run under a temp root, holding one trial's parse. */
+  function committedRun(): string {
+    const root = mkdtempSync(join(tmpdir(), "criteria-"));
+    mkdirSync(join(root, "2000-01", "run"), { recursive: true });
+    writeFileSync(join(root, "2000-01", "latest"), "run\n");
+    writeFileSync(
+      join(root, "2000-01", "run", `${parsed.nctId}-made-up.json`),
+      JSON.stringify({
+        nctId: parsed.nctId,
+        criteria: [],
+        rejected: [],
+        criteriaSha256: criteriaSha256(parsed.eligibility.criteriaText),
+      }),
+    );
+    return root;
+  }
+
+  it("with --fake, checks only a trial with a committed parse, in its own words, by taps", async () => {
+    const data = checkData(trials, () => undefined, {
+      fake: true,
+      month: "2000-01",
+      settingsDir: "unused",
+      criteriaRoot: committedRun(),
+    });
+    expect(data.checkable?.(parsed.nctId)).toBe(true);
+    expect(data.checkable?.(unparsed.nctId)).toBe(false);
+    expect(data).toMatchObject({ fixedQuestions: true, readTyped: false });
+    const adapter = new FakeModelAdapter([]);
+    expect((await data.parse(parsed, adapter)).nctId).toBe(parsed.nctId);
+    await expect(data.parse(unparsed, adapter)).rejects.toThrow(/No committed parse/);
+  });
+
+  it("with --fake and no committed run, offers no check", () => {
+    const data = checkData(trials, () => undefined, {
+      fake: true,
+      month: "2000-01",
+      settingsDir: "unused",
+      criteriaRoot: mkdtempSync(join(tmpdir(), "criteria-")),
+    });
+    expect(data.checkable?.(parsed.nctId)).toBe(false);
+  });
+
+  it("on a model, parses when checked, into the settings directory's cache", () => {
+    const data = checkData(trials, () => undefined, {
+      fake: false,
+      month: "2000-01",
+      settingsDir: "unused",
+    });
+    expect(data.checkable).toBeUndefined();
+    expect(data.fixedQuestions).toBeUndefined();
   });
 });

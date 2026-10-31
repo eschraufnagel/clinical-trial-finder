@@ -2,7 +2,8 @@
  * Runs the page on this machine (slice 0004).
  *
  *   npm run app                          the page, on the model chosen in Settings, http://127.0.0.1:5025
- *   npm run app -- --fake                a scripted reader: no model is called
+ *   npm run app -- --fake                a scripted reader: no model is called; checks only
+ *                                        trials with a committed parse, by taps
  *   npm run app -- --port 5030
  *   npm run app -- --settings-dir <dir>  keep Settings and keys there instead of local/
  *
@@ -13,6 +14,8 @@ import { readdirSync, readFileSync } from "node:fs";
 import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadPatients } from "../evals/questions/patients.js";
+import { findParse, latestCriteriaRun, parseWithCache } from "../src/check/parse-cache.js";
+import type { ParseableTrial } from "../src/criteria/prompt.js";
 import { runDirFor } from "../src/facts/run.js";
 import { loadFactVocabulary } from "../src/facts/vocabulary.js";
 import {
@@ -27,6 +30,7 @@ import { READER_PROMPT_VERSION } from "../src/questions/prompt.js";
 import { loadConversationSettings } from "../src/questions/settings.js";
 import { loadAllTrialFacts, trialsForSearch } from "../src/questions/trials.js";
 import { loadZipPoints } from "../src/search/geo.js";
+import type { CheckOptions } from "../src/server/check.js";
 import type { ReaderSource } from "../src/server/finder.js";
 import { localModels, settingsReader, testConnection } from "../src/server/models.js";
 import { type Estimates, type Measurement, SettingsStore } from "../src/server/settings.js";
@@ -120,6 +124,48 @@ export function scriptedReader(
 }
 
 /**
+ * The check's data (spec 0007 §6.1, §6.3). On a model, a trial's rules are
+ * parsed when it's first checked and cached under the settings directory's
+ * `parses/`. With `--fake`, they come only from the committed parse run
+ * named in `data/criteria/<month>/latest`, a trial without one can't be
+ * checked, questions are the rule in its own words, and typed replies
+ * aren't read: there's no model to word or read anything.
+ */
+export function checkData(
+  trials: ReadonlyMap<string, ParseableTrial>,
+  facts: CheckOptions["facts"],
+  options: { fake: boolean; month: string; settingsDir: string; criteriaRoot?: string },
+): Omit<CheckOptions, "transport" | "reader" | "finder"> {
+  const trial = (id: string) => trials.get(id);
+  if (!options.fake) {
+    const cache = join(options.settingsDir, "parses");
+    return {
+      trial,
+      facts,
+      parse: async (t, adapter) => (await parseWithCache(t, adapter, cache)).parsed,
+    };
+  }
+  const run = latestCriteriaRun(options.month, options.criteriaRoot);
+  const committed = (t: ParseableTrial) =>
+    run === undefined ? undefined : findParse(run, t.nctId, t.eligibility.criteriaText);
+  return {
+    trial,
+    facts,
+    checkable: (id) => {
+      const t = trials.get(id);
+      return t !== undefined && committed(t) !== undefined;
+    },
+    parse: async (t) => {
+      const parsed = committed(t);
+      if (parsed === undefined) throw new Error(`No committed parse of ${t.nctId}`);
+      return parsed;
+    },
+    fixedQuestions: true,
+    readTyped: false,
+  };
+}
+
+/**
  * What each committed held-out reading run measured (spec 0004 §8.5), by
  * the model each file records: how many replies it could read, how exactly
  * it read those that stated an answer, and how often it invented one. Read
@@ -205,7 +251,8 @@ async function main(): Promise<void> {
   const interventions = new Map(
     snapshot.trials.map((t) => [t.nctId, t.interventions.map((i) => i.name)]),
   );
-  const store = new SettingsStore(args.settingsDir ?? LOCAL_DIR, {
+  const settingsDir = args.settingsDir ?? LOCAL_DIR;
+  const store = new SettingsStore(settingsDir, {
     measured: measuredModels(),
     estimates: conversationEstimates(vocabulary),
   });
@@ -222,6 +269,11 @@ async function main(): Promise<void> {
         : (choice) => testConnection(models, choice),
       localModels: () => localModels(models),
     },
+    check: checkData(new Map(snapshot.trials.map((t) => [t.nctId, t])), (id) => facts.get(id), {
+      fake: args.fake,
+      month,
+      settingsDir,
+    }),
     finder: {
       reader: args.fake ? scriptedReader(vocabulary) : settingsReader(models),
       trialsFor: (search) => trialsForSearch(search, snapshot, zips, (id) => facts.get(id)),
