@@ -12,10 +12,12 @@ import {
 import {
   CLOSING_TEMPLATE,
   closingMessage,
+  fixedQuestion,
   OPENING_TEMPLATE,
   openingMessage,
 } from "../../src/screening/templates.js";
 import type { ScreeningCriterion, Turn } from "../../src/screening/types.js";
+import { verdictHits } from "../../src/shortlist/words.js";
 
 const STUDY = { nctId: "NCT04316364", briefTitle: "A Lung Cancer Study" };
 const CRITERION: ScreeningCriterion = {
@@ -37,14 +39,41 @@ function turns(n: number): Turn[] {
 describe("the fixed templates", () => {
   // The two moments a model would sum up are the two it never writes.
   it("contain no verdict language", () => {
-    expect(VERDICT_PATTERN.test(openingMessage(STUDY))).toBe(false);
-    expect(VERDICT_PATTERN.test(closingMessage())).toBe(false);
+    const fixed = [openingMessage(STUDY), openingMessage(STUDY, 4), closingMessage()];
+    for (const text of fixed) expect(VERDICT_PATTERN.test(text), text).toBe(false);
+    expect(verdictHits(fixed)).toEqual([]);
+    expect(
+      verdictHits([
+        fixedQuestion({
+          id: "P1",
+          polarity: "inclusion",
+          type: "patient",
+          text: "Age 18 or older",
+        }),
+      ]),
+    ).toEqual([]);
   });
 
-  it("name the study and hand off to a coordinator", () => {
+  // Slice 0007 here: the reader is the person and their oncologist, not a coordinator.
+  it("name the trial, and say the oncologist and the trial team decide", () => {
     expect(openingMessage(STUDY)).toMatch(/"A Lung Cancer Study"/);
-    expect(openingMessage(STUDY)).toMatch(/coordinator will review/);
-    expect(closingMessage()).toMatch(/coordinator will review/);
+    expect(closingMessage()).toMatch(/oncologist/);
+    expect(closingMessage()).toMatch(/trial team decide/);
+    for (const text of [openingMessage(STUDY, 3), closingMessage()]) {
+      expect(text).not.toMatch(/coordinator/i);
+    }
+  });
+
+  it("say how many rules the conversation covered, and nothing when it covered none", () => {
+    expect(openingMessage(STUDY, 3)).toMatch(/already covered 3 of its rules/);
+    expect(openingMessage(STUDY)).not.toMatch(/covered/);
+    expect(openingMessage(STUDY)).not.toMatch(/ {2}/);
+  });
+
+  it("ask a criterion in its own words in fixed-question mode", () => {
+    expect(
+      fixedQuestion({ id: "P1", polarity: "exclusion", type: "patient", text: "Pregnant" }),
+    ).toBe("The trial asks about this: “Pregnant”. Does this describe you?");
   });
 });
 
@@ -217,6 +246,6 @@ describe("PROMPT_VERSION", () => {
   });
 
   it("is pinned, so a change to anything the agent says or is told is a visible test change", () => {
-    expect(PROMPT_VERSION).toBe("2c46ada9a1d5");
+    expect(PROMPT_VERSION).toBe("8fda2872b52a");
   });
 });

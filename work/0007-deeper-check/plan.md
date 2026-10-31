@@ -163,14 +163,16 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
      - `closingMessage()`: says the record is for them and their oncologist, who decide with the trial team;
      - `fixedQuestion(criterion)` for `fixedQuestions` mode: `The trial asks about this: “{text}”. Does this describe you?`
      - No "coordinator". Its comment keeps the "never sum up" reasoning.
-   - **`ScreeningSession.apply(text, readings: Reading[])`:**
+     - `PROMPT_VERSION` hashes every template (it's "everything the agent says or is told"), so `COVERED_TEMPLATE` and `FIXED_QUESTION_TEMPLATE` join the hash and the version moves from `2c46ada9a1d5` to `8fda2872b52a`. The prompts' text doesn't change. Spec §3.3 and §4 said the version wouldn't move; they didn't know the templates were hashed.
+   - **`fixedQuestions`** joins `SessionOptions`, and is kept in `ScreeningState` (optional, so version 1 states still resume), so a resumed session asks the same way.
+   - **`ScreeningSession.apply(text, readings: Reading[], calls = 0)`:**
      - pushes the participant turn;
      - runs `applyReadings` (so the quote-location rule holds);
      - advances.
      
      `receive` becomes `read` then `apply`'s shared body, so the measurement's path is unchanged.
    - **`ScreeningSession.preview(text)`:** runs the read call only, returning the readings and the calls made, without changing state. It's for the page's confirm step.
-   - **`tapReading(criterionId, choice)`**, in `src/screening/`: a tap's word becomes a `Reading` whose quote is the tap's own words. Yes is `holds`, No is `does-not-hold`, "I don't know" is `unknown`. `applyReadings` already turns a `clinical` criterion's value into `reported`.
+   - **`tapReading(criterionId, choice)`**, in `src/screening/taps.ts`: a tap's word becomes a `Reading` whose quote is the tap's own words. Yes is `holds`, No is `does-not-hold`, "I don't know" is `unknown`. `applyReadings` already turns a `clinical` criterion's value into `reported`.
    - **Tests:**
      - templates pass `verdictHits` and contain no "coordinator";
      - `apply` makes no model call besides the next `ask`, and none in `fixedQuestions` mode;
@@ -407,7 +409,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - `src/search/`, `src/questions/`, `src/shortlist/{order,sheet}.ts`;
 - `src/facts/`, read only;
 - `src/plain/`, `src/models/`;
-- the screening prompts' text, so `PROMPT_VERSION` stands;
+- the screening prompts' text. `PROMPT_VERSION` moves anyway, at step 4, because it hashes the fixed templates too; no committed result in this repository records the agent's version;
 - the mapping run, the patients, 0005's labels;
 - every committed result;
 - `.env`.
@@ -452,3 +454,12 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `npm run test:e2e`: 7 passed.
   - `search:eval -- --check`, `questions:eval -- --check` and `-- --check --dev`, and `facts:eval -- --check` pass.
   - `other:eval -- --check` and `-- --check --dev` fail with "labelsSha256 differs" and nothing else, as 0006 recorded. A separate task; at each step below, "unchanged" for these two means that single difference.
+- **Step 2:** `linkCriteria` takes `nctId` and `criteriaText` as well, to check every span against the text; the plan's signature is updated. 7 tests.
+- **Step 3:**
+  - `initialProgress(criteria, carried)`, `finalize` keeping `earlier`, `SessionOptions.carried`, `Handoff.fromConversation`.
+  - The inherited session test's handoff expectation gains `fromConversation: []`: the record grows by a field, nothing is loosened.
+  - `PROMPT_VERSION` pinned at `2c46ada9a1d5`; `fixedQuestions` moved to step 4, beside its template.
+- **Step 4:**
+  - **Divergence:** `PROMPT_VERSION` hashes the opening and closing templates, so the rewrite moves it, to `8fda2872b52a`. The prompts' text is unchanged. The pin in `prompts.test.ts` changes in this commit, visibly. No result in this repository records the agent's version, so nothing committed is affected.
+  - The inherited template test, which asserted "coordinator will review", now asserts the new reader: the oncologist and the trial team decide, and no "coordinator". The session test's opening assertion follows it.
+  - `receive` is `preview` then `apply`, so the measurement's path is the same calls in the same order.

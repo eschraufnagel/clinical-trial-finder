@@ -237,6 +237,8 @@ export interface ScreeningState {
   /** Model calls made so far, for sizing runs. */
   calls: number;
   done: boolean;
+  /** Questions are the criteria's own words, with no model (slice 0007 here). */
+  fixedQuestions?: true;
 }
 
 /** Criterion ids grouped by where they ended up. A summary, not a decision. */
