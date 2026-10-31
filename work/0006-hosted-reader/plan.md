@@ -227,3 +227,8 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - On the page each would show as a reading of "Yes" for the person to confirm or correct. Confirmed, it would add a "may not fit" hint. No hint removes a trial.
   - `app.test.ts` now expects Haiku's new measurement: readable 1, exact 324/326, invented 0.
   - `npm run check`, `npm run test:e2e` (7 passed) and every `--check` as at step 1.
+- **Step 8:**
+  - `docs/questions.md`: "On a hosted model, once" becomes "On a hosted model", with the three-column table, what the schema is, the errors it brought, the overturned bar, and the two figures in 0004's gate page that don't match its file. Limits gain one hosted model measured. In passing, "the benchmark in slice 0006" becomes 0008, which the roadmap already says; it read as this slice.
+  - `docs/page.md`: Settings' measured line says which run counts; Haiku's row and paragraph are the schema run's; its Limits entry is rewritten.
+  - `work/ROADMAP.md`: 0006 **Done**, with its measure. `CLAUDE.md`: one sentence in "Model access".
+  - The README is unchanged: its list of parts doesn't change, and it reports no findings.
