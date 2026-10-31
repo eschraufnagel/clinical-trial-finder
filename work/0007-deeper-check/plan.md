@@ -121,7 +121,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
    - `other:eval -- --check` and `-- --check --dev` fail with only "labelsSha256 differs", as 0006 recorded. That's a separate task, and "unchanged" for them means that one difference.
 
 2. **The link** (§3.1).
-   - **`src/check/link.ts`:** `linkCriteria(criteria: readonly Criterion[], ids: Map<Criterion, string>, facts: TrialFacts | undefined, threshold = LINK_THRESHOLD): Map<string, LinkedFact[]>`.
+   - **`src/check/link.ts`:** `linkCriteria(nctId, criteriaText, ids: Map<Criterion, string>, facts: TrialFacts | undefined, threshold = LINK_THRESHOLD): Map<string, LinkedFact[]>`. `ids` is `fromParse`'s map, so the criteria come with it; `criteriaText` is what the spans are checked against.
      - `LinkedFact` is `{ factId, rulesOut, polarity, appliesTo?, source }`.
      - Overlap is the shared characters of the two spans ÷ the shorter span's length, at or above `LINK_THRESHOLD` (0.5).
      - It asserts both spans come from the same text by checking `criteriaText.slice(start, end) === text` for each. A mismatch is a thrown error naming the trial.
