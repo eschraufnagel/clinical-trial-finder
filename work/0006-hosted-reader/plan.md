@@ -195,3 +195,16 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `readerSchema(fact)` in `prompt.ts`, passed by `readReply` on every reading. `READER_PROMPT_VERSION` stays `8cb01749dcc3`, now pinned by a test.
   - Settings' Test (`testConnection`) reads through `readReply`, so it carries the schema with no change of its own; `tests/server/models.test.ts` passes as it was.
   - 1,080 tests (1,072 passed, 8 expected to fail). Every `--check` as at step 1.
+- **Step 4:**
+  - `readsPath(set, run, dir)` takes the descriptor's `model` and `schema`; a run that enforced the schema is `…-8cb01749-schema.json`. The run record carries `schema: "enforced"` through the descriptor, with no other change.
+  - `formatGrade` leads with "Read at all: n of N", counting failed pairs in N. `formatUnusable` prints each rejection reason with its count, then each failed pair with its reason. Both are printed at the end of a run.
+  - `scripts/app.ts`: `measuredModels` and `scriptedReader` share `readsOnCurrentPrompt`, which filters on the run record's `promptVersion` rather than the file's name.
+    - `measuredModels` keeps a held-out run only when its schema flag matches the catalog's for that model; two such runs for one model throw.
+    - `scriptedReader` reads only files whose run's adapter is `omlx`.
+  - **Claude Haiku 4.5 is unmeasured in Settings from this commit** until a held-out run with the schema is committed: `app.test.ts` says so on the committed files.
+  - 1,084 tests (1,076 passed, 8 expected to fail). `npm run test:e2e`: 7 passed. Every `--check` as at step 1.
+  - **The dry runs**, nothing sent:
+    - dev: 93 calls, about $0.045 expected; at most $0.10 under `--max-calls 150 --max-usd 0.10`.
+    - held-out: 527 calls, about $0.26 expected; at most $0.48 under `--max-calls 600 --max-usd 0.50`.
+    - The estimate counts about twice the input tokens 0004's run used (224,814 against 107,294 on the same 527 pairs), as the estimates are written to.
+  - `gate-1-spend.md` written. **Stopped at Gate 1.**
