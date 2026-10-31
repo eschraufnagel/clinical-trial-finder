@@ -342,3 +342,25 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `docs/search.md` gains "Trials for other cancers: the mark". `docs/page.md` gains the order, the card line and a rewritten Limits entry.
   - `work/ROADMAP.md`: 0005 **Done**, and open question 6 answered and narrowed. `CLAUDE.md`: layout, the `other:*` commands, the boundary.
   - The README's list of parts is unchanged, so the README is too.
+- **Step 14, the review passes** (`REVIEW.md`):
+  - **Pass 1, plan compliance:**
+    - Changed but not in the file list: `src/web/copy.ts` ("From the record:"), `src/web/Sheet.tsx` (the sheet's line), `src/questions/select.ts` (a comment naming `other-last`), `tests/evals/search-labels.test.ts` (the label sets). Nit, recorded here.
+    - `src/server/` didn't change: it builds trials through `trialsForSearch`, which passes the others file. `tests/evals/search-other.test.ts` is the plan's `tests/evals/other.test.ts`.
+    - The divergences are recorded at steps 7, 11 and 12.
+  - **Pass 2, correctness:**
+    - **Nit, not fixed:** `inclusionSection` ends at the first line that mentions "exclusion criteria", even in a sentence ("(see below Exclusion Criteria)"). It never reads an "Additional Inclusion Criteria" block after the exclusions. Either can hide an open line from `rules`, or an NSCLC mention from a listing. Of the 118 marked candidates, 27 have such a line. None of the slice's measured costs comes from it: NCT03947385's record simply has no inclusion line for its other-solid-tumors cohort. Fixing it would change the frozen check after held-out. It's left for the next change to the check, with the held-out result rerun as a new result.
+    - Nothing else found. A mark's cancers list can't be empty: `listing` needs a condition naming another cancer, and `rules` a diagnosis line naming one.
+  - **Pass 3, scope and data:** nothing found.
+    - Trial records and NCT IDs are public registry data. Patients are 0003's made-up ones.
+    - No network: `other:sample` and `other:eval` read committed files only. No key, no secret.
+    - No card says a person can't or can join. Each lead says what the record names and sends the person to their oncologist, and the verdict scan covers every route's lead.
+  - **Pass 4, eval integrity:**
+    - Every 0005 label was written before any check code, except `places-other-last`, which is said so wherever it's used.
+    - Two held-out labels changed before held-out was scored, each at a gate: NCT06597721 at Gate 1, NCT07476287 at Gate 2.
+    - Held-out labels were scored once, and `other:eval` refuses a second held-out run. Held-out patients were scored a third time, which is said in `gate-3-page.md` and `docs/page.md`.
+    - Tests were extended, not loosened. `select.test.ts` adds `other-last` to the cases it already ran.
+    - No model ran; results name checksums instead.
+  - **Pass 5, documentation:**
+    - The README is unchanged and reports no findings.
+    - Every number in `docs/search.md` and `docs/page.md` traces to a committed result or to `other:eval --places` on one.
+    - The limits are stated: 14 of 43 unmarked, the one relevant trial marked, tuning on dev, labels by models only.
