@@ -1,3 +1,4 @@
+import type { OtherMark } from "./other.js";
 import type { Reason } from "./vocabulary.js";
 
 /** What a person asks the search for (spec 0001 §5). */
@@ -37,6 +38,11 @@ export interface Candidate {
   reasons: Reason[];
   nearestSite: NearestSite | null;
   flags: Flag[];
+  /**
+   * Slice 0005: present when the record is about other cancers only, by an
+   * adopted route. A mark never drops a trial; `other-last` orders by it.
+   */
+  other?: OtherMark;
 }
 
 export interface SearchResult {

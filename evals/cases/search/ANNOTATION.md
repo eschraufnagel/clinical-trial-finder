@@ -41,9 +41,16 @@ An independent labeller relabelled 20 trials blind and raised these. Each was al
 - **A "preferred" or "of primary interest" list doesn't limit enrollment.** A trial open to any solid tumor stays relevant whatever its preferred list says. Only a required list that leaves NSCLC out makes it not relevant.
 - **MeSH terms can be wrong.** Decide from the title, conditions and rules. A MeSH heading that nothing else in the record supports doesn't change a label.
 
+## Edge cases settled at slice 0005's Gate 1
+
+Each came up several times in slice 0005's labels and was decided the same way each time ([`work/0005-other-cancers/gate-1-labels.md`](../../../work/0005-other-cancers/gate-1-labels.md)).
+
+- **A continuation or extension study** that takes only people already in a parent study, and doesn't limit cancer type: relevant, marked unclear. Someone with NSCLC in the parent study can join it; nobody new can.
+- **A supportive-care trial** that treats a side effect or symptom in people with cancer (immunotherapy myocarditis, cardiotoxicity, depression, cognitive problems, nausea, smoking cessation, pain after surgery): relevant when it takes any cancer type or names lung cancer, under "a symptom being treated" above. Not relevant when it's limited to other cancers, for example pain after abdominal surgery only.
+
 ## How a label is written
 
 - From `npm run search:show` output only: the registry's title, conditions, keywords, MeSH terms, interventions and eligibility text. Never from search output.
 - **The reason** is a sentence or so. It quotes the deciding words where there are any, for example: *"'Patients with histologically confirmed advanced solid tumors' and no lung exclusion."* or *"Conditions and rules are limited to prostate cancer."*
 - **When it's genuinely unclear**, decide by the question as worded, say "unclear:" at the start of the reason, and say what tipped it. Unclear labels are counted and reported.
-- **A label isn't changed after the search has scored it**, except by a recorded decision in `work/0001-trial-snapshot/plan.md`.
+- **A label isn't changed after the search has scored it**, except by a recorded decision in `work/0001-trial-snapshot/plan.md`. For slice 0005's labels (`nsclc-other.json`), the record is in `work/0005-other-cancers/`.

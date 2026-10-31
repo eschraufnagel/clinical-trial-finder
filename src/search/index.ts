@@ -10,6 +10,17 @@ export {
   pointForZip,
   UnknownZipError,
 } from "./geo.js";
+export {
+  inclusionSection,
+  loadOthers,
+  markFor,
+  type OtherCancer,
+  type OtherMark,
+  type OtherRoute,
+  type Others,
+  ROUTES,
+  routesFor,
+} from "./other.js";
 export { parseAgeLimit, recordFlags, searchTrials } from "./search.js";
 export type {
   Candidate,

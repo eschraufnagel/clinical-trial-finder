@@ -86,7 +86,7 @@ docs/            the detail behind it, one file per part
 work/            the intent/spec/plan chain, one folder per slice
 src/
   trials/        trial loading, the snapshot, and the registry requests (the fetches are run from scripts/)
-  search/        the search: purpose, cancer type, age and sex, distance; no model
+  search/        the search: purpose, cancer type, age and sex, distance, and the mark on trials for other cancers; no model
   facts/         the fact vocabulary, the mapper that reads trial rules onto it, and the hints a profile gets
   questions/     the conversation: intake, choosing the next question, stopping, and the reader of replies
   shortlist/     the order of the trials a search keeps, and the short list at its top
@@ -102,12 +102,12 @@ data/
   plain/         committed plain-language renderings
   snapshot/      the pinned registry snapshot, one folder per month, gzipped JSONL plus a manifest
   geo/           ZIP code locations from the Census gazetteer
-  cancer-types/  the search vocabulary, one file per cancer type plus generic.json
+  cancer-types/  the search vocabulary, one file per cancer type plus generic.json, and <type>-others.json for the mark
   facts/         the fact vocabulary, and mapping runs by snapshot month and run name
   questions/     the conversation's settings: intake, skips, short-list size, budget, scorer
 evals/
   cases/         eval task definitions: labels, vignettes, and patients (cases/patients/)
-  search/        the search measurement: labels loader, metrics, result checks
+  search/        the search measurement: labels loader, metrics, result checks, and the mark's scoring and places
   facts/         the fact measurement: labels, coverage, grading, result checks
   questions/     the question measurement: made-up patients, arms, metrics, readings, result checks
   graders/       deterministic graders
@@ -136,6 +136,8 @@ Widening any of them is a visible change to that test. The same test keeps `crea
 - keeps `src/web/` free of Node and unimported by the rest of `src/`;
 - holds the browser test's server to `--fake`.
 
+Since slice 0005, it also keeps the other-cancer labelling tool (`other:sample`) away from `src/search/other.ts` and any model. It may know the candidates, but not what the check marks.
+
 A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
 
 Test files share a module cache (`isolate: false` in `vitest.config.ts`), which keeps `npm test` near half a second. That is safe only while no test mocks a module or stubs a global, and a test in `tests/boundary.test.ts` fails if one does.
@@ -160,6 +162,8 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run search:sample` | draw the held-out and dev sets into a label skeleton; refuses to overwrite |
 | `npm run search:show -- <NCT ID>` | print a trial for labelling; `--brief`, `--next N` |
 | `npm run search:eval` | score the search against the labels and write a result; `-- --dev` dev only, `-- --check` rerun the latest result and fail on any difference |
+| `npm run other:sample` | draw slice 0005's label sets into `evals/cases/search/nsclc-other.json`; refuses to overwrite |
+| `npm run other:eval` | score the mark's routes against the labels: `-- --dev` dev only; with no flag held-out, refused once a held-out result exists; `-- --check` rerun the latest; `-- --places <questions result>` short-list places held by trials not for NSCLC |
 | `npm run facts:topics` | count how many NSCLC candidates' rules mention each topic. Deterministic |
 | `npm run facts:sample` | draw the fact-label sets into skeletons; refuses to overwrite |
 | `npm run facts:label-show -- <NCT ID>` | print a trial's passages for fact labelling; `--next`, `--vocabulary` |

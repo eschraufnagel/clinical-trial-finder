@@ -553,6 +553,42 @@ describe("the search labelling tools cannot see the search", () => {
 });
 
 /**
+ * This repository's slice 0005: the other-cancer labelling tool can't see the
+ * check. It reads the search's vocabulary to know which trials are NSCLC
+ * candidates, but labels written knowing what the check marks would agree
+ * with it by construction. Not `src/search/other.ts`, and no model.
+ */
+describe("the other-cancer labelling tool cannot see the check", () => {
+  const TOOL = fileURLToPath(new URL("../scripts/other-sample.ts", import.meta.url));
+  const modules = reachableModules(TOOL);
+
+  const forbidden = (file: string): boolean =>
+    file.includes(`${sep}models${sep}`) || file.endsWith(`src${sep}search${sep}other.ts`);
+
+  it("walks a real graph", () => {
+    expect(modules.some((m) => m.endsWith(`search${sep}vocabulary.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`evals${sep}search${sep}labels.ts`))).toBe(true);
+  });
+
+  it("reaches neither the check nor a model", () => {
+    expect(modules.filter(forbidden)).toEqual([]);
+  });
+
+  it("reaches nothing that touches the network", () => {
+    const offenders = modules
+      .map((file) => ({ file, usage: findNetworkUsage(file) }))
+      .filter(({ usage }) => usage.length > 0);
+    expect(offenders).toEqual([]);
+  });
+
+  it("would catch an import of the check or a model", () => {
+    expect(forbidden(`${sep}src${sep}search${sep}other.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}models${sep}omlx.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}search${sep}vocabulary.ts`)).toBe(false);
+  });
+});
+
+/**
  * This repository's slice 0002: the fact labelling tools can't see the
  * mapper. Labels written knowing what the mapper produced would agree with it
  * by construction. They may read the vocabulary and its types, nothing else

@@ -206,3 +206,40 @@ describe("phaseWords", () => {
     expect(phaseWords([])).toBe("Phase: not given, as the registry gives it.");
   });
 });
+
+describe("a trial the search marked (slice 0005)", () => {
+  const mark = {
+    route: "rules" as const,
+    cancers: ["prostate cancer"],
+    evidence: ["Histologically confirmed   adenocarcinoma of the prostate."],
+  };
+  const marked = () =>
+    trials().map((t) =>
+      t.candidate.nctId === "NCT02" ? { ...t, candidate: { ...t.candidate, other: mark } } : t,
+    );
+  const otherView = () =>
+    describeOrder({
+      order: orderFor(marked(), {}, vocabulary, "other-last"),
+      orderName: "other-last",
+      shortlistSize: 3,
+      profile: {},
+      vocabulary,
+      cancerType: "nsclc",
+    });
+
+  it("says first what its record names, with the record's words, and sorts it last", () => {
+    const v = otherView();
+    const t = [...v.shortlist, ...v.rest].at(-1);
+    expect(t?.nctId).toBe("NCT02");
+    expect(t?.other).toEqual({
+      lead: {
+        ours: "This trial's record names other cancers: prostate cancer. Non-small cell lung cancer isn't among them. Ask your oncologist whether it takes people with your kind of lung cancer.",
+      },
+      evidence: [{ registry: "Histologically confirmed adenocarcinoma of the prostate." }],
+    });
+  });
+
+  it("says nothing of the kind about an unmarked trial", () => {
+    expect([...view({}).shortlist, ...view({}).rest].every((t) => t.other === null)).toBe(true);
+  });
+});

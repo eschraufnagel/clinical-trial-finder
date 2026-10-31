@@ -10,7 +10,25 @@ import { fileURLToPath } from "node:url";
 
 export const NSCLC_LABELS = fileURLToPath(new URL("../cases/search/nsclc.json", import.meta.url));
 
-export type LabelSetName = "heldout" | "dev";
+/**
+ * Slice 0005's labels, by the same convention, for the trials that reach
+ * short lists and a sample of the NSCLC candidates (spec 0005 §3.2). Their own
+ * file, so 0001's labels and the result scored on them stay as they are.
+ */
+export const OTHER_LABELS = fileURLToPath(
+  new URL("../cases/search/nsclc-other.json", import.meta.url),
+);
+
+/** 0001's sets. */
+export const NSCLC_SETS = ["heldout", "dev"] as const;
+/**
+ * 0005's sets, accepted only where a reader asks for them. `places-other-last`
+ * is the trials that first reached a short list under `other-last`, labelled
+ * after the check existed, to count places (plan step 11).
+ */
+export const OTHER_SETS = ["places-dev", "places-heldout", "sample", "places-other-last"] as const;
+
+export type LabelSetName = (typeof NSCLC_SETS)[number] | (typeof OTHER_SETS)[number];
 
 export interface SearchLabel {
   nctId: string;
@@ -34,10 +52,13 @@ export interface CompleteLabel extends SearchLabel {
 
 /**
  * Reads a label file, labelled or not. Refuses a bad shape, a repeated NCT ID
- * or an unknown set, naming each problem. A label with `relevant` set must
- * have a reason, and one without must not have one yet.
+ * or a set outside `sets`, naming each problem. A label with `relevant` set
+ * must have a reason, and one without must not have one yet.
  */
-export function readSearchLabels(path: string = NSCLC_LABELS): SearchLabels {
+export function readSearchLabels(
+  path: string = NSCLC_LABELS,
+  sets: readonly LabelSetName[] = NSCLC_SETS,
+): SearchLabels {
   let parsed: unknown;
   try {
     parsed = JSON.parse(readFileSync(path, "utf8"));
@@ -62,8 +83,8 @@ export function readSearchLabels(path: string = NSCLC_LABELS): SearchLabels {
       } else {
         seen.add(label.nctId);
       }
-      if (label?.set !== "heldout" && label?.set !== "dev") {
-        problems.push(`${at}.set is not "heldout" or "dev"`);
+      if (!sets.includes(label?.set)) {
+        problems.push(`${at}.set is not ${sets.map((s) => `"${s}"`).join(" or ")}`);
       }
       if (typeof label?.reason !== "string") {
         problems.push(`${at}.reason is not a string`);

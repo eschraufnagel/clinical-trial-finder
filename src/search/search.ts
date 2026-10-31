@@ -1,5 +1,6 @@
 import type { Site, SnapshotManifest, SnapshotTrial } from "../trials/snapshot-types.js";
 import { milesBetween, type Point, pointForZip } from "./geo.js";
+import { markFor, type Others } from "./other.js";
 import type { Candidate, Flag, NearestSite, SearchRequest, SearchResult } from "./types.js";
 import { reasonsFor, type Vocabulary } from "./vocabulary.js";
 
@@ -11,6 +12,10 @@ import { reasonsFor, type Vocabulary } from "./vocabulary.js";
  * Pure: it reads no file and no clock. Recall comes first, so anything the
  * record doesn't say keeps the trial: a missing purpose, an age limit that
  * doesn't read, a site with no coordinates. Flags never drop a trial.
+ *
+ * Slice 0005: with the type's others file, a candidate whose record is about
+ * other cancers only carries a mark. Marks are attached after the cancer
+ * stage and drop nothing.
  */
 export function searchTrials(
   trials: readonly SnapshotTrial[],
@@ -18,6 +23,7 @@ export function searchTrials(
   vocabulary: Vocabulary,
   zipPoints: ReadonlyMap<string, Point>,
   request: SearchRequest,
+  others: Others | null = null,
 ): SearchResult {
   const origin = pointForZip(request.zip, zipPoints);
   const funnel: SearchResult["funnel"] = [{ stage: "snapshot", count: trials.length }];
@@ -49,6 +55,7 @@ export function searchTrials(
       reasons,
       nearestSite: place.nearest,
       flags,
+      ...markOf(trial, vocabulary, others),
     });
   }
   funnel.push({ stage: "distance", count: candidates.length });
@@ -63,6 +70,16 @@ export function searchTrials(
     funnel,
     candidates,
   };
+}
+
+/** The candidate's mark, as a field to spread: none without an others file or an adopted route that applies. */
+function markOf(
+  trial: SnapshotTrial,
+  vocabulary: Vocabulary,
+  others: Others | null,
+): Pick<Candidate, "other"> {
+  const mark = others === null ? null : markFor(trial, vocabulary, others);
+  return mark === null ? {} : { other: mark };
 }
 
 function purposeMatches(purpose: string | null, wanted: SearchRequest["purposes"]): boolean {

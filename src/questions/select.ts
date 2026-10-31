@@ -10,8 +10,8 @@ import type { ScorerName, SkipRule } from "./settings.js";
  * model, no file, no clock.
  *
  * An answer flags, it never settles: a fact's answer adds "may not fit"
- * hints to trials. Under the `hints` and `read-first` orders that can only
- * move trials down, which makes `shortlistChange` cheap and exact: only
+ * hints to trials. Under the `hints`, `read-first` and `other-last` orders
+ * that can only move trials down (`other-last`'s mark depends on no answer), which makes `shortlistChange` cheap and exact: only
  * short-list trials that gain a hint can leave, and the trials that take
  * their places are the next ones below that gain none. Under `checked` an
  * answer also adds a fact checked to the trials it doesn't hint, which can

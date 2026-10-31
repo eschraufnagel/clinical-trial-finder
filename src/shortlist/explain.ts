@@ -1,6 +1,7 @@
 import type { Profile } from "../facts/status.js";
 import type { Fact, FactMapping, FactVocabulary, WhoKnows } from "../facts/types.js";
 import { factsFor } from "../facts/vocabulary.js";
+import type { OtherMark } from "../search/other.js";
 import type { Flag } from "../search/types.js";
 import type { OrderEntry, OrderName } from "./order.js";
 import { phaseWords } from "./phase.js";
@@ -61,6 +62,12 @@ export interface TrialView {
   hintNote: Words | null;
   unknown: UnknownGroup[];
   link: { href: string; label: Words };
+  /**
+   * On a trial the search marked as about other cancers only (slice 0005):
+   * what its record names, said first on the card, and the record's own
+   * words that decided it.
+   */
+  other: { lead: Words; evidence: Words[] } | null;
 }
 
 export interface OrderView {
@@ -93,7 +100,26 @@ export const ORDER_WORDS: Readonly<Record<OrderName, string>> = {
     "Trials with the fewest conflicts with your answers come first, then those whose rules your answers checked most, then the nearest.",
   "read-first":
     "Trials with the fewest conflicts with your answers come first. Among those, trials whose rules could be read come before trials whose rules couldn't, then the nearest.",
+  "other-last":
+    "Trials whose records name only other cancers come last. Before them, trials with the fewest conflicts with your answers come first. Among those, trials whose rules could be read come before trials whose rules couldn't, then the nearest.",
 };
+
+/**
+ * What a card says first about a trial the search marked (spec 0005 §6.1).
+ * It says what the record names, never that the trial isn't for the person.
+ */
+export function otherWords(mark: OtherMark): string {
+  const ask = "Ask your oncologist whether it takes people with your kind of lung cancer.";
+  const cancers = mark.cancers.join(", ");
+  switch (mark.route) {
+    case "small-cell":
+      return `This trial's record is about small cell lung cancer, a different kind of lung cancer from non-small cell. ${ask}`;
+    case "biomarker":
+      return `This trial's record names a gene change found in lung cancer, but only in other cancers: ${cancers}. ${ask}`;
+    default:
+      return `This trial's record names other cancers: ${cancers}. Non-small cell lung cancer isn't among them. ${ask}`;
+  }
+}
 
 export const FLAG_WORDS: Readonly<Record<Flag, string>> = {
   "stale-record": "This record hasn't been updated in over a year. It may not be enrolling.",
@@ -239,5 +265,12 @@ function describeWith(entry: OrderEntry, input: DescribeInput, context: Context)
       href: `https://clinicaltrials.gov/study/${encodeURIComponent(candidate.nctId)}`,
       label: ours("The full record on ClinicalTrials.gov"),
     },
+    other:
+      candidate.other === undefined
+        ? null
+        : {
+            lead: ours(otherWords(candidate.other)),
+            evidence: candidate.other.evidence.map((e) => registry(e.replace(/\s+/g, " ").trim())),
+          },
   };
 }
