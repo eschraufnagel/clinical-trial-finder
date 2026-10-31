@@ -8,8 +8,11 @@ export { type ConversationAnswer, carriedFor } from "./carry.js";
 export { LINK_THRESHOLD, type LinkedFact, linkCriteria, overlap } from "./link.js";
 export {
   type CachedParse,
+  CRITERIA_DATA_DIR,
+  criteriaRunName,
   criteriaSha256,
   findParse,
+  latestCriteriaRun,
   type ParseOutcome,
   parseCacheName,
   parseWithCache,

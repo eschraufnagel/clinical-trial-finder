@@ -490,3 +490,9 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
     - The prompt lists every fact for the cancer, not only those the patient knows. A fact they don't know is shown as "you don't know", with `replyFor`'s way of saying so, so the model never has to decide what an unlisted fact would be. A "don't know" about a fact the conversation asked still counts as a repeat, so it has to be citable.
     - So `usedFacts` are any of the cancer's fact ids, not only `knows`. An id outside them is kept and flagged (`unknown-fact`), as the vignette participant does, rather than filtered.
   - The blindness test is a type assertion (`expectTypeOf`), checked by `tsc`.
+- **Step 10:**
+  - `scripts/check-parse.ts` (`npm run check:parse`), `CRITERIA_DATA_DIR`, `criteriaRunName` and `latestCriteriaRun` in `src/check/parse-cache.ts`.
+  - Parses are written by `parseWithCache`, so a committed run holds `<NCT>-<model>-<identity>-<seed>.json` files, read back by `findParse`; `failures.json` beside them; `data/criteria/<month>/latest` names the run.
+  - The picks are checked against the committed questions result before anything is parsed.
+  - **The dry run, nothing sent:** `check:parse -- --set dev --model anthropic:claude-haiku-4-5` prints 8 calls, about $0.18 expected, at most $1.00 under the default cap, and exits. No hosted run is proposed.
+  - The dry-run and resume tests in the plan are covered by hand (above) and by `parseWithCache`'s tests: a test that ran the script would load the full snapshot.

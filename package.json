@@ -38,7 +38,8 @@
     "questions:try": "node --import tsx scripts/questions-try.ts",
     "questions:read": "node --env-file-if-exists=.env --import tsx scripts/questions-read.ts",
     "label:criteria": "node --import tsx scripts/label-criteria.ts",
-    "check:label-show": "node --import tsx scripts/check-label-show.ts"
+    "check:label-show": "node --import tsx scripts/check-label-show.ts",
+    "check:parse": "node --env-file-if-exists=.env --import tsx scripts/check-parse.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",

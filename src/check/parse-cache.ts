@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 // Straight from the modules, not the barrel, as `src/facts/map.ts` does.
 import { parseCriteria } from "../criteria/parse.js";
 import { type ParseableTrial, parseIdentity } from "../criteria/prompt.js";
@@ -20,6 +21,28 @@ import type { ModelAdapter, ModelDescriptor } from "../models/types.js";
  * Used with `local/parses/` by the page, and with a committed run directory
  * under `data/criteria/` by the measurement and `--fake`.
  */
+
+/** Committed parse runs, one directory per snapshot month and run, as `data/facts/` holds mappings. */
+export const CRITERIA_DATA_DIR = fileURLToPath(new URL("../../data/criteria", import.meta.url));
+
+/** The run directory named in `data/criteria/<month>/latest`, or undefined when there's none. */
+export function latestCriteriaRun(month: string, root = CRITERIA_DATA_DIR): string | undefined {
+  const latest = join(root, month, "latest");
+  return existsSync(latest) ? join(root, month, readFileSync(latest, "utf8").trim()) : undefined;
+}
+
+/** A parse run's directory name: the model, the parser's prompt and its normalize version. */
+export function criteriaRunName(
+  model: string,
+  promptVersion: string,
+  normalizeVersion: string,
+): string {
+  const slug = model
+    .toLowerCase()
+    .replace(/[^a-z0-9.]+/g, "-")
+    .replace(/^-|-$/g, "");
+  return `${slug}-${promptVersion.slice(0, 8)}-n${normalizeVersion}`;
+}
 
 export interface CachedParse extends ParsedCriteria {
   criteriaSha256: string;
