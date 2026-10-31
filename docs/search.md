@@ -80,6 +80,62 @@ Finding these would take reading the eligibility text for "any malignancy" and s
 
 **By reason** (relevant kept, of kept): names it 39 of 43; mentions it in its rules 39 of 41; open to many 54 of 61. A trial can have several reasons.
 
+## Trials for other cancers: the mark
+
+Built in slice 0005. The record is in [`work/0005-other-cancers/`](../work/0005-other-cancers/).
+
+Recall first means the search keeps trials a person with NSCLC can't join. On 0004's held-out short lists, they held **35 of 162 places, for 15 of 17 patients**: prostate, breast and colorectal trials, small cell lung cancer, lymphoma, neuroendocrine tumors. Nothing a person answers moves them down. They got in through a generic term beside another cancer ("Metastatic Cancer; Neoplasm, Prostate"), a lung biomarker in another cancer's condition ("ALK-Positive Large B-Cell Lymphoma"), or "lung cancer" inside "small cell lung cancer".
+
+**What it does.** After the cancer stage, `src/search/other.ts` marks a candidate whose record is about other cancers only. The words are in `data/cancer-types/nsclc-others.json`. No model; `nsclc.json` and the reasons are unchanged, so the search keeps the same 1,129 candidates and 0001's result still checks. A mark never drops a trial. The page's order puts a marked trial below every unmarked one ([page.md](page.md)).
+
+It has four routes:
+
+| Route | Marks a trial whose | Example |
+| --- | --- | --- |
+| `small-cell` | conditions name small cell lung cancer only | extensive-stage SCLC trials |
+| `biomarker` | only link to NSCLC is a biomarker inside another cancer's condition | an ALK-negative lymphoma trial |
+| `listing` | conditions name other cancers only, with no generic term | pancreatic neuroendocrine tumors |
+| `rules` | conditions are generic, and whose inclusion rules require other cancers only | "Metastatic Cancer" and "confirmed adenocarcinoma of the prostate" |
+
+**What keeps a trial unmarked:**
+- its conditions, keywords or titles name NSCLC;
+- its inclusion section names NSCLC;
+- a title open to solid tumors;
+- "lung" anywhere in the conditions, unless small cell lung cancer;
+- for `rules`: any inclusion line open to solid tumors or "malignancy", any open phrase ("any solid tumor", "including but not limited to"), "lung" anywhere in the inclusion section, or no inclusion heading at all.
+
+Exclusion text is never read.
+
+**The labels.** 297 trials, labelled by [`ANNOTATION.md`](../evals/cases/search/ANNOTATION.md) before any check code existed ([`nsclc-other.json`](../evals/cases/search/nsclc-other.json)):
+- every trial on 0004's short lists not already labelled (47 dev, 100 held-out);
+- 150 NSCLC candidates drawn by hash.
+
+Two blind passes by separate agents covered 90 of the held-out labels: 20 at random, then all 42 not relevant and the 28 riskiest relevant ones. They agreed on relevant or not for every one. Two edge cases were written into the convention at Gate 1, continuation studies and supportive-care trials.
+
+**The result.** No model, so no model name, quantization, temperature or seed applies. Each result names the snapshot, label, vocabulary and others-file checksums, and `npm run other:eval -- --check` reruns it.
+
+| | Dev ([`dev/01`](../evals/results/search/other/dev/01-d16e940b9df3.json)) | Held-out, scored once ([`01`](../evals/results/search/other/01-d16e940b9df3.json)) |
+| --- | --- | --- |
+| Labelled candidates | 197 | 250 |
+| Not for NSCLC, marked | 17 of 26 | **29 of 43** |
+| Relevant, marked | 0 | **1 of 207** (NCT03947385) |
+
+The bar, set before held-out was labelled: on the 150-trial sample, no relevant trial marked unless "unclear", and at most one of those. Every route passes it.
+
+**The one relevant trial marked:**
+- **NCT03947385** names uveal melanoma, cutaneous melanoma and colorectal cancer beside "Other Solid Tumors". Its inclusion lines name only melanoma, so `rules` marks it.
+- It's a short-list trial, not in the sample, so the bar didn't catch it.
+- Gate 3 kept it as the known cost, rather than change `rules` after seeing held-out.
+
+**On the page,** places held by trials not for NSCLC on held-out short lists fall from 35 to 6, for 15 to 5 patients ([page.md](page.md)).
+
+**What it can't tell you:**
+- **The lists were tuned on dev** while the check was written, so dev's zero cost is the least it could show. Held-out is the measure, and was scored once.
+- **14 of 43 held-out trials not for NSCLC are left unmarked.** Mostly they list their cancers inside a "solid tumor" line, or exclude NSCLC in words. Reading those safely would take more than fixed lists.
+- **Three labellers, all models,** working from one written convention. No clinician checked a label.
+- **The 22 trials that first reached a short list under the new order** were labelled after the check existed, to count places.
+- **About one relevant trial in 200** is marked, on held-out. A mark moves it down; it doesn't hide it.
+
 ## What the measurement can't tell you
 
 - **One labeller.** Claude wrote the labels, the convention and the vocabulary. The labels were written before any search code existed, and the vocabulary's first version was written without opening them. A separate agent relabelled 20 of them blind and agreed on all 20. No clinician and no independent person checked them.

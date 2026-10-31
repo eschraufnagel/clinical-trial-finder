@@ -6,6 +6,8 @@ Built in slice 0004. The record is in [`work/0004-shortlist-handoff/`](../work/0
 - [gate-1-order.md](../work/0004-shortlist-handoff/gate-1-order.md), the order;
 - [gate-3-words.md](../work/0004-shortlist-handoff/gate-3-words.md), the hosted reading run and the page's words.
 
+Slice 0005 moved trials for other cancers below the short list ([`work/0005-other-cancers/`](../work/0005-other-cancers/); [gate-3-page.md](../work/0005-other-cancers/gate-3-page.md) has the words and the rerun).
+
 ```
 npm run app                    the page, at http://127.0.0.1:5025, on the model chosen in Settings
 npm run app -- --fake          the same, with a scripted reader: no model is called
@@ -61,6 +63,13 @@ Use made-up answers. It's a proof of concept.
 
 Part of that rise is structural: a trial with no readings can't be flagged, so replacing one can only add flags. The numbers are in [questions.md](questions.md).
 
+**Slice 0005 put one key in front: `other-last`.** A trial the search marked as about other cancers only ([search.md](search.md)) comes after every unmarked one, and the rest of the order is `read-first`. On held-out, scored a third time:
+- short-list places held by trials not for NSCLC fall from 35 of 162 to 6, for 15 to 5 of 17 patients ([`06-8eea38fafad5.json`](../evals/results/questions/06-8eea38fafad5.json), counted by `npm run other:eval -- --places`);
+- no marked trial is on any held-out short list;
+- agreement with the full record falls from 88% to 85%, and would-flag rises from 12.9% to 17.6%, in the conversation arm.
+
+The rise is the same blind spot as above. None of the 35 places was flagged by the full record, because no NSCLC fact maps onto a prostate trial's rules. 9 of the 32 trials that replaced them are flagged.
+
 **Also compared, and not chosen:** "most of your answers checked first". It put rule-heavy trials from anywhere in the country first, a median of 287 miles away against 100, and more of them flagged by the full record.
 
 ## What the list says
@@ -77,6 +86,7 @@ Part of that rise is structural: a trial with no readings can't be flagged, so r
 - **May not fit:** the person's answer, then the trial's rule, quoted, with "The reading of rules is automatic, and wrong about a quarter of the time. Ask your oncologist."
 - **Still unknown,** grouped by who would know: "You could find out", "Your oncologist would know", "In your records".
 - **A link to the full record** on ClinicalTrials.gov. The person opens it; the app makes no request.
+- **On a trial the search marked** (slice 0005), first, before the phase: what its record names, then the record's own words. "This trial's record names other cancers: prostate cancer. Non-small cell lung cancer isn't among them. Ask your oncologist whether it takes people with your kind of lung cancer." The sheet keeps that line for a marked trial on the short list.
 
 ## The sheet
 
@@ -149,7 +159,7 @@ Most likely Haiku explains around its answer, where the local model answers in J
   - a trial for untreated small-cell lung cancer.
 
   The "few of its rules" line and the read count say so; they don't fix it.
-- **Trials for other cancers.** The search keeps some trials for other cancers, such as prostate or lymphoma, through broad terms like "metastatic cancer". Nothing in a lung cancer person's answers flags them, so they can reach the short list. That's a search problem (0001), and the next slice to take up.
+- **Trials for other cancers, partly.** Since slice 0005 a marked trial goes below the short list, but the check marks 29 of 43 held-out trials not for NSCLC. On held-out short lists 6 of 162 places still go to trials limited to other cancers: blood cancers, and breast or ovarian trials listed under "solid tumor". One relevant trial is moved down by mistake (NCT03947385; [search.md](search.md)).
 - **No plain-language summary** of what a trial tests: the registry's title and interventions stand in. No contacts either; the record's link stands in.
 - **The phase sentences and the page's words were written here** and reviewed by no clinician.
 - **Conversations live in the server's memory.** A restart forgets them.

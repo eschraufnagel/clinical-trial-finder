@@ -338,3 +338,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - Browser test case 8: a marked card in "every other trial", none on the short list. 7 browser tests pass.
   - `gate-3-page.md` written, its cards from `describeOrder` over a made-up Portland search. **Stopped at Gate 3.**
 - **Gate 3, as answered** (owner, 2026-10; `gate-3-page.md`): as recommended. `other-last` and the words stand. The biomarker lead names no gene, and `rules` is unchanged, so NCT03947385 stays marked as the known cost.
+- **Step 13:**
+  - `docs/search.md` gains "Trials for other cancers: the mark". `docs/page.md` gains the order, the card line and a rewritten Limits entry.
+  - `work/ROADMAP.md`: 0005 **Done**, and open question 6 answered and narrowed. `CLAUDE.md`: layout, the `other:*` commands, the boundary.
+  - The README's list of parts is unchanged, so the README is too.
