@@ -116,4 +116,8 @@ Together they hold 7 of the 35 places.
 
 ## Answer
 
-(The owner's, at the gate.)
+**Owner, 2026-10: as recommended, with a second blind pass.**
+- The labels stand, NCT06580002 and NCT06582017 included as relevant, not unclear.
+- The two cases above go into `ANNOTATION.md` as edge cases settled at this gate. Done; no label changes.
+- The slice goes on to stage B.
+- A second blind pass on the labels the check is scored on, before held-out is used. Below.
