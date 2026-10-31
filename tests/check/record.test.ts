@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   ASK_RECORDS,
   MAY_NOT_FIT,
+  MAY_NOT_FIT_PART,
   NOTHING_CONFLICTS,
   recordFor,
   recordWithoutParse,
@@ -150,6 +151,33 @@ describe("recordFor", () => {
     expect(line("T2")?.flag).toEqual({ ours: NOTHING_CONFLICTS });
     expect(line("C1")?.mayNotFit).toBe(true);
     expect(line("C2")?.mayNotFit).toBe(false);
+  });
+
+  it("says a rule for one part of the trial may not fit that part, and still counts it (Gate 1 R3)", () => {
+    const parted = recordFor({
+      study: STUDY,
+      criteria: CASES.map(([c]) => c),
+      findings: CASES.map(([, f]) => f),
+      parts: new Map([
+        ["T1", "Part D"],
+        ["T2", "Part D"],
+      ]),
+    });
+    const of = (id: string) =>
+      [parted.earlier, parted.told, parted.records, parted.aboutTrial]
+        .flatMap((s) => s.lines)
+        .find((l) => l.criterionId === id);
+    expect(of("T1")).toMatchObject({
+      mayNotFit: true,
+      part: { registry: "Part D" },
+      flag: { ours: MAY_NOT_FIT_PART },
+    });
+    expect(of("T2")).toMatchObject({
+      part: { registry: "Part D" },
+      flag: { ours: NOTHING_CONFLICTS },
+    });
+    expect(of("T3")?.part).toBeNull();
+    expect(parted.counts.mayNotFit).toBe(record.counts.mayNotFit);
   });
 
   it("takes an earlier answer's hint from the mapping, and says when they didn't know", () => {

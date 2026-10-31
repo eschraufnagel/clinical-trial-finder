@@ -27,6 +27,8 @@ export const HEADING_RECORDS = "Needs your records or your oncologist";
 export const HEADING_ABOUT_TRIAL = "About the trial, not you";
 export const HEADING_TO_ASK = "To ask your oncologist";
 export const MAY_NOT_FIT = "May not fit";
+/** For a rule the parse says applies to one part of the trial (`appliesTo`): the rest may still fit. */
+export const MAY_NOT_FIT_PART = "May not fit one part of the trial";
 export const NOTHING_CONFLICTS = "Nothing here conflicts with what you said.";
 export const REQUIRED = "The trial requires";
 export const EXCLUDED = "The trial excludes";
@@ -75,7 +77,9 @@ export interface RecordLine {
   earlier: EarlierAnswer[];
   /** What the person said to the check about this rule. */
   said: Words[];
-  /** `MAY_NOT_FIT`, `NOTHING_CONFLICTS`, or nothing. */
+  /** The part of the trial the rule is for, in the trial's words, or null for the whole trial. */
+  part: Words | null;
+  /** `MAY_NOT_FIT`, `MAY_NOT_FIT_PART`, `NOTHING_CONFLICTS`, or nothing. */
   flag: Words | null;
   mayNotFit: boolean;
   why: Words | null;
@@ -108,6 +112,8 @@ export interface RecordInput {
   findings: readonly Finding[];
   /** Each criterion's passage, verbatim from the trial's text. Falls back to the criterion's text. */
   wording?: ReadonlyMap<string, string>;
+  /** The part of the trial a criterion is for, from the parse's `appliesTo`, when it names one. */
+  parts?: ReadonlyMap<string, string>;
 }
 
 type Place = "earlier" | "told" | "records" | "aboutTrial";
@@ -125,7 +131,7 @@ export function recordFor(input: RecordInput): TrialRecord {
     const c = criteria.get(f.criterionId);
     if (c === undefined) throw new Error(`No criterion ${f.criterionId} for its finding`);
     const { place, line } = lineFor(c, f, input.wording?.get(c.id) ?? c.text);
-    placed[place].push(line);
+    placed[place].push(withPart(line, input.parts?.get(c.id)));
   }
   return assemble(input.study, placed, null);
 }
@@ -153,6 +159,7 @@ export function recordWithoutParse(
       criterionId: `M${i + 1}`,
       kind: ours(m.polarity === "inclusion" ? REQUIRED : EXCLUDED),
       rule: registry(m.source.text),
+      part: null,
     };
     if (a === undefined) {
       placed.records.push({
@@ -166,14 +173,19 @@ export function recordWithoutParse(
       return;
     }
     const mayNotFit = m.rulesOut.includes(a.answer);
-    placed.earlier.push({
-      ...base,
-      earlier: [{ asked: ours(a.question), said: said(a.words) }],
-      said: [],
-      flag: mayNotFit ? ours(MAY_NOT_FIT) : null,
-      mayNotFit,
-      why: a.answer === "unknown" ? ours(WHY.didntKnow) : null,
-    });
+    placed.earlier.push(
+      withPart(
+        {
+          ...base,
+          earlier: [{ asked: ours(a.question), said: said(a.words) }],
+          said: [],
+          flag: mayNotFit ? ours(MAY_NOT_FIT) : null,
+          mayNotFit,
+          why: a.answer === "unknown" ? ours(WHY.didntKnow) : null,
+        },
+        m.appliesTo,
+      ),
+    );
   });
   return assemble(study, placed, ours(NO_PARSE));
 }
@@ -192,6 +204,7 @@ function lineFor(
     kind: ours(c.polarity === "inclusion" ? REQUIRED : EXCLUDED),
     rule: registry(wording),
     earlier,
+    part: null,
   };
   // The statement is true of them and the trial excludes it, or false and the trial requires it.
   const conflicts = (value: string | undefined) =>
@@ -254,6 +267,20 @@ function lineFor(
       };
     }
   }
+}
+
+/**
+ * A rule for one part of the trial says so. Its "may not fit" reads "may not
+ * fit one part of the trial", and it still counts as a "may not fit": the
+ * wording changes, the measure doesn't.
+ */
+function withPart(line: RecordLine, part: string | undefined): RecordLine {
+  if (part === undefined) return line;
+  return {
+    ...line,
+    part: registry(part),
+    flag: line.mayNotFit ? ours(MAY_NOT_FIT_PART) : line.flag,
+  };
 }
 
 function whyFor(f: Finding): string {

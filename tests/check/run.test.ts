@@ -180,4 +180,21 @@ describe("startCheck", () => {
     expect(check.carried).toEqual({});
     expect((await check.session.start()).text).toMatch(/ECOG 0 or 1/);
   });
+
+  it("takes each criterion's part of the trial from the parse, for the record", async () => {
+    const { parsed } = await parseWithCache(TRIAL, parseResponse(), tempDir());
+    const check = startCheck({
+      study: { nctId: TRIAL.nctId, briefTitle: TRIAL.briefTitle },
+      criteriaText: TEXT,
+      parsed: {
+        ...parsed,
+        criteria: parsed.criteria.map((c, i) => (i === 1 ? { ...c, appliesTo: "Part A" } : c)),
+      },
+      facts: undefined,
+      answers: new Map(),
+      adapter: new FakeModelAdapter([]),
+      fixedQuestions: true,
+    });
+    expect(check.parts).toEqual(new Map([["P2", "Part A"]]));
+  });
 });

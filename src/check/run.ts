@@ -41,6 +41,8 @@ export interface Check {
   carried: Carried;
   /** Each criterion's passage, verbatim, for the record. */
   wording: Map<string, string>;
+  /** The part of the trial each criterion is for, when the parse names one. */
+  parts: Map<string, string>;
 }
 
 export function startCheck(input: CheckInput): Check {
@@ -48,11 +50,14 @@ export function startCheck(input: CheckInput): Check {
   const links = linkCriteria(input.study.nctId, input.criteriaText, ids, input.facts);
   const carried = carriedFor(links, input.answers);
   const wording = new Map([...ids].map(([c, id]) => [id, c.source.text]));
+  const parts = new Map(
+    [...ids].flatMap(([c, id]) => (c.appliesTo === undefined ? [] : [[id, c.appliesTo] as const])),
+  );
   const session = ScreeningSession.create(input.study, criteria, input.adapter, {
     carried,
     ...(input.fixedQuestions === true ? { fixedQuestions: true } : {}),
   });
-  return { session, criteria, links, carried, wording };
+  return { session, criteria, links, carried, wording, parts };
 }
 
 /** The record of a finished (or stopped) check. */
@@ -62,5 +67,6 @@ export function recordOf(check: Check, result: ScreeningResult): TrialRecord {
     criteria: check.criteria,
     findings: result.findings,
     wording: check.wording,
+    parts: check.parts,
   });
 }

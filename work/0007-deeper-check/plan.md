@@ -525,3 +525,5 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `ConversationAnswer` and `CarriedFact` gain `question`, the vocabulary's question the conversation asked. `RecordLine` gains `earlier: { asked, said }[]`; `said` now holds only what the person told the check.
   - A rule covered by a carried "I don't know", with no hint against it, is listed under "To ask your oncologist" with "Do my records settle this rule?", and counts among the rules that need records or the oncologist.
   - The record tests' expectations follow the new fields and the count (10 → 11, toAsk 13 → 14), and a test for the pairing is added.
+- **Step 12d, R3: a rule for one part of the trial says so.**
+  - `startCheck` keeps each criterion's `appliesTo` from the parse (`Check.parts`), and `recordFor` takes it as `parts`. `RecordLine` gains `part`, in the trial's words. A "may not fit" on such a rule reads `MAY_NOT_FIT_PART`, "May not fit one part of the trial", and still counts as a "may not fit" in the record and the measure. A record without a parse does the same from the mapping's `appliesTo`.
