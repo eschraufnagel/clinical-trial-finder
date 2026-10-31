@@ -38,12 +38,15 @@ export async function shortlistIds(page: Page): Promise<string[]> {
 /**
  * The page's own visible words, leaving out the trial's (`data-registry`)
  * and the person's (`data-said`), checked against the verdict patterns.
+ * `also` leaves out more: the check's messages, which quote the trial's rules
+ * as plain text, and whose fixed words `tests/server/check.test.ts` scans.
  */
-export async function expectNoVerdict(page: Page): Promise<void> {
+export async function expectNoVerdict(page: Page, also: string | null = null): Promise<void> {
+  const leaveOut = ["[data-registry]", "[data-said]", ...(also === null ? [] : [also])].join(", ");
   // Source text, run in the page: this file is typed for Node, without the DOM.
   const text = await page.evaluate<string>(`(() => {
     const clone = document.body.cloneNode(true);
-    for (const el of clone.querySelectorAll("[data-registry], [data-said]")) el.remove();
+    for (const el of clone.querySelectorAll(${JSON.stringify(leaveOut)})) el.remove();
     document.body.append(clone);
     clone.hidden = false;
     const text = clone.innerText;
