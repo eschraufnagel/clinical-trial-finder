@@ -80,3 +80,53 @@ export function summarizePlaces(held: readonly PlacesHeld[]): PlacesSummary[] {
   }
   return [...groups.values()];
 }
+
+/** One labelled candidate, and every route that applies to it, whatever is adopted. */
+export interface RouteRow {
+  nctId: string;
+  set: string;
+  relevant: boolean;
+  /** The label's reason begins "unclear:". */
+  unclear: boolean;
+  routes: string[];
+}
+
+export interface RouteSummary {
+  route: string;
+  /** What it gains: marked, labelled not relevant. */
+  markedNotRelevant: string[];
+  /** What it costs: marked, labelled relevant, not "unclear". */
+  markedRelevant: string[];
+  /** Marked, labelled relevant "unclear". */
+  markedRelevantUnclear: string[];
+  /** Labelled not relevant, not marked by this route. */
+  unmarkedNotRelevant: string[];
+}
+
+/**
+ * Each route scored on its own, and `any` for every route together. The rows
+ * are the candidates the search keeps, since a trial it drops can't be marked.
+ */
+export function scoreRoutes(rows: readonly RouteRow[], routes: readonly string[]): RouteSummary[] {
+  const summary = (route: string, marked: (r: RouteRow) => boolean): RouteSummary => ({
+    route,
+    markedNotRelevant: rows.filter((r) => marked(r) && !r.relevant).map((r) => r.nctId),
+    markedRelevant: rows.filter((r) => marked(r) && r.relevant && !r.unclear).map((r) => r.nctId),
+    markedRelevantUnclear: rows
+      .filter((r) => marked(r) && r.relevant && r.unclear)
+      .map((r) => r.nctId),
+    unmarkedNotRelevant: rows.filter((r) => !marked(r) && !r.relevant).map((r) => r.nctId),
+  });
+  return [
+    ...routes.map((route) => summary(route, (r) => r.routes.includes(route))),
+    summary("any", (r) => r.routes.length > 0),
+  ];
+}
+
+/**
+ * The bar set before held-out was labelled (spec 0005 §7), on the `sample`
+ * set: no relevant trial marked unless "unclear", and at most one of those.
+ */
+export function passesBar(onSample: RouteSummary): boolean {
+  return onSample.markedRelevant.length === 0 && onSample.markedRelevantUnclear.length <= 1;
+}

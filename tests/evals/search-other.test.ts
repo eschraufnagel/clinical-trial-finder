@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { type PlacesRow, placesHeld, summarizePlaces } from "../../evals/search/other.js";
+import {
+  type PlacesRow,
+  passesBar,
+  placesHeld,
+  type RouteRow,
+  scoreRoutes,
+  summarizePlaces,
+} from "../../evals/search/other.js";
 
 /** Made-up short lists and labels. Nothing here is a real patient. */
 const row = (patient: string, set: string, shortlist: string[], scorer: string | null = null) =>
@@ -79,5 +86,50 @@ describe("summarizePlaces", () => {
         unlabelled: 0,
       },
     ]);
+  });
+});
+
+describe("scoreRoutes", () => {
+  const r = (nctId: string, relevant: boolean, routes: string[], unclear = false): RouteRow => ({
+    nctId,
+    set: "sample",
+    relevant,
+    unclear,
+    routes,
+  });
+  const rows = [
+    r("NCT00000001", false, ["listing"]),
+    r("NCT00000002", false, []),
+    r("NCT00000003", true, ["rules"]),
+    r("NCT00000004", true, ["rules"], true),
+    r("NCT00000005", true, []),
+  ];
+
+  it("scores each route on its own, and any route together", () => {
+    const [listing, rules, any] = scoreRoutes(rows, ["listing", "rules"]);
+    expect(listing).toEqual({
+      route: "listing",
+      markedNotRelevant: ["NCT00000001"],
+      markedRelevant: [],
+      markedRelevantUnclear: [],
+      unmarkedNotRelevant: ["NCT00000002"],
+    });
+    expect(rules?.markedRelevant).toEqual(["NCT00000003"]);
+    expect(rules?.markedRelevantUnclear).toEqual(["NCT00000004"]);
+    expect(any?.markedNotRelevant).toEqual(["NCT00000001"]);
+    expect(any?.unmarkedNotRelevant).toEqual(["NCT00000002"]);
+  });
+
+  it("passes the bar with no relevant trial marked and at most one unclear one", () => {
+    const [listing, rules] = scoreRoutes(rows, ["listing", "rules"]);
+    expect(passesBar(listing as never)).toBe(true);
+    expect(passesBar(rules as never)).toBe(false);
+    const [onlyUnclear] = scoreRoutes([rows[3] as RouteRow], ["rules"]);
+    expect(passesBar(onlyUnclear as never)).toBe(true);
+    const [twoUnclear] = scoreRoutes(
+      [rows[3] as RouteRow, { ...(rows[3] as RouteRow), nctId: "NCT00000006" }],
+      ["rules"],
+    );
+    expect(passesBar(twoUnclear as never)).toBe(false);
   });
 });

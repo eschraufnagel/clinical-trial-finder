@@ -317,3 +317,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **Tuned on dev only,** with a scratch script while writing: 0001's 380 labels and `places-dev`. Step 8 scores it formally.
   - `scripts/facts-try.ts` still searches without the others file. It isn't in the file list, and nothing measured reads it.
   - **Proof of no change:** `search:eval -- --check` matches `01-a3e87584fb11`, `questions:eval -- --check` matches `05-7543ffb2cb2e`, and `-- --check --dev` matches `dev/04-92afa01686ff`. 1,061 tests.
+- **Step 8:**
+  - `scoreRoutes` and `passesBar` in `evals/search/other.ts`. `other:eval` has `--dev`, held-out (refused once a held-out result exists) and `--check`.
+  - Dev result `dev/01-d16e940b9df3`: 17 of 26 not-for-NSCLC trials marked, no relevant trial marked.
+  - `gate-2-routes.md` written. **Stopped at Gate 2.**
