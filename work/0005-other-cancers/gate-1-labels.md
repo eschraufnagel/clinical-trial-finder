@@ -147,4 +147,4 @@ Two separate agents took 35 each. Each saw only `ANNOTATION.md`, with the edge c
 
 ## Answer, the second pass
 
-(The owner's.)
+**Owner, 2026-10: as recommended.** NCT06597721 is now "unclear"; the other labels stand. On to stage B.
