@@ -1,4 +1,4 @@
-import { type ModelAdapter, monthStamp } from "../models/index.js";
+import { type ModelAdapter, monthStamp } from "../models/types.js";
 import { initialProgress, nextCriterion, raisability } from "./agenda.js";
 import { applyReadings, finalize, type Reading } from "./apply.js";
 import { ask, type CallResult, read } from "./calls.js";

@@ -1181,3 +1181,84 @@ describe("the browser test reaches no model", () => {
     expect(runsScriptedReaderOnly("npm run app -- --fake --spend")).toBe(false);
   });
 });
+
+/**
+ * This repository's slice 0007: the deeper check. The link, what it carries
+ * and the record are pure: no model, no parser. Nothing under `src/check/`
+ * builds an adapter (it's passed one) or knows about the page, the transport
+ * or the server. The screening agent receives what the conversation carried
+ * as its own type, so it reaches neither `src/check/` nor the fact mapper,
+ * and still not `src/plain/`.
+ */
+describe("the check's link and record reach no model, and src/check/ builds none", () => {
+  const dir = fileURLToPath(new URL("../src/check/", import.meta.url));
+  const check = (name: string) => join(dir, name);
+  const pure = [
+    ...new Set(["link.ts", "carry.ts", "record.ts"].map(check).flatMap(reachableModules)),
+  ];
+  const all = [
+    ...new Set(
+      readdirSync(dir)
+        .filter((n) => n.endsWith(".ts"))
+        .map(check)
+        .flatMap(reachableModules),
+    ),
+  ];
+  const screeningDir = fileURLToPath(new URL("../src/screening/", import.meta.url));
+  const screening = [
+    ...new Set(
+      readdirSync(screeningDir)
+        .filter((n) => n.endsWith(".ts"))
+        .map((n) => join(screeningDir, n))
+        .flatMap(reachableModules),
+    ),
+  ];
+
+  const isModelOrParser = (file: string): boolean =>
+    file.includes(`${sep}models${sep}`) || file.endsWith(`criteria${sep}parse.ts`);
+  const isFactoryOrApp = (file: string): boolean =>
+    file.endsWith(`models${sep}factory.ts`) ||
+    file.endsWith(`models${sep}index.ts`) ||
+    [`${sep}web${sep}`, `${sep}transport${sep}`, `${sep}server${sep}`].some((d) =>
+      file.includes(`${sep}src${d}`),
+    );
+  const beyondTheAgent = (file: string): boolean =>
+    [`${sep}check${sep}`, `${sep}facts${sep}`, `${sep}plain${sep}`].some((d) =>
+      file.includes(`${sep}src${d}`),
+    );
+
+  it("walks a real graph", () => {
+    expect(pure.some((m) => m.endsWith(`check${sep}record.ts`))).toBe(true);
+    expect(pure.some((m) => m.endsWith(`shortlist${sep}words.ts`))).toBe(true);
+    expect(all.some((m) => m.endsWith(`criteria${sep}parse.ts`))).toBe(true);
+    expect(all.some((m) => m.endsWith(`screening${sep}session.ts`))).toBe(true);
+    expect(screening.some((m) => m.endsWith(`screening${sep}apply.ts`))).toBe(true);
+  });
+
+  it("keeps the link, what it carries and the record away from every model module and the parser", () => {
+    expect(pure.filter(isModelOrParser)).toEqual([]);
+  });
+
+  it("keeps all of src/check/ away from the factory, the page, the transport and the server", () => {
+    expect(all.filter(isFactoryOrApp)).toEqual([]);
+  });
+
+  it("keeps the screening agent away from src/check/, the mapper and src/plain/", () => {
+    expect(screening.filter(beyondTheAgent)).toEqual([]);
+  });
+
+  it("would catch each", () => {
+    expect(isModelOrParser(`${sep}src${sep}models${sep}types.ts`)).toBe(true);
+    expect(isModelOrParser(`${sep}src${sep}criteria${sep}parse.ts`)).toBe(true);
+    expect(isModelOrParser(`${sep}src${sep}criteria${sep}locate.ts`)).toBe(false);
+    expect(isFactoryOrApp(`${sep}src${sep}models${sep}index.ts`)).toBe(true);
+    expect(isFactoryOrApp(`${sep}src${sep}server${sep}models.ts`)).toBe(true);
+    expect(isFactoryOrApp(`${sep}src${sep}transport${sep}types.ts`)).toBe(true);
+    expect(isFactoryOrApp(`${sep}src${sep}web${sep}copy.ts`)).toBe(true);
+    expect(isFactoryOrApp(`${sep}src${sep}models${sep}types.ts`)).toBe(false);
+    expect(beyondTheAgent(`${sep}src${sep}check${sep}link.ts`)).toBe(true);
+    expect(beyondTheAgent(`${sep}src${sep}facts${sep}types.ts`)).toBe(true);
+    expect(beyondTheAgent(`${sep}src${sep}plain${sep}index.ts`)).toBe(true);
+    expect(beyondTheAgent(`${sep}src${sep}screening${sep}apply.ts`)).toBe(false);
+  });
+});

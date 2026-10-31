@@ -469,3 +469,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
     - `startCheck` takes the parse instead of making it: the page parses through `parseWithCache`, and the measurement and `--fake` read a committed run through `findParse`.
     - `parseCriteria` and `buildUserPrompt` take `ParseableTrial`, a `Pick` of `Trial`, here rather than at step 10. Type only: the parser's `PROMPT_VERSION` is unchanged and its tests pass as they were.
     - The record's text follows `src/shortlist/words.ts` (`ours`, `registry`, `said`), so `oursIn` finds every string the project writes, and a rule is shown in the trial's verbatim words.
+- **Step 6:**
+  - One describe block in `tests/boundary.test.ts` holds the three rules, with a "would catch" case for each.
+  - **Divergence:** `src/screening/session.ts` and `src/criteria/parse.ts` imported `monthStamp` from `src/models/index.ts`, the barrel that re-exports the factory, so `src/check/` would have reached the factory through the agent and the parser. Both now import it from `src/models/types.ts`, as `src/facts/map.ts` does. Nothing else changes.
+  - Biome's `--write` also rewrote a regex in `src/search/other.ts`, which this slice doesn't touch; that change was reverted before the commit, and the file is unchanged.

@@ -1,4 +1,4 @@
-import { type ModelAdapter, monthStamp } from "../models/index.js";
+import { type ModelAdapter, monthStamp } from "../models/types.js";
 import { locateQuote } from "./locate.js";
 import type { NormalizedText } from "./normalize.js";
 import { NORMALIZE_VERSION, normalize } from "./normalize.js";
