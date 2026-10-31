@@ -2,7 +2,7 @@ import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { completeLabels, readSearchLabels } from "../../evals/search/labels.js";
+import { completeLabels, OTHER_SETS, readSearchLabels } from "../../evals/search/labels.js";
 
 function file(labels: unknown[], extra: Record<string, unknown> = {}): string {
   const path = join(mkdtempSync(join(tmpdir(), "labels-")), "nsclc.json");
@@ -55,6 +55,13 @@ describe("readSearchLabels", () => {
     expect(message).toMatch(/NCT00000004\) is labelled but has no reason/);
     expect(message).toMatch(/NCT00000005\) has a reason but no label/);
     expect(message).toMatch(/labels\[6\]\.relevant is not true, false or null/);
+  });
+
+  it("takes 0005's sets only when asked for them, and then not 0001's", () => {
+    const sample = { ...open, set: "sample" };
+    expect(() => readSearchLabels(file([sample]))).toThrow(/set is not "heldout" or "dev"/);
+    expect(readSearchLabels(file([sample]), OTHER_SETS).labels).toHaveLength(1);
+    expect(() => readSearchLabels(file([open]), OTHER_SETS)).toThrow(/set is not "places-dev"/);
   });
 });
 

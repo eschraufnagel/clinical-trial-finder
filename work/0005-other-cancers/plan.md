@@ -290,3 +290,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - **Step 1, baseline:** `npm run check` exits 0; 1,028 tests (1,020 passed, 8 expected to fail), `npm test` about 0.63 s.
   - The spec changes in Context are made. §6.1 also names `TrialView.other`'s shape as step 12 does, `{ lead, evidence }`.
   - `work/ROADMAP.md`: 0005 trials for other cancers, 0006 reader on hosted models (OQ 2, as proposed), the deeper check 0007, the benchmark 0008. 0001's row now sends TREC to 0008, and open question 6 points here.
+- **Step 2:**
+  - `readSearchLabels(path, sets)` takes the sets a file may hold: `NSCLC_SETS` by default, `OTHER_SETS` for 0005's file. Each file refuses the other's sets.
+  - `other:sample`'s draw is `drawSets` in `scripts/other-sample.ts`, tested on made-up trials. It reuses `isTreatment` from `search-sample.ts`. The places sets come from `PLACES_RESULTS`, the two committed `read-first` results.
+  - 1,037 tests, `npm test` about 0.63 s.
