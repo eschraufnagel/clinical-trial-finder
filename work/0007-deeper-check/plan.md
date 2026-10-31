@@ -223,8 +223,8 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
      - `loadPairLabels()` checks each quote with `locateQuote` against the snapshot's `criteriaText`, and that the pair set matches the picks.
    - **`scripts/check-label-show.ts`** (`npm run check:label-show -- <patient> <NCT ID>`, `--next`): prints the patient's file and the trial's eligibility text, numbered by line. It reaches no parser, link or model, held by a boundary block like "the labelling tool cannot see the parser".
    - **Tests:**
-     - picks equal the committed result's top three (`06-8eea38fafad5.json`): 9 dev pairs over 8 trials, 51 held-out pairs over 35;
-     - the loader rejects a quote that doesn't locate, a missing pair, an extra pair.
+     - `picksProblems` and `labelProblems`, on made-up rows. A test never loads the full snapshot, so the scripts run the same checks on the real picks and refuse to go on if the picks don't match `06-8eea38fafad5.json`;
+     - the loader rejects a quote that isn't verbatim, a missing pair, an extra pair, a doubled pair.
 
 8. **The labels, all 60 pairs** (§7.1). `evals/cases/check/pairs.json`, written from `check:label-show` alone, before any parse. Records note the count clearly ruled out per set, and the time taken. Nothing else in the commit.
 
@@ -473,3 +473,8 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - One describe block in `tests/boundary.test.ts` holds the three rules, with a "would catch" case for each.
   - **Divergence:** `src/screening/session.ts` and `src/criteria/parse.ts` imported `monthStamp` from `src/models/index.ts`, the barrel that re-exports the factory, so `src/check/` would have reached the factory through the agent and the parser. Both now import it from `src/models/types.ts`, as `src/facts/map.ts` does. Nothing else changes.
   - Biome's `--write` also rewrote a regex in `src/search/other.ts`, which this slice doesn't touch; that change was reverted before the commit, and the file is unchanged.
+- **Step 7:**
+  - `evals/check/pairs.ts` (context, conversation, picks, label checks), `scripts/check-label-show.ts`, `LABELLING.md`, and a boundary block for the label tool.
+  - **The picks match the committed result, with one correction to the plan's counts: p19's short list holds two trials, so there are 59 pairs, not 60.** Dev: 9 pairs over 8 trials. Held-out: 50 pairs over 35 trials, 4 of which are also dev trials (NCT02693535 is in 10 pairs across both sets). 39 trials in all.
+  - **Divergence:** quotes are checked verbatim against `criteriaText` (`includes`), not with `locateQuote`: labels are copied from the text `check:label-show` prints, so there's nothing for a loose match to forgive.
+  - `check:label-show` recomputes 20 conversations on the full snapshot, about 15 s.

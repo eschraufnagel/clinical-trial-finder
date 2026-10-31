@@ -1262,3 +1262,36 @@ describe("the check's link and record reach no model, and src/check/ builds none
     expect(beyondTheAgent(`${sep}src${sep}screening${sep}apply.ts`)).toBe(false);
   });
 });
+
+/**
+ * This repository's slice 0007: the pair labels say what a trial's text and
+ * a patient's file say, written before anything reads the trial. The tool
+ * that shows a pair can run the conversation (to know the picks), but can't
+ * reach the parser, the link, the screening agent or a model.
+ */
+describe("the pair labelling tool cannot see the parser, the link or the agent", () => {
+  const SCRIPT = fileURLToPath(new URL("../scripts/check-label-show.ts", import.meta.url));
+  const modules = reachableModules(SCRIPT);
+  const forbidden = (file: string): boolean =>
+    file.includes(`${sep}models${sep}`) ||
+    file.endsWith(`criteria${sep}parse.ts`) ||
+    file.includes(`${sep}src${sep}check${sep}`) ||
+    file.includes(`${sep}src${sep}screening${sep}`);
+
+  it("walks a real graph", () => {
+    expect(modules.some((m) => m.endsWith(`check${sep}pairs.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`questions${sep}conversation.ts`))).toBe(true);
+  });
+
+  it("reaches none of them", () => {
+    expect(modules.filter(forbidden)).toEqual([]);
+  });
+
+  it("would catch each", () => {
+    expect(forbidden(`${sep}src${sep}models${sep}omlx.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}criteria${sep}parse.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}check${sep}link.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}screening${sep}session.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}criteria${sep}normalize.ts`)).toBe(false);
+  });
+});
