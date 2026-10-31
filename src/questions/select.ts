@@ -2,7 +2,7 @@ import type { Profile } from "../facts/status.js";
 import type { Fact, FactVocabulary, TrialFacts } from "../facts/types.js";
 import { factsFor } from "../facts/vocabulary.js";
 import type { Candidate } from "../search/types.js";
-import { compareKeys, keyOf, type OrderEntry } from "../shortlist/order.js";
+import { compareKeys, keyOf, type OrderEntry, type OrderName } from "../shortlist/order.js";
 import type { ScorerName, SkipRule } from "./settings.js";
 
 /**
@@ -10,10 +10,12 @@ import type { ScorerName, SkipRule } from "./settings.js";
  * model, no file, no clock.
  *
  * An answer flags, it never settles: a fact's answer adds "may not fit"
- * hints to trials, and so can only move trials down the order. That's what
- * makes `shortlistChange` cheap and exact: only short-list trials that gain a
- * hint can leave, and the trials that take their places are the next ones
- * below that gain none.
+ * hints to trials. Under the `hints` and `read-first` orders that can only
+ * move trials down, which makes `shortlistChange` cheap and exact: only
+ * short-list trials that gain a hint can leave, and the trials that take
+ * their places are the next ones below that gain none. Under `checked` an
+ * answer also adds a fact checked to the trials it doesn't hint, which can
+ * move a trial up, so `shortlistChange` recounts the whole order (slice 0004).
  */
 
 /** What comes back when the person doesn't know, or hedges. It never moves a trial. */
@@ -25,7 +27,8 @@ export interface TrialInput {
   facts: TrialFacts | null;
 }
 
-export type StopReason = "budget" | "nothing-left" | "stable";
+/** `person`: the person asked for the list, or changed an answer (slice 0004). */
+export type StopReason = "budget" | "nothing-left" | "stable" | "person";
 
 interface HintDelta {
   whole: number;
@@ -84,6 +87,8 @@ export interface Situation {
   skip: readonly SkipRule[];
   sex: "female" | "male";
   shortlistSize: number;
+  /** The order `order` is in. */
+  ordering: OrderName;
   followUps: number;
   budget: number;
 }
@@ -105,6 +110,13 @@ export function askable(s: Situation): Fact[] {
  * in number.
  */
 export function shortlistChange(s: Situation, factId: string, answerId: string): number {
+  return s.ordering === "checked"
+    ? shortlistChangeByRecount(s, factId, answerId)
+    : shortlistChangeDownOnly(s, factId, answerId);
+}
+
+/** The shortcut, for orders under which an answer only moves trials down. */
+function shortlistChangeDownOnly(s: Situation, factId: string, answerId: string): number {
   const size = Math.min(s.shortlistSize, s.order.length);
   const delta = (e: OrderEntry): HintDelta | undefined =>
     s.index.deltas.get(e.candidate.nctId)?.get(factId)?.get(answerId);
@@ -133,9 +145,35 @@ export function shortlistChange(s: Situation, factId: string, answerId: string):
     ...top.filter((e) => delta(e) === undefined).map(keyOf),
     ...below.map(keyOf),
     ...shifted,
-  ].sort(compareKeys);
+  ].sort((a, b) => compareKeys(a, b, s.ordering));
   const kept = new Set(pool.slice(0, size));
   return shifted.filter((k) => !kept.has(k)).length;
+}
+
+/**
+ * The full recount, for any order: every trial's key with the answer
+ * applied, sorted again. A trial that maps the fact gains its hints if the
+ * answer is one it rules out, and a fact checked if not, as `statusFor`
+ * would give. Exported so a test can hold it equal to the shortcut.
+ */
+export function shortlistChangeByRecount(s: Situation, factId: string, answerId: string): number {
+  const size = Math.min(s.shortlistSize, s.order.length);
+  const before = new Set(s.order.slice(0, size).map((e) => e.candidate.nctId));
+  const keys = s.order.map((e) => {
+    const key = keyOf(e);
+    const byAnswer = s.index.deltas.get(e.candidate.nctId)?.get(factId);
+    if (byAnswer === undefined) return key;
+    const d = byAnswer.get(answerId);
+    return d === undefined
+      ? { ...key, checked: key.checked + 1 }
+      : {
+          ...key,
+          wholeTrialHints: key.wholeTrialHints + d.whole,
+          partHints: key.partHints + d.part,
+        };
+  });
+  keys.sort((a, b) => compareKeys(a, b, s.ordering));
+  return keys.slice(0, size).filter((k) => !before.has(k.nctId)).length;
 }
 
 export interface Scored {

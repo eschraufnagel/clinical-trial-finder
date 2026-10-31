@@ -15,7 +15,7 @@ Built in slice 0003. The record is in [`work/0003-question-selection/`](../work/
 
 **An AI model reads people's replies well, on replies written to be clear.** It read all 326 replies that stated an answer correctly ("Keytruda, and it grew anyway"). It turned 1 of 201 "I don't know"s into an answer. Those replies were written to be clear, so real ones will do worse. The page will show each reading back for the person to confirm.
 
-**The order has a bias.** Trials with the fewest "may not fit" hints come first. That favors trials whose rules the model read least: on the short lists they carry about half as many readings as the average trial. This is the next slice's first question.
+**The order had a bias, and slice 0004 changed it.** Trials with the fewest "may not fit" hints came first, which favored trials whose rules the model read least. On the short lists, they carried about half as many readings as the average trial. Slice 0004 now puts trials with readings before trials with none, among trials with equal hints. That takes trials with no readings off held-out short lists (30 places to 2), for about 2 points of agreement ([below](#the-order)).
 
 No answer ever removes a trial. Every trial the search keeps stays in the order; a hint only moves it down.
 
@@ -24,10 +24,24 @@ No answer ever removes a trial. Every trial the search keeps stays in the order;
 `src/shortlist/order.ts`, pinned by a test. Trials are sorted by:
 1. fewest whole-trial hints;
 2. then fewest hints about one part of the trial;
-3. then the nearest recruiting site;
-4. then the trial id.
+3. then, since slice 0004, trials with readings before trials with none (`read-first`);
+4. then the nearest recruiting site;
+5. then the trial id.
 
-The top ten are the short list. Phase, sponsor and anything that could read as "best for you" are never keys.
+The top ten are the short list. Phase, sponsor and anything that could read as "best for you" are never keys. `data/questions/conversation.json` names the order. The numbers in this file's tables come from 0003, under the order without step 3 (`hints`), unless they say otherwise.
+
+**Slice 0004's Gate 1 chose `read-first`** from three orders measured on dev ([gate-1-order.md](../work/0004-shortlist-handoff/gate-1-order.md)). Held-out was then scored a second time, with it: [`04-7543ffb2cb2e.json`](../evals/results/questions/04-7543ffb2cb2e.json), and with the reader's readings [`with-reads/03-7543ffb2cb2e.json`](../evals/results/questions/with-reads/03-7543ffb2cb2e.json). 0003's results stay as they were.
+
+| Held-out, conversation (`shortlist`) | `hints` (0003) | `read-first` (0004) |
+| --- | ---: | ---: |
+| Agreement with the full record | 89% | 88% |
+| Would-flag | 12% | 13% |
+| Short-list places held by trials with no readings, over 17 patients | 30 | 2 |
+| Readings per short-list trial ÷ per trial the search kept | 0.78 | 0.92 |
+
+- **Agreement falls for three patients,** 10 points each.
+- **Would-flag can only rise when a trial with no readings is replaced,** because such a trial can't be flagged.
+- **Also measured, not chosen:** "most of your answers checked" first. It put rule-heavy trials from anywhere first (a median of 287 miles against 100 on dev), and a list that didn't settle as answers came in.
 
 ## The conversation
 
@@ -117,6 +131,23 @@ What the run showed:
   - a sentence of instruction made it worse;
   - quoting the ids fixed it.
 
+### On a hosted model, once
+
+Slice 0004's Gate 2 measured one hosted model, Claude Haiku 4.5, on the same 527 held-out pairs and the same prompt. It ran at temperature 0, with no seed (the Claude API has none) and reasoning off, for $0.15: [the reads](../evals/results/questions/reads/heldout-claude-haiku-4-5-8cb01749.json).
+
+| | Claude Haiku 4.5 |
+| --- | ---: |
+| Replies it could read at all | 237 of 527, 45% |
+| … stating an answer, read exactly | 217 of 217, 100% |
+| … "don't know", read as an answer | 0 of 20 |
+| Cut off at the 64-token limit | 87 |
+| Output that isn't JSON the adapter accepts | 203 |
+
+- **What it read, it read right.**
+- **Most of what it couldn't read is the prompt's fault, not the model's,** most likely: the prompt was written for a model that answers in JSON mode, and Haiku explains around its answer.
+- **The run can't show it.** `questions:read` kept only the first line of each failure, and now keeps the reason ([work/0004-shortlist-handoff/gate-3-words.md](../work/0004-shortlist-handoff/gate-3-words.md)).
+- **Adapting the prompt for hosted models** would be a new prompt version, tuned on dev first.
+
 ## Trying it
 
 ```
@@ -129,7 +160,7 @@ It prints each question with the answer or "doesn't know", which trials moved, w
 
 - **One author.** Claude wrote the patients, their replies, the chooser and the reader's prompt. The patients came first and were split by hash, and held-out was scored once, but no clinician checked any of it.
 - **Agreement is with the mapper, not with the truth.** The record arm is what the mapper says when everything is known, and about a quarter of its hints are wrong ([facts.md](facts.md)). Nothing here says which trials actually suit a person; that needs the benchmark in slice 0006.
-- **The order favors trials the mapper read little,** including trials no model mapped at all: 30 short-list places across the 17 held-out patients. It also keeps trials whose relevant rules the mapper missed, such as first-line trials for someone already treated.
+- **The order favors trials the mapper read little.** Under 0003's order this included trials no model mapped at all: 30 short-list places across the 17 held-out patients, 2 since 0004's `read-first`. The order also keeps trials whose relevant rules the mapper missed, such as first-line trials for someone already treated.
 - **The replies are clean by construction,** so the reader's numbers are best cases. Contradictions, several facts in one reply, and answers to a different question aren't tested.
 - **Small samples:** 3 dev patients chose the scorer, and 17 held-out patients tested it.
 - **One cancer type, one snapshot, one mapping run.**

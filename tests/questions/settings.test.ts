@@ -25,6 +25,21 @@ describe("loadConversationSettings", () => {
     expect(settings.sha256).toMatch(/^[0-9a-f]{64}$/);
   });
 
+  it("reads an order, and takes a file with none as 0003's", () => {
+    const base = {
+      version: 1,
+      intake: ["ecog"],
+      skip: [],
+      shortlistSize: 10,
+      budget: 8,
+      scorer: "shortlist",
+    };
+    expect(loadConversationSettings(vocabulary, fileWith(base)).order).toBe("hints");
+    expect(
+      loadConversationSettings(vocabulary, fileWith({ ...base, order: "checked" })).order,
+    ).toBe("checked");
+  });
+
   it("rejects every rule, and names them all", () => {
     // A fact for another cancer only: the vocabulary has none, so add one.
     const withOther: FactVocabulary = {
@@ -50,6 +65,7 @@ describe("loadConversationSettings", () => {
       shortlistSize: 0,
       budget: 1.5,
       scorer: "random",
+      order: "best",
     });
     let message = "";
     try {
@@ -68,6 +84,7 @@ describe("loadConversationSettings", () => {
       "shortlistSize is not a whole number of at least 1",
       "budget is not a whole number of at least 1",
       "scorer random is not one of fixed, count, shortlist",
+      "order best is not one of hints, checked, read-first",
     ]) {
       expect(message).toContain(expected);
     }

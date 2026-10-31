@@ -4,13 +4,13 @@
 
 **An AI assistant that helps a person with cancer find clinical trials worth asking their oncologist about.** It asks what they know about their cancer and their treatment so far, searches a saved copy of ClinicalTrials.gov, and gives back a short list. For each trial it says why the trial may fit, what's still unknown and what to ask. It never says a person is eligible. Their oncologist and the trial team decide that.
 
-> **A proof of concept, not for real use, and not finished.** So far it has the research, the search, the reading of trial rules into questions, and the choice of which question to ask next. It will only ever be tried with made-up patients, and it will never contact anyone.
+> **A proof of concept, not for real use, and not finished.** So far it has the research, the search, the reading of trial rules into questions, the choice of which question to ask next, and a page that runs on your own computer. It will only ever be tried with made-up patients, and it will never contact anyone.
 
 ## The problem
 
 When standard treatment stops working, a trial may be the next option. ClinicalTrials.gov lists them all, but a search for one cancer type returns hundreds of studies, each with pages of eligibility rules written for doctors. Many of those rules turn on facts a patient may not know, such as which genetic changes their tumor has. Most people who could join a trial never hear about one that fits.
 
-## What it will do
+## What it does
 
 1. **Ask.** A short conversation in plain language: the cancer, how far it has spread, the treatments so far and how each ended, how active the person is, and how far they can travel. "I don't know" is an expected answer.
 2. **Search.** Narrow the saved registry to recruiting trials for that cancer near the person, including trials open to many cancer types.
@@ -49,6 +49,16 @@ npm run questions:try -- --patient evals/cases/patients/dev/p08.json
 ```
 
 How the questions are chosen, and how close it gets: [docs/questions.md](docs/questions.md).
+
+### The page
+
+The whole conversation, in a browser, on this computer only. Answer in your own words; the page shows how it read each answer for you to confirm. At the end are the short list and a sheet to print for the oncologist:
+
+```
+npm run app -- --fake
+```
+
+Then open http://127.0.0.1:5025. `--fake` reads answers from a fixed list, so no AI model is needed. Without it, the page uses the local model, or the hosted model you choose in its Settings with your own key. Use made-up answers. What the page says and why: [docs/page.md](docs/page.md).
 
 ## How it's being built
 

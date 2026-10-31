@@ -6,16 +6,18 @@
  *   npm run questions:eval -- --check [--dev] rerun the latest committed result; non-zero on any difference
  *   npm run questions:eval -- --reads <file>  answer from a reads file (questions:read) instead of what
  *                                             the patients know; write evals/results/questions/with-reads/
+ *   npm run questions:eval -- --dev --order <name>  dev under another order (slice 0004, spec §2.4)
  *
  * Deterministic: no model, no network, no clock. Each patient's search runs
  * on the snapshot, their trials' mappings come from the run named in
  * data/facts/<month>/latest, and their answers from what they know.
  */
+import { createHash } from "node:crypto";
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { armsFor } from "../evals/questions/arms.js";
-import type { ArmSummary } from "../evals/questions/metrics.js";
+import type { ArmRow, ArmSummary } from "../evals/questions/metrics.js";
 import { loadPatients, type Patient, type PatientSet } from "../evals/questions/patients.js";
 import { fromReads, type ReadsFile, readReadsFile } from "../evals/questions/reads.js";
 import {
@@ -30,9 +32,9 @@ import type { FactVocabulary } from "../src/facts/types.js";
 import { loadFactVocabulary } from "../src/facts/vocabulary.js";
 import type { TrialInput } from "../src/questions/select.js";
 import { type ConversationSettings, loadConversationSettings } from "../src/questions/settings.js";
+import { trialsForSearch } from "../src/questions/trials.js";
 import { loadZipPoints, type Point } from "../src/search/geo.js";
-import { searchTrials } from "../src/search/search.js";
-import { loadVocabulary } from "../src/search/vocabulary.js";
+import { ORDER_NAMES, type OrderName } from "../src/shortlist/order.js";
 import { loadSnapshot } from "../src/trials/snapshot-load.js";
 
 export const RESULTS_DIR = fileURLToPath(new URL("../evals/results/questions", import.meta.url));
@@ -59,16 +61,9 @@ export function loadContext(run?: string): EvalContext {
 
 /** A patient's search, with each trial's mappings from the run, or `null` where it has none. */
 export function trialsFor(patient: Patient, ctx: EvalContext): TrialInput[] {
-  const cancer = loadVocabulary(patient.search.cancerType);
-  const { manifest, trials } = ctx.snapshot;
-  const result = searchTrials(trials, manifest, cancer, ctx.zips, {
-    ...patient.search,
-    purposes: ["TREATMENT"],
-  });
-  return result.candidates.map((candidate) => ({
-    candidate,
-    facts: readTrialFacts(ctx.runDir, candidate.nctId) ?? null,
-  }));
+  return trialsForSearch(patient.search, ctx.snapshot, ctx.zips, (nctId) =>
+    readTrialFacts(ctx.runDir, nctId),
+  );
 }
 
 export function scorePatients(
@@ -124,13 +119,74 @@ export function scorePatients(
 /**
  * The settings a `--check` reruns a committed result under: the ones it
  * records, so a dev result made before Gate 2 froze the settings still checks.
+ * A result from before slice 0004 records no order, and ran under `hints`.
  * The vocabulary, patients and run are today's, and must reproduce it.
  */
 export function settingsForCheck(
   committed: Pick<QuestionsEvalResult, "settings" | "settingsSha256">,
   _current: ConversationSettings,
 ): ConversationSettings {
-  return { ...committed.settings, sha256: committed.settingsSha256 };
+  return {
+    ...committed.settings,
+    order: committed.settings.order ?? "hints",
+    sha256: committed.settingsSha256,
+  };
+}
+
+/**
+ * The settings under another order, for a dev run comparing orders (slice
+ * 0004). Their checksum is no longer the file's, so it's the file's with the
+ * order appended: the result's name then says which settings ran, and
+ * `--check` reruns it under the order it records.
+ */
+export function withOrder(settings: ConversationSettings, order: OrderName): ConversationSettings {
+  if (order === settings.order) return settings;
+  const sha256 = createHash("sha256").update(`${settings.sha256}\norder ${order}`).digest("hex");
+  return { ...settings, order, sha256 };
+}
+
+/**
+ * A rerun as a committed result recorded it: the same keys, all the way
+ * down. A result made before a field was added is checked on every field it
+ * has, and only on those.
+ */
+export function asRecorded(rerun: unknown, committed: unknown): unknown {
+  if (Array.isArray(rerun) && Array.isArray(committed))
+    return rerun.map((value, i) => asRecorded(value, committed[i]));
+  if (
+    typeof rerun === "object" &&
+    rerun !== null &&
+    !Array.isArray(rerun) &&
+    typeof committed === "object" &&
+    committed !== null &&
+    !Array.isArray(committed)
+  ) {
+    const r = rerun as Record<string, unknown>;
+    return Object.fromEntries(
+      Object.keys(committed).map((key) => [
+        key,
+        asRecorded(r[key], (committed as Record<string, unknown>)[key]),
+      ]),
+    );
+  }
+  return rerun;
+}
+
+/**
+ * Rows whose views break a rule a result may not break (slice 0004): text
+ * this project writes that states a verdict, or an oncologist sheet that
+ * misses an unknown. A run with any writes nothing.
+ */
+export function brokenRules(rows: readonly ArmRow[]): string[] {
+  return rows.flatMap((r) => {
+    const where = `${r.patient} ${r.arm} ${r.scorer ?? ""}`;
+    return [
+      ...((r.verdictHits ?? 0) > 0 ? [`${where}: ${r.verdictHits} verdict words`] : []),
+      ...((r.sheetMissing ?? 0) > 0
+        ? [`${where}: the sheet misses ${r.sheetMissing} unknowns`]
+        : []),
+    ];
+  });
 }
 
 export function latestResultFile(dir: string): string | undefined {
@@ -209,12 +265,20 @@ function main(): void {
           },
     );
     const differing = rerun.rows.filter(
-      (row, i) => JSON.stringify(row) !== JSON.stringify(committed.rows[i]),
+      (row, i) =>
+        JSON.stringify(asRecorded(row, committed.rows[i])) !== JSON.stringify(committed.rows[i]),
     );
+    const broken = brokenRules(rerun.rows);
+    if (broken.length > 0) {
+      console.error(`${file}'s rerun breaks a rule:\n${broken.join("\n")}`);
+      process.exitCode = 1;
+      return;
+    }
     if (
       differing.length > 0 ||
       rerun.rows.length !== committed.rows.length ||
-      JSON.stringify(rerun.summaries) !== JSON.stringify(committed.summaries) ||
+      JSON.stringify(asRecorded(rerun.summaries, committed.summaries)) !==
+        JSON.stringify(committed.summaries) ||
       rerun.settingsSha256 !== committed.settingsSha256
     ) {
       console.error(`${file} doesn't match a rerun: ${differing.length} rows differ.`);
@@ -225,7 +289,27 @@ function main(): void {
     return;
   }
 
-  const result = scorePatients(sets, loadContext(), reads);
+  const orderArg = args.includes("--order") ? args[args.indexOf("--order") + 1] : undefined;
+  if (orderArg !== undefined && !ORDER_NAMES.includes(orderArg as OrderName)) {
+    console.error(`--order is one of ${ORDER_NAMES.join(", ")}.`);
+    process.exitCode = 1;
+    return;
+  }
+  if (orderArg !== undefined && !devOnly) {
+    console.error("--order is for dev runs only: held-out runs under the committed settings.");
+    process.exitCode = 1;
+    return;
+  }
+  const ctx = loadContext();
+  const settings =
+    orderArg === undefined ? ctx.settings : withOrder(ctx.settings, orderArg as OrderName);
+  const result = scorePatients(sets, { ...ctx, settings }, reads);
+  const broken = brokenRules(result.rows);
+  if (broken.length > 0) {
+    console.error(`Not written: ${broken.length} rows break a rule.\n${broken.join("\n")}`);
+    process.exitCode = 1;
+    return;
+  }
   mkdirSync(dir, { recursive: true });
   const path = join(dir, nextRunFile(dir, result.settingsSha256.slice(0, 12)));
   writeFileSync(path, `${JSON.stringify(result, null, 2)}\n`, "utf8");

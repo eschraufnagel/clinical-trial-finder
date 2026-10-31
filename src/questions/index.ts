@@ -1,10 +1,20 @@
 export {
+  answer,
   type ConversationInput,
   type ConversationResult,
+  type ConversationSoFar,
+  type ConversationState,
+  changeAnswer,
+  current,
+  type NextStep,
+  nextStep,
   openQuestions,
   orderFor,
   runConversation,
+  type StartInput,
   type Step,
+  startConversation,
+  stopNow,
 } from "./conversation.js";
 export {
   askable,

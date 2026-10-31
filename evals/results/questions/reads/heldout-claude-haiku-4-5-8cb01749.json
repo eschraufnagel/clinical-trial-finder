@@ -1,0 +1,2905 @@
+{
+  "version": 1,
+  "set": "heldout",
+  "run": {
+    "model": "claude-haiku-4-5",
+    "quantization": "none",
+    "temperature": 0,
+    "seed": null,
+    "adapter": "anthropic",
+    "thinking": "off",
+    "unset": {
+      "seed": "the Claude API has no seed parameter"
+    },
+    "promptVersion": "8cb01749dcc3",
+    "timestamp": "2026-10"
+  },
+  "vocabularySha256": "854382b27d4633b675487e8b790ffda23736a9a1941136a85f28f7ea8790751b",
+  "patientsSha256": "1bc2770b4d4af32f5863c3f7515f9d15e2013a6350bf46145f801ec8111addb3",
+  "items": [
+    {
+      "patient": "p01",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "The biopsy said adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p01",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, the brain scans have all been clear.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p01",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "I'd have to ask my oncologist.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p01",
+      "factId": "measurable_disease",
+      "kind": "says",
+      "reply": "Yes, there are spots in my liver they measure on every scan.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p01",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "I'm afraid I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p01",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "I'd have to ask my oncologist.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p01",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "I'm afraid I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p01",
+      "factId": "kras",
+      "kind": "dontKnow",
+      "reply": "I think KRAS was on the report but I can't remember what it said.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p01",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "I'm afraid I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p01",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, carboplatin, four rounds.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p01",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "I'd have to ask my oncologist.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p01",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Just the one, the chemo with Keytruda.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p01",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation at all.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No, this is my first cancer.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p01",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No, nothing like that.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No, never had lung inflammation.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p01",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No, I don't have hepatitis.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No, my heart's been fine.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No transplant.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, I'm 64.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p01",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No steroids.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p02",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "Brain's clear.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p02",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p02",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p02",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "Couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p02",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p02",
+      "factId": "kras",
+      "kind": "phrase",
+      "reply": "Couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p02",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p02",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p02",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p02",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yep, cisplatin first.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p02",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No pills like that.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p02",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Two. The chemo, then the Opdivo.",
+      "expected": "two",
+      "answer": "two"
+    },
+    {
+      "patient": "p02",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p02",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "Nope.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p02",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p02",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "Never been tested for that, far as I know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p02",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p02",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p02",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "None.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p03",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma of the lung.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p03",
+      "factId": "leptomeningeal",
+      "kind": "dontKnow",
+      "reply": "The lining? I don't think anyone has said, honestly.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p03",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I still do the books and get around, but I tire out and can't do the heavy ranch work.",
+      "expected": "ps1",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p03",
+      "factId": "ret",
+      "kind": "dontKnow",
+      "reply": "I'd have to dig out the full report for RET, I'm not sure it was on there.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p03",
+      "factId": "kras",
+      "kind": "says",
+      "reply": "KRAS, not detected.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p03",
+      "factId": "braf_v600e",
+      "kind": "says",
+      "reply": "BRAF not detected.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p03",
+      "factId": "pdl1",
+      "kind": "says",
+      "reply": "PD-L1 was less than 1 percent.",
+      "expected": "negative",
+      "answer": "negative"
+    },
+    {
+      "patient": "p03",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No immunotherapy.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p03",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No, I've never had chemo.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p03",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "Yes, I take Tagrisso every day.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p03",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One, just the Tagrisso.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p03",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No other cancers.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p03",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No, never.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p03",
+      "factId": "hiv",
+      "kind": "dontKnow",
+      "reply": "I've never been tested for that.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p03",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No heart problems.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p03",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, I'm not.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p04",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "The last MRI found three new small spots in the brain. Not treated yet, and I don't have any symptoms.",
+      "expected": "not_stable_no_symptoms",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p04",
+      "factId": "measurable_disease",
+      "kind": "says",
+      "reply": "Yes, there are target lesions in the liver they measure each scan.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p04",
+      "factId": "kras",
+      "kind": "says",
+      "reply": "No KRAS mutation.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p04",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No, never had immunotherapy.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p04",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No chemo.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p04",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "Yes, Alecensa first and now Lorbrena.",
+      "expected": "received",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p04",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Two: alectinib, then lorlatinib.",
+      "expected": "two",
+      "answer": "two"
+    },
+    {
+      "patient": "p04",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p04",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No pneumonitis.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p04",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "Negative.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p04",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No steroids.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p05",
+      "factId": "histology",
+      "kind": "dontKnow",
+      "reply": "Non-small cell, that's all I remember.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p05",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, nothing in the brain.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p05",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Oh, I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p05",
+      "factId": "ecog",
+      "kind": "says",
+      "reply": "I'm up for most of the day but I can't work or do much, I rest a lot in the afternoons.",
+      "expected": "ps2",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p05",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "I don't remember.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p05",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "Oh, I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p05",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No, no pills for the cancer.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p05",
+      "factId": "lines_advanced",
+      "kind": "dontKnow",
+      "reply": "Is the chemo and the Keytruda one or two? I don't know how they count.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p05",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p05",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p05",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "Goodness, no.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Squamous cell, they said.",
+      "expected": "squamous",
+      "answer": "squamous"
+    },
+    {
+      "patient": "p06",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, they did a brain scan and it's clean.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p06",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "No clue.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p06",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p06",
+      "factId": "alk",
+      "kind": "phrase",
+      "reply": "No clue.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p06",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p06",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "No clue.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p06",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p06",
+      "factId": "pdl1",
+      "kind": "dontKnow",
+      "reply": "Some PD number? Didn't stick.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p06",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No, haven't started any treatment.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p06",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No chemo yet.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p06",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p06",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "No clue.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p06",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "None yet, I just got diagnosed.",
+      "expected": "zero",
+      "answer": "zero"
+    },
+    {
+      "patient": "p06",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p06",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "Had pneumonitis about eight years ago from a bad flu. Cleared up.",
+      "expected": "past",
+      "answer": "past"
+    },
+    {
+      "patient": "p06",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "Never checked, so I couldn't say.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p06",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "Ha. No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p06",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "Nope.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p07",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, the brain is fine.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p07",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "I'm not sure, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "egfr",
+      "kind": "dontKnow",
+      "reply": "I'm sorry, I think they tested for something like that but I don't know the result.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p07",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "I'm sorry, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p07",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "I'm sorry, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p07",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "I'm sorry, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p07",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "I'm not sure, sorry.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p07",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No, I haven't had any treatment yet.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p07",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No chemo.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p07",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p07",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "None, I haven't had treatment.",
+      "expected": "zero",
+      "answer": "zero"
+    },
+    {
+      "patient": "p07",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No, never.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p07",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "ild",
+      "kind": "dontKnow",
+      "reply": "I had a bad chest infection once, I'm sorry, I don't know if that's the same thing.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p07",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, I'm not, sorry.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p07",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p09",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, not in the brain.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p09",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "We don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p09",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "We don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p09",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "We don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p09",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p09",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One, the chemo and Keytruda together.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p09",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "ild",
+      "kind": "dontKnow",
+      "reply": "Not that I know of, but I'm not sure what his lungs showed before.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p09",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p09",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "He's a man, so no.",
+      "expected": "no",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p10",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p10",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "Yes, one lesion, treated with radiosurgery a year ago, stable since.",
+      "expected": "treated_stable",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p10",
+      "factId": "leptomeningeal",
+      "kind": "says",
+      "reply": "No leptomeningeal spread.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p10",
+      "factId": "ret",
+      "kind": "dontKnow",
+      "reply": "I didn't see RET on my report, so I can't say.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p10",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "I don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p10",
+      "factId": "met",
+      "kind": "phrase",
+      "reply": "Not something I've been told.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p10",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No immunotherapy.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p10",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No chemo.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p10",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "Not something I've been told.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p10",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p10",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No chest radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p10",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p10",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, I'm not pregnant or breastfeeding.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p10",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No steroids.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p12",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p12",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p12",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p12",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p12",
+      "factId": "pdl1",
+      "kind": "says",
+      "reply": "My son says the PD-L1 was high, over 50 percent.",
+      "expected": "high",
+      "answer": "high"
+    },
+    {
+      "patient": "p12",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No treatment yet.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p12",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p12",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p12",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "None. They only just found it.",
+      "expected": "zero",
+      "answer": "zero"
+    },
+    {
+      "patient": "p12",
+      "factId": "chest_radiation_6m",
+      "kind": "dontKnow",
+      "reply": "They talked about radiation for my head. Not sure about the chest.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p12",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p12",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p12",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p12",
+      "factId": "hiv",
+      "kind": "dontKnow",
+      "reply": "Don't think I've been tested.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p12",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "Never been tested.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p12",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p12",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p12",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p12",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "Dexamethasone for the swelling. The doctor said it's a high dose, more than 10 of prednisone.",
+      "expected": "high_dose",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p13",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p13",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No brain involvement.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p13",
+      "factId": "measurable_disease",
+      "kind": "says",
+      "reply": "Yes, there's a node they measure on every scan.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p13",
+      "factId": "egfr",
+      "kind": "says",
+      "reply": "EGFR exon 20 insertion.",
+      "expected": "exon20_insertion",
+      "answer": "exon20_insertion"
+    },
+    {
+      "patient": "p13",
+      "factId": "pdl1",
+      "kind": "says",
+      "reply": "PD-L1 zero percent.",
+      "expected": "negative",
+      "answer": "negative"
+    },
+    {
+      "patient": "p13",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No immunotherapy.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p13",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Carboplatin, along with Rybrevant.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p13",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One so far.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p13",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p13",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p13",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, male.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p13",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "None.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p14",
+      "factId": "histology",
+      "kind": "dontKnow",
+      "reply": "They said non-small cell, and then something about it being mixed? I didn't follow.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p14",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, they checked my brain and it's fine, thank the Lord.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p14",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "I don't know, honey.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "I don't know, honey.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p14",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, carboplatin, twice now actually.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p14",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p14",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No radiation.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No, just this one.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p14",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "ild",
+      "kind": "dontKnow",
+      "reply": "They said something about inflammation once? I don't know if it was the lungs.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p14",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "Oh heavens, no.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p14",
+      "factId": "steroids",
+      "kind": "dontKnow",
+      "reply": "I take a little white pill in the morning, I'm not sure what it is.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p15",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p15",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, brain MRIs have been negative.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p15",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Good question, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p15",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p15",
+      "factId": "kras",
+      "kind": "says",
+      "reply": "No KRAS mutation.",
+      "expected": "none_found",
+      "answer": "none_found"
+    },
+    {
+      "patient": "p15",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "I don't know that.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p15",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No immunotherapy so far.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p15",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "Yes, Tabrecta, capmatinib.",
+      "expected": "received",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p15",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Two: Tabrecta, then the chemo.",
+      "expected": "two",
+      "answer": "two"
+    },
+    {
+      "patient": "p15",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p15",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p15",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p15",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No steroids.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p16",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Squamous cell carcinoma.",
+      "expected": "squamous",
+      "answer": "squamous"
+    },
+    {
+      "patient": "p16",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p16",
+      "factId": "leptomeningeal",
+      "kind": "says",
+      "reply": "No, the doctor said the lining of the brain and spine is clear.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "measurable_disease",
+      "kind": "says",
+      "reply": "Yes, the liver tumor, they measure it every scan.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p16",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p16",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p16",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p16",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p16",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p16",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Carboplatin, yes.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p16",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p16",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "That I couldn't tell you.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p16",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "One.",
+      "expected": "one",
+      "answer": "one"
+    },
+    {
+      "patient": "p16",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p16",
+      "factId": "hiv",
+      "kind": "dontKnow",
+      "reply": "Never been tested for it.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p16",
+      "factId": "hepatitis_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "Yes, a kidney transplant in 2011.",
+      "expected": "yes",
+      "answer": "yes"
+    },
+    {
+      "patient": "p16",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, on two counts.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p16",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p18",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "adenocarcinoma",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p18",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "no",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p18",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "not sure, gotta ask my dr",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "measurable_disease",
+      "kind": "phrase",
+      "reply": "dunno",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "ntrk",
+      "kind": "phrase",
+      "reply": "dunno",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "dunno",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p18",
+      "factId": "braf_v600e",
+      "kind": "says",
+      "reply": "BRAF V600E positive",
+      "expected": "found",
+      "answer": "found"
+    },
+    {
+      "patient": "p18",
+      "factId": "pdl1",
+      "kind": "dontKnow",
+      "reply": "pd-l1 was on there, low? or medium? dont remember",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p18",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "no chemo yet",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p18",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "no",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p18",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "none yet",
+      "expected": "zero",
+      "answer": "zero"
+    },
+    {
+      "patient": "p18",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "no",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p18",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "no",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p18",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "no",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p18",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "no",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p18",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "never been tested i think",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p18",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "no",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p18",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "no",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p18",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "no lol im a guy",
+      "expected": "no",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p18",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "no",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p19",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "It's in my lung and the glands nearby. They said it's too far along for an operation.",
+      "expected": "locally_advanced",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p19",
+      "factId": "brain_mets",
+      "kind": "says",
+      "reply": "No, nothing in my head.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p19",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p19",
+      "factId": "egfr",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p19",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "Oh, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p19",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p19",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "Oh, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p19",
+      "factId": "pdl1",
+      "kind": "phrase",
+      "reply": "I don't remember, dear.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "No, not that immune one.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p19",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, I had the carboplatin with my radiation.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p19",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p19",
+      "factId": "prior_adc",
+      "kind": "phrase",
+      "reply": "I'm not sure, you'd have to ask my neighbor.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p19",
+      "factId": "other_cancer",
+      "kind": "dontKnow",
+      "reply": "I had something taken off my skin once, I think it was a cancer, but I don't remember what kind or when.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p19",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "hepatitis_active",
+      "kind": "phrase",
+      "reply": "Oh, I don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p19",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No, dear, I'm eighty.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p19",
+      "factId": "steroids",
+      "kind": "dontKnow",
+      "reply": "I take a lot of pills. One might be a steroid, I couldn't say.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p20",
+      "factId": "histology",
+      "kind": "says",
+      "reply": "Adenocarcinoma.",
+      "expected": "adenocarcinoma",
+      "answer": "adenocarcinoma"
+    },
+    {
+      "patient": "p20",
+      "factId": "extent",
+      "kind": "says",
+      "reply": "Stage 4. Brain and bones.",
+      "expected": "metastatic_or_recurrent",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p20",
+      "factId": "leptomeningeal",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown"
+    },
+    {
+      "patient": "p20",
+      "factId": "ros1",
+      "kind": "phrase",
+      "reply": "No idea.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p20",
+      "factId": "ret",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p20",
+      "factId": "her2",
+      "kind": "phrase",
+      "reply": "Don't know.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p20",
+      "factId": "braf_v600e",
+      "kind": "phrase",
+      "reply": "No idea.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p20",
+      "factId": "prior_pd1",
+      "kind": "says",
+      "reply": "Chemo and Keytruda. Didn't work, it grew.",
+      "expected": "progressed",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p20",
+      "factId": "prior_platinum",
+      "kind": "says",
+      "reply": "Yes, carboplatin.",
+      "expected": "received",
+      "answer": "received"
+    },
+    {
+      "patient": "p20",
+      "factId": "prior_targeted",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p20",
+      "factId": "prior_adc",
+      "kind": "dontKnow",
+      "reply": "The second one was some new infusion, a long name with 'deruxtecan' maybe? Not sure.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p20",
+      "factId": "lines_advanced",
+      "kind": "says",
+      "reply": "Two.",
+      "expected": "two",
+      "answer": "two"
+    },
+    {
+      "patient": "p20",
+      "factId": "chest_radiation_6m",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "other_cancer",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    },
+    {
+      "patient": "p20",
+      "factId": "autoimmune_active",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "ild",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "never",
+      "answer": "never"
+    },
+    {
+      "patient": "p20",
+      "factId": "hiv",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "hepatitis_active",
+      "kind": "dontKnow",
+      "reply": "Never checked.",
+      "expected": "unknown",
+      "answer": "unknown",
+      "rejected": "the model's output was truncated"
+    },
+    {
+      "patient": "p20",
+      "factId": "cardiac_recent",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "transplant",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "pregnant_or_breastfeeding",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "no",
+      "answer": "no"
+    },
+    {
+      "patient": "p20",
+      "factId": "steroids",
+      "kind": "says",
+      "reply": "No.",
+      "expected": "none",
+      "answer": "none"
+    }
+  ],
+  "failures": {
+    "p01:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p01:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p01:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p01:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p01:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p01:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p01:pdl1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p01:prior_pd1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p01:prior_targeted": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:histology": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:ntrk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:prior_pd1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:other_cancer": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:autoimmune_active": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p02:pregnant_or_breastfeeding": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:brain_mets": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:ros1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:ntrk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:chest_radiation_6m": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p03:steroids": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:leptomeningeal": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:ros1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:ret": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:ntrk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:braf_v600e": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:pdl1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p04:pregnant_or_breastfeeding": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:ntrk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:braf_v600e": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:pdl1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:prior_pd1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:prior_platinum": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:other_cancer": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:hiv": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p05:steroids": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p06:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p06:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p06:ros1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p06:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p06:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p06:braf_v600e": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p06:hiv": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:histology": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:ret": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p07:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:histology": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:ros1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:ret": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:ntrk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:braf_v600e": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:pdl1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:prior_pd1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:prior_platinum": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:other_cancer": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:autoimmune_active": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p09:steroids": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:ros1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:braf_v600e": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:pdl1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:prior_targeted": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p10:autoimmune_active": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:histology": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:brain_mets": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:leptomeningeal": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:ret": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p12:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:leptomeningeal": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:ros1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:ret": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:ntrk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:braf_v600e": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:prior_targeted": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p13:hiv": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:ros1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:ret": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:ntrk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:braf_v600e": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:prior_pd1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p14:lines_advanced": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:ros1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:ret": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:pdl1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:prior_platinum": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p15:pregnant_or_breastfeeding": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p16:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p16:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p16:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p16:ret": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p16:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p16:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p16:pdl1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p16:prior_pd1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p16:other_cancer": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:extent": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:ros1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:ret": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:prior_pd1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:prior_adc": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p18:autoimmune_active": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:histology": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:ntrk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:her2": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:lines_advanced": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:chest_radiation_6m": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p19:ild": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p20:brain_mets": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p20:measurable_disease": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p20:ecog": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p20:egfr": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p20:alk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p20:ntrk": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p20:kras": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p20:met": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:",
+    "p20:pdl1": "Anthropic request to https://api.anthropic.com/v1/messages (model claude-haiku-4-5) failed:"
+  }
+}

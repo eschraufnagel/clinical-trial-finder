@@ -1,5 +1,11 @@
 import { checkInbound, type InboundCheck, isUnprocessed, type Refusal } from "./rules.js";
-import type { ChannelMessage, ChannelStatus, InboundMessage, MessageTransport } from "./types.js";
+import type {
+  ChannelMessage,
+  ChannelStatus,
+  Choice,
+  InboundMessage,
+  MessageTransport,
+} from "./types.js";
 
 /** One message as the participant's side shows it. */
 export interface LedgerMessage extends ChannelMessage {
@@ -58,13 +64,18 @@ export class ChannelLedger implements MessageTransport {
     this.#markLast(channel);
   }
 
-  deliver(conversationId: string, text: string): void {
+  deliver(conversationId: string, text: string, choices?: readonly Choice[]): void {
     const channel = this.#require(conversationId);
     const answered = this.#lastParticipant(channel);
     if (answered !== undefined) {
       answered.state = "processed";
     }
-    channel.messages.push({ seq: channel.nextSeq++, from: "agent", text });
+    channel.messages.push({
+      seq: channel.nextSeq++,
+      from: "agent",
+      text,
+      ...(choices === undefined || choices.length === 0 ? {} : { choices: [...choices] }),
+    });
   }
 
   close(conversationId: string): void {
@@ -110,6 +121,39 @@ export class ChannelLedger implements MessageTransport {
     channel.detail = undefined;
     this.#handler?.({ conversationId, text: check.text });
     return check;
+  }
+
+  /**
+   * Offers a choice: one of the replies the last agent message offered as a
+   * button (slice 0004). Taken as `accept` takes text, under the same rules,
+   * and recorded with the choice's label as its text. Refused if the last
+   * agent message didn't offer it.
+   */
+  acceptChoice(conversationId: string, choiceId: string): InboundCheck {
+    const channel = this.#channels.get(conversationId);
+    const lastAgent = channel?.messages.findLast((m) => m.from === "agent");
+    const choice = lastAgent?.choices?.find((c) => c.id === choiceId);
+    // The status rules first, so a choice while the agent is working is "working", as text is.
+    const check = checkInbound(choice?.label ?? choiceId, channel?.status);
+    if (!check.ok) return check;
+    if (channel === undefined || choice === undefined) {
+      return { ok: false, code: 409, reason: "not-a-choice" };
+    }
+    const last = channel.messages.at(-1);
+    if (isUnprocessed(channel.status) && last?.from === "participant") {
+      channel.messages.pop();
+    }
+    channel.messages.push({
+      seq: channel.nextSeq++,
+      from: "participant",
+      text: choice.label,
+      choice: choice.id,
+      state: "pending",
+    });
+    channel.status = "working";
+    channel.detail = undefined;
+    this.#handler?.({ conversationId, text: choice.label, choice: choice.id });
+    return { ok: true, text: choice.label };
   }
 
   /**

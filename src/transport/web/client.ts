@@ -35,6 +35,12 @@ export async function sendMessage(conversationId: string, text: string): Promise
   return outcome(await fetch(`/api/conversations/${id}/messages`, json({ text })));
 }
 
+/** Picks one of the last agent message's choices (slice 0004). */
+export async function sendChoice(conversationId: string, choice: string): Promise<SendOutcome> {
+  const id = encodeURIComponent(conversationId);
+  return outcome(await fetch(`/api/conversations/${id}/messages`, json({ choice })));
+}
+
 /** Resends the unprocessed message, or `text` in its place. */
 export async function sendAgain(conversationId: string, text?: string): Promise<SendOutcome> {
   const id = encodeURIComponent(conversationId);

@@ -14,14 +14,18 @@ import {
   type ScorerName,
   skippedFacts,
 } from "../../src/questions/settings.js";
+import { describeOrder } from "../../src/shortlist/explain.js";
 import type { OrderEntry } from "../../src/shortlist/order.js";
 import { shortlistOf } from "../../src/shortlist/order.js";
+import { oncologistSheet, sheetMissing } from "../../src/shortlist/sheet.js";
+import { oursIn, verdictHits } from "../../src/shortlist/words.js";
 import {
   type ArmName,
   type ArmRow,
   agreement,
   CURVE_LENGTH,
   type CurvePoint,
+  median,
   wouldFlag,
 } from "./metrics.js";
 import type { Patient, PatientSet } from "./patients.js";
@@ -67,12 +71,16 @@ export function armsFor(
     const value = patient.record[fact.id];
     if (value != null) recordProfile[fact.id] = value;
   }
-  const recordOrder = orderFor(trials, recordProfile, vocabulary);
+  const recordOrder = orderFor(trials, recordProfile, vocabulary, settings.order);
   const recordList = ids(shortlistOf(recordOrder, size));
   const flagged = new Set(
     recordOrder.filter((e) => (e.status?.hints.length ?? 0) > 0).map((e) => e.candidate.nctId),
   );
-  const noAnswerList = ids(shortlistOf(orderFor(trials, {}, vocabulary), size));
+  const noAnswerList = ids(shortlistOf(orderFor(trials, {}, vocabulary, settings.order), size));
+  const mappings = new Map(trials.map((t) => [t.candidate.nctId, t.facts?.mappings.length ?? 0]));
+  const meanMappings = (list: readonly string[]): number | null =>
+    list.length === 0 ? null : list.reduce((n, id) => n + (mappings.get(id) ?? 0), 0) / list.length;
+  const candidateMappings = meanMappings(trials.map((t) => t.candidate.nctId));
   const unmapped = new Set(
     trials
       .filter((t) => t.facts === null || t.facts.mappings.length === 0)
@@ -106,6 +114,27 @@ export function armsFor(
     const byId = new Map(order.map((e) => [e.candidate.nctId, e]));
     const pushed = noAnswerList.filter((id) => !list.includes(id));
     const followUps = result?.steps.filter((s) => s.phase === "follow-up") ?? [];
+    // The person's words, for the facts they answered by saying so.
+    const saidFor = Object.fromEntries(
+      Object.keys(profile).flatMap((f) =>
+        patient.says[f] === undefined ? [] : [[f, patient.says[f]]],
+      ),
+    );
+    const described = {
+      order,
+      orderName: settings.order,
+      shortlistSize: size,
+      profile,
+      said: saidFor,
+      vocabulary,
+      cancerType,
+      skipped,
+    };
+    const view = describeOrder(described);
+    const sheet = oncologistSheet({
+      ...described,
+      asked: result?.steps.map((s) => s.factId) ?? Object.keys(profile),
+    });
     return {
       patient: patient.id,
       set,
@@ -126,6 +155,16 @@ export function armsFor(
       }, 0),
       noMappingPlaces: list.filter((id) => unmapped.has(id)).length,
       openQuestions: openQuestions(shortlist, profile, vocabulary, skipped).length,
+      shortlistMappings: meanMappings(list),
+      candidateMappings,
+      medianMiles: median(
+        shortlist.flatMap((e) => {
+          const miles = e.candidate.nearestSite?.miles;
+          return miles === null || miles === undefined ? [] : [miles];
+        }),
+      ),
+      verdictHits: verdictHits(oursIn([view, sheet])).length,
+      sheetMissing: sheetMissing(sheet, shortlist, skipped).length,
       curve,
     };
   };

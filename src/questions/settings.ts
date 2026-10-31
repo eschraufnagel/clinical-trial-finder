@@ -3,10 +3,12 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import type { FactVocabulary } from "../facts/types.js";
 import { factsFor } from "../facts/vocabulary.js";
+import { ORDER_NAMES, type OrderName } from "../shortlist/order.js";
 
 /**
  * How the conversation runs (spec 0003 §3): the intake, the facts never asked
- * of one sex, the short list's size, the question budget and the scorer.
+ * of one sex, the short list's size, the question budget, the scorer, and
+ * since slice 0004 the order.
  * Its own file, because changing `data/facts/vocabulary.json` changes its
  * hash and orphans the mapping run.
  */
@@ -33,6 +35,8 @@ export interface ConversationSettings {
   /** The most follow-up questions after the intake. */
   budget: number;
   scorer: ScorerName;
+  /** The order of the trials (slice 0004). Absent from the file means `hints`, 0003's. */
+  order: OrderName;
   /** Of the file's bytes, recorded on every result. */
   sha256: string;
 }
@@ -69,10 +73,10 @@ export function loadConversationSettings(
   }
   const problems = settingsProblems(value, vocabulary, cancerType);
   if (problems.length > 0) throw new ConversationSettingsError(path, problems);
-  const { version, intake, skip, shortlistSize, budget, scorer } = value as Omit<
+  const { version, intake, skip, shortlistSize, budget, scorer, order } = value as Omit<
     ConversationSettings,
-    "sha256"
-  >;
+    "sha256" | "order"
+  > & { order?: OrderName };
   return {
     version,
     intake,
@@ -80,6 +84,7 @@ export function loadConversationSettings(
     shortlistSize,
     budget,
     scorer,
+    order: order ?? "hints",
     sha256: createHash("sha256").update(bytes).digest("hex"),
   };
 }
@@ -131,5 +136,7 @@ export function settingsProblems(
   }
   if (!SCORERS.includes(v["scorer"] as ScorerName))
     problems.push(`scorer ${String(v["scorer"])} is not one of ${SCORERS.join(", ")}`);
+  if (v["order"] !== undefined && !ORDER_NAMES.includes(v["order"] as OrderName))
+    problems.push(`order ${String(v["order"])} is not one of ${ORDER_NAMES.join(", ")}`);
   return problems;
 }

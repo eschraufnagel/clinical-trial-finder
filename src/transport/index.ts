@@ -18,6 +18,7 @@ export {
 export type {
   ChannelMessage,
   ChannelStatus,
+  Choice,
   InboundMessage,
   MessageTransport,
 } from "./types.js";

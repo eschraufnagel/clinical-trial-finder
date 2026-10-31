@@ -26,6 +26,7 @@ export const SETTINGS: ConversationSettings = {
   shortlistSize: 3,
   budget: 10,
   scorer: "shortlist",
+  order: "hints",
   sha256: "0".repeat(64),
 };
 

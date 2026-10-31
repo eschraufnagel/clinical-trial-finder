@@ -26,6 +26,7 @@ import {
 import { patientsSha256 } from "../evals/questions/result.js";
 import type { FactVocabulary } from "../src/facts/types.js";
 import { loadFactVocabulary } from "../src/facts/vocabulary.js";
+import type { Provider } from "../src/models/catalog.js";
 import {
   createAdapter,
   createLocalAdapter,
@@ -37,6 +38,7 @@ import {
   tokensFor,
   type Workload,
 } from "../src/models/index.js";
+import { keyAppearsIn } from "../src/models/keys.js";
 import {
   buildReaderPrompt,
   READER_PROMPT_VERSION,
@@ -83,6 +85,23 @@ export function workloadFor(patients: readonly Patient[], vocabulary: FactVocabu
  * Reads every pair not already read in `path`, writing the file after each
  * one. Returns the file, and whether a budget stopped it.
  */
+/**
+ * Why a reading failed, on one line: the error's title and its reasons
+ * (for a provider, its status and message). The reads file is committed,
+ * so a text holding a secret is replaced, never written.
+ */
+export function failureText(error: unknown, holdsSecret?: (text: string) => boolean): string {
+  // A ModelError's message is its title, then a line per reason ("  - HTTP 429 …").
+  const text = (error instanceof Error ? error.message : String(error))
+    .split("\n")
+    .map((line) => line.replace(/^\s*-\s*/, "").trim())
+    .filter((line) => line.length > 0)
+    .join(" ");
+  return holdsSecret?.(text) === true
+    ? "failed; the error's text held the key, so it isn't kept"
+    : text;
+}
+
 export async function readAll(input: {
   set: PatientSet;
   patients: readonly Patient[];
@@ -91,6 +110,8 @@ export async function readAll(input: {
   path: string;
   patientsSha256: string;
   log?: (line: string) => void;
+  /** Whether a failure's text holds a secret, such as the provider's key. Such a text isn't written. */
+  holdsSecret?: (text: string) => boolean;
 }): Promise<{ file: ReadsFile; stopped: boolean }> {
   const { vocabulary, adapter, path } = input;
   const log = input.log ?? (() => {});
@@ -144,8 +165,7 @@ export async function readAll(input: {
         save();
         break;
       }
-      file.failures[key] =
-        (error instanceof Error ? error.message : String(error)).split("\n")[0] ?? "";
+      file.failures[key] = failureText(error, input.holdsSecret);
       log(`${key.padEnd(34)} failed: ${file.failures[key]}`);
     }
     save();
@@ -226,6 +246,11 @@ async function main(): Promise<void> {
     path,
     patientsSha256: patientsSha256(set),
     log: (line) => console.log(line),
+    ...(spec.provider === "omlx"
+      ? {}
+      : {
+          holdsSecret: (text: string) => keyAppearsIn(spec.provider as Provider, text, process.env),
+        }),
   });
   console.log(`\nWrote ${path} in ${((Date.now() - started) / 1000).toFixed(0)} s.`);
   console.log(`${Object.keys(file.failures).length} pairs failed; a rerun retries them.\n`);

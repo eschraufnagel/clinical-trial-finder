@@ -4,9 +4,10 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import type { Patient } from "../../evals/questions/patients.js";
 import type { ReadsFile } from "../../evals/questions/reads.js";
-import { readAll, readsPath } from "../../scripts/questions-read.js";
+import { failureText, readAll, readsPath } from "../../scripts/questions-read.js";
 import { factsFor } from "../../src/facts/vocabulary.js";
 import { FakeModelAdapter } from "../../src/models/fake.js";
+import { ModelError } from "../../src/models/types.js";
 import { vocabulary } from "../questions/fixture.js";
 
 const FACTS = factsFor(vocabulary, "nsclc");
@@ -51,6 +52,23 @@ describe("readAll", () => {
     expect(file.failures).toEqual({});
   });
 
+  // Found in 0004's hosted run: a failure recorded only the error's first
+  // line, "Anthropic request to … failed:", and not why.
+  it("records why a reading failed, not only that it did", async () => {
+    const path = join(mkdtempSync(join(tmpdir(), "reads-")), "dev-fake.json");
+    const adapter = new FakeModelAdapter([{ kind: "error", message: "HTTP 429: rate limited" }]);
+    await readAll({
+      set: "dev",
+      patients: [patient],
+      vocabulary,
+      path,
+      patientsSha256: "a",
+      adapter,
+    });
+    const file = JSON.parse(readFileSync(path, "utf8")) as ReadsFile;
+    expect(Object.values(file.failures)[0]).toContain("HTTP 429: rate limited");
+  });
+
   it("refuses a file read from other patients", async () => {
     const path = join(mkdtempSync(join(tmpdir(), "reads-")), "dev-fake.json");
     const adapter = new FakeModelAdapter([], {
@@ -59,6 +77,14 @@ describe("readAll", () => {
     const input = { set: "dev" as const, patients: [patient], vocabulary, path, adapter };
     await readAll({ ...input, patientsSha256: "a" });
     await expect(readAll({ ...input, patientsSha256: "b" })).rejects.toThrow(/other patients/);
+  });
+});
+
+describe("failureText", () => {
+  it("keeps the reasons on one line, and never a text that holds the key", () => {
+    const error = new ModelError("Anthropic request failed", ["HTTP 429", "rate\nlimited"]);
+    expect(failureText(error)).toBe("Anthropic request failed: HTTP 429 rate limited");
+    expect(failureText(error, (t) => t.includes("429"))).toMatch(/held the key/);
   });
 });
 

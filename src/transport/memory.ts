@@ -11,6 +11,11 @@ export class MemoryTransport extends ChannelLedger {
     return this.accept(conversationId, text);
   }
 
+  /** Picks one of the last agent message's choices (slice 0004). */
+  choose(conversationId: string, choiceId: string): InboundCheck {
+    return this.acceptChoice(conversationId, choiceId);
+  }
+
   /** Agent messages delivered so far, in order. */
   delivered(conversationId: string): string[] {
     return (this.view(conversationId)?.messages ?? [])
