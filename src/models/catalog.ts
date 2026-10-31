@@ -62,6 +62,13 @@ export interface CatalogEntry {
   seedGuarantee?: "best-effort";
   /** How reasoning is switched off for this model. */
   reasoningOff: "omit-thinking" | "thinking-disabled" | "reasoning-effort-none";
+  /**
+   * "enforced" when this project's adapter for the provider sends a request's
+   * answer schema (Anthropic's structured outputs, slice 0006); null when it
+   * ignores one. Per entry, so the page can tell which reading run measured
+   * the request it would send, before it builds an adapter.
+   */
+  schema: "enforced" | null;
   /** Below this many tokens a prompt is not cached at all. Null where caching is automatic and unstated. */
   cacheMinimumTokens: number | null;
   /** Why temperature or seed is null, recorded on every result. */
@@ -90,6 +97,7 @@ export const CATALOG: readonly CatalogEntry[] = [
     seed: null,
     // Haiku 4.5 does not think unless asked, so leaving `thinking` out is off.
     reasoningOff: "omit-thinking",
+    schema: "enforced",
     cacheMinimumTokens: 4096,
     unset: { seed: "the Claude API has no seed parameter" },
     sources: ANTHROPIC_SOURCES,
@@ -103,6 +111,7 @@ export const CATALOG: readonly CatalogEntry[] = [
     temperature: null,
     seed: null,
     reasoningOff: "thinking-disabled",
+    schema: "enforced",
     cacheMinimumTokens: 1024,
     unset: {
       temperature: "rejected by claude-sonnet-5; the provider's default applied",
@@ -123,6 +132,7 @@ export const CATALOG: readonly CatalogEntry[] = [
     temperature: 0,
     seed: null,
     reasoningOff: "reasoning-effort-none",
+    schema: null,
     cacheMinimumTokens: null,
     unset: { seed: "not documented for gpt-6-luna; not sent" },
     sources: [
@@ -141,6 +151,7 @@ export const CATALOG: readonly CatalogEntry[] = [
     seed: "send",
     seedGuarantee: "best-effort",
     reasoningOff: "reasoning-effort-none",
+    schema: null,
     cacheMinimumTokens: null,
     unset: {},
     sources: [
@@ -182,5 +193,6 @@ export function descriptorFor(entry: CatalogEntry, seed: number): ModelDescripto
     thinking: "off",
     ...(unset === undefined ? {} : { unset }),
     ...(entry.seedGuarantee === undefined ? {} : { seedGuarantee: entry.seedGuarantee }),
+    ...(entry.schema === null ? {} : { schema: entry.schema }),
   };
 }

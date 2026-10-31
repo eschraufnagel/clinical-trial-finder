@@ -127,19 +127,17 @@ The trial's own words and the person's own words are kept apart from the page's,
   - logs what it spent to `local/spend.jsonl`.
 
   On Claude Haiku 4.5 a conversation is estimated at under a cent.
-- **Measured models:** beside each confirm the page says which model read the reply. Settings shows what each model's held-out reading run found, or that it wasn't measured. Both runs below are on the same 527 replies from 17 made-up patients, with the same prompt (`8cb01749`), at temperature 0 ([questions.md](questions.md#the-reader)).
+- **Measured models:** beside each confirm the page says which model read the reply. Settings shows what each model's held-out reading run found, or that it wasn't measured. Only a run of the request the app sends now counts: the current prompt, and for Anthropic the reader's answer schema (slice 0006). Both runs below are on the same 527 replies from 17 made-up patients, with the same prompt (`8cb01749`), at temperature 0 ([questions.md](questions.md#on-a-hosted-model)).
 
 | Model | Replies it could read | Of those stating an answer, read exactly | "Don't know"s turned into an answer |
 | --- | ---: | ---: | ---: |
 | Qwen3.6-35B-A3B, 8-bit, local | 527 of 527 | 326 of 326 | 1 of 201 |
-| Claude Haiku 4.5 | 237 of 527 (45%) | 217 of 217 | 0 of 20 |
+| Claude Haiku 4.5, schema enforced | 527 of 527 | 324 of 326 | 0 of 201 |
 | Claude Sonnet 5, GPT-6 Luna, Grok 4.3 | not measured | | |
 
-**Haiku couldn't read 290 replies.**
-- **87** were cut off at the reader's 64-token limit.
-- **203** weren't JSON the adapter accepts. It allows a single code fence around the answer, and nothing else.
+**Haiku's request carries the answer's shape** since slice 0006: Anthropic's structured outputs hold it to one of the question's answer ids, or "unknown". In slice 0004, without it, Haiku could read only 237 of 527 replies (45%): it explained around its answers, which ran past the reader's 64-token limit or wrapped the JSON in prose the adapter doesn't accept. With it, every reply is read.
 
-Most likely Haiku explains around its answer, where the local model answers in JSON mode. The prompt was tuned on the local model. With Haiku chosen, more than half of typed replies would fall back to the answer buttons. None would be read wrong: that's the confirm step and the fallback doing their job. Adapting the prompt for hosted models is left for a later slice.
+**Two plain "No"s were read as "Yes"** (heart trouble in the last six months; spread to the lining of the brain). The local model, and Haiku without the schema, read both as "No". On the page the person sees the reading and corrects it; confirmed, it would only add a "may not fit" hint, which never removes a trial.
 
 ## How the page is held to its rules
 
@@ -164,5 +162,5 @@ Most likely Haiku explains around its answer, where the local model answers in J
 - **The phase sentences and the page's words were written here** and reviewed by no clinician.
 - **Conversations live in the server's memory.** A restart forgets them.
 - **The readings behind `--fake` are clean replies by construction** ([questions.md](questions.md)). Real replies will be read worse, and that's what the confirm step is for.
-- **The reader's prompt suits the local model.** On Claude Haiku 4.5 it could read 45% of replies, and the rest fall back to the buttons. The other hosted models aren't measured.
+- **One hosted model is measured.** Claude Haiku 4.5, with the answer's schema enforced, read every held-out reply, and read 2 of 326 stated answers wrong, each a "No" read as "Yes". The local model read none wrong. Claude Sonnet 5, GPT-6 Luna and Grok 4.3 aren't measured, and only the Anthropic request carries the schema.
 - **One cancer, one snapshot, one mapping run.**

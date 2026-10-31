@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import type { Patient } from "../../evals/questions/patients.js";
 import type { ReadsFile } from "../../evals/questions/reads.js";
-import { failureText, readAll, readsPath } from "../../scripts/questions-read.js";
+import { failureText, formatUnusable, readAll, readsPath } from "../../scripts/questions-read.js";
 import { factsFor } from "../../src/facts/vocabulary.js";
 import { FakeModelAdapter } from "../../src/models/fake.js";
 import { ModelError } from "../../src/models/types.js";
@@ -90,8 +90,39 @@ describe("failureText", () => {
 
 describe("readsPath", () => {
   it("names the set, the model and the prompt", () => {
-    expect(readsPath("dev", "Qwen3.6-35B-A3B-MLX-8bit", "/x")).toMatch(
+    expect(readsPath("dev", { model: "Qwen3.6-35B-A3B-MLX-8bit" }, "/x")).toMatch(
       /^\/x\/dev-qwen3\.6-35b-a3b-mlx-8bit-[0-9a-f]{8}\.json$/,
+    );
+  });
+
+  // Slice 0006: a run that enforced the schema never resumes or overwrites
+  // 0004's run of the same model and prompt, made without it.
+  it("names a run whose schema was enforced apart from one without", () => {
+    const plain = readsPath("heldout", { model: "claude-haiku-4-5" }, "/x");
+    const shaped = readsPath("heldout", { model: "claude-haiku-4-5", schema: "enforced" }, "/x");
+    expect(plain).toBe("/x/heldout-claude-haiku-4-5-8cb01749.json");
+    expect(shaped).toBe("/x/heldout-claude-haiku-4-5-8cb01749-schema.json");
+  });
+});
+
+describe("formatUnusable", () => {
+  it("counts rejections by reason and lists each failure with its reason", () => {
+    const item = { patient: "p00", kind: "phrase" as const, reply: "?", expected: "unknown" };
+    const text = formatUnusable({
+      items: [
+        { ...item, factId: "a", answer: "unknown", rejected: "the model's output was truncated" },
+        { ...item, factId: "b", answer: "unknown", rejected: "the model's output was truncated" },
+        { ...item, factId: "c", answer: "unknown" },
+      ],
+      failures: { "p00:d": "model output is not JSON" },
+    } as unknown as ReadsFile);
+    expect(text).toBe(
+      [
+        "Rejected, by reason:",
+        "     2  the model's output was truncated",
+        "Failed:",
+        `  ${"p00:d".padEnd(34)} model output is not JSON`,
+      ].join("\n"),
     );
   });
 });

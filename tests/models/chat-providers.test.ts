@@ -73,6 +73,23 @@ for (const p of PROVIDERS) {
       ]);
     });
 
+    // Slice 0006: this adapter ignores a schema, and its descriptor says so.
+    it("sends the same body with a schema as without one", async () => {
+      const { fetchImpl, sent } = fixtureFetch(
+        loadFixture(p.name, "ok"),
+        loadFixture(p.name, "ok"),
+      );
+      const adapter = p.make(fetchImpl);
+      await adapter.complete(REQUEST);
+      await adapter.complete({
+        ...REQUEST,
+        schema: { type: "object", properties: {}, required: [], additionalProperties: false },
+      });
+
+      expect(sent[1]?.body).toEqual(sent[0]?.body);
+      expect(adapter.descriptor).not.toHaveProperty("schema");
+    });
+
     it("reads content, usage and the served model", async () => {
       const fixture = loadFixture(p.name, "ok");
       const { fetchImpl } = fixtureFetch(fixture);

@@ -1,5 +1,6 @@
 import { hashPrompt } from "../criteria/prompt.js";
 import type { Fact } from "../facts/types.js";
+import type { JsonSchema } from "../models/types.js";
 
 /**
  * The reader's prompt (spec 0003 §7.1): one question, its fixed answers and
@@ -47,4 +48,25 @@ export function buildReaderPrompt(fact: Fact, reply: string): string {
     "",
     `Reply: ${JSON.stringify(reply)}`,
   ].join("\n");
+}
+
+/**
+ * The shape of the reader's answer (slice 0006): one field, `answer`, one of
+ * the fact's ids or "unknown". An adapter that enforces a schema, Anthropic's,
+ * constrains the output to it; the others ignore it.
+ *
+ * Not part of `READER_PROMPT_VERSION`. An adapter that ignores it sends
+ * exactly the request the version names, so the local model's readings stay
+ * those of prompt `8cb01749`. A run that enforced it says so in its run record
+ * and its file's name (`scripts/questions-read.ts`).
+ */
+export function readerSchema(fact: Fact): JsonSchema {
+  return {
+    type: "object",
+    properties: {
+      answer: { type: "string", enum: [...fact.answers.map((a) => a.id), "unknown"] },
+    },
+    required: ["answer"],
+    additionalProperties: false,
+  };
 }

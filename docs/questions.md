@@ -131,22 +131,30 @@ What the run showed:
   - a sentence of instruction made it worse;
   - quoting the ids fixed it.
 
-### On a hosted model, once
+### On a hosted model
 
-Slice 0004's Gate 2 measured one hosted model, Claude Haiku 4.5, on the same 527 held-out pairs and the same prompt. It ran at temperature 0, with no seed (the Claude API has none) and reasoning off, for $0.15: [the reads](../evals/results/questions/reads/heldout-claude-haiku-4-5-8cb01749.json).
+Claude Haiku 4.5, on the same 527 held-out pairs and the same prompt (`8cb01749`), at temperature 0, with no seed (the Claude API has none) and reasoning off. Measured twice: once in slice 0004 as the prompt was, and once in slice 0006 with the answer's shape enforced. The record of the second is [`work/0006-hosted-reader/`](../work/0006-hosted-reader/).
 
-| | Claude Haiku 4.5 |
-| --- | ---: |
-| Replies it could read at all | 237 of 527, 45% |
-| … stating an answer, read exactly | 217 of 217, 100% |
-| … "don't know", read as an answer | 0 of 20 |
-| Cut off at the 64-token limit | 87 |
-| Output that isn't JSON the adapter accepts | 203 |
+| | Local | Haiku, 0004 | Haiku, schema (0006) |
+| --- | ---: | ---: | ---: |
+| Replies read at all | 527 of 527 | 237 of 527, 45% | **527 of 527** |
+| Replies stating an answer, read exactly, of all 326 | 326 | 217 | **324** (97.8% to 99.8%) |
+| … read as a different answer | 0 | 0 | **2** (0.2% to 2.2%) |
+| "Don't know" replies read as an answer | 1 of 201 | 0 of 20 read | **0 of 201** (0.0% to 1.9%) |
+| Cut off at 64 tokens | 0 | 87 | 0 |
+| Failed: output wasn't JSON the adapter accepts | 0 | 203 | 0 |
+| Spent | — | $0.15 | $0.29 |
 
-- **What it read, it read right.**
-- **Most of what it couldn't read is the prompt's fault, not the model's,** most likely: the prompt was written for a model that answers in JSON mode, and Haiku explains around its answer.
-- **The run can't show it.** `questions:read` kept only the first line of each failure, and now keeps the reason ([work/0004-shortlist-handoff/gate-3-words.md](../work/0004-shortlist-handoff/gate-3-words.md)).
-- **Adapting the prompt for hosted models** would be a new prompt version, tuned on dev first.
+[0004's reads](../evals/results/questions/reads/heldout-claude-haiku-4-5-8cb01749.json); [0006's reads](../evals/results/questions/reads/heldout-claude-haiku-4-5-8cb01749-schema.json), and [dev](../evals/results/questions/reads/dev-claude-haiku-4-5-8cb01749-schema.json) (93 of 93 read, 1 stated answer wrong, $0.05).
+
+**What changed was the request, not the prompt.** The local model, OpenAI and xAI are asked for a JSON object. In 0004 the Anthropic request asked for nothing, and Haiku explained around its answers: that ran past the 64-token limit, mostly on "don't know" replies (75 of the 87), or wrapped the JSON in prose that `src/models/json.ts` deliberately doesn't forgive. Since 0006 a request can carry its answer's JSON schema (`CompletionRequest.schema`). The Anthropic adapter sends it as structured output (`output_config.format`), and the reader's is one field, `answer`, one of the question's ids or "unknown" (`readerSchema` in `src/questions/prompt.ts`). The prompt's words didn't change, so the local model's readings stand, and `json.ts` forgives nothing new. A run records `schema: "enforced"`, and its file's name ends `-schema`.
+
+**The schema brought errors the prompt alone didn't.**
+- **Two plain "No"s were read as "Yes":** "No, my heart's been fine." (heart trouble in the last six months) and "No, the doctor said the lining of the brain and spine is clear." The local model and 0004's Haiku read both as "No".
+- **On dev, a stated count was read as a different one:** "One, the radiation with chemo and then the Imfinzi." was read as two.
+- **Held-out was read under an overturned bar.** Gate 1 froze a bar for spending held-out's one look: no stated answer read wrong on dev. Dev's one wrong reading failed it, and the owner overturned that criterion at Gate 2, after the numbers, to measure it on held-out ([gate-2-dev.md](../work/0006-hosted-reader/gate-2-dev.md)).
+
+**Two figures in 0004's gate page don't match its file.** It gives "241 known replies" and "0 of 95" don't-knows ([gate-3-words.md](../work/0004-shortlist-handoff/gate-3-words.md), "Gate 2, as run"). In the file, 229 stated answers reached the reader without the call failing (217 exact, 12 cut off), and 97 more failed; of the 95 "don't know" items, 75 were cut off and read as unknown by default. The table above quotes the file.
 
 ## Trying it
 
@@ -159,8 +167,9 @@ It prints each question with the answer or "doesn't know", which trials moved, w
 ## Limits
 
 - **One author.** Claude wrote the patients, their replies, the chooser and the reader's prompt. The patients came first and were split by hash, and held-out was scored once, but no clinician checked any of it.
-- **Agreement is with the mapper, not with the truth.** The record arm is what the mapper says when everything is known, and about a quarter of its hints are wrong ([facts.md](facts.md)). Nothing here says which trials actually suit a person; that needs the benchmark in slice 0006.
+- **Agreement is with the mapper, not with the truth.** The record arm is what the mapper says when everything is known, and about a quarter of its hints are wrong ([facts.md](facts.md)). Nothing here says which trials actually suit a person; that needs the benchmark in slice 0008.
 - **The order favors trials the mapper read little.** Under 0003's order this included trials no model mapped at all: 30 short-list places across the 17 held-out patients, 2 since 0004's `read-first`. The order also keeps trials whose relevant rules the mapper missed, such as first-line trials for someone already treated.
+- **One hosted model measured,** Claude Haiku 4.5, and only the Anthropic adapter enforces the schema. OpenAI's and xAI's requests ask for a JSON object, unmeasured.
 - **The replies are clean by construction,** so the reader's numbers are best cases. Contradictions, several facts in one reply, and answers to a different question aren't tested.
 - **Small samples:** 3 dev patients chose the scorer, and 17 held-out patients tested it.
 - **One cancer type, one snapshot, one mapping run.**

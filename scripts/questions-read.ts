@@ -9,8 +9,10 @@
  * Writes evals/results/questions/reads/<set>-<model>-<prompt>.json as it
  * goes, and a rerun skips the pairs already read and retries the ones that
  * failed, so a stopped run resumes. A changed prompt is a new file, never an
- * overwrite. `npm run questions:eval -- --reads <file>` then answers the
- * conversations from these readings, with no further model calls.
+ * overwrite, and so is a run whose adapter enforces the reader's schema
+ * (slice 0006): its name ends `-schema`. `npm run questions:eval -- --reads
+ * <file>` then answers the conversations from these readings, with no further
+ * model calls.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -32,6 +34,7 @@ import {
   createLocalAdapter,
   isBudgetStop,
   type ModelAdapter,
+  type ModelDescriptor,
   ModelError,
   type ModelSpec,
   monthStamp,
@@ -54,13 +57,22 @@ export const READS_DIR = fileURLToPath(
 
 const MAX_OUTPUT_TOKENS = 64;
 
-/** One file per set, model and prompt: a changed prompt is a new file. The vocabulary is named inside. */
-export function readsPath(set: PatientSet, model: string, dir: string = READS_DIR): string {
-  const slug = model
+/**
+ * One file per set, model, prompt and request: a changed prompt is a new file,
+ * and so is a run whose schema was enforced (slice 0006), so it never resumes
+ * or overwrites a run made without one. The vocabulary is named inside.
+ */
+export function readsPath(
+  set: PatientSet,
+  run: Pick<ModelDescriptor, "model" | "schema">,
+  dir: string = READS_DIR,
+): string {
+  const slug = run.model
     .toLowerCase()
     .replace(/[^a-z0-9.]+/g, "-")
     .replace(/^-|-$/g, "");
-  return join(dir, `${set}-${slug}-${READER_PROMPT_VERSION.slice(0, 8)}.json`);
+  const shape = run.schema === "enforced" ? "-schema" : "";
+  return join(dir, `${set}-${slug}-${READER_PROMPT_VERSION.slice(0, 8)}${shape}.json`);
 }
 
 export function workloadFor(patients: readonly Patient[], vocabulary: FactVocabulary): Workload {
@@ -175,10 +187,17 @@ export async function readAll(input: {
 
 const percent = (x: number | null) => (x === null ? "-" : `${(100 * x).toFixed(1)}%`);
 
-export function formatGrade(grade: ReadGrade): string {
+/**
+ * The grade, led by the share of every pair read at all (slice 0006's
+ * measure): neither failed nor rejected, out of the pairs read and failed.
+ */
+export function formatGrade(grade: ReadGrade, failed = 0): string {
   const r = (label: string, x: ReadGrade["known"]["exact"]) =>
     `  ${label.padEnd(22)} ${String(x.n).padStart(4)} of ${String(x.of).padEnd(4)} ${percent(x.share).padStart(6)}  (95% ${x.interval === null ? "-" : `${percent(x.interval[0])} to ${percent(x.interval[1])}`})`;
+  const pairs = grade.known.items + grade.dontKnow.items + failed;
+  const readAtAll = grade.known.items + grade.dontKnow.items - grade.rejected;
   return [
+    `Read at all: ${readAtAll} of ${pairs} ${percent(pairs === 0 ? null : readAtAll / pairs)} (failed ${failed}, rejected ${grade.rejected})`,
     `Known replies, ${grade.known.items}:`,
     r("exact", grade.known.exact),
     r("lost (read unknown)", grade.known.lost),
@@ -196,6 +215,24 @@ export function formatGrade(grade: ReadGrade): string {
     ...grade.wrongs.map(
       (i) => `  ${i.patient} ${i.factId} ${i.expected} -> ${i.answer}: ${JSON.stringify(i.reply)}`,
     ),
+  ].join("\n");
+}
+
+/**
+ * Why the readings that couldn't be used went wrong (slice 0006): each
+ * rejection's reason with its count, then each failed pair with its reason.
+ */
+export function formatUnusable(file: ReadsFile): string {
+  const reasons = new Map<string, number>();
+  for (const item of file.items)
+    if (item.rejected !== undefined)
+      reasons.set(item.rejected, (reasons.get(item.rejected) ?? 0) + 1);
+  const failures = Object.entries(file.failures);
+  return [
+    ...(reasons.size === 0 ? [] : ["Rejected, by reason:"]),
+    ...[...reasons].map(([reason, n]) => `  ${String(n).padStart(4)}  ${reason}`),
+    ...(failures.length === 0 ? [] : ["Failed:"]),
+    ...failures.map(([pair, reason]) => `  ${pair.padEnd(34)} ${reason}`),
   ].join("\n");
 }
 
@@ -236,7 +273,7 @@ async function main(): Promise<void> {
   const adapter: ModelAdapter =
     plan.kind === "spend" ? createAdapter(spec, { budget: plan.budget }) : createLocalAdapter(spec);
   mkdirSync(READS_DIR, { recursive: true });
-  const path = readsPath(set, adapter.descriptor.model);
+  const path = readsPath(set, adapter.descriptor);
   const started = Date.now();
   const { file } = await readAll({
     set,
@@ -254,7 +291,9 @@ async function main(): Promise<void> {
   });
   console.log(`\nWrote ${path} in ${((Date.now() - started) / 1000).toFixed(0)} s.`);
   console.log(`${Object.keys(file.failures).length} pairs failed; a rerun retries them.\n`);
-  console.log(formatGrade(gradeReads(file.items)));
+  console.log(formatGrade(gradeReads(file.items), Object.keys(file.failures).length));
+  const unusable = formatUnusable(file);
+  if (unusable.length > 0) console.log(`\n${unusable}`);
   if (plan.kind === "spend") {
     const usd = logSpend("questions:read", [{ role: "reader", spec, adapter }], { batch: false });
     console.log(`Spent about $${usd.toFixed(2)}.`);

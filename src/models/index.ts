@@ -76,6 +76,7 @@ export {
   type CompletionRequest,
   type CompletionResponse,
   type FinishReason,
+  type JsonSchema,
   type ModelAdapter,
   type ModelDescriptor,
   ModelError,
