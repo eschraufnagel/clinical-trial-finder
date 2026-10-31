@@ -527,3 +527,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - The record tests' expectations follow the new fields and the count (10 → 11, toAsk 13 → 14), and a test for the pairing is added.
 - **Step 12d, R3: a rule for one part of the trial says so.**
   - `startCheck` keeps each criterion's `appliesTo` from the parse (`Check.parts`), and `recordFor` takes it as `parts`. `RecordLine` gains `part`, in the trial's words. A "may not fit" on such a rule reads `MAY_NOT_FIT_PART`, "May not fit one part of the trial", and still counts as a "may not fit" in the record and the measure. A record without a parse does the same from the mapping's `appliesTo`.
+- **Step 12e, R4: the scoring splits caught by what the patient knows.**
+  - `scorePair` takes the patient's known facts, read from their committed file by `check:eval`. A clearly-ruled-out row is `knowable` when the patient knows every fact its label turns on (a label on the search's own fields is knowable). The summary adds `knowable`, `caughtKnowable` and its interval, beside caught of all. The labels don't change.
+  - A labelled rule covered only by the conversation's "I don't know" is missed as `unknown-or-records`, not `no-conflict`.
+  - Dev's first result (`01-bc351f7eb344.json`) predates these fields, so `check:eval -- --check --dev` fails on it from this commit until the rerun writes the next result, which it then checks.

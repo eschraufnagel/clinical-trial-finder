@@ -48,11 +48,12 @@ export function scoreTranscripts(
   transcripts: readonly PairTranscript[],
   labels: PairLabels,
   textOf: (nctId: string) => string,
+  knowsOf: (patient: string) => ReadonlySet<string>,
 ): { rows: PairRow[]; summary: CheckSummary } {
   const byKey = new Map(transcripts.map((t) => [`${t.patient} ${t.nctId}`, t]));
   const rows = labels.pairs.flatMap((l) => {
     const t = byKey.get(`${l.patient} ${l.nctId}`);
-    return t === undefined ? [] : [scorePair(t, l, textOf(l.nctId))];
+    return t === undefined ? [] : [scorePair(t, l, textOf(l.nctId), knowsOf(l.patient))];
   });
   return { rows, summary: summarize(rows) };
 }
@@ -67,11 +68,12 @@ export function regradeProblems(
   labels: PairLabels,
   labelsSha256: string,
   textOf: (nctId: string) => string,
+  knowsOf: (patient: string) => ReadonlySet<string>,
 ): string[] {
   const problems: string[] = [];
   if (committed.labelsSha256 !== labelsSha256) problems.push("labelsSha256 differs");
   const set = labels.pairs.filter((p) => p.set === committed.set);
-  const again = scoreTranscripts(transcripts, { ...labels, pairs: set }, textOf);
+  const again = scoreTranscripts(transcripts, { ...labels, pairs: set }, textOf, knowsOf);
   if (JSON.stringify(again.rows) !== JSON.stringify(committed.rows)) {
     const first = again.rows.findIndex(
       (r, i) => JSON.stringify(r) !== JSON.stringify(committed.rows[i]),

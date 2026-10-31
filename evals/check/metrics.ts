@@ -18,6 +18,11 @@ import type { PairTranscript } from "./transcript.js";
  * - **Caught:** a pair labelled clearly ruled out whose record shows the
  *   labelled rule as "may not fit". The rule is matched to criteria by the
  *   link's overlap rule.
+ * - **Caught, of the knowable:** the same, among ruled-out pairs whose
+ *   deciding facts (the label's `facts`) the patient knows, from the patient's
+ *   file. A rule that turns on a biomarker the patient can't report can't be
+ *   caught by talking to them; at best it reaches the oncologist's list, and
+ *   is missed as "unknown-or-records".
  * - **A false alarm:** any "may not fit" on a pair labelled not clearly ruled
  *   out. Not an error in itself (the label is only "not clearly"), but the
  *   cost the person pays in worry, so every one is listed.
@@ -45,6 +50,8 @@ export interface PairRow {
   asked: number;
   repeats: { turn: number; facts: string[] }[];
   clearlyRuledOut: boolean;
+  /** When clearly ruled out: whether the patient knows every fact the label turns on. Null otherwise. */
+  knowable: boolean | null;
   caught: { route: "carried" | "asked"; criterionId: string } | null;
   missed: MissReason | null;
   falseAlarms: string[];
@@ -70,7 +77,13 @@ function linesOf(record: TrialRecord): Array<{ section: string; line: RecordLine
   );
 }
 
-export function scorePair(t: PairTranscript, label: PairLabel, criteriaText: string): PairRow {
+/** `knows` is the patient's known facts, from their file. */
+export function scorePair(
+  t: PairTranscript,
+  label: PairLabel,
+  criteriaText: string,
+  knows: ReadonlySet<string>,
+): PairRow {
   const unfaithful = new Set(t.replies.filter((r) => r.flags.length > 0).map((r) => r.turn));
   const excluded = t.findings
     .filter((f) => f.evidence.some((e) => unfaithful.has(e.turn)))
@@ -90,6 +103,11 @@ export function scorePair(t: PairTranscript, label: PairLabel, criteriaText: str
     return facts.length > 0 ? [{ turn: q.index, facts }] : [];
   });
 
+  // A rule the conversation's "I don't know" covered is open, not "no conflict".
+  const didntKnow = (id: string) =>
+    t.findings.some(
+      (f) => f.criterionId === id && (f.earlier ?? []).some((e) => e.answer === "unknown"),
+    );
   let caught: PairRow["caught"] = null;
   let missed: MissReason | null = null;
   if (label.clearlyRuledOut && label.rule !== undefined) {
@@ -113,7 +131,12 @@ export function scorePair(t: PairTranscript, label: PairLabel, criteriaText: str
       missed = "unfaithful";
     } else if (matching.every((l) => l.section === "aboutTrial")) {
       missed = "about-the-trial";
-    } else if (matching.some((l) => l.section === "records")) {
+    } else if (
+      matching.some(
+        (l) =>
+          l.section === "records" || (l.section === "earlier" && didntKnow(l.line.criterionId)),
+      )
+    ) {
       missed = "unknown-or-records";
     } else {
       missed = "no-conflict";
@@ -155,6 +178,7 @@ export function scorePair(t: PairTranscript, label: PairLabel, criteriaText: str
     asked: questions.length,
     repeats,
     clearlyRuledOut: label.clearlyRuledOut,
+    knowable: label.clearlyRuledOut ? (label.rule?.facts ?? []).every((f) => knows.has(f)) : null,
     caught,
     missed,
     falseAlarms,
@@ -179,6 +203,10 @@ export interface CheckSummary {
   caught: number;
   caughtInterval: [number, number];
   caughtBy: { carried: number; asked: number };
+  /** Ruled-out pairs whose deciding facts the patient knows, and how many of those were caught. */
+  knowable: number;
+  caughtKnowable: number;
+  caughtKnowableInterval: [number, number];
   missedBy: Partial<Record<MissReason, number>>;
   notRuledOut: number;
   falseAlarmPairs: number;
@@ -196,6 +224,8 @@ export function summarize(rows: readonly PairRow[]): CheckSummary {
   const ruledOut = rows.filter((r) => r.clearlyRuledOut);
   const notRuledOut = rows.filter((r) => !r.clearlyRuledOut);
   const caught = ruledOut.filter((r) => r.caught !== null);
+  const knowable = ruledOut.filter((r) => r.knowable === true);
+  const caughtKnowable = knowable.filter((r) => r.caught !== null).length;
   const falseAlarmPairs = notRuledOut.filter((r) => r.falseAlarms.length > 0).length;
   const missedBy: Partial<Record<MissReason, number>> = {};
   for (const r of ruledOut)
@@ -217,6 +247,9 @@ export function summarize(rows: readonly PairRow[]): CheckSummary {
       carried: caught.filter((r) => r.caught?.route === "carried").length,
       asked: caught.filter((r) => r.caught?.route === "asked").length,
     },
+    knowable: knowable.length,
+    caughtKnowable,
+    caughtKnowableInterval: wilson(caughtKnowable, knowable.length),
     missedBy,
     notRuledOut: notRuledOut.length,
     falseAlarmPairs,

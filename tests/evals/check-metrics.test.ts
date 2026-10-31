@@ -23,6 +23,8 @@ const span = (quote: string) => {
   return { start, end: start + quote.length, text: quote };
 };
 const RULE = "Prior immunotherapy is not allowed.";
+/** The made-up patient's known facts. */
+const KNOWS: ReadonlySet<string> = new Set(["prior_pd1"]);
 
 const CRITERIA: ScreeningCriterion[] = [
   { id: "P1", polarity: "inclusion", type: "patient", text: "Age 18 or older" },
@@ -124,7 +126,7 @@ const p3 = finding("P3", "not-raised", { reason: "lab-value" });
 
 describe("scorePair", () => {
   it("counts what the conversation saved, the questions asked, and a repeat by the participant's report", () => {
-    const row = scorePair(transcript([p1, carriedP2, p3]), ruledOut, TEXT);
+    const row = scorePair(transcript([p1, carriedP2, p3]), ruledOut, TEXT, KNOWS);
     expect(row.saved).toBe(1);
     expect(row.raisable).toBe(2);
     expect(row.asked).toBe(1);
@@ -132,18 +134,18 @@ describe("scorePair", () => {
   });
 
   it("catches the labelled rule by the carried route and by the asked route", () => {
-    expect(scorePair(transcript([p1, carriedP2, p3]), ruledOut, TEXT).caught).toEqual({
+    expect(scorePair(transcript([p1, carriedP2, p3]), ruledOut, TEXT, KNOWS).caught).toEqual({
       route: "carried",
       criterionId: "P2",
     });
-    expect(scorePair(transcript([p1, askedP2, p3]), ruledOut, TEXT).caught).toEqual({
+    expect(scorePair(transcript([p1, askedP2, p3]), ruledOut, TEXT, KNOWS).caught).toEqual({
       route: "asked",
       criterionId: "P2",
     });
   });
 
   it("names why a ruled-out pair was missed", () => {
-    const missed = (t: PairTranscript) => scorePair(t, ruledOut, TEXT).missed;
+    const missed = (t: PairTranscript) => scorePair(t, ruledOut, TEXT, KNOWS).missed;
     const { P2: _p2, ...noP2 } = SOURCES;
     expect(missed(transcript([p1, askedP2, p3], { sources: noP2 }))).toBe("not-parsed");
     expect(missed(transcript([p1, finding("P2", "unresolved", { reason: "unknown" }), p3]))).toBe(
@@ -172,12 +174,14 @@ describe("scorePair", () => {
       replies: [{ turn: 2, usedFacts: [], flags: [{ kind: "model", reason: "invented" }] }],
     });
     expect(missed(unfaithful)).toBe("unfaithful");
-    expect(scorePair(unfaithful, ruledOut, TEXT).excluded).toEqual(["P1", "P2"]);
+    expect(scorePair(unfaithful, ruledOut, TEXT, KNOWS).excluded).toEqual(["P1", "P2"]);
   });
 
   it("lists every may-not-fit on a pair not clearly ruled out as a false alarm", () => {
-    expect(scorePair(transcript([p1, askedP2, p3]), notRuledOut, TEXT).falseAlarms).toEqual(["P2"]);
-    expect(scorePair(transcript([p1, askedP2, p3]), ruledOut, TEXT).falseAlarms).toEqual([]);
+    expect(scorePair(transcript([p1, askedP2, p3]), notRuledOut, TEXT, KNOWS).falseAlarms).toEqual([
+      "P2",
+    ]);
+    expect(scorePair(transcript([p1, askedP2, p3]), ruledOut, TEXT, KNOWS).falseAlarms).toEqual([]);
   });
 
   it("checks never a verdict, every unknown on the record, and the order unmoved", () => {
@@ -189,7 +193,7 @@ describe("scorePair", () => {
       { index: 4, speaker: "agent", kind: "closing", text: "You are eligible." },
     ];
     t.record = { ...t.record, records: { ...t.record.records, lines: [] } };
-    const row = scorePair(t, notRuledOut, TEXT);
+    const row = scorePair(t, notRuledOut, TEXT, KNOWS);
     expect(row.verdictHits).toEqual(["You are eligible."]);
     expect(row.unknownsMissing).toEqual(["P2"]);
     expect(row.orderMoved).toBe(true);
@@ -206,21 +210,59 @@ describe("scorePair", () => {
       criteria: CRITERIA.map((c) => (c.id === "P2" ? eligible : c)),
     });
     t.transcript = TURNS.map((x) => (x.index === 1 ? { ...x, text: fixedQuestion(eligible) } : x));
-    expect(scorePair(t, notRuledOut, TEXT).verdictHits).toEqual([]);
+    expect(scorePair(t, notRuledOut, TEXT, KNOWS).verdictHits).toEqual([]);
     t.transcript = TURNS.map((x) =>
       x.index === 1 ? { ...x, text: "Are you eligible for immunotherapy?" } : x,
     );
-    expect(scorePair(t, notRuledOut, TEXT).verdictHits).toEqual([
+    expect(scorePair(t, notRuledOut, TEXT, KNOWS).verdictHits).toEqual([
       "Are you eligible for immunotherapy?",
     ]);
+  });
+});
+
+describe("the patient's knowledge (Gate 1 R4)", () => {
+  const carriedUnknown = finding("P2", "from-conversation", {
+    earlier: [
+      {
+        factId: "prior_pd1",
+        answer: "unknown",
+        words: "I'm not sure.",
+        question: "Asked before?",
+        mayNotFit: false,
+      },
+    ],
+  });
+
+  it("marks a ruled-out pair knowable when the patient knows every fact its label turns on", () => {
+    const t = transcript([p1, askedP2, p3]);
+    expect(scorePair(t, ruledOut, TEXT, KNOWS).knowable).toBe(true);
+    expect(scorePair(t, ruledOut, TEXT, new Set()).knowable).toBe(false);
+    expect(scorePair(t, notRuledOut, TEXT, KNOWS).knowable).toBeNull();
+    const searchOnly = { ...ruledOut, rule: { quote: RULE, facts: [], why: "made up" } };
+    expect(scorePair(t, searchOnly, TEXT, new Set()).knowable).toBe(true);
+  });
+
+  it("misses a rule the conversation's don't-know covered as unknown, not no conflict", () => {
+    expect(scorePair(transcript([p1, carriedUnknown, p3]), ruledOut, TEXT, KNOWS).missed).toBe(
+      "unknown-or-records",
+    );
+  });
+
+  it("reports caught among the knowable beside caught of all", () => {
+    const s = summarize([
+      scorePair(transcript([p1, carriedP2, p3]), ruledOut, TEXT, KNOWS),
+      scorePair(transcript([p1, carriedUnknown, p3]), ruledOut, TEXT, new Set()),
+    ]);
+    expect(s).toMatchObject({ ruledOut: 2, caught: 1, knowable: 1, caughtKnowable: 1 });
+    expect(s.caughtKnowableInterval[0]).toBeGreaterThan(0);
   });
 });
 
 describe("summarize", () => {
   it("adds the rows up, with intervals on the two rates", () => {
     const rows = [
-      scorePair(transcript([p1, carriedP2, p3]), ruledOut, TEXT),
-      scorePair(transcript([p1, askedP2, p3]), notRuledOut, TEXT),
+      scorePair(transcript([p1, carriedP2, p3]), ruledOut, TEXT, KNOWS),
+      scorePair(transcript([p1, askedP2, p3]), notRuledOut, TEXT, KNOWS),
     ];
     const s = summarize(rows);
     expect(s).toMatchObject({
@@ -241,7 +283,12 @@ describe("summarize", () => {
 describe("regradeProblems", () => {
   const t = transcript([p1, carriedP2, p3]);
   const labels = { version: 1 as const, pairs: [ruledOut] };
-  const { rows, summary } = scoreTranscripts([t], labels, () => TEXT);
+  const { rows, summary } = scoreTranscripts(
+    [t],
+    labels,
+    () => TEXT,
+    () => KNOWS,
+  );
   const committed = {
     set: "dev",
     labelsSha256: "abc",
@@ -250,15 +297,38 @@ describe("regradeProblems", () => {
   } as unknown as CheckEvalResult;
 
   it("passes when the transcripts regrade to the committed rows", () => {
-    expect(regradeProblems(committed, [t], labels, "abc", () => TEXT)).toEqual([]);
+    expect(
+      regradeProblems(
+        committed,
+        [t],
+        labels,
+        "abc",
+        () => TEXT,
+        () => KNOWS,
+      ),
+    ).toEqual([]);
   });
 
   it("names a changed label file, and rows that no longer follow", () => {
-    expect(regradeProblems(committed, [t], labels, "def", () => TEXT)).toEqual([
-      "labelsSha256 differs",
-    ]);
     expect(
-      regradeProblems(committed, [t], { version: 1, pairs: [notRuledOut] }, "abc", () => TEXT),
+      regradeProblems(
+        committed,
+        [t],
+        labels,
+        "def",
+        () => TEXT,
+        () => KNOWS,
+      ),
+    ).toEqual(["labelsSha256 differs"]);
+    expect(
+      regradeProblems(
+        committed,
+        [t],
+        { version: 1, pairs: [notRuledOut] },
+        "abc",
+        () => TEXT,
+        () => KNOWS,
+      ),
     ).toEqual(["rows differ, first at p99 NCT00000001", "summary differs"]);
   });
 });

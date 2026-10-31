@@ -37,7 +37,7 @@ import {
 import { CHECK_REVISION, checkPair } from "../evals/check/run.js";
 import type { PairTranscript } from "../evals/check/transcript.js";
 import { PATIENT_SIMULATOR_VERSION } from "../evals/participant/prompt.js";
-import type { PatientSet } from "../evals/questions/patients.js";
+import { loadPatients, type PatientSet } from "../evals/questions/patients.js";
 import { patientsSha256 } from "../evals/questions/result.js";
 import { nextRunFile } from "../evals/run-file.js";
 import { LINK_THRESHOLD } from "../src/check/link.js";
@@ -93,6 +93,14 @@ async function main(): Promise<void> {
   const textOf = (id: string) => text.get(id) ?? "";
   const labels = readPairLabels();
   const labelsSha256 = fileSha256(PAIR_LABELS_PATH);
+  // Which facts each patient knows, from their committed file: the scoring's
+  // "knowable" split. Both sets, so `--check` regrades whichever it reads.
+  const knows = new Map(
+    (["dev", "heldout"] as const).flatMap((s) =>
+      loadPatients(s, ctx.vocabulary, ctx.zips).map((p) => [p.id, new Set(p.knows)] as const),
+    ),
+  );
+  const knowsOf = (patient: string) => knows.get(patient) ?? new Set<string>();
 
   if (args.includes("--check")) {
     const path = latestResult(resultsDir);
@@ -108,6 +116,7 @@ async function main(): Promise<void> {
       labels,
       labelsSha256,
       textOf,
+      knowsOf,
     );
     if (problems.length > 0) {
       console.error(`${path} doesn't match a regrade: ${problems.join("; ")}.`);
@@ -257,6 +266,7 @@ async function main(): Promise<void> {
     transcripts,
     { ...labels, pairs: labels.pairs.filter((p) => p.set === set) },
     textOf,
+    knowsOf,
   );
   const parsed = transcripts.find((t) => t.parse === "parsed");
   const parse =
