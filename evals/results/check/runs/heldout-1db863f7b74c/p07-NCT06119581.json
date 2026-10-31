@@ -1,0 +1,2174 @@
+{
+  "patient": "p07",
+  "nctId": "NCT06119581",
+  "set": "heldout",
+  "rank": 2,
+  "conversation": {
+    "histology": {
+      "answer": "unknown",
+      "words": "I'm sorry, I don't remember the type.",
+      "question": "What type of lung cancer cell did the biopsy show?"
+    },
+    "extent": {
+      "answer": "early_resectable",
+      "words": "They caught it early, I'm sorry, it's just the one spot and they say surgery can take it out.",
+      "question": "How far has the cancer spread?"
+    },
+    "brain_mets": {
+      "answer": "none",
+      "words": "No, the brain is fine.",
+      "question": "Has the cancer spread to the brain?"
+    },
+    "ecog": {
+      "answer": "ps0",
+      "words": "I'm doing everything I always did, work and all.",
+      "question": "Which is closest to how you are day to day?"
+    },
+    "prior_platinum": {
+      "answer": "never",
+      "words": "No chemo.",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?"
+    },
+    "prior_pd1": {
+      "answer": "never",
+      "words": "No, I haven't had any treatment yet.",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+    },
+    "prior_targeted": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+    },
+    "lines_advanced": {
+      "answer": "zero",
+      "words": "None, I haven't had treatment.",
+      "question": "How many treatments have you had since the cancer became advanced?"
+    },
+    "other_cancer": {
+      "answer": "none",
+      "words": "No, never.",
+      "question": "Have you had another kind of cancer?"
+    },
+    "egfr": {
+      "answer": "unknown",
+      "words": "I'm sorry, I think they tested for something like that but I don't know the result.",
+      "question": "Did testing find an EGFR mutation?"
+    },
+    "pregnant_or_breastfeeding": {
+      "answer": "no",
+      "words": "No, I'm not, sorry.",
+      "question": "Are you pregnant or breastfeeding?"
+    },
+    "ild": {
+      "answer": "unknown",
+      "words": "I had a bad chest infection once, I'm sorry, I don't know if that's the same thing.",
+      "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?"
+    },
+    "hiv": {
+      "answer": "no",
+      "words": "No.",
+      "question": "Do you have HIV?"
+    },
+    "measurable_disease": {
+      "answer": "unknown",
+      "words": "I'm sorry, I don't know.",
+      "question": "Is there a tumor that scans can measure?"
+    },
+    "leptomeningeal": {
+      "answer": "unknown",
+      "words": "I'm not sure, sorry.",
+      "question": "Has the cancer spread to the lining of the brain or spinal cord?"
+    },
+    "hepatitis_active": {
+      "answer": "no",
+      "words": "No.",
+      "question": "Do you have active hepatitis B or C?"
+    }
+  },
+  "orderBefore": [
+    "NCT04267848",
+    "NCT06119581",
+    "NCT07169851",
+    "NCT07293247",
+    "NCT06253130",
+    "NCT04302025",
+    "NCT05061550",
+    "NCT06623422",
+    "NCT07415031",
+    "NCT03526835",
+    "NCT05142605",
+    "NCT05932862",
+    "NCT06330064",
+    "NCT06162221",
+    "NCT06596473",
+    "NCT04181060",
+    "NCT06031688",
+    "NCT06116682",
+    "NCT07174336",
+    "NCT05624996",
+    "NCT07144280",
+    "NCT04613596",
+    "NCT05768139",
+    "NCT06759649",
+    "NCT06764771",
+    "NCT03093116",
+    "NCT04614103",
+    "NCT05920356",
+    "NCT06745882",
+    "NCT06793215",
+    "NCT07291037",
+    "NCT06767514",
+    "NCT06758401",
+    "NCT07229313",
+    "NCT05642572",
+    "NCT06498635",
+    "NCT07217301",
+    "NCT06616584",
+    "NCT07531095",
+    "NCT06712355",
+    "NCT06203210",
+    "NCT05783323",
+    "NCT07037758",
+    "NCT07365241",
+    "NCT07227597",
+    "NCT07472517"
+  ],
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has histologically or cytologically confirmed NSCLC with Stage IIIB-IIIC or Stage IV disease, not suitable for curative intent radical surgery or radiation therapy."
+    },
+    {
+      "id": "P2",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "For Part B and Safety Lead-In Part B, the histology of the tumor must be predominantly non-squamous (in line with pemetrexed label)."
+    },
+    {
+      "id": "P3",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has disease with evidence of KRAS G12C mutation."
+    },
+    {
+      "id": "P4",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has known programmed death-ligand 1 (PD-L1) expression."
+    },
+    {
+      "id": "P5",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "For Part A, the PD-L1 expression is greater than or equal to (≥)50 percent (%)."
+    },
+    {
+      "id": "P6",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "For Part B, the PD-L1 expression is 0% to 100%."
+    },
+    {
+      "id": "P7",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "For Part C, the PD-L1 expression is <50%."
+    },
+    {
+      "id": "P8",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has measurable disease per RECIST v1.1."
+    },
+    {
+      "id": "P9",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has an ECOG performance status of 0 or 1."
+    },
+    {
+      "id": "P10",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has an estimated life expectancy ≥12 weeks."
+    },
+    {
+      "id": "P11",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant has the ability to swallow capsules."
+    },
+    {
+      "id": "P12",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has adequate laboratory parameters."
+    },
+    {
+      "id": "P13",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant's contraceptive use is consistent with local regulations for those participating in clinical studies."
+    },
+    {
+      "id": "P14",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "Women of childbearing potential must meet the following requirements."
+    },
+    {
+      "id": "P15",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a negative pregnancy test."
+    },
+    {
+      "id": "P16",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant is not breastfeeding during treatment."
+    },
+    {
+      "id": "P17",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a documented additional validated targetable oncogenic driver mutation or alteration in genes such as epidermal growth factor receptor (EGFR), anaplastic lymphoma kinase (ALK), BRAF (V600E), human epidermal growth factor receptor 2 (HER2), MET (exon 14), ROS1, rearranged during transfection (RET), or neurotrophic tyrosine receptor kinase (NTRK)1/2/3."
+    },
+    {
+      "id": "P18",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has had any of the following prior to randomization."
+    },
+    {
+      "id": "P19",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has had prior systemic therapy (chemotherapy, immunotherapy, targeted therapy, or biological therapy) for advanced or metastatic NSCLC."
+    },
+    {
+      "id": "P20",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has had 1 cycle of standard-of-care treatment prior to study enrollment for cases where immediate treatment is clinically indicated."
+    },
+    {
+      "id": "P21",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has known active central nervous system metastases and/or carcinomatous meningitis."
+    },
+    {
+      "id": "P22",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has predominantly squamous cell histology for NSCLC."
+    },
+    {
+      "id": "P23",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "For participants with mild to moderate renal insufficiency, the participant is unable to avoid aspirin, ibuprofen, or other nonsteroidal anti-inflammatory drugs (NSAIDs) two days before (5 days for long acting NSAIDs), day of, and two days after administration of pemetrexed."
+    },
+    {
+      "id": "P24",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant is unable or unwilling to take folic acid or vitamin B12 supplementation."
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 23,
+      "end": 183,
+      "text": "Histologically or cytologically confirmed NSCLC with Stage IIIB-IIIC or Stage IV disease, not suitable for curative intent radical surgery or radiation therapy."
+    },
+    "P2": {
+      "start": 186,
+      "end": 314,
+      "text": "Part B and Safety Lead-In Part B: the histology of the tumor must be predominantly non-squamous (in line with pemetrexed label)."
+    },
+    "P3": {
+      "start": 317,
+      "end": 371,
+      "text": "Must have disease with evidence of KRAS G12C mutation."
+    },
+    "P4": {
+      "start": 374,
+      "end": 434,
+      "text": "Must have known programmed death-ligand 1 (PD-L1) expression"
+    },
+    "P5": {
+      "start": 440,
+      "end": 491,
+      "text": "Part A: Greater than or equal to (≥)50 percent (%)."
+    },
+    "P6": {
+      "start": 496,
+      "end": 515,
+      "text": "Part B: 0% to 100%."
+    },
+    "P7": {
+      "start": 520,
+      "end": 534,
+      "text": "Part C: \\<50%."
+    },
+    "P8": {
+      "start": 537,
+      "end": 582,
+      "text": "Must have measurable disease per RECIST v1.1."
+    },
+    "P9": {
+      "start": 585,
+      "end": 632,
+      "text": "Must have an ECOG performance status of 0 or 1."
+    },
+    "P10": {
+      "start": 635,
+      "end": 671,
+      "text": "Estimated life expectancy ≥12 weeks."
+    },
+    "P11": {
+      "start": 674,
+      "end": 702,
+      "text": "Ability to swallow capsules."
+    },
+    "P12": {
+      "start": 705,
+      "end": 746,
+      "text": "Must have adequate laboratory parameters."
+    },
+    "P13": {
+      "start": 749,
+      "end": 855,
+      "text": "Contraceptive use should be consistent with local regulations for those participating in clinical studies."
+    },
+    "P14": {
+      "start": 858,
+      "end": 894,
+      "text": "Women of childbearing potential must"
+    },
+    "P15": {
+      "start": 900,
+      "end": 931,
+      "text": "Have a negative pregnancy test."
+    },
+    "P16": {
+      "start": 936,
+      "end": 973,
+      "text": "Not be breastfeeding during treatment"
+    },
+    "P17": {
+      "start": 998,
+      "end": 1355,
+      "text": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as epidermal growth factor receptor (EGFR), anaplastic lymphoma kinase (ALK), BRAF (V600E), human epidermal growth factor receptor 2 (HER2), MET (exon 14), ROS1, rearranged during transfection (RET), or neurotrophic tyrosine receptor kinase (NTRK)1/2/3."
+    },
+    "P18": {
+      "start": 1358,
+      "end": 1411,
+      "text": "Have had any of the following prior to randomization:"
+    },
+    "P19": {
+      "start": 1419,
+      "end": 1546,
+      "text": "Prior systemic therapy (chemotherapy, immunotherapy, targeted therapy, or biological therapy) for advanced or metastatic NSCLC."
+    },
+    "P20": {
+      "start": 1555,
+      "end": 1695,
+      "text": "1 cycle of standard-of-care treatment prior to study enrollment will be allowed for cases where immediate treatment is clinically indicated:"
+    },
+    "P21": {
+      "start": 1698,
+      "end": 1782,
+      "text": "Have known active central nervous system metastases and/or carcinomatous meningitis."
+    },
+    "P22": {
+      "start": 1892,
+      "end": 1944,
+      "text": "Have predominantly squamous cell histology for NSCLC"
+    },
+    "P23": {
+      "start": 1947,
+      "end": 2207,
+      "text": "Only for participants with mild to moderate renal insufficiency: Unable to avoid aspirin, ibuprofen, or other nonsteroidal anti-inflammatory drugs (NSAIDs) two days before (5 days for long acting NSAIDs), day of, and two days after administration of pemetrexed"
+    },
+    "P24": {
+      "start": 2210,
+      "end": 2283,
+      "text": "Is unable or unwilling to take folic acid or vitamin B12 supplementation."
+    }
+  },
+  "links": {
+    "P1": [],
+    "P2": [],
+    "P3": [
+      {
+        "factId": "kras",
+        "rulesOut": [
+          "other_mutation",
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 317,
+          "end": 371,
+          "text": "Must have disease with evidence of KRAS G12C mutation."
+        }
+      }
+    ],
+    "P4": [],
+    "P5": [
+      {
+        "factId": "pdl1",
+        "rulesOut": [
+          "low",
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "appliesTo": "Part A",
+        "source": {
+          "start": 440,
+          "end": 491,
+          "text": "Part A: Greater than or equal to (≥)50 percent (%)."
+        }
+      }
+    ],
+    "P6": [],
+    "P7": [
+      {
+        "factId": "pdl1",
+        "rulesOut": [
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "appliesTo": "Part C",
+        "source": {
+          "start": 520,
+          "end": 534,
+          "text": "Part C: \\<50%."
+        }
+      }
+    ],
+    "P8": [
+      {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 537,
+          "end": 582,
+          "text": "Must have measurable disease per RECIST v1.1."
+        }
+      }
+    ],
+    "P9": [
+      {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 585,
+          "end": 632,
+          "text": "Must have an ECOG performance status of 0 or 1."
+        }
+      }
+    ],
+    "P10": [],
+    "P11": [],
+    "P12": [],
+    "P13": [],
+    "P14": [],
+    "P15": [],
+    "P16": [],
+    "P17": [
+      {
+        "factId": "egfr",
+        "rulesOut": [
+          "common_sensitizing",
+          "exon20_insertion",
+          "other_mutation"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 998,
+          "end": 1144,
+          "text": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as epidermal growth factor receptor (EGFR)"
+        }
+      }
+    ],
+    "P18": [],
+    "P19": [
+      {
+        "factId": "prior_targeted",
+        "rulesOut": [
+          "received"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 1419,
+          "end": 1546,
+          "text": "Prior systemic therapy (chemotherapy, immunotherapy, targeted therapy, or biological therapy) for advanced or metastatic NSCLC."
+        }
+      }
+    ],
+    "P20": [],
+    "P21": [
+      {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 1698,
+          "end": 1782,
+          "text": "Have known active central nervous system metastases and/or carcinomatous meningitis."
+        }
+      },
+      {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 1698,
+          "end": 1782,
+          "text": "Have known active central nervous system metastases and/or carcinomatous meningitis."
+        }
+      }
+    ],
+    "P22": [
+      {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous"
+        ],
+        "polarity": "exclusion",
+        "appliesTo": "Part B and Safety Lead-In Part B",
+        "source": {
+          "start": 1892,
+          "end": 1944,
+          "text": "Have predominantly squamous cell histology for NSCLC"
+        }
+      }
+    ],
+    "P23": [],
+    "P24": []
+  },
+  "carried": {
+    "P8": [
+      {
+        "factId": "measurable_disease",
+        "answer": "unknown",
+        "words": "I'm sorry, I don't know.",
+        "question": "Is there a tumor that scans can measure?",
+        "mayNotFit": false
+      }
+    ],
+    "P9": [
+      {
+        "factId": "ecog",
+        "answer": "ps0",
+        "words": "I'm doing everything I always did, work and all.",
+        "question": "Which is closest to how you are day to day?",
+        "mayNotFit": false
+      }
+    ],
+    "P17": [
+      {
+        "factId": "egfr",
+        "answer": "unknown",
+        "words": "I'm sorry, I think they tested for something like that but I don't know the result.",
+        "question": "Did testing find an EGFR mutation?",
+        "mayNotFit": false
+      }
+    ],
+    "P19": [
+      {
+        "factId": "prior_targeted",
+        "answer": "never",
+        "words": "No.",
+        "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?",
+        "mayNotFit": false
+      }
+    ],
+    "P21": [
+      {
+        "factId": "brain_mets",
+        "answer": "none",
+        "words": "No, the brain is fine.",
+        "question": "Has the cancer spread to the brain?",
+        "mayNotFit": false
+      },
+      {
+        "factId": "leptomeningeal",
+        "answer": "unknown",
+        "words": "I'm not sure, sorry.",
+        "question": "Has the cancer spread to the lining of the brain or spinal cord?",
+        "mayNotFit": false
+      }
+    ],
+    "P22": [
+      {
+        "factId": "histology",
+        "answer": "unknown",
+        "words": "I'm sorry, I don't remember the type.",
+        "question": "What type of lung cancer cell did the biopsy show?",
+        "mayNotFit": false
+      }
+    ]
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "I don't think so. They said they caught it early and that surgery can take it out",
+          "reading": "unclear",
+          "statement": "The participant has histologically or cytologically confirmed NSCLC with Stage IIIB-IIIC or Stage IV disease, not suitable for curative intent radical surgery or radiation therapy.",
+          "withheld": "does-not-hold"
+        },
+        {
+          "turn": 4,
+          "quote": "They said it's just one spot and surgery can take it out",
+          "reading": "does-not-hold",
+          "statement": "The participant has histologically or cytologically confirmed NSCLC with Stage IIIB-IIIC or Stage IV disease, not suitable for curative intent radical surgery or radiation therapy."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [
+        {
+          "turn": 6,
+          "quote": "I don't remember the type. I'm not sure if it's squamous or non-squamous.",
+          "reading": "unknown",
+          "statement": "The histology of the tumor is predominantly non-squamous."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I don't know. I think they tested for something like that but I don't know the result.",
+          "reading": "unknown",
+          "statement": "The participant has disease with evidence of KRAS G12C mutation."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I don't know. I'm not sure if they did that test or what the result was.",
+          "reading": "does-not-hold",
+          "statement": "The participant has known programmed death-ligand 1 (PD-L1) expression."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I don't know. I'm not sure what the result was.",
+          "reading": "unknown",
+          "statement": "The PD-L1 expression is greater than or equal to (≥)50 percent (%)."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I don't know. I'm not sure what the result was.",
+          "reading": "unknown",
+          "statement": "The PD-L1 expression is 0% to 100%."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I don't know. I'm not sure what the result was.",
+          "reading": "unknown",
+          "statement": "The PD-L1 expression is <50%."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "measurable_disease",
+          "answer": "unknown",
+          "words": "I'm sorry, I don't know.",
+          "question": "Is there a tumor that scans can measure?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "ecog",
+          "answer": "ps0",
+          "words": "I'm doing everything I always did, work and all.",
+          "question": "Which is closest to how you are day to day?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [
+        {
+          "turn": 14,
+          "quote": "I'm not sure how long I'll live.",
+          "reading": "unknown",
+          "statement": "The participant has an estimated life expectancy ≥12 weeks."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P11",
+      "evidence": [
+        {
+          "turn": 16,
+          "quote": "yes, I can swallow capsules just fine",
+          "reading": "holds",
+          "statement": "The participant has the ability to swallow capsules."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P12",
+      "evidence": [
+        {
+          "turn": 18,
+          "quote": "I don't know. I'm not sure when my last blood work was done.",
+          "reading": "unknown",
+          "statement": "The participant has adequate laboratory parameters."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P13",
+      "evidence": [
+        {
+          "turn": 20,
+          "quote": "No, I'm not, sorry.",
+          "reading": "holds",
+          "statement": "The participant's contraceptive use is consistent with local regulations for those participating in clinical studies."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P14",
+      "evidence": [
+        {
+          "turn": 20,
+          "quote": "I'm 55 and not pregnant or breastfeeding.",
+          "reading": "does-not-apply",
+          "statement": "Women of childbearing potential must meet the following requirements."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "unresolved",
+      "reason": "does-not-apply"
+    },
+    {
+      "criterionId": "P15",
+      "evidence": [
+        {
+          "turn": 20,
+          "quote": "not pregnant",
+          "reading": "holds",
+          "statement": "The participant has a negative pregnancy test."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "holds"
+    },
+    {
+      "criterionId": "P16",
+      "evidence": [
+        {
+          "turn": 20,
+          "quote": "not pregnant or breastfeeding",
+          "reading": "holds",
+          "statement": "The participant is not breastfeeding during treatment."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P17",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "egfr",
+          "answer": "unknown",
+          "words": "I'm sorry, I think they tested for something like that but I don't know the result.",
+          "question": "Did testing find an EGFR mutation?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P18",
+      "evidence": [
+        {
+          "turn": 22,
+          "quote": "No, I haven't had any treatment yet.",
+          "reading": "does-not-hold",
+          "statement": "The participant has had any prior treatment for lung cancer prior to randomization."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P19",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "prior_targeted",
+          "answer": "never",
+          "words": "No.",
+          "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P20",
+      "evidence": [],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "evidence-not-found"
+    },
+    {
+      "criterionId": "P21",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "brain_mets",
+          "answer": "none",
+          "words": "No, the brain is fine.",
+          "question": "Has the cancer spread to the brain?",
+          "mayNotFit": false
+        },
+        {
+          "factId": "leptomeningeal",
+          "answer": "unknown",
+          "words": "I'm not sure, sorry.",
+          "question": "Has the cancer spread to the lining of the brain or spinal cord?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P22",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "histology",
+          "answer": "unknown",
+          "words": "I'm sorry, I don't remember the type.",
+          "question": "What type of lung cancer cell did the biopsy show?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P23",
+      "evidence": [
+        {
+          "turn": 28,
+          "quote": "I don't know. I'm not sure if I have any kidney issues",
+          "reading": "unknown",
+          "statement": "The participant has mild to moderate renal insufficiency and is unable to avoid aspirin, ibuprofen, or other nonsteroidal anti-inflammatory drugs (NSAIDs) two days before (5 days for long acting NSAIDs), day of, and two days after administration of pemetrexed."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P24",
+      "evidence": [
+        {
+          "turn": 30,
+          "quote": "I don't know. I'm not sure if I take folic acid or B12 supplements.",
+          "reading": "unknown",
+          "statement": "The participant is unable or unwilling to take folic acid or vitamin B12 supplementation."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"A Study of First-Line Olomorasib (LY3537982) and Pembrolizumab With or Without Chemotherapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer\". Your earlier answers already covered 6 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you been told that your lung cancer is Stage IIIB, IIIC, or Stage IV, and that surgery or radiation to cure it is not an option?",
+      "criterionId": "P1"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, but I don't think so. They said they caught it early and that surgery can take it out, so I don't believe it's advanced like that."
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks for clarifying. To be sure, has a doctor ever told you that your cancer is Stage IIIB, IIIC, or Stage IV, or that surgery/radiation to cure it is not an option?",
+      "criterionId": "P1"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, but no. They said it's just one spot and surgery can take it out, so I don't think it's that advanced."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you know if your lung cancer is non-squamous? This is a specific type of lung cancer. If you aren't sure, that's okay.",
+      "criterionId": "P2"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, I don't remember the type. I'm not sure if it's squamous or non-squamous."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you know if your cancer has a KRAS G12C mutation? This is a specific genetic change in the tumor. If you aren't sure, that's okay.",
+      "criterionId": "P3"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, I don't know. I think they tested for something like that but I don't know the result."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you know if your cancer has been tested for PD-L1 expression? This is a test that looks at a specific protein on the cancer cells. If you aren't sure, that's okay.",
+      "criterionId": "P4"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, I don't know. I'm not sure if they did that test or what the result was."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you know if your PD-L1 test result was 50% or higher? If you aren't sure, that's okay.",
+      "criterionId": "P5"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, I don't know. I'm not sure what the result was."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Based on your current health, do you expect to live for at least 12 weeks? If you aren't sure, that's okay.",
+      "criterionId": "P10"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, I don't know. I'm doing everything I always did, work and all, but I'm not sure how long I'll live."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you able to swallow capsules? If you aren't sure, that's okay.",
+      "criterionId": "P11"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, yes, I can swallow capsules just fine. I take my vitamins every day without any trouble."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any blood tests or lab work done in the last 7 days to check your blood counts and organ function?",
+      "criterionId": "P12"
+    },
+    {
+      "index": 18,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, I don't know. I'm not sure when my last blood work was done."
+    },
+    {
+      "index": 19,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you currently use any form of birth control or contraception? If you aren't sure, that's okay.",
+      "criterionId": "P13"
+    },
+    {
+      "index": 20,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I'm not, sorry. I'm 55 and not pregnant or breastfeeding."
+    },
+    {
+      "index": 21,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any prior treatment for your lung cancer, such as chemotherapy, immunotherapy, or targeted therapy?",
+      "criterionId": "P18"
+    },
+    {
+      "index": 22,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any treatment yet. I'm sorry, I haven't had chemo or anything else."
+    },
+    {
+      "index": 23,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Since you haven't had treatment yet, does your doctor feel that starting treatment immediately is clinically necessary for your lung cancer?",
+      "criterionId": "P20"
+    },
+    {
+      "index": 24,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, I don't know. I'm not sure if it's clinically necessary to start right now or if we can wait."
+    },
+    {
+      "index": 25,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Since you're not sure, would you like me to ask your doctor if starting treatment right now is medically necessary for your lung cancer?",
+      "criterionId": "P20"
+    },
+    {
+      "index": 26,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Yes, please do. I'm sorry, I really don't know what's best medically, so I'd appreciate it if you could ask my doctor."
+    },
+    {
+      "index": 27,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "The trial asks about this: “For participants with mild to moderate renal insufficiency, the participant is unable to avoid aspirin, ibuprofen, or other nonsteroidal anti-inflammatory drugs (NSAIDs) two days before (5 days for long acting NSAIDs), day of, and two days after administration of pemetrexed.”. Does this describe you?",
+      "criterionId": "P23"
+    },
+    {
+      "index": 28,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, I don't know. I'm not sure if I have any kidney issues or if I need to avoid those pain medicines."
+    },
+    {
+      "index": 29,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently taking folic acid or vitamin B12 supplements, or are you unable or unwilling to take them?",
+      "criterionId": "P24"
+    },
+    {
+      "index": 30,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, I don't know. I'm not sure if I take folic acid or B12 supplements."
+    },
+    {
+      "index": 31,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [
+    {
+      "turn": 24,
+      "criterionId": "P20",
+      "reading": "does-not-hold",
+      "quote": "I haven't had any treatment yet."
+    },
+    {
+      "turn": 26,
+      "criterionId": "P20",
+      "reading": "unknown",
+      "quote": "I don't know what's best medically"
+    }
+  ],
+  "ignoredReadings": [],
+  "replies": [
+    {
+      "turn": 2,
+      "usedFacts": [
+        "extent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 4,
+      "usedFacts": [
+        "extent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "usedFacts": [
+        "histology"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 8,
+      "usedFacts": [
+        "kras"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 10,
+      "usedFacts": [
+        "pdl1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "usedFacts": [
+        "pdl1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 14,
+      "usedFacts": [
+        "ecog"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts uncertainty about life expectancy, which is not stated in the facts and contradicts the persona's instruction to state that surgery can remove the cancer."
+        }
+      ]
+    },
+    {
+      "turn": 16,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "uncited-assertion",
+          "length": 99
+        },
+        {
+          "kind": "model",
+          "reason": "The message claims the person takes vitamins every day, which contradicts the fact that they have not had any treatment yet and implies a medication habit not supported by the provided facts."
+        }
+      ]
+    },
+    {
+      "turn": 18,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 20,
+      "usedFacts": [
+        "pregnant_or_breastfeeding"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 22,
+      "usedFacts": [
+        "prior_pd1",
+        "prior_platinum",
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 24,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims uncertainty about the clinical necessity of starting treatment, which contradicts the facts stating the patient has not yet had any treatment and is unaware of specific test results, implying no treatment decision has been reached or discussed in that manner."
+        }
+      ]
+    },
+    {
+      "turn": 26,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 28,
+      "usedFacts": [
+        "ild"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message introduces kidney issues and pain medicines, which are not mentioned in the facts and contradict the persona's instruction to say 'I don't know' regarding specific medical details not covered by the provided facts."
+        }
+      ]
+    },
+    {
+      "turn": 30,
+      "usedFacts": [
+        "pdl1"
+      ],
+      "flags": []
+    }
+  ],
+  "record": {
+    "nctId": "NCT06119581",
+    "title": {
+      "registry": "A Study of First-Line Olomorasib (LY3537982) and Pembrolizumab With or Without Chemotherapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 2,
+      "records": 19,
+      "line": {
+        "ours": "2 rules may not fit what you said. 19 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Must have measurable disease per RECIST v1.1."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Is there a tumor that scans can measure?"
+              },
+              "said": {
+                "said": "I'm sorry, I don't know."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Must have an ECOG performance status of 0 or 1."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Which is closest to how you are day to day?"
+              },
+              "said": {
+                "said": "I'm doing everything I always did, work and all."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P17",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as epidermal growth factor receptor (EGFR), anaplastic lymphoma kinase (ALK), BRAF (V600E), human epidermal growth factor receptor 2 (HER2), MET (exon 14), ROS1, rearranged during transfection (RET), or neurotrophic tyrosine receptor kinase (NTRK)1/2/3."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Did testing find an EGFR mutation?"
+              },
+              "said": {
+                "said": "I'm sorry, I think they tested for something like that but I don't know the result."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P19",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Prior systemic therapy (chemotherapy, immunotherapy, targeted therapy, or biological therapy) for advanced or metastatic NSCLC."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+              },
+              "said": {
+                "said": "No."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P21",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Have known active central nervous system metastases and/or carcinomatous meningitis."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the brain?"
+              },
+              "said": {
+                "said": "No, the brain is fine."
+              }
+            },
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the lining of the brain or spinal cord?"
+              },
+              "said": {
+                "said": "I'm not sure, sorry."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P22",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Have predominantly squamous cell histology for NSCLC"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "What type of lung cancer cell did the biopsy show?"
+              },
+              "said": {
+                "said": "I'm sorry, I don't remember the type."
+              }
+            }
+          ],
+          "part": {
+            "registry": "Exclusion Criteria for Participants receiving Pemetrexed and Platinum (Part B and Safety Lead-In Part B)"
+          },
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P11",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Ability to swallow capsules."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "yes, I can swallow capsules just fine"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P13",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Contraceptive use should be consistent with local regulations for those participating in clinical studies."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I'm not, sorry."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P16",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Not be breastfeeding during treatment"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "not pregnant or breastfeeding"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Histologically or cytologically confirmed NSCLC with Stage IIIB-IIIC or Stage IV disease, not suitable for curative intent radical surgery or radiation therapy."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't think so. They said they caught it early and that surgery can take it out"
+            },
+            {
+              "said": "They said it's just one spot and surgery can take it out"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Part B and Safety Lead-In Part B: the histology of the tumor must be predominantly non-squamous (in line with pemetrexed label)."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "Part B and Safety Lead-In Part B"
+          },
+          "said": [
+            {
+              "said": "I don't remember the type. I'm not sure if it's squamous or non-squamous."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Must have disease with evidence of KRAS G12C mutation."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I think they tested for something like that but I don't know the result."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Must have known programmed death-ligand 1 (PD-L1) expression"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I'm not sure if they did that test or what the result was."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Part A: Greater than or equal to (≥)50 percent (%)."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "Part A"
+          },
+          "said": [
+            {
+              "said": "I don't know. I'm not sure what the result was."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Part B: 0% to 100%."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "Part B"
+          },
+          "said": [
+            {
+              "said": "I don't know. I'm not sure what the result was."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Part C: \\<50%."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "Part C"
+          },
+          "said": [
+            {
+              "said": "I don't know. I'm not sure what the result was."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Estimated life expectancy ≥12 weeks."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure how long I'll live."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P12",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Must have adequate laboratory parameters."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I'm not sure when my last blood work was done."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P14",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Women of childbearing potential must"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm 55 and not pregnant or breastfeeding."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You said this isn't about you."
+          }
+        },
+        {
+          "criterionId": "P15",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Have a negative pregnancy test."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "not pregnant"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P18",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Have had any of the following prior to randomization:"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had any treatment yet."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P20",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "1 cycle of standard-of-care treatment prior to study enrollment will be allowed for cases where immediate treatment is clinically indicated:"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P23",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Only for participants with mild to moderate renal insufficiency: Unable to avoid aspirin, ibuprofen, or other nonsteroidal anti-inflammatory drugs (NSAIDs) two days before (5 days for long acting NSAIDs), day of, and two days after administration of pemetrexed"
+          },
+          "earlier": [],
+          "part": {
+            "registry": "Exclusion Criteria for Participants receiving Pemetrexed and Platinum (Part B and Safety Lead-In Part B)"
+          },
+          "said": [
+            {
+              "said": "I don't know. I'm not sure if I have any kidney issues"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P24",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Is unable or unwilling to take folic acid or vitamin B12 supplementation."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "Exclusion Criteria for Participants receiving Pemetrexed and Platinum (Part B and Safety Lead-In Part B)"
+          },
+          "said": [
+            {
+              "said": "I don't know. I'm not sure if I take folic acid or B12 supplements."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "Histologically or cytologically confirmed NSCLC with Stage IIIB-IIIC or Stage IV disease, not suitable for curative intent radical surgery or radiation therapy."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Must have known programmed death-ligand 1 (PD-L1) expression"
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Part B and Safety Lead-In Part B: the histology of the tumor must be predominantly non-squamous (in line with pemetrexed label)."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Must have disease with evidence of KRAS G12C mutation."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Part A: Greater than or equal to (≥)50 percent (%)."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Part B: 0% to 100%."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Part C: \\<50%."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Estimated life expectancy ≥12 weeks."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Must have adequate laboratory parameters."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Women of childbearing potential must"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have a negative pregnancy test."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have had any of the following prior to randomization:"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "1 cycle of standard-of-care treatment prior to study enrollment will be allowed for cases where immediate treatment is clinically indicated:"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Only for participants with mild to moderate renal insufficiency: Unable to avoid aspirin, ibuprofen, or other nonsteroidal anti-inflammatory drugs (NSAIDs) two days before (5 days for long acting NSAIDs), day of, and two days after administration of pemetrexed"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Is unable or unwilling to take folic acid or vitamin B12 supplementation."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Must have measurable disease per RECIST v1.1."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have a documented additional validated targetable oncogenic driver mutation or alteration in genes such as epidermal growth factor receptor (EGFR), anaplastic lymphoma kinase (ALK), BRAF (V600E), human epidermal growth factor receptor 2 (HER2), MET (exon 14), ROS1, rearranged during transfection (RET), or neurotrophic tyrosine receptor kinase (NTRK)1/2/3."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have known active central nervous system metastases and/or carcinomatous meningitis."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have predominantly squamous cell histology for NSCLC"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "orderAfter": [
+    "NCT04267848",
+    "NCT06119581",
+    "NCT07169851",
+    "NCT07293247",
+    "NCT06253130",
+    "NCT04302025",
+    "NCT05061550",
+    "NCT06623422",
+    "NCT07415031",
+    "NCT03526835",
+    "NCT05142605",
+    "NCT05932862",
+    "NCT06330064",
+    "NCT06162221",
+    "NCT06596473",
+    "NCT04181060",
+    "NCT06031688",
+    "NCT06116682",
+    "NCT07174336",
+    "NCT05624996",
+    "NCT07144280",
+    "NCT04613596",
+    "NCT05768139",
+    "NCT06759649",
+    "NCT06764771",
+    "NCT03093116",
+    "NCT04614103",
+    "NCT05920356",
+    "NCT06745882",
+    "NCT06793215",
+    "NCT07291037",
+    "NCT06767514",
+    "NCT06758401",
+    "NCT07229313",
+    "NCT05642572",
+    "NCT06498635",
+    "NCT07217301",
+    "NCT06616584",
+    "NCT07531095",
+    "NCT06712355",
+    "NCT06203210",
+    "NCT05783323",
+    "NCT07037758",
+    "NCT07365241",
+    "NCT07227597",
+    "NCT07472517"
+  ],
+  "calls": {
+    "agent": 30,
+    "participant": 15,
+    "fidelity": 15
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-10"
+  }
+}

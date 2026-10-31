@@ -537,3 +537,19 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `gate-1-dev.md` asks Gate 1 again, recommending held-out. **Stopped at Gate 1.**
 - **Gate 1, second answer: run held-out.** Stage C runs as planned.
 - **Step 13, held-out parses:** 31 trials (the other 4 reused from dev) in 38 minutes on the local model, at the parser's default reasoning mode; no failures. 897 criteria kept, 14 rejected, 11 of them on NCT05614739 (25 kept). Same run directory as dev's, now 39 trials. Nothing read them before step 14.
+- **Step 14, held-out, once:** 50 pairs in 7.8 hours of pair time on the local model, same model, settings, parse run, labels and `CHECK_REVISION` as dev's second run ([`01-1db863f7b74c.json`](../../evals/results/check/01-1db863f7b74c.json)). No errors and no resumes. The 2.5-hour estimate was low: p15's three trials, with 52 to 75 parsed rules each, took 23 to 52 minutes apiece. `check:eval -- --check` and `-- --check --dev` both pass.
+
+  | Measure | Dev (9 pairs) | Held-out (50 pairs) |
+  | --- | --- | --- |
+  | Questions saved | 46 of 169 raisable (27%) | 330 of 1,236 (27%) |
+  | Asked; counted repeats | 110; 68 | 973; 495 |
+  | Clearly ruled out, caught | 0 of 4 (0–49%) | 5 of 16 (14–56%): 1 carried, 4 asked |
+  | Of those the patient could know, caught | 0 of 3 (0–56%) | 5 of 9 (27–81%) |
+  | Missed: no conflict; unknown or records | 3; 1 | 6; 5 |
+  | False alarms, pairs not ruled out | 3 of 5 (23–88%) | 27 of 34 (63–90%) |
+  | Verdict words; unknowns missing; orders moved | 0; 0; 0 | 0; 0; 0 |
+  | Fidelity flags; findings excluded | 25; 46 | 263; 236 |
+
+  - Intervals are Wilson 95%. Every catch is on a pair the patient could know. The 7 ruled-out pairs they couldn't know were all missed, 4 of them as "unknown or records", which is where the record sends them.
+  - Held-out's flags are 210 from the model fidelity check, 49 uncited assertions and 4 used facts the patient doesn't know. 59 of the 236 excluded findings are p15's three long trials.
+  - Held-out is read once, as Gate 1 decided; nothing is tuned on it.

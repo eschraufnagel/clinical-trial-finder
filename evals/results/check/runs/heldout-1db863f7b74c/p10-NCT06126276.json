@@ -1,0 +1,2587 @@
+{
+  "patient": "p10",
+  "nctId": "NCT06126276",
+  "set": "heldout",
+  "rank": 3,
+  "conversation": {
+    "histology": {
+      "answer": "adenocarcinoma",
+      "words": "Adenocarcinoma.",
+      "question": "What type of lung cancer cell did the biopsy show?"
+    },
+    "extent": {
+      "answer": "metastatic_or_recurrent",
+      "words": "Metastatic, to the brain and the other lung.",
+      "question": "How far has the cancer spread?"
+    },
+    "brain_mets": {
+      "answer": "treated_stable",
+      "words": "Yes, one lesion, treated with radiosurgery a year ago, stable since.",
+      "question": "Has the cancer spread to the brain?"
+    },
+    "ecog": {
+      "answer": "ps0",
+      "words": "Fully active, I'm still working full shifts.",
+      "question": "Which is closest to how you are day to day?"
+    },
+    "prior_platinum": {
+      "answer": "never",
+      "words": "No chemo.",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?"
+    },
+    "prior_pd1": {
+      "answer": "never",
+      "words": "No immunotherapy.",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+    },
+    "prior_targeted": {
+      "answer": "received",
+      "words": "Yes, Rozlytrek, entrectinib.",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+    },
+    "lines_advanced": {
+      "answer": "one",
+      "words": "One.",
+      "question": "How many treatments have you had since the cancer became advanced?"
+    },
+    "measurable_disease": {
+      "answer": "unknown",
+      "words": "I don't know.",
+      "question": "Is there a tumor that scans can measure?"
+    },
+    "ild": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?"
+    },
+    "pregnant_or_breastfeeding": {
+      "answer": "no",
+      "words": "No, I'm not pregnant or breastfeeding.",
+      "question": "Are you pregnant or breastfeeding?"
+    },
+    "leptomeningeal": {
+      "answer": "no",
+      "words": "No leptomeningeal spread.",
+      "question": "Has the cancer spread to the lining of the brain or spinal cord?"
+    },
+    "autoimmune_active": {
+      "answer": "yes",
+      "words": "Yes, I have Crohn's and I'm on Humira for it.",
+      "question": "In the last 2 years, have you needed medicine that calms the immune system, such as steroids or immunosuppressants, for an autoimmune disease like lupus or Crohn's? Thyroid hormone, insulin and skin creams don't count."
+    },
+    "hepatitis_active": {
+      "answer": "no",
+      "words": "No.",
+      "question": "Do you have active hepatitis B or C?"
+    },
+    "hiv": {
+      "answer": "no",
+      "words": "No.",
+      "question": "Do you have HIV?"
+    },
+    "chest_radiation_6m": {
+      "answer": "no",
+      "words": "No chest radiation.",
+      "question": "Have you had radiation to the chest in the last 6 months?"
+    }
+  },
+  "orderBefore": [
+    "NCT05382559",
+    "NCT05735080",
+    "NCT06126276",
+    "NCT06326411",
+    "NCT06774963",
+    "NCT06881784",
+    "NCT06997029",
+    "NCT07094204",
+    "NCT07444814",
+    "NCT07718672",
+    "NCT03706027",
+    "NCT05614739",
+    "NCT06031688",
+    "NCT06686771",
+    "NCT07100080",
+    "NCT06116682",
+    "NCT07229313",
+    "NCT06150664",
+    "NCT06172478",
+    "NCT06343402",
+    "NCT04181060",
+    "NCT06306638",
+    "NCT06627647",
+    "NCT06667141",
+    "NCT07017829",
+    "NCT07027514",
+    "NCT07339176",
+    "NCT07602842",
+    "NCT05642572",
+    "NCT06262321",
+    "NCT06561386",
+    "NCT07293247",
+    "NCT04787042",
+    "NCT05061550",
+    "NCT06692738",
+    "NCT04297605",
+    "NCT06582017",
+    "NCT07190248",
+    "NCT04267848",
+    "NCT06563388",
+    "NCT06623422",
+    "NCT06868277",
+    "NCT07388524",
+    "NCT06216301",
+    "NCT06616584",
+    "NCT06498635",
+    "NCT05624996",
+    "NCT04511039",
+    "NCT05544019",
+    "NCT06943755",
+    "NCT06724237",
+    "NCT04696575",
+    "NCT06179069",
+    "NCT06769126",
+    "NCT07325136",
+    "NCT06780137"
+  ],
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The patient has enrolled onto EAY191 and has been given a treatment assignment to ComboMATCH to EAY191-N5 based on the presence of an actionable mutation as defined in EAY191"
+    },
+    {
+      "id": "P2",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has a HER2 amplified solid tumor except breast cancer."
+    },
+    {
+      "id": "P3",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "If IHC is 0 or 1+, the patient is not eligible."
+    },
+    {
+      "id": "P4",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "If IHC is 3+, the patient is eligible."
+    },
+    {
+      "id": "P5",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "If IHC is 2+, ISH/FISH or NGS must be positive for the patient to be eligible."
+    },
+    {
+      "id": "P6",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has recurrent or persistent disease."
+    },
+    {
+      "id": "P7",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient has no known evidence of RB1 loss or deletion including copy number loss or deleterious mutation."
+    },
+    {
+      "id": "P8",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The patient has disease that can be safely biopsied and agrees to a pre-treatment biopsy or, if disease cannot be safely biopsied, has archival tissue available from within 12 months prior to the date of registration on the ComboMATCH Registration Trial (EAY191)."
+    },
+    {
+      "id": "P9",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has measurable disease based on RECIST 1.1. A second measurable lesion outside of the biopsiable lesion is required."
+    },
+    {
+      "id": "P10",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "Patients with treated brain metastases are eligible if follow up brain imaging after central nervous system (CNS) directed therapy shows no evidence of progression for 3 months or more and patient is not on steroids and is asymptomatic."
+    },
+    {
+      "id": "P11",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient has no known leptomeningeal disease."
+    },
+    {
+      "id": "P12",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The patient has received up to 5 prior lines of systemic therapy."
+    },
+    {
+      "id": "P13",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "Prior therapy with trastuzumab or pertuzumab, either alone or in combination, antibody drug conjugates (ADC) such as DS8201a or T-DM1 is allowed."
+    },
+    {
+      "id": "P14",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The patient has no prior therapy with HER2 targeting tyrosine kinase inhibitors (TKI) such as neratinib or tucatinib."
+    },
+    {
+      "id": "P15",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The patient has no prior therapy with CDK4/6 inhibition."
+    },
+    {
+      "id": "P16",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The patient has no cancer directed therapy within 3 weeks prior to registration. For oral therapy, the washout can be reduced to greater than or equal to 5 half lives of the drug. No HER2 targeting ADCs within 30 days prior to registration."
+    },
+    {
+      "id": "P17",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The patient is age ≥ 18."
+    },
+    {
+      "id": "P18",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has an Eastern Cooperative Oncology Group (ECOG) Performance Status of ≤ 2."
+    },
+    {
+      "id": "P19",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The patient is not pregnant and not nursing."
+    },
+    {
+      "id": "P20",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has an Absolute neutrophil count (ANC) ≥ 1,500 cells/mm^3."
+    },
+    {
+      "id": "P21",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has Platelets ≥ 100,000 cells/mm^3."
+    },
+    {
+      "id": "P22",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has Hemoglobin ≥ 9 g/dl."
+    },
+    {
+      "id": "P23",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has a Creatinine clearance (CrCL) of ≥ 30 mL/min by the Cockcroft-Gault formula."
+    },
+    {
+      "id": "P24",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has a Total bilirubin level ≤ 1.5 x institutional upper limit of normal (ULN)."
+    },
+    {
+      "id": "P25",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The patient has Aspartate aminotransferase (AST) and alanine aminotransferase (ALT) ≤ 3 x institutional upper limit of normal (ULN)."
+    },
+    {
+      "id": "P26",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "Patients with known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, should have a clinical risk assessment of cardiac function using the New York Heart Association Functional Classification. To be eligible for this trial, patients should be class 2B or better."
+    },
+    {
+      "id": "P27",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient has no active infection requiring parenteral antibiotics."
+    },
+    {
+      "id": "P28",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient has no current evidence of intra-abdominal abscess, abdominal/pelvic fistula (not diverted), gastrointestinal perforation, gastrointestinal (GI) obstruction, and/or need for drainage nasogastric or gastrostomy tube."
+    },
+    {
+      "id": "P29",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient has no current evidence of malabsorption or chronic diarrhea or any other significant gastro-intestinal disease (e.g gastrectomy, ileal bypass, Crohn's disease, gastroparesis), associated with moderate to severe diarrhea (grade 2 or more) or inability to tolerate oral therapy."
+    },
+    {
+      "id": "P30",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient has no lung disease causing dyspnea at rest."
+    },
+    {
+      "id": "P31",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient has no interstitial lung disease with ongoing signs and symptoms at the time of registration."
+    },
+    {
+      "id": "P32",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The patient has no history of allergic reaction to the study agents, compound of similar chemical or biologic composition of the study agents or any of their excipients."
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 23,
+      "end": 205,
+      "text": "Patient must have enrolled onto EAY191 and must have been given a treatment assignment to ComboMATCH to EAY191-N5 based on the presence of an actionable mutation as defined in EAY191"
+    },
+    "P2": {
+      "start": 208,
+      "end": 277,
+      "text": "Patients must have a HER2 amplified solid tumor except breast cancer."
+    },
+    "P3": {
+      "start": 283,
+      "end": 420,
+      "text": "If IHC is 0 or 1+, patient (pt) is NOT ELIGIBLE regardless of in situ hybridization (ISH)/FISH or next generation sequencing (NGS) status"
+    },
+    "P4": {
+      "start": 425,
+      "end": 490,
+      "text": "If IHC is 3+, pt IS ELIGIBLE regardless of ISH/FISH or NGS status"
+    },
+    "P5": {
+      "start": 495,
+      "end": 603,
+      "text": "If IHC is 2+, ISH/FISH OR NGS must be positive for the patient to be ELIGIBLE. Otherwise, pt is NOT ELIGIBLE"
+    },
+    "P6": {
+      "start": 799,
+      "end": 849,
+      "text": "Patients must have recurrent or persistent disease"
+    },
+    "P7": {
+      "start": 852,
+      "end": 944,
+      "text": "No known evidence of RB1 loss or deletion including copy number loss or deleterious mutation"
+    },
+    "P8": {
+      "start": 947,
+      "end": 1212,
+      "text": "Patients must have disease that can be safely biopsied and agree to a pre-treatment biopsy or, if disease cannot be safely biopsied, have archival tissue available from within 12 months prior to the date of registration on the ComboMATCH Registration Trial (EAY191)"
+    },
+    "P9": {
+      "start": 1215,
+      "end": 1345,
+      "text": "Patients must have measurable disease based on RECIST 1.1. A second measurable lesion outside of the biopsiable lesion is required"
+    },
+    "P10": {
+      "start": 1348,
+      "end": 1583,
+      "text": "Patients with treated brain metastases are eligible if follow up brain imaging after central nervous system (CNS) directed therapy shows no evidence of progression for 3 months or more and patient is not on steroids and is asymptomatic"
+    },
+    "P11": {
+      "start": 1586,
+      "end": 1617,
+      "text": "No known leptomeningeal disease"
+    },
+    "P12": {
+      "start": 1620,
+      "end": 1686,
+      "text": "Patients may have received up to 5 prior lines of systemic therapy"
+    },
+    "P13": {
+      "start": 1689,
+      "end": 1833,
+      "text": "Prior therapy with trastuzumab or pertuzumab, either alone or in combination, antibody drug conjugates (ADC) such as DS8201a or T-DM1 is allowed"
+    },
+    "P14": {
+      "start": 1836,
+      "end": 1936,
+      "text": "No prior therapy with HER2 targeting tyrosine kinase inhibitors (TKI) such as neratinib or tucatinib"
+    },
+    "P15": {
+      "start": 1939,
+      "end": 1978,
+      "text": "No prior therapy with CDK4/6 inhibition"
+    },
+    "P16": {
+      "start": 1981,
+      "end": 2204,
+      "text": "No cancer directed therapy within 3 weeks prior to registration. For oral therapy, the washout can be reduced to greater than or equal to 5 half lives of the drug. No HER2 targeting ADCs within 30 days prior to registration"
+    },
+    "P17": {
+      "start": 2207,
+      "end": 2215,
+      "text": "Age ≥ 18"
+    },
+    "P18": {
+      "start": 2218,
+      "end": 2285,
+      "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of ≤ 2"
+    },
+    "P19": {
+      "start": 2288,
+      "end": 2316,
+      "text": "Not pregnant and not nursing"
+    },
+    "P20": {
+      "start": 2319,
+      "end": 2370,
+      "text": "Absolute neutrophil count (ANC) ≥ 1,500 cells/mm\\^3"
+    },
+    "P21": {
+      "start": 2373,
+      "end": 2404,
+      "text": "Platelets ≥ 100,000 cells/mm\\^3"
+    },
+    "P22": {
+      "start": 2407,
+      "end": 2530,
+      "text": "Hemoglobin ≥ 9 g/dl (Note: The use of transfusion or other intervention to achieve hemoglobin (Hgb) ≥ 9 g/dl is acceptable)"
+    },
+    "P23": {
+      "start": 2533,
+      "end": 2606,
+      "text": "Creatinine clearance (CrCL) of ≥ 30 mL/min by the Cockcroft-Gault formula"
+    },
+    "P24": {
+      "start": 2609,
+      "end": 2785,
+      "text": "Total bilirubin level ≤ 1.5 x institutional upper limit of normal (ULN) (patients with known Gilbert's disease who have bilirubin level ≤ 3 x institutional ULN may be enrolled)"
+    },
+    "P25": {
+      "start": 2788,
+      "end": 2903,
+      "text": "Aspartate aminotransferase (AST) and alanine aminotransferase (ALT) ≤ 3 x institutional upper limit of normal (ULN)"
+    },
+    "P26": {
+      "start": 2906,
+      "end": 3214,
+      "text": "Patients with known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, should have a clinical risk assessment of cardiac function using the New York Heart Association Functional Classification. To be eligible for this trial, patients should be class 2B or better"
+    },
+    "P27": {
+      "start": 3217,
+      "end": 3269,
+      "text": "No active infection requiring parenteral antibiotics"
+    },
+    "P28": {
+      "start": 3272,
+      "end": 3482,
+      "text": "No current evidence of intra-abdominal abscess, abdominal/pelvic fistula (not diverted), gastrointestinal perforation, gastrointestinal (GI) obstruction, and/or need for drainage nasogastric or gastrostomy tube"
+    },
+    "P29": {
+      "start": 3485,
+      "end": 3757,
+      "text": "No current evidence of malabsorption or chronic diarrhea or any other significant gastro-intestinal disease (e.g gastrectomy, ileal bypass, Crohn's disease, gastroparesis), associated with moderate to severe diarrhea (grade 2 or more) or inability to tolerate oral therapy"
+    },
+    "P30": {
+      "start": 3760,
+      "end": 3799,
+      "text": "No lung disease causing dyspnea at rest"
+    },
+    "P31": {
+      "start": 3802,
+      "end": 3890,
+      "text": "No interstitial lung disease with ongoing signs and symptoms at the time of registration"
+    },
+    "P32": {
+      "start": 3893,
+      "end": 4045,
+      "text": "No history of allergic reaction to the study agents, compound of similar chemical or biologic composition of the study agents or any of their excipients"
+    }
+  },
+  "links": {
+    "P1": [],
+    "P2": [
+      {
+        "factId": "her2",
+        "rulesOut": [
+          "none_found"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 208,
+          "end": 277,
+          "text": "Patients must have a HER2 amplified solid tumor except breast cancer."
+        }
+      }
+    ],
+    "P3": [],
+    "P4": [],
+    "P5": [],
+    "P6": [
+      {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 799,
+          "end": 849,
+          "text": "Patients must have recurrent or persistent disease"
+        }
+      }
+    ],
+    "P7": [],
+    "P8": [],
+    "P9": [
+      {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 1215,
+          "end": 1345,
+          "text": "Patients must have measurable disease based on RECIST 1.1. A second measurable lesion outside of the biopsiable lesion is required"
+        }
+      }
+    ],
+    "P10": [
+      {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 1348,
+          "end": 1583,
+          "text": "Patients with treated brain metastases are eligible if follow up brain imaging after central nervous system (CNS) directed therapy shows no evidence of progression for 3 months or more and patient is not on steroids and is asymptomatic"
+        }
+      }
+    ],
+    "P11": [
+      {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 1586,
+          "end": 1617,
+          "text": "No known leptomeningeal disease"
+        }
+      }
+    ],
+    "P12": [
+      {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 1620,
+          "end": 1686,
+          "text": "Patients may have received up to 5 prior lines of systemic therapy"
+        }
+      }
+    ],
+    "P13": [],
+    "P14": [],
+    "P15": [],
+    "P16": [],
+    "P17": [],
+    "P18": [
+      {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 2218,
+          "end": 2285,
+          "text": "Eastern Cooperative Oncology Group (ECOG) Performance Status of ≤ 2"
+        }
+      }
+    ],
+    "P19": [
+      {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 2288,
+          "end": 2316,
+          "text": "Not pregnant and not nursing"
+        }
+      }
+    ],
+    "P20": [],
+    "P21": [],
+    "P22": [],
+    "P23": [],
+    "P24": [],
+    "P25": [],
+    "P26": [],
+    "P27": [],
+    "P28": [],
+    "P29": [],
+    "P30": [],
+    "P31": [
+      {
+        "factId": "ild",
+        "rulesOut": [
+          "current"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 3802,
+          "end": 3890,
+          "text": "No interstitial lung disease with ongoing signs and symptoms at the time of registration"
+        }
+      }
+    ],
+    "P32": []
+  },
+  "carried": {
+    "P6": [
+      {
+        "factId": "extent",
+        "answer": "metastatic_or_recurrent",
+        "words": "Metastatic, to the brain and the other lung.",
+        "question": "How far has the cancer spread?",
+        "mayNotFit": false
+      }
+    ],
+    "P9": [
+      {
+        "factId": "measurable_disease",
+        "answer": "unknown",
+        "words": "I don't know.",
+        "question": "Is there a tumor that scans can measure?",
+        "mayNotFit": false
+      }
+    ],
+    "P10": [
+      {
+        "factId": "brain_mets",
+        "answer": "treated_stable",
+        "words": "Yes, one lesion, treated with radiosurgery a year ago, stable since.",
+        "question": "Has the cancer spread to the brain?",
+        "mayNotFit": false
+      }
+    ],
+    "P11": [
+      {
+        "factId": "leptomeningeal",
+        "answer": "no",
+        "words": "No leptomeningeal spread.",
+        "question": "Has the cancer spread to the lining of the brain or spinal cord?",
+        "mayNotFit": false
+      }
+    ],
+    "P12": [
+      {
+        "factId": "lines_advanced",
+        "answer": "one",
+        "words": "One.",
+        "question": "How many treatments have you had since the cancer became advanced?",
+        "mayNotFit": false
+      }
+    ],
+    "P18": [
+      {
+        "factId": "ecog",
+        "answer": "ps0",
+        "words": "Fully active, I'm still working full shifts.",
+        "question": "Which is closest to how you are day to day?",
+        "mayNotFit": false
+      }
+    ],
+    "P19": [
+      {
+        "factId": "pregnant_or_breastfeeding",
+        "answer": "no",
+        "words": "No, I'm not pregnant or breastfeeding.",
+        "question": "Are you pregnant or breastfeeding?",
+        "mayNotFit": false
+      }
+    ],
+    "P31": [
+      {
+        "factId": "ild",
+        "answer": "never",
+        "words": "No.",
+        "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?",
+        "mayNotFit": false
+      }
+    ]
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "I don't know what the EAY191 study is. I haven't heard of it.",
+          "reading": "does-not-hold",
+          "statement": "The patient has enrolled onto EAY191 and has been given a treatment assignment to ComboMATCH to EAY191-N5 based on the presence of an actionable mutation as defined in EAY191"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I haven't been told about HER2 amplification in my report.",
+          "reading": "unclear",
+          "statement": "The patient has a HER2 amplified solid tumor except breast cancer."
+        },
+        {
+          "turn": 6,
+          "quote": "I don't know. I haven't been told about HER2 positivity in my report.",
+          "reading": "unclear",
+          "statement": "The patient has a HER2 amplified solid tumor except breast cancer."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "unclear"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I don't know. I haven't been told about an IHC score",
+          "reading": "unknown",
+          "statement": "The patient has an IHC score of 0 or 1+."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I don't know. I haven't been told about an IHC score",
+          "reading": "unknown",
+          "statement": "The patient has an IHC score of 3+."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I don't know. I haven't been told about an IHC score",
+          "reading": "unknown",
+          "statement": "The patient has an IHC score of 2+ and ISH/FISH or NGS is positive for the patient to be eligible."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "extent",
+          "answer": "metastatic_or_recurrent",
+          "words": "Metastatic, to the brain and the other lung.",
+          "question": "How far has the cancer spread?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I haven't been told about RB1 status",
+          "reading": "unclear",
+          "statement": "The patient has known evidence of RB1 loss or deletion including copy number loss or deleterious mutation."
+        },
+        {
+          "turn": 12,
+          "quote": "I haven't been told about RB1 status",
+          "reading": "unknown",
+          "statement": "The patient has known evidence of RB1 loss or deletion including copy number loss or deleterious mutation."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [
+        {
+          "turn": 14,
+          "quote": "I don't know if I have tissue samples from the last 12 months.",
+          "reading": "partial",
+          "missing": "agrees to a pre-treatment biopsy",
+          "statement": "The patient has disease that can be safely biopsied and agrees to a pre-treatment biopsy or, if disease cannot be safely biopsied, has archival tissue available from within 12 months prior to the date of registration on the ComboMATCH Registration Trial (EAY191)."
+        },
+        {
+          "turn": 16,
+          "quote": "I would be willing to have a new biopsy if it's necessary for the trial.",
+          "reading": "partial",
+          "missing": "Whether the disease can be safely biopsied or if archival tissue from within 12 months is available.",
+          "statement": "The patient has disease that can be safely biopsied and agrees to a pre-treatment biopsy or, if disease cannot be safely biopsied, has archival tissue available from within 12 months prior to the date of registration on the ComboMATCH Registration Trial (EAY191)."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "unresolved",
+      "reason": "partial"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "measurable_disease",
+          "answer": "unknown",
+          "words": "I don't know.",
+          "question": "Is there a tumor that scans can measure?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "brain_mets",
+          "answer": "treated_stable",
+          "words": "Yes, one lesion, treated with radiosurgery a year ago, stable since.",
+          "question": "Has the cancer spread to the brain?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P11",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "leptomeningeal",
+          "answer": "no",
+          "words": "No leptomeningeal spread.",
+          "question": "Has the cancer spread to the lining of the brain or spinal cord?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P12",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "lines_advanced",
+          "answer": "one",
+          "words": "One.",
+          "question": "How many treatments have you had since the cancer became advanced?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P13",
+      "evidence": [
+        {
+          "turn": 18,
+          "quote": "I haven't had trastuzumab or pertuzumab.",
+          "reading": "does-not-hold",
+          "statement": "The person has received prior therapy with trastuzumab or pertuzumab, either alone or in combination, antibody drug conjugates (ADC) such as DS8201a or T-DM1."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P14",
+      "evidence": [
+        {
+          "turn": 18,
+          "quote": "I only had entrectinib (Rozlytrek) for my ROS1 fusion.",
+          "reading": "unclear",
+          "statement": "The person has prior therapy with HER2 targeting tyrosine kinase inhibitors (TKI) such as neratinib or tucatinib."
+        },
+        {
+          "turn": 20,
+          "quote": "No, I haven't taken neratinib or tucatinib.",
+          "reading": "does-not-hold",
+          "statement": "The patient has had prior therapy with HER2 targeting tyrosine kinase inhibitors (TKI) such as neratinib or tucatinib."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P15",
+      "evidence": [
+        {
+          "turn": 22,
+          "quote": "No, I haven't taken any CDK4/6 inhibitors",
+          "reading": "does-not-hold",
+          "statement": "The patient has had prior therapy with CDK4/6 inhibition."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P16",
+      "evidence": [
+        {
+          "turn": 24,
+          "quote": "last treatment was entrectinib, which was more than 3 weeks ago. I haven't had an ADC.",
+          "reading": "does-not-hold",
+          "statement": "The patient has cancer directed therapy within 3 weeks prior to registration or has had a HER2 targeting ADC within 30 days prior to registration."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P17",
+      "evidence": [
+        {
+          "turn": 26,
+          "quote": "Yes, I am 45 years old.",
+          "reading": "holds",
+          "statement": "The patient is age ≥ 18."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P18",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "ecog",
+          "answer": "ps0",
+          "words": "Fully active, I'm still working full shifts.",
+          "question": "Which is closest to how you are day to day?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P19",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "answer": "no",
+          "words": "No, I'm not pregnant or breastfeeding.",
+          "question": "Are you pregnant or breastfeeding?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P20",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P21",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P22",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P23",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P24",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P25",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P26",
+      "evidence": [
+        {
+          "turn": 28,
+          "quote": "I don't know if my heart function is classified as NYHA Class 2B or better.",
+          "reading": "unknown",
+          "statement": "The patient has a known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, and their clinical risk assessment of cardiac function using the New York Heart Association Functional Classification is class 2B or better."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P27",
+      "evidence": [
+        {
+          "turn": 30,
+          "quote": "No, I don't have an active infection requiring IV antibiotics.",
+          "reading": "does-not-hold",
+          "statement": "The patient has an active infection requiring parenteral antibiotics."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P28",
+      "evidence": [
+        {
+          "turn": 32,
+          "quote": "No, I don't have any of those abdominal or pelvic issues.",
+          "reading": "does-not-hold",
+          "statement": "The patient has current evidence of intra-abdominal abscess, abdominal/pelvic fistula (not diverted), gastrointestinal perforation, gastrointestinal (GI) obstruction, and/or need for drainage nasogastric or gastrostomy tube."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P29",
+      "evidence": [
+        {
+          "turn": 34,
+          "quote": "I have Crohn's disease, but I'm currently stable on Humira and not experiencing moderate to severe diarrhea. I can take pills by mouth without issue.",
+          "reading": "does-not-hold",
+          "statement": "The patient has current evidence of malabsorption or chronic diarrhea or any other significant gastro-intestinal disease (e.g gastrectomy, ileal bypass, Crohn's disease, gastroparesis), associated with moderate to severe diarrhea (grade 2 or more) or inability to tolerate oral therapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P30",
+      "evidence": [
+        {
+          "turn": 36,
+          "quote": "No, I don't have lung disease that causes shortness of breath while resting.",
+          "reading": "does-not-hold",
+          "statement": "The patient has lung disease causing dyspnea at rest."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P31",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "ild",
+          "answer": "never",
+          "words": "No.",
+          "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P32",
+      "evidence": [
+        {
+          "turn": 38,
+          "quote": "No, I have never had an allergic reaction",
+          "reading": "does-not-hold",
+          "statement": "The patient has a history of allergic reaction to the study agents, compound of similar chemical or biologic composition of the study agents or any of their excipients."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"Testing the Use of Neratinib or the Combination of Neratinib and Palbociclib Targeted Treatment for HER2+ Solid Tumors (A ComboMATCH Treatment Trial)\". Your earlier answers already covered 8 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you been enrolled in the EAY191 study and assigned to the ComboMATCH arm (EAY191-N5)?",
+      "criterionId": "P1"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know what the EAY191 study is. I haven't heard of it."
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you been diagnosed with a solid tumor that is HER2 amplified, excluding breast cancer? (HER2 is a protein found on some cancer cells. If you aren't sure, that's okay.)",
+      "criterionId": "P2"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been told about HER2 amplification in my report."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Has your doctor ever told you that your tumor is 'HER2 positive' or 'HER2 amplified'? This is a specific test result for certain cancers. If you aren't sure, that's okay.",
+      "criterionId": "P2"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been told about HER2 positivity in my report."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you know if your tumor testing showed an IHC score of 0 or 1+? (IHC is a scale used to measure HER2 protein levels. If you aren't sure, that's okay.)",
+      "criterionId": "P3"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been told about an IHC score for my tumor."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Has your doctor ever mentioned that your tumor has an RB1 loss, deletion, or mutation? (RB1 is a gene that helps control cell growth. If you aren't sure, that's okay.)",
+      "criterionId": "P7"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been told about RB1 status in my report."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Since you haven't been told about RB1 status, do you know if your doctor has ever mentioned that your tumor has an RB1 loss, deletion, or mutation? (RB1 is a gene that helps control cell growth. If you aren't sure, that's okay.)",
+      "criterionId": "P7"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been told about RB1 status in my report."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Would you be willing to have a biopsy before starting treatment, or do you have tumor tissue samples from a biopsy done in the last 12 months?",
+      "criterionId": "P8"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know if I have tissue samples from the last 12 months. I had a biopsy at diagnosis, but I'm not sure if that was recent enough."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Would you be willing to have a new biopsy before starting treatment if needed?",
+      "criterionId": "P8"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm a pharmacist, so I understand the importance of accurate tissue for testing. I would be willing to have a new biopsy if it's necessary for the trial."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever received treatment with trastuzumab or pertuzumab, either alone or together? (These are common targeted therapies for HER2+ cancers.)",
+      "criterionId": "P13"
+    },
+    {
+      "index": 18,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I haven't had trastuzumab or pertuzumab. I only had entrectinib (Rozlytrek) for my ROS1 fusion."
+    },
+    {
+      "index": 19,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever taken neratinib or tucatinib? These are targeted pills for HER2+ cancers.",
+      "criterionId": "P14"
+    },
+    {
+      "index": 20,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't taken neratinib or tucatinib. I only had entrectinib (Rozlytrek) for my ROS1 fusion."
+    },
+    {
+      "index": 21,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever taken any CDK4/6 inhibitor medications? These are a type of targeted therapy often used for breast cancer, such as palbociclib, ribociclib, or abemaciclib.",
+      "criterionId": "P15"
+    },
+    {
+      "index": 22,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't taken any CDK4/6 inhibitors like palbociclib or ribociclib. My only prior targeted therapy was entrectinib for my ROS1 fusion."
+    },
+    {
+      "index": 23,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "When was your last cancer treatment? We need to make sure it was more than 3 weeks ago (or 30 days if it was a specific type called an ADC).",
+      "criterionId": "P16"
+    },
+    {
+      "index": 24,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "My last treatment was entrectinib, which was more than 3 weeks ago. I haven't had an ADC."
+    },
+    {
+      "index": 25,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. To confirm, are you 18 years of age or older?",
+      "criterionId": "P17"
+    },
+    {
+      "index": 26,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Yes, I am 45 years old."
+    },
+    {
+      "index": 27,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever been diagnosed with a heart condition or had treatment with medications that can affect the heart? If so, do you know if your heart function is classified as NYHA Class 2B or better?",
+      "criterionId": "P26"
+    },
+    {
+      "index": 28,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know if my heart function is classified as NYHA Class 2B or better. I haven't been told about that specific classification."
+    },
+    {
+      "index": 29,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you currently have an active infection that requires antibiotics given by injection or IV (parenteral antibiotics)?",
+      "criterionId": "P27"
+    },
+    {
+      "index": 30,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't have an active infection requiring IV antibiotics."
+    },
+    {
+      "index": 31,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you currently have an abdominal or pelvic abscess, a fistula (an abnormal connection between organs), a hole in your stomach or intestines, a blockage in your digestive tract, or a tube in your stomach for drainage?",
+      "criterionId": "P28"
+    },
+    {
+      "index": 32,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't have any of those abdominal or pelvic issues."
+    },
+    {
+      "index": 33,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you currently have any significant stomach or intestinal conditions, such as Crohn's disease or prior stomach surgery, that cause moderate to severe diarrhea or make it hard for you to take pills by mouth?",
+      "criterionId": "P29"
+    },
+    {
+      "index": 34,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I have Crohn's disease, but I'm currently stable on Humira and not experiencing moderate to severe diarrhea. I can take pills by mouth without issue."
+    },
+    {
+      "index": 35,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you currently have any lung disease that causes shortness of breath while resting?",
+      "criterionId": "P30"
+    },
+    {
+      "index": 36,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't have lung disease that causes shortness of breath while resting. I'm fully active and still working full shifts."
+    },
+    {
+      "index": 37,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever had an allergic reaction to neratinib, palbociclib, or any similar medications or their ingredients?",
+      "criterionId": "P32"
+    },
+    {
+      "index": 38,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I have never had an allergic reaction to neratinib, palbociclib, or their ingredients."
+    },
+    {
+      "index": 39,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [],
+  "ignoredReadings": [],
+  "replies": [
+    {
+      "turn": 2,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 4,
+      "usedFacts": [
+        "her2"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "usedFacts": [
+        "her2"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 8,
+      "usedFacts": [
+        "her2"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 10,
+      "usedFacts": [
+        "ntrk"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "usedFacts": [
+        "ntrk"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 14,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 16,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "uncited-assertion",
+          "length": 153
+        }
+      ]
+    },
+    {
+      "turn": 18,
+      "usedFacts": [
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 20,
+      "usedFacts": [
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 22,
+      "usedFacts": [
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 24,
+      "usedFacts": [
+        "prior_targeted",
+        "prior_adc"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 26,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 28,
+      "usedFacts": [
+        "cardiac_recent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 30,
+      "usedFacts": [
+        "hiv",
+        "hepatitis_active"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts the absence of an active infection requiring IV antibiotics, a specific medical detail not mentioned in the provided facts."
+        }
+      ]
+    },
+    {
+      "turn": 32,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts the absence of abdominal or pelvic issues, which is information not contained in or contradicted by the provided facts."
+        }
+      ]
+    },
+    {
+      "turn": 34,
+      "usedFacts": [
+        "autoimmune_active"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts that the person is not experiencing moderate to severe diarrhea and can take pills by mouth, details which are not stated in the provided facts."
+        }
+      ]
+    },
+    {
+      "turn": 36,
+      "usedFacts": [
+        "ecog"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims the person does not have lung disease causing shortness of breath while resting, which is a specific health detail not stated in the facts."
+        }
+      ]
+    },
+    {
+      "turn": 38,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "uncited-assertion",
+          "length": 90
+        },
+        {
+          "kind": "model",
+          "reason": "The message asserts information about allergic reactions to specific drugs (neratinib, palbociclib) which is not present in the provided facts."
+        }
+      ]
+    }
+  ],
+  "record": {
+    "nctId": "NCT06126276",
+    "title": {
+      "registry": "Testing the Use of Neratinib or the Combination of Neratinib and Palbociclib Targeted Treatment for HER2+ Solid Tumors (A ComboMATCH Treatment Trial)"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 2,
+      "records": 18,
+      "line": {
+        "ours": "2 rules may not fit what you said. 18 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients must have recurrent or persistent disease"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "How far has the cancer spread?"
+              },
+              "said": {
+                "said": "Metastatic, to the brain and the other lung."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients must have measurable disease based on RECIST 1.1. A second measurable lesion outside of the biopsiable lesion is required"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Is there a tumor that scans can measure?"
+              },
+              "said": {
+                "said": "I don't know."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients with treated brain metastases are eligible if follow up brain imaging after central nervous system (CNS) directed therapy shows no evidence of progression for 3 months or more and patient is not on steroids and is asymptomatic"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the brain?"
+              },
+              "said": {
+                "said": "Yes, one lesion, treated with radiosurgery a year ago, stable since."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P11",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No known leptomeningeal disease"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the lining of the brain or spinal cord?"
+              },
+              "said": {
+                "said": "No leptomeningeal spread."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P12",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients may have received up to 5 prior lines of systemic therapy"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "How many treatments have you had since the cancer became advanced?"
+              },
+              "said": {
+                "said": "One."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P18",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Eastern Cooperative Oncology Group (ECOG) Performance Status of ≤ 2"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Which is closest to how you are day to day?"
+              },
+              "said": {
+                "said": "Fully active, I'm still working full shifts."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P19",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Not pregnant and not nursing"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Are you pregnant or breastfeeding?"
+              },
+              "said": {
+                "said": "No, I'm not pregnant or breastfeeding."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P31",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No interstitial lung disease with ongoing signs and symptoms at the time of registration"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?"
+              },
+              "said": {
+                "said": "No."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patient must have enrolled onto EAY191 and must have been given a treatment assignment to ComboMATCH to EAY191-N5 based on the presence of an actionable mutation as defined in EAY191"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know what the EAY191 study is. I haven't heard of it."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        },
+        {
+          "criterionId": "P13",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Prior therapy with trastuzumab or pertuzumab, either alone or in combination, antibody drug conjugates (ADC) such as DS8201a or T-DM1 is allowed"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I haven't had trastuzumab or pertuzumab."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        },
+        {
+          "criterionId": "P14",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No prior therapy with HER2 targeting tyrosine kinase inhibitors (TKI) such as neratinib or tucatinib"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I only had entrectinib (Rozlytrek) for my ROS1 fusion."
+            },
+            {
+              "said": "No, I haven't taken neratinib or tucatinib."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P15",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No prior therapy with CDK4/6 inhibition"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't taken any CDK4/6 inhibitors"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P16",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No cancer directed therapy within 3 weeks prior to registration. For oral therapy, the washout can be reduced to greater than or equal to 5 half lives of the drug. No HER2 targeting ADCs within 30 days prior to registration"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "last treatment was entrectinib, which was more than 3 weeks ago. I haven't had an ADC."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P17",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Age ≥ 18"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "Yes, I am 45 years old."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P32",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No history of allergic reaction to the study agents, compound of similar chemical or biologic composition of the study agents or any of their excipients"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I have never had an allergic reaction"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients must have a HER2 amplified solid tumor except breast cancer."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I haven't been told about HER2 amplification in my report."
+            },
+            {
+              "said": "I don't know. I haven't been told about HER2 positivity in my report."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "If IHC is 0 or 1+, patient (pt) is NOT ELIGIBLE regardless of in situ hybridization (ISH)/FISH or next generation sequencing (NGS) status"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I haven't been told about an IHC score"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "If IHC is 3+, pt IS ELIGIBLE regardless of ISH/FISH or NGS status"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I haven't been told about an IHC score"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "If IHC is 2+, ISH/FISH OR NGS must be positive for the patient to be ELIGIBLE. Otherwise, pt is NOT ELIGIBLE"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I haven't been told about an IHC score"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No known evidence of RB1 loss or deletion including copy number loss or deleterious mutation"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I haven't been told about RB1 status"
+            },
+            {
+              "said": "I haven't been told about RB1 status"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients must have disease that can be safely biopsied and agree to a pre-treatment biopsy or, if disease cannot be safely biopsied, have archival tissue available from within 12 months prior to the date of registration on the ComboMATCH Registration Trial (EAY191)"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I have tissue samples from the last 12 months."
+            },
+            {
+              "said": "I would be willing to have a new biopsy if it's necessary for the trial."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Your answer didn't settle it."
+          }
+        },
+        {
+          "criterionId": "P20",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Absolute neutrophil count (ANC) ≥ 1,500 cells/mm\\^3"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P21",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Platelets ≥ 100,000 cells/mm\\^3"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P22",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Hemoglobin ≥ 9 g/dl (Note: The use of transfusion or other intervention to achieve hemoglobin (Hgb) ≥ 9 g/dl is acceptable)"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P23",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Creatinine clearance (CrCL) of ≥ 30 mL/min by the Cockcroft-Gault formula"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P24",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Total bilirubin level ≤ 1.5 x institutional upper limit of normal (ULN) (patients with known Gilbert's disease who have bilirubin level ≤ 3 x institutional ULN may be enrolled)"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P25",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Aspartate aminotransferase (AST) and alanine aminotransferase (ALT) ≤ 3 x institutional upper limit of normal (ULN)"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P26",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients with known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, should have a clinical risk assessment of cardiac function using the New York Heart Association Functional Classification. To be eligible for this trial, patients should be class 2B or better"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if my heart function is classified as NYHA Class 2B or better."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P27",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No active infection requiring parenteral antibiotics"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I don't have an active infection requiring IV antibiotics."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P28",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No current evidence of intra-abdominal abscess, abdominal/pelvic fistula (not diverted), gastrointestinal perforation, gastrointestinal (GI) obstruction, and/or need for drainage nasogastric or gastrostomy tube"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I don't have any of those abdominal or pelvic issues."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P29",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No current evidence of malabsorption or chronic diarrhea or any other significant gastro-intestinal disease (e.g gastrectomy, ileal bypass, Crohn's disease, gastroparesis), associated with moderate to severe diarrhea (grade 2 or more) or inability to tolerate oral therapy"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I have Crohn's disease, but I'm currently stable on Humira and not experiencing moderate to severe diarrhea. I can take pills by mouth without issue."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P30",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No lung disease causing dyspnea at rest"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I don't have lung disease that causes shortness of breath while resting."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "Patient must have enrolled onto EAY191 and must have been given a treatment assignment to ComboMATCH to EAY191-N5 based on the presence of an actionable mutation as defined in EAY191"
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Prior therapy with trastuzumab or pertuzumab, either alone or in combination, antibody drug conjugates (ADC) such as DS8201a or T-DM1 is allowed"
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients must have a HER2 amplified solid tumor except breast cancer."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "If IHC is 0 or 1+, patient (pt) is NOT ELIGIBLE regardless of in situ hybridization (ISH)/FISH or next generation sequencing (NGS) status"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "If IHC is 3+, pt IS ELIGIBLE regardless of ISH/FISH or NGS status"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "If IHC is 2+, ISH/FISH OR NGS must be positive for the patient to be ELIGIBLE. Otherwise, pt is NOT ELIGIBLE"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "No known evidence of RB1 loss or deletion including copy number loss or deleterious mutation"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients must have disease that can be safely biopsied and agree to a pre-treatment biopsy or, if disease cannot be safely biopsied, have archival tissue available from within 12 months prior to the date of registration on the ComboMATCH Registration Trial (EAY191)"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Absolute neutrophil count (ANC) ≥ 1,500 cells/mm\\^3"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Platelets ≥ 100,000 cells/mm\\^3"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Hemoglobin ≥ 9 g/dl (Note: The use of transfusion or other intervention to achieve hemoglobin (Hgb) ≥ 9 g/dl is acceptable)"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Creatinine clearance (CrCL) of ≥ 30 mL/min by the Cockcroft-Gault formula"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Total bilirubin level ≤ 1.5 x institutional upper limit of normal (ULN) (patients with known Gilbert's disease who have bilirubin level ≤ 3 x institutional ULN may be enrolled)"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Aspartate aminotransferase (AST) and alanine aminotransferase (ALT) ≤ 3 x institutional upper limit of normal (ULN)"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients with known history or current symptoms of cardiac disease, or history of treatment with cardiotoxic agents, should have a clinical risk assessment of cardiac function using the New York Heart Association Functional Classification. To be eligible for this trial, patients should be class 2B or better"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "No active infection requiring parenteral antibiotics"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "No current evidence of intra-abdominal abscess, abdominal/pelvic fistula (not diverted), gastrointestinal perforation, gastrointestinal (GI) obstruction, and/or need for drainage nasogastric or gastrostomy tube"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "No current evidence of malabsorption or chronic diarrhea or any other significant gastro-intestinal disease (e.g gastrectomy, ileal bypass, Crohn's disease, gastroparesis), associated with moderate to severe diarrhea (grade 2 or more) or inability to tolerate oral therapy"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "No lung disease causing dyspnea at rest"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients must have measurable disease based on RECIST 1.1. A second measurable lesion outside of the biopsiable lesion is required"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "orderAfter": [
+    "NCT05382559",
+    "NCT05735080",
+    "NCT06126276",
+    "NCT06326411",
+    "NCT06774963",
+    "NCT06881784",
+    "NCT06997029",
+    "NCT07094204",
+    "NCT07444814",
+    "NCT07718672",
+    "NCT03706027",
+    "NCT05614739",
+    "NCT06031688",
+    "NCT06686771",
+    "NCT07100080",
+    "NCT06116682",
+    "NCT07229313",
+    "NCT06150664",
+    "NCT06172478",
+    "NCT06343402",
+    "NCT04181060",
+    "NCT06306638",
+    "NCT06627647",
+    "NCT06667141",
+    "NCT07017829",
+    "NCT07027514",
+    "NCT07339176",
+    "NCT07602842",
+    "NCT05642572",
+    "NCT06262321",
+    "NCT06561386",
+    "NCT07293247",
+    "NCT04787042",
+    "NCT05061550",
+    "NCT06692738",
+    "NCT04297605",
+    "NCT06582017",
+    "NCT07190248",
+    "NCT04267848",
+    "NCT06563388",
+    "NCT06623422",
+    "NCT06868277",
+    "NCT07388524",
+    "NCT06216301",
+    "NCT06616584",
+    "NCT06498635",
+    "NCT05624996",
+    "NCT04511039",
+    "NCT05544019",
+    "NCT06943755",
+    "NCT06724237",
+    "NCT04696575",
+    "NCT06179069",
+    "NCT06769126",
+    "NCT07325136",
+    "NCT06780137"
+  ],
+  "calls": {
+    "agent": 38,
+    "participant": 19,
+    "fidelity": 19
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-10"
+  }
+}

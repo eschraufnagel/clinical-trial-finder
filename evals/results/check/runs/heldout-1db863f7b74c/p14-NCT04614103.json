@@ -1,0 +1,2183 @@
+{
+  "patient": "p14",
+  "nctId": "NCT04614103",
+  "set": "heldout",
+  "rank": 2,
+  "conversation": {
+    "histology": {
+      "answer": "unknown",
+      "words": "They said non-small cell, and then something about it being mixed? I didn't follow.",
+      "question": "What type of lung cancer cell did the biopsy show?"
+    },
+    "extent": {
+      "answer": "metastatic_or_recurrent",
+      "words": "Oh, it's spread, to the liver and some lymph nodes, they told me in the summer.",
+      "question": "How far has the cancer spread?"
+    },
+    "brain_mets": {
+      "answer": "none",
+      "words": "No, they checked my brain and it's fine, thank the Lord.",
+      "question": "Has the cancer spread to the brain?"
+    },
+    "ecog": {
+      "answer": "ps1",
+      "words": "I'm up and about, I just can't do the heavy cleaning anymore.",
+      "question": "Which is closest to how you are day to day?"
+    },
+    "prior_platinum": {
+      "answer": "received",
+      "words": "Yes, carboplatin, twice now actually.",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?"
+    },
+    "prior_pd1": {
+      "answer": "progressed",
+      "words": "I had Tecentriq, the immune one, and it stopped working, the cancer grew.",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+    },
+    "prior_targeted": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+    },
+    "lines_advanced": {
+      "answer": "unknown",
+      "words": "Oh, I don't know how they count them, honey.",
+      "question": "How many treatments have you had since the cancer became advanced?"
+    },
+    "measurable_disease": {
+      "answer": "unknown",
+      "words": "Oh, I wouldn't know that.",
+      "question": "Is there a tumor that scans can measure?"
+    },
+    "egfr": {
+      "answer": "unknown",
+      "words": "I don't know, honey.",
+      "question": "Did testing find an EGFR mutation?"
+    },
+    "ild": {
+      "answer": "unknown",
+      "words": "They said something about inflammation once? I don't know if it was the lungs.",
+      "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?"
+    },
+    "other_cancer": {
+      "answer": "none",
+      "words": "No, just this one.",
+      "question": "Have you had another kind of cancer?"
+    },
+    "pregnant_or_breastfeeding": {
+      "answer": "no",
+      "words": "Oh heavens, no.",
+      "question": "Are you pregnant or breastfeeding?"
+    },
+    "autoimmune_active": {
+      "answer": "no",
+      "words": "No.",
+      "question": "In the last 2 years, have you needed medicine that calms the immune system, such as steroids or immunosuppressants, for an autoimmune disease like lupus or Crohn's? Thyroid hormone, insulin and skin creams don't count."
+    },
+    "alk": {
+      "answer": "unknown",
+      "words": "Oh, I wouldn't know that.",
+      "question": "Did testing find an ALK change?"
+    },
+    "ros1": {
+      "answer": "unknown",
+      "words": "You'd have to ask them.",
+      "question": "Did testing find a ROS1 change?"
+    }
+  },
+  "orderBefore": [
+    "NCT02693535",
+    "NCT04614103",
+    "NCT05242965",
+    "NCT05503797",
+    "NCT05536141",
+    "NCT06046495",
+    "NCT06190886",
+    "NCT06275360",
+    "NCT06357533",
+    "NCT06568939",
+    "NCT06686771",
+    "NCT06799065",
+    "NCT06823167",
+    "NCT06922591",
+    "NCT07030257",
+    "NCT07109726",
+    "NCT07144280",
+    "NCT07189871",
+    "NCT07195916",
+    "NCT07277413",
+    "NCT07278479",
+    "NCT07660055",
+    "NCT06472245",
+    "NCT06603844",
+    "NCT06793215",
+    "NCT06953089",
+    "NCT07005102",
+    "NCT07155187",
+    "NCT07288177",
+    "NCT07291037",
+    "NCT06031688",
+    "NCT06126276",
+    "NCT06881784",
+    "NCT06010329",
+    "NCT06162221",
+    "NCT06667076",
+    "NCT07229313",
+    "NCT04317534",
+    "NCT05176483",
+    "NCT07415031",
+    "NCT04198766",
+    "NCT05970497",
+    "NCT05005403",
+    "NCT07489066",
+    "NCT04222062",
+    "NCT04267848",
+    "NCT04613596",
+    "NCT05061550",
+    "NCT05283330",
+    "NCT05624996",
+    "NCT06758401",
+    "NCT07680764",
+    "NCT04181060",
+    "NCT06627647",
+    "NCT06692738",
+    "NCT06868277",
+    "NCT07222566",
+    "NCT07554339",
+    "NCT06498635",
+    "NCT03191149",
+    "NCT06116682",
+    "NCT07388524",
+    "NCT06712316",
+    "NCT07063745",
+    "NCT05642572",
+    "NCT06767514",
+    "NCT07513376",
+    "NCT03550391",
+    "NCT03460977",
+    "NCT05208047",
+    "NCT06203210",
+    "NCT06943755",
+    "NCT07778316",
+    "NCT06712355",
+    "NCT07218146",
+    "NCT04665739",
+    "NCT06095505",
+    "NCT07326566",
+    "NCT07472517",
+    "NCT06769126"
+  ],
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant is over 70 years of age"
+    },
+    {
+      "id": "P2",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a historically or pathologically confirmed diagnosis of metastatic Stage IV NSCLC without EGFR, ALK, or ROS1 genomic alterations."
+    },
+    {
+      "id": "P3",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has actionable mutations (other than EGFR, ALK, or ROS1 genomic alterations) and has received 1 additional line of therapy with the appropriate health authority approved targeted therapy."
+    },
+    {
+      "id": "P4",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has documented radiographic disease progression on or after the first-line therapy, including concurrent or sequential ICI and platinum-based chemotherapy ± bevacizumab."
+    },
+    {
+      "id": "P5",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has received no more than 1 prior line of therapy if ICI and platinum-based chemotherapy were administered concurrently, and no more than 2 prior lines of therapy for sequential administration of platinum-based chemotherapy and ICI as 2 separate lines."
+    },
+    {
+      "id": "P6",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has residual resectable disease after completion of the platinum-based chemotherapy component of the front-line ICI and platinum-based chemotherapy combination, meets all eligibility criteria except documented disease progression, and intends to receive TIL therapy after disease progression."
+    },
+    {
+      "id": "P7",
+      "polarity": "inclusion",
+      "type": "definitional",
+      "text": "Prior systemic therapy in the adjuvant or neoadjuvant setting, or as part of definitive chemoradiotherapy, counts as a line of therapy if the patient had disease progression during or within 12 months after the completion of such therapy."
+    },
+    {
+      "id": "P8",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has at least 1 resectable lesion for TIL production and at least one remaining measurable lesion, as defined by RECIST v1.1."
+    },
+    {
+      "id": "P9",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has adequate organ function."
+    },
+    {
+      "id": "P10",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has an LVEF > 45% and NYHA Class 1."
+    },
+    {
+      "id": "P11",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has adequate pulmonary function."
+    },
+    {
+      "id": "P12",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has an ECOG performance status of 0 or 1."
+    },
+    {
+      "id": "P13",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant is of childbearing potential or has a partner of childbearing potential and is willing to practice an approved method of highly effective birth control during treatment and up to 12 months after all protocol-related therapy."
+    },
+    {
+      "id": "P14",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has EGFR, ALK or ROS1 driver mutations."
+    },
+    {
+      "id": "P15",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has symptomatic, untreated brain metastases."
+    },
+    {
+      "id": "P16",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has had an allogeneic organ transplant or prior cell therapy within the past 20 years."
+    },
+    {
+      "id": "P17",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has any form of primary immunodeficiency."
+    },
+    {
+      "id": "P18",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant is on systemic steroid therapy ≥ 10 mg/day of prednisone or equivalent."
+    },
+    {
+      "id": "P19",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has received a live or attenuated vaccination within 28 days prior to the start of treatment."
+    },
+    {
+      "id": "P20",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has had another primary malignancy within the previous 3 years."
+    },
+    {
+      "id": "P21",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant is participating in another interventional clinical study within 21 days."
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 23,
+      "end": 128,
+      "text": "Patients who are over 70 years of age may be allowed to enroll after discussion with the Medical Monitor."
+    },
+    "P2": {
+      "start": 131,
+      "end": 263,
+      "text": "Have historically or pathologically confirmed diagnosis of metastatic Stage IV NSCLC without EGFR, ALK, or ROS1 genomic alterations."
+    },
+    "P3": {
+      "start": 266,
+      "end": 467,
+      "text": "For patients who have actionable mutations (other than EGFR, ALK, or ROS1 genomic alterations), 1 additional line of therapy with the appropriate health authority approved targeted therapy is required."
+    },
+    "P4": {
+      "start": 470,
+      "end": 654,
+      "text": "Patients must have documented radiographic disease progression on or after the first-line therapy, including concurrent or sequential ICI and platinum-based chemotherapy ± bevacizumab."
+    },
+    "P5": {
+      "start": 655,
+      "end": 894,
+      "text": "No more than 1 prior line is allowed if ICI and platinum-based chemotherapy were administered concurrently and no more than 2 prior lines are allowed for sequential administration of platinum-based chemotherapy and ICI as 2 separate lines."
+    },
+    "P6": {
+      "start": 897,
+      "end": 1253,
+      "text": "LN-145 manufacture is allowed for patients who have residual resectable disease after completion of the platinum-based chemotherapy component of the front-line ICI and platinum-based chemotherapy combination and meet all eligibility criteria except documented disease progression. These patients must intend to receive TIL therapy after disease progression"
+    },
+    "P7": {
+      "start": 1256,
+      "end": 1498,
+      "text": "Prior systemic therapy in the adjuvant or neoadjuvant setting, or as part of definitive chemoradiotherapy, will count as a line of therapy if the patient had disease progression during or within 12 months after the completion of such therapy."
+    },
+    "P8": {
+      "start": 1501,
+      "end": 1620,
+      "text": "At least 1 resectable lesion for TIL production and at least one remaining measurable lesion, as defined by RECIST v1.1"
+    },
+    "P9": {
+      "start": 1623,
+      "end": 1651,
+      "text": "Have adequate organ function"
+    },
+    "P10": {
+      "start": 1654,
+      "end": 1679,
+      "text": "LVEF \\> 45%, NYHA Class 1"
+    },
+    "P11": {
+      "start": 1682,
+      "end": 1714,
+      "text": "Have adequate pulmonary function"
+    },
+    "P12": {
+      "start": 1717,
+      "end": 1750,
+      "text": "ECOG performance status of 0 or 1"
+    },
+    "P13": {
+      "start": 1753,
+      "end": 1989,
+      "text": "Patients of childbearing potential or those with partners of childbearing potential must be willing to practice an approved method of highly effective birth control during treatment and up to 12 months after all protocol-related therapy"
+    },
+    "P14": {
+      "start": 2014,
+      "end": 2066,
+      "text": "Patients who have EGFR, ALK or ROS1 driver mutations"
+    },
+    "P15": {
+      "start": 2069,
+      "end": 2127,
+      "text": "Patients who have symptomatic, untreated brain metastases."
+    },
+    "P16": {
+      "start": 2130,
+      "end": 2226,
+      "text": "Patients who have had allogeneic organ transplant or prior cell therapy within the past 20 years"
+    },
+    "P17": {
+      "start": 2229,
+      "end": 2283,
+      "text": "Patients who have any form of primary immunodeficiency"
+    },
+    "P18": {
+      "start": 2286,
+      "end": 2371,
+      "text": "Patients who are on systemic steroid therapy ≥ 10 mg/day of prednisone or equivalent."
+    },
+    "P19": {
+      "start": 2374,
+      "end": 2480,
+      "text": "Patients who have received a live or attenuated vaccination within 28 days prior to the start of treatment"
+    },
+    "P20": {
+      "start": 2483,
+      "end": 2559,
+      "text": "Patients who have had another primary malignancy within the previous 3 years"
+    },
+    "P21": {
+      "start": 2562,
+      "end": 2631,
+      "text": "Participation in another interventional clinical study within 21 days"
+    }
+  },
+  "links": {
+    "P1": [],
+    "P2": [
+      {
+        "factId": "histology",
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 131,
+          "end": 215,
+          "text": "Have historically or pathologically confirmed diagnosis of metastatic Stage IV NSCLC"
+        }
+      },
+      {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 131,
+          "end": 215,
+          "text": "Have historically or pathologically confirmed diagnosis of metastatic Stage IV NSCLC"
+        }
+      },
+      {
+        "factId": "egfr",
+        "rulesOut": [
+          "common_sensitizing",
+          "exon20_insertion",
+          "other_mutation"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 131,
+          "end": 263,
+          "text": "Have historically or pathologically confirmed diagnosis of metastatic Stage IV NSCLC without EGFR, ALK, or ROS1 genomic alterations."
+        }
+      },
+      {
+        "factId": "alk",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 131,
+          "end": 263,
+          "text": "Have historically or pathologically confirmed diagnosis of metastatic Stage IV NSCLC without EGFR, ALK, or ROS1 genomic alterations."
+        }
+      },
+      {
+        "factId": "ros1",
+        "rulesOut": [
+          "found"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 131,
+          "end": 263,
+          "text": "Have historically or pathologically confirmed diagnosis of metastatic Stage IV NSCLC without EGFR, ALK, or ROS1 genomic alterations."
+        }
+      }
+    ],
+    "P3": [],
+    "P4": [],
+    "P5": [
+      {
+        "factId": "lines_advanced",
+        "rulesOut": [
+          "three_plus"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 655,
+          "end": 894,
+          "text": "No more than 1 prior line is allowed if ICI and platinum-based chemotherapy were administered concurrently and no more than 2 prior lines are allowed for sequential administration of platinum-based chemotherapy and ICI as 2 separate lines."
+        }
+      }
+    ],
+    "P6": [],
+    "P7": [],
+    "P8": [
+      {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 1501,
+          "end": 1620,
+          "text": "At least 1 resectable lesion for TIL production and at least one remaining measurable lesion, as defined by RECIST v1.1"
+        }
+      }
+    ],
+    "P9": [],
+    "P10": [],
+    "P11": [],
+    "P12": [
+      {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 1717,
+          "end": 1750,
+          "text": "ECOG performance status of 0 or 1"
+        }
+      }
+    ],
+    "P13": [],
+    "P14": [],
+    "P15": [
+      {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 2069,
+          "end": 2127,
+          "text": "Patients who have symptomatic, untreated brain metastases."
+        }
+      }
+    ],
+    "P16": [
+      {
+        "factId": "transplant",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 2130,
+          "end": 2226,
+          "text": "Patients who have had allogeneic organ transplant or prior cell therapy within the past 20 years"
+        }
+      }
+    ],
+    "P17": [],
+    "P18": [
+      {
+        "factId": "steroids",
+        "rulesOut": [
+          "high_dose"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 2286,
+          "end": 2371,
+          "text": "Patients who are on systemic steroid therapy ≥ 10 mg/day of prednisone or equivalent."
+        }
+      }
+    ],
+    "P19": [],
+    "P20": [
+      {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 2483,
+          "end": 2559,
+          "text": "Patients who have had another primary malignancy within the previous 3 years"
+        }
+      }
+    ],
+    "P21": []
+  },
+  "carried": {
+    "P2": [
+      {
+        "factId": "histology",
+        "answer": "unknown",
+        "words": "They said non-small cell, and then something about it being mixed? I didn't follow.",
+        "question": "What type of lung cancer cell did the biopsy show?",
+        "mayNotFit": false
+      },
+      {
+        "factId": "extent",
+        "answer": "metastatic_or_recurrent",
+        "words": "Oh, it's spread, to the liver and some lymph nodes, they told me in the summer.",
+        "question": "How far has the cancer spread?",
+        "mayNotFit": false
+      },
+      {
+        "factId": "egfr",
+        "answer": "unknown",
+        "words": "I don't know, honey.",
+        "question": "Did testing find an EGFR mutation?",
+        "mayNotFit": false
+      },
+      {
+        "factId": "alk",
+        "answer": "unknown",
+        "words": "Oh, I wouldn't know that.",
+        "question": "Did testing find an ALK change?",
+        "mayNotFit": false
+      },
+      {
+        "factId": "ros1",
+        "answer": "unknown",
+        "words": "You'd have to ask them.",
+        "question": "Did testing find a ROS1 change?",
+        "mayNotFit": false
+      }
+    ],
+    "P5": [
+      {
+        "factId": "lines_advanced",
+        "answer": "unknown",
+        "words": "Oh, I don't know how they count them, honey.",
+        "question": "How many treatments have you had since the cancer became advanced?",
+        "mayNotFit": false
+      }
+    ],
+    "P8": [
+      {
+        "factId": "measurable_disease",
+        "answer": "unknown",
+        "words": "Oh, I wouldn't know that.",
+        "question": "Is there a tumor that scans can measure?",
+        "mayNotFit": false
+      }
+    ],
+    "P12": [
+      {
+        "factId": "ecog",
+        "answer": "ps1",
+        "words": "I'm up and about, I just can't do the heavy cleaning anymore.",
+        "question": "Which is closest to how you are day to day?",
+        "mayNotFit": false
+      }
+    ],
+    "P15": [
+      {
+        "factId": "brain_mets",
+        "answer": "none",
+        "words": "No, they checked my brain and it's fine, thank the Lord.",
+        "question": "Has the cancer spread to the brain?",
+        "mayNotFit": false
+      }
+    ],
+    "P20": [
+      {
+        "factId": "other_cancer",
+        "answer": "none",
+        "words": "No, just this one.",
+        "question": "Have you had another kind of cancer?",
+        "mayNotFit": false
+      }
+    ]
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "I'm 67",
+          "reading": "does-not-hold",
+          "statement": "The participant is over 70 years of age"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "histology",
+          "answer": "unknown",
+          "words": "They said non-small cell, and then something about it being mixed? I didn't follow.",
+          "question": "What type of lung cancer cell did the biopsy show?",
+          "mayNotFit": false
+        },
+        {
+          "factId": "extent",
+          "answer": "metastatic_or_recurrent",
+          "words": "Oh, it's spread, to the liver and some lymph nodes, they told me in the summer.",
+          "question": "How far has the cancer spread?",
+          "mayNotFit": false
+        },
+        {
+          "factId": "egfr",
+          "answer": "unknown",
+          "words": "I don't know, honey.",
+          "question": "Did testing find an EGFR mutation?",
+          "mayNotFit": false
+        },
+        {
+          "factId": "alk",
+          "answer": "unknown",
+          "words": "Oh, I wouldn't know that.",
+          "question": "Did testing find an ALK change?",
+          "mayNotFit": false
+        },
+        {
+          "factId": "ros1",
+          "answer": "unknown",
+          "words": "You'd have to ask them.",
+          "question": "Did testing find a ROS1 change?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "No, I haven't had any of those targeted pills.",
+          "reading": "does-not-hold",
+          "statement": "The participant has actionable mutations (other than EGFR, ALK, or ROS1 genomic alterations) and has received 1 additional line of therapy with the appropriate health authority approved targeted therapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 6,
+          "quote": "The Tecentriq stopped working and the cancer grew again",
+          "reading": "holds",
+          "statement": "The participant has documented radiographic disease progression on or after the first-line therapy, including concurrent or sequential ICI and platinum-based chemotherapy ± bevacizumab."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "holds"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "lines_advanced",
+          "answer": "unknown",
+          "words": "Oh, I don't know how they count them, honey.",
+          "question": "How many treatments have you had since the cancer became advanced?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "there's no way they could take it all out with surgery",
+          "reading": "does-not-hold",
+          "statement": "The participant has residual resectable disease after completion of the platinum-based chemotherapy component of the front-line ICI and platinum-based chemotherapy combination, meets all eligibility criteria except documented disease progression, and intends to receive TIL therapy after disease progression."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "definitional"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "measurable_disease",
+          "answer": "unknown",
+          "words": "Oh, I wouldn't know that.",
+          "question": "Is there a tumor that scans can measure?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I don't keep track of exactly when my last blood work was done.",
+          "reading": "unknown",
+          "statement": "The participant has adequate organ function."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I don't think they did a pumping strength test recently",
+          "reading": "unclear",
+          "statement": "The participant has an LVEF > 45% and NYHA Class 1."
+        },
+        {
+          "turn": 14,
+          "quote": "No, I haven't had an echocardiogram in the last two weeks.",
+          "reading": "partial",
+          "missing": "LVEF > 45% and NYHA Class 1 status",
+          "statement": "The participant has an LVEF > 45% and NYHA Class 1."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "partial",
+      "reported": "partial"
+    },
+    {
+      "criterionId": "P11",
+      "evidence": [
+        {
+          "turn": 16,
+          "quote": "I'm not sure if they did any of those lung function tests recently.",
+          "reading": "unknown",
+          "statement": "The participant has adequate pulmonary function."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P12",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "ecog",
+          "answer": "ps1",
+          "words": "I'm up and about, I just can't do the heavy cleaning anymore.",
+          "question": "Which is closest to how you are day to day?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P13",
+      "evidence": [
+        {
+          "turn": 18,
+          "quote": "I'm 67 years old. I'm certainly not pregnant or breastfeeding",
+          "reading": "does-not-hold",
+          "statement": "The participant is of childbearing potential or has a partner of childbearing potential and is willing to practice an approved method of highly effective birth control during treatment and up to 12 months after all protocol-related therapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P14",
+      "evidence": [
+        {
+          "turn": 20,
+          "quote": "I don't keep track of those specific genetic test results.",
+          "reading": "unknown",
+          "statement": "The participant has EGFR, ALK or ROS1 driver mutations."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P15",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "brain_mets",
+          "answer": "none",
+          "words": "No, they checked my brain and it's fine, thank the Lord.",
+          "question": "Has the cancer spread to the brain?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P16",
+      "evidence": [
+        {
+          "turn": 22,
+          "quote": "No, I haven't had an organ transplant.",
+          "reading": "does-not-hold",
+          "statement": "The participant has had an allogeneic organ transplant or prior cell therapy within the past 20 years."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P17",
+      "evidence": [
+        {
+          "turn": 24,
+          "quote": "I've never heard of a primary immunodeficiency",
+          "reading": "unclear",
+          "statement": "The participant has any form of primary immunodeficiency."
+        },
+        {
+          "turn": 26,
+          "quote": "I've never been told I have a condition where my immune system doesn't work properly from birth",
+          "reading": "unclear",
+          "statement": "The participant has any form of primary immunodeficiency."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "unclear"
+    },
+    {
+      "criterionId": "P18",
+      "evidence": [
+        {
+          "turn": 28,
+          "quote": "I'm not sure what it is, so I don't know if it's prednisone or how much it is.",
+          "reading": "unclear",
+          "statement": "The participant is on systemic steroid therapy ≥ 10 mg/day of prednisone or equivalent."
+        },
+        {
+          "turn": 30,
+          "quote": "I really don't know what that little white pill is called or how strong it is.",
+          "reading": "unknown",
+          "statement": "The participant is on systemic steroid therapy ≥ 10 mg/day of prednisone or equivalent."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P19",
+      "evidence": [
+        {
+          "turn": 32,
+          "quote": "I'm not sure if I've had any of those live vaccines recently",
+          "reading": "unknown",
+          "statement": "The participant has received a live or attenuated vaccination within 28 days prior to the start of treatment."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P20",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "other_cancer",
+          "answer": "none",
+          "words": "No, just this one.",
+          "question": "Have you had another kind of cancer?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P21",
+      "evidence": [
+        {
+          "turn": 34,
+          "quote": "No, I haven't joined any other studies recently.",
+          "reading": "does-not-hold",
+          "statement": "The participant is participating in another interventional clinical study within 21 days."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"Autologous LN-145 in Patients With Metastatic Non-Small-Cell Lung Cancer\". Your earlier answers already covered 6 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you over 70 years of age?",
+      "criterionId": "P1"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, no dear, I'm 67. I'm not quite there yet!"
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you received 1 additional line of therapy with a targeted treatment approved by your health authority for a mutation other than EGFR, ALK, or ROS1?",
+      "criterionId": "P3"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any of those targeted pills. I just had the chemo and the immune therapy."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. After your first treatment (chemo and immune therapy), did your cancer grow or spread again on a scan?",
+      "criterionId": "P4"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh yes, it did. The Tecentriq stopped working and the cancer grew again, that's why I'm looking at this trial."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. After your chemo and immunotherapy, did your doctor say you still have cancer that can be surgically removed?",
+      "criterionId": "P6"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, no dear. It's spread to my liver and lymph nodes, so there's no way they could take it all out with surgery."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any recent blood tests or organ function checks in the last 2 weeks to make sure your body is ready for treatment?",
+      "criterionId": "P9"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I'm not sure about that one, dear. I don't keep track of exactly when my last blood work was done."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had a recent heart function test (like an echocardiogram) to check your heart's pumping strength?",
+      "criterionId": "P10"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had that. I know my heart is okay generally, but I don't think they did a pumping strength test recently."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. To clarify, have you had an echocardiogram (a heart ultrasound) in the last 2 weeks to check your heart's pumping strength?",
+      "criterionId": "P10"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had an echocardiogram in the last two weeks. I know my heart is fine, but I don't think they did that specific test recently."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any recent lung function tests (like spirometry) to check how well your lungs are working?",
+      "criterionId": "P11"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I wouldn't know that, dear. I'm not sure if they did any of those lung function tests recently."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently using a highly effective birth control method, or do you have a partner who is using one, to prevent pregnancy during the study and for 12 months after treatment ends?",
+      "criterionId": "P13"
+    },
+    {
+      "index": 18,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh heavens, no, I'm 67 years old. I'm certainly not pregnant or breastfeeding, so that's not a worry for me."
+    },
+    {
+      "index": 19,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been tested for EGFR, ALK, or ROS1 mutations in your lung cancer? These are specific genetic changes in the tumor cells.",
+      "criterionId": "P14"
+    },
+    {
+      "index": 20,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I wouldn't know that, dear. I don't keep track of those specific genetic test results."
+    },
+    {
+      "index": 21,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever received an organ transplant from another person, or had any prior cell therapy treatments in the last 20 years?",
+      "criterionId": "P16"
+    },
+    {
+      "index": 22,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had an organ transplant. Just this one cancer, nothing else."
+    },
+    {
+      "index": 23,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been diagnosed with a primary immunodeficiency, which is a condition where your immune system doesn't work properly from birth?",
+      "criterionId": "P17"
+    },
+    {
+      "index": 24,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I don't know what that means, dear. I've never heard of a primary immunodeficiency. I just know I have this lung cancer."
+    },
+    {
+      "index": 25,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. To clarify, have you ever been told by a doctor that you have a condition where your immune system doesn't work properly from birth, or have you had frequent, severe infections since childhood?",
+      "criterionId": "P17"
+    },
+    {
+      "index": 26,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I don't know, honey. I've never been told I have a condition where my immune system doesn't work properly from birth, and I don't recall having frequent severe infections since I was a child."
+    },
+    {
+      "index": 27,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently taking prednisone or a similar steroid medicine at a dose of 10 mg per day or more?",
+      "criterionId": "P18"
+    },
+    {
+      "index": 28,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I take a little white pill in the morning, but I'm not sure what it is, so I don't know if it's prednisone or how much it is."
+    },
+    {
+      "index": 29,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Could you check the bottle or box for the name of the pill and the strength (mg)? Or do you know if it's a steroid like prednisone?",
+      "criterionId": "P18"
+    },
+    {
+      "index": 30,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm sorry, dear, but I really don't know what that little white pill is called or how strong it is. I just take it in the morning and hope for the best."
+    },
+    {
+      "index": 31,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you received any live or attenuated vaccines (like MMR, varicella, or the nasal flu spray) in the last 28 days?",
+      "criterionId": "P19"
+    },
+    {
+      "index": 32,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I don't know, honey. I'm not sure if I've had any of those live vaccines recently. I just get my regular shots when the doctor says so."
+    },
+    {
+      "index": 33,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you joined or started any other clinical trial studies in the last 21 days?",
+      "criterionId": "P21"
+    },
+    {
+      "index": 34,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't joined any other studies recently. I'm just looking into this one."
+    },
+    {
+      "index": 35,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [],
+  "ignoredReadings": [],
+  "replies": [
+    {
+      "turn": 2,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 4,
+      "usedFacts": [
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "usedFacts": [
+        "prior_pd1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 8,
+      "usedFacts": [
+        "extent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 10,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "usedFacts": [
+        "cardiac_recent"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims the person knows their heart is okay generally, which contradicts the fact that they do not know about recent cardiac events or tests (cardiac_recent) and only states 'No' to having had a heart attack/stroke/hospitalization, without asserting general heart health knowledge."
+        }
+      ]
+    },
+    {
+      "turn": 14,
+      "usedFacts": [
+        "cardiac_recent"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims the person knows their heart is fine, which contradicts the fact that they only stated they have not had a recent heart attack, stroke, or heart failure requiring hospital care, without asserting their heart is currently fine or that they know its status."
+        }
+      ]
+    },
+    {
+      "turn": 16,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 18,
+      "usedFacts": [
+        "pregnant_or_breastfeeding"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 20,
+      "usedFacts": [
+        "egfr",
+        "alk",
+        "ros1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 22,
+      "usedFacts": [
+        "transplant",
+        "other_cancer"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 24,
+      "usedFacts": [
+        "leptomeningeal"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 26,
+      "usedFacts": [
+        "24"
+      ],
+      "flags": [
+        {
+          "kind": "unknown-fact",
+          "facts": [
+            "24"
+          ]
+        },
+        {
+          "kind": "model",
+          "reason": "The message asserts that the person has never been told they have a primary immunodeficiency and recalls no frequent severe infections, which introduces specific medical history details not present in the provided facts."
+        }
+      ]
+    },
+    {
+      "turn": 28,
+      "usedFacts": [
+        "steroids"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 30,
+      "usedFacts": [
+        "steroids"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 32,
+      "usedFacts": [
+        "pdl1"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts information about the person's vaccination history (live vaccines), which is not mentioned in the facts and contradicts the persona's tendency to claim ignorance about specific medical details or stick to the provided facts."
+        }
+      ]
+    },
+    {
+      "turn": 34,
+      "usedFacts": [],
+      "flags": []
+    }
+  ],
+  "record": {
+    "nctId": "NCT04614103",
+    "title": {
+      "registry": "Autologous LN-145 in Patients With Metastatic Non-Small-Cell Lung Cancer"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 4,
+      "records": 13,
+      "line": {
+        "ours": "4 rules may not fit what you said. 13 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Have historically or pathologically confirmed diagnosis of metastatic Stage IV NSCLC without EGFR, ALK, or ROS1 genomic alterations."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "What type of lung cancer cell did the biopsy show?"
+              },
+              "said": {
+                "said": "They said non-small cell, and then something about it being mixed? I didn't follow."
+              }
+            },
+            {
+              "asked": {
+                "ours": "How far has the cancer spread?"
+              },
+              "said": {
+                "said": "Oh, it's spread, to the liver and some lymph nodes, they told me in the summer."
+              }
+            },
+            {
+              "asked": {
+                "ours": "Did testing find an EGFR mutation?"
+              },
+              "said": {
+                "said": "I don't know, honey."
+              }
+            },
+            {
+              "asked": {
+                "ours": "Did testing find an ALK change?"
+              },
+              "said": {
+                "said": "Oh, I wouldn't know that."
+              }
+            },
+            {
+              "asked": {
+                "ours": "Did testing find a ROS1 change?"
+              },
+              "said": {
+                "said": "You'd have to ask them."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "No more than 1 prior line is allowed if ICI and platinum-based chemotherapy were administered concurrently and no more than 2 prior lines are allowed for sequential administration of platinum-based chemotherapy and ICI as 2 separate lines."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "How many treatments have you had since the cancer became advanced?"
+              },
+              "said": {
+                "said": "Oh, I don't know how they count them, honey."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "At least 1 resectable lesion for TIL production and at least one remaining measurable lesion, as defined by RECIST v1.1"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Is there a tumor that scans can measure?"
+              },
+              "said": {
+                "said": "Oh, I wouldn't know that."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P12",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "ECOG performance status of 0 or 1"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Which is closest to how you are day to day?"
+              },
+              "said": {
+                "said": "I'm up and about, I just can't do the heavy cleaning anymore."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P15",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients who have symptomatic, untreated brain metastases."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the brain?"
+              },
+              "said": {
+                "said": "No, they checked my brain and it's fine, thank the Lord."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P20",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients who have had another primary malignancy within the previous 3 years"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Have you had another kind of cancer?"
+              },
+              "said": {
+                "said": "No, just this one."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients who are over 70 years of age may be allowed to enroll after discussion with the Medical Monitor."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm 67"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        },
+        {
+          "criterionId": "P13",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients of childbearing potential or those with partners of childbearing potential must be willing to practice an approved method of highly effective birth control during treatment and up to 12 months after all protocol-related therapy"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm 67 years old. I'm certainly not pregnant or breastfeeding"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        },
+        {
+          "criterionId": "P16",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients who have had allogeneic organ transplant or prior cell therapy within the past 20 years"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had an organ transplant."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P21",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participation in another interventional clinical study within 21 days"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't joined any other studies recently."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "For patients who have actionable mutations (other than EGFR, ALK, or ROS1 genomic alterations), 1 additional line of therapy with the appropriate health authority approved targeted therapy is required."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had any of those targeted pills."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients must have documented radiographic disease progression on or after the first-line therapy, including concurrent or sequential ICI and platinum-based chemotherapy ± bevacizumab."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "The Tecentriq stopped working and the cancer grew again"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "LN-145 manufacture is allowed for patients who have residual resectable disease after completion of the platinum-based chemotherapy component of the front-line ICI and platinum-based chemotherapy combination and meet all eligibility criteria except documented disease progression. These patients must intend to receive TIL therapy after disease progression"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "there's no way they could take it all out with surgery"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Have adequate organ function"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't keep track of exactly when my last blood work was done."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "LVEF \\> 45%, NYHA Class 1"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't think they did a pumping strength test recently"
+            },
+            {
+              "said": "No, I haven't had an echocardiogram in the last two weeks."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P11",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Have adequate pulmonary function"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure if they did any of those lung function tests recently."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P14",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients who have EGFR, ALK or ROS1 driver mutations"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't keep track of those specific genetic test results."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P17",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients who have any form of primary immunodeficiency"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I've never heard of a primary immunodeficiency"
+            },
+            {
+              "said": "I've never been told I have a condition where my immune system doesn't work properly from birth"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P18",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients who are on systemic steroid therapy ≥ 10 mg/day of prednisone or equivalent."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure what it is, so I don't know if it's prednisone or how much it is."
+            },
+            {
+              "said": "I really don't know what that little white pill is called or how strong it is."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P19",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients who have received a live or attenuated vaccination within 28 days prior to the start of treatment"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure if I've had any of those live vaccines recently"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Prior systemic therapy in the adjuvant or neoadjuvant setting, or as part of definitive chemoradiotherapy, will count as a line of therapy if the patient had disease progression during or within 12 months after the completion of such therapy."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "Patients who are over 70 years of age may be allowed to enroll after discussion with the Medical Monitor."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients of childbearing potential or those with partners of childbearing potential must be willing to practice an approved method of highly effective birth control during treatment and up to 12 months after all protocol-related therapy"
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "For patients who have actionable mutations (other than EGFR, ALK, or ROS1 genomic alterations), 1 additional line of therapy with the appropriate health authority approved targeted therapy is required."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "LN-145 manufacture is allowed for patients who have residual resectable disease after completion of the platinum-based chemotherapy component of the front-line ICI and platinum-based chemotherapy combination and meet all eligibility criteria except documented disease progression. These patients must intend to receive TIL therapy after disease progression"
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients must have documented radiographic disease progression on or after the first-line therapy, including concurrent or sequential ICI and platinum-based chemotherapy ± bevacizumab."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have adequate organ function"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "LVEF \\> 45%, NYHA Class 1"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have adequate pulmonary function"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients who have EGFR, ALK or ROS1 driver mutations"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients who have any form of primary immunodeficiency"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients who are on systemic steroid therapy ≥ 10 mg/day of prednisone or equivalent."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients who have received a live or attenuated vaccination within 28 days prior to the start of treatment"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have historically or pathologically confirmed diagnosis of metastatic Stage IV NSCLC without EGFR, ALK, or ROS1 genomic alterations."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "No more than 1 prior line is allowed if ICI and platinum-based chemotherapy were administered concurrently and no more than 2 prior lines are allowed for sequential administration of platinum-based chemotherapy and ICI as 2 separate lines."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "At least 1 resectable lesion for TIL production and at least one remaining measurable lesion, as defined by RECIST v1.1"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "orderAfter": [
+    "NCT02693535",
+    "NCT04614103",
+    "NCT05242965",
+    "NCT05503797",
+    "NCT05536141",
+    "NCT06046495",
+    "NCT06190886",
+    "NCT06275360",
+    "NCT06357533",
+    "NCT06568939",
+    "NCT06686771",
+    "NCT06799065",
+    "NCT06823167",
+    "NCT06922591",
+    "NCT07030257",
+    "NCT07109726",
+    "NCT07144280",
+    "NCT07189871",
+    "NCT07195916",
+    "NCT07277413",
+    "NCT07278479",
+    "NCT07660055",
+    "NCT06472245",
+    "NCT06603844",
+    "NCT06793215",
+    "NCT06953089",
+    "NCT07005102",
+    "NCT07155187",
+    "NCT07288177",
+    "NCT07291037",
+    "NCT06031688",
+    "NCT06126276",
+    "NCT06881784",
+    "NCT06010329",
+    "NCT06162221",
+    "NCT06667076",
+    "NCT07229313",
+    "NCT04317534",
+    "NCT05176483",
+    "NCT07415031",
+    "NCT04198766",
+    "NCT05970497",
+    "NCT05005403",
+    "NCT07489066",
+    "NCT04222062",
+    "NCT04267848",
+    "NCT04613596",
+    "NCT05061550",
+    "NCT05283330",
+    "NCT05624996",
+    "NCT06758401",
+    "NCT07680764",
+    "NCT04181060",
+    "NCT06627647",
+    "NCT06692738",
+    "NCT06868277",
+    "NCT07222566",
+    "NCT07554339",
+    "NCT06498635",
+    "NCT03191149",
+    "NCT06116682",
+    "NCT07388524",
+    "NCT06712316",
+    "NCT07063745",
+    "NCT05642572",
+    "NCT06767514",
+    "NCT07513376",
+    "NCT03550391",
+    "NCT03460977",
+    "NCT05208047",
+    "NCT06203210",
+    "NCT06943755",
+    "NCT07778316",
+    "NCT06712355",
+    "NCT07218146",
+    "NCT04665739",
+    "NCT06095505",
+    "NCT07326566",
+    "NCT07472517",
+    "NCT06769126"
+  ],
+  "calls": {
+    "agent": 34,
+    "participant": 17,
+    "fidelity": 17
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-10"
+  }
+}

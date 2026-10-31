@@ -1,0 +1,4031 @@
+{
+  "patient": "p10",
+  "nctId": "NCT05382559",
+  "set": "heldout",
+  "rank": 1,
+  "conversation": {
+    "histology": {
+      "answer": "adenocarcinoma",
+      "words": "Adenocarcinoma.",
+      "question": "What type of lung cancer cell did the biopsy show?"
+    },
+    "extent": {
+      "answer": "metastatic_or_recurrent",
+      "words": "Metastatic, to the brain and the other lung.",
+      "question": "How far has the cancer spread?"
+    },
+    "brain_mets": {
+      "answer": "treated_stable",
+      "words": "Yes, one lesion, treated with radiosurgery a year ago, stable since.",
+      "question": "Has the cancer spread to the brain?"
+    },
+    "ecog": {
+      "answer": "ps0",
+      "words": "Fully active, I'm still working full shifts.",
+      "question": "Which is closest to how you are day to day?"
+    },
+    "prior_platinum": {
+      "answer": "never",
+      "words": "No chemo.",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?"
+    },
+    "prior_pd1": {
+      "answer": "never",
+      "words": "No immunotherapy.",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+    },
+    "prior_targeted": {
+      "answer": "received",
+      "words": "Yes, Rozlytrek, entrectinib.",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+    },
+    "lines_advanced": {
+      "answer": "one",
+      "words": "One.",
+      "question": "How many treatments have you had since the cancer became advanced?"
+    },
+    "measurable_disease": {
+      "answer": "unknown",
+      "words": "I don't know.",
+      "question": "Is there a tumor that scans can measure?"
+    },
+    "ild": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?"
+    },
+    "pregnant_or_breastfeeding": {
+      "answer": "no",
+      "words": "No, I'm not pregnant or breastfeeding.",
+      "question": "Are you pregnant or breastfeeding?"
+    },
+    "leptomeningeal": {
+      "answer": "no",
+      "words": "No leptomeningeal spread.",
+      "question": "Has the cancer spread to the lining of the brain or spinal cord?"
+    },
+    "autoimmune_active": {
+      "answer": "yes",
+      "words": "Yes, I have Crohn's and I'm on Humira for it.",
+      "question": "In the last 2 years, have you needed medicine that calms the immune system, such as steroids or immunosuppressants, for an autoimmune disease like lupus or Crohn's? Thyroid hormone, insulin and skin creams don't count."
+    },
+    "hepatitis_active": {
+      "answer": "no",
+      "words": "No.",
+      "question": "Do you have active hepatitis B or C?"
+    },
+    "hiv": {
+      "answer": "no",
+      "words": "No.",
+      "question": "Do you have HIV?"
+    },
+    "chest_radiation_6m": {
+      "answer": "no",
+      "words": "No chest radiation.",
+      "question": "Have you had radiation to the chest in the last 6 months?"
+    }
+  },
+  "orderBefore": [
+    "NCT05382559",
+    "NCT05735080",
+    "NCT06126276",
+    "NCT06326411",
+    "NCT06774963",
+    "NCT06881784",
+    "NCT06997029",
+    "NCT07094204",
+    "NCT07444814",
+    "NCT07718672",
+    "NCT03706027",
+    "NCT05614739",
+    "NCT06031688",
+    "NCT06686771",
+    "NCT07100080",
+    "NCT06116682",
+    "NCT07229313",
+    "NCT06150664",
+    "NCT06172478",
+    "NCT06343402",
+    "NCT04181060",
+    "NCT06306638",
+    "NCT06627647",
+    "NCT06667141",
+    "NCT07017829",
+    "NCT07027514",
+    "NCT07339176",
+    "NCT07602842",
+    "NCT05642572",
+    "NCT06262321",
+    "NCT06561386",
+    "NCT07293247",
+    "NCT04787042",
+    "NCT05061550",
+    "NCT06692738",
+    "NCT04297605",
+    "NCT06582017",
+    "NCT07190248",
+    "NCT04267848",
+    "NCT06563388",
+    "NCT06623422",
+    "NCT06868277",
+    "NCT07388524",
+    "NCT06216301",
+    "NCT06616584",
+    "NCT06498635",
+    "NCT05624996",
+    "NCT04511039",
+    "NCT05544019",
+    "NCT06943755",
+    "NCT06724237",
+    "NCT04696575",
+    "NCT06179069",
+    "NCT06769126",
+    "NCT07325136",
+    "NCT06780137"
+  ],
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has locally advanced (unresectable) or metastatic solid tumor malignancy with documented KRAS G12D mutation, has received prior standard therapy, and the investigator does not see any further clinical benefit from continuing such targeted therapy, or is ineligible to receive standard approved therapies."
+    },
+    {
+      "id": "P2",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "For the ASP3082 monotherapy escalation cohorts, the participant has a solid tumor malignancy."
+    },
+    {
+      "id": "P3",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a known KRAS G12 mutation other than G12D."
+    },
+    {
+      "id": "P4",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "For ASP3082 combination therapy with Nab-P+GEM or FOLFIRINOX or NALRIFOX, the participant has metastatic pancreatic ductal adenocarcinoma (mPDAC) that has not been previously treated with chemotherapy."
+    },
+    {
+      "id": "P5",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "If the participant received (neo)adjuvant therapy, tumor recurrence or disease progression occurred at least 6 months after completing the last dose of the (neo)adjuvant therapy."
+    },
+    {
+      "id": "P6",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant consents to provide a tumor specimen in a tissue block or unstained serial slides or a tumor biopsy (core needle biopsy or excision) obtained after the last interventional treatment, but prior to start of study intervention."
+    },
+    {
+      "id": "P7",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant consents to provide a sample for tumor biopsy during the treatment period as indicated in the study protocol."
+    },
+    {
+      "id": "P8",
+      "polarity": "inclusion",
+      "type": "protocol",
+      "text": "If the participant cannot provide a fresh tissue biopsy sample, the site consults with the sponsor/study medical monitor."
+    },
+    {
+      "id": "P9",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+    },
+    {
+      "id": "P10",
+      "polarity": "inclusion",
+      "type": "definitional",
+      "text": "Lesions situated in a previously irradiated area are considered measurable if progression has been demonstrated in such lesions."
+    },
+    {
+      "id": "P11",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has an ECOG performance status of 0, 1 or 2 for dose escalation, and 0 or 1 for dose expansion."
+    },
+    {
+      "id": "P12",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant's last dose of prior antineoplastic therapy, including any immunotherapy, was 21 days or 5 half-lives, whichever is shorter, prior to initiation of study intervention administration."
+    },
+    {
+      "id": "P13",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant has completed any radiotherapy (including stereotactic radiosurgery) at least 14 days prior to the start of study intervention administration."
+    },
+    {
+      "id": "P14",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has recovered from all radiation-related toxicities, does not require corticosteroids (except physiologic replacement dose), and does not have active radiation pneumonitis."
+    },
+    {
+      "id": "P15",
+      "polarity": "inclusion",
+      "type": "definitional",
+      "text": "A 1-week washout is permitted for palliative radiation (<= 2 weeks of radiotherapy) to non-central nervous system disease."
+    },
+    {
+      "id": "P16",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant's adverse events (excluding alopecia) from prior therapy have improved to grade 1 or baseline within 14 days prior to start of study intervention (or prior to starting SoC chemotherapy, for first line participants receiving Nab-P+GEM FOLFIRINOX or NALIRIFOX)."
+    },
+    {
+      "id": "P17",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has adequate organ function as indicated by protocol laboratory value parameters."
+    },
+    {
+      "id": "P18",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The female participant is not pregnant, confirmed by pregnancy test and medical evaluation by interview."
+    },
+    {
+      "id": "P19",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The female participant is not a woman of childbearing potential (WOCBP)."
+    },
+    {
+      "id": "P20",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The female participant is a WOCBP who agrees to follow the contraceptive guidance from the time of informed consent through at least 6 months after study intervention administration."
+    },
+    {
+      "id": "P21",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "For EU participants in combination therapy with carboplatin, follow contraception guidelines from the time of informed consent through at least 7 months after the final dose of carboplatin."
+    },
+    {
+      "id": "P22",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "For South Korea participants in combination therapy with oxaliplatin, follow contraception guidelines from the time of informed consent through at least 15 months after the final dose of oxaliplatin. For combination therapy with cisplatin, follow contraception guidelines from the time of informed consent through at least 14 months after the final dose of cisplatin."
+    },
+    {
+      "id": "P23",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The female participant agrees not to breastfeed starting at screening and throughout the study period and for 6 months after study intervention administration."
+    },
+    {
+      "id": "P24",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The female participant agrees not to donate ova starting at first dose of study intervention and throughout the study period and for 6 months after study intervention administration."
+    },
+    {
+      "id": "P25",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The male participant with female partner(s) of childbearing potential agrees to use contraception throughout the treatment period and for 3 months after study intervention administration."
+    },
+    {
+      "id": "P26",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The male participant agrees not to donate sperm during the treatment period and for 3 months after study intervention administration."
+    },
+    {
+      "id": "P27",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "For South Korea participants in combination therapy with oxaliplatin, follow contraception guidelines from the time of informed consent through at least 12 months after the final dose of oxaliplatin. For combination therapy with cisplatin, follow contraception guidelines from the time of informed consent through at least 11 months after the final dose of cisplatin."
+    },
+    {
+      "id": "P28",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The male participant with pregnant partner(s) agrees to remain abstinent or use a condom for the duration of the pregnancy throughout the study period and for 3 months after study intervention administration."
+    },
+    {
+      "id": "P29",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant agrees not to participate in another interventional study while receiving study intervention."
+    },
+    {
+      "id": "P30",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "For ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H), the participant has pathologically documented locally advanced or metastatic (unresectable Stage IIIB-IV) non-small cell lung cancer (NSCLC) with KRAS G12D mutation."
+    },
+    {
+      "id": "P31",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant has received prior platinum-containing chemotherapy."
+    },
+    {
+      "id": "P32",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant has never received systemic therapy for locally advanced or metastatic NSCLC with no oncogenic driver mutations, except up to 1 cycle of SoC pembrolizumab or platinum-based chemotherapy ± pembrolizumab prior to Screening with a 21-day washout before C1D1. Participants who received adjuvant or neoadjuvant platinum-based chemotherapy and developed recurrent or metastatic disease more than 12 months after completing therapy may be enrolled."
+    },
+    {
+      "id": "P33",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has received investigational therapy within 21 days or 5 half-lives, whichever is shorter, prior to start of study intervention."
+    },
+    {
+      "id": "P34",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has symptomatic or untreated central nervous system (CNS) metastases."
+    },
+    {
+      "id": "P35",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has leptomeningeal disease as a manifestation of the current malignancy."
+    },
+    {
+      "id": "P36",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a prior malignancy active (i.e., requiring treatment or intervention) within the previous 2 years, except for local malignancies that have been apparently cured."
+    },
+    {
+      "id": "P37",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has a known or suspected hypersensitivity to ASP3082 or any components of the formulation used."
+    },
+    {
+      "id": "P38",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has active hepatitis B or hepatitis C virus (RNA detected by qualitative assay)."
+    },
+    {
+      "id": "P39",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a known history of human immunodeficiency virus [HIV] infection."
+    },
+    {
+      "id": "P40",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has had a myocardial infarction or unstable angina within 6 months prior to the start of study intervention, has a left ventricular ejection fraction (LVEF) < 50%, or currently has an uncontrolled illness including symptomatic congestive heart failure, clinically significant cardiac disease, unstable angina pectoris, cardiac arrhythmia, obligate use of a cardiac pacemaker, or long QT syndrome."
+    },
+    {
+      "id": "P41",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a corrected QT interval (QTcF) > 450 msec (men) or >470 msec (women) during screening."
+    },
+    {
+      "id": "P42",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has received prior treatment with a specific KRAS G12D inhibitor/degrader or pan-RAS inhibitor/degrader targeting KRAS G12D."
+    },
+    {
+      "id": "P43",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has an active infection requiring intravenous antibiotics within 14 days prior to study intervention."
+    },
+    {
+      "id": "P44",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant is expected to require another form of antineoplastic therapy while on study treatment."
+    },
+    {
+      "id": "P45",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has any condition which makes the participant unsuitable for study participation."
+    },
+    {
+      "id": "P46",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has had major surgery within 4 weeks prior to first dose of study intervention."
+    },
+    {
+      "id": "P47",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has a history of prior discontinuation of cetuximab treatment due to toxicity or intolerance of cetuximab."
+    },
+    {
+      "id": "P48",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a history of interstitial lung disease requiring systemic steroid treatment."
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 23,
+      "end": 441,
+      "text": "Participant has locally advanced (unresectable) or metastatic solid tumor malignancy with documented Kirsten rat sarcoma viral oncogene homolog \\[KRAS\\] G12D mutation and has received prior standard therapy and the investigator does not see any further clinical benefit from continuing such targeted therapy, or is ineligible to receive standard approved therapies (no limit to the number of prior treatment regimens)."
+    },
+    "P2": {
+      "start": 444,
+      "end": 562,
+      "text": "For the ASP3082 monotherapy escalation cohorts, participants with solid tumor malignancies are allowed to be enrolled."
+    },
+    "P3": {
+      "start": 563,
+      "end": 646,
+      "text": "Participants with other known KRAS G12 mutations will not be eligible for the study"
+    },
+    "P4": {
+      "start": 649,
+      "end": 806,
+      "text": "For ASP3082 combination therapy with Nab-P+GEM or FOLFIRINOX or NALRIFOX: Participant must have mPDAC that has not been previously treated with chemotherapy."
+    },
+    "P5": {
+      "start": 807,
+      "end": 993,
+      "text": "If a participant received (neo)adjuvant therapy, tumor recurrence or disease progression must have occurred at least 6 months after completing the last dose of the (neo)adjuvant therapy."
+    },
+    "P6": {
+      "start": 996,
+      "end": 1230,
+      "text": "Participant consents to provide tumor specimen in a tissue block or unstained serial slides or a tumor biopsy (core needle biopsy or excision) obtained after the last interventional treatment, but prior to start of study intervention."
+    },
+    "P7": {
+      "start": 1231,
+      "end": 1357,
+      "text": "Participant also consents to provide a sample for tumor biopsy during the treatment period as indicated in the study protocol."
+    },
+    "P8": {
+      "start": 1358,
+      "end": 1483,
+      "text": "If a participant cannot provide a fresh tissue biopsy sample, the site should consult with the sponsor/study medical monitor."
+    },
+    "P9": {
+      "start": 1486,
+      "end": 1594,
+      "text": "Participant has at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+    },
+    "P10": {
+      "start": 1595,
+      "end": 1723,
+      "text": "Lesions situated in a previously irradiated area are considered measurable if progression has been demonstrated in such lesions."
+    },
+    "P11": {
+      "start": 1726,
+      "end": 1833,
+      "text": "Participant has an ECOG performance status of 0, 1 or 2 for dose escalation, and 0 or 1 for dose expansion."
+    },
+    "P12": {
+      "start": 1836,
+      "end": 2030,
+      "text": "Participant's last dose of prior antineoplastic therapy, including any immunotherapy, was 21 days or 5 half-lives, whichever is shorter, prior to initiation of study intervention administration."
+    },
+    "P13": {
+      "start": 2033,
+      "end": 2187,
+      "text": "Participant has completed any radiotherapy (including stereotactic radiosurgery) at least 14 days prior to the start of study intervention administration."
+    },
+    "P14": {
+      "start": 2188,
+      "end": 2539,
+      "text": "Participants must have recovered from all radiation-related toxicities, not require corticosteroids (NOTE: Physiologic replacement dose of hydrocortisone or its equivalent \\[defined as up to 30 mg per day of hydrocortisone, 2 mg per day of dexamethasone, or up to 10 mg per day of prednisone\\] is permitted), and not have active radiation pneumonitis."
+    },
+    "P15": {
+      "start": 2540,
+      "end": 2663,
+      "text": "A 1-week washout is permitted for palliative radiation (\\<= 2 weeks of radiotherapy) to non-central nervous system disease."
+    },
+    "P16": {
+      "start": 2666,
+      "end": 2948,
+      "text": "Participant's adverse events \\[AEs\\] (excluding alopecia) from prior therapy have improved to grade 1 or baseline within 14 days prior to start of study intervention (or prior to staring SoC chemotherapy, for first line (1L) participants receiving Nab-P+GEM FOLFIRINOX or NALIRIFOX."
+    },
+    "P17": {
+      "start": 2951,
+      "end": 3183,
+      "text": "Participant has adequate organ function as indicated by protocol laboratory value parameters (If a participant has received a recent blood transfusion, the laboratory tests must be obtained \\>= 14 days after any blood transfusion.)."
+    },
+    "P18": {
+      "start": 3186,
+      "end": 3336,
+      "text": "Female participant is not pregnant, confirmed by pregnancy test and medical evaluation by interview, and at least 1 of the following conditions apply:"
+    },
+    "P19": {
+      "start": 3342,
+      "end": 3388,
+      "text": "Not a woman of childbearing potential (WOCBP)."
+    },
+    "P20": {
+      "start": 3393,
+      "end": 3547,
+      "text": "WOCBP who agrees to follow the contraceptive guidance from the time of informed consent through at least 6 months after study intervention administration."
+    },
+    "P21": {
+      "start": 3552,
+      "end": 3731,
+      "text": "EU only: For combination therapy with carboplatin, follow contraception guidelines from the time of informed consent through at least 7 months after the final dose of carboplatin."
+    },
+    "P22": {
+      "start": 3736,
+      "end": 4093,
+      "text": "South Korea only: For combination therapy with oxaliplatin, follow contraception guidelines from the time of informed consent through at least 15 months after the final dose of oxaliplatin. For combination therapy with cisplatin, follow contraception guidelines from the time of informed consent through at least 14 months after the final dose of cisplatin."
+    },
+    "P23": {
+      "start": 4096,
+      "end": 4255,
+      "text": "Female participant must agree not to breastfeed starting at screening and throughout the study period and for 6 months after study intervention administration."
+    },
+    "P24": {
+      "start": 4258,
+      "end": 4431,
+      "text": "Female participant must not donate ova starting at first dose of study intervention and throughout the study period and for 6 months after study intervention administration."
+    },
+    "P25": {
+      "start": 4434,
+      "end": 4655,
+      "text": "Male participant with female partner(s) of childbearing potential (including breastfeeding partner) must agree to use contraception throughout the treatment period and for 3 months after study intervention administration."
+    },
+    "P26": {
+      "start": 4658,
+      "end": 4782,
+      "text": "Male participant must not donate sperm during the treatment period and for 3 months after study intervention administration."
+    },
+    "P27": {
+      "start": 4785,
+      "end": 5142,
+      "text": "South Korea only: For combination therapy with oxaliplatin, follow contraception guidelines from the time of informed consent through at least 12 months after the final dose of oxaliplatin. For combination therapy with cisplatin, follow contraception guidelines from the time of informed consent through at least 11 months after the final dose of cisplatin."
+    },
+    "P28": {
+      "start": 5145,
+      "end": 5353,
+      "text": "Male participant with pregnant partner(s) must agree to remain abstinent or use a condom for the duration of the pregnancy throughout the study period and for 3 months after study intervention administration."
+    },
+    "P29": {
+      "start": 5356,
+      "end": 5566,
+      "text": "Participant agrees not to participate in another interventional study while receiving study intervention (Participants who are currently in the follow-up period of an interventional clinical trial are allowed)."
+    },
+    "P30": {
+      "start": 5569,
+      "end": 5940,
+      "text": "For ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H): Participant must have pathologically documented locally advanced or metastatic (unresectable Stage IIIB-IV) non-small cell lung cancer (NSCLC) (Note: for Cohort H only, the tumor must be non-squamous NSCLC) with KRAS G12D mutation and"
+    },
+    "P31": {
+      "start": 5946,
+      "end": 6023,
+      "text": "have received prior platinum-containing chemotherapy (safety lead-in only) or"
+    },
+    "P32": {
+      "start": 6028,
+      "end": 6678,
+      "text": "have never received systemic therapy (up to 1 cycle of SoC pembrolizumab \\[defined as one 21-day cycle of 200 mg\\] in Cohort G and up to 1 cycle of SoC platinum-based chemotherapy ± pembrolizumab \\[defined as one 21-day cycle of 200 mg\\] or pembrolizumab \\[defined as one 21-day cycle of 200 mg\\] in Cohort H is permitted prior to Screening, provided a 21-day washout occurs before C1D1) for locally advanced or metastatic NSCLC with no oncogenic driver mutations. Participants who received adjuvant or neoadjuvant platinum-based chemotherapy and developed recurrent or metastatic disease more than 12 months after completing therapy may be enrolled."
+    },
+    "P33": {
+      "start": 6703,
+      "end": 6843,
+      "text": "Participant has received investigational therapy within 21 days or 5 half-lives, whichever is shorter, prior to start of study intervention."
+    },
+    "P34": {
+      "start": 6846,
+      "end": 6927,
+      "text": "Participant has symptomatic or untreated central nervous system (CNS) metastases."
+    },
+    "P35": {
+      "start": 6999,
+      "end": 7083,
+      "text": "Participant has leptomeningeal disease as a manifestation of the current malignancy."
+    },
+    "P36": {
+      "start": 7086,
+      "end": 7399,
+      "text": "Participant has a prior malignancy active (i.e., requiring treatment or intervention) within the previous 2 years, except for local malignancies that have been apparently cured, such as basal or squamous cell skin cancer, superficial bladder cancer or carcinoma in situ of the cervix or breast, which are allowed."
+    },
+    "P37": {
+      "start": 7402,
+      "end": 7509,
+      "text": "Participant has a known or suspected hypersensitivity to ASP3082 or any components of the formulation used."
+    },
+    "P38": {
+      "start": 7512,
+      "end": 7777,
+      "text": "Participant with active hepatitis B (including acute hepatitis B virus \\[HBV\\] or chronic HBV) or hepatitis C virus \\[HCV\\] (ribonucleic acid \\[RNA\\] detected by qualitative assay). HCV RNA testing is not required in participants with negative HCV antibody testing."
+    },
+    "P39": {
+      "start": 7780,
+      "end": 7862,
+      "text": "Participant has a known history of human immunodeficiency virus \\[HIV\\] infection."
+    },
+    "P40": {
+      "start": 7937,
+      "end": 8436,
+      "text": "Participant has had a myocardial infarction or unstable angina within 6 months prior to the start of study intervention, left ventricular ejection fraction (LVEF) \\< 50% as determined by multigated acquisition (MUGA) scan or echocardiogram (ECHO) or currently has an uncontrolled illness including, but not limited to symptomatic congestive heart failure, clinically significant cardiac disease, unstable angina pectoris, cardiac arrhythmia, obligate use of a cardiac pacemaker, or long QT syndrome."
+    },
+    "P41": {
+      "start": 8439,
+      "end": 8620,
+      "text": "Participant has a corrected QT interval (single electrocardiogram \\[ECG\\]) using Fridericia's formula (QTcF) \\> 450 milliseconds (msec) (men) or \\>470 msec (women) during screening."
+    },
+    "P42": {
+      "start": 8623,
+      "end": 8894,
+      "text": "Participant has received prior treatment with a specific KRAS G12D inhibitor/degrader or pan-RAS inhibitor/degrader targeting KRAS G12D. Participants who received prior treatment with a KRAS G12D inhibitor/degrader are eligible for the ASP3082 combination therapy cohort."
+    },
+    "P43": {
+      "start": 8897,
+      "end": 9010,
+      "text": "Participant has an active infection requiring intravenous antibiotics within 14 days prior to study intervention."
+    },
+    "P44": {
+      "start": 9013,
+      "end": 9112,
+      "text": "Participant is expected to require another form of antineoplastic therapy while on study treatment."
+    },
+    "P45": {
+      "start": 9115,
+      "end": 9308,
+      "text": "Participant has any condition which makes the participant unsuitable for study participation (such as psychiatric illness/social situations that would limit compliance with study requirements)."
+    },
+    "P46": {
+      "start": 9311,
+      "end": 9402,
+      "text": "Participant has had major surgery within 4 weeks prior to first dose of study intervention."
+    },
+    "P47": {
+      "start": 9440,
+      "end": 9529,
+      "text": "Prior discontinuation of cetuximab treatment due to toxicity or intolerance of cetuximab."
+    },
+    "P48": {
+      "start": 9532,
+      "end": 9703,
+      "text": "History of interstitial lung disease requiring systemic steroid treatment. Note that a participant with resolved pulmonary infections or radiation pneumonitis is eligible."
+    }
+  },
+  "links": {
+    "P1": [
+      {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 23,
+          "end": 107,
+          "text": "Participant has locally advanced (unresectable) or metastatic solid tumor malignancy"
+        }
+      }
+    ],
+    "P2": [],
+    "P3": [],
+    "P4": [],
+    "P5": [],
+    "P6": [],
+    "P7": [],
+    "P8": [],
+    "P9": [
+      {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 1486,
+          "end": 1594,
+          "text": "Participant has at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+        }
+      }
+    ],
+    "P10": [],
+    "P11": [
+      {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 1726,
+          "end": 1833,
+          "text": "Participant has an ECOG performance status of 0, 1 or 2 for dose escalation, and 0 or 1 for dose expansion."
+        }
+      }
+    ],
+    "P12": [],
+    "P13": [],
+    "P14": [],
+    "P15": [],
+    "P16": [],
+    "P17": [],
+    "P18": [
+      {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 3186,
+          "end": 3285,
+          "text": "Female participant is not pregnant, confirmed by pregnancy test and medical evaluation by interview"
+        }
+      }
+    ],
+    "P19": [],
+    "P20": [],
+    "P21": [],
+    "P22": [],
+    "P23": [
+      {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 4096,
+          "end": 4255,
+          "text": "Female participant must agree not to breastfeed starting at screening and throughout the study period and for 6 months after study intervention administration."
+        }
+      }
+    ],
+    "P24": [],
+    "P25": [],
+    "P26": [],
+    "P27": [],
+    "P28": [],
+    "P29": [],
+    "P30": [
+      {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "appliesTo": "For ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H)",
+        "source": {
+          "start": 5706,
+          "end": 5848,
+          "text": "Participant must have pathologically documented locally advanced or metastatic (unresectable Stage IIIB-IV) non-small cell lung cancer (NSCLC)"
+        }
+      },
+      {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous"
+        ],
+        "polarity": "inclusion",
+        "appliesTo": "For ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H)",
+        "source": {
+          "start": 5850,
+          "end": 5911,
+          "text": "Note: for Cohort H only, the tumor must be non-squamous NSCLC"
+        }
+      }
+    ],
+    "P31": [],
+    "P32": [],
+    "P33": [],
+    "P34": [
+      {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 6846,
+          "end": 6996,
+          "text": "Participant has symptomatic or untreated central nervous system (CNS) metastases. Participants with asymptomatic, treated CNS metastases are eligible."
+        }
+      }
+    ],
+    "P35": [
+      {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 6999,
+          "end": 7083,
+          "text": "Participant has leptomeningeal disease as a manifestation of the current malignancy."
+        }
+      }
+    ],
+    "P36": [
+      {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 7086,
+          "end": 7399,
+          "text": "Participant has a prior malignancy active (i.e., requiring treatment or intervention) within the previous 2 years, except for local malignancies that have been apparently cured, such as basal or squamous cell skin cancer, superficial bladder cancer or carcinoma in situ of the cervix or breast, which are allowed."
+        }
+      }
+    ],
+    "P37": [],
+    "P38": [
+      {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 7512,
+          "end": 7693,
+          "text": "Participant with active hepatitis B (including acute hepatitis B virus \\[HBV\\] or chronic HBV) or hepatitis C virus \\[HCV\\] (ribonucleic acid \\[RNA\\] detected by qualitative assay)."
+        }
+      }
+    ],
+    "P39": [
+      {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled",
+          "controlled"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 7780,
+          "end": 7862,
+          "text": "Participant has a known history of human immunodeficiency virus \\[HIV\\] infection."
+        }
+      }
+    ],
+    "P40": [
+      {
+        "factId": "cardiac_recent",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 7937,
+          "end": 8056,
+          "text": "Participant has had a myocardial infarction or unstable angina within 6 months prior to the start of study intervention"
+        }
+      }
+    ],
+    "P41": [],
+    "P42": [],
+    "P43": [],
+    "P44": [],
+    "P45": [],
+    "P46": [],
+    "P47": [],
+    "P48": [
+      {
+        "factId": "ild",
+        "rulesOut": [
+          "current",
+          "past"
+        ],
+        "polarity": "exclusion",
+        "appliesTo": "For ASP3082 Combination Therapy",
+        "source": {
+          "start": 9532,
+          "end": 9703,
+          "text": "History of interstitial lung disease requiring systemic steroid treatment. Note that a participant with resolved pulmonary infections or radiation pneumonitis is eligible."
+        }
+      }
+    ]
+  },
+  "carried": {
+    "P1": [
+      {
+        "factId": "extent",
+        "answer": "metastatic_or_recurrent",
+        "words": "Metastatic, to the brain and the other lung.",
+        "question": "How far has the cancer spread?",
+        "mayNotFit": false
+      }
+    ],
+    "P9": [
+      {
+        "factId": "measurable_disease",
+        "answer": "unknown",
+        "words": "I don't know.",
+        "question": "Is there a tumor that scans can measure?",
+        "mayNotFit": false
+      }
+    ],
+    "P11": [
+      {
+        "factId": "ecog",
+        "answer": "ps0",
+        "words": "Fully active, I'm still working full shifts.",
+        "question": "Which is closest to how you are day to day?",
+        "mayNotFit": false
+      }
+    ],
+    "P18": [
+      {
+        "factId": "pregnant_or_breastfeeding",
+        "answer": "no",
+        "words": "No, I'm not pregnant or breastfeeding.",
+        "question": "Are you pregnant or breastfeeding?",
+        "mayNotFit": false
+      }
+    ],
+    "P23": [
+      {
+        "factId": "pregnant_or_breastfeeding",
+        "answer": "no",
+        "words": "No, I'm not pregnant or breastfeeding.",
+        "question": "Are you pregnant or breastfeeding?",
+        "mayNotFit": false
+      }
+    ],
+    "P30": [
+      {
+        "factId": "extent",
+        "answer": "metastatic_or_recurrent",
+        "words": "Metastatic, to the brain and the other lung.",
+        "question": "How far has the cancer spread?",
+        "mayNotFit": false
+      },
+      {
+        "factId": "histology",
+        "answer": "adenocarcinoma",
+        "words": "Adenocarcinoma.",
+        "question": "What type of lung cancer cell did the biopsy show?",
+        "mayNotFit": false
+      }
+    ],
+    "P34": [
+      {
+        "factId": "brain_mets",
+        "answer": "treated_stable",
+        "words": "Yes, one lesion, treated with radiosurgery a year ago, stable since.",
+        "question": "Has the cancer spread to the brain?",
+        "mayNotFit": false
+      }
+    ],
+    "P35": [
+      {
+        "factId": "leptomeningeal",
+        "answer": "no",
+        "words": "No leptomeningeal spread.",
+        "question": "Has the cancer spread to the lining of the brain or spinal cord?",
+        "mayNotFit": false
+      }
+    ],
+    "P38": [
+      {
+        "factId": "hepatitis_active",
+        "answer": "no",
+        "words": "No.",
+        "question": "Do you have active hepatitis B or C?",
+        "mayNotFit": false
+      }
+    ],
+    "P39": [
+      {
+        "factId": "hiv",
+        "answer": "no",
+        "words": "No.",
+        "question": "Do you have HIV?",
+        "mayNotFit": false
+      }
+    ],
+    "P48": [
+      {
+        "factId": "ild",
+        "answer": "never",
+        "words": "No.",
+        "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?",
+        "mayNotFit": false
+      }
+    ]
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "extent",
+          "answer": "metastatic_or_recurrent",
+          "words": "Metastatic, to the brain and the other lung.",
+          "question": "How far has the cancer spread?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "Yes, I have non-small cell lung cancer, which is a solid tumor.",
+          "reading": "holds",
+          "statement": "The participant has a solid tumor malignancy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "holds"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "My report just said KRAS negative",
+          "reading": "does-not-hold",
+          "statement": "The participant has a known KRAS G12 mutation other than G12D."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 6,
+          "quote": "I don't have pancreatic cancer",
+          "reading": "does-not-hold",
+          "statement": "The participant has metastatic pancreatic ductal adenocarcinoma (mPDAC) that has not been previously treated with chemotherapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "it hasn't been more than 6 months since finishing that",
+          "reading": "does-not-hold",
+          "statement": "If the participant received (neo)adjuvant therapy, tumor recurrence or disease progression occurred at least 6 months after completing the last dose of the (neo)adjuvant therapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I don't know. I haven't been asked about providing a new biopsy sample yet.",
+          "reading": "unknown",
+          "statement": "The participant consents to provide a tumor specimen in a tissue block or unstained serial slides or a tumor biopsy (core needle biopsy or excision) obtained after the last interventional treatment, but prior to start of study intervention."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I don't know.",
+          "reading": "unknown",
+          "statement": "The participant consents to provide a sample for tumor biopsy during the treatment period as indicated in the study protocol."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "protocol"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "measurable_disease",
+          "answer": "unknown",
+          "words": "I don't know.",
+          "question": "Is there a tumor that scans can measure?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "definitional"
+    },
+    {
+      "criterionId": "P11",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "ecog",
+          "answer": "ps0",
+          "words": "Fully active, I'm still working full shifts.",
+          "question": "Which is closest to how you are day to day?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P12",
+      "evidence": [
+        {
+          "turn": 14,
+          "quote": "I don't know the exact date of my last dose.",
+          "reading": "unknown",
+          "statement": "The participant's last dose of prior antineoplastic therapy, including any immunotherapy, was 21 days or 5 half-lives, whichever is shorter, prior to initiation of study intervention administration."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P13",
+      "evidence": [
+        {
+          "turn": 16,
+          "quote": "No, I haven't had any radiation therapy in the last 14 days.",
+          "reading": "holds",
+          "statement": "The participant has completed any radiotherapy (including stereotactic radiosurgery) at least 14 days prior to the start of study intervention administration."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P14",
+      "evidence": [
+        {
+          "turn": 18,
+          "quote": "No, I don't have any unhealed side effects from that radiation, and I'm not taking steroid medications.",
+          "reading": "partial",
+          "missing": "does not have active radiation pneumonitis",
+          "statement": "The participant has recovered from all radiation-related toxicities, does not require corticosteroids (except physiologic replacement dose), and does not have active radiation pneumonitis."
+        },
+        {
+          "turn": 20,
+          "quote": "No, I don't have any breathing problems or lung inflammation from previous radiation. I've never had interstitial lung disease or pneumonitis.",
+          "reading": "partial",
+          "missing": "recovered from all radiation-related toxicities, does not require corticosteroids (except physiologic replacement dose)",
+          "statement": "The participant has recovered from all radiation-related toxicities, does not require corticosteroids (except physiologic replacement dose), and does not have active radiation pneumonitis."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "partial",
+      "reported": "partial"
+    },
+    {
+      "criterionId": "P15",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "definitional"
+    },
+    {
+      "criterionId": "P16",
+      "evidence": [
+        {
+          "turn": 22,
+          "quote": "I don't know. I haven't been tracking my side effects by grade or specific timeline like that.",
+          "reading": "unknown",
+          "statement": "The participant's adverse events (excluding alopecia) from prior therapy have improved to grade 1 or baseline within 14 days prior to start of study intervention (or prior to starting SoC chemotherapy, for first line participants receiving Nab-P+GEM FOLFIRINOX or NALIRIFOX)."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P17",
+      "evidence": [
+        {
+          "turn": 24,
+          "quote": "I don't know. I haven't been tracking the specific timing of my lab work like that.",
+          "reading": "unknown",
+          "statement": "The participant has adequate organ function as indicated by protocol laboratory value parameters."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P18",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "answer": "no",
+          "words": "No, I'm not pregnant or breastfeeding.",
+          "question": "Are you pregnant or breastfeeding?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P19",
+      "evidence": [
+        {
+          "turn": 26,
+          "quote": "I don't know. I haven't been told about my menopausal status or had those surgeries.",
+          "reading": "unknown",
+          "statement": "The female participant is not a woman of childbearing potential (WOCBP)."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P20",
+      "evidence": [
+        {
+          "turn": 28,
+          "quote": "I'm not sure if I'm considered of childbearing potential",
+          "reading": "unclear",
+          "statement": "The female participant is a WOCBP who agrees to follow the contraceptive guidance from the time of informed consent through at least 6 months after study intervention administration."
+        },
+        {
+          "turn": 30,
+          "quote": "I don't know. I haven't been tracking whether I'm still having periods.",
+          "reading": "unclear",
+          "statement": "The female participant is a WOCBP who agrees to follow the contraceptive guidance from the time of informed consent through at least 6 months after study intervention administration."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "unresolved",
+      "reason": "unclear"
+    },
+    {
+      "criterionId": "P21",
+      "evidence": [
+        {
+          "turn": 32,
+          "quote": "I don't know. I haven't discussed birth control requirements",
+          "reading": "unknown",
+          "statement": "The participant agrees to follow contraception guidelines from the time of informed consent through at least 7 months after the final dose of carboplatin."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P22",
+      "evidence": [
+        {
+          "turn": 34,
+          "quote": "I don't know. I haven't discussed my sexual activity status with the trial team yet.",
+          "reading": "unknown",
+          "statement": "The South Korea participant in combination therapy with oxaliplatin or cisplatin follows contraception guidelines from the time of informed consent through at least 15 months after the final dose of oxaliplatin or at least 14 months after the final dose of cisplatin."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P23",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "answer": "no",
+          "words": "No, I'm not pregnant or breastfeeding.",
+          "question": "Are you pregnant or breastfeeding?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P24",
+      "evidence": [
+        {
+          "turn": 36,
+          "quote": "No, I am not planning to donate eggs.",
+          "reading": "holds",
+          "statement": "The female participant agrees not to donate ova starting at first dose of study intervention and throughout the study period and for 6 months after study intervention administration."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P25",
+      "evidence": [
+        {
+          "turn": 38,
+          "quote": "I don't have a female partner.",
+          "reading": "does-not-apply",
+          "statement": "The male participant has a female partner of childbearing potential."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "does-not-apply"
+    },
+    {
+      "criterionId": "P26",
+      "evidence": [
+        {
+          "turn": 40,
+          "quote": "I don't know.",
+          "reading": "unknown",
+          "statement": "The male participant agrees not to donate sperm during the treatment period and for 3 months after study intervention administration."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P27",
+      "evidence": [
+        {
+          "turn": 42,
+          "quote": "I don't know. I haven't discussed the specific contraception timeline",
+          "reading": "unknown",
+          "statement": "The participant agrees to follow contraception guidelines from the time of informed consent through at least 11 to 12 months after the final dose of chemotherapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P28",
+      "evidence": [
+        {
+          "turn": 44,
+          "quote": "I don't have a female partner",
+          "reading": "does-not-apply",
+          "statement": "The male participant with pregnant partner(s) agrees to remain abstinent or use a condom for the duration of the pregnancy throughout the study period and for 3 months after study intervention administration."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "does-not-apply"
+    },
+    {
+      "criterionId": "P29",
+      "evidence": [
+        {
+          "turn": 46,
+          "quote": "No, I am not currently participating in any other interventional clinical studies.",
+          "reading": "partial",
+          "missing": "agreement to not participate in the future",
+          "statement": "The participant agrees not to participate in another interventional study while receiving study intervention."
+        },
+        {
+          "turn": 48,
+          "quote": "Yes, I agree. I'm not in any other studies and I won't join another one while on this treatment.",
+          "reading": "holds",
+          "statement": "The participant agrees not to participate in another interventional study while receiving study intervention."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P30",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "extent",
+          "answer": "metastatic_or_recurrent",
+          "words": "Metastatic, to the brain and the other lung.",
+          "question": "How far has the cancer spread?",
+          "mayNotFit": false
+        },
+        {
+          "factId": "histology",
+          "answer": "adenocarcinoma",
+          "words": "Adenocarcinoma.",
+          "question": "What type of lung cancer cell did the biopsy show?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P31",
+      "evidence": [
+        {
+          "turn": 50,
+          "quote": "No, I have not had chemotherapy with carboplatin or cisplatin.",
+          "reading": "does-not-hold",
+          "statement": "The participant has received prior platinum-containing chemotherapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P32",
+      "evidence": [
+        {
+          "turn": 52,
+          "quote": "No, I haven't had systemic treatment for advanced lung cancer without driver mutations.",
+          "reading": "does-not-hold",
+          "statement": "The participant has received systemic therapy for locally advanced or metastatic NSCLC with no oncogenic driver mutations, except up to 1 cycle of SoC pembrolizumab or platinum-based chemotherapy ± pembrolizumab prior to Screening with a 21-day washout before C1D1."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P33",
+      "evidence": [
+        {
+          "turn": 54,
+          "quote": "No, I haven't received any investigational therapy in the last 21 days.",
+          "reading": "does-not-hold",
+          "statement": "The participant has received investigational therapy within 21 days or 5 half-lives, whichever is shorter, prior to start of study intervention."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P34",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "brain_mets",
+          "answer": "treated_stable",
+          "words": "Yes, one lesion, treated with radiosurgery a year ago, stable since.",
+          "question": "Has the cancer spread to the brain?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P35",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "leptomeningeal",
+          "answer": "no",
+          "words": "No leptomeningeal spread.",
+          "question": "Has the cancer spread to the lining of the brain or spinal cord?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P36",
+      "evidence": [
+        {
+          "turn": 56,
+          "quote": "No, I have not had any other cancer diagnosis in the last 2 years.",
+          "reading": "does-not-hold",
+          "statement": "The participant has a prior malignancy active (i.e., requiring treatment or intervention) within the previous 2 years, except for local malignancies that have been apparently cured."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P37",
+      "evidence": [
+        {
+          "turn": 58,
+          "quote": "I don't know. I haven't been told about any allergies",
+          "reading": "unknown",
+          "statement": "The participant has a known or suspected hypersensitivity to ASP3082 or any components of the formulation used."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P38",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "hepatitis_active",
+          "answer": "no",
+          "words": "No.",
+          "question": "Do you have active hepatitis B or C?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P39",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "hiv",
+          "answer": "no",
+          "words": "No.",
+          "question": "Do you have HIV?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P40",
+      "evidence": [
+        {
+          "turn": 60,
+          "quote": "No, I haven't had any of those heart issues in the last 6 months.",
+          "reading": "partial",
+          "missing": "LVEF < 50%, symptomatic congestive heart failure, clinically significant cardiac disease, cardiac arrhythmia, obligate use of a cardiac pacemaker",
+          "statement": "The participant has had a myocardial infarction or unstable angina within 6 months prior to the start of study intervention, has a left ventricular ejection fraction (LVEF) < 50%, or currently has an uncontrolled illness including symptomatic congestive heart failure, clinically significant cardiac disease, unstable angina pectoris, cardiac arrhythmia, obligate use of a cardiac pacemaker, or long QT syndrome."
+        },
+        {
+          "turn": 62,
+          "quote": "No, I haven't been told my heart pumping strength is low, and I don't have congestive heart failure, significant heart disease, an irregular heartbeat, or a pacemaker.",
+          "reading": "partial",
+          "missing": "myocardial infarction or unstable angina within 6 months prior to the start of study intervention; long QT syndrome",
+          "statement": "The participant has had a myocardial infarction or unstable angina within 6 months prior to the start of study intervention, has a left ventricular ejection fraction (LVEF) < 50%, or currently has an uncontrolled illness including symptomatic congestive heart failure, clinically significant cardiac disease, unstable angina pectoris, cardiac arrhythmia, obligate use of a cardiac pacemaker, or long QT syndrome."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "partial",
+      "reported": "partial"
+    },
+    {
+      "criterionId": "P41",
+      "evidence": [
+        {
+          "turn": 64,
+          "quote": "I don't know. I haven't been told my corrected QT interval results.",
+          "reading": "unknown",
+          "statement": "The participant has a corrected QT interval (QTcF) > 450 msec (men) or >470 msec (women) during screening."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P42",
+      "evidence": [
+        {
+          "turn": 66,
+          "quote": "No, I have not received any treatment targeting KRAS G12D or pan-RAS inhibitors.",
+          "reading": "does-not-hold",
+          "statement": "The participant has received prior treatment with a specific KRAS G12D inhibitor/degrader or pan-RAS inhibitor/degrader targeting KRAS G12D."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P43",
+      "evidence": [
+        {
+          "turn": 68,
+          "quote": "No, I haven't had any intravenous antibiotics for an active infection in the last 14 days.",
+          "reading": "does-not-hold",
+          "statement": "The participant has an active infection requiring intravenous antibiotics within 14 days prior to study intervention."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P44",
+      "evidence": [
+        {
+          "turn": 70,
+          "quote": "No, I don't expect to need other cancer treatments while in this study.",
+          "reading": "does-not-hold",
+          "statement": "The participant is expected to require another form of antineoplastic therapy while on study treatment."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P45",
+      "evidence": [
+        {
+          "turn": 72,
+          "quote": "I have Crohn's disease, which is an autoimmune condition.",
+          "reading": "unclear",
+          "statement": "The participant has any condition which makes the participant unsuitable for study participation."
+        },
+        {
+          "turn": 74,
+          "quote": "I don't know. I haven't tracked whether I've had any serious complications or hospitalizations related to my Crohn's disease in the past year.",
+          "reading": "unclear",
+          "statement": "The participant has any condition which makes the participant unsuitable for study participation."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "unclear"
+    },
+    {
+      "criterionId": "P46",
+      "evidence": [
+        {
+          "turn": 76,
+          "quote": "No, I haven't had any major surgery in the last 4 weeks.",
+          "reading": "does-not-hold",
+          "statement": "The participant has had major surgery within 4 weeks prior to first dose of study intervention."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P47",
+      "evidence": [
+        {
+          "turn": 78,
+          "quote": "I have never taken cetuximab, so I haven't stopped it",
+          "reading": "does-not-hold",
+          "statement": "The participant has a history of prior discontinuation of cetuximab treatment due to toxicity or intolerance of cetuximab."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P48",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "ild",
+          "answer": "never",
+          "words": "No.",
+          "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"A Study of ASP3082 in Adults With Advanced Solid Tumors\". Your earlier answers already covered 11 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you been diagnosed with a solid tumor malignancy? (This refers to a cancer that forms in solid tissues like organs or bones, rather than in the blood.)",
+      "criterionId": "P2"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Yes, I have non-small cell lung cancer, which is a solid tumor."
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you know if your tumor has a KRAS G12 mutation other than G12D? (This is a specific genetic change in the cancer cells. If you aren't sure, that's okay.)",
+      "criterionId": "P3"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. My report just said KRAS negative, so I'm not sure about specific subtypes like G12C or G12V."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. For this part of the study, have you ever received chemotherapy for your pancreatic cancer?",
+      "criterionId": "P4"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't have pancreatic cancer; I have non-small cell lung cancer. I also haven't had any chemotherapy."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks for clarifying. Since you haven't had chemotherapy, did you receive any other treatments (like surgery or targeted therapy) before starting your current cancer care, and if so, did your cancer come back or progress more than 6 months after finishing that treatment?",
+      "criterionId": "P5"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I had targeted therapy with Rozlytrek (entrectinib) for my ROS1 fusion. I've only had one line of treatment since the cancer became advanced, so it hasn't been more than 6 months since finishing that."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you willing and able to provide a new tumor sample (like a biopsy) after your last treatment but before starting this study's treatment?",
+      "criterionId": "P6"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been asked about providing a new biopsy sample yet."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Would you be willing to provide a new tumor sample (biopsy) during the study treatment period if needed?",
+      "criterionId": "P7"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been asked about providing a new biopsy sample yet."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. When was the date of your last dose of Rozlytrek?",
+      "criterionId": "P12"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know the exact date of my last dose. I haven't been tracking that level of detail."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any radiation therapy (including stereotactic radiosurgery) in the last 14 days?",
+      "criterionId": "P13"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any radiation therapy in the last 14 days. My last treatment was radiosurgery for my brain lesion a year ago."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any side effects from your radiation treatment that haven't fully healed yet, or are you currently taking steroid medications (other than low-dose replacement)?",
+      "criterionId": "P14"
+    },
+    {
+      "index": 18,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't have any unhealed side effects from that radiation, and I'm not taking steroid medications."
+    },
+    {
+      "index": 19,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you currently have any breathing problems or lung inflammation caused by your previous radiation treatment?",
+      "criterionId": "P14"
+    },
+    {
+      "index": 20,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't have any breathing problems or lung inflammation from previous radiation. I've never had interstitial lung disease or pneumonitis."
+    },
+    {
+      "index": 21,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any side effects from your previous cancer treatments that are still bothering you (grade 2 or higher) or haven't improved to mild (grade 1) or your normal baseline level in the last 14 days?",
+      "criterionId": "P16"
+    },
+    {
+      "index": 22,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been tracking my side effects by grade or specific timeline like that."
+    },
+    {
+      "index": 23,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any blood tests or lab work done in the last 2 weeks to check your organ function?",
+      "criterionId": "P17"
+    },
+    {
+      "index": 24,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been tracking the specific timing of my lab work like that."
+    },
+    {
+      "index": 25,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently post-menopausal, or have you had a hysterectomy or bilateral oophorectomy (removal of both ovaries)?",
+      "criterionId": "P19"
+    },
+    {
+      "index": 26,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been told about my menopausal status or had those surgeries."
+    },
+    {
+      "index": 27,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently able to become pregnant (of childbearing potential)? If you are unsure, that is okay to say.",
+      "criterionId": "P20"
+    },
+    {
+      "index": 28,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I'm not pregnant or breastfeeding. I haven't been told about my menopausal status or had those surgeries, so I'm not sure if I'm considered of childbearing potential."
+    },
+    {
+      "index": 29,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Since you aren't sure about your menopausal status, do you currently have periods (menstruation)?",
+      "criterionId": "P20"
+    },
+    {
+      "index": 30,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been tracking whether I'm still having periods."
+    },
+    {
+      "index": 31,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. If you are sexually active and could become pregnant, are you able to use effective birth control during the study and for 7 months after your last dose of carboplatin?",
+      "criterionId": "P21"
+    },
+    {
+      "index": 32,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't discussed birth control requirements or sexual activity with my care team yet."
+    },
+    {
+      "index": 33,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently sexually active?",
+      "criterionId": "P22"
+    },
+    {
+      "index": 34,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't discussed my sexual activity status with the trial team yet."
+    },
+    {
+      "index": 35,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently planning to donate eggs (ova)?",
+      "criterionId": "P24"
+    },
+    {
+      "index": 36,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I am not planning to donate eggs."
+    },
+    {
+      "index": 37,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you have a female partner who could become pregnant, and if so, are you willing to use contraception during the study and for 3 months after your last dose?",
+      "criterionId": "P25"
+    },
+    {
+      "index": 38,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't have a female partner."
+    },
+    {
+      "index": 39,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you agree not to donate sperm during the study and for 3 months after your last dose?",
+      "criterionId": "P26"
+    },
+    {
+      "index": 40,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't discussed sperm donation restrictions with the trial team yet."
+    },
+    {
+      "index": 41,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. For the combination therapy part of the study, are you willing to follow contraception guidelines for at least 11 to 12 months after your last dose of chemotherapy?",
+      "criterionId": "P27"
+    },
+    {
+      "index": 42,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't discussed the specific contraception timeline for this study with my care team yet."
+    },
+    {
+      "index": 43,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you agree to remain abstinent or use a condom if you have a female partner who could become pregnant, during the study and for 3 months after your last dose?",
+      "criterionId": "P28"
+    },
+    {
+      "index": 44,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't have a female partner, so this doesn't apply to me."
+    },
+    {
+      "index": 45,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently participating in any other interventional clinical studies?",
+      "criterionId": "P29"
+    },
+    {
+      "index": 46,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I am not currently participating in any other interventional clinical studies."
+    },
+    {
+      "index": 47,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you agree not to join another interventional clinical study while you are receiving the study treatment?",
+      "criterionId": "P29"
+    },
+    {
+      "index": 48,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Yes, I agree. I'm not in any other studies and I won't join another one while on this treatment."
+    },
+    {
+      "index": 49,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you previously received chemotherapy that contains platinum?",
+      "criterionId": "P31"
+    },
+    {
+      "index": 50,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I have not had chemotherapy with carboplatin or cisplatin."
+    },
+    {
+      "index": 51,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever received systemic treatment for advanced lung cancer (NSCLC) without driver mutations, other than up to 1 cycle of pembrolizumab or platinum chemo before this study?",
+      "criterionId": "P32"
+    },
+    {
+      "index": 52,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had systemic treatment for advanced lung cancer without driver mutations. My only prior treatment was targeted therapy for my ROS1 fusion."
+    },
+    {
+      "index": 53,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you received any investigational therapy (a new treatment being studied in a clinical trial) within the last 21 days?",
+      "criterionId": "P33"
+    },
+    {
+      "index": 54,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't received any investigational therapy in the last 21 days. My only prior treatment was Rozlytrek, which is an approved targeted therapy, not an investigational one."
+    },
+    {
+      "index": 55,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any other cancer diagnosis in the last 2 years that is still active or requires treatment? (This excludes skin cancers or other local cancers that have been fully cured.)",
+      "criterionId": "P36"
+    },
+    {
+      "index": 56,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I have not had any other cancer diagnosis in the last 2 years. I only have non-small cell lung cancer."
+    },
+    {
+      "index": 57,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you have any known allergies or hypersensitivity to ASP3082 or any of the ingredients in this medication?",
+      "criterionId": "P37"
+    },
+    {
+      "index": 58,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been told about any allergies to ASP3082 or its ingredients."
+    },
+    {
+      "index": 59,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had a heart attack, unstable chest pain, or been diagnosed with heart failure, significant heart disease, irregular heartbeat, or long QT syndrome in the last 6 months?",
+      "criterionId": "P40"
+    },
+    {
+      "index": 60,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any of those heart issues in the last 6 months."
+    },
+    {
+      "index": 61,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been told your heart's pumping strength (LVEF) is below 50%, or do you have congestive heart failure, significant heart disease, an irregular heartbeat, or a permanent pacemaker?",
+      "criterionId": "P40"
+    },
+    {
+      "index": 62,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't been told my heart pumping strength is low, and I don't have congestive heart failure, significant heart disease, an irregular heartbeat, or a pacemaker."
+    },
+    {
+      "index": 63,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. During your screening, was your corrected QT interval (a measure of your heart's electrical activity) found to be higher than 450 msec if you are male, or higher than 470 msec if you are female?",
+      "criterionId": "P41"
+    },
+    {
+      "index": 64,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't been told my corrected QT interval results."
+    },
+    {
+      "index": 65,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever received treatment with a drug that specifically targets the KRAS G12D mutation (such as a KRAS G12D inhibitor or degrader) or a pan-RAS inhibitor?",
+      "criterionId": "P42"
+    },
+    {
+      "index": 66,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I have not received any treatment targeting KRAS G12D or pan-RAS inhibitors. My only prior targeted therapy was entrectinib for my ROS1 fusion."
+    },
+    {
+      "index": 67,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you received any intravenous antibiotics for an active infection in the last 14 days?",
+      "criterionId": "P43"
+    },
+    {
+      "index": 68,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any intravenous antibiotics for an active infection in the last 14 days."
+    },
+    {
+      "index": 69,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you expect to need any other cancer treatments (antineoplastic therapy) while participating in this study?",
+      "criterionId": "P44"
+    },
+    {
+      "index": 70,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't expect to need other cancer treatments while in this study. I'm looking to this trial as my primary next step."
+    },
+    {
+      "index": 71,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you have any other health conditions or issues that might make it difficult for you to participate in this study?",
+      "criterionId": "P45"
+    },
+    {
+      "index": 72,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I have Crohn's disease, which is an autoimmune condition. I'm currently taking Humira to manage it."
+    },
+    {
+      "index": 73,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks for sharing that. To help us understand if Crohn's disease affects your ability to join this study, could you tell us if you have had any serious complications or hospitalizations related to it in the past year?",
+      "criterionId": "P45"
+    },
+    {
+      "index": 74,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I haven't tracked whether I've had any serious complications or hospitalizations related to my Crohn's disease in the past year."
+    },
+    {
+      "index": 75,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any major surgery in the last 4 weeks? (Major surgery means a procedure requiring an incision and anesthesia, like an appendectomy or knee replacement.)",
+      "criterionId": "P46"
+    },
+    {
+      "index": 76,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any major surgery in the last 4 weeks."
+    },
+    {
+      "index": 77,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever stopped taking a medicine called cetuximab because of side effects or because you couldn't tolerate it?",
+      "criterionId": "P47"
+    },
+    {
+      "index": 78,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I have never taken cetuximab, so I haven't stopped it due to side effects."
+    },
+    {
+      "index": 79,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [],
+  "ignoredReadings": [],
+  "replies": [
+    {
+      "turn": 2,
+      "usedFacts": [
+        "histology"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims the patient has non-small cell lung cancer, but the facts specify the histology is Adenocarcinoma, which is a subtype of NSCLC, and the persona is instructed to state 'Adenocarcinoma' for the cell type, making the broader classification potentially misleading or contradictory to the specific instruction to identify the cell type."
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "usedFacts": [
+        "kras"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "usedFacts": [
+        "extent",
+        "prior_platinum"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims the person has non-small cell lung cancer, but the facts specify the histology is Adenocarcinoma, which is a specific subtype, and does not explicitly state 'non-small cell lung cancer' as a general category, though it is implied; however, the more critical issue is that the facts do not contain the specific statement 'I don't have pancreatic cancer', making this an assertion of negative history not present in the facts."
+        }
+      ]
+    },
+    {
+      "turn": 8,
+      "usedFacts": [
+        "prior_targeted",
+        "ros1",
+        "lines_advanced"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims it has not been more than 6 months since finishing treatment, but the facts state the patient had brain metastases treated with radiosurgery a year ago and do not specify the timing of the targeted therapy, making the timeline assertion unsupported and potentially contradictory to the 'one line' history without further context."
+        }
+      ]
+    },
+    {
+      "turn": 10,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 14,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 16,
+      "usedFacts": [
+        "brain_mets",
+        "chest_radiation_6m"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 18,
+      "usedFacts": [
+        "brain_mets",
+        "steroids"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims the patient has no unhealed side effects from radiation, but the facts state the patient has had no chest radiation in the last 6 months and only had brain radiosurgery a year ago, making the reference to 'that radiation' ambiguous and potentially contradictory regarding the context of recent treatment."
+        }
+      ]
+    },
+    {
+      "turn": 20,
+      "usedFacts": [
+        "ild"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 22,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 24,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 26,
+      "usedFacts": [
+        "pregnant_or_breastfeeding"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message introduces information about menopausal status and surgeries that is not present in the provided facts."
+        }
+      ]
+    },
+    {
+      "turn": 28,
+      "usedFacts": [
+        "pregnant_or_breastfeeding"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message introduces new information about the person's menopausal status and surgical history that is not present in the facts."
+        }
+      ]
+    },
+    {
+      "turn": 30,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The persona is a 45-year-old male pharmacist, so he cannot have periods, contradicting the implication in the message that he might."
+        }
+      ]
+    },
+    {
+      "turn": 32,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 34,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 36,
+      "usedFacts": [
+        "pregnant_or_breastfeeding"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 38,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 40,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 42,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 44,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 46,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "uncited-assertion",
+          "length": 82
+        }
+      ]
+    },
+    {
+      "turn": 48,
+      "usedFacts": [
+        "other_cancer"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 50,
+      "usedFacts": [
+        "prior_platinum"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 52,
+      "usedFacts": [
+        "prior_targeted",
+        "prior_pd1",
+        "prior_platinum"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 54,
+      "usedFacts": [
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 56,
+      "usedFacts": [
+        "other_cancer"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims the person only has non-small cell lung cancer, which contradicts the fact that they have Crohn's disease."
+        }
+      ]
+    },
+    {
+      "turn": 58,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 60,
+      "usedFacts": [
+        "cardiac_recent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 62,
+      "usedFacts": [
+        "cardiac_recent",
+        "transplant"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts specific negative health details regarding heart pumping strength, congestive heart failure, significant heart disease, irregular heartbeat, and pacemakers, which are not stated in the provided facts."
+        }
+      ]
+    },
+    {
+      "turn": 64,
+      "usedFacts": [
+        "cardiac_recent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 66,
+      "usedFacts": [
+        "prior_targeted",
+        "ros1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 68,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "uncited-assertion",
+          "length": 90
+        }
+      ]
+    },
+    {
+      "turn": 70,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "uncited-assertion",
+          "length": 122
+        }
+      ]
+    },
+    {
+      "turn": 72,
+      "usedFacts": [
+        "autoimmune_active"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 74,
+      "usedFacts": [
+        "autoimmune_active"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 76,
+      "usedFacts": [
+        "transplant"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts that the person has not had major surgery in the last 4 weeks, but the facts do not contain any information regarding recent surgical history."
+        }
+      ]
+    },
+    {
+      "turn": 78,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message mentions cetuximab, which is not listed in the facts, and implies a history of taking it, contradicting the fact that the patient has only had one treatment (entrectinib) and no chemotherapy or immunotherapy."
+        }
+      ]
+    }
+  ],
+  "record": {
+    "nctId": "NCT05382559",
+    "title": {
+      "registry": "A Study of ASP3082 in Adults With Advanced Solid Tumors"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 4,
+      "records": 26,
+      "line": {
+        "ours": "4 rules may not fit what you said. 26 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant has locally advanced (unresectable) or metastatic solid tumor malignancy with documented Kirsten rat sarcoma viral oncogene homolog \\[KRAS\\] G12D mutation and has received prior standard therapy and the investigator does not see any further clinical benefit from continuing such targeted therapy, or is ineligible to receive standard approved therapies (no limit to the number of prior treatment regimens)."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "How far has the cancer spread?"
+              },
+              "said": {
+                "said": "Metastatic, to the brain and the other lung."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant has at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Is there a tumor that scans can measure?"
+              },
+              "said": {
+                "said": "I don't know."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P11",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant has an ECOG performance status of 0, 1 or 2 for dose escalation, and 0 or 1 for dose expansion."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Which is closest to how you are day to day?"
+              },
+              "said": {
+                "said": "Fully active, I'm still working full shifts."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P18",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Female participant is not pregnant, confirmed by pregnancy test and medical evaluation by interview, and at least 1 of the following conditions apply:"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Are you pregnant or breastfeeding?"
+              },
+              "said": {
+                "said": "No, I'm not pregnant or breastfeeding."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P23",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Female participant must agree not to breastfeed starting at screening and throughout the study period and for 6 months after study intervention administration."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Are you pregnant or breastfeeding?"
+              },
+              "said": {
+                "said": "No, I'm not pregnant or breastfeeding."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P30",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "For ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H): Participant must have pathologically documented locally advanced or metastatic (unresectable Stage IIIB-IV) non-small cell lung cancer (NSCLC) (Note: for Cohort H only, the tumor must be non-squamous NSCLC) with KRAS G12D mutation and"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "How far has the cancer spread?"
+              },
+              "said": {
+                "said": "Metastatic, to the brain and the other lung."
+              }
+            },
+            {
+              "asked": {
+                "ours": "What type of lung cancer cell did the biopsy show?"
+              },
+              "said": {
+                "said": "Adenocarcinoma."
+              }
+            }
+          ],
+          "part": {
+            "registry": "ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H)"
+          },
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P34",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has symptomatic or untreated central nervous system (CNS) metastases."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the brain?"
+              },
+              "said": {
+                "said": "Yes, one lesion, treated with radiosurgery a year ago, stable since."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P35",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has leptomeningeal disease as a manifestation of the current malignancy."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the lining of the brain or spinal cord?"
+              },
+              "said": {
+                "said": "No leptomeningeal spread."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P38",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant with active hepatitis B (including acute hepatitis B virus \\[HBV\\] or chronic HBV) or hepatitis C virus \\[HCV\\] (ribonucleic acid \\[RNA\\] detected by qualitative assay). HCV RNA testing is not required in participants with negative HCV antibody testing."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Do you have active hepatitis B or C?"
+              },
+              "said": {
+                "said": "No."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P39",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has a known history of human immunodeficiency virus \\[HIV\\] infection."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Do you have HIV?"
+              },
+              "said": {
+                "said": "No."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P48",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "History of interstitial lung disease requiring systemic steroid treatment. Note that a participant with resolved pulmonary infections or radiation pneumonitis is eligible."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?"
+              },
+              "said": {
+                "said": "No."
+              }
+            }
+          ],
+          "part": {
+            "registry": "ASP3082 Combination Therapy"
+          },
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P13",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant has completed any radiotherapy (including stereotactic radiosurgery) at least 14 days prior to the start of study intervention administration."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had any radiation therapy in the last 14 days."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P24",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Female participant must not donate ova starting at first dose of study intervention and throughout the study period and for 6 months after study intervention administration."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I am not planning to donate eggs."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P29",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant agrees not to participate in another interventional study while receiving study intervention (Participants who are currently in the follow-up period of an interventional clinical trial are allowed)."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I am not currently participating in any other interventional clinical studies."
+            },
+            {
+              "said": "Yes, I agree. I'm not in any other studies and I won't join another one while on this treatment."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P31",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "have received prior platinum-containing chemotherapy (safety lead-in only) or"
+          },
+          "earlier": [],
+          "part": {
+            "registry": "ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H)"
+          },
+          "said": [
+            {
+              "said": "No, I have not had chemotherapy with carboplatin or cisplatin."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit one part of the trial"
+          },
+          "mayNotFit": true,
+          "why": null
+        },
+        {
+          "criterionId": "P32",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "have never received systemic therapy (up to 1 cycle of SoC pembrolizumab \\[defined as one 21-day cycle of 200 mg\\] in Cohort G and up to 1 cycle of SoC platinum-based chemotherapy ± pembrolizumab \\[defined as one 21-day cycle of 200 mg\\] or pembrolizumab \\[defined as one 21-day cycle of 200 mg\\] in Cohort H is permitted prior to Screening, provided a 21-day washout occurs before C1D1) for locally advanced or metastatic NSCLC with no oncogenic driver mutations. Participants who received adjuvant or neoadjuvant platinum-based chemotherapy and developed recurrent or metastatic disease more than 12 months after completing therapy may be enrolled."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "ASP3082 Combination Therapy with Pembrolizumab (Cohort G), or Platinum-based Chemotherapy + Pemetrexed +/- Pembrolizumab (Cohort H)"
+          },
+          "said": [
+            {
+              "said": "No, I haven't had systemic treatment for advanced lung cancer without driver mutations."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit one part of the trial"
+          },
+          "mayNotFit": true,
+          "why": null
+        },
+        {
+          "criterionId": "P33",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has received investigational therapy within 21 days or 5 half-lives, whichever is shorter, prior to start of study intervention."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't received any investigational therapy in the last 21 days."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P42",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has received prior treatment with a specific KRAS G12D inhibitor/degrader or pan-RAS inhibitor/degrader targeting KRAS G12D. Participants who received prior treatment with a KRAS G12D inhibitor/degrader are eligible for the ASP3082 combination therapy cohort."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I have not received any treatment targeting KRAS G12D or pan-RAS inhibitors."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P46",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has had major surgery within 4 weeks prior to first dose of study intervention."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had any major surgery in the last 4 weeks."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P47",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Prior discontinuation of cetuximab treatment due to toxicity or intolerance of cetuximab."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "ASP3082 Combination Therapy"
+          },
+          "said": [
+            {
+              "said": "I have never taken cetuximab, so I haven't stopped it"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "For the ASP3082 monotherapy escalation cohorts, participants with solid tumor malignancies are allowed to be enrolled."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "ASP3082 monotherapy escalation cohorts"
+          },
+          "said": [
+            {
+              "said": "Yes, I have non-small cell lung cancer, which is a solid tumor."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participants with other known KRAS G12 mutations will not be eligible for the study"
+          },
+          "earlier": [],
+          "part": {
+            "registry": "ASP3082 monotherapy escalation cohorts"
+          },
+          "said": [
+            {
+              "said": "My report just said KRAS negative"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "For ASP3082 combination therapy with Nab-P+GEM or FOLFIRINOX or NALRIFOX: Participant must have mPDAC that has not been previously treated with chemotherapy."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "ASP3082 combination therapy with Nab-P+GEM or FOLFIRINOX or NALRIFOX"
+          },
+          "said": [
+            {
+              "said": "I don't have pancreatic cancer"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit one part of the trial"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "If a participant received (neo)adjuvant therapy, tumor recurrence or disease progression must have occurred at least 6 months after completing the last dose of the (neo)adjuvant therapy."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "ASP3082 combination therapy with Nab-P+GEM or FOLFIRINOX or NALRIFOX"
+          },
+          "said": [
+            {
+              "said": "it hasn't been more than 6 months since finishing that"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit one part of the trial"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant consents to provide tumor specimen in a tissue block or unstained serial slides or a tumor biopsy (core needle biopsy or excision) obtained after the last interventional treatment, but prior to start of study intervention."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I haven't been asked about providing a new biopsy sample yet."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant also consents to provide a sample for tumor biopsy during the treatment period as indicated in the study protocol."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P12",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant's last dose of prior antineoplastic therapy, including any immunotherapy, was 21 days or 5 half-lives, whichever is shorter, prior to initiation of study intervention administration."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know the exact date of my last dose."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P14",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participants must have recovered from all radiation-related toxicities, not require corticosteroids (NOTE: Physiologic replacement dose of hydrocortisone or its equivalent \\[defined as up to 30 mg per day of hydrocortisone, 2 mg per day of dexamethasone, or up to 10 mg per day of prednisone\\] is permitted), and not have active radiation pneumonitis."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I don't have any unhealed side effects from that radiation, and I'm not taking steroid medications."
+            },
+            {
+              "said": "No, I don't have any breathing problems or lung inflammation from previous radiation. I've never had interstitial lung disease or pneumonitis."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P16",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant's adverse events \\[AEs\\] (excluding alopecia) from prior therapy have improved to grade 1 or baseline within 14 days prior to start of study intervention (or prior to staring SoC chemotherapy, for first line (1L) participants receiving Nab-P+GEM FOLFIRINOX or NALIRIFOX."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I haven't been tracking my side effects by grade or specific timeline like that."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P17",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participant has adequate organ function as indicated by protocol laboratory value parameters (If a participant has received a recent blood transfusion, the laboratory tests must be obtained \\>= 14 days after any blood transfusion.)."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I haven't been tracking the specific timing of my lab work like that."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P19",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Not a woman of childbearing potential (WOCBP)."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I haven't been told about my menopausal status or had those surgeries."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P20",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "WOCBP who agrees to follow the contraceptive guidance from the time of informed consent through at least 6 months after study intervention administration."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure if I'm considered of childbearing potential"
+            },
+            {
+              "said": "I don't know. I haven't been tracking whether I'm still having periods."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Your answer didn't settle it."
+          }
+        },
+        {
+          "criterionId": "P21",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "EU only: For combination therapy with carboplatin, follow contraception guidelines from the time of informed consent through at least 7 months after the final dose of carboplatin."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "EU only: combination therapy with carboplatin"
+          },
+          "said": [
+            {
+              "said": "I don't know. I haven't discussed birth control requirements"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P22",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "South Korea only: For combination therapy with oxaliplatin, follow contraception guidelines from the time of informed consent through at least 15 months after the final dose of oxaliplatin. For combination therapy with cisplatin, follow contraception guidelines from the time of informed consent through at least 14 months after the final dose of cisplatin."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "South Korea only: combination therapy with oxaliplatin or cisplatin"
+          },
+          "said": [
+            {
+              "said": "I don't know. I haven't discussed my sexual activity status with the trial team yet."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P25",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Male participant with female partner(s) of childbearing potential (including breastfeeding partner) must agree to use contraception throughout the treatment period and for 3 months after study intervention administration."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't have a female partner."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You said this isn't about you."
+          }
+        },
+        {
+          "criterionId": "P26",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Male participant must not donate sperm during the treatment period and for 3 months after study intervention administration."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P27",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "South Korea only: For combination therapy with oxaliplatin, follow contraception guidelines from the time of informed consent through at least 12 months after the final dose of oxaliplatin. For combination therapy with cisplatin, follow contraception guidelines from the time of informed consent through at least 11 months after the final dose of cisplatin."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "South Korea only: combination therapy with oxaliplatin or cisplatin"
+          },
+          "said": [
+            {
+              "said": "I don't know. I haven't discussed the specific contraception timeline"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P28",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Male participant with pregnant partner(s) must agree to remain abstinent or use a condom for the duration of the pregnancy throughout the study period and for 3 months after study intervention administration."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't have a female partner"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You said this isn't about you."
+          }
+        },
+        {
+          "criterionId": "P36",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has a prior malignancy active (i.e., requiring treatment or intervention) within the previous 2 years, except for local malignancies that have been apparently cured, such as basal or squamous cell skin cancer, superficial bladder cancer or carcinoma in situ of the cervix or breast, which are allowed."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I have not had any other cancer diagnosis in the last 2 years."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P37",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has a known or suspected hypersensitivity to ASP3082 or any components of the formulation used."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I haven't been told about any allergies"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P40",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has had a myocardial infarction or unstable angina within 6 months prior to the start of study intervention, left ventricular ejection fraction (LVEF) \\< 50% as determined by multigated acquisition (MUGA) scan or echocardiogram (ECHO) or currently has an uncontrolled illness including, but not limited to symptomatic congestive heart failure, clinically significant cardiac disease, unstable angina pectoris, cardiac arrhythmia, obligate use of a cardiac pacemaker, or long QT syndrome."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had any of those heart issues in the last 6 months."
+            },
+            {
+              "said": "No, I haven't been told my heart pumping strength is low, and I don't have congestive heart failure, significant heart disease, an irregular heartbeat, or a pacemaker."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P41",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has a corrected QT interval (single electrocardiogram \\[ECG\\]) using Fridericia's formula (QTcF) \\> 450 milliseconds (msec) (men) or \\>470 msec (women) during screening."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I haven't been told my corrected QT interval results."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P43",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has an active infection requiring intravenous antibiotics within 14 days prior to study intervention."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had any intravenous antibiotics for an active infection in the last 14 days."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P44",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant is expected to require another form of antineoplastic therapy while on study treatment."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I don't expect to need other cancer treatments while in this study."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P45",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participant has any condition which makes the participant unsuitable for study participation (such as psychiatric illness/social situations that would limit compliance with study requirements)."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I have Crohn's disease, which is an autoimmune condition."
+            },
+            {
+              "said": "I don't know. I haven't tracked whether I've had any serious complications or hospitalizations related to my Crohn's disease in the past year."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "If a participant cannot provide a fresh tissue biopsy sample, the site should consult with the sponsor/study medical monitor."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Lesions situated in a previously irradiated area are considered measurable if progression has been demonstrated in such lesions."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P15",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "A 1-week washout is permitted for palliative radiation (\\<= 2 weeks of radiotherapy) to non-central nervous system disease."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "have received prior platinum-containing chemotherapy (safety lead-in only) or"
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "have never received systemic therapy (up to 1 cycle of SoC pembrolizumab \\[defined as one 21-day cycle of 200 mg\\] in Cohort G and up to 1 cycle of SoC platinum-based chemotherapy ± pembrolizumab \\[defined as one 21-day cycle of 200 mg\\] or pembrolizumab \\[defined as one 21-day cycle of 200 mg\\] in Cohort H is permitted prior to Screening, provided a 21-day washout occurs before C1D1) for locally advanced or metastatic NSCLC with no oncogenic driver mutations. Participants who received adjuvant or neoadjuvant platinum-based chemotherapy and developed recurrent or metastatic disease more than 12 months after completing therapy may be enrolled."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "For ASP3082 combination therapy with Nab-P+GEM or FOLFIRINOX or NALRIFOX: Participant must have mPDAC that has not been previously treated with chemotherapy."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "If a participant received (neo)adjuvant therapy, tumor recurrence or disease progression must have occurred at least 6 months after completing the last dose of the (neo)adjuvant therapy."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "For the ASP3082 monotherapy escalation cohorts, participants with solid tumor malignancies are allowed to be enrolled."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participants with other known KRAS G12 mutations will not be eligible for the study"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant consents to provide tumor specimen in a tissue block or unstained serial slides or a tumor biopsy (core needle biopsy or excision) obtained after the last interventional treatment, but prior to start of study intervention."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant also consents to provide a sample for tumor biopsy during the treatment period as indicated in the study protocol."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant's last dose of prior antineoplastic therapy, including any immunotherapy, was 21 days or 5 half-lives, whichever is shorter, prior to initiation of study intervention administration."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participants must have recovered from all radiation-related toxicities, not require corticosteroids (NOTE: Physiologic replacement dose of hydrocortisone or its equivalent \\[defined as up to 30 mg per day of hydrocortisone, 2 mg per day of dexamethasone, or up to 10 mg per day of prednisone\\] is permitted), and not have active radiation pneumonitis."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant's adverse events \\[AEs\\] (excluding alopecia) from prior therapy have improved to grade 1 or baseline within 14 days prior to start of study intervention (or prior to staring SoC chemotherapy, for first line (1L) participants receiving Nab-P+GEM FOLFIRINOX or NALIRIFOX."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant has adequate organ function as indicated by protocol laboratory value parameters (If a participant has received a recent blood transfusion, the laboratory tests must be obtained \\>= 14 days after any blood transfusion.)."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Not a woman of childbearing potential (WOCBP)."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "WOCBP who agrees to follow the contraceptive guidance from the time of informed consent through at least 6 months after study intervention administration."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "EU only: For combination therapy with carboplatin, follow contraception guidelines from the time of informed consent through at least 7 months after the final dose of carboplatin."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "South Korea only: For combination therapy with oxaliplatin, follow contraception guidelines from the time of informed consent through at least 15 months after the final dose of oxaliplatin. For combination therapy with cisplatin, follow contraception guidelines from the time of informed consent through at least 14 months after the final dose of cisplatin."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Male participant with female partner(s) of childbearing potential (including breastfeeding partner) must agree to use contraception throughout the treatment period and for 3 months after study intervention administration."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Male participant must not donate sperm during the treatment period and for 3 months after study intervention administration."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "South Korea only: For combination therapy with oxaliplatin, follow contraception guidelines from the time of informed consent through at least 12 months after the final dose of oxaliplatin. For combination therapy with cisplatin, follow contraception guidelines from the time of informed consent through at least 11 months after the final dose of cisplatin."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Male participant with pregnant partner(s) must agree to remain abstinent or use a condom for the duration of the pregnancy throughout the study period and for 3 months after study intervention administration."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant has a prior malignancy active (i.e., requiring treatment or intervention) within the previous 2 years, except for local malignancies that have been apparently cured, such as basal or squamous cell skin cancer, superficial bladder cancer or carcinoma in situ of the cervix or breast, which are allowed."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant has a known or suspected hypersensitivity to ASP3082 or any components of the formulation used."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant has had a myocardial infarction or unstable angina within 6 months prior to the start of study intervention, left ventricular ejection fraction (LVEF) \\< 50% as determined by multigated acquisition (MUGA) scan or echocardiogram (ECHO) or currently has an uncontrolled illness including, but not limited to symptomatic congestive heart failure, clinically significant cardiac disease, unstable angina pectoris, cardiac arrhythmia, obligate use of a cardiac pacemaker, or long QT syndrome."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant has a corrected QT interval (single electrocardiogram \\[ECG\\]) using Fridericia's formula (QTcF) \\> 450 milliseconds (msec) (men) or \\>470 msec (women) during screening."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant has an active infection requiring intravenous antibiotics within 14 days prior to study intervention."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant is expected to require another form of antineoplastic therapy while on study treatment."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant has any condition which makes the participant unsuitable for study participation (such as psychiatric illness/social situations that would limit compliance with study requirements)."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participant has at least 1 measurable lesion per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "orderAfter": [
+    "NCT05382559",
+    "NCT05735080",
+    "NCT06126276",
+    "NCT06326411",
+    "NCT06774963",
+    "NCT06881784",
+    "NCT06997029",
+    "NCT07094204",
+    "NCT07444814",
+    "NCT07718672",
+    "NCT03706027",
+    "NCT05614739",
+    "NCT06031688",
+    "NCT06686771",
+    "NCT07100080",
+    "NCT06116682",
+    "NCT07229313",
+    "NCT06150664",
+    "NCT06172478",
+    "NCT06343402",
+    "NCT04181060",
+    "NCT06306638",
+    "NCT06627647",
+    "NCT06667141",
+    "NCT07017829",
+    "NCT07027514",
+    "NCT07339176",
+    "NCT07602842",
+    "NCT05642572",
+    "NCT06262321",
+    "NCT06561386",
+    "NCT07293247",
+    "NCT04787042",
+    "NCT05061550",
+    "NCT06692738",
+    "NCT04297605",
+    "NCT06582017",
+    "NCT07190248",
+    "NCT04267848",
+    "NCT06563388",
+    "NCT06623422",
+    "NCT06868277",
+    "NCT07388524",
+    "NCT06216301",
+    "NCT06616584",
+    "NCT06498635",
+    "NCT05624996",
+    "NCT04511039",
+    "NCT05544019",
+    "NCT06943755",
+    "NCT06724237",
+    "NCT04696575",
+    "NCT06179069",
+    "NCT06769126",
+    "NCT07325136",
+    "NCT06780137"
+  ],
+  "calls": {
+    "agent": 78,
+    "participant": 39,
+    "fidelity": 39
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-10"
+  }
+}

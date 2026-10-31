@@ -1,0 +1,1061 @@
+{
+  "patient": "p07",
+  "nctId": "NCT07169851",
+  "set": "heldout",
+  "rank": 3,
+  "conversation": {
+    "histology": {
+      "answer": "unknown",
+      "words": "I'm sorry, I don't remember the type.",
+      "question": "What type of lung cancer cell did the biopsy show?"
+    },
+    "extent": {
+      "answer": "early_resectable",
+      "words": "They caught it early, I'm sorry, it's just the one spot and they say surgery can take it out.",
+      "question": "How far has the cancer spread?"
+    },
+    "brain_mets": {
+      "answer": "none",
+      "words": "No, the brain is fine.",
+      "question": "Has the cancer spread to the brain?"
+    },
+    "ecog": {
+      "answer": "ps0",
+      "words": "I'm doing everything I always did, work and all.",
+      "question": "Which is closest to how you are day to day?"
+    },
+    "prior_platinum": {
+      "answer": "never",
+      "words": "No chemo.",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?"
+    },
+    "prior_pd1": {
+      "answer": "never",
+      "words": "No, I haven't had any treatment yet.",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+    },
+    "prior_targeted": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+    },
+    "lines_advanced": {
+      "answer": "zero",
+      "words": "None, I haven't had treatment.",
+      "question": "How many treatments have you had since the cancer became advanced?"
+    },
+    "other_cancer": {
+      "answer": "none",
+      "words": "No, never.",
+      "question": "Have you had another kind of cancer?"
+    },
+    "egfr": {
+      "answer": "unknown",
+      "words": "I'm sorry, I think they tested for something like that but I don't know the result.",
+      "question": "Did testing find an EGFR mutation?"
+    },
+    "pregnant_or_breastfeeding": {
+      "answer": "no",
+      "words": "No, I'm not, sorry.",
+      "question": "Are you pregnant or breastfeeding?"
+    },
+    "ild": {
+      "answer": "unknown",
+      "words": "I had a bad chest infection once, I'm sorry, I don't know if that's the same thing.",
+      "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?"
+    },
+    "hiv": {
+      "answer": "no",
+      "words": "No.",
+      "question": "Do you have HIV?"
+    },
+    "measurable_disease": {
+      "answer": "unknown",
+      "words": "I'm sorry, I don't know.",
+      "question": "Is there a tumor that scans can measure?"
+    },
+    "leptomeningeal": {
+      "answer": "unknown",
+      "words": "I'm not sure, sorry.",
+      "question": "Has the cancer spread to the lining of the brain or spinal cord?"
+    },
+    "hepatitis_active": {
+      "answer": "no",
+      "words": "No.",
+      "question": "Do you have active hepatitis B or C?"
+    }
+  },
+  "orderBefore": [
+    "NCT04267848",
+    "NCT06119581",
+    "NCT07169851",
+    "NCT07293247",
+    "NCT06253130",
+    "NCT04302025",
+    "NCT05061550",
+    "NCT06623422",
+    "NCT07415031",
+    "NCT03526835",
+    "NCT05142605",
+    "NCT05932862",
+    "NCT06330064",
+    "NCT06162221",
+    "NCT06596473",
+    "NCT04181060",
+    "NCT06031688",
+    "NCT06116682",
+    "NCT07174336",
+    "NCT05624996",
+    "NCT07144280",
+    "NCT04613596",
+    "NCT05768139",
+    "NCT06759649",
+    "NCT06764771",
+    "NCT03093116",
+    "NCT04614103",
+    "NCT05920356",
+    "NCT06745882",
+    "NCT06793215",
+    "NCT07291037",
+    "NCT06767514",
+    "NCT06758401",
+    "NCT07229313",
+    "NCT05642572",
+    "NCT06498635",
+    "NCT07217301",
+    "NCT06616584",
+    "NCT07531095",
+    "NCT06712355",
+    "NCT06203210",
+    "NCT05783323",
+    "NCT07037758",
+    "NCT07365241",
+    "NCT07227597",
+    "NCT07472517"
+  ],
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant is chemotherapy-naive and is planned to receive AC or cisplatin-based chemotherapy ≥70 mg/m² on Day 1 of each cycle, with no multiple administrations during the CINV observation period (Day 2 to Day 5 of each cycle)."
+    },
+    {
+      "id": "P2",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has an Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2."
+    },
+    {
+      "id": "P3",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has symptomatic or untreated central nervous system (CNS) metastases."
+    },
+    {
+      "id": "P4",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has an established diagnosis of uncontrolled diabetes mellitus."
+    },
+    {
+      "id": "P5",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a history of, or current evidence of, a clinically significant cardiac condition or QT/QTcF-related conditions."
+    },
+    {
+      "id": "P6",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has another etiology for nausea and vomiting, or receives medications with known or potential antiemetic activity."
+    },
+    {
+      "id": "P7",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has signs, symptoms, or a history of thyroid tumors."
+    },
+    {
+      "id": "P8",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant receives treatment with a gastric inhibitory polypeptide (GIP) or glucagon-like peptide-1 (GLP-1) receptor agonist within 4 weeks prior to chemotherapy."
+    },
+    {
+      "id": "P9",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has participated in a clinical study involving study intervention within 30 days of Cycle 1 Day 1 (C1D1), or within 3 months or 5 half-lives (whichever is longer) of C1D1 if the previous study intervention has a long half-life."
+    },
+    {
+      "id": "P10",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant is pregnant, breastfeeding, or intends to become pregnant during the study or within 30 days of the last dose of study intervention."
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 23,
+      "end": 305,
+      "text": "Chemotherapy-naive participants, planned to receive AC or cisplatin-based chemotherapy greater than or equal to (≥)70 milligrams per square meter (mg/m²), on Day 1 of each cycle, with no multiple administrations during the CINV observation period, from Day 2 to Day 5 of each cycle."
+    },
+    "P2": {
+      "start": 308,
+      "end": 387,
+      "text": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2."
+    },
+    "P3": {
+      "start": 412,
+      "end": 482,
+      "text": "Have symptomatic or untreated central nervous system (CNS) metastases."
+    },
+    "P4": {
+      "start": 485,
+      "end": 549,
+      "text": "Have an established diagnosis of uncontrolled diabetes mellitus."
+    },
+    "P5": {
+      "start": 552,
+      "end": 668,
+      "text": "Have a history of, or current evidence of, a clinically significant cardiac condition or QT/QTcF-related conditions."
+    },
+    "P6": {
+      "start": 671,
+      "end": 784,
+      "text": "Have another etiology for nausea and vomiting, or receives medications with know or potential antiemetic activity"
+    },
+    "P7": {
+      "start": 787,
+      "end": 831,
+      "text": "Signs, symptoms or history of thyroid tumors"
+    },
+    "P8": {
+      "start": 834,
+      "end": 985,
+      "text": "Receives treatment with a gastric inhibitory polypetide (GIP) or glucagon-like peptide-1 (GLP-1) receptor agonist within 4 weeks prior to chemotherapy."
+    },
+    "P9": {
+      "start": 988,
+      "end": 1213,
+      "text": "Have participated in a clinical study involving study intervention within 30 days of Cycle 1 Day 1 (C1D1). If the previous study intervention has a long half-life, within 3 months or 5 halflives, whichever is longer, of C1D1."
+    },
+    "P10": {
+      "start": 1216,
+      "end": 1348,
+      "text": "Are pregnant, breastfeeding, or intend to become pregnant during the study or within 30 days of the last dose of study intervention."
+    }
+  },
+  "links": {
+    "P1": [],
+    "P2": [
+      {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 308,
+          "end": 387,
+          "text": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2."
+        }
+      }
+    ],
+    "P3": [
+      {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 412,
+          "end": 482,
+          "text": "Have symptomatic or untreated central nervous system (CNS) metastases."
+        }
+      }
+    ],
+    "P4": [],
+    "P5": [],
+    "P6": [],
+    "P7": [],
+    "P8": [],
+    "P9": [],
+    "P10": [
+      {
+        "factId": "pregnant_or_breastfeeding",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 1216,
+          "end": 1348,
+          "text": "Are pregnant, breastfeeding, or intend to become pregnant during the study or within 30 days of the last dose of study intervention."
+        }
+      }
+    ]
+  },
+  "carried": {
+    "P2": [
+      {
+        "factId": "ecog",
+        "answer": "ps0",
+        "words": "I'm doing everything I always did, work and all.",
+        "question": "Which is closest to how you are day to day?",
+        "mayNotFit": false
+      }
+    ],
+    "P3": [
+      {
+        "factId": "brain_mets",
+        "answer": "none",
+        "words": "No, the brain is fine.",
+        "question": "Has the cancer spread to the brain?",
+        "mayNotFit": false
+      }
+    ],
+    "P10": [
+      {
+        "factId": "pregnant_or_breastfeeding",
+        "answer": "no",
+        "words": "No, I'm not, sorry.",
+        "question": "Are you pregnant or breastfeeding?",
+        "mayNotFit": false
+      }
+    ]
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "I haven't had any chemotherapy yet.",
+          "reading": "partial",
+          "missing": "planned to receive AC or cisplatin-based chemotherapy ≥70 mg/m² on Day 1 of each cycle, with no multiple administrations during the CINV observation period (Day 2 to Day 5 of each cycle)",
+          "statement": "The participant is chemotherapy-naive and is planned to receive AC or cisplatin-based chemotherapy ≥70 mg/m² on Day 1 of each cycle, with no multiple administrations during the CINV observation period (Day 2 to Day 5 of each cycle)."
+        },
+        {
+          "turn": 4,
+          "quote": "I don't know what my upcoming treatment will include yet.",
+          "reading": "partial",
+          "missing": "planned to receive AC or cisplatin-based chemotherapy ≥70 mg/m² on Day 1 of each cycle, with no multiple administrations during the CINV observation period (Day 2 to Day 5 of each cycle)",
+          "statement": "The participant is chemotherapy-naive and is planned to receive AC or cisplatin-based chemotherapy ≥70 mg/m² on Day 1 of each cycle, with no multiple administrations during the CINV observation period (Day 2 to Day 5 of each cycle)."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "unresolved",
+      "reason": "partial"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "ecog",
+          "answer": "ps0",
+          "words": "I'm doing everything I always did, work and all.",
+          "question": "Which is closest to how you are day to day?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "brain_mets",
+          "answer": "none",
+          "words": "No, the brain is fine.",
+          "question": "Has the cancer spread to the brain?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 6,
+          "quote": "I don't know if I have diabetes",
+          "reading": "unknown",
+          "statement": "The participant has an established diagnosis of uncontrolled diabetes mellitus."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I don't know if I have a heart condition or an issue with my heart's rhythm",
+          "reading": "unknown",
+          "statement": "The participant has a history of, or current evidence of, a clinically significant cardiac condition or QT/QTcF-related conditions."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I'm not taking any medications for nausea or vomiting",
+          "reading": "does-not-hold",
+          "statement": "The participant receives medications with known or potential antiemetic activity."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I don't know if I have thyroid tumors",
+          "reading": "unknown",
+          "statement": "The participant has signs, symptoms, or a history of thyroid tumors."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [
+        {
+          "turn": 14,
+          "quote": "I haven't taken any of those injections",
+          "reading": "does-not-hold",
+          "statement": "The participant receives treatment with a gastric inhibitory polypeptide (GIP) or glucagon-like peptide-1 (GLP-1) receptor agonist within 4 weeks prior to chemotherapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [
+        {
+          "turn": 16,
+          "quote": "I haven't taken part in any other clinical trials",
+          "reading": "does-not-hold",
+          "statement": "The participant has participated in a clinical study involving study intervention within 30 days of Cycle 1 Day 1 (C1D1), or within 3 months or 5 half-lives (whichever is longer) of C1D1 if the previous study intervention has a long half-life."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "pregnant_or_breastfeeding",
+          "answer": "no",
+          "words": "No, I'm not, sorry.",
+          "question": "Are you pregnant or breastfeeding?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"A Study to Evaluate LY3537021 for the Treatment of Nausea and Vomiting Caused by Chemotherapy in Adults With Cancer\". Your earlier answers already covered 3 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Are you currently receiving chemotherapy, or do you have a plan to start it soon? Also, will your treatment include AC or cisplatin-based chemotherapy at a dose of 70 mg/m² or higher?",
+      "criterionId": "P1"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm so sorry, but I haven't had any chemotherapy yet. I definitely haven't had AC or cisplatin."
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Will your upcoming treatment include AC or cisplatin-based chemotherapy at a dose of 70 mg/m² or higher? Also, will you only receive this chemo once per cycle, without extra doses between days 2 and 5?",
+      "criterionId": "P1"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm so sorry, but I don't know what my upcoming treatment will include yet. I haven't started anything, so I can't say for sure about the doses or schedule."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been diagnosed with uncontrolled diabetes? If you aren't sure, that's okay to say.",
+      "criterionId": "P4"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm so sorry, but I don't know if I have diabetes. I haven't been told about that, so I'm not sure."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been diagnosed with a heart condition or an issue with your heart's electrical rhythm (QT/QTcF)? If you aren't sure, that's okay to say.",
+      "criterionId": "P5"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm so sorry, but I don't know if I have a heart condition or an issue with my heart's rhythm. I haven't been told about that."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently taking any medications specifically to prevent or treat nausea and vomiting?",
+      "criterionId": "P6"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm so sorry, but I haven't started any treatment yet, so I'm not taking any medications for nausea or vomiting."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been diagnosed with thyroid tumors, or do you have any signs or symptoms related to them? If you aren't sure, that's okay to say.",
+      "criterionId": "P7"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm so sorry, but I don't know if I have thyroid tumors. I haven't been told about that, so I'm not sure."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you received any injections or medications for diabetes or weight loss that contain GIP or GLP-1 (like Ozempic, Wegovy, Mounjaro, or Trulicity) in the 4 weeks before your chemotherapy?",
+      "criterionId": "P8"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm so sorry, but I haven't started any treatment yet, so I haven't taken any of those injections. I'm not sure if I have diabetes or weight loss issues either."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you taken part in any other clinical trial or study involving a new treatment within the last 30 days?",
+      "criterionId": "P9"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm so sorry, but I haven't taken part in any other clinical trials. I haven't had any treatment yet, so I definitely haven't been in a study recently."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [],
+  "ignoredReadings": [],
+  "replies": [
+    {
+      "turn": 2,
+      "usedFacts": [
+        "prior_pd1",
+        "prior_platinum"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 4,
+      "usedFacts": [
+        "prior_pd1",
+        "prior_platinum",
+        "prior_targeted",
+        "lines_advanced"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 8,
+      "usedFacts": [
+        "cardiac_recent"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims uncertainty about having a heart condition or rhythm issue, whereas the facts explicitly state the person has not had a heart attack, stroke, or heart failure requiring hospital care in the last 6 months, implying no known recent serious cardiac history."
+        }
+      ]
+    },
+    {
+      "turn": 10,
+      "usedFacts": [
+        "prior_pd1",
+        "prior_platinum",
+        "prior_targeted",
+        "lines_advanced"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 14,
+      "usedFacts": [
+        "prior_pd1",
+        "prior_platinum",
+        "prior_targeted",
+        "lines_advanced"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 16,
+      "usedFacts": [
+        "lines_advanced"
+      ],
+      "flags": []
+    }
+  ],
+  "record": {
+    "nctId": "NCT07169851",
+    "title": {
+      "registry": "A Study to Evaluate LY3537021 for the Treatment of Nausea and Vomiting Caused by Chemotherapy in Adults With Cancer"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 0,
+      "records": 5,
+      "line": {
+        "ours": "0 rules may not fit what you said. 5 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Have an Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Which is closest to how you are day to day?"
+              },
+              "said": {
+                "said": "I'm doing everything I always did, work and all."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Have symptomatic or untreated central nervous system (CNS) metastases."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the brain?"
+              },
+              "said": {
+                "said": "No, the brain is fine."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Are pregnant, breastfeeding, or intend to become pregnant during the study or within 30 days of the last dose of study intervention."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Are you pregnant or breastfeeding?"
+              },
+              "said": {
+                "said": "No, I'm not, sorry."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Receives treatment with a gastric inhibitory polypetide (GIP) or glucagon-like peptide-1 (GLP-1) receptor agonist within 4 weeks prior to chemotherapy."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I haven't taken any of those injections"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Have participated in a clinical study involving study intervention within 30 days of Cycle 1 Day 1 (C1D1). If the previous study intervention has a long half-life, within 3 months or 5 halflives, whichever is longer, of C1D1."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I haven't taken part in any other clinical trials"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Chemotherapy-naive participants, planned to receive AC or cisplatin-based chemotherapy greater than or equal to (≥)70 milligrams per square meter (mg/m²), on Day 1 of each cycle, with no multiple administrations during the CINV observation period, from Day 2 to Day 5 of each cycle."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I haven't had any chemotherapy yet."
+            },
+            {
+              "said": "I don't know what my upcoming treatment will include yet."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Your answer didn't settle it."
+          }
+        },
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Have an established diagnosis of uncontrolled diabetes mellitus."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I have diabetes"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Have a history of, or current evidence of, a clinically significant cardiac condition or QT/QTcF-related conditions."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I have a heart condition or an issue with my heart's rhythm"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Have another etiology for nausea and vomiting, or receives medications with know or potential antiemetic activity"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not taking any medications for nausea or vomiting"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Signs, symptoms or history of thyroid tumors"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I have thyroid tumors"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "Chemotherapy-naive participants, planned to receive AC or cisplatin-based chemotherapy greater than or equal to (≥)70 milligrams per square meter (mg/m²), on Day 1 of each cycle, with no multiple administrations during the CINV observation period, from Day 2 to Day 5 of each cycle."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have an established diagnosis of uncontrolled diabetes mellitus."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have a history of, or current evidence of, a clinically significant cardiac condition or QT/QTcF-related conditions."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have another etiology for nausea and vomiting, or receives medications with know or potential antiemetic activity"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Signs, symptoms or history of thyroid tumors"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "orderAfter": [
+    "NCT04267848",
+    "NCT06119581",
+    "NCT07169851",
+    "NCT07293247",
+    "NCT06253130",
+    "NCT04302025",
+    "NCT05061550",
+    "NCT06623422",
+    "NCT07415031",
+    "NCT03526835",
+    "NCT05142605",
+    "NCT05932862",
+    "NCT06330064",
+    "NCT06162221",
+    "NCT06596473",
+    "NCT04181060",
+    "NCT06031688",
+    "NCT06116682",
+    "NCT07174336",
+    "NCT05624996",
+    "NCT07144280",
+    "NCT04613596",
+    "NCT05768139",
+    "NCT06759649",
+    "NCT06764771",
+    "NCT03093116",
+    "NCT04614103",
+    "NCT05920356",
+    "NCT06745882",
+    "NCT06793215",
+    "NCT07291037",
+    "NCT06767514",
+    "NCT06758401",
+    "NCT07229313",
+    "NCT05642572",
+    "NCT06498635",
+    "NCT07217301",
+    "NCT06616584",
+    "NCT07531095",
+    "NCT06712355",
+    "NCT06203210",
+    "NCT05783323",
+    "NCT07037758",
+    "NCT07365241",
+    "NCT07227597",
+    "NCT07472517"
+  ],
+  "calls": {
+    "agent": 16,
+    "participant": 8,
+    "fidelity": 8
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-10"
+  }
+}

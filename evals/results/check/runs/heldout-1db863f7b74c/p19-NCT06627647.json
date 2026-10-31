@@ -1,0 +1,1528 @@
+{
+  "patient": "p19",
+  "nctId": "NCT06627647",
+  "set": "heldout",
+  "rank": 1,
+  "conversation": {
+    "histology": {
+      "answer": "unknown",
+      "words": "I don't remember, dear.",
+      "question": "What type of lung cancer cell did the biopsy show?"
+    },
+    "extent": {
+      "answer": "locally_advanced",
+      "words": "It's in my lung and the glands nearby. They said it's too far along for an operation.",
+      "question": "How far has the cancer spread?"
+    },
+    "brain_mets": {
+      "answer": "none",
+      "words": "No, nothing in my head.",
+      "question": "Has the cancer spread to the brain?"
+    },
+    "ecog": {
+      "answer": "ps2",
+      "words": "I'm up for more than half the day, but I can't do any work, I sit a lot.",
+      "question": "Which is closest to how you are day to day?"
+    },
+    "prior_platinum": {
+      "answer": "received",
+      "words": "Yes, I had the carboplatin with my radiation.",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?"
+    },
+    "prior_pd1": {
+      "answer": "never",
+      "words": "No, not that immune one.",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+    },
+    "prior_targeted": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+    },
+    "lines_advanced": {
+      "answer": "unknown",
+      "words": "How many? I don't remember, dear.",
+      "question": "How many treatments have you had since the cancer became advanced?"
+    }
+  },
+  "orderBefore": [
+    "NCT06627647",
+    "NCT07229313"
+  ],
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has histologically or cytologically documented non-squamous NSCLC."
+    },
+    {
+      "id": "P2",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has Stage III B/C or IV NSCLC (based on the American Joint Committee on Cancer Edition 8) not amenable to curative treatment."
+    },
+    {
+      "id": "P3",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant does not have sensitizing EGFR mutations (including, but not limited to, exon 19 deletion and exon 21 L858R, exon 21 L861Q, exon 18 G719X, and exon 20 S768I mutations) and ALK and ROS1 rearrangements."
+    },
+    {
+      "id": "P4",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant does not have documented tumor genomic mutation results from tests conducted as part of standard local practice in any other actionable driver oncogenes for which there are locally approved and available targeted 1L therapies."
+    },
+    {
+      "id": "P5",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant provides an acceptable tumor sample to confirm tumor PD-L1 expression TC ≥ 1%."
+    },
+    {
+      "id": "P6",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has at least one lesion not previously irradiated that qualifies as a RECIST 1.1 TL at baseline and can be accurately measured at baseline as ≥ 10 mm in the longest diameter (except lymph nodes, which must have short axis ≥ 15 mm) with CT or MRI and is suitable for accurate repeated measurements."
+    },
+    {
+      "id": "P7",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has adequate organ and bone marrow function."
+    },
+    {
+      "id": "P8",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has small cell and neuroendocrine histology components."
+    },
+    {
+      "id": "P9",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has brain metastases unless asymptomatic, stable, and not requiring steroids or anticonvulsants for at least 7 days prior to randomization. A minimum of 2 weeks must have elapsed between the end of local therapy (brain radiotherapy or surgery) and randomization. Participants must have recovered from the acute toxic effect of radiotherapy (eg, dizziness and signs of increased intracranial pressure) or surgery prior to randomization."
+    },
+    {
+      "id": "P10",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has any prior systemic therapy received for NSCLC except in the neoadjuvant or adjuvant setting or definitive chemoradiotherapy with the intent to cure, provided that progression has occurred > 12 months after the end of systemic therapy treatment."
+    },
+    {
+      "id": "P11",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has any prior exposure to an anti-TIGIT therapy or any other anticancer therapy targeting immune-regulatory receptors or mechanisms."
+    },
+    {
+      "id": "P12",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has any prior treatment with an anti-PD-1 or anti-PD-L1 agent."
+    },
+    {
+      "id": "P13",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has a history of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention and of low potential risk for recurrence."
+    },
+    {
+      "id": "P14",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has active or prior documented autoimmune or inflammatory disorders requiring chronic systemic treatment with the use of disease-modifying agents, corticosteroids, or immunosuppressive drugs."
+    },
+    {
+      "id": "P15",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has active primary immunodeficiency/active infectious disease(s)."
+    },
+    {
+      "id": "P16",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has active tuberculosis infection."
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 23,
+      "end": 85,
+      "text": "Histologically or cytologically documented non-squamous NSCLC."
+    },
+    "P2": {
+      "start": 88,
+      "end": 209,
+      "text": "Stage III B/C or IV NSCLC (based on the American Joint Committee on Cancer Edition 8) not amenable to curative treatment."
+    },
+    "P3": {
+      "start": 212,
+      "end": 409,
+      "text": "Absence of sensitizing EGFR mutations (including, but not limited to, exon 19 deletion and exon 21 L858R, exon 21 L861Q, exon 18 G719X, and exon 20 S768I mutations) and ALK and ROS1 rearrangements."
+    },
+    "P4": {
+      "start": 412,
+      "end": 635,
+      "text": "Absence of documented tumor genomic mutation results from tests conducted as part of standard local practice in any other actionable driver oncogenes for which there are locally approved and available targeted 1L therapies."
+    },
+    "P5": {
+      "start": 638,
+      "end": 718,
+      "text": "Provision of acceptable tumor sample, to confirm tumor PD-L1 expression TC ≥ 1%."
+    },
+    "P6": {
+      "start": 721,
+      "end": 1014,
+      "text": "At least one lesion not previously irradiated that qualifies as a RECIST 1.1 TL at baseline and can be accurately measured at baseline as ≥ 10 mm in the longest diameter (except lymph nodes, which must have short axis ≥ 15 mm) with CT or MRI and is suitable for accurate repeated measurements."
+    },
+    "P7": {
+      "start": 1017,
+      "end": 1056,
+      "text": "Adequate organ and bone marrow function"
+    },
+    "P8": {
+      "start": 1081,
+      "end": 1144,
+      "text": "Presence of small cell and neuroendocrine histology components."
+    },
+    "P9": {
+      "start": 1147,
+      "end": 1578,
+      "text": "Brain metastases unless asymptomatic, stable, and not requiring steroids or anticonvulsants for at least 7 days prior to randomization. A minimum of 2 weeks must have elapsed between the end of local therapy (brain radiotherapy or surgery) and randomization. Participants must have recovered from the acute toxic effect of radiotherapy (eg, dizziness and signs of increased intracranial pressure) or surgery prior to randomization."
+    },
+    "P10": {
+      "start": 1581,
+      "end": 1826,
+      "text": "Any prior systemic therapy received for NSCLC except in the neoadjuvant or adjuvant setting or definitive chemoradiotherapy with the intent to cure, provided that progression has occurred \\> 12 months after the end of systemic therapy treatment."
+    },
+    "P11": {
+      "start": 1829,
+      "end": 1957,
+      "text": "Any prior exposure to an anti-TIGIT therapy or any other anticancer therapy targeting immune-regulatory receptors or mechanisms."
+    },
+    "P12": {
+      "start": 1960,
+      "end": 2018,
+      "text": "Any prior treatment with an anti-PD-1 or anti-PD-L1 agent."
+    },
+    "P13": {
+      "start": 2021,
+      "end": 2234,
+      "text": "History of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention and of low potential risk for recurrence."
+    },
+    "P14": {
+      "start": 2237,
+      "end": 2424,
+      "text": "Active or prior documented autoimmune or inflammatory disorders requiring chronic systemic treatment with the use of disease-modifying agents, corticosteroids, or immunosuppressive drugs."
+    },
+    "P15": {
+      "start": 2427,
+      "end": 2488,
+      "text": "Active primary immunodeficiency/active infectious disease(s)."
+    },
+    "P16": {
+      "start": 2491,
+      "end": 2521,
+      "text": "Active tuberculosis infection."
+    }
+  },
+  "links": {
+    "P1": [
+      {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 23,
+          "end": 85,
+          "text": "Histologically or cytologically documented non-squamous NSCLC."
+        }
+      }
+    ],
+    "P2": [
+      {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 88,
+          "end": 209,
+          "text": "Stage III B/C or IV NSCLC (based on the American Joint Committee on Cancer Edition 8) not amenable to curative treatment."
+        }
+      }
+    ],
+    "P3": [
+      {
+        "factId": "egfr",
+        "rulesOut": [
+          "common_sensitizing"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 212,
+          "end": 376,
+          "text": "Absence of sensitizing EGFR mutations (including, but not limited to, exon 19 deletion and exon 21 L858R, exon 21 L861Q, exon 18 G719X, and exon 20 S768I mutations)"
+        }
+      }
+    ],
+    "P4": [],
+    "P5": [
+      {
+        "factId": "pdl1",
+        "rulesOut": [
+          "negative"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 638,
+          "end": 718,
+          "text": "Provision of acceptable tumor sample, to confirm tumor PD-L1 expression TC ≥ 1%."
+        }
+      }
+    ],
+    "P6": [
+      {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 721,
+          "end": 1014,
+          "text": "At least one lesion not previously irradiated that qualifies as a RECIST 1.1 TL at baseline and can be accurately measured at baseline as ≥ 10 mm in the longest diameter (except lymph nodes, which must have short axis ≥ 15 mm) with CT or MRI and is suitable for accurate repeated measurements."
+        }
+      }
+    ],
+    "P7": [],
+    "P8": [],
+    "P9": [
+      {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 1147,
+          "end": 1282,
+          "text": "Brain metastases unless asymptomatic, stable, and not requiring steroids or anticonvulsants for at least 7 days prior to randomization."
+        }
+      }
+    ],
+    "P10": [],
+    "P11": [],
+    "P12": [
+      {
+        "factId": "prior_pd1",
+        "rulesOut": [
+          "progressed",
+          "stopped_other"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 1960,
+          "end": 2018,
+          "text": "Any prior treatment with an anti-PD-1 or anti-PD-L1 agent."
+        }
+      }
+    ],
+    "P13": [
+      {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 2021,
+          "end": 2234,
+          "text": "History of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention and of low potential risk for recurrence."
+        }
+      }
+    ],
+    "P14": [
+      {
+        "factId": "autoimmune_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 2237,
+          "end": 2424,
+          "text": "Active or prior documented autoimmune or inflammatory disorders requiring chronic systemic treatment with the use of disease-modifying agents, corticosteroids, or immunosuppressive drugs."
+        }
+      }
+    ],
+    "P15": [],
+    "P16": []
+  },
+  "carried": {
+    "P1": [
+      {
+        "factId": "histology",
+        "answer": "unknown",
+        "words": "I don't remember, dear.",
+        "question": "What type of lung cancer cell did the biopsy show?",
+        "mayNotFit": false
+      }
+    ],
+    "P2": [
+      {
+        "factId": "extent",
+        "answer": "locally_advanced",
+        "words": "It's in my lung and the glands nearby. They said it's too far along for an operation.",
+        "question": "How far has the cancer spread?",
+        "mayNotFit": false
+      }
+    ],
+    "P9": [
+      {
+        "factId": "brain_mets",
+        "answer": "none",
+        "words": "No, nothing in my head.",
+        "question": "Has the cancer spread to the brain?",
+        "mayNotFit": false
+      }
+    ],
+    "P12": [
+      {
+        "factId": "prior_pd1",
+        "answer": "never",
+        "words": "No, not that immune one.",
+        "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?",
+        "mayNotFit": false
+      }
+    ]
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "histology",
+          "answer": "unknown",
+          "words": "I don't remember, dear.",
+          "question": "What type of lung cancer cell did the biopsy show?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "extent",
+          "answer": "locally_advanced",
+          "words": "It's in my lung and the glands nearby. They said it's too far along for an operation.",
+          "question": "How far has the cancer spread?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "I don't remember, dear. I'm not sure",
+          "reading": "unknown",
+          "statement": "The participant does not have sensitizing EGFR mutations and ALK and ROS1 rearrangements."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I don't know. I'm not sure",
+          "reading": "unknown",
+          "statement": "The participant has documented tumor genomic mutation results from tests conducted as part of standard local practice in any other actionable driver oncogenes for which there are locally approved and available targeted 1L therapies."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [
+        {
+          "turn": 6,
+          "quote": "I don't remember, dear. I'm not sure",
+          "reading": "unknown",
+          "statement": "The participant provides an acceptable tumor sample to confirm tumor PD-L1 expression TC ≥ 1%."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I'm not sure, you'd have to ask my neighbor.",
+          "reading": "unknown",
+          "statement": "The participant has at least one lesion not previously irradiated that qualifies as a RECIST 1.1 TL at baseline and can be accurately measured at baseline as ≥ 10 mm in the longest diameter (except lymph nodes, which must have short axis ≥ 15 mm) with CT or MRI and is suitable for accurate repeated measurements."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I don't know, dear. I'm not sure",
+          "reading": "unknown",
+          "statement": "The participant has adequate organ and bone marrow function."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I know it's non-small cell",
+          "reading": "does-not-hold",
+          "statement": "The participant has small cell and neuroendocrine histology components."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "brain_mets",
+          "answer": "none",
+          "words": "No, nothing in my head.",
+          "question": "Has the cancer spread to the brain?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [
+        {
+          "turn": 14,
+          "quote": "Yes, I had the carboplatin with my radiation.",
+          "reading": "holds",
+          "statement": "The participant has received prior systemic therapy for NSCLC in the neoadjuvant or adjuvant setting or definitive chemoradiotherapy with the intent to cure."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P11",
+      "evidence": [
+        {
+          "turn": 14,
+          "quote": "I haven't had the immune one",
+          "reading": "unclear",
+          "statement": "The participant has prior exposure to an anti-TIGIT therapy or any other anticancer therapy targeting immune-regulatory receptors or mechanisms."
+        },
+        {
+          "turn": 16,
+          "quote": "I don't know, dear. I'm not sure",
+          "reading": "unknown",
+          "statement": "The participant has any prior exposure to an anti-TIGIT therapy or any other anticancer therapy targeting immune-regulatory receptors or mechanisms."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P12",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "prior_pd1",
+          "answer": "never",
+          "words": "No, not that immune one.",
+          "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P13",
+      "evidence": [
+        {
+          "turn": 18,
+          "quote": "I think it was a cancer, but I don't remember what kind or when.",
+          "reading": "unclear",
+          "statement": "The participant has a history of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention and of low potential risk for recurrence."
+        },
+        {
+          "turn": 20,
+          "quote": "I don't remember, dear. I had something taken off my skin once, but I don't know if it was cured or how long ago.",
+          "reading": "partial",
+          "missing": "Whether the skin lesion was a malignancy of low potential risk for recurrence, and confirmation that it was treated with curative intent with no known active disease ≥ 2 years before the first dose.",
+          "statement": "The participant has a history of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention and of low potential risk for recurrence."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "unresolved",
+      "reason": "partial"
+    },
+    {
+      "criterionId": "P14",
+      "evidence": [
+        {
+          "turn": 22,
+          "quote": "No, I don't have that kind of condition.",
+          "reading": "does-not-hold",
+          "statement": "The participant has active or prior documented autoimmune or inflammatory disorders requiring chronic systemic treatment with the use of disease-modifying agents, corticosteroids, or immunosuppressive drugs."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P15",
+      "evidence": [
+        {
+          "turn": 24,
+          "quote": "No, I don't have HIV. I don't know about any active infections",
+          "reading": "partial",
+          "missing": "active primary immunodeficiency",
+          "statement": "The participant has active primary immunodeficiency/active infectious disease(s)."
+        },
+        {
+          "turn": 26,
+          "quote": "I don't know, dear. I'm not sure",
+          "reading": "unknown",
+          "statement": "The participant has active primary immunodeficiency/active infectious disease(s)."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P16",
+      "evidence": [
+        {
+          "turn": 28,
+          "quote": "No, I don't have tuberculosis.",
+          "reading": "does-not-hold",
+          "statement": "The participant has active tuberculosis infection."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"A Global Phase III Study of Rilvegostomig or Pembrolizumab Plus Chemotherapy for First-Line Treatment of Locally Advanced or Metastatic Non-Squamous NSCLC\". Your earlier answers already covered 4 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever been tested for EGFR, ALK, or ROS1 genetic changes in your tumor? These are specific mutations that can affect treatment options. If you aren't sure, that's okay.",
+      "criterionId": "P3"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't remember, dear. I'm not sure, you'd have to ask my neighbor."
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you had any other genetic tests on your tumor for different mutations, besides EGFR, ALK, or ROS1, that were part of your regular care?",
+      "criterionId": "P4"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I don't know. I'm not sure, you'd have to ask my neighbor."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you had your tumor tissue tested for PD-L1 expression? This is a protein level measured on tumor cells to help guide treatment. If you aren't sure, that's okay.",
+      "criterionId": "P5"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't remember, dear. I'm not sure, you'd have to ask my neighbor."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you had a recent CT or MRI scan showing a tumor spot that hasn't been treated with radiation yet, and is at least 10 mm wide (or 15 mm for lymph nodes)?",
+      "criterionId": "P6"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm not sure, you'd have to ask my neighbor."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you had recent blood tests to check that your liver, kidneys, and bone marrow are working well enough for treatment? If you aren't sure, that's okay.",
+      "criterionId": "P7"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know, dear. I'm not sure, you'd have to ask my neighbor."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you know if your cancer diagnosis includes small cell or neuroendocrine types? If you aren't sure, that's okay.",
+      "criterionId": "P8"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't remember, dear. I know it's non-small cell, but I don't recall the specific cell type."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever received chemotherapy, immunotherapy, or targeted therapy for your lung cancer before this study? This includes treatment given before or after surgery if the goal was to cure the cancer.",
+      "criterionId": "P10"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Yes, I had the carboplatin with my radiation. But I haven't had the immune one or the pill aimed at the mutation."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever received any treatment specifically targeting TIGIT or other immune-regulatory receptors? If you aren't sure, that's okay.",
+      "criterionId": "P11"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know, dear. I'm not sure, you'd have to ask my neighbor."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever been diagnosed with a different type of cancer, other than your current lung cancer?",
+      "criterionId": "P13"
+    },
+    {
+      "index": 18,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I had something taken off my skin once, I think it was a cancer, but I don't remember what kind or when."
+    },
+    {
+      "index": 19,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "The trial asks about this: “The participant has a history of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention and of low potential risk for recurrence.”. Does this describe you?",
+      "criterionId": "P13"
+    },
+    {
+      "index": 20,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't remember, dear. I had something taken off my skin once, but I don't know if it was cured or how long ago."
+    },
+    {
+      "index": 21,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you currently have an autoimmune or inflammatory condition (like rheumatoid arthritis or lupus) that requires daily medication such as steroids or immune-suppressing drugs?",
+      "criterionId": "P14"
+    },
+    {
+      "index": 22,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't have that kind of condition."
+    },
+    {
+      "index": 23,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you currently have an active infection, such as pneumonia or a urinary tract infection, or a condition that weakens your immune system (like HIV)?",
+      "criterionId": "P15"
+    },
+    {
+      "index": 24,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't have HIV. I don't know about any active infections like pneumonia right now."
+    },
+    {
+      "index": 25,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you have a known condition where your immune system doesn't work properly from birth (primary immunodeficiency)?",
+      "criterionId": "P15"
+    },
+    {
+      "index": 26,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know, dear. I'm not sure, you'd have to ask my neighbor."
+    },
+    {
+      "index": 27,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you ever been diagnosed with active tuberculosis (TB)?",
+      "criterionId": "P16"
+    },
+    {
+      "index": 28,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't have tuberculosis."
+    },
+    {
+      "index": 29,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [],
+  "ignoredReadings": [],
+  "replies": [
+    {
+      "turn": 2,
+      "usedFacts": [
+        "egfr",
+        "alk",
+        "ros1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 4,
+      "usedFacts": [
+        "ntrk",
+        "her2",
+        "met",
+        "braf_v600e"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "usedFacts": [
+        "pdl1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 8,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 10,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "usedFacts": [
+        "histology"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts that the person knows the cancer is non-small cell, but the facts state she does not know the histology type."
+        }
+      ]
+    },
+    {
+      "turn": 14,
+      "usedFacts": [
+        "prior_pd1",
+        "prior_platinum",
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 16,
+      "usedFacts": [
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 18,
+      "usedFacts": [
+        "other_cancer"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 20,
+      "usedFacts": [
+        "other_cancer"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 22,
+      "usedFacts": [
+        "autoimmune_active"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 24,
+      "usedFacts": [
+        "hiv",
+        "hepatitis_active"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims the person does not know about active infections like pneumonia, but the facts state they do not know about active hepatitis B or C, and the persona's forgetfulness is specifically regarding medical test results and history, not general infection status which is not explicitly addressed as unknown in the facts."
+        }
+      ]
+    },
+    {
+      "turn": 26,
+      "usedFacts": [
+        "autoimmune_active"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 28,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts that the person does not have tuberculosis, but the facts do not mention tuberculosis at all, nor do they provide a basis for this specific denial."
+        }
+      ]
+    }
+  ],
+  "record": {
+    "nctId": "NCT06627647",
+    "title": {
+      "registry": "A Global Phase III Study of Rilvegostomig or Pembrolizumab Plus Chemotherapy for First-Line Treatment of Locally Advanced or Metastatic Non-Squamous NSCLC"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 1,
+      "records": 12,
+      "line": {
+        "ours": "1 rule may not fit what you said. 12 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Histologically or cytologically documented non-squamous NSCLC."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "What type of lung cancer cell did the biopsy show?"
+              },
+              "said": {
+                "said": "I don't remember, dear."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Stage III B/C or IV NSCLC (based on the American Joint Committee on Cancer Edition 8) not amenable to curative treatment."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "How far has the cancer spread?"
+              },
+              "said": {
+                "said": "It's in my lung and the glands nearby. They said it's too far along for an operation."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Brain metastases unless asymptomatic, stable, and not requiring steroids or anticonvulsants for at least 7 days prior to randomization. A minimum of 2 weeks must have elapsed between the end of local therapy (brain radiotherapy or surgery) and randomization. Participants must have recovered from the acute toxic effect of radiotherapy (eg, dizziness and signs of increased intracranial pressure) or surgery prior to randomization."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the brain?"
+              },
+              "said": {
+                "said": "No, nothing in my head."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P12",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Any prior treatment with an anti-PD-1 or anti-PD-L1 agent."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+              },
+              "said": {
+                "said": "No, not that immune one."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Any prior systemic therapy received for NSCLC except in the neoadjuvant or adjuvant setting or definitive chemoradiotherapy with the intent to cure, provided that progression has occurred \\> 12 months after the end of systemic therapy treatment."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "Yes, I had the carboplatin with my radiation."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Absence of sensitizing EGFR mutations (including, but not limited to, exon 19 deletion and exon 21 L858R, exon 21 L861Q, exon 18 G719X, and exon 20 S768I mutations) and ALK and ROS1 rearrangements."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't remember, dear. I'm not sure"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Absence of documented tumor genomic mutation results from tests conducted as part of standard local practice in any other actionable driver oncogenes for which there are locally approved and available targeted 1L therapies."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I'm not sure"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Provision of acceptable tumor sample, to confirm tumor PD-L1 expression TC ≥ 1%."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't remember, dear. I'm not sure"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "At least one lesion not previously irradiated that qualifies as a RECIST 1.1 TL at baseline and can be accurately measured at baseline as ≥ 10 mm in the longest diameter (except lymph nodes, which must have short axis ≥ 15 mm) with CT or MRI and is suitable for accurate repeated measurements."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure, you'd have to ask my neighbor."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Adequate organ and bone marrow function"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know, dear. I'm not sure"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Presence of small cell and neuroendocrine histology components."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I know it's non-small cell"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P11",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Any prior exposure to an anti-TIGIT therapy or any other anticancer therapy targeting immune-regulatory receptors or mechanisms."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I haven't had the immune one"
+            },
+            {
+              "said": "I don't know, dear. I'm not sure"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P13",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "History of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention and of low potential risk for recurrence."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I think it was a cancer, but I don't remember what kind or when."
+            },
+            {
+              "said": "I don't remember, dear. I had something taken off my skin once, but I don't know if it was cured or how long ago."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Your answer didn't settle it."
+          }
+        },
+        {
+          "criterionId": "P14",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Active or prior documented autoimmune or inflammatory disorders requiring chronic systemic treatment with the use of disease-modifying agents, corticosteroids, or immunosuppressive drugs."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I don't have that kind of condition."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P15",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Active primary immunodeficiency/active infectious disease(s)."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I don't have HIV. I don't know about any active infections"
+            },
+            {
+              "said": "I don't know, dear. I'm not sure"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P16",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Active tuberculosis infection."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I don't have tuberculosis."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "Any prior systemic therapy received for NSCLC except in the neoadjuvant or adjuvant setting or definitive chemoradiotherapy with the intent to cure, provided that progression has occurred \\> 12 months after the end of systemic therapy treatment."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Absence of sensitizing EGFR mutations (including, but not limited to, exon 19 deletion and exon 21 L858R, exon 21 L861Q, exon 18 G719X, and exon 20 S768I mutations) and ALK and ROS1 rearrangements."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Absence of documented tumor genomic mutation results from tests conducted as part of standard local practice in any other actionable driver oncogenes for which there are locally approved and available targeted 1L therapies."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Provision of acceptable tumor sample, to confirm tumor PD-L1 expression TC ≥ 1%."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "At least one lesion not previously irradiated that qualifies as a RECIST 1.1 TL at baseline and can be accurately measured at baseline as ≥ 10 mm in the longest diameter (except lymph nodes, which must have short axis ≥ 15 mm) with CT or MRI and is suitable for accurate repeated measurements."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Adequate organ and bone marrow function"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Presence of small cell and neuroendocrine histology components."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Any prior exposure to an anti-TIGIT therapy or any other anticancer therapy targeting immune-regulatory receptors or mechanisms."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "History of another primary malignancy except for malignancy treated with curative intent with no known active disease ≥ 2 years before the first dose of study intervention and of low potential risk for recurrence."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Active or prior documented autoimmune or inflammatory disorders requiring chronic systemic treatment with the use of disease-modifying agents, corticosteroids, or immunosuppressive drugs."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Active primary immunodeficiency/active infectious disease(s)."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Active tuberculosis infection."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Histologically or cytologically documented non-squamous NSCLC."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "orderAfter": [
+    "NCT06627647",
+    "NCT07229313"
+  ],
+  "calls": {
+    "agent": 28,
+    "participant": 14,
+    "fidelity": 14
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-10"
+  }
+}
