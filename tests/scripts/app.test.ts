@@ -64,9 +64,15 @@ describe("npm run app", () => {
       exact: 1,
       invented: 1 / 201,
     });
-    // 0004's Claude Haiku 4.5 run was made without the schema the app now
-    // sends (slice 0006), so it measures nothing the app does.
-    expect(byModel.has("claude-haiku-4-5")).toBe(false);
+    // Claude Haiku 4.5 with the schema enforced (slice 0006) read all 527:
+    // 324 of 326 exactly, 0 of 201 invented. 0004's run without the schema
+    // no longer counts, because the app doesn't send that request.
+    expect(byModel.get("claude-haiku-4-5")).toEqual({
+      model: "claude-haiku-4-5",
+      readable: 1,
+      exact: 324 / 326,
+      invented: 0,
+    });
   });
 
   it("counts only a run of the request the app would send, and refuses two", () => {

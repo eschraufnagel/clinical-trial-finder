@@ -217,3 +217,13 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **Against the frozen bar, criterion 2 fails:** one reply stating an answer was read as a different answer. Criteria 1 and 3 pass.
 - **Step 6:** `gate-2-dev.md` written. It says the dev run fails the frozen bar on criterion 2, and recommends overturning that criterion and running held-out once; stopping is the frozen rule's answer. **Stopped at Gate 2.**
 - **Gate 2, as answered** (owner, 2026-10; `gate-2-dev.md`): as recommended. Criterion 2 of the frozen bar is overturned at the gate, after dev's numbers, and held-out runs once under `--max-calls 600 --max-usd 0.50`. The PR says so.
+- **Step 7:**
+  - The held-out run, as approved at Gate 2: `heldout-claude-haiku-4-5-8cb01749-schema.json`, 527 calls in 389 s, **$0.292**, no retries. 0004's file stays committed and isn't read by the page.
+  - **Read at all: 527 of 527.** Replies stating an answer: 324 of 326 exact (97.8% to 99.8%), 2 wrong (0.2% to 2.2%), none lost. "Don't know" replies: 0 of 201 invented (0.0% to 1.9%).
+  - **The two wrong readings are both a plain "No" read as "yes":**
+    - p01 `cardiac_recent`, "No, my heart's been fine.";
+    - p16 `leptomeningeal`, "No, the doctor said the lining of the brain and spine is clear."
+    - The local model and 0004's Haiku run, without the schema, read both as "no". On these pairs, then, the errors come with the schema. That's a stronger finding than dev's p11, whose number Haiku may have counted.
+  - On the page each would show as a reading of "Yes" for the person to confirm or correct. Confirmed, it would add a "may not fit" hint. No hint removes a trial.
+  - `app.test.ts` now expects Haiku's new measurement: readable 1, exact 324/326, invented 0.
+  - `npm run check`, `npm run test:e2e` (7 passed) and every `--check` as at step 1.
