@@ -86,6 +86,12 @@ export function Sheet({ id }: { id: string }) {
         {sheet.trials.map((trial) => (
           <li key={trial.nctId}>
             <strong>{trial.nctId}</strong> <W w={trial.title} />
+            {trial.other === null ? null : (
+              <>
+                <br />
+                <W w={trial.other.lead} />
+              </>
+            )}
             <br />
             <W w={trial.phase} /> <W w={trial.site} /> <W w={trial.read} />
             {trial.thin === null ? null : (

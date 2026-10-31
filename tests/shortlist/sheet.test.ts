@@ -94,3 +94,38 @@ describe("sheetMissing", () => {
     ]);
   });
 });
+
+describe("a marked trial on the short list (slice 0005)", () => {
+  it("keeps its card's line on the sheet", () => {
+    const mark = {
+      route: "small-cell" as const,
+      cancers: ["small cell lung cancer"],
+      evidence: ["SCLC"],
+    };
+    const input: SheetInput = {
+      order: orderFor(
+        trials().map((t) =>
+          t.candidate.nctId === "NCT01" ? { ...t, candidate: { ...t.candidate, other: mark } } : t,
+        ),
+        {},
+        vocabulary,
+        "read-first",
+      ),
+      orderName: "read-first",
+      shortlistSize: 3,
+      profile: {},
+      vocabulary,
+      cancerType: "nsclc",
+      asked: ["brain_mets"],
+    };
+    const sheet = oncologistSheet(input);
+    const t = sheet.trials.find((x) => x.nctId === "NCT01");
+    expect(t?.other?.lead).toEqual({
+      ours: "This trial's record is about small cell lung cancer, a different kind of lung cancer from non-small cell. Ask your oncologist whether it takes people with your kind of lung cancer.",
+    });
+    expect(sheet.trials.filter((x) => x.nctId !== "NCT01").every((x) => x.other === null)).toBe(
+      true,
+    );
+    expect(sheetMissing(sheet, input.order.slice(0, 3))).toEqual([]);
+  });
+});

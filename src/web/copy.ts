@@ -56,6 +56,7 @@ export const COPY = {
     unknown: "Still unknown",
     flags: "About the record",
     interventions: "What it tests",
+    fromRecord: "From the record:",
     open: "Open",
     close: "Close",
     showRest: "Show them",

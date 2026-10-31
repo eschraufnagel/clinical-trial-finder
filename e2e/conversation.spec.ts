@@ -90,3 +90,20 @@ test("case 5 and 6: the sheet, and no verdict on any screen", async ({ page }) =
   await page.goto("/#/settings");
   await expectNoVerdict(page);
 });
+
+test("case 8 (slice 0005): a trial whose record names other cancers says so first, below the short list", async ({
+  page,
+}) => {
+  await search(page, p08);
+  await page.getByText(COPY.conversation.choose).click();
+  await page.getByRole("button", { name: "Adenocarcinoma", exact: true }).click();
+  await expect.poll(() => lastQuestion(page)).toBe("How far has the cancer spread?");
+  await page.getByRole("button", { name: COPY.conversation.listNow }).click();
+  // The rest isn't shown yet, so any marked card here would be on the short list.
+  await expect(page.locator(".trial .other")).toHaveCount(0);
+  await page.getByRole("button", { name: COPY.list.showRest }).click();
+  const marked = page.locator(".rest .trial .other").first();
+  await expect(marked).toContainText("This trial's record ");
+  await expect(marked).toContainText(COPY.list.fromRecord);
+  await expectNoVerdict(page);
+});

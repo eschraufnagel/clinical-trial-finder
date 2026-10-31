@@ -16,6 +16,22 @@ export function TrialCard({ trial, rank }: { trial: TrialView; rank: number }) {
         </a>{" "}
         · <W w={trial.link.label} />
       </p>
+      {trial.other === null ? null : (
+        <div className="flag other">
+          <p>
+            <W w={trial.other.lead} />
+          </p>
+          <p className="note">
+            {t.fromRecord}{" "}
+            {trial.other.evidence.map((w, i) => (
+              <span key={textOf(w)}>
+                {i === 0 ? null : "; "}
+                <W w={w} />
+              </span>
+            ))}
+          </p>
+        </div>
+      )}
       {trial.interventions.length === 0 ? null : (
         <p>
           <strong>{t.interventions}</strong>{" "}

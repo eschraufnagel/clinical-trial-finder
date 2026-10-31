@@ -1,5 +1,5 @@
 import { openQuestions } from "../questions/conversation.js";
-import { type DescribeInput, describeOrder, type HintView } from "./explain.js";
+import { type DescribeInput, describeOrder, type HintView, type TrialView } from "./explain.js";
 import type { OrderEntry } from "./order.js";
 import { ours, said, type Words } from "./words.js";
 
@@ -39,6 +39,8 @@ export interface SheetTrial {
   read: Words;
   thin: Words | null;
   hints: HintView[];
+  /** What its record names, on a trial the search marked as about other cancers only (slice 0005). */
+  other: TrialView["other"];
 }
 
 export interface SheetView {
@@ -154,6 +156,7 @@ export function oncologistSheet(input: SheetInput): SheetView {
       read: t.read,
       thin: t.thin,
       hints: t.hints,
+      other: t.other,
     })),
     closing: ours(
       "None of this says a trial fits. The reading of each trial's rules is automatic, and wrong about a quarter of the time. The oncologist and the trial team decide.",

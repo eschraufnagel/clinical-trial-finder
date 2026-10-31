@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { orderFor } from "../../src/questions/conversation.js";
-import { describeOrder, FLAG_WORDS, ORDER_WORDS, WHO_WORDS } from "../../src/shortlist/explain.js";
+import { ROUTES } from "../../src/search/other.js";
+import {
+  describeOrder,
+  FLAG_WORDS,
+  ORDER_WORDS,
+  otherWords,
+  WHO_WORDS,
+} from "../../src/shortlist/explain.js";
 import { ORDER_NAMES } from "../../src/shortlist/order.js";
 import { PHASE_WORDS } from "../../src/shortlist/phase.js";
 import {
@@ -43,6 +50,9 @@ describe("the words this project writes", () => {
       ...Object.values(WHO_WORDS),
       ...Object.values(PHASE_WORDS),
       ...vocabulary.facts.flatMap((f) => [f.question, ...f.answers.map((a) => a.words)]),
+      ...ROUTES.map((route) =>
+        otherWords({ route, cancers: ["prostate cancer", "lymphoma"], evidence: [] }),
+      ),
     ];
     expect(verdictHits(fixed)).toEqual([]);
   });

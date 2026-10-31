@@ -332,3 +332,8 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **Places held by trials not for NSCLC, held-out conversation arm (`shortlist`):** 35 → 6, for 15 → 5 patients. With reads: 34 → 6. The full record's short list: 38 → 9.
   - **No marked trial is on any held-out short list.** One relevant trial left a short list because it's marked: NCT03947385, on one patient's.
   - **Agreement falls 3 points and would-flag rises about 5,** conversation arm (`shortlist`): 88% → 85% and 12.9% → 17.6%. `gate-3-page.md` takes this up.
+- **Step 12:**
+  - `TrialView.other` is `{ lead, evidence }`, built by `otherWords(mark)` in `explain.ts`, and shown first on the card. The sheet's trials carry it, and the page's label "From the record:" is in `copy.ts`.
+  - **The listing and rules lead first said "Lung cancer isn't among them."** That's false for the 14 marked trials whose records name small cell lung cancer or lung neuroendocrine tumors. It now says "Non-small cell lung cancer isn't among them."
+  - Browser test case 8: a marked card in "every other trial", none on the short list. 7 browser tests pass.
+  - `gate-3-page.md` written, its cards from `describeOrder` over a made-up Portland search. **Stopped at Gate 3.**
