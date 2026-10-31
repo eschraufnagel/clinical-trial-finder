@@ -2,6 +2,7 @@ import { readdirSync } from "node:fs";
 import { readTrialFacts } from "../facts/run.js";
 import type { TrialFacts } from "../facts/types.js";
 import type { Point } from "../search/geo.js";
+import { loadOthers } from "../search/other.js";
 import { searchTrials } from "../search/search.js";
 import type { SearchRequest } from "../search/types.js";
 import { loadVocabulary } from "../search/vocabulary.js";
@@ -30,10 +31,14 @@ export function trialsForSearch(
   facts: TrialFactsLookup,
 ): TrialInput[] {
   const cancer = loadVocabulary(request.cancerType);
-  const result = searchTrials(snapshot.trials, snapshot.manifest, cancer, zips, {
-    ...request,
-    purposes: ["TREATMENT"],
-  });
+  const result = searchTrials(
+    snapshot.trials,
+    snapshot.manifest,
+    cancer,
+    zips,
+    { ...request, purposes: ["TREATMENT"] },
+    loadOthers(request.cancerType),
+  );
   return result.candidates.map((candidate) => ({
     candidate,
     facts: facts(candidate.nctId) ?? null,

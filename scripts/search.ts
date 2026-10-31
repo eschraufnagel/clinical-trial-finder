@@ -11,6 +11,7 @@
  * vocabulary. The ZIP and age are a search, never stored.
  */
 import { loadZipPoints } from "../src/search/geo.js";
+import { loadOthers } from "../src/search/other.js";
 import { searchTrials } from "../src/search/search.js";
 import type { Candidate, SearchRequest, SearchResult } from "../src/search/types.js";
 import { loadVocabulary, type Reason } from "../src/search/vocabulary.js";
@@ -112,7 +113,11 @@ function formatCandidate(c: Candidate): string {
       ? "no site"
       : `${site.miles === null ? "  ?" : String(site.miles).padStart(4)} mi  ${[site.facility, [site.city, site.state].filter(Boolean).join(" ")].filter(Boolean).join(", ")}`;
   const flags = c.flags.map((f) => FLAG_WORDS[f] ?? f).join("; ");
-  return `${c.nctId}  ${phase.padEnd(16)}${where}  · ${reasons}${flags === "" ? "" : `  [${flags}]`}`;
+  const other =
+    c.other === undefined
+      ? ""
+      : `  {other cancers: ${c.other.cancers.join(", ")}; ${c.other.route}}`;
+  return `${c.nctId}  ${phase.padEnd(16)}${where}  · ${reasons}${flags === "" ? "" : `  [${flags}]`}${other}`;
 }
 
 function main(): void {
@@ -126,7 +131,14 @@ function main(): void {
   }
   const { manifest, trials } = loadSnapshot();
   const vocabulary = loadVocabulary(parsed.request.cancerType);
-  const result = searchTrials(trials, manifest, vocabulary, loadZipPoints(), parsed.request);
+  const result = searchTrials(
+    trials,
+    manifest,
+    vocabulary,
+    loadZipPoints(),
+    parsed.request,
+    loadOthers(parsed.request.cancerType),
+  );
   if (parsed.json) {
     console.log(JSON.stringify(result, null, 2));
     return;

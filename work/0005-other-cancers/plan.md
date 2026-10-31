@@ -308,3 +308,12 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - On 0004's results, trials not for NSCLC hold 35 of 162 held-out short-list places in the conversation arm (`shortlist`), for 15 of 17 patients. With reads: 34. The full record's list: 38. Every short-list trial has a label.
   - `gate-1-labels.md` written. **Stopped at Gate 1.**
 - **Gate 1, as answered** (owner, 2026-10; `gate-1-labels.md`): the labels stand; continuation studies and supportive-care trials go into `ANNOTATION.md` as edge cases; a second blind pass first. It relabelled 70 held-out trials, every not-relevant label and the relevant ones whose conditions name only other cancers, and agreed on relevant or not for all 70. On its result, NCT06597721 became "unclear" ("Selected Advanced Solid Tumours"). `sample` now has 9 relevant "unclear".
+- **Step 7:**
+  - **`Candidate.other` is optional,** present only on a marked candidate, rather than `OtherMark | null`. Fixtures and `search --json` are unchanged for unmarked trials.
+  - **The others file** has `typeTerms` (NSCLC's own names, stripped first), `notCancerTerms` ("kirsten rat sarcoma"), `notOpenTerms` (RECIST's "in solid tumors"), `ambiguousTerms` ("lung"), `otherCancers` as `{name, terms}`, `openPhrases`, `diagnosisWords` and `routes`. There's no `notCancer` list: a condition the file doesn't name counts as naming no cancer.
+  - **The three listing routes share one test** of the conditions, and the route says which kind of listing it is. That's small cell only, then named by a biomarker only, then any other listing.
+  - **A listing isn't marked** when the inclusion section names NSCLC, or the title is open to solid tumors ("... in Advanced Solid Malignancies").
+  - **`rules` reads every inclusion line for openness,** not only diagnosis lines. A line saying "solid tumor" or "malignancy" opens the trial, RECIST's name aside.
+  - **Tuned on dev only,** with a scratch script while writing: 0001's 380 labels and `places-dev`. Step 8 scores it formally.
+  - `scripts/facts-try.ts` still searches without the others file. It isn't in the file list, and nothing measured reads it.
+  - **Proof of no change:** `search:eval -- --check` matches `01-a3e87584fb11`, `questions:eval -- --check` matches `05-7543ffb2cb2e`, and `-- --check --dev` matches `dev/04-92afa01686ff`. 1,061 tests.
