@@ -553,3 +553,8 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - Intervals are Wilson 95%. Every catch is on a pair the patient could know. The 7 ruled-out pairs they couldn't know were all missed, 4 of them as "unknown or records", which is where the record sends them.
   - Held-out's flags are 210 from the model fidelity check, 49 uncited assertions and 4 used facts the patient doesn't know. 59 of the 236 excluded findings are p15's three long trials.
   - Held-out is read once, as Gate 1 decided; nothing is tuned on it.
+- **Step 15, the check service:** `src/server/check.ts` (`CheckService`), `src/transport/route.ts` (`routeByConversation`), and the routes in `src/server/app.ts`: `GET /api/finder/:id/checkable`, `POST /api/check`, `GET /api/check/:id/view`, `POST /api/check/:id/stop`, `DELETE /api/check/:id`.
+  - `FinderService.checkSource` gives a check the conversation's answers, the list's trials and its reader key, read only.
+  - A question the model can't word is taken again in the trial's own words (`fixedQuestions` on the resumed state), saying so, so a check works with no model once the trial is parsed. Not in the plan; it's how the page meets §6.1's "falls back" for the ask call, which the plan named only for the read.
+  - The "Stop and show the record" tap ends the trial in hand and goes on to the next; `POST /api/check/:id/stop` ends the check.
+  - The check's test data moved into `tests/server/fixture.ts` (`checkOptions`), so the app's route test uses it too.

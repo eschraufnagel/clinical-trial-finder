@@ -4,7 +4,18 @@
  */
 export { type App, type AppOptions, configureApp, ownOrigins } from "./app.js";
 export {
+  CHECK_WORDS,
+  type CheckOptions,
+  CheckService,
+  type CheckStart,
+  type CheckView,
+  MAX_CHECKED,
+  READING_WORDS,
+  TAPS,
+} from "./check.js";
+export {
   type AnswerView,
+  type CheckSource,
   CONFIRM,
   checkForm,
   type FinderOptions,

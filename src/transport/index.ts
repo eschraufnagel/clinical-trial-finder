@@ -8,6 +8,7 @@ export {
   type LedgerMessage,
 } from "./ledger.js";
 export { MemoryTransport } from "./memory.js";
+export { routeByConversation } from "./route.js";
 export {
   checkInbound,
   type InboundCheck,
