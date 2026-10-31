@@ -68,4 +68,6 @@ Choice 2 is the answer the frozen rule gives. Choose it if a bar overturned afte
 
 ## Answer
 
-(The owner's, at the gate.)
+**Owner, 2026-10: as recommended.**
+- Criterion 2 of the bar is overturned at this gate, after dev's numbers, for the reasons above.
+- Held-out runs once, with the command and cap above.
