@@ -148,14 +148,14 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
      - Nothing else changes.
    - **`src/screening/apply.ts`:** `finalize` carries `earlier` through.
    - **`src/screening/session.ts`:**
-     - `create(study, criteria, adapter, options?: { carried?: Carried; fixedQuestions?: boolean })`, with `fixedQuestions` used by step 16's `--fake`;
+     - `create(study, criteria, adapter, options?: { carried?: Carried })`; step 4 adds `fixedQuestions`, with its template, for step 16's `--fake`;
      - `#result`'s handoff includes `fromConversation`;
      - `#readable` is unchanged: closed criteria are in neither `open` nor `answered`, so the read prompt's shape is unchanged.
    - **Who decides "every linked fact was asked":** `src/check/carry.ts`, step 5. `screening/` only receives the decided `Carried`, so it imports neither `src/check/` nor `src/facts/` (§8).
    - **Tests:**
      - `tests/screening/agenda.test.ts`: `initialProgress(c)` deep-equals `initialProgress(c, {})` on every inherited fixture, and carried criteria close as above.
      - `tests/screening/session.test.ts`, fake adapter: a carried criterion is never asked; `ask` is never called with its id; a reading for it is counted `already-settled`; the result's findings carry `earlier`.
-     - `tests/screening/prompts.test.ts`: `PROMPT_VERSION` unchanged.
+     - `tests/screening/prompts.test.ts`: `PROMPT_VERSION` pinned at `2c46ada9a1d5`, so step 4's change to it is a visible test change.
 
 4. **The agent's words, and confirmed readings without a model** (§4, §6.1).
    - **`src/screening/templates.ts`:**

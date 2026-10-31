@@ -237,6 +237,7 @@ export function finalize(
       criterionId: p.criterionId,
       evidence: p.evidence,
       timesAsked: p.timesAsked,
+      ...(p.earlier === undefined ? {} : { earlier: p.earlier }),
     };
     if (p.status !== "open") {
       return {

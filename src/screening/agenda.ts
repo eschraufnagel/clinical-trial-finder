@@ -1,4 +1,4 @@
-import type { FindingReason, Progress, ScreeningCriterion } from "./types.js";
+import type { Carried, FindingReason, Progress, ScreeningCriterion } from "./types.js";
 
 /**
  * Which criteria the agent raises, in what order, and how many times.
@@ -52,19 +52,34 @@ export function raisability(criterion: ScreeningCriterion): Raisability {
   }
 }
 
-/** The starting point: raisable criteria open, the rest already closed with a reason. */
-export function initialProgress(criteria: readonly ScreeningCriterion[]): Progress[] {
+/**
+ * The starting point: raisable criteria open, the rest already closed with a
+ * reason.
+ *
+ * Since slice 0007 here, a raisable criterion the conversation's answers cover
+ * (`carried`) starts closed instead, as `from-conversation`, so it is never
+ * asked: nothing is asked twice. A criterion that isn't raisable keeps its
+ * reason and gains the answers, for the record. With nothing carried this is
+ * exactly the inherited starting point, which a test pins.
+ */
+export function initialProgress(
+  criteria: readonly ScreeningCriterion[],
+  carried: Carried = {},
+): Progress[] {
   return criteria.map((criterion) => {
     const r = raisability(criterion);
-    return r.raise
-      ? { criterionId: criterion.id, status: "open", reason: null, evidence: [], timesAsked: 0 }
-      : {
-          criterionId: criterion.id,
-          status: "not-raised",
-          reason: r.reason,
-          evidence: [],
-          timesAsked: 0,
-        };
+    const earlier = carried[criterion.id];
+    const covered = earlier !== undefined && earlier.length > 0 ? [...earlier] : undefined;
+    const common = {
+      criterionId: criterion.id,
+      evidence: [],
+      timesAsked: 0,
+      ...(covered === undefined ? {} : { earlier: covered }),
+    };
+    if (!r.raise) return { ...common, status: "not-raised", reason: r.reason };
+    return covered === undefined
+      ? { ...common, status: "open", reason: null }
+      : { ...common, status: "from-conversation", reason: "answered-earlier" };
   });
 }
 

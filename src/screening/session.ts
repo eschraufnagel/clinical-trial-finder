@@ -5,6 +5,7 @@ import { ask, read } from "./calls.js";
 import { type AnsweredCriterion, PROMPT_VERSION } from "./prompts.js";
 import { closingMessage, openingMessage } from "./templates.js";
 import type {
+  Carried,
   Finding,
   Handoff,
   Progress,
@@ -33,6 +34,14 @@ export type AgentReply =
   | { kind: "message"; text: string }
   | { kind: "done"; text: string; result: ScreeningResult };
 
+export interface SessionOptions {
+  /**
+   * The conversation's answers, by the criteria they cover (slice 0007 here).
+   * Those criteria start closed and are never asked.
+   */
+  carried?: Carried;
+}
+
 export class ScreeningSession {
   #state: ScreeningState;
   readonly #adapter: ModelAdapter;
@@ -46,6 +55,7 @@ export class ScreeningSession {
     study: StudyContext,
     criteria: readonly ScreeningCriterion[],
     adapter: ModelAdapter,
+    options: SessionOptions = {},
   ): ScreeningSession {
     const ids = criteria.map((c) => c.id);
     const duplicate = ids.find((id, i) => ids.indexOf(id) !== i);
@@ -61,7 +71,7 @@ export class ScreeningSession {
         study,
         criteria: [...criteria],
         transcript: [],
-        progress: initialProgress(criteria),
+        progress: initialProgress(criteria, options.carried),
         pending: null,
         rejectedReadings: [],
         ignoredReadings: [],
@@ -289,5 +299,6 @@ function handoff(findings: readonly Finding[]): Handoff {
     unresolved: ids("unresolved"),
     chartReview: ids("chart-review"),
     notRaised: ids("not-raised"),
+    fromConversation: ids("from-conversation"),
   };
 }

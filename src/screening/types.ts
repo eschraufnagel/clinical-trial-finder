@@ -59,7 +59,15 @@ export type FindingStatus =
    */
   | "chart-review"
   /** Never put to the participant: `protocol`, `definitional`, or a lab value. */
-  | "not-raised";
+  | "not-raised"
+  /**
+   * Covered by facts the person already answered in the conversation (slice
+   * 0007 of this repository), so never asked. Closed before the first
+   * question, with what they said in `earlier`. Never `holds` or
+   * `does-not-hold`: whether their answer meets this rule is the fact
+   * mapper's reading, a model's, and on the record it is a hint.
+   */
+  | "from-conversation";
 
 export type FindingReason =
   | "answered"
@@ -81,7 +89,9 @@ export type FindingReason =
   | "no-answer"
   | "lab-value"
   | "protocol"
-  | "definitional";
+  | "definitional"
+  /** Covered by an answer the person gave in the conversation (slice 0007 here). */
+  | "answered-earlier";
 
 /** What a single reply says about a single criterion, as the read call judged it. */
 export type ReadingValue =
@@ -140,6 +150,8 @@ export interface Finding {
   reported?: ReportedValue;
   evidence: Evidence[];
   timesAsked: number;
+  /** The conversation's answers that cover this criterion, when any do (slice 0007 here). */
+  earlier?: CarriedFact[];
 }
 
 /** A finding while the conversation is still going. */
@@ -150,7 +162,32 @@ export interface Progress {
   reported?: ReportedValue;
   evidence: Evidence[];
   timesAsked: number;
+  earlier?: CarriedFact[];
 }
+
+/**
+ * One answer from the conversation that came before this check (slice 0007
+ * of this repository), carried onto a criterion it covers.
+ *
+ * The agent doesn't decide what covers what. Whoever starts the session does
+ * (`src/check/carry.ts`), from the fact mappings, and hands over the result,
+ * so this module imports neither the mapper nor the vocabulary.
+ */
+export interface CarriedFact {
+  factId: string;
+  /** The confirmed answer id, or `"unknown"` when the person didn't know. */
+  answer: string;
+  /** What the person typed, or the tapped answer's own words. */
+  words: string;
+  /**
+   * Whether the fact mapping says this rule excludes that answer. A hint, as
+   * on the list: the mapper is wrong about a quarter of the time.
+   */
+  mayNotFit: boolean;
+}
+
+/** Criterion id to the conversation's answers that cover it. */
+export type Carried = Readonly<Record<string, readonly CarriedFact[]>>;
 
 export type TurnKind = "opening" | "question" | "closing" | "reply";
 
@@ -209,6 +246,8 @@ export interface Handoff {
   unresolved: string[];
   chartReview: string[];
   notRaised: string[];
+  /** Covered by the conversation's answers, and never asked (slice 0007 here). */
+  fromConversation: string[];
 }
 
 export interface ScreeningResult {

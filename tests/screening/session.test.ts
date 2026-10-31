@@ -90,6 +90,7 @@ describe("a whole conversation", () => {
       unresolved: [],
       chartReview: ["L2"],
       notRaised: ["L4"],
+      fromConversation: [],
     });
     expect(result.calls).toBe(6);
     expect(result.run.promptVersion).toMatch(/^[0-9a-f]{12}$/);
@@ -369,5 +370,64 @@ describe("slice 0009: corrections and criteria that don't apply", () => {
       { criterionId: "L49", status: "unresolved", reason: "does-not-apply" },
     ]);
     expect(result.handoff.unresolved).toEqual(["L49"]);
+  });
+});
+
+describe("what the conversation carried (slice 0007 here)", () => {
+  const carried = {
+    L8: [
+      { factId: "lines_advanced", answer: "zero", words: "No treatment yet.", mayNotFit: false },
+    ],
+  };
+
+  it("never asks a carried criterion, and hands it off with the person's words", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("Has a surgeon said it can be removed?"),
+      readR([{ criterionId: "L2", reading: "holds", quote: "stage II, removable" }]),
+      askR("Are you pregnant?"),
+      readR([{ criterionId: "L19", reading: "does-not-hold", quote: "not pregnant" }]),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter, { carried });
+    await s.start();
+    await s.receive(REPLIES[1] ?? "");
+    const result = done(await s.receive(REPLIES[2] ?? ""));
+
+    const asked = s
+      .state()
+      .transcript.filter((t) => t.kind === "question")
+      .map((t) => t.criterionId);
+    expect(asked).toEqual(["L2", "L19"]);
+    expect(adapter.requests.some((r) => r.user.includes("Previous anti-cancer therapy"))).toBe(
+      false,
+    );
+    expect(result.findings[0]).toMatchObject({
+      criterionId: "L8",
+      status: "from-conversation",
+      reason: "answered-earlier",
+      timesAsked: 0,
+      earlier: carried.L8,
+    });
+    expect(result.handoff.fromConversation).toEqual(["L8"]);
+  });
+
+  it("counts a later reading for a carried criterion as already settled, and applies nothing", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("Has a surgeon said it can be removed?"),
+      readR([
+        { criterionId: "L2", reading: "holds", quote: "stage II" },
+        { criterionId: "L8", reading: "holds", quote: "untreated" },
+      ]),
+      askR("Are you pregnant?"),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter, { carried });
+    await s.start();
+    await s.receive(REPLIES[1] ?? "");
+
+    const state = s.state();
+    expect(state.ignoredReadings).toEqual([
+      { turn: 2, criterionId: "L8", reading: "holds", why: "already-settled" },
+    ]);
+    expect(state.progress[0]?.status).toBe("from-conversation");
+    expect(state.progress[0]?.evidence).toEqual([]);
   });
 });

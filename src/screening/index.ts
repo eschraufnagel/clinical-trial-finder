@@ -7,8 +7,10 @@
  */
 export { LAB_VALUE_PATTERN, MAX_ASKS, raisability } from "./agenda.js";
 export { PROMPT_VERSION } from "./prompts.js";
-export { type AgentReply, ScreeningSession } from "./session.js";
+export { type AgentReply, ScreeningSession, type SessionOptions } from "./session.js";
 export {
+  type Carried,
+  type CarriedFact,
   type Evidence,
   type Finding,
   type FindingReason,

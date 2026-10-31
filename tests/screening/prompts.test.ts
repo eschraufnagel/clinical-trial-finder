@@ -215,4 +215,8 @@ describe("PROMPT_VERSION", () => {
     expect(PROMPT_VERSION).toMatch(/^[0-9a-f]{12}$/);
     expect(OPENING_TEMPLATE.length + CLOSING_TEMPLATE.length).toBeGreaterThan(0);
   });
+
+  it("is pinned, so a change to anything the agent says or is told is a visible test change", () => {
+    expect(PROMPT_VERSION).toBe("2c46ada9a1d5");
+  });
 });
