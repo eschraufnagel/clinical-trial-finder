@@ -1,6 +1,43 @@
 # Gate 1: spend held-out's one look?
 
-**Question:** run held-out once, revise on dev first, or stop (plan, Gate 1; spec §7.5). **Dev fails the bar frozen in the plan, on criterion 1.** It also catches none of its 4 clearly-ruled-out pairs, and raises false alarms on 3 of the other 5. The causes are below, each traced to a transcript.
+The gate was asked twice: first on dev's first run, then again after the revisions the first answer asked for. The second look comes first; the first follows unchanged.
+
+**First question:** run held-out once, revise on dev first, or stop (plan, Gate 1; spec §7.5). **Dev fails the bar frozen in the plan, on criterion 1.** It also catches none of its 4 clearly-ruled-out pairs, and raises false alarms on 3 of the other 5. The causes are below, each traced to a transcript.
+
+## Asked again, after R1 to R4
+
+**The owner's first answer was choice 1: revise on dev and ask again (Answer, below).** R1 to R4 are in (plan, Records, steps 12b to 12e), and dev was run once more: [`02-1db863f7b74c.json`](../../evals/results/check/dev/02-1db863f7b74c.json), transcripts in [`runs/dev-1db863f7b74c/`](../../evals/results/check/runs/dev-1db863f7b74c/), the records as text in [gate-1-records.txt](gate-1-records.txt), which now shows them. It used the same model, settings, parse and labels, and took 27 minutes. No hosted spend.
+
+**Question:** run held-out once, or stop. **Dev now passes all five parts of the frozen bar.** It still catches none of its 4 clearly-ruled-out pairs.
+
+| | First run | After R1 to R4 | Bar |
+| --- | --- | --- | --- |
+| 1. Verdict words | 1 | **0** | passes |
+| 2. Unknowns missing from a record | 0 | 0 | passes |
+| 3. Orders moved | 0 | 0 | passes |
+| 4. Fidelity flags read and explained | 24 flags, 45 excluded | 25 flags, 46 excluded | passes (below) |
+| 5. Questions saved on every pair with a linked fact | 3 to 7 | 3 to 7 | passes |
+| Questions saved | 46 of 169, 27% | 46 of 169, 27% | reported |
+| Questions asked | 111 | 110 | reported |
+| Caught, of all ruled out | 0 of 4 | 0 of 4 (0% to 49%) | reported |
+| Caught, of those whose deciding facts the patient knows | — | 0 of 3 (0% to 56%) | reported |
+| Pairs with false alarms | 3 of 5 | 3 of 5, the same 17 lines | reported |
+
+**What each revision did on dev:**
+- **R1** replaced one phrased question: p11 × NCT03089554's infection question, the one that said "check eligibility", is now asked in the trial's words. That's the only change to any transcript. The broader question drew a broader reply, which the fidelity check flagged ("not sick with an infection" isn't in the file). That's the one new flag; the other 24 are the first run's, unchanged.
+- **R2** makes both of p11's wrong links visible. The radiation rule and the "no prior systemic therapy" rule each read: *Asked earlier: "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?" You said: "No."* A person or an oncologist reading it can see the question doesn't answer the rule. p17's KRAS G12C rule, carried as "I'd need to ask about that", is now under "To ask your oncologist".
+- **R3** marks 30 "may not fit" lines as "May not fit one part of the trial", 25 of them on p08 × NCT05579366's cohort rules. They still count; the false alarms are unchanged.
+- **R4:** p17's KRAS miss is now "unknown-or-records", not "no conflict". The other three misses are knowable and still "no conflict".
+
+**Why the three knowable misses remain:**
+- **p08 × NCT05579366:** the simulated patient again says "No, I haven't had that" to the topoisomerase-ADC rule, though their file says they had one. The run is deterministic, so it says the same thing every time. It's the participant's error, and the fidelity check doesn't flag it. A real person who knew they'd had Enhertu would be caught by this question.
+- **p11 × 2:** closed by the wrong link, as before. They're no longer quiet, but they aren't caught: the record shows "No." to the wrong question, not a "may not fit". Catching them would need the link not to carry a rule onto a fact that doesn't answer it. That's the mapping's error, and fixing it is beyond this slice (first look, "Not proposed here").
+
+**Recommendation: run held-out once (stage C), as the plan says.** The bar is passed. The misses on dev are the participant, the inherited mapping and a fact the patient doesn't know, and each is now visible on the record or in the scoring. Held-out measures the slice as it now stands, with caught reported both ways. It costs about 3 hours of your machine and no spend.
+
+**Alternatives:** stop with the dev finding; or a further revision first, such as not carrying a rule whose linked fact's mapping is the only reason it closed. That would cut questions saved, and isn't proposed.
+
+# The first look
 
 ## On dev
 
@@ -101,3 +138,5 @@ The bar failed on a guarantee the code can make outright. And two of dev's four 
 ## Answer
 
 **Choice 1, as recommended (2026-10).** Revise on dev with R1 to R4, rerun dev once, and bring Gate 1 back. The labels, the link's threshold and the record's other words stand as they are; the page stays in this slice. Held-out isn't run until Gate 1 is asked again.
+
+**Second answer:** *Awaiting the owner.*

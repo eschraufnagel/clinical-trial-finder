@@ -531,3 +531,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `scorePair` takes the patient's known facts, read from their committed file by `check:eval`. A clearly-ruled-out row is `knowable` when the patient knows every fact its label turns on (a label on the search's own fields is knowable). The summary adds `knowable`, `caughtKnowable` and its interval, beside caught of all. The labels don't change.
   - A labelled rule covered only by the conversation's "I don't know" is missed as `unknown-or-records`, not `no-conflict`.
   - Dev's first result (`01-bc351f7eb344.json`) predates these fields, so `check:eval -- --check --dev` fails on it from this commit until the rerun writes the next result, which it then checks.
+- **Step 12f, dev again after R1 to R4:** 9 pairs in 27 minutes, same model, settings, parse and labels ([`02-1db863f7b74c.json`](../../evals/results/check/dev/02-1db863f7b74c.json)). `check:eval -- --check --dev` passes on it.
+  - **The bar passes on all five:** 0 verdict words, 0 unknowns missing, 0 orders moved, 25 fidelity flags read (24 as before, 1 new from R1's fixed question), questions saved on every pair.
+  - Saved 46 of 169 (27%); 110 asked. **Caught 0 of 4; 0 of the 3 the patient could know.** False alarms on 3 of 5, the same 17 lines. R1 fired once, R3 relabelled 30 lines, and R2 and R4 changed the record and scoring as intended.
+  - `gate-1-dev.md` asks Gate 1 again, recommending held-out. **Stopped at Gate 1.**
