@@ -37,6 +37,11 @@ describe("the catalog", () => {
     }
   });
 
+  // Slice 0006. Only the Anthropic adapter sends a request's schema.
+  it("says the schema is enforced for Anthropic and no other provider", () => {
+    for (const e of CATALOG) expect(e.schema).toBe(e.provider === "anthropic" ? "enforced" : null);
+  });
+
   it("builds batch only where this project has a batch path", () => {
     expect(CATALOG.filter((e) => e.batch !== null).map((e) => e.provider)).toEqual([
       "anthropic",

@@ -185,3 +185,9 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `npm run check` exits 0; 1,070 tests (1,062 passed, 8 expected to fail); `npm test` about 0.7 s.
   - `search:eval -- --check`, `questions:eval -- --check` and `-- --check --dev`, and `facts:eval -- --check` pass.
   - **`other:eval -- --check` and `-- --check --dev` fail on `main`**, both with "labelsSha256 differs" and nothing else. 0005's step 11 added the `places-other-last` set to `evals/cases/search/nsclc-other.json` after step 9 wrote the results, so the label file's checksum moved. 0005's Records say these checks passed. It isn't this slice's to fix: it's 0005's result, and this slice touches neither the labels nor the check. At each step below, "unchanged" for these two means the same single difference, and nothing else.
+- **Step 2:**
+  - Checked against the live structured-outputs page: `output_config: { format: { type: "json_schema", schema } }`, no beta header, Haiku 4.5 supported, examples on `anthropic-version: 2023-06-01`, and `additionalProperties: false` required on every object.
+  - `JsonSchema` and `CompletionRequest.schema` in `types.ts`; `ModelDescriptor.schema` and `CatalogEntry.schema`, put on the descriptor by `descriptorFor`, so the batch adapter and the budget wrapper carry it with no other change.
+  - The descriptor pin in `anthropic.test.ts` ("keeps the key out of the descriptor") gains `schema: "enforced"`: the record grows by a field, nothing is loosened.
+  - A schema changes a batched request's `custom_id`, so a ledgered result for one request is never collected for the other; tested.
+  - 1,076 tests (1,068 passed, 8 expected to fail). Every `--check` as at step 1.

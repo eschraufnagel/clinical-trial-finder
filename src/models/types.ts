@@ -58,6 +58,29 @@ export interface ModelDescriptor {
    * does not, and a result must not read as if it did.
    */
   seedGuarantee?: "best-effort";
+  /**
+   * Present, as "enforced", when the adapter sends a request's `schema` to its
+   * provider, which constrains the output to it (slice 0006). Absent means a
+   * schema is ignored and the model is asked in the prompt's words alone.
+   *
+   * Part of what defines an experiment, like `thinking`: the same model with
+   * and without its answer's shape enforced is a different system.
+   */
+  schema?: "enforced";
+}
+
+/**
+ * A JSON schema, as plain data: only the keywords this project uses. Every
+ * object in one sets `additionalProperties: false`, which Anthropic's
+ * structured outputs require.
+ */
+export interface JsonSchema {
+  type: "object" | "array" | "string" | "number" | "integer" | "boolean";
+  properties?: Readonly<Record<string, JsonSchema>>;
+  required?: readonly string[];
+  enum?: readonly string[];
+  items?: JsonSchema;
+  additionalProperties?: false;
 }
 
 export interface CompletionRequest {
@@ -70,6 +93,14 @@ export interface CompletionRequest {
    */
   responseFormat: "json";
   maxOutputTokens: number;
+  /**
+   * The exact shape of the answer, when the caller knows it (slice 0006). An
+   * adapter whose descriptor says `schema: "enforced"` sends it to its
+   * provider; the others ignore it. Either way the answer is still parsed by
+   * `parseModelJson` and checked by the caller, so a schema narrows what a
+   * model can say and forgives nothing it does say.
+   */
+  schema?: JsonSchema;
 }
 
 /**

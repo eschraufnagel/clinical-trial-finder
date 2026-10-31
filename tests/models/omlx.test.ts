@@ -51,6 +51,23 @@ function capturing(): {
   return { calls, fetchImpl };
 }
 
+// Slice 0006: the local model's request doesn't change when a caller gives a
+// schema, so its committed readings stay what that request produced.
+describe("OmlxAdapter and a schema", () => {
+  it("sends the same body with a schema as without one, and records none", async () => {
+    const { calls, fetchImpl } = capturing();
+    const adapter = new OmlxAdapter({ env: ENV, fetchImpl });
+    await adapter.complete(REQUEST);
+    await adapter.complete({
+      ...REQUEST,
+      schema: { type: "object", properties: {}, required: [], additionalProperties: false },
+    });
+
+    expect(calls[1]?.init.body).toBe(calls[0]?.init.body);
+    expect(adapter.descriptor).not.toHaveProperty("schema");
+  });
+});
+
 describe("OmlxAdapter reasoning mode", () => {
   it("sends nothing about reasoning by default, and records nothing", async () => {
     const { calls, fetchImpl } = capturing();

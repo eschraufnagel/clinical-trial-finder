@@ -113,6 +113,11 @@ export function anthropicHeaders(key: string): Record<string, string> {
  * on Haiku 4.5, whose floor is 4,096 tokens; it costs nothing either, and the
  * spend log records cache writes and reads, so the saving is measured rather
  * than assumed.
+ *
+ * A request's schema goes as structured output (slice 0006), which
+ * constrains the text to it. Without one the body is exactly what it was
+ * before, so the mapper's, the parser's and the screening agent's requests
+ * don't change. The Messages API has no schema-less JSON mode to send instead.
  */
 export function anthropicBody(
   entry: CatalogEntry,
@@ -125,6 +130,9 @@ export function anthropicBody(
     messages: [{ role: "user", content: request.user }],
     ...(entry.temperature === null ? {} : { temperature: entry.temperature }),
     ...(entry.reasoningOff === "thinking-disabled" ? { thinking: { type: "disabled" } } : {}),
+    ...(request.schema === undefined
+      ? {}
+      : { output_config: { format: { type: "json_schema", schema: request.schema } } }),
   };
 }
 

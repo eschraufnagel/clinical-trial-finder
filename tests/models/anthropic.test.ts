@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { AnthropicAdapter } from "../../src/models/anthropic.js";
 import { isConnectionFailure, isRefusal } from "../../src/models/errors.js";
-import type { CompletionRequest } from "../../src/models/index.js";
+import type { CompletionRequest, JsonSchema } from "../../src/models/index.js";
 import { ModelError } from "../../src/models/index.js";
 import type { Fixture } from "./fixtures.js";
 import {
@@ -25,6 +25,13 @@ const REQUEST: CompletionRequest = {
   user: "user prompt",
   responseFormat: "json",
   maxOutputTokens: 256,
+};
+
+const SCHEMA: JsonSchema = {
+  type: "object",
+  properties: { answer: { type: "string", enum: ["yes", "no", "unknown"] } },
+  required: ["answer"],
+  additionalProperties: false,
 };
 
 function adapter(model: string, ...fixtures: Fixture[]) {
@@ -67,6 +74,18 @@ describe("AnthropicAdapter requests", () => {
     const body = sent[0]?.body as Record<string, unknown>;
     expect(body).not.toHaveProperty("temperature");
     expect(body["thinking"]).toEqual({ type: "disabled" });
+  });
+
+  // Slice 0006. The schema goes as structured output, and a request without
+  // one is the body pinned above, unchanged.
+  it("sends a request's schema as structured output, and says so on the descriptor", async () => {
+    const { adapter: a, sent } = adapter("claude-haiku-4-5", loadFixture("anthropic", "ask-ok"));
+    await a.complete({ ...REQUEST, schema: SCHEMA });
+
+    const body = sent[0]?.body as Record<string, unknown>;
+    expect(body["output_config"]).toEqual({ format: { type: "json_schema", schema: SCHEMA } });
+    expect(body["temperature"]).toBe(0);
+    expect(a.descriptor.schema).toBe("enforced");
   });
 
   it("puts the key in one header and nowhere else in the request", async () => {
@@ -228,6 +247,7 @@ describe("AnthropicAdapter never shows its key", () => {
       adapter: "anthropic",
       thinking: "off",
       unset: { seed: "the Claude API has no seed parameter" },
+      schema: "enforced",
     });
   });
 });

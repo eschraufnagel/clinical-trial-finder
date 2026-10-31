@@ -206,6 +206,28 @@ describe("AnthropicBatchAdapter", () => {
   });
 });
 
+describe("a schema in a batch (slice 0006)", () => {
+  it("goes in the batched params as it would on its own, and makes a different request", () => {
+    const schema = {
+      type: "object",
+      properties: { answer: { type: "string", enum: ["yes", "unknown"] } },
+      required: ["answer"],
+      additionalProperties: false,
+    } as const;
+    const plain = request("same reply");
+    const shaped = { ...plain, schema };
+
+    expect(anthropicBody(HAIKU, shaped)["output_config"]).toEqual({
+      format: { type: "json_schema", schema },
+    });
+    expect(anthropicBody(HAIKU, plain)).not.toHaveProperty("output_config");
+    // A ledgered result for one is never collected for the other.
+    expect(customIdFor(anthropicBody(HAIKU, shaped))).not.toBe(
+      customIdFor(anthropicBody(HAIKU, plain)),
+    );
+  });
+});
+
 describe("batch through the factory", () => {
   it("is built for Anthropic only", () => {
     expect(() =>
