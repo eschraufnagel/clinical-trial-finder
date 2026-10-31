@@ -83,4 +83,6 @@ Held-out's one look is spent only if, on the 93 dev replies:
 
 ## Answer
 
-(The owner's, at the gate.)
+**Owner, 2026-10: as recommended.**
+- Yes to the dev run, with the command and cap above.
+- The bar is frozen as written: at least 84 of 93 read at all, no answer read as another, no "don't know" read as an answer.

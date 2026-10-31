@@ -208,3 +208,4 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
     - held-out: 527 calls, about $0.26 expected; at most $0.48 under `--max-calls 600 --max-usd 0.50`.
     - The estimate counts about twice the input tokens 0004's run used (224,814 against 107,294 on the same 527 pairs), as the estimates are written to.
   - `gate-1-spend.md` written. **Stopped at Gate 1.**
+- **Gate 1, as answered** (owner, 2026-10; `gate-1-spend.md`): as recommended. One dev run under `--max-calls 150 --max-usd 0.10`, and the bar frozen as written in §5.2.
