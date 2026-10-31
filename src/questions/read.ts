@@ -1,6 +1,6 @@
 import type { Fact } from "../facts/types.js";
 import type { ModelAdapter } from "../models/types.js";
-import { buildReaderPrompt, READER_SYSTEM_PROMPT } from "./prompt.js";
+import { buildReaderPrompt, READER_SYSTEM_PROMPT, readerSchema } from "./prompt.js";
 import { UNKNOWN } from "./select.js";
 
 /**
@@ -15,6 +15,10 @@ import { UNKNOWN } from "./select.js";
  * the reason recorded. A failure of the adapter itself (the model unreachable,
  * output that isn't JSON) is thrown, so a run records it and can retry, rather
  * than counting it as the person not knowing.
+ *
+ * **The request carries the answer's schema** (slice 0006), which a provider
+ * that enforces one holds the output to. The checks below stay: a schema
+ * narrows what a model can say, and the reader still trusts none of it.
  */
 
 const DEFAULT_MAX_OUTPUT_TOKENS = 64;
@@ -36,6 +40,7 @@ export async function readReply(
     system: READER_SYSTEM_PROMPT,
     user: buildReaderPrompt(fact, reply),
     responseFormat: "json",
+    schema: readerSchema(fact),
     maxOutputTokens: options.maxOutputTokens ?? DEFAULT_MAX_OUTPUT_TOKENS,
   });
   if (response.finishReason === "length")

@@ -191,3 +191,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - The descriptor pin in `anthropic.test.ts` ("keeps the key out of the descriptor") gains `schema: "enforced"`: the record grows by a field, nothing is loosened.
   - A schema changes a batched request's `custom_id`, so a ledgered result for one request is never collected for the other; tested.
   - 1,076 tests (1,068 passed, 8 expected to fail). Every `--check` as at step 1.
+- **Step 3:**
+  - `readerSchema(fact)` in `prompt.ts`, passed by `readReply` on every reading. `READER_PROMPT_VERSION` stays `8cb01749dcc3`, now pinned by a test.
+  - Settings' Test (`testConnection`) reads through `readReply`, so it carries the schema with no change of its own; `tests/server/models.test.ts` passes as it was.
+  - 1,080 tests (1,072 passed, 8 expected to fail). Every `--check` as at step 1.
