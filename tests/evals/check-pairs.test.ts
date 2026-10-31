@@ -32,7 +32,10 @@ describe("picksProblems", () => {
         rows: [row(["NCT00000009"], "record", null), row(["NCT00000001", "NCT00000002"])],
       }),
     ).toEqual([]);
-    const three = [...picks, { ...picks[0]!, nctId: "NCT00000003", rank: 3 }];
+    const three: PairPick[] = [
+      ...picks,
+      { patient: "p01", set: "heldout", nctId: "NCT00000003", rank: 3 },
+    ];
     expect(
       picksProblems(three, {
         rows: [row(["NCT00000001", "NCT00000002", "NCT00000003", "NCT00000004"])],

@@ -183,6 +183,21 @@ export class ScreeningSession {
     return next;
   }
 
+  /**
+   * Closes the conversation where it stands and returns its result (slice
+   * 0007 here): the page's "Stop and show the record", or a measured check
+   * that couldn't go on. Every criterion still open is finalized as it would
+   * be at the end, unresolved or for the chart with `no-answer`, so it is on
+   * the record as not asked. Makes no model call.
+   */
+  stop(): ScreeningResult {
+    const draft = structuredClone(this.#state);
+    draft.pending = null;
+    draft.done = true;
+    this.#state = draft;
+    return this.#result(draft);
+  }
+
   #assertReceiving(): void {
     if (this.#state.transcript.length === 0) {
       throw new ScreeningError("Cannot receive a message", ["the screening has not started"]);

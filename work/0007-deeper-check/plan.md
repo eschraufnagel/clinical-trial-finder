@@ -496,3 +496,11 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - The picks are checked against the committed questions result before anything is parsed.
   - **The dry run, nothing sent:** `check:parse -- --set dev --model anthropic:claude-haiku-4-5` prints 8 calls, about $0.18 expected, at most $1.00 under the default cap, and exits. No hosted run is proposed.
   - The dry-run and resume tests in the plan are covered by hand (above) and by `parseWithCache`'s tests: a test that ran the script would load the full snapshot.
+- **Step 11:**
+  - `evals/check/{transcript,run,metrics,result}.ts`, `scripts/check-eval.ts` (`npm run check:eval`).
+  - **Divergences:**
+    - `ScreeningSession.stop()` lands here, not at step 15: a measured check that fails partway is closed where it stands, as the page's "Stop and show the record" will. It finalizes every open criterion as at the end, makes no model call, and is tested.
+    - The transcript's shape is its own module, `evals/check/transcript.ts`, so the scoring reads it without the runner.
+    - "Raisable" counts every finding the agent could ask, the carried included; "saved" is the carried ones.
+    - The held-out refusal and the script's `--check` aren't unit-tested: both load the full snapshot. `regradeProblems`, which `--check` runs, is.
+  - One model plays the agent, the participant and the fidelity check, as in the prescreening repository's vignette runs.

@@ -546,3 +546,21 @@ describe("fixed questions (slice 0007 here, for --fake)", () => {
     expect((await s.start()).text).toMatch(/already covered 1 of its rules/);
   });
 });
+
+describe("stop (slice 0007 here)", () => {
+  it("closes where it stands, every open criterion as not asked, with no model call", async () => {
+    const adapter = new FakeModelAdapter([askR("Have you had any anti-cancer therapy?")]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter);
+    await s.start();
+    const result = s.stop();
+    expect(adapter.requests).toHaveLength(1);
+    expect(s.done).toBe(true);
+    expect(result.findings.map((f) => [f.criterionId, f.status, f.reason])).toEqual([
+      ["L8", "unresolved", "no-answer"],
+      ["L4", "not-raised", "protocol"],
+      ["L2", "chart-review", "no-answer"],
+      ["L19", "unresolved", "no-answer"],
+    ]);
+    await expect(s.receive("late")).rejects.toThrow(/finished/);
+  });
+});
