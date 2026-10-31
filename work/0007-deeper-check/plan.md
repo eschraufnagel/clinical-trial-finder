@@ -536,3 +536,4 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - Saved 46 of 169 (27%); 110 asked. **Caught 0 of 4; 0 of the 3 the patient could know.** False alarms on 3 of 5, the same 17 lines. R1 fired once, R3 relabelled 30 lines, and R2 and R4 changed the record and scoring as intended.
   - `gate-1-dev.md` asks Gate 1 again, recommending held-out. **Stopped at Gate 1.**
 - **Gate 1, second answer: run held-out.** Stage C runs as planned.
+- **Step 13, held-out parses:** 31 trials (the other 4 reused from dev) in 38 minutes on the local model, at the parser's default reasoning mode; no failures. 897 criteria kept, 14 rejected, 11 of them on NCT05614739 (25 kept). Same run directory as dev's, now 39 trials. Nothing read them before step 14.
