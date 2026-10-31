@@ -1,0 +1,459 @@
+{
+  "version": 1,
+  "pairs": [
+    {
+      "patient": "p08",
+      "nctId": "NCT02693535",
+      "set": "dev",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p08",
+      "nctId": "NCT04389632",
+      "set": "dev",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p08",
+      "nctId": "NCT05579366",
+      "set": "dev",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Prior therapy with a topoisomerase 1 inhibitor-based antibody drug conjugate.",
+        "facts": ["prior_adc"],
+        "why": "The record says they had an antibody-drug conjugate with a topoisomerase payload; the trial excludes exactly that."
+      }
+    },
+    {
+      "patient": "p11",
+      "nctId": "NCT05624996",
+      "set": "dev",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Prior radiotherapy to the study cancer (local recurrence).",
+        "facts": ["chest_radiation_6m"],
+        "why": "The record says they finished radiation to the chest three months ago, as part of their one line of treatment for this cancer; the trial excludes prior radiotherapy to it."
+      }
+    },
+    {
+      "patient": "p11",
+      "nctId": "NCT07361510",
+      "set": "dev",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Participants must have no prior systemic anti-tumor therapy for locally advanced or metastatic NSCLC.",
+        "facts": ["lines_advanced"],
+        "why": "The record says one line of treatment since the cancer became advanced; the trial requires none."
+      }
+    },
+    {
+      "patient": "p11",
+      "nctId": "NCT03089554",
+      "set": "dev",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p17",
+      "nctId": "NCT02693535",
+      "set": "dev",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p17",
+      "nctId": "NCT06890598",
+      "set": "dev",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Must have disease with evidence of KRAS G12C mutation.",
+        "facts": ["kras"],
+        "why": "The record says KRAS was tested and none found; the trial requires a KRAS G12C mutation."
+      }
+    },
+    {
+      "patient": "p17",
+      "nctId": "NCT07403721",
+      "set": "dev",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p01",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p01",
+      "nctId": "NCT03093116",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "harbors an ALK, ROS1, NTRK1, NTRK2, or NTRK3 gene rearrangement by protocol specified tests",
+        "facts": ["alk", "ros1", "ntrk"],
+        "why": "The record says ALK, ROS1 and NTRK were tested and none found; every part of the trial requires one of them."
+      }
+    },
+    {
+      "patient": "p01",
+      "nctId": "NCT03486873",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p02",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p02",
+      "nctId": "NCT03093116",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p02",
+      "nctId": "NCT03686124",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p03",
+      "nctId": "NCT06881784",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "One to two prior lines of therapy including an anti-PD-1/anti-PD(L)-1 agent and platinum-based chemotherapy.",
+        "facts": ["prior_pd1", "prior_platinum"],
+        "why": "The record says they've had neither immunotherapy nor platinum chemotherapy; the trial requires both."
+      }
+    },
+    {
+      "patient": "p03",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p03",
+      "nctId": "NCT06126276",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Patients must have a HER2 amplified solid tumor except breast cancer.",
+        "facts": ["her2"],
+        "why": "The record says HER2 was tested and none found, extra copies included; the trial requires HER2 amplification."
+      }
+    },
+    {
+      "patient": "p04",
+      "nctId": "NCT04410796",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Somatic activating mutation in EGFR in pre-treatment tumor biopsy/ cytology from pleural fluid or cfDNA",
+        "facts": ["egfr"],
+        "why": "The record says EGFR was tested and none found; the trial requires an activating EGFR mutation."
+      }
+    },
+    {
+      "patient": "p04",
+      "nctId": "NCT04606446",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p04",
+      "nctId": "NCT04872166",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "History of, or known, central nervous system (CNS) disease involvement",
+        "facts": ["brain_mets"],
+        "why": "The record says the cancer has spread to the brain; the trial excludes any known involvement of the brain or spine."
+      }
+    },
+    {
+      "patient": "p05",
+      "nctId": "NCT03623958",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p05",
+      "nctId": "NCT04115254",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p05",
+      "nctId": "NCT04410796",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Somatic activating mutation in EGFR in pre-treatment tumor biopsy/ cytology from pleural fluid or cfDNA",
+        "facts": ["egfr"],
+        "why": "The record says EGFR was tested and none found; the trial requires an activating EGFR mutation."
+      }
+    },
+    {
+      "patient": "p06",
+      "nctId": "NCT05624996",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p06",
+      "nctId": "NCT06623422",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "previously untreated and pathologically confirmed resectable clinical Stage II, IIIA, or IIIB (N2) non-small cell lung cancer",
+        "facts": ["extent"],
+        "why": "The record says surgery can't remove it; the trial requires resectable disease."
+      }
+    },
+    {
+      "patient": "p06",
+      "nctId": "NCT06890598",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p07",
+      "nctId": "NCT04267848",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p07",
+      "nctId": "NCT06119581",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "not suitable for curative intent radical surgery or radiation therapy.",
+        "facts": ["extent"],
+        "why": "The record says it can be removed with surgery; the trial requires disease not suitable for curative surgery."
+      }
+    },
+    {
+      "patient": "p07",
+      "nctId": "NCT07169851",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p09",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p09",
+      "nctId": "NCT05785754",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p09",
+      "nctId": "NCT06026410",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p10",
+      "nctId": "NCT05382559",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Kirsten rat sarcoma viral oncogene homolog \\[KRAS\\] G12D mutation",
+        "facts": ["kras"],
+        "why": "The record says KRAS was tested and none found; the trial requires a KRAS G12D mutation."
+      }
+    },
+    {
+      "patient": "p10",
+      "nctId": "NCT05735080",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p10",
+      "nctId": "NCT06126276",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Patients must have a HER2 amplified solid tumor except breast cancer.",
+        "facts": ["her2"],
+        "why": "The record says HER2 was tested and none found, extra copies included; the trial requires HER2 amplification."
+      }
+    },
+    {
+      "patient": "p12",
+      "nctId": "NCT05384626",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Histologically or cytologically confirmed locally advanced or metastatic solid tumor with a documented ALK rearrangement or activating ALK mutation.",
+        "facts": ["alk"],
+        "why": "The record says ALK was tested and none found; every part of the trial requires an ALK rearrangement or mutation."
+      }
+    },
+    {
+      "patient": "p12",
+      "nctId": "NCT05614739",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p12",
+      "nctId": "NCT05985161",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p13",
+      "nctId": "NCT03556228",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p13",
+      "nctId": "NCT04389632",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p13",
+      "nctId": "NCT04412616",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p14",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p14",
+      "nctId": "NCT04614103",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p14",
+      "nctId": "NCT05242965",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Have completed 3-4 cycles of chemoimmunotherapy, without evidence of progressive disease.",
+        "facts": ["prior_pd1"],
+        "why": "The record says the cancer grew during or after immunotherapy; the trial requires chemo-immunotherapy without progression."
+      }
+    },
+    {
+      "patient": "p15",
+      "nctId": "NCT04585958",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p15",
+      "nctId": "NCT04657068",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p15",
+      "nctId": "NCT04939610",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p16",
+      "nctId": "NCT07144280",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p16",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p16",
+      "nctId": "NCT03556228",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p18",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p18",
+      "nctId": "NCT03093116",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "harbors an ALK, ROS1, NTRK1, NTRK2, or NTRK3 gene rearrangement by protocol specified tests",
+        "facts": ["alk", "ros1", "ntrk"],
+        "why": "The record says ALK, ROS1 and NTRK were tested and none found; every part of the trial requires one of them."
+      }
+    },
+    {
+      "patient": "p18",
+      "nctId": "NCT03486873",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p19",
+      "nctId": "NCT06627647",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "Histologically or cytologically documented non-squamous NSCLC.",
+        "facts": ["histology"],
+        "why": "The record says squamous cell; the trial requires non-squamous."
+      }
+    },
+    {
+      "patient": "p19",
+      "nctId": "NCT07229313",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "ECOG 0 or 1",
+        "facts": ["ecog"],
+        "why": "The record says ECOG 2 (up more than half the day, can't work); the trial requires 0 or 1."
+      }
+    },
+    {
+      "patient": "p20",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    },
+    {
+      "patient": "p20",
+      "nctId": "NCT03093116",
+      "set": "heldout",
+      "clearlyRuledOut": true,
+      "rule": {
+        "quote": "harbors an ALK, ROS1, NTRK1, NTRK2, or NTRK3 gene rearrangement by protocol specified tests",
+        "facts": ["alk", "ros1", "ntrk"],
+        "why": "The record says ALK, ROS1 and NTRK were tested and none found; every part of the trial requires one of them."
+      }
+    },
+    {
+      "patient": "p20",
+      "nctId": "NCT03486873",
+      "set": "heldout",
+      "clearlyRuledOut": false
+    }
+  ]
+}
