@@ -1,9 +1,8 @@
 import { type ModelAdapter, monthStamp } from "../models/index.js";
-import type { Trial } from "../trials/index.js";
 import { locateQuote } from "./locate.js";
 import type { NormalizedText } from "./normalize.js";
 import { NORMALIZE_VERSION, normalize } from "./normalize.js";
-import { buildUserPrompt, PROMPT_VERSION, SYSTEM_PROMPT } from "./prompt.js";
+import { buildUserPrompt, type ParseableTrial, PROMPT_VERSION, SYSTEM_PROMPT } from "./prompt.js";
 import type { Criterion, ParsedCriteria, RejectedCriterion, SourceSpan } from "./types.js";
 import { CriteriaParseError } from "./types.js";
 import type { RawCriterion } from "./validate.js";
@@ -44,7 +43,7 @@ export interface ParseOptions {
 }
 
 export async function parseCriteria(
-  trial: Trial,
+  trial: ParseableTrial,
   adapter: ModelAdapter,
   options: ParseOptions = {},
 ): Promise<ParsedCriteria> {

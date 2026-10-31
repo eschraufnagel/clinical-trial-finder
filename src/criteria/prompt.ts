@@ -1,5 +1,16 @@
 import { createHash } from "node:crypto";
 import type { Trial } from "../trials/index.js";
+
+/**
+ * What the parser reads of a trial: a pinned protocol (`Trial`) or a snapshot
+ * record (`SnapshotTrial`, slice 0007 here) both have it. Narrowed by type
+ * only; the prompt is the same, so `PROMPT_VERSION` is too.
+ */
+export type ParseableTrial = Pick<
+  Trial,
+  "nctId" | "briefTitle" | "conditions" | "phases" | "eligibility"
+>;
+
 import { NORMALIZE_VERSION } from "./normalize.js";
 
 /**
@@ -145,7 +156,7 @@ export function parseIdentity(parser: { thinking?: "off" }): string {
  * out of the criteria themselves, and a parser given no context would have to
  * infer what "the study" is from the criteria it is trying to split.
  */
-export function buildUserPrompt(trial: Trial, criteriaText: string): string {
+export function buildUserPrompt(trial: ParseableTrial, criteriaText: string): string {
   return [
     `Trial: ${trial.nctId}`,
     `Title: ${trial.briefTitle}`,

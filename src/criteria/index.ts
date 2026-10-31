@@ -17,6 +17,7 @@ export { type ParseOptions, parseCriteria } from "./parse.js";
 export {
   buildUserPrompt,
   hashPrompt,
+  type ParseableTrial,
   PROMPT_VERSION,
   parseIdentity,
   SYSTEM_PROMPT,

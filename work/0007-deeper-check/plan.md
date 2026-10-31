@@ -193,7 +193,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 
      The sections follow §5's table, and every criterion lands in exactly one. Its fixed sentences are named constants in the file. `recordWithoutParse(...)` builds §3.4's record from the mappings and answers alone.
    - **`src/check/parse-cache.ts`:** `parseWithCache(trial, adapter, dir)`. It's keyed as `evals/runner.ts` keys its cache (model, parser prompt, normalize version, seed, text checksum), and writes the parse when it returns.
-   - **`src/check/run.ts`:** `startCheck({ trial, facts, answers, adapter, cacheDir, fixedQuestions? })`. It parses, or reads the cache, then runs `fromParse`, the link and `carriedFor`, and returns a session, the links and the criteria. The adapter is passed in, never built (§8).
+   - **`src/check/run.ts`:** `startCheck({ study, criteriaText, parsed, facts, answers, adapter, fixedQuestions? })` runs `fromParse`, the link and `carriedFor`, and returns a session, the criteria, links, carried facts and each criterion's verbatim wording; `recordOf(check, result)` builds the record. It takes the parse rather than making it, so the caller chooses the cache (`parseWithCache`) or a committed run (`findParse`), and nothing here calls a model before the first question. The adapter is passed in, never built (§8).
    - **Tests, `tests/check/`:**
      - `carry.test.ts`: partial coverage isn't carried, and the `mayNotFit` cases.
      - `record.test.ts`:
@@ -247,7 +247,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
       - local model by default; `--model <spec>` goes through `planPaidRun` and is dry without `--spend`;
       - loads `.env` via the npm script's `--env-file-if-exists`, as `facts:map` does.
     - The run name is `<model>-<parser prompt 8>-<normalize 8>`.
-    - **`src/criteria/parse.ts`:** `parseCriteria` takes `Pick<Trial, "nctId" | "briefTitle" | "conditions" | "phases" | "eligibility">`. It's a type-only widening, so `PROMPT_VERSION` doesn't change. The test of it passes a `SnapshotTrial`.
+    - `parseCriteria`'s widened trial type (`ParseableTrial`) landed at step 5, where `parse-cache.ts` first needed it.
     - `package.json` gains `check:parse`, `check:label-show` and `check:eval`, with no dependency.
     - **Tests:** the run name; a dry run with `--model anthropic:…` prints and exits; resume skips written trials.
 
@@ -463,3 +463,9 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **Divergence:** `PROMPT_VERSION` hashes the opening and closing templates, so the rewrite moves it, to `8fda2872b52a`. The prompts' text is unchanged. The pin in `prompts.test.ts` changes in this commit, visibly. No result in this repository records the agent's version, so nothing committed is affected.
   - The inherited template test, which asserted "coordinator will review", now asserts the new reader: the oncologist and the trial team decide, and no "coordinator". The session test's opening assertion follows it.
   - `receive` is `preview` then `apply`, so the measurement's path is the same calls in the same order.
+- **Step 5:**
+  - `carriedFor`, `recordFor`, `recordWithoutParse`, `parseWithCache`, `findParse`, `startCheck`, `recordOf`.
+  - **Divergences:**
+    - `startCheck` takes the parse instead of making it: the page parses through `parseWithCache`, and the measurement and `--fake` read a committed run through `findParse`.
+    - `parseCriteria` and `buildUserPrompt` take `ParseableTrial`, a `Pick` of `Trial`, here rather than at step 10. Type only: the parser's `PROMPT_VERSION` is unchanged and its tests pass as they were.
+    - The record's text follows `src/shortlist/words.ts` (`ours`, `registry`, `said`), so `oursIn` finds every string the project writes, and a rule is shown in the trial's verbatim words.
