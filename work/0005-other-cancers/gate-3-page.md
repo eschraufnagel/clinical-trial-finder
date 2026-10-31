@@ -101,4 +101,8 @@ The prostate trial was never safer than the NSCLC trial that replaced it, only u
 
 ## Answer
 
-(The owner's.)
+**Owner, 2026-10: as recommended.**
+- `other-last` stays in `conversation.json`.
+- The lead sentences stand as written, with "Non-small cell lung cancer isn't among them".
+- The `biomarker` lead stays without a gene's name.
+- `rules` isn't changed after held-out. NCT03947385 stays marked, and it's reported as the slice's one known cost.

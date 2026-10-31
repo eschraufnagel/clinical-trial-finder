@@ -337,3 +337,4 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **The listing and rules lead first said "Lung cancer isn't among them."** That's false for the 14 marked trials whose records name small cell lung cancer or lung neuroendocrine tumors. It now says "Non-small cell lung cancer isn't among them."
   - Browser test case 8: a marked card in "every other trial", none on the short list. 7 browser tests pass.
   - `gate-3-page.md` written, its cards from `describeOrder` over a made-up Portland search. **Stopped at Gate 3.**
+- **Gate 3, as answered** (owner, 2026-10; `gate-3-page.md`): as recommended. `other-last` and the words stand. The biomarker lead names no gene, and `rules` is unchanged, so NCT03947385 stays marked as the known cost.
