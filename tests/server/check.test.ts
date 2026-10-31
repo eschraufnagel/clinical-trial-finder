@@ -203,6 +203,39 @@ describe("typed replies", () => {
     });
   });
 
+  it("don't show back a reading of a rule the conversation covered", async () => {
+    const both = {
+      read: (): ScriptedResponse => ({
+        kind: "json",
+        content: {
+          readings: [
+            {
+              criterionId: "P1",
+              reading: "holds",
+              quote: "I always do",
+              statement: "x",
+              outright: true,
+            },
+            {
+              criterionId: "P2",
+              reading: "holds",
+              quote: "I always do",
+              statement: "y",
+              outright: true,
+            },
+          ],
+        },
+      }),
+    };
+    const { transport, begin, last } = setUp({}, agentReader(both));
+    const id = await begin(["NCT01"]);
+    transport.send(id, "I always do");
+    await settle();
+    expect(last(id)?.text).toBe(
+      `${CHECK_WORDS.readAs}\n${CHECK_WORDS.readLine("Agrees to use contraception", "yes")}`,
+    );
+  });
+
   it("change discards the readings and offers the taps", async () => {
     const { transport, check, begin, last } = setUp({}, agentReader(reading("does-not-hold")));
     const id = await begin(["NCT01"]);

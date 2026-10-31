@@ -378,29 +378,33 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 **New:**
 - `src/check/{index,link,carry,record,parse-cache,run}.ts`;
 - `src/server/check.ts`; `src/transport/route.ts` (the dispatcher);
-- `src/web/{Check,Record}.tsx`;
+- `src/web/{Check,Record,Channel}.tsx` (`Channel.tsx`, the messages and reply box both views share, step 17);
+- `src/screening/taps.ts` (step 4);
 - `evals/cases/check/{LABELLING.md,pairs.json}`;
-- `evals/check/{pairs,run,metrics,result}.ts`;
+- `evals/check/{pairs,run,metrics,result,transcript}.ts`;
 - `evals/participant/patient.ts`;
 - `scripts/{check-label-show,check-parse,check-eval}.ts`;
 - `data/criteria/2026-10/<run>/*.json` and `latest`;
 - `evals/results/check/{dev/,runs/}…` and the held-out result;
-- `tests/check/{link,carry,record,parse-cache,run}.test.ts`;
+- `tests/check/{link,carry,record,run}.test.ts` (the parse cache's tests are in `run.test.ts`);
 - `tests/server/check.test.ts`;
-- `tests/scripts/{check-eval,check-parse}.test.ts`;
-- `tests/participant/patient.test.ts`, or beside the existing participant tests;
+- `tests/scripts/check-parse.test.ts`; `tests/evals/check-{metrics,pairs,participant,run}.test.ts` (the eval's tests, in place of a `check-eval` script test, which would load the full snapshot);
+- `tests/transport/route.test.ts`;
 - `e2e/check.spec.ts`;
 - `docs/check.md`;
-- `work/0007-deeper-check/{plan,gate-1-dev}.md`.
+- `work/0007-deeper-check/{plan,gate-1-dev}.md`, `gate-1-records.txt`.
 
 **Changed:**
 - `src/screening/{types,agenda,apply,session,templates,index}.ts`;
-- `src/criteria/parse.ts` (the parameter's type only);
-- `src/server/app.ts`; `src/transport/index.ts`;
-- `src/web/{ShortList,TrialCard,App,api,copy,logic,SettingsPage}.tsx|ts`, `styles.css`;
-- `evals/participant/{prompt,fidelity}.ts`;
+- `src/criteria/{parse,prompt,index}.ts` (`ParseableTrial`, the parameter's type only);
+- `src/screening/{prompts,calls}.ts` (the new templates join `PROMPT_VERSION`; `READ_MAX_OUTPUT_TOKENS` 4,096);
+- `src/server/{app,finder,index}.ts`; `src/transport/index.ts`;
+- `src/web/{ShortList,Conversation,App,api,copy,logic}.tsx|ts`, `styles.css` (`TrialCard` and `SettingsPage` unchanged: the ticks are in the list, and the cap's words in `copy.ts`);
+- `evals/participant/{prompt,simulate}.ts` (the patient's fidelity checks are in `patient.ts`);
 - `scripts/app.ts`; `package.json` (scripts only);
-- `tests/boundary.test.ts`;
+- `tests/boundary.test.ts`; `biome.jsonc` (the machine-written runs excluded);
+- `e2e/lib/page.ts` (`expectNoVerdict` can leave out the check's messages);
+- `tests/server/{app.test,fixture}.ts`, `tests/web/{copy,logic}.test.ts`, `tests/screening/calls.test.ts`;
 - `tests/screening/{agenda,session,prompts}.test.ts`;
 - `tests/scripts/app.test.ts`;
 - `docs/page.md`, `README.md`, `work/ROADMAP.md`, `CLAUDE.md`.
@@ -568,3 +572,15 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `npm run test:e2e` passes, 8 of 8. By hand, on `npm run app -- --fake`: a check of two trials driven by taps, stopped, and its record read on the page.
 - **Step 19, docs:** `docs/check.md` (new), `docs/page.md` (the check, `--fake`, the verdict table, Limits), README (the check as step 5, no findings), `work/ROADMAP.md` (0007 **Done** with its measure, and open question 6's note that the picks held no trial for another cancer), and `CLAUDE.md` (the three commands, `src/check/`, `data/criteria/`, `evals/check/`, slice 0007's boundaries and the router).
   - `docs/check.md` counts held-out's false-alarm lines without reading them one by one, so nothing is tuned on held-out: 102 lines over 27 pairs, 45 for one part of the trial, 75 under "needs your records", none from an earlier answer.
+- **Step 20, review passes** (`REVIEW.md`), over `main...HEAD`:
+  - **Pass 1, plan compliance.** *Important, fixed:* "Files that change" had fallen behind what was built: `Channel.tsx`, `taps.ts`, `transcript.ts`, `route.test.ts`, the eval's tests under `tests/evals/`, `src/criteria/prompt.ts`, `src/screening/{prompts,calls}.ts`, `biome.jsonc`, `e2e/lib/page.ts`. Each was in Records already; the list now matches. Nothing planned is left undone, apart from what Records say moved. No new dependency.
+  - **Pass 2, correctness.**
+    - *Important, fixed:* a check step retried in the trial's own words had no handler if that retry threw too, so a fault there would have been an unhandled rejection in the server. That retry calls no model, so it can't fail on an outage, only on a fault. It now closes the trial where it stands and goes on.
+    - *Nit, fixed with a test:* "I read that as:" showed readings of rules the conversation covered, which `apply` then ignores. They're no longer shown.
+    - *Nit, open:* if **Check these** fails (say, a trial's parse went stale between the list and the click), the page re-enables the button but says nothing.
+  - **Pass 3, scope and data discipline.** Clean. Patients and labels are made up. The check sends nothing anywhere, and its parse cache is in `local/`. Every hosted call goes through the app's adapter, under the per-trial cap. No verdict word is in any fixed sentence, agent message or record (scanned in unit tests, in `check:eval` on all 59 pairs, and in the browser test). No unknown leaves a record, and no list changes.
+  - **Pass 4, eval integrity.**
+    - Labels were frozen before any parse and unchanged after; held-out ran once, after Gate 1, on the same model, settings and revision as dev's second run. Every result records model, quantization, temperature, seed and prompt versions.
+    - The record tests' expectations changed at R2 for a deliberate change of the record, and `prompts.test.ts`'s and `calls.test.ts`'s pins moved visibly, each recorded above.
+    - *Nit:* the browser test's verdict scan leaves out the check's messages, which quote trial rules as plain text. Their fixed words are scanned in `tests/server/check.test.ts`; the reason is in `e2e/lib/page.ts` and `docs/page.md`.
+  - **Pass 5, documentation.** Every number in `docs/check.md`, `docs/page.md` and the roadmap was checked against the two committed results. The README names the check and reports nothing. Limits state the inherited parser, the mapper's misses, one author, the simulated patient, 59 pairs, the untested trials for other cancers, and the hosted model.

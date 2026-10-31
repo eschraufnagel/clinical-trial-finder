@@ -344,7 +344,17 @@ export class CheckService {
     this.#options.reader.release(running.adapter);
     if (!this.#sessions.has(id)) return;
     const rules = new Map(running.check.criteria.map((c) => [c.id, c.text]));
-    const readings = result.value.filter((r) => rules.has(r.criterionId));
+    // A reading of a rule the conversation covered, or one never asked, would
+    // be ignored when applied, so it isn't shown back for the person to confirm.
+    const askable = new Set(
+      running.check.session
+        .state()
+        .progress.filter((p) => p.status !== "from-conversation" && p.status !== "not-raised")
+        .map((p) => p.criterionId),
+    );
+    const readings = result.value.filter(
+      (r) => rules.has(r.criterionId) && askable.has(r.criterionId),
+    );
     if (readings.length === 0) {
       this.#offer(id, CHECK_WORDS.unclear);
       return;
@@ -377,7 +387,21 @@ export class CheckService {
         { ...running.check.session.state(), fixedQuestions: true },
         running.adapter,
       );
-      reply = await act(running.check.session);
+      try {
+        reply = await act(running.check.session);
+      } catch {
+        // In the trial's own words a step calls no model, so this is a fault,
+        // not an outage. The trial is closed where it stands rather than left
+        // hanging, and the check goes on.
+        reader.release(running.adapter);
+        if (this.#sessions.get(id)?.running !== running) return;
+        this.#endTrial(
+          id,
+          recordOf(running.check, running.check.session.stop()),
+          CHECK_WORDS.stoppedTrial,
+        );
+        return;
+      }
       if (this.#sessions.has(id)) transport.deliver(id, CHECK_WORDS.ownWords);
     }
     reader.release(running.adapter);
