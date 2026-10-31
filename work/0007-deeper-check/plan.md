@@ -509,3 +509,10 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **A pair that stops on an error isn't written as done.** It goes to `failures.json` in the run's directory with its reason (now the whole message, up to 600 characters), a rerun retries it, and no result is written while a pair is missing.
   - **`READ_MAX_OUTPUT_TOKENS` 2,048 → 4,096.** On p08 × NCT05579366, "I have non-small cell lung cancer. It's spread" read against every one of a basket trial's per-cancer rules and ran past 2,048 twice. As in the prescreening repository's 0009, the limit isn't part of `PROMPT_VERSION`: it changes only a call that would otherwise fail, so the other 8 transcripts are unaffected. The pin in `calls.test.ts` moves with it.
   - `biome.jsonc` excludes `evals/results/check` and `data/criteria`, as it excludes the other machine-written results and runs.
+- **Step 12, dev on the local model:**
+  - **The parse:** 8 trials, 7.3 minutes, no failures, 2 criteria rejected on one trial (`data/criteria/2026-10/qwen3.6-35b-a3b-mlx-8bit-e1e694b3-n2/`).
+  - **The check:** 9 pairs in 26 minutes ([`01-bc351f7eb344.json`](../../evals/results/check/dev/01-bc351f7eb344.json)). `check:eval -- --check --dev` passes.
+  - **Saved** 46 of 169 raisable criteria (27%). 111 questions asked; 69 counted as repeats, overcounted (gate page). **Caught 0 of 4. False alarms on 3 of 5.** 1 verdict word; 0 unknowns missing; 0 orders moved; 24 fidelity flags; 45 findings excluded.
+  - **Against the frozen bar, criterion 1 fails:** the agent phrased one question "To help us check eligibility…". Criteria 2 to 5 pass.
+  - **Not foreseen by the plan:** 1 of 4 dev and 7 of 16 held-out ruled-out pairs turn on facts the patient doesn't know.
+  - `gate-1-dev.md` and `gate-1-records.txt` written. It recommends revising on dev (R1 to R4, no prompt change), rerunning dev, and asking Gate 1 again. **Stopped at Gate 1.**
