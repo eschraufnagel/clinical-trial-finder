@@ -294,3 +294,4 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `readSearchLabels(path, sets)` takes the sets a file may hold: `NSCLC_SETS` by default, `OTHER_SETS` for 0005's file. Each file refuses the other's sets.
   - `other:sample`'s draw is `drawSets` in `scripts/other-sample.ts`, tested on made-up trials. It reuses `isTreatment` from `search-sample.ts`. The places sets come from `PLACES_RESULTS`, the two committed `read-first` results.
   - 1,037 tests, `npm test` about 0.63 s.
+- **Step 3:** `other:sample` wrote 297 trials: 47 `places-dev`, 100 `places-heldout`, 150 `sample`. The places sets total 147, the 171 short-list trials less the 24 in 0001's labels, as §3.2 says. The plan's split, "30-odd dev, about 117 held-out", was wrong: 117 is held-out before 0001's labels are taken out. A second run refuses to overwrite.
