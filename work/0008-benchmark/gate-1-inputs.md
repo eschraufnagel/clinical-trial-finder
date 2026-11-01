@@ -145,3 +145,42 @@ The second derivation of 8, its differences and the three options are in [`accou
 - Approve the notes, the mapping, the vocabularies and the named rules, or correct them here.
 - **Choose option 2 for the accounts:** fix the two gaps in `KNOWING.md`, reapply to all 35, and bring the accounts alone back to the gate.
 - Then go on to stages B and C.
+
+## Answer
+
+**First answer (2026-10): fix the convention and reapply it to all 35 accounts** (option 2 in `accounts-diff.md`). `KNOWING.md` expands every regimen acronym, keeps a stated absence, and drops measured values; the first writer's breaks and omissions are corrected wherever the same patterns occur. The accounts alone come back to this gate. The notes, the mapping, the vocabularies, the named rules and the go-ahead for the check aren't answered yet.
+
+## The accounts again, after the first answer
+
+**`KNOWING.md` now:**
+- **drop 6:** every regimen acronym becomes its drugs' names, because a trial's rules name drugs. Worked example 2 follows it ("rituximab, cyclophosphamide, doxorubicin, vincristine and prednisone", not "R-CHOP");
+- **keep 8 (new):** what the summary says isn't there, such as no spread to the brain, nothing in the blood, a clear bone scan, symptoms denied, no allergies. Negative marker tests stay dropped;
+- **drop 8 (new):** measured values of any kind, vital signs included;
+- **Form:** a finding isn't turned into its consequence, isn't given as a reason, and a word isn't explained beyond what the summary says.
+
+**Reapplied to all 35. 21 accounts changed; the other 14 had nothing these rules touch:**
+
+| Account | Change |
+| --- | --- |
+| nci-01 | Keep 8: the symptoms the summary says she denies |
+| nci-04 | Drop 6: "ddAC+T", which the account had left as "chemo", now doxorubicin and cyclophosphamide, then paclitaxel |
+| nci-05 | Drop 6: "the KEYNOTE 522 regimen", which the account had as "chemo with immunotherapy", now pembrolizumab with carboplatin and paclitaxel, then doxorubicin and cyclophosphamide |
+| nci-07, nci-12 | Form: the pathology reason for chemoradiation removed |
+| nci-09, 10, 19, 21, 23 | Drop 6: FOLFOX named as its drugs |
+| nci-13 | Drop 6: TIP as paclitaxel, ifosfamide and cisplatin |
+| nci-14 | Drop 6: FOLFIRINOX as its drugs. Form: "nerve damage", without the hands and feet the summary doesn't name |
+| nci-20 | Drop 6: CAPOX as capecitabine and oxaliplatin |
+| nci-21 | Form: "my kidneys were failing" removed. Drop 3: "mucinous" removed. "Peripheral neuropathy" without the hands and feet |
+| nci-25 | Drop 6: CHOP and ICE. Keep 8: not in the brain or blood |
+| nci-26 | Drop 6: BV-CHP as brentuximab vedotin with cyclophosphamide, doxorubicin and prednisone. Keep 8: not in the blood. "B symptoms" named as the summary does |
+| nci-28, nci-29 | Drop 6: CHOP (and ICE). Keep 8: not in the brain or blood |
+| nci-30 | Drop 6: ICE. Keep 8: not in the brain, no leukemia |
+| nci-35 | Keep 2: the uncertain pelvic nodes added. Form: "a hemangioma", not "a harmless blood vessel growth" |
+| nci-37 | Keep 2: the nodes near the liver and the possible pelvic site added. Drop 8: "a high fever", not "103" |
+| nci-41 | Keep 8: no allergies |
+
+**Two expansions needed knowledge beyond an abbreviation,** which `KNOWING.md` says shouldn't happen: nci-04's "ddAC+T" and nci-05's "KEYNOTE 522 regimen", a trial's name for a standard regimen. Both are written out with the regimen's usual drugs. The owner can choose to leave them as the summary gives them instead.
+
+`accounts-second/` is unchanged: it's the record of what an independent reading of the first convention gave.
+
+**What's asked now:** approve the accounts as they stand. The rest of Gate 1 (the notes, the mapping, the vocabularies, the named rules, the go-ahead for the check) is still open.

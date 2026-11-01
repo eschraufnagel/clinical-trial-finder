@@ -370,3 +370,9 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **`reasons.json`:** 35 ineligible pairs, 18 `rule` (every quote verbatim in its trial's criteria), 12 `disease` (trials for another disease or purpose: an MRI study, a procedure-tracking study, a neuromuscular study), 5 `none`. Of the 5, 2 have no comment, and 3 (NCT05327023) have comments naming a prior allogeneic transplant that no rule in the text requires. `PairReason` gains an optional `note`, used on 8 entries.
   - 6 tests in `tests/benchmark/pairs.test.ts`, including that the committed pairs are the draw of the committed labels, and that every input is complete.
   - `work/0008-benchmark/gate-1-inputs.md` written. **Stopped at Gate 1.**
+- **Gate 1, first answer: fix the convention and reapply it to all 35 accounts** (option 2 of `accounts-diff.md`); the accounts alone come back to the gate. Recorded in `gate-1-inputs.md`, Answer.
+- **Step 6b, the accounts reapplied** (its own commit):
+  - `KNOWING.md`: drop 6 now expands every regimen acronym, and worked example 2 follows it; keep 8 (a stated absence) and drop 8 (measured values, vital signs included) are new; Form says a finding isn't turned into its consequence or given as a reason, and a word isn't explained beyond the summary.
+  - 21 of the 35 accounts changed, each listed in `gate-1-inputs.md`. Two expansions needed knowledge beyond an abbreviation (nci-04's ddAC+T, nci-05's KEYNOTE 522 regimen) and are flagged for the owner.
+  - `accounts-second/` is unchanged. The tests are unchanged and pass.
+  - **Stopped at Gate 1** again, on the accounts.
