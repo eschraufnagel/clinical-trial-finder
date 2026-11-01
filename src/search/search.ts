@@ -2,7 +2,7 @@ import type { Site, SnapshotManifest, SnapshotTrial } from "../trials/snapshot-t
 import { milesBetween, type Point, pointForZip } from "./geo.js";
 import { markFor, type Others } from "./other.js";
 import type { Candidate, Flag, NearestSite, SearchRequest, SearchResult } from "./types.js";
-import { reasonsFor, type Vocabulary } from "./vocabulary.js";
+import { type Reason, reasonsFor, type Vocabulary } from "./vocabulary.js";
 
 /**
  * The search (spec 0001 §5): the snapshot narrowed by purpose, cancer type,
@@ -26,23 +26,10 @@ export function searchTrials(
   others: Others | null = null,
 ): SearchResult {
   const origin = pointForZip(request.zip, zipPoints);
-  const funnel: SearchResult["funnel"] = [{ stage: "snapshot", count: trials.length }];
-
-  const byPurpose = trials.filter((t) => purposeMatches(t.primaryPurpose, request.purposes));
-  funnel.push({ stage: "purpose", count: byPurpose.length });
-
-  const byCancer = byPurpose
-    .map((trial) => ({ trial, reasons: reasonsFor(trial, vocabulary) }))
-    .filter(({ reasons }) => reasons.length > 0);
-  funnel.push({ stage: "cancer", count: byCancer.length });
-
-  const byPerson = byCancer
-    .map((entry) => ({ ...entry, age: ageFits(entry.trial, request.age) }))
-    .filter(({ trial, age }) => age !== "no" && sexFits(trial.eligibility.sex, request.sex));
-  funnel.push({ stage: "age-and-sex", count: byPerson.length });
+  const { entries, funnel } = personStages(trials, vocabulary, request);
 
   const candidates: Candidate[] = [];
-  for (const { trial, reasons, age } of byPerson) {
+  for (const { trial, reasons, age } of entries) {
     const place = placeFor(trial.sites, origin, request.radiusMiles, zipPoints);
     if (place === undefined) continue;
     const flags: Flag[] = [...recordFlags(trial, manifest.dataTimestamp)];
@@ -70,6 +57,45 @@ export function searchTrials(
     funnel,
     candidates,
   };
+}
+
+/** A trial that passed the person's stages, with why it was kept and how its age limit read. */
+export interface PersonStageEntry {
+  trial: SnapshotTrial;
+  reasons: Reason[];
+  age: "yes" | "unread";
+}
+
+/**
+ * The search's first three stages: purpose, cancer type, and age and sex
+ * (spec 0008 §3.4). `searchTrials` runs these, then distance. The benchmark
+ * runs them alone on TREC's 2021 trials, where distance and status don't
+ * apply. The funnel starts at "snapshot" and ends at "age-and-sex".
+ */
+export function personStages(
+  trials: readonly SnapshotTrial[],
+  vocabulary: Vocabulary,
+  request: Pick<SearchRequest, "age" | "sex" | "purposes">,
+): { entries: PersonStageEntry[]; funnel: SearchResult["funnel"] } {
+  const funnel: SearchResult["funnel"] = [{ stage: "snapshot", count: trials.length }];
+
+  const byPurpose = trials.filter((t) => purposeMatches(t.primaryPurpose, request.purposes));
+  funnel.push({ stage: "purpose", count: byPurpose.length });
+
+  const byCancer = byPurpose
+    .map((trial) => ({ trial, reasons: reasonsFor(trial, vocabulary) }))
+    .filter(({ reasons }) => reasons.length > 0);
+  funnel.push({ stage: "cancer", count: byCancer.length });
+
+  const entries: PersonStageEntry[] = [];
+  for (const entry of byCancer) {
+    const age = ageFits(entry.trial, request.age);
+    if (age === "no" || !sexFits(entry.trial.eligibility.sex, request.sex)) continue;
+    entries.push({ ...entry, age });
+  }
+  funnel.push({ stage: "age-and-sex", count: entries.length });
+
+  return { entries, funnel };
 }
 
 /** The candidate's mark, as a field to spread: none without an others file or an adopted route that applies. */

@@ -322,3 +322,7 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `npm run test:e2e`: 8 passed.
   - `search:eval -- --check`, `questions:eval -- --check` and `-- --check --dev`, `facts:eval -- --check`, and `check:eval -- --check` and `-- --check --dev` pass.
   - `other:eval -- --check` and `-- --check --dev` fail with "labelsSha256 differs" and nothing else, as 0006 and 0007 recorded. A separate task; at each step below, "unchanged" for these two means that single difference.
+- **Step 2, `personStages`:**
+  - `personStages(trials, vocabulary, request)` returns `{ entries: PersonStageEntry[], funnel }`. `request` is a `Pick` of `age`, `sex` and `purposes`, so no ZIP is needed. `searchTrials` still places its origin first, so an unknown ZIP is refused before any stage runs, as before. `PersonStageEntry` is exported with it.
+  - 3 tests in `tests/search/search.test.ts`: the funnel and entries match `searchTrials`' before distance, each entry's reasons and age reading, and a trial with no sites kept. 1,198 tests (1,190 passed, 8 expected to fail).
+  - `search:eval`, `questions:eval` (both sets), `facts:eval` and `check:eval` (both sets) `--check` pass; `other:eval`'s two are unchanged.

@@ -21,7 +21,13 @@ export {
   ROUTES,
   routesFor,
 } from "./other.js";
-export { parseAgeLimit, recordFlags, searchTrials } from "./search.js";
+export {
+  type PersonStageEntry,
+  parseAgeLimit,
+  personStages,
+  recordFlags,
+  searchTrials,
+} from "./search.js";
 export type {
   Candidate,
   Flag,
