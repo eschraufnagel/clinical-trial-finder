@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import type { ParseableTrial } from "../../src/criteria/prompt.js";
 import { BENCHMARK_DATA_DIR } from "./sources.js";
 import { readTrialsGz } from "./trec.js";
 
@@ -193,3 +194,24 @@ export function trialBenchProblems(data: TrialBenchData): string[] {
 export function readTrialBenchProfiles(path = TRIALBENCH_PROFILES_PATH): TrialBenchProfile[] {
   return (JSON.parse(readFileSync(path, "utf8")) as { profiles: TrialBenchProfile[] }).profiles;
 }
+
+/** A labelled trial as the parser takes it (spec 0008 §7.2): the release's criteria, verbatim. */
+export function parseableTrialOf(trial: BenchTrial): ParseableTrial {
+  return {
+    nctId: trial.nctId,
+    briefTitle: trial.briefTitle,
+    conditions: trial.conditions,
+    phases: trial.phases,
+    eligibility: {
+      criteriaText: trial.criteriaText,
+      sex: trial.sex,
+      minimumAge: trial.minimumAge,
+      maximumAge: trial.maximumAge,
+      healthyVolunteers: null,
+      stdAges: [],
+    },
+  };
+}
+
+/** Where the check's parses go: not under a snapshot month, since these trials aren't the snapshot's. */
+export const TRIALBENCH_CRITERIA_MONTH = "trialbench";
