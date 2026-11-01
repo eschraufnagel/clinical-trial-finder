@@ -397,3 +397,24 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **`evals/check/metrics.ts`:** the never-a-verdict and every-unknown checks moved out of `scorePair` into exported `verdictHitsOf` and `unknownsMissingOf`, unchanged, so the benchmark scores them the same way. `check:eval -- --check` and `-- --check --dev` still match their committed results row for row.
   - **The scoring** (`scoreBenchmarkPair`, `summarizeArm`, `compareArms`) is §7.5 and §7.7's: flagged, caught, false alarms by label, each false alarm's "may not fit" lines by where they sit (one part of the trial, asked, records, earlier, about the trial), what the comment named (`rule-caught`, `rule-other`, `rule-missed`, `disease`, `none`), and the arms pair by pair. A line resting on a flagged reply is excluded and listed, as in 0007.
   - The run hash covers the pairs, the accounts (by `folderSha256`), the reasons, the parse run, both prompt versions, the model, the reasoning mode and `CHECK_REVISION`. `--arm full` runs one arm, for Gate 2's option.
+- **Step 12, dev on the local model, both arms** ([`dev/01-5ed77c679dad.json`](../../evals/results/benchmark/check/dev/01-5ed77c679dad.json); `-- --check --dev` matches row for row). 28 checks in 11.4 h wall time, failed attempts included: a finished check averaged 29.6 min from the full file and 15.6 min from the account.
+  - **Stops, and the fix:**
+    - Two full-arm pairs were refused by the local server's memory guard (HTTP 400 on prefill memory) and finished on a rerun.
+    - Two pairs on NCT03331380 stopped on a participant reply cut off at 300 tokens: asked about a condition its summary doesn't hold, it quoted most of the summary.
+    - **Fix, its own commit before the data (`026624f`):** the summary participant's `MAX_OUTPUT_TOKENS` is 1,024. The limit only cuts a reply short, so every reply that had finished under 300 is unchanged at temperature 0, and the run hash, which covers the prompts, stayed the same. Both pairs then finished.
+  - **The bar is met in both arms:**
+    - no verdict hits and no unknown left off a record;
+    - every pair finished;
+    - every flag (114 full, 218 account) is in `gate-2-flags.txt` by class, and every finding resting on one is excluded (117 and 210).
+  - **Caught:** 4 of 5 from the full file, 5 of 5 from the account. **False alarms:** 8 of 9 and 4 of 9. As a reading, with lines on one part of a trial left out: caught 1 of 5 in each arm, and that one rests on a contraception rule read the wrong way round; false alarms 5 of 9 and 4 of 9 become 5 and 2.
+  - **The false alarms' causes, from reading every line:**
+    1. "or" lists parsed as separate requirements;
+    2. cohorts the person isn't in;
+    3. pregnancy, nursing and contraception rules read the wrong way round, as in 0007;
+    4. conditional rules read as requirements.
+    All four are in the parser or the agent.
+  - **The arms:** of the account arm's four fewer false alarms, two come from lines resting on flagged replies.
+  - **The named rule:** nci-37's, the only rule pair in dev, is on both records under "Needs your records or your oncologist", where the clinician said it belonged. The measure scores it `rule-other`.
+  - **Held-out estimate:** about 42 h in both arms, 28 h from the full file only, against the plan's 15 to 30.
+  - **Divergence:** besides `gate-2-dev.md` and `gate-2-records.txt`, the flags are listed in their own file, `gate-2-flags.txt`, because 332 flags with their replies would bury the page. The records are rendered by a scratch script in 0007's format, not by a committed renderer.
+  - **Recommendation: stop,** with dev reported beside the search results, and held-out kept for after the four causes are worked on. **Stopped at Gate 2.**

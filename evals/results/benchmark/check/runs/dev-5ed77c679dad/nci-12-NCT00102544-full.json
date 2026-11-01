@@ -1,0 +1,978 @@
+{
+  "patient": "nci-12",
+  "nctId": "NCT00102544",
+  "label": "ineligible",
+  "set": "dev",
+  "arm": "full",
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "protocol",
+      "text": "Patient enrollment is by referral only."
+    },
+    {
+      "id": "P2",
+      "polarity": "inclusion",
+      "type": "protocol",
+      "text": "All patients must have a pre-operative imaging (CT, MR, or PET scan) available in digital format."
+    },
+    {
+      "id": "P3",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "Age is greater than or equal to 18 years."
+    },
+    {
+      "id": "P4",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient does not have a serious concurrent medical illness that would preclude making a rational informed decision on participation."
+    },
+    {
+      "id": "P5",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The patient has the ability to understand and willingness to sign a written informed consent form, and to comply with the protocol."
+    },
+    {
+      "id": "P6",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "All patients in non-prostate biopsy cohorts must be undergoing an image-guided surgical or interventional radiology procedure such as an angiography or a CT/ US-guided biopsy as clinically indicated or IRB-approved under a separate research protocol."
+    },
+    {
+      "id": "P7",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "Patients have undergone a prostate MRI and have had abnormalities identified."
+    },
+    {
+      "id": "P8",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "PSA is >2.5 OR digital rectal exam is abnormal OR an abnormality is identified on prostate MRI with a clinical indication for fusion biopsy."
+    },
+    {
+      "id": "P9",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "Pre-biopsy prostate MRI shows targetable lesions."
+    },
+    {
+      "id": "P10",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient has an altered mental status that precludes understanding or consenting for the biopsy procedure."
+    },
+    {
+      "id": "P11",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The patient is unlikely able to hold reasonably still on a procedure table for the length of the procedure."
+    },
+    {
+      "id": "P12",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The patient has an inability to hold breath, if the procedure will be performed with conscious sedation, and without general anesthesia."
+    },
+    {
+      "id": "P13",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The patient has pacemakers and other potentially electrically conductive implants."
+    },
+    {
+      "id": "P14",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "Gross body weight is above the CT table limit (606 pounds), if CT table used."
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 111,
+      "end": 150,
+      "text": "Patient enrollment is by referral only."
+    },
+    "P2": {
+      "start": 155,
+      "end": 252,
+      "text": "All patients must have a pre-operative imaging (CT, MR, or PET scan) available in digital format."
+    },
+    "P3": {
+      "start": 256,
+      "end": 294,
+      "text": "Age greater than or equal to 18 years."
+    },
+    "P4": {
+      "start": 298,
+      "end": 426,
+      "text": "No serious concurrent medical illness that would preclude the patient from making a rational informed decision on participation."
+    },
+    "P5": {
+      "start": 430,
+      "end": 545,
+      "text": "The ability to understand and willingness to sign a written informed consent form, and to comply with the protocol."
+    },
+    "P6": {
+      "start": 601,
+      "end": 852,
+      "text": "All patients in non-prostate biopsy cohorts, must be undergoing an image-guided surgical or interventional radiology procedure such as an angiography or a CT/ US-guided biopsy as clinically indicated or IRB-approved under a separate research protocol."
+    },
+    "P7": {
+      "start": 920,
+      "end": 1029,
+      "text": "Patients are eligible if they have undergone a prostate MRI and have had abnormalities identified as follows:"
+    },
+    "P8": {
+      "start": 1034,
+      "end": 1165,
+      "text": "PSA \\>2.5 OR abnormal digital rectal exam OR an abnormality identified on prostate MRI with a clinical indication for fusion biopsy"
+    },
+    "P9": {
+      "start": 1169,
+      "end": 1219,
+      "text": "Pre-biopsy prostate MRI showing targetable lesions"
+    },
+    "P10": {
+      "start": 1316,
+      "end": 1456,
+      "text": "Patients with an altered mental status that precludes understanding or consenting for the biopsy procedure will be excluded from this study."
+    },
+    "P11": {
+      "start": 1460,
+      "end": 1561,
+      "text": "Patients unlikely able to hold reasonably still on a procedure table for the length of the procedure."
+    },
+    "P12": {
+      "start": 1565,
+      "end": 1678,
+      "text": "Inability to hold breath, if procedure will be performed with conscious sedation, and without general anesthesia."
+    },
+    "P13": {
+      "start": 1682,
+      "end": 1762,
+      "text": "Patients with pacemakers and other potentially electrically conductive implants."
+    },
+    "P14": {
+      "start": 1766,
+      "end": 1840,
+      "text": "Gross body weight above the CT table limit (606 pounds), if CT table used."
+    }
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "protocol"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "protocol"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "Yes, I am 38 years old",
+          "reading": "holds",
+          "statement": "The person is 18 years of age or older."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I don't know if I have any conditions that would affect my ability to understand the study or make decisions",
+          "reading": "unknown",
+          "statement": "The patient has a serious concurrent medical illness that would preclude making a rational informed decision on participation."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I don't know if I have any conditions that would affect my ability to understand the study or make decisions",
+          "reading": "unknown",
+          "statement": "The patient has the ability to understand and willingness to sign a written informed consent form, and to comply with the protocol."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [
+        {
+          "turn": 6,
+          "quote": "I don't know if I am currently scheduled for an image-guided procedure",
+          "reading": "unknown",
+          "statement": "The patient is undergoing an image-guided surgical or interventional radiology procedure such as an angiography or a CT/ US-guided biopsy as clinically indicated or IRB-approved under a separate research protocol."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I am a woman with cervical cancer, so I do not have a prostate.",
+          "reading": "does-not-apply",
+          "statement": "The patient has undergone a prostate MRI and has had abnormalities identified."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "does-not-apply",
+      "reported": "does-not-apply"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I am a woman with cervical cancer, so I do not have a prostate.",
+          "reading": "does-not-apply",
+          "statement": "PSA is >2.5 OR digital rectal exam is abnormal OR an abnormality is identified on prostate MRI with a clinical indication for fusion biopsy."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "chart-review",
+      "reason": "does-not-apply",
+      "reported": "does-not-apply"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I am a woman with cervical cancer, so I do not have a prostate.",
+          "reading": "does-not-apply",
+          "statement": "Pre-biopsy prostate MRI shows targetable lesions."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "chart-review",
+      "reason": "does-not-apply",
+      "reported": "does-not-apply"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I don't know if I have any conditions that would affect my ability to understand the study or make decisions",
+          "reading": "unknown",
+          "statement": "The patient has an altered mental status that precludes understanding or consenting for the biopsy procedure."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P11",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I don't know if I can lie still for the duration of a procedure",
+          "reading": "unknown",
+          "statement": "The patient is unlikely able to hold reasonably still on a procedure table for the length of the procedure."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P12",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I don't know if I can hold my breath when asked.",
+          "reading": "unknown",
+          "statement": "The patient has an inability to hold breath, if the procedure will be performed with conscious sedation, and without general anesthesia."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P13",
+      "evidence": [
+        {
+          "turn": 14,
+          "quote": "I don't know if I have a pacemaker or any other implants.",
+          "reading": "unknown",
+          "statement": "The patient has pacemakers and other potentially electrically conductive implants."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P14",
+      "evidence": [
+        {
+          "turn": 16,
+          "quote": "I don't know if my weight is over 606 pounds.",
+          "reading": "unknown",
+          "statement": "Gross body weight is above the CT table limit (606 pounds), if CT table used."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"Use of Tracking Devices to Locate Abnormalities During Invasive Procedures\". I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you 18 years of age or older?",
+      "criterionId": "P3"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Yes, I am 38 years old, so I am definitely 18 or older."
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you have any serious ongoing medical conditions that might make it hard for you to understand the study details or make a decision about joining?",
+      "criterionId": "P4"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know if I have any conditions that would affect my ability to understand the study or make decisions. I am working full-time and have an ECOG performance status of 1, which suggests I am fairly active, but I don't have specific information about cognitive or decision-making impairments."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Are you currently scheduled for an image-guided procedure, such as an angiography or a biopsy guided by CT or ultrasound?",
+      "criterionId": "P6"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know if I am currently scheduled for an image-guided procedure. My home oncologist is starting palliative topotecan while I look for clinical trial options, but I don't have details on specific upcoming procedures."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you had a prostate MRI recently, and if so, did the results show any abnormalities?",
+      "criterionId": "P7"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know, as I am a woman with cervical cancer, so I do not have a prostate."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks for clarifying. To help us understand if you can participate, would you say you are generally able to lie still on a procedure table for the duration of a medical procedure?",
+      "criterionId": "P11"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know if I can lie still for the duration of a procedure. I have an ECOG status of 1 and work full-time, but I don't have specific information about my ability to remain still during medical procedures."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. If your procedure uses conscious sedation (you are awake but relaxed) rather than general anesthesia, are you able to hold your breath when asked?",
+      "criterionId": "P12"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know if I can hold my breath when asked. I don't have specific information about my ability to do that during a procedure."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you have a pacemaker or any other implants that might be affected by electricity or magnets, such as certain metal clips or devices?",
+      "criterionId": "P13"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know if I have a pacemaker or any other implants. My text doesn't mention having any devices like that."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you know if your weight is over 606 pounds? This is the limit for the CT table if one is used in the procedure.",
+      "criterionId": "P14"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know if my weight is over 606 pounds. My text doesn't mention my weight or any limits for procedure tables."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [],
+  "ignoredReadings": [],
+  "replies": [
+    {
+      "turn": 2,
+      "quotes": [
+        "38yo F"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 4,
+      "quotes": [
+        "Working full-time, ECOG 1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "quotes": [
+        "Home oncologist starting palliative topotecan while patient looking for clinical trial options."
+      ],
+      "flags": []
+    },
+    {
+      "turn": 8,
+      "quotes": [
+        "38yo F with metastatic stage IV cervical adenocarcinoma"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 10,
+      "quotes": [
+        "Working full-time, ECOG 1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "quotes": [],
+      "flags": []
+    },
+    {
+      "turn": 14,
+      "quotes": [],
+      "flags": []
+    },
+    {
+      "turn": 16,
+      "quotes": [],
+      "flags": []
+    }
+  ],
+  "record": {
+    "nctId": "NCT00102544",
+    "title": {
+      "registry": "Use of Tracking Devices to Locate Abnormalities During Invasive Procedures"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 0,
+      "records": 11,
+      "line": {
+        "ours": "0 rules may not fit what you said. 11 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Age greater than or equal to 18 years."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "Yes, I am 38 years old"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "No serious concurrent medical illness that would preclude the patient from making a rational informed decision on participation."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I have any conditions that would affect my ability to understand the study or make decisions"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "The ability to understand and willingness to sign a written informed consent form, and to comply with the protocol."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I have any conditions that would affect my ability to understand the study or make decisions"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "All patients in non-prostate biopsy cohorts, must be undergoing an image-guided surgical or interventional radiology procedure such as an angiography or a CT/ US-guided biopsy as clinically indicated or IRB-approved under a separate research protocol."
+          },
+          "earlier": [],
+          "part": {
+            "registry": "non-prostate biopsy cohorts"
+          },
+          "said": [
+            {
+              "said": "I don't know if I am currently scheduled for an image-guided procedure"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients are eligible if they have undergone a prostate MRI and have had abnormalities identified as follows:"
+          },
+          "earlier": [],
+          "part": {
+            "registry": "PROSTATE BIOPSY COHORT (Cohorts 1 and 9)"
+          },
+          "said": [
+            {
+              "said": "I am a woman with cervical cancer, so I do not have a prostate."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You said this isn't about you."
+          }
+        },
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "PSA \\>2.5 OR abnormal digital rectal exam OR an abnormality identified on prostate MRI with a clinical indication for fusion biopsy"
+          },
+          "earlier": [],
+          "part": {
+            "registry": "PROSTATE BIOPSY COHORT (Cohorts 1 and 9)"
+          },
+          "said": [
+            {
+              "said": "I am a woman with cervical cancer, so I do not have a prostate."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You said this isn't about you."
+          }
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Pre-biopsy prostate MRI showing targetable lesions"
+          },
+          "earlier": [],
+          "part": {
+            "registry": "PROSTATE BIOPSY COHORT (Cohorts 1 and 9)"
+          },
+          "said": [
+            {
+              "said": "I am a woman with cervical cancer, so I do not have a prostate."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You said this isn't about you."
+          }
+        },
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients with an altered mental status that precludes understanding or consenting for the biopsy procedure will be excluded from this study."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I have any conditions that would affect my ability to understand the study or make decisions"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P11",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients unlikely able to hold reasonably still on a procedure table for the length of the procedure."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I can lie still for the duration of a procedure"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P12",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Inability to hold breath, if procedure will be performed with conscious sedation, and without general anesthesia."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I can hold my breath when asked."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P13",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients with pacemakers and other potentially electrically conductive implants."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if I have a pacemaker or any other implants."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P14",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Gross body weight above the CT table limit (606 pounds), if CT table used."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know if my weight is over 606 pounds."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patient enrollment is by referral only."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "All patients must have a pre-operative imaging (CT, MR, or PET scan) available in digital format."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "No serious concurrent medical illness that would preclude the patient from making a rational informed decision on participation."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "The ability to understand and willingness to sign a written informed consent form, and to comply with the protocol."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "All patients in non-prostate biopsy cohorts, must be undergoing an image-guided surgical or interventional radiology procedure such as an angiography or a CT/ US-guided biopsy as clinically indicated or IRB-approved under a separate research protocol."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients are eligible if they have undergone a prostate MRI and have had abnormalities identified as follows:"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "PSA \\>2.5 OR abnormal digital rectal exam OR an abnormality identified on prostate MRI with a clinical indication for fusion biopsy"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Pre-biopsy prostate MRI showing targetable lesions"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients with an altered mental status that precludes understanding or consenting for the biopsy procedure will be excluded from this study."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients unlikely able to hold reasonably still on a procedure table for the length of the procedure."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Inability to hold breath, if procedure will be performed with conscious sedation, and without general anesthesia."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients with pacemakers and other potentially electrically conductive implants."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Gross body weight above the CT table limit (606 pounds), if CT table used."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "calls": {
+    "agent": 16,
+    "participant": 8,
+    "fidelity": 8
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-11"
+  }
+}
