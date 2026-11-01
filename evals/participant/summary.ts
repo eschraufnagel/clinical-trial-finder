@@ -20,7 +20,13 @@ import { SimulatorError, type TranscriptLine } from "./simulate.js";
  * the text, a flag for a person to read, never a score.
  */
 
-const MAX_OUTPUT_TOKENS = 300;
+/**
+ * Above 0007's participants' 300: a summary is long, and on a question its text
+ * doesn't answer the participant may quote much of it to show what it does say
+ * (0008, step 12: two dev replies cut off that way). The limit only cuts, so at
+ * temperature 0 every reply that finished under 300 is unchanged.
+ */
+const MAX_OUTPUT_TOKENS = 1024;
 
 export interface SummaryReply {
   message: string;
