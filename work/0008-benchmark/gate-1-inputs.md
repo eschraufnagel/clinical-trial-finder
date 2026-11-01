@@ -186,3 +186,5 @@ The second derivation of 8, its differences and the three options are in [`accou
 **What's asked now:** approve the accounts as they stand. The rest of Gate 1 (the notes, the mapping, the vocabularies, the named rules, the go-ahead for the check) is still open.
 
 **Second answer (2026-10): the accounts are approved as they stand,** the two flagged expansions (nci-04, nci-05) included. They're frozen from here: no account changes after any check runs. Still open: the notes, the mapping, the vocabularies, the named rules and the go-ahead for the check.
+
+**Third answer (2026-10): the rest of Gate 1 approved as proposed, and go on.** The nine notes, the mapping, the twenty vocabularies and the named rules are frozen as committed. Stages B and C run: both searches scored once, then dev's parse and check on the local model, stopping at Gate 2.
