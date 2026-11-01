@@ -184,3 +184,5 @@ The second derivation of 8, its differences and the three options are in [`accou
 `accounts-second/` is unchanged: it's the record of what an independent reading of the first convention gave.
 
 **What's asked now:** approve the accounts as they stand. The rest of Gate 1 (the notes, the mapping, the vocabularies, the named rules, the go-ahead for the check) is still open.
+
+**Second answer (2026-10): the accounts are approved as they stand,** the two flagged expansions (nci-04, nci-05) included. They're frozen from here: no account changes after any check runs. Still open: the notes, the mapping, the vocabularies, the named rules and the go-ahead for the check.

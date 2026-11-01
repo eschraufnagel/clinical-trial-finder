@@ -376,3 +376,4 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - 21 of the 35 accounts changed, each listed in `gate-1-inputs.md`. Two expansions needed knowledge beyond an abbreviation (nci-04's ddAC+T, nci-05's KEYNOTE 522 regimen) and are flagged for the owner.
   - `accounts-second/` is unchanged. The tests are unchanged and pass.
   - **Stopped at Gate 1** again, on the accounts.
+- **Gate 1, second answer: the accounts are approved as they stand,** nci-04's and nci-05's expansions included, and frozen. The rest of Gate 1 is still open.
