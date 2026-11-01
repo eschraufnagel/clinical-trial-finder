@@ -335,3 +335,14 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **Read over all 4,297 judged trials, with no failure:** 2 have no criteria text, 324 no condition MeSH, 1,068 no primary purpose (mostly observational studies, kept by `purposes: "all"`), and 328 no minimum age. Every `last_update_posted` read as an ISO date. So no parser dependency is needed.
   - Fixtures: NCT00032383 (two phases, MeSH), NCT00065078 (no `condition_browse`, healthy volunteers, unknown status), NCT00038233 (entities; an intervention MeSH term and a collaborator agency that mustn't be read). 5 tests in `tests/benchmark/trec-xml.test.ts`; 1,203 tests in all (1,195 passed, 8 expected to fail).
   - `biome.jsonc` now excludes `local`: Biome doesn't read `.gitignore` here, and the downloaded release's JSON failed its formatter. Not foreseen by the plan.
+- **Step 4, the import:**
+  - `evals/benchmark/{sources,trec,trialbench}.ts`, `scripts/benchmark-import.ts` (`npm run benchmark:import`), `data/benchmark/sources.json`, and `data/benchmark/trec/{topics,qrels}.json`, `trials.jsonl.gz` (3.9 MB) and `data/benchmark/trialbench/{vignettes,labels}.json`, `trials.jsonl.gz` (0.2 MB).
+  - **Written:** TREC, 9 notes, 4,672 judgments (888 eligible, 781 excluded, 3,003 not relevant), 4,297 trials. NIH-TrialBench, 41 NCI vignettes, 395 labels, 106 trials (all 13 targets among them). No judged trial is missing from the corpus. A rerun wrote byte-identical files. `--record` with checksumming took 4.5 s.
+  - **The manifest** checksums 13 files and one folder: the four TREC topic and judgment files, the five corpus zips (not the 375,580 unzipped files), NIH-TrialBench's four `raw/` files, and `trials/` by a hash of its files' names and checksums.
+  - **Divergences:**
+    - A TREC note is keyed `<year>-<number>`: 2021 and 2022 both have a topic 11.
+    - **NIH-TrialBench's two trial sources disagree.** For 14 of the 106 trials, `trials/NCT*.json`'s criteria differ from `raw/trial_search_space.jsonl`'s, and for 2 the title does too. Title and criteria come from `raw/`, the release itself; conditions, phases, ages and sex, which `raw/` lacks, come from `trials/`. `trialbench.ts`'s header says so.
+    - **The boundary asserts no fetch, not no host name.** §9 said no file names `trec.nist.gov`, `trec-cds.org` or `github.com`, but the manifest needs each download's URL as data. The new block in `tests/boundary.test.ts` walks `benchmark:import`'s graph and finds no network use, no model module and not `registry.ts`, with a "would catch" case.
+    - The TREC citation names the track's pages rather than the overview papers' authors, which weren't checked first-hand.
+    - `biome.jsonc` didn't need `data/benchmark/**/*.gz`: Biome doesn't read gzip.
+  - 15 tests in `tests/benchmark/import.test.ts`, 4 in the boundary block; 1,220 tests in all (1,212 passed, 8 expected to fail), `npm test` about 0.74 s.

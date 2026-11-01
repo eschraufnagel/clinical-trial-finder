@@ -1295,3 +1295,43 @@ describe("the pair labelling tool cannot see the parser, the link or the agent",
     expect(forbidden(`${sep}src${sep}criteria${sep}normalize.ts`)).toBe(false);
   });
 });
+
+/**
+ * Slice 0008: the benchmarks' files are downloaded by a person into `local/`,
+ * and the import reads them from there. So nothing the import reaches touches
+ * the network, the registry request or a model. The download URLs are named in
+ * `evals/benchmark/sources.ts` as data, for the manifest, and never fetched:
+ * this asserts the fetch, not the name.
+ */
+describe("the benchmark import reaches no network, registry or model", () => {
+  const SCRIPT = fileURLToPath(new URL("../scripts/benchmark-import.ts", import.meta.url));
+  const modules = reachableModules(SCRIPT);
+  const forbidden = (file: string): boolean =>
+    file.includes(`${sep}models${sep}`) || file.endsWith(REGISTRY_FILE);
+
+  it("walks a real graph", () => {
+    expect(modules.some((m) => m.endsWith(`benchmark${sep}sources.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`benchmark${sep}trec-xml.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`benchmark${sep}trialbench.ts`))).toBe(true);
+  });
+
+  it("touches no network", () => {
+    const offenders = modules
+      .map((file) => ({ file, usage: findNetworkUsage(file) }))
+      .filter(({ usage }) => usage.length > 0);
+    expect(offenders).toEqual([]);
+  });
+
+  it("reaches no model and not the registry request", () => {
+    expect(modules.filter(forbidden)).toEqual([]);
+  });
+
+  it("would catch each", () => {
+    expect(forbidden(`${sep}src${sep}models${sep}omlx.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}trials${sep}registry.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}trials${sep}snapshot-types.ts`)).toBe(false);
+    expect(
+      findNetworkUsage(`${sep}evals${sep}benchmark${sep}sources.ts`, "await fetch(url);"),
+    ).toEqual(["fetch()"]);
+  });
+});
