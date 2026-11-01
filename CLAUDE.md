@@ -34,13 +34,15 @@ work/0001-<name>/
   plan.md      files that change, stages and gates, order of work, risks, proof
 ```
 
-For each slice (`/next-slice`, in `.claude/skills/next-slice/`, does steps 1 to 3 and stops at the plan):
+For each slice:
 
-1. Write `intent.md`. Do not start from the product intent alone; each slice gets its own.
-2. Write `spec.md` from the intent.
-3. **Use plan mode** to produce `plan.md`. Read the codebase, do not edit it. Iterate until someone who never saw the conversation could implement from the plan alone. Commit `plan.md` before writing code.
+1. Write `intent.md` (`/sdlc:slice-intent`). Do not start from the product intent alone; each slice gets its own.
+2. Write `spec.md` from the accepted intent (`/sdlc:slice-spec`).
+3. **Use plan mode** to produce `plan.md` from the accepted spec (`/sdlc:slice-plan`). Read the codebase, do not edit it. Iterate until someone who never saw the conversation could implement from the plan alone.
 4. Implement, one stage at a time, stopping at each gate. If implementation diverges from the plan, update `plan.md` in the same commit. An out-of-date plan is a merge blocker.
 5. Run the review passes in `REVIEW.md` before opening the PR.
+
+Steps 1 to 3 each end at the owner. Each artifact is written uncommitted, and the owner accepts it, asks for changes, or drops the slice. Acceptance is the commit: `NNNN intent`, `NNNN spec`, `NNNN plan`, each alone. No skill writes the next artifact over one that isn't committed, and a later step that finds an earlier artifact wrong proposes the change rather than making it (`NNNN intent: revised`). `/sdlc:next-slice` works out which of the three is next and runs it. The skills come from the owner's `sdlc` plugin (`eschraufnagel/sdlc`), not this repository; they read the layout, constraints, plan rules and `npm run check` from this file.
 
 ### Stages and gates
 
