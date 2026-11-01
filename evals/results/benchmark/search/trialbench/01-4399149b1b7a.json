@@ -1,0 +1,4317 @@
+{
+  "version": 1,
+  "benchmark": "trialbench",
+  "model": null,
+  "sources": {
+    "snapshot": "76099a0ec4886d38f906ada584c4d8d106d5afaadcc865de501e3031f1cf6a3d",
+    "manifest": "32ba002c816b834061d34a0d900d39db08f77bcb6ca2589a6559e9cf48d14dc3",
+    "vignettes": "fbc301ddf5d3f4b055b5dc494b37c1ab7eecccb05df75b9b6ae8a1ac812673d4",
+    "labels": "fd4c9c7e3bea9e771498d5435610b40fc7e1c314b5f7ce42433aba4e3ff02397",
+    "profiles": "03b4d887d4d2a68ec79b2d064fa1a839ca9ca3e28a35f5d44808a6c42c59fc34"
+  },
+  "vocabularies": {
+    "anal": "94d205fe4a32aec59cf7440f6be2af0f1d9056ff8596cb844b26e77bd7eda045",
+    "bladder": "cc1e1f282b318e23c209f0661b11980927ecd26f4fa5d50ffa2d3343731063b2",
+    "breast": "12e21b775c48fcb380cd329ddd251f1575d4b0f42f0606aad0081a2bbf26e87c",
+    "cervical": "d52f68965b01443485ba6c7e885e7556866569f1e64a08e82e2ac9be8151e644",
+    "cutaneous-squamous": "274262862cd791b03fbdbb00ca74589c10b35fbbfd8ab20b2afc58f38bb81acc",
+    "endometrial": "507931861727364b8ef237a17c04e430815e6634ea0252d5289fd8061dfce1e3",
+    "gastroesophageal": "b92e67f4ffdafdbc4ff3d08ec49cfeb1ed669629eeac9a783585106ab47cc7da",
+    "germ-cell": "96a2a178c1cd8288cd34120be654c40ab416a20e9b18f3a5ba554e4f0cee02c7",
+    "head-and-neck": "202c292a9e3d5ebfd746b6a4efaf3ab9ee0ce0d1baaa1e66035a5fde62306d47",
+    "kidney": "043dd023b7d400498423c48c9175b77481f3dc2097fa3128de8ec044d30168c9",
+    "lymphoma": "3b77ea06f05b10b5aa54e7942fc95b10bd4cce8bec5abafcc5e7baa02a204823",
+    "melanoma": "8fe315a97465272aca9a0bd256ede142f12a669f667305615c6da0ac922f5e45",
+    "merkel-cell": "e7010c0c87f45e911ca717b37905fddff774db2742aa1ae2dcc6a07d002ac490",
+    "nsclc": "a3e87584fb11ff0102da1c061f86286dfeea1d2d7f29e982f0b1c3f737babbd0",
+    "penile": "f8f4697141129e121f13de097f866ed9cca3b0566896b271858a98d4ccdc6709",
+    "prostate": "86a35e5b4524abbd3f147993bc4c193dbe0d6f115c1394d6aa5ac3c1acff7fda",
+    "urethral": "794a4c2f2c7cdcd719a463dba93394415d8baf84a53ef636c80015832e0aa8c0"
+  },
+  "request": {
+    "zip": "20814",
+    "radiusMiles": null,
+    "purposes": [
+      "TREATMENT"
+    ]
+  },
+  "targets": [
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT06865677",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT06865677",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT06865677",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT07067138",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT07067138",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT07067138",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT05686226",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "generic"
+      ]
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT05686226",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "generic"
+      ]
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT05686226",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "generic"
+      ]
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT05483491",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ]
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT05483491",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT05483491",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ]
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT06228066",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT06228066",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT06228066",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT03866382",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT03866382",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT03866382",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT06041503",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ]
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT06041503",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ]
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT06041503",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-31",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04002947",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-32",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04002947",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-33",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04002947",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT06096870",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT06096870",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ]
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT03476681",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT03476681",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT03476681",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": []
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT06171750",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules",
+        "generic"
+      ]
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT06171750",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ]
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT06171750",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT01900132",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT03366116",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT04432597",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-01",
+      "cancerType": "cervical",
+      "nctId": "NCT04902443",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT01827384",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT02723864",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT03366116",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-02",
+      "cancerType": "cervical",
+      "nctId": "NCT04708470",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT00720785",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT00924027",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT01174121",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT01273168",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT01445509",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-03",
+      "cancerType": "endometrial",
+      "nctId": "NCT02723864",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT01174121",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT01445509",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT03412877",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT04222413",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules",
+        "generic"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT04258566",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT04449549",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT04847050",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT06223542",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-04",
+      "cancerType": "breast",
+      "nctId": "NCT07067138",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT01116648",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT02723864",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT03366116",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT03907475",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-05",
+      "cancerType": "breast",
+      "nctId": "NCT05592626",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT01174121",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT01273168",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT01827384",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT03412877",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT05564377",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-06",
+      "cancerType": "breast",
+      "nctId": "NCT05691517",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT00720785",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT02858310",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT03427411",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT04287868",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT04708470",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT05592626",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules",
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT05686226",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-07",
+      "cancerType": "cervical",
+      "nctId": "NCT06157151",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT02723864",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT02858310",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT03366116",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT03427411",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-08",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT04708470",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT02649868",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT02723864",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT04209595",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT04287868",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-09",
+      "cancerType": "anal",
+      "nctId": "NCT04449549",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules",
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT03366116",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT03412877",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT03907475",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-10",
+      "cancerType": "gastroesophageal",
+      "nctId": "NCT05035407",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT00720785",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT02133196",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT02379416",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT05035407",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-11",
+      "cancerType": "nsclc",
+      "nctId": "NCT05483491",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT02723864",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT04287868",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT04708470",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT04902443",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT05035407",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-12",
+      "cancerType": "cervical",
+      "nctId": "NCT05483491",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT03493945",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT05715281",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT06041503",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT06171750",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-13",
+      "cancerType": "penile",
+      "nctId": "NCT06223542",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT01174121",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT01352962",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT01688999",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT01900132",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT02496208",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT04574583",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT06066138",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-14",
+      "cancerType": "bladder",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT02379416",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT02495103",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT03866382",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT03907475",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT05286801",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT05715281",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-15",
+      "cancerType": "kidney",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT01688999",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT02788201",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT03896503",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT04209595",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT04501094",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT04826341",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT05691491",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-16",
+      "cancerType": "bladder",
+      "nctId": "NCT06503146",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT01688999",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT03493945",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT04295863",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT04826341",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT04847050",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT06041516",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT06228066",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-17",
+      "cancerType": "bladder",
+      "nctId": "NCT06503146",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT01688999",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT03554473",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT04209595",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT04235777",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT04258566",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT06228066",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-18",
+      "cancerType": "bladder",
+      "nctId": "NCT06503146",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT02496208",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT04209595",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT04235777",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT04295863",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT04449549",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT04574583",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT05691517",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT06041503",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-19",
+      "cancerType": "urethral",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT01352962",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT01688999",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT02496208",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT03493945",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT03866382",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT04295863",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-20",
+      "cancerType": "urethral",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT01352962",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT01688999",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT01900132",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT02496208",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT03816345",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT04295863",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-21",
+      "cancerType": "urethral",
+      "nctId": "NCT05564377",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT01174121",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT02379416",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT02723864",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT02788201",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT03366116",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-22",
+      "cancerType": "bladder",
+      "nctId": "NCT06258304",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules",
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT01352962",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT01688999",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT02379416",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT03412877",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT03502733",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-23",
+      "cancerType": "bladder",
+      "nctId": "NCT06161532",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT01174121",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT02379416",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT03907475",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT04235777",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT04295863",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT05564377",
+      "droppedAt": "purpose",
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT05691517",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-24",
+      "cancerType": "germ-cell",
+      "nctId": "NCT06606990",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00003838",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00520130",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT02356159",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03502733",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03922724",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04447027",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-25",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00003838",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00520130",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03502733",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03922724",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04447027",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT05327023",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT05436418",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT06223542",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules",
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-26",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00003838",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT01851369",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03502733",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03922724",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03983850",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04447027",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-27",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00003838",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03922724",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03983850",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04295863",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04447027",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-28",
+      "cancerType": "lymphoma",
+      "nctId": "NCT06223542",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules",
+        "generic"
+      ],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03502733",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03663933",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03922724",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03983850",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT05327023",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT05371054",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-29",
+      "cancerType": "lymphoma",
+      "nctId": "NCT06223542",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules",
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00003838",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03663933",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03922724",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03983850",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04258566",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04447027",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT05327023",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT05605574",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-30",
+      "cancerType": "lymphoma",
+      "nctId": "NCT07055477",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-31",
+      "cancerType": "lymphoma",
+      "nctId": "NCT02337985",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-31",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-31",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04002947",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-31",
+      "cancerType": "lymphoma",
+      "nctId": "NCT05327023",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-31",
+      "cancerType": "lymphoma",
+      "nctId": "NCT06066138",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-32",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00520130",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-32",
+      "cancerType": "lymphoma",
+      "nctId": "NCT01399385",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-32",
+      "cancerType": "lymphoma",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-32",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03223610",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-32",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-32",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03816345",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules",
+        "generic"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-32",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04959175",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-33",
+      "cancerType": "lymphoma",
+      "nctId": "NCT00118209",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-33",
+      "cancerType": "lymphoma",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-33",
+      "cancerType": "lymphoma",
+      "nctId": "NCT04002947",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT00720785",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT00924027",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT01553188",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT01867333",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT02203513",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT03388619",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-34",
+      "cancerType": "prostate",
+      "nctId": "NCT06096870",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT01399385",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT01875250",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT01900132",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT03181867",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT03253744",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT03315871",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-35",
+      "cancerType": "prostate",
+      "nctId": "NCT06096870",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT00720785",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT02133196",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT02379416",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT02423057",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT03476681",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-36",
+      "cancerType": "head-and-neck",
+      "nctId": "NCT04847466",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT00924027",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT01399385",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT01621594",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT01900132",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT04574583",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT05548296",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT06223542",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-37",
+      "cancerType": "endometrial",
+      "nctId": "NCT06865677",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT02133196",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT02723864",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT03816345",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "rules",
+        "generic"
+      ],
+      "label": "ineligible"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT04826341",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-38",
+      "cancerType": "nsclc",
+      "nctId": "NCT05687136",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT02379416",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT03493945",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT03907475",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT04847050",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT06171750",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "names",
+        "rules",
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-39",
+      "cancerType": "cutaneous-squamous",
+      "nctId": "NCT06223542",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT00102544",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT00720785",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT02379416",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT02535702",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT02723864",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT05691517",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT06041516",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT06223542",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-40",
+      "cancerType": "merkel-cell",
+      "nctId": "NCT06503146",
+      "droppedAt": "cancer",
+      "droppedAtAllPurposes": "cancer",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT01534598",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT02211755",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT02298959",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT02379416",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT02465060",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT03331380",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT03388632",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT04258566",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "eligible_but_not_recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT04847050",
+      "droppedAt": "not-in-snapshot",
+      "droppedAtAllPurposes": "not-in-snapshot",
+      "reasons": [],
+      "label": "recommended"
+    },
+    {
+      "patient": "nci-41",
+      "cancerType": "melanoma",
+      "nctId": "NCT06223542",
+      "droppedAt": null,
+      "droppedAtAllPurposes": null,
+      "reasons": [
+        "generic"
+      ],
+      "label": "recommended"
+    }
+  ],
+  "summary": {
+    "targetKept": {
+      "n": 29,
+      "kept": 26,
+      "rate": 0.8966,
+      "interval": [
+        0.7361,
+        0.9642
+      ]
+    },
+    "targetKeptAllPurposes": {
+      "n": 29,
+      "kept": 29,
+      "rate": 1,
+      "interval": [
+        0.883,
+        1
+      ]
+    },
+    "targetsNotInSnapshot": [
+      "NCT06865677",
+      "NCT07055477",
+      "NCT03476681"
+    ],
+    "byReason": {
+      "names": 24,
+      "rules": 17,
+      "generic": 6
+    },
+    "labelsKept": {
+      "recommended": {
+        "n": 73,
+        "kept": 58,
+        "rate": 0.7945,
+        "interval": [
+          0.6883,
+          0.8713
+        ]
+      },
+      "eligible_but_not_recommended": {
+        "n": 18,
+        "kept": 13,
+        "rate": 0.7222,
+        "interval": [
+          0.4913,
+          0.875
+        ]
+      },
+      "ineligible": {
+        "n": 10,
+        "kept": 10,
+        "rate": 1,
+        "interval": [
+          0.7225,
+          1
+        ]
+      }
+    },
+    "labelsKeptAllPurposes": {
+      "recommended": {
+        "n": 73,
+        "kept": 65,
+        "rate": 0.8904,
+        "interval": [
+          0.7984,
+          0.9434
+        ]
+      },
+      "eligible_but_not_recommended": {
+        "n": 18,
+        "kept": 13,
+        "rate": 0.7222,
+        "interval": [
+          0.4913,
+          0.875
+        ]
+      },
+      "ineligible": {
+        "n": 10,
+        "kept": 10,
+        "rate": 1,
+        "interval": [
+          0.7225,
+          1
+        ]
+      }
+    }
+  },
+  "notes": {
+    "NCT03476681": "ACTIVE_NOT_RECRUITING in the registry, read 2026-10.",
+    "NCT06865677": "TERMINATED in the registry, read 2026-10.",
+    "NCT07055477": "SUSPENDED in the registry, read 2026-10."
+  }
+}

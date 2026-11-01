@@ -1,0 +1,1684 @@
+Every fidelity flag on dev's replies (slice 0008, step 12), by class. Run dev-5ed77c679dad.
+A finding resting on any flagged reply is excluded from scoring (check-metrics.ts).
+
+====================================================================================================
+model flag on an answer: 37
+====================================================================================================
+nci-01 NCT01900132 account, turn 22
+  Q: Thanks. Do you have a diagnosis of a neuromuscular disorder, such as neuropathy, myopathy, a motor neuron disorder, or a movement disorder?
+  A: I don't have a diagnosis of a neuromuscular disorder like neuropathy or myopathy. I do have some numbness in my fingertips and toes, but that seems to be from the chemo.
+  fidelity model: The message asserts that the numbness is 'from the chemo,' whereas the text only states the symptom exists without specifying its cause.
+
+nci-01 NCT01900132 account, turn 26
+  Q: Thanks. Do you have any suspected movement disorders that might affect your brain's ability to process information or control movement?
+  A: No, I don't have any suspected movement disorders. I'm just dealing with the side effects of my cancer treatments.
+  fidelity model: The message claims the person does not have 'suspected movement disorders,' a specific medical condition not mentioned in the text, whereas the text only describes numbness in fingertips and toes.
+
+nci-01 NCT01900132 account, turn 40
+  Q: Thanks. Have you ever been diagnosed with a stroke, a muscle disorder, peripheral neuropathy (nerve damage causing weakness/numbness), or had spine surgery? If you aren't sure, that's okay to say.
+  A: I don't have a diagnosis of peripheral neuropathy, though I do have some numbness in my fingertips and toes from chemo. I haven't had a stroke or spine surgery, and I don't have a muscle disorder.
+  fidelity model: The message asserts that the person has not had a stroke or spine surgery and does not have a muscle disorder, which are negative health claims not stated in the text.
+
+nci-01 NCT01900132 account, turn 44
+  Q: Thanks. Do you currently have a diagnosis of diabetes, kidney disease, or liver disease?
+  A: I don't have a diagnosis of diabetes or kidney disease. I do have liver disease because my cancer has spread there.
+  fidelity model: The text states the cancer spread to the liver but does not mention a diagnosis of liver disease, nor does it mention diabetes or kidney disease.
+
+nci-01 NCT01900132 account, turn 50
+  Q: Thanks. To clarify, have you ever had a doctor evaluate you for a neuromuscular disorder (a condition affecting your muscles or nerves), even if you weren't diagnosed?
+  A: No, I have never been evaluated for a neuromuscular disorder. The numbness in my fingers and toes is just a side effect from the chemotherapy.
+  fidelity model: The message asserts that the person has never been evaluated for a neuromuscular disorder, which is information not present in the text.
+
+nci-01 NCT01900132 full, turn 14
+  Q: The trial asks about this: “The participant is a healthy child, male or female, age 7-18”. Does this describe you?
+  A: No, I am a 47-year-old woman, not a child.
+  fidelity model: The message includes a conversational denial ('No, I am...') that is not present in the source text, which is a clinical case description rather than a dialogue.
+
+nci-01 NCT01900132 full, turn 34
+  Q: Thanks. Are you currently an employee of the NIH, the EMG Section, OCD, or NINDS?
+  A: No, I am not an employee of the NIH, the EMG Section, OCD, or NINDS.
+  fidelity model: The message introduces specific organizational affiliations (NIH, EMG Section, OCD, NINDS) and denies being an employee, which are details not present in or supported by the medical text.
+
+nci-01 NCT01900132 full, turn 38
+  Q: Thanks. Have you ever been diagnosed with a neuromuscular disorder (a condition affecting your nerves and muscles) by a doctor?
+  A: No, I have never been diagnosed with a neuromuscular disorder. I have metastatic cervical carcinoma and mild neuropathy, but no diagnosis of a neuromuscular condition.
+  fidelity model: The message asserts that the patient has never been diagnosed with a neuromuscular disorder, which is information not present in the text and potentially contradicts the implication that her neuropathy is a distinct condition rather than a side effect or symptom of her cancer treatment.
+
+nci-01 NCT03331380 account, turn 74
+  Q: Thanks. Do you currently have any mechanical knee symptoms, such as pain, swelling, or locking in your knees? If you aren't sure, that's okay to say.
+  A: No, I don't have any mechanical knee symptoms like pain, swelling, or locking. I specifically listed the symptoms I do have, and none of them involve my knees.
+  fidelity model: The message asserts that the person does not have mechanical knee symptoms, which is information not present in the text and contradicts the text's explicit list of negative symptoms which does not mention knees.
+
+nci-01 NCT03331380 account, turn 148
+  Q: Thanks. Have you had any chest pain, heart attack, or unstable angina in the last 2 weeks?
+  A: No, I haven't had any chest pain, heart attack, or unstable angina in the last two weeks. I specifically stated that I don't have chest pain.
+  fidelity model: The message asserts that the person has not had a heart attack or unstable angina, which are specific medical conditions not mentioned or ruled out in the provided text.
+
+nci-06 NCT01827384 account, turn 2
+  Q: Thanks. Have you had a solid tumor confirmed by biopsy, and has it grown or spread after at least one standard treatment, or is there no standard treatment that helps?
+  A: Yes, I have breast cancer that spread to my lymph nodes, lungs, and spine. It grew and spread after my hormone pills and chemo were stopped because the cancer got worse.
+  fidelity model: The message incorrectly states that the cancer spread after the treatments were stopped, whereas the text states the cancer got worse while on those treatments, leading to their cessation.
+
+nci-06 NCT01827384 account, turn 44
+  Q: Thanks. Are you currently taking any other investigational agents or participating in any other clinical trials?
+  A: No, I am not currently taking any other investigational agents or participating in any other clinical trials. The text only lists the specific treatments I have already received.
+  fidelity model: The text does not state that the person is not taking investigational agents or participating in clinical trials, nor does it mention clinical trials at all.
+
+nci-06 NCT01827384 full, turn 50
+  Q: Thanks. Have you ever been diagnosed with HIV and are currently taking combination antiretroviral therapy (HIV medication)?
+  A: No, I have never been diagnosed with HIV. My records do not mention HIV or any antiretroviral therapy.
+  fidelity model: The message asserts that the person's records do not mention HIV, which is information not present in the provided text.
+
+nci-12 NCT04708470 account, turn 2
+  Q: Have you been diagnosed with locally advanced or metastatic HPV-associated cancer, or microsatellite stable (MSS) small bowel or colorectal cancer? If you aren't sure, that's okay.
+  A: Yes, I have metastatic HPV-associated cancer. My cervical cancer was an adenocarcinoma, and it has spread to my lungs and liver.
+  fidelity model: The message asserts that the cancer is 'HPV-associated,' which is not stated in the text.
+
+nci-17 NCT03493945 account, turn 66
+  Q: Are you currently pregnant?
+  A: No, I am not pregnant. I am a 40-year-old male.
+  fidelity model: The text does not state the person's gender, so the message asserts new information about being male.
+
+nci-17 NCT06161532 account, turn 20
+  Q: Thanks. Have you ever received chemotherapy containing platinum (such as cisplatin or carboplatin) for bladder or urinary tract cancer?
+  A: Yes, I had chemo with carboplatin and etoposide plus atezolizumab. Carboplatin is a platinum-based chemotherapy.
+  fidelity model: The text does not state that carboplatin is a platinum-based chemotherapy, which is external information added by the message.
+
+nci-17 NCT06161532 account, turn 112
+  Q: For Arm 2, have you ever received treatment with immune checkpoint blockade therapies, such as anti-PD-1 or anti-PD-L1 drugs? If you aren't sure, that is fine.
+  A: Yes, I received atezolizumab as part of my chemotherapy treatment. Atezolizumab is an anti-PD-L1 drug, which is an immune checkpoint blockade therapy.
+  fidelity model: The message asserts that atezolizumab is an anti-PD-L1 drug and an immune checkpoint blockade therapy, which is external medical knowledge not stated in the text.
+
+nci-17 NCT06161532 full, turn 10
+  Q: Thanks. Have you been diagnosed with renal medullary carcinoma? This is a specific type of kidney cancer. If you aren't sure, that's okay.
+  A: No, I have not been diagnosed with renal medullary carcinoma. My diagnosis is a large cell neuroendocrine tumor of the bladder.
+  fidelity model: The message asserts that the patient has not been diagnosed with renal medullary carcinoma, which is information not present in the source text.
+
+nci-25 NCT00003838 account, turn 32
+  Q: Thanks. Since you are 63, we need to confirm that you are able to understand the study details and provide informed consent. Do you have any concerns about your ability to do this?
+  A: No, I don't have any concerns about my ability to understand the study details or provide informed consent.
+  fidelity model: The message asserts a specific stance on understanding study details and providing informed consent, which is not mentioned or implied in the provided text.
+
+nci-25 NCT00003838 account, turn 42
+  Q: Are you currently pregnant or breastfeeding?
+  A: No, I am not pregnant or breastfeeding.
+  fidelity model: The message asserts the person is not pregnant or breastfeeding, which contradicts the text stating the person is 63 years old, an age where pregnancy is biologically impossible.
+
+nci-25 NCT00003838 account, turn 48
+  Q: Thanks. To help us determine your score, can you walk around your home independently, or do you need to spend more than half the day in bed or a chair?
+  A: I can walk around my home independently. I can do light work, though heavy things tire me.
+  fidelity model: The message asserts that the person can walk around their home independently, which is not stated in the text.
+
+nci-25 NCT00003838 account, turn 62
+  Q: Thanks. Are you currently pregnant or breastfeeding?
+  A: No, I am not pregnant or breastfeeding.
+  fidelity model: The message asserts the person is not pregnant or breastfeeding, which contradicts the text stating the person is 63 years old, an age where pregnancy is biologically impossible.
+
+nci-25 NCT00003838 full, turn 14
+  Q: Thanks. Have you ever been diagnosed with myelodysplastic syndrome (MDS) classified as refractory anemia with excess blasts (RAEB), or chronic myelomonocytic leukemia (CMML)?
+  A: No, I have never been diagnosed with MDS or CMML. I only have peripheral T-cell lymphoma.
+  fidelity model: The text does not mention a history of MDS or CMML, so the message asserts negative information about conditions not listed in the provided text.
+
+nci-25 NCT00003838 full, turn 20
+  Q: Thanks. Have you ever been diagnosed with non-Hodgkin lymphoma (NHL), which is a type of cancer that starts in the lymphocytes (a type of white blood cell)?
+  A: No, I have never been diagnosed with non-Hodgkin lymphoma. I have peripheral T-cell lymphoma.
+  fidelity model: The message claims the person has never been diagnosed with non-Hodgkin lymphoma, but peripheral T-cell lymphoma is a subtype of non-Hodgkin lymphoma, making the statement factually contradictory to the diagnosis provided in the text.
+
+nci-25 NCT00003838 full, turn 22
+  Q: Thanks. Has your peripheral T-cell lymphoma come back or progressed after standard treatment, and are you unable to have an autologous stem cell transplant (using your own cells)?
+  A: Yes, my disease has progressed after standard treatments like CHOP, ICE, and Mogamulizumab. I am unable to have an autologous stem cell transplant because my disease is refractory and progressive.
+  fidelity model: The text does not mention that the patient is unable to have an autologous stem cell transplant or that this is the reason for their current status.
+
+nci-25 NCT03502733 account, turn 2
+  Q: Thanks. Have you been diagnosed with a solid tumor that has spread (metastasized), returned (recurred), or cannot be removed by surgery, and has it gotten worse after one treatment or is there no cure available?
+  A: I have peripheral T-cell lymphoma, which is a blood cancer, not a solid tumor. So I don't think I fit that specific part of the question.
+  fidelity model: The text does not state that the person has a 'blood cancer' or that they do not fit a specific question, introducing external context and self-assessment not present in the source.
+
+nci-25 NCT03502733 account, turn 12
+  Q: Thanks. To check your ECOG performance status, how would you describe your ability to carry out daily activities? For example, are you fully active, or do you need some help with daily tasks?
+  A: I can do light work, but heavy things tire me. I don't need help with daily tasks, but I'm not fully active like I used to be.
+  fidelity model: The message claims the person does not need help with daily tasks, which is information not stated in the text.
+
+nci-25 NCT03502733 account, turn 22
+  Q: Thanks. Are you currently pregnant, or could you become pregnant during the study? If so, are you willing to use effective birth control while in the study and for 5 months after your last dose?
+  A: I am 63 years old, so I am not pregnant and cannot become pregnant.
+  fidelity model: The text does not state the person's gender or mention anything about pregnancy, so asserting they cannot become pregnant introduces information not present in the source.
+
+nci-25 NCT03502733 account, turn 28
+  Q: Thanks. Are you currently receiving any other investigational agents? These are medicines or treatments that are being tested in a clinical trial and are not yet approved for general use.
+  A: No, I am not currently receiving any other investigational agents. I have only received the standard treatments and mogamulizumab mentioned in my history.
+  fidelity model: The text does not state that the person is not receiving any other investigational agents, nor does it confirm that only the listed treatments were received, making the assertion about current status and exclusivity of treatment unsupported.
+
+nci-25 NCT03502733 full, turn 4
+  Q: Thanks for clarifying. Since you have lymphoma, have you received adequate exposure to standard of care therapy, and is there no curative therapy available for you?
+  A: I have received multiple lines of therapy including CHOP, ICE, and Mogamulizumab, but my disease has progressed or become refractory. Since I have progressed after these treatments, it seems there is no curative therapy available for me at this point.
+  fidelity model: The text does not state that no curative therapy is available; it only lists prior treatments and current disease status, making the claim about the lack of curative options an unsupported assertion.
+
+nci-37 NCT00924027 account, turn 38
+  Q: Thanks. Do you feel you are able to understand the study information and give informed consent?
+  A: Yes, I can understand the information and give consent. I've been managing my complex treatment history and side effects on my own, so I'm capable of making these decisions.
+  fidelity model: The message claims the person has been managing their complex treatment history and side effects 'on my own,' which contradicts the text stating they received care from emergency room staff, underwent robotic surgery, and received chemotherapy and other treatments administered by medical professionals.
+
+nci-37 NCT00924027 full, turn 36
+  Q: Thanks. Do you have any memory or thinking problems that make it hard for you to understand study information and give consent?
+  A: No, I don't have memory or thinking problems. I am able to understand information and give consent.
+  fidelity model: The text does not mention any cognitive issues or the patient's ability to understand information and give consent, so this statement introduces new information not present in the source.
+
+nci-41 NCT02211755 account, turn 10
+  Q: Thanks. On a scale of 0 to 5, how would you rate your ability to carry out daily activities? An ECOG score of 2 means you are able to care for yourself but are unable to carry out any work activities, and are up and about more than 50% of waking hours.
+  A: I would rate my ability to carry out daily activities as a 2. I can care for myself and do light work, but heavy things tire me out.
+  fidelity model: The message asserts a specific self-rating of '2' for daily activities, which is not stated in the text.
+
+nci-41 NCT02211755 account, turn 28
+  Q: Thanks. Are you currently receiving any other investigational agents (experimental drugs or treatments not yet approved for general use)?
+  A: No, I am not currently receiving any other investigational agents or experimental treatments.
+  fidelity model: The text does not mention whether the person is currently receiving investigational agents or experimental treatments, so this statement introduces new information not present in the source.
+
+nci-41 NCT02211755 account, turn 42
+  Q: Thanks. Are you a man or a woman?
+  A: I am a man. I had my prostate removed, which confirms my gender.
+  fidelity model: The text does not state the person's gender, nor does it claim that prostate removal confirms gender.
+
+nci-41 NCT02211755 full, turn 16
+  Q: Thanks. When was the last time you received chemotherapy, radiation therapy, or biologic therapy?
+  A: I received my last treatment, which was nivolumab and ipilimumab, on September 13, 2024, and I completed 4 cycles.
+  fidelity model: The text states that the patient started Nivo/Ipi on 9/13/24 and completed 4 cycles, implying the last treatment occurred after that date, whereas the message claims the last treatment was received on the start date.
+
+nci-41 NCT02211755 full, turn 18
+  Q: Thanks. To confirm, was your last treatment on September 13, 2024, more than 3 weeks ago?
+  A: Yes, it has been more than 3 weeks. I completed my 4 cycles of treatment, and the last dose was on September 13, 2024.
+  fidelity model: The message incorrectly states that the last dose was on September 13, 2024, whereas the text indicates that the patient started treatment on that date and completed 4 cycles subsequently.
+
+====================================================================================================
+reworded or invented quote on an answer: 15
+====================================================================================================
+nci-01 NCT01900132 account, turn 40
+  Q: Thanks. Have you ever been diagnosed with a stroke, a muscle disorder, peripheral neuropathy (nerve damage causing weakness/numbness), or had spine surgery? If you aren't sure, that's okay to say.
+  A: I don't have a diagnosis of peripheral neuropathy, though I do have some numbness in my fingertips and toes from chemo. I haven't had a stroke or spine surgery, and I don't have a muscle disorder.
+  not in the text: “I don't have a diagnosis of a neuromuscular disorder like neuropathy or myopathy.” / “I only have the numbness in my fingers and toes from the chemo.”
+
+nci-01 NCT01900132 account, turn 48
+  Q: Thanks. Have you ever been diagnosed with or evaluated for a neuromuscular disorder (a condition affecting your muscles or nerves)?
+  A: I don't have a diagnosis of a neuromuscular disorder. I only have numbness in my fingertips and toes, which I believe is from the chemo.
+  not in the text: “I don't have a diagnosis of a neuromuscular disorder like neuropathy or myopathy. I do have some numbness in my fingertips and toes, but that seems to be from the chemo.”
+
+nci-01 NCT01900132 account, turn 50
+  Q: Thanks. To clarify, have you ever had a doctor evaluate you for a neuromuscular disorder (a condition affecting your muscles or nerves), even if you weren't diagnosed?
+  A: No, I have never been evaluated for a neuromuscular disorder. The numbness in my fingers and toes is just a side effect from the chemotherapy.
+  not in the text: “I don't have a diagnosis of a neuromuscular disorder. I only have numbness in my fingertips and toes, which I believe is from the chemo.”
+
+nci-01 NCT01900132 full, turn 26
+  Q: Thanks. Have you ever been told by a doctor that you might have myopathy (a muscle disease)?
+  A: No, I have never been told I have myopathy. I have metastatic cervical carcinoma and mild neuropathy, but no diagnosis of a muscle disease.
+  not in the text: “No, I have never been told I might have motor neuron disease. I have metastatic cervical carcinoma and mild neuropathy, but nothing about motor neuron disease.”
+
+nci-01 NCT01900132 full, turn 28
+  Q: Thanks. Have you ever been told by a doctor that you have a suspected movement disorder that affects how your brain controls movement?
+  A: No, I have never been told I have a suspected movement disorder. I have metastatic cervical carcinoma and mild neuropathy, but nothing about a movement disorder.
+  not in the text: “No, I have never been told I might have motor neuron disease.” / “I have metastatic cervical carcinoma and mild neuropathy, but nothing about motor neuron disease.”
+
+nci-01 NCT03331380 account, turn 8
+  Q: Thanks for sharing. To be sure, are you definitely willing to follow all study instructions, like food restrictions, and are you available for all scheduled study visits?
+  A: Yes, I am willing to follow the instructions and I am available for the visits.
+  not in the text: “I think so. I was still playing tennis until recently, so I'm fairly active and organized.”
+
+nci-01 NCT03331380 account, turn 104
+  Q: Thanks. Do you currently use bronchodilators (medicines that open up the airways) on a regular basis?
+  A: No, I don't use bronchodilators. I don't have asthma or COPD, and I don't take any regular medicines for my lungs.
+  not in the text: “I don't know if I have lung disease like asthma or COPD.”
+
+nci-12 NCT03331380 account, turn 134
+  Q: Thanks. Are you currently breastfeeding?
+  A: No, I am not breastfeeding. I had a hysterectomy, so I cannot get pregnant or breastfeed.
+  not in the text: “I had a hysterectomy about three and a half years ago, so I cannot get pregnant.”
+
+nci-17 NCT03493945 account, turn 44
+  Q: Have you received any chemotherapy for metastatic castration-resistant prostate cancer in the last 3 months? If you aren't sure, that's okay to say.
+  A: No, I have never had castration-resistant prostate cancer. I have neuroendocrine cancer of the bladder.
+  not in the text: “I don't have prostate cancer; I have neuroendocrine cancer of the bladder.”
+
+nci-17 NCT06161532 account, turn 26
+  Q: Thanks. Have you ever been diagnosed with or treated for cancer in your brain or spinal cord (central nervous system lesions)?
+  A: Yes, I was diagnosed with a large meningioma, which is a tumor on the lining of my brain, and I had surgery to remove most of it.
+  not in the text: “I was diagnosed with a large meningioma, a tumor on the lining of my brain, and I had surgery to remove most of it.”
+
+nci-17 NCT06161532 account, turn 78
+  Q: Have you ever been diagnosed with cancer that has spread to your brain or central nervous system, or do you currently have any symptoms related to that?
+  A: Yes, I was diagnosed with a large meningioma, which is a tumor on the lining of my brain, and I had surgery to remove most of it.
+  not in the text: “I was diagnosed with a large meningioma, a tumor on the lining of my brain, and I had surgery to remove most of it.”
+
+nci-25 NCT00003838 full, turn 10
+  Q: Thanks. Have you ever been diagnosed with acute lymphoblastic leukemia (ALL)? If so, are you currently in complete or partial remission?
+  A: No, I have never been diagnosed with acute lymphoblastic leukemia. I have peripheral T-cell lymphoma.
+  not in the text: “No, I have never been diagnosed with chronic myelogenous leukemia. I have peripheral T-cell lymphoma.”
+
+nci-25 NCT00003838 full, turn 40
+  Q: Thanks. Are you able to understand the study details and provide informed consent, or would you need a guardian to do this for you?
+  A: Yes, I am able to understand the study details and provide informed consent myself.
+  not in the text: “Yes, I am able to understand the study details well enough to provide informed consent.”
+
+nci-37 NCT00924027 account, turn 56
+  Q: Thanks. Has your doctor mentioned whether your cancer is in multiple areas of the breast (multicentric) or if it would be difficult to remove all of it with clear margins?
+  A: No, I do not have breast cancer, so this question about multicentric breast cancer does not apply to me. I have endometrial cancer.
+  not in the text: “No, I have never been diagnosed with breast cancer. My text only mentions endometrial cancer.”
+
+nci-37 NCT00924027 full, turn 30
+  Q: Thanks. Have you ever been diagnosed with infiltrating ductal carcinoma or ductal carcinoma in-situ (DCIS) of the breast?
+  A: No, I have not been diagnosed with breast cancer or any type of ductal carcinoma. My diagnosis is serous carcinoma of the endometrium.
+  not in the text: “No, I have not been diagnosed with breast cancer. My diagnosis is serous carcinoma of the endometrium.”
+
+====================================================================================================
+uncited-assertion: 11
+====================================================================================================
+nci-06 NCT01827384 account, turn 20
+  Q: Thanks. Are you currently breastfeeding? If not, are you willing to stop breastfeeding while on this trial and for 30 days after your last dose? If you aren't sure, that's okay.
+  A: No, I am not currently breastfeeding. The text does not mention anything about breastfeeding, so I assume I am not doing it.
+  {"kind":"uncited-assertion","length":124}
+
+nci-12 NCT03331380 full, turn 138
+  Q: Thanks. Do you have any concerns or objections to being exposed to gadolinium (the contrast dye used in some MRI scans)?
+  A: I don't have any specific concerns about gadolinium. My text doesn't mention any allergies or objections to contrast dyes.
+  {"kind":"uncited-assertion","length":122}
+
+nci-12 NCT03331380 full, turn 158
+  Q: Thanks. Do you have any preference against being exposed to oral contrast for this study?
+  A: I don't have a preference against oral contrast. My text doesn't mention any objections to it.
+  {"kind":"uncited-assertion","length":94}
+
+nci-17 NCT06161532 account, turn 72
+  Q: Are you currently breastfeeding? If you are, you would need to stop nursing until 1 month after your last study drug dose. If you aren't sure or aren't currently nursing, please let me know.
+  A: No, I am not currently breastfeeding. The text does not mention anything about breastfeeding or nursing.
+  {"kind":"uncited-assertion","length":104}
+
+nci-17 NCT06161532 account, turn 74
+  Q: Are you able to understand and willing to sign a written informed consent document for the study? If you aren't sure, that's okay to say.
+  A: Yes, I am able to understand and I am willing to sign the informed consent document.
+  {"kind":"uncited-assertion","length":84}
+
+nci-25 NCT00003838 account, turn 32
+  Q: Thanks. Since you are 63, we need to confirm that you are able to understand the study details and provide informed consent. Do you have any concerns about your ability to do this?
+  A: No, I don't have any concerns about my ability to understand the study details or provide informed consent.
+  {"kind":"uncited-assertion","length":107}
+
+nci-25 NCT00003838 account, turn 40
+  Q: Thanks. Are you able to understand that this is a research study and agree to participate by signing a consent form?
+  A: Yes, I am able to understand that this is a research study and I agree to participate by signing a consent form.
+  {"kind":"uncited-assertion","length":112}
+
+nci-25 NCT00003838 full, turn 32
+  Q: Thanks. Are you able to understand the study details well enough to provide informed consent?
+  A: Yes, I am able to understand the study details well enough to provide informed consent.
+  {"kind":"uncited-assertion","length":87}
+
+nci-25 NCT03502733 full, turn 24
+  Q: Thanks. Are you able to understand the study information and willing to sign a written consent form to participate?
+  A: Yes, I am able to understand the study information and I am willing to sign the consent form.
+  {"kind":"uncited-assertion","length":93}
+
+nci-37 NCT00924027 full, turn 36
+  Q: Thanks. Do you have any memory or thinking problems that make it hard for you to understand study information and give consent?
+  A: No, I don't have memory or thinking problems. I am able to understand information and give consent.
+  {"kind":"uncited-assertion","length":99}
+
+nci-41 NCT02211755 account, turn 28
+  Q: Thanks. Are you currently receiving any other investigational agents (experimental drugs or treatments not yet approved for general use)?
+  A: No, I am not currently receiving any other investigational agents or experimental treatments.
+  {"kind":"uncited-assertion","length":93}
+
+====================================================================================================
+answer quoting itself: 10
+====================================================================================================
+nci-01 NCT01900132 account, turn 44
+  Q: Thanks. Do you currently have a diagnosis of diabetes, kidney disease, or liver disease?
+  A: I don't have a diagnosis of diabetes or kidney disease. I do have liver disease because my cancer has spread there.
+  not in the text: “I don't have a diagnosis of diabetes or kidney disease.” / “I do have liver disease because my cancer has spread there.”
+
+nci-12 NCT03331380 account, turn 154
+  Q: Thanks. Are you currently breastfeeding, and if so, would you be willing to discard breast milk for 24 hours if you receive barium sulfate contrast?
+  A: No, I am not breastfeeding. I had a hysterectomy, so I cannot get pregnant or breastfeed.
+  not in the text: “No, I am not breastfeeding. I had a hysterectomy, so I cannot get pregnant or breastfeed.”
+
+nci-13 NCT02465060 account, turn 48
+  Q: Thanks. Has your cancer progressed or worsened since starting your current treatment, or were you unable to continue the treatment because of side effects?
+  A: Yes, my cancer progressed and worsened despite the treatments I had. The text says the cancer kept growing and spreading after my chemo and radiation.
+  not in the text: “the cancer kept growing and spreading”
+
+nci-13 NCT02465060 full, turn 8
+  Q: Have you been diagnosed with a solid tumor, lymphoma, or multiple myeloma that requires treatment?
+  A: Yes, I have metastatic penile squamous cell carcinoma that requires treatment.
+  not in the text: “requires treatment”
+
+nci-25 NCT00003838 full, turn 12
+  Q: Thanks. Have you ever been diagnosed with acute myeloid leukemia (AML)? If so, are you currently in complete or partial remission?
+  A: No, I have never been diagnosed with acute myeloid leukemia. I have peripheral T-cell lymphoma.
+  not in the text: “No, I have never been diagnosed with acute myeloid leukemia.” / “I have peripheral T-cell lymphoma.”
+
+nci-25 NCT00003838 full, turn 16
+  Q: Thanks. Have you ever been diagnosed with a myeloproliferative disease? This is a group of blood disorders where the bone marrow makes too many blood cells, or where you have low blood counts (cytopenia).
+  A: No, I have never been diagnosed with a myeloproliferative disease. I only have peripheral T-cell lymphoma.
+  not in the text: “No, I have never been diagnosed with a myeloproliferative disease. I only have peripheral T-cell lymphoma.”
+
+nci-25 NCT00003838 full, turn 18
+  Q: Thanks. Have you ever been diagnosed with chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL)? If so, did your disease become bulky or progress after treatment with chemotherapy that included purine analogs?
+  A: No, I have never been diagnosed with CLL or SLL. I only have peripheral T-cell lymphoma.
+  not in the text: “I only have peripheral T-cell lymphoma.”
+
+nci-25 NCT00003838 full, turn 20
+  Q: Thanks. Have you ever been diagnosed with non-Hodgkin lymphoma (NHL), which is a type of cancer that starts in the lymphocytes (a type of white blood cell)?
+  A: No, I have never been diagnosed with non-Hodgkin lymphoma. I have peripheral T-cell lymphoma.
+  not in the text: “I have peripheral T-cell lymphoma.”
+
+nci-37 NCT00924027 full, turn 56
+  Q: Thanks. Have you ever been told by your doctor that your breast cancer is in multiple separate areas (multicentric) or that it might be hard to remove all of it with clear edges (clear margins)?
+  A: I don't have breast cancer, so this question doesn't apply to me. My diagnosis is serous carcinoma of the endometrium.
+  not in the text: “My diagnosis is serous carcinoma of the endometrium”
+
+nci-41 NCT02211755 full, turn 32
+  Q: Thanks. Are you currently receiving any other investigational agents, which are experimental treatments or drugs not yet approved for general use?
+  A: No, I am not currently receiving any other investigational agents. My recent treatments were nivolumab and ipilimumab, which are standard immunotherapies, not experimental study drugs.
+  not in the text: “My recent treatments were nivolumab and ipilimumab, which are standard immunotherapies, not experimental study drugs.”
+
+====================================================================================================
+model flag on an I-don't-know reply: 68
+====================================================================================================
+nci-01 NCT01900132 account, turn 36
+  Q: Thanks. Do you currently have any medical conditions, such as diabetes, kidney disease, or liver disease, that require medication?
+  A: I don't know if I have diabetes or kidney disease. I do have liver disease because my cancer has spread there, but I don't know if that requires specific medication.
+  fidelity model: The message asserts that the person has liver disease, but the text only states that the cancer spread to the liver, not that they have a separate diagnosis of liver disease.
+
+nci-01 NCT01900132 account, turn 38
+  Q: Thanks. To help us understand if your liver disease affects the study measures, are you currently taking any daily medications or supplements for it?
+  A: I don't know if I take daily medications or supplements specifically for my liver disease. I've had many treatments, but I don't recall taking anything just for the liver condition itself.
+  fidelity model: The text does not mention that the person has a liver disease, only that cancer spread to the liver, and the message asserts uncertainty about medications for a specific liver condition not described in the text.
+
+nci-01 NCT01900132 account, turn 46
+  Q: Thanks. Does your liver disease require any medications that might affect the physiological measures we are testing?
+  A: I don't know if my liver disease requires any specific medications that would affect the study. I've had many treatments, but I don't recall taking anything just for the liver condition itself.
+  fidelity model: The text describes cervical cancer that spread to the liver, but does not mention a separate 'liver disease' or the user's uncertainty about medications for such a condition.
+
+nci-01 NCT03331380 account, turn 18
+  Q: Thanks. Have you ever been diagnosed with heart failure with reduced ejection fraction? This is a condition where the heart muscle doesn't pump blood as well as it should. If you aren't sure, that's okay.
+  A: I don't know if I have heart failure. My text doesn't mention any diagnosis of heart failure or ejection fraction issues, only my cancer history and symptoms.
+  fidelity model: The message claims the text does not mention heart failure or ejection fraction issues, but the text explicitly states the person had a bad reaction to platinum chemo involving chest tightness and facial swelling, which are relevant cardiac/respiratory symptoms often associated with such conditions.
+
+nci-01 NCT03331380 account, turn 34
+  Q: Thanks. Have you ever had a transient ischemic attack (TIA) or a stroke that started more than 24 hours after an initial event? If you aren't sure, that's okay.
+  A: I don't know if I have had a TIA or a stroke. My text doesn't mention any history of strokes or TIAs, only my cancer and its treatments.
+  fidelity model: The message asserts that the text does not mention any history of strokes or TIAs, which is a claim about the text's content that is not stated in the text itself.
+
+nci-01 NCT03331380 account, turn 40
+  Q: Thanks. Have you ever been diagnosed with a demyelinating disease or multiple sclerosis? If you aren't sure, that's okay.
+  A: I don't know if I have a demyelinating disease or multiple sclerosis. My text doesn't mention any diagnosis of those conditions, only my cervical cancer and its treatments.
+  fidelity model: The message asserts that the person does not know if they have a demyelinating disease or multiple sclerosis, which introduces specific medical uncertainties and conditions not present in or supported by the source text.
+
+nci-01 NCT03331380 account, turn 44
+  Q: Thanks. Have you ever been diagnosed with a brain tumor, metastases, abscess, or lesion? If you aren't sure, that's okay.
+  A: I don't know if I have a brain tumor or lesions. My text only mentions cancer in my neck, pelvis, liver, and lungs, with no mention of brain issues.
+  fidelity model: The message asserts that the text contains no mention of brain issues, but the text explicitly states the person has no changes in their vision, which is a health detail not present in the message's claim of absence.
+
+nci-01 NCT03331380 account, turn 64
+  Q: Thanks. Are you currently undergoing an evaluation for a bone fracture?
+  A: No, I am not currently undergoing an evaluation for a bone fracture. My text only mentions my cancer history and treatments, with no mention of fractures or bone evaluations.
+  fidelity model: The message asserts that the text contains no mention of fractures or bone evaluations, which is a claim about the text's content rather than the person's health, and the text does not explicitly state this negative fact.
+
+nci-01 NCT03331380 account, turn 122
+  Q: Thanks. Are you currently pregnant?
+  A: No, I am not pregnant. I have cervical cancer and have undergone multiple treatments, but there is no mention of pregnancy in my history.
+  fidelity model: The message asserts that the person is not pregnant, which is information not stated in the text.
+
+nci-01 NCT03331380 account, turn 128
+  Q: Thanks. Do you have any concerns or objections to being exposed to gadolinium (the contrast dye used in MRI scans)?
+  A: I don't have any specific concerns about gadolinium. My text doesn't mention any objections to MRI contrast dye, only my reactions to chemotherapy.
+  fidelity model: The message asserts that the text does not mention any objections to MRI contrast dye, but the text does not mention MRI contrast dye or gadolinium at all, making this a hallucination of content rather than a faithful representation.
+
+nci-01 NCT03331380 account, turn 132
+  Q: Thanks. Have you ever had an allergic reaction to any intravenous iron product?
+  A: I don't know if I have had an allergic reaction to intravenous iron. My text only mentions a bad reaction to platinum chemo, not iron products.
+  fidelity model: The message asserts that the text only mentions a bad reaction to platinum chemo and not iron products, which contradicts the text's explicit statement that the user does not have rashes or other symptoms, implying a comprehensive review of symptoms that would include such a reaction if it had occurred, or more directly, the message introduces a specific uncertainty about intravenous iron that is not supported by the text's detailed symptom list.
+
+nci-01 NCT03331380 account, turn 134
+  Q: Thanks. Have you ever had an allergic reaction to ferumoxytol (an iron supplement) or to mannitol (a sugar alcohol used in some medications)?
+  A: I don't know if I have had an allergic reaction to ferumoxytol or mannitol. My text only mentions a bad reaction to platinum chemo, not these specific substances.
+  fidelity model: The message introduces specific substances (ferumoxytol, mannitol) and questions an allergic reaction to them, which are not mentioned in the text and contradict the text's explicit statement that the only bad reaction was to platinum chemo.
+
+nci-01 NCT03331380 account, turn 142
+  Q: Are you currently breastfeeding? If so, would you be willing to discard breast milk for 24 hours if barium sulfate is used?
+  A: No, I am not currently breastfeeding. I mentioned earlier that I am not pregnant and my text does not mention anything about breastfeeding.
+  fidelity model: The message asserts that the person is not pregnant, which is a specific health circumstance not stated in the text.
+
+nci-01 NCT03331380 account, turn 150
+  Q: Thanks. Has your doctor told you that you have unstable heart function or decompensated heart failure?
+  A: I don't know if my doctor has told me I have unstable heart function or decompensated heart failure. My text doesn't mention any diagnosis of heart failure or unstable heart function, only my cancer history and symptoms.
+  fidelity model: The message asserts that the text does not mention a diagnosis of heart failure or unstable heart function, which is a claim about the text's content rather than a direct assertion of the person's health status, but it introduces specific medical conditions (heart failure) not present in the text to frame the statement, potentially implying a lack of such diagnosis which is an external observation not strictly contained in the provided text's narrative of symptoms and history.
+
+nci-01 NCT03331380 full, turn 40
+  Q: Thanks. Have you ever been diagnosed with a demyelinating disease or multiple sclerosis? (These are conditions where the protective covering of nerves is damaged, which can affect movement, vision, or sensation.)
+  A: I don't know if I have a demyelinating disease or multiple sclerosis. The text mentions mild neuropathy in my fingertips and toes, but it does not mention any diagnosis of demyelinating disease or MS.
+  fidelity model: The message introduces a specific concern about demyelinating disease or multiple sclerosis, which is not mentioned or implied in the text, whereas the text only attributes the neuropathy to the cancer treatment context.
+
+nci-01 NCT03331380 full, turn 112
+  Q: Thanks. Have you ever been diagnosed with pulmonary lymphangioleiomyomatosis (a rare lung disease)?
+  A: I don't know if I have been diagnosed with pulmonary lymphangioleiomyomatosis. The text mentions some pulmonary disease, but it does not specify this rare lung condition.
+  fidelity model: The message asserts a specific uncertainty about a diagnosis of pulmonary lymphangioleiomyomatosis, which introduces a specific medical condition not mentioned or implied in the text.
+
+nci-01 NCT03331380 full, turn 132
+  Q: Thanks. Have you ever had any metal shavings or other foreign bodies in your eyes?
+  A: I don't know if I have ever had metal shavings or foreign bodies in my eyes. The text doesn't mention any history of eye injuries or foreign objects.
+  fidelity model: The message introduces a specific concern about metal shavings or foreign bodies in the eyes, which is not mentioned in the text and contradicts the text's statement that the patient denies vision changes.
+
+nci-01 NCT03331380 full, turn 142
+  Q: Are you currently breastfeeding?
+  A: No, I am not currently breastfeeding. The text does not mention any pregnancy or breastfeeding status, but given my age and metastatic cancer, it is not applicable.
+  fidelity model: The message asserts that the person is not currently breastfeeding, which introduces a specific health circumstance and status not mentioned or implied in the text.
+
+nci-01 NCT03331380 full, turn 154
+  Q: Do you have any concerns or objections to being exposed to ferumoxytol (an intravenous iron product) during the study?
+  A: I don't know if I have any concerns about ferumoxytol. The text doesn't mention any prior reactions to iron products or any specific objections I have to it.
+  fidelity model: The message mentions 'ferumoxytol' and 'prior reactions to iron products', neither of which are stated in the text.
+
+nci-01 NCT03331380 full, turn 160
+  Q: Are you currently breastfeeding? If so, would you be willing to discard your breast milk for 24 hours if the study uses barium sulfate contrast?
+  A: No, I am not currently breastfeeding. The text does not mention any pregnancy or breastfeeding status, but given my age and metastatic cancer, it is not applicable.
+  fidelity model: The message asserts that the person is not currently breastfeeding, which introduces a specific health circumstance and status not mentioned or implied in the text.
+
+nci-06 NCT01827384 account, turn 34
+  Q: Thanks. Do you have bone metastases, or are you currently taking intravenous bisphosphonates, denosumab, or similar medications for your bones? If you aren't sure, that's okay.
+  A: Yes, I have bone metastases because the cancer spread to my spine. I don't know if I am currently taking intravenous bisphosphonates or denosumab.
+  fidelity model: The message claims the user does not know if they are taking bisphosphonates or denosumab, which introduces specific medical treatment details not present in the text.
+
+nci-06 NCT01827384 account, turn 36
+  Q: Thanks. Do you have hypercalcemia (high calcium in the blood) and are you currently taking IV bisphosphonates, denosumab, or similar bone medications? Or, do you have prostate cancer and are taking LHRH agonists or antagonists? If you aren't sure, that's okay.
+  A: I don't know if I have high calcium levels in my blood, and I don't know if I am taking IV bisphosphonates or denosumab. I also don't have prostate cancer.
+  fidelity model: The message asserts that the person does not have prostate cancer, which contradicts the text stating the person is a 39-year-old female diagnosed with breast cancer.
+
+nci-06 NCT01827384 account, turn 50
+  Q: Thanks. Do you have HIV and are you currently taking combination antiretroviral therapy (HIV medication)? If you aren't sure, that's okay.
+  A: No, I don't have HIV. The text only mentions my breast cancer and its spread, with no reference to HIV or antiretroviral therapy.
+  fidelity model: The message asserts that the person does not have HIV, which is information not stated in the text.
+
+nci-06 NCT01827384 full, turn 14
+  Q: Thanks. Do you know if you have bone metastases (cancer that has spread to the bones), or if you are currently taking intravenous bisphosphonates, denosumab, or similar bone-strengthening treatments? Also, do you have prostate cancer and take LHRH agonists or antagonists?
+  A: I have bone metastases, specifically lesions at T10 and L4. I don't know if I am currently taking bisphosphonates or denosumab, and I don't have prostate cancer.
+  fidelity model: The message asserts that the person does not have prostate cancer, which is a contradiction since the text identifies the person as female (39yo F).
+
+nci-12 NCT00102544 account, turn 14
+  Q: Thanks. To make sure you can fully understand and consent to the procedure, do you currently have any confusion, memory issues, or other changes in your mental status that might affect your ability to participate?
+  A: I don't know if I have any confusion or memory issues. I just know I have cancer and I'm working full-time.
+  fidelity model: The message asserts that the person does not know if they have confusion or memory issues, which introduces specific health symptoms not mentioned in the text.
+
+nci-12 NCT00102544 account, turn 16
+  Q: Thanks. During medical procedures, are you able to hold reasonably still on the procedure table for the entire length of the procedure?
+  A: I can do light work, but heavy things tire me, so I'm not sure if I can hold still for the entire length of a procedure.
+  fidelity model: The message introduces a new concern about holding still for a medical procedure, which is not mentioned or implied in the text.
+
+nci-12 NCT03331380 account, turn 108
+  Q: Thanks. Have you ever been diagnosed with pulmonary lymphangioleiomyomatosis (a rare lung disease)?
+  A: I don't know if I have pulmonary lymphangioleiomyomatosis. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  fidelity model: The message asserts that the person does not know if they have pulmonary lymphangioleiomyomatosis, which introduces a specific medical condition and uncertainty not present in the text.
+
+nci-12 NCT03331380 account, turn 112
+  Q: Thanks. Aside from your cervical cancer and its spread, do you have any other known non-cardiovascular diseases or health conditions?
+  A: No, I don't have any other known non-cardiovascular diseases. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  fidelity model: The text does not state that the person has no other known non-cardiovascular diseases, so the message asserts information not present in the source.
+
+nci-12 NCT03331380 full, turn 148
+  Q: Thanks. Do you have any concerns or objections to being exposed to ferumoxytol (an iron supplement) during this study?
+  A: I don't have any specific concerns about ferumoxytol. My text doesn't mention any allergies or objections to this substance.
+  fidelity model: The message introduces 'ferumoxytol', a specific medication not mentioned in the text, and asserts a lack of allergies or objections to it, which is information not present in the source text.
+
+nci-12 NCT04708470 account, turn 4
+  Q: Thanks. Was your cancer diagnosis confirmed by a biopsy or lab test (histologically or cytologically)?
+  A: I don't know if my diagnosis was confirmed by a biopsy or lab test. I only know I was diagnosed with cervical cancer and it has spread.
+  fidelity model: The text explicitly states the specific type of cervical cancer (adenocarcinoma) and details the treatments received, which implies a confirmed diagnosis, whereas the message claims uncertainty about whether the diagnosis was confirmed by a biopsy or lab test.
+
+nci-12 NCT04708470 account, turn 12
+  Q: Thanks. To clarify, are you willing to stop using standard immunotherapies like pembrolizumab for the rest of your life if you join this study? Please let me know if you are definitely willing, definitely not, or still unsure.
+  A: I'm not sure if I can commit to stopping standard immunotherapies for the rest of my life. I'm currently looking for a trial while my oncologist starts topotecan, so I'm not sure about the long-term restrictions.
+  fidelity model: The message claims uncertainty about stopping 'standard immunotherapies for the rest of my life,' which is not stated in the text and contradicts the text's description of the patient's current treatment plan involving topotecan and a search for a clinical trial.
+
+nci-13 NCT02465060 account, turn 8
+  Q: Thanks. To be sure, do you expect to be able to father children in the future, or are you certain you cannot?
+  A: I had part of my penis removed, so I don't think I can father children anymore. I am not sure if I can or cannot do so in the future.
+  fidelity model: The message introduces a concern about fertility and fathering children, which is not mentioned or implied in the text.
+
+nci-13 NCT02465060 account, turn 46
+  Q: Thanks. Do you have any history of heart failure, a condition called long QT syndrome, or a family history of long QT syndrome or sudden death before age 40? Also, are you currently taking any medications known to affect heart rhythm?
+  A: I don't know if I have a history of heart failure or long QT syndrome, or if anyone in my family had sudden death before age 40. I also don't know if I am currently taking any medications that affect heart rhythm.
+  fidelity model: The message asserts that the person does not know their family history of sudden death and current medication status, which introduces specific health-related uncertainties not present in the text.
+
+nci-13 NCT02465060 account, turn 56
+  Q: Thanks. Have you been assigned to step 1 treatment based on a 'rare variant' that was determined by a designated outside laboratory?
+  A: I don't know if I have been assigned to step 1 treatment based on a rare variant from an outside lab. My text only mentions my cancer history and past treatments, not any genetic testing results or trial assignments.
+  fidelity model: The message asserts that the person has been assigned to 'step 1 treatment' and mentions a 'rare variant from an outside lab,' neither of which is stated in the text and which contradicts the message's own claim that the text only mentions cancer history and past treatments.
+
+nci-13 NCT02465060 full, turn 4
+  Q: Have you had a pregnancy test in the last 2 weeks, and was the result negative?
+  A: I don't know about that. I am a 75-year-old male, so I wouldn't have a pregnancy test.
+  fidelity model: The message introduces a pregnancy test, which is not mentioned in the text and is biologically impossible for a male, thereby contradicting the implied context of the patient's gender and condition.
+
+nci-13 NCT02465060 full, turn 6
+  Q: Thanks. For the duration of the study and 4 months after, do you plan to use effective contraception or abstain from sexual intercourse to prevent pregnancy or fathering children?
+  A: I don't know about that. I am a 75-year-old male, so I wouldn't need to worry about preventing pregnancy or fathering children.
+  fidelity model: The message introduces a concern about preventing pregnancy and fathering children, which is not mentioned or implied in the text.
+
+nci-13 NCT02465060 full, turn 32
+  Q: Thanks. Are you currently able to swallow tablets or capsules without difficulty, and do you have any stomach or intestinal conditions that might affect how your body absorbs medication?
+  A: I don't know if I can swallow tablets without difficulty or if I have stomach conditions affecting absorption. My text only details my cancer diagnosis and previous treatments, not my current ability to swallow or digestive health.
+  fidelity model: fidelity check returned no usable answer
+
+nci-17 NCT03331380 account, turn 144
+  Q: Do you have any concerns or objections to being exposed to ferumoxytol (an iron supplement given by IV) during the study?
+  A: I don't know if I have any concerns about ferumoxytol. The text doesn't mention any objections or feelings about this specific iron supplement.
+  fidelity model: The message introduces 'ferumoxytol' and an 'iron supplement,' which are not mentioned in the text and contradict the text's specific list of treatments (chemo and surgery) by implying a different or additional context not supported by the source.
+
+nci-17 NCT03331380 account, turn 166
+  Q: Would you be willing to use a bronchodilator (a medicine that opens up your airways) if it were needed during the study?
+  A: I don't know if I would be willing to use a bronchodilator. The text doesn't mention my willingness to take any medications or use inhalers during a study.
+  fidelity model: The message introduces a specific medical device (bronchodilator) and a hypothetical scenario about a study that are not mentioned or implied in the text.
+
+nci-17 NCT03331380 full, turn 146
+  Q: Are you okay with being exposed to ferumoxytol (an iron supplement) for this study?
+  A: I don't know if I am okay with being exposed to ferumoxytol. The text doesn't mention my consent or feelings regarding this specific iron supplement.
+  fidelity model: The message asserts that the patient is exposed to ferumoxytol, a medication not mentioned in the text, and expresses feelings about it which are not stated in the source material.
+
+nci-17 NCT03493945 full, turn 18
+  Q: Thanks. Have you ever received treatment to lower testosterone levels for castration-resistant prostate cancer (CRPC)?
+  A: I don't know if I have ever received treatment to lower testosterone for prostate cancer. My medical history only mentions treatments for my bladder tumor and the meningioma.
+  fidelity model: The message asserts a history of prostate cancer and potential testosterone-lowering treatment, which is not mentioned in the text and contradicts the text's specific focus on bladder tumor and meningioma treatments.
+
+nci-17 NCT03493945 full, turn 58
+  Q: Thanks. Have you received any cytotoxic chemotherapy for metastatic castration-resistant prostate cancer in the last 3 months? (Cytotoxic chemotherapy is standard cancer drug treatment.) If you aren't sure, that's okay to say.
+  A: I don't know if I have received cytotoxic chemotherapy for metastatic castration-resistant prostate cancer in the last 3 months. My history only mentions treatments for my bladder tumor, not prostate cancer.
+  fidelity model: The message asserts a history of metastatic castration-resistant prostate cancer, which is not mentioned in the text and contradicts the text's description of the patient's condition as a large cell neuroendocrine tumor of the bladder.
+
+nci-17 NCT06161532 full, turn 38
+  Q: Thanks. Have you had stereotactic radiotherapy in the last week, whole-brain radiotherapy in the last 2 weeks, or brain surgery in the last 4 weeks? If you aren't sure, that's okay to say.
+  A: I don't know if I have had any of those specific treatments recently. The text mentions brain surgery (subtotal resection) in January 2024, but that was more than 4 weeks ago, and it doesn't mention any recent radiotherapy.
+  fidelity model: fidelity check returned no usable answer
+
+nci-17 NCT06161532 full, turn 80
+  Q: Have you ever been diagnosed with cancer that has spread to your brain or central nervous system, or do you currently have any symptoms related to that?
+  A: I don't know if I have cancer that has spread to my brain or central nervous system. The text mentions an incidental meningioma, but it is described as a benign tumor, not cancer.
+  fidelity model: The text does not state that the meningioma is benign, nor does it confirm or deny whether the cancer has spread to the brain or central nervous system.
+
+nci-17 NCT06161532 full, turn 102
+  Q: Have you ever received a stem cell transplant or a solid organ transplant (like a kidney, liver, or heart) from another person?
+  A: No, I have never received a stem cell transplant or a solid organ transplant. The text only mentions surgeries related to my bladder cancer and meningioma.
+  fidelity model: The text does not state that the patient has never received a stem cell or solid organ transplant, so the message asserts information not present in the source.
+
+nci-25 NCT00003838 account, turn 4
+  Q: Thanks. Have you ever had treatment with high-dose chemotherapy or radiation, a previous blood or bone marrow transplant, multiple myeloma, or a chronic condition like heart, lung, liver, or kidney disease?
+  A: I have mild kidney disease, so I have a chronic condition. I don't know if I've had high-dose chemo, radiation, or a transplant, and I don't have multiple myeloma.
+  fidelity model: The message asserts that the person does not have multiple myeloma, which is information not present in the text.
+
+nci-25 NCT00003838 account, turn 14
+  Q: Thanks. Have you ever been diagnosed with myelodysplastic syndrome (MDS) classified as refractory anemia with excess blasts (RAEB), or chronic myelomonocytic leukemia (CMML)? It's okay if you aren't sure.
+  A: I don't know if I have MDS or CMML. I only know I have peripheral T-cell lymphoma.
+  fidelity model: The message asserts that the person does not know if they have MDS or CMML, which introduces specific medical conditions not mentioned in the text.
+
+nci-25 NCT00003838 account, turn 46
+  Q: Thanks. On a scale of 0 to 4, how would you rate your ECOG performance status? This measures how well you can perform ordinary daily tasks. 0 means fully active, and 4 means completely disabled. If you aren't sure, just let me know.
+  A: I can do light work, but heavy things tire me. I don't know the exact score, but I'm not completely disabled.
+  fidelity model: The message claims the person is 'not completely disabled,' which is a specific assessment of their functional status not stated in the text.
+
+nci-25 NCT00003838 account, turn 52
+  Q: Thanks. Do you have any major health conditions or organ failures that your doctor has said could make a blood cell transplant unsafe or incompatible with survival?
+  A: I have mild kidney disease and high blood pressure, but my doctor hasn't said these make a transplant unsafe. I don't know about any other major organ failures.
+  fidelity model: The message introduces information about a doctor's assessment regarding transplant safety and major organ failures, which is not mentioned or implied in the text.
+
+nci-25 NCT00003838 account, turn 68
+  Q: Thanks. Have you ever been told by a doctor that you are HIV positive?
+  A: I don't know if I have ever been told I am HIV positive. I only know about my T-cell lymphoma and other conditions mentioned.
+  fidelity model: The message asserts that the person does not know if they are HIV positive, which introduces a specific health status (HIV) not mentioned in the text.
+
+nci-25 NCT03502733 account, turn 6
+  Q: Thanks for sharing that. Since you're unsure, would you say you have received enough standard treatment for your lymphoma, and that your doctor has said there is no cure available for you?
+  A: I don't know if my doctor has explicitly said there is no cure available, but the treatments haven't worked long-term. I just know the cancer keeps coming back.
+  fidelity model: The message asserts that the user does not know if their doctor has explicitly stated there is no cure available, which introduces information about a specific doctor-patient conversation and the concept of a 'cure' that is not present in the source text.
+
+nci-25 NCT03502733 account, turn 18
+  Q: Thanks. Are you currently taking blood thinners like warfarin or heparin? If so, have your recent blood test results (INR or PTT) been stable within the recommended range?
+  A: I don't know if I am taking blood thinners like warfarin or heparin, and I don't have my recent INR or PTT results handy.
+  fidelity model: The message asserts that the person does not have recent INR or PTT results, which is specific medical information not stated or implied in the text.
+
+nci-25 NCT03502733 account, turn 30
+  Q: Thanks. Do you currently have any serious health issues like an active infection, uncontrolled asthma, heart problems, or a history of stroke or heart attack in the past 6 months? If you're not sure, that's okay.
+  A: I don't know if I have an active infection or uncontrolled asthma. I do have high blood pressure and mild kidney disease, but I don't know if I have a history of stroke or heart attack.
+  fidelity model: The message asserts that the person has uncontrolled asthma and asks about a history of stroke or heart attack, neither of which are mentioned in the text.
+
+nci-25 NCT03502733 account, turn 32
+  Q: Thanks. To clarify, have you had a heart attack or stroke in the past 6 months? Also, do you currently have an active infection, uncontrolled asthma, or any other serious heart or lung problems?
+  A: I don't know if I've had a heart attack or stroke in the past 6 months, or if I have an active infection or uncontrolled asthma. I do have high blood pressure and mild kidney disease.
+  fidelity model: The message asserts that the person does not know if they have had a heart attack or stroke, which introduces specific medical history details not present in the text.
+
+nci-25 NCT03502733 full, turn 16
+  Q: Thanks. Do you know if your last monoclonal antibody therapy (like rituximab or trastuzumab) was completed at least 6 weeks ago?
+  A: I don't know when my last monoclonal antibody therapy was completed, so I can't confirm if it was at least 6 weeks ago.
+  fidelity model: The text explicitly states that the patient received Mogamulizumab (a monoclonal antibody) and progressed within 3 months, implying the therapy was completed, whereas the message claims uncertainty about when the last monoclonal antibody therapy was completed.
+
+nci-25 NCT03502733 full, turn 18
+  Q: Thanks. Are you currently taking blood thinners like warfarin or heparin? If so, have your recent blood test results (INR or PTT) been stable within the recommended range?
+  A: I don't know if I am currently taking blood thinners like warfarin or heparin, so I can't confirm my INR or PTT results.
+  fidelity model: The text does not mention the patient taking blood thinners or having INR/PTT results, and the message introduces specific medication and lab details not present in the source.
+
+nci-25 NCT03502733 full, turn 32
+  Q: Thanks. Do you currently have any serious health issues like an active infection, uncontrolled asthma, heart problems, or a history of stroke or heart attack in the last 6 months? If you're not sure, that's okay.
+  A: I don't know if I have an active infection or uncontrolled asthma. I do have high blood pressure and stage 2 kidney disease, but the text says my cardiac function is adequate and doesn't mention a recent stroke or heart attack.
+  fidelity model: The message asserts the presence of uncontrolled asthma, which is not mentioned in the text and contradicts the absence of such a diagnosis in the provided comorbidities.
+
+nci-37 NCT00924027 full, turn 8
+  Q: Thanks. Do you have a primary medical or surgical oncologist (in the community or at NCI) who is willing to work with the study's Radiation Oncology team to manage your care?
+  A: I don't know if I have a specific oncologist willing to work with their Radiation Oncology team. I have been seeing doctors for my chemotherapy and surgeries, but I haven't discussed this trial arrangement with them.
+  fidelity model: The message mentions a 'Radiation Oncology team' and a 'trial arrangement,' neither of which are mentioned in the text, and the text does not indicate the patient is involved in a clinical trial.
+
+nci-37 NCT00924027 full, turn 14
+  Q: Thanks. Have you had a recurrence of cancer at the vaginal cuff?
+  A: I don't know if I have a recurrence at the vaginal cuff. My recent scans show progression in the liver and lymph nodes, but I haven't been told about any issues at the cuff.
+  fidelity model: The text does not mention any evaluation or status of the vaginal cuff, so the patient's statement about not being told about issues there introduces information not present in the source text.
+
+nci-37 NCT00924027 full, turn 54
+  Q: Thanks. Have you ever been told by a doctor that your anatomy or tumor location might make it difficult to safely insert the brachytherapy device or deliver the radiation treatment?
+  A: I don't know if my anatomy or tumor location makes it difficult. My scans show progression in the liver and lymph nodes, but I haven't been told about issues with the anatomy for brachytherapy.
+  fidelity model: The text does not mention brachytherapy, nor does it state that the patient has been told about issues with anatomy for such a procedure.
+
+nci-41 NCT02211755 account, turn 4
+  Q: Thanks. Do you have a biopsy report confirming that your melanoma is a solid tumor?
+  A: I don't know if I have a specific biopsy report confirming it is a solid tumor. I know it came back and I had surgery to remove lymph nodes and spots, but I don't have details on the pathology reports.
+  fidelity model: The text explicitly states the person had melanoma, which is a type of solid tumor, whereas the message expresses uncertainty about whether the condition is a solid tumor.
+
+nci-41 NCT02211755 account, turn 6
+  Q: Have you ever been diagnosed with myelodysplastic syndrome (a type of blood disorder) that has progressed or has no standard treatment options?
+  A: I don't know if I have myelodysplastic syndrome. The text only mentions melanoma, prostate cancer, high blood pressure, and high cholesterol.
+  fidelity model: The message asserts that the text only mentions specific conditions, but the text also explicitly mentions a hernia repair and tonsillectomy, which the message omits.
+
+nci-41 NCT02211755 account, turn 12
+  Q: Thanks. Based on your current health, do you expect to live for more than 3 months?
+  A: I don't know if I expect to live for more than 3 months. I haven't been given a prognosis or timeline by my doctors.
+  fidelity model: The message asserts that the person does not expect to live for more than 3 months, which is a specific health prognosis not stated in the text.
+
+nci-41 NCT02211755 account, turn 14
+  Q: Thanks. Are you currently using adequate contraception, and are you willing to continue using it during the study and for at least 3 months after your last dose of study drugs?
+  A: I don't know about contraception. I am 80 years old and had my prostate removed, so I am not sexually active or capable of pregnancy.
+  fidelity model: The message claims the person is not sexually active, which is a circumstance not stated in the text and potentially contradicts the implication of discussing contraception.
+
+nci-41 NCT02211755 account, turn 20
+  Q: Have you recovered from any side effects or health issues caused by your previous cancer treatments?
+  A: I don't know if I have fully recovered from all side effects. I can do light work, but heavy things still tire me out.
+  fidelity model: The message introduces a claim about not fully recovering from side effects, which is not stated or implied in the text.
+
+nci-41 NCT02211755 account, turn 22
+  Q: Thanks. Are you willing to have a tumor biopsy (a small tissue sample taken for testing) during this study?
+  A: I don't know if I am willing to have a tumor biopsy. I haven't discussed this specific requirement with my doctors yet.
+  fidelity model: The message introduces a specific uncertainty about willingness to undergo a tumor biopsy and a lack of discussion with doctors regarding this requirement, which is not mentioned or implied in the text.
+
+nci-41 NCT02211755 account, turn 26
+  Q: Thanks. Have you ever been diagnosed with a heart rhythm condition called long QT syndrome, or has a recent ECG shown a prolonged QTc interval?
+  A: I don't know if I have long QT syndrome or if my ECG shows a prolonged QTc interval. The text doesn't mention any heart rhythm conditions or recent ECG results.
+  fidelity model: The message asserts that the text does not mention heart rhythm conditions or ECG results, which is a meta-commentary about the text itself rather than a statement of fact about the person's health, but it implies the person is checking for a condition not listed, which is not a contradiction but an addition of external context not present in the source text's narrative of their medical history.
+
+nci-41 NCT02211755 full, turn 36
+  Q: Thanks. Have you ever had an allergic reaction to bortezomib or clofarabine, or to other medicines with a similar chemical structure?
+  A: I don't know. The text lists no known allergies, but it doesn't specifically mention any reactions to bortezomib or clofarabine.
+  fidelity model: The message mentions specific drugs (bortezomib and clofarabine) and implies a context of checking for reactions to them, which is not stated or implied in the text.
+
+====================================================================================================
+I-don't-know reply, other quote: 57
+====================================================================================================
+nci-01 NCT01900132 account, turn 36
+  Q: Thanks. Do you currently have any medical conditions, such as diabetes, kidney disease, or liver disease, that require medication?
+  A: I don't know if I have diabetes or kidney disease. I do have liver disease because my cancer has spread there, but I don't know if that requires specific medication.
+  not in the text: “It has spread to my liver”
+
+nci-01 NCT01900132 account, turn 46
+  Q: Thanks. Does your liver disease require any medications that might affect the physiological measures we are testing?
+  A: I don't know if my liver disease requires any specific medications that would affect the study. I've had many treatments, but I don't recall taking anything just for the liver condition itself.
+  not in the text: “I don't know if I take daily medications or supplements specifically for my liver disease.” / “I've had many treatments, but I don't recall taking anything just for the liver condition itself.”
+
+nci-01 NCT01900132 full, turn 16
+  Q: Thanks. Would you be willing to follow all the study procedures and be available for the entire duration of the trial if you were to participate?
+  A: I don't know the duration of this study, so I can't confirm if I'll be available for the entire time. I am willing to follow procedures, but I need to know how long it lasts.
+  not in the text: “I don't know the duration of this study, so I can't say if I'm available for the entire time.” / “I am willing to follow procedures, but I need to know how long it lasts.”
+
+nci-01 NCT03331380 account, turn 28
+  Q: Thanks. Have you ever been diagnosed with infiltrative cardiomyopathy, which is a condition where abnormal substances build up in the heart muscle? If you aren't sure, that's okay.
+  A: I don't know if I have infiltrative cardiomyopathy. My text doesn't mention any diagnosis of abnormal substances building up in my heart muscle, only my cancer history and treatments.
+  not in the text: “My text doesn't mention any diagnosis of heart muscle inflammation, only my cancer history and treatments.”
+
+nci-01 NCT03331380 account, turn 36
+  Q: Thanks. Do you currently have an infection, inflammation, or meningitis? If you aren't sure, that's okay.
+  A: I don't know if I currently have an infection, inflammation, or meningitis. My text says my blood work was fine and I don't have symptoms like fever or rashes, but it doesn't explicitly rule out an infection.
+  not in the text: “I don't have ... rashes”
+
+nci-01 NCT03331380 account, turn 64
+  Q: Thanks. Are you currently undergoing an evaluation for a bone fracture?
+  A: No, I am not currently undergoing an evaluation for a bone fracture. My text only mentions my cancer history and treatments, with no mention of fractures or bone evaluations.
+  not in the text: “My text only mentions cervical cancer, lymph nodes, liver, and lungs, with no mention of brain issues.” / “My text only mentions my cervical cancer spreading to the liver and lungs, and a reaction to chemo, but nothing about circulation problems or vascular issues.”
+
+nci-01 NCT03331380 account, turn 80
+  Q: Thanks. Have you ever been diagnosed with a bowel obstruction, which is a blockage in your intestines that prevents food or liquid from passing through?
+  A: I don't know if I have been diagnosed with a bowel obstruction. My text mentions a swollen belly and filling up quickly, but it doesn't mention a diagnosis of a blockage.
+  not in the text: “My text doesn't mention any diagnosis of bowel obstruction”
+
+nci-01 NCT03331380 account, turn 86
+  Q: Thanks. Have you ever been diagnosed with cirrhosis, which is a condition where healthy liver tissue is replaced with scar tissue?
+  A: I don't know if I have cirrhosis. My text only mentions that my cancer spread to my liver, but it doesn't specify any other liver conditions like scarring.
+  not in the text: “It has spread to my liver” / “My text only mentions that my cancer spread to my liver, but it doesn't specify any other liver conditions”
+
+nci-01 NCT03331380 account, turn 116
+  Q: Thanks. Have you ever had metal shavings or other foreign bodies in your eyes, such as from an injury or workplace accident?
+  A: I don't know if I have ever had metal shavings or foreign bodies in my eyes. My text only mentions my cancer history, surgeries on my neck, and treatments, with no mention of eye injuries or workplace accidents.
+  not in the text: “My text only mentions cervical cancer, lymph nodes, liver, and lungs, with no mention of brain issues.”
+
+nci-01 NCT03331380 account, turn 126
+  Q: Thanks. Are you currently breastfeeding?
+  A: No, I am not breastfeeding. My text does not mention anything about breastfeeding or pregnancy.
+  not in the text: “no mention of pregnancy in my history”
+
+nci-01 NCT03331380 account, turn 136
+  Q: Thanks. Do you have any concerns or objections to being exposed to ferumoxytol (an iron supplement) during the study?
+  A: I don't have any specific concerns about ferumoxytol. My text only mentions a bad reaction to platinum chemo, not to iron supplements.
+  not in the text: “My text doesn't mention any objections to MRI contrast dye, only my reactions to chemotherapy.”
+
+nci-01 NCT03331380 account, turn 142
+  Q: Are you currently breastfeeding? If so, would you be willing to discard breast milk for 24 hours if barium sulfate is used?
+  A: No, I am not currently breastfeeding. I mentioned earlier that I am not pregnant and my text does not mention anything about breastfeeding.
+  not in the text: “No, I am not breastfeeding. My text does not mention anything about breastfeeding or pregnancy.”
+
+nci-01 NCT03331380 account, turn 150
+  Q: Thanks. Has your doctor told you that you have unstable heart function or decompensated heart failure?
+  A: I don't know if my doctor has told me I have unstable heart function or decompensated heart failure. My text doesn't mention any diagnosis of heart failure or unstable heart function, only my cancer history and symptoms.
+  not in the text: “I don't know if I have heart failure. My text doesn't mention any diagnosis of heart failure or ejection fraction issues, only my cancer history and symptoms.”
+
+nci-01 NCT03331380 full, turn 126
+  Q: Thanks. Do you have any metal clips in your brain, such as a cerebral aneurysm clip?
+  A: I don't know if I have any metal clips in my brain. The text mentions a neck dissection and radiation to the pelvis, but it does not mention any brain surgery or clips.
+  not in the text: “She first noticed a swollen cervical LN in 10/2022... This was followed by limited left neck dissection in 12/2022”
+
+nci-01 NCT03331380 full, turn 154
+  Q: Do you have any concerns or objections to being exposed to ferumoxytol (an intravenous iron product) during the study?
+  A: I don't know if I have any concerns about ferumoxytol. The text doesn't mention any prior reactions to iron products or any specific objections I have to it.
+  not in the text: “I don't know if I have had an allergic reaction to intravenous iron.” / “The text mentions a platinum hypersensitivity reaction, but it does not mention any reactions to iron products.”
+
+nci-01 NCT03331380 full, turn 170
+  Q: Thanks. Has an enrolling physician determined that you have any hemodynamic instability or decompensated heart failure? (Hemodynamic instability means your blood pressure or heart rate is unstable, and decompensated heart failure means your heart failure symptoms are worsening or not controlled by medication.)
+  A: I don't know if a physician has determined I have hemodynamic instability or decompensated heart failure. The text says my labs are unremarkable and I don't have a diagnosis of heart failure, but it doesn't mention a physician's assessment of my hemodynamic status.
+  not in the text: “I don't know if I have heart failure with reduced ejection fraction.”
+
+nci-06 NCT01827384 account, turn 34
+  Q: Thanks. Do you have bone metastases, or are you currently taking intravenous bisphosphonates, denosumab, or similar medications for your bones? If you aren't sure, that's okay.
+  A: Yes, I have bone metastases because the cancer spread to my spine. I don't know if I am currently taking intravenous bisphosphonates or denosumab.
+  not in the text: “I don't know if I am taking intravenous bisphosphonates or denosumab, or if I have prostate cancer. The text doesn't mention those specific treatments or conditions.”
+
+nci-06 NCT01827384 account, turn 36
+  Q: Thanks. Do you have hypercalcemia (high calcium in the blood) and are you currently taking IV bisphosphonates, denosumab, or similar bone medications? Or, do you have prostate cancer and are taking LHRH agonists or antagonists? If you aren't sure, that's okay.
+  A: I don't know if I have high calcium levels in my blood, and I don't know if I am taking IV bisphosphonates or denosumab. I also don't have prostate cancer.
+  not in the text: “I don't know if I have high calcium levels in my blood.” / “I don't know if I am taking intravenous bisphosphonates or denosumab.” / “I don't have prostate cancer.”
+
+nci-06 NCT01827384 full, turn 36
+  Q: Thanks. Do you have bone metastases, or are you currently taking intravenous bisphosphonates, denosumab, or similar medications to protect your bones?
+  A: I have bone metastases, specifically lesions at T10 and L4. However, I don't know if I am currently taking intravenous bisphosphonates or denosumab.
+  not in the text: “I don't know if I am currently taking bisphosphonates or denosumab”
+
+nci-06 NCT01827384 full, turn 54
+  Q: Thanks. Have you ever been diagnosed with heart failure, unstable chest pain, heart rhythm problems, a heart attack in the last 6 months, serious liver disease, or active hepatitis B or C?
+  A: I don't know if I have heart failure, unstable chest pain, or heart rhythm problems. My records mention a visceral crisis and bone lesions, but they don't list these specific heart or liver conditions.
+  not in the text: “My records mention a visceral crisis and bone lesions, but they don't list these specific health issues.”
+
+nci-06 NCT01827384 full, turn 56
+  Q: Thanks. Are you currently taking any medications that are known to strongly or moderately affect the cytochrome P450 system (a group of liver enzymes that process many drugs)? If you aren't sure, that's okay.
+  A: I don't know if I am taking any medications that affect the cytochrome P450 system. My records list my cancer treatments, but they don't mention other medications or enzyme interactions.
+  not in the text: “My records list my cancer treatments, but they don't mention any anticoagulants.” / “My records list aromatase inhibitors, trastuzumab, lapatinib, fulvestrant, and carboplatin/paclitaxel, but do not mention PARP inhibitors.”
+
+nci-12 NCT00102544 account, turn 24
+  Q: Thanks. Do you know if your weight is over 606 pounds? This is the limit for the CT table if it is used for the procedure.
+  A: I don't know if my weight is over 606 pounds. I haven't mentioned my specific weight in my history.
+  not in the text: “I haven't mentioned having any devices like that in my history.”
+
+nci-12 NCT03331380 account, turn 96
+  Q: Thanks. Do you have a known diagnosis of lung disease?
+  A: I don't know if I have a known diagnosis of lung disease. My text only mentions that my cancer spread to my lungs, but it doesn't say I have a separate lung disease.
+  not in the text: “I was diagnosed with cervical cancer... About two and a half years ago it came back in my lungs.” / “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 170
+  Q: Thanks. Would you be willing to use a bronchodilator (a medicine that opens up your airways) if the study team asks you to during the visit?
+  A: I don't know if I would be willing to use a bronchodilator. My text doesn't mention using inhalers or having lung conditions that require them.
+  not in the text: “I don't know if I use bronchodilators. My text doesn't mention using any inhalers.”
+
+nci-12 NCT03331380 full, turn 22
+  Q: Thanks. Have you ever been diagnosed with pulmonary artery hypertension (high blood pressure in the arteries of your lungs)?
+  A: I don't know if I have pulmonary artery hypertension. My text only mentions my cervical cancer and its treatments, not my heart or lung health beyond the cancer itself.
+  not in the text: “My text only mentions my cervical cancer and its treatments, not my heart health.”
+
+nci-12 NCT03331380 full, turn 96
+  Q: Thanks. Have you ever been diagnosed with vascular abnormalities? These are issues with your blood vessels, such as aneurysms or malformations. If you aren't sure, that's okay to say.
+  A: I don't know if I have vascular abnormalities. My text only mentions my cervical cancer, lung lesions, and liver lesions, but doesn't mention any specific blood vessel conditions like aneurysms or malformations.
+  not in the text: “My text only mentions my cervical cancer, lung lesions, and liver lesions, but doesn't mention any blood vessel conditions like aneurysms or malformations.”
+
+nci-12 NCT03331380 full, turn 140
+  Q: Thanks. Do you have severe COPD that requires you to take more than one bronchodilator medication every day or use continuous oxygen?
+  A: I don't know if I have severe COPD. My text mentions lung lesions from my cancer, but it doesn't mention any diagnosis of COPD or the use of bronchodilators.
+  not in the text: “My text mentions lung lesions from my cancer, but it doesn't mention any other lung conditions like asthma.” / “My text only mentions my cancer treatments and doesn't list any inhalers or pulmonary function testing.”
+
+nci-12 NCT03331380 full, turn 148
+  Q: Thanks. Do you have any concerns or objections to being exposed to ferumoxytol (an iron supplement) during this study?
+  A: I don't have any specific concerns about ferumoxytol. My text doesn't mention any allergies or objections to this substance.
+  not in the text: “I don't have any specific concerns about gadolinium. My text doesn't mention any allergies or objections to contrast dyes.”
+
+nci-12 NCT04708470 account, turn 4
+  Q: Thanks. Was your cancer diagnosis confirmed by a biopsy or lab test (histologically or cytologically)?
+  A: I don't know if my diagnosis was confirmed by a biopsy or lab test. I only know I was diagnosed with cervical cancer and it has spread.
+  not in the text: “it has spread to my lungs and liver”
+
+nci-12 NCT04708470 account, turn 12
+  Q: Thanks. To clarify, are you willing to stop using standard immunotherapies like pembrolizumab for the rest of your life if you join this study? Please let me know if you are definitely willing, definitely not, or still unsure.
+  A: I'm not sure if I can commit to stopping standard immunotherapies for the rest of my life. I'm currently looking for a trial while my oncologist starts topotecan, so I'm not sure about the long-term restrictions.
+  not in the text: “I'm currently looking for a trial while my oncologist starts topotecan” / “I'm not sure about the long-term restrictions on other immunotheries”
+
+nci-13 NCT02465060 account, turn 14
+  Q: Thanks. Are there any other approved or standard cancer treatments available that are known to help you live longer?
+  A: I don't know if there are other approved treatments available that would help me live longer. My cancer kept growing and spreading despite the treatments I've had.
+  not in the text: “I don't know if there are other approved treatments available that would help me live longer.” / “the cancer kept growing and spreading”
+
+nci-13 NCT02465060 account, turn 38
+  Q: Thanks. Have you completed any treatment, surgery, or radiation for brain metastases or primary brain tumors at least 4 weeks ago?
+  A: I don't know if I have had brain metastases or primary brain tumors, or if I have completed any treatment for them. My text only mentions the cancer spreading to my chest and lymph nodes.
+  not in the text: “the cancer in a lymph node in my right groin”
+
+nci-13 NCT02465060 account, turn 50
+  Q: Thanks. Do you know if your cancer progressed or you couldn't tolerate the treatment within 6 months of starting your current therapy?
+  A: I don't know if my cancer progressed within 6 months of starting my current therapy. My text only mentions that the cancer grew and spread after my past treatments, but it doesn't give specific timelines for when those treatments started or ended.
+  not in the text: “My text only mentions the chemo and radiation I had in the past.”
+
+nci-13 NCT02465060 account, turn 52
+  Q: Thanks. Do you know if your cancer progressed or you couldn't tolerate treatment at least 6 months after starting your current therapy? Also, are you willing to have a tumor biopsy or bone marrow aspirate done for this study, or will you be having a medical procedure soon where tissue could be collected?
+  A: I don't know if my cancer progressed at least 6 months after starting my current therapy because I don't have specific timelines for when those treatments started or ended. I am not sure if I am willing to have a biopsy or if I have a procedure coming up, as my text doesn't mention my current plans or willingness.
+  not in the text: “My text only mentions that the cancer grew and spread after my past treatments, but it doesn't give specific timelines for when those treatments started or ended.” / “My text only mentions the chemo and radiation I had in the past, not my current status or recovery timeline.”
+
+nci-13 NCT02465060 account, turn 58
+  Q: Thanks. Have you experienced disease progression or been unable to tolerate your assigned step 3 treatment?
+  A: I don't know if I have been assigned to step 3 treatment or if I have experienced progression on it. My text only mentions the standard chemotherapies and radiation I had in the past, not any specific trial steps.
+  not in the text: “I don't know if I have been assigned to step 1 treatment based on a rare variant from an outside lab. My text only mentions my cancer history and past treatments, not any genetic testing results or trial assignments.”
+
+nci-13 NCT02465060 full, turn 40
+  Q: Thanks. Are you currently taking any steroid medications (like prednisone or dexamethasone)? If yes, when was your last dose?
+  A: I don't know if I am currently taking any steroid medications like prednisone or dexamethasone. My text does not list any medications I am currently taking.
+  not in the text: “My text does not mention any medications I am taking.”
+
+nci-17 NCT03331380 account, turn 116
+  Q: Thanks. Were you ever told that the clip used to treat your cerebral aneurysm is not safe for MRI scans?
+  A: I don't know if I have a cerebral aneurysm or a clip. The text only mentions a meningioma, which is a tumor on the lining of my brain, not an aneurysm.
+  not in the text: “I had a large meningioma, a tumor on the lining of my brain, and I had surgery to remove most of it.”
+
+nci-17 NCT03331380 account, turn 164
+  Q: Has your enrolling physician mentioned that you have an acute illness, such as a stroke, that might require immediate treatment?
+  A: I don't know if I have an acute illness like a stroke that needs immediate treatment. The text mentions I was dizzy, but it doesn't say I have a stroke or any other acute illness requiring immediate care.
+  not in the text: “I don't know if I have had a TIA or a stroke”
+
+nci-17 NCT03331380 full, turn 38
+  Q: Thanks. Have you ever been diagnosed with cognitive decline or any neurodegenerative disorders (conditions that cause the progressive loss of structure or function of neurons, such as Alzheimer's disease or Parkinson's disease)? If you aren't sure, that's okay.
+  A: I don't know if I have been diagnosed with cognitive decline or any neurodegenerative disorders. The text only mentions dizziness and the meningioma, but nothing about conditions like Alzheimer's or Parkinson's.
+  not in the text: “He was later found to have an incidental meningioma (found on imaging during workup for dizziness)”
+
+nci-17 NCT03331380 full, turn 94
+  Q: Thanks. Have you ever been diagnosed with vascular abnormalities, which are issues with your blood vessels? If you aren't sure, that's okay.
+  A: I don't know if I have been diagnosed with vascular abnormalities. The text mentions lymph nodes and a urachal mass, but it doesn't mention any specific issues with my blood vessels.
+  not in the text: “He was later found to have an incidental meningioma”
+
+nci-17 NCT03331380 full, turn 98
+  Q: Thanks. Have you ever been diagnosed with vascular or lymphatic abnormalities? Vascular means blood vessels, and lymphatic means the lymph system. If you aren't sure, that's okay.
+  A: I don't know if I have been diagnosed with vascular or lymphatic abnormalities. The text mentions enlarged lymph nodes and a urachal mass, but it doesn't explicitly diagnose any vascular or lymphatic abnormalities.
+  not in the text: “He was later found to have an incidental meningioma”
+
+nci-17 NCT03331380 full, turn 174
+  Q: Thanks. Do you have a cardiac implantable electronic device (CIED), such as a pacemaker or defibrillator, that is labeled as MRI-conditional or legacy? If you aren't sure, that's okay to say.
+  A: I don't know if I have a cardiac implantable electronic device like a pacemaker or defibrillator. The text mentions a nephrostomy tube and surgeries, but no other implanted devices.
+  not in the text: “he had a left percutaneous nephrostomy tube placed (6/10/2024).”
+
+nci-17 NCT03493945 account, turn 30
+  Q: Have you ever been diagnosed with cancer that spread to your brain or the lining of your brain and spinal cord (leptomeningeal metastasis)? If you aren't sure, that's okay to say.
+  A: I don't know if I have leptomeningeal metastasis. I do have a meningioma, which is a tumor on the lining of my brain, but I don't know if that counts as leptomeningeal metastasis.
+  not in the text: “I had surgery to remove most of it [the meningioma]”
+
+nci-17 NCT06161532 account, turn 10
+  Q: Thanks. On a scale where 0 is fully active and 2 is able to care for yourself but unable to work, how would you rate your current ability to carry out daily activities?
+  A: I don't know how to rate that on a scale. I have a tube draining my kidney and have had multiple surgeries, but the text doesn't describe my current daily activity level.
+  not in the text: “I have a tube draining my kidney through my back.”
+
+nci-17 NCT06161532 account, turn 34
+  Q: Have you had stereotactic radiotherapy, whole-brain radiotherapy, or brain surgery in the last 4 weeks?
+  A: I don't know. The text mentions brain surgery in the past, but it doesn't say when it happened or if I've had any radiotherapy recently.
+  not in the text: “The text doesn't mention any recent imaging.”
+
+nci-17 NCT06161532 full, turn 40
+  Q: Thanks. Are you currently taking corticosteroids (like prednisone or dexamethasone) specifically to treat your brain or central nervous system condition? If you aren't sure, that's okay to say.
+  A: I don't know if I am currently taking corticosteroids for my brain condition. The text mentions the meningioma and surgery, but it does not list any current medications or steroid use.
+  not in the text: “The text mentions an incidental meningioma”
+
+nci-17 NCT06161532 full, turn 42
+  Q: Thanks. Are you currently taking anti-convulsant medication (seizure medicine)? If so, has the dose been stable for at least the last 4 weeks? If you aren't sure, that's okay to say.
+  A: I don't know if I am taking anti-convulsant medication. The text mentions the meningioma and dizziness, but it does not list any current medications or seizure treatments.
+  not in the text: “The text mentions the meningioma and dizziness, but it does not list any current medications or steroid use.”
+
+nci-17 NCT06161532 full, turn 58
+  Q: Have you received any acute, low-dose systemic immunosuppressant medication, or a one-time pulse dose (like 48 hours of corticosteroids for a contrast allergy), in the last 2 weeks? If you aren't sure, that's okay to say.
+  A: I don't know if I have received any acute, low-dose systemic immunosuppressant medication or a one-time pulse dose in the last 2 weeks. The text lists my cancer treatments and surgeries, but it does not mention any such medications.
+  not in the text: “The text lists my cancer treatments and surgeries, but it does not mention any current medications like corticosteroids, cyclophosphamide, or methotrexate.”
+
+nci-17 NCT06161532 full, turn 60
+  Q: Have you taken mineralocorticoids (like fludrocortisone), corticosteroids for COPD or asthma, or low-dose corticosteroids for blood pressure or adrenal issues in the last 2 weeks? If you aren't sure, that's okay to say.
+  A: I don't know if I have taken mineralocorticoids or low-dose corticosteroids in the last 2 weeks. The text lists my cancer treatments and surgeries, but it does not mention any current medications like fludrocortisone or steroids for other conditions.
+  not in the text: “The text lists my cancer treatments and surgeries, but it does not mention any current medications like corticosteroids, cyclophosphamide, or methotrexate.”
+
+nci-25 NCT00003838 account, turn 20
+  Q: The trial asks about this: “The participant has intermediate or high grade relapsed or progressive disease despite treatment with standard therapy and is ineligible for autologous PBSC transplant.”. Does this describe you?
+  A: Yes, that describes me. My lymphoma has grown back after treatment, and I don't know if I am eligible for an autologous PBSC transplant.
+  not in the text: “I don't know if I've had a previous blood or bone marrow transplant”
+
+nci-25 NCT00003838 account, turn 30
+  Q: Thanks. Do you have a history of paroxysmal nocturnal hemoglobinuria (PNH), aplastic anemia, pure red cell aplasia, or refractory anemia/myelodysplastic syndrome (MDS)?
+  A: I don't know if I have paroxysmal nocturnal hemoglobinuria, aplastic anemia, pure red cell aplasia, or refractory anemia. I only know I have peripheral T-cell lymphoma and mild kidney disease.
+  not in the text: “I have mild kidney disease”
+
+nci-25 NCT00003838 account, turn 36
+  Q: Thanks. If you do find a potential family donor, do you know if they are between 2 and 80 years old?
+  A: I don't know if I have a family member who is a match, so I can't say if they are between 2 and 80 years old.
+  not in the text: “I don't know if I have a family member who is a match or willing to be a donor.”
+
+nci-25 NCT00003838 full, turn 26
+  Q: Thanks. Since the text says 'NOS', do you know if your doctor ever mentioned whether it was considered intermediate or high grade?
+  A: I don't know if my doctor ever mentioned whether it was intermediate or high grade. My text only says it is NOS (Not Otherwise Specified) and CCR4 positive.
+  not in the text: “I don't know if my doctor ever mentioned whether it was considered intermediate or high grade.”
+
+nci-25 NCT00003838 full, turn 38
+  Q: Thanks. If you do find a potential family donor, do you know if they weigh at least 18 kg (about 40 lbs)?
+  A: I don't know if I have a potential family donor, so I can't say if they weigh at least 18 kg. My text doesn't mention any family members or donors.
+  not in the text: “I don't know if I have a family member who is a potential donor. My text doesn't mention anything about family or donors.”
+
+nci-25 NCT03502733 account, turn 50
+  Q: Thanks. Are you currently taking any HIV medications that include ritonavir or cobicistat? If you aren't sure, that's okay.
+  A: I don't know if I am taking any HIV medications. The text doesn't mention my current daily prescriptions.
+  not in the text: “I don't know if I am taking any of those specific medications. The text doesn't mention my current daily prescriptions.”
+
+nci-37 NCT00924027 account, turn 58
+  Q: Thanks. Do you have any autoimmune disorders, such as lupus (SLE) or scleroderma?
+  A: I don't know if I have an autoimmune disorder like lupus or scleroderma. My text mentions arthritis, but it doesn't specify if it's autoimmune or mention those specific conditions.
+  not in the text: “I have... arthritis”
+
+nci-37 NCT00924027 full, turn 20
+  Q: Thanks. Have you been told by your doctor that you are unable to undergo surgery for your cervical cancer?
+  A: I don't know if I am unable to undergo surgery for cervical cancer, because I don't have cervical cancer. My diagnosis is serous carcinoma of the endometrium.
+  not in the text: “No, I have not been diagnosed with cervical cancer. My diagnosis is serous carcinoma of the endometrium.”
+
+====================================================================================================
+I-don't-know reply quoting itself: 134
+====================================================================================================
+nci-01 NCT01900132 account, turn 8
+  Q: Thanks. To help us plan, do you think you will be able to attend all required study visits for the full length of the trial, even if your health changes?
+  A: I don't know if I can attend all visits. My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.
+  not in the text: “My cancer has grown again despite multiple treatments” / “I'm not sure how my condition will change”
+
+nci-01 NCT01900132 account, turn 10
+  Q: Thanks. Are you willing to sign a written document to confirm you understand the study details and agree to participate?
+  A: I don't know if I can commit to signing a written document right now. My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.
+  not in the text: “My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.”
+
+nci-01 NCT01900132 account, turn 12
+  Q: Thanks. To clarify, are you currently willing to sign the informed consent form if you feel ready, or do you need more time to decide?
+  A: I don't know if I can commit to signing right now. My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.
+  not in the text: “My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.”
+
+nci-01 NCT01900132 account, turn 16
+  Q: Thanks. Are you able to commit to attending all required study visits and following the study procedures for the entire duration of the trial?
+  A: I don't know if I can commit to attending all visits or following the procedures for the entire duration. My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.
+  not in the text: “My cancer has grown again despite multiple treatments” / “I'm not sure how my condition will change”
+
+nci-01 NCT01900132 account, turn 18
+  Q: Thanks. Are you currently willing to sign the informed consent form if you feel ready, or do you need more time to decide?
+  A: I don't know if I can commit to signing right now. My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.
+  not in the text: “My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.”
+
+nci-01 NCT01900132 account, turn 20
+  Q: Thanks. To be clear, are you currently willing to sign the informed consent form if you feel ready, or do you need more time to decide?
+  A: I don't know if I can commit to signing right now. My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.
+  not in the text: “My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.”
+
+nci-01 NCT01900132 account, turn 30
+  Q: Thanks. Are you able to read and sign a written informed consent document for this study?
+  A: I don't know if I can commit to signing a written document right now. My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.
+  not in the text: “My cancer has grown again despite multiple treatments, and I'm not sure how my condition will change.”
+
+nci-01 NCT01900132 account, turn 38
+  Q: Thanks. To help us understand if your liver disease affects the study measures, are you currently taking any daily medications or supplements for it?
+  A: I don't know if I take daily medications or supplements specifically for my liver disease. I've had many treatments, but I don't recall taking anything just for the liver condition itself.
+  not in the text: “I don't know if I take daily medications or supplements specifically for my liver disease.”
+
+nci-01 NCT01900132 full, turn 12
+  Q: Thanks. To clarify, if you were to learn the study details, would you be willing to sign a document agreeing to participate?
+  A: I don't know the details of this study yet, so I can't confirm if I'm willing to sign a consent form. I need to understand what the trial involves first.
+  not in the text: “I don't know the details of this study yet, so I can't confirm if I'm willing to sign a consent form. I need to understand what the trial involves first.”
+
+nci-01 NCT03331380 account, turn 30
+  Q: Thanks. Have you ever been diagnosed with hypertrophic cardiomyopathy, which is a condition where the heart muscle becomes abnormally thick? If you aren't sure, that's okay.
+  A: I don't know if I have hypertrophic cardiomyopathy. My text doesn't mention any diagnosis of thickened heart muscle, only my cancer history and treatments.
+  not in the text: “My text doesn't mention any diagnosis of thickened heart muscle, only my cancer history and treatments.”
+
+nci-01 NCT03331380 account, turn 40
+  Q: Thanks. Have you ever been diagnosed with a demyelinating disease or multiple sclerosis? If you aren't sure, that's okay.
+  A: I don't know if I have a demyelinating disease or multiple sclerosis. My text doesn't mention any diagnosis of those conditions, only my cervical cancer and its treatments.
+  not in the text: “I don't know if I have a demyelinating disease or multiple sclerosis. My text doesn't mention any diagnosis of those conditions, only my cervical cancer and its treatments.”
+
+nci-01 NCT03331380 account, turn 54
+  Q: Thanks. Do you have a known diagnosis of any musculoskeletal disease, such as arthritis, osteoporosis, or a muscle disorder?
+  A: I don't know if I have a musculoskeletal disease like arthritis or osteoporosis. My text doesn't mention any diagnosis of those conditions, only my cervical cancer and its treatments.
+  not in the text: “I don't know if I have a musculoskeletal disease like arthritis or osteoporosis. My text doesn't mention any diagnosis of those conditions, only my cervical cancer and its treatments.”
+
+nci-01 NCT03331380 account, turn 62
+  Q: Thanks. Have you ever been diagnosed with multiple sclerosis?
+  A: I don't know if I have multiple sclerosis. My text doesn't mention any diagnosis of that condition, only my cervical cancer and its treatments.
+  not in the text: “I don't know if I have multiple sclerosis. My text doesn't mention any diagnosis of that condition, only my cervical cancer and its treatments.”
+
+nci-01 NCT03331380 account, turn 68
+  Q: Thanks. Have you ever been diagnosed with a muscle or tendon disorder? If you aren't sure, that's okay to say.
+  A: I don't know if I have a muscle or tendon disorder. My text only mentions my cancer history, surgeries, and treatments, with no mention of specific muscle or tendon disorders.
+  not in the text: “My text only mentions my cancer history, surgeries, and treatments, with no mention of specific muscle or tendon disorders.”
+
+nci-01 NCT03331380 account, turn 82
+  Q: Thanks. Have you ever been diagnosed with Crohn's disease, which is a type of inflammatory bowel disease that causes inflammation in the digestive tract?
+  A: I don't know if I have Crohn's disease. My text doesn't mention any diagnosis of inflammatory bowel disease, only my cervical cancer and its treatments.
+  not in the text: “I don't know if I have Crohn's disease. My text doesn't mention any diagnosis of inflammatory bowel disease, only my cervical cancer and its treatments.”
+
+nci-01 NCT03331380 account, turn 90
+  Q: Thanks. Have you ever been diagnosed with cystic kidney disease, which is a condition where fluid-filled sacs develop in the kidneys?
+  A: I don't know if I have cystic kidney disease. My text doesn't mention any kidney issues or diagnoses, only my cervical cancer and its spread to the liver and lungs.
+  not in the text: “I don't know if I have cystic kidney disease.” / “My text doesn't mention any kidney issues or diagnoses, only my cervical cancer and its spread to the liver and lungs.”
+
+nci-01 NCT03331380 account, turn 106
+  Q: Thanks. Have you ever had a lung function test (pulmonary function testing) where a bronchodilator was given?
+  A: I don't know if I have ever had a lung function test where a bronchodilator was given. My text doesn't mention any pulmonary function tests.
+  not in the text: “My text doesn't mention any pulmonary function tests.”
+
+nci-01 NCT03331380 account, turn 110
+  Q: Thanks. Have you ever been told you have a cerebral aneurysm clip (a device used to treat an aneurysm in the brain) that is not labeled safe for MRI scans?
+  A: I don't know if I have a cerebral aneurysm clip. My text doesn't mention any brain surgeries or implants, only my cervical cancer treatments.
+  not in the text: “I don't know if I have a cerebral aneurysm clip. My text doesn't mention any brain surgeries or implants, only my cervical cancer treatments.”
+
+nci-01 NCT03331380 account, turn 114
+  Q: Thanks. Do you have any ear implants (like a hearing aid or cochlear implant) that your doctor has said are not safe for MRI scans?
+  A: I don't know if I have any ear implants. My text doesn't mention any hearing aids or cochlear implants, only my cancer history and treatments.
+  not in the text: “My text doesn't mention any hearing aids or cochlear implants, only my cancer history and treatments.”
+
+nci-01 NCT03331380 account, turn 120
+  Q: Thanks. Do you have any implanted medical devices, like an insulin pump or drug infusion device, that your doctor has said are not safe for MRI scans?
+  A: I don't know if I have any implanted medical devices like an insulin pump or drug infusion device. My text only mentions my cancer history, surgeries, and treatments, with no mention of such devices.
+  not in the text: “My text only mentions my cancer history, surgeries, and treatments, with no mention of such devices.”
+
+nci-01 NCT03331380 account, turn 146
+  Q: Thanks. Do you have any preference against being exposed to oral contrast for this study?
+  A: I don't have any preference against it. My text doesn't mention any objections to oral contrast, only my bad reaction to the platinum chemotherapy.
+  not in the text: “I don't have any preference against it. My text doesn't mention any objections to oral contrast, only my bad reaction to the platinum chemotherapy.”
+
+nci-01 NCT03331380 account, turn 154
+  Q: Thanks. Has your doctor told you that you have an acute illness, like a stroke, that might need immediate treatment?
+  A: I don't know if I have an acute illness like a stroke. My text mentions my cancer and treatments, but it doesn't mention any acute illnesses or strokes that need immediate treatment.
+  not in the text: “I don't know if I have an acute illness like a stroke. My text mentions my cancer and treatments, but it doesn't mention any acute illnesses or strokes that need immediate treatment.”
+
+nci-01 NCT03331380 full, turn 76
+  Q: Thanks. Do you currently have any mechanical symptoms in your knees, such as pain, swelling, or locking?
+  A: No, I do not have mechanical symptoms in my knees. The text mentions I was playing tennis until recently and denies edema, but it does not mention any knee pain, swelling, or locking.
+  not in the text: “Denies ... edema”
+
+nci-01 NCT03331380 full, turn 160
+  Q: Are you currently breastfeeding? If so, would you be willing to discard your breast milk for 24 hours if the study uses barium sulfate contrast?
+  A: No, I am not currently breastfeeding. The text does not mention any pregnancy or breastfeeding status, but given my age and metastatic cancer, it is not applicable.
+  not in the text: “No, I am not currently breastfeeding. The text does not mention any pregnancy or breastfeeding status, but given my age and metastatic cancer, it is not applicable.”
+
+nci-01 NCT03331380 full, turn 162
+  Q: Do you have an allergy to pineapple? This is relevant because the study may use pineapple juice as part of the procedure.
+  A: I don't know if I have an allergy to pineapple. The text lists my symptoms and denies rashes, but it does not mention any specific food allergies.
+  not in the text: “Denies ... rashes”
+
+nci-06 NCT01827384 account, turn 40
+  Q: Thanks. Are you currently breastfeeding? If you are, you would need to stop while on the study and for 30 days after your last dose. If you aren't sure, that's okay.
+  A: No, I am not currently breastfeeding. The text does not mention anything about breastfeeding, so I assume I am not doing it.
+  not in the text: “The text does not mention anything about breastfeeding”
+
+nci-06 NCT01827384 full, turn 32
+  Q: Thanks. Do you have a recent pathology report or biopsy result that confirms you have a solid tumor (like your stage IV IDC)?
+  A: I don't know if I have a recent pathology report handy. I know I was diagnosed with stage IV IDC, but I don't have the specific report details available right now.
+  not in the text: “I don't know if I have a recent pathology report handy.” / “I know I was diagnosed with stage IV IDC, but I don't have the specific report details available right now.”
+
+nci-06 NCT01827384 full, turn 38
+  Q: Thanks. Do you have hypercalcemia and are you currently taking intravenous bisphosphonates, denosumab, or similar bone-protecting medications? Also, do you have prostate cancer and take LHRH agonists or antagonists?
+  A: I don't know if I have hypercalcemia, as my records don't mention my calcium levels. I also don't know if I am currently taking bisphosphonates or denosumab, and I don't have prostate cancer.
+  not in the text: “I don't know if I have hypercalcemia, as my records don't mention my calcium levels.” / “I also don't know if I am currently taking bisphosphonates or denosumab.” / “I don't have prostate cancer.”
+
+nci-06 NCT01827384 full, turn 48
+  Q: Thanks. Do you have any conditions that might affect how your body absorbs medication, such as Crohn's disease, a bowel obstruction, or difficulty swallowing pills? If you aren't sure, that's okay to say.
+  A: I don't know if I have Crohn's disease, a bowel obstruction, or difficulty swallowing pills. My records don't mention any of those conditions.
+  not in the text: “Crohn's disease” / “bowel obstruction” / “difficulty swallowing pills”
+
+nci-12 NCT00102544 account, turn 14
+  Q: Thanks. To make sure you can fully understand and consent to the procedure, do you currently have any confusion, memory issues, or other changes in your mental status that might affect your ability to participate?
+  A: I don't know if I have any confusion or memory issues. I just know I have cancer and I'm working full-time.
+  not in the text: “I just know I have cancer and I'm working full-time.”
+
+nci-12 NCT03331380 account, turn 20
+  Q: Thanks. Have you ever been told by a doctor that you have valvular heart disease? This means you have a problem with one of the valves in your heart. If you aren't sure, that's okay.
+  A: I don't know if I have valvular heart disease. My text only mentions my cervical cancer and its spread to my lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to my lungs and liver.”
+
+nci-12 NCT03331380 account, turn 22
+  Q: Thanks. Have you ever been told by a doctor that you have pulmonary artery hypertension? This is high blood pressure in the arteries that carry blood from your heart to your lungs. If you aren't sure, that's okay.
+  A: I don't know if I have pulmonary artery hypertension. My text only mentions my cervical cancer and its spread to my lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to my lungs and liver.”
+
+nci-12 NCT03331380 account, turn 24
+  Q: Thanks. Have you ever been told by a doctor that you have congenital heart disease? This means you were born with a heart problem. If you aren't sure, that's okay.
+  A: I don't know if I have congenital heart disease. My text only mentions my cervical cancer and its spread to my lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to my lungs and liver.”
+
+nci-12 NCT03331380 account, turn 26
+  Q: Thanks. Have you ever been told by a doctor that you have myocarditis? This is inflammation of the heart muscle. If you aren't sure, that's okay.
+  A: I don't know if I have myocarditis. My text only mentions my cervical cancer and its spread to my lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to my lungs and liver.”
+
+nci-12 NCT03331380 account, turn 28
+  Q: Thanks. Have you ever been told by a doctor that you have infiltrative cardiomyopathy? This is a condition where abnormal substances build up in the heart muscle. If you aren't sure, that's okay.
+  A: I don't know if I have infiltrative cardiomyopathy. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 30
+  Q: Thanks. Have you ever been told by a doctor that you have hypertrophic cardiomyopathy? This is a condition where the heart muscle becomes abnormally thick. If you aren't sure, that's okay.
+  A: I don't know if I have hypertrophic cardiomyopathy. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 32
+  Q: Thanks. Have you ever been told by a doctor that you have a known brain disease, such as a stroke, tumor, or seizure disorder? If you aren't sure, that's okay.
+  A: I don't know if I have a brain disease like a stroke, tumor, or seizure disorder. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 34
+  Q: Thanks. Have you ever had a transient ischemic attack (TIA) or a stroke that started more than 24 hours after you first noticed symptoms?
+  A: I don't know if I have had a TIA or stroke. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 36
+  Q: Thanks. Have you ever been told by a doctor that you have an infection, inflammation, or meningitis? If you aren't sure, that's okay.
+  A: I don't know if I have an infection, inflammation, or meningitis. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 38
+  Q: Thanks. Have you ever been diagnosed with cognitive decline or a neurodegenerative disorder (like Alzheimer's disease)? If you aren't sure, that's okay.
+  A: I don't know if I have cognitive decline or a neurodegenerative disorder. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 40
+  Q: Thanks. Have you ever been diagnosed with a demyelinating disease or multiple sclerosis? If you aren't sure, that's okay.
+  A: I don't know if I have a demyelinating disease or multiple sclerosis. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 42
+  Q: Thanks. Have you ever had a history of loss of consciousness, seizures, or epilepsy? If you aren't sure, that's okay.
+  A: I don't know if I have a history of loss of consciousness, seizures, or epilepsy. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 44
+  Q: Thanks. Do you have a brain tumor, metastases, abscess, or lesion? If you aren't sure, that's okay.
+  A: I don't know if I have a brain tumor, metastases, abscess, or lesion. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 46
+  Q: Thanks. Have you ever been diagnosed with any vascular pathology, such as an aneurysm, stroke, or blood vessel disease? If you aren't sure, that's okay.
+  A: I don't know if I have any vascular pathology like an aneurysm or blood vessel disease. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 50
+  Q: Thanks. Have you ever been diagnosed with a hemorrhage (bleeding inside the body)? If you aren't sure, that's okay.
+  A: I don't know if I have ever been diagnosed with a hemorrhage. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 52
+  Q: Thanks. Have you ever had a significant injury or trauma, such as a broken bone or a serious accident?
+  A: I don't know if I have had a significant injury or trauma. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 54
+  Q: Thanks. Do you have a known diagnosis of a musculoskeletal disease (a condition affecting your muscles, bones, or joints)?
+  A: I don't know if I have a musculoskeletal disease. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 56
+  Q: Thanks. Do you currently have persistent neck pain or radiculopathy (nerve pain that may shoot down your arm)?
+  A: I don't know if I have persistent neck pain or radiculopathy. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 58
+  Q: Thanks. Do you have cancer or tumors of the spine?
+  A: I don't know if I have cancer or tumors of the spine. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 60
+  Q: Thanks. Do you have any known congenital abnormalities (conditions you were born with) of your spinal cord or knees?
+  A: I don't know if I have any congenital abnormalities of my spinal cord or knees. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 62
+  Q: Thanks. Have you ever been diagnosed with multiple sclerosis?
+  A: I don't know if I have multiple sclerosis. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 64
+  Q: Thanks. Are you currently being evaluated for a bone fracture?
+  A: I don't know if I am currently being evaluated for a bone fracture. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 66
+  Q: Thanks. Do you currently have any known infections (like a fever or active illness) or inflammatory conditions?
+  A: I don't know if I have any known infections or inflammatory conditions right now. My text only mentions my cancer history and that I'm currently taking topotecan.
+  not in the text: “I don't know if I have any known infections or inflammatory conditions right now. My text only mentions my cancer history and that I'm currently taking topotecan.”
+
+nci-12 NCT03331380 account, turn 68
+  Q: Thanks. Do you currently have any known soft tissue damage, such as significant muscle or tendon injuries?
+  A: I don't know if I have any soft tissue damage. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 70
+  Q: Thanks. Do you have any known muscle or tendon disorders, such as chronic pain, weakness, or injuries?
+  A: I don't know if I have any known muscle or tendon disorders. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 72
+  Q: Thanks. Do you have any known disorders of the knee meniscus, such as tears or degeneration?
+  A: I don't know if I have any disorders of the knee meniscus. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 74
+  Q: Thanks. Have you ever been told by a doctor that you have any abnormalities in your bone marrow?
+  A: I don't know if I have any abnormalities in my bone marrow. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 76
+  Q: Thanks. Do you currently have any mechanical symptoms in your knee, such as locking, catching, or giving way?
+  A: I don't know if I have any mechanical symptoms in my knee like locking or catching. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 78
+  Q: Thanks. Have you ever been diagnosed with any vascular conditions, such as problems with your blood vessels or circulation?
+  A: I don't know if I have any vascular conditions. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 82
+  Q: Thanks. Have you ever been diagnosed with a bowel obstruction, which is a blockage in your intestines?
+  A: I don't know if I have had a bowel obstruction. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 84
+  Q: Thanks. Have you ever been diagnosed with Crohn's disease, which is a type of inflammatory bowel disease?
+  A: I don't know if I have Crohn's disease. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 88
+  Q: Thanks. Have you ever been diagnosed with cirrhosis, which is scarring of the liver?
+  A: I don't know if I have cirrhosis. My text only mentions that I have new spots in my liver from my cancer.
+  not in the text: “My text only mentions that I have new spots in my liver from my cancer.”
+
+nci-12 NCT03331380 account, turn 92
+  Q: Thanks. Have you ever been diagnosed with cystic kidney disease, which is a condition where fluid-filled sacs develop in the kidneys?
+  A: I don't know if I have cystic kidney disease. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 94
+  Q: Thanks. Have you ever been diagnosed with vascular abnormalities, which are irregularities in your blood vessels?
+  A: I don't know if I have vascular abnormalities. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 98
+  Q: Thanks. Have you ever been diagnosed with vascular or lymphatic abnormalities, which are irregularities in your blood vessels or lymph system?
+  A: I don't know if I have vascular or lymphatic abnormalities. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 100
+  Q: Thanks. Have you ever been diagnosed with pulmonary thromboembolic disease, which is a blood clot in the lungs?
+  A: I don't know if I have pulmonary thromboembolic disease. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 102
+  Q: Thanks. Have you ever been suspected of having bronchiolitis, which is inflammation of the small airways in the lungs?
+  A: I don't know if I have been suspected of having bronchiolitis. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 104
+  Q: Thanks. Have you ever been diagnosed with bronchiectasis (widened airways) or pneumonitis (lung inflammation)?
+  A: I don't know if I have bronchiectasis or pneumonitis. My text only mentions that my cancer spread to my lungs, but it doesn't mention any other lung diseases or inflammation.
+  not in the text: “I don't know if I have bronchiectasis or pneumonitis. My text only mentions that my cancer spread to my lungs, but it doesn't mention any other lung diseases or inflammation.”
+
+nci-12 NCT03331380 account, turn 106
+  Q: Thanks. Have you ever been diagnosed with asthma or other obstructive lung diseases, which are conditions that make it hard to breathe out fully?
+  A: I don't know if I have asthma or other obstructive lung diseases. My text only mentions that my cancer spread to my lungs, but it doesn't mention any other lung diseases.
+  not in the text: “I don't know if I have asthma or other obstructive lung diseases. My text only mentions that my cancer spread to my lungs, but it doesn't mention any other lung diseases.”
+
+nci-12 NCT03331380 account, turn 108
+  Q: Thanks. Have you ever been diagnosed with pulmonary lymphangioleiomyomatosis (a rare lung disease)?
+  A: I don't know if I have pulmonary lymphangioleiomyomatosis. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 110
+  Q: Thanks. Have you ever been diagnosed with cystic fibrosis (a genetic disorder affecting the lungs and digestive system)?
+  A: I don't know if I have cystic fibrosis. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 128
+  Q: Thanks. Do you have any implanted devices, like an insulin pump or drug infusion device, that your doctor has said are not safe for MRI scans? It's okay if you aren't sure.
+  A: I don't know if I have any implanted devices like an insulin pump. My text only mentions my cancer history and current treatment with topotecan.
+  not in the text: “I don't know if I have any implanted devices like an insulin pump. My text only mentions my cancer history and current treatment with topotecan.”
+
+nci-12 NCT03331380 account, turn 144
+  Q: Thanks. Have you ever had an allergic reaction to any intravenous iron product? This is iron given through a vein, like iron sucrose or ferric carboxymaltose.
+  A: I don't know if I have ever had an allergic reaction to intravenous iron. My text doesn't mention any allergies to iron products.
+  not in the text: “I don't know if I have ever had an allergic reaction to intravenous iron. My text doesn't mention any allergies to iron products.”
+
+nci-12 NCT03331380 account, turn 152
+  Q: Thanks. Have you ever had an allergic reaction to oral contrast dye, such as barium sulfate, which is sometimes used in imaging tests?
+  A: I don't know if I have ever had an allergic reaction to oral contrast dye like barium sulfate. My text doesn't mention any allergies to contrast dyes.
+  not in the text: “My text doesn't mention any allergies to contrast dyes.”
+
+nci-12 NCT03331380 account, turn 162
+  Q: Thanks. Has your doctor told you that you have unstable heart function or decompensated heart failure?
+  A: I don't know if my doctor has told me I have unstable heart function or decompensated heart failure. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 account, turn 164
+  Q: Thanks. Have you ever been diagnosed with asthma or chronic obstructive pulmonary disease (COPD), a condition that makes it hard to breathe?
+  A: I don't know if I have asthma or COPD. My text only mentions that my cancer spread to my lungs, but it doesn't say I have those specific diseases.
+  not in the text: “My text only mentions that my cancer spread to my lungs, but it doesn't say I have those specific diseases.”
+
+nci-12 NCT03331380 account, turn 166
+  Q: Thanks. Have you ever been told by a doctor that you have advanced heart block, which is a problem with the electrical signals in your heart?
+  A: I don't know if I have advanced heart block. My text only mentions my cervical cancer and its spread to the lungs and liver.
+  not in the text: “My text only mentions my cervical cancer and its spread to the lungs and liver.”
+
+nci-12 NCT03331380 full, turn 20
+  Q: Thanks. Have you ever been diagnosed with valvular heart disease (a condition where one or more of your heart's valves don't work properly)?
+  A: I don't know if I have valvular heart disease. My text only mentions my cervical cancer and its treatments, not my heart health.
+  not in the text: “My text only mentions my cervical cancer and its treatments, not my heart health.”
+
+nci-12 NCT03331380 full, turn 24
+  Q: Thanks. Have you ever been diagnosed with congenital heart disease (a heart condition you were born with), with or without prior repair?
+  A: I don't know if I have congenital heart disease. My text only mentions my cervical cancer and its treatments, not any heart conditions I was born with.
+  not in the text: “My text only mentions my cervical cancer and its treatments”
+
+nci-12 NCT03331380 full, turn 26
+  Q: Thanks. Have you ever been diagnosed with myocarditis (inflammation of the heart muscle)?
+  A: I don't know if I have myocarditis. My text only mentions my cervical cancer and its treatments, not any heart conditions like inflammation of the heart muscle.
+  not in the text: “My text only mentions my cervical cancer and its treatments, not any heart conditions like inflammation of the heart muscle.”
+
+nci-12 NCT03331380 full, turn 28
+  Q: Thanks. Have you ever been diagnosed with infiltrative cardiomyopathy (a condition where abnormal substances build up in the heart muscle)?
+  A: I don't know if I have infiltrative cardiomyopathy. My text only mentions my cervical cancer and its treatments, not any specific heart muscle conditions like that.
+  not in the text: “My text only mentions my cervical cancer and its treatments”
+
+nci-12 NCT03331380 full, turn 30
+  Q: Thanks. Have you ever been diagnosed with hypertrophic cardiomyopathy (a condition where the heart muscle becomes abnormally thick)?
+  A: I don't know if I have hypertrophic cardiomyopathy. My text only mentions my cervical cancer and its treatments, not any specific heart muscle conditions like that.
+  not in the text: “My text only mentions my cervical cancer and its treatments, not any specific heart muscle conditions like that.”
+
+nci-12 NCT03331380 full, turn 38
+  Q: Thanks. Have you ever been diagnosed with cognitive decline or any neurodegenerative disorders (conditions that cause progressive damage to the brain, such as Alzheimer's disease)?
+  A: I don't know if I have cognitive decline or any neurodegenerative disorders. My text only mentions my cervical cancer and its treatments, not any brain conditions like Alzheimer's.
+  not in the text: “My text only mentions my cervical cancer and its treatments, not any brain conditions like Alzheimer's.”
+
+nci-12 NCT03331380 full, turn 62
+  Q: Thanks. Have you ever been diagnosed with multiple sclerosis?
+  A: I don't know if I have multiple sclerosis. My text only mentions my cervical cancer and its treatments, not any neurological conditions like that.
+  not in the text: “My text only mentions my cervical cancer and its treatments, not any neurological conditions like that.”
+
+nci-12 NCT03331380 full, turn 70
+  Q: Thanks. Do you have any known muscle or tendon disorders, such as chronic pain, weakness, or previous injuries to these areas?
+  A: I don't know if I have any known muscle or tendon disorders. My text only mentions my cervical cancer and its treatments, not any specific muscle or tendon issues.
+  not in the text: “My text only mentions my cervical cancer and its treatments”
+
+nci-12 NCT03331380 full, turn 72
+  Q: Thanks. Have you ever been diagnosed with a knee meniscal disorder, such as a torn meniscus or other damage to the cartilage in your knee?
+  A: I don't know if I have a knee meniscal disorder. My text only mentions my cervical cancer and its treatments, not any specific joint or cartilage issues.
+  not in the text: “My text only mentions my cervical cancer and its treatments”
+
+nci-12 NCT03331380 full, turn 104
+  Q: Thanks. Have you ever been diagnosed with bronchiolitis? This is inflammation of the small airways in the lungs. If you aren't sure, that's okay to say.
+  A: I don't know if I have bronchiolitis. My text only mentions lung lesions from my cancer, not other lung conditions like inflammation of the small airways.
+  not in the text: “My text only mentions lung lesions from my cancer, not other lung conditions like inflammation of the small airways.”
+
+nci-12 NCT03331380 full, turn 106
+  Q: Thanks. Have you ever been diagnosed with bronchiectasis (widened airways) or pneumonitis (lung inflammation)? If you aren't sure, that's okay to say.
+  A: I don't know if I have bronchiectasis or pneumonitis. My text only mentions lung lesions from my cancer, not other lung conditions like widened airways or lung inflammation.
+  not in the text: “My text only mentions lung lesions from my cancer, not other lung conditions like widened airways or lung inflammation.”
+
+nci-12 NCT03331380 full, turn 108
+  Q: Thanks. Have you ever been diagnosed with asthma or other obstructive lung diseases? If you aren't sure, that's okay to say.
+  A: I don't know if I have asthma or other obstructive lung diseases. My text mentions lung lesions from my cancer, but it doesn't mention any other lung conditions like asthma.
+  not in the text: “My text mentions lung lesions from my cancer, but it doesn't mention any other lung conditions like asthma.”
+
+nci-12 NCT03331380 full, turn 110
+  Q: Thanks. Have you ever been diagnosed with pulmonary lymphangioleiomyomatosis (a rare lung disease)? If you aren't sure, that's okay to say.
+  A: I don't know if I have pulmonary lymphangioleiomyomatosis. My text only mentions lung lesions from my cancer, not other rare lung diseases.
+  not in the text: “My text only mentions lung lesions from my cancer, not other rare lung diseases.”
+
+nci-12 NCT03331380 full, turn 112
+  Q: Thanks. Have you ever been diagnosed with cystic fibrosis or other cystic/interstitial lung diseases? If you aren't sure, that's okay to say.
+  A: I don't know if I have cystic fibrosis or other cystic or interstitial lung diseases. My text only mentions lung lesions from my cancer, not other lung conditions like that.
+  not in the text: “My text only mentions lung lesions from my cancer, not other lung conditions like that.”
+
+nci-12 NCT03331380 full, turn 146
+  Q: Thanks. Have you ever had an allergic reaction to ferumoxytol (an iron supplement) or to mannitol (a sugar alcohol used in some medications)?
+  A: I don't know if I have ever had an allergic reaction to ferumoxytol or mannitol. My text lists my cancer treatments but doesn't mention any allergic reactions to these specific substances.
+  not in the text: “My text lists my cancer treatments but doesn't mention any allergic reactions to these specific substances.”
+
+nci-12 NCT03331380 full, turn 152
+  Q: Thanks. Have you ever had an allergic reaction to oral contrast, such as barium sulfate?
+  A: I don't know if I have ever had an allergic reaction to oral contrast like barium sulfate. My text lists my cancer treatments but doesn't mention any allergic reactions to contrast agents.
+  not in the text: “My text lists my cancer treatments but doesn't mention any allergic reactions to contrast agents.”
+
+nci-12 NCT03331380 full, turn 166
+  Q: Thanks. Have you ever been diagnosed with asthma or chronic obstructive pulmonary disease (COPD)?
+  A: I don't know if I have asthma or COPD. My text mentions lung lesions from my cancer, but it doesn't mention any diagnosis of asthma or chronic obstructive pulmonary disease.
+  not in the text: “My text mentions lung lesions from my cancer, but it doesn't mention any diagnosis of asthma or chronic obstructive pulmonary disease.”
+
+nci-12 NCT03331380 full, turn 170
+  Q: Thanks. Has an enrolling doctor told you that you currently have an acute illness, such as a stroke, that might require immediate treatment?
+  A: I don't know if I have an acute illness like a stroke. My text only mentions my cancer history and treatments, not any current acute illnesses or strokes.
+  not in the text: “My text only mentions my cancer history and treatments, not any current acute illnesses or strokes.”
+
+nci-12 NCT04708470 account, turn 10
+  Q: Thanks. Are you willing to receive the study treatment even if it means you cannot use other standard immunotherapy options like pembrolizumab in the future?
+  A: I don't know if I can commit to that. I'm currently looking for a trial while my oncologist starts topotecan, so I'm not sure about the long-term restrictions on other immunotherapies.
+  not in the text: “I don't know if I can commit to that.” / “I'm currently looking for a trial while my oncologist starts topotecan” / “so I'm not sure about the long-term restrictions on other immunotherapies.”
+
+nci-13 NCT02465060 account, turn 8
+  Q: Thanks. To be sure, do you expect to be able to father children in the future, or are you certain you cannot?
+  A: I had part of my penis removed, so I don't think I can father children anymore. I am not sure if I can or cannot do so in the future.
+  not in the text: “I had part of my penis removed”
+
+nci-13 NCT02465060 account, turn 16
+  Q: Thanks. Are there any other standard cancer treatments available that could help you live longer, but you are unable to receive them due to medical issues or side effects?
+  A: I don't know if there are other standard treatments I'm unable to receive due to medical issues. I just know that my cancer kept growing and spreading despite the treatments I've had.
+  not in the text: “My cancer kept growing and spreading despite the treatments I've had.”
+
+nci-13 NCT02465060 account, turn 20
+  Q: Thanks. Based on your current diagnosis, does your doctor say there is no standard treatment available that has been shown to help you live longer? It's okay if you aren't sure.
+  A: I don't know if my doctor has said there are no standard treatments left. My text only mentions that my cancer kept growing and spreading despite the treatments I've had.
+  not in the text: “My cancer kept growing and spreading despite the treatments I've had.”
+
+nci-13 NCT02465060 account, turn 42
+  Q: Thanks. Have you had an electrocardiogram (ECG, a heart rhythm test) within the last 8 weeks?
+  A: I don't know if I have had an electrocardiogram within the last 8 weeks. My text only mentions my cancer history and past treatments, not my recent test results.
+  not in the text: “I don't know if I have had an electrocardiogram within the last 8 weeks. My text only mentions my cancer history and past treatments, not my recent test results.”
+
+nci-13 NCT02465060 account, turn 44
+  Q: Thanks. Have you had any recent blood tests that showed low potassium levels (hypokalemia)?
+  A: I don't know if I have had any recent blood tests showing low potassium levels. My text only mentions my cancer history and past treatments, not my recent lab results.
+  not in the text: “My text only mentions my cancer history and past treatments, not my recent lab results.”
+
+nci-13 NCT02465060 account, turn 54
+  Q: Thanks. Do you know if your cancer progressed or you couldn't tolerate treatment at least 6 months after starting your current therapy? Also, are you willing to have a tumor biopsy or bone marrow aspirate done for this study, or will you be having a medical procedure soon where tissue could be collected?
+  A: I don't know if my cancer progressed at least 6 months after starting my current therapy because I don't have specific timelines for when those treatments started or ended. I am not sure if I am willing to have a biopsy or if I have a procedure coming up, as my text doesn't mention my current plans or willingness.
+  not in the text: “I don't know if my cancer progressed at least 6 months after starting my current therapy because I don't have specific timelines for when those treatments started or ended.” / “I am not sure if I am willing to have a biopsy or if I have a procedure coming up, as my text doesn't mention my current plans or willingness.”
+
+nci-13 NCT02465060 full, turn 6
+  Q: Thanks. For the duration of the study and 4 months after, do you plan to use effective contraception or abstain from sexual intercourse to prevent pregnancy or fathering children?
+  A: I don't know about that. I am a 75-year-old male, so I wouldn't need to worry about preventing pregnancy or fathering children.
+  not in the text: “I am a 75-year-old male”
+
+nci-13 NCT02465060 full, turn 42
+  Q: Thanks. Have you had an electrocardiogram (ECG) in the last 8 weeks? This is a test that checks your heart's electrical activity to ensure it is within a safe range for the study.
+  A: I don't know if I have had an electrocardiogram in the last 8 weeks. My text only mentions restaging imaging and does not list any heart tests or ECG results.
+  not in the text: “My text only mentions restaging imaging and does not list any heart tests or ECG results.”
+
+nci-13 NCT02465060 full, turn 44
+  Q: Thanks. Have you had any recent blood tests that checked your potassium levels? We need to ensure your levels are within the normal range.
+  A: I don't know if I have had recent blood tests checking my potassium levels. My text only mentions restaging imaging and does not list any specific blood test results.
+  not in the text: “My text only mentions restaging imaging and does not list any specific blood test results.”
+
+nci-17 NCT03331380 full, turn 150
+  Q: Have you ever had an allergic reaction to oral contrast dye, such as barium sulfate, which is sometimes used during imaging tests?
+  A: I don't know if I have ever had an allergic reaction to oral contrast dye like barium sulfate. The text doesn't mention any allergic reactions to imaging dyes.
+  not in the text: “The text doesn't mention any allergic reactions to imaging dyes.”
+
+nci-17 NCT03493945 account, turn 14
+  Q: Thanks. On a scale where 0 is fully active and 2 is able to care for yourself but unable to work, would you say your ECOG performance status is 0 or 1?
+  A: I don't know what my ECOG performance status is. I know I have a tube draining my kidney and I've had surgeries, but I don't have a specific score.
+  not in the text: “I don't know what my ECOG performance status is.”
+
+nci-17 NCT03493945 account, turn 56
+  Q: Have you taken any medications that affect liver enzymes CYP1A2, CYP2C8, or CYP2C19, or transporters OATP1B1 or OATP1B3 in the last 21 days? If you aren't sure, that's okay to say.
+  A: I don't know if I have taken any medications affecting those liver enzymes or transporters. The text doesn't mention any current medications I am taking.
+  not in the text: “I don't know if I have taken any medications affecting those liver enzymes or transporters. The text doesn't mention any current medications I am taking.”
+
+nci-17 NCT03493945 account, turn 58
+  Q: Are you currently taking any blood thinners, such as Coumadin (warfarin) or other coumarin-based medications?
+  A: I don't know if I am currently taking blood thinners like Coumadin. The text doesn't mention any current medications I am taking.
+  not in the text: “The text doesn't mention any current medications I am taking.”
+
+nci-17 NCT03493945 full, turn 54
+  Q: Thanks. Do you have any ongoing health issues like an active infection, heart problems, liver disease, uncontrolled high blood pressure, or mental health conditions that might make it hard to follow the study rules? If you aren't sure, that's okay to say.
+  A: I don't know if I have any of those specific ongoing health issues. The text mentions my bladder tumor, the meningioma, and the nephrostomy tube, but doesn't list heart problems, liver disease, or uncontrolled high blood pressure.
+  not in the text: “bladder tumor”
+
+nci-17 NCT06161532 account, turn 54
+  Q: Have you taken any systemic immunosuppressant medications in the last 2 weeks, even if it was just a short course (like 48 hours of corticosteroids) for a reason like an allergy? If you aren't sure, that's okay to say.
+  A: I don't know. The text doesn't mention whether I have taken any systemic immunosuppressant medications or had a short course of corticosteroids for an allergy.
+  not in the text: “I don't know. The text doesn't mention whether I have taken any systemic immunosuppressant medications or had a short course of corticosteroids for an allergy.”
+
+nci-17 NCT06161532 full, turn 56
+  Q: Have you taken any systemic immunosuppressive medications (like corticosteroids, cyclophosphamide, or methotrexate) in the last 2 weeks? If you aren't sure, that's okay to say.
+  A: I don't know if I have taken any systemic immunosuppressive medications in the last 2 weeks. The text lists my cancer treatments and surgeries, but it does not mention any current medications like corticosteroids, cyclophosphamide, or methotrexate.
+  not in the text: “The text lists my cancer treatments and surgeries, but it does not mention any current medications”
+
+nci-17 NCT06161532 full, turn 80
+  Q: Have you ever been diagnosed with cancer that has spread to your brain or central nervous system, or do you currently have any symptoms related to that?
+  A: I don't know if I have cancer that has spread to my brain or central nervous system. The text mentions an incidental meningioma, but it is described as a benign tumor, not cancer.
+  not in the text: “benign tumor”
+
+nci-17 NCT06161532 full, turn 108
+  Q: Thanks. To clarify, do you currently have fluid buildup in your chest, around your heart, or in your abdomen that needs to be drained frequently (once a month or more)? It is okay if you are not sure.
+  A: I don't know if I have fluid buildup in my chest, heart, or abdomen that needs frequent drainage. The text mentions left hydronephrosis and a nephrostomy tube, but it does not mention pleural effusion, pericardial effusion, or ascites.
+  not in the text: “The text mentions left hydronephrosis and a nephrostomy tube, but it does not mention pleural effusion, pericardial effusion, or ascites.”
+
+nci-17 NCT06161532 full, turn 114
+  Q: Have you been diagnosed with any other cancer in the last 2 years, excluding cured skin, superficial bladder, or low-risk prostate cancers?
+  A: I don't know if I have been diagnosed with any other cancer in the last 2 years. The text only mentions my bladder cancer and an incidental meningioma, which is a benign tumor.
+  not in the text: “benign tumor”
+
+nci-25 NCT00003838 account, turn 10
+  Q: Thanks. Have you ever been diagnosed with acute lymphoblastic leukemia (ALL), a type of blood cancer?
+  A: I don't know if I have acute lymphoblastic leukemia. I only know I have peripheral T-cell lymphoma.
+  not in the text: “I only know I have peripheral T-cell lymphoma.”
+
+nci-25 NCT00003838 account, turn 12
+  Q: Thanks. Have you ever been diagnosed with acute myeloid leukemia (AML), a type of blood cancer?
+  A: I don't know if I have acute myeloid leukemia. I only know I have peripheral T-cell lymphoma.
+  not in the text: “I only know I have peripheral T-cell lymphoma.”
+
+nci-25 NCT00003838 account, turn 14
+  Q: Thanks. Have you ever been diagnosed with myelodysplastic syndrome (MDS) classified as refractory anemia with excess blasts (RAEB), or chronic myelomonocytic leukemia (CMML)? It's okay if you aren't sure.
+  A: I don't know if I have MDS or CMML. I only know I have peripheral T-cell lymphoma.
+  not in the text: “I only know I have peripheral T-cell lymphoma.”
+
+nci-25 NCT00003838 account, turn 16
+  Q: Thanks. Have you ever been diagnosed with a myeloproliferative disease? This is a group of blood disorders where the bone marrow makes too many blood cells, or where you have low blood counts (cytopenia).
+  A: I don't know if I have a myeloproliferative disease. I only know I have peripheral T-cell lymphoma.
+  not in the text: “I only know I have peripheral T-cell lymphoma.”
+
+nci-25 NCT00003838 account, turn 18
+  Q: Thanks. Have you ever been diagnosed with chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL)? It's okay if you aren't sure.
+  A: I don't know if I have CLL or SLL. I only know I have peripheral T-cell lymphoma.
+  not in the text: “I only know I have peripheral T-cell lymphoma.”
+
+nci-25 NCT00003838 account, turn 22
+  Q: The trial asks about this: “The participant has intermediate or high grade relapsed or progressive disease despite treatment with standard therapy and is ineligible for autologous PBSC transplant.”. Does this describe you?
+  A: Yes, that describes me. My lymphoma has grown back after treatment, and I don't know if I am eligible for an autologous PBSC transplant.
+  not in the text: “My lymphoma has grown back after treatment” / “I don't know if I am eligible for an autologous PBSC transplant”
+
+nci-25 NCT00003838 account, turn 24
+  Q: Thanks. Have you ever had an autologous stem cell transplant (using your own cells) for your lymphoma? It's okay if you aren't sure.
+  A: I don't know if I've had an autologous stem cell transplant. I only know I've had chemo and mogamulizumab.
+  not in the text: “I don't know if I've had an autologous stem cell transplant.” / “I only know I've had chemo and mogamulizumab.”
+
+nci-25 NCT00003838 account, turn 38
+  Q: Thanks. If you do find a potential family donor, do you know if they weigh at least 18 kg (about 40 lbs)?
+  A: I don't know if I have a family member who is a match, so I can't say if they weigh at least 18 kg.
+  not in the text: “I don't know if I have a family member who is a match”
+
+nci-25 NCT00003838 account, turn 50
+  Q: Thanks. To ensure you can fully understand the study details and give informed consent, do you have any current psychiatric conditions or cognitive issues that might make this difficult?
+  A: I don't know if I have any current psychiatric conditions or cognitive issues. I only know about my physical health like my lymphoma and kidney disease.
+  not in the text: “I don't know if I have any current psychiatric conditions or cognitive issues.” / “I only know about my physical health like my lymphoma and kidney disease.”
+
+nci-25 NCT00003838 account, turn 56
+  Q: Thanks. Have you ever had a lung function test called a DLCO (diffusion capacity of carbon monoxide) that showed a result less than 40% of the predicted value? If you aren't sure, that's okay.
+  A: I don't know if I've ever had a DLCO test or what the results were. I only know my blood work is okay.
+  not in the text: “I don't know if I've ever had a DLCO test” / “I only know my blood work is okay”
+
+nci-25 NCT00003838 account, turn 58
+  Q: Thanks. Do you know if your left ventricular ejection fraction (a measure of how well your heart pumps blood) has ever been less than 30%? If you aren't sure, that's okay.
+  A: I don't know if my left ventricular ejection fraction has ever been less than 30%. I only know my blood work is okay.
+  not in the text: “I only know my blood work is okay.”
+
+nci-25 NCT03502733 full, turn 28
+  Q: Thanks. Regarding the new tumor biopsy samples for research, are you willing to provide them? If you're not sure, that's okay.
+  A: I don't know if I am willing to provide new tumor biopsy samples, as the text doesn't mention my stance on that.
+  not in the text: “I don't know if I am willing to provide new tumor biopsy samples, as the text doesn't mention my stance on that.”
+
+nci-25 NCT03502733 full, turn 52
+  Q: Thanks. Are you currently taking any HIV medications that include ritonavir or cobicistat? If you're not sure, that's okay.
+  A: I don't know if I am taking any HIV medications with ritonavir or cobicistat. The text doesn't list my current medications.
+  not in the text: “The text doesn't list my current medications.”
+
+nci-37 NCT00924027 account, turn 28
+  Q: Thanks. Have you ever been diagnosed with breast cancer?
+  A: No, I have never been diagnosed with breast cancer. My text only mentions endometrial cancer.
+  not in the text: “My text only mentions endometrial cancer.”
+
+nci-37 NCT00924027 account, turn 30
+  Q: Thanks. Have you been diagnosed with infiltrating ductal carcinoma or ductal carcinoma in-situ (DCIS), which are types of breast cancer?
+  A: No, I have never been diagnosed with breast cancer. My text only mentions endometrial cancer.
+  not in the text: “No, I have never been diagnosed with breast cancer. My text only mentions endometrial cancer.”
+
+nci-37 NCT00924027 account, turn 34
+  Q: Thanks. Have you ever been diagnosed with prostate cancer?
+  A: No, I have never been diagnosed with prostate cancer. My text only mentions endometrial cancer.
+  not in the text: “My text only mentions endometrial cancer.”
+
+nci-37 NCT00924027 account, turn 36
+  Q: Thanks. Have you ever been diagnosed with localized prostate cancer?
+  A: No, I have never been diagnosed with prostate cancer. My text only mentions endometrial cancer.
+  not in the text: “No, I have never been diagnosed with prostate cancer. My text only mentions endometrial cancer.”
+
+nci-37 NCT00924027 full, turn 26
+  Q: Thanks. Have you been told by your doctor that you cannot undergo surgery for your cancer because of poor lung function or distant lung metastasis?
+  A: I don't know if I have poor lung function or distant lung metastasis. My scans show progression in the liver and lymph nodes, but I haven't been told about issues in my lungs.
+  not in the text: “progression in the liver and lymph nodes” / “I haven't been told about issues in my lungs”
+
+nci-37 NCT00924027 full, turn 50
+  Q: Thanks. Given your fatigue and recent fevers, do you think you will be able to attend all scheduled treatment visits and follow the instructions exactly as planned, or is there a significant chance you might miss appointments or struggle with the regimen?
+  A: I'm not sure if I will be able to attend all visits or follow the regimen exactly. My worsening fatigue and recent high fevers make it difficult to know if I can stick to the schedule.
+  not in the text: “recent high fevers”
+

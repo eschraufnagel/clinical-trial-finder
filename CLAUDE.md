@@ -107,21 +107,23 @@ data/
   geo/           ZIP code locations from the Census gazetteer
   cancer-types/  the search vocabulary, one file per cancer type plus generic.json, and <type>-others.json for the mark
   facts/         the fact vocabulary, and mapping runs by snapshot month and run name
-  criteria/      parses of picked trials' rules, by snapshot month and run name, for the check's measurement and --fake
+  criteria/      parses of picked trials' rules, by snapshot month and run name, for the check's measurement and --fake; trialbench/ for the benchmark's
+  benchmark/     TREC's and NIH-TrialBench's files, trimmed from local/benchmark/ by benchmark:import, and sources.json, their manifest
   questions/     the conversation's settings: intake, skips, short-list size, budget, scorer
 evals/
-  cases/         eval task definitions: labels, vignettes, patients (cases/patients/), and the check's pair labels (cases/check/)
+  cases/         eval task definitions: labels, vignettes, patients (cases/patients/), the check's pair labels (cases/check/), and the benchmark's pairs, reasons and accounts (cases/benchmark/)
   search/        the search measurement: labels loader, metrics, result checks, and the mark's scoring and places
   facts/         the fact measurement: labels, coverage, grading, result checks
   questions/     the question measurement: made-up patients, arms, metrics, readings, result checks
   check/         the check's measurement: picks, pair labels, the runner, metrics, result checks
+  benchmark/     the benchmarks: import, TREC's XML reader, the pairs, the search's scoring, the check's runner and scoring
   graders/       deterministic graders
-  participant/   the simulated participants: the vignette one, and the made-up patient for the check
+  participant/   the simulated participants: the vignette one, the made-up patient for the check, and the summary participant for the benchmark
   results/       committed run output
 scripts/         scripts run by a person, never imported by the application
 tests/           deterministic tests only
 e2e/             the browser test, run against npm run app -- --fake
-local/           settings, keys and spend ledgers; gitignored
+local/           settings, keys, spend ledgers and the benchmark downloads (local/benchmark/); gitignored
 ```
 
 New parts get their own directories under `src/` when the slice that needs them is planned.
@@ -148,6 +150,8 @@ Since slice 0007, it also:
 - keeps all of `src/check/` away from the factory, the page, the transport and the server: whoever starts a check passes the adapter in;
 - keeps `src/screening/` away from `src/check/` and `src/facts/`: the agent receives what the conversation carried as its own type;
 - keeps the pair labelling tool (`check:label-show`) away from the parser, the link, the screening agent and any model.
+
+Since slice 0008, it also keeps the benchmark import (`benchmark:import`) away from the network, the registry request and every model. The benchmarks are downloaded by a person into `local/benchmark/` (`docs/benchmark.md`); their URLs are data in the manifest, never fetched, so no host joins the exceptions.
 
 The conversation and the check share the app's one transport through `routeByConversation` in `src/transport/`, so neither knows how messages are delivered.
 
@@ -193,6 +197,10 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run check:label-show -- <patient> <NCT ID>` | print a patient's file and a picked trial's rules, numbered, for pair labelling; `--next`. Reaches no parser, link or model |
 | `npm run check:parse -- --set dev\|heldout` | parse the picked trials' rules into `data/criteria/<month>/<run>/`, on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
 | `npm run check:eval` | check every pair on the local model and write a result: `-- --dev` dev only; with no flag held-out, refused once a held-out result exists; `-- --check [--dev]` regrade the latest from its transcripts and fail on any difference. Resumable. Loads `.env` |
+| `npm run benchmark:import` | check the downloads in `local/benchmark/` against `data/benchmark/sources.json` and rebuild `data/benchmark/`; `-- --record` writes the manifest, `-- --pairs` draws the check's pairs (refuses to overwrite). No network, no model |
+| `npm run benchmark:search -- --trec\|--trialbench` | score the search against a benchmark and write a result, once; `-- --check` reruns the latest and fails on any difference. No model |
+| `npm run benchmark:parse -- --set dev\|heldout` | parse the check pairs' trials into `data/criteria/trialbench/<run>/`, on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
+| `npm run benchmark:check` | check the NIH-TrialBench pairs on the local model, both arms: `-- --dev` dev only; with no flag held-out, refused once a held-out result exists; `--arm full\|account`; `-- --check [--dev]` regrade the latest from its transcripts. Resumable. Loads `.env` |
 
 Run `npm run check` before every commit and before opening a PR, and commit only if it passes: `npm run check && git commit ...`.
 

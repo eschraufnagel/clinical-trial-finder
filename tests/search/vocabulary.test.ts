@@ -1,8 +1,13 @@
-import { mkdtempSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { loadVocabulary, reasonsFor, VocabularyError } from "../../src/search/vocabulary.js";
+import {
+  DEFAULT_VOCABULARY_DIR,
+  loadVocabulary,
+  reasonsFor,
+  VocabularyError,
+} from "../../src/search/vocabulary.js";
 import { rules, trial } from "./trial-fixture.js";
 
 function vocabularyDir(
@@ -108,5 +113,20 @@ describe("reasonsFor", () => {
     ]);
     expect(reasons({})).toEqual([]);
     expect(reasons({ conditions: ["Small Cell Lung Cancer"] })).toEqual([]);
+  });
+});
+
+describe("every committed cancer type", () => {
+  const ids = readdirSync(DEFAULT_VOCABULARY_DIR)
+    .filter((f) => f.endsWith(".json") && f !== "generic.json" && !f.endsWith("-others.json"))
+    .map((f) => f.slice(0, -".json".length));
+
+  it("loads, and only NSCLC is measured", () => {
+    expect(ids.length).toBe(21);
+    for (const id of ids) {
+      const vocabulary = loadVocabulary(id);
+      expect(vocabulary.type.measured, id).toBe(id === "nsclc");
+      expect(vocabulary.type.names.length, id).toBeGreaterThan(0);
+    }
   });
 });

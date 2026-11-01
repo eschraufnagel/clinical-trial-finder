@@ -77,6 +77,41 @@ function linesOf(record: TrialRecord): Array<{ section: string; line: RecordLine
   );
 }
 
+/** The parts of a check's transcript the never-a-verdict and every-unknown checks read. */
+type Checked = Pick<PairTranscript, "transcript" | "criteria" | "record" | "findings">;
+
+/**
+ * Verdict words in the agent's turns and the record. A fixed question quotes
+ * the trial's own words, which aren't ours to scan (`src/shortlist/words.ts`),
+ * so only its template is. Shared with slice 0008's benchmark.
+ */
+export function verdictHitsOf(t: Checked): string[] {
+  const criteria = new Map(t.criteria.map((c) => [c.id, c]));
+  const agentText = t.transcript
+    .filter((x) => x.speaker === "agent")
+    .map((x) => {
+      const c = x.criterionId === undefined ? undefined : criteria.get(x.criterionId);
+      return c !== undefined && x.text === fixedQuestion(c) ? FIXED_QUESTION_TEMPLATE : x.text;
+    });
+  return verdictHits([...agentText, ...oursIn(t.record)]);
+}
+
+/** Criteria left open (unresolved, chart review, or a carried "I don't know") that the record doesn't list. */
+export function unknownsMissingOf(t: Checked): string[] {
+  const onRecord = new Set(
+    [...t.record.records.lines, ...t.record.earlier.lines].map((l) => l.criterionId),
+  );
+  return t.findings
+    .filter(
+      (f) =>
+        f.status === "unresolved" ||
+        f.status === "chart-review" ||
+        (f.status === "from-conversation" && (f.earlier ?? []).some((e) => e.answer === "unknown")),
+    )
+    .map((f) => f.criterionId)
+    .filter((id) => !onRecord.has(id));
+}
+
 /** `knows` is the patient's known facts, from their file. */
 export function scorePair(
   t: PairTranscript,
@@ -146,28 +181,6 @@ export function scorePair(
     ? []
     : counted.filter((l) => l.line.mayNotFit).map((l) => l.line.criterionId);
 
-  // A fixed question quotes the trial's own words, which aren't ours to scan
-  // (`src/shortlist/words.ts`), so only its template is.
-  const criteria = new Map(t.criteria.map((c) => [c.id, c]));
-  const agentText = t.transcript
-    .filter((x) => x.speaker === "agent")
-    .map((x) => {
-      const c = x.criterionId === undefined ? undefined : criteria.get(x.criterionId);
-      return c !== undefined && x.text === fixedQuestion(c) ? FIXED_QUESTION_TEMPLATE : x.text;
-    });
-  const onRecord = new Set(
-    [...t.record.records.lines, ...t.record.earlier.lines].map((l) => l.criterionId),
-  );
-  const unknownsMissing = t.findings
-    .filter(
-      (f) =>
-        f.status === "unresolved" ||
-        f.status === "chart-review" ||
-        (f.status === "from-conversation" && (f.earlier ?? []).some((e) => e.answer === "unknown")),
-    )
-    .map((f) => f.criterionId)
-    .filter((id) => !onRecord.has(id));
-
   return {
     patient: t.patient,
     nctId: t.nctId,
@@ -182,8 +195,8 @@ export function scorePair(
     caught,
     missed,
     falseAlarms,
-    verdictHits: verdictHits([...agentText, ...oursIn(t.record)]),
-    unknownsMissing,
+    verdictHits: verdictHitsOf(t),
+    unknownsMissing: unknownsMissingOf(t),
     orderMoved: t.orderBefore.join(" ") !== t.orderAfter.join(" "),
     flags: t.replies.reduce((n, r) => n + r.flags.length, 0),
     excluded,

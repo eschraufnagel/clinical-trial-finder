@@ -61,6 +61,8 @@ npm run app -- --fake
 
 Then open http://127.0.0.1:5025. From the list, tick up to three trials and check them. `--fake` reads answers from a fixed list, and checks by buttons only, so no AI model is needed. Without it, the page uses the local model, or the hosted model you choose in its Settings with your own key. Use made-up answers. What the page says and why: [docs/page.md](docs/page.md). How the check works and how well it does: [docs/check.md](docs/check.md).
 
+The search and the check have also been scored against judgments made elsewhere, by NIST's TREC assessors and NIH clinicians: [docs/benchmark.md](docs/benchmark.md).
+
 ## How it's being built
 
 It's built by one developer working with Claude, in small changes. Each change is written up as an intent, a spec and a plan before any code, then checked automatically and landed as one reviewed change. The record is in [`work/`](work/), starting with the [research](work/0000-product/research.md). The model adapters, the eligibility parser and the per-trial screening agent come from an earlier proof of concept, [Clinical Trial Prescreening Agent](https://github.com/eschraufnagel/trial-prescreening-agent).

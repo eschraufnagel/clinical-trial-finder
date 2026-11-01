@@ -1,7 +1,7 @@
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { loadZipPoints, UnknownZipError } from "../../src/search/geo.js";
-import { parseAgeLimit, recordFlags, searchTrials } from "../../src/search/search.js";
+import { parseAgeLimit, personStages, recordFlags, searchTrials } from "../../src/search/search.js";
 import type { SearchRequest } from "../../src/search/types.js";
 import { loadVocabulary } from "../../src/search/vocabulary.js";
 import { rules, site, trial } from "./trial-fixture.js";
@@ -174,6 +174,55 @@ describe("searchTrials", () => {
 
   it("refuses a ZIP it can't place", () => {
     expect(() => search([trial("NCT00000001", lung)], { zip: "00000" })).toThrow(UnknownZipError);
+  });
+});
+
+describe("personStages", () => {
+  const trials = [
+    trial("NCT00000001", lung),
+    trial("NCT00000002", { ...lung, primaryPurpose: "DIAGNOSTIC" }),
+    trial("NCT00000003"),
+    trial("NCT00000004", {
+      ...lung,
+      eligibility: { ...trial("x").eligibility, maximumAge: "21 Years" },
+    }),
+    trial("NCT00000005", { ...lung, sites: [site({ lat: 61.219998, lon: -149.85784 })] }),
+    trial("NCT00000006", {
+      conditions: ["Advanced Solid Tumor"],
+      eligibility: { ...trial("x").eligibility, minimumAge: "eighteen" },
+    }),
+    trial("NCT00000007", { ...lung, sites: [] }),
+  ];
+
+  it("gives searchTrials' funnel up to age and sex, and the trials it then places", () => {
+    const stages = personStages(trials, VOCABULARY, REQUEST);
+    const result = search(trials);
+    expect(stages.funnel).toEqual(result.funnel.slice(0, 4));
+    expect(stages.entries.map((e) => e.trial.nctId)).toEqual([
+      "NCT00000001",
+      "NCT00000005",
+      "NCT00000006",
+      "NCT00000007",
+    ]);
+    // Distance then drops the far site and the trial with none.
+    expect(ids(result)).toEqual(["NCT00000001", "NCT00000006"]);
+  });
+
+  it("keeps each trial's reasons and how its age limit read", () => {
+    const stages = personStages(trials, VOCABULARY, REQUEST);
+    const byId = new Map(stages.entries.map((e) => [e.trial.nctId, e]));
+    expect(byId.get("NCT00000001")).toMatchObject({ reasons: ["names"], age: "yes" });
+    expect(byId.get("NCT00000006")).toMatchObject({ reasons: ["generic"], age: "unread" });
+  });
+
+  it("needs no ZIP: a trial with no sites is still kept", () => {
+    const { entries } = personStages(trials, VOCABULARY, {
+      age: 64,
+      sex: "female",
+      purposes: "all",
+    });
+    expect(entries.map((e) => e.trial.nctId)).toContain("NCT00000007");
+    expect(entries.map((e) => e.trial.nctId)).toContain("NCT00000002");
   });
 });
 

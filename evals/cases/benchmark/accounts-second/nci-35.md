@@ -1,0 +1,7 @@
+Account of nci-35, from its patient_summary in data/benchmark/trialbench/vignettes.json, by KNOWING.md.
+
+I was diagnosed with prostate cancer about twelve years ago and had seed radiation to the prostate. Over the years my PSA kept rising. About four years ago a PSMA scan showed the prostate, and a biopsy showed the cancer was back there. About three years ago I had another kind of internal radiation to the prostate. My PSA came down, then started going up again.
+
+About a year and a half ago a PSMA scan showed the cancer back in my prostate and nowhere else. I had a cystoscopy with a washout. My oncologist said there were no more radiation or surgery options, so the plan was hormone therapy, on and off. I started it about a year and a half ago, and my PSA went down to almost nothing. My urine stream got slower, they found a narrowing in my urethra, and about a year ago I had a procedure to put in a catheter through my belly into my bladder. I stopped the hormone therapy about eight months ago, and my PSA has been rising since. My oncologist encouraged me to look for trials at the NIH.
+
+At my first NIH visit, about three months ago, a PSMA scan showed the cancer in my prostate reaching toward the neck of my bladder, a spot on my liver, and some small lymph nodes in my pelvis they weren't sure about. An MRI showed the liver spot was a hemangioma. A CT and bone scan a couple of weeks ago showed no spread. I've just signed up for a PSMA imaging study, and its scan showed the prostate tumor and the small liver spot looking the same as before.
