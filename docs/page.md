@@ -1,4 +1,4 @@
-# The page: the conversation, the list and the sheet
+# The page: the conversation, the list, the sheet and the check
 
 The search ([search.md](search.md)), the trials' readings ([facts.md](facts.md)) and the questions ([questions.md](questions.md)) were built as commands. This part puts them on a page that runs on this computer.
 
@@ -6,11 +6,11 @@ Built in slice 0004. The record is in [`work/0004-shortlist-handoff/`](../work/0
 - [gate-1-order.md](../work/0004-shortlist-handoff/gate-1-order.md), the order;
 - [gate-3-words.md](../work/0004-shortlist-handoff/gate-3-words.md), the hosted reading run and the page's words.
 
-Slice 0005 moved trials for other cancers below the short list ([`work/0005-other-cancers/`](../work/0005-other-cancers/); [gate-3-page.md](../work/0005-other-cancers/gate-3-page.md) has the words and the rerun).
+Slice 0005 moved trials for other cancers below the short list ([`work/0005-other-cancers/`](../work/0005-other-cancers/); [gate-3-page.md](../work/0005-other-cancers/gate-3-page.md) has the words and the rerun). Slice 0007 added the check of a few picked trials ([check.md](check.md); [`work/0007-deeper-check/`](../work/0007-deeper-check/)).
 
 ```
 npm run app                    the page, at http://127.0.0.1:5025, on the model chosen in Settings
-npm run app -- --fake          the same, with a scripted reader: no model is called
+npm run app -- --fake          the same, with a scripted reader: no model is called, and checks by taps
 npm run test:e2e               the browser test, on --fake
 ```
 
@@ -32,6 +32,7 @@ Use made-up answers. It's a proof of concept.
    - every other trial the search kept, below them;
    - their answers, each of which can be changed. A change reorders the list. No more questions follow it.
 6. **Prints the sheet** for their oncologist, or saves it as a PDF. Nothing sends it anywhere.
+7. **Can tick up to three trials and check them** (slice 0007, [below](#the-check)): one question at a time about each trial's own rules, then a record per trial to print.
 
 ## The confirm step
 
@@ -98,6 +99,26 @@ The rise is the same blind spot as above. None of the 35 places was flagged by t
 
 **Every unknown reaches the sheet.** For every made-up patient, every fact a short-list trial asks about that the person didn't answer is either a question on the sheet or a "may not fit" on that trial. `questions:eval` records this as `sheetMissing` and refuses to write a result with any: 0 in all 169 rows of [`05-7543ffb2cb2e.json`](../evals/results/questions/05-7543ffb2cb2e.json).
 
+## The check
+
+`src/server/check.ts`, `src/web/Check.tsx`, `src/web/Record.tsx`; how it works and how well it does is in [check.md](check.md).
+- **Picking.** Each trial on the list has a tick, "Check this trial". A fourth tick is refused, and **Check these** starts a check. Ticking changes nothing on the list.
+- **The questions.** The trials are checked one at a time.
+  - "Reading the rules of …" while a trial is parsed.
+  - An opening that says how many of its rules the earlier answers covered.
+  - Then each remaining rule, with **Yes**, **No**, **I don't know** and **Stop and show the record** as buttons. A tap needs no model.
+- **Typed replies are confirmed, as in the conversation.** "I read that as:" lists each rule the reply touched and how it was read, with **That's right** and **Change it**. Nothing typed counts until it's confirmed.
+- **When the model can't help, the buttons stand in:**
+  - a reply it can't read gets the buttons, saying why;
+  - a question it can't word is asked in the trial's own words, saying so;
+  - a trial whose rules can't be read gets a shorter record, from the rules the mapper read and the earlier answers.
+- **The record** is the one [check.md](check.md#how-it-works) describes. It's printable, and the questions aren't printed. It says first that it isn't a decision.
+- **The cost cap applies per trial checked,** the parse included, so three trials can spend three caps. Settings says so.
+- **A check never changes the conversation:** not its answers, its list or its order. The check reads the answers and the list, and nothing else.
+- **On a hosted model** the page says beside a reading that the check hasn't been measured on that model.
+- **With `--fake`,** only trials with a committed parse in `data/criteria/` can be ticked. Each rule is asked in its own words, and a typed reply gets "Typed replies can't be read in this mode. Please choose an answer."
+- **The transport is shared.** The conversation and the check each open their own conversations on the one transport, and `src/transport/route.ts` hands each message to the service that opened it.
+
 ## Never a verdict
 
 No text the page writes says a person is eligible, qualifies, matches or fits, or should or can join, or that a trial is best for them. `src/shortlist/words.ts` lists the patterns. They're held three ways:
@@ -106,7 +127,8 @@ No text the page writes says a person is eligible, qualifies, matches or fits, o
 | --- | --- | --- |
 | `questions:eval` (`verdictHits`) | the list and sheet for all 20 made-up patients, in every arm | 0 in all 169 rows |
 | `tests/web/copy.test.ts` | every fixed sentence on the page and in the conversation. No word may be written straight into a component | passes |
-| the browser test | every screen's visible text | passes |
+| the browser test | every screen's visible text, and since slice 0007 the check's records. The check's messages are left out of that scan, because they quote the trial's rules as plain text; their fixed words are scanned in `tests/server/check.test.ts` | passes |
+| `check:eval` (slice 0007) | every agent message and record string on all 59 checked pairs | 0 |
 
 The trial's own words and the person's own words are kept apart from the page's, and aren't scanned. A trial's title may say "eligible patients", and a person may type "am I eligible?".
 
@@ -160,7 +182,8 @@ The trial's own words and the person's own words are kept apart from the page's,
 - **Trials for other cancers, partly.** Since slice 0005 a marked trial goes below the short list, but the check marks 29 of 43 held-out trials not for NSCLC. On held-out short lists 6 of 162 places still go to trials limited to other cancers: blood cancers, and breast or ovarian trials listed under "solid tumor". One relevant trial is moved down by mistake (NCT03947385; [search.md](search.md)).
 - **No plain-language summary** of what a trial tests: the registry's title and interventions stand in. No contacts either; the record's link stands in.
 - **The phase sentences and the page's words were written here** and reviewed by no clinician.
-- **Conversations live in the server's memory.** A restart forgets them.
+- **Conversations and checks live in the server's memory.** A restart forgets them.
+- **The check is measured on the local model only,** and flags too much: [check.md](check.md#limits). A record's folded "About the trial, not you" stays folded when printed.
 - **The readings behind `--fake` are clean replies by construction** ([questions.md](questions.md)). Real replies will be read worse, and that's what the confirm step is for.
 - **One hosted model is measured.** Claude Haiku 4.5, with the answer's schema enforced, read every held-out reply, and read 2 of 326 stated answers wrong, each a "No" read as "Yes". The local model read none wrong. Claude Sonnet 5, GPT-6 Luna and Grok 4.3 aren't measured, and only the Anthropic request carries the schema.
 - **One cancer, one snapshot, one mapping run.**

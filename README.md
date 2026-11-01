@@ -4,7 +4,7 @@
 
 **An AI assistant that helps a person with cancer find clinical trials worth asking their oncologist about.** It asks what they know about their cancer and their treatment so far, searches a saved copy of ClinicalTrials.gov, and gives back a short list. For each trial it says why the trial may fit, what's still unknown and what to ask. It never says a person is eligible. Their oncologist and the trial team decide that.
 
-> **A proof of concept, not for real use, and not finished.** So far it has the research, the search, the reading of trial rules into questions, the choice of which question to ask next, and a page that runs on your own computer. It will only ever be tried with made-up patients, and it will never contact anyone.
+> **A proof of concept, not for real use, and not finished.** So far it has the research, the search, the reading of trial rules into questions, the choice of which question to ask next, a closer check of the few trials a person picks, and a page that runs on your own computer. It will only ever be tried with made-up patients, and it will never contact anyone.
 
 ## The problem
 
@@ -16,6 +16,7 @@ When standard treatment stops working, a trial may be the next option. ClinicalT
 2. **Search.** Narrow the saved registry to recruiting trials for that cancer near the person, including trials open to many cancer types.
 3. **Ask what matters next.** Choose the question that would rule the most trials in or out, and stop when more questions wouldn't change the list.
 4. **Hand over.** A short list, each trial with its reasons, its unknowns and its nearest site, plus a page of questions to take to the oncologist.
+5. **Check a few.** The person picks up to three trials. For each, an agent goes through the trial's own rules, asking only what wasn't already answered, and writes a record of what fits, what may not and what to ask.
 
 ## Run it
 
@@ -58,7 +59,7 @@ The whole conversation, in a browser, on this computer only. Answer in your own 
 npm run app -- --fake
 ```
 
-Then open http://127.0.0.1:5025. `--fake` reads answers from a fixed list, so no AI model is needed. Without it, the page uses the local model, or the hosted model you choose in its Settings with your own key. Use made-up answers. What the page says and why: [docs/page.md](docs/page.md).
+Then open http://127.0.0.1:5025. From the list, tick up to three trials and check them. `--fake` reads answers from a fixed list, and checks by buttons only, so no AI model is needed. Without it, the page uses the local model, or the hosted model you choose in its Settings with your own key. Use made-up answers. What the page says and why: [docs/page.md](docs/page.md). How the check works and how well it does: [docs/check.md](docs/check.md).
 
 ## How it's being built
 

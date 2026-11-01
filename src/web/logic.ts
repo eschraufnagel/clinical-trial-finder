@@ -8,6 +8,7 @@ export type Route =
   | { view: "conversation"; id: string }
   | { view: "list"; id: string }
   | { view: "sheet"; id: string }
+  | { view: "check"; id: string; check: string }
   | { view: "settings" };
 
 /** The view a URL hash names, so a reload lands where it was and no router is needed. */
@@ -15,6 +16,9 @@ export function routeFrom(hash: string): Route {
   const parts = hash.replace(/^#\/?/, "").split("/");
   const [view, id] = parts;
   if (view === "settings") return { view: "settings" };
+  const check = parts[2];
+  if (view === "check" && id !== undefined && id !== "" && check !== undefined && check !== "")
+    return { view: "check", id, check };
   if ((view === "c" || view === "list" || view === "sheet") && id !== undefined && id !== "")
     return view === "c" ? { view: "conversation", id } : { view, id };
   return { view: "start" };
@@ -28,6 +32,8 @@ export function hashOf(route: Route): string {
       return "#/settings";
     case "conversation":
       return `#/c/${route.id}`;
+    case "check":
+      return `#/check/${route.id}/${route.check}`;
     default:
       return `#/${route.view}/${route.id}`;
   }
@@ -57,7 +63,18 @@ export function formatUsd(usd: number): string {
  * server's words.
  */
 export const CLOSEST = "Which is closest?";
+/** How the check's fallback messages end (slice 0007). */
+export const CHOOSE = "Please choose an answer.";
 
 export function asksToChoose(text: string | undefined): boolean {
-  return text?.endsWith(CLOSEST) ?? false;
+  return (text?.endsWith(CLOSEST) || text?.endsWith(CHOOSE)) ?? false;
+}
+
+/** How many trials one check takes (slice 0007), as the server holds it. */
+export const MAX_TICKED = 3;
+
+/** Ticks or unticks a trial for the check; a fourth tick is refused, leaving the ticks as they were. */
+export function toggleTick(ticked: readonly string[], nctId: string): string[] {
+  if (ticked.includes(nctId)) return ticked.filter((id) => id !== nctId);
+  return ticked.length >= MAX_TICKED ? [...ticked] : [...ticked, nctId];
 }

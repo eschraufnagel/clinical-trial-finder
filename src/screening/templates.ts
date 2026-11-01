@@ -1,4 +1,4 @@
-import type { StudyContext } from "./types.js";
+import type { ScreeningCriterion, StudyContext } from "./types.js";
 
 /**
  * What the agent says in its own voice, written by code, never by the model
@@ -10,23 +10,44 @@ import type { StudyContext } from "./types.js";
  * than unlikely, and a test checks this text against the grader's verdict
  * pattern.
  *
- * Real prescreening language is an IRB-approved artifact. This is not, and says
- * nothing a real study would need approved.
+ * Rewritten in slice 0007 of this repository for its reader: a person with
+ * cancer checking a trial they picked, not a participant whose answers a
+ * study coordinator reviews. The record is for them and their oncologist,
+ * and the oncologist and the trial team decide. Every template is part of
+ * `PROMPT_VERSION`, so the rewrite moved it.
  */
 
 export const OPENING_TEMPLATE =
-  'Hello, and thank you for your interest in the study "{title}". ' +
-  "I'll ask you a short series of questions, one at a time. You can skip any question. " +
-  "A study coordinator will review everything you tell me and follow up with you.";
+  'These questions are about the trial "{title}". {covered}' +
+  "I'll ask about the rest of its rules one at a time. You can skip any question, " +
+  'and "I don\'t know" is always fine.';
+
+/** The opening's middle sentence, when the conversation covered some of the trial's rules. */
+export const COVERED_TEMPLATE = "Your earlier answers already covered {n} of its rules. ";
 
 export const CLOSING_TEMPLATE =
-  "Thank you, that's all my questions. A study coordinator will review your answers " +
-  "and contact you about next steps.";
+  "Thank you, that's all my questions. Your record for this trial is ready, for you and " +
+  "your oncologist. They and the trial team decide whether it is right for you.";
 
-export function openingMessage(study: StudyContext): string {
-  return OPENING_TEMPLATE.replace("{title}", study.briefTitle);
+/**
+ * A criterion asked in its own words, with no model (`fixedQuestions`, for the
+ * page's `--fake`). Clumsier than a phrased question, and exact.
+ */
+export const FIXED_QUESTION_TEMPLATE =
+  "The trial asks about this: “{text}”. Does this describe you?";
+
+/** `covered` is how many of the trial's rules the conversation's answers covered. */
+export function openingMessage(study: StudyContext, covered = 0): string {
+  return OPENING_TEMPLATE.replace("{title}", study.briefTitle).replace(
+    "{covered}",
+    covered > 0 ? COVERED_TEMPLATE.replace("{n}", String(covered)) : "",
+  );
 }
 
 export function closingMessage(): string {
   return CLOSING_TEMPLATE;
+}
+
+export function fixedQuestion(criterion: ScreeningCriterion): string {
+  return FIXED_QUESTION_TEMPLATE.replace("{text}", criterion.text);
 }

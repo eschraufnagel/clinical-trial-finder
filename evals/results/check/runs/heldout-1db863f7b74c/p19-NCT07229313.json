@@ -1,0 +1,1341 @@
+{
+  "patient": "p19",
+  "nctId": "NCT07229313",
+  "set": "heldout",
+  "rank": 2,
+  "conversation": {
+    "histology": {
+      "answer": "unknown",
+      "words": "I don't remember, dear.",
+      "question": "What type of lung cancer cell did the biopsy show?"
+    },
+    "extent": {
+      "answer": "locally_advanced",
+      "words": "It's in my lung and the glands nearby. They said it's too far along for an operation.",
+      "question": "How far has the cancer spread?"
+    },
+    "brain_mets": {
+      "answer": "none",
+      "words": "No, nothing in my head.",
+      "question": "Has the cancer spread to the brain?"
+    },
+    "ecog": {
+      "answer": "ps2",
+      "words": "I'm up for more than half the day, but I can't do any work, I sit a lot.",
+      "question": "Which is closest to how you are day to day?"
+    },
+    "prior_platinum": {
+      "answer": "received",
+      "words": "Yes, I had the carboplatin with my radiation.",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?"
+    },
+    "prior_pd1": {
+      "answer": "never",
+      "words": "No, not that immune one.",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+    },
+    "prior_targeted": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+    },
+    "lines_advanced": {
+      "answer": "unknown",
+      "words": "How many? I don't remember, dear.",
+      "question": "How many treatments have you had since the cancer became advanced?"
+    }
+  },
+  "orderBefore": [
+    "NCT06627647",
+    "NCT07229313"
+  ],
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant is male or female and is ≥18 years of age"
+    },
+    {
+      "id": "P2",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "No therapy of proven efficacy exists for the participant's tumor"
+    },
+    {
+      "id": "P3",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a pathologically or histologically documented diagnosis of advanced / metastatic solid tumor malignancy that is resistant to standard therapy or for which no standard therapy is available."
+    },
+    {
+      "id": "P4",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has adequate bone marrow, kidney, and liver function"
+    },
+    {
+      "id": "P5",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has measurable disease using RECIST v1.1"
+    },
+    {
+      "id": "P6",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has an ECOG performance status of 0 or 1"
+    },
+    {
+      "id": "P7",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a life expectancy of ≥ 3 months"
+    },
+    {
+      "id": "P8",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has had prior treatment with any ADC with topoisomerase 1 inhibitor payload"
+    },
+    {
+      "id": "P9",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has had prior treatment with any PTK7 - targeted therapy"
+    },
+    {
+      "id": "P10",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has uncontrolled cardiovascular disease"
+    },
+    {
+      "id": "P11",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has an active Hepatitis B, Hepatitis C, or HIV infection"
+    },
+    {
+      "id": "P12",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a history of interstitial lung disease"
+    },
+    {
+      "id": "P13",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant has had major surgery, radiation therapy, or systemic anti-cancer within 3 weeks of study treatment start."
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 23,
+      "end": 54,
+      "text": "Male or female ≥18 years of age"
+    },
+    "P2": {
+      "start": 57,
+      "end": 107,
+      "text": "No therapy of proven efficacy exists for the tumor"
+    },
+    "P3": {
+      "start": 110,
+      "end": 296,
+      "text": "Pathologically or histologically documented diagnosis of advanced / metastatic solid tumor malignancy that is resistant to standard therapy or for which no standard therapy is available."
+    },
+    "P4": {
+      "start": 299,
+      "end": 347,
+      "text": "Adequate bone marrow, kidney, and liver function"
+    },
+    "P5": {
+      "start": 350,
+      "end": 386,
+      "text": "Measurable disease using RECIST v1.1"
+    },
+    "P6": {
+      "start": 389,
+      "end": 400,
+      "text": "ECOG 0 or 1"
+    },
+    "P7": {
+      "start": 403,
+      "end": 429,
+      "text": "Life expectancy ≥ 3 months"
+    },
+    "P8": {
+      "start": 454,
+      "end": 521,
+      "text": "Prior treatment with any ADC with topoisomerase 1 inhibitor payload"
+    },
+    "P9": {
+      "start": 524,
+      "end": 551,
+      "text": "Any PTK7 - targeted therapy"
+    },
+    "P10": {
+      "start": 554,
+      "end": 589,
+      "text": "Uncontrolled cardiovascular disease"
+    },
+    "P11": {
+      "start": 592,
+      "end": 641,
+      "text": "Active Hepatitis B, Hepatitis C, or HIV infection"
+    },
+    "P12": {
+      "start": 644,
+      "end": 680,
+      "text": "History of interstitial lung disease"
+    },
+    "P13": {
+      "start": 683,
+      "end": 781,
+      "text": "Major surgery, radiation therapy, or systemic anti-cancer within 3 weeks of study treatment start."
+    }
+  },
+  "links": {
+    "P1": [],
+    "P2": [],
+    "P3": [
+      {
+        "factId": "histology",
+        "rulesOut": [
+          "squamous",
+          "other_nsclc",
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 110,
+          "end": 211,
+          "text": "Pathologically or histologically documented diagnosis of advanced / metastatic solid tumor malignancy"
+        }
+      },
+      {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 110,
+          "end": 211,
+          "text": "Pathologically or histologically documented diagnosis of advanced / metastatic solid tumor malignancy"
+        }
+      }
+    ],
+    "P4": [],
+    "P5": [
+      {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 350,
+          "end": 386,
+          "text": "Measurable disease using RECIST v1.1"
+        }
+      }
+    ],
+    "P6": [
+      {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps2",
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 389,
+          "end": 400,
+          "text": "ECOG 0 or 1"
+        }
+      }
+    ],
+    "P7": [],
+    "P8": [
+      {
+        "factId": "prior_adc",
+        "rulesOut": [
+          "topo_payload"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 454,
+          "end": 521,
+          "text": "Prior treatment with any ADC with topoisomerase 1 inhibitor payload"
+        }
+      }
+    ],
+    "P9": [],
+    "P10": [],
+    "P11": [
+      {
+        "factId": "hiv",
+        "rulesOut": [
+          "uncontrolled"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 592,
+          "end": 641,
+          "text": "Active Hepatitis B, Hepatitis C, or HIV infection"
+        }
+      },
+      {
+        "factId": "hepatitis_active",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 592,
+          "end": 641,
+          "text": "Active Hepatitis B, Hepatitis C, or HIV infection"
+        }
+      }
+    ],
+    "P12": [
+      {
+        "factId": "ild",
+        "rulesOut": [
+          "past",
+          "current"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 644,
+          "end": 680,
+          "text": "History of interstitial lung disease"
+        }
+      }
+    ],
+    "P13": []
+  },
+  "carried": {
+    "P3": [
+      {
+        "factId": "histology",
+        "answer": "unknown",
+        "words": "I don't remember, dear.",
+        "question": "What type of lung cancer cell did the biopsy show?",
+        "mayNotFit": false
+      },
+      {
+        "factId": "extent",
+        "answer": "locally_advanced",
+        "words": "It's in my lung and the glands nearby. They said it's too far along for an operation.",
+        "question": "How far has the cancer spread?",
+        "mayNotFit": false
+      }
+    ],
+    "P6": [
+      {
+        "factId": "ecog",
+        "answer": "ps2",
+        "words": "I'm up for more than half the day, but I can't do any work, I sit a lot.",
+        "question": "Which is closest to how you are day to day?",
+        "mayNotFit": true
+      }
+    ]
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "Yes, dear, I'm eighty.",
+          "reading": "holds",
+          "statement": "The participant is male or female and is ≥18 years of age"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I'm not sure about that. You'd have to ask my neighbor, I don't remember the details.",
+          "reading": "unknown",
+          "statement": "No therapy of proven efficacy exists for the participant's tumor"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "histology",
+          "answer": "unknown",
+          "words": "I don't remember, dear.",
+          "question": "What type of lung cancer cell did the biopsy show?",
+          "mayNotFit": false
+        },
+        {
+          "factId": "extent",
+          "answer": "locally_advanced",
+          "words": "It's in my lung and the glands nearby. They said it's too far along for an operation.",
+          "question": "How far has the cancer spread?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 6,
+          "quote": "I'm not sure about that. You'd have to ask my neighbor, I don't remember the details.",
+          "reading": "unknown",
+          "statement": "The participant has adequate bone marrow, kidney, and liver function"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I'm not sure, you'd have to ask my neighbor.",
+          "reading": "unknown",
+          "statement": "The participant has measurable disease using RECIST v1.1"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "ecog",
+          "answer": "ps2",
+          "words": "I'm up for more than half the day, but I can't do any work, I sit a lot.",
+          "question": "Which is closest to how you are day to day?",
+          "mayNotFit": true
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I hope so",
+          "reading": "unclear",
+          "statement": "The participant has a life expectancy of ≥ 3 months"
+        },
+        {
+          "turn": 12,
+          "quote": "I hope so",
+          "reading": "unclear",
+          "statement": "The participant has a life expectancy of ≥ 3 months"
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "unclear"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [
+        {
+          "turn": 14,
+          "quote": "I'm not sure",
+          "reading": "unknown",
+          "statement": "The participant has had prior treatment with any ADC with topoisomerase 1 inhibitor payload"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [
+        {
+          "turn": 16,
+          "quote": "I don't know what that is",
+          "reading": "unknown",
+          "statement": "The participant has had prior treatment with any PTK7 - targeted therapy"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [
+        {
+          "turn": 18,
+          "quote": "No, I haven't had a heart attack or heart failure that needed hospital care recently",
+          "reading": "partial",
+          "missing": "The reply denies specific severe events (heart attack, severe heart failure) but does not address other forms of uncontrolled cardiovascular disease mentioned in the criterion such as unstable angina or other conditions not well-controlled.",
+          "statement": "The participant has uncontrolled cardiovascular disease"
+        },
+        {
+          "turn": 20,
+          "quote": "I don't know about unstable angina",
+          "reading": "unclear",
+          "statement": "The participant has uncontrolled cardiovascular disease"
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "unclear",
+      "reported": "partial"
+    },
+    {
+      "criterionId": "P11",
+      "evidence": [
+        {
+          "turn": 22,
+          "quote": "I don't have HIV",
+          "reading": "does-not-hold",
+          "statement": "The participant has an active Hepatitis B, Hepatitis C, or HIV infection"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P12",
+      "evidence": [
+        {
+          "turn": 24,
+          "quote": "Maybe, I don't recall.",
+          "reading": "unclear",
+          "statement": "The participant has a history of interstitial lung disease."
+        },
+        {
+          "turn": 26,
+          "quote": "I don't remember, dear.",
+          "reading": "unknown",
+          "statement": "The participant has a history of interstitial lung disease"
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P13",
+      "evidence": [
+        {
+          "turn": 28,
+          "quote": "I had radiation on my chest in the summer, about two months ago",
+          "reading": "does-not-hold",
+          "statement": "The participant has had major surgery, radiation therapy, or systemic anti-cancer within 3 weeks of study treatment start."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"A Study of KIVU-107 in Participants With Locally Advanced or Metastatic Solid Tumors\". Your earlier answers already covered 2 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you 18 years of age or older?",
+      "criterionId": "P1"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Yes, dear, I'm eighty."
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you been told that there is no standard treatment with proven effectiveness available for your specific type of tumor?",
+      "criterionId": "P2"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm not sure about that. You'd have to ask my neighbor, I don't remember the details."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had recent blood tests (like a CBC, kidney panel, and liver function tests) that showed your bone marrow, kidney, and liver are working well?",
+      "criterionId": "P4"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm not sure about that. You'd have to ask my neighbor, I don't remember the details."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any recent scans (like CT or MRI) that showed your tumor is large enough to be measured?",
+      "criterionId": "P5"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm not sure, you'd have to ask my neighbor."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Based on your current health, do you expect to live for at least 3 more months? It's okay if you're not sure.",
+      "criterionId": "P7"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I hope so, dear. I'm up for more than half the day, but I can't do any work and I sit a lot."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. To help us understand better, do you feel healthy enough to expect to live for at least 3 more months? It's okay if you're not sure.",
+      "criterionId": "P7"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I hope so, dear. I'm up for more than half the day, but I can't do any work and I sit a lot."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever received a treatment called an ADC (antibody-drug conjugate) that uses a topoisomerase 1 inhibitor as its payload? It's okay if you're not sure.",
+      "criterionId": "P8"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I'm not sure, you'd have to ask my neighbor."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever received any treatment specifically targeting a protein called PTK7? It's okay if you're not sure.",
+      "criterionId": "P9"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know what that is, dear. You'd have to ask my neighbor."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you have any heart or blood vessel conditions that are not well-controlled, such as recent heart attack, unstable angina, or severe heart failure?",
+      "criterionId": "P10"
+    },
+    {
+      "index": 18,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had a heart attack or heart failure that needed hospital care recently."
+    },
+    {
+      "index": 19,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Aside from those, do you have any other heart or blood vessel conditions that are not well-controlled, such as unstable angina?",
+      "criterionId": "P10"
+    },
+    {
+      "index": 20,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know about unstable angina, dear. You'd have to ask my neighbor."
+    },
+    {
+      "index": 21,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been diagnosed with Hepatitis B, Hepatitis C, or HIV?",
+      "criterionId": "P11"
+    },
+    {
+      "index": 22,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't have HIV. I don't know about the hepatitis ones, dear."
+    },
+    {
+      "index": 23,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been diagnosed with interstitial lung disease? This is a condition that causes scarring in the lungs. If you aren't sure, that's okay.",
+      "criterionId": "P12"
+    },
+    {
+      "index": 24,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Inflammation? Maybe, I don't recall."
+    },
+    {
+      "index": 25,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. To clarify, have you ever been told by a doctor that you have a lung condition involving scarring or inflammation of the lung tissue (interstitial lung disease)?",
+      "criterionId": "P12"
+    },
+    {
+      "index": 26,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't remember, dear. You'd have to ask my neighbor."
+    },
+    {
+      "index": 27,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any major surgery, radiation therapy, or systemic anti-cancer treatment in the last 3 weeks?",
+      "criterionId": "P13"
+    },
+    {
+      "index": 28,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I had radiation on my chest in the summer, about two months ago, so I don't think it was in the last three weeks. I don't remember any other treatments recently."
+    },
+    {
+      "index": 29,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [],
+  "ignoredReadings": [
+    {
+      "turn": 22,
+      "criterionId": "P11",
+      "reading": "unknown",
+      "why": "already-settled"
+    }
+  ],
+  "replies": [
+    {
+      "turn": 2,
+      "usedFacts": [
+        "pregnant_or_breastfeeding"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 4,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 8,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 10,
+      "usedFacts": [
+        "ecog"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "usedFacts": [
+        "ecog"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 14,
+      "usedFacts": [
+        "prior_adc"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 16,
+      "usedFacts": [
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 18,
+      "usedFacts": [
+        "cardiac_recent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 20,
+      "usedFacts": [
+        "cardiac_recent"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts that the person does not know about unstable angina and suggests asking their neighbor, but the facts do not mention unstable angina or link this specific condition to the neighbor's knowledge."
+        }
+      ]
+    },
+    {
+      "turn": 22,
+      "usedFacts": [
+        "hiv",
+        "hepatitis_active"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 24,
+      "usedFacts": [
+        "ild"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 26,
+      "usedFacts": [
+        "ild"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 28,
+      "usedFacts": [
+        "chest_radiation_6m"
+      ],
+      "flags": []
+    }
+  ],
+  "record": {
+    "nctId": "NCT07229313",
+    "title": {
+      "registry": "A Study of KIVU-107 in Participants With Locally Advanced or Metastatic Solid Tumors"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 1,
+      "records": 10,
+      "line": {
+        "ours": "1 rule may not fit what you said. 10 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Pathologically or histologically documented diagnosis of advanced / metastatic solid tumor malignancy that is resistant to standard therapy or for which no standard therapy is available."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "What type of lung cancer cell did the biopsy show?"
+              },
+              "said": {
+                "said": "I don't remember, dear."
+              }
+            },
+            {
+              "asked": {
+                "ours": "How far has the cancer spread?"
+              },
+              "said": {
+                "said": "It's in my lung and the glands nearby. They said it's too far along for an operation."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "ECOG 0 or 1"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Which is closest to how you are day to day?"
+              },
+              "said": {
+                "said": "I'm up for more than half the day, but I can't do any work, I sit a lot."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Male or female ≥18 years of age"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "Yes, dear, I'm eighty."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P13",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Major surgery, radiation therapy, or systemic anti-cancer within 3 weeks of study treatment start."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I had radiation on my chest in the summer, about two months ago"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "No therapy of proven efficacy exists for the tumor"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure about that. You'd have to ask my neighbor, I don't remember the details."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Adequate bone marrow, kidney, and liver function"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure about that. You'd have to ask my neighbor, I don't remember the details."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Measurable disease using RECIST v1.1"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure, you'd have to ask my neighbor."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Life expectancy ≥ 3 months"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I hope so"
+            },
+            {
+              "said": "I hope so"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Prior treatment with any ADC with topoisomerase 1 inhibitor payload"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm not sure"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Any PTK7 - targeted therapy"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know what that is"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Uncontrolled cardiovascular disease"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had a heart attack or heart failure that needed hospital care recently"
+            },
+            {
+              "said": "I don't know about unstable angina"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P11",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Active Hepatitis B, Hepatitis C, or HIV infection"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't have HIV"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P12",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "History of interstitial lung disease"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "Maybe, I don't recall."
+            },
+            {
+              "said": "I don't remember, dear."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "ECOG 0 or 1"
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "No therapy of proven efficacy exists for the tumor"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Adequate bone marrow, kidney, and liver function"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Measurable disease using RECIST v1.1"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Life expectancy ≥ 3 months"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Prior treatment with any ADC with topoisomerase 1 inhibitor payload"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Any PTK7 - targeted therapy"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Uncontrolled cardiovascular disease"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Active Hepatitis B, Hepatitis C, or HIV infection"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "History of interstitial lung disease"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Pathologically or histologically documented diagnosis of advanced / metastatic solid tumor malignancy that is resistant to standard therapy or for which no standard therapy is available."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "orderAfter": [
+    "NCT06627647",
+    "NCT07229313"
+  ],
+  "calls": {
+    "agent": 28,
+    "participant": 14,
+    "fidelity": 14
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-10"
+  }
+}

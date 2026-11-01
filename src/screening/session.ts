@@ -1,10 +1,12 @@
-import { type ModelAdapter, monthStamp } from "../models/index.js";
+import { type ModelAdapter, monthStamp } from "../models/types.js";
+import { verdictHits } from "../shortlist/words.js";
 import { initialProgress, nextCriterion, raisability } from "./agenda.js";
-import { applyReadings, finalize } from "./apply.js";
-import { ask, read } from "./calls.js";
+import { applyReadings, finalize, type Reading } from "./apply.js";
+import { ask, type CallResult, read } from "./calls.js";
 import { type AnsweredCriterion, PROMPT_VERSION } from "./prompts.js";
-import { closingMessage, openingMessage } from "./templates.js";
+import { closingMessage, fixedQuestion, openingMessage } from "./templates.js";
 import type {
+  Carried,
   Finding,
   Handoff,
   Progress,
@@ -33,6 +35,20 @@ export type AgentReply =
   | { kind: "message"; text: string }
   | { kind: "done"; text: string; result: ScreeningResult };
 
+export interface SessionOptions {
+  /**
+   * The conversation's answers, by the criteria they cover (slice 0007 here).
+   * Those criteria start closed and are never asked.
+   */
+  carried?: Carried;
+  /**
+   * Ask each criterion in its own words, in a fixed sentence, with no model
+   * call (slice 0007 here, for the page's `--fake`). Kept in the state, so a
+   * resumed session asks the same way.
+   */
+  fixedQuestions?: boolean;
+}
+
 export class ScreeningSession {
   #state: ScreeningState;
   readonly #adapter: ModelAdapter;
@@ -46,6 +62,7 @@ export class ScreeningSession {
     study: StudyContext,
     criteria: readonly ScreeningCriterion[],
     adapter: ModelAdapter,
+    options: SessionOptions = {},
   ): ScreeningSession {
     const ids = criteria.map((c) => c.id);
     const duplicate = ids.find((id, i) => ids.indexOf(id) !== i);
@@ -61,12 +78,13 @@ export class ScreeningSession {
         study,
         criteria: [...criteria],
         transcript: [],
-        progress: initialProgress(criteria),
+        progress: initialProgress(criteria, options.carried),
         pending: null,
         rejectedReadings: [],
         ignoredReadings: [],
         calls: 0,
         done: false,
+        ...(options.fixedQuestions === true ? { fixedQuestions: true as const } : {}),
       },
       adapter,
     );
@@ -97,7 +115,8 @@ export class ScreeningSession {
       throw new ScreeningError("Cannot start a screening", ["it has already started"]);
     }
     const draft = structuredClone(this.#state);
-    const opening = openingMessage(draft.study);
+    const covered = draft.progress.filter((p) => p.status === "from-conversation").length;
+    const opening = openingMessage(draft.study, covered);
     draft.transcript.push({ index: 0, speaker: "agent", kind: "opening", text: opening });
 
     const next = await this.#advance(draft);
@@ -109,19 +128,26 @@ export class ScreeningSession {
 
   /** One participant message in, the next agent message out. */
   async receive(text: string): Promise<AgentReply> {
-    if (this.#state.transcript.length === 0) {
-      throw new ScreeningError("Cannot receive a message", ["the screening has not started"]);
-    }
-    if (this.#state.done) {
-      throw new ScreeningError("Cannot receive a message", ["the screening has finished"]);
-    }
+    const readings = await this.preview(text);
+    return this.apply(text, readings.value, readings.calls);
+  }
 
+  /**
+   * What the read call makes of `text`, without changing anything (slice 0007
+   * here). The page shows these readings back, and only a confirmed set is
+   * passed to `apply`: nothing typed counts until the person confirms it.
+   */
+  async preview(text: string): Promise<CallResult<Reading[]>> {
+    this.#assertReceiving();
     const draft = structuredClone(this.#state);
-    const turn = draft.transcript.length;
-    draft.transcript.push({ index: turn, speaker: "participant", kind: "reply", text });
-
+    draft.transcript.push({
+      index: draft.transcript.length,
+      speaker: "participant",
+      kind: "reply",
+      text,
+    });
     const { open, answered, saidSoFar } = this.#readable(draft);
-    const readings = await read(this.#adapter, {
+    return read(this.#adapter, {
       transcript: draft.transcript,
       message: text,
       askedAbout: draft.pending,
@@ -129,11 +155,25 @@ export class ScreeningSession {
       answered,
       saidSoFar,
     });
-    draft.calls += readings.calls;
+  }
+
+  /**
+   * One participant message and the readings to apply to it, then the next
+   * agent message. The readings go through `applyReadings` like any others,
+   * so a quote that isn't in `text` is still rejected. `calls` is what
+   * reading them cost, when a model read them. A tap (`tapReading`) costs
+   * nothing, and in `fixedQuestions` mode nor does the next question.
+   */
+  async apply(text: string, readings: readonly Reading[], calls = 0): Promise<AgentReply> {
+    this.#assertReceiving();
+    const draft = structuredClone(this.#state);
+    const turn = draft.transcript.length;
+    draft.transcript.push({ index: turn, speaker: "participant", kind: "reply", text });
+    draft.calls += calls;
 
     const applied = applyReadings(
       { criteria: draft.criteria, progress: draft.progress, turn, message: text },
-      readings.value,
+      readings,
     );
     draft.progress = applied.progress;
     draft.rejectedReadings.push(...applied.rejected);
@@ -142,6 +182,30 @@ export class ScreeningSession {
     const next = await this.#advance(draft);
     this.#state = draft;
     return next;
+  }
+
+  /**
+   * Closes the conversation where it stands and returns its result (slice
+   * 0007 here): the page's "Stop and show the record", or a measured check
+   * that couldn't go on. Every criterion still open is finalized as it would
+   * be at the end, unresolved or for the chart with `no-answer`, so it is on
+   * the record as not asked. Makes no model call.
+   */
+  stop(): ScreeningResult {
+    const draft = structuredClone(this.#state);
+    draft.pending = null;
+    draft.done = true;
+    this.#state = draft;
+    return this.#result(draft);
+  }
+
+  #assertReceiving(): void {
+    if (this.#state.transcript.length === 0) {
+      throw new ScreeningError("Cannot receive a message", ["the screening has not started"]);
+    }
+    if (this.#state.done) {
+      throw new ScreeningError("Cannot receive a message", ["the screening has finished"]);
+    }
   }
 
   /** Asks the next question on `draft`, or closes it. Mutates `draft`. */
@@ -169,14 +233,24 @@ export class ScreeningSession {
     }
 
     const followUp = progress.timesAsked > 0 ? describeFollowUp(progress) : undefined;
-    const question = await ask(this.#adapter, {
-      study: draft.study,
-      transcript: draft.transcript,
-      criterion,
-      kind: r.as,
-      ...(followUp === undefined ? {} : { followUp }),
-    });
+    const question =
+      draft.fixedQuestions === true
+        ? { value: fixedQuestion(criterion), calls: 0 }
+        : await ask(this.#adapter, {
+            study: draft.study,
+            transcript: draft.transcript,
+            criterion,
+            kind: r.as,
+            ...(followUp === undefined ? {} : { followUp }),
+          });
     draft.calls += question.calls;
+    // A phrased question never carries a verdict word ("to check your
+    // eligibility"): code decides, as for the agent's other guarantees, and
+    // the criterion is asked in its own words instead. No prompt changes.
+    const text =
+      draft.fixedQuestions !== true && verdictHits([question.value]).length > 0
+        ? fixedQuestion(criterion)
+        : question.value;
 
     progress.timesAsked += 1;
     draft.pending = criterion.id;
@@ -184,10 +258,10 @@ export class ScreeningSession {
       index: draft.transcript.length,
       speaker: "agent",
       kind: "question",
-      text: question.value,
+      text,
       criterionId: criterion.id,
     });
-    return { kind: "message", text: question.value };
+    return { kind: "message", text };
   }
 
   /**
@@ -289,5 +363,6 @@ function handoff(findings: readonly Finding[]): Handoff {
     unresolved: ids("unresolved"),
     chartReview: ids("chart-review"),
     notRaised: ids("not-raised"),
+    fromConversation: ids("from-conversation"),
   };
 }

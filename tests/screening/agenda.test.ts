@@ -144,3 +144,63 @@ describe("order and attempts", () => {
     expect(nextCriterion(criteria, progress)?.id).toBe("L1");
   });
 });
+
+describe("what the conversation carried (slice 0007 here)", () => {
+  const criteria = [
+    criterion("L1", "patient"),
+    criterion("L2", "protocol"),
+    criterion("L3", "clinical", "ECOG 0 or 1"),
+    criterion("L4", "patient"),
+    criterion("L5", "clinical", "Platelets >= 100,000/mm3"),
+  ];
+  const fact = (factId: string, answer: string) => ({
+    factId,
+    answer,
+    words: "what they said",
+    question: "Asked before?",
+    mayNotFit: false,
+  });
+
+  it("with nothing carried, starts exactly where the inherited agent did", () => {
+    for (const set of loadLabelSets()) {
+      const own = set.criteria.map((l) => ({
+        id: l.id,
+        polarity: l.polarity,
+        type: l.type,
+        text: l.quote,
+      }));
+      expect(initialProgress(own, {}), set.nctId).toEqual(initialProgress(own));
+      for (const p of initialProgress(own)) expect(p).not.toHaveProperty("earlier");
+    }
+  });
+
+  it("closes a covered raisable criterion before the first question, an unknown included", () => {
+    const progress = initialProgress(criteria, {
+      L1: [fact("prior_pd1", "progressed")],
+      L3: [fact("ecog", "unknown")],
+    });
+    expect(progress.map((p) => [p.criterionId, p.status, p.reason])).toEqual([
+      ["L1", "from-conversation", "answered-earlier"],
+      ["L2", "not-raised", "protocol"],
+      ["L3", "from-conversation", "answered-earlier"],
+      ["L4", "open", null],
+      ["L5", "not-raised", "lab-value"],
+    ]);
+    expect(progress[0]?.earlier).toEqual([fact("prior_pd1", "progressed")]);
+    expect(nextCriterion(criteria, progress)?.id).toBe("L4");
+  });
+
+  it("keeps a non-raisable criterion's reason, with the answers beside it", () => {
+    const progress = initialProgress(criteria, {
+      L2: [fact("histology", "adenocarcinoma")],
+      L5: [fact("ecog", "ps1")],
+    });
+    expect(progress[1]).toMatchObject({ status: "not-raised", reason: "protocol" });
+    expect(progress[1]?.earlier).toHaveLength(1);
+    expect(progress[4]).toMatchObject({ status: "not-raised", reason: "lab-value" });
+  });
+
+  it("treats an empty entry as nothing carried", () => {
+    expect(initialProgress(criteria, { L1: [] })).toEqual(initialProgress(criteria));
+  });
+});

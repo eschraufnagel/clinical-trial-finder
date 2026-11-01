@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import type { ConversationAnswer } from "../check/carry.js";
 import type { FactVocabulary } from "../facts/types.js";
 import { isBudgetStop } from "../models/budget.js";
 import { type ModelAdapter, ModelError } from "../models/types.js";
@@ -103,6 +104,20 @@ export interface FinderView {
   measured: boolean;
   /** The hosted provider replies go to, or null when they stay on this machine. */
   hosted: string | null;
+}
+
+/**
+ * What a check started from this conversation needs from it (slice 0007):
+ * the answers, the trials the search kept, and the model the conversation
+ * started on, so a check reads with the same one.
+ */
+export interface CheckSource {
+  /** Each asked fact's confirmed answer, the person's words, and the question. */
+  answers: Map<string, ConversationAnswer>;
+  /** Every trial the search kept, in the list's order. */
+  trials: string[];
+  /** The reader key the conversation started on. */
+  key: string;
 }
 
 interface Pending {
@@ -244,6 +259,30 @@ export class FinderService {
       measured: this.#options.reader.measured(session.key),
       hosted: this.#options.reader.hosted?.(session.key) ?? null,
     };
+  }
+
+  /**
+   * The answers a check carries (slice 0007). A tapped answer's words are the
+   * answer's own; a typed one's are what the person typed. Read only: a
+   * check never changes the conversation or its order.
+   */
+  checkSource(id: string): CheckSource | undefined {
+    const session = this.#sessions.get(id);
+    if (session === undefined) return undefined;
+    const so = current(session.state);
+    const facts = new Map(this.#options.vocabulary.facts.map((f) => [f.id, f]));
+    const answers = new Map<string, ConversationAnswer>();
+    for (const step of so.steps) {
+      const fact = facts.get(step.factId);
+      const answer = so.profile[step.factId] ?? UNKNOWN;
+      const words =
+        session.said[step.factId] ??
+        (answer === UNKNOWN
+          ? "I don't know"
+          : (fact?.answers.find((a) => a.id === answer)?.words ?? answer));
+      answers.set(step.factId, { answer, words, question: fact?.question ?? step.factId });
+    }
+    return { answers, trials: so.order.map((e) => e.candidate.nctId), key: session.key };
   }
 
   /**

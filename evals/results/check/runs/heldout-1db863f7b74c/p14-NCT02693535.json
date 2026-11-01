@@ -1,0 +1,1764 @@
+{
+  "patient": "p14",
+  "nctId": "NCT02693535",
+  "set": "heldout",
+  "rank": 1,
+  "conversation": {
+    "histology": {
+      "answer": "unknown",
+      "words": "They said non-small cell, and then something about it being mixed? I didn't follow.",
+      "question": "What type of lung cancer cell did the biopsy show?"
+    },
+    "extent": {
+      "answer": "metastatic_or_recurrent",
+      "words": "Oh, it's spread, to the liver and some lymph nodes, they told me in the summer.",
+      "question": "How far has the cancer spread?"
+    },
+    "brain_mets": {
+      "answer": "none",
+      "words": "No, they checked my brain and it's fine, thank the Lord.",
+      "question": "Has the cancer spread to the brain?"
+    },
+    "ecog": {
+      "answer": "ps1",
+      "words": "I'm up and about, I just can't do the heavy cleaning anymore.",
+      "question": "Which is closest to how you are day to day?"
+    },
+    "prior_platinum": {
+      "answer": "received",
+      "words": "Yes, carboplatin, twice now actually.",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?"
+    },
+    "prior_pd1": {
+      "answer": "progressed",
+      "words": "I had Tecentriq, the immune one, and it stopped working, the cancer grew.",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+    },
+    "prior_targeted": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+    },
+    "lines_advanced": {
+      "answer": "unknown",
+      "words": "Oh, I don't know how they count them, honey.",
+      "question": "How many treatments have you had since the cancer became advanced?"
+    },
+    "measurable_disease": {
+      "answer": "unknown",
+      "words": "Oh, I wouldn't know that.",
+      "question": "Is there a tumor that scans can measure?"
+    },
+    "egfr": {
+      "answer": "unknown",
+      "words": "I don't know, honey.",
+      "question": "Did testing find an EGFR mutation?"
+    },
+    "ild": {
+      "answer": "unknown",
+      "words": "They said something about inflammation once? I don't know if it was the lungs.",
+      "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?"
+    },
+    "other_cancer": {
+      "answer": "none",
+      "words": "No, just this one.",
+      "question": "Have you had another kind of cancer?"
+    },
+    "pregnant_or_breastfeeding": {
+      "answer": "no",
+      "words": "Oh heavens, no.",
+      "question": "Are you pregnant or breastfeeding?"
+    },
+    "autoimmune_active": {
+      "answer": "no",
+      "words": "No.",
+      "question": "In the last 2 years, have you needed medicine that calms the immune system, such as steroids or immunosuppressants, for an autoimmune disease like lupus or Crohn's? Thyroid hormone, insulin and skin creams don't count."
+    },
+    "alk": {
+      "answer": "unknown",
+      "words": "Oh, I wouldn't know that.",
+      "question": "Did testing find an ALK change?"
+    },
+    "ros1": {
+      "answer": "unknown",
+      "words": "You'd have to ask them.",
+      "question": "Did testing find a ROS1 change?"
+    }
+  },
+  "orderBefore": [
+    "NCT02693535",
+    "NCT04614103",
+    "NCT05242965",
+    "NCT05503797",
+    "NCT05536141",
+    "NCT06046495",
+    "NCT06190886",
+    "NCT06275360",
+    "NCT06357533",
+    "NCT06568939",
+    "NCT06686771",
+    "NCT06799065",
+    "NCT06823167",
+    "NCT06922591",
+    "NCT07030257",
+    "NCT07109726",
+    "NCT07144280",
+    "NCT07189871",
+    "NCT07195916",
+    "NCT07277413",
+    "NCT07278479",
+    "NCT07660055",
+    "NCT06472245",
+    "NCT06603844",
+    "NCT06793215",
+    "NCT06953089",
+    "NCT07005102",
+    "NCT07155187",
+    "NCT07288177",
+    "NCT07291037",
+    "NCT06031688",
+    "NCT06126276",
+    "NCT06881784",
+    "NCT06010329",
+    "NCT06162221",
+    "NCT06667076",
+    "NCT07229313",
+    "NCT04317534",
+    "NCT05176483",
+    "NCT07415031",
+    "NCT04198766",
+    "NCT05970497",
+    "NCT05005403",
+    "NCT07489066",
+    "NCT04222062",
+    "NCT04267848",
+    "NCT04613596",
+    "NCT05061550",
+    "NCT05283330",
+    "NCT05624996",
+    "NCT06758401",
+    "NCT07680764",
+    "NCT04181060",
+    "NCT06627647",
+    "NCT06692738",
+    "NCT06868277",
+    "NCT07222566",
+    "NCT07554339",
+    "NCT06498635",
+    "NCT03191149",
+    "NCT06116682",
+    "NCT07388524",
+    "NCT06712316",
+    "NCT07063745",
+    "NCT05642572",
+    "NCT06767514",
+    "NCT07513376",
+    "NCT03550391",
+    "NCT03460977",
+    "NCT05208047",
+    "NCT06203210",
+    "NCT06943755",
+    "NCT07778316",
+    "NCT06712355",
+    "NCT07218146",
+    "NCT04665739",
+    "NCT06095505",
+    "NCT07326566",
+    "NCT07472517",
+    "NCT06769126"
+  ],
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant is 12 years of age or older"
+    },
+    {
+      "id": "P2",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a histologically-proven locally advanced or metastatic solid tumor, multiple myeloma or B cell non-Hodgkin lymphoma and is no longer benefiting from standard anti-cancer treatment or for whom, in the opinion of the treating physician, no such treatment is available or indicated"
+    },
+    {
+      "id": "P3",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a Performance status of 0-2 (Per Eastern Cooperative Oncology Group (ECOG) criteria)"
+    },
+    {
+      "id": "P4",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has acceptable organ function as defined below"
+    },
+    {
+      "id": "P5",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has an Absolute neutrophil count ≥ 1500 µl"
+    },
+    {
+      "id": "P6",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a Hemoglobin ≥ 9.0 g/dl"
+    },
+    {
+      "id": "P7",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has Platelets ≥ 75,000/µl"
+    },
+    {
+      "id": "P8",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a Total bilirubin < 2.0 mg/ dl, except in patients with Gilbert's Syndrome"
+    },
+    {
+      "id": "P9",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has Aspartate aminotransferase (AST) serum glutamic-oxaloacetic transaminase (SGOT) and alanine aminotransferase (ALT) serum glutamic-pyruvic transaminase (SGPT) < 2.5 x institutional upper limit of normal (ULN) (or < 5 x ULN in patients with known hepatic metastases)"
+    },
+    {
+      "id": "P10",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has Serum creatinine ≤ 1.5 × ULN or calculated or measured creatinine clearance ≥ 50 mL/min/1.73 m2"
+    },
+    {
+      "id": "P11",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has disease that can be objectively measured by physical, laboratory or radiographic exam (per RECIST v1.1 for solid tumor, Lugano criteria for non-Hodgkin lymphoma or International Myeloma Working Group criteria for multiple myeloma)"
+    },
+    {
+      "id": "P12",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "Results must be available from a genomic test or immunohistochemistry (IHC) test for protein expression performed in a Clinical Laboratory Improvement Amendments (CLIA)-certified and College of American Pathologists (CAP)-accredited or New York State accredited (for labs offering services to residents of NY) laboratory"
+    },
+    {
+      "id": "P13",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant has the ability to understand and the willingness to sign a written informed consent/assent document"
+    },
+    {
+      "id": "P14",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a tumor genomic profile for which single agent treatment with one of the FDA approved targeted anti-cancer drugs included in this study has potential clinical benefit based on the criteria described in protocol"
+    },
+    {
+      "id": "P15",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The patient must be able to swallow and tolerate oral medication and must have no known malabsorption syndrome"
+    },
+    {
+      "id": "P16",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "Women of child-bearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control; abstinence) for the duration of study participation, and for four months following completion of study therapy"
+    },
+    {
+      "id": "P17",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant's disease is not measurable or cannot be assessed by radiographic imaging or physical examination (e.g., elevated serum tumor marker only)"
+    },
+    {
+      "id": "P18",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has primary brain tumors or new, untreated or progressive leptomeningeal metastases"
+    },
+    {
+      "id": "P19",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has previously treated brain metastases or previously treated leptomeningeal disease and has not experienced a seizure or had a clinically significant change in neurological status within the 1 months prior to registration, and is clinically stable for at least 1 month after completion of treatment and off steroid treatment for one month prior to study enrollment"
+    },
+    {
+      "id": "P20",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has known progressive brain metastases"
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 23,
+      "end": 121,
+      "text": "12 years of age or older (\\*Restrictions apply. Not all therapies are available for patients \\<18)"
+    },
+    "P2": {
+      "start": 124,
+      "end": 537,
+      "text": "Histologically-proven locally advanced or metastatic solid tumor, multiple myeloma or B cell non-Hodgkin lymphoma who is no longer benefiting from standard anti-cancer treatment or for whom, in the opinion of the treating physician, no such treatment is available or indicated (except under the circumstance in which the TAPUR arm is designed to provide additional evidence to support an existing FDA indication)."
+    },
+    "P3": {
+      "start": 540,
+      "end": 619,
+      "text": "Performance status 0-2 (Per Eastern Cooperative Oncology Group (ECOG) criteria)"
+    },
+    "P4": {
+      "start": 622,
+      "end": 860,
+      "text": "Patients must have acceptable organ function as defined below. However, as noted above, drug-specific inclusion/exclusion criteria specified in the protocol appendix for each agent will take precedence for this and all inclusion criteria:"
+    },
+    "P5": {
+      "start": 864,
+      "end": 902,
+      "text": "1. Absolute neutrophil count ≥ 1500 µl"
+    },
+    "P6": {
+      "start": 905,
+      "end": 929,
+      "text": "2. Hemoglobin ≥ 9.0 g/dl"
+    },
+    "P7": {
+      "start": 932,
+      "end": 956,
+      "text": "3. Platelets ≥ 75,000/µl"
+    },
+    "P8": {
+      "start": 959,
+      "end": 1035,
+      "text": "4. Total bilirubin \\< 2.0 mg/ dl, except in patients with Gilbert's Syndrome"
+    },
+    "P9": {
+      "start": 1038,
+      "end": 1307,
+      "text": "5. Aspartate aminotransferase (AST) serum glutamic-oxaloacetic transaminase (SGOT) and alanine aminotransferase (ALT) serum glutamic-pyruvic transaminase (SGPT) \\< 2.5 x institutional upper limit of normal (ULN) (or \\< 5 x ULN in patients with known hepatic metastases)"
+    },
+    "P10": {
+      "start": 1310,
+      "end": 1408,
+      "text": "6. Serum creatinine ≤ 1.5 × ULN or calculated or measured creatinine clearance ≥ 50 mL/min/1.73 m2"
+    },
+    "P11": {
+      "start": 1411,
+      "end": 1661,
+      "text": "Patients must have disease that can be objectively measured by physical, laboratory or radiographic exam (per RECIST v1.1 for solid tumor, Lugano criteria for non-Hodgkin lymphoma or International Myeloma Working Group criteria for multiple myeloma)."
+    },
+    "P12": {
+      "start": 1664,
+      "end": 2611,
+      "text": "Results must be available from a genomic test or immunohistochemistry (IHC) test for protein expression performed in a Clinical Laboratory Improvement Amendments (CLIA)-certified and College of American Pathologists (CAP)-accredited or New York State accredited (for labs offering services to residents of NY) laboratory. Labs that have registered the test with the NIH Genetic Testing Registry or that provide a report that has been designated as optimized for TAPUR participation are preferred, but not required. The genomic or IHC test used to qualify a patient for participation in TAPUR may have been performed on any specimen of the patient's tumor obtained at any point during the patient's care at the discretion of the patient's treating physician. Genomic assays performed on cell-free DNA in plasma (\"liquid biopsies\") will also be acceptable if the genomic analysis is performed in a laboratory that meets the criteria described above."
+    },
+    "P13": {
+      "start": 2614,
+      "end": 2707,
+      "text": "Ability to understand and the willingness to sign a written informed consent/assent document."
+    },
+    "P14": {
+      "start": 2710,
+      "end": 2926,
+      "text": "Have a tumor genomic profile for which single agent treatment with one of the FDA approved targeted anti-cancer drugs included in this study has potential clinical benefit based on the criteria described in protocol."
+    },
+    "P15": {
+      "start": 2929,
+      "end": 3071,
+      "text": "For orally administered drugs, the patient must be able to swallow and tolerate oral medication and must have no known malabsorption syndrome."
+    },
+    "P16": {
+      "start": 3074,
+      "end": 4162,
+      "text": "Because of the risks of drug treatment to the developing fetus, women of child-bearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control; abstinence) for the duration of study participation, and for four months following completion of study therapy. Should a woman become pregnant or suspect she is pregnant while participating in this study or if she is the partner of a male participant in this study and becomes pregnant while he is participating in this study, she should inform her or her partner's treating physician immediately as well as her obstetrician. Female study patients who become pregnant must immediately discontinue treatment with any study therapy. Male patients should avoid impregnating a female partner. Male study patients, even if surgically sterilized, (i.e. post-vasectomy) must agree to one of the following: practice effective barrier contraception during the entire study treatment period and for a specified amount of time the last dose of study treatment, or completely abstain from sexual intercourse."
+    },
+    "P17": {
+      "start": 4329,
+      "end": 4497,
+      "text": "Patients whose disease is not measurable or cannot be assessed by radiographic imaging or physical examination (e.g., elevated serum tumor marker only) are not eligible"
+    },
+    "P18": {
+      "start": 4500,
+      "end": 4606,
+      "text": "Patients with primary brain tumors or new, untreated or progressive leptomeningeal metastases are excluded"
+    },
+    "P19": {
+      "start": 4609,
+      "end": 5076,
+      "text": "Patients with previously treated brain metastases or previously treated leptomeningeal disease are eligible, provided that the patient has not experienced a seizure or had a clinically significant change in neurological status within the 1 months prior to registration. All patients with previously treated brain metastases must be clinically stable for at least 1 month after completion of treatment and off steroid treatment for one month prior to study enrollment."
+    },
+    "P20": {
+      "start": 5079,
+      "end": 5183,
+      "text": "Patients with known progressive brain metastases are eligible but additional eligibility criteria apply."
+    }
+  },
+  "links": {
+    "P1": [],
+    "P2": [
+      {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 124,
+          "end": 188,
+          "text": "Histologically-proven locally advanced or metastatic solid tumor"
+        }
+      }
+    ],
+    "P3": [
+      {
+        "factId": "ecog",
+        "rulesOut": [
+          "ps3_4"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 540,
+          "end": 619,
+          "text": "Performance status 0-2 (Per Eastern Cooperative Oncology Group (ECOG) criteria)"
+        }
+      }
+    ],
+    "P4": [],
+    "P5": [],
+    "P6": [],
+    "P7": [],
+    "P8": [],
+    "P9": [],
+    "P10": [],
+    "P11": [
+      {
+        "factId": "measurable_disease",
+        "rulesOut": [
+          "no"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 1411,
+          "end": 1515,
+          "text": "Patients must have disease that can be objectively measured by physical, laboratory or radiographic exam"
+        }
+      }
+    ],
+    "P12": [],
+    "P13": [],
+    "P14": [],
+    "P15": [],
+    "P16": [],
+    "P17": [],
+    "P18": [
+      {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 4500,
+          "end": 4606,
+          "text": "Patients with primary brain tumors or new, untreated or progressive leptomeningeal metastases are excluded"
+        }
+      },
+      {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 4500,
+          "end": 4606,
+          "text": "Patients with primary brain tumors or new, untreated or progressive leptomeningeal metastases are excluded"
+        }
+      }
+    ],
+    "P19": [],
+    "P20": []
+  },
+  "carried": {
+    "P2": [
+      {
+        "factId": "extent",
+        "answer": "metastatic_or_recurrent",
+        "words": "Oh, it's spread, to the liver and some lymph nodes, they told me in the summer.",
+        "question": "How far has the cancer spread?",
+        "mayNotFit": false
+      }
+    ],
+    "P3": [
+      {
+        "factId": "ecog",
+        "answer": "ps1",
+        "words": "I'm up and about, I just can't do the heavy cleaning anymore.",
+        "question": "Which is closest to how you are day to day?",
+        "mayNotFit": false
+      }
+    ],
+    "P11": [
+      {
+        "factId": "measurable_disease",
+        "answer": "unknown",
+        "words": "Oh, I wouldn't know that.",
+        "question": "Is there a tumor that scans can measure?",
+        "mayNotFit": false
+      }
+    ]
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "I'm 67, dear. I'm certainly old enough for that.",
+          "reading": "holds",
+          "statement": "The participant is 12 years of age or older"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "extent",
+          "answer": "metastatic_or_recurrent",
+          "words": "Oh, it's spread, to the liver and some lymph nodes, they told me in the summer.",
+          "question": "How far has the cancer spread?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "ecog",
+          "answer": "ps1",
+          "words": "I'm up and about, I just can't do the heavy cleaning anymore.",
+          "question": "Which is closest to how you are day to day?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I wouldn't know that",
+          "reading": "unknown",
+          "statement": "The participant has acceptable organ function as defined below"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [],
+      "timesAsked": 0,
+      "status": "not-raised",
+      "reason": "lab-value"
+    },
+    {
+      "criterionId": "P11",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "measurable_disease",
+          "answer": "unknown",
+          "words": "Oh, I wouldn't know that.",
+          "question": "Is there a tumor that scans can measure?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P12",
+      "evidence": [
+        {
+          "turn": 6,
+          "quote": "I wouldn't know that",
+          "reading": "unknown",
+          "statement": "The person has results available from a genomic test or immunohistochemistry (IHC) test for protein expression performed in a CLIA-certified and CAP-accredited or New York State accredited laboratory."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P13",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I can certainly sign papers",
+          "reading": "holds",
+          "statement": "The participant has the ability to understand and the willingness to sign a written informed consent/assent document"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P14",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I wouldn't know that",
+          "reading": "unknown",
+          "statement": "The participant has a tumor genomic profile for which single agent treatment with one of the FDA approved targeted anti-cancer drugs included in this study has potential clinical benefit based on the criteria described in protocol"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P15",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I can swallow pills just fine",
+          "reading": "partial",
+          "missing": "tolerate oral medication and has no known malabsorption syndrome",
+          "statement": "The patient is able to swallow and tolerate oral medication and has no known malabsorption syndrome"
+        },
+        {
+          "turn": 14,
+          "quote": "I don't know if I have any of those syndromes",
+          "reading": "partial",
+          "missing": "The patient has no known malabsorption syndrome",
+          "statement": "The patient is able to swallow and tolerate oral medication and has no known malabsorption syndrome"
+        }
+      ],
+      "timesAsked": 2,
+      "status": "unresolved",
+      "reason": "partial"
+    },
+    {
+      "criterionId": "P16",
+      "evidence": [
+        {
+          "turn": 16,
+          "quote": "Oh heavens, no",
+          "reading": "does-not-hold",
+          "statement": "The person agrees to use adequate contraception or abstain from sex for the duration of study participation and for four months following completion of study therapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P17",
+      "evidence": [
+        {
+          "turn": 18,
+          "quote": "I wouldn't know that",
+          "reading": "unknown",
+          "statement": "The participant's disease is not measurable or cannot be assessed by radiographic imaging or physical examination (e.g., elevated serum tumor marker only)."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P18",
+      "evidence": [
+        {
+          "turn": 20,
+          "quote": "No, they checked my brain and it's fine",
+          "reading": "does-not-hold",
+          "statement": "The participant has primary brain tumors or new, untreated or progressive leptomeningeal metastases"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P19",
+      "evidence": [
+        {
+          "turn": 22,
+          "quote": "No, I haven't had any seizures or changes like that.",
+          "reading": "unclear",
+          "statement": "The participant has not experienced a seizure or had a clinically significant change in neurological status within the 1 months prior to registration."
+        },
+        {
+          "turn": 24,
+          "quote": "No, I haven't had any of those things.",
+          "reading": "unclear",
+          "statement": "The participant has not experienced a seizure or had a clinically significant change in neurological status within the 1 months prior to registration."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "unclear"
+    },
+    {
+      "criterionId": "P20",
+      "evidence": [
+        {
+          "turn": 26,
+          "quote": "No, they checked my brain and it's fine",
+          "reading": "does-not-hold",
+          "statement": "The participant has known progressive brain metastases"
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs That Target a Specific Abnormality in a Tumor Gene in People With Advanced Stage Cancer\". Your earlier answers already covered 3 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. To confirm, are you 12 years of age or older?",
+      "criterionId": "P1"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh yes, I'm 67, dear. I'm certainly old enough for that."
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you know if your recent blood tests showed that your liver, kidneys, and bone marrow are working well enough for this study? If you aren't sure, that's okay.",
+      "criterionId": "P4"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I wouldn't know that, dear. They talk about all those things, but I just try to keep up with what the doctor says."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you know if your recent tumor test was done at a lab that is certified by CLIA and accredited by CAP or New York State? If you aren't sure, that's okay.",
+      "criterionId": "P12"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I wouldn't know that, dear. They talk about all those things, but I just try to keep up with what the doctor says."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you willing and able to sign a written informed consent document for this study?",
+      "criterionId": "P13"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, yes, I can certainly sign papers. I've signed plenty of forms for my treatments and the hospital paperwork. I'm happy to do what's needed."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Has your doctor or the tumor genomic testing lab told you that your tumor's genetic profile matches a specific FDA-approved targeted drug included in this study?",
+      "criterionId": "P14"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I wouldn't know that, dear. They talk about all those things, but I just try to keep up with what the doctor says."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Are you able to swallow pills and take oral medications without any issues with absorption or digestion?",
+      "criterionId": "P15"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh yes, I can swallow pills just fine, dear. I take my little white one every morning without any trouble at all."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Do you have any known conditions that affect how your body absorbs nutrients or medications, such as malabsorption syndrome?",
+      "criterionId": "P15"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I wouldn't know that, dear. I just take my little white pill in the morning and hope for the best. I don't know if I have any of those syndromes."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. For this study, you would need to agree to use birth control (like a pill or condom) or abstain from sex while in the study and for 4 months after. Would you be willing to do that?",
+      "criterionId": "P16"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh heavens, no, I'm 67 years old, dear. I'm certainly not worried about that sort of thing anymore."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have your doctors ever said that your cancer cannot be measured or seen clearly on scans or physical exams, for example if it can only be tracked by blood tests?",
+      "criterionId": "P17"
+    },
+    {
+      "index": 18,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Oh, I wouldn't know that, dear. They talk about all those things, but I just try to keep up with what the doctor says."
+    },
+    {
+      "index": 19,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been diagnosed with a primary brain tumor or leptomeningeal metastases (cancer spread to the lining of the brain or spinal cord)?",
+      "criterionId": "P18"
+    },
+    {
+      "index": 20,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, they checked my brain and it's fine, thank the Lord. I don't know about that lining stuff, honey."
+    },
+    {
+      "index": 21,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any seizures or noticeable changes in your neurological status (like balance or coordination) in the last month?",
+      "criterionId": "P19"
+    },
+    {
+      "index": 22,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any seizures or changes like that. I'm up and about, just can't do the heavy cleaning anymore."
+    },
+    {
+      "index": 23,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. To be sure, have you had any seizures or noticeable changes in balance, coordination, or other neurological symptoms in the last month?",
+      "criterionId": "P19"
+    },
+    {
+      "index": 24,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any of those things. I'm up and about, I just can't do the heavy cleaning anymore."
+    },
+    {
+      "index": 25,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you been told by your doctor that you have brain metastases that are getting worse or growing?",
+      "criterionId": "P20"
+    },
+    {
+      "index": 26,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, they checked my brain and it's fine, thank the Lord."
+    },
+    {
+      "index": 27,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [],
+  "ignoredReadings": [],
+  "replies": [
+    {
+      "turn": 2,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 4,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 8,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "uncited-assertion",
+          "length": 142
+        }
+      ]
+    },
+    {
+      "turn": 10,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "usedFacts": [],
+      "flags": [
+        {
+          "kind": "uncited-assertion",
+          "length": 113
+        },
+        {
+          "kind": "model",
+          "reason": "The message asserts the person takes a specific pill every morning, which contradicts the fact that they do not know what their medication is."
+        }
+      ]
+    },
+    {
+      "turn": 14,
+      "usedFacts": [
+        "steroids"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 16,
+      "usedFacts": [
+        "pregnant_or_breastfeeding"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 18,
+      "usedFacts": [
+        "measurable_disease"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 20,
+      "usedFacts": [
+        "brain_mets",
+        "leptomeningeal"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 22,
+      "usedFacts": [
+        "ecog"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts that the person has not had seizures, which is a specific health detail not stated in the facts."
+        }
+      ]
+    },
+    {
+      "turn": 24,
+      "usedFacts": [
+        "ecog"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 26,
+      "usedFacts": [
+        "brain_mets"
+      ],
+      "flags": []
+    }
+  ],
+  "record": {
+    "nctId": "NCT02693535",
+    "title": {
+      "registry": "TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs That Target a Specific Abnormality in a Tumor Gene in People With Advanced Stage Cancer"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 2,
+      "records": 15,
+      "line": {
+        "ours": "2 rules may not fit what you said. 15 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Histologically-proven locally advanced or metastatic solid tumor, multiple myeloma or B cell non-Hodgkin lymphoma who is no longer benefiting from standard anti-cancer treatment or for whom, in the opinion of the treating physician, no such treatment is available or indicated (except under the circumstance in which the TAPUR arm is designed to provide additional evidence to support an existing FDA indication)."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "How far has the cancer spread?"
+              },
+              "said": {
+                "said": "Oh, it's spread, to the liver and some lymph nodes, they told me in the summer."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Performance status 0-2 (Per Eastern Cooperative Oncology Group (ECOG) criteria)"
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Which is closest to how you are day to day?"
+              },
+              "said": {
+                "said": "I'm up and about, I just can't do the heavy cleaning anymore."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P11",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients must have disease that can be objectively measured by physical, laboratory or radiographic exam (per RECIST v1.1 for solid tumor, Lugano criteria for non-Hodgkin lymphoma or International Myeloma Working Group criteria for multiple myeloma)."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Is there a tumor that scans can measure?"
+              },
+              "said": {
+                "said": "Oh, I wouldn't know that."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "12 years of age or older (\\*Restrictions apply. Not all therapies are available for patients \\<18)"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I'm 67, dear. I'm certainly old enough for that."
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P13",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Ability to understand and the willingness to sign a written informed consent/assent document."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I can certainly sign papers"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P16",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Because of the risks of drug treatment to the developing fetus, women of child-bearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control; abstinence) for the duration of study participation, and for four months following completion of study therapy. Should a woman become pregnant or suspect she is pregnant while participating in this study or if she is the partner of a male participant in this study and becomes pregnant while he is participating in this study, she should inform her or her partner's treating physician immediately as well as her obstetrician. Female study patients who become pregnant must immediately discontinue treatment with any study therapy. Male patients should avoid impregnating a female partner. Male study patients, even if surgically sterilized, (i.e. post-vasectomy) must agree to one of the following: practice effective barrier contraception during the entire study treatment period and for a specified amount of time the last dose of study treatment, or completely abstain from sexual intercourse."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "Oh heavens, no"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients must have acceptable organ function as defined below. However, as noted above, drug-specific inclusion/exclusion criteria specified in the protocol appendix for each agent will take precedence for this and all inclusion criteria:"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I wouldn't know that"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "1. Absolute neutrophil count ≥ 1500 µl"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "2. Hemoglobin ≥ 9.0 g/dl"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "3. Platelets ≥ 75,000/µl"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "4. Total bilirubin \\< 2.0 mg/ dl, except in patients with Gilbert's Syndrome"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "5. Aspartate aminotransferase (AST) serum glutamic-oxaloacetic transaminase (SGOT) and alanine aminotransferase (ALT) serum glutamic-pyruvic transaminase (SGPT) \\< 2.5 x institutional upper limit of normal (ULN) (or \\< 5 x ULN in patients with known hepatic metastases)"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "6. Serum creatinine ≤ 1.5 × ULN or calculated or measured creatinine clearance ≥ 50 mL/min/1.73 m2"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "A lab value: your records will have it."
+          }
+        },
+        {
+          "criterionId": "P12",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Results must be available from a genomic test or immunohistochemistry (IHC) test for protein expression performed in a Clinical Laboratory Improvement Amendments (CLIA)-certified and College of American Pathologists (CAP)-accredited or New York State accredited (for labs offering services to residents of NY) laboratory. Labs that have registered the test with the NIH Genetic Testing Registry or that provide a report that has been designated as optimized for TAPUR participation are preferred, but not required. The genomic or IHC test used to qualify a patient for participation in TAPUR may have been performed on any specimen of the patient's tumor obtained at any point during the patient's care at the discretion of the patient's treating physician. Genomic assays performed on cell-free DNA in plasma (\"liquid biopsies\") will also be acceptable if the genomic analysis is performed in a laboratory that meets the criteria described above."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I wouldn't know that"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P14",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Have a tumor genomic profile for which single agent treatment with one of the FDA approved targeted anti-cancer drugs included in this study has potential clinical benefit based on the criteria described in protocol."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I wouldn't know that"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P15",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "For orally administered drugs, the patient must be able to swallow and tolerate oral medication and must have no known malabsorption syndrome."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I can swallow pills just fine"
+            },
+            {
+              "said": "I don't know if I have any of those syndromes"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Your answer didn't settle it."
+          }
+        },
+        {
+          "criterionId": "P17",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients whose disease is not measurable or cannot be assessed by radiographic imaging or physical examination (e.g., elevated serum tumor marker only) are not eligible"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I wouldn't know that"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P18",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Patients with primary brain tumors or new, untreated or progressive leptomeningeal metastases are excluded"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, they checked my brain and it's fine"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P19",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients with previously treated brain metastases or previously treated leptomeningeal disease are eligible, provided that the patient has not experienced a seizure or had a clinically significant change in neurological status within the 1 months prior to registration. All patients with previously treated brain metastases must be clinically stable for at least 1 month after completion of treatment and off steroid treatment for one month prior to study enrollment."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had any seizures or changes like that."
+            },
+            {
+              "said": "No, I haven't had any of those things."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P20",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Patients with known progressive brain metastases are eligible but additional eligibility criteria apply."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, they checked my brain and it's fine"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "Because of the risks of drug treatment to the developing fetus, women of child-bearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control; abstinence) for the duration of study participation, and for four months following completion of study therapy. Should a woman become pregnant or suspect she is pregnant while participating in this study or if she is the partner of a male participant in this study and becomes pregnant while he is participating in this study, she should inform her or her partner's treating physician immediately as well as her obstetrician. Female study patients who become pregnant must immediately discontinue treatment with any study therapy. Male patients should avoid impregnating a female partner. Male study patients, even if surgically sterilized, (i.e. post-vasectomy) must agree to one of the following: practice effective barrier contraception during the entire study treatment period and for a specified amount of time the last dose of study treatment, or completely abstain from sexual intercourse."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients with known progressive brain metastases are eligible but additional eligibility criteria apply."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients must have acceptable organ function as defined below. However, as noted above, drug-specific inclusion/exclusion criteria specified in the protocol appendix for each agent will take precedence for this and all inclusion criteria:"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "1. Absolute neutrophil count ≥ 1500 µl"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "2. Hemoglobin ≥ 9.0 g/dl"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "3. Platelets ≥ 75,000/µl"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "4. Total bilirubin \\< 2.0 mg/ dl, except in patients with Gilbert's Syndrome"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "5. Aspartate aminotransferase (AST) serum glutamic-oxaloacetic transaminase (SGOT) and alanine aminotransferase (ALT) serum glutamic-pyruvic transaminase (SGPT) \\< 2.5 x institutional upper limit of normal (ULN) (or \\< 5 x ULN in patients with known hepatic metastases)"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "6. Serum creatinine ≤ 1.5 × ULN or calculated or measured creatinine clearance ≥ 50 mL/min/1.73 m2"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Results must be available from a genomic test or immunohistochemistry (IHC) test for protein expression performed in a Clinical Laboratory Improvement Amendments (CLIA)-certified and College of American Pathologists (CAP)-accredited or New York State accredited (for labs offering services to residents of NY) laboratory. Labs that have registered the test with the NIH Genetic Testing Registry or that provide a report that has been designated as optimized for TAPUR participation are preferred, but not required. The genomic or IHC test used to qualify a patient for participation in TAPUR may have been performed on any specimen of the patient's tumor obtained at any point during the patient's care at the discretion of the patient's treating physician. Genomic assays performed on cell-free DNA in plasma (\"liquid biopsies\") will also be acceptable if the genomic analysis is performed in a laboratory that meets the criteria described above."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Have a tumor genomic profile for which single agent treatment with one of the FDA approved targeted anti-cancer drugs included in this study has potential clinical benefit based on the criteria described in protocol."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "For orally administered drugs, the patient must be able to swallow and tolerate oral medication and must have no known malabsorption syndrome."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients whose disease is not measurable or cannot be assessed by radiographic imaging or physical examination (e.g., elevated serum tumor marker only) are not eligible"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients with primary brain tumors or new, untreated or progressive leptomeningeal metastases are excluded"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients with previously treated brain metastases or previously treated leptomeningeal disease are eligible, provided that the patient has not experienced a seizure or had a clinically significant change in neurological status within the 1 months prior to registration. All patients with previously treated brain metastases must be clinically stable for at least 1 month after completion of treatment and off steroid treatment for one month prior to study enrollment."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Patients must have disease that can be objectively measured by physical, laboratory or radiographic exam (per RECIST v1.1 for solid tumor, Lugano criteria for non-Hodgkin lymphoma or International Myeloma Working Group criteria for multiple myeloma)."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "orderAfter": [
+    "NCT02693535",
+    "NCT04614103",
+    "NCT05242965",
+    "NCT05503797",
+    "NCT05536141",
+    "NCT06046495",
+    "NCT06190886",
+    "NCT06275360",
+    "NCT06357533",
+    "NCT06568939",
+    "NCT06686771",
+    "NCT06799065",
+    "NCT06823167",
+    "NCT06922591",
+    "NCT07030257",
+    "NCT07109726",
+    "NCT07144280",
+    "NCT07189871",
+    "NCT07195916",
+    "NCT07277413",
+    "NCT07278479",
+    "NCT07660055",
+    "NCT06472245",
+    "NCT06603844",
+    "NCT06793215",
+    "NCT06953089",
+    "NCT07005102",
+    "NCT07155187",
+    "NCT07288177",
+    "NCT07291037",
+    "NCT06031688",
+    "NCT06126276",
+    "NCT06881784",
+    "NCT06010329",
+    "NCT06162221",
+    "NCT06667076",
+    "NCT07229313",
+    "NCT04317534",
+    "NCT05176483",
+    "NCT07415031",
+    "NCT04198766",
+    "NCT05970497",
+    "NCT05005403",
+    "NCT07489066",
+    "NCT04222062",
+    "NCT04267848",
+    "NCT04613596",
+    "NCT05061550",
+    "NCT05283330",
+    "NCT05624996",
+    "NCT06758401",
+    "NCT07680764",
+    "NCT04181060",
+    "NCT06627647",
+    "NCT06692738",
+    "NCT06868277",
+    "NCT07222566",
+    "NCT07554339",
+    "NCT06498635",
+    "NCT03191149",
+    "NCT06116682",
+    "NCT07388524",
+    "NCT06712316",
+    "NCT07063745",
+    "NCT05642572",
+    "NCT06767514",
+    "NCT07513376",
+    "NCT03550391",
+    "NCT03460977",
+    "NCT05208047",
+    "NCT06203210",
+    "NCT06943755",
+    "NCT07778316",
+    "NCT06712355",
+    "NCT07218146",
+    "NCT04665739",
+    "NCT06095505",
+    "NCT07326566",
+    "NCT07472517",
+    "NCT06769126"
+  ],
+  "calls": {
+    "agent": 26,
+    "participant": 13,
+    "fidelity": 13
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-10"
+  }
+}

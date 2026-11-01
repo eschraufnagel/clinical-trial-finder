@@ -8,7 +8,9 @@ import {
   PROVIDER_NAMES,
   type Provider,
 } from "../models/index.js";
+import { routeByConversation } from "../transport/route.js";
 import { WebTransport } from "../transport/web/transport.js";
+import { type CheckOptions, CheckService } from "./check.js";
 import { type FinderOptions, FinderService } from "./finder.js";
 import type { ConnectionResult } from "./models.js";
 import {
@@ -36,6 +38,8 @@ export interface AppOptions {
   info: { snapshotMonth: string; mappingRun: string };
   /** The conversation service's data and reader; the transport is made here. */
   finder: Omit<FinderOptions, "transport">;
+  /** The deeper check's data (slice 0007). It reads with the conversation's reader. Without it, there's no check. */
+  check?: Omit<CheckOptions, "transport" | "reader" | "finder">;
   /** Settings. Without it, there's no Settings screen. */
   settings?: SettingsRoutesOptions;
 }
@@ -49,12 +53,24 @@ export interface SettingsRoutesOptions {
 
 export interface App {
   finder: FinderService;
+  check: CheckService | undefined;
   transport: WebTransport;
 }
 
 export function configureApp(app: FastifyInstance, options: AppOptions): App {
   const transport = new WebTransport();
-  const finder = new FinderService({ ...options.finder, transport });
+  // The conversation and the check share the one transport, each with its own conversations.
+  const route = routeByConversation(transport);
+  const finder = new FinderService({ ...options.finder, transport: route() });
+  const check =
+    options.check === undefined
+      ? undefined
+      : new CheckService({
+          ...options.check,
+          transport: route(),
+          reader: options.finder.reader,
+          finder,
+        });
   registerGuards(app, options.port);
   app.get("/api/info", () => {
     const key = options.finder.reader.current();
@@ -69,9 +85,10 @@ export function configureApp(app: FastifyInstance, options: AppOptions): App {
   });
   transport.register(app);
   registerFinderRoutes(app, finder);
+  if (check !== undefined) registerCheckRoutes(app, check);
   if (options.settings !== undefined) registerSettingsRoutes(app, options, options.settings);
   registerPage(app, options.webDir);
-  return { finder, transport };
+  return { finder, check, transport };
 }
 
 interface Params {
@@ -117,6 +134,42 @@ function registerFinderRoutes(app: FastifyInstance, finder: FinderService): void
     finder.remove(request.params.id)
       ? reply.code(204).send()
       : reply.code(404).send({ error: "unknown-conversation" }),
+  );
+}
+
+/**
+ * The check's routes (spec 0007 §6.2): which trials can be checked, start a
+ * check of up to three, see its records, stop, forget it. Its questions and
+ * replies go through the transport's routes, as the conversation's do.
+ */
+function registerCheckRoutes(app: FastifyInstance, check: CheckService): void {
+  app.get<{ Params: Params }>("/api/finder/:id/checkable", (request, reply) => {
+    const ids = check.checkable(request.params.id);
+    return ids === undefined ? reply.code(404).send({ error: "unknown-conversation" }) : { ids };
+  });
+
+  app.post("/api/check", (request, reply) => {
+    const outcome = check.start(request.body);
+    return outcome.ok
+      ? reply.code(201).send({ id: outcome.id })
+      : reply.code(outcome.code).send({ error: outcome.error });
+  });
+
+  app.get<{ Params: Params }>("/api/check/:id/view", (request, reply) => {
+    const view = check.view(request.params.id);
+    return view === undefined ? reply.code(404).send({ error: "unknown-check" }) : view;
+  });
+
+  app.post<{ Params: Params }>("/api/check/:id/stop", (request, reply) =>
+    check.stop(request.params.id)
+      ? reply.code(204).send()
+      : reply.code(404).send({ error: "unknown-check" }),
+  );
+
+  app.delete<{ Params: Params }>("/api/check/:id", (request, reply) =>
+    check.remove(request.params.id)
+      ? reply.code(204).send()
+      : reply.code(404).send({ error: "unknown-check" }),
   );
 }
 

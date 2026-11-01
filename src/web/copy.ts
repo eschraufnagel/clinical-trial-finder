@@ -8,7 +8,13 @@ export const COPY = {
   title: "Trials to ask your oncologist about",
   madeUp: "This is a proof of concept, run on this computer. Use made-up answers.",
   scripted: "Scripted reader: no model is called. Typed replies are read from a fixed list.",
-  nav: { start: "Start", list: "Your list", sheet: "For your oncologist", settings: "Settings" },
+  nav: {
+    start: "Start",
+    list: "Your list",
+    sheet: "For your oncologist",
+    check: "Your check",
+    settings: "Settings",
+  },
 
   search: {
     heading: "Where to look",
@@ -62,6 +68,31 @@ export const COPY = {
     showRest: "Show them",
     hideRest: "Hide them",
     notStopped: "The questions aren't finished. This is the list so far.",
+    tick: "Check this trial",
+    tickNote:
+      "Tick up to three trials to go through their own rules, one question at a time. Each gets a record for you and your oncologist.",
+    tickLimit: "Three is the most one check takes.",
+    checkThese: "Check these",
+    starting: "Starting…",
+  },
+
+  check: {
+    heading: "Checking the trials you picked",
+    working: "Working…",
+    stop: "Stop and show the records",
+    back: "Back to your list",
+    print: "Print or save as PDF",
+    unmeasured: "On this model, the check hasn't been measured.",
+    notChecked: "Not checked: the check stopped before this trial.",
+    gone: "This check is no longer here. Checks are kept only while the page runs.",
+  },
+
+  record: {
+    part: "For part of the trial:",
+    askedEarlier: "Asked earlier:",
+    youSaid: "You said:",
+    rule: "The trial's rule:",
+    show: "Show these rules",
   },
 
   answers: {
@@ -100,7 +131,7 @@ export const COPY = {
     works: (model: string, read: string) => `It works: ${model} read "${read}" correctly.`,
     use: "Use this model",
     inUse: "In use",
-    cap: "Most one conversation may spend on a hosted model, in dollars",
+    cap: "Most one conversation, or one trial checked, may spend on a hosted model, in dollars",
     saveCap: "Save",
     measurement: (readable: string, exact: string, invented: string) =>
       `Measured on made-up patients' replies: it could read ${readable} of them, and the rest would fall back to the answer buttons. Of the replies that stated an answer, it read ${exact} exactly; of the "I don't know"s, it turned ${invented} into an answer.`,

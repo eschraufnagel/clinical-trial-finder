@@ -5,7 +5,7 @@ import Fastify from "fastify";
 import { describe, expect, it } from "vitest";
 import { configureApp } from "../../src/server/app.js";
 import { SettingsStore } from "../../src/server/settings.js";
-import { FORM, finderOptions, settle } from "./fixture.js";
+import { checkOptions, FORM, finderOptions, settle } from "./fixture.js";
 
 /** The server in memory, through `inject`: no socket is opened. */
 function app(store?: SettingsStore) {
@@ -15,6 +15,7 @@ function app(store?: SettingsStore) {
     mode: "scripted",
     info: { snapshotMonth: "2000-01", mappingRun: "run" },
     finder: finderOptions(),
+    check: checkOptions(),
     ...(store === undefined
       ? {}
       : {
@@ -123,6 +124,68 @@ describe("the conversation's routes", () => {
     expect(del.statusCode).toBe(204);
     const gone = await server.inject({ url: `/api/finder/${id}/view`, headers: HOST });
     expect(gone.statusCode).toBe(404);
+  });
+});
+
+describe("the check's routes (slice 0007)", () => {
+  const post = (server: ReturnType<typeof app>, url: string, payload: unknown) =>
+    server.inject({ method: "POST", url, headers: HOST, payload: payload as object });
+
+  it("say which trials can be checked, start a check, take a tap through the transport, and show the records", async () => {
+    const server = app();
+    const { id: finderId } = (await post(server, "/api/finder", FORM)).json() as { id: string };
+    // Answering brain metastases carries the fixture's ECOG rule, so one rule is left to ask.
+    await post(server, `/api/conversations/${finderId}/messages`, { choice: "none" });
+    await settle();
+    const checkable = await server.inject({
+      url: `/api/finder/${finderId}/checkable`,
+      headers: HOST,
+    });
+    expect(checkable.json().ids).toContain("NCT01");
+
+    const started = await post(server, "/api/check", { finderId, nctIds: ["NCT01"] });
+    expect(started.statusCode).toBe(201);
+    const { id } = started.json() as { id: string };
+    await settle();
+    expect(
+      (await post(server, `/api/conversations/${id}/messages`, { choice: "yes" })).statusCode,
+    ).toBe(202);
+    await settle();
+    const view = await server.inject({ url: `/api/check/${id}/view`, headers: HOST });
+    expect(view.json()).toMatchObject({ done: true, trials: [{ nctId: "NCT01" }] });
+    expect(view.json().records[0].told.lines).toHaveLength(1);
+
+    // The conversation's own messages are untouched by the check's.
+    const said = await server.inject({
+      url: `/api/conversations/${finderId}/messages`,
+      headers: HOST,
+    });
+    expect(said.json().messages.every((m: { text: string }) => !/contraception/.test(m.text))).toBe(
+      true,
+    );
+  });
+
+  it("refuse four trials and an unknown conversation; stop and forget a check", async () => {
+    const server = app();
+    const { id: finderId } = (await post(server, "/api/finder", FORM)).json() as { id: string };
+    const four = await post(server, "/api/check", {
+      finderId,
+      nctIds: ["NCT01", "NCT02", "NCT03", "NCT04"],
+    });
+    expect(four.statusCode).toBe(400);
+    expect(
+      (await post(server, "/api/check", { finderId: "x", nctIds: ["NCT01"] })).statusCode,
+    ).toBe(404);
+    const { id } = (await post(server, "/api/check", { finderId, nctIds: ["NCT01"] })).json() as {
+      id: string;
+    };
+    await settle();
+    expect((await post(server, `/api/check/${id}/stop`, {})).statusCode).toBe(204);
+    const del = await server.inject({ method: "DELETE", url: `/api/check/${id}`, headers: HOST });
+    expect(del.statusCode).toBe(204);
+    expect((await server.inject({ url: `/api/check/${id}/view`, headers: HOST })).statusCode).toBe(
+      404,
+    );
   });
 });
 

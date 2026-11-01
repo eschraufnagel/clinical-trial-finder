@@ -1,4 +1,6 @@
+import type { RecordLine, RecordSection, TrialRecord } from "../check/record.js";
 import type { AppChoice, LocalModels } from "../models/index.js";
+import type { CheckView } from "../server/check.js";
 import type { FinderView, SearchForm } from "../server/finder.js";
 import type { ConnectionResult } from "../server/models.js";
 import type { SettingsPatch, SettingsView } from "../server/settings.js";
@@ -19,7 +21,17 @@ export interface Info {
   hosted: string | null;
 }
 
-export type { ConnectionResult, FinderView, LocalModels, SearchForm, SettingsView };
+export type {
+  CheckView,
+  ConnectionResult,
+  FinderView,
+  LocalModels,
+  RecordLine,
+  RecordSection,
+  SearchForm,
+  SettingsView,
+  TrialRecord,
+};
 
 async function body<T>(response: Response): Promise<T> {
   if (!response.ok) {
@@ -73,6 +85,27 @@ export async function stopFinder(id: string): Promise<void> {
 
 export async function removeFinder(id: string): Promise<void> {
   return done(await fetch(`/api/finder/${encodeURIComponent(id)}`, sending("DELETE")));
+}
+
+/** Which of the list's trials can be checked (slice 0007). */
+export async function getCheckable(id: string): Promise<string[]> {
+  const response = await fetch(`/api/finder/${encodeURIComponent(id)}/checkable`);
+  return response.ok ? ((await response.json()) as { ids: string[] }).ids : [];
+}
+
+export async function startCheck(finderId: string, nctIds: readonly string[]): Promise<string> {
+  return (
+    await body<{ id: string }>(await fetch("/api/check", sending("POST", { finderId, nctIds })))
+  ).id;
+}
+
+export async function getCheck(id: string): Promise<CheckView | undefined> {
+  const response = await fetch(`/api/check/${encodeURIComponent(id)}/view`);
+  return response.ok ? ((await response.json()) as CheckView) : undefined;
+}
+
+export async function stopCheck(id: string): Promise<void> {
+  return done(await fetch(`/api/check/${encodeURIComponent(id)}/stop`, sending("POST", {})));
 }
 
 export async function getSettings(): Promise<SettingsView> {

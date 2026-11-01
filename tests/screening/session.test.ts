@@ -4,6 +4,7 @@ import { FakeModelAdapter } from "../../src/models/index.js";
 import { MAX_ASKS } from "../../src/screening/agenda.js";
 import type { AgentReply } from "../../src/screening/session.js";
 import { ScreeningSession } from "../../src/screening/session.js";
+import { TAP_WORDS, tapReading } from "../../src/screening/taps.js";
 import type { ScreeningCriterion, ScreeningResult } from "../../src/screening/types.js";
 import { ScreeningError } from "../../src/screening/types.js";
 
@@ -72,7 +73,9 @@ describe("a whole conversation", () => {
     const { s } = session(HAPPY);
 
     const first = await s.start();
-    expect(first.text).toMatch(/^Hello[\s\S]*coordinator[\s\S]*\n\nHave you had any anti-cancer/);
+    expect(first.text).toMatch(
+      /^These questions are about the trial[\s\S]*\n\nHave you had any anti-cancer/,
+    );
 
     await s.receive(REPLIES[0] ?? "");
     await s.receive(REPLIES[1] ?? "");
@@ -90,6 +93,7 @@ describe("a whole conversation", () => {
       unresolved: [],
       chartReview: ["L2"],
       notRaised: ["L4"],
+      fromConversation: [],
     });
     expect(result.calls).toBe(6);
     expect(result.run.promptVersion).toMatch(/^[0-9a-f]{12}$/);
@@ -369,5 +373,231 @@ describe("slice 0009: corrections and criteria that don't apply", () => {
       { criterionId: "L49", status: "unresolved", reason: "does-not-apply" },
     ]);
     expect(result.handoff.unresolved).toEqual(["L49"]);
+  });
+});
+
+describe("what the conversation carried (slice 0007 here)", () => {
+  const carried = {
+    L8: [
+      {
+        factId: "lines_advanced",
+        answer: "zero",
+        words: "No treatment yet.",
+        question: "Asked before?",
+        mayNotFit: false,
+      },
+    ],
+  };
+
+  it("never asks a carried criterion, and hands it off with the person's words", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("Has a surgeon said it can be removed?"),
+      readR([{ criterionId: "L2", reading: "holds", quote: "stage II, removable" }]),
+      askR("Are you pregnant?"),
+      readR([{ criterionId: "L19", reading: "does-not-hold", quote: "not pregnant" }]),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter, { carried });
+    await s.start();
+    await s.receive(REPLIES[1] ?? "");
+    const result = done(await s.receive(REPLIES[2] ?? ""));
+
+    const asked = s
+      .state()
+      .transcript.filter((t) => t.kind === "question")
+      .map((t) => t.criterionId);
+    expect(asked).toEqual(["L2", "L19"]);
+    expect(adapter.requests.some((r) => r.user.includes("Previous anti-cancer therapy"))).toBe(
+      false,
+    );
+    expect(result.findings[0]).toMatchObject({
+      criterionId: "L8",
+      status: "from-conversation",
+      reason: "answered-earlier",
+      timesAsked: 0,
+      earlier: carried.L8,
+    });
+    expect(result.handoff.fromConversation).toEqual(["L8"]);
+  });
+
+  it("counts a later reading for a carried criterion as already settled, and applies nothing", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("Has a surgeon said it can be removed?"),
+      readR([
+        { criterionId: "L2", reading: "holds", quote: "stage II" },
+        { criterionId: "L8", reading: "holds", quote: "untreated" },
+      ]),
+      askR("Are you pregnant?"),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter, { carried });
+    await s.start();
+    await s.receive(REPLIES[1] ?? "");
+
+    const state = s.state();
+    expect(state.ignoredReadings).toEqual([
+      { turn: 2, criterionId: "L8", reading: "holds", why: "already-settled" },
+    ]);
+    expect(state.progress[0]?.status).toBe("from-conversation");
+    expect(state.progress[0]?.evidence).toEqual([]);
+  });
+});
+
+describe("readings confirmed on the page (slice 0007 here)", () => {
+  it("previews a reply without changing anything", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("Have you had any anti-cancer therapy?"),
+      readR([{ criterionId: "L8", reading: "does-not-hold", quote: "No treatment" }]),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter);
+    await s.start();
+    const before = s.state();
+
+    const preview = await s.preview(REPLIES[0] ?? "");
+    expect(preview.value).toEqual([
+      expect.objectContaining({ criterionId: "L8", reading: "does-not-hold" }),
+    ]);
+    expect(preview.calls).toBe(1);
+    expect(s.state()).toEqual(before);
+  });
+
+  it("applies confirmed readings with no read call, counting what the preview cost", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("Have you had any anti-cancer therapy?"),
+      readR([{ criterionId: "L8", reading: "does-not-hold", quote: "No treatment" }]),
+      askR("Has a surgeon said it can be removed?"),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter);
+    await s.start();
+    const preview = await s.preview(REPLIES[0] ?? "");
+    await s.apply(REPLIES[0] ?? "", preview.value, preview.calls);
+
+    expect(adapter.requests).toHaveLength(3);
+    expect(s.state().progress[0]).toMatchObject({ status: "does-not-hold", reason: "answered" });
+    expect(s.state().calls).toBe(3);
+  });
+
+  it("still rejects a confirmed reading whose quote isn't in the message", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("Have you had any anti-cancer therapy?"),
+      askR("Again?"),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter);
+    await s.start();
+    await s.apply("No.", [{ criterionId: "L8", reading: "does-not-hold", quote: "never treated" }]);
+    expect(s.state().rejectedReadings).toHaveLength(1);
+    expect(s.state().progress[0]?.status).toBe("open");
+  });
+
+  it("applies a tap as a reading whose quote is the tap's words", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("Have you had any anti-cancer therapy?"),
+      askR("Has a surgeon said it can be removed?"),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter);
+    await s.start();
+    await s.apply(TAP_WORDS.yes, [tapReading("L8", "yes")]);
+
+    expect(s.state().progress[0]).toMatchObject({ status: "holds", reason: "answered" });
+    expect(s.state().progress[0]?.evidence[0]?.quote).toBe("Yes");
+    expect(s.state().rejectedReadings).toEqual([]);
+  });
+
+  it("records a tap on a clinical criterion as reported, never settled", async () => {
+    const adapter = new FakeModelAdapter([askR("Q1"), askR("Q2"), askR("Q3")]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter);
+    await s.start();
+    await s.apply(TAP_WORDS.no, [tapReading("L8", "no")]);
+    await s.apply(TAP_WORDS.yes, [tapReading("L2", "yes")]);
+    expect(s.state().progress[2]).toMatchObject({ status: "chart-review", reported: "holds" });
+  });
+});
+
+describe("fixed questions (slice 0007 here, for --fake)", () => {
+  it("asks each criterion in its own words and never calls a model", async () => {
+    const adapter = new FakeModelAdapter([]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter, { fixedQuestions: true });
+    const first = await s.start();
+    expect(first.text).toMatch(/“Previous anti-cancer therapy”\. Does this describe you\?$/);
+
+    await s.apply(TAP_WORDS.no, [tapReading("L8", "no")]);
+    await s.apply(TAP_WORDS.unknown, [tapReading("L2", "unknown")]);
+    const result = done(await s.apply(TAP_WORDS.no, [tapReading("L19", "no")]));
+
+    expect(adapter.requests).toEqual([]);
+    expect(result.calls).toBe(0);
+    expect(result.findings.map((f) => f.status)).toEqual([
+      "does-not-hold",
+      "not-raised",
+      "chart-review",
+      "does-not-hold",
+    ]);
+  });
+
+  it("keeps fixed questions when resumed", async () => {
+    const s = ScreeningSession.create(STUDY, CRITERIA, new FakeModelAdapter([]), {
+      fixedQuestions: true,
+    });
+    await s.start();
+    const resumed = ScreeningSession.fromState(s.state(), new FakeModelAdapter([]));
+    const next = await resumed.apply(TAP_WORDS.no, [tapReading("L8", "no")]);
+    expect(next.text).toMatch(/“Untreated, resectable stage II”/);
+  });
+
+  it("says in the opening how many rules the conversation covered", async () => {
+    const s = ScreeningSession.create(STUDY, CRITERIA, new FakeModelAdapter([]), {
+      fixedQuestions: true,
+      carried: {
+        L8: [
+          {
+            factId: "lines_advanced",
+            answer: "zero",
+            words: "None.",
+            question: "Asked before?",
+            mayNotFit: false,
+          },
+        ],
+      },
+    });
+    expect((await s.start()).text).toMatch(/already covered 1 of its rules/);
+  });
+});
+
+describe("a phrased question with a verdict word (slice 0007 here, Gate 1 R1)", () => {
+  it("is replaced by the criterion in its own words", async () => {
+    const adapter = new FakeModelAdapter([
+      askR("To help us check your eligibility, have you had any anti-cancer therapy?"),
+    ]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter);
+    const first = await s.start();
+    expect(adapter.requests).toHaveLength(1);
+    expect(first.text).toMatch(/“Previous anti-cancer therapy”\. Does this describe you\?$/);
+    expect(first.text).not.toMatch(/eligib/);
+    expect(s.state().transcript.at(-1)).toMatchObject({ kind: "question", criterionId: "L8" });
+  });
+
+  it("leaves a question without one as the model phrased it", async () => {
+    const s = ScreeningSession.create(
+      STUDY,
+      CRITERIA,
+      new FakeModelAdapter([askR("Have you had any anti-cancer therapy?")]),
+    );
+    expect((await s.start()).text).toMatch(/Have you had any anti-cancer therapy\?$/);
+  });
+});
+
+describe("stop (slice 0007 here)", () => {
+  it("closes where it stands, every open criterion as not asked, with no model call", async () => {
+    const adapter = new FakeModelAdapter([askR("Have you had any anti-cancer therapy?")]);
+    const s = ScreeningSession.create(STUDY, CRITERIA, adapter);
+    await s.start();
+    const result = s.stop();
+    expect(adapter.requests).toHaveLength(1);
+    expect(s.done).toBe(true);
+    expect(result.findings.map((f) => [f.criterionId, f.status, f.reason])).toEqual([
+      ["L8", "unresolved", "no-answer"],
+      ["L4", "not-raised", "protocol"],
+      ["L2", "chart-review", "no-answer"],
+      ["L19", "unresolved", "no-answer"],
+    ]);
+    await expect(s.receive("late")).rejects.toThrow(/finished/);
   });
 });

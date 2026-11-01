@@ -27,10 +27,13 @@ const ASK_MAX_OUTPUT_TOKENS = 256;
 /**
  * Room for a reply that speaks to many criteria. Raised from 1,024 during
  * 0009's scored run: every reading now carries a full statement, and a reply
- * touching a dozen surgical criteria ran past 1,024 on both attempts. Not part
- * of `PROMPT_VERSION`: it changes only a call that would otherwise fail.
+ * touching a dozen surgical criteria ran past 1,024 on both attempts. Raised
+ * again, to 4,096, in this repository's slice 0007: on a basket trial with a
+ * rule per cancer type, "I have non-small cell lung cancer" reads against
+ * every one of them and ran past 2,048 on both attempts. Not part of
+ * `PROMPT_VERSION`: it changes only a call that would otherwise fail.
  */
-export const READ_MAX_OUTPUT_TOKENS = 2048;
+export const READ_MAX_OUTPUT_TOKENS = 4096;
 const ATTEMPTS = 2;
 
 const READINGS: readonly ReadingValue[] = [

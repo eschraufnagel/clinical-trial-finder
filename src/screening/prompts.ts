@@ -1,5 +1,10 @@
 import { hashPrompt } from "../criteria/prompt.js";
-import { CLOSING_TEMPLATE, OPENING_TEMPLATE } from "./templates.js";
+import {
+  CLOSING_TEMPLATE,
+  COVERED_TEMPLATE,
+  FIXED_QUESTION_TEMPLATE,
+  OPENING_TEMPLATE,
+} from "./templates.js";
 import type { ScreeningCriterion, StudyContext, Turn } from "./types.js";
 
 /**
@@ -88,7 +93,9 @@ export const PROMPT_VERSION = hashPrompt(
     ASK_SYSTEM_PROMPT,
     READ_SYSTEM_PROMPT,
     OPENING_TEMPLATE,
+    COVERED_TEMPLATE,
     CLOSING_TEMPLATE,
+    FIXED_QUESTION_TEMPLATE,
     RETRY_AFTER_TRUNCATION,
     `layout ${PROMPT_LAYOUT}`,
     `context ${ASK_CONTEXT_TURNS}/${READ_CONTEXT_TURNS}`,

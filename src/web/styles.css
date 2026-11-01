@@ -80,6 +80,7 @@ button.primary {
 }
 .messages li {
   border-radius: 0.5rem;
+  white-space: pre-line;
   margin: 0.4rem 0;
   max-width: 85%;
   padding: 0.5rem 0.8rem;
@@ -128,6 +129,23 @@ blockquote {
   margin: 0.2rem 0 0.4rem 1rem;
 }
 
+.ticks {
+  border-top: 1px solid var(--line);
+  padding: 0.6rem 0;
+}
+.record {
+  border-top: 1px solid var(--line);
+  padding: 0.8rem 0;
+}
+.record h4 {
+  font-size: 0.95rem;
+  margin: 0.8rem 0 0.2rem;
+}
+.record .may-not-fit {
+  border-left: 3px solid var(--flag);
+  padding-left: 0.6rem;
+}
+
 .sheet table {
   border-collapse: collapse;
   width: 100%;
@@ -148,5 +166,8 @@ blockquote {
   .no-print,
   header {
     display: none;
+  }
+  .record {
+    break-inside: avoid-page;
   }
 }

@@ -1,0 +1,2234 @@
+{
+  "patient": "p16",
+  "nctId": "NCT07144280",
+  "set": "heldout",
+  "rank": 1,
+  "conversation": {
+    "histology": {
+      "answer": "squamous",
+      "words": "Squamous cell carcinoma.",
+      "question": "What type of lung cancer cell did the biopsy show?"
+    },
+    "extent": {
+      "answer": "metastatic_or_recurrent",
+      "words": "It's in the liver now.",
+      "question": "How far has the cancer spread?"
+    },
+    "brain_mets": {
+      "answer": "none",
+      "words": "No.",
+      "question": "Has the cancer spread to the brain?"
+    },
+    "ecog": {
+      "answer": "ps1",
+      "words": "I'm up and around but I can't do the heavy work.",
+      "question": "Which is closest to how you are day to day?"
+    },
+    "prior_platinum": {
+      "answer": "received",
+      "words": "Carboplatin, yes.",
+      "question": "Have you had chemotherapy with carboplatin or cisplatin?"
+    },
+    "prior_pd1": {
+      "answer": "progressed",
+      "words": "Libtayo with carboplatin. It grew on that.",
+      "question": "Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?"
+    },
+    "prior_targeted": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?"
+    },
+    "lines_advanced": {
+      "answer": "one",
+      "words": "One.",
+      "question": "How many treatments have you had since the cancer became advanced?"
+    },
+    "egfr": {
+      "answer": "unknown",
+      "words": "Don't know.",
+      "question": "Did testing find an EGFR mutation?"
+    },
+    "ild": {
+      "answer": "never",
+      "words": "No.",
+      "question": "Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?"
+    },
+    "hiv": {
+      "answer": "unknown",
+      "words": "Never been tested for it.",
+      "question": "Do you have HIV?"
+    },
+    "leptomeningeal": {
+      "answer": "no",
+      "words": "No, the doctor said the lining of the brain and spine is clear.",
+      "question": "Has the cancer spread to the lining of the brain or spinal cord?"
+    },
+    "hepatitis_active": {
+      "answer": "no",
+      "words": "No.",
+      "question": "Do you have active hepatitis B or C?"
+    },
+    "transplant": {
+      "answer": "yes",
+      "words": "Yes, a kidney transplant in 2011.",
+      "question": "Have you had an organ or bone marrow transplant?"
+    },
+    "measurable_disease": {
+      "answer": "yes",
+      "words": "Yes, the liver tumor, they measure it every scan.",
+      "question": "Is there a tumor that scans can measure?"
+    },
+    "kras": {
+      "answer": "unknown",
+      "words": "That I couldn't tell you.",
+      "question": "Did testing find a KRAS mutation?"
+    }
+  },
+  "orderBefore": [
+    "NCT07144280",
+    "NCT02693535",
+    "NCT03556228",
+    "NCT06126276",
+    "NCT05123482",
+    "NCT06119581",
+    "NCT05624996",
+    "NCT06581432",
+    "NCT06616584",
+    "NCT06667076",
+    "NCT07291037",
+    "NCT07229313",
+    "NCT07489066",
+    "NCT05434234",
+    "NCT04267848",
+    "NCT04181060",
+    "NCT06422143",
+    "NCT06459973",
+    "NCT06498635",
+    "NCT07222566",
+    "NCT05642572",
+    "NCT05920356",
+    "NCT07365319",
+    "NCT06646276",
+    "NCT06801834",
+    "NCT06943755",
+    "NCT06657144"
+  ],
+  "parse": "parsed",
+  "criteria": [
+    {
+      "id": "P1",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a histologically or cytologically confirmed diagnosis of NSCLC with locally advanced, unresectable Stage IIIB or IIIC not eligible for definitive chemoradiotherapy or metastatic (Stage IV: M1a, M1b, or M1c) disease per the American Joint Committee on Cancer (AJCC) Staging Manual, Version 8.0, and the Union for International Cancer Control (UICC) Staging System."
+    },
+    {
+      "id": "P2",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a neuroendocrine component or histology."
+    },
+    {
+      "id": "P3",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "PD-L1 expression is on ≥1% of tumor cells based on local immunohistochemistry (IHC) testing with an assay utilizing the anti-PD-L1 monoclonal antibody clones 22C3 or SP263."
+    },
+    {
+      "id": "P4",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has NSCLC with known AGAs."
+    },
+    {
+      "id": "P5",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant is able to provide tumor tissues for biomarker analysis."
+    },
+    {
+      "id": "P6",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has an archival specimen (preferably collected within 12 months after the last anticancer therapy)."
+    },
+    {
+      "id": "P7",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has a de novo biopsy from a tumor lesion, if medically feasible."
+    },
+    {
+      "id": "P8",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant has received therapies and progressed during or relapsed after receiving their most recent prior therapy, or has been intolerant to their most recent therapy."
+    },
+    {
+      "id": "P9",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant has no known AGAs and fulfills 1 of the following conditions."
+    },
+    {
+      "id": "P10",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, and unless contraindicated, a PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+    },
+    {
+      "id": "P11",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting and received a PD-(L)1 monoclonal antibody at any time during the course of treatment."
+    },
+    {
+      "id": "P12",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant has known AGAs (eg, EGFR mutations, ALK translocations, or other relevant actionable mutations) and fulfills the following conditions."
+    },
+    {
+      "id": "P13",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant has received at least 1 relevant AGA-targeted therapy if locally available and, in the opinion of the investigator, additional AGA-targeted therapy is not in the best interest of the participant."
+    },
+    {
+      "id": "P14",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, or experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting."
+    },
+    {
+      "id": "P15",
+      "polarity": "inclusion",
+      "type": "patient",
+      "text": "The participant may have received PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+    },
+    {
+      "id": "P16",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a history of another malignancy within 3 years before the first dose of PF-08046054, or any evidence of residual disease from a previously diagnosed malignancy."
+    },
+    {
+      "id": "P17",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant does not have a malignancy with a negligible risk of metastasis or death (eg, 5-year overall survival [OS] ≥90%), such as adequately treated carcinoma in situ of the cervix, non-melanoma skin carcinoma, localized prostate cancer, ductal carcinoma in situ, or Stage I uterine cancer."
+    },
+    {
+      "id": "P18",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has any central nervous system (CNS) lesions, unless definitively treated with CNS-directed local therapy (surgery and/or radiotherapy)."
+    },
+    {
+      "id": "P19",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant has definitively treated brain metastases and meets the following criteria."
+    },
+    {
+      "id": "P20",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The participant is on a stable dose of ≤10 mg/day of prednisone or equivalent for at least >14 days prior to randomization (if requiring steroid treatment)."
+    },
+    {
+      "id": "P21",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "There is no clinical or radiographic progression in the CNS following CNS-directed definitive radiotherapy and/or surgery."
+    },
+    {
+      "id": "P22",
+      "polarity": "inclusion",
+      "type": "clinical",
+      "text": "The time since CNS-directed treatment is ≥28 days prior to randomization."
+    },
+    {
+      "id": "P23",
+      "polarity": "exclusion",
+      "type": "clinical",
+      "text": "The participant has a history of leptomeningeal metastasis."
+    },
+    {
+      "id": "P24",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant had prior treatment with an anti-PD-L1 agent (where indicated per protocol) within 5 half-lives."
+    },
+    {
+      "id": "P25",
+      "polarity": "exclusion",
+      "type": "patient",
+      "text": "The participant had previous receipt of an MMAE-containing agent or prior docetaxel."
+    }
+  ],
+  "sources": {
+    "P1": {
+      "start": 22,
+      "end": 383,
+      "text": "Histologically or cytologically confirmed diagnosis of NSCLC with locally advanced, unresectable Stage IIIB or IIIC not eligible for definitive chemoradiotherapy or metastatic (Stage IV: M1a, M1b, or M1c) disease per the American Joint Committee on Cancer (AJCC) Staging Manual, Version 8.0, and the Union for International Cancer Control (UICC) Staging System."
+    },
+    "P2": {
+      "start": 384,
+      "end": 465,
+      "text": "Note: Participants with a neuroendocrine component or histology are not eligible."
+    },
+    "P3": {
+      "start": 468,
+      "end": 637,
+      "text": "PD-L1 expression on ≥1% of tumor cells based on local immunohistochemistry (IHC) testing with an assay utilizing the anti-PD-L1 monoclonal antibody clones 22C3 or SP263."
+    },
+    "P4": {
+      "start": 640,
+      "end": 698,
+      "text": "Participants who have NSCLC with known AGAs are permitted."
+    },
+    "P5": {
+      "start": 701,
+      "end": 775,
+      "text": "Able to provide any of the following tumor tissues for biomarker analysis:"
+    },
+    "P6": {
+      "start": 781,
+      "end": 912,
+      "text": "Archival specimen (preferably collected within 12 months after the last anticancer therapy) (see laboratory manual for details); or"
+    },
+    "P7": {
+      "start": 917,
+      "end": 975,
+      "text": "De novo biopsy from a tumor lesion, if medically feasible."
+    },
+    "P8": {
+      "start": 978,
+      "end": 1170,
+      "text": "Participants must have received the following therapies and progressed during or relapsed after receiving their most recent prior therapy, or have been intolerant to their most recent therapy:"
+    },
+    "P9": {
+      "start": 1172,
+      "end": 1247,
+      "text": "Participants with no known AGAs must fulfill 1 of the following conditions:"
+    },
+    "P10": {
+      "start": 1251,
+      "end": 1473,
+      "text": "Received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, and unless contraindicated, a PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+    },
+    "P11": {
+      "start": 1476,
+      "end": 1717,
+      "text": "Experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting and received a PD-(L)1 monoclonal antibody at any time during the course of treatment."
+    },
+    "P12": {
+      "start": 1719,
+      "end": 1867,
+      "text": "Participants with known AGAs (eg, EGFR mutations, ALK translocations, or other relevant actionable mutations) must fulfill the following conditions:"
+    },
+    "P13": {
+      "start": 1871,
+      "end": 2071,
+      "text": "Must have received at least 1 relevant AGA-targeted therapy if locally available and, in the opinion of the investigator, additional AGA-targeted therapy is not in the best interest of the participant"
+    },
+    "P14": {
+      "start": 2074,
+      "end": 2332,
+      "text": "Received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, or experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting."
+    },
+    "P15": {
+      "start": 2335,
+      "end": 2445,
+      "text": "May have received PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+    },
+    "P16": {
+      "start": 2469,
+      "end": 2627,
+      "text": "History of another malignancy within 3 years before the first dose of PF-08046054, or any evidence of residual disease from a previously diagnosed malignancy."
+    },
+    "P17": {
+      "start": 2628,
+      "end": 2913,
+      "text": "Exceptions are malignancies with a negligible risk of metastasis or death (eg, 5-year overall survival \\[OS\\] ≥90%), such as adequately treated carcinoma in situ of the cervix, non-melanoma skin carcinoma, localized prostate cancer, ductal carcinoma in situ, or Stage I uterine cancer."
+    },
+    "P18": {
+      "start": 2916,
+      "end": 3048,
+      "text": "Any central nervous system (CNS) lesions, unless definitively treated with CNS-directed local therapy (surgery and/or radiotherapy)."
+    },
+    "P19": {
+      "start": 3049,
+      "end": 3154,
+      "text": "Participants with definitively treated brain metastases are eligible if they meet the following criteria:"
+    },
+    "P20": {
+      "start": 3160,
+      "end": 3317,
+      "text": "The participant is on a stable dose of ≤10 mg/day of prednisone or equivalent for at least \\>14 days prior to randomization (if requiring steroid treatment)."
+    },
+    "P21": {
+      "start": 3322,
+      "end": 3435,
+      "text": "No clinical or radiographic progression in the CNS following CNS-directed definitive radiotherapy and/or surgery."
+    },
+    "P22": {
+      "start": 3440,
+      "end": 3509,
+      "text": "Time since CNS-directed treatment is ≥28 days prior to randomization."
+    },
+    "P23": {
+      "start": 3512,
+      "end": 3582,
+      "text": "Participants with a history of leptomeningeal metastasis are excluded."
+    },
+    "P24": {
+      "start": 3585,
+      "end": 3677,
+      "text": "Prior treatment with an anti-PD-L1 agent (where indicated per protocol) within 5 half-lives."
+    },
+    "P25": {
+      "start": 3680,
+      "end": 3744,
+      "text": "Previous receipt of an MMAE-containing agent or prior docetaxel."
+    }
+  },
+  "links": {
+    "P1": [
+      {
+        "factId": "extent",
+        "rulesOut": [
+          "early_resectable",
+          "locally_advanced"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 22,
+          "end": 383,
+          "text": "Histologically or cytologically confirmed diagnosis of NSCLC with locally advanced, unresectable Stage IIIB or IIIC not eligible for definitive chemoradiotherapy or metastatic (Stage IV: M1a, M1b, or M1c) disease per the American Joint Committee on Cancer (AJCC) Staging Manual, Version 8.0, and the Union for International Cancer Control (UICC) Staging System."
+        }
+      }
+    ],
+    "P2": [
+      {
+        "factId": "histology",
+        "rulesOut": [
+          "mixed_small_cell"
+        ],
+        "polarity": "inclusion",
+        "source": {
+          "start": 384,
+          "end": 465,
+          "text": "Note: Participants with a neuroendocrine component or histology are not eligible."
+        }
+      }
+    ],
+    "P3": [],
+    "P4": [],
+    "P5": [],
+    "P6": [],
+    "P7": [],
+    "P8": [],
+    "P9": [],
+    "P10": [],
+    "P11": [],
+    "P12": [],
+    "P13": [],
+    "P14": [],
+    "P15": [],
+    "P16": [
+      {
+        "factId": "other_cancer",
+        "rulesOut": [
+          "within_2_years",
+          "two_to_5_years"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 2469,
+          "end": 2627,
+          "text": "History of another malignancy within 3 years before the first dose of PF-08046054, or any evidence of residual disease from a previously diagnosed malignancy."
+        }
+      }
+    ],
+    "P17": [],
+    "P18": [
+      {
+        "factId": "brain_mets",
+        "rulesOut": [
+          "not_stable_no_symptoms",
+          "symptoms"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 2916,
+          "end": 3048,
+          "text": "Any central nervous system (CNS) lesions, unless definitively treated with CNS-directed local therapy (surgery and/or radiotherapy)."
+        }
+      }
+    ],
+    "P19": [],
+    "P20": [],
+    "P21": [],
+    "P22": [],
+    "P23": [
+      {
+        "factId": "leptomeningeal",
+        "rulesOut": [
+          "yes"
+        ],
+        "polarity": "exclusion",
+        "source": {
+          "start": 3512,
+          "end": 3582,
+          "text": "Participants with a history of leptomeningeal metastasis are excluded."
+        }
+      }
+    ],
+    "P24": [],
+    "P25": []
+  },
+  "carried": {
+    "P1": [
+      {
+        "factId": "extent",
+        "answer": "metastatic_or_recurrent",
+        "words": "It's in the liver now.",
+        "question": "How far has the cancer spread?",
+        "mayNotFit": false
+      }
+    ],
+    "P2": [
+      {
+        "factId": "histology",
+        "answer": "squamous",
+        "words": "Squamous cell carcinoma.",
+        "question": "What type of lung cancer cell did the biopsy show?",
+        "mayNotFit": false
+      }
+    ],
+    "P18": [
+      {
+        "factId": "brain_mets",
+        "answer": "none",
+        "words": "No.",
+        "question": "Has the cancer spread to the brain?",
+        "mayNotFit": false
+      }
+    ],
+    "P23": [
+      {
+        "factId": "leptomeningeal",
+        "answer": "no",
+        "words": "No, the doctor said the lining of the brain and spine is clear.",
+        "question": "Has the cancer spread to the lining of the brain or spinal cord?",
+        "mayNotFit": false
+      }
+    ]
+  },
+  "findings": [
+    {
+      "criterionId": "P1",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "extent",
+          "answer": "metastatic_or_recurrent",
+          "words": "It's in the liver now.",
+          "question": "How far has the cancer spread?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P2",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "histology",
+          "answer": "squamous",
+          "words": "Squamous cell carcinoma.",
+          "question": "What type of lung cancer cell did the biopsy show?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P3",
+      "evidence": [
+        {
+          "turn": 2,
+          "quote": "That I couldn't tell you.",
+          "reading": "unknown",
+          "statement": "The person has had a biopsy of their lung tumor tested for PD-L1 expression using the 22C3 or SP263 test."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P4",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I don't know about those specific genetic changes.",
+          "reading": "unknown",
+          "statement": "The participant has NSCLC with known AGAs."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P5",
+      "evidence": [
+        {
+          "turn": 6,
+          "quote": "I don't know about that. I'm not sure if I can",
+          "reading": "unknown",
+          "statement": "The participant is able to provide tumor tissues for biomarker analysis."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P6",
+      "evidence": [
+        {
+          "turn": 8,
+          "quote": "I don't know about that. I'm not sure if I have any leftover samples",
+          "reading": "unknown",
+          "statement": "The participant has an archival specimen (preferably collected within 12 months after the last anticancer therapy)."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P7",
+      "evidence": [
+        {
+          "turn": 10,
+          "quote": "I don't know about that. I'm not sure if I've had a recent biopsy",
+          "reading": "unknown",
+          "statement": "The participant has a de novo biopsy from a tumor lesion, if medically feasible."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "unknown",
+      "reported": "unknown"
+    },
+    {
+      "criterionId": "P8",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "the cancer progressed while I was on it",
+          "reading": "holds",
+          "statement": "The participant has received therapies and progressed during or relapsed after receiving their most recent prior therapy, or has been intolerant to their most recent therapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P9",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I don't know about those specific genetic changes.",
+          "reading": "unknown",
+          "statement": "The participant has no known AGAs and fulfills 1 of the following conditions."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P10",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I had Libtayo with carboplatin",
+          "reading": "partial",
+          "missing": "Whether the therapy was for metastatic or recurrent disease and whether it was concurrent or sequential",
+          "statement": "The participant received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, and unless contraindicated, a PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+        },
+        {
+          "turn": 14,
+          "quote": "I had Libtayo with carboplatin",
+          "reading": "partial",
+          "missing": "Whether the disease was metastatic or recurrent, and whether the therapy was concurrent or sequential.",
+          "statement": "The participant received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, and unless contraindicated, a PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+        },
+        {
+          "turn": 40,
+          "quote": "I had Libtayo with carboplatin",
+          "reading": "holds",
+          "statement": "The participant received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, and unless contraindicated, a PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P11",
+      "evidence": [
+        {
+          "turn": 18,
+          "quote": "I don't know. I only had one line of treatment since the cancer became advanced",
+          "reading": "unclear",
+          "statement": "The participant experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting and received a PD-(L)1 monoclonal antibody at any time during the course of treatment."
+        },
+        {
+          "turn": 20,
+          "quote": "That was the first treatment I had for the advanced cancer.",
+          "reading": "does-not-hold",
+          "statement": "The participant experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting and received a PD-(L)1 monoclonal antibody at any time during the course of treatment."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P12",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "I don't know about those specific genetic changes.",
+          "reading": "unknown",
+          "statement": "The participant has known AGAs (eg, EGFR mutations, ALK translocations, or other relevant actionable mutations) and fulfills the following conditions."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "unresolved",
+      "reason": "unknown"
+    },
+    {
+      "criterionId": "P13",
+      "evidence": [
+        {
+          "turn": 22,
+          "quote": "No, I haven't had any targeted therapies.",
+          "reading": "does-not-hold",
+          "statement": "The participant has received at least 1 relevant AGA-targeted therapy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "does-not-hold",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P14",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I had Libtayo with carboplatin",
+          "reading": "partial",
+          "missing": "Whether the therapy was for metastatic/recurrent disease or if progression occurred within 6 months of last platinum dose in adjuvant/neoadjuvant setting",
+          "statement": "The participant received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, or experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting."
+        },
+        {
+          "turn": 14,
+          "quote": "I had Libtayo with carboplatin",
+          "reading": "partial",
+          "missing": "Whether the disease was metastatic or recurrent, or whether there was progression within 6 months of last dose in adjuvant/neoadjuvant setting.",
+          "statement": "The participant received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, or experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting."
+        },
+        {
+          "turn": 24,
+          "quote": "I had carboplatin as part of my first and only treatment for the advanced cancer",
+          "reading": "holds",
+          "statement": "The participant received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, or experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P15",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I had Libtayo with carboplatin",
+          "reading": "holds",
+          "statement": "The participant may have received PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+        }
+      ],
+      "timesAsked": 0,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P16",
+      "evidence": [
+        {
+          "turn": 26,
+          "quote": "I haven't had any other cancer in the last 3 years.",
+          "reading": "does-not-hold",
+          "statement": "The participant has a history of another malignancy within 3 years before the first dose of PF-08046054, or any evidence of residual disease from a previously diagnosed malignancy."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P17",
+      "evidence": [
+        {
+          "turn": 26,
+          "quote": "I had melanoma on my back, but that was removed in 2009.",
+          "reading": "unclear",
+          "statement": "The participant has a malignancy with a negligible risk of metastasis or death (eg, 5-year overall survival [OS] ≥90%), such as adequately treated carcinoma in situ of the cervix, non-melanoma skin carcinoma, localized prostate cancer, ductal carcinoma in situ, or Stage I uterine cancer."
+        },
+        {
+          "turn": 28,
+          "quote": "just the melanoma on my back",
+          "reading": "does-not-hold",
+          "statement": "The participant has a malignancy with a negligible risk of metastasis or death (eg, 5-year overall survival [OS] ≥90%), such as adequately treated carcinoma in situ of the cervix, non-melanoma skin carcinoma, localized prostate cancer, ductal carcinoma in situ, or Stage I uterine cancer."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P18",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "brain_mets",
+          "answer": "none",
+          "words": "No.",
+          "question": "Has the cancer spread to the brain?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P19",
+      "evidence": [
+        {
+          "turn": 30,
+          "quote": "No, the cancer hasn't spread to my brain.",
+          "reading": "does-not-hold",
+          "statement": "The participant has definitively treated brain metastases."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P20",
+      "evidence": [
+        {
+          "turn": 32,
+          "quote": "No, I don't take steroid pills like prednisone or dexamethasone every day.",
+          "reading": "does-not-hold",
+          "statement": "The participant is on a stable dose of ≤10 mg/day of prednisone or equivalent for at least >14 days prior to randomization."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "does-not-hold"
+    },
+    {
+      "criterionId": "P21",
+      "evidence": [
+        {
+          "turn": 34,
+          "quote": "No, I haven't had any new headaches, vision changes, or balance issues.",
+          "reading": "partial",
+          "missing": "radiographic progression",
+          "statement": "There is no clinical or radiographic progression in the CNS following CNS-directed definitive radiotherapy and/or surgery."
+        },
+        {
+          "turn": 36,
+          "quote": "No, the scans show the cancer is in the liver, not the brain or spine.",
+          "reading": "holds",
+          "statement": "There is no clinical or radiographic progression in the CNS following CNS-directed definitive radiotherapy and/or surgery."
+        }
+      ],
+      "timesAsked": 2,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "holds"
+    },
+    {
+      "criterionId": "P22",
+      "evidence": [
+        {
+          "turn": 38,
+          "quote": "I haven't had any treatment for my brain or spine.",
+          "reading": "holds",
+          "statement": "The time since CNS-directed treatment is ≥28 days prior to randomization."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "chart-review",
+      "reason": "answered",
+      "reported": "holds"
+    },
+    {
+      "criterionId": "P23",
+      "evidence": [],
+      "timesAsked": 0,
+      "earlier": [
+        {
+          "factId": "leptomeningeal",
+          "answer": "no",
+          "words": "No, the doctor said the lining of the brain and spine is clear.",
+          "question": "Has the cancer spread to the lining of the brain or spinal cord?",
+          "mayNotFit": false
+        }
+      ],
+      "status": "from-conversation",
+      "reason": "answered-earlier"
+    },
+    {
+      "criterionId": "P24",
+      "evidence": [
+        {
+          "turn": 12,
+          "quote": "I had Libtayo",
+          "reading": "partial",
+          "missing": "Timing of the treatment relative to the first dose of PF-08046054 (within 5 half-lives)",
+          "statement": "The participant had prior treatment with an anti-PD-L1 agent (where indicated per protocol) within 5 half-lives."
+        },
+        {
+          "turn": 14,
+          "quote": "I had Libtayo with carboplatin",
+          "reading": "unclear",
+          "statement": "The participant had prior treatment with an anti-PD-L1 agent (where indicated per protocol) within 5 half-lives."
+        },
+        {
+          "turn": 40,
+          "quote": "Yes, I had Libtayo",
+          "reading": "holds",
+          "statement": "The participant had prior treatment with an anti-PD-L1 agent (where indicated per protocol) within 5 half-lives."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "holds",
+      "reason": "answered"
+    },
+    {
+      "criterionId": "P25",
+      "evidence": [
+        {
+          "turn": 42,
+          "quote": "I don't know about docetaxel or MMAE.",
+          "reading": "unknown",
+          "statement": "The participant had previous receipt of an MMAE-containing agent or prior docetaxel."
+        }
+      ],
+      "timesAsked": 1,
+      "status": "unresolved",
+      "reason": "unknown"
+    }
+  ],
+  "transcript": [
+    {
+      "index": 0,
+      "speaker": "agent",
+      "kind": "opening",
+      "text": "These questions are about the trial \"A Study to Learn About the Study Medicine Called PF-08046054/SGN-PDL1V Versus Docetaxel in Adult Participants With Previously-Treated Programmed Cell Death Ligand 1 (PD-L1) Positive Non-Small-Cell Lung Cancer (NSCLC)\". Your earlier answers already covered 4 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and \"I don't know\" is always fine."
+    },
+    {
+      "index": 1,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you had a biopsy of your lung tumor tested for PD-L1 expression using the 22C3 or SP263 test? If you aren't sure, that's okay.",
+      "criterionId": "P3"
+    },
+    {
+      "index": 2,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "That I couldn't tell you."
+    },
+    {
+      "index": 3,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Have you been told that your lung cancer has known actionable genetic alterations (AGAs), such as EGFR, ALK, or ROS1 changes? If you aren't sure, that's okay.",
+      "criterionId": "P4"
+    },
+    {
+      "index": 4,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know about those specific genetic changes. I couldn't tell you if I have EGFR, ALK, or ROS1 alterations."
+    },
+    {
+      "index": 5,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Would you be willing to provide tumor tissue samples for biomarker analysis if needed?",
+      "criterionId": "P5"
+    },
+    {
+      "index": 6,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know about that. I'm not sure if I can or if they need me to provide more samples."
+    },
+    {
+      "index": 7,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you have any leftover tumor tissue samples from your diagnosis or treatment that were collected within the last 12 months?",
+      "criterionId": "P6"
+    },
+    {
+      "index": 8,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know about that. I'm not sure if I have any leftover samples or when they were collected."
+    },
+    {
+      "index": 9,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Do you have a recent biopsy (within the last 12 months) from a tumor site that was done specifically for this study or diagnosis, if it was medically possible to do?",
+      "criterionId": "P7"
+    },
+    {
+      "index": 10,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know about that. I'm not sure if I've had a recent biopsy specifically for this study or if it was medically possible."
+    },
+    {
+      "index": 11,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Regarding your most recent cancer treatment, did your disease progress or return while you were receiving it, or did you stop because of side effects?",
+      "criterionId": "P8"
+    },
+    {
+      "index": 12,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "It grew on that treatment. I had Libtayo with carboplatin, and the cancer progressed while I was on it."
+    },
+    {
+      "index": 13,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Did you receive a platinum-based chemotherapy (like carboplatin) along with a PD-(L)1 antibody (like Libtayo) for your metastatic or recurrent cancer?",
+      "criterionId": "P10"
+    },
+    {
+      "index": 14,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Yes, I had Libtayo with carboplatin."
+    },
+    {
+      "index": 15,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Was your cancer metastatic or recurrent at that time? Also, did you take Libtayo and carboplatin at the same time, or one after the other?",
+      "criterionId": "P10"
+    },
+    {
+      "index": 16,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "It was metastatic, since it had spread to the liver. I took them at the same time."
+    },
+    {
+      "index": 17,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Did your cancer grow or return within 6 months after finishing any prior platinum-based chemotherapy (like carboplatin) given before your current metastatic treatment?",
+      "criterionId": "P11"
+    },
+    {
+      "index": 18,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know. I only had one line of treatment since the cancer became advanced, so I don't have a timeline for prior chemo before that."
+    },
+    {
+      "index": 19,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. To clarify, did you receive any chemotherapy (like carboplatin) before your cancer spread to the liver, or was the treatment with Libtayo and carboplatin the very first treatment you ever received for your lung cancer?",
+      "criterionId": "P11"
+    },
+    {
+      "index": 20,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "That was the first treatment I had for the advanced cancer. I only had one line of treatment since it became advanced."
+    },
+    {
+      "index": 21,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you received any other targeted therapies for your lung cancer besides the Libtayo and carboplatin you mentioned?",
+      "criterionId": "P13"
+    },
+    {
+      "index": 22,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any targeted therapies. I only had the Libtayo and carboplatin."
+    },
+    {
+      "index": 23,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Did you receive any chemotherapy (like carboplatin) specifically to treat your cancer after it had spread (metastatic), or did your cancer return/progress within 6 months of finishing any earlier chemotherapy given before the spread?",
+      "criterionId": "P14"
+    },
+    {
+      "index": 24,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I had carboplatin as part of my first and only treatment for the advanced cancer, which was when it had spread to the liver. I don't know about any chemotherapy given before the spread."
+    },
+    {
+      "index": 25,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you been diagnosed with any other type of cancer in the last 3 years, or do you have any remaining signs of a previous cancer?",
+      "criterionId": "P16"
+    },
+    {
+      "index": 26,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I had melanoma on my back, but that was removed in 2009. I haven't had any other cancer in the last 3 years."
+    },
+    {
+      "index": 27,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been diagnosed with any other type of cancer besides the melanoma you mentioned?",
+      "criterionId": "P17"
+    },
+    {
+      "index": 28,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, just the melanoma on my back. That was removed in 2009."
+    },
+    {
+      "index": 29,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever been diagnosed with cancer that had spread to your brain, and if so, has that condition been definitively treated?",
+      "criterionId": "P19"
+    },
+    {
+      "index": 30,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, the cancer hasn't spread to my brain. The doctor said the lining of my brain and spine is clear."
+    },
+    {
+      "index": 31,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Are you currently taking prednisone or a similar steroid medication? If so, what is your daily dose?",
+      "criterionId": "P20"
+    },
+    {
+      "index": 32,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I don't take steroid pills like prednisone or dexamethasone every day."
+    },
+    {
+      "index": 33,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Since you mentioned your brain and spine lining is clear, have you had any new symptoms like headaches, vision changes, or balance issues since your last scan?",
+      "criterionId": "P21"
+    },
+    {
+      "index": 34,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, I haven't had any new headaches, vision changes, or balance issues. My main issue is just that I can't do heavy work anymore."
+    },
+    {
+      "index": 35,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you had any recent scans showing that the cancer in your brain or spine has grown or changed since your last treatment?",
+      "criterionId": "P21"
+    },
+    {
+      "index": 36,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "No, the scans show the cancer is in the liver, not the brain or spine. The doctor said the lining of my brain and spine is clear."
+    },
+    {
+      "index": 37,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. When was your last treatment specifically for your brain or spine (CNS-directed treatment)?",
+      "criterionId": "P22"
+    },
+    {
+      "index": 38,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I haven't had any treatment for my brain or spine. The cancer is in the liver, and the doctor said the lining of my brain and spine is clear."
+    },
+    {
+      "index": 39,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever received treatment with an anti-PD-L1 medicine (a type of immunotherapy that helps your immune system fight cancer)?",
+      "criterionId": "P24"
+    },
+    {
+      "index": 40,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "Yes, I had Libtayo with carboplatin. It grew on that treatment."
+    },
+    {
+      "index": 41,
+      "speaker": "agent",
+      "kind": "question",
+      "text": "Thanks. Have you ever received treatment with docetaxel (a chemotherapy medicine) or any medicine containing MMAE?",
+      "criterionId": "P25"
+    },
+    {
+      "index": 42,
+      "speaker": "participant",
+      "kind": "reply",
+      "text": "I don't know about docetaxel or MMAE. I haven't had any targeted therapies or antibody-drug conjugates, and I'm not sure about those specific names."
+    },
+    {
+      "index": 43,
+      "speaker": "agent",
+      "kind": "closing",
+      "text": "Thank you, that's all my questions. Your record for this trial is ready, for you and your oncologist. They and the trial team decide whether it is right for you."
+    }
+  ],
+  "rejectedReadings": [
+    {
+      "turn": 16,
+      "criterionId": "P10",
+      "reading": "holds",
+      "quote": "It was metastatic... I took them at the same time."
+    },
+    {
+      "turn": 16,
+      "criterionId": "P14",
+      "reading": "holds",
+      "quote": "It was metastatic... I took them at the same time."
+    }
+  ],
+  "ignoredReadings": [],
+  "replies": [
+    {
+      "turn": 2,
+      "usedFacts": [
+        "pdl1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 4,
+      "usedFacts": [
+        "egfr",
+        "alk",
+        "ros1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 6,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 8,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 10,
+      "usedFacts": [],
+      "flags": []
+    },
+    {
+      "turn": 12,
+      "usedFacts": [
+        "prior_pd1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 14,
+      "usedFacts": [
+        "prior_pd1",
+        "prior_platinum"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 16,
+      "usedFacts": [
+        "extent",
+        "prior_pd1"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message claims the person took medications 'at the same time,' which asserts a specific treatment adherence behavior not stated in the facts."
+        }
+      ]
+    },
+    {
+      "turn": 18,
+      "usedFacts": [
+        "lines_advanced"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 20,
+      "usedFacts": [
+        "lines_advanced"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 22,
+      "usedFacts": [
+        "prior_targeted"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 24,
+      "usedFacts": [
+        "prior_platinum",
+        "lines_advanced",
+        "extent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 26,
+      "usedFacts": [
+        "other_cancer"
+      ],
+      "flags": [
+        {
+          "kind": "model",
+          "reason": "The message asserts that the person has not had any other cancer in the last 3 years, which is information not present in the facts and potentially contradicts the fact that they have active metastatic lung cancer diagnosed recently."
+        }
+      ]
+    },
+    {
+      "turn": 28,
+      "usedFacts": [
+        "other_cancer"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 30,
+      "usedFacts": [
+        "brain_mets",
+        "leptomeningeal"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 32,
+      "usedFacts": [
+        "steroids"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 34,
+      "usedFacts": [
+        "brain_mets",
+        "leptomeningeal",
+        "ecog"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 36,
+      "usedFacts": [
+        "brain_mets",
+        "leptomeningeal",
+        "extent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 38,
+      "usedFacts": [
+        "brain_mets",
+        "leptomeningeal",
+        "extent"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 40,
+      "usedFacts": [
+        "prior_pd1"
+      ],
+      "flags": []
+    },
+    {
+      "turn": 42,
+      "usedFacts": [
+        "prior_targeted",
+        "prior_adc"
+      ],
+      "flags": []
+    }
+  ],
+  "record": {
+    "nctId": "NCT07144280",
+    "title": {
+      "registry": "A Study to Learn About the Study Medicine Called PF-08046054/SGN-PDL1V Versus Docetaxel in Adult Participants With Previously-Treated Programmed Cell Death Ligand 1 (PD-L1) Positive Non-Small-Cell Lung Cancer (NSCLC)"
+    },
+    "notADecision": {
+      "ours": "This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you."
+    },
+    "counts": {
+      "mayNotFit": 6,
+      "records": 14,
+      "line": {
+        "ours": "6 rules may not fit what you said. 14 rules need your records or your oncologist."
+      }
+    },
+    "lead": null,
+    "earlier": {
+      "heading": {
+        "ours": "What your earlier answers covered"
+      },
+      "lines": [
+        {
+          "criterionId": "P1",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Histologically or cytologically confirmed diagnosis of NSCLC with locally advanced, unresectable Stage IIIB or IIIC not eligible for definitive chemoradiotherapy or metastatic (Stage IV: M1a, M1b, or M1c) disease per the American Joint Committee on Cancer (AJCC) Staging Manual, Version 8.0, and the Union for International Cancer Control (UICC) Staging System."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "How far has the cancer spread?"
+              },
+              "said": {
+                "said": "It's in the liver now."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P2",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Note: Participants with a neuroendocrine component or histology are not eligible."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "What type of lung cancer cell did the biopsy show?"
+              },
+              "said": {
+                "said": "Squamous cell carcinoma."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P18",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Any central nervous system (CNS) lesions, unless definitively treated with CNS-directed local therapy (surgery and/or radiotherapy)."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the brain?"
+              },
+              "said": {
+                "said": "No."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P23",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Participants with a history of leptomeningeal metastasis are excluded."
+          },
+          "earlier": [
+            {
+              "asked": {
+                "ours": "Has the cancer spread to the lining of the brain or spinal cord?"
+              },
+              "said": {
+                "said": "No, the doctor said the lining of the brain and spine is clear."
+              }
+            }
+          ],
+          "part": null,
+          "said": [],
+          "flag": null,
+          "mayNotFit": false,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "told": {
+      "heading": {
+        "ours": "What you told the check"
+      },
+      "lines": [
+        {
+          "criterionId": "P8",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participants must have received the following therapies and progressed during or relapsed after receiving their most recent prior therapy, or have been intolerant to their most recent therapy:"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "the cancer progressed while I was on it"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P10",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, and unless contraindicated, a PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I had Libtayo with carboplatin"
+            },
+            {
+              "said": "I had Libtayo with carboplatin"
+            },
+            {
+              "said": "I had Libtayo with carboplatin"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P11",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting and received a PD-(L)1 monoclonal antibody at any time during the course of treatment."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know. I only had one line of treatment since the cancer became advanced"
+            },
+            {
+              "said": "That was the first treatment I had for the advanced cancer."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        },
+        {
+          "criterionId": "P13",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Must have received at least 1 relevant AGA-targeted therapy if locally available and, in the opinion of the investigator, additional AGA-targeted therapy is not in the best interest of the participant"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had any targeted therapies."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        },
+        {
+          "criterionId": "P14",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Received a platinum-based combination therapy for the treatment of metastatic or recurrent disease, or experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I had Libtayo with carboplatin"
+            },
+            {
+              "said": "I had Libtayo with carboplatin"
+            },
+            {
+              "said": "I had carboplatin as part of my first and only treatment for the advanced cancer"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P15",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "May have received PD-(L)1 monoclonal antibody (concurrently or sequentially with platinum-based chemotherapy)."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I had Libtayo with carboplatin"
+            }
+          ],
+          "flag": {
+            "ours": "Nothing here conflicts with what you said."
+          },
+          "mayNotFit": false,
+          "why": null
+        },
+        {
+          "criterionId": "P24",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Prior treatment with an anti-PD-L1 agent (where indicated per protocol) within 5 half-lives."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I had Libtayo"
+            },
+            {
+              "said": "I had Libtayo with carboplatin"
+            },
+            {
+              "said": "Yes, I had Libtayo"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": null
+        }
+      ],
+      "folded": false
+    },
+    "records": {
+      "heading": {
+        "ours": "Needs your records or your oncologist"
+      },
+      "lines": [
+        {
+          "criterionId": "P3",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "PD-L1 expression on ≥1% of tumor cells based on local immunohistochemistry (IHC) testing with an assay utilizing the anti-PD-L1 monoclonal antibody clones 22C3 or SP263."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "That I couldn't tell you."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P4",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participants who have NSCLC with known AGAs are permitted."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know about those specific genetic changes."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P5",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Able to provide any of the following tumor tissues for biomarker analysis:"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know about that. I'm not sure if I can"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P6",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Archival specimen (preferably collected within 12 months after the last anticancer therapy) (see laboratory manual for details); or"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know about that. I'm not sure if I have any leftover samples"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P7",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "De novo biopsy from a tumor lesion, if medically feasible."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know about that. I'm not sure if I've had a recent biopsy"
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P9",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participants with no known AGAs must fulfill 1 of the following conditions:"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know about those specific genetic changes."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P12",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participants with known AGAs (eg, EGFR mutations, ALK translocations, or other relevant actionable mutations) must fulfill the following conditions:"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know about those specific genetic changes."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        },
+        {
+          "criterionId": "P16",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "History of another malignancy within 3 years before the first dose of PF-08046054, or any evidence of residual disease from a previously diagnosed malignancy."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I haven't had any other cancer in the last 3 years."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P17",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Exceptions are malignancies with a negligible risk of metastasis or death (eg, 5-year overall survival \\[OS\\] ≥90%), such as adequately treated carcinoma in situ of the cervix, non-melanoma skin carcinoma, localized prostate cancer, ductal carcinoma in situ, or Stage I uterine cancer."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I had melanoma on my back, but that was removed in 2009."
+            },
+            {
+              "said": "just the melanoma on my back"
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P19",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Participants with definitively treated brain metastases are eligible if they meet the following criteria:"
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, the cancer hasn't spread to my brain."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P20",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "The participant is on a stable dose of ≤10 mg/day of prednisone or equivalent for at least \\>14 days prior to randomization (if requiring steroid treatment)."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I don't take steroid pills like prednisone or dexamethasone every day."
+            }
+          ],
+          "flag": {
+            "ours": "May not fit"
+          },
+          "mayNotFit": true,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P21",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "No clinical or radiographic progression in the CNS following CNS-directed definitive radiotherapy and/or surgery."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "No, I haven't had any new headaches, vision changes, or balance issues."
+            },
+            {
+              "said": "No, the scans show the cancer is in the liver, not the brain or spine."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P22",
+          "kind": {
+            "ours": "The trial requires"
+          },
+          "rule": {
+            "registry": "Time since CNS-directed treatment is ≥28 days prior to randomization."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I haven't had any treatment for my brain or spine."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "Only your records can settle this, whatever you said."
+          }
+        },
+        {
+          "criterionId": "P25",
+          "kind": {
+            "ours": "The trial excludes"
+          },
+          "rule": {
+            "registry": "Previous receipt of an MMAE-containing agent or prior docetaxel."
+          },
+          "earlier": [],
+          "part": null,
+          "said": [
+            {
+              "said": "I don't know about docetaxel or MMAE."
+            }
+          ],
+          "flag": null,
+          "mayNotFit": false,
+          "why": {
+            "ours": "You didn't know."
+          }
+        }
+      ],
+      "folded": false
+    },
+    "aboutTrial": {
+      "heading": {
+        "ours": "About the trial, not you"
+      },
+      "lines": [],
+      "folded": true
+    },
+    "toAsk": {
+      "heading": {
+        "ours": "To ask your oncologist"
+      },
+      "items": [
+        {
+          "rule": {
+            "registry": "Experienced disease progression within 6 months of the last dose of platinum-based chemotherapy in the adjuvant, neoadjuvant, or chemoradiotherapy setting and received a PD-(L)1 monoclonal antibody at any time during the course of treatment."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Must have received at least 1 relevant AGA-targeted therapy if locally available and, in the opinion of the investigator, additional AGA-targeted therapy is not in the best interest of the participant"
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Prior treatment with an anti-PD-L1 agent (where indicated per protocol) within 5 half-lives."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Exceptions are malignancies with a negligible risk of metastasis or death (eg, 5-year overall survival \\[OS\\] ≥90%), such as adequately treated carcinoma in situ of the cervix, non-melanoma skin carcinoma, localized prostate cancer, ductal carcinoma in situ, or Stage I uterine cancer."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participants with definitively treated brain metastases are eligible if they meet the following criteria:"
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "The participant is on a stable dose of ≤10 mg/day of prednisone or equivalent for at least \\>14 days prior to randomization (if requiring steroid treatment)."
+          },
+          "question": {
+            "ours": "Does this rule keep this trial from being an option for me?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "PD-L1 expression on ≥1% of tumor cells based on local immunohistochemistry (IHC) testing with an assay utilizing the anti-PD-L1 monoclonal antibody clones 22C3 or SP263."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participants who have NSCLC with known AGAs are permitted."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Able to provide any of the following tumor tissues for biomarker analysis:"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Archival specimen (preferably collected within 12 months after the last anticancer therapy) (see laboratory manual for details); or"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "De novo biopsy from a tumor lesion, if medically feasible."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participants with no known AGAs must fulfill 1 of the following conditions:"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Participants with known AGAs (eg, EGFR mutations, ALK translocations, or other relevant actionable mutations) must fulfill the following conditions:"
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "History of another malignancy within 3 years before the first dose of PF-08046054, or any evidence of residual disease from a previously diagnosed malignancy."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "No clinical or radiographic progression in the CNS following CNS-directed definitive radiotherapy and/or surgery."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Time since CNS-directed treatment is ≥28 days prior to randomization."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        },
+        {
+          "rule": {
+            "registry": "Previous receipt of an MMAE-containing agent or prior docetaxel."
+          },
+          "question": {
+            "ours": "Do my records settle this rule?"
+          }
+        }
+      ]
+    }
+  },
+  "orderAfter": [
+    "NCT07144280",
+    "NCT02693535",
+    "NCT03556228",
+    "NCT06126276",
+    "NCT05123482",
+    "NCT06119581",
+    "NCT05624996",
+    "NCT06581432",
+    "NCT06616584",
+    "NCT06667076",
+    "NCT07291037",
+    "NCT07229313",
+    "NCT07489066",
+    "NCT05434234",
+    "NCT04267848",
+    "NCT04181060",
+    "NCT06422143",
+    "NCT06459973",
+    "NCT06498635",
+    "NCT07222566",
+    "NCT05642572",
+    "NCT05920356",
+    "NCT07365319",
+    "NCT06646276",
+    "NCT06801834",
+    "NCT06943755",
+    "NCT06657144"
+  ],
+  "calls": {
+    "agent": 42,
+    "participant": 21,
+    "fidelity": 21
+  },
+  "run": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "thinking": "off",
+    "promptVersion": "8fda2872b52a",
+    "timestamp": "2026-10"
+  }
+}

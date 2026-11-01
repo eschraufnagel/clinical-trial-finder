@@ -1,0 +1,4762 @@
+{
+  "version": 1,
+  "set": "heldout",
+  "labelsSha256": "fde2812bcaadb74d2536167221ea34bbee361100aa4c00ef29362260332ea607",
+  "patientsSha256": "1bc2770b4d4af32f5863c3f7515f9d15e2013a6350bf46145f801ec8111addb3",
+  "snapshot": {
+    "month": "2026-10",
+    "sha256": "76099a0ec4886d38f906ada584c4d8d106d5afaadcc865de501e3031f1cf6a3d"
+  },
+  "mappingRun": "2026-10/qwen3.6-35b-a3b-mlx-8bit-5fea5003-854382b2",
+  "parseRun": "2026-10/qwen3.6-35b-a3b-mlx-8bit-e1e694b3-n2",
+  "parser": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "e1e694b399d4",
+    "normalizeVersion": "2",
+    "timestamp": "2026-10"
+  },
+  "linkThreshold": 0.5,
+  "run": {
+    "agent": {
+      "model": "Qwen3.6-35B-A3B-MLX-8bit",
+      "quantization": "8bit",
+      "temperature": 0,
+      "seed": 20260921,
+      "adapter": "omlx",
+      "thinking": "off",
+      "promptVersion": "8fda2872b52a",
+      "timestamp": "2026-10"
+    },
+    "participant": {
+      "model": "Qwen3.6-35B-A3B-MLX-8bit",
+      "quantization": "8bit",
+      "temperature": 0,
+      "seed": 20260921,
+      "adapter": "omlx",
+      "thinking": "off",
+      "promptVersion": "b794412740af",
+      "timestamp": "2026-10"
+    }
+  },
+  "transcripts": "evals/results/check/runs/heldout-1db863f7b74c",
+  "rows": [
+    {
+      "patient": "p01",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 14,
+      "saved": 4,
+      "asked": 12,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "brain_mets"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P14",
+        "P20"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 2,
+      "excluded": [
+        "P13",
+        "P15"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p01",
+      "nctId": "NCT03093116",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 28,
+      "saved": 8,
+      "asked": 20,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "measurable_disease"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": false,
+      "caught": null,
+      "missed": "no-conflict",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 6,
+      "excluded": [
+        "P4",
+        "P16",
+        "P22",
+        "P25",
+        "P26",
+        "P27"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p01",
+      "nctId": "NCT03486873",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 38,
+      "saved": 9,
+      "asked": 31,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "autoimmune_active"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 45,
+          "facts": [
+            "prior_targeted"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P2"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 9,
+      "excluded": [
+        "P3",
+        "P7",
+        "P9",
+        "P10",
+        "P26",
+        "P27",
+        "P30"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p02",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 14,
+      "saved": 4,
+      "asked": 12,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "brain_mets"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P16",
+        "P20"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 3,
+      "excluded": [
+        "P15",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p02",
+      "nctId": "NCT03093116",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 28,
+      "saved": 8,
+      "asked": 24,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "leptomeningeal"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 2,
+      "excluded": [
+        "P25",
+        "P30"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p02",
+      "nctId": "NCT03686124",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 24,
+      "saved": 7,
+      "asked": 17,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "lines_advanced",
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "hepatitis_active",
+            "hiv"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "autoimmune_active"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "prior_pd1"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P4",
+        "P5"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 1,
+      "excluded": [
+        "P18",
+        "P19",
+        "P22"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p03",
+      "nctId": "NCT06881784",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 13,
+      "saved": 6,
+      "asked": 9,
+      "repeats": [
+        {
+          "turn": 11,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_targeted",
+            "prior_pd1",
+            "prior_platinum",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "ild"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "prior_targeted"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": true,
+      "caught": null,
+      "missed": "no-conflict",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 3,
+      "excluded": [
+        "P1",
+        "P7",
+        "P11"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p03",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 14,
+      "saved": 4,
+      "asked": 12,
+      "repeats": [
+        {
+          "turn": 9,
+          "facts": [
+            "egfr",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "egfr",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "brain_mets"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P20"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 2,
+      "excluded": [
+        "P13",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p03",
+      "nctId": "NCT06126276",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 26,
+      "saved": 8,
+      "asked": 22,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 41,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 43,
+          "facts": [
+            "prior_targeted"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": true,
+      "caught": {
+        "route": "asked",
+        "criterionId": "P2"
+      },
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 7,
+      "excluded": [
+        "P8",
+        "P17",
+        "P28",
+        "P29",
+        "P32"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p04",
+      "nctId": "NCT04410796",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 31,
+      "saved": 5,
+      "asked": 24,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "cardiac_recent"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": true,
+      "caught": {
+        "route": "asked",
+        "criterionId": "P3"
+      },
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 3,
+      "excluded": [
+        "P4",
+        "P44"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p04",
+      "nctId": "NCT04606446",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 35,
+      "saved": 5,
+      "asked": 18,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "her2"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "ecog"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P9",
+        "P13",
+        "P17",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P7",
+        "P10",
+        "P11",
+        "P14",
+        "P15",
+        "P18",
+        "P19"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 3,
+      "excluded": [
+        "P32",
+        "P33",
+        "P34"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p04",
+      "nctId": "NCT04872166",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 22,
+      "saved": 7,
+      "asked": 18,
+      "repeats": [
+        {
+          "turn": 7,
+          "facts": [
+            "ecog",
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "hiv",
+            "hepatitis_active"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "other_cancer",
+            "hiv",
+            "hepatitis_active"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "extent",
+            "brain_mets"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": true,
+      "caught": {
+        "route": "asked",
+        "criterionId": "P14"
+      },
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 2,
+      "excluded": [
+        "P1"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p05",
+      "nctId": "NCT03623958",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 7,
+      "saved": 2,
+      "asked": 5,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "histology"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 0,
+      "excluded": [],
+      "error": null
+    },
+    {
+      "patient": "p05",
+      "nctId": "NCT04115254",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 9,
+      "saved": 2,
+      "asked": 7,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "histology",
+            "extent"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "measurable_disease"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 3,
+      "excluded": [
+        "P8",
+        "P10",
+        "P11"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p05",
+      "nctId": "NCT04410796",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 31,
+      "saved": 6,
+      "asked": 28,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 37,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 41,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 51,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 53,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 55,
+          "facts": [
+            "measurable_disease"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": false,
+      "caught": null,
+      "missed": "unknown-or-records",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 7,
+      "excluded": [
+        "P8",
+        "P20",
+        "P26",
+        "P27",
+        "P40",
+        "P44"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p06",
+      "nctId": "NCT05624996",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 22,
+      "saved": 7,
+      "asked": 16,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "prior_platinum",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "extent",
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "extent",
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "egfr"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "other_cancer"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P3",
+        "P16",
+        "P21"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 1,
+      "excluded": [
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p06",
+      "nctId": "NCT06623422",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 15,
+      "saved": 6,
+      "asked": 9,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "hiv"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "hepatitis_active"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "prior_platinum",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_targeted",
+            "prior_pd1",
+            "prior_platinum",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "steroids"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": true,
+      "caught": null,
+      "missed": "no-conflict",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 1,
+      "excluded": [
+        "P15"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p06",
+      "nctId": "NCT06890598",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 17,
+      "saved": 4,
+      "asked": 9,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "extent",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "egfr"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "prior_pd1"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P2",
+        "P3",
+        "P4",
+        "P6"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 0,
+      "excluded": [],
+      "error": null
+    },
+    {
+      "patient": "p07",
+      "nctId": "NCT04267848",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 19,
+      "saved": 9,
+      "asked": 10,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "hiv",
+            "hepatitis_active"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "prior_pd1"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P1",
+        "P17",
+        "P6",
+        "P14"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 1,
+      "excluded": [
+        "P18"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p07",
+      "nctId": "NCT06119581",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 24,
+      "saved": 6,
+      "asked": 15,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "ild"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": true,
+      "caught": {
+        "route": "asked",
+        "criterionId": "P1"
+      },
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 5,
+      "excluded": [
+        "P10",
+        "P11",
+        "P23"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p07",
+      "nctId": "NCT07169851",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 10,
+      "saved": 3,
+      "asked": 8,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "lines_advanced"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 1,
+      "excluded": [
+        "P5"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p09",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 14,
+      "saved": 4,
+      "asked": 12,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "egfr",
+            "kras"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "brain_mets"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P20"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 3,
+      "excluded": [
+        "P15",
+        "P16",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p09",
+      "nctId": "NCT05785754",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 37,
+      "saved": 5,
+      "asked": 35,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "lines_advanced",
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "egfr"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "histology",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "ild"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 67,
+          "facts": [
+            "autoimmune_active"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P4",
+        "P14"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 9,
+      "excluded": [
+        "P10",
+        "P11",
+        "P21",
+        "P22",
+        "P23",
+        "P25",
+        "P27",
+        "P32",
+        "P35"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p09",
+      "nctId": "NCT06026410",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 22,
+      "saved": 6,
+      "asked": 20,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "kras"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "autoimmune_active"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 4,
+      "excluded": [
+        "P2",
+        "P14",
+        "P16",
+        "P20"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p10",
+      "nctId": "NCT05382559",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 45,
+      "saved": 11,
+      "asked": 39,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "extent",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "brain_mets",
+            "chest_radiation_6m"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "ild"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 49,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 51,
+          "facts": [
+            "prior_targeted",
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 53,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 65,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 71,
+          "facts": [
+            "autoimmune_active"
+          ]
+        },
+        {
+          "turn": 73,
+          "facts": [
+            "autoimmune_active"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": true,
+      "caught": null,
+      "missed": "no-conflict",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 14,
+      "excluded": [
+        "P2",
+        "P4",
+        "P5",
+        "P14",
+        "P19",
+        "P20",
+        "P29",
+        "P36",
+        "P40",
+        "P43",
+        "P44",
+        "P46",
+        "P47"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p10",
+      "nctId": "NCT05735080",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 26,
+      "saved": 9,
+      "asked": 21,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "pregnant_or_breastfeeding",
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "chest_radiation_6m"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "chest_radiation_6m"
+          ]
+        },
+        {
+          "turn": 37,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 39,
+          "facts": [
+            "autoimmune_active",
+            "ild"
+          ]
+        },
+        {
+          "turn": 41,
+          "facts": [
+            "autoimmune_active"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 10,
+      "excluded": [
+        "P7",
+        "P10",
+        "P13",
+        "P14",
+        "P18",
+        "P22",
+        "P24",
+        "P26"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p10",
+      "nctId": "NCT06126276",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 26,
+      "saved": 8,
+      "asked": 19,
+      "repeats": [
+        {
+          "turn": 13,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "hiv",
+            "hepatitis_active"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "autoimmune_active"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "ecog"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": false,
+      "caught": null,
+      "missed": "unknown-or-records",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 7,
+      "excluded": [
+        "P8",
+        "P27",
+        "P28",
+        "P29",
+        "P30",
+        "P32"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p12",
+      "nctId": "NCT05384626",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 13,
+      "saved": 3,
+      "asked": 9,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "prior_pd1",
+            "lines_advanced"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": false,
+      "caught": null,
+      "missed": "unknown-or-records",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 1,
+      "excluded": [
+        "P11"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p12",
+      "nctId": "NCT05614739",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 25,
+      "saved": 7,
+      "asked": 23,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "her2",
+            "histology"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "other_cancer",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "extent",
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "autoimmune_active",
+            "ild"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "transplant"
+          ]
+        },
+        {
+          "turn": 37,
+          "facts": [
+            "transplant"
+          ]
+        },
+        {
+          "turn": 39,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 45,
+          "facts": [
+            "transplant"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P10",
+        "P14"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 7,
+      "excluded": [
+        "P5",
+        "P12",
+        "P13",
+        "P19",
+        "P23",
+        "P25"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p12",
+      "nctId": "NCT05985161",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 19,
+      "saved": 5,
+      "asked": 15,
+      "repeats": [
+        {
+          "turn": 9,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "prior_pd1",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "extent",
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P22",
+        "P6",
+        "P9"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 7,
+      "excluded": [
+        "P2",
+        "P3",
+        "P4",
+        "P7",
+        "P10",
+        "P12",
+        "P18"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p13",
+      "nctId": "NCT03556228",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 28,
+      "saved": 16,
+      "asked": 12,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "ecog",
+            "cardiac_recent"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P13"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 2,
+      "excluded": [
+        "P12",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p13",
+      "nctId": "NCT04389632",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 33,
+      "saved": 7,
+      "asked": 24,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "prior_platinum",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "prior_platinum",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 45,
+          "facts": [
+            "prior_pd1"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P16",
+        "P24",
+        "P27"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 5,
+      "excluded": [
+        "P3",
+        "P4",
+        "P17",
+        "P26",
+        "P33"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p13",
+      "nctId": "NCT04412616",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 18,
+      "saved": 5,
+      "asked": 19,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced",
+            "ecog"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "ecog",
+            "extent"
+          ]
+        },
+        {
+          "turn": 37,
+          "facts": [
+            "extent",
+            "ecog"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P16",
+        "P12"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 8,
+      "excluded": [
+        "P6",
+        "P9",
+        "P14",
+        "P15",
+        "P17",
+        "P18",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p14",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 14,
+      "saved": 3,
+      "asked": 13,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "brain_mets"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P16",
+        "P20"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 4,
+      "excluded": [
+        "P13",
+        "P15",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p14",
+      "nctId": "NCT04614103",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 20,
+      "saved": 6,
+      "asked": 17,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "egfr",
+            "alk",
+            "ros1"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "other_cancer"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P1",
+        "P13",
+        "P3",
+        "P6"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 5,
+      "excluded": [
+        "P10",
+        "P17",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p14",
+      "nctId": "NCT05242965",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 24,
+      "saved": 7,
+      "asked": 19,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "prior_pd1",
+            "egfr"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "pregnant_or_breastfeeding"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "egfr",
+            "alk",
+            "ros1"
+          ]
+        },
+        {
+          "turn": 37,
+          "facts": [
+            "egfr",
+            "alk",
+            "ros1"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": true,
+      "caught": null,
+      "missed": "unknown-or-records",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 5,
+      "excluded": [
+        "P5",
+        "P7",
+        "P31"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p15",
+      "nctId": "NCT04585958",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 42,
+      "saved": 9,
+      "asked": 31,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "extent",
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "hepatitis_active"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 39,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 49,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 51,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 57,
+          "facts": [
+            "ecog"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P11",
+        "P25",
+        "P26",
+        "P27"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 17,
+      "excluded": [
+        "P8",
+        "P16",
+        "P18",
+        "P30",
+        "P31",
+        "P32",
+        "P33",
+        "P34",
+        "P37",
+        "P38",
+        "P41",
+        "P44",
+        "P46",
+        "P47",
+        "P49",
+        "P50",
+        "P51"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p15",
+      "nctId": "NCT04657068",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 64,
+      "saved": 18,
+      "asked": 55,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "prior_platinum",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "prior_platinum",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "histology",
+            "extent",
+            "brain_mets",
+            "leptomeningeal",
+            "measurable_disease",
+            "ecog",
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced",
+            "other_cancer",
+            "autoimmune_active",
+            "ild",
+            "hiv",
+            "hepatitis_active",
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "extent",
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum",
+            "extent"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 39,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 41,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 43,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 45,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 47,
+          "facts": [
+            "extent",
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 49,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 51,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 53,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 55,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 57,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 59,
+          "facts": [
+            "prior_platinum",
+            "histology"
+          ]
+        },
+        {
+          "turn": 61,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 63,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 65,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 67,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 69,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 71,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 77,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 79,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 85,
+          "facts": [
+            "ecog",
+            "autoimmune_active"
+          ]
+        },
+        {
+          "turn": 91,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 95,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 99,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 101,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 103,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 107,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 109,
+          "facts": [
+            "ecog"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P24",
+        "P31",
+        "P37",
+        "P23"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 23,
+      "excluded": [
+        "P1",
+        "P2",
+        "P3",
+        "P8",
+        "P15",
+        "P21",
+        "P22",
+        "P25",
+        "P27",
+        "P40",
+        "P46",
+        "P48",
+        "P52",
+        "P55",
+        "P57",
+        "P58",
+        "P59",
+        "P60",
+        "P65",
+        "P66",
+        "P68"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p15",
+      "nctId": "NCT04939610",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 69,
+      "saved": 9,
+      "asked": 60,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "extent",
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "histology",
+            "extent"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 31,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 39,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 41,
+          "facts": [
+            "histology",
+            "extent"
+          ]
+        },
+        {
+          "turn": 43,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 45,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 47,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 49,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 51,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 53,
+          "facts": [
+            "prior_platinum",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 57,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 59,
+          "facts": [
+            "histology",
+            "extent"
+          ]
+        },
+        {
+          "turn": 61,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 63,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 65,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 67,
+          "facts": [
+            "prior_platinum",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 69,
+          "facts": [
+            "prior_platinum",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 71,
+          "facts": [
+            "prior_targeted",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 73,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 75,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 77,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 79,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 81,
+          "facts": [
+            "cardiac_recent",
+            "autoimmune_active"
+          ]
+        },
+        {
+          "turn": 83,
+          "facts": [
+            "cardiac_recent"
+          ]
+        },
+        {
+          "turn": 87,
+          "facts": [
+            "hiv"
+          ]
+        },
+        {
+          "turn": 89,
+          "facts": [
+            "other_cancer"
+          ]
+        },
+        {
+          "turn": 109,
+          "facts": [
+            "extent",
+            "ecog"
+          ]
+        },
+        {
+          "turn": 117,
+          "facts": [
+            "hepatitis_active"
+          ]
+        },
+        {
+          "turn": 119,
+          "facts": [
+            "hepatitis_active"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P24",
+        "P56",
+        "P17",
+        "P31",
+        "P32",
+        "P40",
+        "P41",
+        "P42",
+        "P43",
+        "P44",
+        "P45",
+        "P46",
+        "P47",
+        "P48",
+        "P54",
+        "P64",
+        "P77"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 21,
+      "excluded": [
+        "P1",
+        "P14",
+        "P21",
+        "P23",
+        "P27",
+        "P29",
+        "P30",
+        "P35",
+        "P37",
+        "P49",
+        "P51",
+        "P57",
+        "P59",
+        "P60",
+        "P62",
+        "P65",
+        "P66",
+        "P69",
+        "P71",
+        "P72",
+        "P74"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p16",
+      "nctId": "NCT07144280",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 25,
+      "saved": 4,
+      "asked": 21,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "egfr"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "extent",
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "prior_platinum",
+            "lines_advanced",
+            "extent"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal",
+            "ecog"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal",
+            "extent"
+          ]
+        },
+        {
+          "turn": 37,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal",
+            "extent"
+          ]
+        },
+        {
+          "turn": 39,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 41,
+          "facts": [
+            "prior_targeted"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P11",
+        "P13",
+        "P24",
+        "P19",
+        "P20"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 2,
+      "excluded": [
+        "P16",
+        "P17"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p16",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 14,
+      "saved": 4,
+      "asked": 13,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "egfr",
+            "kras"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal",
+            "extent"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P20"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 3,
+      "excluded": [
+        "P13",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p16",
+      "nctId": "NCT03556228",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 28,
+      "saved": 16,
+      "asked": 12,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "hiv"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "transplant"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 4,
+      "excluded": [
+        "P6",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p18",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 14,
+      "saved": 4,
+      "asked": 11,
+      "repeats": [
+        {
+          "turn": 9,
+          "facts": [
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 21,
+          "facts": [
+            "brain_mets"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P16",
+        "P20"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 4,
+      "excluded": [
+        "P13",
+        "P15",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p18",
+      "nctId": "NCT03093116",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 28,
+      "saved": 8,
+      "asked": 27,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 33,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 37,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 39,
+          "facts": [
+            "ecog"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": false,
+      "caught": null,
+      "missed": "no-conflict",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 4,
+      "excluded": [
+        "P26",
+        "P27",
+        "P30"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p18",
+      "nctId": "NCT03486873",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 38,
+      "saved": 9,
+      "asked": 28,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted",
+            "lines_advanced"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "autoimmune_active"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "prior_targeted",
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 27,
+          "facts": [
+            "hepatitis_active"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "autoimmune_active"
+          ]
+        },
+        {
+          "turn": 35,
+          "facts": [
+            "extent"
+          ]
+        },
+        {
+          "turn": 39,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 51,
+          "facts": [
+            "autoimmune_active"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P1",
+        "P2"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 13,
+      "excluded": [
+        "P8",
+        "P12",
+        "P13",
+        "P20",
+        "P24",
+        "P25",
+        "P27",
+        "P29",
+        "P31",
+        "P32",
+        "P33",
+        "P35",
+        "P36",
+        "P39"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p19",
+      "nctId": "NCT06627647",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 16,
+      "saved": 4,
+      "asked": 14,
+      "repeats": [
+        {
+          "turn": 11,
+          "facts": [
+            "histology"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum",
+            "prior_targeted"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "prior_targeted"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": false,
+      "caught": null,
+      "missed": "unknown-or-records",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 3,
+      "excluded": [
+        "P8",
+        "P15",
+        "P16"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p19",
+      "nctId": "NCT07229313",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 13,
+      "saved": 2,
+      "asked": 14,
+      "repeats": [
+        {
+          "turn": 9,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 15,
+          "facts": [
+            "prior_targeted"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": true,
+      "caught": {
+        "route": "carried",
+        "criterionId": "P6"
+      },
+      "missed": null,
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 1,
+      "excluded": [
+        "P10"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p20",
+      "nctId": "NCT02693535",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 14,
+      "saved": 4,
+      "asked": 12,
+      "repeats": [
+        {
+          "turn": 3,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 19,
+          "facts": [
+            "brain_mets"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "brain_mets"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P20"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 2,
+      "excluded": [
+        "P16",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p20",
+      "nctId": "NCT03093116",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 28,
+      "saved": 8,
+      "asked": 19,
+      "repeats": [
+        {
+          "turn": 5,
+          "facts": [
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "brain_mets",
+            "leptomeningeal"
+          ]
+        },
+        {
+          "turn": 13,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 17,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 23,
+          "facts": [
+            "measurable_disease"
+          ]
+        }
+      ],
+      "clearlyRuledOut": true,
+      "knowable": false,
+      "caught": null,
+      "missed": "no-conflict",
+      "falseAlarms": [],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 6,
+      "excluded": [
+        "P8",
+        "P14",
+        "P27",
+        "P30"
+      ],
+      "error": null
+    },
+    {
+      "patient": "p20",
+      "nctId": "NCT03486873",
+      "set": "heldout",
+      "parse": "parsed",
+      "raisable": 38,
+      "saved": 9,
+      "asked": 33,
+      "repeats": [
+        {
+          "turn": 1,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 3,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 5,
+          "facts": [
+            "prior_pd1",
+            "prior_platinum"
+          ]
+        },
+        {
+          "turn": 7,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 9,
+          "facts": [
+            "ecog",
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 11,
+          "facts": [
+            "ecog"
+          ]
+        },
+        {
+          "turn": 25,
+          "facts": [
+            "prior_pd1"
+          ]
+        },
+        {
+          "turn": 29,
+          "facts": [
+            "autoimmune_active"
+          ]
+        },
+        {
+          "turn": 49,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 51,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 53,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 55,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 57,
+          "facts": [
+            "measurable_disease"
+          ]
+        },
+        {
+          "turn": 65,
+          "facts": [
+            "prior_targeted"
+          ]
+        }
+      ],
+      "clearlyRuledOut": false,
+      "knowable": null,
+      "caught": null,
+      "missed": null,
+      "falseAlarms": [
+        "P2",
+        "P3"
+      ],
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "orderMoved": false,
+      "flags": 7,
+      "excluded": [
+        "P12",
+        "P13",
+        "P20",
+        "P25",
+        "P27",
+        "P29",
+        "P39"
+      ],
+      "error": null
+    }
+  ],
+  "summary": {
+    "pairs": 50,
+    "parsed": 50,
+    "saved": 330,
+    "raisable": 1236,
+    "savedShare": 0.267,
+    "asked": 973,
+    "repeats": 495,
+    "ruledOut": 16,
+    "caught": 5,
+    "caughtInterval": [
+      0.1416,
+      0.556
+    ],
+    "caughtBy": {
+      "carried": 1,
+      "asked": 4
+    },
+    "knowable": 9,
+    "caughtKnowable": 5,
+    "caughtKnowableInterval": [
+      0.2667,
+      0.8112
+    ],
+    "missedBy": {
+      "no-conflict": 6,
+      "unknown-or-records": 5
+    },
+    "notRuledOut": 34,
+    "falseAlarmPairs": 27,
+    "falseAlarmInterval": [
+      0.632,
+      0.8965
+    ],
+    "verdictHits": 0,
+    "unknownsMissing": 0,
+    "ordersMoved": 0,
+    "flags": 263,
+    "excluded": 236,
+    "errors": 0
+  }
+}
