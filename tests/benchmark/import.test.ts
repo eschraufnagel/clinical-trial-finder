@@ -12,6 +12,7 @@ import {
   loadTrec,
   readQrels,
   readTopics,
+  readTrecProfiles,
   readTrialsGz,
   TREC_TOPICS,
   trecProblems,
@@ -22,9 +23,11 @@ import {
   labelsFrom,
   loadTrialBench,
   type ReleaseTrial,
+  readTrialBenchProfiles,
   trialBenchProblems,
   vignettesFrom,
 } from "../../evals/benchmark/trialbench.js";
+import { loadVocabulary } from "../../src/search/vocabulary.js";
 import { trial } from "../search/trial-fixture.js";
 
 const scratch = mkdtempSync(join(tmpdir(), "benchmark-import-"));
@@ -199,5 +202,28 @@ describe("NIH-TrialBench's files", () => {
     expect(data.vignettes).toHaveLength(41);
     expect(data.labels).toHaveLength(395);
     expect(data.trials).toHaveLength(106);
+  });
+});
+
+describe("the profiles", () => {
+  it("give every TREC note one profile, with a type that loads", () => {
+    const profiles = readTrecProfiles();
+    expect(profiles.map((p) => `${p.year}-${p.number}`)).toEqual(
+      TREC_TOPICS.map((t) => `${t.year}-${t.number}`),
+    );
+    for (const p of profiles) expect(() => loadVocabulary(p.cancerType)).not.toThrow();
+  });
+
+  it("give every NCI vignette one profile, with a type that loads", () => {
+    const profiles = readTrialBenchProfiles();
+    expect(profiles.map((p) => p.patient)).toEqual(
+      loadTrialBench().vignettes.map((v) => v.patient),
+    );
+    for (const p of profiles) expect(() => loadVocabulary(p.cancerType)).not.toThrow();
+    expect(profiles.filter((p) => p.note !== undefined).map((p) => p.patient)).toEqual([
+      "nci-05",
+      "nci-34",
+      "nci-35",
+    ]);
   });
 });

@@ -346,3 +346,14 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
     - The TREC citation names the track's pages rather than the overview papers' authors, which weren't checked first-hand.
     - `biome.jsonc` didn't need `data/benchmark/**/*.gz`: Biome doesn't read gzip.
   - 15 tests in `tests/benchmark/import.test.ts`, 4 in the boundary block; 1,220 tests in all (1,212 passed, 8 expected to fail), `npm test` about 0.74 s.
+- **Step 5, vocabularies and profiles:**
+  - **The twenty files of §4.1,** each `measured: false`, written from each cancer's common names, its MeSH headings and characteristic biomarkers, in `nsclc.json`'s shape. `trials.jsonl.gz`, `qrels.json` and `labels.json` weren't opened while writing them. **What was seen earlier, while writing the intent:** NIH-TrialBench's label counts, six ineligible pairs' comments, its 13 target IDs, and one target's title (NCT05483491, a TCR-T trial for gastric, breast, cervical and lung cancer). No list of TREC's judged trials was ever looked at.
+  - **Choices in them the owner should see at Gate 1:**
+    - recall first, as in `nsclc.json`: broad MeSH headings are included where a trial so tagged could take the patient (`Brain Neoplasms` for glioma, `Skin Neoplasms` for cutaneous squamous, `Uterine Neoplasms` for endometrial, `Urologic Neoplasms` for bladder and urethral);
+    - `bladder` names "urachal" and "urothelial", and `urethral` names "urothelial carcinoma" and "upper tract urothelial";
+    - `gastroesophageal` names esophageal cancer too, since gastroesophageal junction trials usually list both;
+    - biomarkers only where characteristic: breast (hormone receptor positive, triple negative), gastroesophageal (claudin 18.2), glioma (MGMT, H3 K27M), kidney (VHL), bladder (FGFR3, nectin-4), lymphoma (CD30), myeloma (BCMA), prostate (PSMA). HER2, BRAF, KRAS, PD-L1 and HPV are shared and left out.
+  - **Profiles:** `data/benchmark/trec/profiles.json` (9) and `data/benchmark/trialbench/profiles.json` (41). Three vignettes don't state everything, and their profiles carry a `note`: nci-05 states no sex (triple-negative breast cancer, read as female); nci-34 and nci-35 state no age (65 used; male, from the prostate cancer). `TrialBenchProfile` gains the optional `note`.
+  - `data/benchmark/{trec,trialbench}/README.md`: what's committed, the convention (judgments 1 and 2 count as "for the patient's condition"; recall is of the judged pool), the licenses and the citation.
+  - **By hand:** `npm run search -- --cancer breast --zip 20814 --age 45 --sex female` keeps 1,332 trials for breast cancer and 373 within 100 miles, and prints "The breast cancer vocabulary hasn't been measured yet."
+  - Tests: every cancer type in `data/cancer-types/` loads and only `nsclc` is measured; every note and vignette has one profile whose type loads, and only the three have a note. 1,223 tests (1,215 passed, 8 expected to fail).

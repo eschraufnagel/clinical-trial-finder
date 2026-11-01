@@ -100,6 +100,8 @@ export interface TrialBenchProfile {
   cancerType: string;
   age: number;
   sex: "female" | "male";
+  /** Present when the summary didn't state the age or sex, saying what was used. */
+  note?: string;
 }
 
 export function readJsonl<T>(text: string): T[] {
