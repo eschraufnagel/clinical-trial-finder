@@ -42,7 +42,7 @@ For each slice:
 4. Implement, one stage at a time, stopping at each gate. If implementation diverges from the plan, update `plan.md` in the same commit. An out-of-date plan is a merge blocker.
 5. Run the review passes in `REVIEW.md` before opening the PR.
 
-Steps 1 to 3 each end at the owner. Each artifact is written uncommitted, and the owner accepts it, asks for changes, or drops the slice. Acceptance is the commit: `NNNN intent`, `NNNN spec`, `NNNN plan`, each alone. No skill writes the next artifact over one that isn't committed, and a later step that finds an earlier artifact wrong proposes the change rather than making it (`NNNN intent: revised`). `/sdlc:next-slice` works out which of the three is next and runs it. The skills come from the owner's `sdlc` plugin (`eschraufnagel/sdlc`), not this repository; they read the layout, constraints, plan rules and `npm run check` from this file.
+Steps 1 to 3 each end at the owner. Each artifact is written uncommitted, and the owner accepts it, asks for changes, or drops the slice. Acceptance is the commit: `NNNN intent`, `NNNN spec`, `NNNN plan`, each alone. No skill writes the next artifact over one that isn't committed, and a later step that finds an earlier artifact wrong proposes the change rather than making it (`NNNN intent: revised`). `/sdlc:next-slice` works out which of the three is next and runs it. The skills come from the owner's `sdlc` plugin (`sdlc@eschraufnagel`, from `eschraufnagel/claude-plugins`), not this repository; they read the layout, constraints, plan rules and `npm run check` from this file.
 
 ### Stages and gates
 
