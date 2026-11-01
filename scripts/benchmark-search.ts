@@ -3,6 +3,8 @@
  *
  *   npm run benchmark:search -- --trec            TREC's nine cancer notes, once: refused if a result exists
  *   npm run benchmark:search -- --trec --check    rescore and compare with the latest result
+ *   npm run benchmark:search -- --trialbench      NIH-TrialBench's NCI vignettes over the 2026-10 snapshot, once
+ *   npm run benchmark:search -- --trialbench --check
  *
  * Deterministic: no model, no network, no clock. Every input is a committed file,
  * and the result names each one's sha256.
@@ -12,8 +14,10 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   scoreTrec,
+  scoreTrialBench,
   type TrecSearchResult,
   type TrecSummary,
+  type TrialBenchSearchResult,
   vocabulariesHash,
 } from "../evals/benchmark/search-score.js";
 import { fileSha256, SOURCES_PATH } from "../evals/benchmark/sources.js";
@@ -25,8 +29,17 @@ import {
   TREC_TOPICS_PATH,
   TREC_TRIALS_PATH,
 } from "../evals/benchmark/trec.js";
+import {
+  loadTrialBench,
+  readTrialBenchProfiles,
+  TRIALBENCH_DIR,
+  TRIALBENCH_PROFILES_PATH,
+} from "../evals/benchmark/trialbench.js";
 import { nextRunFile } from "../evals/run-file.js";
+import { loadZipPoints } from "../src/search/geo.js";
+import { loadOthers } from "../src/search/other.js";
 import { loadVocabulary, type Vocabulary } from "../src/search/vocabulary.js";
+import { loadSnapshot } from "../src/trials/snapshot-load.js";
 
 export const RESULTS_DIR = fileURLToPath(
   new URL("../evals/results/benchmark/search", import.meta.url),
@@ -51,6 +64,41 @@ function trecResult(): TrecSearchResult {
       trials: fileSha256(TREC_TRIALS_PATH),
       profiles: fileSha256(TREC_PROFILES_PATH),
     },
+  });
+}
+
+/**
+ * Why each target isn't in the snapshot, read by a person from the target's
+ * registry entry in 2026-10 (the snapshot keeps recruiting trials only). Not
+ * fetched by this script.
+ */
+const TARGET_NOTES: Record<string, string> = {
+  NCT03476681: "ACTIVE_NOT_RECRUITING in the registry, read 2026-10.",
+  NCT06865677: "TERMINATED in the registry, read 2026-10.",
+  NCT07055477: "SUSPENDED in the registry, read 2026-10.",
+};
+
+function trialBenchResult(): TrialBenchSearchResult {
+  const snapshot = loadSnapshot();
+  const { vignettes, labels } = loadTrialBench();
+  const profiles = readTrialBenchProfiles();
+  const types = [...new Set(profiles.map((p) => p.cancerType))];
+  return scoreTrialBench({
+    snapshot,
+    zipPoints: loadZipPoints(),
+    vignettes,
+    profiles,
+    labels,
+    vocabularies: vocabulariesFor(types),
+    others: new Map(types.map((t) => [t, loadOthers(t)])),
+    sources: {
+      snapshot: snapshot.manifest.sha256,
+      manifest: fileSha256(SOURCES_PATH),
+      vignettes: fileSha256(join(TRIALBENCH_DIR, "vignettes.json")),
+      labels: fileSha256(join(TRIALBENCH_DIR, "labels.json")),
+      profiles: fileSha256(TRIALBENCH_PROFILES_PATH),
+    },
+    notes: TARGET_NOTES,
   });
 }
 
@@ -107,7 +155,25 @@ function main(): void {
     }
     return;
   }
-  throw new Error("Say which benchmark: --trec.");
+  if (process.argv.includes("--trialbench")) {
+    run("trialbench", trialBenchResult);
+    const latest = latestResultFile(join(RESULTS_DIR, "trialbench"));
+    if (latest !== undefined && !process.argv.includes("--check")) {
+      const { summary } = JSON.parse(readFileSync(latest, "utf8")) as TrialBenchSearchResult;
+      const show = (r: { kept: number; n: number }) => `${r.kept}/${r.n}`;
+      console.log(
+        `Targets kept: ${show(summary.targetKept)} (every purpose ${show(summary.targetKeptAllPurposes)}); not in the snapshot: ${summary.targetsNotInSnapshot.join(", ")}`,
+      );
+      console.log(`By reason: ${JSON.stringify(summary.byReason)}`);
+      for (const [label, r] of Object.entries(summary.labelsKept)) {
+        console.log(
+          `  ${label}: ${show(r)} (every purpose ${show(summary.labelsKeptAllPurposes[label] ?? r)})`,
+        );
+      }
+    }
+    return;
+  }
+  throw new Error("Say which benchmark: --trec or --trialbench.");
 }
 
 main();

@@ -1,9 +1,13 @@
 import { createHash } from "node:crypto";
-import { personStages } from "../../src/search/search.js";
+import type { Point } from "../../src/search/geo.js";
+import type { Others } from "../../src/search/other.js";
+import { personStages, searchTrials } from "../../src/search/search.js";
+import type { SearchRequest } from "../../src/search/types.js";
 import { type Reason, reasonsFor, type Vocabulary } from "../../src/search/vocabulary.js";
-import type { SnapshotTrial } from "../../src/trials/snapshot-types.js";
+import type { SnapshotManifest, SnapshotTrial } from "../../src/trials/snapshot-types.js";
 import { wilson } from "../search/metrics.js";
 import { type Judgment, type TrecJudgment, type TrecProfile, topicKey } from "./trec.js";
+import type { Label, TrialBenchProfile, Vignette } from "./trialbench.js";
 
 /**
  * The search scored against TREC's physicians (spec 0008 §3.4, §3.5). No model:
@@ -178,4 +182,161 @@ export function vocabulariesHash(vocabularies: Record<string, string>): string {
     .map(([type, sha]) => `${type}\t${sha}\n`)
     .join("");
   return createHash("sha256").update(text).digest("hex").slice(0, 12);
+}
+
+/** Where a trial left the full search, run over the snapshot. */
+export type SnapshotDrop = "not-in-snapshot" | "purpose" | "cancer" | "age-and-sex" | "distance";
+
+export interface TrialBenchTargetRow {
+  patient: string;
+  cancerType: string;
+  nctId: string;
+  /** With the page's purposes (treatment); null when kept. */
+  droppedAt: SnapshotDrop | null;
+  /** With every purpose; null when kept. */
+  droppedAtAllPurposes: SnapshotDrop | null;
+  reasons: Reason[];
+}
+
+export interface TrialBenchLabelRow extends TrialBenchTargetRow {
+  label: string;
+}
+
+export interface TrialBenchSearchResult {
+  version: 1;
+  benchmark: "trialbench";
+  model: null;
+  sources: Record<string, string>;
+  vocabularies: Record<string, string>;
+  request: { zip: string; radiusMiles: null; purposes: string[] };
+  targets: TrialBenchTargetRow[];
+  labels: TrialBenchLabelRow[];
+  summary: {
+    /** Vignettes whose target is in the snapshot, and how many of those kept it. */
+    targetKept: Rate;
+    targetKeptAllPurposes: Rate;
+    targetsNotInSnapshot: string[];
+    /** Among targets kept, by reason. */
+    byReason: Record<Reason, number>;
+    /** Labelled pairs on trials in the snapshot, kept, by label. */
+    labelsKept: Record<string, Rate>;
+    labelsKeptAllPurposes: Record<string, Rate>;
+  };
+  /** Read by a person, not computed: why each target isn't in the snapshot. */
+  notes: Record<string, string>;
+}
+
+/** Where `searchTrials` left a trial, given the candidates it kept. */
+export function dropOf(
+  trial: SnapshotTrial | undefined,
+  candidates: ReadonlySet<string>,
+  vocabulary: Vocabulary,
+  request: Pick<SearchRequest, "age" | "sex" | "purposes">,
+): SnapshotDrop | null {
+  if (trial === undefined) return "not-in-snapshot";
+  if (candidates.has(trial.nctId)) return null;
+  const all = personStages([trial], vocabulary, { ...request, purposes: "all" });
+  if (all.entries.length === 0) {
+    return reasonsFor(trial, vocabulary).length === 0 ? "cancer" : "age-and-sex";
+  }
+  const asked = personStages([trial], vocabulary, request);
+  return asked.entries.length === 0 ? "purpose" : "distance";
+}
+
+export function scoreTrialBench(input: {
+  snapshot: {
+    trials: readonly SnapshotTrial[];
+    manifest: Pick<SnapshotManifest, "month" | "dataTimestamp">;
+  };
+  zipPoints: ReadonlyMap<string, Point>;
+  vignettes: readonly Vignette[];
+  profiles: readonly TrialBenchProfile[];
+  labels: readonly Label[];
+  vocabularies: ReadonlyMap<string, Vocabulary>;
+  others: ReadonlyMap<string, Others | null>;
+  sources: Record<string, string>;
+  notes: Record<string, string>;
+  /** Bethesda, where the NIH Clinical Center is (spec §6.1); a test passes its own. */
+  zip?: string;
+}): TrialBenchSearchResult {
+  const zip = input.zip ?? "20814";
+  const byId = new Map(input.snapshot.trials.map((t) => [t.nctId, t]));
+  const profileOf = new Map(input.profiles.map((p) => [p.patient, p]));
+  const targets: TrialBenchTargetRow[] = [];
+  const labelRows: TrialBenchLabelRow[] = [];
+
+  for (const v of input.vignettes) {
+    const profile = profileOf.get(v.patient);
+    if (profile === undefined) throw new Error(`${v.patient} has no profile.`);
+    const vocabulary = input.vocabularies.get(profile.cancerType);
+    if (vocabulary === undefined) throw new Error(`No vocabulary for ${profile.cancerType}.`);
+    const base = { age: profile.age, sex: profile.sex };
+    const kept = (purposes: SearchRequest["purposes"]) =>
+      new Set(
+        searchTrials(
+          input.snapshot.trials,
+          input.snapshot.manifest,
+          vocabulary,
+          input.zipPoints,
+          { cancerType: profile.cancerType, zip, radiusMiles: null, purposes, ...base },
+          input.others.get(profile.cancerType) ?? null,
+        ).candidates.map((c) => c.nctId),
+      );
+    const treatment = kept(["TREATMENT"]);
+    const every = kept("all");
+    const row = (nctId: string): TrialBenchTargetRow => {
+      const trial = byId.get(nctId);
+      return {
+        patient: v.patient,
+        cancerType: profile.cancerType,
+        nctId,
+        droppedAt: dropOf(trial, treatment, vocabulary, { ...base, purposes: ["TREATMENT"] }),
+        droppedAtAllPurposes: dropOf(trial, every, vocabulary, { ...base, purposes: "all" }),
+        reasons: trial === undefined ? [] : reasonsFor(trial, vocabulary),
+      };
+    };
+    targets.push(row(v.targetTrial));
+    for (const l of input.labels.filter((x) => x.patient === v.patient)) {
+      labelRows.push({ ...row(l.nctId), label: l.label });
+    }
+  }
+
+  const inSnapshot = targets.filter((t) => t.droppedAt !== "not-in-snapshot");
+  const keptTargets = inSnapshot.filter((t) => t.droppedAt === null);
+  const by = (reason: Reason) => keptTargets.filter((t) => t.reasons.includes(reason)).length;
+  const labelled = labelRows.filter((r) => r.droppedAt !== "not-in-snapshot");
+  const perLabel = (key: "droppedAt" | "droppedAtAllPurposes") =>
+    Object.fromEntries(
+      ["recommended", "eligible_but_not_recommended", "ineligible"].map((label) => {
+        const rows = labelled.filter((r) => r.label === label);
+        return [label, rate(rows.filter((r) => r[key] === null).length, rows.length)];
+      }),
+    );
+  const types = [...new Set(input.profiles.map((p) => p.cancerType))].sort();
+  return {
+    version: 1,
+    benchmark: "trialbench",
+    model: null,
+    sources: input.sources,
+    vocabularies: Object.fromEntries(
+      types.map((t) => [t, input.vocabularies.get(t)?.sha256 ?? ""]),
+    ),
+    request: { zip, radiusMiles: null, purposes: ["TREATMENT"] },
+    targets,
+    labels: labelRows,
+    summary: {
+      targetKept: rate(keptTargets.length, inSnapshot.length),
+      targetKeptAllPurposes: rate(
+        inSnapshot.filter((t) => t.droppedAtAllPurposes === null).length,
+        inSnapshot.length,
+      ),
+      targetsNotInSnapshot: [
+        ...new Set(targets.filter((t) => t.droppedAt === "not-in-snapshot").map((t) => t.nctId)),
+      ],
+      byReason: { names: by("names"), rules: by("rules"), generic: by("generic") },
+      labelsKept: perLabel("droppedAt"),
+      labelsKeptAllPurposes: perLabel("droppedAtAllPurposes"),
+    },
+    notes: input.notes,
+  };
 }
