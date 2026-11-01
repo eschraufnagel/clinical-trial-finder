@@ -418,3 +418,15 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - **Held-out estimate:** about 42 h in both arms, 28 h from the full file only, against the plan's 15 to 30.
   - **Divergence:** besides `gate-2-dev.md` and `gate-2-records.txt`, the flags are listed in their own file, `gate-2-flags.txt`, because 332 flags with their replies would bury the page. The records are rendered by a scratch script in 0007's format, not by a committed renderer.
   - **Recommendation: stop,** with dev reported beside the search results, and held-out kept for after the four causes are worked on. **Stopped at Gate 2.**
+- **Gate 2's answer: stop, keep held-out.** Stage D (steps 13 and 14) doesn't run. Held-out's 30 trials aren't parsed and its pairs aren't checked, so its one look is unspent, kept for after the false alarms' causes are worked on. Recorded in `gate-2-dev.md`, Answer.
+- **Step 15, docs:**
+  - **`docs/benchmark.md`,** by §8's outline. Every number cites a committed result, or this Records section for what was read by hand. §8.4's own-labels column is 0007's held-out (5 of 16 caught, 27 of 34 false alarms). The check column is dev's only, since held-out wasn't run.
+  - **The worked examples, nci-11 and nci-38:** search only, because their pairs are in held-out.
+  - **Limits** in `docs/search.md`, `check.md` and `questions.md` now point to the benchmark. `questions.md`'s "needs the benchmark in slice 0008" now says what it couldn't measure, and what would.
+  - **`work/ROADMAP.md`:** 0008 **Done**, and open question 4 answered. Only those lines are committed. The roadmap's uncommitted "Future scope" section is someone else's, and was left in the working tree.
+  - **README:** one line, no numbers.
+  - **`CLAUDE.md`:**
+    - the four `benchmark:*` commands;
+    - `data/benchmark/`, `data/criteria/trialbench/`, `evals/benchmark/`, `evals/cases/benchmark/` and `local/benchmark/` in the layout;
+    - the summary participant;
+    - the import's boundary.

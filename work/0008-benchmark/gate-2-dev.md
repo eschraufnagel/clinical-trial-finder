@@ -189,7 +189,7 @@ Whichever you choose, I'd name the four causes as the next work for the check: a
 
 ## Answer
 
-_(the owner's decision goes here)_
+**Stop, keep held-out** (2026-11). Stage D doesn't run: held-out's 30 trials aren't parsed and its 56 pairs aren't checked, so its one look is still unspent. The slice ships stages A to C and E, with this page's finding reported as dev's, beside the search results.
 
 ## Appendix: every dev pair's "may not fit" lines
 
