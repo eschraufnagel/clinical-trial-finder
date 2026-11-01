@@ -357,3 +357,16 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
   - `data/benchmark/{trec,trialbench}/README.md`: what's committed, the convention (judgments 1 and 2 count as "for the patient's condition"; recall is of the judged pool), the licenses and the citation.
   - **By hand:** `npm run search -- --cancer breast --zip 20814 --age 45 --sex female` keeps 1,332 trials for breast cancer and 373 within 100 miles, and prints "The breast cancer vocabulary hasn't been measured yet."
   - Tests: every cancer type in `data/cancer-types/` loads and only `nsclc` is measured; every note and vignette has one profile whose type loads, and only the three have a note. 1,223 tests (1,215 passed, 8 expected to fail).
+- **Step 6, the check's inputs:**
+  - **The pairs:** `evals/benchmark/pairs.ts` (`drawPairs`, `splitOf`, `inputProblems`) and `npm run benchmark:import -- --pairs`, which reads the committed labels and needs no download. `evals/cases/benchmark/pairs.json`: 70 pairs over 42 trials and 35 vignettes; dev 14 (5 ineligible) over 8 vignettes, held-out 56 (30 ineligible), as the spec computed.
+  - **`KNOWING.md`,** with two worked examples on made-up text. Two rules were added while writing the accounts, before the second derivation: an ECOG or Karnofsky score is said in a person's words, and a lab trend a patient is told in words is kept without its numbers.
+  - **35 accounts** in `evals/cases/benchmark/accounts/`, written from `KNOWING.md` and each summary alone. nci-34 and nci-35 state no age, and their accounts give none.
+  - **The second derivation:** 8 vignettes (nci-12, 14, 16, 21, 25, 31, 35, 37), written by a separate agent given only `KNOWING.md` and those 8 summaries, into `accounts-second/`. Compared by hand in `accounts-diff.md`:
+    - the same cancer, treatments, endings, surgery, radiation, conditions and activity on all 8;
+    - **two gaps in the convention:** drop 6 says to expand regimen acronyms, but worked example 2 keeps "R-CHOP" (the first writer kept FOLFOX, FOLFIRINOX, CHOP and ICE; the second expanded them), and nothing covers a stated absence ("it isn't in my brain");
+    - **the first writer, who wrote the convention, broke it three times** (a pathology finding as a reason, a creatinine read as kidney failure, "mucinous") **and omitted spread sites twice** (nci-35's uncertain pelvic nodes, nci-37's nodes near the liver).
+
+    Nothing was reconciled; Gate 1 chooses among three options, and the gate page recommends fixing the convention and reapplying it to all 35.
+  - **`reasons.json`:** 35 ineligible pairs, 18 `rule` (every quote verbatim in its trial's criteria), 12 `disease` (trials for another disease or purpose: an MRI study, a procedure-tracking study, a neuromuscular study), 5 `none`. Of the 5, 2 have no comment, and 3 (NCT05327023) have comments naming a prior allogeneic transplant that no rule in the text requires. `PairReason` gains an optional `note`, used on 8 entries.
+  - 6 tests in `tests/benchmark/pairs.test.ts`, including that the committed pairs are the draw of the committed labels, and that every input is complete.
+  - `work/0008-benchmark/gate-1-inputs.md` written. **Stopped at Gate 1.**

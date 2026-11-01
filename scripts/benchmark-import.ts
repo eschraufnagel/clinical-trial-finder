@@ -4,6 +4,8 @@
  *   npm run benchmark:import -- --record   first run only: write data/benchmark/sources.json
  *   npm run benchmark:import               check the downloads against it, then write
  *                                          data/benchmark/{trec,trialbench}/
+ *   npm run benchmark:import -- --pairs    draw the check's pairs from the committed labels into
+ *                                          evals/cases/benchmark/pairs.json; refuses to overwrite
  *
  * The downloads are in local/benchmark/, put there by a person (docs/benchmark.md
  * says how). No network: nothing here fetches. Deterministic: the output is sorted
@@ -11,6 +13,7 @@
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { BENCHMARK_CASES_DIR, drawPairs, PAIRS_PATH } from "../evals/benchmark/pairs.js";
 import {
   BENCHMARK_DATA_DIR,
   buildManifest,
@@ -36,6 +39,7 @@ import {
   type AnnotationRow,
   benchTrialFrom,
   labelsFrom,
+  loadTrialBench,
   type PatientRow,
   type ReleaseTrial,
   readJsonl,
@@ -47,6 +51,10 @@ import {
 const YEARS: readonly TrecYear[] = ["2021", "2022"];
 
 function main(argv: readonly string[]): void {
+  if (argv.includes("--pairs")) {
+    writePairs();
+    return;
+  }
   const root = LOCAL_BENCHMARK_DIR;
   if (!existsSync(root)) {
     throw new Error(`${root} doesn't exist. docs/benchmark.md says what to download into it.`);
@@ -136,6 +144,20 @@ function importTrialBench(root: string): void {
   writeFileSync(join(TRIALBENCH_DIR, "trials.jsonl.gz"), trialsGz(trials));
   console.log(
     `NIH-TrialBench: ${vignettes.length} NCI vignettes, ${labels.length} labels, ${trials.length} trials; criteria in trials/ differ from the search space's for ${differ}.`,
+  );
+}
+
+function writePairs(): void {
+  if (existsSync(PAIRS_PATH)) throw new Error(`${PAIRS_PATH} exists. The pairs are drawn once.`);
+  const pairs = drawPairs(loadTrialBench().labels);
+  mkdirSync(BENCHMARK_CASES_DIR, { recursive: true });
+  const note =
+    "The deeper check's pairs (spec 0008 §7.1), drawn by `npm run benchmark:import -- --pairs` from data/benchmark/trialbench/labels.json.";
+  writeFileSync(PAIRS_PATH, jsonText({ note, pairs }));
+  const count = (set: string, label?: string) =>
+    pairs.filter((p) => p.set === set && (label === undefined || p.label === label)).length;
+  console.log(
+    `${pairs.length} pairs over ${new Set(pairs.map((p) => p.nctId)).size} trials and ${new Set(pairs.map((p) => p.patient)).size} vignettes: dev ${count("dev")} (${count("dev", "ineligible")} ineligible), held-out ${count("heldout")} (${count("heldout", "ineligible")} ineligible).`,
   );
 }
 

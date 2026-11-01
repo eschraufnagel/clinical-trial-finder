@@ -1,0 +1,7 @@
+Account of nci-37, from its patient_summary in data/benchmark/trialbench/vignettes.json, by KNOWING.md.
+
+I'm 65. I have endometrial cancer, a serous kind. About a year and a half ago I went to the emergency room with three months of belly pain and swelling, and they drained fluid from my belly that had cancer cells in it.
+
+I had chemo with carboplatin and paclitaxel with bevacizumab, and a robotic hysterectomy with lymph nodes removed. I kept on the chemo, which gave me nerve damage, heartburn, hearing loss and a bad rash. After that there was no sign of cancer, and I stayed on bevacizumab. A few months later it came back in my liver, so I went back on carboplatin, paclitaxel and bevacizumab, which gave me scalp pain and changed my taste, and my blood pressure went up. It kept growing, so I switched to pembrolizumab and lenvatinib. My platelets and blood counts dropped badly and I needed transfusions, and I have tendinitis in my left arm and a stiff neck. I had part of my liver removed. My treatment was stopped recently because it grew again.
+
+I'm more tired and get winded with everyday things, but I'm on my feet all day. I can do light work, but heavy things tire me. I get fevers and chills at night, last night up to 103. I have a dry cough that's better, some bloating, and the numbness in my feet is worse. I also have high blood pressure from the bevacizumab, a hiatal hernia, high cholesterol, an underactive thyroid, arthritis and osteoporosis.
