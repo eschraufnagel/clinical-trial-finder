@@ -257,11 +257,11 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
 - `evals/cases/benchmark/{KNOWING.md,pairs.json,reasons.json,accounts-diff.md}`, `accounts/*.md` (35), `accounts-second/*.md` (8);
 - `data/criteria/trialbench/<run>/*.json`, `failures.json`, `latest`;
 - `evals/results/benchmark/search/{trec,trialbench}/01-*.json`;
-- `evals/results/benchmark/check/{dev/,runs/}…` and the held-out result;
+- `evals/results/benchmark/check/{dev/,runs/}…`; no held-out result, since Gate 2 chose to stop;
 - `tests/benchmark/{trec-xml,import,pairs,search-score}.test.ts`, `tests/benchmark/fixtures/` (three corpus files);
 - `tests/evals/{summary-participant,benchmark-check}.test.ts`, `tests/scripts/benchmark-parse.test.ts`;
 - `docs/benchmark.md`;
-- `work/0008-benchmark/{plan,gate-1-inputs,gate-2-dev}.md`, `gate-2-records.txt`.
+- `work/0008-benchmark/{intent,spec,plan,gate-1-inputs,gate-2-dev}.md`, `gate-2-records.txt`, `gate-2-flags.txt` (added at step 12).
 
 **Changed:**
 - `src/search/{search,index}.ts` (`personStages`, behavior unchanged);
@@ -430,3 +430,26 @@ Each step is one commit, through `npm run check && git commit`. No commit carrie
     - `data/benchmark/`, `data/criteria/trialbench/`, `evals/benchmark/`, `evals/cases/benchmark/` and `local/benchmark/` in the layout;
     - the summary participant;
     - the import's boundary.
+- **Step 16, review passes** (`REVIEW.md`), over `main...HEAD`:
+  - **Pass 1, plan compliance. Important, fixed:** "Files that change" didn't name `gate-2-flags.txt`, and still named a held-out result Gate 2 cancelled. Both were in the Records but not the list; the list is corrected. **Nit:** the list named only `plan.md` of the slice's three documents; `intent.md` and `spec.md` are added. Steps 13 and 14 are unimplemented, by Gate 2's answer. Nothing else is outside the list, and there's no new dependency.
+  - **Pass 2, correctness:**
+    - The held-out guard reads only `evals/results/benchmark/check/` itself, so dev's result doesn't refuse a held-out run (checked).
+    - A pair stopped on an error is retried, not scored.
+    - The named-rule overlap returns `rule-missed` or `rule-other` when a quote isn't found in the text, never a false `rule-caught`.
+    - **Nit, recorded:** the run hash covers the participant's prompts, not its `MAX_OUTPUT_TOKENS`, so a later change to the limit alone wouldn't start a new run. Step 12 relied on that deliberately.
+  - **Pass 3, scope and data:**
+    - No network outside the named exceptions: the import's boundary test holds.
+    - No secrets in the diff.
+    - Patient text is the benchmarks' vignettes, as published, or accounts written here.
+    - The only day-level dates are the TREC corpus's name and the sources' own text.
+    - No verdict wording: `verdictHits` is 0 in every dev transcript.
+  - **Pass 4, eval integrity:**
+    - No test was loosened. The removed test lines are import lines; `evals/check/metrics.ts`'s removed lines are the step 11 extraction, and 0007's results still regrade row for row.
+    - The reply-limit fix touched no test or grader.
+    - The frozen measures are unchanged. The gate page's "without part-only lines" figures are labelled a reading.
+    - Every result records model, quantization, temperature and seed.
+  - **Pass 5, documentation:**
+    - The README gains one line with no numbers.
+    - Every number in `docs/benchmark.md` was checked against its result. Two counts were corrected while writing: the vignettes cover 17 cancer types, not 18, and 305 of 1,155 replies were flagged, a quarter, not a third.
+    - Limits state that the check was measured on dev only, and that TREC states no licence.
+    - **Nit, recorded:** `gate-2-records.txt` was rendered by a scratch script, not a committed one, so it can't be regenerated from the repository.
