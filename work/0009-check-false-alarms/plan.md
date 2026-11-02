@@ -333,3 +333,7 @@ No parser change, no schema change, no boundary widened.
     | named rule on the record | 1 of 1 | 1 of 1 |
 
     These match the reading on 0008's gate page.
+- **Step 5, the record's part lines:** `counts.onePart`, `countsLine(mayNotFit, records, onePart)`, `ASK_PART`, and part lines last on "To ask your oncologist", in `src/check/record.ts`. `CHECK_REVISION` is 3. 4 tests, 1,269 in all (1,261 passed, 8 expected to fail).
+  - **Divergence, wording:** when every "may not fit" is on one part, the second sentence drops "more": "0 rules may not fit what you said. 7 are for one part of the trial, which you may not be in." Found by rendering nci-25 × NCT00003838.
+  - `npm run test:e2e`: 8 passed, with no expectation changed. `check:eval -- --check` and `-- --check --dev`, and `benchmark:check -- --check --dev`, pass.
+  - **Not done by hand:** the plan's check of `npm run app -- --fake` in a browser. `Record.tsx` is unchanged and renders `counts.line` and `toAsk.items` as given. The new wording was read on dev records through `benchmark:lines --record` instead.
