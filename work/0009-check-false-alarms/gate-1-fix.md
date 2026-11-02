@@ -117,4 +117,4 @@ Caught and false alarms are shown in both measures, not barred: 14 pairs can't m
 
 ## Answer
 
-(The owner's.)
+**Go** (2026-11). The diagnosis, the prompt's three additions, the record's wording, both measures and the bar are frozen as above. Dev runs from the full summary.

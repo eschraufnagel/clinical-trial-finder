@@ -341,3 +341,4 @@ No parser change, no schema change, no boundary widened.
   - **Divergence, the overlap test:** the plan said `READ_SYSTEM_PROMPT` shares no five-word run with NIH-TrialBench's trials or the twelve pinned protocols. Before this slice it already shared five, all from the prescreening repository's aspirin and gemcitabine examples. The test lists those five and holds that nothing added shares another.
   - **One phrase replaced, not added:** "never about its condition" became "never about what it requires", since "condition" now names the "if".
   - `gate-1-fix.md` written, and its two records in `gate-1-records.txt`. **Stopped at Gate 1.**
+- **Gate 1's answer: go.** The fix, the measures and the bar are frozen; stage B runs. Recorded in `gate-1-fix.md`, Answer.
