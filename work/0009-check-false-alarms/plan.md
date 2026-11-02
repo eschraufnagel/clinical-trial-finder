@@ -337,3 +337,7 @@ No parser change, no schema change, no boundary widened.
   - **Divergence, wording:** when every "may not fit" is on one part, the second sentence drops "more": "0 rules may not fit what you said. 7 are for one part of the trial, which you may not be in." Found by rendering nci-25 × NCT00003838.
   - `npm run test:e2e`: 8 passed, with no expectation changed. `check:eval -- --check` and `-- --check --dev`, and `benchmark:check -- --check --dev`, pass.
   - **Not done by hand:** the plan's check of `npm run app -- --fake` in a browser. `Record.tsx` is unchanged and renders `counts.line` and `toAsk.items` as given. The new wording was read on dev records through `benchmark:lines --record` instead.
+- **Step 6, the reading prompt:** the three additions of §3 in `READ_SYSTEM_PROMPT`. `PROMPT_VERSION` is `f8b60faffee1` (was `8fda2872b52a`). 3 tests, 1,272 in all (1,264 passed, 8 expected to fail).
+  - **Divergence, the overlap test:** the plan said `READ_SYSTEM_PROMPT` shares no five-word run with NIH-TrialBench's trials or the twelve pinned protocols. Before this slice it already shared five, all from the prescreening repository's aspirin and gemcitabine examples. The test lists those five and holds that nothing added shares another.
+  - **One phrase replaced, not added:** "never about its condition" became "never about what it requires", since "condition" now names the "if".
+  - `gate-1-fix.md` written, and its two records in `gate-1-records.txt`. **Stopped at Gate 1.**
