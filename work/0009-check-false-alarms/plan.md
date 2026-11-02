@@ -308,4 +308,9 @@ No parser change, no schema change, no boundary widened.
 
 ## Records
 
-(Written as the work goes.)
+- **The owner approved this plan as written (2026-11).**
+- **Step 1, baseline** (on `0009-check-false-alarms` at `ce089f5`, `main` at `f250cf4` plus intent, spec and plan):
+  - `npm run check` exits 0; 1,253 tests (1,245 passed, 8 expected to fail) in 112 files; `npm test` about 0.8 s.
+  - `npm run test:e2e`: 8 passed.
+  - `search:eval -- --check`, `questions:eval -- --check` and `-- --check --dev`, `facts:eval -- --check`, `check:eval -- --check` and `-- --check --dev`, `benchmark:search -- --trec --check` and `-- --trialbench --check`, and `benchmark:check -- --check --dev` pass.
+  - `other:eval -- --check` and `-- --check --dev` fail with "labelsSha256 differs" and nothing else, as recorded since 0006.
