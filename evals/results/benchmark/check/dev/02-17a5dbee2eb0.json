@@ -1,0 +1,859 @@
+{
+  "version": 1,
+  "set": "dev",
+  "arms": [
+    "full"
+  ],
+  "pairsSha256": "f796c12da64a323e64c5a3c556ea9c1ccbc74389625e0fa76e0be6fbc689ad00",
+  "accountsSha256": "7f2928d8d30cb72788c20a4b8b03de0ae43fd1a06fc1e3f5e742097a17d6efa1",
+  "reasonsSha256": "3657652666e47e7f31bdbc098a2cfa06a1a944b707e1ca90708b25b8ae9bd776",
+  "parseRun": "trialbench/qwen3.6-35b-a3b-mlx-8bit-e1e694b3-n2",
+  "parser": {
+    "model": "Qwen3.6-35B-A3B-MLX-8bit",
+    "quantization": "8bit",
+    "temperature": 0,
+    "seed": 20260921,
+    "adapter": "omlx",
+    "promptVersion": "e1e694b399d4",
+    "normalizeVersion": "2",
+    "timestamp": "2026-11"
+  },
+  "run": {
+    "agent": {
+      "model": "Qwen3.6-35B-A3B-MLX-8bit",
+      "quantization": "8bit",
+      "temperature": 0,
+      "seed": 20260921,
+      "adapter": "omlx",
+      "thinking": "off",
+      "promptVersion": "f8b60faffee1",
+      "timestamp": "2026-11"
+    },
+    "participant": {
+      "model": "Qwen3.6-35B-A3B-MLX-8bit",
+      "quantization": "8bit",
+      "temperature": 0,
+      "seed": 20260921,
+      "adapter": "omlx",
+      "thinking": "off",
+      "promptVersion": "29afc83c7df6",
+      "timestamp": "2026-11"
+    }
+  },
+  "transcripts": "evals/results/benchmark/check/runs/dev-17a5dbee2eb0",
+  "rows": [
+    {
+      "patient": "nci-01",
+      "nctId": "NCT01900132",
+      "set": "dev",
+      "label": "ineligible",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P1",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P2",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P6",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P10",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P11",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P13",
+          "kind": "part"
+        }
+      ],
+      "named": "disease",
+      "asked": 17,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 9,
+      "excluded": [
+        "P4",
+        "P5",
+        "P7",
+        "P8",
+        "P15",
+        "P16",
+        "P17",
+        "P19"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-01",
+      "nctId": "NCT03331380",
+      "set": "dev",
+      "label": "ineligible",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P4",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P23",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P87",
+          "kind": "part"
+        }
+      ],
+      "named": "disease",
+      "asked": 87,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 5,
+      "excluded": [
+        "P38",
+        "P44",
+        "P60",
+        "P76",
+        "P92",
+        "P94"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-06",
+      "nctId": "NCT01827384",
+      "set": "dev",
+      "label": "eligible_but_not_recommended",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": false,
+      "mayNotFit": [],
+      "named": null,
+      "asked": 28,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 7,
+      "excluded": [
+        "P12",
+        "P14",
+        "P18",
+        "P28",
+        "P34",
+        "P41",
+        "P46"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-12",
+      "nctId": "NCT00102544",
+      "set": "dev",
+      "label": "ineligible",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P7",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P8",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P9",
+          "kind": "part"
+        }
+      ],
+      "named": "disease",
+      "asked": 12,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 3,
+      "excluded": [
+        "P4",
+        "P5",
+        "P10",
+        "P12"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-12",
+      "nctId": "NCT03331380",
+      "set": "dev",
+      "label": "ineligible",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P4",
+          "kind": "part"
+        }
+      ],
+      "named": "disease",
+      "asked": 87,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 22,
+      "excluded": [
+        "P14",
+        "P16",
+        "P19",
+        "P20",
+        "P24",
+        "P30",
+        "P34",
+        "P37",
+        "P39",
+        "P41",
+        "P49",
+        "P58",
+        "P59",
+        "P64",
+        "P68",
+        "P69",
+        "P76",
+        "P79",
+        "P81",
+        "P83",
+        "P84",
+        "P91"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-12",
+      "nctId": "NCT04708470",
+      "set": "dev",
+      "label": "recommended",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P7",
+          "kind": "asked"
+        }
+      ],
+      "named": null,
+      "asked": 26,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 8,
+      "excluded": [
+        "P5",
+        "P14",
+        "P23",
+        "P24",
+        "P25",
+        "P26"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-13",
+      "nctId": "NCT02465060",
+      "set": "dev",
+      "label": "recommended",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P13",
+          "kind": "asked"
+        }
+      ],
+      "named": null,
+      "asked": 28,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 5,
+      "excluded": [
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P30"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-17",
+      "nctId": "NCT03331380",
+      "set": "dev",
+      "label": "eligible_but_not_recommended",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P4",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P87",
+          "kind": "part"
+        }
+      ],
+      "named": null,
+      "asked": 85,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 15,
+      "excluded": [
+        "P19",
+        "P30",
+        "P36",
+        "P38",
+        "P45",
+        "P46",
+        "P57",
+        "P59",
+        "P65",
+        "P67",
+        "P68",
+        "P81",
+        "P83",
+        "P90",
+        "P94"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-17",
+      "nctId": "NCT03493945",
+      "set": "dev",
+      "label": "eligible_but_not_recommended",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": false,
+      "mayNotFit": [],
+      "named": null,
+      "asked": 41,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 0,
+      "excluded": [],
+      "error": null
+    },
+    {
+      "patient": "nci-17",
+      "nctId": "NCT06161532",
+      "set": "dev",
+      "label": "recommended",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P66",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P67",
+          "kind": "asked"
+        },
+        {
+          "criterionId": "P3",
+          "kind": "records"
+        },
+        {
+          "criterionId": "P4",
+          "kind": "records"
+        },
+        {
+          "criterionId": "P6",
+          "kind": "records"
+        }
+      ],
+      "named": null,
+      "asked": 58,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 8,
+      "excluded": [
+        "P5",
+        "P26",
+        "P30",
+        "P37",
+        "P39",
+        "P44",
+        "P50"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-25",
+      "nctId": "NCT00003838",
+      "set": "dev",
+      "label": "recommended",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P17",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P3",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P11",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P12",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P13",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P14",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P15",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P16",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P18",
+          "kind": "part"
+        }
+      ],
+      "named": null,
+      "asked": 33,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 17,
+      "excluded": [
+        "P2",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P20",
+        "P21",
+        "P24",
+        "P25",
+        "P26",
+        "P31",
+        "P34"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-25",
+      "nctId": "NCT03502733",
+      "set": "dev",
+      "label": "recommended",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P1",
+          "kind": "records"
+        }
+      ],
+      "named": null,
+      "asked": 30,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 7,
+      "excluded": [
+        "P13",
+        "P14",
+        "P17",
+        "P26",
+        "P29",
+        "P30"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-37",
+      "nctId": "NCT00924027",
+      "set": "dev",
+      "label": "ineligible",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P5",
+          "kind": "asked"
+        },
+        {
+          "criterionId": "P9",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P10",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P12",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P13",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P16",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P17",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P18",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P19",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P35",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P37",
+          "kind": "part"
+        },
+        {
+          "criterionId": "P38",
+          "kind": "part"
+        }
+      ],
+      "named": "rule-other",
+      "asked": 34,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 12,
+      "excluded": [
+        "P4",
+        "P11",
+        "P14",
+        "P20",
+        "P21",
+        "P23",
+        "P25",
+        "P32",
+        "P33"
+      ],
+      "error": null
+    },
+    {
+      "patient": "nci-41",
+      "nctId": "NCT02211755",
+      "set": "dev",
+      "label": "recommended",
+      "arm": "full",
+      "parse": "parsed",
+      "flagged": true,
+      "mayNotFit": [
+        {
+          "criterionId": "P2",
+          "kind": "records"
+        }
+      ],
+      "named": null,
+      "asked": 21,
+      "verdictHits": [],
+      "unknownsMissing": [],
+      "flags": 0,
+      "excluded": [],
+      "error": null
+    }
+  ],
+  "byArm": [
+    {
+      "arm": "full",
+      "pairs": 14,
+      "parseFailed": [],
+      "caught": {
+        "n": 5,
+        "kept": 5,
+        "rate": 1,
+        "interval": [
+          0.5655,
+          1
+        ]
+      },
+      "byNamed": {
+        "rule-caught": 0,
+        "rule-other": 1,
+        "rule-missed": 0,
+        "disease": 4,
+        "none": 0
+      },
+      "falseAlarms": {
+        "n": 9,
+        "kept": 7,
+        "rate": 0.7778,
+        "interval": [
+          0.4526,
+          0.9368
+        ]
+      },
+      "falseAlarmsByLabel": {
+        "recommended": {
+          "n": 6,
+          "kept": 6,
+          "rate": 1,
+          "interval": [
+            0.6097,
+            1
+          ]
+        },
+        "eligible_but_not_recommended": {
+          "n": 3,
+          "kept": 1,
+          "rate": 0.3333,
+          "interval": [
+            0.0615,
+            0.7923
+          ]
+        }
+      },
+      "falseAlarmLines": {
+        "part": 12,
+        "records": 5,
+        "asked": 3,
+        "earlier": 0,
+        "about-the-trial": 0
+      },
+      "asked": 587,
+      "askedPerPair": 41.9,
+      "verdictHits": 0,
+      "unknownsMissing": 0,
+      "flags": 118,
+      "excluded": 110,
+      "errors": []
+    }
+  ],
+  "compared": {
+    "pairs": 0,
+    "caught": {
+      "both": [],
+      "fullOnly": [],
+      "accountOnly": []
+    },
+    "falseAlarms": {
+      "both": [],
+      "fullOnly": [],
+      "accountOnly": []
+    }
+  },
+  "parts": {
+    "rows": [
+      {
+        "patient": "nci-01",
+        "nctId": "NCT01900132",
+        "arm": "full",
+        "label": "ineligible",
+        "parse": "parsed",
+        "flaggedOutsideParts": false,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-01",
+        "nctId": "NCT03331380",
+        "arm": "full",
+        "label": "ineligible",
+        "parse": "parsed",
+        "flaggedOutsideParts": false,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-06",
+        "nctId": "NCT01827384",
+        "arm": "full",
+        "label": "eligible_but_not_recommended",
+        "parse": "parsed",
+        "flaggedOutsideParts": false,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-12",
+        "nctId": "NCT00102544",
+        "arm": "full",
+        "label": "ineligible",
+        "parse": "parsed",
+        "flaggedOutsideParts": false,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-12",
+        "nctId": "NCT03331380",
+        "arm": "full",
+        "label": "ineligible",
+        "parse": "parsed",
+        "flaggedOutsideParts": false,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-12",
+        "nctId": "NCT04708470",
+        "arm": "full",
+        "label": "recommended",
+        "parse": "parsed",
+        "flaggedOutsideParts": true,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-13",
+        "nctId": "NCT02465060",
+        "arm": "full",
+        "label": "recommended",
+        "parse": "parsed",
+        "flaggedOutsideParts": true,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-17",
+        "nctId": "NCT03331380",
+        "arm": "full",
+        "label": "eligible_but_not_recommended",
+        "parse": "parsed",
+        "flaggedOutsideParts": false,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-17",
+        "nctId": "NCT03493945",
+        "arm": "full",
+        "label": "eligible_but_not_recommended",
+        "parse": "parsed",
+        "flaggedOutsideParts": false,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-17",
+        "nctId": "NCT06161532",
+        "arm": "full",
+        "label": "recommended",
+        "parse": "parsed",
+        "flaggedOutsideParts": true,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-25",
+        "nctId": "NCT00003838",
+        "arm": "full",
+        "label": "recommended",
+        "parse": "parsed",
+        "flaggedOutsideParts": false,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-25",
+        "nctId": "NCT03502733",
+        "arm": "full",
+        "label": "recommended",
+        "parse": "parsed",
+        "flaggedOutsideParts": true,
+        "namedOnRecord": null
+      },
+      {
+        "patient": "nci-37",
+        "nctId": "NCT00924027",
+        "arm": "full",
+        "label": "ineligible",
+        "parse": "parsed",
+        "flaggedOutsideParts": true,
+        "namedOnRecord": true
+      },
+      {
+        "patient": "nci-41",
+        "nctId": "NCT02211755",
+        "arm": "full",
+        "label": "recommended",
+        "parse": "parsed",
+        "flaggedOutsideParts": true,
+        "namedOnRecord": null
+      }
+    ],
+    "byArm": [
+      {
+        "arm": "full",
+        "caught": {
+          "n": 5,
+          "kept": 1,
+          "rate": 0.2,
+          "interval": [
+            0.0362,
+            0.6245
+          ]
+        },
+        "falseAlarms": {
+          "n": 9,
+          "kept": 5,
+          "rate": 0.5556,
+          "interval": [
+            0.2667,
+            0.8112
+          ]
+        },
+        "falseAlarmsByLabel": {
+          "recommended": {
+            "n": 6,
+            "kept": 5,
+            "rate": 0.8333,
+            "interval": [
+              0.4365,
+              0.9699
+            ]
+          },
+          "eligible_but_not_recommended": {
+            "n": 3,
+            "kept": 0,
+            "rate": 0,
+            "interval": [
+              0,
+              0.5615
+            ]
+          }
+        },
+        "namedOnRecord": {
+          "n": 1,
+          "kept": 1,
+          "rate": 1,
+          "interval": [
+            0.2065,
+            1
+          ]
+        }
+      }
+    ]
+  }
+}

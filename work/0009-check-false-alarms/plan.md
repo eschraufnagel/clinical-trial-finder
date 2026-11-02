@@ -342,3 +342,7 @@ No parser change, no schema change, no boundary widened.
   - **One phrase replaced, not added:** "never about its condition" became "never about what it requires", since "condition" now names the "if".
   - `gate-1-fix.md` written, and its two records in `gate-1-records.txt`. **Stopped at Gate 1.**
 - **Gate 1's answer: go.** The fix, the measures and the bar are frozen; stage B runs. Recorded in `gate-1-fix.md`, Answer.
+- **Step 7, dev rerun:** `npm run benchmark:check -- --dev --arm full`, run `dev-17a5dbee2eb0`, on Qwen3.6-35B-A3B-MLX-8bit at temperature 0, seed 20260921, reasoning off; agent prompt `f8b60faffee1`, `CHECK_REVISION` 3. Result `evals/results/benchmark/check/dev/02-17a5dbee2eb0.json`.
+  - **Stops:** the first attempt's first three checks were refused by the local server's memory guard (prefill about 35.7 GB of 35.77 GB). Their transcripts weren't kept. The owner freed memory, and the rerun finished all 14 with no stop and an empty `failures.json`.
+  - **Timing:** 18,843 s of checks, about 5.2 hours; 22.4 minutes a check (0008: 29.6). The longest, nci-17 × NCT03331380, took 58.5 minutes.
+  - `benchmark:check -- --check --dev` and `-- --check --result …/dev/01-5ed77c679dad.json` pass.
