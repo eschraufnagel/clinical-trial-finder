@@ -314,3 +314,6 @@ No parser change, no schema change, no boundary widened.
   - `npm run test:e2e`: 8 passed.
   - `search:eval -- --check`, `questions:eval -- --check` and `-- --check --dev`, `facts:eval -- --check`, `check:eval -- --check` and `-- --check --dev`, `benchmark:search -- --trec --check` and `-- --trialbench --check`, and `benchmark:check -- --check --dev` pass.
   - `other:eval -- --check` and `-- --check --dev` fail with "labelsSha256 differs" and nothing else, as recorded since 0006.
+- **Step 2, `benchmark:lines`:** `scripts/benchmark-lines.ts` (`formatLines`, `readParse`, `rebuildRecord`, `formatRecord`) and `npm run benchmark:lines`. 4 tests in `tests/scripts/benchmark-lines.test.ts`, and a boundary block of 4: the script's graph reaches no `src/models/` module, not `src/criteria/parse.ts`, not the agent's `session.ts` or `calls.ts`, and no network.
+  - **Divergence:** the script reads a parse's JSON from the result's `parseRun` folder itself, rather than through `findParse`. `src/check/parse-cache.ts` imports the parser, which imports `src/models/types.ts`, and the boundary would then have to allow a model module. The parse is only read for its passages and parts; its checksum against the criteria text isn't needed for printing.
+  - On 0008's dev result it prints 899 lines over 28 pair-arms; `--record` on nci-41 × NCT02211755 renders every section.
