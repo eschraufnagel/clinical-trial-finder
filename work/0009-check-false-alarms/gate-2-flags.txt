@@ -1,0 +1,494 @@
+Every fidelity flag on dev's replies from the full summary (slice 0009, step 8). Run dev-17a5dbee2eb0.
+A finding resting on any flagged reply is excluded from scoring (check-metrics.ts).
+
+====================================================================================================
+model flag on an answer: 11
+====================================================================================================
+nci-01 NCT01900132 t14
+  A: No, I am a 47-year-old woman, not a child.
+  flag: The message includes a conversational denial ('No, I am...') that is not present in the source text, which is a clinical case description rather than a dialogue.
+
+nci-01 NCT01900132 t26
+  A: No, I am not an employee of the NIH, the EMG Section, the OCD, or the NINDS.
+  flag: The message introduces specific organizational affiliations (NIH, EMG Section, OCD, NINDS) and denies being an employee, which are details not present in or supported by the medical text.
+
+nci-06 NCT01827384 t18
+  A: Yes, I would agree to stop breastfeeding for 30 days after the last dose. I am not currently breastfeeding, so this is not an active issue for me right now.
+  flag: The text does not mention the patient's breastfeeding status or any agreement to stop breastfeeding, making this information unsupported by the provided history.
+
+nci-17 NCT06161532 t10
+  A: No, I have not been diagnosed with renal medullary carcinoma. My diagnosis is specifically a large cell neuroendocrine tumor of the bladder.
+  flag: The message asserts that the patient has not been diagnosed with renal medullary carcinoma, which is information not present in the source text.
+
+nci-25 NCT00003838 t14
+  A: No, I have never been diagnosed with MDS or CMML. I only have peripheral T-cell lymphoma.
+  flag: The text does not mention a history of MDS or CMML, so the message asserts negative information about conditions not listed in the provided text.
+
+nci-25 NCT00003838 t20
+  A: No, I have never been diagnosed with non-Hodgkin lymphoma. I have peripheral T-cell lymphoma.
+  flag: The message claims the person has never been diagnosed with non-Hodgkin lymphoma, but peripheral T-cell lymphoma is a subtype of non-Hodgkin lymphoma, making the statement factually contradictory to the diagnosis provided in the text.
+
+nci-25 NCT00003838 t22
+  A: Yes, my disease has progressed after standard treatments like CHOP, ICE, and Mogamulizumab. I am unable to have an autologous stem cell transplant because my disease is refractory and progressive.
+  flag: The text does not mention that the patient is unable to have an autologous stem cell transplant or that this is the reason for their current status.
+
+nci-25 NCT00003838 t24
+  A: Yes, that describes me. My disease is progressive despite standard therapy, and I am ineligible for an autologous transplant.
+  flag: The text does not state that the patient is ineligible for an autologous transplant, nor does it mention this specific treatment constraint.
+
+nci-25 NCT00003838 t50
+  A: I don't have any current psychiatric conditions or cognitive issues. I am able to understand the study details and provide my own informed consent.
+  flag: The text does not mention the patient's psychiatric conditions or cognitive status, so asserting the absence of these issues introduces information not present in the source.
+
+nci-25 NCT03502733 t4
+  A: I have received multiple lines of therapy including CHOP, ICE, and Mogamulizumab, but my disease has progressed or become refractory. Since I have progressed after these treatments, it seems there is no curative therapy available for me at this point.
+  flag: The text does not state that no curative therapy is available; it only lists prior treatments and current disease status, making the claim about the lack of curative options an unsupported assertion.
+
+nci-37 NCT00924027 t44
+  A: No, I do not have memory or thinking problems. I am able to understand information and give consent.
+  flag: The text does not mention any cognitive issues or the patient's ability to understand information and give consent, so this statement introduces new information not present in the source.
+
+
+====================================================================================================
+quote not in the text, on an answer: 16
+====================================================================================================
+nci-06 NCT01827384 t18
+  A: Yes, I would agree to stop breastfeeding for 30 days after the last dose. I am not currently breastfeeding, so this is not an active issue for me right now.
+  flag: ["No, I am not currently breastfeeding.","I am a 39-year-old female, but there is no mention of pregnancy or breastfeeding in my medical history."]
+
+nci-06 NCT01827384 t38
+  A: No, I am not currently taking any other investigational drugs or medications that are part of a clinical trial. The text only lists my standard therapies and the molecular profile results.
+  flag: ["The text only lists my standard therapies and the molecular profile results."]
+
+nci-06 NCT01827384 t48
+  A: No, I am not currently taking any other investigational agents. The text only lists my standard therapies and the molecular profile results.
+  flag: ["The text only lists my standard therapies and the molecular profile results."]
+
+nci-12 NCT04708470 t48
+  A: No, I have not been diagnosed with any other type of cancer in the last 3 years. My records only mention my cervical cancer.
+  flag: ["My records only mention lung and liver lesions from the cancer."]
+
+nci-13 NCT02465060 t8
+  A: Yes, I have metastatic penile squamous cell carcinoma that requires treatment.
+  flag: ["requires treatment"]
+
+nci-25 NCT00003838 t10
+  A: No, I have never been diagnosed with acute lymphoblastic leukemia. I have peripheral T-cell lymphoma.
+  flag: ["No, I have never been diagnosed with chronic myelogenous leukemia. I have peripheral T-cell lymphoma."]
+
+nci-25 NCT00003838 t12
+  A: No, I have never been diagnosed with acute myeloid leukemia. I have peripheral T-cell lymphoma.
+  flag: ["No, I have never been diagnosed with acute myeloid leukemia.","I have peripheral T-cell lymphoma."]
+
+nci-25 NCT00003838 t16
+  A: No, I have never been diagnosed with a myeloproliferative disease. I only have peripheral T-cell lymphoma.
+  flag: ["No, I have never been diagnosed with a myeloproliferative disease. I only have peripheral T-cell lymphoma."]
+
+nci-25 NCT00003838 t18
+  A: No, I have never been diagnosed with CLL or SLL. I only have peripheral T-cell lymphoma.
+  flag: ["I only have peripheral T-cell lymphoma."]
+
+nci-25 NCT00003838 t20
+  A: No, I have never been diagnosed with non-Hodgkin lymphoma. I have peripheral T-cell lymphoma.
+  flag: ["I have peripheral T-cell lymphoma."]
+
+nci-25 NCT00003838 t32
+  A: No, I have never been diagnosed with PNH, aplastic anemia, PRCA, or MDS. My only diagnosis is peripheral T-cell lymphoma.
+  flag: ["No, I have never been diagnosed with MDS or CMML. I only have peripheral T-cell lymphoma."]
+
+nci-25 NCT00003838 t50
+  A: I don't have any current psychiatric conditions or cognitive issues. I am able to understand the study details and provide my own informed consent.
+  flag: ["I am able to understand the study details and provide my own informed consent."]
+
+nci-37 NCT00924027 t24
+  A: No, that criterion does not apply to me because my original cancer was endometrial, not cervical.
+  flag: ["No, my original cancer was diagnosed as serous carcinoma of the endometrium, not cervical cancer."]
+
+nci-37 NCT00924027 t42
+  A: No, I do not have a diagnosis of prostate cancer. My cancer is serous carcinoma of the endometrium.
+  flag: ["No, I do not have a diagnosis of prostate cancer. My cancer is serous carcinoma of the endometrium."]
+
+nci-37 NCT00924027 t48
+  A: No, I haven't received chemotherapy in the last 5 days. I was taken off my previous treatment in October 2022 and haven't started any new chemo since then.
+  flag: ["No, I am not currently receiving any investigational chemotherapy drugs. I was taken off my previous treatment for progression in October 2022 and have not started a new study drug since then."]
+
+nci-37 NCT00924027 t64
+  A: No, that does not apply to me because I do not have breast cancer. My diagnosis is serous carcinoma of the endometrium.
+  flag: ["No, I do not have a diagnosis of breast cancer. My cancer is serous carcinoma of the endometrium."]
+
+
+====================================================================================================
+uncited assertion: 5
+====================================================================================================
+nci-06 NCT01827384 t22
+  A: Yes, I am able to understand the study details and I am willing to sign the informed consent document.
+  flag: null
+
+nci-12 NCT00102544 t8
+  A: Yes, I am willing and able to sign the informed consent form and follow the study instructions.
+  flag: null
+
+nci-12 NCT04708470 t42
+  A: Yes, I am willing to accept blood products if they are medically needed during the study.
+  flag: null
+
+nci-25 NCT00003838 t34
+  A: Yes, I am able to understand the study details and provide my own informed consent.
+  flag: null
+
+nci-37 NCT00924027 t44
+  A: No, I do not have memory or thinking problems. I am able to understand information and give consent.
+  flag: null
+
+
+====================================================================================================
+model flag on an "I don't know" reply: 29
+====================================================================================================
+nci-01 NCT01900132 t28
+  A: I don't know if I have diabetes or kidney disease, but I do have significant hepatic disease from my cancer progression.
+  flag: The message asserts that the person does not know if they have diabetes or kidney disease, which is information not present in the text.
+
+nci-01 NCT01900132 t30
+  A: I don't know if my liver disease requires any specific medications that would affect this study. I know I have significant hepatic disease, but I don't have details on the medications for it.
+  flag: The text states the patient has 'significant hepatic disease' but does not mention that she is taking specific medications for it, nor does it imply she has details on such medications; the message asserts knowledge about medications for liver disease which is not supported by the text.
+
+nci-01 NCT01900132 t32
+  A: I don't know if I am taking specific medications for my liver disease. I have had various cancer treatments like carbo/taxol/pembro and tisotumab vedotin, but I don't have details on current liver-specific meds.
+  flag: The text states the patient has significant hepatic disease and received chemotherapy, but it does not mention any specific liver disease medications, nor does it support the claim that she lacks details on current liver-specific meds as a known fact rather than uncertainty.
+
+nci-01 NCT01900132 t34
+  A: I don't know if I am currently taking any specific prescription medications, supplements, or injections for my liver disease or cancer right now. I have had various treatments in the past, but I don't have details on my current medication list.
+  flag: The text explicitly states the patient received carbo/taxol with avastin for 6 cycles and progressed in 05/2024, implying active or recent treatment, whereas the message claims uncertainty about current medications and implies no current treatment.
+
+nci-01 NCT03331380 t78
+  A: I don't know if I have mechanical symptoms in my knee like locking or catching. The text mentions I was playing tennis recently, but it doesn't describe any specific knee issues or symptoms.
+  flag: The message introduces specific knee symptoms (locking or catching) that are not mentioned in the text and contradicts the text's statement that the patient denies edema and other physical complaints, as the text does not support the existence of these specific mechanical issues.
+
+nci-01 NCT03331380 t90
+  A: I don't know if I have been diagnosed with diffuse liver disease like hemochromatosis or fatty infiltration. The text mentions significant hepatic disease, but it doesn't specify the underlying cause or type of liver disease.
+  flag: The message introduces a specific uncertainty about liver disease etiology (hemochromatosis or fatty infiltration) that is not present in the text, which attributes the hepatic disease to metastatic progression of cervical carcinoma.
+
+nci-01 NCT03331380 t142
+  A: I don't know if I have severe COPD requiring daily bronchodilators or oxygen. The text mentions some pulmonary disease, but it doesn't specify a COPD diagnosis or my medication needs.
+  flag: The message asserts a specific medical history of severe COPD requiring daily bronchodilators or oxygen, which is not stated in the text and contradicts the patient's denial of shortness of breath and unremarkable labs.
+
+nci-01 NCT03331380 t172
+  A: I don't know if I would be willing to use a bronchodilator. The text mentions I have some pulmonary disease, but it doesn't specify if I need or would accept bronchodilators.
+  flag: The message asserts a specific medical opinion and hesitation regarding the use of bronchodilators, which is not stated or implied in the text.
+
+nci-12 NCT00102544 t20
+  A: I don't know if I can hold my breath when asked. My text doesn't mention any respiratory limitations or specific instructions about breath-holding.
+  flag: The message asserts a specific physical limitation ('can't hold my breath') that is not stated in the text and contradicts the patient's ECOG performance status of 1, which implies the ability to carry out normal activities.
+
+nci-12 NCT03331380 t132
+  A: No, I am not pregnant. My text describes my history with metastatic cervical cancer and treatments, but it does not mention any current pregnancy.
+  flag: The message asserts that the patient is not pregnant, which is information not stated in the text and contradicts the context of a 38-year-old female with metastatic cancer who is working full-time, as pregnancy would likely impact her ECOG status and treatment eligibility, though the primary issue is the introduction of unverified negative health status.
+
+nci-12 NCT03331380 t148
+  A: I don't know if I have had an allergic reaction to ferumoxytol or mannitol. My text lists my cancer treatments but does not mention any allergic reactions to these specific substances.
+  flag: The message mentions specific substances (ferumoxytol and mannitol) and questions about allergic reactions that are not present in the provided text.
+
+nci-12 NCT03331380 t150
+  A: I don't know if I have any concerns about ferumoxytol. My text doesn't mention any specific allergies or objections to this substance.
+  flag: The message introduces 'ferumoxytol', a specific medication not mentioned in the text, implying a context or concern regarding this substance that is not supported by the provided patient history.
+
+nci-12 NCT04708470 t22
+  A: I don't know if I have been tested for HIV, Hepatitis B, or Hepatitis C, as that information isn't in my records.
+  flag: The message asserts that the patient does not know their HIV, Hepatitis B, or Hepatitis C status, which is information not present in the provided text.
+
+nci-12 NCT04708470 t24
+  A: I don't know if I have been tested for HIV, Hepatitis B, or Hepatitis C, as that information isn't in my records.
+  flag: The message asserts that the patient does not know their HIV, Hepatitis B, or Hepatitis C status, which is information not present in the provided text.
+
+nci-13 NCT02465060 t4
+  A: I don't know about that. I am a 75-year-old male, so I wouldn't have a pregnancy test.
+  flag: The message introduces a pregnancy test, which is not mentioned in the text and is biologically impossible for a male, thereby contradicting the implied context of the patient's gender and condition.
+
+nci-13 NCT02465060 t6
+  A: I don't know about that. I am a 75-year-old male, so I wouldn't need to worry about preventing pregnancy or fathering children.
+  flag: The message introduces a concern about preventing pregnancy and fathering children, which is not mentioned or implied in the text.
+
+nci-17 NCT03331380 t144
+  A: I don't know if I am comfortable with that. The text doesn't mention my personal feelings or consent regarding exposure to ferumoxytol.
+  flag: The message mentions 'ferumoxytol', a medication not present in the text, and asserts personal feelings about consent which are not stated in the clinical history.
+
+nci-17 NCT03331380 t168
+  A: I don't know if I am willing to use a bronchodilator. The text doesn't mention my personal willingness or preferences regarding this specific aspect of the study.
+  flag: The message introduces a specific medical treatment (bronchodilator) and the patient's personal willingness to use it, neither of which is mentioned or implied in the text.
+
+nci-17 NCT06161532 t34
+  A: I don't know if they have been measured and confirmed by my doctor. The text mentions the mass and nodes were found on imaging, but it doesn't explicitly state they were measured or confirmed in that way.
+  flag: The message incorrectly claims the text does not explicitly state the mass and nodes were found on imaging, whereas the text clearly states they were 'found... on imaging'.
+
+nci-17 NCT06161532 t70
+  A: I am a 40-year-old male, so I am able to have children. I don't know if I would be willing to use contraception during the study, as the text doesn't mention my personal preferences or family planning.
+  flag: The message asserts the patient is able to have children, which is not stated in the text and may contradict the medical history of bladder cancer treatment and surgery.
+
+nci-25 NCT00003838 t40
+  A: I don't know if any potential family donor weighs at least 18 kg, since I don't know if I have a family member who is a match or willing to donate.
+  flag: The message introduces specific details about family donors, weight requirements, and willingness to donate that are not present in the text.
+
+nci-25 NCT00003838 t56
+  A: I don't know if my left ventricular ejection fraction is less than 30%. I only know that my cardiac function is adequate.
+  flag: The message asserts uncertainty about a specific cardiac metric (LVEF < 30%) which is not mentioned in the text, whereas the text only states 'adequate cardiac function' without providing specific values or ranges.
+
+nci-25 NCT03502733 t16
+  A: I don't know when my last monoclonal antibody therapy was completed, so I can't confirm if it was at least 6 weeks ago.
+  flag: The text explicitly states that the patient received Mogamulizumab (a monoclonal antibody) and progressed within 3 months, implying the therapy was completed, whereas the message claims uncertainty about when the last monoclonal antibody therapy was completed.
+
+nci-25 NCT03502733 t18
+  A: I don't know if I am currently taking blood thinners like warfarin or heparin, so I can't confirm my INR or PTT results.
+  flag: The text does not mention the patient taking blood thinners or having INR/PTT results, and the message introduces specific medication and lab details not present in the source.
+
+nci-25 NCT03502733 t26
+  A: I don't know if I am able to understand the study details well enough to sign a consent form, as the text doesn't mention my cognitive status or ability to consent.
+  flag: The message asserts that the text does not mention cognitive status or ability to consent, which is a factual claim about the provided text that is incorrect as the text implicitly assumes capacity by listing clinical details, but more importantly, the message introduces a doubt about understanding that is not supported by the text's explicit statements.
+
+nci-37 NCT00924027 t8
+  A: I don't know if I have a specific oncologist willing to work with their Radiation Oncology team. I have been seeing doctors for my chemotherapy and surgeries, but I haven't discussed this trial arrangement with them.
+  flag: The message mentions a 'Radiation Oncology team' and a 'trial arrangement,' neither of which are mentioned in the text, and the text does not indicate the patient is involved in a clinical trial.
+
+nci-37 NCT00924027 t10
+  A: I don't know if my current doctors are willing to coordinate with a Radiation Oncology team for this trial. I haven't discussed this specific arrangement with them yet.
+  flag: The message mentions a 'Radiation Oncology team' and a 'trial', but the text only describes chemotherapy, immunotherapy, and surgery, with no mention of radiation therapy or clinical trials.
+
+nci-37 NCT00924027 t30
+  A: I have a chronic dry cough, but it has improved. I don't know if it's caused by cancer in my airways or if I'm coughing up blood.
+  flag: The message claims uncertainty about coughing up blood, but the text explicitly states the patient 'denies any new concerns or symptoms,' which contradicts the presence of hemoptysis or uncertainty regarding it.
+
+nci-37 NCT00924027 t52
+  A: I have some health issues like hypertension, hypothyroidism, and osteoporosis, but I don't know if I have serious heart, lung, liver, or kidney problems that would prevent me from tolerating this. I do have liver lesions from my cancer, but I'm not sure if that counts as a serious liver problem for this trial.
+  flag: The message claims the patient does not know if they have serious heart, lung, liver, or kidney problems, but the text explicitly lists hypertension, hypothyroidism, and osteoporosis as medical history and notes liver lesions from cancer, implying known conditions rather than uncertainty about their existence.
+
+
+====================================================================================================
+quote not in the text, on an "I don't know" reply: 57
+====================================================================================================
+nci-01 NCT01900132 t12
+  A: I don't know the details of this study yet, so I can't confirm if I'm willing to sign a consent form. I need to understand what the trial involves first.
+  flag: ["I don't know the details of this study yet, so I can't confirm if I'm willing to sign a consent form. I need to understand what the trial involves first."]
+
+nci-01 NCT01900132 t16
+  A: I don't know the duration of this study, so I can't confirm if I'll be available for the entire time. I am willing to follow procedures, but I need to know how long it lasts.
+  flag: ["I don't know the duration of this study, so I can't say if I'm available for the entire time.","I am willing to follow procedures, but I need to know how long it lasts."]
+
+nci-01 NCT01900132 t34
+  A: I don't know if I am currently taking any specific prescription medications, supplements, or injections for my liver disease or cancer right now. I have had various treatments in the past, but I don't have details on my current medication list.
+  flag: ["I don't know if I am taking specific medications for my liver disease.","I have had various cancer treatments like carbo/taxol/pembro and tisotumab vedotin, but I don't have details on current liver-specific meds."]
+
+nci-01 NCT03331380 t170
+  A: I don't know if I have an acute illness requiring immediate treatment. The text says I present for screening/consultation and my labs are unremarkable, but it doesn't mention any sudden acute conditions like a stroke.
+  flag: ["Today’s labs are unremarkable."]
+
+nci-06 NCT01827384 t30
+  A: I don't know when my last treatment ended. The text lists the therapies I received, but it doesn't specify the dates or when they finished.
+  flag: ["The text lists the therapies I received, but it doesn't specify when they ended."]
+
+nci-06 NCT01827384 t52
+  A: I don't know if I am taking any medications that affect the cytochrome P450 system. The text lists my cancer treatments but doesn't mention any other current medications.
+  flag: ["The text lists my cancer treatments but doesn't mention any other medications I might be taking."]
+
+nci-12 NCT00102544 t14
+  A: I don't know if I have any confusion, memory issues, or changes in awareness. I am working full-time and have an ECOG status of 1, which suggests I am fairly active, but I don't have specific information about cognitive impairments.
+  flag: ["I don't know if I have any specific conditions that would make it difficult for me to understand the study details or make decisions. I am working full-time and have an ECOG status of 1, but I don't have information about cognitive impairments."]
+
+nci-12 NCT03331380 t32
+  A: I don't know if I have hypertrophic cardiomyopathy. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of heart muscle conditions.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of heart muscle conditions."]
+
+nci-12 NCT03331380 t36
+  A: I don't know if I have had a TIA or stroke. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of any neurological events or brain issues.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of any neurological events or brain issues."]
+
+nci-12 NCT03331380 t42
+  A: I don't know if I have a demyelinating disease or multiple sclerosis. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of neurological conditions like MS.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of neurological conditions like MS."]
+
+nci-12 NCT03331380 t44
+  A: I don't know if I have a history of loss of consciousness, seizures, or epilepsy. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of neurological conditions like seizures.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of neurological conditions like seizures."]
+
+nci-12 NCT03331380 t54
+  A: I don't know if I have a history of internal bleeding. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of any bleeding events.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of any bleeding events."]
+
+nci-12 NCT03331380 t70
+  A: I don't know if I have any soft tissue damage. My text only mentions my cancer history and treatments, with no mention of injuries to muscles, tendons, or ligaments.
+  flag: ["My text only mentions my cancer history and treatments, with no mention of injuries to muscles, tendons, or ligaments."]
+
+nci-12 NCT03331380 t76
+  A: I don't know if I have abnormalities in my bone marrow. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of bone marrow conditions.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of bone marrow conditions."]
+
+nci-12 NCT03331380 t80
+  A: I don't know if I have any vascular conditions. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of blood vessel or circulation issues.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of vascular conditions."]
+
+nci-12 NCT03331380 t84
+  A: I don't know if I have had a bowel obstruction. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of bowel issues.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of bowel issues."]
+
+nci-12 NCT03331380 t98
+  A: I don't know if I have vascular abnormalities like aneurysms or arteriovenous malformations. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of vascular conditions.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of vascular conditions."]
+
+nci-12 NCT03331380 t110
+  A: I don't know if I have pulmonary lymphangioleiomyomatosis. My text only mentions lung lesions from cancer, but it doesn't list any other specific lung diseases like that.
+  flag: ["My text only mentions lung lesions from cancer, but it doesn't list any other specific lung diseases like that."]
+
+nci-12 NCT03331380 t112
+  A: I don't know if I have cystic fibrosis or any other cystic or interstitial lung diseases. My text only mentions lung lesions from cancer, but it doesn't list any other specific lung conditions like that.
+  flag: ["My text only mentions lung lesions from cancer, but it doesn't list any other specific lung conditions like that."]
+
+nci-12 NCT03331380 t122
+  A: I don't know if I have any neural stimulators like a TENS unit. My text only mentions my cancer history and treatments, with no mention of pain management devices or implants.
+  flag: ["My text only mentions my cancer history and treatments, with no mention of pain management devices or implants."]
+
+nci-12 NCT03331380 t130
+  A: I don't know if I have any implanted devices like an insulin pump or drug infusion device. My text only mentions my cancer history and treatments, with no mention of such devices.
+  flag: ["My text only mentions my cancer history and treatments, with no mention of such devices."]
+
+nci-12 NCT03331380 t140
+  A: I don't know if I have severe COPD requiring multiple bronchodilators or oxygen. My text only mentions lung lesions from cancer, not COPD or oxygen use.
+  flag: ["My text only mentions lung lesions from cancer, but it doesn't list any other lung conditions like asthma or COPD."]
+
+nci-12 NCT03331380 t148
+  A: I don't know if I have had an allergic reaction to ferumoxytol or mannitol. My text lists my cancer treatments but does not mention any allergic reactions to these specific substances.
+  flag: ["My text lists my cancer treatments but does not mention any allergic reactions to these specific substances."]
+
+nci-12 NCT03331380 t154
+  A: I don't know if I have had an allergic reaction to oral contrast like barium sulfate. My text lists my cancer treatments but does not mention any allergic reactions to contrast agents.
+  flag: ["My text lists my cancer treatments but does not mention any allergic reactions to contrast agents."]
+
+nci-12 NCT03331380 t156
+  A: I don't know if I am currently breastfeeding. My text only mentions my cancer history and treatments, with no mention of pregnancy or breastfeeding status.
+  flag: ["I don't know if I am currently breastfeeding. My text only mentions my cancer history and treatments, with no mention of pregnancy or breastfeeding status."]
+
+nci-12 NCT03331380 t168
+  A: I don't know if I have advanced heart block. My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of heart rhythm or electrical issues.
+  flag: ["My text only mentions my cervical cancer and its spread to the lungs and liver, with no mention of heart rhythm or electrical issues."]
+
+nci-12 NCT04708470 t8
+  A: I don't know if that specific combination was FDA approved for my cancer type at the time I received it.
+  flag: ["I'm not sure if that specific combination was FDA approved for my cancer type at the time I received it"]
+
+nci-12 NCT04708470 t24
+  A: I don't know if I have been tested for HIV, Hepatitis B, or Hepatitis C, as that information isn't in my records.
+  flag: ["I don't know if I have been tested for HIV, Hepatitis B, or Hepatitis C, as that information isn't in my records."]
+
+nci-12 NCT04708470 t44
+  A: I don't know if I have had any serious tissue damage issues like ulcers or heart attacks in the last 3 months. My records only mention my cancer progression and treatments.
+  flag: ["My records only mention my cancer progression and treatments."]
+
+nci-12 NCT04708470 t46
+  A: I don't know if I have any significant fluid buildup in my body. My records only mention lung and liver lesions from the cancer.
+  flag: ["My records only mention lung and liver lesions"]
+
+nci-13 NCT02465060 t6
+  A: I don't know about that. I am a 75-year-old male, so I wouldn't need to worry about preventing pregnancy or fathering children.
+  flag: ["I am a 75-year-old male"]
+
+nci-13 NCT02465060 t52
+  A: I don't know if I have progressed on a 'current Step 1 treatment' because the text doesn't mention any treatment I am currently receiving right now. It only lists past treatments like TIP and chemoradiation.
+  flag: ["The text says I received chemoradiation in the past, but it doesn't mention any treatment I am currently receiving right now."]
+
+nci-17 NCT03331380 t40
+  A: I don't know if I have been diagnosed with a demyelinating disease or multiple sclerosis. The text only mentions my bladder tumor and meningioma, with no mention of those specific conditions.
+  flag: ["He was later found to have an incidental meningioma"]
+
+nci-17 NCT03331380 t60
+  A: I don't know if I have been diagnosed with multiple sclerosis. The text only mentions my bladder tumor and meningioma, with no mention of multiple sclerosis.
+  flag: ["he had disease recurrence in the left pelvis contributing to left hydronephrosis and had a left percutaneous nephrostomy tube placed (6/10/2024)"]
+
+nci-17 NCT03331380 t70
+  A: I don't know if I have any disorders of the knee meniscus. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of knee issues.
+  flag: ["He was later found to have an incidental meningioma"]
+
+nci-17 NCT03331380 t74
+  A: I don't know if I have any mechanical symptoms in my knee like pain, locking, or catching. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of knee issues.
+  flag: ["I don't know if I have any known disorders of the knee meniscus. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of knee issues."]
+
+nci-17 NCT03331380 t86
+  A: I don't know if I have been diagnosed with focal hepatic lesions. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of liver conditions.
+  flag: ["The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of liver conditions."]
+
+nci-17 NCT03331380 t88
+  A: I don't know if I have been diagnosed with cirrhosis. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of liver conditions.
+  flag: ["The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of liver conditions."]
+
+nci-17 NCT03331380 t106
+  A: I don't know if I have a diagnosis of asthma or any other obstructive lung disease. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of lung conditions like asthma.
+  flag: ["I don't know if I have a diagnosis of asthma or any other obstructive lung disease. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of lung conditions like asthma."]
+
+nci-17 NCT03331380 t110
+  A: I don't know if I have cystic fibrosis or any other cystic or interstitial lung disease. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of these lung conditions.
+  flag: ["The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of these lung conditions."]
+
+nci-17 NCT03331380 t120
+  A: I don't know if I have any ear implants that are not safe for MRI. The text mentions my bladder tumor, meningioma, and surgeries, but it does not mention any ear implants.
+  flag: ["I don't know if I have any ear implants that are not safe for MRI. The text mentions my bladder tumor, meningioma, and surgeries, but it does not mention any ear implants."]
+
+nci-17 NCT03331380 t124
+  A: I don't know if I have any metal shrapnel or a bullet in my body. The text mentions my bladder tumor, meningioma, and surgeries, but it does not mention any shrapnel or bullets.
+  flag: ["The text mentions my bladder tumor, meningioma, and surgeries, but it does not mention any shrapnel or bullets."]
+
+nci-17 NCT03331380 t126
+  A: I don't know if I have any implanted medical devices like an insulin pump or drug infusion device. The text mentions surgeries and a nephrostomy tube, but it does not mention any implanted pumps or infusion devices.
+  flag: ["he had a left percutaneous nephrostomy tube placed (6/10/2024)."]
+
+nci-17 NCT03331380 t148
+  A: I don't know if I have ever had an allergic reaction to oral contrast dye like barium sulfate. The text mentions my cancer treatments and surgeries, but it does not mention any allergic reactions to imaging dyes.
+  flag: ["The text mentions my cancer treatments and surgeries, but it does not mention any allergic reactions to imaging dyes."]
+
+nci-17 NCT03331380 t162
+  A: I don't know if I have been diagnosed with asthma or COPD. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of lung conditions like asthma or COPD.
+  flag: ["I don't know if I have been diagnosed with asthma or COPD. The text only mentions my bladder tumor, meningioma, and related surgeries, with no mention of lung conditions like asthma or COPD."]
+
+nci-17 NCT06161532 t42
+  A: I don't know if I am taking anti-convulsant medication. The text mentions surgeries and a nephrostomy tube, but it does not list any current medications.
+  flag: ["The text mentions a nephrostomy tube and surgeries, but it doesn't list any medications I am taking."]
+
+nci-17 NCT06161532 t56
+  A: I don't know if I have taken any systemic immunosuppressive medications. The text mentions surgeries and a nephrostomy tube, but it does not list any current medications.
+  flag: ["The text mentions a nephrostomy tube and surgeries, but it doesn't list any medications I am taking."]
+
+nci-17 NCT06161532 t60
+  A: I don't know if I am taking mineralocorticoids or low-dose corticosteroids. The text mentions surgeries and a nephrostomy tube, but it does not list any current medications.
+  flag: ["The text mentions surgeries and a nephrostomy tube, but it does not list any current medications."]
+
+nci-17 NCT06161532 t72
+  A: I don't know if I would be willing to use contraception. The text doesn't mention my personal preferences or family planning decisions.
+  flag: ["I don't know if I would be willing to use contraception during the study, as the text doesn't mention my personal preferences or family planning."]
+
+nci-17 NCT06161532 t82
+  A: I don't know if I have been diagnosed with cancer that has spread to my brain or central nervous system. The text mentions an incidental meningioma, but it does not specify if it is cancerous or if it has spread to the CNS.
+  flag: ["He was later found to have an incidental meningioma (found on imaging during workup for dizziness) that was up to 9.0 cm."]
+
+nci-25 NCT00003838 t38
+  A: I don't know if I have a family member who is an HLA match or if they are willing to be a donor, so I can't confirm their age or willingness.
+  flag: ["I don't know if I have a family member who is an HLA match or if they are willing to be a donor."]
+
+nci-25 NCT00003838 t42
+  A: I don't know if any potential family donor understands the study or can give consent, since I don't have a confirmed donor yet.
+  flag: ["I don't know if I have a family member who is an HLA match or if they are willing to be a donor"]
+
+nci-25 NCT03502733 t42
+  A: I don't know if I have taken any steroid medications or other immune-lowering drugs in the last 14 days. The text does not list my current daily medications.
+  flag: ["The text doesn't mention my current daily medications."]
+
+nci-25 NCT03502733 t48
+  A: I don't know if I am currently taking any strong CYP3A4 inhibitors or inducers. The text does not list my current daily medications.
+  flag: ["The text does not list my current daily medications."]
+
+nci-25 NCT03502733 t50
+  A: I don't know if I am taking any HIV medications with ritonavir or cobicistat. The text does not list my current daily medications.
+  flag: ["The text does not list my current daily medications."]
+
+nci-37 NCT00924027 t10
+  A: I don't know if my current doctors are willing to coordinate with a Radiation Oncology team for this trial. I haven't discussed this specific arrangement with them yet.
+  flag: ["I haven't discussed this trial arrangement with them."]
+
+nci-37 NCT00924027 t54
+  A: I don't know if I have a serious heart, lung, liver, or kidney condition. I have liver lesions from my cancer, but I haven't been diagnosed with a separate serious condition in those organs. I also had fevers and chills recently, but I'm not sure if that counts as a serious infection.
+  flag: ["I have liver lesions from my cancer"]
+

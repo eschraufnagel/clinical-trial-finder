@@ -241,7 +241,7 @@ No parser change, no schema change, no boundary widened.
 
 ## Files that change
 
-- `work/0009-check-false-alarms/plan.md`, `diagnosis.md`, `gate-1-fix.md`, `gate-2-dev.md`
+- `work/0009-check-false-alarms/plan.md`, `diagnosis.md`, `gate-1-fix.md`, `gate-1-records.txt`, `gate-2-dev.md`, `gate-2-flags.txt`
 - `src/screening/prompts.ts`: `READ_SYSTEM_PROMPT`
 - `src/check/record.ts`: `counts.onePart`, `countsLine`, `ASK_PART`, `toAsk` order
 - `evals/check/run.ts`: `CHECK_REVISION` 3
@@ -346,3 +346,8 @@ No parser change, no schema change, no boundary widened.
   - **Stops:** the first attempt's first three checks were refused by the local server's memory guard (prefill about 35.7 GB of 35.77 GB). Their transcripts weren't kept. The owner freed memory, and the rerun finished all 14 with no stop and an empty `failures.json`.
   - **Timing:** 18,843 s of checks, about 5.2 hours; 22.4 minutes a check (0008: 29.6). The longest, nci-17 × NCT03331380, took 58.5 minutes.
   - `benchmark:check -- --check --dev` and `-- --check --result …/dev/01-5ed77c679dad.json` pass.
+- **Step 8, `gate-2-dev.md`:** the bar is met (0 `verdictHits`, 0 `unknownsMissing`, 118 flags on 109 replies read and classed, 110 findings excluded, 14 of 14 finished).
+  - **Before and after, full summary:** frozen caught 4 → 5 of 5, false alarms 8 → 7 of 9; outside parts, caught 1 → 1 of 5, false alarms 5 → 5 of 9, named rule 1 of 1. Counted false-alarm lines 27 → 20.
+  - Of the six full-summary lines in causes 3 and 4, four are gone and read right; nci-13 P13 (a permission) and nci-37 P5 (a joined condition) are still there. Two new lines outside parts on eligible pairs: nci-12 × NCT04708470 P7 (statement inverted) and nci-17 × NCT06161532 P67 (reading). "Does-not-apply" was read 7 times, none an overreach.
+  - **Divergence:** the flags are listed in their own file, `gate-2-flags.txt`, as in 0008.
+  - **Recommendation: stop,** keeping held-out unread. **Stopped at Gate 2.**
