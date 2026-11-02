@@ -322,3 +322,14 @@ No parser change, no schema change, no boundary widened.
   - **Cause 2: 95 lines, 69 counted. Cause 1, outside a part: 9, 8 counted.**
   - **At best, from the full summary, 8 of 9 false alarms become 4 of 9.** The four left are two "or" lists, a fair washout question and a "solid tumors" rule. On ineligible pairs, catches outside parts drop to nci-37's alone, which rests on the contraception misreading: the check reads rules, not purpose.
   - **Divergence:** a fifth locus, `measure`, for part lines. The plan listed `parse`, `statement`, `reading` and `code`.
+- **Step 4, the parts measure:** `evals/benchmark/check-parts.ts` (`scorePartsPair`, `summarizeParts`). `check-metrics.ts` exports `countedLines` and `linesOf`, which `scoreBenchmarkPair` now uses with no change to its rows. `BenchmarkCheckResult.parts` is optional and is regraded only when present. `benchmark:check` gains `--check --result <path>` and `--parts <path>`. 5 tests, 1,266 in all (1,258 passed, 8 expected to fail).
+  - `benchmark:check -- --check --dev` and `-- --check --result …/dev/01-5ed77c679dad.json` pass. So do `check:eval -- --check` and `-- --check --dev`.
+  - **0008's dev, in the parts measure** (`--parts`), the before figures:
+
+    | | full | account |
+    | --- | --- | --- |
+    | caught outside parts | 1 of 5 | 1 of 5 |
+    | false alarms outside parts | 5 of 9 (recommended 5 of 6, eligible but not recommended 0 of 3) | 2 of 9 (2 of 6, 0 of 3) |
+    | named rule on the record | 1 of 1 | 1 of 1 |
+
+    These match the reading on 0008's gate page.

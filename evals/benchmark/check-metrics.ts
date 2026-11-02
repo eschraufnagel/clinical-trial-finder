@@ -47,7 +47,7 @@ export interface BenchmarkRow {
 
 const SECTIONS = ["earlier", "told", "records", "aboutTrial"] as const;
 
-function linesOf(record: TrialRecord): { section: (typeof SECTIONS)[number]; line: RecordLine }[] {
+export function linesOf(record: TrialRecord): CountedLine[] {
   return SECTIONS.flatMap((section) => record[section].lines.map((line) => ({ section, line })));
 }
 
@@ -59,11 +59,21 @@ function kindOf(section: (typeof SECTIONS)[number], line: RecordLine): LineKind 
   return "about-the-trial";
 }
 
-export function scoreBenchmarkPair(
-  t: BenchmarkTranscript,
-  reason: PairReason | undefined,
-  criteriaText: string,
-): BenchmarkRow {
+export interface CountedLine {
+  section: (typeof SECTIONS)[number];
+  line: RecordLine;
+}
+
+/**
+ * The record's "may not fit" lines that count, and the criteria set aside
+ * because a finding on them rests on a reply flagged as unfaithful. Shared by
+ * the frozen scoring and slice 0009's parts measure, so both count the same
+ * lines.
+ */
+export function countedLines(t: BenchmarkTranscript): {
+  counted: CountedLine[];
+  excluded: string[];
+} {
   const unfaithful = new Set(t.replies.filter((r) => r.flags.length > 0).map((r) => r.turn));
   const excluded = t.findings
     .filter((f) => f.evidence.some((e) => unfaithful.has(e.turn)))
@@ -71,6 +81,15 @@ export function scoreBenchmarkPair(
   const counted = linesOf(t.record).filter(
     (l) => l.line.mayNotFit && !excluded.includes(l.line.criterionId),
   );
+  return { counted, excluded };
+}
+
+export function scoreBenchmarkPair(
+  t: BenchmarkTranscript,
+  reason: PairReason | undefined,
+  criteriaText: string,
+): BenchmarkRow {
+  const { counted, excluded } = countedLines(t);
   const flagged = counted.length > 0;
 
   let named: Named | null = null;
