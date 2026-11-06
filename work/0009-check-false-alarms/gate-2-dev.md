@@ -151,4 +151,4 @@ nci-12's P7 rests on "I am open to discussing standard treatments with my doctor
 
 ## Answer
 
-(The owner's.)
+**Stop** (2026-11). Stages A, B and D ship, with dev reported as a dev finding. Held-out stays unread, and stage C doesn't run.

@@ -351,3 +351,4 @@ No parser change, no schema change, no boundary widened.
   - Of the six full-summary lines in causes 3 and 4, four are gone and read right; nci-13 P13 (a permission) and nci-37 P5 (a joined condition) are still there. Two new lines outside parts on eligible pairs: nci-12 × NCT04708470 P7 (statement inverted) and nci-17 × NCT06161532 P67 (reading). "Does-not-apply" was read 7 times, none an overreach.
   - **Divergence:** the flags are listed in their own file, `gate-2-flags.txt`, as in 0008.
   - **Recommendation: stop,** keeping held-out unread. **Stopped at Gate 2.**
+- **Gate 2's answer: stop.** Stage C (steps 9 and 10) doesn't run, and held-out stays unread. Stage D reports dev as a dev finding. Recorded in `gate-2-dev.md`, Answer.
