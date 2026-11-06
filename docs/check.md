@@ -4,11 +4,15 @@ The conversation ([questions.md](questions.md)) orders the trials by 31 facts. M
 
 Built in slice 0007. The record is in [`work/0007-deeper-check/`](../work/0007-deeper-check/), with its gate write-up, [gate-1-dev.md](../work/0007-deeper-check/gate-1-dev.md), and dev's records as text, [gate-1-records.txt](../work/0007-deeper-check/gate-1-records.txt).
 
+Slice 0009 changed how the agent reads conditional and pregnancy rules, and how the record counts rules for one part of a trial ([below](#what-slice-0009-changed)). Its record is in [`work/0009-check-false-alarms/`](../work/0009-check-false-alarms/), with the line-by-line diagnosis, [diagnosis.md](../work/0009-check-false-alarms/diagnosis.md), and the dev rerun, [gate-2-dev.md](../work/0009-check-false-alarms/gate-2-dev.md). The numbers below are 0007's, measured before that change.
+
 ```
 npm run check:label-show -- p08 NCT05579366     a patient and a trial's rules, for labelling
 npm run check:parse -- --set dev|heldout        parse the picked trials' rules, on the local model
 npm run check:eval -- --dev                     check the dev pairs, and write a result
 npm run check:eval -- --check [--dev]           regrade the latest result from its transcripts
+npm run benchmark:lines -- <result.json>        every "may not fit" line on a check result, with the parse, statement and reading behind it
+npm run benchmark:lines -- <result.json> --pair nci-13:NCT02465060 --record   one pair's record, assembled again with today's record
 ```
 
 ## The finding, in plain words
@@ -39,6 +43,11 @@ All numbers are from one local model, Qwen3.6-35B-A3B in 8-bit, at temperature 0
    - **Fixed opening and closing.** The opening says how many rules the earlier answers covered. The closing says the record is for the person and their oncologist.
    - **No verdict words in a question.** A worded question containing one ("to check your eligibility") is replaced with the rule in its own words. This happened once on dev.
    - **Stop.** A check can end partway, and its rules not yet asked are recorded as not asked.
+
+   Since slice 0009, the reading prompt (`READ_SYSTEM_PROMPT`) also says:
+   - **an exclusion is restated by its meaning,** even when its text reads as what the person must be;
+   - **a rule that applies only if something is true keeps its "if"** in the agent's restatement, and a permission ("may have had…") stays one;
+   - **"does-not-apply" covers an unmet "if",** as well as a group the person isn't in. Against "The person is not pregnant", a man's "I'm not pregnant" reads "holds".
 5. **Record** (`record.ts`). Every criterion lands in exactly one section:
 
 | Section | What's in it |
@@ -49,7 +58,7 @@ All numbers are from one local model, Qwen3.6-35B-A3B in 8-bit, at temperature 0
 | About the trial, not you (folded) | rules about the trial's own procedures |
 | To ask your oncologist | every "may not fit", every rule needing records, every earlier "I don't know" |
 
-   - **A rule for one part of the trial** (the parse's `appliesTo`) shows that part, and reads "May not fit one part of the trial".
+   - **A rule for one part of the trial** (the parse's `appliesTo`) shows that part, and reads "May not fit one part of the trial". Since slice 0009 the counts sentence sets those apart: "1 rule may not fit what you said. 2 more are for one part of the trial, which you may not be in." They come last on "To ask your oncologist", each with "Which part of the trial would I be in, and is this rule for it?"
    - **A trial whose rules can't be parsed** gets a shorter record. It shows the rules the mapper read, with the earlier answers beside them, and says it wasn't checked.
    - **There is no field for a verdict.** "May not fit" is the only word for a conflict, as on the list.
 
@@ -106,6 +115,17 @@ On held-out, read only for counts, so nothing was tuned on it, there are 102 fal
 - **75 are under "Needs your records".** That's a rule only the chart can settle, where what the person said would conflict.
 - **None come from an earlier answer.**
 
+### What slice 0009 changed
+
+Slice 0009 read every "may not fit" line on NIH-TrialBench's dev pairs ([benchmark.md](benchmark.md#the-check-own-labels-and-clinicians)) and placed each one: in the parse, the agent's restatement, its reading, or the code. None came from the code. Pregnancy and conditional rules came from the restatement dropping a rule's "if", and from the reading getting the pregnancy example the wrong way round. So the slice changed the reading prompt and the record's counts, not the parser.
+
+Dev was rerun from the full summary only, on the same model and settings ([`dev/02-17a5dbee2eb0.json`](../evals/results/benchmark/check/dev/02-17a5dbee2eb0.json)):
+- **Of the six full-summary lines from pregnancy and conditional rules, four are gone and were read right.** Two are still there: a permission ("may have received") restated as a requirement, and a contraception rule the parser joined to who it's for.
+- **The false-alarm rate didn't move.** Leaving out rules for one part of a trial, 5 of 9 eligible pairs were flagged before and 5 of 9 after, the same five. Each pair that lost a line kept another: an "or" list, the trial's own "solid tumors", or one of two new lines where an "I don't know" in 0008 became an answer this time. Counting every line, as 0008 did, 8 of 9 became 7 of 9.
+- **The widened "does-not-apply" didn't overreach.** It was read 7 times, each on a rule for a group or a step of the trial the person isn't in.
+
+Held-out stayed unread: the owner kept it for a fix that can move the rate.
+
 ### Repeats
 
 The repeat count is high and overstated. It counts a reply that drew on an asked fact, whether or not the question repeated one. "Have you been told you have separate tumor nodules?" got "They told me it's in my chest", which counts. Some repeats are real: questions the conversation asked but the mapper didn't tie to the rule.
@@ -117,7 +137,13 @@ See [page.md](page.md#the-check). `npm run app -- --fake` checks only trials wit
 ## Limits
 
 - **The inherited parser isn't measured on these trials.** It was measured on 12 pinned protocols in the prescreening repository. A rule it drops can't be caught, and the false-alarm patterns above are its structure. Fixing them is a parser change.
-- **Against clinicians' labels it flags almost everything.** On NIH-TrialBench's dev pairs, from slice 0008, it flagged 8 of 9 trials clinicians called eligible from the full clinical summary, and 4 of 9 from a patient's account. Its catches on ineligible pairs came from parts of the trial the person isn't in. The false alarms have the same causes as above, plus pregnancy rules read the wrong way round and conditional rules read as requirements. Held-out was left unread, for after those are fixed ([benchmark.md](benchmark.md)).
+- **Against clinicians' labels it flags almost everything.** On NIH-TrialBench's dev pairs, from slice 0008, it flagged 8 of 9 trials clinicians called eligible from the full clinical summary, and 4 of 9 from a patient's account. Its catches on ineligible pairs came from parts of the trial the person isn't in. Slice 0009's prompt fixed most of the pregnancy and conditional lines, and the rate stayed at 5 of 9 outside parts ([above](#what-slice-0009-changed)). Held-out is still unread ([benchmark.md](benchmark.md)).
+- **What still causes false alarms:**
+  - **"or" lists** the parser splits into one requirement per alternative;
+  - **conditions the parser drops or joins,** which no prompt can bring back;
+  - **the restatement,** which still turns some permissions into requirements, and on one dev pair turned an inclusion upside down;
+  - **no judgment of purpose:** the check reads rules, so a trial for another purpose is flagged only on its parts, if at all.
+- **Slice 0009's change was measured from the full summary only.** The account arm wasn't rerun, and 0007's own held-out numbers above were measured before it.
 - **The link inherits the mapper's misses,** about a quarter of the rules it should map. A missed link becomes a question asked again. A wrong link closes a rule with an answer to a different question. The record shows that question beside the rule, so the person and their oncologist can see it, but nothing flags it. Two of dev's misses happened this way.
 - **One author** wrote the patients, the labels and the spec. The labels were written before any parse, from text alone.
 - **The simulated patient is a model.** It invents negatives it was told to say "I don't know" to; most of held-out's 263 flags are those. It missed one known fact on dev, a drug its file says it took. Repeats rest on its own report of what it drew on.

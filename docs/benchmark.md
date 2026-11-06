@@ -4,13 +4,16 @@ Every earlier number in this repository was measured against labels written here
 - **TREC Clinical Trials, 2021 and 2022.** NIST's assessors judged which trials suit each patient note.
 - **NIH-TrialBench.** NIH clinicians labelled trials for patient vignettes: recommended, eligible but not recommended, or ineligible, often with a comment.
 
-Built in slice 0008. The record is in [`work/0008-benchmark/`](../work/0008-benchmark/). The check's dev finding, with every pair's lines, is in [gate-2-dev.md](../work/0008-benchmark/gate-2-dev.md).
+Built in slice 0008. The record is in [`work/0008-benchmark/`](../work/0008-benchmark/). The check's dev finding, with every pair's lines, is in [gate-2-dev.md](../work/0008-benchmark/gate-2-dev.md). Slice 0009 reran the check's dev pairs after a fix ([`work/0009-check-false-alarms/`](../work/0009-check-false-alarms/)).
 
 ```
 npm run benchmark:import                        rebuild data/benchmark/ from the downloads; -- --record writes the manifest
 npm run benchmark:search -- --trec|--trialbench score the search, once; -- --check reruns the latest
 npm run benchmark:parse -- --set dev|heldout    parse the check's trials, on the local model
 npm run benchmark:check -- --dev                check dev's pairs in both arms; -- --check [--dev] regrades
+npm run benchmark:check -- --check --result <f> regrade a named result, not the latest
+npm run benchmark:check -- --parts <f>          print a result's outside-parts measure, without writing
+npm run benchmark:lines -- <f>                  every "may not fit" line on a result; --pair <p:NCT> [--record]
 ```
 
 ## In plain words
@@ -123,7 +126,19 @@ The headline was frozen before scoring and isn't changed, but it mixes two thing
 - **The one rule a clinician named,** for nci-37 ("…for which high-dose rate brachytherapy is appropriate…"), is on both arms' records under "Needs your records or your oncologist". That's where the clinician said it belonged. The measure credits only a "may not fit" line on it, so it isn't scored as caught.
 - **The account arm's fewer false alarms are half an artefact.** Two of the four pairs it doesn't flag lose their only line because that line rests on a reply the fidelity checks flagged. The account arm has nearly twice the flagged replies (198 to 107), mostly harmless ones where the participant quotes its own words.
 
-**Held-out is unread.** It was estimated at about 42 hours in both arms. At the slice's second gate the owner chose not to spend its one look on a check whose false alarms have known causes. Held-out's 30 trials aren't parsed, and its 56 pairs (30 ineligible, 17 with a named rule) are untouched.
+**Slice 0009 fixed the agent's side of causes 3 and 4, and reran dev from the full summary.** The account arm wasn't rerun. Result: [`check/dev/02-17a5dbee2eb0.json`](../evals/results/benchmark/check/dev/02-17a5dbee2eb0.json); every line is read in [gate-2-dev.md](../work/0009-check-false-alarms/gate-2-dev.md). Beside 0008's measure, every new result also scores **outside parts**: a pair counts only for a "may not fit" line on a rule that isn't for one part of the trial.
+
+| Dev, full summary | 0008 | 0009 | 0008, outside parts | 0009, outside parts |
+| --- | --- | --- | --- | --- |
+| ineligible caught | 4 of 5 | 5 of 5 | 1 of 5 | 1 of 5 |
+| false alarms | 8 of 9 | 7 of 9 | 5 of 9 | 5 of 9 |
+| the named rule on the record | — | — | 1 of 1 | 1 of 1 |
+
+- Four of the six pregnancy and conditional lines are gone. The other two are a permission restated as a requirement and a contraception rule the parser joined to who it's for.
+- Outside parts, the same five eligible pairs are flagged. Each kept another line: two "or" lists, the trial's own "solid tumors", and two new lines on questions answered "I don't know" in 0008.
+- "Caught" rises to 5 of 5 on 0008's measure only because the prostate MRI study's rules are now read "does-not-hold" for a woman, on a part of the trial.
+
+**Held-out is unread.** It was estimated at about 42 hours in both arms. At 0008's second gate the owner chose not to spend its one look on a check whose false alarms have known causes. At 0009's, with the rate unchanged on dev, the owner kept it for a fix that can move the rate. Held-out's 30 trials aren't parsed, and its 56 pairs (30 ineligible, 17 with a named rule) are untouched.
 
 ## The three-way comparison
 
@@ -179,7 +194,7 @@ Nothing in the repository fetches the benchmarks, so no new host enters the netw
 - **The search measures aren't like for like with slice 0001.** The differences are the disease, the labeller, the registry year and the pool that was judged. TREC's headline also counts trials for other conditions as misses.
 - **The 20 new vocabularies are search-only.** Each was measured once, here, on a few notes or vignettes at most. They aren't measured the way `nsclc.json` was.
 - **NIH-TrialBench's labelled trials were a matcher's top ten,** so they're trials that already looked plausible. Most aren't recruiting: 101 of the 395 labels are on trials in the snapshot.
-- **The check was measured on dev only:** 14 pairs, one model. The intervals span most of the range.
+- **The check was measured on dev only:** 14 pairs, one model. The intervals span most of the range. Slice 0009's rerun is from the full summary only.
 - **"Ineligible" isn't what the check looks for.** Most of dev's ineligible pairs are trials for another purpose. The check reads rules, not purpose, and the record has no line for purpose.
 - **The participant is a model,** answering from a summary or an account. About a quarter of its replies were flagged (305 of 1,155), mostly harmlessly. Findings resting on a flagged reply aren't counted, and that pulls caught and false alarms both down. Five flagged replies were real errors, all set aside.
 - **The accounts were written here,** to rules written here. No patient or clinician wrote or checked them.

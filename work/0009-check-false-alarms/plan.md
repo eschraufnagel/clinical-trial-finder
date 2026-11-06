@@ -352,3 +352,6 @@ No parser change, no schema change, no boundary widened.
   - **Divergence:** the flags are listed in their own file, `gate-2-flags.txt`, as in 0008.
   - **Recommendation: stop,** keeping held-out unread. **Stopped at Gate 2.**
 - **Gate 2's answer: stop.** Stage C (steps 9 and 10) doesn't run, and held-out stays unread. Stage D reports dev as a dev finding. Recorded in `gate-2-dev.md`, Answer.
+- **Step 11, docs:** `docs/check.md` (the reading's three additions under "How it works", the counts sentence and the part question under the record, a "What slice 0009 changed" section, and Limits by cause), `docs/benchmark.md` (the dev rerun beside 0008's, in both measures; held-out still unread; the new commands), the roadmap's 0009 row and header, and `CLAUDE.md` (`benchmark:lines`, `benchmark:check`'s `--check --result` and `--parts`, and the boundary sentence). The README has no sentence on the check's false alarms and is unchanged.
+  - **As Gate 2 was "stop",** the docs report dev only and say held-out is still unread. Stage C's steps 9 and 10 weren't done.
+  - The roadmap's uncommitted Future scope section stays unstaged: the 0009 row was staged from the committed file.
