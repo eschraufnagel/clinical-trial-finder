@@ -252,9 +252,9 @@ No parser change, no schema change, no boundary widened.
 - `scripts/benchmark-lines.ts`: new; `package.json`: `benchmark:lines`
 - `tests/screening/prompts.test.ts`, `tests/check/record.test.ts`, `tests/evals/benchmark-check.test.ts`, `tests/scripts/benchmark-lines.test.ts` (new), `tests/boundary.test.ts`
 - `e2e/check.spec.ts`: only if step 5 finds an expectation on the changed wording
-- `evals/results/benchmark/check/dev/02-*.json`, `evals/results/benchmark/check/01-*.json`, and their `runs/` folders
-- `data/criteria/trialbench/qwen3.6-35b-a3b-mlx-8bit-e1e694b3-n2/`: held-out's 30 parses
-- `docs/check.md`, `docs/benchmark.md`, `work/ROADMAP.md` (0009 row only), `CLAUDE.md`, possibly `README.md`
+- `evals/results/benchmark/check/dev/02-17a5dbee2eb0.json` and its `runs/` folder
+- **Not created, since Gate 2 chose to stop:** a held-out result (`evals/results/benchmark/check/01-*.json`) and held-out's 30 parses in `data/criteria/trialbench/qwen3.6-35b-a3b-mlx-8bit-e1e694b3-n2/`
+- `docs/check.md`, `docs/benchmark.md`, `work/ROADMAP.md` (0009 row and header only), `CLAUDE.md`; `README.md` and `e2e/check.spec.ts` turned out not to need a change
 
 **Not changed:**
 - `src/criteria/`;
@@ -355,3 +355,10 @@ No parser change, no schema change, no boundary widened.
 - **Step 11, docs:** `docs/check.md` (the reading's three additions under "How it works", the counts sentence and the part question under the record, a "What slice 0009 changed" section, and Limits by cause), `docs/benchmark.md` (the dev rerun beside 0008's, in both measures; held-out still unread; the new commands), the roadmap's 0009 row and header, and `CLAUDE.md` (`benchmark:lines`, `benchmark:check`'s `--check --result` and `--parts`, and the boundary sentence). The README has no sentence on the check's false alarms and is unchanged.
   - **As Gate 2 was "stop",** the docs report dev only and say held-out is still unread. Stage C's steps 9 and 10 weren't done.
   - The roadmap's uncommitted Future scope section stays unstaged: the 0009 row was staged from the committed file.
+- **Step 12, review passes** (`REVIEW.md`, over `main...HEAD`):
+  - **Pass 1, plan compliance. Important, fixed:** "Files that change" still named a held-out result and held-out's parses, which Gate 2's "stop" cancelled; the list now says they weren't created, and that the README and `e2e/check.spec.ts` needed no change. Every changed file is on the list, there's no new dependency, and each divergence is in these Records. Steps 9 and 10 are unimplemented, by Gate 2's answer.
+  - **Pass 2, correctness. Nit:** `benchmark:check -- --check --result <path>` with a path that doesn't exist throws rather than printing a message, and `--result` without `--check` is ignored. **Nit:** `scorePartsPair` gives `namedOnRecord: false`, not null, for a `rule` reason with no quote; no dev pair has one. No Important finding: `countsLine` and the `toAsk` order place each line once, `parts` is regraded only where present, and both dev results regrade.
+  - **Pass 3, scope and data.** Clean. No network, model or factory reached by the new script (`tests/boundary.test.ts`); `ASK_PART` and the counts sentence pass the verdict-word scan; the gate pages quote simulated replies to NIH-TrialBench's public vignettes only.
+  - **Pass 4, eval integrity.** No Important finding. The prompt pin's change is the visible record of the prompt change. The five-word-run test allows the five runs the prompt already shared before this slice, listed by name, which is looser than the plan's wording and recorded at step 6. Edited record tests assert new behavior, not a bug fix. The new result records model, quantization, temperature, seed, and both prompt versions.
+  - **Pass 5, documentation. Important, fixed:** `docs/check.md`'s false-alarm pattern 3 still said a part line "still counts"; it now says the record counts it apart. The README is unchanged and still accurate. Every number in `docs/` traces to `dev/02-17a5dbee2eb0.json` or 0008's result, and the limits say the rerun was full-summary only and held-out is unread.
+  - **Still not done by hand:** the browser check of `npm run app -- --fake` (step 5).

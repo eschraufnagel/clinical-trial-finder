@@ -105,7 +105,7 @@ Intervals are Wilson 95%. Held-out took 7.8 hours on one machine. Trials with 50
 On dev, the 17 false-alarm lines were read one by one. They came from four patterns:
 1. **A list of cancers parsed as one requirement per cancer type.** "No, I don't have breast cancer" then reads as a requirement not met.
 2. **A permission parsed as a requirement.** "Patients with treated brain metastases may participate…" then flags someone without brain metastases.
-3. **A rule for one part of the trial.** It now says so, and still counts.
+3. **A rule for one part of the trial.** It now says so, and since slice 0009 the record counts it apart and asks which part the person would be in. This measure still counts it.
 4. **"Not about me" read as "no".** "No, I'm a guy" to a contraception rule.
 
 Patterns 1, 2 and 4 come from the inherited parser and reader.
