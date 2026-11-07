@@ -46,7 +46,7 @@ At the end of this slice:
 
 1. **The parser keeps a list together.** A rule met by any one of several alternatives is no longer parsed as several requirements. Either it stays one rule, or its alternatives carry a mark saying they belong to one list (OQ 1). An "or" inside a single test ("exon 19 deletion or L858R") and separate rules stay as they are.
 2. **The check reads a list as one rule.** "May not fit" is said on a list only when the person's answers rule out every alternative. An alternative the person has settles it. An alternative they don't know stays unknown, as now.
-3. **The record shows it as one line,** in the trial's words, not one line per alternative.
+3. **The record shows it as one list,** in the trial's words: a line per alternative under one lead-in, counted once, not as separate requirements. (Revised at the spec, 2026-11: one line per criterion is what the measure and the page rely on.)
 4. **The parser checked against what it already did right,** with no model where possible: the hand-labelled protocols in `evals/cases/labels/`, and a count of how the new parses split against the old (OQ 3).
 5. **Dev reparsed and rerun from the full summary,** on 0008's 14 pairs on the local model, reported in both measures beside 0009's rerun, with every "or" line read.
 6. **A gate on held-out.** Dev's result decides whether held-out's one look is spent on this fix. If it is: 30 trials parsed, 56 pairs checked from the full summary, reported in both measures, once.
