@@ -4,6 +4,7 @@ import {
   ASK_PART,
   ASK_RECORDS,
   countsLine,
+  LIST_ANY,
   MAY_NOT_FIT,
   MAY_NOT_FIT_PART,
   NOTHING_CONFLICTS,
@@ -328,3 +329,109 @@ describe("recordWithoutParse", () => {
     expect(verdictHits(oursIn(r))).toEqual([]);
   });
 });
+
+/**
+ * Slice 0010: a list the trial accepts any one of is one requirement. Made-up
+ * clinical items, as a basket trial's histologies are, read by chart-review.
+ */
+describe("recordFor with a list", () => {
+  const item = (id: string) => crit(id, "inclusion", "clinical");
+  const reported = (id: string, value: "holds" | "does-not-hold" | "unknown") =>
+    finding(id, "chart-review", value === "unknown" ? "unknown" : "answered", {
+      reported: value,
+      evidence: value === "unknown" ? [] : quote(value === "holds" ? "Yes" : "No"),
+    });
+  const ids = ["A1", "A2", "A3"];
+  const make = (
+    values: Array<"holds" | "does-not-hold" | "unknown">,
+    extra: { parts?: Map<string, string> } = {},
+  ) =>
+    recordFor({
+      study: STUDY,
+      criteria: [...ids.map(item), crit("X1", "inclusion")],
+      findings: [
+        ...values.map((v, i) => reported(ids[i] as string, v)),
+        finding("X1", "does-not-hold", "answered", { evidence: quote("No") }),
+      ],
+      lists: new Map(ids.map((id) => [id, "kinds"])),
+      ...extra,
+    });
+  const lineIn = (r: TrialRecord, id: string) =>
+    sections(r)
+      .flatMap((s) => s.lines)
+      .find((l) => l.criterionId === id);
+
+  it("says nothing may not fit when one item is met, and flags no item", () => {
+    const r = make(["does-not-hold", "holds", "does-not-hold"]);
+    for (const id of ids) {
+      expect(lineIn(r, id)?.mayNotFit).toBe(false);
+      expect(lineIn(r, id)?.list).toEqual({ ours: LIST_ANY });
+      expect(lineIn(r, id)?.listId).toBe("kinds");
+    }
+    expect(lineIn(r, "A1")?.flag).toBeNull();
+    expect(r.counts.mayNotFit).toBe(1); // X1 alone
+    expect(
+      r.toAsk.items.filter((i) => "ours" in i.question && i.question.ours === ASK_MAY_NOT_FIT),
+    ).toHaveLength(1);
+  });
+
+  it("says every item may not fit when every one conflicts, and counts the list once", () => {
+    const r = make(["does-not-hold", "does-not-hold", "does-not-hold"]);
+    for (const id of ids) {
+      expect(lineIn(r, id)?.mayNotFit).toBe(true);
+      expect(lineIn(r, id)?.flag).toEqual({ ours: MAY_NOT_FIT });
+    }
+    expect(r.counts.mayNotFit).toBe(2); // the list and X1
+    expect(r.counts.line).toEqual({ ours: countsLine(2, 3) });
+  });
+
+  it("leaves a list with an unknown item open, with no flag", () => {
+    const r = make(["does-not-hold", "unknown", "does-not-hold"]);
+    expect(ids.map((id) => lineIn(r, id)?.mayNotFit)).toEqual([false, false, false]);
+    expect(lineIn(r, "A1")?.flag).toBeNull();
+    expect(where2(r, "A2")).toEqual(r.records.heading);
+    expect(
+      r.toAsk.items.some(
+        (i) =>
+          "ours" in i.question &&
+          i.question.ours === ASK_RECORDS &&
+          "registry" in i.rule &&
+          i.rule.registry === "rule A2",
+      ),
+    ).toBe(true);
+  });
+
+  it("counts a list on one part of the trial once", () => {
+    const r = make(["does-not-hold", "does-not-hold", "does-not-hold"], {
+      parts: new Map(ids.map((id) => [id, "Arm B"])),
+    });
+    expect(lineIn(r, "A1")?.flag).toEqual({ ours: MAY_NOT_FIT_PART });
+    expect(r.counts.onePart).toBe(1);
+    expect(r.counts.mayNotFit).toBe(2);
+  });
+
+  it("is today's record when there are no lists", () => {
+    const withEmpty = recordFor({
+      study: STUDY,
+      criteria: CASES.map(([c]) => c),
+      findings: CASES.map(([, f]) => f),
+      wording: new Map(CASES.map(([c]) => [c.id, `Verbatim ${c.id}.`])),
+      lists: new Map(),
+    });
+    expect(withEmpty).toEqual(record);
+    expect(
+      sections(record)
+        .flatMap((s) => s.lines)
+        .every((l) => l.list === null && l.listId === null),
+    ).toBe(true);
+  });
+
+  it("has no verdict words in its lead-in", () => {
+    const r = make(["does-not-hold", "holds", "unknown"]);
+    expect(verdictHits(oursIn(r))).toEqual([]);
+    expect(verdictHits([LIST_ANY])).toEqual([]);
+  });
+});
+
+const where2 = (r: TrialRecord, id: string) =>
+  sections(r).find((s) => s.lines.some((l) => l.criterionId === id))?.heading;

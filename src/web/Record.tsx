@@ -94,6 +94,11 @@ function Line({ line }: { line: RecordLine }) {
           {t.part} <W w={line.part} />
         </p>
       )}
+      {line.list === null ? null : (
+        <p className="note">
+          <W w={line.list} />
+        </p>
+      )}
       {line.earlier.map((e) => (
         <p key={`${textOf(e.asked)} ${textOf(e.said)}`}>
           {t.askedEarlier} <W w={e.asked} /> {t.youSaid} <W w={e.said} />

@@ -92,12 +92,16 @@ export function rebuildRecord(t: BenchmarkTranscript, parsed: CachedParse): Tria
   const parts = new Map(
     [...ids].flatMap(([c, id]) => (c.appliesTo === undefined ? [] : [[id, c.appliesTo] as const])),
   );
+  const lists = new Map(
+    [...ids].flatMap(([c, id]) => (c.anyOf === undefined ? [] : [[id, c.anyOf] as const])),
+  );
   return recordFor({
     study: { nctId: t.nctId, briefTitle: text(t.record.title) },
     criteria: t.criteria,
     findings: t.findings,
     wording,
     parts,
+    lists,
   });
 }
 
@@ -115,6 +119,7 @@ export function formatRecord(record: TrialRecord): string {
     for (const l of section.lines) {
       out.push(`- [${l.criterionId}] ${text(l.kind)}: ${text(l.rule)}`);
       if (l.part !== null) out.push(`    part: ${text(l.part)}`);
+      if (l.list !== null && l.list !== undefined) out.push(`    ${text(l.list)} (${l.listId})`);
       for (const a of l.earlier) out.push(`    asked before: ${text(a.asked)} — "${text(a.said)}"`);
       for (const w of l.said) out.push(`    said: "${text(w)}"`);
       if (l.flag !== null) out.push(`    ${text(l.flag)}`);

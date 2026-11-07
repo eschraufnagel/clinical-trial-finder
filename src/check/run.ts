@@ -43,6 +43,8 @@ export interface Check {
   wording: Map<string, string>;
   /** The part of the trial each criterion is for, when the parse names one. */
   parts: Map<string, string>;
+  /** The list each criterion is one item of, by the parse's `anyOf` label (slice 0010). */
+  lists: Map<string, string>;
 }
 
 export function startCheck(input: CheckInput): Check {
@@ -53,11 +55,14 @@ export function startCheck(input: CheckInput): Check {
   const parts = new Map(
     [...ids].flatMap(([c, id]) => (c.appliesTo === undefined ? [] : [[id, c.appliesTo] as const])),
   );
+  const lists = new Map(
+    [...ids].flatMap(([c, id]) => (c.anyOf === undefined ? [] : [[id, c.anyOf] as const])),
+  );
   const session = ScreeningSession.create(input.study, criteria, input.adapter, {
     carried,
     ...(input.fixedQuestions === true ? { fixedQuestions: true } : {}),
   });
-  return { session, criteria, links, carried, wording, parts };
+  return { session, criteria, links, carried, wording, parts, lists };
 }
 
 /** The record of a finished (or stopped) check. */
@@ -68,5 +73,6 @@ export function recordOf(check: Check, result: ScreeningResult): TrialRecord {
     findings: result.findings,
     wording: check.wording,
     parts: check.parts,
+    lists: check.lists,
   });
 }

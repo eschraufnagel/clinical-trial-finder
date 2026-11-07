@@ -36,6 +36,11 @@ export const ASK_MAY_NOT_FIT = "Does this rule keep this trial from being an opt
 export const ASK_RECORDS = "Do my records settle this rule?";
 /** For a "may not fit" on one part of the trial (slice 0009): which part comes first. */
 export const ASK_PART = "Which part of the trial would I be in, and is this rule for it?";
+/**
+ * On each item of a list the trial accepts any one of (slice 0010): the list
+ * is one requirement, and "may not fit" only when every item does.
+ */
+export const LIST_ANY = "One of a list: the trial asks for any one of these.";
 export const NO_PARSE =
   "This trial's rules couldn't be read just now, so it wasn't checked. These are the rules your earlier answers covered.";
 
@@ -91,6 +96,10 @@ export interface RecordLine {
   said: Words[];
   /** The part of the trial the rule is for, in the trial's words, or null for the whole trial. */
   part: Words | null;
+  /** `LIST_ANY` when the rule is one item of a list the trial accepts any one of, or null. */
+  list: Words | null;
+  /** That list's label from the parse, for counting the list once; not shown. Null when none. */
+  listId: string | null;
   /** `MAY_NOT_FIT`, `MAY_NOT_FIT_PART`, `NOTHING_CONFLICTS`, or nothing. */
   flag: Words | null;
   mayNotFit: boolean;
@@ -127,6 +136,8 @@ export interface RecordInput {
   wording?: ReadonlyMap<string, string>;
   /** The part of the trial a criterion is for, from the parse's `appliesTo`, when it names one. */
   parts?: ReadonlyMap<string, string>;
+  /** The list a criterion is one item of, by the parse's `anyOf` label (slice 0010). */
+  lists?: ReadonlyMap<string, string>;
 }
 
 type Place = "earlier" | "told" | "records" | "aboutTrial";
@@ -140,13 +151,52 @@ export function recordFor(input: RecordInput): TrialRecord {
     aboutTrial: [],
   };
 
-  for (const f of input.findings) {
+  const lines: { place: Place; line: RecordLine }[] = input.findings.map((f) => {
     const c = criteria.get(f.criterionId);
     if (c === undefined) throw new Error(`No criterion ${f.criterionId} for its finding`);
-    const { place, line } = lineFor(c, f, input.wording?.get(c.id) ?? c.text);
-    placed[place].push(withPart(line, input.parts?.get(c.id)));
+    return lineFor(c, f, input.wording?.get(c.id) ?? c.text);
+  });
+  for (const { place, line } of settleLists(lines, input.lists)) {
+    placed[place].push(withPart(line, input.parts?.get(line.criterionId)));
   }
   return assemble(input.study, placed, null);
+}
+
+/**
+ * A list the trial accepts any one of is one requirement (spec 0010 §4). Its
+ * items "may not fit" only when every one does; otherwise none does, and an
+ * item that conflicts shows no flag, since "Nothing here conflicts" would read
+ * as though the person had it. Each item keeps its place, its words and what
+ * the person said, and is marked as one of a list. A list of one, which the
+ * parser's own check never leaves, is read as a lone rule.
+ */
+function settleLists(
+  lines: { place: Place; line: RecordLine }[],
+  lists: ReadonlyMap<string, string> | undefined,
+): { place: Place; line: RecordLine }[] {
+  if (lists === undefined || lists.size === 0) return lines;
+  const byLabel = new Map<string, RecordLine[]>();
+  for (const { line } of lines) {
+    const label = lists.get(line.criterionId);
+    if (label !== undefined) byLabel.set(label, [...(byLabel.get(label) ?? []), line]);
+  }
+  return lines.map(({ place, line }) => {
+    const label = lists.get(line.criterionId);
+    const items = label === undefined ? undefined : byLabel.get(label);
+    if (label === undefined || items === undefined || items.length < 2) return { place, line };
+    const listMayNotFit = items.every((l) => l.mayNotFit);
+    const flagged = line.flag !== null && "ours" in line.flag && line.flag.ours === MAY_NOT_FIT;
+    return {
+      place,
+      line: {
+        ...line,
+        list: ours(LIST_ANY),
+        listId: label,
+        mayNotFit: listMayNotFit && line.mayNotFit,
+        flag: !listMayNotFit && flagged ? null : line.flag,
+      },
+    };
+  });
 }
 
 /**
@@ -173,6 +223,8 @@ export function recordWithoutParse(
       kind: ours(m.polarity === "inclusion" ? REQUIRED : EXCLUDED),
       rule: registry(m.source.text),
       part: null,
+      list: null,
+      listId: null,
     };
     if (a === undefined) {
       placed.records.push({
@@ -218,6 +270,8 @@ function lineFor(
     rule: registry(wording),
     earlier,
     part: null,
+    list: null,
+    listId: null,
   };
   // The statement is true of them and the trial excludes it, or false and the trial requires it.
   const conflicts = (value: string | undefined) =>
@@ -324,8 +378,12 @@ function assemble(
   lead: Words | null,
 ): TrialRecord {
   const all = [...placed.earlier, ...placed.told, ...placed.records, ...placed.aboutTrial];
-  const mayNotFit = all.filter((l) => l.mayNotFit).length;
-  const onePart = all.filter((l) => l.mayNotFit && l.part !== null).length;
+  // A list counts once, however many of its items "may not fit" (slice 0010).
+  const once = (lines: RecordLine[]): number =>
+    lines.filter((l) => l.listId === null).length +
+    new Set(lines.flatMap((l) => (l.listId === null ? [] : [l.listId]))).size;
+  const mayNotFit = once(all.filter((l) => l.mayNotFit));
+  const onePart = once(all.filter((l) => l.mayNotFit && l.part !== null));
   // A rule the conversation's "I don't know" covered is as open as one the
   // check left unresolved: it goes to the oncologist too, and counts.
   const didntKnow = placed.earlier.filter((l) => !l.mayNotFit && isWhy(l, WHY.didntKnow));

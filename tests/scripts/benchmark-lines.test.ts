@@ -9,6 +9,7 @@ import {
   HEADING_RECORDS,
   HEADING_TO_ASK,
   HEADING_TOLD,
+  LIST_ANY,
   MAY_NOT_FIT_PART,
   recordFor,
 } from "../../src/check/record.js";
@@ -145,5 +146,15 @@ describe("benchmark:lines", () => {
     ]) {
       expect(out).toContain(`## ${heading}`);
     }
+  });
+
+  it("reads a parse's list marks onto the record (0010)", () => {
+    const marked: CachedParse = {
+      ...PARSED,
+      criteria: PARSED.criteria.map((c) => ({ ...c, anyOf: "pair" })),
+    };
+    const out = formatRecord(rebuildRecord(T, marked));
+    expect(out).toContain(`${LIST_ANY} (pair)`);
+    expect(formatRecord(rebuildRecord(T, PARSED))).not.toContain(LIST_ANY);
   });
 });
