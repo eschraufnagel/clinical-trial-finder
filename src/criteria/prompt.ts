@@ -44,21 +44,6 @@ import { NORMALIZE_VERSION } from "./normalize.js";
  * different findings with "or" made the model bundle every "or" list (0011's
  * dev v1).
  *
- * ## Why lists are marked, not merged (slice 0010 here)
- *
- * A list the participant meets by any one item ("one of the following
- * histologies:", or "…, or" then another item) was split one item per
- * criterion, and the check read each item as a requirement: someone with one
- * histology "may not fit" every other. The parser still splits them, and marks
- * the items with a shared `anyOf` label; `src/check/record.ts` reads the list
- * as one rule. Splitting is left alone because the history above shows how a
- * wording about "or" can move it: keeping the split lets a new parse be
- * compared item by item with an old one. Exclusions are never a list (any one
- * excludes), and `settleLists` in `parse.ts` drops a mark it can't trust.
- * Gate 1's first try split one trial's exclusion into its exceptions, each an
- * inclusion, and marked cohort headings as items; the two lines after the list
- * rule answer those.
- *
  * ## Why `patient` and `clinical` are told apart by the kind of fact
  *
  * Until slice 0011 they were told apart by who could answer: `clinical` if it
@@ -82,7 +67,6 @@ You are given the eligibility section of a real trial protocol. Split it into in
     "polarity": "inclusion" | "exclusion",
     "type": "patient" | "clinical" | "definitional" | "protocol",
     "appliesTo": "the study arm or phase this is limited to, or null",
-    "anyOf": "a short label shared by every item of one list the participant meets by any one item, or null",
     "confidence": 0.0 to 1.0
   }
 ]}
@@ -115,9 +99,6 @@ Boundary cases that matter:
 - Headings such as "Inclusion Criteria:" are not criteria. Skip them.
 - The input may be a bulleted list, a numbered list, or unbroken prose with no list markers at all. Find the criteria by meaning, not by punctuation.
 - Sub-items sometimes run inline with their parent with no line break. Treat each as its own criterion.
-- Some requirements are met by any one of several items written as separate items or sentences: a lead-in such as "one of the following:" followed by items, or an item ending ", or" followed by another. Each item is still its own criterion, and every item of that list gets the same short "anyOf" label. Only requirements the participant must meet form such a list. Items joined by "and", items listed one after another with nothing saying any one is enough, and exclusions (where any one item excludes) each get "anyOf": null.
-- A list holds only the items themselves. A heading that names a group of items is not an item, and neither is a rule that adds a condition to the items (how long, how stable, who it is for). Those get "anyOf": null.
-- An exception to an exclusion ("except for …", "with the exception of …") stays inside that exclusion, as one criterion. Never make the exceptions into criteria of their own.
 - Where criteria are grouped under a study arm or phase ("Phase I portion", "Arm A"), set "appliesTo" to that label for every criterion in the group. Otherwise set it to null.
 - Do not invent criteria, and do not omit ones you find hard to classify. Give a low confidence instead.
 
@@ -136,38 +117,12 @@ Participants are ineligible if any of the following apply:
 
 Output:
 {"criteria": [
-  {"quote": "took an experimental medicine in the past two months", "text": "The participant took an experimental medicine in the past two months", "polarity": "exclusion", "type": "patient", "appliesTo": null, "anyOf": null, "confidence": 0.9},
-  {"quote": "is presently in another interventional trial", "text": "The participant is presently in another interventional trial", "polarity": "exclusion", "type": "patient", "appliesTo": null, "anyOf": null, "confidence": 0.9},
-  {"quote": "had an allergic reaction to a penicillin antibiotic", "text": "The participant had an allergic reaction to a penicillin antibiotic", "polarity": "exclusion", "type": "patient", "appliesTo": null, "anyOf": null, "confidence": 0.9},
-  {"quote": "has been diagnosed with chronic kidney disease", "text": "The participant has chronic kidney disease", "polarity": "exclusion", "type": "clinical", "appliesTo": null, "anyOf": null, "confidence": 0.9},
-  {"quote": "hemoglobin under 10 g/dL", "text": "Hemoglobin is under 10 g/dL", "polarity": "exclusion", "type": "clinical", "appliesTo": null, "anyOf": null, "confidence": 0.9},
-  {"quote": "the clinic must freeze one serum aliquot ahead of dosing", "text": "The clinic freezes one serum aliquot before dosing", "polarity": "inclusion", "type": "protocol", "appliesTo": null, "anyOf": null, "confidence": 0.8}
-]}
-
-## A second worked example
-
-Also invented. It shows a list met by any one item, beside requirements that must all be met.
-
-Input:
-Eligible participants must have:
-1. A skin condition confirmed by a dermatologist, being any of these:
-   - plaque psoriasis
-   - atopic eczema
-   - chronic hand dermatitis
-2. Worn contact lenses daily for at least a year, or
-3. had laser surgery on both eyes
-4. A resting heart rate below 100 and a body weight above 45 kg
-
-Output:
-{"criteria": [
-  {"quote": "A skin condition confirmed by a dermatologist", "text": "The participant has a skin condition confirmed by a dermatologist", "polarity": "inclusion", "type": "clinical", "appliesTo": null, "anyOf": null, "confidence": 0.9},
-  {"quote": "plaque psoriasis", "text": "The participant has plaque psoriasis", "polarity": "inclusion", "type": "clinical", "appliesTo": null, "anyOf": "skin type", "confidence": 0.9},
-  {"quote": "atopic eczema", "text": "The participant has atopic eczema", "polarity": "inclusion", "type": "clinical", "appliesTo": null, "anyOf": "skin type", "confidence": 0.9},
-  {"quote": "chronic hand dermatitis", "text": "The participant has chronic hand dermatitis", "polarity": "inclusion", "type": "clinical", "appliesTo": null, "anyOf": "skin type", "confidence": 0.9},
-  {"quote": "Worn contact lenses daily for at least a year, or", "text": "The participant has worn contact lenses daily for at least a year", "polarity": "inclusion", "type": "patient", "appliesTo": null, "anyOf": "eyes", "confidence": 0.9},
-  {"quote": "had laser surgery on both eyes", "text": "The participant had laser surgery on both eyes", "polarity": "inclusion", "type": "patient", "appliesTo": null, "anyOf": "eyes", "confidence": 0.9},
-  {"quote": "A resting heart rate below 100", "text": "Resting heart rate is below 100", "polarity": "inclusion", "type": "clinical", "appliesTo": null, "anyOf": null, "confidence": 0.9},
-  {"quote": "a body weight above 45 kg", "text": "Body weight is above 45 kg", "polarity": "inclusion", "type": "clinical", "appliesTo": null, "anyOf": null, "confidence": 0.9}
+  {"quote": "took an experimental medicine in the past two months", "text": "The participant took an experimental medicine in the past two months", "polarity": "exclusion", "type": "patient", "appliesTo": null, "confidence": 0.9},
+  {"quote": "is presently in another interventional trial", "text": "The participant is presently in another interventional trial", "polarity": "exclusion", "type": "patient", "appliesTo": null, "confidence": 0.9},
+  {"quote": "had an allergic reaction to a penicillin antibiotic", "text": "The participant had an allergic reaction to a penicillin antibiotic", "polarity": "exclusion", "type": "patient", "appliesTo": null, "confidence": 0.9},
+  {"quote": "has been diagnosed with chronic kidney disease", "text": "The participant has chronic kidney disease", "polarity": "exclusion", "type": "clinical", "appliesTo": null, "confidence": 0.9},
+  {"quote": "hemoglobin under 10 g/dL", "text": "Hemoglobin is under 10 g/dL", "polarity": "exclusion", "type": "clinical", "appliesTo": null, "confidence": 0.9},
+  {"quote": "the clinic must freeze one serum aliquot ahead of dosing", "text": "The clinic freezes one serum aliquot before dosing", "polarity": "inclusion", "type": "protocol", "appliesTo": null, "confidence": 0.8}
 ]}`;
 
 /** Hash of the system prompt, recorded on every parse. */

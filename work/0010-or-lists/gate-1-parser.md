@@ -62,7 +62,7 @@ Most of R1's type and polarity loss is NCT03433469 (type 73%, polarity 90%), whe
 
 ### Answer, second try
 
-(The owner's.)
+**Stop** (2026-11). The prompt goes back to `e1e694b399d4` and `latest` to the old run, in their own commit. The code ships inert, stage D writes up the two tries, and held-out stays unread.
 
 ---
 

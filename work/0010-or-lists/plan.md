@@ -383,3 +383,5 @@ A hosted run, if asked for at a gate, is a new gate: dry first with `--model <sp
   - `criteria:compare` against the old parses: 430 matched, 69 old only, 215 new only, 14 polarity, 13 type and 126 part changed; 25 lists (16 right, 7 wrong, 2 mixed by hand), 14 dropped marks. Two wrong lists hide real requirements (NCT06161532's organ function and "all of the following" brain-lesion conditions).
   - `gate-1-parser.md` gains the second try above the first; `gate-1-compare.md` gains R1's output.
   - **Recommendation: stop,** reverting the prompt. **Stopped at Gate 1 again.**
+- **Gate 1's second answer: stop** (recorded in `gate-1-parser.md`). Stage B and C don't run.
+- **The revert:** `src/criteria/prompt.ts` back to the plan's commit (`PROMPT_VERSION` `e1e694b399d4`), and `data/criteria/trialbench/latest` back to `qwen3.6-35b-a3b-mlx-8bit-e1e694b3-n2`. The two tried runs' parses and grades stay committed. `tests/criteria/prompt-overlap.test.ts` loses its check that the prompt asks for `anyOf`; its two overlap checks stay, and pass on the old prompt.

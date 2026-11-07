@@ -46,9 +46,4 @@ describe("the parser's prompt", () => {
     expect(trials).toHaveLength(12);
     expect(shared(trials.map((t) => t.eligibility.criteriaText))).toEqual([]);
   });
-
-  it("asks for a list label on every criterion (0010)", () => {
-    expect(SYSTEM_PROMPT).toContain('"anyOf"');
-    expect(SYSTEM_PROMPT).toContain("exclusions (where any one item excludes)");
-  });
 });
