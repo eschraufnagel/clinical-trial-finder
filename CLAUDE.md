@@ -153,6 +153,8 @@ Since slice 0007, it also:
 
 Since slice 0008, it also keeps the benchmark import (`benchmark:import`) away from the network, the registry request and every model. The benchmarks are downloaded by a person into `local/benchmark/` (`docs/benchmark.md`); their URLs are data in the manifest, never fetched, so no host joins the exceptions.
 
+Since slice 0009, it also keeps `benchmark:lines` away from every model module, the parser and the agent's session: it reads a result's transcripts and parses, and re-assembles records with `recordFor`.
+
 The conversation and the check share the app's one transport through `routeByConversation` in `src/transport/`, so neither knows how messages are delivered.
 
 A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
@@ -200,7 +202,8 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run benchmark:import` | check the downloads in `local/benchmark/` against `data/benchmark/sources.json` and rebuild `data/benchmark/`; `-- --record` writes the manifest, `-- --pairs` draws the check's pairs (refuses to overwrite). No network, no model |
 | `npm run benchmark:search -- --trec\|--trialbench` | score the search against a benchmark and write a result, once; `-- --check` reruns the latest and fails on any difference. No model |
 | `npm run benchmark:parse -- --set dev\|heldout` | parse the check pairs' trials into `data/criteria/trialbench/<run>/`, on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
-| `npm run benchmark:check` | check the NIH-TrialBench pairs on the local model, both arms: `-- --dev` dev only; with no flag held-out, refused once a held-out result exists; `--arm full\|account`; `-- --check [--dev]` regrade the latest from its transcripts. Resumable. Loads `.env` |
+| `npm run benchmark:check` | check the NIH-TrialBench pairs on the local model, both arms: `-- --dev` dev only; with no flag held-out, refused once a held-out result exists; `--arm full\|account`; `-- --check [--dev]` regrade the latest from its transcripts, or `-- --check --result <file>` a named one; `-- --parts <file>` prints a result's outside-parts measure. Resumable. Loads `.env` |
+| `npm run benchmark:lines -- <result.json>` | every "may not fit" line on a check result, with the parse, the agent's statement and its reading; `--pair <patient>:<NCT ID>`, `--record` re-assembles the record with today's code. No model |
 
 Run `npm run check` before every commit and before opening a PR, and commit only if it passes: `npm run check && git commit ...`.
 

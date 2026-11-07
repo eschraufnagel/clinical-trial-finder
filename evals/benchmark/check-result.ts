@@ -7,6 +7,7 @@ import {
   scoreBenchmarkPair,
   summarizeArm,
 } from "./check-metrics.js";
+import { type PartsRow, type PartsSummary, scorePartsPair, summarizeParts } from "./check-parts.js";
 import type { Arm, BenchmarkTranscript } from "./check-run.js";
 import type { BenchmarkPair, BenchmarkSet, PairReason } from "./pairs.js";
 
@@ -33,6 +34,11 @@ export interface BenchmarkCheckResult {
   rows: BenchmarkRow[];
   byArm: ArmSummary[];
   compared: ArmsCompared;
+  /**
+   * Slice 0009's measure, beside the frozen one (spec 0009 §5.2). Absent on
+   * results written before it, which regrade without it.
+   */
+  parts?: { rows: PartsRow[]; byArm: PartsSummary[] };
 }
 
 /** Rows in pair order, arm by arm, and their summaries. */
@@ -42,17 +48,17 @@ export function scoreBenchmark(
   arms: readonly Arm[],
   reasons: readonly PairReason[],
   textOf: (nctId: string) => string,
-): Pick<BenchmarkCheckResult, "rows" | "byArm" | "compared"> {
+): Required<Pick<BenchmarkCheckResult, "rows" | "byArm" | "compared" | "parts">> {
   const byKey = new Map(transcripts.map((t) => [`${t.patient} ${t.nctId} ${t.arm}`, t]));
   const reasonOf = new Map(reasons.map((r) => [`${r.patient} ${r.nctId}`, r]));
-  const rows = arms.flatMap((arm) =>
+  const found = arms.flatMap((arm) =>
     pairs.flatMap((p) => {
       const t = byKey.get(`${p.patient} ${p.nctId} ${arm}`);
-      return t === undefined
-        ? []
-        : [scoreBenchmarkPair(t, reasonOf.get(`${p.patient} ${p.nctId}`), textOf(p.nctId))];
+      return t === undefined ? [] : [{ t, reason: reasonOf.get(`${p.patient} ${p.nctId}`) }];
     }),
   );
+  const rows = found.map(({ t, reason }) => scoreBenchmarkPair(t, reason, textOf(t.nctId)));
+  const partsRows = found.map(({ t, reason }) => scorePartsPair(t, reason, textOf(t.nctId)));
   return {
     rows,
     byArm: arms.map((arm) =>
@@ -62,6 +68,15 @@ export function scoreBenchmark(
       ),
     ),
     compared: compareArms(rows),
+    parts: {
+      rows: partsRows,
+      byArm: arms.map((arm) =>
+        summarizeParts(
+          arm,
+          partsRows.filter((r) => r.arm === arm),
+        ),
+      ),
+    },
   };
 }
 
@@ -86,6 +101,12 @@ export function benchmarkRegradeProblems(
   }
   if (JSON.stringify(again.compared) !== JSON.stringify(committed.compared)) {
     problems.push("the arms' comparison differs");
+  }
+  if (
+    committed.parts !== undefined &&
+    JSON.stringify(again.parts) !== JSON.stringify(committed.parts)
+  ) {
+    problems.push("the parts measure differs");
   }
   return problems;
 }

@@ -34,6 +34,8 @@ export const REQUIRED = "The trial requires";
 export const EXCLUDED = "The trial excludes";
 export const ASK_MAY_NOT_FIT = "Does this rule keep this trial from being an option for me?";
 export const ASK_RECORDS = "Do my records settle this rule?";
+/** For a "may not fit" on one part of the trial (slice 0009): which part comes first. */
+export const ASK_PART = "Which part of the trial would I be in, and is this rule for it?";
 export const NO_PARSE =
   "This trial's rules couldn't be read just now, so it wasn't checked. These are the rules your earlier answers covered.";
 
@@ -49,10 +51,20 @@ export const WHY = {
   notAboutYou: "You said this isn't about you.",
 } as const;
 
-export function countsLine(mayNotFit: number, records: number): string {
+/**
+ * The record's counts. A "may not fit" on one part of the trial is counted on
+ * its own (slice 0009): the person may not be in that part, and the first
+ * sentence then counts only the rest. With none, the line is as before.
+ */
+export function countsLine(mayNotFit: number, records: number, onePart = 0): string {
   const rules = (n: number) => (n === 1 ? "1 rule" : `${n} rules`);
+  const more = mayNotFit - onePart === 0 ? "" : " more";
+  const part =
+    onePart === 0
+      ? ""
+      : `${onePart}${more} ${onePart === 1 ? "is" : "are"} for one part of the trial, which you may not be in. `;
   return (
-    `${rules(mayNotFit)} may not fit what you said. ` +
+    `${rules(mayNotFit - onePart)} may not fit what you said. ${part}` +
     `${rules(records)} need${records === 1 ? "s" : ""} your records or your oncologist.`
   );
 }
@@ -96,7 +108,8 @@ export interface TrialRecord {
   nctId: string;
   title: Words;
   notADecision: Words;
-  counts: { mayNotFit: number; records: number; line: Words };
+  /** `mayNotFit` counts every "may not fit" line; `onePart` those on one part of the trial. */
+  counts: { mayNotFit: number; onePart: number; records: number; line: Words };
   /** Absent when the check ran; present when the trial's rules couldn't be read. */
   lead: Words | null;
   earlier: RecordSection;
@@ -312,6 +325,7 @@ function assemble(
 ): TrialRecord {
   const all = [...placed.earlier, ...placed.told, ...placed.records, ...placed.aboutTrial];
   const mayNotFit = all.filter((l) => l.mayNotFit).length;
+  const onePart = all.filter((l) => l.mayNotFit && l.part !== null).length;
   // A rule the conversation's "I don't know" covered is as open as one the
   // check left unresolved: it goes to the oncologist too, and counts.
   const didntKnow = placed.earlier.filter((l) => !l.mayNotFit && isWhy(l, WHY.didntKnow));
@@ -325,7 +339,7 @@ function assemble(
     nctId: study.nctId,
     title: registry(study.briefTitle),
     notADecision: ours(NOT_A_DECISION),
-    counts: { mayNotFit, records, line: ours(countsLine(mayNotFit, records)) },
+    counts: { mayNotFit, onePart, records, line: ours(countsLine(mayNotFit, records, onePart)) },
     lead,
     earlier: section(HEADING_EARLIER, placed.earlier),
     told: section(HEADING_TOLD, placed.told),
@@ -335,12 +349,16 @@ function assemble(
       heading: ours(HEADING_TO_ASK),
       items: [
         ...all
-          .filter((l) => l.mayNotFit)
+          .filter((l) => l.mayNotFit && l.part === null)
           .map((l) => ({ rule: l.rule, question: ours(ASK_MAY_NOT_FIT) })),
         ...[...placed.records.filter((l) => !l.mayNotFit), ...didntKnow].map((l) => ({
           rule: l.rule,
           question: ours(ASK_RECORDS),
         })),
+        // Last, because whether the person would be in that part comes first (slice 0009).
+        ...all
+          .filter((l) => l.mayNotFit && l.part !== null)
+          .map((l) => ({ rule: l.rule, question: ours(ASK_PART) })),
       ],
     },
   };

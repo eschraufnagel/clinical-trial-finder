@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { loadTrialBench } from "../../evals/benchmark/trialbench.js";
 import { loadVignettes } from "../../evals/cases/vignettes.js";
 import { VERDICT_PATTERN } from "../../evals/graders/screening.js";
 import {
@@ -18,6 +19,7 @@ import {
 } from "../../src/screening/templates.js";
 import type { ScreeningCriterion, Turn } from "../../src/screening/types.js";
 import { verdictHits } from "../../src/shortlist/words.js";
+import { loadTrials } from "../../src/trials/load.js";
 
 const STUDY = { nctId: "NCT04316364", briefTitle: "A Lung Cancer Study" };
 const CRITERION: ScreeningCriterion = {
@@ -209,6 +211,19 @@ describe("the read prompt", () => {
       /"does-not-apply": the criterion is written about one group/,
     );
   });
+
+  it("keeps a rule's condition as an if, and reads a reply outside it as does-not-apply (0009 §3)", () => {
+    expect(READ_SYSTEM_PROMPT).toMatch(/keep that in the statement as an "if"/);
+    expect(READ_SYSTEM_PROMPT).toMatch(
+      /The group may also be set by the "if" a statement starts with/,
+    );
+    expect(READ_SYSTEM_PROMPT).toMatch(
+      /against "The person is not pregnant", the same reply gives "holds"/,
+    );
+    expect(READ_SYSTEM_PROMPT).toMatch(
+      /Do this even when the criterion's text reads as what the person must be/,
+    );
+  });
 });
 
 describe("the agent's prompts and the scored vignettes (0009 spec §3.5)", () => {
@@ -246,6 +261,54 @@ describe("PROMPT_VERSION", () => {
   });
 
   it("is pinned, so a change to anything the agent says or is told is a visible test change", () => {
-    expect(PROMPT_VERSION).toBe("8fda2872b52a");
+    expect(PROMPT_VERSION).toBe("f8b60faffee1");
+  });
+});
+
+describe("the reading prompt and the trials it's measured on (this repository's 0009 §3)", () => {
+  const words = (text: string) =>
+    text
+      .toLowerCase()
+      .replace(/[’']/g, "")
+      .split(/[^a-z0-9]+/)
+      .filter((w) => w.length > 0);
+  const prompt = ` ${words(READ_SYSTEM_PROMPT).join(" ")} `;
+  const shared = (texts: readonly string[]) => {
+    const found = new Set<string>();
+    for (const t of texts) {
+      const w = words(t);
+      for (let i = 0; i + 5 <= w.length; i++) {
+        const run = w.slice(i, i + 5).join(" ");
+        if (prompt.includes(` ${run} `)) found.add(run);
+      }
+    }
+    return [...found];
+  };
+
+  // The prescreening repository's aspirin and gemcitabine examples, in the
+  // prompt before this slice, share these with NIH-TrialBench's trials and one
+  // pinned protocol. The test holds that nothing added since shares another.
+  const BEFORE_0009 = [
+    "days before the first dose",
+    "7 days before the first",
+    "patients must not have received",
+    "must not have received prior",
+    "not have received prior gemcitabine",
+  ];
+
+  it("shares no new run of five words with any NIH-TrialBench trial's criteria", () => {
+    const { trials } = loadTrialBench();
+    expect(trials.length).toBeGreaterThan(100);
+    expect(
+      shared(trials.map((t) => t.criteriaText)).filter((r) => !BEFORE_0009.includes(r)),
+    ).toEqual([]);
+  });
+
+  it("shares no new run of five words with the twelve pinned protocols", () => {
+    const trials = loadTrials();
+    expect(trials).toHaveLength(12);
+    expect(
+      shared(trials.map((t) => t.eligibility.criteriaText)).filter((r) => !BEFORE_0009.includes(r)),
+    ).toEqual([]);
   });
 });

@@ -5,6 +5,8 @@
  *   npm run benchmark:check                       held-out's 56, once: refused when a held-out result exists
  *   npm run benchmark:check -- --arm full         one arm only (Gate 2's option)
  *   npm run benchmark:check -- --check [--dev]    regrade the latest result from its transcripts; no model
+ *   npm run benchmark:check -- --check --result <path>   regrade a named result instead
+ *   npm run benchmark:check -- --parts <path>     print a result's parts measure (0009), from its transcripts; no model
  *   npm run benchmark:check -- --dev --model anthropic:claude-haiku-4-5
  *                                                 dry: prints the estimate and exits, unless --spend
  *
@@ -98,8 +100,29 @@ async function main(): Promise<void> {
     reasonsSha256: fileSha256(REASONS_PATH),
   };
 
+  if (args.includes("--parts")) {
+    const path = args[args.indexOf("--parts") + 1];
+    if (path === undefined || !existsSync(path)) {
+      console.error("--parts takes a result file.");
+      process.exitCode = 1;
+      return;
+    }
+    const committed = JSON.parse(readFileSync(path, "utf8")) as BenchmarkCheckResult;
+    const set = pairs.filter((p) => p.set === committed.set);
+    const { parts } = scoreBenchmark(
+      readTranscripts(join(ROOT, committed.transcripts)),
+      set,
+      committed.arms,
+      reasons,
+      textOf,
+    );
+    console.log(JSON.stringify(parts.byArm, null, 2));
+    return;
+  }
+
   if (args.includes("--check")) {
-    const path = latestResult(resultsDir);
+    const named = args.includes("--result") ? args[args.indexOf("--result") + 1] : undefined;
+    const path = named ?? latestResult(resultsDir);
     if (path === undefined) {
       console.error(`No result in ${resultsDir} to check.`);
       process.exitCode = 1;
@@ -276,7 +299,13 @@ async function main(): Promise<void> {
   const out = join(resultsDir, nextRunFile(resultsDir, hash));
   writeFileSync(out, `${JSON.stringify(result, null, 2)}\n`, "utf8");
   console.log(`\nWrote ${relative(ROOT, out)}.`);
-  console.log(JSON.stringify({ byArm: result.byArm, compared: result.compared }, null, 2));
+  console.log(
+    JSON.stringify(
+      { byArm: result.byArm, compared: result.compared, parts: result.parts?.byArm },
+      null,
+      2,
+    ),
+  );
 }
 
 if (import.meta.main) {

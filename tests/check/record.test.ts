@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
+  ASK_MAY_NOT_FIT,
+  ASK_PART,
   ASK_RECORDS,
+  countsLine,
   MAY_NOT_FIT,
   MAY_NOT_FIT_PART,
   NOTHING_CONFLICTS,
@@ -178,6 +181,60 @@ describe("recordFor", () => {
     });
     expect(of("T3")?.part).toBeNull();
     expect(parted.counts.mayNotFit).toBe(record.counts.mayNotFit);
+    expect(parted.counts.onePart).toBe(1);
+    expect(parted.counts.line).toEqual({
+      ours: "3 rules may not fit what you said. 1 more is for one part of the trial, which you may not be in. 11 rules need your records or your oncologist.",
+    });
+  });
+
+  it("asks about a rule for one part last, by which part the person would be in (0009)", () => {
+    const parted = recordFor({
+      study: STUDY,
+      criteria: CASES.map(([c]) => c),
+      findings: CASES.map(([, f]) => f),
+      parts: new Map([["T1", "Part D"]]),
+    });
+    const items = parted.toAsk.items;
+    expect(items).toHaveLength(record.toAsk.items.length);
+    const t1 = parted.told.lines.find((l) => l.criterionId === "T1");
+    expect(items.at(-1)).toEqual({ rule: t1?.rule, question: { ours: ASK_PART } });
+    expect(
+      items.filter((i) => "ours" in i.question && i.question.ours === ASK_MAY_NOT_FIT),
+    ).toHaveLength(3);
+    expect(verdictHits(oursIn(parted))).toEqual([]);
+  });
+
+  it("keeps the counts line as before when no rule is for one part", () => {
+    expect(record.counts.onePart).toBe(0);
+    expect(record.counts.line).toEqual({
+      ours: "4 rules may not fit what you said. 11 rules need your records or your oncologist.",
+    });
+    expect(countsLine(1, 1, 0)).toBe(
+      "1 rule may not fit what you said. 1 rule needs your records or your oncologist.",
+    );
+    expect(countsLine(2, 0, 2)).toBe(
+      "0 rules may not fit what you said. 2 are for one part of the trial, which you may not be in. 0 rules need your records or your oncologist.",
+    );
+    expect(countsLine(3, 2, 2)).toBe(
+      "1 rule may not fit what you said. 2 more are for one part of the trial, which you may not be in. 2 rules need your records or your oncologist.",
+    );
+  });
+
+  it("never says may not fit when a clinical rule's condition doesn't apply (0009)", () => {
+    const r = recordFor({
+      study: STUDY,
+      criteria: [crit("D1", "inclusion", "clinical")],
+      findings: [
+        finding("D1", "chart-review", "does-not-apply", {
+          reported: "does-not-apply",
+          evidence: [{ turn: 2, quote: "No", reading: "does-not-apply" }],
+        }),
+      ],
+    });
+    expect(r.records.lines).toEqual([
+      expect.objectContaining({ mayNotFit: false, flag: null, why: { ours: WHY.notAboutYou } }),
+    ]);
+    expect(r.counts.mayNotFit).toBe(0);
   });
 
   it("takes an earlier answer's hint from the mapping, and says when they didn't know", () => {

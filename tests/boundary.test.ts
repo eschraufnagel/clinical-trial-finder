@@ -1335,3 +1335,41 @@ describe("the benchmark import reaches no network, registry or model", () => {
     ).toEqual(["fetch()"]);
   });
 });
+
+/**
+ * Slice 0009: `benchmark:lines` prints a result's lines and re-assembles a
+ * record from stored findings. It reads; it never checks. So it reaches no
+ * model module, not the parser, not the agent's session and no network.
+ */
+describe("benchmark:lines reaches no model, parser, session or network", () => {
+  const SCRIPT = fileURLToPath(new URL("../scripts/benchmark-lines.ts", import.meta.url));
+  const modules = reachableModules(SCRIPT);
+  const forbidden = (file: string): boolean =>
+    file.includes(`${sep}models${sep}`) ||
+    file.endsWith(`${sep}criteria${sep}parse.ts`) ||
+    file.endsWith(`${sep}screening${sep}session.ts`) ||
+    file.endsWith(`${sep}screening${sep}calls.ts`);
+
+  it("walks a real graph", () => {
+    expect(modules.some((m) => m.endsWith(`check${sep}record.ts`))).toBe(true);
+    expect(modules.some((m) => m.endsWith(`screening${sep}from-parse.ts`))).toBe(true);
+  });
+
+  it("touches no network", () => {
+    const offenders = modules
+      .map((file) => ({ file, usage: findNetworkUsage(file) }))
+      .filter(({ usage }) => usage.length > 0);
+    expect(offenders).toEqual([]);
+  });
+
+  it("reaches none of them", () => {
+    expect(modules.filter(forbidden)).toEqual([]);
+  });
+
+  it("would catch each", () => {
+    expect(forbidden(`${sep}src${sep}models${sep}types.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}criteria${sep}parse.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}screening${sep}session.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}check${sep}record.ts`)).toBe(false);
+  });
+});

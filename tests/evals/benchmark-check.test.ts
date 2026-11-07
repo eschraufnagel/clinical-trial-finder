@@ -4,6 +4,7 @@ import {
   scoreBenchmarkPair,
   summarizeArm,
 } from "../../evals/benchmark/check-metrics.js";
+import { scorePartsPair, summarizeParts } from "../../evals/benchmark/check-parts.js";
 import { benchmarkRegradeProblems, scoreBenchmark } from "../../evals/benchmark/check-result.js";
 import { type BenchmarkTranscript, checkBenchmarkPair } from "../../evals/benchmark/check-run.js";
 import type { BenchmarkPair } from "../../evals/benchmark/pairs.js";
@@ -227,6 +228,108 @@ describe("the arms", () => {
         reasonsSha256: "z",
       }),
     ).toContain("reasonsSha256 differs");
+  });
+
+  it("regrade a result written before the parts measure without it, and notice a change in it", () => {
+    const transcripts = [transcript(eligible, "full", [finding("P3", "holds")])];
+    const pairs = [eligible];
+    const sums = { pairsSha256: "a", accountsSha256: "b", reasonsSha256: "c" };
+    const { parts, ...frozen } = scoreBenchmark(transcripts, pairs, ["full"], [], () => TEXT);
+    const base = {
+      version: 1 as const,
+      set: "dev" as const,
+      arms: ["full" as const],
+      ...sums,
+      parseRun: "",
+      parser: null,
+      run: {
+        agent: null,
+        participant: {
+          model: "fake",
+          quantization: "none",
+          temperature: 0,
+          seed: 0,
+          adapter: "fake",
+          promptVersion: "x",
+          timestamp: "2000-06",
+        },
+      },
+      transcripts: "",
+      ...frozen,
+    };
+    expect(benchmarkRegradeProblems(base, transcripts, pairs, [], () => TEXT, sums)).toEqual([]);
+    const tampered = {
+      ...base,
+      parts: {
+        ...parts,
+        rows: parts.rows.map((r) => ({ ...r, flaggedOutsideParts: !r.flaggedOutsideParts })),
+      },
+    };
+    expect(benchmarkRegradeProblems(tampered, transcripts, pairs, [], () => TEXT, sums)).toEqual([
+      "the parts measure differs",
+    ]);
+  });
+});
+
+describe("the parts measure (0009 §5.2)", () => {
+  const withParts = (pair: BenchmarkPair, findings: Finding[], parts: [string, string][]) => {
+    const t = transcript(pair, "full", findings);
+    t.record = recordFor({ study: STUDY, criteria: CRITERIA, findings, parts: new Map(parts) });
+    return t;
+  };
+  const rule = {
+    patient: "nci-90",
+    nctId: "NCT00000001",
+    kind: "rule" as const,
+    quote: "Prior platinum chemotherapy",
+  };
+
+  it("flags a pair whose only line is on one part, but not outside parts", () => {
+    const t = withParts(eligible, [finding("P3", "holds")], [["P3", "Arm B"]]);
+    expect(scoreBenchmarkPair(t, undefined, TEXT).flagged).toBe(true);
+    expect(scorePartsPair(t, undefined, TEXT)).toMatchObject({
+      flaggedOutsideParts: false,
+      namedOnRecord: null,
+    });
+  });
+
+  it("flags a pair with a line on the whole trial both ways", () => {
+    const t = withParts(
+      eligible,
+      [finding("P3", "holds"), finding("P2", "does-not-hold")],
+      [["P3", "Arm B"]],
+    );
+    expect(scoreBenchmarkPair(t, undefined, TEXT).flagged).toBe(true);
+    expect(scorePartsPair(t, undefined, TEXT).flaggedOutsideParts).toBe(true);
+  });
+
+  it("finds the named rule under records, and not when it isn't on the record", () => {
+    const records = withParts(
+      ineligible,
+      [{ ...finding("P2", "unresolved"), reason: "unknown" }],
+      [],
+    );
+    expect(scorePartsPair(records, rule, TEXT)).toMatchObject({
+      flaggedOutsideParts: false,
+      namedOnRecord: true,
+    });
+    const fits = withParts(ineligible, [finding("P2", "holds")], []);
+    expect(scorePartsPair(fits, rule, TEXT).namedOnRecord).toBe(false);
+  });
+
+  it("summarizes caught, false alarms and named rules on the record", () => {
+    const rows = [
+      scorePartsPair(withParts(ineligible, [finding("P2", "does-not-hold")], []), rule, TEXT),
+      scorePartsPair(
+        withParts(eligible, [finding("P3", "holds")], [["P3", "Arm B"]]),
+        undefined,
+        TEXT,
+      ),
+    ];
+    const s = summarizeParts("full", rows);
+    expect(s.caught).toMatchObject({ kept: 1, n: 1 });
+    expect(s.falseAlarms).toMatchObject({ kept: 0, n: 1 });
+    expect(s.namedOnRecord).toMatchObject({ kept: 1, n: 1 });
   });
 });
 
