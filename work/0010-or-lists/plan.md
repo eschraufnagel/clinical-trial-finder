@@ -340,4 +340,9 @@ A hosted run, if asked for at a gate, is a new gate: dry first with `--model <sp
 
 ## Records
 
-(Filled in as the steps land.)
+- **The owner approved this plan as written (2026-11).**
+- **Step 1, baseline** (on `0010-or-lists` at `275c2ca`, `main` at `a1b3ca0` plus intent, revised intent, spec and plan):
+  - `npm run check` exits 0; 1,272 tests (1,264 passed, 8 expected to fail) in 113 files; `npm test` about 0.9 s.
+  - `npm run test:e2e`: 8 passed.
+  - `search:eval -- --check`, `questions:eval -- --check` and `-- --check --dev`, `facts:eval -- --check`, `check:eval -- --check` and `-- --check --dev`, `benchmark:search -- --trec --check` and `-- --trialbench --check`, `benchmark:check -- --check --dev` (`dev/02-17a5dbee2eb0.json`) and `-- --check --result …/dev/01-5ed77c679dad.json` pass.
+  - `other:eval -- --check` and `-- --check --dev` fail with "labelsSha256 differs" and nothing else, as recorded since 0006.
