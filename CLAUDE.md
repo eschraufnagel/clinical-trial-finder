@@ -155,6 +155,8 @@ Since slice 0008, it also keeps the benchmark import (`benchmark:import`) away f
 
 Since slice 0009, it also keeps `benchmark:lines` away from every model module, the parser and the agent's session: it reads a result's transcripts and parses, and re-assembles records with `recordFor`.
 
+Since slice 0010, it also keeps `criteria:compare` away from every model module, the parser, the parse cache and the network: it reads parse files only.
+
 The conversation and the check share the app's one transport through `routeByConversation` in `src/transport/`, so neither knows how messages are delivered.
 
 A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
@@ -203,7 +205,9 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run benchmark:search -- --trec\|--trialbench` | score the search against a benchmark and write a result, once; `-- --check` reruns the latest and fails on any difference. No model |
 | `npm run benchmark:parse -- --set dev\|heldout` | parse the check pairs' trials into `data/criteria/trialbench/<run>/`, on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
 | `npm run benchmark:check` | check the NIH-TrialBench pairs on the local model, both arms: `-- --dev` dev only; with no flag held-out, refused once a held-out result exists; `--arm full\|account`; `-- --check [--dev]` regrade the latest from its transcripts, or `-- --check --result <file>` a named one; `-- --parts <file>` prints a result's outside-parts measure. Resumable. Loads `.env` |
-| `npm run benchmark:lines -- <result.json>` | every "may not fit" line on a check result, with the parse, the agent's statement and its reading; `--pair <patient>:<NCT ID>`, `--record` re-assembles the record with today's code. No model |
+| `npm run benchmark:lines -- <result.json>` | every "may not fit" line on a check result, with the parse, the agent's statement and its reading; `--pair <patient>:<NCT ID>`, `--record` re-assembles the record with today's code, `--parses <dir>` with another parse run's passages, parts and lists. No model |
+| `npm run criteria:eval` | grade the parser on the five hand-labelled protocols with the inherited runner, writing to `evals/results/criteria/`; on the local model, cached by prompt; `--model <spec>` is dry without `--spend`. Loads `.env` |
+| `npm run criteria:compare -- <old> <new>` | two parse runs of the same trials, rule by rule: split, joined, lost, changed, and every list mark; `--old-prompt`/`--new-prompt` pick from one folder; `--lists <dir>` estimates list-like runs from source text. No model |
 
 Run `npm run check` before every commit and before opening a PR, and commit only if it passes: `npm run check && git commit ...`.
 

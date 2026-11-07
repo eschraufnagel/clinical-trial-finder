@@ -6,6 +6,8 @@ Built in slice 0007. The record is in [`work/0007-deeper-check/`](../work/0007-d
 
 Slice 0009 changed how the agent reads conditional and pregnancy rules, and how the record counts rules for one part of a trial ([below](#what-slice-0009-changed)). Its record is in [`work/0009-check-false-alarms/`](../work/0009-check-false-alarms/), with the line-by-line diagnosis, [diagnosis.md](../work/0009-check-false-alarms/diagnosis.md), and the dev rerun, [gate-2-dev.md](../work/0009-check-false-alarms/gate-2-dev.md). The numbers below are 0007's, measured before that change.
 
+Slice 0010 tried to stop "or" lists raising false alarms, by having the parser mark a list's items. Two wordings of the parser's prompt each marked the target lists right and changed other trials' parses for the worse, so the prompt was put back and no check was run ([below](#what-slice-0010-tried)). Its record is in [`work/0010-or-lists/`](../work/0010-or-lists/), with both tries read mark by mark in [gate-1-parser.md](../work/0010-or-lists/gate-1-parser.md).
+
 ```
 npm run check:label-show -- p08 NCT05579366     a patient and a trial's rules, for labelling
 npm run check:parse -- --set dev|heldout        parse the picked trials' rules, on the local model
@@ -13,6 +15,9 @@ npm run check:eval -- --dev                     check the dev pairs, and write a
 npm run check:eval -- --check [--dev]           regrade the latest result from its transcripts
 npm run benchmark:lines -- <result.json>        every "may not fit" line on a check result, with the parse, statement and reading behind it
 npm run benchmark:lines -- <result.json> --pair nci-13:NCT02465060 --record   one pair's record, assembled again with today's record
+npm run benchmark:lines -- <result.json> --record --parses <dir>               the same, with another parse run's passages, parts and lists
+npm run criteria:eval                           grade the parser on the five hand-labelled protocols, on the local model
+npm run criteria:compare -- <old> <new>         two parse runs of the same trials, rule by rule; --lists <dir> estimates lists
 ```
 
 ## The finding, in plain words
@@ -60,6 +65,7 @@ All numbers are from one local model, Qwen3.6-35B-A3B in 8-bit, at temperature 0
 
    - **A rule for one part of the trial** (the parse's `appliesTo`) shows that part, and reads "May not fit one part of the trial". Since slice 0009 the counts sentence sets those apart: "1 rule may not fit what you said. 2 more are for one part of the trial, which you may not be in." They come last on "To ask your oncologist", each with "Which part of the trial would I be in, and is this rule for it?"
    - **A trial whose rules can't be parsed** gets a shorter record. It shows the rules the mapper read, with the earlier answers beside them, and says it wasn't checked.
+   - **A list the trial accepts any one of** (since slice 0010): when the parse marks rules with a shared `anyOf` label, the record reads them as one rule. Each item shows "One of a list: the trial asks for any one of these." The list "may not fit" only when every item does, and then counts once. No parse in use carries marks today (below), so no record shows one.
    - **There is no field for a verdict.** "May not fit" is the only word for a conflict, as on the list.
 
 **What changed at Gate 1.** Dev's first run failed the bar on one worded question with "eligibility" in it. Four revisions followed, none of which changed a prompt:
@@ -126,6 +132,23 @@ Dev was rerun from the full summary only, on the same model and settings ([`dev/
 
 Held-out stayed unread: the owner kept it for a fix that can move the rate.
 
+### What slice 0010 tried
+
+"Or" lists are the largest cause of false alarms left in one place. A trial open to "squamous cell, adenocarcinoma, or renal medullary carcinoma" was parsed as three requirements, so a person with one of them "may not fit" the other two. On 0009's dev rerun, four counted lines came from this, on two eligible pairs.
+
+Slice 0010 kept the split and added a mark: the parser gives every item of one list the same `anyOf` label, code drops a mark it can't trust (a list of one, mixed polarity or parts, an exclusion list), and the record reads a marked list as one rule. The code is in, tested, and inert: the parser's prompt doesn't ask for marks.
+
+The prompt that did ask was tried twice, on the five hand-labelled protocols and NIH-TrialBench dev's 12 trials, on the local model ([gate-1-parser.md](../work/0010-or-lists/gate-1-parser.md)):
+- **Both tries marked the two target lists right.** Re-read with 0009's stored answers, all four lines lose their "may not fit".
+- **Both also changed how other trials were split, and marked the wrong things.**
+  - The first try turned one trial's exceptions to an exclusion ("…with exception of: eczema, vitiligo…") into rules a person must meet. Nearly everyone would "may not fit" them.
+  - The second fixed that, but marked "all of the following criteria are met" and a block of ten required lab values as "any one of these". That would hide real conflicts.
+- **Against the hand labels, the parser split closer to them** (strict recall 77.8% before, 84.9% and 82.1% in the two tries), but type accuracy fell to 86.5% on the second.
+
+**The owner stopped at the first gate,** before any check: a third wording tuned on the same 12 trials would be fitting the prompt to dev. Both tries' parses and grades are committed (`data/criteria/trialbench/…-08edc407-n2/` and `…-d62e4ce7-n2/`, `evals/results/criteria/`).
+
+**What it points to.** The trial's own words tell the two kinds of list apart. Every right list followed "one of the following", an item ending "or", or a list of kinds ("histologies"). Every wrong one followed "all of the following", "as defined below" or "except for the following". Marks made in code from those words would need no model and no change to the parser.
+
 ### Repeats
 
 The repeat count is high and overstated. It counts a reply that drew on an asked fact, whether or not the question repeated one. "Have you been told you have separate tumor nodules?" got "They told me it's in my chest", which counts. Some repeats are real: questions the conversation asked but the mapper didn't tie to the rule.
@@ -139,7 +162,7 @@ See [page.md](page.md#the-check). `npm run app -- --fake` checks only trials wit
 - **The inherited parser isn't measured on these trials.** It was measured on 12 pinned protocols in the prescreening repository. A rule it drops can't be caught, and the false-alarm patterns above are its structure. Fixing them is a parser change.
 - **Against clinicians' labels it flags almost everything.** On NIH-TrialBench's dev pairs, from slice 0008, it flagged 8 of 9 trials clinicians called eligible from the full clinical summary, and 4 of 9 from a patient's account. Its catches on ineligible pairs came from parts of the trial the person isn't in. Slice 0009's prompt fixed most of the pregnancy and conditional lines, and the rate stayed at 5 of 9 outside parts ([above](#what-slice-0009-changed)). Held-out is still unread ([benchmark.md](benchmark.md)).
 - **What still causes false alarms:**
-  - **"or" lists** the parser splits into one requirement per alternative;
+  - **"or" lists** the parser splits into one requirement per alternative. Slice 0010's record can read them as one rule, but nothing marks them yet;
   - **conditions the parser drops or joins,** which no prompt can bring back;
   - **the restatement,** which still turns some permissions into requirements, and on one dev pair turned an inclusion upside down;
   - **no judgment of purpose:** the check reads rules, so a trial for another purpose is flagged only on its parts, if at all.

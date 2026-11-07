@@ -281,6 +281,7 @@ A hosted run, if asked for at a gate, is a new gate: dry first with `--model <sp
 - `data/criteria/trialbench/<new run>/`: dev's 12, plus held-out's 30 if run; `data/criteria/trialbench/latest`
 - `evals/results/benchmark/check/dev/03-*.json` and `runs/`; a held-out result if run
 - `docs/check.md`, `docs/benchmark.md`, `work/ROADMAP.md` (0010 row and header only), `CLAUDE.md`
+- **As Gate 1 was "stop":** `src/criteria/prompt.ts` is back to its plan-time text, and `data/criteria/trialbench/latest` to the old run. Not created: a dev result (`dev/03-*.json`), `gate-2-dev.md`, `gate-2-flags.txt`, held-out's parses and result. Added beside the plan's list: `work/0010-or-lists/gate-1-compare.md`, a second parse run (`…-d62e4ce7-n2/`) and a third grading run (`03-d62e4ce71f05.json`), from R1. `src/web/Record.tsx` gained the list note but no record shows it while no parse has marks.
 
 **Not changed:**
 - `src/screening/` and `ScreeningCriterion`;
@@ -385,3 +386,4 @@ A hosted run, if asked for at a gate, is a new gate: dry first with `--model <sp
   - **Recommendation: stop,** reverting the prompt. **Stopped at Gate 1 again.**
 - **Gate 1's second answer: stop** (recorded in `gate-1-parser.md`). Stage B and C don't run.
 - **The revert:** `src/criteria/prompt.ts` back to the plan's commit (`PROMPT_VERSION` `e1e694b399d4`), and `data/criteria/trialbench/latest` back to `qwen3.6-35b-a3b-mlx-8bit-e1e694b3-n2`. The two tried runs' parses and grades stay committed. `tests/criteria/prompt-overlap.test.ts` loses its check that the prompt asks for `anyOf`; its two overlap checks stay, and pass on the old prompt.
+- **Step 12, docs:** `docs/check.md` (the commands, the record's list reading under "How it works", a "What slice 0010 tried" section, and the "or" lists limit), `docs/benchmark.md` (dev not rerun, held-out still unread), the roadmap's 0010 row and header (staged against the committed file, so the owner's Future scope section stays unstaged), and `CLAUDE.md` (`criteria:eval`, `criteria:compare`, `benchmark:lines --parses`, and the boundary sentence). The README has no sentence on the check's false alarms and is unchanged.
