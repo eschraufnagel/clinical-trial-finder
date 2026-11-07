@@ -377,3 +377,9 @@ A hosted run, if asked for at a gate, is a new gate: dry first with `--model <sp
   - **Recommendation: revise** (two lines in "Splitting"), then step 7 again. **Stopped at Gate 1.**
 - **Gate 1's answer: revise** (recorded in `gate-1-parser.md`, Answer).
 - **Revision R1, the parser prompt:** two lines after the list rule in "Splitting": a list holds only its items (not a heading, not a rule adding a condition); an exception to an exclusion stays inside it. A header line says why. `PROMPT_VERSION` is `d62e4ce71f05`. The overlap test passes unchanged.
+- **Step 7 again, after R1:**
+  - `criteria:eval`: `evals/results/criteria/03-d62e4ce71f05.json`, 550 s. Pooled strict recall 82.1%, coverage recall 91.7%, precision 93.7%, type accuracy 86.5%, polarity accuracy 96.6%, merged 24, predictions 221.
+  - `benchmark:parse -- --set dev`: run `qwen3.6-35b-a3b-mlx-8bit-d62e4ce7-n2`, all 12 in 1,585 s; `latest` moved to it. NCT02465060 parsed, as 145 rules.
+  - `criteria:compare` against the old parses: 430 matched, 69 old only, 215 new only, 14 polarity, 13 type and 126 part changed; 25 lists (16 right, 7 wrong, 2 mixed by hand), 14 dropped marks. Two wrong lists hide real requirements (NCT06161532's organ function and "all of the following" brain-lesion conditions).
+  - `gate-1-parser.md` gains the second try above the first; `gate-1-compare.md` gains R1's output.
+  - **Recommendation: stop,** reverting the prompt. **Stopped at Gate 1 again.**
