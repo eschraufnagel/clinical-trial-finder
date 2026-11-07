@@ -86,6 +86,28 @@ export interface Criterion {
    * model's `text` already carries the heading's meaning.
    */
   heading?: SourceSpan;
+  /**
+   * Present when this criterion is one item of a list the trial accepts any one
+   * of: the same short label on every item (slice 0010 here). Absent on parses
+   * made before it, and on any criterion that stands alone.
+   *
+   * A mark, not a merged rule: the split stays as the parser made it, so a
+   * parse with marks can be compared item by item with one without, and
+   * whether a list "may not fit" is decided in code (`src/check/record.ts`).
+   * `settleLists` in `parse.ts` drops a mark it can't trust.
+   */
+  anyOf?: string;
+}
+
+/**
+ * A list mark the parser gave and `settleLists` took away, with why (slice
+ * 0010 here). Not a `RejectedCriterion`: the criteria stay, only the mark goes.
+ */
+export interface DroppedMark {
+  label: string;
+  /** The criteria that carried it. */
+  ids: string[];
+  reason: string;
 }
 
 /** A criterion the model produced that did not survive validation. */
@@ -115,6 +137,11 @@ export interface ParsedCriteria {
    * Not an error — data for a human reading the parse, and for 0003.
    */
   unclaimed: SourceSpan[];
+  /**
+   * List marks dropped as untrustworthy (slice 0010 here). Present only when
+   * there are some; absent on parses made before it.
+   */
+  droppedMarks?: DroppedMark[];
   /**
    * `normalizeVersion` is which normalization the model was shown (slice
    * 0011). Absent on parses made before it, which means "1".

@@ -31,9 +31,10 @@ import type { PairTranscript, ParticipantTurn } from "./transcript.js";
  * question. It's part of `check:eval`'s run hash, so a revision is a new run,
  * never a mix with transcripts the old code wrote. 1 was dev's first run; 2
  * is after Gate 1's revisions (R1 to R3); 3 is slice 0009's record, which
- * counts and asks about rules for one part of the trial on their own.
+ * counts and asks about rules for one part of the trial on their own; 4 is
+ * slice 0010's, which reads a list the trial accepts any one of as one rule.
  */
-export const CHECK_REVISION = 3;
+export const CHECK_REVISION = 4;
 
 /** Far beyond any trial's criteria twice over; a guard against a loop, never a budget. */
 export const MAX_TURNS = 400;

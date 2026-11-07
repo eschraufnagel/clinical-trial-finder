@@ -5,6 +5,8 @@
  *   npm run benchmark:lines -- <result.json>                       every counted line, every pair
  *   npm run benchmark:lines -- <result.json> --pair nci-13:NCT02465060   one pair, every arm
  *   npm run benchmark:lines -- <result.json> --pair <p:NCT> --record     its record, re-assembled
+ *   npm run benchmark:lines -- <result.json> --record --parses <dir>      re-assembled with another
+ *                                                              parse run's passages, parts and lists
  *
  * For each line: the parse's text, polarity and type as the agent saw them,
  * the part of the trial it's for, where the measure says it sits, and each
@@ -92,13 +94,29 @@ export function rebuildRecord(t: BenchmarkTranscript, parsed: CachedParse): Tria
   const parts = new Map(
     [...ids].flatMap(([c, id]) => (c.appliesTo === undefined ? [] : [[id, c.appliesTo] as const])),
   );
+  const lists = new Map(
+    [...ids].flatMap(([c, id]) => (c.anyOf === undefined ? [] : [[id, c.anyOf] as const])),
+  );
   return recordFor({
     study: { nctId: t.nctId, briefTitle: text(t.record.title) },
     criteria: t.criteria,
     findings: t.findings,
     wording,
     parts,
+    lists,
   });
+}
+
+/**
+ * The agent's ids whose passage differs in a parse, by ordinal: where a record
+ * rebuilt from that parse would put a finding beside another rule. Passages,
+ * not statements, since the parser words a statement afresh each run.
+ */
+export function parseDrift(t: BenchmarkTranscript, parsed: CachedParse): string[] {
+  const { ids } = fromParse(parsed);
+  const passage = new Map([...ids].map(([c, id]) => [id, c.source.text]));
+  const all = new Set([...Object.keys(t.sources), ...passage.keys()]);
+  return [...all].filter((id) => passage.get(id) !== t.sources[id]?.text);
 }
 
 /** A record as plain text, section by section, as the page lays it out. */
@@ -115,6 +133,7 @@ export function formatRecord(record: TrialRecord): string {
     for (const l of section.lines) {
       out.push(`- [${l.criterionId}] ${text(l.kind)}: ${text(l.rule)}`);
       if (l.part !== null) out.push(`    part: ${text(l.part)}`);
+      if (l.list !== null && l.list !== undefined) out.push(`    ${text(l.list)} (${l.listId})`);
       for (const a of l.earlier) out.push(`    asked before: ${text(a.asked)} — "${text(a.said)}"`);
       for (const w of l.said) out.push(`    said: "${text(w)}"`);
       if (l.flag !== null) out.push(`    ${text(l.flag)}`);
@@ -158,9 +177,16 @@ function main(): void {
     result.rows.find((r) => r.patient === t.patient && r.nctId === t.nctId && r.arm === t.arm);
 
   if (args.includes("--record")) {
+    // Slice 0010: another parse run, to read stored findings with its list
+    // marks. The agent's ids are ordinals, so they carry over only where the
+    // other run kept the same criteria in the same order; `parseDrift` says where not.
+    const parsesArg = args.includes("--parses") ? args[args.indexOf("--parses") + 1] : undefined;
+    const parseDir = parsesArg ?? join(CRITERIA_DIR, result.parseRun);
     for (const t of transcripts) {
-      const parsed = readParse(join(CRITERIA_DIR, result.parseRun), t.nctId);
+      const parsed = readParse(parseDir, t.nctId);
       console.log(`=== ${t.patient} ${t.nctId} ${t.arm}\n`);
+      const drift = parsed === undefined ? [] : parseDrift(t, parsed);
+      if (drift.length > 0) console.log(`Ids that don't carry over: ${drift.join(", ")}\n`);
       console.log(
         parsed === undefined ? formatRecord(t.record) : formatRecord(rebuildRecord(t, parsed)),
       );

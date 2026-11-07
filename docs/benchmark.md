@@ -138,7 +138,9 @@ The headline was frozen before scoring and isn't changed, but it mixes two thing
 - Outside parts, the same five eligible pairs are flagged. Each kept another line: two "or" lists, the trial's own "solid tumors", and two new lines on questions answered "I don't know" in 0008.
 - "Caught" rises to 5 of 5 on 0008's measure only because the prostate MRI study's rules are now read "does-not-hold" for a woman, on a part of the trial.
 
-**Held-out is unread.** It was estimated at about 42 hours in both arms. At 0008's second gate the owner chose not to spend its one look on a check whose false alarms have known causes. At 0009's, with the rate unchanged on dev, the owner kept it for a fix that can move the rate. Held-out's 30 trials aren't parsed, and its 56 pairs (30 ineligible, 17 with a named rule) are untouched.
+**Slice 0010 didn't rerun dev.** It tried a parser change for "or" lists and stopped before any check, because the change made other trials' parses worse ([check.md](check.md#what-slice-0010-tried)).
+
+**Held-out is unread.** It was estimated at about 42 hours in both arms. At 0008's second gate the owner chose not to spend its one look on a check whose false alarms have known causes. At 0009's, with the rate unchanged on dev, the owner kept it for a fix that can move the rate. Slice 0010's fix never reached a check. Held-out's 30 trials aren't parsed, and its 56 pairs (30 ineligible, 17 with a named rule) are untouched.
 
 ## The three-way comparison
 

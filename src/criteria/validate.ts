@@ -29,6 +29,8 @@ export interface RawCriterion {
   polarity: CriterionPolarity;
   type: CriterionType;
   appliesTo: string | null;
+  /** The list this item belongs to, by its label, or null (slice 0010 here). */
+  anyOf: string | null;
   confidence: number | null;
 }
 
@@ -109,6 +111,7 @@ function readCriterion(entry: unknown): CriterionResult {
 
   const confidence = readConfidence(record["confidence"], problems);
   const appliesTo = readAppliesTo(record["appliesTo"], problems);
+  const anyOf = readAnyOf(record["anyOf"], problems);
 
   if (problems.length > 0) {
     return { problems };
@@ -121,6 +124,7 @@ function readCriterion(entry: unknown): CriterionResult {
       polarity: polarity as CriterionPolarity,
       type: type as CriterionType,
       appliesTo,
+      anyOf,
       confidence,
     },
   };
@@ -156,6 +160,22 @@ function readAppliesTo(value: unknown, problems: string[]): string | null {
   }
   if (typeof value !== "string") {
     problems.push(`appliesTo ${describe(value)} is not a string`);
+    return null;
+  }
+  const trimmed = value.trim();
+  return trimmed.length === 0 ? null : trimmed;
+}
+
+/**
+ * A list label, like `appliesTo`: absent or blank is none, and anything but a
+ * string is a fault. Exported for its test.
+ */
+export function readAnyOf(value: unknown, problems: string[]): string | null {
+  if (value === undefined || value === null) {
+    return null;
+  }
+  if (typeof value !== "string") {
+    problems.push(`anyOf ${describe(value)} is not a string`);
     return null;
   }
   const trimmed = value.trim();

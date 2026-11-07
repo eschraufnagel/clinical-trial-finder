@@ -34,6 +34,7 @@ describe("readCriteriaEnvelope", () => {
         polarity: "inclusion",
         type: "patient",
         appliesTo: null,
+        anyOf: null,
         confidence: 0.95,
       },
     ]);

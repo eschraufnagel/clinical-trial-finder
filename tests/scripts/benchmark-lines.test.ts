@@ -1,7 +1,12 @@
 import { describe, expect, it } from "vitest";
 import type { BenchmarkRow } from "../../evals/benchmark/check-metrics.js";
 import type { BenchmarkTranscript } from "../../evals/benchmark/check-run.js";
-import { formatLines, formatRecord, rebuildRecord } from "../../scripts/benchmark-lines.js";
+import {
+  formatLines,
+  formatRecord,
+  parseDrift,
+  rebuildRecord,
+} from "../../scripts/benchmark-lines.js";
 import type { CachedParse } from "../../src/check/parse-cache.js";
 import {
   HEADING_ABOUT_TRIAL,
@@ -9,6 +14,7 @@ import {
   HEADING_RECORDS,
   HEADING_TO_ASK,
   HEADING_TOLD,
+  LIST_ANY,
   MAY_NOT_FIT_PART,
   recordFor,
 } from "../../src/check/record.js";
@@ -145,5 +151,21 @@ describe("benchmark:lines", () => {
     ]) {
       expect(out).toContain(`## ${heading}`);
     }
+  });
+
+  it("reads a parse's list marks onto the record (0010)", () => {
+    const marked: CachedParse = {
+      ...PARSED,
+      criteria: PARSED.criteria.map((c) => ({ ...c, anyOf: "pair" })),
+    };
+    const out = formatRecord(rebuildRecord(T, marked));
+    expect(out).toContain(`${LIST_ANY} (pair)`);
+    expect(formatRecord(rebuildRecord(T, PARSED))).not.toContain(LIST_ANY);
+  });
+
+  it("names the ids whose passage another parse moved (0010)", () => {
+    expect(parseDrift(T, PARSED)).toEqual([]);
+    const moved: CachedParse = { ...PARSED, criteria: [...PARSED.criteria].reverse() };
+    expect(parseDrift(T, moved)).toEqual(["P1", "P2"]);
   });
 });

@@ -197,4 +197,26 @@ describe("startCheck", () => {
     });
     expect(check.parts).toEqual(new Map([["P2", "Part A"]]));
   });
+
+  it("takes each criterion's list from the parse, for the record (0010)", async () => {
+    const { parsed } = await parseWithCache(TRIAL, parseResponse(), tempDir());
+    const check = startCheck({
+      study: { nctId: TRIAL.nctId, briefTitle: TRIAL.briefTitle },
+      criteriaText: TEXT,
+      parsed: {
+        ...parsed,
+        criteria: parsed.criteria.map((c, i) => (i < 2 ? { ...c, anyOf: "kinds" } : c)),
+      },
+      facts: undefined,
+      answers: new Map(),
+      adapter: new FakeModelAdapter([]),
+      fixedQuestions: true,
+    });
+    expect(check.lists).toEqual(
+      new Map([
+        ["P1", "kinds"],
+        ["P2", "kinds"],
+      ]),
+    );
+  });
 });
