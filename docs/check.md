@@ -147,7 +147,7 @@ The prompt that did ask was tried twice, on the five hand-labelled protocols and
 
 **The owner stopped at the first gate,** before any check: a third wording tuned on the same 12 trials would be fitting the prompt to dev. Both tries' parses and grades are committed (`data/criteria/trialbench/…-08edc407-n2/` and `…-d62e4ce7-n2/`, `evals/results/criteria/`).
 
-**What it points to.** The trial's own words tell the two kinds of list apart. Every right list followed "one of the following", an item ending "or", or a list of kinds ("histologies"). Every wrong one followed "all of the following", "as defined below" or "except for the following". Marks made in code from those words would need no model and no change to the parser.
+**What it points to.** The trial's own words mostly tell the two kinds of list apart. Most right lists followed "one of the following", "including but not limited to", or an item ending "or". Most wrong ones followed "all of the following", "as defined below", "who meets the following criteria", "as follows" or "except for the following". A few lead-ins say neither. Marks made in code from those words would need no model and no change to the parser, and would have to say what they do with a lead-in that's unclear.
 
 ### Repeats
 

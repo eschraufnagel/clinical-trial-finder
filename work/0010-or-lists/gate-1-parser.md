@@ -41,7 +41,7 @@ R1 added two lines to "Splitting": a list holds only its items (not a heading, n
 
 16 right, 7 wrong, 2 mixed. 14 marks dropped by the code: 7 lists of one, 5 exclusion lists, and 2 whose items differ in polarity.
 
-**What the lead-ins show.** Each right list follows "one of the following", an item ending "or", or a list of kinds ("histologies", "diseases"). Each wrong one follows "all of the following", "as defined below", "who meets the following criteria" or "except for the following". The words that decide it are in the trial's own text. That points to a next step that needs no model and no parser change; see option 3.
+**What the lead-ins show.** Most right lists follow "one of the following", "including but not limited to", or an item ending "or". Most wrong ones follow "all of the following", "as defined below", "who meets the following criteria", "as follows" or "except for the following". A few say neither: NCT02465060's Step 2 lists, and its permitted steroids. (Corrected in step 13: the first version said "each".) The words that decide it are in the trial's own text. That points to a next step that needs no model and no parser change; see option 3.
 
 ### The five protocols, R1
 
