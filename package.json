@@ -45,7 +45,8 @@
     "benchmark:search": "node --import tsx scripts/benchmark-search.ts",
     "benchmark:parse": "node --env-file-if-exists=.env --import tsx scripts/benchmark-parse.ts",
     "benchmark:check": "node --env-file-if-exists=.env --import tsx scripts/benchmark-check.ts",
-    "benchmark:lines": "node --import tsx scripts/benchmark-lines.ts"
+    "benchmark:lines": "node --import tsx scripts/benchmark-lines.ts",
+    "criteria:eval": "node --env-file-if-exists=.env --import tsx scripts/criteria-eval.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",

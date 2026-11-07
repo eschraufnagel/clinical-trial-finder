@@ -346,3 +346,5 @@ A hosted run, if asked for at a gate, is a new gate: dry first with `--model <sp
   - `npm run test:e2e`: 8 passed.
   - `search:eval -- --check`, `questions:eval -- --check` and `-- --check --dev`, `facts:eval -- --check`, `check:eval -- --check` and `-- --check --dev`, `benchmark:search -- --trec --check` and `-- --trialbench --check`, `benchmark:check -- --check --dev` (`dev/02-17a5dbee2eb0.json`) and `-- --check --result …/dev/01-5ed77c679dad.json` pass.
   - `other:eval -- --check` and `-- --check --dev` fail with "labelsSha256 differs" and nothing else, as recorded since 0006.
+- **Step 2, `criteria:eval`:** `scripts/criteria-eval.ts` and `npm run criteria:eval`, over `runEval` with `resultsDir` `evals/results/criteria/`.
+  - **The old prompt's grades** (`e1e694b399d4`), run file `evals/results/criteria/01-e1e694b399d4.json`, on Qwen3.6-35B-A3B-MLX-8bit at the runner's defaults (temperature 0, seed 20260921, reasoning at the runtime's default), 481 s: 5 studies, 252 labels, 206 predictions, 196 matched; coverage recall 93.7%, strict recall 77.8%, precision 95.1%; type accuracy 91.3%, polarity accuracy 98.5%; 40 merged.

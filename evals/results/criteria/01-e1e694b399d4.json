@@ -1,0 +1,652 @@
+{
+  "startedAt": "2026-11",
+  "finishedAt": "2026-11",
+  "model": "Qwen3.6-35B-A3B-MLX-8bit",
+  "quantization": "8bit",
+  "temperature": 0,
+  "seed": 20260921,
+  "adapter": "omlx",
+  "promptVersion": "e1e694b399d4",
+  "normalizeVersion": "2",
+  "parseIdentity": "e1e694b399d4-n2",
+  "thinking": "default",
+  "matcher": {
+    "version": "2",
+    "spanWeight": 0.6,
+    "textWeight": 0.4,
+    "floor": 0.3,
+    "narrativeOverlap": 0.5
+  },
+  "studies": [
+    {
+      "nctId": "NCT00077350",
+      "status": "graded",
+      "parseSource": "model",
+      "metrics": {
+        "nctId": "NCT00077350",
+        "labels": 37,
+        "predictions": 22,
+        "matched": 22,
+        "merged": 15,
+        "coverageRecall": 1,
+        "strictRecall": 0.5945945945945946,
+        "mergeRate": 0.40540540540540543,
+        "precision": 1,
+        "typeAccuracy": 0.8636363636363636,
+        "polarityAccuracy": 0.9090909090909091,
+        "narrativeFalsePositives": 0,
+        "nearMisses": 0
+      },
+      "quotes": {
+        "rejected": 0,
+        "loose": 0
+      },
+      "diagnostics": {
+        "missed": [],
+        "extra": [],
+        "merged": [
+          {
+            "id": "L2",
+            "inside": "The participant has progressive or recurrent NSCLC, has failed one and only one prior cytotoxic chemotherapy regimen for advanced disease, and has not received …"
+          },
+          {
+            "id": "L4",
+            "inside": "The participant has progressive or recurrent NSCLC, has failed one and only one prior cytotoxic chemotherapy regimen for advanced disease, and has not received …"
+          },
+          {
+            "id": "L11",
+            "inside": "Absolute granulocyte count is >= 1500/mm3 and WBC is >= 3000/mm^3."
+          },
+          {
+            "id": "L15",
+            "inside": "The participant has completed prior cytotoxic chemotherapy >= 3 weeks prior to registration and has recovered from adverse effects from the chemotherapy to <= G…"
+          },
+          {
+            "id": "L18",
+            "inside": "If the participant has treated brain metastases, they are > 3 weeks post completion of treatment for their brain metastases and are neurologically stable. If th…"
+          },
+          {
+            "id": "L20",
+            "inside": "The participant is not pregnant or breastfeeding. A negative serum pregnancy test is required within 14 days of study entry. Women of child-bearing potential an…"
+          },
+          {
+            "id": "L21",
+            "inside": "The participant is not pregnant or breastfeeding. A negative serum pregnancy test is required within 14 days of study entry. Women of child-bearing potential an…"
+          },
+          {
+            "id": "L22",
+            "inside": "The participant is not pregnant or breastfeeding. A negative serum pregnancy test is required within 14 days of study entry. Women of child-bearing potential an…"
+          },
+          {
+            "id": "L27",
+            "inside": "The participant does not have uncontrolled intercurrent illness including ongoing or active infection, or psychiatric illness/social situations that would limit…"
+          },
+          {
+            "id": "L28",
+            "inside": "The participant does not have uncontrolled intercurrent illness including ongoing or active infection, or psychiatric illness/social situations that would limit…"
+          },
+          {
+            "id": "L29",
+            "inside": "The participant does not have uncontrolled intercurrent illness including ongoing or active infection, or psychiatric illness/social situations that would limit…"
+          },
+          {
+            "id": "L30",
+            "inside": "The participant does not have uncontrolled intercurrent illness including ongoing or active infection, or psychiatric illness/social situations that would limit…"
+          },
+          {
+            "id": "L31",
+            "inside": "The participant does not have uncontrolled intercurrent illness including ongoing or active infection, or psychiatric illness/social situations that would limit…"
+          },
+          {
+            "id": "L35",
+            "inside": "The participant does not have a clinical history of G6PD (glucose-6-phosphate dehydrogenase) deficiency. Persons at high risk for this condition (patients of Af…"
+          },
+          {
+            "id": "L37",
+            "inside": "The participant does not have a clinical history of G6PD (glucose-6-phosphate dehydrogenase) deficiency. Persons at high risk for this condition (patients of Af…"
+          }
+        ],
+        "typeErrors": [
+          {
+            "id": "L3",
+            "labelled": "patient",
+            "predicted": "clinical",
+            "quote": "must have failed one and only one prior cytotoxic chemotherapy regimen for advanced disease"
+          },
+          {
+            "id": "L16",
+            "labelled": "clinical",
+            "predicted": "patient",
+            "quote": "have recovered from adverse effects from the chemotherapy to =\\< Grade 1, or baseline"
+          },
+          {
+            "id": "L36",
+            "labelled": "protocol",
+            "predicted": "clinical",
+            "quote": "persons at high risk for this condition (patients of African, Asian, or Mediterranean origin/ancestry) must undergo specific clinical testing at protocol entry …"
+          }
+        ],
+        "narrative": []
+      }
+    },
+    {
+      "nctId": "NCT03433469",
+      "status": "graded",
+      "parseSource": "model",
+      "metrics": {
+        "nctId": "NCT03433469",
+        "labels": 73,
+        "predictions": 72,
+        "matched": 70,
+        "merged": 3,
+        "coverageRecall": 1,
+        "strictRecall": 0.958904109589041,
+        "mergeRate": 0.0410958904109589,
+        "precision": 0.9722222222222222,
+        "typeAccuracy": 0.9428571428571428,
+        "polarityAccuracy": 0.9857142857142858,
+        "narrativeFalsePositives": 2,
+        "nearMisses": 0
+      },
+      "quotes": {
+        "rejected": 0,
+        "loose": 0
+      },
+      "diagnostics": {
+        "missed": [],
+        "extra": [
+          {
+            "polarity": "exclusion",
+            "type": "clinical",
+            "text": "The participant has any of the following cardiac abnormalities or history"
+          },
+          {
+            "polarity": "inclusion",
+            "type": "clinical",
+            "text": "Patients receiving prophylactic antibiotics (eg, to prevent a urinary tract infection or chronic obstructive pulmonary disease exacerbation) are eligible"
+          }
+        ],
+        "merged": [
+          {
+            "id": "L4",
+            "inside": "If the participant was treated with osimertinib or another EGFR TKI, they received no more than 28 days of treatment and have no evidence of grade 2 or greater …"
+          },
+          {
+            "id": "L21",
+            "inside": "Women of childbearing potential must have a negative serum pregnancy test within 3 days prior to the first dose of study treatment and agree to use highly effec…"
+          },
+          {
+            "id": "L67",
+            "inside": "The participant is female and is pregnant or breastfeeding"
+          }
+        ],
+        "typeErrors": [
+          {
+            "id": "L55",
+            "labelled": "patient",
+            "predicted": "clinical",
+            "quote": "Patients who are currently receiving treatment with contraindicated corrected QT interval (QTc) prolonging medications or potent CYP3A4 inducers, if that treatm…"
+          },
+          {
+            "id": "L59",
+            "labelled": "patient",
+            "predicted": "clinical",
+            "quote": "Treatment with prohibited medications (concurrent anticancer therapy including chemotherapy, radiation, hormonal treatment \\[except corticosteroids and megester…"
+          },
+          {
+            "id": "L63",
+            "labelled": "patient",
+            "predicted": "clinical",
+            "quote": "Therapeutic oral or intravenous (IV) antibiotics within 2 weeks prior to first day of study treatment:"
+          },
+          {
+            "id": "L73",
+            "labelled": "clinical",
+            "predicted": "patient",
+            "quote": "Uncontrolled medical, psychological, familial, sociological, or geographical conditions that interfere with the patient?s safety, ability to provide informed co…"
+          }
+        ],
+        "narrative": [
+          {
+            "text": "The participant has any of the following cardiac abnormalities or history",
+            "ruledOutBecause": "Introduces the cardiac exclusions below; the requirements are those items, not this line."
+          },
+          {
+            "text": "Patients receiving prophylactic antibiotics (eg, to prevent a urinary tract infection or chronic obstructive pulmonary disease exacerbation) are eligible",
+            "ruledOutBecause": "Rule 1: an exception narrowing the antibiotic exclusion above."
+          }
+        ]
+      }
+    },
+    {
+      "nctId": "NCT04316364",
+      "status": "graded",
+      "parseSource": "model",
+      "metrics": {
+        "nctId": "NCT04316364",
+        "labels": 24,
+        "predictions": 21,
+        "matched": 21,
+        "merged": 3,
+        "coverageRecall": 1,
+        "strictRecall": 0.875,
+        "mergeRate": 0.125,
+        "precision": 1,
+        "typeAccuracy": 0.9047619047619048,
+        "polarityAccuracy": 1,
+        "narrativeFalsePositives": 0,
+        "nearMisses": 0
+      },
+      "quotes": {
+        "rejected": 0,
+        "loose": 0
+      },
+      "diagnostics": {
+        "missed": [],
+        "extra": [],
+        "merged": [
+          {
+            "id": "L19",
+            "inside": "The participant is pregnant or lactating"
+          },
+          {
+            "id": "L21",
+            "inside": "The participant has known psychiatric or substance abuse disorders"
+          },
+          {
+            "id": "L23",
+            "inside": "The participant has a confirmed COVID-19 infection, suspected COVID-19 infection, or is a close contact with a person with known or suspected COVID-19 infection"
+          }
+        ],
+        "typeErrors": [
+          {
+            "id": "L22",
+            "labelled": "patient",
+            "predicted": "clinical",
+            "quote": "substance abuse disorders"
+          },
+          {
+            "id": "L24",
+            "labelled": "patient",
+            "predicted": "clinical",
+            "quote": "close contact with a person with known or suspected COVID-19 infection"
+          }
+        ],
+        "narrative": []
+      }
+    },
+    {
+      "nctId": "NCT04385368",
+      "status": "graded",
+      "parseSource": "model",
+      "metrics": {
+        "nctId": "NCT04385368",
+        "labels": 74,
+        "predictions": 62,
+        "matched": 55,
+        "merged": 3,
+        "coverageRecall": 0.7837837837837838,
+        "strictRecall": 0.7432432432432432,
+        "mergeRate": 0.04054054054054054,
+        "precision": 0.8870967741935484,
+        "typeAccuracy": 0.8545454545454545,
+        "polarityAccuracy": 1,
+        "narrativeFalsePositives": 6,
+        "nearMisses": 0
+      },
+      "quotes": {
+        "rejected": 0,
+        "loose": 0
+      },
+      "diagnostics": {
+        "missed": [
+          {
+            "id": "L4",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "In these cases, a whole blood sample and resected tumor tissue must be collected and sent to the diagnostic lab as soon as possible after ICF1 is signed for dev…"
+          },
+          {
+            "id": "L5",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "A plasma sample must still be collected at Week 3-5 (Day 21-35) post-surgery, even if creation of the personalized panel for MRD detection is delayed."
+          },
+          {
+            "id": "L11",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "In the absence of pre-operative FDG-PET CT imaging, pre-operative contrast-enhanced CT imaging or MRI scan must cover liver and adrenal glands."
+          },
+          {
+            "id": "L12",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "Brain MRI (preferred) or brain CT with IV contrast is required for complete staging of the tumor."
+          },
+          {
+            "id": "L14",
+            "polarity": "inclusion",
+            "type": "clinical",
+            "quote": "The primary tumor must be deemed resectable by a multidisciplinary evaluation that must include a thoracic surgeon certified or trained according to local stand…"
+          },
+          {
+            "id": "L20",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "However, the surgeon must clearly document in the operative report or in a separate written statement that the lymph node level was explored and no lymph nodes …"
+          },
+          {
+            "id": "L21",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "Normal appearing lymph nodes, if present, must be biopsied or removed."
+          },
+          {
+            "id": "L22",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "Exploration of nodes must clearly be documented in medical file if not recorded in operative report."
+          },
+          {
+            "id": "L23",
+            "polarity": "inclusion",
+            "type": "definitional",
+            "quote": "Note: Lobe-specific lymph node stations are classified based on the location of the primary tumor as follows (based on IASLC 2009 lymph node map terminology \\[R…"
+          },
+          {
+            "id": "L27",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "Tumor tissue and whole blood samples must be provided to the diagnostic laboratory for development of the personalized panel as soon as possible."
+          },
+          {
+            "id": "L40",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "In the event of lymphadenopathy on imaging that would lead to exclusion, histopathological confirmation of lymph node metastasis should be obtained prior to exc…"
+          },
+          {
+            "id": "L42",
+            "polarity": "inclusion",
+            "type": "definitional",
+            "quote": "Where EGFR/ALK results are obtained from a pre-surgical tissue biopsy as part of standard local practice, the patient must be confirmed EGFR/ALK wild-type prior…"
+          },
+          {
+            "id": "L43",
+            "polarity": "inclusion",
+            "type": "definitional",
+            "quote": "Results obtained from testing the patient's primary tumor tissue during screening for another AstraZeneca study may be used in this study."
+          },
+          {
+            "id": "L44",
+            "polarity": "inclusion",
+            "type": "definitional",
+            "quote": "Results from local testing of a pre-surgical biopsy."
+          },
+          {
+            "id": "L45",
+            "polarity": "inclusion",
+            "type": "protocol",
+            "quote": "All local EGFR/ALK testing performed locally must be performed using a well-validated, local regulatory-approved test."
+          },
+          {
+            "id": "L56",
+            "polarity": "inclusion",
+            "type": "clinical",
+            "quote": "Patients positive for HCV antibody are eligible only if polymerase chain reaction is negative for HCV RNA."
+          }
+        ],
+        "extra": [
+          {
+            "polarity": "inclusion",
+            "type": "patient",
+            "text": "The patient provides signed and dated written optional genetic informed consent prior to collection of a sample for optional genetic analysis at the time of sec…"
+          },
+          {
+            "polarity": "inclusion",
+            "type": "patient",
+            "text": "The patient is male or female."
+          },
+          {
+            "polarity": "inclusion",
+            "type": "clinical",
+            "text": "If a resection has been extended by means of a wedge resection of an adjacent lobe to ensure complete resection of a tumor at or crossing a fissure between lobe…"
+          },
+          {
+            "polarity": "exclusion",
+            "type": "clinical",
+            "text": "The patient had the resection of a second tumor nodule (eg, a T4 lesion) undertaken by means of a wedge resection of a separate lobe."
+          },
+          {
+            "polarity": "exclusion",
+            "type": "clinical",
+            "text": "The patient's tumor has less than the requisite 50 tumor-specific variants."
+          },
+          {
+            "polarity": "exclusion",
+            "type": "clinical",
+            "text": "The patient has an unknown PD-L1 status."
+          },
+          {
+            "polarity": "inclusion",
+            "type": "clinical",
+            "text": "The patient has a body weight >30 kg."
+          }
+        ],
+        "merged": [
+          {
+            "id": "L2",
+            "inside": "The patient is capable of giving signed informed consent, which includes a mandatory genetic informed consent and compliance with the requirements and restricti…"
+          },
+          {
+            "id": "L71",
+            "inside": "The patient is a female who is pregnant or breastfeeding, or a male or female patient of reproductive potential who is not willing to employ effective birth con…"
+          },
+          {
+            "id": "L72",
+            "inside": "The patient is a female who is pregnant or breastfeeding, or a male or female patient of reproductive potential who is not willing to employ effective birth con…"
+          }
+        ],
+        "typeErrors": [
+          {
+            "id": "L10",
+            "labelled": "protocol",
+            "predicted": "clinical",
+            "quote": "A contrast-enhanced CT or MRI scan of the chest must have been done for surgical planning prior to surgery."
+          },
+          {
+            "id": "L17",
+            "labelled": "protocol",
+            "predicted": "clinical",
+            "quote": "The surgeon performing the resection should remove all gross disease by the end of surgery."
+          },
+          {
+            "id": "L19",
+            "labelled": "protocol",
+            "predicted": "clinical",
+            "quote": "Pathology and/or operative reports must include the examination of at least 2 different mediastinal lymph node (N2) levels, one of which is the subcarinal node-…"
+          },
+          {
+            "id": "L30",
+            "labelled": "protocol",
+            "predicted": "clinical",
+            "quote": "Known tumor PD-L1 status determined at a central reference laboratory testing service using a validated Ventana SP263 PD-L1 immunohistochemistry (IHC) assay pri…"
+          },
+          {
+            "id": "L31",
+            "labelled": "protocol",
+            "predicted": "clinical",
+            "quote": "Post-operative CT scan of the chest (including liver and adrenal glands) performed within 28 days + 7 days prior to randomization."
+          },
+          {
+            "id": "L49",
+            "labelled": "patient",
+            "predicted": "clinical",
+            "quote": "History of allogeneic organ or bone marrow transplantation."
+          },
+          {
+            "id": "L57",
+            "labelled": "patient",
+            "predicted": "clinical",
+            "quote": "Known allergy or hypersensitivity to any of the IPs or any of the IP excipients."
+          },
+          {
+            "id": "L74",
+            "labelled": "clinical",
+            "predicted": "patient",
+            "quote": "Judgment by the Investigator that the patient should not participate in the study if the patient is unlikely to comply with study procedures, restrictions, and …"
+          }
+        ],
+        "narrative": [
+          {
+            "text": "The patient provides signed and dated written optional genetic informed consent prior to collection of a sample for optional genetic analysis at the time of sec…",
+            "ruledOutBecause": "Optional consent. Declining it does not affect eligibility."
+          },
+          {
+            "text": "The patient is male or female.",
+            "ruledOutBecause": "States no restriction, so nobody can fail it."
+          },
+          {
+            "text": "If a resection has been extended by means of a wedge resection of an adjacent lobe to ensure complete resection of a tumor at or crossing a fissure between lobe…",
+            "ruledOutBecause": "Rule 5: a clarification of the criterion above, asserting no requirement of its own."
+          },
+          {
+            "text": "The patient had the resection of a second tumor nodule (eg, a T4 lesion) undertaken by means of a wedge resection of a separate lobe.",
+            "ruledOutBecause": "Rule 5: a clarification of the criterion above, asserting no requirement of its own."
+          },
+          {
+            "text": "The patient's tumor has less than the requisite 50 tumor-specific variants.",
+            "ruledOutBecause": "Rule 5: a clarification of the criterion above, asserting no requirement of its own."
+          },
+          {
+            "text": "The patient has an unknown PD-L1 status.",
+            "ruledOutBecause": "Rule 6: the negative form of the criterion above. One requirement, labelled once."
+          }
+        ]
+      }
+    },
+    {
+      "nctId": "NCT06728852",
+      "status": "graded",
+      "parseSource": "model",
+      "metrics": {
+        "nctId": "NCT06728852",
+        "labels": 44,
+        "predictions": 29,
+        "matched": 28,
+        "merged": 16,
+        "coverageRecall": 1,
+        "strictRecall": 0.6363636363636364,
+        "mergeRate": 0.36363636363636365,
+        "precision": 0.9655172413793104,
+        "typeAccuracy": 1,
+        "polarityAccuracy": 1,
+        "narrativeFalsePositives": 0,
+        "nearMisses": 3
+      },
+      "quotes": {
+        "rejected": 0,
+        "loose": 0
+      },
+      "diagnostics": {
+        "missed": [],
+        "extra": [
+          {
+            "polarity": "inclusion",
+            "type": "clinical",
+            "text": "The participant has good hematological function, defined as an absolute neutrophil count (ANC) ≥ 1.5×10^9/L, platelet count ≥ 100×10^9/L, hemoglobin ≥ 90g/L (wi…"
+          }
+        ],
+        "merged": [
+          {
+            "id": "L3",
+            "inside": "The participant has a pathological or cytological diagnosis of metastatic/relapsed advanced NSCLC with measurable lesions according to RECIST 1.1"
+          },
+          {
+            "id": "L7",
+            "inside": "The participant has an Eastern Cooperative Oncology Group (ECOG) performance status score of 0-2 and an expected survival time ≥ 3 months"
+          },
+          {
+            "id": "L8",
+            "inside": "The participant has normal major organ function: renal function with creatinine clearance rate ≥ 60 mL/min; liver function with bilirubin ≤ 1.5× upper limit of …"
+          },
+          {
+            "id": "L10",
+            "inside": "The participant has normal major organ function: renal function with creatinine clearance rate ≥ 60 mL/min; liver function with bilirubin ≤ 1.5× upper limit of …"
+          },
+          {
+            "id": "L11",
+            "inside": "The participant has good hematological function, defined as an absolute neutrophil count (ANC) ≥ 1.5×10^9/L, platelet count ≥ 100×10^9/L, hemoglobin ≥ 90g/L (wi…"
+          },
+          {
+            "id": "L12",
+            "inside": "The participant has good hematological function, defined as an absolute neutrophil count (ANC) ≥ 1.5×10^9/L, platelet count ≥ 100×10^9/L, hemoglobin ≥ 90g/L (wi…"
+          },
+          {
+            "id": "L13",
+            "inside": "The participant has good hematological function, defined as an absolute neutrophil count (ANC) ≥ 1.5×10^9/L, platelet count ≥ 100×10^9/L, hemoglobin ≥ 90g/L (wi…"
+          },
+          {
+            "id": "L16",
+            "inside": "Female patients of childbearing potential must agree to use contraception (e.g., intrauterine device, contraceptives, or condoms) during the study and for 6 mon…"
+          },
+          {
+            "id": "L20",
+            "inside": "The participant previously failed treatment with multi-target anti-angiogenic drugs, such as anlotinib, cabozantinib, apatinib, lenvatinib, etc. The use of beva…"
+          },
+          {
+            "id": "L23",
+            "inside": "The participant has tumor invasion of large blood vessels, central squamous cell carcinoma of the lung with cavitation, or non-small cell lung cancer with hemop…"
+          },
+          {
+            "id": "L24",
+            "inside": "The participant has tumor invasion of large blood vessels, central squamous cell carcinoma of the lung with cavitation, or non-small cell lung cancer with hemop…"
+          },
+          {
+            "id": "L25",
+            "inside": "The participant has tumor invasion of large blood vessels, central squamous cell carcinoma of the lung with cavitation, or non-small cell lung cancer with hemop…"
+          },
+          {
+            "id": "L28",
+            "inside": "The participant is planning to receive systemic anti-tumor therapy within 4 weeks before enrollment or during the study period, including cytotoxic therapy, sig…"
+          },
+          {
+            "id": "L39",
+            "inside": "The participant has a history of substance abuse that cannot be quit or is diagnosed with psychiatric disorders"
+          },
+          {
+            "id": "L43",
+            "inside": "The participant has a known history of human immunodeficiency virus (HIV) infection (i.e., HIV 1/2 antibody positive); untreated active hepatitis B; active HCV …"
+          },
+          {
+            "id": "L44",
+            "inside": "The participant has a known history of human immunodeficiency virus (HIV) infection (i.e., HIV 1/2 antibody positive); untreated active hepatitis B; active HCV …"
+          }
+        ],
+        "typeErrors": [],
+        "narrative": []
+      }
+    }
+  ],
+  "pooled": {
+    "studies": 5,
+    "labels": 252,
+    "predictions": 206,
+    "matched": 196,
+    "merged": 40,
+    "coverageRecall": 0.9365079365079365,
+    "strictRecall": 0.7777777777777778,
+    "mergeRate": 0.15873015873015872,
+    "precision": 0.9514563106796117,
+    "typeAccuracy": 0.9132653061224489,
+    "polarityAccuracy": 0.9846938775510204,
+    "narrativeFalsePositives": 8,
+    "nearMisses": 3
+  },
+  "quotes": {
+    "rejected": 0,
+    "loose": 0
+  },
+  "failed": []
+}
