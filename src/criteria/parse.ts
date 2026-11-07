@@ -3,7 +3,13 @@ import { locateQuote } from "./locate.js";
 import type { NormalizedText } from "./normalize.js";
 import { NORMALIZE_VERSION, normalize } from "./normalize.js";
 import { buildUserPrompt, type ParseableTrial, PROMPT_VERSION, SYSTEM_PROMPT } from "./prompt.js";
-import type { Criterion, ParsedCriteria, RejectedCriterion, SourceSpan } from "./types.js";
+import type {
+  Criterion,
+  DroppedMark,
+  ParsedCriteria,
+  RejectedCriterion,
+  SourceSpan,
+} from "./types.js";
 import { CriteriaParseError } from "./types.js";
 import type { RawCriterion } from "./validate.js";
 import { readCriteriaEnvelope } from "./validate.js";
@@ -71,7 +77,8 @@ export async function parseCriteria(
 
   const { valid, rejected } = readCriteriaEnvelope(response.content, context);
   const located = locateAll(valid, normalized, trial.nctId);
-  const criteria = located.criteria;
+  const settled = settleLists(located.criteria);
+  const criteria = settled.criteria;
   const allRejected = [...rejected, ...located.rejected];
 
   // Nothing usable is a failed parse too. An empty result would otherwise look
@@ -89,6 +96,7 @@ export async function parseCriteria(
     criteria,
     rejected: allRejected,
     unclaimed: findUnclaimed(trial.eligibility.criteriaText, criteria),
+    ...(settled.dropped.length === 0 ? {} : { droppedMarks: settled.dropped }),
     run: {
       ...adapter.descriptor,
       promptVersion: PROMPT_VERSION,
@@ -164,12 +172,57 @@ function locateAll(
       source: found.span,
       confidence: entry.confidence,
       ...(entry.appliesTo === null ? {} : { appliesTo: entry.appliesTo }),
+      ...(entry.anyOf === null ? {} : { anyOf: entry.anyOf }),
       ...(found.loose ? { loose: true as const } : {}),
       ...(found.heading === undefined ? {} : { heading: found.heading }),
     });
   }
 
   return { criteria, rejected };
+}
+
+/**
+ * Drops the list marks that can't be trusted (spec 0010 §2), after the quotes
+ * are located, so a list whose other items were thrown out is judged on what's
+ * left. A mark means "the trial accepts any one of these", which only holds for
+ * inclusions that apply to the same people. An exclusion list already reads
+ * right split: any one of them excludes. Each dropped mark is kept, with why.
+ */
+export function settleLists(criteria: readonly Criterion[]): {
+  criteria: Criterion[];
+  dropped: DroppedMark[];
+} {
+  const byLabel = new Map<string, Criterion[]>();
+  for (const c of criteria) {
+    if (c.anyOf === undefined) continue;
+    byLabel.set(c.anyOf, [...(byLabel.get(c.anyOf) ?? []), c]);
+  }
+  const dropped: DroppedMark[] = [];
+  for (const [label, items] of byLabel) {
+    const reason = listProblem(items);
+    if (reason !== undefined) dropped.push({ label, ids: items.map((c) => c.id), reason });
+  }
+  const gone = new Set(dropped.map((d) => d.label));
+  return {
+    criteria: criteria.map((c) => {
+      if (c.anyOf === undefined || !gone.has(c.anyOf)) return c;
+      const { anyOf: _dropped, ...rest } = c;
+      return rest;
+    }),
+    dropped,
+  };
+}
+
+function listProblem(items: readonly Criterion[]): string | undefined {
+  if (items.length < 2) return "a list needs two or more items";
+  if (new Set(items.map((c) => c.polarity)).size > 1) return "items differ in polarity";
+  if (new Set(items.map((c) => c.appliesTo ?? "")).size > 1) {
+    return "items differ in the part they're for";
+  }
+  if (items.every((c) => c.polarity === "exclusion")) {
+    return "an exclusion list already reads right split";
+  }
+  return undefined;
 }
 
 /**

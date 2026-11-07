@@ -13,7 +13,7 @@ export {
   normalize,
   toSourceSpan,
 } from "./normalize.js";
-export { type ParseOptions, parseCriteria } from "./parse.js";
+export { type ParseOptions, parseCriteria, settleLists } from "./parse.js";
 export {
   buildUserPrompt,
   hashPrompt,
@@ -27,6 +27,7 @@ export {
   type Criterion,
   type CriterionPolarity,
   type CriterionType,
+  type DroppedMark,
   isPatientAnswerable,
   type ParsedCriteria,
   type RejectedCriterion,

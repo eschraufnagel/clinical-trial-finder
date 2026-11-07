@@ -359,3 +359,6 @@ A hosted run, if asked for at a gate, is a new gate: dry first with `--model <sp
 
   - A lead-in ending ":" is often an "and" list ("adequate organ function:" then lab values), so that column overstates lists. The "or" column is the closer of the two.
   - **Divergence:** the plan said 0007's folder holds 40 parses; it holds 39 and a `failures.json`.
+- **Step 4, the `anyOf` field:** `Criterion.anyOf`, `DroppedMark` and `ParsedCriteria.droppedMarks` (`src/criteria/types.ts`); `RawCriterion.anyOf` and `readAnyOf` (`validate.ts`); `settleLists`, run after `locateAll`, and `droppedMarks` on the parse (`parse.ts`); `DroppedMark` and `settleLists` exported from `src/criteria/index.ts`. `PROMPT_VERSION` unchanged. 12 tests in `tests/criteria/lists.test.ts`.
+  - **An expectation changed on purpose:** `tests/criteria/validate.test.ts`' well-formed criterion now has `anyOf: null`, the new field's value when absent.
+  - **Divergence:** the plan put the fake-adapter parse test with marks in step 6. It's here, in `lists.test.ts`, since it tests this step's code.
