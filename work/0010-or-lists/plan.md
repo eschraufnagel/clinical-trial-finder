@@ -375,3 +375,5 @@ A hosted run, if asked for at a gate, is a new gate: dry first with `--model <sp
   - **`benchmark:lines -- --record --parses <dir>`** and `parseDrift`, so 0009's findings can be read with another run's marks; 1 test. Ids are ordinals, and on both target trials they carry over only to P9.
   - **Divergence:** `gate-1-compare.md` holds the comparison output beside the gate page, as 0009 kept its records in `gate-1-records.txt`.
   - **Recommendation: revise** (two lines in "Splitting"), then step 7 again. **Stopped at Gate 1.**
+- **Gate 1's answer: revise** (recorded in `gate-1-parser.md`, Answer).
+- **Revision R1, the parser prompt:** two lines after the list rule in "Splitting": a list holds only its items (not a heading, not a rule adding a condition); an exception to an exclusion stays inside it. A header line says why. `PROMPT_VERSION` is `d62e4ce71f05`. The overlap test passes unchanged.

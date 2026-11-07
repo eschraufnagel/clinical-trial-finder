@@ -55,6 +55,9 @@ import { NORMALIZE_VERSION } from "./normalize.js";
  * wording about "or" can move it: keeping the split lets a new parse be
  * compared item by item with an old one. Exclusions are never a list (any one
  * excludes), and `settleLists` in `parse.ts` drops a mark it can't trust.
+ * Gate 1's first try split one trial's exclusion into its exceptions, each an
+ * inclusion, and marked cohort headings as items; the two lines after the list
+ * rule answer those.
  *
  * ## Why `patient` and `clinical` are told apart by the kind of fact
  *
@@ -113,6 +116,8 @@ Boundary cases that matter:
 - The input may be a bulleted list, a numbered list, or unbroken prose with no list markers at all. Find the criteria by meaning, not by punctuation.
 - Sub-items sometimes run inline with their parent with no line break. Treat each as its own criterion.
 - Some requirements are met by any one of several items written as separate items or sentences: a lead-in such as "one of the following:" followed by items, or an item ending ", or" followed by another. Each item is still its own criterion, and every item of that list gets the same short "anyOf" label. Only requirements the participant must meet form such a list. Items joined by "and", items listed one after another with nothing saying any one is enough, and exclusions (where any one item excludes) each get "anyOf": null.
+- A list holds only the items themselves. A heading that names a group of items is not an item, and neither is a rule that adds a condition to the items (how long, how stable, who it is for). Those get "anyOf": null.
+- An exception to an exclusion ("except for …", "with the exception of …") stays inside that exclusion, as one criterion. Never make the exceptions into criteria of their own.
 - Where criteria are grouped under a study arm or phase ("Phase I portion", "Arm A"), set "appliesTo" to that label for every criterion in the group. Otherwise set it to null.
 - Do not invent criteria, and do not omit ones you find hard to classify. Give a low confidence instead.
 

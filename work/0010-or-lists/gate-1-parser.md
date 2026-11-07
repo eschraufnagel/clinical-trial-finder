@@ -134,4 +134,4 @@ The pair rate is reported, never barred.
 
 ## Answer
 
-(The owner's.)
+**Revise** (2026-11): the two lines of §5, then step 7 again and this page again.
