@@ -348,3 +348,14 @@ A hosted run, if asked for at a gate, is a new gate: dry first with `--model <sp
   - `other:eval -- --check` and `-- --check --dev` fail with "labelsSha256 differs" and nothing else, as recorded since 0006.
 - **Step 2, `criteria:eval`:** `scripts/criteria-eval.ts` and `npm run criteria:eval`, over `runEval` with `resultsDir` `evals/results/criteria/`.
   - **The old prompt's grades** (`e1e694b399d4`), run file `evals/results/criteria/01-e1e694b399d4.json`, on Qwen3.6-35B-A3B-MLX-8bit at the runner's defaults (temperature 0, seed 20260921, reasoning at the runtime's default), 481 s: 5 studies, 252 labels, 206 predictions, 196 matched; coverage recall 93.7%, strict recall 77.8%, precision 95.1%; type accuracy 91.3%, polarity accuracy 98.5%; 40 merged.
+- **Step 3, `criteria:compare`:** `scripts/criteria-compare.ts` (`readParses`, `compareTrial`, `compareSets`, `formatComparison`, `estimateLists`) and `npm run criteria:compare`, with `--old-prompt` and `--new-prompt` to pick parses out of one folder. 5 tests in `tests/scripts/criteria-compare.test.ts`, and a boundary block of 4: the script reaches no model module, not the parser, not the parse cache, and no network.
+  - **`--lists`, an estimate from source text only:**
+
+    | Parses | Trials | With a list-like run | Items ending "or" | Lead-ins ending ":" |
+    | --- | --- | --- | --- | --- |
+    | 0007's picks, `data/criteria/2026-10/…-e1e694b3-n2/` | 39 | 11 | 2 | 27 |
+    | NIH-TrialBench dev's 12 | 12 | 7 | 5 | 15 |
+    | the five labelled protocols, old prompt | 5 | 1 | 0 | 5 |
+
+  - A lead-in ending ":" is often an "and" list ("adequate organ function:" then lab values), so that column overstates lists. The "or" column is the closer of the two.
+  - **Divergence:** the plan said 0007's folder holds 40 parses; it holds 39 and a `failures.json`.

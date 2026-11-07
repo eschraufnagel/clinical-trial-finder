@@ -1373,3 +1373,39 @@ describe("benchmark:lines reaches no model, parser, session or network", () => {
     expect(forbidden(`${sep}src${sep}check${sep}record.ts`)).toBe(false);
   });
 });
+
+/**
+ * Slice 0010: `criteria:compare` reads two sets of parse files and prints how
+ * they differ. It never parses, so it reaches no model module, not the parser,
+ * not the parse cache and no network.
+ */
+describe("criteria:compare reaches no model, parser, parse cache or network", () => {
+  const SCRIPT = fileURLToPath(new URL("../scripts/criteria-compare.ts", import.meta.url));
+  const modules = reachableModules(SCRIPT);
+  const forbidden = (file: string): boolean =>
+    file.includes(`${sep}models${sep}`) ||
+    file.endsWith(`${sep}criteria${sep}parse.ts`) ||
+    file.endsWith(`${sep}check${sep}parse-cache.ts`);
+
+  it("walks a real graph", () => {
+    expect(modules.some((m) => m.endsWith(`scripts${sep}criteria-compare.ts`))).toBe(true);
+  });
+
+  it("touches no network", () => {
+    const offenders = modules
+      .map((file) => ({ file, usage: findNetworkUsage(file) }))
+      .filter(({ usage }) => usage.length > 0);
+    expect(offenders).toEqual([]);
+  });
+
+  it("reaches none of them", () => {
+    expect(modules.filter(forbidden)).toEqual([]);
+  });
+
+  it("would catch each", () => {
+    expect(forbidden(`${sep}src${sep}models${sep}types.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}criteria${sep}parse.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}check${sep}parse-cache.ts`)).toBe(true);
+    expect(forbidden(`${sep}src${sep}criteria${sep}types.ts`)).toBe(false);
+  });
+});
