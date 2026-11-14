@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trial Finder · Settings</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="chart.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="screen t-{{theme}}">
+  <header class="app-header">
+    <a class="brand" href="#"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><rect class="brand-mark-tile" width="100" height="100" rx="22"></rect><rect class="brand-mark-lead" x="20" y="23.5" width="60" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="44.5" width="46" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="65.5" width="32" height="11" rx="5.5"></rect></svg>Trial Finder</a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="#">Start</a>
+      <a class="nav-link" href="#">Your list</a>
+      <a class="nav-link" href="#">For your oncologist</a>
+      <a class="nav-link" href="#" aria-current="page">Settings</a>
+    </nav>
+    <span class="model-chip"><span class="model-chip-dot"></span>Local model · Qwen3.6-35B-A3B-MLX-8bit</span>
+  </header>
+  <div class="standing"><span>This is a proof of concept, run on this computer. Use made-up answers.</span></div>
+
+  <main class="page" style="max-width: 860px; gap: 20px;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <h1 class="page-title">Settings</h1>
+      <p class="page-intro" style="font: var(--text-body);">Which model reads your answers. The local model runs on this computer and nothing leaves it. A hosted model sends what you type to its provider, with your own key.</p>
+    </div>
+
+    <section class="card provider">
+      <div class="provider-head"><h2 class="provider-name">The local model</h2><span class="tag">In use</span></div>
+      <div class="provider-grid">
+        <label class="field"><span class="field-label" style="font: 600 14px/20px var(--font-ui);">Address</span><input class="input" value="http://127.0.0.1:8000/v1"></label>
+        <label class="field"><span class="field-label" style="font: 600 14px/20px var(--font-ui);">Model</span><input class="input" value="Qwen3.6-35B-A3B-MLX-8bit"></label>
+      </div>
+      <label class="field"><span class="field-label" style="font: 600 14px/20px var(--font-ui);">Key for the local model</span><input class="input" placeholder="No key saved."></label>
+      <div class="provider-actions">
+        <button type="button" class="button button-secondary">Test</button>
+        <button type="button" class="button button-secondary" aria-disabled="true">In use</button>
+      </div>
+      <p class="result-line">It works: Qwen3.6-35B-A3B read "Carboplatin, yes." correctly.</p>
+      <div class="provider-lines">
+        <p>Measured on made-up patients' replies: it could read 527 of 527 of them, and the rest would fall back to the answer buttons. Of the replies that stated an answer, it read 326 of 326 exactly; of the "I don't know"s, it turned 1 of 201 into an answer.</p>
+      </div>
+    </section>
+
+    <section class="card provider">
+      <div class="provider-head"><h2 class="provider-name">Anthropic</h2><span class="convo-meta">Claude Haiku 4.5</span></div>
+      <div class="provider-actions" style="justify-content: space-between;">
+        <span style="font: var(--text-body);">Key saved (…a1b2).</span>
+        <span style="display: flex; gap: 8px;"><button type="button" class="button button-quiet">Remove key</button><button type="button" class="button button-secondary">Test</button><button type="button" class="button button-primary">Use this model</button></span>
+      </div>
+      <div class="provider-lines">
+        <p>Measured on made-up patients' replies: it could read 527 of 527 of them, and the rest would fall back to the answer buttons. Of the replies that stated an answer, it read 324 of 326 exactly; of the "I don't know"s, it turned 0 of 201 into an answer.</p>
+        <p>$1 in, $5 out, per million tokens. About [estimate] a conversation.</p>
+        <p>Tested against the live service [month]. Prices as of [month].</p>
+      </div>
+    </section>
+
+    <section class="card provider">
+      <div class="provider-head"><h2 class="provider-name">OpenAI</h2><span class="convo-meta">GPT-6 Luna</span></div>
+      <label class="field"><span class="field-label" style="font: 600 14px/20px var(--font-ui);">Key</span><input class="input" placeholder="No key saved."></label>
+      <div class="provider-actions"><button type="button" class="button button-secondary">Save key</button></div>
+      <div class="provider-lines"><p>Its readings haven't been measured.</p><p>Not yet tested against the live service.</p></div>
+    </section>
+
+    <section class="card provider">
+      <div class="provider-head"><h2 class="provider-name">xAI</h2><span class="convo-meta">Grok 4.3</span></div>
+      <label class="field"><span class="field-label" style="font: 600 14px/20px var(--font-ui);">Key</span><input class="input" placeholder="No key saved."></label>
+      <div class="provider-actions"><button type="button" class="button button-secondary">Save key</button></div>
+      <div class="provider-lines"><p>Its readings haven't been measured.</p><p>Not yet tested against the live service.</p></div>
+    </section>
+
+    <section class="card provider">
+      <label class="field">
+        <span class="field-label" style="font: 600 14px/20px var(--font-ui);">Most one conversation, or one trial checked, may spend on a hosted model, in dollars</span>
+        <span style="display: flex; gap: 8px; max-width: 320px;"><input class="input" value="0.10"><button type="button" class="button button-secondary">Save</button></span>
+      </label>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":1280,"height":1600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'light' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trial Finder · Your list</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="chart.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="screen t-{{theme}}">
+  <header class="app-header">
+    <a class="brand" href="#"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><rect class="brand-mark-tile" width="100" height="100" rx="22"></rect><rect class="brand-mark-lead" x="20" y="23.5" width="60" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="44.5" width="46" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="65.5" width="32" height="11" rx="5.5"></rect></svg>Trial Finder</a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="#">Start</a>
+      <a class="nav-link" href="#" aria-current="page">Your list</a>
+      <a class="nav-link" href="#">For your oncologist</a>
+      <a class="nav-link" href="#">Settings</a>
+    </nav>
+    <span class="model-chip"><span class="model-chip-dot"></span>Local model · Qwen3.6-35B-A3B-MLX-8bit</span>
+  </header>
+  <div class="standing"><span>This is a proof of concept, run on this computer. Use made-up answers.</span></div>
+
+  <main class="page" style="max-width: 1200px;">
+    <h1 class="page-title">Your list</h1>
+    <div class="list-layout">
+      <div class="list-main">
+        <p class="order-note">Trials whose records name only other cancers come last. Before them, trials with the fewest conflicts with your answers come first. Among those, trials whose rules could be read come before trials whose rules couldn't, then the nearest. The order isn't a ranking of which trial would work for you. Nothing here says whether you could take part in any trial; your oncologist and each trial's team decide that.</p>
+        <p class="rail-note phone-only">Tick up to three trials to go through their own rules, one question at a time. Each gets a record for you and your oncologist.</p>
+
+        <!-- Trial 1, closed -->
+        <article class="tcard" aria-label="NCT02693535">
+          <div class="tcard-head">
+            <span class="tcard-n">1</span>
+            <div class="tcard-head-text">
+              <div class="tcard-meta"><span>NCT02693535</span><span class="tag">Phase 2</span><span>1 mile</span></div>
+              <h2 class="tcard-title">TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs That Target a Specific Abnormality in a Tumor Gene in People With Advanced Stage Cancer</h2>
+              <p class="tcard-tests">Sunitinib (CLOSED TO ENROLLMENT), Trastuzumab and Pertuzumab (CLOSED TO ENROLLMENT), … Futibatinib, Dabrafenib plus Trametinib, Fam-Trastuzumab Deruxtecan-Nxki (TDxD)</p>
+            </div>
+          </div>
+          <div class="tcard-body">
+            <div class="block">
+              <span class="block-label">How much was read</span>
+              <div class="block-body">
+                <p class="lead-line">Few of this trial's rules could be checked against your answers.</p>
+                <p class="small">Its rules were read for 5 of the 31 questions here.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tcard-foot">
+            <label class="check"><span class="check-box" data-on="true"></span>Check this trial</label>
+            <span class="spacer"></span>
+            <a href="#" style="font: var(--text-small);">The full record on ClinicalTrials.gov</a>
+            <button type="button" class="button button-quiet">Open</button>
+          </div>
+        </article>
+
+        <!-- Trial 2, open: every block -->
+        <article class="tcard" aria-label="NCT04389632">
+          <div class="tcard-head">
+            <span class="tcard-n">2</span>
+            <div class="tcard-head-text">
+              <div class="tcard-meta"><span>NCT04389632</span><span class="tag">Phase 1</span><span>1 mile</span></div>
+              <h2 class="tcard-title">A Study of Sigvotatug Vedotin in Advanced Solid Tumors</h2>
+            </div>
+          </div>
+          <div class="tcard-body">
+            <div class="block">
+              <span class="block-label">May not fit</span>
+              <div class="block-body">
+                <div class="qa" style="padding-top: 0;">
+                  <span class="qa-q">In the last 6 months, have you had a heart attack, a stroke, or heart failure that needed hospital care?</span>
+                  <span class="qa-a"><span class="said-label">Your answer:</span>Yes</span>
+                  <span class="qa-a"><span class="said-label">You said:</span><span class="said">Yes, I had a heart attack in April. Four months ago.</span></span>
+                </div>
+                <div class="trial-words question-rule">
+                  <span class="trial-words-label">The trial's rule:</span>
+                  <p class="trial-words-text">History of myocardial infarction within 6 months prior to enrollment</p>
+                </div>
+                <p class="small">The reading of rules is automatic, and wrong about a quarter of the time. Ask your oncologist.</p>
+              </div>
+            </div>
+            <div class="block">
+              <span class="block-label">How much was read</span>
+              <div class="block-body">
+                <p class="lead-line">Few of this trial's rules could be checked against your answers.</p>
+                <p class="small">Its rules were read for 7 of the 31 questions here.</p>
+              </div>
+            </div>
+            <div class="block">
+              <span class="block-label">What it tests</span>
+              <div class="block-body"><p>sigvotatug vedotin, pembrolizumab, cisplatin, carboplatin</p></div>
+            </div>
+            <div class="block">
+              <span class="block-label">Phase</span>
+              <div class="block-body"><p>Phase 1: the first tests in people, mostly to find a safe dose and learn the side effects. Whether it works is a later question.</p></div>
+            </div>
+            <div class="block">
+              <span class="block-label">Where</span>
+              <div class="block-body"><p>Nearest site: Providence Cancer Institute Franz Clinic, Portland, Oregon, 1 mile away.</p></div>
+            </div>
+            <div class="block">
+              <span class="block-label">What your answers checked</span>
+              <div class="block-body" style="gap: 0;">
+                <p class="small" style="padding-bottom: 6px;">Nothing in what was read of its rules conflicts with these answers.</p>
+                <div class="qa"><span class="qa-q">Has the cancer spread to the brain?</span><span class="qa-a">No <span class="said">No brain mets.</span></span></div>
+                <div class="qa"><span class="qa-q">Which is closest to how you are day to day?</span><span class="qa-a">Up and about, but can't do heavy work <span class="said">Up and about, can't do the heavy stuff.</span></span></div>
+                <div class="qa"><span class="qa-q">How far has the cancer spread?</span><span class="qa-a">It has spread further, or come back <span class="said">Spread to the adrenal gland and the bones.</span></span></div>
+                <div class="qa"><span class="qa-q">Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?</span><span class="qa-a">No <span class="said">No lung inflammation.</span></span></div>
+                <div class="qa"><span class="qa-q">Is there a tumor that scans can measure?</span><span class="qa-a">Yes <span class="said">Yes, they measure the adrenal tumor every time.</span></span></div>
+              </div>
+            </div>
+            <div class="block">
+              <span class="block-label">Still unknown</span>
+              <div class="block-body">
+                <div class="who">
+                  <span class="who-label">Your oncologist would know</span>
+                  <ul><li>Has the cancer spread to the lining of the brain or spinal cord?</li></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tcard-foot">
+            <label class="check"><span class="check-box" data-on="true"></span>Check this trial</label>
+            <span class="spacer"></span>
+            <a href="#" style="font: var(--text-small);">The full record on ClinicalTrials.gov</a>
+            <button type="button" class="button button-quiet">Close</button>
+          </div>
+        </article>
+
+        <!-- Trials 3 to 10, closed -->
+        <sc-for list="{{trials}}" as="t" hint-placeholder-count="8">
+          <article class="tcard" aria-label="{{t.nct}}">
+            <div class="tcard-head">
+              <span class="tcard-n">{{t.n}}</span>
+              <div class="tcard-head-text">
+                <div class="tcard-meta"><span>{{t.nct}}</span><span class="tag">{{t.phase}}</span><span>1 mile</span></div>
+                <h2 class="tcard-title">{{t.title}}</h2>
+                <p class="tcard-tests">{{t.tests}}</p>
+              </div>
+            </div>
+            <div class="tcard-body">
+              <div class="block">
+                <span class="block-label">How much was read</span>
+                <div class="block-body">
+                  <sc-if value="{{t.few}}" hint-placeholder-val="{{ true }}"><p class="lead-line">Few of this trial's rules could be checked against your answers.</p></sc-if>
+                  <p class="small">Its rules were read for {{t.read}} of the 31 questions here.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tcard-foot">
+              <label class="check"><span class="check-box" data-on="false"></span>Check this trial</label>
+              <span class="spacer"></span>
+              <a href="#" style="font: var(--text-small);">The full record on ClinicalTrials.gov</a>
+              <button type="button" class="button button-quiet">Open</button>
+            </div>
+          </article>
+        </sc-for>
+
+        <div class="more">
+          <span class="more-title">89 more trials the search kept, in the same order</span>
+          <span class="spacer"></span>
+          <button type="button" class="button button-secondary">Show them</button>
+        </div>
+
+        <section style="display: flex; flex-direction: column; gap: 12px; padding-top: 24px;">
+          <h2 class="h2">Your answers</h2>
+          <p class="convo-reassure">Changing an answer reorders the list. No more questions are asked.</p>
+          <div class="answers-table">
+            <sc-for list="{{answers}}" as="a" hint-placeholder-count="6">
+              <div class="answers-row">
+                <span class="answers-q">{{a.q}}</span>
+                <span class="answers-a"><span>{{a.answer}}</span><span><span class="said">{{a.said}}</span></span></span>
+                <button type="button" class="button button-quiet">Change</button>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+      </div>
+
+      <aside class="rail">
+        <section class="rail-card">
+          <h2 class="rail-title">Your check</h2>
+          <p class="rail-note">Tick up to three trials to go through their own rules, one question at a time. Each gets a record for you and your oncologist.</p>
+          <ol class="picked">
+            <li><span class="picked-n">1</span><span>TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs…</span></li>
+            <li><span class="picked-n">2</span><span>A Study of Sigvotatug Vedotin in Advanced Solid Tumors</span></li>
+          </ol>
+          <button type="button" class="button button-primary">Check these</button>
+        </section>
+        <section class="rail-card">
+          <h2 class="rail-title">For your oncologist</h2>
+          <button type="button" class="button button-secondary">Print or save as PDF</button>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <div class="pickbar">
+    <span class="pickbar-text">Your check <span style="font: var(--text-data); color: var(--ink-2); margin-left: 6px;">2 / 3</span></span>
+    <button type="button" class="button button-primary" style="width: auto;">Check these</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":1280,"height":3600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      theme: this.props.theme ?? 'light',
+      trials: [
+        { n: 3, nct: 'NCT05579366', phase: 'Phase 1/2', read: 4, few: true, title: 'Rinatabart Sesutecan (Rina-S, PRO1184, GEN1184) for Advanced Solid Tumors (GCT1184-01/ PRO1184-001)', tests: 'Rina-S, Carboplatin, Bevacizumab, Pembrolizumab, Erythromycin, Itraconazole' },
+        { n: 4, nct: 'NCT05768139', phase: 'Phase 1/2', read: 4, few: true, title: 'First-in-Human Study of Tersolisib (STX-478) as Monotherapy and in Combination With Other Antineoplastic Agents in Participants With Advanced Solid Tumors', tests: 'STX-478, Fulvestrant, Ribociclib, Palbociclib, Letrozole, Anastrozole, Exemestane, Tamoxifen, Abemaciclib, Imlunestrant, Metformin' },
+        { n: 5, nct: 'NCT05919264', phase: 'Phase 1/2', read: 4, few: true, title: 'FOG-001 in Locally Advanced or Metastatic Solid Tumors', tests: 'FOG-001, mFOLFOX-6, Nivolumab, Trifluridine/tipiracil, Bevacizumab, FOG-001' },
+        { n: 6, nct: 'NCT06119581', phase: 'Phase 3', read: 9, few: true, title: 'A Study of First-Line Olomorasib (LY3537982) and Pembrolizumab With or Without Chemotherapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer', tests: 'LY3537982, Pembrolizumab, Placebo, Cisplatin, Carboplatin, Pemetrexed' },
+        { n: 7, nct: 'NCT06130553', phase: 'Phase 1/2', read: 12, few: false, title: 'A Study of AZD3470, a PRMT5 Inhibitor, Given as Monotherapy and in Combination in Patients With MTAP Deficient Advanced/Metastatic Solid Tumors', tests: 'AZD3470, Datopotamab deruxtecan' },
+        { n: 8, nct: 'NCT06218914', phase: 'Phase 1', read: 9, few: true, title: 'Phase 1 Study to Investigate TCRTs KRAS Mutation in Unresectable, Advanced, and/or Metastatic Solid Tumors', tests: 'NT-112: Autologous, engineered T Cells targeting KRAS G12D, AZD0240: Autologous, engineered T Cells targeting KRAS G12D' },
+        { n: 9, nct: 'NCT06242470', phase: 'Phase 1', read: 8, few: true, title: 'A Study of MGC026 in Participants With Advanced Solid Tumors', tests: 'MGC026 Dose Escalation, MGC026 Dose for Expansion' },
+        { n: 10, nct: 'NCT06251310', phase: 'Phase 1', read: 5, few: true, title: 'SW-682 in Advanced Solid Tumors', tests: 'SW-682, Combination Therapy' }
+      ],
+      answers: [
+        { q: 'What type of lung cancer cell did the biopsy show?', answer: 'Adenocarcinoma', said: 'Adenocarcinoma.' },
+        { q: 'How far has the cancer spread?', answer: 'It has spread further, or come back', said: 'Spread to the adrenal gland and the bones.' },
+        { q: 'Has the cancer spread to the brain?', answer: 'No', said: 'No brain mets.' },
+        { q: 'Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?', answer: 'Yes, and the cancer grew during or after it', said: 'Keytruda with chemo first. It stopped working, cancer grew.' },
+        { q: 'Has the cancer spread to the lining of the brain or spinal cord?', answer: 'Not known yet', said: "Don't know." },
+        { q: 'In the last 6 months, have you had a heart attack, a stroke, or heart failure that needed hospital care?', answer: 'Yes', said: 'Yes, I had a heart attack in April. Four months ago.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

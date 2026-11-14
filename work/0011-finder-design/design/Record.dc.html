@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trial Finder · A record</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="chart.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="screen t-{{theme}}">
+  <header class="app-header">
+    <a class="brand" href="#"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><rect class="brand-mark-tile" width="100" height="100" rx="22"></rect><rect class="brand-mark-lead" x="20" y="23.5" width="60" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="44.5" width="46" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="65.5" width="32" height="11" rx="5.5"></rect></svg>Trial Finder</a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="#">Start</a>
+      <a class="nav-link" href="#">Your list</a>
+      <a class="nav-link" href="#">For your oncologist</a>
+      <a class="nav-link" href="#" aria-current="page">Your check</a>
+      <a class="nav-link" href="#">Settings</a>
+    </nav>
+    <span class="model-chip"><span class="model-chip-dot"></span>Local model · Qwen3.6-35B-A3B-MLX-8bit</span>
+  </header>
+  <div class="standing"><span>This is a proof of concept, run on this computer. Use made-up answers.</span></div>
+
+  <div class="review">
+    <aside class="review-summary">
+      <span class="section-label">This record</span>
+      <a class="summary-item" href="#covered"><span class="summary-count">4</span><span class="summary-label">What your earlier answers covered</span><span class="summary-desc">Asked in the questions before the check.</span></a>
+      <a class="summary-item" href="#told"><span class="summary-count">3</span><span class="summary-label">What you told the check</span><span class="summary-desc">Answered here, rule by rule.</span></a>
+      <a class="summary-item" href="#records"><span class="summary-count">14</span><span class="summary-label">Needs your records or your oncologist</span><span class="summary-desc">Lab values, chart-only rules, and what you didn't know.</span></a>
+      <a class="summary-item" href="#trial"><span class="summary-count">0</span><span class="summary-label">About the trial, not you</span><span class="summary-desc">Rules about the trial's own procedures.</span></a>
+      <a class="summary-item" href="#ask"><span class="summary-count">13</span><span class="summary-label">To ask your oncologist</span><span class="summary-desc">Every "may not fit", and every rule that needs your records.</span></a>
+      <div class="summary-actions">
+        <button type="button" class="button button-primary">Print or save as PDF</button>
+        <button type="button" class="button button-quiet">Back to your list</button>
+      </div>
+    </aside>
+
+    <main class="review-main">
+      <nav class="picked-tabs" aria-label="The trials you picked">
+        <a class="picked-tab" href="#" aria-current="true"><span style="font: var(--text-data); color: var(--ink-2);">1</span>TAPUR: Testing the Use of Food and Drug Administration (FDA)…</a>
+        <a class="picked-tab" href="#"><span style="font: var(--text-data);">2</span>A Study of Sigvotatug Vedotin in Advanced Solid Tumors</a>
+      </nav>
+      <header class="review-header">
+        <span class="convo-meta" style="font: var(--text-data);">NCT02693535</span>
+        <h1 class="review-title">TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs That Target a Specific Abnormality in a Tumor Gene in People With Advanced Stage Cancer</h1>
+      </header>
+      <div class="notice-list" style="font: var(--text-reassure);">
+        <p class="notice" style="color: var(--ink); font: 700 16px/24px var(--font-patient);">This isn't a decision. Your oncologist and the trial team decide whether this trial is right for you.</p>
+        <p class="notice" style="font: var(--text-patient-body); color: var(--ink);">2 rules may not fit what you said. 14 rules need your records or your oncologist.</p>
+      </div>
+
+      <details class="group" id="covered" open>
+        <summary class="group-header"><span class="group-title">What your earlier answers covered</span><span class="group-count">4</span></summary>
+        <div class="rrow">
+          <span class="rrow-type">The trial requires</span>
+          <div class="rrow-rule">
+            <p class="rrow-text">Performance status 0-2 (Per Eastern Cooperative Oncology Group (ECOG) criteria)</p>
+            <p class="rrow-evidence"><span>Asked earlier: Which is closest to how you are day to day?</span><span><span class="said-label">You said:</span><span class="said">Up and about, can't do the heavy stuff.</span></span></p>
+          </div>
+          <span class="rrow-finding">Nothing here conflicts with what you said.</span>
+        </div>
+        <div class="rrow">
+          <span class="rrow-type">The trial requires</span>
+          <div class="rrow-rule">
+            <p class="rrow-text">Patients must have disease that can be objectively measured by physical, laboratory or radiographic exam (per RECIST v1.1 for solid tumor, Lugano criteria for non-Hodgkin lymphoma or International Myeloma Working Group criteria for multiple myeloma).</p>
+            <p class="rrow-evidence"><span>Asked earlier: Is there a tumor that scans can measure?</span><span><span class="said-label">You said:</span><span class="said">Yes, they measure the adrenal tumor every time.</span></span></p>
+          </div>
+          <span class="rrow-finding">Nothing here conflicts with what you said.</span>
+        </div>
+        <div class="rrow">
+          <span class="rrow-type">The trial excludes</span>
+          <div class="rrow-rule">
+            <p class="rrow-text">Patients with primary brain tumors or new, untreated or progressive leptomeningeal metastases are excluded</p>
+            <p class="rrow-evidence"><span>Asked earlier: Has the cancer spread to the brain?</span><span><span class="said-label">You said:</span><span class="said">No brain mets.</span></span><span>Asked earlier: Has the cancer spread to the lining of the brain or spinal cord?</span><span><span class="said-label">You said:</span><span class="said">Don't know.</span></span></p>
+          </div>
+          <span class="rrow-finding">You didn't know.</span>
+        </div>
+      </details>
+
+      <details class="group" id="told" open>
+        <summary class="group-header"><span class="group-title">What you told the check</span><span class="group-count">3</span></summary>
+        <div class="rrow">
+          <span class="rrow-type">The trial requires</span>
+          <div class="rrow-rule">
+            <p class="rrow-text">12 years of age or older (*Restrictions apply. Not all therapies are available for patients &lt;18)</p>
+            <p class="rrow-evidence"><span><span class="said-label">You said:</span><span class="said">Yes</span></span></p>
+          </div>
+          <span class="rrow-finding">Nothing here conflicts with what you said.</span>
+        </div>
+        <div class="rrow">
+          <span class="rrow-type">The trial requires</span>
+          <div class="rrow-rule">
+            <p class="rrow-text">Ability to understand and the willingness to sign a written informed consent/assent document.</p>
+            <p class="rrow-evidence"><span><span class="said-label">You said:</span><span class="said">Yes</span></span></p>
+          </div>
+          <span class="rrow-finding">Nothing here conflicts with what you said.</span>
+        </div>
+      </details>
+
+      <details class="group" id="records" open>
+        <summary class="group-header"><span class="group-title">Needs your records or your oncologist</span><span class="group-count">14</span></summary>
+        <div class="rrow">
+          <span class="rrow-type">The trial requires</span>
+          <div class="rrow-rule">
+            <p class="rrow-text">Patients must have acceptable organ function as defined below. However, as noted above, drug-specific inclusion/exclusion criteria specified in the protocol appendix for each agent will take precedence for this and all inclusion criteria:</p>
+            <p class="rrow-evidence"><span><span class="said-label">You said:</span><span class="said">No</span></span></p>
+          </div>
+          <span class="rrow-finding">May not fit<br><span style="font: var(--text-small); color: var(--ink-2);">Only your records can settle this, whatever you said.</span></span>
+        </div>
+        <div class="rrow">
+          <span class="rrow-type">The trial requires</span>
+          <div class="rrow-rule">
+            <div class="labs">
+              <span>1. Absolute neutrophil count ≥ 1500 µl</span>
+              <span>2. Hemoglobin ≥ 9.0 g/dl</span>
+              <span>3. Platelets ≥ 75,000/µl</span>
+              <span>4. Total bilirubin &lt; 2.0 mg/ dl, except in patients with Gilbert's Syndrome</span>
+              <span>5. AST (SGOT) and ALT (SGPT) &lt; 2.5 x ULN (or &lt; 5 x ULN with known hepatic metastases)</span>
+              <span>6. Serum creatinine ≤ 1.5 × ULN or creatinine clearance ≥ 50 mL/min/1.73 m2</span>
+            </div>
+          </div>
+          <span class="rrow-finding">A lab value: your records will have it.<br><span style="font: var(--text-small); color: var(--ink-2);">6 rules</span></span>
+        </div>
+        <div class="rrow">
+          <span class="rrow-type">The trial requires</span>
+          <div class="rrow-rule">
+            <p class="rrow-text">Have a tumor genomic profile for which single agent treatment with one of the FDA approved targeted anti-cancer drugs included in this study has potential clinical benefit based on the criteria described in protocol.</p>
+            <p class="rrow-evidence"><span><span class="said-label">You said:</span><span class="said">No</span></span></p>
+          </div>
+          <span class="rrow-finding">May not fit<br><span style="font: var(--text-small); color: var(--ink-2);">Only your records can settle this, whatever you said.</span></span>
+        </div>
+        <div class="rrow">
+          <span class="rrow-type">The trial requires</span>
+          <div class="rrow-rule">
+            <p class="rrow-text">For orally administered drugs, the patient must be able to swallow and tolerate oral medication and must have no known malabsorption syndrome.</p>
+            <p class="rrow-evidence"><span><span class="said-label">You said:</span><span class="said">I don't know</span></span></p>
+          </div>
+          <span class="rrow-finding">You didn't know.</span>
+        </div>
+        <div class="rrow">
+          <span class="rrow-type">The trial requires</span>
+          <div class="rrow-rule">
+            <p class="rrow-text">Patients with known progressive brain metastases are eligible but additional eligibility criteria apply.</p>
+            <p class="rrow-evidence"><span><span class="said-label">You said:</span><span class="said">Yes</span></span></p>
+          </div>
+          <span class="rrow-finding">Only your records can settle this, whatever you said.</span>
+        </div>
+      </details>
+
+      <details class="group" id="trial">
+        <summary class="group-header"><span class="group-title">About the trial, not you</span><span class="group-count">0</span><span class="group-hint">Show these rules</span></summary>
+      </details>
+
+      <details class="group" id="ask" open>
+        <summary class="group-header"><span class="group-title">To ask your oncologist</span><span class="group-count">13</span></summary>
+        <div class="ask"><p class="ask-q">Does this rule keep this trial from being an option for me?</p><p class="ask-rule">Patients must have acceptable organ function as defined below.</p></div>
+        <div class="ask"><p class="ask-q">Does this rule keep this trial from being an option for me?</p><p class="ask-rule">Have a tumor genomic profile for which single agent treatment with one of the FDA approved targeted anti-cancer drugs included in this study has potential clinical benefit based on the criteria described in protocol.</p></div>
+        <div class="ask"><p class="ask-q">Do my records settle this rule?</p><p class="ask-rule">1. Absolute neutrophil count ≥ 1500 µl</p></div>
+        <div class="ask"><p class="ask-q">Do my records settle this rule?</p><p class="ask-rule">For orally administered drugs, the patient must be able to swallow and tolerate oral medication and must have no known malabsorption syndrome.</p></div>
+      </details>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":1280,"height":3000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'light' };
+  }
+}
+</script>
+</body>
+</html>

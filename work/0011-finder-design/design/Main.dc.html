@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trial Finder · Where to look</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="chart.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="screen t-{{theme}}">
+  <header class="app-header">
+    <a class="brand" href="#"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><rect class="brand-mark-tile" width="100" height="100" rx="22"></rect><rect class="brand-mark-lead" x="20" y="23.5" width="60" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="44.5" width="46" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="65.5" width="32" height="11" rx="5.5"></rect></svg>Trial Finder</a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="#" aria-current="page">Start</a>
+      <a class="nav-link" href="#">Settings</a>
+    </nav>
+    <span class="model-chip"><span class="model-chip-dot"></span>Local model · Qwen3.6-35B-A3B-MLX-8bit</span>
+  </header>
+  <div class="standing"><span>This is a proof of concept, run on this computer. Use made-up answers.</span></div>
+
+  <main class="page">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 680px;">
+      <h1 class="page-title">Where to look</h1>
+      <p class="page-intro">Lung cancer (non-small cell) only, for now. Other cancers aren't ready: the questions and trial readings cover lung cancer alone.</p>
+    </div>
+
+    <div class="start">
+      <form class="card start-form">
+        <div class="start-row">
+          <label class="field">
+            <span class="field-label">ZIP code</span>
+            <input class="input is-focus" value="97201" inputmode="numeric">
+          </label>
+          <label class="field">
+            <span class="field-label">Age</span>
+            <input class="input" value="69" inputmode="numeric">
+          </label>
+        </div>
+
+        <fieldset class="field">
+          <legend class="field-label" style="margin-bottom: 8px;">How far you could travel</legend>
+          <div class="pills" role="radiogroup">
+            <button type="button" class="pill" role="radio" aria-checked="false">25 miles</button>
+            <button type="button" class="pill" role="radio" aria-checked="true">50 miles</button>
+            <button type="button" class="pill" role="radio" aria-checked="false">100 miles</button>
+            <button type="button" class="pill" role="radio" aria-checked="false">250 miles</button>
+            <button type="button" class="pill" role="radio" aria-checked="false">Anywhere in the US</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend class="field-label" style="margin-bottom: 8px;">Sex, as the trials ask it</legend>
+          <div class="pills" role="radiogroup">
+            <button type="button" class="pill" role="radio" aria-checked="false">Female</button>
+            <button type="button" class="pill" role="radio" aria-checked="true">Male</button>
+          </div>
+        </fieldset>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px; border-top: 1px solid var(--line-soft);">
+          <button type="submit" class="button button-primary" style="align-self: flex-start; font-size: 16px; padding: 0 32px; margin-top: 16px;">Start the questions</button>
+          <p class="composer-note">Your answers stay on this computer. Use made-up answers.</p>
+        </div>
+      </form>
+
+      <aside style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px;">
+        <h2 class="section-label">What happens next</h2>
+        <ol class="next-steps">
+          <li><span class="next-steps-n">1</span><span>A few questions, one at a time.</span></li>
+          <li><span class="next-steps-n">2</span><span>A short list of trials to ask your oncologist about.</span></li>
+          <li><span class="next-steps-n">3</span><span>A sheet to print for your visit.</span></li>
+        </ol>
+        <p class="convo-reassure" style="padding-top: 8px; border-top: 1px solid var(--line-soft); margin-top: 4px;">"I don't know" is always fine: it never takes a trial off your list.</p>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":1280,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'light' };
+  }
+}
+</script>
+</body>
+</html>

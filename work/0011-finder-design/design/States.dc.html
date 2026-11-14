@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trial Finder · States</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="chart.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="screen t-{{theme}}">
+  <div class="states">
+
+    <section class="state">
+      <h2 class="state-caption">Start · searching</h2>
+      <div class="state-frame">
+        <button type="button" class="button button-primary" aria-disabled="true" style="align-self: flex-start;">Searching the trials…</button>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Start · a ZIP the app doesn't know</h2>
+      <div class="state-frame">
+        <label class="field"><span class="field-label">ZIP code</span><input class="input is-focus" value="99999" aria-invalid="true"></label>
+        <p class="error-line" role="alert">ZIP 99999 isn't in the Census Bureau's ZIP table. Some ZIPs, such as a single building's, have no area of their own. Try a nearby ZIP.</p>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Questions · reading a reply</h2>
+      <div class="state-frame">
+        <div class="turn-you" style="align-self: flex-end;"><span class="turn-you-text" style="font: var(--text-turn);">Carboplatin, yes.</span></div>
+        <p class="convo-reassure" aria-live="polite">Reading your answer…</p>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Questions · a reply that couldn't be read</h2>
+      <div class="state-frame">
+        <p class="error-line" role="alert">Something went wrong. Try again.</p>
+        <span class="chooser-label">Not sure how to say it? Choose an answer</span>
+        <div class="answers">
+          <button type="button" class="button button-secondary">Yes</button>
+          <button type="button" class="button button-secondary">No</button>
+          <button type="button" class="button button-secondary">I don't know</button>
+        </div>
+        <button type="button" class="button button-quiet" style="align-self: flex-start;">Try again</button>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Questions · on a hosted model</h2>
+      <div class="state-frame">
+        <p class="composer-note">While Anthropic is chosen in Settings, what you type here is sent to Anthropic. Use made-up answers.</p>
+        <p class="confirm-meta">Read by Claude Haiku 4.5.</p>
+        <p class="confirm-meta">This model's readings haven't been measured.</p>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Questions · the end</h2>
+      <div class="state-frame">
+        <p class="turn-agent" style="font: var(--text-turn);">That's all the questions. Your list of trials to ask about is ready.</p>
+        <button type="button" class="button button-primary" style="align-self: flex-start;">See your list</button>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">List · stopped early</h2>
+      <div class="state-frame">
+        <p class="order-note" style="color: var(--ink);">The questions aren't finished. This is the list so far.</p>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">List · a trial for other cancers (below the short list)</h2>
+      <div class="state-frame">
+        <article class="tcard">
+          <div class="tcard-head">
+            <span class="tcard-n">14</span>
+            <div class="tcard-head-text">
+              <div class="tcard-meta"><span>NCT00000000</span><span class="tag">Phase 2</span><span>12 miles</span></div>
+              <h3 class="tcard-title" style="font-size: 16px; line-height: 22px;">[A trial whose record names prostate cancer]</h3>
+            </div>
+          </div>
+          <div class="tcard-body" style="padding-left: 16px; padding-bottom: 16px;">
+            <div class="block" style="grid-template-columns: minmax(0, 1fr); gap: 6px;">
+              <span class="block-label">About the record</span>
+              <div class="block-body" style="font: var(--text-reassure);">
+                <p>This trial's record names other cancers: prostate cancer. Non-small cell lung cancer isn't among them. Ask your oncologist whether it takes people with your kind of lung cancer.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">List · a fourth tick refused</h2>
+      <div class="state-frame">
+        <label class="check"><span class="check-box" data-on="true"></span>Check this trial</label>
+        <label class="check" aria-disabled="true"><span class="check-box"></span>Check this trial</label>
+        <p class="rail-note" role="status">Three is the most one check takes.</p>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">List · Check these, starting and failed (new sentence)</h2>
+      <div class="state-frame">
+        <button type="button" class="button button-primary" aria-disabled="true" style="align-self: flex-start;">Starting…</button>
+        <p class="error-line" role="alert">The check couldn't start. Nothing on your list changed. Try again.</p>
+        <button type="button" class="button button-primary" style="align-self: flex-start;">Check these</button>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Check · reading a trial's rules</h2>
+      <div class="state-frame">
+        <p class="turn-agent" style="font: var(--text-turn);" aria-live="polite">Reading the rules of “A Study of Sigvotatug Vedotin in Advanced Solid Tumors”…</p>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Check · a typed reply to confirm</h2>
+      <div class="state-frame">
+        <div class="turn-you" style="align-self: flex-end;"><span class="turn-you-text" style="font: var(--text-turn);">I can swallow pills fine.</span></div>
+        <div class="confirm" style="margin-top: 0; padding: 16px 20px;">
+          <p class="confirm-reading" style="font-size: 18px; line-height: 26px;"><span class="confirm-reading-label">I read that as:</span>“The patient must be able to swallow and tolerate oral medication…”: Yes</p>
+          <div class="confirm-actions"><button type="button" class="button button-primary button-patient">That's right</button><button type="button" class="button button-secondary button-patient">Change it</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Check · a trial not reached</h2>
+      <div class="state-frame">
+        <div class="card" style="display: flex; flex-direction: column; gap: 6px;">
+          <span class="convo-meta">NCT05579366</span>
+          <p style="font: var(--text-group);">Rinatabart Sesutecan (Rina-S, PRO1184, GEN1184) for Advanced Solid Tumors</p>
+          <p class="convo-reassure" style="color: var(--ink);">Not checked: the check stopped before this trial.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Check · rules that couldn't be read</h2>
+      <div class="state-frame">
+        <p class="notice-list notice" style="font: var(--text-reassure); color: var(--ink);">This trial's rules couldn't be read just now, so it wasn't checked. These are the rules your earlier answers covered.</p>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Check · gone after a restart</h2>
+      <div class="state-frame">
+        <p class="error-line">This check is no longer here. Checks are kept only while the page runs.</p>
+        <button type="button" class="button button-secondary" style="align-self: flex-start;">Back to your list</button>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Record · a list rule, and a part of the trial</h2>
+      <div class="state-frame">
+        <div class="group"><div class="rrow" style="grid-template-columns: minmax(0, 1fr);">
+          <span class="rrow-type">The trial requires</span>
+          <p class="rrow-text">Small cell carcinoma of the bladder</p>
+          <p class="rrow-evidence">One of a list: the trial asks for any one of these.</p>
+        </div><div class="rrow" style="grid-template-columns: minmax(0, 1fr);">
+          <span class="rrow-type">For part of the trial: Part B</span>
+          <p class="rrow-text">Prior treatment with a KRAS G12C inhibitor</p>
+          <span class="rrow-finding" style="text-align: left;">May not fit one part of the trial</span>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Check · on a hosted model</h2>
+      <div class="state-frame">
+        <p class="confirm-meta">On this model, the check hasn't been measured.</p>
+      </div>
+    </section>
+
+    <section class="state">
+      <h2 class="state-caption">Settings · a test that failed</h2>
+      <div class="state-frame">
+        <p class="error-line" role="alert">[The provider's error, as the server gives it]</p>
+        <button type="button" class="button button-secondary" style="align-self: flex-start;">Test</button>
+      </div>
+    </section>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":1280,"height":2600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'light' };
+  }
+}
+</script>
+</body>
+</html>
