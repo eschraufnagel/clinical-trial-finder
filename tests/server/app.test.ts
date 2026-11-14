@@ -1,4 +1,4 @@
-import { mkdtempSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import Fastify from "fastify";
@@ -255,5 +255,32 @@ describe("the Settings routes", () => {
     });
     expect(res.statusCode).toBe(400);
     expect(res.json().error).toMatch(/between/);
+  });
+});
+
+describe("the built page", () => {
+  it("serves the bundled fonts and the manifest with their types (slice 0011)", async () => {
+    const webDir = mkdtempSync(join(tmpdir(), "finder-web-"));
+    mkdirSync(join(webDir, "assets"));
+    writeFileSync(join(webDir, "index.html"), "<!doctype html><title>page</title>");
+    writeFileSync(join(webDir, "assets", "font-abc.woff2"), "wOF2");
+    writeFileSync(join(webDir, "manifest.webmanifest"), "{}");
+    const server = Fastify();
+    configureApp(server, {
+      port: 5099,
+      mode: "scripted",
+      info: { snapshotMonth: "2000-01", mappingRun: "run" },
+      finder: finderOptions(),
+      check: checkOptions(),
+      webDir,
+    });
+    try {
+      const font = await server.inject({ url: "/assets/font-abc.woff2", headers: HOST });
+      const manifest = await server.inject({ url: "/manifest.webmanifest", headers: HOST });
+      expect(font.headers["content-type"]).toBe("font/woff2");
+      expect(manifest.headers["content-type"]).toMatch(/^application\/manifest\+json/);
+    } finally {
+      rmSync(webDir, { recursive: true, force: true });
+    }
   });
 });

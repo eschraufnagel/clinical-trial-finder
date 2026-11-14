@@ -64,10 +64,10 @@ The page works but looks like a test harness: `src/web/styles.css` is 173 lines 
 
 1. **Baseline.** Record in Records: `npm run check` exits 0, with the test count and time; `npm run test:e2e` passes, with its case count. The commit is `plan.md`'s Records alone.
 
-2. **Fonts, icons, and the server's types** (§5).
-   - **Fonts,** from the owner, in `src/web/fonts/`: `IBMPlexSans-Regular.woff2`, `IBMPlexSans-Italic.woff2`, `IBMPlexSans-Medium.woff2`, `IBMPlexSans-SemiBold.woff2`, `IBMPlexMono-Regular.woff2`, `IBMPlexMono-Medium.woff2`, `AtkinsonHyperlegible-Regular.woff2`, `AtkinsonHyperlegible-Bold.woff2`, and `OFL-IBM-Plex.txt`, `OFL-Atkinson-Hyperlegible.txt`. Record each file's size.
-   - **Icons,** copied as they are from the handoff's `icons/` into `src/web/public/icons/`: `favicon.svg`, `favicon-32.png`, `apple-touch-icon-180.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png`; and `src/web/public/manifest.webmanifest`, from `HEAD.html`'s manifest, named "Trial Finder", with no `start_url` beyond `/`.
-   - **`src/web/index.html`:** `<title>Trial Finder</title>`, the icon and manifest `<link>`s from `HEAD.html` with paths under `/icons/`, and `<meta name="color-scheme" content="light dark">`.
+2. **Fonts, icons, and the server's types** (§5). *Revised at step 2 (owner, 2026-11): the prescreening repository already built Chart v2 in its slice 0020, so the fonts, licences, icons, manifest and `index.html` come from there, and the two products share the same files.*
+   - **Fonts,** copied from the prescreening repository's `src/web/fonts/` into `src/web/fonts/`: `IBMPlexSans-Regular.woff2`, `IBMPlexSans-Italic.woff2`, `IBMPlexSans-Medium.woff2`, `IBMPlexSans-SemiBold.woff2`, `IBMPlexMono-Regular.woff2`, `IBMPlexMono-Medium.woff2`, `AtkinsonHyperlegible-Regular.woff2`, `AtkinsonHyperlegible-Bold.woff2`, and its three licences, `IBMPlexSans-OFL.txt`, `IBMPlexMono-OFL.txt`, `AtkinsonHyperlegible-OFL.txt`. Record each file's size.
+   - **Icons,** copied as they are from the prescreening repository's `src/web/public/icons/` into `src/web/public/icons/`: `favicon.svg`, `favicon-32.png`, `apple-touch-icon-180.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png`; and `src/web/public/manifest.webmanifest`, from its manifest, named "Trial Finder" ("Finder" short).
+   - **`src/web/index.html`:** from the prescreening repository's: `<title>Trial Finder</title>`, the icon and manifest `<link>`s under `/icons/`, the light and dark `theme-color`s, and `<meta name="color-scheme" content="light dark">`.
    - **`src/server/app.ts` `CONTENT_TYPES`:** `.woff2` → `font/woff2`, `.webmanifest` → `application/manifest+json`.
    - **`tests/server/app.test.ts`:** a built-page fixture with a `.woff2` and a `.webmanifest` file is served with those types.
    - Nothing references the fonts yet, so the page is unchanged.
@@ -167,7 +167,8 @@ The page works but looks like a test harness: `src/web/styles.css` is 173 lines 
 
 ## Reused, not rebuilt
 
-- **Chart v2's handoff:** `tokens.css` and `components.css` as they are; the Record mark's geometry; the icons and `HEAD.html`.
+- **The prescreening repository's Chart v2 (its slice 0020):** the fonts, licences, icons, manifest and `index.html` (step 2). Steps 3 and 9 start from its `src/web/styles.css` (tokens, `@font-face`, base and the shared components) and its `playwright.capture.config.ts` and `npm run screenshots`, so the two products stay alike; where they differ from this plan, the step says so.
+- **Chart v2's handoff:** `tokens.css` and `components.css`; the Record mark's geometry.
 - **The canvas:** `design/chart.css`'s finder components and the `.dc.html` markup as the reference for each component's structure.
 - **The page's data:** `TrialView`, `RecordLine`, `RecordSection`, `TrialRecord`, `FinderView`, `CheckView`, `Info` unchanged; `W`, `textOf`, `isConfirm`, `toggleTick`, `MAX_TICKED`.
 - **The browser test's helpers:** `search`, `lastQuestion`, `typeReply`, `shortlistIds`, `expectNoVerdict`, `patient`, `replyTo`, for the new cases and the screenshots.
@@ -219,3 +220,4 @@ The page works but looks like a test harness: `src/web/styles.css` is 173 lines 
 - **Step 1, baseline (2026-11).** At the plan's commit (`ee047e5`):
   - `npm run check` exits 0. `npm test`: 116 files, 1,295 tests passed and 8 expected failures, 885 ms.
   - `npm run test:e2e`: 8 cases passed, 28.5 s.
+- **Step 2, fonts and icons (2026-11).** Copied from the prescreening repository at `af1ba04`, at the owner's word, instead of downloaded. Sizes in bytes: Plex Sans Regular 63,020, Italic 67,220, Medium 66,740, SemiBold 67,060; Plex Mono Regular 49,248, Medium 50,400; Atkinson Hyperlegible Regular 23,196, Bold 23,776; 8 fonts 410,660 in all. Licences: `IBMPlexSans-OFL.txt` and `IBMPlexMono-OFL.txt` 4,456 each, `AtkinsonHyperlegible-OFL.txt` 4,352. Its `favicon.svg` differs from the handoff's; the prescreening repository's is used, so both products serve the same file.
