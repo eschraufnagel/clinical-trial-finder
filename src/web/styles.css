@@ -777,8 +777,9 @@ button:is(:disabled, [aria-disabled="true"]):hover {
   margin-top: calc(-1 * var(--space-2));
   font: var(--text-small);
 }
-/* The message waiting for an answer, and only that one, in the question card. */
-.messages li.agent.current {
+/* The message waiting for an answer, and only that one, in the question card.
+   Its number comes from `data-label`, so the message's text stays its own. */
+.messages li.agent.current:not(.reading) {
   max-width: none;
   margin-top: var(--space-2);
   display: flex;
@@ -793,9 +794,18 @@ button:is(:disabled, [aria-disabled="true"]):hover {
   color: var(--ink);
   text-wrap: pretty;
 }
+.messages li.agent.current[data-label]::before {
+  content: attr(data-label);
+  font: 600 14px / 1 var(--font-ui);
+  color: var(--accent);
+}
+/* A reading waiting to be confirmed: the words the page read, large. */
 .messages li.agent.current.reading {
   align-self: stretch;
+  max-width: none;
   margin-top: var(--space-2);
+  font: 400 21px / 31px var(--font-patient);
+  color: var(--ink);
 }
 .question-label {
   font: 600 14px / 1 var(--font-ui);
@@ -842,6 +852,16 @@ button:is(:disabled, [aria-disabled="true"]):hover {
 .chooser-label {
   font: var(--text-reassure);
   color: var(--ink-2);
+  cursor: pointer;
+}
+summary.chooser-label {
+  min-height: var(--tap-min);
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+}
+details.chooser > .answers {
+  margin-top: var(--space-2);
 }
 .composer {
   padding: var(--space-4) 0 0;
@@ -1572,7 +1592,7 @@ main > form {
   .convo {
     padding: 0 20px 24px;
   }
-  .messages li.agent.current {
+  .messages li.agent.current:not(.reading) {
     padding: var(--space-5) 20px;
     font-size: 21px;
     line-height: 31px;

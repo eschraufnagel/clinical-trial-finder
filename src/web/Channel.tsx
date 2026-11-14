@@ -54,23 +54,48 @@ export function Messages({
 }) {
   const t = COPY.conversation;
   const status = channel?.status;
+  const messages = channel?.messages ?? [];
+  const lastAgent = messages.findLast((m) => m.from === "agent")?.seq;
+  // A question is an agent message offering answers other than a confirm. Its
+  // number is drawn by CSS from `data-label`, so the message's own text, which
+  // the browser test reads, stays as it arrived (slice 0011).
+  let asked = 0;
   return (
     <>
       <ol className="messages no-print" aria-live="polite">
-        {(channel?.messages ?? []).map((m) => (
-          <li key={m.seq} className={m.from}>
-            {m.text}
-          </li>
-        ))}
+        {messages.map((m) => {
+          const reading = m.from === "agent" && isConfirm(m.choices);
+          const question = m.from === "agent" && !reading && (m.choices?.length ?? 0) > 0;
+          if (question) asked += 1;
+          const current = m.seq === lastAgent;
+          const classes = [m.from, reading ? "reading" : "", current ? "current" : ""];
+          return (
+            <li
+              key={m.seq}
+              className={classes.filter((c) => c !== "").join(" ")}
+              data-label={current && question ? t.question(asked) : undefined}
+            >
+              {m.text}
+            </li>
+          );
+        })}
       </ol>
       {status === "working" ? <p className="working no-print">{working}</p> : null}
       {status === "failed" || status === "unavailable" ? (
-        <p className="problem no-print">
-          {t.failed}{" "}
-          <button type="button" onClick={() => void sendAgain(id).then(refresh)}>
-            {t.tryAgain}
-          </button>
-        </p>
+        <div className="no-print chooser">
+          <p className="error-line" role="alert">
+            {t.failed}
+          </p>
+          <div>
+            <button
+              type="button"
+              className="secondary"
+              onClick={() => void sendAgain(id).then(refresh)}
+            >
+              {t.tryAgain}
+            </button>
+          </div>
+        </div>
       ) : null}
     </>
   );
@@ -117,8 +142,15 @@ export function Reply({
     await sendChoice(id, choice);
     await refresh();
   };
-  const buttons = last?.choices?.map((c) => (
-    <button key={c.id} type="button" onClick={() => void choose(c.id)}>
+  // The confirm's first choice is the primary action; every answer to a
+  // question is the same quiet button, "I don't know" among them.
+  const buttons = last?.choices?.map((c, i) => (
+    <button
+      key={c.id}
+      type="button"
+      className={confirming && i === 0 ? undefined : "secondary"}
+      onClick={() => void choose(c.id)}
+    >
       {c.label}
     </button>
   ));
@@ -127,38 +159,45 @@ export function Reply({
     <div className="no-print">
       {confirming ? (
         <div className="confirm">
-          {buttons}
+          <div className="confirm-actions">{buttons}</div>
           {reader === undefined ? null : (
-            <p className="note">
+            <p className="confirm-meta">
               {t.readBy(reader.model)} {reader.measured ? null : t.unmeasured} {readerExtra}
             </p>
           )}
         </div>
       ) : null}
-      {!confirming && unfold ? <div className="choices">{buttons}</div> : null}
+      {!confirming && unfold ? <div className="answers chooser">{buttons}</div> : null}
 
-      <form className="reply" onSubmit={send}>
-        <label>
+      <form className="composer reply" onSubmit={send}>
+        <label className="field-label" htmlFor={`reply-${id}`}>
           {t.reply}
-          <textarea
-            name="reply"
-            rows={2}
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) void send(e);
-            }}
-          />
         </label>
-        <p className="note">{reader?.hosted == null ? t.local : t.hosted(reader.hosted)}</p>
-        <button type="submit">{t.send}</button>
+        <textarea
+          id={`reply-${id}`}
+          className="composer-input"
+          name="reply"
+          rows={unfold ? 2 : 3}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) void send(e);
+          }}
+        />
+        <div className="composer-footer">
+          <p className="composer-note">
+            {reader?.hosted == null ? t.local : t.hosted(reader.hosted)}
+          </p>
+          <button type="submit">{t.send}</button>
+        </div>
         {!confirming && !unfold && (last?.choices?.length ?? 0) > 0 ? (
           <details
+            className="chooser"
             open={open || choosing}
             onToggle={(e) => setOpen((e.target as HTMLDetailsElement).open)}
           >
-            <summary>{t.choose}</summary>
-            <div className="choices">{buttons}</div>
+            <summary className="chooser-label">{t.choose}</summary>
+            <div className="answers">{buttons}</div>
           </details>
         ) : null}
       </form>

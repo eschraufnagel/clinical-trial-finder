@@ -61,6 +61,7 @@ export const COPY = {
     local: "Your answers stay on this computer. Use made-up answers.",
     failed: "Something went wrong. Try again.",
     tryAgain: "Try again",
+    question: (n: number) => `Question ${n}`,
   },
 
   list: {

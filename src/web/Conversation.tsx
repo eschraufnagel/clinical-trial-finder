@@ -24,34 +24,42 @@ export function Conversation({
 
   if (gone) {
     return (
-      <section>
-        <button type="button" onClick={onStartOver}>
-          {t.startOver}
-        </button>
+      <section className="convo">
+        <div className="convo-actions">
+          <button type="button" className="secondary" onClick={onStartOver}>
+            {t.startOver}
+          </button>
+        </div>
       </section>
     );
   }
 
   return (
-    <section className="conversation">
+    <section className="convo conversation">
       <Messages id={id} channel={channel} refresh={refresh} working={t.working} />
       <Reply id={id} channel={channel} refresh={refresh} reader={info} />
 
-      <div className="actions">
+      <div className="convo-actions">
         {status === "done" ? (
-          <button type="button" className="primary" onClick={onList}>
+          <button type="button" onClick={onList}>
             {t.seeList}
           </button>
         ) : (
           <button
             type="button"
+            className="secondary"
             onClick={() => void stopFinder(id).then(refresh).then(onList)}
             disabled={status === undefined}
           >
             {t.listNow}
           </button>
         )}
-        <button type="button" onClick={() => void removeFinder(id).finally(onStartOver)}>
+        <span className="spacer" />
+        <button
+          type="button"
+          className="quiet"
+          onClick={() => void removeFinder(id).finally(onStartOver)}
+        >
           {t.startOver}
         </button>
       </div>
