@@ -6,6 +6,12 @@
  */
 export const COPY = {
   title: "Trials to ask your oncologist about",
+  brand: "Trial Finder",
+  chip: {
+    scripted: "Scripted reader · no model",
+    local: (model: string) => `Local model · ${model}`,
+    hosted: (provider: string, model: string) => `${provider} · ${model}`,
+  },
   madeUp: "This is a proof of concept, run on this computer. Use made-up answers.",
   scripted: "Scripted reader: no model is called. Typed replies are read from a fixed list.",
   nav: {
@@ -30,6 +36,14 @@ export const COPY = {
     male: "Male",
     start: "Start the questions",
     starting: "Searching the trials…",
+    next: {
+      heading: "What happens next",
+      steps: [
+        "A few questions, one at a time.",
+        "A short list of trials to ask your oncologist about.",
+        "A sheet to print for your visit.",
+      ],
+    },
   },
 
   conversation: {
