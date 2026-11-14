@@ -72,7 +72,7 @@ The page works but looks like a test harness: `src/web/styles.css` is 173 lines 
    - **`tests/server/app.test.ts`:** a built-page fixture with a `.woff2` and a `.webmanifest` file is served with those types.
    - Nothing references the fonts yet, so the page is unchanged.
 
-3. **The stylesheet's foundation, the contrast test, and the URL boundary** (§3, §6, §10).
+3. **The stylesheet's foundation, the contrast test, and the URL boundary** (§3, §6, §10). *Revised at step 3 (owner, 2026-11): items 1 to 3 below come from the prescreening repository's `styles.css` (its lines 6 to 431: `@font-face`, tokens, base, focus, buttons, cards and tags, header, mark, model chip, banner, and the header's phone rules), copied unchanged, instead of pasting the handoff's files again. So its conventions hold here too: a button is primary unless it says `.secondary` or `.quiet`; the header is `.header` / `.header-inner`; the model chip is `.pill`. The canvas's distance and sex pills are therefore `.option` in the app.*
    - **`src/web/styles.css` rewritten, in this order:**
      1. `@font-face` for the eight fonts, `url("./fonts/…")`, `font-display: swap`;
      2. the handoff's `tokens.css` tokens as they are: light on `:root`, dark under `@media (prefers-color-scheme: dark)`, reduced motion;
@@ -221,3 +221,4 @@ The page works but looks like a test harness: `src/web/styles.css` is 173 lines 
   - `npm run check` exits 0. `npm test`: 116 files, 1,295 tests passed and 8 expected failures, 885 ms.
   - `npm run test:e2e`: 8 cases passed, 28.5 s.
 - **Step 2, fonts and icons (2026-11).** Copied from the prescreening repository at `af1ba04`, at the owner's word, instead of downloaded. Sizes in bytes: Plex Sans Regular 63,020, Italic 67,220, Medium 66,740, SemiBold 67,060; Plex Mono Regular 49,248, Medium 50,400; Atkinson Hyperlegible Regular 23,196, Bold 23,776; 8 fonts 410,660 in all. Licences: `IBMPlexSans-OFL.txt` and `IBMPlexMono-OFL.txt` 4,456 each, `AtkinsonHyperlegible-OFL.txt` 4,352. Its `favicon.svg` differs from the handoff's; the prescreening repository's is used, so both products serve the same file.
+- **Step 3, the stylesheet (2026-11).** `styles.css` is 1,718 lines before formatting: 426 from the prescreening repository's, unchanged, then the finder's components, the old class names in neutral ink until steps 4 to 8 replace them, the phone rules and print. `vite build` bundles all eight fonts into `dist/web/assets/` and copies the icons and manifest. The contrast test passes in light, dark and print on 17 pairs; no colour is set outside a token. The browser test's 8 cases pass with the page on the new foundation.

@@ -1,5 +1,5 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { dirname, join, resolve, sep } from "node:path";
+import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
@@ -1407,5 +1407,49 @@ describe("criteria:compare reaches no model, parser, parse cache or network", ()
     expect(forbidden(`${sep}src${sep}criteria${sep}parse.ts`)).toBe(true);
     expect(forbidden(`${sep}src${sep}check${sep}parse-cache.ts`)).toBe(true);
     expect(forbidden(`${sep}src${sep}criteria${sep}types.ts`)).toBe(false);
+  });
+});
+
+/**
+ * Slice 0011: the page names no address off this machine. The fetch rule
+ * above reads scripts only; a stylesheet's `@import` or `url()`, or a `<link>`
+ * in `index.html`, would load a font or a script from a CDN past it. The fonts
+ * and icons are bundled under `src/web/` instead.
+ */
+const WEB_DIR = fileURLToPath(new URL("../src/web", import.meta.url));
+const TEXT_EXTENSIONS = /\.(css|html|svg|ts|tsx|webmanifest|json)$/;
+
+function webFiles(dir: string): string[] {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) return webFiles(path);
+    return TEXT_EXTENSIONS.test(entry.name) ? [path] : [];
+  });
+}
+
+/** The http(s) addresses in a file, leaving out XML namespace declarations. */
+function outsideAddresses(source: string): string[] {
+  const withoutNamespaces = source.replace(/\bxmlns(?::[\w-]+)?="[^"]*"/g, "");
+  return [...withoutNamespaces.matchAll(/https?:\/\/[^\s"'`)<>]+/g)].map((m) => m[0]);
+}
+
+describe("the page names no outside address", () => {
+  it("in any stylesheet, page, icon, manifest or component under src/web/", () => {
+    const files = webFiles(WEB_DIR);
+    expect(files.some((f) => f.endsWith("styles.css"))).toBe(true);
+    expect(files.some((f) => f.endsWith("index.html"))).toBe(true);
+    const found = files.flatMap((f) =>
+      outsideAddresses(readFileSync(f, "utf8")).map((a) => `${relative(WEB_DIR, f)}: ${a}`),
+    );
+    expect(found).toEqual([]);
+  });
+
+  it("would catch a font loaded from a CDN, and pass an SVG's namespace", () => {
+    expect(
+      outsideAddresses('@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans");'),
+    ).toEqual(["https://fonts.googleapis.com/css2?family=IBM+Plex+Sans"]);
+    expect(outsideAddresses('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1">')).toEqual(
+      [],
+    );
   });
 });
