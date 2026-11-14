@@ -444,6 +444,11 @@ button:is(:disabled, [aria-disabled="true"]):hover {
 .app {
   min-height: 100vh;
 }
+/* The finder's nav has longer words than the prescreening repository's, so its
+   links keep to one line and the nav scrolls on a phone, as its rule says. */
+.nav a {
+  white-space: nowrap;
+}
 .page {
   max-width: 1040px;
   margin: 0 auto;
@@ -1519,6 +1524,15 @@ details.chooser > .answers {
 }
 
 /* ---------- Settings (coordinator register) ---------- */
+.settings {
+  max-width: 860px;
+}
+.settings-intro {
+  font: var(--text-body);
+}
+.cap-input {
+  max-width: 160px;
+}
 .provider {
   display: flex;
   flex-direction: column;
@@ -1563,65 +1577,6 @@ details.chooser > .answers {
   border-radius: var(--radius-control);
   font: var(--text-small);
   color: var(--ink);
-}
-
-/* ---------- Until each screen is rebuilt (steps 4 to 8) ----------
-   The page's old class names, in neutral ink, so nothing is coloured by a
-   finding meanwhile. Each rule goes when the last component using it does. */
-.note {
-  color: var(--ink-2);
-  font: var(--text-small);
-}
-.flag,
-.problem {
-  color: var(--ink);
-}
-label {
-  display: block;
-  margin: var(--space-2) 0;
-}
-label.inline {
-  display: inline-flex;
-  gap: var(--space-1);
-  margin-right: var(--space-4);
-}
-input:not([type="radio"]):not([type="checkbox"]),
-select,
-textarea {
-  display: block;
-  max-width: 100%;
-  min-height: var(--control-h);
-  margin-top: var(--space-1);
-  padding: 0 var(--space-3);
-  background: var(--surface);
-  color: var(--ink);
-  border: 1px solid var(--control-line);
-  border-radius: var(--radius-control);
-  font: var(--text-body);
-}
-textarea {
-  width: 100%;
-  padding: var(--space-3);
-}
-fieldset {
-  margin: var(--space-2) 0;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-control);
-}
-blockquote {
-  margin: var(--space-1) 0 var(--space-2) var(--space-4);
-  color: var(--ink-2);
-}
-.choices {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-main > section:not(.check):not(.page):not(.convo):not(.sheet),
-main > form {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: var(--space-5) var(--space-6);
 }
 
 /* A record in one column once its rules would get too narrow beside the summary. */

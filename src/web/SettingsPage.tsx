@@ -60,68 +60,85 @@ export function SettingsPage() {
   const entry = provider?.models.find((m) => m.model === model);
 
   return (
-    <section className="settings">
-      <h2>{t.heading}</h2>
-      <p>{t.intro}</p>
-      {view.mode === "scripted" ? <p className="flag">{t.scripted}</p> : null}
+    <section className="page settings">
+      <h1 className="page-title">{t.heading}</h1>
+      <p className="page-intro settings-intro">{t.intro}</p>
+      {view.mode === "scripted" ? <p className="error-line">{t.scripted}</p> : null}
 
-      <fieldset>
-        <legend>{t.model}</legend>
-        <label className="inline">
-          <input
-            type="radio"
-            name="provider"
-            checked={picked === "omlx"}
-            onChange={() => {
-              setPicked("omlx");
-              setResult(null);
-            }}
-          />
-          {t.local}
-        </label>
-        {view.providers.map((p) => (
-          <label key={p.provider} className="inline">
+      <fieldset className="field">
+        <legend className="field-label">{t.model}</legend>
+        <div className="options">
+          <label className="option">
             <input
+              className="option-input"
               type="radio"
               name="provider"
-              checked={picked === p.provider}
+              checked={picked === "omlx"}
               onChange={() => {
-                setPicked(p.provider);
-                setModel(
-                  view.choice.provider === p.provider
-                    ? view.choice.model
-                    : (p.models.find((m) => m.cheapest)?.model ?? p.models[0]?.model ?? ""),
-                );
+                setPicked("omlx");
                 setResult(null);
               }}
             />
-            {p.name}
+            {t.local}
           </label>
-        ))}
+          {view.providers.map((p) => (
+            <label key={p.provider} className="option">
+              <input
+                className="option-input"
+                type="radio"
+                name="provider"
+                checked={picked === p.provider}
+                onChange={() => {
+                  setPicked(p.provider);
+                  setModel(
+                    view.choice.provider === p.provider
+                      ? view.choice.model
+                      : (p.models.find((m) => m.cheapest)?.model ?? p.models[0]?.model ?? ""),
+                  );
+                  setResult(null);
+                }}
+              />
+              {p.name}
+            </label>
+          ))}
+        </div>
       </fieldset>
 
       {picked === "omlx" ? (
-        <div className="provider">
-          <label>
-            {t.baseUrl}
-            <input
-              value={local.baseUrl}
-              onChange={(e) => setLocal({ ...local, baseUrl: e.target.value })}
-            />
-          </label>
-          <label>
-            {t.model}
-            <input
-              value={local.model}
-              onChange={(e) => setLocal({ ...local, model: e.target.value })}
-            />
-          </label>
-          <button type="button" onClick={() => void act(putSettings({ local }))}>
-            {t.saveCap}
-          </button>
-          <p className="note">
-            {view.local.measurement === null ? t.unmeasured : measured(view.local.measurement)}
-          </p>
+        <div className="card provider">
+          <h2 className="provider-name">{t.local}</h2>
+          <div className="provider-grid">
+            <label className="field">
+              <span className="field-label">{t.baseUrl}</span>
+              <input
+                className="input input-plain"
+                value={local.baseUrl}
+                onChange={(e) => setLocal({ ...local, baseUrl: e.target.value })}
+              />
+            </label>
+            <label className="field">
+              <span className="field-label">{t.model}</span>
+              <input
+                className="input input-plain"
+                value={local.model}
+                onChange={(e) => setLocal({ ...local, model: e.target.value })}
+              />
+            </label>
+          </div>
+          <div className="provider-actions">
+            <button
+              type="button"
+              className="secondary"
+              onClick={() => void act(putSettings({ local }))}
+            >
+              {t.saveCap}
+            </button>
+          </div>
+          <div className="provider-lines">
+            <p>
+              {view.local.measurement === null ? t.unmeasured : measured(view.local.measurement)}
+            </p>
+          </div>
           <KeyField
             label={t.keyLocal}
             saved={view.local.keyHint}
@@ -133,10 +150,15 @@ export function SettingsPage() {
           />
         </div>
       ) : provider === undefined ? null : (
-        <div className="provider">
-          <label>
-            {t.model}
-            <select value={model} onChange={(e) => setModel(e.target.value)}>
+        <div className="card provider">
+          <h2 className="provider-name">{provider.name}</h2>
+          <label className="field">
+            <span className="field-label">{t.model}</span>
+            <select
+              className="input input-plain"
+              value={model}
+              onChange={(e) => setModel(e.target.value)}
+            >
               {provider.models.map((m) => (
                 <option key={m.model} value={m.model}>
                   {m.model}
@@ -145,13 +167,17 @@ export function SettingsPage() {
             </select>
           </label>
           {entry === undefined ? null : (
-            <p className="note">
-              {t.price(entry.inputPerMillion, entry.outputPerMillion)}{" "}
-              {entry.estimateUsd === null ? null : t.estimate(formatUsd(entry.estimateUsd))}{" "}
-              {entry.tested === null ? t.untested : t.tested(entry.tested)}{" "}
-              {entry.measurement === null ? t.unmeasured : measured(entry.measurement)}{" "}
-              {t.pricesAsOf(view.pricesAsOf)}
-            </p>
+            <div className="provider-lines">
+              <p>{entry.measurement === null ? t.unmeasured : measured(entry.measurement)}</p>
+              <p>
+                {t.price(entry.inputPerMillion, entry.outputPerMillion)}{" "}
+                {entry.estimateUsd === null ? null : t.estimate(formatUsd(entry.estimateUsd))}
+              </p>
+              <p>
+                {entry.tested === null ? t.untested : t.tested(entry.tested)}{" "}
+                {t.pricesAsOf(view.pricesAsOf)}
+              </p>
+            </div>
           )}
           <KeyField
             label={t.key}
@@ -165,9 +191,10 @@ export function SettingsPage() {
         </div>
       )}
 
-      <div className="actions">
+      <div className="provider-actions">
         <button
           type="button"
+          className="secondary"
           onClick={() => {
             setResult("testing");
             void testModel({ provider: picked, model: chosenModel }).then(setResult);
@@ -186,22 +213,32 @@ export function SettingsPage() {
         </button>
       </div>
       {result === null || result === "testing" ? null : (
-        <output className={result.ok ? "note" : "problem"}>
+        <output className={result.ok ? "result-line" : "error-line"}>
           {result.ok ? t.works(result.servedModel, result.read) : result.problem}
         </output>
       )}
 
-      <label>
-        {t.cap}
-        <input inputMode="decimal" value={cap} onChange={(e) => setCap(e.target.value)} />
-      </label>
-      <button
-        type="button"
-        onClick={() => void act(putSettings({ caps: { conversationUsd: Number(cap) } }))}
-      >
-        {t.saveCap}
-      </button>
-      {message === null ? null : <output className="note">{message}</output>}
+      <div className="card provider">
+        <label className="field">
+          <span className="field-label">{t.cap}</span>
+          <span className="provider-actions">
+            <input
+              className="input input-plain cap-input"
+              inputMode="decimal"
+              value={cap}
+              onChange={(e) => setCap(e.target.value)}
+            />
+            <button
+              type="button"
+              className="secondary"
+              onClick={() => void act(putSettings({ caps: { conversationUsd: Number(cap) } }))}
+            >
+              {t.saveCap}
+            </button>
+          </span>
+        </label>
+      </div>
+      {message === null ? null : <output className="result-line">{message}</output>}
     </section>
   );
 }
@@ -223,27 +260,35 @@ function KeyField(props: {
 }) {
   const t = COPY.settings;
   return (
-    <div className="key">
-      <label>
-        {props.label}
+    <div className="key provider-lines">
+      <label className="field">
+        <span className="field-label">{props.label}</span>
         <input
+          className="input input-plain"
           type="password"
           autoComplete="off"
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
         />
       </label>
-      <button type="button" onClick={props.onSave} disabled={props.value.trim() === ""}>
-        {t.saveKey}
-      </button>
-      <p className="note">
+      <p>
         {props.saved === null ? (props.fromEnv ? t.keyFromEnv : t.noKey) : t.keySaved(props.saved)}
       </p>
-      {props.saved === null ? null : (
-        <button type="button" onClick={props.onRemove}>
-          {t.removeKey}
+      <div className="provider-actions">
+        <button
+          type="button"
+          className="secondary"
+          onClick={props.onSave}
+          disabled={props.value.trim() === ""}
+        >
+          {t.saveKey}
         </button>
-      )}
+        {props.saved === null ? null : (
+          <button type="button" className="quiet" onClick={props.onRemove}>
+            {t.removeKey}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
