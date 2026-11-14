@@ -88,6 +88,7 @@ export const COPY = {
       "Tick up to three trials to go through their own rules, one question at a time. Each gets a record for you and your oncologist.",
     tickLimit: "Three is the most one check takes.",
     checkThese: "Check these",
+    checkFailed: "The check couldn't start. Nothing on your list changed. Try again.",
     starting: "Starting…",
   },
 

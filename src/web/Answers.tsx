@@ -17,24 +17,27 @@ export function Answers({
   const t = COPY.answers;
 
   return (
-    <section className="answers">
-      <h2>{t.heading}</h2>
-      <p className="note">{t.note}</p>
-      <ul>
+    <section className="your-answers list-main">
+      <h2 className="h2">{t.heading}</h2>
+      <p className="convo-reassure">{t.note}</p>
+      <ul className="answers-table">
         {view.answers.map((a) => {
           const words = a.choices.find((c) => c.id === a.answer)?.label ?? t.notKnown;
           return (
-            <li key={a.factId} aria-label={a.question}>
-              <strong>{a.question}</strong> {words}
-              {a.said === null ? null : (
-                <>
-                  {" "}
-                  <q data-said="">{a.said}</q>
-                </>
-              )}
+            <li key={a.factId} aria-label={a.question} className="answers-row">
+              <span className="answers-q">{a.question}</span>
+              <span className="answers-a">
+                <span>{words}</span>
+                {a.said === null ? null : (
+                  <span>
+                    <q data-said="">{a.said}</q>
+                  </span>
+                )}
+              </span>
               {editing === a.factId ? (
-                <span className="edit">
+                <span className="edit provider-actions">
                   <select
+                    className="input input-plain"
                     aria-label={a.question}
                     value={choice}
                     onChange={(e) => setChoice(e.target.value)}
@@ -56,14 +59,14 @@ export function Answers({
                   >
                     {t.save}
                   </button>
-                  <button type="button" onClick={() => setEditing(null)}>
+                  <button type="button" className="quiet" onClick={() => setEditing(null)}>
                     {t.cancel}
                   </button>
                 </span>
               ) : (
                 <button
                   type="button"
-                  className="no-print"
+                  className="quiet no-print"
                   onClick={() => {
                     setEditing(a.factId);
                     setChoice(a.answer);

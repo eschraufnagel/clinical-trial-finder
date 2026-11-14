@@ -63,3 +63,13 @@ export async function expectNoVerdict(page: Page, also: string | null = null): P
   const hits = VERDICT_PATTERNS.filter((p) => p.test(text)).map(String);
   expect(hits).toEqual([]);
 }
+
+/**
+ * Opens every trial card on the list (slice 0011). Closed, a card shows only
+ * "May not fit", how much was read and anything about its record, so the
+ * verdict scan opens them all first to read every word the list writes.
+ */
+export async function openAllCards(page: Page): Promise<void> {
+  const open = page.getByRole("button", { name: COPY.list.open, exact: true });
+  while ((await open.count()) > 0) await open.first().click();
+}

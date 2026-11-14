@@ -617,7 +617,8 @@ button:is(:disabled, [aria-disabled="true"]):hover {
   content: "\201D";
 }
 /* The person's words: the --you fill, in Atkinson. */
-.said {
+.said,
+q[data-said] {
   background: var(--you);
   color: var(--ink);
   border-radius: var(--radius-tag);
@@ -1184,6 +1185,13 @@ details.chooser > .answers {
   flex-direction: column;
   gap: 4px;
   font: var(--text-patient-body);
+}
+
+.your-answers {
+  margin-top: var(--space-5);
+}
+.answers-row .edit {
+  grid-column: 1 / -1;
 }
 
 /* ---------- The sheet ---------- */
