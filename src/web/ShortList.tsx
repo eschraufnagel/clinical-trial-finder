@@ -33,7 +33,7 @@ export function ShortList({ id, onCheck }: { id: string; onCheck: (check: string
   const all = [...order.shortlist, ...order.rest];
   const tick = (nctId: string) =>
     checkable.includes(nctId) ? (
-      <label className="check tick no-print">
+      <label className="tick no-print">
         <input
           type="checkbox"
           checked={ticked.includes(nctId)}

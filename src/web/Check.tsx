@@ -101,12 +101,12 @@ export function Check({ check, onList }: { check: string; onList: () => void }) 
           const record = view?.records[i];
           return record === null || record === undefined ? (
             done ? (
-              <p key={trial.nctId} className="note">
-                <strong>{trial.nctId}</strong> {t.notChecked}
+              <p key={trial.nctId} className="card not-checked">
+                <span className="review-id">{trial.nctId}</span> {t.notChecked}
               </p>
             ) : null
           ) : (
-            <Record key={trial.nctId} record={record} />
+            <Record key={trial.nctId} record={record} hidden={i !== active} />
           );
         })}
       </div>

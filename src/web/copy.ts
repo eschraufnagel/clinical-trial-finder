@@ -109,6 +109,14 @@ export const COPY = {
     youSaid: "You said:",
     rule: "The trial's rule:",
     show: "Show these rules",
+    summary: "This record",
+    about: {
+      earlier: "Asked in the questions before the check.",
+      told: "Answered here, rule by rule.",
+      records: "Lab values, chart-only rules, and what you didn't know.",
+      trial: "Rules about the trial's own procedures.",
+      ask: 'Every "may not fit", and every rule that needs your records.',
+    },
   },
 
   answers: {
@@ -125,6 +133,7 @@ export const COPY = {
     print: "Print or save as PDF",
     youSaid: "Said:",
     answer: "Answer:",
+    columns: { question: "Question", said: "Said", answer: "Answer" },
   },
 
   settings: {
