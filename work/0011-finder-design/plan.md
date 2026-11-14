@@ -216,4 +216,6 @@ The page works but looks like a test harness: `src/web/styles.css` is 173 lines 
 
 ## Records
 
-(Filled in as steps land.)
+- **Step 1, baseline (2026-11).** At the plan's commit (`ee047e5`):
+  - `npm run check` exits 0. `npm test`: 116 files, 1,295 tests passed and 8 expected failures, 885 ms.
+  - `npm run test:e2e`: 8 cases passed, 28.5 s.
