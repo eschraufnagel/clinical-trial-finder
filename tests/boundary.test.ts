@@ -1152,9 +1152,12 @@ describe("the page is browser code", () => {
 /**
  * Slice 0004: the browser test runs the page with the scripted reader, so
  * `npm run test:e2e` can never reach a model, local or hosted. Copied from
- * the prescreening repository.
+ * the prescreening repository. Since slice 0011 the README's screenshots
+ * (`npm run screenshots`) are held to the same rule.
  */
-const PLAYWRIGHT_CONFIG = fileURLToPath(new URL("../playwright.config.ts", import.meta.url));
+const PLAYWRIGHT_CONFIGS = ["../playwright.config.ts", "../playwright.screenshots.config.ts"].map(
+  (path) => fileURLToPath(new URL(path, import.meta.url)),
+);
 
 /** The `command:` string in Playwright's config, or "" if there is none. */
 function webServerCommand(config: string): string {
@@ -1168,8 +1171,10 @@ function runsScriptedReaderOnly(command: string): boolean {
 }
 
 describe("the browser test reaches no model", () => {
-  it("starts its server with the scripted reader and no model flag", () => {
-    const command = webServerCommand(readFileSync(PLAYWRIGHT_CONFIG, "utf8"));
+  it.each(
+    PLAYWRIGHT_CONFIGS,
+  )("%s starts its server with the scripted reader and no model flag", (config) => {
+    const command = webServerCommand(readFileSync(config, "utf8"));
     expect(command).toContain("npm run app");
     expect(runsScriptedReaderOnly(command)).toBe(true);
   });

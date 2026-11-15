@@ -97,4 +97,4 @@ Each state on the canvas's states board, and how it's drawn:
 
 ## Answer
 
-(The owner's.)
+**Go to stage B** (2026-11), with no revisions.
