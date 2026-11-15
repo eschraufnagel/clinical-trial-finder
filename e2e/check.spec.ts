@@ -73,6 +73,12 @@ test("case 9 (slice 0007): tick three, check one by taps, print its record", asy
   expect(await first.locator("ol > li").count()).toBeGreaterThanOrEqual(taps);
   await expectNoVerdict(page, ".messages");
 
+  // The summary column's counts go to their sections and stay on the check.
+  const url = page.url();
+  await first.locator(".summary-item").first().click();
+  await expect(page).toHaveURL(url);
+  await expect(first).toBeVisible();
+
   // Printing shows the records, not the questions.
   await page.emulateMedia({ media: "print" });
   await expect(first).toBeVisible();
