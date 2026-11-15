@@ -31,8 +31,15 @@ function tokensAfter(css: string, opener: RegExp): Tokens {
 
 const LIGHT = tokensAfter(CSS, /^:root \{/m);
 const DARK = { ...LIGHT, ...tokensAfter(CSS, /@media \(prefers-color-scheme: dark\)/) };
-const PRINT = { ...LIGHT, ...tokensAfter(CSS, /@media print/) };
-const THEMES: Record<string, Tokens> = { light: LIGHT, dark: DARK, print: PRINT };
+// Paper is printed from whichever theme the system is in, so print's forced
+// tokens are checked over both.
+const PRINTED = tokensAfter(CSS, /@media print/);
+const THEMES: Record<string, Tokens> = {
+  light: LIGHT,
+  dark: DARK,
+  "print from light": { ...LIGHT, ...PRINTED },
+  "print from dark": { ...DARK, ...PRINTED },
+};
 
 function channel(c: number): number {
   const s = c / 255;
@@ -77,7 +84,7 @@ describe("the page's colours", () => {
   it("are read from the stylesheet's token blocks", () => {
     expect(Object.keys(LIGHT).length).toBeGreaterThan(15);
     expect(DARK.bg).not.toBe(LIGHT.bg);
-    expect(PRINT.bg).toBe("#ffffff");
+    expect(THEMES["print from dark"]?.bg).toBe("#ffffff");
   });
 
   for (const [theme, tokens] of Object.entries(THEMES)) {
