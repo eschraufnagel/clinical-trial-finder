@@ -6,12 +6,13 @@ Built in slice 0004. The record is in [`work/0004-shortlist-handoff/`](../work/0
 - [gate-1-order.md](../work/0004-shortlist-handoff/gate-1-order.md), the order;
 - [gate-3-words.md](../work/0004-shortlist-handoff/gate-3-words.md), the hosted reading run and the page's words.
 
-Slice 0005 moved trials for other cancers below the short list ([`work/0005-other-cancers/`](../work/0005-other-cancers/); [gate-3-page.md](../work/0005-other-cancers/gate-3-page.md) has the words and the rerun). Slice 0007 added the check of a few picked trials ([check.md](check.md); [`work/0007-deeper-check/`](../work/0007-deeper-check/)).
+Slice 0005 moved trials for other cancers below the short list ([`work/0005-other-cancers/`](../work/0005-other-cancers/); [gate-3-page.md](../work/0005-other-cancers/gate-3-page.md) has the words and the rerun). Slice 0007 added the check of a few picked trials ([check.md](check.md); [`work/0007-deeper-check/`](../work/0007-deeper-check/)). Slice 0011 gave every screen its look ([How it looks](#how-it-looks); [`work/0011-finder-design/`](../work/0011-finder-design/)).
 
 ```
 npm run app                    the page, at http://127.0.0.1:5025, on the model chosen in Settings
 npm run app -- --fake          the same, with a scripted reader: no model is called, and checks by taps
 npm run test:e2e               the browser test, on --fake
+npm run screenshots            the README's three images, on --fake
 ```
 
 Use made-up answers. It's a proof of concept.
@@ -113,6 +114,7 @@ The rise is the same blind spot as above. None of the 35 places was flagged by t
   - a question it can't word is asked in the trial's own words, saying so;
   - a trial whose rules can't be read gets a shorter record, from the rules the mapper read and the earlier answers.
 - **The record** is the one [check.md](check.md#how-it-works) describes. It's printable, and the questions aren't printed. It says first that it isn't a decision.
+- **A check that can't start says so:** "The check couldn't start. Nothing on your list changed. Try again." The ticks stay. Before slice 0011 nothing was shown.
 - **The cost cap applies per trial checked,** the parse included, so three trials can spend three caps. Settings says so.
 - **A check never changes the conversation:** not its answers, its list or its order. The check reads the answers and the list, and nothing else.
 - **On a hosted model** the page says beside a reading that the check hasn't been measured on that model.
@@ -161,6 +163,22 @@ The trial's own words and the person's own words are kept apart from the page's,
 
 **Two plain "No"s were read as "Yes"** (heart trouble in the last six months; spread to the lining of the brain). The local model, and Haiku without the schema, read both as "No". On the page the person sees the reading and corrects it; confirmed, it would only add a "may not fit" hint, which never removes a trial.
 
+## How it looks
+
+Since slice 0011 the page is in Chart v2, the design the prescreening repository's page also uses. The screens were drawn first on a canvas, from a brief of the page as it was, and accepted before any code ([`design/`](../work/0011-finder-design/design/), with what was decided in its `README.md`). The built page was then checked against the canvas at a gate ([gate-1-look.md](../work/0011-finder-design/gate-1-look.md), which lists where the two differ).
+
+- **The shared part is the prescreening page's, copied unchanged:** its fonts, icons and manifest, and the first part of `src/web/styles.css` (colour tokens, buttons, cards, tags, the header, the model chip and the Record mark). Both pages serve the same files, so they can be brought together later.
+- **Two registers.** What the person reads and answers (the questions, the readings, the list's cards, the sheet) is set in Atkinson Hyperlegible, made for low vision. The labels, IDs and the coordinator's screens (Settings, the record's rule rows) are IBM Plex Sans and Mono.
+- **Three kinds of words look different:** the page's own, the trial's (quoted, `data-registry`) and the person's (highlighted, `data-said`). The verdict scan reads only the page's.
+- **Findings are neutral ink.** "May not fit", "You didn't know" and every reason on a record are the same colour and weight as the text around them. No finding is red, amber or green, because colour would read as a judgement the page doesn't make. The one colour, the accent, is for actions, links and focus.
+- **Cards open and close.** Closed, a card shows anything about its record, "May not fit" and how much was read; **Open** shows the rest. The browser test opens every card before its verdict scan.
+- **Picks are in a rail,** on the right of the list: the ticked trials and **Check these**. On a phone it's a bar at the bottom.
+- **A record** has a summary column with each section's count, then its sections. The picked trials are tabs that choose which record is shown.
+- **Dark mode follows the system,** with no switch. **The phone layout** starts below 600 px.
+- **What prints:** the sheet, and on the check page every record, in light colours whatever the theme, without the header, the questions or the controls. A printed record puts "To ask your oncologist" first.
+- **Fonts are bundled** in `src/web/fonts/` with their licences (SIL Open Font License), and icons in `src/web/public/`. The page names no outside address; `tests/boundary.test.ts` holds that.
+- **Contrast:** `tests/web/contrast.test.ts` checks 17 colour pairs in the light, dark and print themes against WCAG AA (4.5 for text, 3 for lines and controls), and fails on a colour set anywhere but a token.
+
 ## How the page is held to its rules
 
 - **Network:**
@@ -170,7 +188,7 @@ The trial's own words and the person's own words are kept apart from the page's,
 - **Settings writes** need the page's own origin and a JSON body.
 - **The conversation** goes through the transport (`MessageTransport`), which gained one thing in this slice: an agent message may offer choices, and a reply may be a choice. A choice the last message didn't offer is refused.
 - **`tests/boundary.test.ts`** holds all of this, and that nothing under `src/web/` uses Node.
-- **The browser test** runs only with `--fake`.
+- **The browser test** runs only with `--fake`, and since slice 0011 so do the README's screenshots (`playwright.screenshots.config.ts`).
 
 ## Limits
 
@@ -180,6 +198,8 @@ The trial's own words and the person's own words are kept apart from the page's,
 
   The "few of its rules" line and the read count say so; they don't fix it.
 - **Trials for other cancers, partly.** Since slice 0005 a marked trial goes below the short list, but the check marks 29 of 43 held-out trials not for NSCLC. On held-out short lists 6 of 162 places still go to trials limited to other cancers: blood cancers, and breast or ovarian trials listed under "solid tumor". One relevant trial is moved down by mistake (NCT03947385; [search.md](search.md)).
+- **The check's questions aren't split** into the trial's rule and "Does this describe you?", as the canvas draws them: the model words each question, so the page shows it as written.
+- **Print was looked at in Chrome only.**
 - **No plain-language summary** of what a trial tests: the registry's title and interventions stand in. No contacts either; the record's link stands in.
 - **The phase sentences and the page's words were written here** and reviewed by no clinician.
 - **Conversations and checks live in the server's memory.** A restart forgets them.
