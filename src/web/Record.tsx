@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { WHY } from "../check/record.js";
 import type { RecordLine, RecordSection, TrialRecord } from "./api.js";
 import { COPY } from "./copy.js";
@@ -14,6 +15,14 @@ import { textOf, W } from "./Words.js";
 export function Record({ record, hidden = false }: { record: TrialRecord; hidden?: boolean }) {
   const t = COPY.record;
   const key = (part: string) => `${record.nctId}-${part}`;
+  // The page routes on the hash, so a count scrolls to its section, opening
+  // it, rather than following its link, which would leave the check.
+  const goTo = (part: string) => (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const section = document.getElementById(key(part));
+    if (section instanceof HTMLDetailsElement) section.open = true;
+    section?.scrollIntoView({ block: "start" });
+  };
   const sections: [string, RecordSection, string][] = [
     ["earlier", record.earlier, t.about.earlier],
     ["told", record.told, t.about.told],
@@ -25,7 +34,7 @@ export function Record({ record, hidden = false }: { record: TrialRecord; hidden
       <aside className="review-summary">
         <h3 className="section-label">{t.summary}</h3>
         {sections.map(([part, section, about]) => (
-          <a key={part} className="summary-item" href={`#${key(part)}`}>
+          <a key={part} className="summary-item" href={`#${key(part)}`} onClick={goTo(part)}>
             <span className="summary-count">{section.lines.length}</span>
             <span className="summary-label">
               <W w={section.heading} />
@@ -33,7 +42,7 @@ export function Record({ record, hidden = false }: { record: TrialRecord; hidden
             <span className="summary-desc">{about}</span>
           </a>
         ))}
-        <a className="summary-item" href={`#${key("ask")}`}>
+        <a className="summary-item" href={`#${key("ask")}`} onClick={goTo("ask")}>
           <span className="summary-count">{record.toAsk.items.length}</span>
           <span className="summary-label">
             <W w={record.toAsk.heading} />
