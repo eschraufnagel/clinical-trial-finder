@@ -6,6 +6,12 @@
  */
 export const COPY = {
   title: "Trials to ask your oncologist about",
+  brand: "Trial Finder",
+  chip: {
+    scripted: "Scripted reader · no model",
+    local: (model: string) => `Local model · ${model}`,
+    hosted: (provider: string, model: string) => `${provider} · ${model}`,
+  },
   madeUp: "This is a proof of concept, run on this computer. Use made-up answers.",
   scripted: "Scripted reader: no model is called. Typed replies are read from a fixed list.",
   nav: {
@@ -30,6 +36,14 @@ export const COPY = {
     male: "Male",
     start: "Start the questions",
     starting: "Searching the trials…",
+    next: {
+      heading: "What happens next",
+      steps: [
+        "A few questions, one at a time.",
+        "A short list of trials to ask your oncologist about.",
+        "A sheet to print for your visit.",
+      ],
+    },
   },
 
   conversation: {
@@ -47,6 +61,7 @@ export const COPY = {
     local: "Your answers stay on this computer. Use made-up answers.",
     failed: "Something went wrong. Try again.",
     tryAgain: "Try again",
+    question: (n: number) => `Question ${n}`,
   },
 
   list: {
@@ -73,6 +88,7 @@ export const COPY = {
       "Tick up to three trials to go through their own rules, one question at a time. Each gets a record for you and your oncologist.",
     tickLimit: "Three is the most one check takes.",
     checkThese: "Check these",
+    checkFailed: "The check couldn't start. Nothing on your list changed. Try again.",
     starting: "Starting…",
   },
 
@@ -93,6 +109,14 @@ export const COPY = {
     youSaid: "You said:",
     rule: "The trial's rule:",
     show: "Show these rules",
+    summary: "This record",
+    about: {
+      earlier: "Asked in the questions before the check.",
+      told: "Answered here, rule by rule.",
+      records: "Lab values, chart-only rules, and what you didn't know.",
+      trial: "Rules about the trial's own procedures.",
+      ask: 'Every "may not fit", and every rule that needs your records.',
+    },
   },
 
   answers: {
@@ -109,6 +133,7 @@ export const COPY = {
     print: "Print or save as PDF",
     youSaid: "Said:",
     answer: "Answer:",
+    columns: { question: "Question", said: "Said", answer: "Answer" },
   },
 
   settings: {

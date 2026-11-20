@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trial Finder · Your check</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="chart.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="screen t-{{theme}}">
+  <header class="app-header">
+    <a class="brand" href="#"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><rect class="brand-mark-tile" width="100" height="100" rx="22"></rect><rect class="brand-mark-lead" x="20" y="23.5" width="60" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="44.5" width="46" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="65.5" width="32" height="11" rx="5.5"></rect></svg>Trial Finder</a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="#">Start</a>
+      <a class="nav-link" href="#">Your list</a>
+      <a class="nav-link" href="#">For your oncologist</a>
+      <a class="nav-link" href="#" aria-current="page">Your check</a>
+      <a class="nav-link" href="#">Settings</a>
+    </nav>
+    <span class="model-chip"><span class="model-chip-dot"></span>Local model · Qwen3.6-35B-A3B-MLX-8bit</span>
+  </header>
+  <div class="standing"><span>This is a proof of concept, run on this computer. Use made-up answers.</span></div>
+
+  <main class="convo">
+    <div class="convo-context" style="flex-direction: column; gap: 12px;">
+      <h1 class="convo-heading">Checking the trials you picked</h1>
+      <nav class="picked-tabs" aria-label="The trials you picked" style="width: 100%;">
+        <a class="picked-tab" href="#" aria-current="true"><span style="font: var(--text-data); color: var(--ink-2);">1</span>TAPUR: Testing the Use of Food and Drug Administration (FDA)…</a>
+        <a class="picked-tab" href="#"><span style="font: var(--text-data);">2</span>A Study of Sigvotatug Vedotin in Advanced Solid Tumors</a>
+      </nav>
+    </div>
+
+    <div class="thread">
+      <p class="turn-agent">These questions are about the trial "TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs That Target a Specific Abnormality in a Tumor Gene in People With Advanced Stage Cancer". Your earlier answers already covered 4 of its rules. I'll ask about the rest of its rules one at a time. You can skip any question, and "I don't know" is always fine.</p>
+      <p class="turn-agent">The trial asks about this: “The participant is 12 years of age or older”. Does this describe you?</p>
+      <div class="turn-you"><span class="turn-you-text">Yes</span></div>
+      <p class="turn-agent">The trial asks about this: “The participant has acceptable organ function as defined below”. Does this describe you?</p>
+      <div class="turn-you"><span class="turn-you-text">I don't know</span></div>
+    </div>
+
+    <section class="question-card" aria-labelledby="cq">
+      <div class="trial-words question-rule">
+        <span class="trial-words-label">The trial asks about this:</span>
+        <p class="trial-words-text">The patient must be able to swallow and tolerate oral medication and must have no known malabsorption syndrome</p>
+      </div>
+      <h2 id="cq" class="question-text">Does this describe you?</h2>
+      <div class="answers">
+        <button type="button" class="button button-secondary">Yes</button>
+        <button type="button" class="button button-secondary">No</button>
+        <button type="button" class="button button-secondary">I don't know</button>
+      </div>
+    </section>
+
+    <div class="composer">
+      <label class="field-label" for="creply">Your answer, in your own words</label>
+      <textarea id="creply" class="composer-input" placeholder="Type your answer" style="min-height: 72px;"></textarea>
+      <div class="composer-footer">
+        <span class="composer-note">Your answers stay on this computer. Use made-up answers.</span>
+        <button type="button" class="button button-primary">Send</button>
+      </div>
+    </div>
+
+    <div class="convo-actions">
+      <button type="button" class="button button-secondary">Stop and show the records</button>
+      <span class="spacer"></span>
+      <button type="button" class="button button-quiet">Back to your list</button>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":1280,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'light' };
+  }
+}
+</script>
+</body>
+</html>

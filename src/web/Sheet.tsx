@@ -15,37 +15,55 @@ export function Sheet({ id }: { id: string }) {
 
   return (
     <section className="sheet">
-      <button type="button" className="no-print" onClick={() => window.print()}>
-        {t.print}
-      </button>
-      <h2>
+      <div className="no-print">
+        <button type="button" onClick={() => window.print()}>
+          {t.print}
+        </button>
+      </div>
+      <div className="sheet-brand">
+        <svg className="brand-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <rect className="brand-mark-tile" width="100" height="100" rx="22" />
+          <rect className="brand-mark-lead" x="20" y="23.5" width="60" height="11" rx="5.5" />
+          <rect className="brand-mark-line" x="20" y="44.5" width="46" height="11" rx="5.5" />
+          <rect className="brand-mark-line" x="20" y="65.5" width="32" height="11" rx="5.5" />
+        </svg>
+        {COPY.brand}
+      </div>
+      <h1 className="sheet-title">
         <W w={sheet.title} />
-      </h2>
-      <p>
+      </h1>
+      <p className="sheet-intro">
         <W w={sheet.intro} />
       </p>
 
-      <h3>
+      <h2>
         <W w={sheet.questionsHeading} />
-      </h3>
-      <ol>
+      </h2>
+      <ol className="sheet-rows">
         {sheet.questions.map((q) => (
           <li key={q.factId}>
-            <W w={q.question} /> <W w={q.count} />
+            <span>
+              <W w={q.question} />
+            </span>
+            <span className="sheet-count">
+              <W w={q.count} />
+            </span>
           </li>
         ))}
       </ol>
 
       {sheet.bring.length === 0 ? null : (
         <>
-          <h3>
+          <h2>
             <W w={sheet.bringHeading} />
-          </h3>
-          <ul>
+          </h2>
+          <ul className="sheet-rows">
             {sheet.bring.map((b) => (
               <li key={textOf(b.item)}>
-                <W w={b.item} />
-                <ul>
+                <strong>
+                  <W w={b.item} />
+                </strong>
+                <ul className="sheet-sub">
                   {b.answers.map((q) => (
                     <li key={textOf(q)}>
                       <W w={q} />
@@ -58,34 +76,44 @@ export function Sheet({ id }: { id: string }) {
         </>
       )}
 
-      <h3>
+      <h2>
         <W w={sheet.answersHeading} />
-      </h3>
+      </h2>
       <table>
+        <thead>
+          <tr>
+            <th scope="col">{t.columns.question}</th>
+            <th scope="col">{t.columns.said}</th>
+            <th scope="col">{t.columns.answer}</th>
+          </tr>
+        </thead>
         <tbody>
           {sheet.answers.map((a) => (
             <tr key={a.factId}>
-              <th scope="row">
-                <W w={a.question} />
-              </th>
               <td>
-                {t.youSaid} <W w={a.said} />
+                <W w={a.question} />
               </td>
               <td>
-                {t.answer} <W w={a.answer} />
+                <W w={a.said} />
+              </td>
+              <td>
+                <W w={a.answer} />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      <h3>
+      <h2>
         <W w={sheet.trialsHeading} />
-      </h3>
-      <ol>
+      </h2>
+      <ol className="sheet-trials">
         {sheet.trials.map((trial) => (
           <li key={trial.nctId}>
-            <strong>{trial.nctId}</strong> <W w={trial.title} />
+            <span className="review-id">{trial.nctId}</span>{" "}
+            <strong>
+              <W w={trial.title} />
+            </strong>
             {trial.other === null ? null : (
               <>
                 <br />

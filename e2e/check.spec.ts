@@ -73,6 +73,12 @@ test("case 9 (slice 0007): tick three, check one by taps, print its record", asy
   expect(await first.locator("ol > li").count()).toBeGreaterThanOrEqual(taps);
   await expectNoVerdict(page, ".messages");
 
+  // The summary column's counts go to their sections and stay on the check.
+  const url = page.url();
+  await first.locator(".summary-item").first().click();
+  await expect(page).toHaveURL(url);
+  await expect(first).toBeVisible();
+
   // Printing shows the records, not the questions.
   await page.emulateMedia({ media: "print" });
   await expect(first).toBeVisible();
@@ -81,4 +87,25 @@ test("case 9 (slice 0007): tick three, check one by taps, print its record", asy
 
   await page.getByRole("button", { name: COPY.check.back }).click();
   expect(await shortlistIds(page)).toEqual(before);
+});
+
+test("case 10 (slice 0011): a check that can't start says so, and the ticks stay", async ({
+  page,
+}) => {
+  await search(page, p08);
+  await page.getByRole("button", { name: COPY.conversation.listNow }).click();
+  await shortlistIds(page);
+  // The server refuses the check. Playwright answers the request; no module is mocked.
+  await page.route("**/api/check", (route) =>
+    route.request().method() === "POST"
+      ? route.fulfill({ status: 500, contentType: "application/json", body: "{}" })
+      : route.continue(),
+  );
+  const ticks = page.getByRole("checkbox", { name: COPY.list.tick });
+  await ticks.first().check();
+  await page.getByRole("button", { name: COPY.list.checkThese }).click();
+  // The rail and the phone's bar each hold the sentence; one is shown at a width.
+  await expect(page.getByRole("alert").filter({ hasText: COPY.list.checkFailed })).toBeVisible();
+  await expect(ticks.first()).toBeChecked();
+  await expect(page).toHaveURL(/#\/list\//);
 });

@@ -8,8 +8,14 @@ export async function search(page: Page, p: Patient): Promise<void> {
   await page.goto("/#/");
   await page.getByLabel(COPY.search.zip).fill(p.search.zip);
   await page
-    .getByLabel(COPY.search.distance)
-    .selectOption(p.search.radiusMiles === null ? "anywhere" : String(p.search.radiusMiles));
+    .getByRole("radio", {
+      name:
+        p.search.radiusMiles === null
+          ? COPY.search.anywhere
+          : COPY.search.miles(p.search.radiusMiles),
+      exact: true,
+    })
+    .check();
   await page.getByLabel(COPY.search.age).fill(String(p.search.age));
   await page.getByRole("radio", { name: COPY.search[p.search.sex], exact: true }).check();
   await page.getByRole("button", { name: COPY.search.start }).click();
@@ -56,4 +62,14 @@ export async function expectNoVerdict(page: Page, also: string | null = null): P
   expect(text.length).toBeGreaterThan(50);
   const hits = VERDICT_PATTERNS.filter((p) => p.test(text)).map(String);
   expect(hits).toEqual([]);
+}
+
+/**
+ * Opens every trial card on the list (slice 0011). Closed, a card shows only
+ * "May not fit", how much was read and anything about its record, so the
+ * verdict scan opens them all first to read every word the list writes.
+ */
+export async function openAllCards(page: Page): Promise<void> {
+  const open = page.getByRole("button", { name: COPY.list.open, exact: true });
+  while ((await open.count()) > 0) await open.first().click();
 }

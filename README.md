@@ -18,6 +18,14 @@ When standard treatment stops working, a trial may be the next option. ClinicalT
 4. **Hand over.** A short list, each trial with its reasons, its unknowns and its nearest site, plus a page of questions to take to the oncologist.
 5. **Check a few.** The person picks up to three trials. For each, an agent goes through the trial's own rules, asking only what wasn't already answered, and writes a record of what fits, what may not and what to ask.
 
+<p>
+  <img src="docs/images/question.png" width="32%" alt="A question in its card, with the earlier answer and how it was read shown above it.">
+  <img src="docs/images/list.png" width="32%" alt="The short list: each trial's card with how much of its rules was read, and a column on the right holding the three trials ticked to check.">
+  <img src="docs/images/record.png" width="32%" alt="A checked trial's record: a summary column of counts, a notice that it isn't a decision, and the trial's rules with what was said about each.">
+</p>
+
+Made-up answers, from the page's scripted mode.
+
 ## Run it
 
 Needs Node 24 or newer.

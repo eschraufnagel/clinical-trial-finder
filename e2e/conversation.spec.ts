@@ -1,6 +1,13 @@
 import { expect, type Page, test } from "@playwright/test";
 import { COPY } from "../src/web/copy.js";
-import { expectNoVerdict, lastQuestion, search, shortlistIds, typeReply } from "./lib/page.js";
+import {
+  expectNoVerdict,
+  lastQuestion,
+  openAllCards,
+  search,
+  shortlistIds,
+  typeReply,
+} from "./lib/page.js";
 import { expectedShortlist, patient, replyTo } from "./lib/patients.js";
 
 /**
@@ -39,6 +46,7 @@ test("case 2: typed replies, each reading confirmed, end on questions:try's shor
   await expectNoVerdict(page);
   await page.getByRole("button", { name: COPY.conversation.seeList }).click();
   expect(await shortlistIds(page)).toEqual(expectedShortlist(p08));
+  await openAllCards(page);
   await expectNoVerdict(page);
 });
 
@@ -71,6 +79,7 @@ test("case 5 and 6: the sheet, and no verdict on any screen", async ({ page }) =
   const id = /#\/c\/(.+)$/.exec(page.url())?.[1] ?? "";
   await page.goto(`/#/list/${id}`);
   await page.getByRole("button", { name: COPY.list.showRest }).click();
+  await openAllCards(page);
   await expectNoVerdict(page);
 
   await page.goto(`/#/sheet/${id}`);
@@ -105,5 +114,6 @@ test("case 8 (slice 0005): a trial whose record names other cancers says so firs
   const marked = page.locator(".rest .trial .other").first();
   await expect(marked).toContainText("This trial's record ");
   await expect(marked).toContainText(COPY.list.fromRecord);
+  await openAllCards(page);
   await expectNoVerdict(page);
 });

@@ -1,6 +1,6 @@
 # Roadmap
 
-0001 to 0010 are done; the rest are proposed. Each slice gets its own intent, spec and plan before any code, and none starts without the owner's go-ahead. The sketch comes from section 9 of [the research](0000-product/research.md) and will change as slices are planned.
+0001 to 0011 are done; the rest are proposed. Each slice gets its own intent, spec and plan before any code, and none starts without the owner's go-ahead. The sketch comes from section 9 of [the research](0000-product/research.md) and will change as slices are planned.
 
 | Slice | What | Measured by | Model? |
 | --- | --- | --- | --- |
@@ -15,6 +15,7 @@
 | 0008 Benchmark | **Done.** The search scored against TREC 2021/22's nine cancer notes and NIH-TrialBench's NCI vignettes, with 20 search-only vocabularies; the deeper check against NIH clinicians' labels on dev, from the full summary and from a patient's account ([docs/benchmark.md](../docs/benchmark.md)) | Search: TREC's relevant trials kept 77.3% pooled (many misses are trials for other conditions); 26 of 29 recruiting NIH-TrialBench targets kept with treatment, 29 of 29 with every purpose. Check, dev only: false alarms on 8 of 9 eligible pairs (full) and 4 of 9 (account), its catches on parts of trials the person isn't in. Held-out left unread at Gate 2. The three-way comparison can't be measured on outside labels: two NSCLC vignettes | Yes, local only |
 | 0009 Check false alarms | **Done.** The deeper check's agent keeps a rule's "if" and reads pregnancy rules both ways round; the record sets rules for one part of the trial apart and asks which part the person would be in ([docs/check.md](../docs/check.md#what-slice-0009-changed)) | NIH-TrialBench dev, full summary only: four of six pregnancy and conditional lines gone, but false alarms outside parts unchanged at 5 of 9 (0008's measure: 8 of 9 to 7 of 9). Held-out kept unread at Gate 2 for a fix that can move the rate | Yes, local only |
 | 0010 "Or" lists | **Done, stopped at Gate 1.** A list mark (`anyOf`) on the parse, checked in code, and a record that reads a marked list as one rule; inert, since the parser's prompt was put back. Two prompt wordings each marked the target lists right and made other trials' parses worse ([docs/check.md](../docs/check.md#what-slice-0010-tried)) | No check run. The parser graded on 5 hand-labelled protocols (strict recall 77.8%, then 84.9% and 82.1%) and compared rule by rule on dev's 12; of the second try's 25 lists, 16 right, 7 wrong, 2 of them hiding required rules. Held-out still unread | Yes, local parses only |
+| 0011 Finder design | **Done.** Every screen in Chart v2, the design the prescreening page uses, with its fonts, icons and stylesheet foundation shared: two registers, findings in neutral ink, dark mode from the system, a phone layout, print. Drawn first on a canvas the owner accepted; a check that can't start now says so ([docs/page.md](../docs/page.md#how-it-looks)) | The contrast test (17 pairs, AA, light, dark and print), the verdict scan, the browser test (10 cases) and the owner's look at Gate 1 | No |
 
 ## Open questions
 

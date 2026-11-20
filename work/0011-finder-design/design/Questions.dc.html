@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trial Finder · The questions</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="chart.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="screen t-{{theme}}">
+  <header class="app-header">
+    <a class="brand" href="#"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><rect class="brand-mark-tile" width="100" height="100" rx="22"></rect><rect class="brand-mark-lead" x="20" y="23.5" width="60" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="44.5" width="46" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="65.5" width="32" height="11" rx="5.5"></rect></svg>Trial Finder</a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="#" aria-current="page">Start</a>
+      <a class="nav-link" href="#">Your list</a>
+      <a class="nav-link" href="#">For your oncologist</a>
+      <a class="nav-link" href="#">Settings</a>
+    </nav>
+    <span class="model-chip"><span class="model-chip-dot"></span>Local model · Qwen3.6-35B-A3B-MLX-8bit</span>
+  </header>
+  <div class="standing"><span>This is a proof of concept, run on this computer. Use made-up answers.</span></div>
+
+  <main class="convo">
+    <div class="convo-context">
+      <div class="convo-context-text">
+        <span class="convo-meta">Lung cancer (non-small cell) · 97201 · 50 miles</span>
+        <p class="convo-reassure">A few questions everyone is asked come first, then some chosen for you. Answer in your own words, or choose an answer. "I don't know" is always fine: it never takes a trial off your list.</p>
+      </div>
+      <span class="question-count">Question 5</span>
+    </div>
+
+    <div class="thread">
+      <p class="turn-agent">How far has the cancer spread?</p>
+      <div class="turn-you">
+        <span class="turn-you-text">Spread to the adrenal gland and the bones.</span>
+        <span class="turn-reading">I read that as: It has spread further, or come back.</span>
+      </div>
+      <p class="turn-agent">Has the cancer spread to the brain?</p>
+      <div class="turn-you">
+        <span class="turn-you-text">No brain mets.</span>
+        <span class="turn-reading">I read that as: No.</span>
+      </div>
+      <p class="turn-agent">Which is closest to how you are day to day?</p>
+      <div class="turn-you">
+        <span class="turn-you-text">Up and about, can't do the heavy stuff.</span>
+        <span class="turn-reading">I read that as: Up and about, but can't do heavy work.</span>
+      </div>
+    </div>
+
+    <section class="question-card" aria-labelledby="q5">
+      <span class="question-label">Question 5</span>
+      <h1 id="q5" class="question-text">Have you had chemotherapy with carboplatin or cisplatin?</h1>
+    </section>
+
+    <sc-if value="{{confirming}}" hint-placeholder-val="{{ true }}">
+      <div class="thread" style="padding-top: 16px; -webkit-mask-image: none; mask-image: none;">
+        <div class="turn-you"><span class="turn-you-text">Carboplatin, yes.</span></div>
+      </div>
+      <section class="confirm" aria-live="polite">
+        <p class="confirm-reading"><span class="confirm-reading-label">I read that as:</span>Yes.</p>
+        <div class="confirm-actions">
+          <button type="button" class="button button-primary button-patient">That's right</button>
+          <button type="button" class="button button-secondary button-patient">Change it</button>
+        </div>
+        <p class="confirm-meta">Read by Qwen3.6-35B-A3B.</p>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{answering}}" hint-placeholder-val="{{ false }}">
+      <div class="composer">
+        <label class="field-label" for="reply">Your answer, in your own words</label>
+        <textarea id="reply" class="composer-input is-focus" placeholder="Type your answer"></textarea>
+        <div class="composer-footer">
+          <span class="composer-note">Your answers stay on this computer. Use made-up answers.</span>
+          <button type="button" class="button button-primary">Send</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px;">
+        <span class="chooser-label">Not sure how to say it? Choose an answer</span>
+        <div class="answers">
+          <button type="button" class="button button-secondary">Yes</button>
+          <button type="button" class="button button-secondary">No</button>
+          <button type="button" class="button button-secondary">I don't know</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <div class="convo-actions">
+      <button type="button" class="button button-secondary">Show me the list now</button>
+      <span class="spacer"></span>
+      <button type="button" class="button button-quiet">Start over</button>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"step":{"editor":"enum","options":["confirm","answer"],"default":"confirm"},"$preview":{"width":1280,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const step = this.props.step ?? 'confirm';
+    return { theme: this.props.theme ?? 'light', confirming: step === 'confirm', answering: step === 'answer' };
+  }
+}
+</script>
+</body>
+</html>

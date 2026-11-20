@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>For your oncologist, printed</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="chart.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+.doc h2{font:600 18px/26px var(--font-ui);margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid #14202B;text-wrap:balance}
+.doc table{width:100%;border-collapse:collapse;font:400 14px/20px var(--font-ui)}
+.doc th{text-align:left;font:500 12px/16px var(--font-mono);letter-spacing:.04em;text-transform:uppercase;color:#4A5866;padding:6px 8px 6px 0;border-bottom:1px solid #7D8995}
+.doc td{vertical-align:top;padding:8px 8px 8px 0;border-bottom:1px solid #D9DEE3}
+.doc td.n{text-align:right;font:500 13px/20px var(--font-mono);white-space:nowrap}
+.doc .said-p{font:400 15px/21px var(--font-patient)}
+</style>
+</helmet>
+<div class="screen t-light doc" style="width: 816px; padding: 72px; background: #FFFFFF; color: #14202B; font: 400 16px/25px var(--font-ui);">
+  <div style="display: flex; align-items: center; gap: 10px; font: 600 14px/1 var(--font-ui); color: #4A5866; margin-bottom: 20px;">
+    <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true" style="width: 16px; height: 16px;"><rect class="brand-mark-tile" width="100" height="100" rx="22"></rect><rect class="brand-mark-lead" x="20" y="23.5" width="60" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="44.5" width="46" height="11" rx="5.5"></rect><rect class="brand-mark-line" x="20" y="65.5" width="32" height="11" rx="5.5"></rect></svg>Trial Finder
+  </div>
+  <h1 style="font: 600 28px/34px var(--font-ui); margin: 0 0 12px;">For your oncologist</h1>
+  <p style="font: 400 16px/25px var(--font-ui); max-width: 620px; margin: 0;">A list of trials to ask about, from a search of ClinicalTrials.gov as it stood in 2026-10 and a short set of questions. It doesn't say whether any trial suits this person. Their oncologist and each trial's team decide that.</p>
+
+  <h2>Questions that would settle the most of these trials</h2>
+  <table>
+    <thead><tr><th>Question</th><th style="text-align: right;">Trials that ask</th></tr></thead>
+    <tbody>
+      <tr><td>Has the cancer spread to the lining of the brain or spinal cord?</td><td class="n">7 of these 10</td></tr>
+      <tr><td>In the last 2 years, have you needed medicine that calms the immune system, such as steroids or immunosuppressants, for an autoimmune disease like lupus or Crohn's? Thyroid hormone, insulin and skin creams don't count.</td><td class="n">2 of these 10</td></tr>
+      <tr><td>Do you have active hepatitis B or C?</td><td class="n">2 of these 10</td></tr>
+      <tr><td>Did testing find an EGFR mutation?</td><td class="n">1 of these 10</td></tr>
+      <tr><td>Did testing find a KRAS mutation?</td><td class="n">1 of these 10</td></tr>
+      <tr><td>What was the PD-L1 test result?</td><td class="n">1 of these 10</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What to bring</h2>
+  <table>
+    <tbody>
+      <tr><td style="width: 44%; font-weight: 600;">Your latest scan reports</td><td>Has the cancer spread to the lining of the brain or spinal cord?</td></tr>
+      <tr><td style="font-weight: 600;">The biomarker (genetic test) report on your tumor</td><td>Did testing find an EGFR mutation?<br>Did testing find a KRAS mutation?</td></tr>
+      <tr><td style="font-weight: 600;">The PD-L1 test result</td><td>What was the PD-L1 test result?</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What they were asked, and answered</h2>
+  <table>
+    <thead><tr><th style="width: 40%;">Question</th><th style="width: 32%;">Said</th><th>Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What type of lung cancer cell did the biopsy show?</td><td class="said-p">Adenocarcinoma.</td><td>Adenocarcinoma</td></tr>
+      <tr><td>How far has the cancer spread?</td><td class="said-p">Spread to the adrenal gland and the bones.</td><td>It has spread further, or come back</td></tr>
+      <tr><td>Has the cancer spread to the brain?</td><td class="said-p">No brain mets.</td><td>No</td></tr>
+      <tr><td>Which is closest to how you are day to day?</td><td class="said-p">Up and about, can't do the heavy stuff.</td><td>Up and about, but can't do heavy work</td></tr>
+      <tr><td>Have you had chemotherapy with carboplatin or cisplatin?</td><td class="said-p">Carboplatin, yes.</td><td>Yes</td></tr>
+      <tr><td>Have you had an immunotherapy drug such as pembrolizumab, nivolumab or durvalumab?</td><td class="said-p">Keytruda with chemo first. It stopped working, cancer grew.</td><td>Yes, and the cancer grew during or after it</td></tr>
+      <tr><td>Have you had a pill aimed at your tumor's mutation, such as osimertinib or alectinib?</td><td class="said-p">No mutation pills.</td><td>No</td></tr>
+      <tr><td>How many treatments have you had since the cancer became advanced?</td><td class="said-p">Three. Chemo and Keytruda, then docetaxel, then Enhertu.</td><td>Three or more</td></tr>
+      <tr><td>Is there a tumor that scans can measure?</td><td class="said-p">Yes, they measure the adrenal tumor every time.</td><td>Yes</td></tr>
+      <tr><td>Has the cancer spread to the lining of the brain or spinal cord?</td><td class="said-p">Don't know.</td><td>Not known yet</td></tr>
+      <tr><td>Have you had lung inflammation (pneumonitis) or scarring (interstitial lung disease)?</td><td class="said-p">No lung inflammation.</td><td>No</td></tr>
+      <tr><td>In the last 6 months, have you had a heart attack, a stroke, or heart failure that needed hospital care?</td><td class="said-p">Yes, I had a heart attack in April. Four months ago.</td><td>Yes</td></tr>
+      <tr><td>Have you had another kind of cancer?</td><td class="said-p">No.</td><td>No</td></tr>
+      <tr><td>Have you had an organ or bone marrow transplant?</td><td class="said-p">No.</td><td>No</td></tr>
+      <tr><td>Do you have HIV?</td><td class="said-p">No.</td><td>No</td></tr>
+      <tr><td>In the last 2 years, have you needed medicine that calms the immune system…?</td><td class="said-p">Not sure. I take a lot of pills since the heart attack.</td><td>Not known yet</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The trials</h2>
+  <sc-for list="{{trials}}" as="t" hint-placeholder-count="10">
+    <div style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 8px; padding: 12px 0; border-bottom: 1px solid #D9DEE3;">
+      <span style="font: 500 14px/22px var(--font-mono); color: #4A5866;">{{t.n}}</span>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <span style="font: 500 13px/18px var(--font-mono); color: #4A5866;">{{t.nct}}</span>
+        <span style="font: 600 15px/22px var(--font-ui);">{{t.title}}</span>
+        <span style="font: 400 14px/20px var(--font-ui);">{{t.phase}} Nearest site: {{t.site}}, 1 mile away. Its rules were read for {{t.read}} of the 31 questions here.</span>
+        <sc-if value="{{t.few}}" hint-placeholder-val="{{ true }}"><span style="font: 600 14px/20px var(--font-ui);">Few of this trial's rules could be checked against your answers.</span></sc-if>
+      </div>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":816,"height":3400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const p1 = 'Phase 1: the first tests in people, mostly to find a safe dose and learn the side effects. Whether it works is a later question.';
+    const p12 = 'Phase 1/2: first finds a safe dose, then starts to test whether the treatment works.';
+    return {
+      trials: [
+        { n: 1, nct: 'NCT02693535', title: 'TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs That Target a Specific Abnormality in a Tumor Gene in People With Advanced Stage Cancer', phase: 'Phase 2: tests whether a treatment works against a cancer, usually in tens to a few hundred people, while still learning its side effects.', site: 'Providence Health & Services, Portland, Oregon', read: 5, few: true },
+        { n: 2, nct: 'NCT04389632', title: 'A Study of Sigvotatug Vedotin in Advanced Solid Tumors', phase: p1, site: 'Providence Cancer Institute Franz Clinic, Portland, Oregon', read: 7, few: true },
+        { n: 3, nct: 'NCT05579366', title: 'Rinatabart Sesutecan (Rina-S, PRO1184, GEN1184) for Advanced Solid Tumors (GCT1184-01/ PRO1184-001)', phase: p12, site: 'Compass Oncology - Rose Quarter, Portland, Oregon', read: 4, few: true },
+        { n: 4, nct: 'NCT05768139', title: 'First-in-Human Study of Tersolisib (STX-478) as Monotherapy and in Combination With Other Antineoplastic Agents in Participants With Advanced Solid Tumors', phase: p12, site: 'Providence Cancer Institute Franz Clinic, Portland, Oregon', read: 4, few: true },
+        { n: 5, nct: 'NCT05919264', title: 'FOG-001 in Locally Advanced or Metastatic Solid Tumors', phase: p12, site: 'Oregon Health and Science University, Portland, Oregon', read: 4, few: true },
+        { n: 6, nct: 'NCT06119581', title: 'A Study of First-Line Olomorasib (LY3537982) and Pembrolizumab With or Without Chemotherapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer', phase: 'Phase 3: compares a treatment with a standard one, in many people. Which treatment each person gets is often decided at random.', site: 'Providence Portland Medical Center, Portland, Oregon', read: 9, few: true },
+        { n: 7, nct: 'NCT06130553', title: 'A Study of AZD3470, a PRMT5 Inhibitor, Given as Monotherapy and in Combination in Patients With MTAP Deficient Advanced/Metastatic Solid Tumors', phase: p12, site: 'Research Site, Portland, Oregon', read: 12, few: false },
+        { n: 8, nct: 'NCT06218914', title: 'Phase 1 Study to Investigate TCRTs KRAS Mutation in Unresectable, Advanced, and/or Metastatic Solid Tumors', phase: p1, site: 'Research Site, Portland, Oregon', read: 9, few: true },
+        { n: 9, nct: 'NCT06242470', title: 'A Study of MGC026 in Participants With Advanced Solid Tumors', phase: p1, site: 'Providence Cancer Institute, Portland, Oregon', read: 8, few: true },
+        { n: 10, nct: 'NCT06251310', title: 'SW-682 in Advanced Solid Tumors', phase: p1, site: 'Oregon Health and Science University, Knight Cancer Institute - Marquam Hill, Portland, Oregon', read: 5, few: true }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
