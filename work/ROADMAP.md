@@ -27,3 +27,27 @@ From the research, section 8, in order:
 4. Where does ground truth come from without a clinician? Check NIH-TrialBench's license and oncology share. Answered in 0008: NIH-TrialBench is public domain and all NCI, but has two NSCLC vignettes; TREC states no licence and has no lung cancer. Both measure the search on other cancers, and NIH-TrialBench the check. Neither measures the conversation; that needs clinician-labelled NSCLC patients, or facts for a benchmark cancer.
 5. How is a shortlist ordered without implying "this one is best for you"? Partly answered in 0004: fewest conflicts first, then trials whose rules were read, then distance, with a note saying the order isn't a ranking and each card saying how much was read. What stays open is a list that still favors trials whose rules the model missed.
 6. Added in 0004: the search keeps some trials for other cancers (prostate, lymphoma) through broad terms such as "metastatic cancer". Nothing in a person's answers flags them, so they can reach the short list. Answered in 0005: they held one held-out short-list place in five. A mark without a model now moves most of them below the short list, removing nothing, at a cost of one relevant trial in about 200. What stays open is the third that a fixed check can't read: cancers listed inside a "solid tumor" line, and trials that exclude NSCLC in words. 0007 hoped its check would catch some of them on a picked trial's own rules; none of the 59 pairs it labelled was one, so that stays untested.
+
+## Future scope, not yet planned
+
+Recorded 2026-10 at the owner's request. None of this is a slice yet. Each item needs its own intent, spec and plan before any work.
+
+**Today the finder is built for one cancer.**
+- The search can run for any cancer once it has a vocabulary in `data/cancer-types/`. Only `nsclc.json` is measured. Slice 0008 adds twenty more, unmeasured and search-only, for its benchmarks.
+- The questions, the order and the short list rest on 31 facts written for NSCLC (`docs/facts.md`), so the conversation on the page works only for NSCLC.
+- The deeper check reads any trial's own rules, so it doesn't depend on the cancer type. Slice 0008 measures it on other cancers.
+
+**The direction: more cancers.** Rare disease was considered and set aside (2026-10): the product stays oncology only, as its intent says.
+
+For each new cancer type:
+- a search vocabulary, measured on held-out labels as 0001 measured NSCLC;
+- the facts that knock its trials off a list, and each trial's rules mapped onto them;
+- made-up patients with knowledge profiles;
+- the three arms measured, as 0003 did.
+
+Likely first candidates are the cancers 0008's benchmarks cover (breast, lymphoma, cervical, others), since outside labels already exist for their search.
+
+**Open questions for that work:**
+- How much of the fact vocabulary is shared across cancers, and how much is per cancer?
+- Can the questions be chosen the same way for a cancer with few trials?
+- Where do labels come from for each new cancer: written here, as for NSCLC, or from a benchmark?
