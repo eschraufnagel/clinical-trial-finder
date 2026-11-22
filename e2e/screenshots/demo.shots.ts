@@ -24,6 +24,8 @@ const OUT = fileURLToPath(new URL("../.out/demo", import.meta.url));
 const SIZE = { width: 1280, height: 800 };
 /** The question typed after the first fast-forward: "I don't know" taken as an answer. */
 const LINING = "Has the cancer spread to the lining of the brain or spinal cord?";
+/** Milliseconds each skipped question and its reading are held before speeding up. */
+const FAST_HOLD = 400;
 
 test("the README's demo", async ({ browser }) => {
   test.setTimeout(180_000);
@@ -93,9 +95,13 @@ test("the README's demo", async ({ browser }) => {
       await page.getByLabel(COPY.conversation.reply).fill(replyTo(p08, asked));
       await page.getByRole("button", { name: COPY.conversation.send }).click();
       await expect(confirm).toBeVisible();
+      // Short holds, so the fast-forward is a real one: each question and its
+      // reading are on screen for a moment before `npm run demo` speeds them up.
+      await hold(FAST_HOLD);
       const reading = await lastQuestion(page);
       await confirm.click();
       await expect.poll(() => lastQuestion(page)).not.toBe(reading);
+      await hold(FAST_HOLD);
       n++;
       if (n > 40) throw new Error("the conversation didn't end");
     }
