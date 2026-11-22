@@ -12,7 +12,8 @@ Slice 0005 moved trials for other cancers below the short list ([`work/0005-othe
 npm run app                    the page, at http://127.0.0.1:5025, on the model chosen in Settings
 npm run app -- --fake          the same, with a scripted reader: no model is called, and checks by taps
 npm run test:e2e               the browser test, on --fake
-npm run screenshots            the README's three images, on --fake
+npm run screenshots            the README's three images and the demo's recording, on --fake
+npm run demo                   the README's loop, from that recording; needs ffmpeg
 ```
 
 Use made-up answers. It's a proof of concept.
