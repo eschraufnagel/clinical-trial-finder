@@ -159,6 +159,8 @@ Since slice 0010, it also keeps `criteria:compare` away from every model module,
 
 Since slice 0011, it also keeps outside addresses out of `src/web/` (the fonts are bundled), and holds the screenshot config (`playwright.screenshots.config.ts`) to `--fake`, as it does the browser test's.
 
+Since slice 0014, it also keeps `scripts/make-demo.ts` to Node's own modules: it reaches nothing in the repository and no network.
+
 The conversation and the check share the app's one transport through `routeByConversation` in `src/transport/`, so neither knows how messages are delivered.
 
 A smaller one: plain-language renderings are display only. Nothing under `src/screening/` imports `src/plain/`, and `ScreeningCriterion` is pinned to four fields, so the agent asks and reads from the protocol's words.
@@ -199,7 +201,8 @@ Keep saved trial JSON trimmed. The full API response per study is large and most
 | `npm run questions:eval` | every patient through every arm, and write a result; `-- --dev`; `-- --reads <file>` answers from a reads file; `-- --check` reruns the latest and fails on any difference |
 | `npm run app` | build the page and serve it at http://127.0.0.1:5025, on the model chosen in its Settings (kept in `local/`; a checked trial's parse is cached in `local/parses/`). `-- --fake` reads replies from the committed readings and checks committed parses by taps, no model; `--port`, `--settings-dir` |
 | `npm run test:e2e` | the browser test, against `npm run app -- --fake` on port 5035; never part of `npm test` |
-| `npm run screenshots` | the README's three images into `docs/images/`, from `npm run app -- --fake` on port 5045; never part of `npm test` or `test:e2e` |
+| `npm run screenshots` | the README's three images into `docs/images/`, and the demo's recording into `e2e/.out/demo/`, from `npm run app -- --fake` on port 5045; never part of `npm test` or `test:e2e` |
+| `npm run demo` | the README's loop, `docs/images/demo.gif`, from the last `npm run screenshots`; needs `ffmpeg` on the path; `-- --offset <s>`, `-- --mp4`. No network, no model |
 | `npm run questions:read -- --set dev\|heldout` | read every patient's replies on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |
 | `npm run check:label-show -- <patient> <NCT ID>` | print a patient's file and a picked trial's rules, numbered, for pair labelling; `--next`. Reaches no parser, link or model |
 | `npm run check:parse -- --set dev\|heldout` | parse the picked trials' rules into `data/criteria/<month>/<run>/`, on the local model, resumable; `--model <spec>` is dry without `--spend`. Loads `.env` |

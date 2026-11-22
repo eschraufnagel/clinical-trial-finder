@@ -1,6 +1,6 @@
 # Roadmap
 
-0001 to 0011 and 0013 are done; the rest are proposed. Each slice gets its own intent, spec and plan before any code, and none starts without the owner's go-ahead. The sketch comes from section 9 of [the research](0000-product/research.md) and will change as slices are planned.
+0001 to 0011, 0013 and 0014 are done; the rest are proposed. Each slice gets its own intent, spec and plan before any code, and none starts without the owner's go-ahead. The sketch comes from section 9 of [the research](0000-product/research.md) and will change as slices are planned.
 
 | Slice | What | Measured by | Model? |
 | --- | --- | --- | --- |
@@ -17,6 +17,7 @@
 | 0010 "Or" lists | **Done, stopped at Gate 1.** A list mark (`anyOf`) on the parse, checked in code, and a record that reads a marked list as one rule; inert, since the parser's prompt was put back. Two prompt wordings each marked the target lists right and made other trials' parses worse ([docs/check.md](../docs/check.md#what-slice-0010-tried)) | No check run. The parser graded on 5 hand-labelled protocols (strict recall 77.8%, then 84.9% and 82.1%) and compared rule by rule on dev's 12; of the second try's 25 lists, 16 right, 7 wrong, 2 of them hiding required rules. Held-out still unread | Yes, local parses only |
 | 0011 Finder design | **Done.** Every screen in Chart v2, the design the prescreening page uses, with its fonts, icons and stylesheet foundation shared: two registers, findings in neutral ink, dark mode from the system, a phone layout, print. Drawn first on a canvas the owner accepted; a check that can't start now says so ([docs/page.md](../docs/page.md#how-it-looks)) | The contrast test (17 pairs, AA, light, dark and print), the verdict scan, the browser test (10 cases) and the owner's look at Gate 1 | No |
 | 0013 Ready to show | **Done.** The README for a first reader: the guardrails together, six measured results each linked to its committed file with what it doesn't show, and a diagram of the parts and the model boundary; a demo script on `--fake` following made-up patient p08 ([docs/demo.md](../docs/demo.md)); the GitHub description and topics; the history scanned for PHI and secrets, nothing real found | The owner's read of the README and run of the demo at Gate 1; gitleaks and a PHI pattern search over all 277 commits ([history-scan.md](0013-demo-ready/history-scan.md)) | No |
+| 0014 Demo video | **Done.** A 36-second loop near the top of the README: made-up patient p08 on `--fake`, from the start form to a checked trial's record, made by `npm run screenshots` then `npm run demo` ([docs/page.md](../docs/page.md)) | The capture's own checks and Claude's frame-by-frame look; Gate 1 skipped on the owner's word ([gate-1-watch.md](0014-demo-video/gate-1-watch.md)) | No |
 
 ## Open questions
 

@@ -2,6 +2,8 @@
 
 One made-up person through the whole page, in scripted mode: no AI model, no network, the same every time. Each screen has what to do and what to say about it. Each number links to the measurement behind it, listed in the [README](../README.md#what-was-measured).
 
+The [README's loop](../README.md) shows the same walk in about 35 seconds.
+
 The person is **p08** ([`evals/cases/patients/dev/p08.json`](../evals/cases/patients/dev/p08.json)), the same person the README's screenshots show. He's 69 and lives in Portland, Oregon. His lung adenocarcinoma has spread to his adrenal gland and bones, and it kept growing through three treatments: chemotherapy with Keytruda, then docetaxel, then Enhertu. He keeps a list on his phone, and he knows some of his test results but not all. He's made up, like every patient in this repository.
 
 For a three-minute version, skip the parts marked *(skip for three)*.

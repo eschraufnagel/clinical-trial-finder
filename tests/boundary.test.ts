@@ -1416,6 +1416,38 @@ describe("criteria:compare reaches no model, parser, parse cache or network", ()
 });
 
 /**
+ * Slice 0014: `npm run demo` turns a recording into the README's loop. It
+ * calls `ffmpeg` and writes a file, and nothing more, so it imports only
+ * Node's own modules: it reaches no model, parser, registry or anything else
+ * in the repository, and no network.
+ */
+describe("make-demo imports nothing from the repository", () => {
+  const SCRIPT = fileURLToPath(new URL("../scripts/make-demo.ts", import.meta.url));
+  const modules = reachableModules(SCRIPT);
+  const importsLocal = (source: string): boolean =>
+    /from\s+["']\./.test(stripTypeOnlyImports(stripComments(source)));
+
+  it("walks a real graph", () => {
+    expect(modules).toContain(SCRIPT);
+  });
+
+  it("reaches nothing but itself", () => {
+    expect(modules).toEqual([SCRIPT]);
+    expect(importsLocal(readFileSync(SCRIPT, "utf8"))).toBe(false);
+  });
+
+  it("touches no network", () => {
+    expect(findNetworkUsage(SCRIPT)).toEqual([]);
+  });
+
+  it("would catch a local import", () => {
+    expect(importsLocal('import { x } from "../src/models/index.js";')).toBe(true);
+    expect(importsLocal('import { execFileSync } from "node:child_process";')).toBe(false);
+    expect(importsLocal('import type { Cut } from "./types.js";')).toBe(false);
+  });
+});
+
+/**
  * Slice 0011: the page names no address off this machine. The fetch rule
  * above reads scripts only; a stylesheet's `@import` or `url()`, or a `<link>`
  * in `index.html`, would load a font or a script from a CDN past it. The fonts
