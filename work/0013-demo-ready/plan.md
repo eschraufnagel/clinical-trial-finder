@@ -125,4 +125,27 @@ None. One reading made explicit: spec §12's "before the README and the demo are
 
 ## Records
 
-Filled during implementation: the history scan's result, Gate 1's answer, the description and topics as set, review-pass findings.
+**Order of commits.** Step 4 (the Gate 1 page, `1659430`) was committed before step 1 (`9bd5215`), because step 1 waited on gitleaks being installed. Steps 2 and 3 were committed after Gate 1, as planned (`ad0602d`, `cead663`).
+
+**History scan (step 1):** nothing real found. gitleaks 8.30.1 found one hit, a test sentinel (`tests/models/fixtures.ts`). The PHI pass had 23 hits, all judged placeholders, DOIs, registry content or this plan's text ([history-scan.md](history-scan.md)).
+
+**The demo walk (step 2):** all 16 of p08's typed replies were read as the script says. Trials 1, 2, 3 and 6 on p08's list can be checked. One fault was found and not fixed: trial 6's record shows the prior-therapy exclusion as covered by the mutation-pill answer, with no "may not fit" ([gate-1-read.md](gate-1-read.md) §3). A follow-up.
+
+**Gate 1 (2026-11):** the owner accepted the README, the demo script, and the description and topics as written.
+
+**GitHub (step 6):** the description and the nine topics were set as on the gate page, checked with `gh repo view`. Visibility stays private.
+
+**Step 7, one departure:** the roadmap's opening line now reads "0001 to 0011 and 0013 are done", not left as it was, so it stays true once this lands.
+
+**Not in the repository:** a `finder-fake-0013` entry was added to the main checkout's untracked `.claude/launch.json`, to walk this branch's page on port 5056.
+
+**Review passes (step 8):**
+- **Pass 1, plan compliance.** Every changed file is in "Files that change", plus `plan.md` itself. The two order and wording departures above are recorded. Nothing changed under `src/`, `scripts/`, `tests/`, `e2e/`, `evals/` or `data/` (`git diff --stat main`). No findings beyond those.
+- **Pass 2, correctness.** **Important, fixed:** `docs/demo.md` §5 said "**Back** to the list", but the sheet has no Back button; it now says to use **Your list** in the header. **Nit, fixed:** §6 named the tick box by position; it now names it by its label, **Check this trial**. Every README claim was re-read against its source (gate page §4).
+- **Pass 3, scope and data.** No PHI: p08 is made up, and his "heart attack in April" is part of the made-up file. No secrets, no network beyond `gh`, run by hand. No verdict words, per the wording scan. No findings.
+- **Pass 4, eval integrity.** No test, grader, threshold or result changed. The README records model, quantization, temperature and seed for the runs it reports. No findings.
+- **Pass 5, documentation.** **Nit, left:** `docs/questions.md` still opens with 0003's 89% and 79%, while the README reports 85% and 72% under today's order. Known from the spec (Concern 1); the README links the result that gives 85%. A follow-up if the owner wants the doc's opening updated.
+
+**Follow-ups for later slices:**
+- the check's link from a rule that names several kinds of treatment to the conversation's answers (trial 6);
+- `docs/questions.md`'s opening numbers.

@@ -75,11 +75,11 @@ Ten trials, then "89 more trials the search kept". Open the first card, **TAPUR*
 
 > **Say:** a page to print and take to the visit. Up top, the questions that would settle the most of these trials: whether the cancer has reached the lining of the brain and spine is asked by 7 of the 10. What to bring: scan reports and the biomarker report. Every question asked, what he said in his words, and how it was read. Every unknown ends up here. The page goes nowhere else: no email, no sending, no contact with any trial site.
 
-**Back** to the list.
+**Your list** in the header, to go back.
 
 ## 6. The check
 
-Tick **TAPUR** (the box under its card), then **Check these**. Only trials with a **Check this trial** box can be checked in scripted mode. On p08's list those are trials 1, 2, 3 and 6.
+On TAPUR's card, tick **Check this trial**, then **Check these** at the foot of the list. Only trials with a **Check this trial** box can be checked in scripted mode. On p08's list those are trials 1, 2, 3 and 6.
 
 The check opens with: "Your earlier answers already covered 4 of its rules."
 
