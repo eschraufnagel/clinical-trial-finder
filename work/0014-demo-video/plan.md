@@ -142,4 +142,24 @@ The README tells the finder's story in words, numbers and three still images (sl
 
 ## Records
 
-(Filled at step 8.)
+**The owner's instruction (2026-11), after stage A:** "Why don't you just proceed with this entire slice. Stop asking me to approve for this slice unless absolutely needed." Stages B and C, the push and the PR went ahead on that.
+
+**Step 3, revised (`db5246f`):** the first run's fast-forwards took 1.3 s and 1.1 s, under `FAST_SECONDS`, so nothing was sped up. A 400 ms hold on each skipped question's reading and on the next question makes them real fast-forwards (2.8× and 2.4×). The loop went from 33.7 s to 36.2 s. Recorded in step 3 above.
+
+**The GIF (step 4):** 4,771,148 bytes, 10 fps, 720 px wide, 36.2 s; the first three size steps were over 5 MB (7.28, 7.50 and 5.54 MB). The three stills came out byte-identical on both runs of `npm run screenshots`. Full table and timeline in [gate-1-watch.md](gate-1-watch.md).
+
+**Gate 1: skipped,** on the owner's instruction above. Claude read seven frames of the GIF at full size in its place: every screen's text is readable at 720 px, the record's notice reads in full, and the page's own "Scripted reader · no model" banner is in every frame ([gate-1-watch.md](gate-1-watch.md)). Not checked by a person: the pacing as watched, and the look on GitHub.
+
+**Review passes (step 8):**
+- **Pass 1, plan compliance.** Every changed file is in "Files that change", plus `plan.md` itself. The one divergence (step 3's holds) was recorded in `plan.md` in the same commit. Nothing under `src/`, `evals/` or `data/` changed, nor either Playwright config or `readme.shots.ts` (`git diff --stat origin/main`). No npm dependency added. No findings.
+- **Pass 2, correctness.** **Nit, left:** `npm run demo` with no `e2e/.out/demo/cuts.json` fails with Node's own "no such file" error rather than saying to run `npm run screenshots` first; the sibling's does the same. **Nit, left:** a size step that's over 5 MB leaves that oversized GIF in `docs/images/` until the next step overwrites it, and if every step fails, the last one stays there, uncommitted; the error says so. The capture writes no cut list unless its checks pass, and clears `e2e/.out/demo/` first, so a stale list can't be used. No Importants.
+- **Pass 3, scope and data.** p08 is made up; no network (the boundary block holds `make-demo.ts` to Node's modules, and the capture runs under the `--fake` config); `ffmpeg` runs locally on a local file. No verdict words: the capture's scans passed, and the README's alt text and caption say the record "isn't a decision". No findings.
+- **Pass 4, eval integrity.** No test, grader, threshold or result changed; one boundary block and one script test added. No model result is reported. No findings.
+- **Pass 5, documentation.** The README gains four lines. `docs/demo.md` says "about 35 seconds" for 36.2 s, as the plan's rounding asks. **Nit, left:** under each typed reading, scripted mode says "This model's readings haven't been measured", true of the scripted reader, while the README's caption says the readings it replays are the local model's; both are true, and the wording is a later slice's question (gate page).
+
+**Verification:** `npm run check` passed before every commit; `npm run screenshots` passed twice; `npm run test:e2e` passed (10 of 10).
+
+**Follow-ups for later slices:**
+- a timed narration script for a 60–90 second walkthrough in the owner's voice, once there's somewhere to post it (spec §7);
+- scripted mode's "This model's readings haven't been measured" line, next to replayed readings that were measured;
+- making the repository public, the owner's call, without which the loop promotes nothing (spec Concern 3).
