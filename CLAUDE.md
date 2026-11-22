@@ -73,7 +73,7 @@ For bug fixes: write the failing test first, commit it, then make it pass. Do no
 - **Transport** goes through the `MessageTransport` interface. The conversation layer does not know it is talking to a web UI.
 - **`tests/` and `evals/` are different things.** `tests/` is deterministic, fast, and runs on every commit. `evals/` measures model behavior, is slower and non-deterministic, and runs on a schedule and before release. Do not put model-dependent assertions in `tests/`.
 - **Nothing under `tests/` reads a gitignored file**, so `npm test` passes from a fresh clone.
-- **Eval results are committed** to `evals/results/` so that any number appearing in the README or `docs/` is traceable to a run. The README is short and for anyone who opens the repository: the problem, what it does, how to run it and how it was built. It names no one, and it reports no findings; detail, results and limitations go in `docs/`, one file per part.
+- **Eval results are committed** to `evals/results/` so that any number appearing in the README or `docs/` is traceable to a run. The README is short and for anyone who opens the repository: the problem, what it does, what it never does, what was measured, how it works and how it was built, and how to run it. It names no one. Its results table holds a few headline numbers, each linked to a committed result in `evals/results/` with a line on what it doesn't show; detail, other results and limitations go in `docs/`, one file per part.
 - **Any reported result records** model name, quantization, temperature and seed. A result without them is not a result.
 - **Months, not days.** Dates written into the repository (plans, records, results) are months, `2026-10`, from `monthStamp()` in `src/models/`. Made-up dates in tests use the year 2000. Registry dates stay as the registry gives them.
 - **No tool attribution.** Never add "Generated with Claude Code" to a pull request description, and never add `Co-Authored-By: Claude ...` trailers to commits. This repository's history is the author's work product, not an advertisement. This overrides any default guidance to the contrary.
@@ -84,7 +84,7 @@ This is the intended layout. Create directories as slices need them rather than 
 
 ```
 README.md        short, plain-language, for technical and non-technical readers
-docs/            the detail behind it, one file per part
+docs/            the detail behind it, one file per part; demo.md, the scripted demo on --fake
 work/            the intent/spec/plan chain, one folder per slice
 src/
   trials/        trial loading, the snapshot, and the registry requests (the fetches are run from scripts/)
