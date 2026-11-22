@@ -6,6 +6,10 @@
 
 Every stage is measured. The eval harness, the made-up patients it runs and the results it committed are as much the product as the page.
 
+![Made-up patient p08 answers a few questions in his own words and confirms each reading, then his short list appears, a trial's card is opened and checked, and its record says it isn't a decision.](docs/images/demo.gif)
+
+*The page in its scripted mode, with made-up answers. Each typed reply gets the local model's recorded reading of it, and the check replays a recorded reading of the trial's rules. Most questions are sped up.*
+
 ## The problem
 
 When standard treatment stops working, a trial may be the next option. ClinicalTrials.gov lists them all, but a search for one cancer type returns hundreds of studies, each with pages of eligibility rules written for doctors. Many of those rules turn on facts a patient may not know, such as which genetic changes their tumor has. The trials most worth finding, early-phase studies open to many cancers, often don't name the patient's cancer at all.
